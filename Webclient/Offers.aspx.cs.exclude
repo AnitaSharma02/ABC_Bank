@@ -1,0 +1,278 @@
+﻿using Framework.EnterpriseLibrary.Adapters;
+using Giift.ShopGateway.Client.Entities;
+using GiiftShopGateway.Model;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Web;
+using System.Web.Services;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Offers : System.Web.UI.Page
+{
+    static int PageSize = 15;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            if (!Page.IsPostBack)
+            {
+                if (Session["MemberDetails"] == null)
+                {
+                    //string CallbackUrl = HttpUtility.UrlEncode(Encrypt("shop/Offers.aspx?categoryid=" + "9bb8ef33-b745-4f7b-8506-efa2f9d1b294"));
+                    string CallbackUrl = HttpUtility.UrlEncode(Encrypt("Offers.aspx?categoryid=other"));
+                    Response.Redirect("~/Login.aspx?CallbackUrl=" + CallbackUrl, false);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("Offers.aspx- Page_Load Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+        }
+    }
+
+    [WebMethod]
+    public static bool SearchProducts(string CategoryId, string ProductName, string Sort, string Terms, int PageNo)
+    {
+        string catagory = string.Empty;
+        try
+        {
+            if (!string.IsNullOrEmpty(CategoryId))
+            {
+                catagory = HttpUtility.UrlDecode(CategoryId);
+            }
+
+            string productName = string.Empty;
+            if (!string.IsNullOrEmpty(ProductName))
+            {
+                productName = HttpUtility.UrlDecode(ProductName);
+            }
+
+            string sort = string.Empty;
+            if (!string.IsNullOrEmpty(Sort))
+            {
+                sort = HttpUtility.UrlDecode(Sort);
+            }
+
+            List<string> terms = null;
+            if (!string.IsNullOrEmpty(Terms))
+            {
+                terms = HttpUtility.UrlDecode(Terms).Split(';').ToList();
+            }
+
+            ShopModel model = new ShopModel();
+            ProductSearchCriteria criteria = model.BuildProductSearchCriteria(catagory, null, ItemResponseGroup.ItemProperties, 0, 0, productName, sort, (PageNo - 1) * PageSize, PageSize, terms);
+            var result = model.SearchProducts(criteria);
+            if (result != null)
+            {
+                HttpContext.Current.Session["ProductList"] = result;
+                return true;
+            }
+            else
+            {
+                HttpContext.Current.Session["ProductList"] = null;
+                return false;
+            }
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("Offers.aspx- SearchProducts Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+            return false;
+        }
+    }
+
+    [WebMethod]
+    public static string GetProductList(int PageNo)
+    {
+        string html = string.Empty;
+        try
+        {
+            ProductSearchResult result = HttpContext.Current.Session["ProductList"] as ProductSearchResult;
+            if (result != null)
+            {
+                StringBuilder sb = new StringBuilder();
+                //string Template = "<div class='col-md-4'><div class='card mb-4 shadow-sm' style='align-items:center;'><img width='70%' height='225' src='{0}'/><div class='card-body'><p class='card-text'><h5 class='text'>{1}</h5></p><div class='d-flex justify-content-between align-items-center'><div class='btn-group'><a href='{3}' class='btn btn-success btn-block text-uppercase'>View Details</a></div><h5 style='color:#d9272e'>{2}</h5></div></div></div></div>";
+                string Template = "<div class=\"col-md-4\" style=\"margin-bottom:15px;\">"
+                    + "<div class=\"product py-4\">"
+                    //+ "<span class=\"off bg-success\">-25% OFF</span>"
+                    + "<div class=\"text-center\">"
+                    + "<img src = \"{0}\" style=\"width:225px;height:200px\">"
+                    + "</div>"
+                    + "<div class=\"about text-center\">"
+                    + "<h5 class='text'>{1}</h5>"
+                    + "<span>{2}</span>"
+                    + "</div>"
+                    + "<div class=\"cart-button mt-3 px-2 d-flex justify-content-between align-items-center\">"
+                    //+ "<button class=\"btn btn-one text-uppercase\">Add to cart</button>"
+                    + "<a href = \"{3}\" class=\"blue_button btn-block text-uppercase trigger_popup_fricc\">View Details</a>"
+                     //+ "<div class=\"add\"><span class=\"product_fav\"><i class=\"fa fa-heart-o\"></i></span><span class=\"product_fav\"><i class=\"fa fa-opencart\"></i></span> </div>"
+                     + "</div>"
+                    + "</div>"
+                    + "</div>";
+
+                sb.Append("<div class='row g-2'>");
+
+                foreach (var product in result.Products)
+                {
+                    string lstrDiscount = string.Empty;
+                    if (product.Properties.ToList().Find(lobj => lobj.Name.Equals("Discount")) != null)
+                    {
+                        lstrDiscount = product.Properties.ToList().Find(lobj => lobj.Name.Equals("Discount")).Value;
+
+                    }
+                    sb.Append(string.Format(Template, product.PrimaryImage.Url, product.Name, lstrDiscount, "OfferDetails.aspx?ProductId=" + product.Id, ""));
+                }
+
+                sb.Append("</div>");
+                //sb.Append("<br /> <br /> <nav aria-label='...'> <ul class='pagination justify-content-center'> <li class='page-item disabled'> <span class='page-link'>Previous</span> </li> <li class='page-item'><a class='page-link' href='#'>1</a></li> <li class='page-item active'> <span class='page-link'> 2 <span class='sr-only'>(current)</span> </span> </li> <li class='page-item'><a class='page-link' href='#'>3</a></li> <li class='page-item'> <a class='page-link' href='#'>Next</a> </li> </ul> </nav>");
+
+                if (result.totalCount > PageSize)
+                {
+                    StringBuilder sbPage = new StringBuilder();
+                    sbPage.Append("<nav aria-label='...'><ul class='pagination justify-content-center'>");
+                    if (PageNo == 1)
+                    {
+                        sbPage.Append("<li class='page-item disabled'> <span class='page-link'>Previous</span> </li>");
+                    }
+                    else
+                    {
+                        sbPage.Append(string.Format("<li class='page-item'> <span class='page-link' onclick='BindProducts({0});return false;'>Previous</span> </li>", (PageNo - 1)));
+                    }
+
+                    int totalPages = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(result.totalCount) / PageSize));
+
+                    int PagingSize = 15;
+                    int Pager = 1;
+                    if (PageNo >= PagingSize)
+                    {
+                        if (totalPages >= PageNo + PagingSize - 2)
+                        {
+                            Pager = PageNo - 1;
+                        }
+                        else
+                        {
+                            Pager = totalPages - 14;
+                        }
+                    }
+
+                    int j = 1;
+                    for (int i = Pager; i <= totalPages && j <= PagingSize; i++, j++)
+                    {
+                        if (i == PageNo)
+                        {
+                            sbPage.Append(string.Format("<li class='page-item active'> <span class='page-link'> {0} <span class='sr-only'>(current)</span> </span></li>", i));
+                        }
+                        else
+                        {
+                            sbPage.Append(string.Format("<li class='page-item'> <span class='page-link' onclick='BindProducts({0});return false;'> {0} </span> </li>", i));
+                        }
+                    }
+
+                    if (PageNo < totalPages)
+                    {
+                        sbPage.Append(string.Format("<li class='page-item'> <span class='page-link' onclick='BindProducts({0});return false;'>Next</span> </li> </ul> </nav>", (PageNo + 1)));
+                    }
+                    else
+                    {
+                        sbPage.Append("<li class='page-item disabled'> <span class='page-link'>Next</span> </li> </ul> </nav>");
+                    }
+
+                    sb.Append(sbPage.ToString());
+
+                }
+
+                html = sb.ToString();
+            }
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("Offers.aspx- GetProductList Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+        }
+        return html;
+    }
+
+    [WebMethod]
+    public static string Filter()
+    {
+        string html = string.Empty;
+        try
+        {
+            ProductSearchResult result = HttpContext.Current.Session["ProductList"] as ProductSearchResult;
+            if (result != null)
+            {
+                StringBuilder filterHtml = new StringBuilder();
+
+                filterHtml.Append("");
+                int i = 0;
+                foreach (var filter in result.Aggregations)
+                {
+                    if (filter.Items.Count > 0)
+                    {
+                        if (i == 0)
+                        {
+                            filterHtml.Append(string.Format("<div id='{0}' class=\"processor\"><div class=\"accordion active heading d-flex justify-content-between align-items-center\" onclick=\"toggleAccordion(this)\"><h6>{0}</h6></div>", filter.Label));
+                            filterHtml.Append("<div class=\"panel\" style=\"display:block\">");
+                        }
+                        else
+                        {
+                            filterHtml.Append(string.Format("<div id='{0}' class=\"processor\"><div class=\"accordion heading d-flex justify-content-between align-items-center\" onclick=\"toggleAccordion(this)\"><h6>{0}</h6></div>", filter.Label));
+                            filterHtml.Append("<div class=\"panel\" style=\"display:none\">");
+                        }
+                        i++;
+
+                        foreach (var item in filter.Items)
+                        {
+                            string lstrChecked = string.Empty;
+                            if (item.IsApplied)
+                            {
+                                lstrChecked = "checked";
+                            }
+
+                            filterHtml.Append("<div class=\"d-flex justify-content-between mt-2\">"
+                                + "<div class=\"form-check\">"
+                                + "<input class=\"form-check-input\" readonly=\"readonly\" type=\"checkbox\" value=\"" + item.Value + "\" onchange='FilterProducts();return false;' id=\"" + item.Value + "\" " + lstrChecked + ">"
+                                + "<label class=\"form-check-label\" for=\"flexCheckChecked\">" + item.Label + "</label>"
+                                + "</div>"
+                                + "<span>" + item.Count + "</span>"
+                                + "</div>");
+                        }
+                        filterHtml.Append("</div></div>");
+                    }
+                }
+
+                html = filterHtml.ToString();
+            }
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("Offers.aspx- Filter Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+        }
+        return html;
+    }
+
+    private static string Encrypt(string clearText)
+    {
+        string EncryptionKey = "MAKV2SPNIC99212";
+        byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
+        using (Aes encryptor = Aes.Create())
+        {
+            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+            encryptor.Key = pdb.GetBytes(32);
+            encryptor.IV = pdb.GetBytes(16);
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(clearBytes, 0, clearBytes.Length);
+                    cs.Close();
+                }
+                clearText = Convert.ToBase64String(ms.ToArray());
+            }
+        }
+        return clearText;
+    }
+}

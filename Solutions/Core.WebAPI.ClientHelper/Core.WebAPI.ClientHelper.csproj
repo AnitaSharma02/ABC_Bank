@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core.WebAPI.ClientHelper</RootNamespace>
+    <AssemblyName>Core.WebAPI.ClientHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CB.IBE.Platform.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.CoreWebAPI.Response">
+      <HintPath>..\..\References\Core.Platform.CoreWebAPI.Response.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ExpirySchedule.Entities">
+      <HintPath>..\..\References\Core.Platform.ExpirySchedule.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Member.Entites">
+      <HintPath>..\..\References\Core.Platform.Member.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MemberActivity.Entities">
+      <HintPath>..\..\References\Core.Platform.MemberActivity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.OTP.Entities">
+      <HintPath>..\..\References\Core.Platform.OTP.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ProgramMaster.Entities">
+      <HintPath>..\..\References\Core.Platform.ProgramMaster.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.RedemptionAuditTrail.Entities">
+      <HintPath>..\..\References\Core.Platform.RedemptionAuditTrail.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Transactions.Entites">
+      <HintPath>..\..\References\Core.Platform.Transactions.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.TransactionSummary.Entites">
+      <HintPath>..\..\References\Core.Platform.TransactionSummary.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Adapters">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Adapters.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Entity">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.PasswordReset.Entities">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.PasswordReset.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.UniqueNumberGenerator">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.UniqueNumberGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="GiiftPaymentGateway.Entities">
+      <HintPath>..\..\Webclient\Bin\GiiftPaymentGateway.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="LoyaltyManagement.Request">
+      <HintPath>..\..\References\LoyaltyManagement.Request.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Webclient\Bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APIClientHelper.cs" />
+    <Compile Include="APIConstant.cs" />
+    <Compile Include="CoreAuthTokenRequest.cs" />
+    <Compile Include="PaymentGatewayDetails.cs" />
+    <Compile Include="PaymentGatewayStatus.cs" />
+    <Compile Include="TokenModel.cs" />
+    <Compile Include="WebAPIHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CB.IBE.DomesticFlight.Entities\CB.IBE.DomesticFlight.Entities.csproj">
+      <Project>{E8F9623E-7210-44F6-9E73-24262E589422}</Project>
+      <Name>CB.IBE.DomesticFlight.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CE.Entities\CE.Entities.csproj">
+      <Project>{e03a4fd9-25af-4ca0-8668-16cccf8cc349}</Project>
+      <Name>CE.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KhaltiISP.Entities\KhaltiISP.Entities.csproj">
+      <Project>{386D80CA-9D8A-4B16-B680-177AE8D42657}</Project>
+      <Name>KhaltiISP.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KhaltiInsurance.Entities\KhaltiInsurance.Entities.csproj">
+      <Project>{E4A8F51C-731D-404E-9441-BE72FDC75195}</Project>
+      <Name>KhaltiInsurance.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactionDetailsAdditionalInfo.Entities\TransactionDetailsAdditionalInfo.Entities.csproj">
+      <Project>{BFB5D46A-15BA-4917-B26E-A5BD15105874}</Project>
+      <Name>TransactionDetailsAdditionalInfo.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

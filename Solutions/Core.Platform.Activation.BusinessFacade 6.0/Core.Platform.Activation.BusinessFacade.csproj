@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Core.Platform.Activation.BusinessFacade</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Core.Platform.Common.Entities">
+      <HintPath>..\..\References\Core.Platform.Common.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Member.Entites">
+      <HintPath>..\..\References\Core.Platform.Member.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MemberManagement.BusinessFacade">
+      <HintPath>..\..\References\Core 6.0\Core.Platform.MemberManagement.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MemberManagement.DataAccess">
+      <HintPath>..\..\References\Core 6.0\Core.Platform.MemberManagement.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.OTP.Entities">
+      <HintPath>..\..\References\Core 6.0\Core.Platform.OTP.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.OTP.Facade">
+      <HintPath>..\..\References\Core 6.0\Core.Platform.OTP.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Adapters">
+      <HintPath>..\..\References\Core 6.0\Framework.EnterpriseLibrary.Adapters.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.BusinessFacade">
+      <HintPath>..\..\References\Core 6.0\Framework.EnterpriseLibrary.CommunicationEngine.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.DataAccess">
+      <HintPath>..\..\References\Core 6.0\Framework.EnterpriseLibrary.CommunicationEngine.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Entity">
+      <HintPath>..\..\References\Core 6.0\Framework.EnterpriseLibrary.CommunicationEngine.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.EmailComponent">
+      <HintPath>..\..\References\Core 6.0\Framework.EnterpriseLibrary.EmailComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.EmailComponent.Entities">
+      <HintPath>..\..\References\Core 6.0\Framework.EnterpriseLibrary.EmailComponent.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.PasswordGenerator">
+      <HintPath>..\..\References\Core 6.0\Framework.EnterpriseLibrary.PasswordGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Security">
+      <HintPath>..\..\References\Core 6.0\Framework.EnterpriseLibrary.Security.dll</HintPath>
+    </Reference>
+	  <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+		  <HintPath>..\..\References\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+	  </Reference>
+  </ItemGroup>
+
+</Project>

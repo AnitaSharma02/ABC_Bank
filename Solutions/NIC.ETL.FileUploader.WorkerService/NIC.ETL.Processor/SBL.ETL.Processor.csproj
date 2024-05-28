@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SBL.ETL.BusinessFacade\SBL.ETL.BusinessFacade.csproj" />
+    <ProjectReference Include="..\SBL.ETL.Entities\SBL.ETL.Entities.csproj" />
+    <ProjectReference Include="..\SBL.ETL.WebAPI.Helper\SBL.ETL.WebAPI.Helper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Core.Platform.ProgramMaster.BusinessFacade">
+      <HintPath>..\References\Core.Platform.ProgramMaster.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ProgramMaster.Entities">
+      <HintPath>..\References\Core.Platform.ProgramMaster.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Adapters">
+      <HintPath>..\References\Framework.EnterpriseLibrary.Adapters.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.BusinessFacade">
+      <HintPath>..\References\Framework.EnterpriseLibrary.CommunicationEngine.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Entity">
+      <HintPath>..\References\Framework.EnterpriseLibrary.CommunicationEngine.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.UniqueNumberGenerator">
+      <HintPath>..\References\Framework.EnterpriseLibrary.UniqueNumberGenerator.dll</HintPath>
+    </Reference>    
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <HintPath>..\References\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+	</ItemGroup>
+
+</Project>

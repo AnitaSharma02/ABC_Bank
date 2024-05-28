@@ -1,0 +1,52 @@
+﻿Installing assembly 'D:\TFS\Core.Framework\Core Version 4.0\Central Program\Program.Framework\Core.Platform.ProgramMaster.WindowsService\bin\Debug\Core.Platform.ProgramMaster.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TFS\Core.Framework\Core Version 4.0\Central Program\Program.Framework\Core.Platform.ProgramMaster.WindowsService\bin\Debug\Core.Platform.ProgramMaster.WindowsService.InstallLog
+   assemblypath = D:\TFS\Core.Framework\Core Version 4.0\Central Program\Program.Framework\Core.Platform.ProgramMaster.WindowsService\bin\Debug\Core.Platform.ProgramMaster.WindowsService.exe
+Installing service Program Gateway...
+Service Program Gateway has been successfully installed.
+Creating EventLog source Program Gateway in log Application...
+Committing assembly 'D:\TFS\Core.Framework\Core Version 4.0\Central Program\Program.Framework\Core.Platform.ProgramMaster.WindowsService\bin\Debug\Core.Platform.ProgramMaster.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TFS\Core.Framework\Core Version 4.0\Central Program\Program.Framework\Core.Platform.ProgramMaster.WindowsService\bin\Debug\Core.Platform.ProgramMaster.WindowsService.InstallLog
+   assemblypath = D:\TFS\Core.Framework\Core Version 4.0\Central Program\Program.Framework\Core.Platform.ProgramMaster.WindowsService\bin\Debug\Core.Platform.ProgramMaster.WindowsService.exe
+Installing assembly 'C:\CENTRAL PROGRAM\Program Service\PROGRAM GATEWAY SERVICE\Core.Platform.ProgramMaster.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\CENTRAL PROGRAM\Program Service\PROGRAM GATEWAY SERVICE\Core.Platform.ProgramMaster.WindowsService.InstallLog
+   assemblypath = C:\CENTRAL PROGRAM\Program Service\PROGRAM GATEWAY SERVICE\Core.Platform.ProgramMaster.WindowsService.exe
+Installing service Program Gateway...
+Service Program Gateway has been successfully installed.
+Creating EventLog source Program Gateway in log Application...
+Committing assembly 'C:\CENTRAL PROGRAM\Program Service\PROGRAM GATEWAY SERVICE\Core.Platform.ProgramMaster.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\CENTRAL PROGRAM\Program Service\PROGRAM GATEWAY SERVICE\Core.Platform.ProgramMaster.WindowsService.InstallLog
+   assemblypath = C:\CENTRAL PROGRAM\Program Service\PROGRAM GATEWAY SERVICE\Core.Platform.ProgramMaster.WindowsService.exe
+Installing assembly 'D:\Gulf Bank\Services\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Gulf Bank\Services\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.InstallLog
+   assemblypath = D:\Gulf Bank\Services\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.exe
+Installing service Program Gateway...
+Service Program Gateway has been successfully installed.
+Creating EventLog source Program Gateway in log Application...
+Committing assembly 'D:\Gulf Bank\Services\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Gulf Bank\Services\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.InstallLog
+   assemblypath = D:\Gulf Bank\Services\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.exe
+Installing assembly 'D:\SAMPATH BANK\SERVICES\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\SAMPATH BANK\SERVICES\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.InstallLog
+   assemblypath = D:\SAMPATH BANK\SERVICES\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.exe
+Installing service Program Gateway...
+Service Program Gateway has been successfully installed.
+Creating EventLog source Program Gateway in log Application...
+Committing assembly 'D:\SAMPATH BANK\SERVICES\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\SAMPATH BANK\SERVICES\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.InstallLog
+   assemblypath = D:\SAMPATH BANK\SERVICES\CENTRAL PROGRAM\GatewayService\Core.Platform.ProgramMaster.WindowsService.exe

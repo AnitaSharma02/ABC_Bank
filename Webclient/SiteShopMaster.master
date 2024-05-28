@@ -1,0 +1,206 @@
+﻿<%@ Master Language="C#" MasterPageFile="SiteMaster.master" AutoEventWireup="true" CodeFile="SiteShopMaster.master.cs" Inherits="SiteShopMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
+    <link rel="stylesheet" href="\Css/shop.css">
+    <script src="../Jquery/PrepaidCard.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.dvMain').insertBefore('.dvRedemptionMenu');
+            $('.dvRedemptionMenu').insertBefore('.dvShopOfferPage');
+            $('.hover_app_info').hide();
+            $("#txtProductName").autocomplete({
+                source: function (request, response) {
+                    var list = [];
+                    if (request.term.toString() != "" && request.term.toString().length > 3) {
+                        var productType = getQuerystring("ProductType");
+                        var terms = getQuerystring("terms");
+                        if (productType == '') {
+                            productType = 'Digital';
+                        }
+                        $.ajax({
+                            type: 'POST',
+                            url: 'ShopList.aspx/GetAutocompleteProductName',
+                            contentType: 'application/json; charset=utf-8',
+                            dataType: 'json',
+                            data: "{'prefixText':'" + request.term.toString() + "','productType':'" + productType + "','terms':'" + terms + "'}",
+                            cache: false,
+                            success: function (msg) {
+                                response(msg.d);
+                            },
+                            error: function (errmsg) {
+                                list.push({ label: 'No product found.', val: '' });
+                                response(list);
+                            }
+                        });
+                        response(list);
+                    }
+                },
+                select: function (event, ui) {
+                    if (ui.item.label.toLowerCase().replaceAll(/\s/g, '') != 'noproductfound.') {
+                        $("#txtProductName").val(ui.item.label);
+                        $("#txtProductName").val(ui.item.value);
+                    }
+                    return false;
+                },
+                minLength: 3,
+                scroll: true,
+                scrollHeight: 300
+            });
+            $.ui.autocomplete.prototype._renderItem = function (ul, item) {
+                var strResult = item.label.toString();
+                return $("<li style='width:100%'></li>").data("item.autocomplete", item).append("<a onclick=\"SearchProduct('" + strResult + "')\" style='line-height: 14px;height: auto;width:auto'>" + strResult + "</a>").appendTo(ul);
+            };
+
+            // this script is to keep multiple autocomplete inside their respective input's fields div section
+            function initAutocomplete(inputSelector, containerSelector) {
+                $(inputSelector).autocomplete({
+                    appendTo: $(containerSelector),
+                    open: function (event, ui) {
+                        var $autocompleteMenu = $(this).autocomplete("widget");
+                        $autocompleteMenu.addClass("myClass").css({
+                            "max-height": 400,
+                            "overflow-x": "hidden"
+                        });
+                    }
+                });
+            }
+            //just mention your id and the div className
+            //initAutocomplete(".pageParentClass #id", "pageParentClass .className");
+            initAutocomplete(".dvShopMenu .dvSearch #txtProductName", ".dvShopMenu .dvSearch .dvTxtProductName");
+        });
+        function Confirmsignout() {
+            $('.hover_app_info').show();
+            //var confirm_value = document.createElement("INPUT");
+            //confirm_value.type = "hidden";
+            //confirm_value.name = "confirm_value";
+            //if (confirm("Do you want to Signout?")) {
+            //    confirm_value.value = "Yes";
+            //    window.location.href = "../Logout.aspx";
+
+            //} else {
+            //    confirm_value.value = "No";
+            //}
+            //document.forms[0].appendChild(confirm_value);
+        }
+        function SearchProduct(name) {
+            var productName;
+            if (name != '') {
+                productName = name;
+            }
+            else {
+                productName = jQuery('#txtProductName').val();
+            }
+            productName = jQuery('#txtProductName').val();
+
+            if (productName != "" && productName.length > 3) {
+                var CategoryId = getQuerystring("CategoryId");
+                var ProductType = getQuerystring("ProductType");
+                window.location.href = "ShopList.aspx?ProductName=" + productName + "&ProductType=" + ProductType + "&CategoryId=" + CategoryId;
+                return false;
+            }
+            else {
+                alert("Please Enter Minimum 3 Letter Value in Search Box");
+            }
+        }
+        function getQuerystring(key, default_) {
+            if (default_ == null) default_ = "";
+            key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
+            var qs = regex.exec(decodeURIComponent(window.location.href));
+            if (qs == null)
+                return default_;
+            else
+                return qs[1];
+        }
+
+        
+
+        // this script is only if you need submenu. check testing folder for html submenu markup reference
+        $(function () {
+            $(".dropdown-menu a.dropdown-toggle").on("click", function (e) {
+                if (!$(this).next().hasClass("show")) {
+                    $(this).parents(".dropdown-menu").first().find(".show").removeClass("show");
+                }
+                var $subMenu = $(this).next(".dropdown-menu");
+                $subMenu.toggleClass("show");
+                $(this).parent().toggleClass("show");
+                $(this)
+                    .parents("li.nav-item.dropdown.show")
+                    .on("hidden.bs.dropdown", function (e) {
+                        $(".dropdown-submenu .show").removeClass("show");
+                        $(".dropdown-submenu.show").removeClass("show");
+                    });
+                return false;
+            });
+        });
+    </script>
+    <div class="dvShopMenu">
+        <div class="container-xl" dir="ltr" style="direction: ltr;" id="divShopMenuBar" runat="server">
+            <nav class="navbar navbar-expand-lg navbar-light px-0 mx-n3">
+                <div class="col-auto d-lg-none order-lg-0">
+                    <button class="navbar-toggler px-1" type="button" data-toggle="collapse" data-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                </div>
+                <div class="dvShopSerachBox px-0 col-6 col-lg-3 order-lg-2 ml-auto">
+                    <div class="dvSearch">
+                        <div class="dvTxtProductName input-group">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductName">
+                            <div class="input-group-prepend">
+                                <span id="btnSearchExperiences" type="button" class="input-group-text" onclick="SearchProduct()">
+                                    <img src="../images/icons/other/search-icon1.svg" /></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="Cart.aspx" id="aCartBtn" runat="server" class="order-lg-3 pl-2 col-auto d-flex align-items-center justify-content-end">
+                    <span>
+                        <img src="images/shoppage/icon-cart.svg" class="icon-cart" />
+                    </span>
+                    <span id="spanCartItems" runat="server" class="h7 badge bg-light border text-colour7 p-2 ml-2">0</span>
+                </a>
+                <div class="col-12 col-lg-8 order-lg-1">
+                    <div id="divMenuContent" runat="server">
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <%--<div class="dvShopMenu">
+        <div class="container-xl">
+            <div dir="ltr" style="direction: ltr;" id="divShopMenuBar" runat="server">
+                <nav class="navbar navbar-expand-lg navbar-light px-0 mx-n3">
+                    <div class="col-2 d-lg-none order-lg-0">
+                        <button class="navbar-toggler px-1" type="button" data-toggle="collapse" data-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    </div>
+                    <div class="col-10 col-lg-3 d-flex align-items-center justify-content-end order-lg-2 pl-0">
+                        <div class="dvSearch col-8 px-0">
+                            <div class="input-group">
+                                <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductName">
+                                <div class="input-group-prepend">
+                                    <span id="btnSearchExperiences" type="button" class="input-group-text" onclick="SearchProduct()">
+                                        <img src="../images/icons/other/search-icon1.svg" /></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto pr-0">
+                            <a href="Cart.aspx" id="aCartBtn" runat="server" class="d-block">
+                                <div class="d-flex align-items-center">
+                                    <span><img src="images/shoppage/icon-cart.svg" class="icon-cart" /></span>
+                                    <span id="spanCartItems" runat="server" class="h7 badge bg-light border p-2 ml-2">0</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-9 order-lg-1">
+                        <div id="divMenuContent" runat="server">
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>--%>
+    <asp:ContentPlaceHolder ID="CPSHOP" runat="server">
+    </asp:ContentPlaceHolder>
+    <div id="updProgress" style="z-index: 10000; height: 100%; display: none;">
+        <img src="../Images/loading.gif" alt="loading..." />
+    </div>
+</asp:Content>

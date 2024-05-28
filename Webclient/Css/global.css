@@ -1,0 +1,1595 @@
+/*=========[ BODY ]=========*/
+body {
+    font-family: var(--body-f-family);
+    color: var(--body-text-colour);
+    font-size: var(--body-font-size);
+    background-color: var(--body-bg-colour);
+}
+/*=========[ BODY ]=========*/
+
+/*=========[ OVERWRITE BOOTSTRAP TAGS ]=========*/
+a {
+    color: var(--colour7);
+}
+a:hover {
+    text-decoration: none;
+    color: var(--colour4);
+}
+.text-underline {
+    text-decoration: underline !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.h7,
+.h8,
+.h9,
+ul,
+ol,
+p,
+label {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*=========[ OVERWRITE BOOTSTRAP TAGS ]=========*/
+
+/* common p tag */
+p {
+    color: var(--body-text-colour);
+    font-family: var(--body-f-family);
+}
+
+/*=========[ ADDITIONAL HEADINGS BOOTSTRAP ]=========*/
+.h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
+
+.h2 {
+    font-size: calc(1.325rem + 0.9vw);
+}
+
+.h3 {
+    font-size: calc(1.3rem + 0.6vw);
+}
+
+.h4 {
+    font-size: calc(1.275rem + 0.3vw);
+}
+
+.h5 {
+    font-size: 1.25rem;
+}
+
+.h6 {
+    font-size: 1rem;
+}
+
+.h7 {
+    font-size: 0.875rem;
+}
+
+.h8 {
+    font-size: 0.75rem;
+}
+
+.h9 {
+    font-size: 0.625rem;
+}
+/*=========[ ADDITIONAL HEADINGS BOOTSTRAP ]=========*/
+
+
+/*=========[ DROPDOWN   ]=========*/
+.dvDropdown .dropdown-toggle::after{
+    color:#777777;
+}
+.dvDropdown .dropdown-menu {
+    padding: 0;
+}
+.dvDropdown .dropdown-item .form-control,
+.dvDropdown .dropdown-item .special-text,
+.dvDropdown .dropdown-item .fa-minus,
+.dvDropdown .dropdown-item .fa-plus{
+    color: var(--colour7);
+    padding: 0;
+}
+.dvDropdown .dropdown-item:hover .form-control,
+.dvDropdown .dropdown-item:hover .special-text,
+.dvDropdown .dropdown-item:hover .fa-minus,
+.dvDropdown .dropdown-item:hover .fa-plus {
+    color: var(--colour6);
+}
+.dvDropdown .dropdown-item {
+    color: var(--text-colour7);
+    font-family: var(--font-regular);
+    padding: .5rem .75rem;
+}
+.dvDropdown .dropdown-item:hover {
+    background-color: var(--bg-colour1);
+}
+/*=========[ DROPDOWN ]=========*/
+
+
+/*=========[ RESPONSIVE HEADINGS ]=========*/
+.heading-thin {
+    font-family: var(--heading-thin);
+}
+
+.heading-semithin {
+    font-family: var(--heading-semithin);
+}
+
+.heading-extrathin {
+    font-family: var(--heading-extrathin);
+}
+
+.heading-light {
+    font-family: var(--heading-light);
+}
+
+.heading-semilight {
+    font-family: var(--heading-semilight);
+}
+
+.heading-extralight {
+    font-family: var(--heading-extralight);
+}
+
+.heading-regular {
+    font-family: var(--heading-regular);
+}
+
+.heading-semiregular {
+    font-family: var(--heading-semiregular);
+}
+
+.heading-extraregular {
+    font-family: var(--heading-extraregular);
+}
+
+.heading-medium {
+    font-family: var(--heading-medium);
+}
+
+.heading-semimedium {
+    font-family: var(--heading-semimedium);
+}
+
+.heading-extramedium {
+    font-family: var(--heading-extramedium);
+}
+
+.heading-bold {
+    font-family: var(--heading-bold);
+}
+
+.heading-semibold {
+    font-family: var(--heading-semibold);
+}
+
+.heading-extrabold {
+    font-family: var(--heading-extrabold);
+}
+
+.heading-black {
+    font-family: var(--heading-black);
+}
+
+.heading-semiblack {
+    font-family: var(--heading-semiblack);
+}
+
+.heading-extrablack {
+    font-family: var(--heading-extrablack);
+}
+/*=========[ RESPONSIVE HEADINGS ]=========*/
+
+/*=========[ TEXT COLOURS ]=========*/
+.text-colour1 {
+    color: var(--text-colour1);
+}
+.text-colour2 {
+    color: var(--text-colour2);
+}
+.text-colour3 {
+    color: var(--text-colour3);
+}
+.text-colour4 {
+    color: var(--text-colour4);
+}
+.text-colour5 {
+    color: var(--text-colour5);
+}
+.text-colour6 {
+    color: var(--text-colour6);
+}
+.text-colour7 {
+    color: var(--text-colour7);
+}
+.text-colour8 {
+    color: var(--text-colour8);
+}
+.text-colour9 {
+    color: var(--text-colour9);
+}
+/*=========[ TEXT COLOURS ]=========*/
+
+/*=========[ BACKGROUND COLOURS ]=========*/
+.bg-colour1{
+    background-color:var(--bg-colour1);
+}
+.bg-colour2 {
+    background-color: var(--bg-colour2);
+}
+.bg-colour3 {
+    background-color: var(--bg-colour3);
+}
+.bg-colour4 {
+    background-color: var(--bg-colour4);
+}
+.bg-colour5 {
+    background-color: var(--bg-colour5);
+}
+.bg-colour6 {
+    background-color: var(--bg-colour6);
+}
+.bg-colour7 {
+    background-color: var(--bg-colour7);
+}
+.bg-colour8 {
+    background-color: var(--bg-colour8);
+}
+.bg-colour9 {
+    background-color: var(--bg-colour9);
+}
+/*=========[ BACKGROUND COLOURS ]=========*/
+/*=========[ STICKY FOOTER ]=========*/
+#form1 {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.dvMain {
+    flex: 1;
+}
+
+.dvFooter {
+    flex-shrink: 0;
+}
+/*=========[ STICKY FOOTER ]=========*/
+
+/*=========[ PERFECT CENTER WITHOUT CHANGING STICKY FOOTER CSS ]=========*/
+.vh-center {
+    min-height: calc(100vh - 80px);
+}
+/*=========[ PERFECT CENTER WITHOUT CHANGING STICKY FOOTER CSS ]=========*/
+
+/*=========[ PLACEHOLDER ]=========*/
+::-webkit-input-placeholder {
+    font-size: var(--placeholder-font-size);
+    color: var(--placeholder-text-colour);
+}
+
+::-moz-placeholder {
+    font-size: var(--placeholder-font-size);
+    color: var(--placeholder-text-colour);
+}
+
+:-ms-input-placeholder {
+    font-size: var(--placeholder-font-size);
+    color: var(--placeholder-text-colour);
+}
+
+:-moz-placeholder {
+    font-size: var(--placeholder-font-size);
+    color: var(--placeholder-text-colour);
+}
+/*=========[ PLACEHOLDER ]=========*/
+
+/*=========[ MAIN LOADER ]=========*/
+#updProgress {
+    z-index: 2000 !important;
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    border: solid 1px #4682b4;
+    opacity: 0.5;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    width: 100%;
+    height: 80%;
+    padding: 5px 0;
+    background-color: rgba(50, 50, 50, 0.75);
+}
+
+    #updProgress img {
+        text-align: left;
+        margin-right: 7px;
+        margin-top: 17%;
+        padding: 10px;
+        background: #fff;
+        border-radius: 5px;
+        width: 60px;
+    }
+
+    #updProgress p {
+        border: 0 solid red;
+    }
+/*=========[ MAIN LOADER ]=========*/
+
+/*=========[ HEADER ]=========*/
+.dvHeader .logo img {
+    width: 140px;
+}
+
+.dvStripe {
+    background-color: var(--bg-colour3);
+    padding: 0.2rem 0;
+}
+/*.dvHeader {z-index:1;}*/
+.dvHeader .navbar-nav .nav-item.active a {
+    color: var(--primary-colour);
+    /*border-top: 1px solid var(--primary-colour);*/
+}
+
+.dvHeader .navbar-nav .nav-item a {
+    color: var(--text-colour7);
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-family: var(--font-semibold);
+    text-transform: uppercase;
+}
+
+    .dvHeader .navbar-nav .nav-item a:hover {
+        color: var(--text-colour1);
+    }
+
+.dvHeader .navbar-nav .nav-item.dropdown .dropdown-menu a:hover {
+    background-color: var(--text-colour1);
+    color: #fff;
+}
+
+.dvHeader .nav-link {
+    padding: .75rem 1rem;
+}
+/*=========[ HEADER ]=========*/
+
+/*=========[ FOOTER ]=========*/
+.dvBgRedColor {
+    background-color: var(--bg-colour1);
+}
+
+.dvFooter {
+    background-color: var(--bg-section);
+}
+
+.dvFooter .dvLinks a {
+    padding: 0 0.2rem;
+    color: var(--text-colour5);
+    font-size: 1rem;
+    font-family: var(--font-semibold);
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.dvFooter .footer-logo {
+    width: 150px;
+}
+
+.dvFooter .border-thin {
+    border-top: 1px solid #303030;
+}
+/*=========[ FOOTER ]=========*/
+
+/*=========[ Flight Search ]=========*/
+.dvFlightPassenger .border {
+    border: 1px solid #efeff0 !important;
+}
+
+.dvFlightSearchProducts .img-container {
+    padding-bottom: 73%;
+}
+/*=========[ Flight Search ]=========*/
+/*=========[ Login Forms ]=========*/
+.dvLoginBoxbg .innerBox {
+    /*overflow: hidden;*/
+    background: var(--bg-colour2);
+    border: none;
+    border-radius: var(--b-radius) !important;
+}
+
+/*=========[ Login Forms ]=========*/
+
+/*=========[ HORIZONTAL SCROLL ]=========*/
+.scroll-hoz {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+/*=========[ HORIZONTAL SCROLL ]=========*/
+
+/*=========[ VERTICAL SCROLL ]=========*/
+.scroll-ver {
+    overflow-x: hidden;
+}
+/*=========[ VERTICAL SCROLL ]=========*/
+
+/*=========[ EQUAL COLUMNS ]=========*/
+.equal-col {
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+    /* .equal-col [class*="col-"] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+} */
+    .equal-col > [class*="col-"] {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+/*=========[ EQUAL COLUMNS ]=========*/
+
+/*=========[ IMAGE FIX ]=========*/
+.img-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.img-container img {
+    width: 100% !important;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/*=========[ IMAGE FIX ]=========*/
+
+/*=========[ RATINGS ]=========*/
+.dvRatings img {
+    width: 12px;
+}
+/*=========[ RATINGS ]=========*/
+
+/*=========[ SWIPER ARROW BUTTONS ]=========*/
+/* swiper's disabled button */
+.swiper-button-disabled {
+    opacity: var(--arrow-disabled-opacity);
+}
+/* disable original arrows of swiper */
+.swiper-button-next:after,
+.swiper-button-prev:after,
+.swiper-button-next-hero:after,
+.swiper-button-prev-hero:after,
+.swiper-button-next-vouchers:after,
+.swiper-button-next-vouchers:after {
+    display: none;
+}
+/* adjust width of arrow images */
+.swiper-button-prev img,
+.swiper-button-next img {
+    width: var(--arrow-image-width);
+}
+/*=========[ SWIPER ARROW BUTTONS ]=========*/
+
+/*=========[ SWIPER BUTTONS - use "customizeButtons" class when you want to shift buttons or customize]=========*/
+/* customized swiper buttons */
+.customizedButtons .swiper-button-prev,
+.customizedButtons .swiper-button-next {
+    position: static !important;
+    /* flex: 0 0 41.66; */
+    width: auto !important;
+    margin: 0 !important;
+    height: auto !important;
+}
+
+.customizedButtons .swiper-button-prev img,
+.customizedButtons .swiper-button-next img {
+    width: 40px;
+}
+/*=========[ SWIPER BUTTONS - use "customizeButtons" class when you want to shift buttons or customize]=========*/
+
+/*=========[ SWIPER PAGINATION ]=========*/
+.swiper-pagination-bullet {
+    opacity: var(--pagination-opacity) !important;
+    background-color: var(--pagination-fade-colour) !important;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    background-color: var(--pagination-active-colour) !important;
+    border: 1px solid var(--colour1);
+}
+/*=========[ SWIPER PAGINATION ]=========*/
+
+/*=========[ SWIPER THUMBSLIDER ]=========*/
+.dvThumbSwiperSlider .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.dvThumbSwiperSlider .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+    .dvThumbSwiperSlider .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.dvThumbSwiperSlider .swiper {
+    width: 100%;
+    /*height: 300px;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dvThumbSwiperSlider .mySwiper2 {
+    /*height: 50%;*/
+    height: auto;
+    width: 100%;
+}
+
+.dvThumbSwiperSlider .mySwiper {
+    /*height: 12%;*/
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+    .dvThumbSwiperSlider .mySwiper .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    .dvThumbSwiperSlider .mySwiper .swiper-slide-thumb-active {
+        opacity: 1;
+    }
+
+/* adjust arrows right & left */
+.dvThumbSwiperSlider .swiper-button-prev,
+.dvThumbSwiperSlider .swiper-rtl .swiper-button-next {
+    left: var(--swiper-navigation-sides-offset, 10px);
+    right: auto;
+}
+
+.dvThumbSwiperSlider .swiper-button-next,
+.dvThumbSwiperSlider .swiper-rtl .swiper-button-prev {
+    right: var(--swiper-navigation-sides-offset, 10px);
+    left: auto;
+}
+
+    /* adjust arrows width size */
+    .dvThumbSwiperSlider .swiper-button-prev img,
+    .dvThumbSwiperSlider .swiper-button-next img {
+        width: 25px;
+    }
+/*=========[ SWIPER THUMBSLIDER ]=========*/
+
+/*=========[ PAGINATION ]=========*/
+.dvPagination .page-link:focus {
+    box-shadow: none;
+}
+
+.dvPagination .page-link {
+    color: var(--colour1);
+    cursor: pointer;
+}
+
+.dvPagination .page-item.active .page-link {
+    color: #fff;
+    background-color: var(--colour1);
+    border-color: var(--colour1);
+}
+
+.dvPagination .page-item.disabled .page-link {
+    background-color: #fff;
+    border-color: #dee2e6;
+    color: #6c757d;
+}
+
+/*pagination table for account pages*/
+.dvPagination .table-bordered td,
+.dvPagination .table-bordered th{
+    padding:0;
+    border:none;
+}
+.dvPagination .table-bordered .page-item:last-child .page-link,
+.dvPagination .table-bordered .page-item:first-child .page-link,
+.dvPagination .table-bordered .page-link {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+/*pagination table for account pages*/
+/*=========[ PAGINATION ]=========*/
+/*=========[ BUTTONS ]=========*/
+.btn.focus,
+.btn:focus {
+    box-shadow: none;
+}
+
+.btn {
+    font-family: var(--btn-family);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border-color: var(--btn-border-colour);
+    text-transform: uppercase;
+    border-radius: var(--b-radius);
+}
+
+    .btn:hover,
+    .btn.focus,
+    .btn:focus {
+        font-family: var(--btn-family);
+        background-color: var(--btn-bg);
+        color: var(--btn-text);
+        border-color: var(--btn-border-colour);
+        text-transform: uppercase;
+        border-radius: var(--b-radius);
+    }
+
+.btn-one {
+    font-family: var(--btn-one-family);
+    background-color: var(--btn-one-bg);
+    color: var(--btn-one-text);
+    border-color: var(--btn-one-border-colour);
+    text-transform: uppercase;
+    line-height: 1.8;
+}
+
+    .btn-one:hover {
+        font-family: var(--btn-one-family);
+        background-color: var(--btn-one-bg-hover);
+        color: var(--btn-one-text-hover);
+        border-color: var(--btn-one-border-colour-hover);
+        text-transform: uppercase;
+    }
+
+    .btn-one.focus,
+    .btn-one:focus {
+        font-family: var(--btn-one-family);
+        background-color: var(--btn-one-bg);
+        color: var(--btn-one-text);
+        border-color: var(--btn-one-border-colour);
+        text-transform: uppercase;
+    }
+
+.btn-two {
+    font-family: var(--btn-two-family);
+    background-color: var(--btn-two-bg);
+    color: var(--btn-two-text);
+    border-color: var(--btn-two-border-colour);
+    text-transform: uppercase;
+    line-height: 1.8;
+}
+
+    .btn-two:hover {
+        font-family: var(--btn-two-family);
+        background-color: var(--btn-two-bg-hover);
+        color: var(--btn-two-text-hover);
+        border-color: var(--btn-two-border-colour-hover);
+        text-transform: uppercase;
+    }
+
+    .btn-two.focus,
+    .btn-two:focus {
+        font-family: var(--btn-two-family);
+        background-color: var(--btn-two-bg);
+        color: var(--btn-two-text);
+        border-color: var(--btn-two-border-colour);
+        text-transform: uppercase;
+    }
+/*=========[ BUTTONS ]=========*/
+
+/*=========[ TABS ]=========*/
+.dvTabs .nav-tabs .nav-item.show .nav-link,
+.dvTabs .nav-tabs .nav-link.active {
+    background-color: var(--colour1);
+    color: #fff;
+}
+
+.dvTabs .nav-tabs .nav-link {
+    border: 1px solid #dee2e6;
+}
+/*=========[ TABS ]=========*/
+
+/*=========[ ROTATE SINGLE COLLAPSE ARROW ICON ]=========*/
+.arrow-icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.collapsed .arrow-icon {
+    transform: rotate(180deg);
+}
+/*=========[ ROTATE SINGLE COLLAPSE ARROW ICON ]=========*/
+
+/*=========[ BORDER SEPARATOR ]=========*/
+.dvBorderBottom .border-bottom {
+    border-bottom: 1px solid var(--colour3) !important;
+}
+/*=========[ BORDER SEPARATOR ]=========*/
+
+/*=========[ ACCORDION ]=========*/
+/* changed for transparent accordion headers */
+.accordion {
+    border: 1px solid var(--colour3);
+}
+.accordion .card {
+    border: none;
+}
+.accordion .card-header,
+.accordion .card-header button {
+    background-color: var(--accordion-header-bg);
+    color: var(--accordion-header-text);
+    border: none;
+}
+.accordion .dvBorderBottom .border-bottom {
+    border-bottom: 1px solid var(--colour3) !important;
+}
+/*for giftcards, shop, lounges, milesexchange filter*/
+.accordion .dvBorderBottom:last-child {
+    display:none;
+}
+/*for giftcards, shop, lounges, milesexchange filter*/
+.accordion .scroll-ver {
+    overflow-x: hidden;
+    margin: 0px 0 0;
+    max-height: 200px;
+}
+/*rotate icons*/
+.accordion .card-header .arrow-icon {
+    position: absolute;
+    right: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+.accordion .card-header .collapsed .arrow-icon {
+    transform: rotate(180deg);
+}
+.accordion .scroll-ver::-webkit-scrollbar {
+    width: 3px;
+}
+/* Track */
+.accordion .scroll-ver::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+/* Handle */
+.accordion .scroll-ver::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+#filter-accordion .accordion .scroll-ver {
+    overflow-x: hidden;
+    margin: 0px 0 0;
+    max-height: 240px;
+}
+/*=========[ ACCORDION ]=========*/
+
+/*=========[ CART ICON ]=========*/
+.dvCartIcon .fa-shopping-cart {
+    font-size: 1.5rem;
+}
+/*=========[ CART ICON ]=========*/
+
+/*=========[ SHOP MENU ]=========*/
+.dvShopMenu {
+    background-color: var(--bg-colour3);
+}
+
+    .dvShopMenu .bg-light {
+        background-color: var( --bg-colour6) !important;
+    }
+
+    .dvShopMenu .navbar-light .navbar-nav .nav-link {
+        color: var(--text-colour7);
+    }
+
+    .dvShopMenu .dropdown-item:focus,
+    .dvShopMenu .dropdown-item:hover {
+        background-color: var(--colour1) !important;
+        color: #fff;
+    }
+
+    .dvShopMenu .dropdown-item.active,
+    .dvShopMenu .dropdown-item:active {
+        background-color: var(--colour1) !important;
+        color: #fff;
+    }
+/*=========[ SHOP MENU ]=========*/
+
+/*=========[ BREADCRUMBS ]=========*/
+.dvBreadcrumbs .breadcrumb {
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+    .dvBreadcrumbs .breadcrumb li a {
+        color: var(--colour1);
+    }
+
+    .dvBreadcrumbs .breadcrumb li.active {
+        color: var(--colour4);
+    }
+/*=========[ BREADCRUMBS ]=========*/
+
+/*=========[ BOOTSTRAP NAVBAR ]=========*/
+/*submenu css*/
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.dropdown-submenu a::after {
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 6px;
+    top: 0.8em;
+}
+.dropdown-item {
+    padding: 0.25rem 0.75rem;
+}
+/*submenu css*/
+
+/*rotate icon animation before 992px*/
+li .dropdown-toggle:after {
+    transition: all 0.5s;
+}
+
+li.show > .dropdown-toggle:after {
+    transform: rotate(180deg);
+}
+
+li li.show > .dropdown-toggle:after {
+    transform: rotate(90deg);
+}
+/*rotate icon animation before 992px*/
+/*=========[ BOOTSTRAP NAVBAR ]=========*/
+
+/*=========[ CHECKBOX ]=========*/
+.dvLabel {
+    margin-bottom: 0.25rem;
+}
+    /* The checkbox-container */
+    .dvLabel .checkbox-container {
+        position: relative;
+        padding-left: 15px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+        /* Hide the browser's default checkbox */
+        .dvLabel .checkbox-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+    /* Create a custom checkbox with an image */
+    .dvLabel .checkmark {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        border: 1px solid var(--colour1);
+        border-radius: 3px;
+    }
+    /* When the checkbox is checked */
+    .dvLabel .checkbox-container input:checked ~ .checkmark {
+        background-color: #2196f3;
+        background: url("/images/icons/arrows/checkmark.png") no-repeat center center var(--colour1);
+        background-size: contain;
+    }
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .dvLabel .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    /* Show the checkmark when checked */
+    .dvLabel .checkbox-container input:checked ~ .checkmark:after {
+        display: block;
+    }
+    /*=========[ CHECKBOX ]=========*/
+
+    /*=========[ RADIO ]=========*/
+    /* The container */
+    .dvLabel .radio-container {
+        display: block;
+        position: relative;
+        padding-left: 10px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        /* Hide the browser's default radio button */
+        .dvLabel .radio-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+    /* Create a custom radio button */
+    .dvLabel .radiomark {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        height: 14px;
+        width: 14px;
+        background-color: #eee;
+        border-radius: 50%;
+        box-shadow: 0px 0px 0px 1px #bebebe;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .dvLabel .radio-container input:checked ~ .radiomark {
+        background-color: var(--colour1);
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .dvLabel .radiomark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .dvLabel .radio-container input:checked ~ .radiomark:after {
+        display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .dvLabel .radio-container .radiomark:after {
+        top: 50%;
+        left: 50%;
+        width: 8px;
+        height: 8px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 0 0 4px var(--colour1);
+    }
+/*=========[ RADIO ]=========*/
+
+/*=========[ FORM CONTROL ]=========*/
+/*disabled & readonly input*/
+.form-control[readonly] {
+    background-color: #fff;
+    opacity: 1;
+}
+.form-control:disabled {
+    background-color: #e9ecef;
+    opacity: 1;
+}
+/*disabled box shadow onfocus*/
+.form-select:focus,
+.form-control:focus {
+    box-shadow: none;
+    border-color: #dee2e6;
+}
+/*input or select style*/
+.form-control {
+    border-radius: var(--b-radius) !important;
+    font-size: 0.875rem;
+    border: 1px solid #E0E2EA;
+    resize: none;
+    padding: 0.75rem 0.75rem;
+    height: auto;
+}
+.form-control.radius {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+/*input icon border*/
+.input-group-text {
+    /* border-radius: 0 10px 10px 0; */
+    border: 1px solid #e0e2ea;
+    border-radius: var(--b-radius) !important;
+    border-top-left-radius: var(--b-radius) !important;
+    border-bottom-left-radius: var(--b-radius) !important;
+}
+
+.input-group .input-group-text {
+    /*border-radius: 0 var(--b-radius) var(--b-radius) 0;*/
+    border-top-left-radius: var(--b-radius) !important;
+    border-bottom-left-radius: var(--b-radius) !important;
+}
+/*=========[ FORM CONTROL ]=========*/
+
+/*=========[ CUSTOM SELECT ]=========*/
+.select {
+    position: relative;
+    width: 100%;
+}
+
+    .select .selectBtn {
+        display: flex;
+        align-items: center;
+        /* background: red; */
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background: #fff;
+    }
+
+        .select .selectBtn:after {
+            content: "";
+            position: absolute;
+            top: 45%;
+            right: 15px;
+            width: 6px;
+            height: 6px;
+            transform: translateY(-50%) rotate(45deg);
+            border-right: 2px solid var(--colour4);
+            border-bottom: 2px solid var(--colour4);
+            transition: 0.2s ease;
+        }
+
+        .select .selectBtn.toggle {
+            border-radius: 3px 3px 0 0;
+        }
+
+            .select .selectBtn.toggle:after {
+                transform: translateY(-50%) rotate(-135deg);
+            }
+
+    .select .selectDropdown {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        border-radius: 0 0 3px 3px;
+        overflow-x: hidden;
+        max-height: 150px;
+        /* background: green; */
+        z-index: 2 !important;
+        background: #fff;
+        transform: scale(1, 0);
+        transform-origin: top center;
+        visibility: hidden;
+        transition: 0.2s ease;
+        /* box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); */
+        border: 1px solid #ddd;
+        left: 0;
+    }
+
+        .select .selectDropdown .option {
+            padding: 7px 10px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+            .select .selectDropdown .option:hover {
+                background: #f8f8f8;
+            }
+
+        .select .selectDropdown.toggle {
+            visibility: visible;
+            transform: scale(1, 1);
+        }
+/*=========[ CUSTOM SELECT ]=========*/
+
+/*=========[ JQUERY UI SELECTMENU ]=========*/
+/*button*/
+.ui-selectmenu-button.ui-button {
+    width: auto;
+    background-color: transparent;
+    border-radius: var(--b-radius) !important;
+    font-size: 0.875rem;
+    border: 1px solid transparent;
+    resize: none;
+    padding: 0;
+    color: var(--colour7);
+    font-family: var(--font-regular);
+}
+/*arrow icon*/
+.ui-selectmenu-button.ui-button:active {
+    color: var(--colour7);
+}
+.ui-selectmenu-button.ui-button .ui-icon {
+    top: 1px;
+}
+.ui-selectmenu-button.ui-button:active .ui-icon,
+.ui-selectmenu-button.ui-button:hover .ui-icon {
+    background-image: url(/images/ui-icons_777777_256x240.png);
+    top: 1px;
+}
+/*white bg inactive*/
+.ui-selectmenu-menu .ui-menu-item-wrapper {
+    background-color: var(--colour6);
+    color: var(--colour7);
+    border: 1px solid var(--colour6);
+    font-family: var(--font-regular);
+    padding: 3px 5px;
+}
+/*red bg active*/
+.ui-selectmenu-menu .ui-menu-item-wrapper.ui-state-active {
+    background-color: var(--colour1);
+    color: var(--colour6);
+    border: 1px solid var(--colour1);
+    font-family: var(--font-regular);
+    padding:3px 5px;
+}
+/*if have class overflow*/
+.ui-selectmenu-menu .overflow {
+    max-height: 150px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+/*=========[ JQUERY UI SELECTMENU ]=========*/
+
+/*=========[ JQUERY UI TIMEPICKER ]=========*/
+
+/* input {
+        width: 100px;
+      } */
+.ui-timepicker-container {
+    position: absolute;
+    overflow: hidden;
+    /* box-sizing: border-box; */
+    left: 0;
+}
+
+.ui-menu .ui-menu-item {
+    text-align: left;
+}
+
+.ui-timepicker,
+.ui-timepicker-viewport {
+    box-sizing: content-box;
+    height: 205px;
+    /*   display: block; */
+    /*   margin: 0 */
+}
+
+.ui-timepicker {
+    list-style: none;
+    /*   padding: 0 1px; */
+    text-align: center;
+}
+
+.ui-timepicker-viewport {
+    padding: 0px;
+    /*   margin:0px; */
+    /*   overflow: right; */
+    overflow-x: hidden;
+}
+
+.ui-timepicker-standard {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 0.9em;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    color: #222;
+    /*   margin: 0; */
+    /*   padding: 2px */
+}
+
+    .ui-timepicker-standard a {
+        border: 1px solid transparent;
+        color: #222;
+        display: block;
+        padding: 0 1rem;
+        text-decoration: none;
+    }
+
+    .ui-timepicker-standard .ui-state-hover {
+        background-color: var(--colour1);
+        /* border: 1px solid var(--colour1); */
+        font-weight: 400;
+        color: #fff;
+    }
+
+/* .ui-timepicker-standard .ui-menu-item {
+              /*   margin: 0;
+        padding: 0 /
+            } */
+
+.ui-timepicker-corners,
+.ui-timepicker-corners .ui-corner-all {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+/* .ui-timepicker-hidden {
+        display: none
+      }
+
+      .ui-timepicker-no-scrollbar .ui-timepicker {
+        border: none
+      }
+       */
+/*=========[ JQUERY UI TIMEPICKER ]=========*/
+
+/*=========[ JQUERY UI RANGE SLIDER ]=========*/
+/*wrapper height*/
+.dvRangeSlider .ui-slider-horizontal {
+    height: 0.25rem;
+}
+/*wrapper selected bg*/
+.dvRangeSlider .ui-slider .ui-slider-range {
+    background-color: var(--colour7);
+}
+/* wrapper border */
+.dvRangeSlider .ui-widget.ui-widget-content {
+    border: 0;
+    background-color: var(--colour7);
+}
+/* handle */
+.dvRangeSlider .ui-state-default,
+.dvRangeSlider .ui-widget-content .ui-state-default,
+.dvRangeSlider .ui-widget-header .ui-state-default,
+.dvRangeSlider .ui-button,
+.dvRangeSlider html .ui-button.ui-state-disabled:hover,
+.dvRangeSlider html .ui-button.ui-state-disabled:active {
+    border: 1px solid var(--colour1);
+    background: var(--colour1);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.dvRangeSlider .ui-slider-horizontal .ui-slider-handle {
+    top: -4px;
+    margin-left: -5px;
+}
+/*=========[ JQUERY UI RANGE SLIDER ]=========*/
+
+/*=========[ JQUERY UI DATEPICKER ]=========*/
+/* header bg and date title */
+.ui-datepicker .ui-datepicker-header {
+    background-color: var(--colour1);
+    color: var(--text-colour5);
+}
+/* month & year selectbox */
+.ui-datepicker .ui-datepicker-title select {
+    /* font-size: 1em;
+  margin: 1px 0; */
+    border: 1px solid var(--colour1);
+    color: var(--colour7);
+}
+/* prev & next buttons */
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+    background: var(--bg-colour6);
+    border: 1px solid transparent;
+    color: #fff;
+}
+/* prev & next button position on hover */
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+    right: 2px;
+    top: 2px;
+}
+/* current or active date */
+.ui-datepicker .ui-state-highlight,
+.ui-datepicker .ui-widget-content .ui-state-highlight,
+.ui-datepicker .ui-widget-header .ui-state-highlight {
+    background-color: var(--colour1);
+    border: 1px solid var(--colour1);
+    color: #fff !important;
+}
+/* selected date */
+.ui-datepicker .ui-state-active,
+.ui-datepicker .ui-widget-content .ui-state-active,
+.ui-datepicker .ui-widget-header .ui-state-active,
+.ui-datepicker a.ui-button:active,
+.ui-datepicker .ui-button:active,
+.ui-datepicker .ui-button.ui-state-active:hover {
+    background-color: var(--colour1);
+    border: 1px solid var(--colour1);
+    color: #fff !important;
+}
+/* text colour for all dates */
+.ui-datepicker .ui-state-default,
+.ui-datepicker .ui-widget-content .ui-state-default,
+.ui-datepicker .ui-widget-header .ui-state-default,
+.ui-datepicker .ui-button,
+.ui-datepicker html .ui-button.ui-state-disabled:hover,
+.ui-datepicker html .ui-button.ui-state-disabled:active {
+    text-align: center;
+    color: var(--colour1);
+}
+/*=========[ JQUERY UI DATEPICKER ]=========*/
+
+    /*=========[ JQUERY UI AUTOCOMPLETE ]=========*/
+    /*.ui-menu{
+        display:block !important;
+    }*/
+    .ui-autocomplete .ui-menu-item a,
+    .ui-autocomplete .ui-menu-item .ui-menu-item-wrapper {
+        display: block;
+        background: var(--bg-colour1);
+        color: var(--text-colour6);
+        border: none !important;
+        margin: 1px;
+        padding: .5rem .5rem;
+        font-size: .875rem;
+    }
+    .ui-autocomplete .ui-menu-item a:hover,
+    .ui-autocomplete .ui-menu-item .ui-menu-item-wrapper:hover{
+        display: block;
+        background: var(--bg-colour1);
+        color: var(--text-colour6);
+        border: none !important;
+        margin: 1px;
+        padding: .5rem .5rem;
+        opacity:.7;
+    }
+    /*=========[ JQUERY UI AUTOCOMPLETE ]=========*/
+
+/*=========[ ADD TO CART ]=========*/
+.btn-addtocart .fa-minus,
+.btn-addtocart .fa-plus {
+    border-radius: 0%;
+    background-color: var(--bg-colour1);
+    padding: 15px;
+    cursor: pointer;
+}
+
+.btn-addtocart {
+    font-family: var(--regular);
+    /* background-color: var(--colour1); */
+    color: var(--colour7);
+    border: none;
+}
+
+.btn-addtocart i {
+    background-color: var(--bg-colour2);
+    color: var(--text-colour6);
+    border: none;
+}
+
+.btn-addtocart:hover i {
+    background-color: var(--bg-colour1);
+    color: var(--text-colour6);
+    border: none;
+}
+/*=========[ ADD TO CART ]=========*/
+
+/*=========[ DENOMIMATION ]=========*/
+.dvDenominations .denomination-btn {
+    padding: 0.5rem 0.75rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--bg-colour2);
+    color: var(--text-colour7);
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    /* flex: 0 0 16.66%;
+max-width: 16.66%; */
+}
+
+.dvDenominations .denomination-checkbox {
+    display: none;
+}
+.btn-success.focus, .btn-success:focus {
+    box-shadow: unset;
+}
+.dvDenominations .denomination-btn.selected {
+    background-color: var(--bg-colour1);
+    color: #fff;
+}
+/*=========[ DENOMIMATION ]=========*/
+
+/*=========[ RESPONSIVE FILTER MODAL ]=========*/
+.dvProductList .dvFilter.modal .close {
+    padding: 12px 12px 0 0;
+    color: var(--text-colour1);
+    opacity: 1;
+}
+
+.dvProductList .dvFilter.modal .accordion {
+    border: 1px solid var(--colour3);
+}
+
+    .dvProductList .dvFilter.modal .accordion .card {
+        border: none;
+    }
+
+    .dvProductList .dvFilter.modal .accordion .card-header,
+    .dvProductList .dvFilter.modal .accordion .card-header button {
+        background-color: var(--colour6);
+        color: var(--colour7);
+        border: none;
+    }
+
+    .dvProductList .dvFilter.modal .accordion .dvBorderBottom .border-bottom {
+        border-bottom: 1px solid var(--colour3) !important;
+    }
+/*=========[ RESPONSIVE FILTER MODAL ]=========*/
+
+/*=========[ TOTAL RECORDS ]=========*/
+.dvProductList .dvTotalRecords.border {
+    border: 1px solid var(--bg-colour5) !important;
+}
+
+.dvProductList .dvTotalRecords.bg-lightgray {
+    background-color: var(--bg-colour5);
+    border-radius: 0 0px 0 0;
+}
+/*=========[ TOTAL RECORDS ]=========*/
+
+/*=========[ BG GRAY STRIPE ]=========*/
+.dvProductList .bg-lightgray {
+    background-color: var(--bg-colour2);
+}
+/*=========[ BG GRAY STRIPE ]=========*/
+
+/*=========[ MODAL ]=========*/
+.modal .modal-header {
+    background-color: var(--modal-header-bg-colour);
+}
+.modal .modal-header .modal-title {
+    color: var(--modal-header-text-colour);
+}
+.modal .modal-header .close{
+    opacity:1;
+}
+.modal .modal-header .close i{
+    color: var(--modal-header-text-colour);
+    font-size:1rem;
+}
+/*=========[ MODAL ]=========*/
+
+/*=========[ DIFFERENT CLASS NAMES FOR DIFFERENT REDEMPTIONS ]=========*/
+.dvMilesExchangePage .img-container img,
+.dvUtilityPage .img-container img {
+    object-fit: contain;
+}
+/*=========[ DIFFERENT CLASS NAMES FOR DIFFERENT REDEMPTIONS ]=========*/
+
+/*=========[ MEDIA QUERIES ]=========*/
+@media (min-width: 576px) {
+    .scroll-hoz {
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+    .h1 {
+        font-size: 2.5rem;
+    }
+
+    .h2 {
+        font-size: 2rem;
+    }
+
+    .h3 {
+        font-size: 1.75rem;
+    }
+
+    .h4 {
+        font-size: 1.5rem;
+    }
+
+    .accordion {
+        border: none;
+    }
+
+    /* BOOTSTRAP NAVBAR ON HOVER */
+    /* open first dropdown menu on hover */
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+        /* open first dropdown menu on hover */
+
+        /* open submenus on hover after 992px */
+        .dropdown:hover .dropdown-menu .dropdown-submenu .dropdown-menu {
+            display: none;
+            margin-top: 0;
+        }
+
+        .dropdown:hover .dropdown-menu .dropdown-submenu:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+        /* open submenus on hover after 992px */
+
+        /* open subsubmenus on hover after 992px */
+        .dropdown:hover .dropdown-menu .dropdown-submenu .dropdown-menu .dropdown-submenu .dropdown-menu {
+            display: none;
+            margin-top: 0;
+        }
+
+        .dropdown:hover
+        .dropdown-menu
+        .dropdown-submenu
+        .dropdown-menu
+        .dropdown-submenu:hover
+        .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+    /* open subsubmenus on hover after 992px */
+
+    /*remove rotating icon animation after 992px*/
+    li .dropdown-toggle:after {
+        transition: none;
+    }
+
+    li.show > .dropdown-toggle:after {
+        transform: none;
+    }
+
+    li li.show > .dropdown-toggle:after {
+        transform: none;
+    }
+    /*remove rotating icon animation after 992px*/
+    /* BOOTSTRAP NAVBAR ON HOVER */
+
+    .dvProductList .dvFilter.modal {
+        position: static;
+        display: block;
+        width: auto;
+        height: auto;
+        overflow: auto;
+        opacity: 1;
+        z-index: 0;
+    }
+
+        .dvProductList .dvFilter.modal .modal-dialog {
+            margin: 0 auto;
+            transform: translate(0, 0);
+            min-height: auto;
+        }
+
+        .dvProductList .dvFilter.modal .modal-dialog-scrollable {
+            /*margin: 0 auto;
+    transform: translate(0, 0);
+    min-height: auto;*/
+            justify-content: start;
+            max-height: none;
+        }
+}
+
+@media (min-width: 1200px) {
+}
+/*=========[ MEDIA QUERIES ]=========*/

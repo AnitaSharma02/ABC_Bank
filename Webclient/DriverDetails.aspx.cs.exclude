@@ -1,0 +1,391 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using ABC.Model;
+using CB.IBE.Platform.Car.ClientEntities;
+using CB.IBE.Platform.Car.Entities;
+using System.Globalization;
+using System.Text;
+using System.Security.Cryptography;
+using Core.Platform.Member.Entites;
+using Core.Platform.ProgramMaster.Entities;
+using Core.Platform.OTP.Entities;
+using CB.IBE.Platform.Masters.Entities;
+using System.Configuration;
+using Core.Platform.MemberActivity.Constants;
+using Core.Platform.MemberActivity.Entities;
+using Core.Platform.Booking.Entities;
+public partial class DriverDetails : System.Web.UI.Page
+{
+    ABCModel lobjModel = new ABCModel();
+    CarMakeBookingRequest lobjCarMakeBookingRequest = new CarMakeBookingRequest();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!Page.IsPostBack)
+        {
+            if (Session["CarSearchRequest"] != null && Session["Cars"] != null && Session["CarSelected"] != null && Session["CarExtraListResponse"] != null && Session["IsDERAdded"] != null)
+            {
+
+                MemberDetails lobjMemberDetails = Session["MemberDetails"] as MemberDetails;
+                string lstrCurrency = lobjModel.GetDefaultCurrency();
+                ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+
+                Session["MemberMiles"] = Convert.ToString(lobjModel.CheckAvailbility(lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToInt32(RelationType.LBMS), lstrCurrency, lobjProgramDefinition.ProgramId));
+                CarSearchRequest lobjCarSearchRequest = Session["CarSearchRequest"] as CarSearchRequest;
+                lobjCarSearchRequest.PaymentType = (PaymentType)Session["CarSearchPaymode"];
+                CarSearchResponse lobjCarSearchResponse = Session["Cars"] as CarSearchResponse;
+                Match lobjCarVehicle = Session["CarSelected"] as Match;
+                CarExtrasListResponse lobjCarExtrasListResponse = Session["CarExtraListResponse"] as CarExtrasListResponse;
+                string lstrSourceCurrency = Convert.ToString(ConfigurationManager.AppSettings["SourceCurrency"]);
+                lobjCarExtrasListResponse.IsDERAdded = Convert.ToBoolean(Session["IsDERAdded"].ToString());
+
+                if (lobjCarSearchRequest.PaymentType.Equals(PaymentType.Points))
+                {
+
+
+                    if (lobjCarExtrasListResponse.IsDERAdded == true)
+                    {
+                        if ((lobjCarVehicle.Price[0].TotalPoints) + (lobjCarExtrasListResponse.ExtrasListRS.Items[0].ExtraInfo[0].Price[0].ExtraTotalPoints) <= 0)
+                        {
+                            Response.Redirect("BookingFailure.aspx");
+                        }
+
+                        if (Convert.ToDouble(Session["MemberMiles"]) >= Convert.ToDouble((lobjCarVehicle.Price[0].TotalPoints) + (lobjCarExtrasListResponse.ExtrasListRS.Items[0].ExtraInfo[0].Price[0].ExtraTotalPoints)))
+                        {
+                            Session["CarExtraListResponse"] = lobjCarExtrasListResponse;
+                        }
+                        else
+                        {
+                            PointsInfo.Attributes.Add("style", "Display:block");
+                            lblMsg.Text = "You need " + Convert.ToString(String.Format("{0:#,#}", lobjCarVehicle.Price[0].TotalPoints + lobjCarExtrasListResponse.ExtrasListRS.Items[0].ExtraInfo[0].Price[0].ExtraTotalPoints)) + " Points to book this car. Your Points available is " + Convert.ToDouble(Session["MemberMiles"]).ToString() + ".";
+
+                            ImageButtonBookNow.Enabled = false;
+                        }
+                        Total_Value.Text = Convert.ToString(String.Format("{0:#,#}", lobjCarVehicle.Price[0].TotalPoints + lobjCarExtrasListResponse.ExtrasListRS.Items[0].ExtraInfo[0].Price[0].ExtraTotalPoints));
+                    }
+
+                    else
+                    {
+
+                        if (lobjCarVehicle.Price[0].TotalPoints <= 0)
+                        {
+                            Response.Redirect("BookingFailure.aspx");
+                        }
+
+                        if (Convert.ToDouble(Session["MemberMiles"]) >= Convert.ToDouble(lobjCarVehicle.Price[0].TotalPoints))
+                        {
+                            CarExtrasListResponse lobjCarExtrasListResponse1 = new CarExtrasListResponse();
+                            ExtrasListRS lobjExtrasListRS = new ExtrasListRS();
+
+                            List<ExtraInfoList> lobjListOfExtraInfoList = new List<ExtraInfoList>();
+                            ExtraInfoList lobjExtraInfoList = new ExtraInfoList();
+                            lobjListOfExtraInfoList.Add(lobjExtraInfoList);
+
+                            List<ExtraInfo> lobjListOfExtraInfo = new List<ExtraInfo>();
+                            ExtraInfo lobjExtraInfo = new ExtraInfo();
+                            lobjListOfExtraInfo.Add(lobjExtraInfo);
+
+                            lobjExtrasListRS.Items = lobjListOfExtraInfoList.ToArray();
+
+                            lobjExtrasListRS.Items[0].ExtraInfo = lobjListOfExtraInfo.ToArray();
+                            lobjCarExtrasListResponse1.ExtrasListRS = lobjExtrasListRS;
+
+                            List<Price> ListOfPrice = new List<Price>();
+                            Price lobjPrice = new Price();
+                            ListOfPrice.Add(lobjPrice);
+                            lobjCarExtrasListResponse1.ExtrasListRS.Items[0].ExtraInfo[0].Price = ListOfPrice.ToArray();
+                            lobjCarExtrasListResponse1.IsDERAdded = Convert.ToBoolean(Session["IsDERAdded"].ToString());
+                            Session["CarExtraListResponse"] = lobjCarExtrasListResponse1;
+                        }
+                        else
+                        {
+                            PointsInfo.Attributes.Add("style", "Display:block");
+                            lblMsg.Text = "You need " + Convert.ToString(String.Format("{0:#,#}", lobjCarVehicle.Price[0].TotalPoints + lobjCarExtrasListResponse.ExtrasListRS.Items[0].ExtraInfo[0].Price[0].ExtraTotalPoints)) + " Points to book this car. Your Points available is " + Convert.ToDouble(Session["MemberMiles"]).ToString() + ".";
+                            ImageButtonBookNow.Enabled = false;
+                        }
+
+                        if (lobjCarVehicle.Price[0].TotalPoints <= 0)
+                        {
+                            Response.Redirect("BookingFailure.aspx");
+                        }
+                        Total_Value.Text = Convert.ToString(String.Format("{0:#,#}", lobjCarVehicle.Price[0].TotalPoints));
+                    }
+
+                    lobjCarExtrasListResponse = Session["CarExtraListResponse"] as CarExtrasListResponse;
+
+                    lblPickLocation.Text = lobjCarSearchResponse.SearchResponse.MatchList[0].Match[0].Route[0].PickUp[0].locName.ToString();
+                    lblPickCountry.Text = lobjCarSearchRequest.SearchRequest.PickUp[0].Location[0].country + ", ";
+                    TimeSpan Pickts = new TimeSpan(Convert.ToInt32(lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].hour), Convert.ToInt32(lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].minute), 00);
+                    DateTime dtPick = DateTime.ParseExact(Pickts.ToString(), "HH:mm:ss", CultureInfo.InvariantCulture);
+                    string strPickup = dtPick.ToString("hh:mm tt");
+                    lblPickTime.Text = strPickup;
+                    string myPickStr = lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].year;
+                    DateTime Pickresult = Convert.ToDateTime(myPickStr);
+                    lblPickDateTime.Text = Pickresult.ToString("dddd, MMMM dd, yyyy");
+
+
+                    lblDropLocation.Text = lobjCarSearchResponse.SearchResponse.MatchList[0].Match[0].Route[0].DropOff[0].locName.ToString();
+                    lblDropCountry.Text = lobjCarSearchRequest.SearchRequest.DropOff[0].Location[0].country + ", ";
+                    string myDropStr = lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].year;
+                    DateTime Dropresult = Convert.ToDateTime(myDropStr);
+                    lblDropDateTime.Text = Dropresult.ToString("dddd, MMMM dd, yyyy");
+
+                    TimeSpan Dropts = new TimeSpan(Convert.ToInt32(lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].hour), Convert.ToInt32(lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].minute), 00);
+                    DateTime dtDrop = DateTime.ParseExact(Dropts.ToString(), "HH:mm:ss", CultureInfo.InvariantCulture);
+                    string strDrop = dtDrop.ToString("hh:mm tt");
+                    lblDropTime.Text = strDrop;
+
+                    lblCarName.Text = lobjCarVehicle.Vehicle[0].Name;
+                    imgCar.ImageUrl = lobjCarVehicle.Vehicle[0].LargeImageURL;
+
+                    Title_Total.Text = "<span data-i18n='cardetails-total'>Total Points:</span>";
+
+                }
+
+                if (lobjCarSearchRequest.PaymentType.Equals(PaymentType.Cash))
+                {
+                    if (lobjCarExtrasListResponse.IsDERAdded == true)
+                    {
+                        if ((lobjCarVehicle.Price[0].TotalBaseFare) + (lobjCarExtrasListResponse.ExtrasListRS.Items[0].ExtraInfo[0].Price[0].ExtraTotalBaseFare) <= 0)
+                        {
+                            Response.Redirect("BookingFailure.aspx");
+                        }
+                        Total_Value.Text = Convert.ToString(String.Format("{0:#,#}", lobjCarVehicle.Price[0].TotalBaseFare + lobjCarExtrasListResponse.ExtrasListRS.Items[0].ExtraInfo[0].Price[0].ExtraTotalBaseFare)) + " in " + lstrSourceCurrency;
+                    }
+
+                    else
+                    {
+
+                        if (lobjCarVehicle.Price[0].TotalBaseFare <= 0)
+                        {
+                            Response.Redirect("BookingFailure.aspx");
+                        }
+                        Total_Value.Text = Convert.ToString(String.Format("{0:#,#}", lobjCarVehicle.Price[0].TotalBaseFare)) + " in " + lstrSourceCurrency;
+                    }
+
+                    lobjCarExtrasListResponse = Session["CarExtraListResponse"] as CarExtrasListResponse;
+
+                    lblPickLocation.Text = lobjCarSearchResponse.SearchResponse.MatchList[0].Match[0].Route[0].PickUp[0].locName.ToString();
+                    lblPickCountry.Text = lobjCarSearchRequest.SearchRequest.PickUp[0].Location[0].country + ", ";
+                    TimeSpan Pickts = new TimeSpan(Convert.ToInt32(lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].hour), Convert.ToInt32(lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].minute), 00);
+                    DateTime dtPick = DateTime.ParseExact(Pickts.ToString(), "HH:mm:ss", CultureInfo.InvariantCulture);
+                    string strPickup = dtPick.ToString("hh:mm tt");
+                    lblPickTime.Text = strPickup;
+                    string myPickStr = lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].year;
+                    DateTime Pickresult = Convert.ToDateTime(myPickStr);
+                    lblPickDateTime.Text = Pickresult.ToString("dddd, MMMM dd, yyyy");
+
+
+                    lblDropLocation.Text = lobjCarSearchResponse.SearchResponse.MatchList[0].Match[0].Route[0].DropOff[0].locName.ToString();
+                    lblDropCountry.Text = lobjCarSearchRequest.SearchRequest.DropOff[0].Location[0].country + ", ";
+                    string myDropStr = lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].year;
+                    DateTime Dropresult = Convert.ToDateTime(myDropStr);
+                    lblDropDateTime.Text = Dropresult.ToString("dddd, MMMM dd, yyyy");
+
+                    TimeSpan Dropts = new TimeSpan(Convert.ToInt32(lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].hour), Convert.ToInt32(lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].minute), 00);
+                    DateTime dtDrop = DateTime.ParseExact(Dropts.ToString(), "HH:mm:ss", CultureInfo.InvariantCulture);
+                    string strDrop = dtDrop.ToString("hh:mm tt");
+                    lblDropTime.Text = strDrop;
+
+                    lblCarName.Text = lobjCarVehicle.Vehicle[0].Name;
+                    imgCar.ImageUrl = lobjCarVehicle.Vehicle[0].LargeImageURL;
+
+                    Title_Total.Text = "Total Fare: ";
+
+                }
+            }
+            else
+            {
+                Response.Redirect("BookingFailure.aspx");
+            }
+        }
+    }
+    protected void ImageButtonBookNow_Click(object sender, EventArgs e)
+    {
+        if (Session["MemberDetails"] != null)
+        {
+            if (Session["CarSearchRequest"] != null && Session["CarSelected"] != null && Session["CarExtraListResponse"] != null)
+            {
+
+                MemberDetails lobjMemberDetails = Session["MemberDetails"] as MemberDetails;
+                CarSearchRequest lobjCarSearchRequest = Session["CarSearchRequest"] as CarSearchRequest;
+                CarExtrasListResponse lobjCarExtrasListResponse = Session["CarExtraListResponse"] as CarExtrasListResponse;
+                Match lobjMatch = Session["CarSelected"] as Match;
+                ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+
+                lobjCarMakeBookingRequest.MembershipReference = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference; //lobjMemberDetails.MembershipReference;
+                lobjCarMakeBookingRequest.MemberName = lobjMemberDetails.FullName;
+                lobjCarMakeBookingRequest.MemberEmail = lobjMemberDetails.Email;
+                lobjCarMakeBookingRequest.MemberPhone = lobjMemberDetails.MobileNumber;
+                lobjCarMakeBookingRequest.MemberAddress = lobjMemberDetails.Address1;
+
+                List<Location> lobjPickUpLocationList = new List<Location>();
+                Location lobjPickUpLocation = new Location();
+                lobjPickUpLocation.id = lobjCarSearchRequest.SearchRequest.PickUp[0].Location[0].id;
+                lobjPickUpLocationList.Add(lobjPickUpLocation);
+
+                List<PickUp> lobjPickUpList = new List<PickUp>();
+                PickUp lobjPickUp = new PickUp();
+                lobjPickUp.Location = lobjPickUpLocationList.ToArray();
+                lobjPickUpList.Add(lobjPickUp);
+
+                lobjCarMakeBookingRequest.MakeBookingRQ.Booking.PickUp = lobjPickUpList.ToArray();
+                lobjCarMakeBookingRequest.MakeBookingRQ.Booking.PickUp[0].Date = lobjCarSearchRequest.SearchRequest.PickUp[0].Date;
+
+                List<Location> lobjDropOffLocationList = new List<Location>();
+                Location lobjDropOffLocation = new Location();
+                lobjDropOffLocation.id = lobjCarSearchRequest.SearchRequest.DropOff[0].Location[0].id;
+                lobjDropOffLocationList.Add(lobjDropOffLocation);
+
+                List<DropOff> lobjDropOffList = new List<DropOff>();
+                DropOff lobjDropOff = new DropOff();
+                lobjDropOff.Location = lobjDropOffLocationList.ToArray();
+                lobjDropOffList.Add(lobjDropOff);
+
+                lobjCarMakeBookingRequest.MakeBookingRQ.Booking.DropOff = lobjDropOffList.ToArray();
+                lobjCarMakeBookingRequest.MakeBookingRQ.Booking.DropOff[0].Date = lobjCarSearchRequest.SearchRequest.DropOff[0].Date;
+
+                if (lobjCarExtrasListResponse.IsDERAdded == true)
+                {
+
+                    List<ExtraList> lobjListExtraList = new List<ExtraList>();
+                    ExtraList lobjExtraList = new ExtraList();
+
+                    List<Extra> lobjListExtra = new List<Extra>();
+                    Extra lobjExtra = new Extra();
+                    lobjExtra.id = lobjCarExtrasListResponse.ExtrasListRS.Items[0].ExtraInfo[0].Extra[0].id;
+                    lobjExtra.amount = lobjCarExtrasListResponse.ExtrasListRS.Items[0].ExtraInfo[0].Extra[0].available;
+                    lobjListExtra.Add(lobjExtra);
+
+                    lobjExtraList.Extra = lobjListExtra.ToArray();
+                    lobjListExtraList.Add(lobjExtraList);
+
+                    lobjCarMakeBookingRequest.MakeBookingRQ.Booking.ExtraList = lobjListExtraList.ToArray();
+                }
+                else
+                {
+                    List<ExtraList> lobjListExtraList = new List<ExtraList>();
+                    ExtraList lobjExtraList = new ExtraList();
+                    lobjListExtraList.Add(lobjExtraList);
+
+                    lobjCarMakeBookingRequest.MakeBookingRQ.Booking.ExtraList = lobjListExtraList.ToArray();
+                }
+
+                List<Vehicle> lobjListVehicle = new List<Vehicle>();
+                Vehicle lobjVehicle = new Vehicle();
+                lobjVehicle.id = lobjMatch.Vehicle[0].id;
+                lobjListVehicle.Add(lobjVehicle);
+                lobjCarMakeBookingRequest.MakeBookingRQ.Booking.Vehicle = lobjListVehicle.ToArray();
+
+                List<DriverInfo> lobjDriverInfoList = new List<DriverInfo>();
+                DriverInfo lobjDriverInfo = new DriverInfo();
+                lobjDriverInfo.DriverAge = lobjCarSearchRequest.SearchRequest.DriverAge;
+                lobjDriverInfo.Email = "dicken.thomas@infiniasns.com";
+                lobjDriverInfo.Telephone = lobjMemberDetails.MobileNumber;
+                lobjDriverInfoList.Add(lobjDriverInfo);
+
+                lobjCarMakeBookingRequest.MakeBookingRQ.Booking.DriverInfo = lobjDriverInfoList.ToArray();
+
+                List<Address> lobjListOfAddress = new List<Address>();
+                Address lobjAddress = new Address();
+                lobjAddress.city = string.Empty;
+                lobjAddress.country = string.Empty;
+                lobjAddress.street = string.Empty;
+                lobjAddress.postcode = string.Empty;
+                lobjListOfAddress.Add(lobjAddress);
+                lobjCarMakeBookingRequest.MakeBookingRQ.Booking.DriverInfo[0].Address = lobjListOfAddress.ToArray();
+
+                List<DriverName> lobjDriverNameList = new List<DriverName>();
+                DriverName lobjDriverName = new DriverName();
+                lobjDriverName.title = DDLTitle.SelectedItem.Text;
+                lobjDriverName.lastname = TextBoxSurname.Text;
+                lobjDriverName.firstname = TextBoxFirstName.Text;
+                lobjDriverNameList.Add(lobjDriverName);
+                lobjCarMakeBookingRequest.MakeBookingRQ.Booking.DriverInfo[0].DriverName = lobjDriverNameList.ToArray();
+
+
+                List<AirlineInfo> lobjAirlineInfoList = new List<AirlineInfo>();
+                AirlineInfo lobjAirlineInfo = new AirlineInfo();
+                lobjAirlineInfo.flightNo = TextBoxFlightNumber.Text.Trim();             // TAKE FROM TEXT BOX
+                lobjAirlineInfoList.Add(lobjAirlineInfo);
+                lobjCarMakeBookingRequest.MakeBookingRQ.Booking.AirlineInfo = lobjAirlineInfoList.ToArray();
+
+                List<AdditionalInfo> lobjListOfAdditionalInfo = new List<AdditionalInfo>();
+                AdditionalInfo lobjAdditionalInfo = new AdditionalInfo();
+                lobjAdditionalInfo.Comments = "";
+                lobjAdditionalInfo.DropOffService = string.Empty;
+                lobjAdditionalInfo.PickUpService = string.Empty;
+                lobjListOfAdditionalInfo.Add(lobjAdditionalInfo);
+                lobjCarMakeBookingRequest.MakeBookingRQ.Booking.AdditionalInfo = lobjListOfAdditionalInfo.ToArray();
+
+                RefererDetails lobjRefererData = HttpContext.Current.Application["RefererData"] as RefererDetails;
+                lobjCarMakeBookingRequest.RefererDetails = lobjRefererData;
+
+                string lstrCurrency = lobjModel.GetDefaultCurrency();
+
+                lobjCarMakeBookingRequest.RedemptionRate = lobjModel.GetProgramRedemptionRate(lstrCurrency, RedemptionCodeKeys.CAR.ToString(), lobjProgramDefinition.ProgramId);
+                lobjCarMakeBookingRequest.IPAddress = Request.ServerVariables["REMOTE_ADDR"];
+
+                Session["CarMakeBookingRequest"] = lobjCarMakeBookingRequest;
+
+                List<RedemptionKeys> lobjRedemptionKeys = new List<RedemptionKeys>();
+                lobjRedemptionKeys = lobjModel.GetAllRedemptionKeys(lobjProgramDefinition.ProgramId);
+                int ThreshouldValue = 0;
+
+                ThreshouldValue = lobjRedemptionKeys.Find(lobj => lobj.RedemptionCode.Equals(RedemptionCodeKeys.CAR.ToString()) && lobj.Currency.Equals(lstrCurrency)).OTPThreshold;
+                int lintTotalPoints = Convert.ToInt32(lobjMatch.Price[0].TotalPoints + lobjCarExtrasListResponse.ExtrasListRS.Items[0].ExtraInfo[0].Price[0].ExtraTotalPoints);
+                float lftAmount = Convert.ToSingle(lobjMatch.Price[0].TotalBaseFare + lobjCarExtrasListResponse.ExtrasListRS.Items[0].ExtraInfo[0].Price[0].ExtraTotalBaseFare);
+
+                List<RedemptionDetails> lobjListOfRedemptionDetails = new List<RedemptionDetails>();
+                RedemptionDetails lobjRedemptionDetails = new RedemptionDetails();
+                lobjRedemptionDetails.Currency = lstrCurrency;
+                lobjRedemptionDetails.DisplayCurrency = lobjModel.CurrencyDisplayText(lstrCurrency);
+                lobjRedemptionDetails.Points = lintTotalPoints;
+                lobjRedemptionDetails.RelationReference = lobjMemberDetails.MemberRelationsList[0].RelationReference;
+                lobjRedemptionDetails.Amount = lftAmount;
+
+                lobjListOfRedemptionDetails.Add(lobjRedemptionDetails);
+                Session["RedemptionDetails"] = lobjListOfRedemptionDetails;
+
+
+                //if (Session["CarSearchPaymode"].Equals(PaymentType.Points))
+                //{
+                if (ThreshouldValue <= lintTotalPoints && !ThreshouldValue.Equals(-1))
+                {
+                    bool Status = false;
+                    OTPDetails lobjOTPDetails = new OTPDetails();
+                    lobjOTPDetails.UniquerefID = lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference;
+                    lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.CARREVIEWNCONFIRM;
+                    lobjOTPDetails.OtpType = Convert.ToString(OTPEnumTypes.CARREVIEWNCONFIRM);
+
+                    Status = lobjModel.GenerateReviewnConfirmOTP(lobjOTPDetails, lobjMemberDetails);
+
+                    if (Status)
+                    {
+                        lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "CAR", lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference, "Success"), ActivityType.ReviewConfirmOTPSuccess);
+                        Response.Redirect("ValidateOTP.aspx?flag=Car");
+                    }
+                    else
+                    {
+                        lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "CAR", lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference, "Failed"), ActivityType.ReviewConfirmOTPFailed);
+                        Response.Redirect("BookingFailure.aspx");
+                    }
+                }
+                else
+                {
+                    lobjModel.LogActivity(string.Format("Car Booking {0}: Requested", lobjRedemptionDetails.RelationReference), ActivityType.CarBooking);
+                    Response.Redirect("PointGateway.aspx?flag=Car");
+                }
+                //}
+            }
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        }
+    }
+}

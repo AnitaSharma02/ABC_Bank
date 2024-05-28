@@ -1,0 +1,244 @@
+@font-face {
+  font-family: FontThin;
+  src: url(../fonts/roboto/Roboto-Thin.ttf);
+}
+@font-face {
+  font-family: FontSemiThin;
+  src: url();
+}
+@font-face {
+  font-family: FontExtraThin;
+  src: url();
+}
+@font-face {
+    font-family: FontLight;
+    src: url(../fonts/SegoeUI/segoeuilight.ttf);
+}
+@font-face {
+    font-family: FontSemiLight;
+    src: url(../fonts/SegoeUI/segoeuisemilight.ttf);
+}
+@font-face {
+  font-family: FontExtraLight;
+  src: url();
+}
+@font-face {
+    font-family: FontRegular;
+    src: url(../fonts/SegoeUI/segoeuiregular.ttf);
+}
+@font-face {
+  font-family: FontSemiRegular;
+  src: url();
+}
+@font-face {
+  font-family: FontExtraRegular;
+  src: url();
+}
+@font-face {
+  font-family: FontMedium;
+  src: url(../fonts/roboto/Roboto-Medium.ttf);
+}
+@font-face {
+  font-family: FontSemiMedium;
+  src: url();
+}
+@font-face {
+  font-family: FontExtraMedium;
+  src: url();
+}
+@font-face {
+    font-family: FontBold;
+    src: url(../fonts/SegoeUI/segoeuibold.ttf);
+}
+@font-face {
+    font-family: FontSemiBold;
+    src: url(../fonts/SegoeUI/seguisemibold.ttf);
+}
+@font-face {
+  font-family: FontExtraBold;
+  src: url();
+}
+@font-face {
+    font-family: FontBlack;
+    src: url(../fonts/SegoeUI/seguiblack.ttf);
+}
+@font-face {
+  font-family: FontSemiBlack;
+  src: url();
+}
+@font-face {
+  font-family: FontExtraBlack;
+  src: url();
+}
+
+:root {
+    /*fonts*/
+    --font-thin: FontThin;
+    --font-semithin: FontSemiThin;
+    --font-extrathin: FontExtraThin;
+    --font-light: FontLight;
+    --font-semilight: FontSemiLight;
+    --font-extralight: FontExtraLight;
+    --font-regular: FontRegular;
+    --font-semiregular: FontSemiRegular;
+    --font-extraregular: FontExtraRegular;
+    --font-medium: FontMedium;
+    --font-semimedium: FontSemiMedium;
+    --font-extramedium: FontExtraMedium;
+    --font-bold: FontBold;
+    --font-semibold: FontSemiBold;
+    --font-extrabold: FontExtraBold;
+    --font-black: FontBlack;
+    --font-semiblack: FontSemiBlack;
+    --font-extrablack: FontExtraBlack;
+
+    /* theme colours */
+    --colour1: #DD2625; /*red*/
+    --colour2: #F3F4F6; /*lightgray -- used for form bg mostly*/
+    --colour3: #E1E1E1; /*darkgray -- used for background mostly*/
+    --colour4: #666666; /*gray*/
+    --colour5: #FEF2F2; /*lightRed*/
+    --colour6: #ffffff; /*white*/
+    --colour7: #000000; /*black*/
+    --colour8: #5979a7; /*lightblue*/
+    --colour9: #000A09; /*lightblack*/
+
+    /* X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X */
+    /* COMPONENT CONTROL */
+
+    /* body */
+    --body-f-family: var(--font-light);
+    --body-font-size: 1rem;
+    --body-bg-colour: '';
+    --body-text-colour: #000;
+
+    /*headings*/
+    --heading-thin: var(--font-thin);
+    --heading-semithin: var(--font-semithin);
+    --heading-extrathin: var(--font-extrathin);
+    --heading-light: var(--font-light);
+    --heading-semilight: var(--font-semilight);
+    --heading-extralight: var(--font-extralight);
+    --heading-regular: var(--font-regular);
+    --heading-semiregular: var(--font-semiregular);
+    --heading-extraregular: var(--font-extraregular);
+    --heading-medium: var(--font-medium);
+    --heading-semimedium: var(--font-semimedium);
+    --heading-extramedium: var(--font-extramedium);
+    --heading-bold: var(--font-bold);
+    --heading-semibold: var(--font-semibold);
+    --heading-extrabold: var(--font-extrabold);
+    --heading-black: var(--font-black);
+    --heading-semiblack: var(--font-semiblack);
+    --heading-extrablack: var(--font-extrablack);
+
+    /* border radius */
+    --b-radius: 0rem;
+
+    /* text colours */
+    --text-colour1: var(--colour1); /*red*/
+    --text-colour2: var(--colour2); /*lightgray*/
+    --text-colour3: var(--colour3); /*darkgray*/
+    --text-colour4: var(--colour4); /*gray*/
+    --text-colour5: var(--colour5); /*lightRed*/
+    --text-colour6: var(--colour6); /*white*/
+    --text-colour7: var(--colour7); /*black*/
+    --text-colour8: var(--colour8); /*lightblue*/
+    --text-colour9: var(--colour9); /*lightblack*/
+
+    /* bg blur */
+    --bg-blur: rgba(255, 255, 255, 0.3); /* Fallback for browsers that don't support */
+    --backdrop-filter: blur(10px);
+
+    /* background colours */
+    --bg-colour1: var(--colour1); /*red*/
+    --bg-colour2: var(--colour2); /*lightgray*/
+    --bg-colour3: var(--colour3); /*darkgray*/
+    --bg-colour4: var(--colour4); /*gray*/
+    --bg-colour5: var(--colour5); /*lightRed*/
+    --bg-colour6: var(--colour6); /*white*/
+    --bg-colour7: var(--colour7); /*black*/
+    --bg-colour8: var(--colour8); /*lightblue*/
+    --bg-colour9: var(--colour9); /*lightblack*/
+
+    /*buttons*/
+    --btn-family: var(--font-regular);
+    --btn-bg: var(--colour3);
+    --btn-bg-hover: var(--colour3);
+    --btn-text: var(--colour7);
+    --btn-text-hover: var(--colour7);
+    --btn-border-colour: var(--colour3);
+    --btn-border-colour-hover: var(--colour3);
+
+    /*btn-one*/
+    --btn-one-family: var(--font-semibold);
+    --btn-one-bg: var(--colour1);
+    --btn-one-bg-hover: var(--colour6);
+    --btn-one-text: var(--colour6);
+    --btn-one-text-hover: var(--colour1);
+    --btn-one-border-colour: var(--colour1);
+    --btn-one-border-colour-hover: var(--colour1);
+
+    /*btn-two*/
+    --btn-two-family: var(--font-semibold);
+    --btn-two-bg: var(--colour6);
+    --btn-two-bg-hover: var(--colour1);
+    --btn-two-text: var(--colour1);
+    --btn-two-text-hover: var(--colour6);
+    --btn-two-border-colour: var(--colour1);
+    --btn-two-border-colour-hover: var(--colour1);
+
+    /*swiper arrow colour buttons*/
+    --arrow-bg-colour: var(--colour7);
+    --arrow-text-colour: var(--colour6);
+    --arrow-disabled-bg-colour: #ccc;
+    --arrow-disabled-text-colour: #aaa;
+    --arrow-disabled-opacity: 0.3;
+    --arrow-image-width: 30px;
+    --arrow-fa-icon-size: 20px;
+
+    /*swiper pagination colour*/
+    --pagination-active-colour: var(--colour7);
+    --pagination-fade-colour: var(--colour7);
+    --pagination-opacity: 0.3;
+
+    /*modal*/
+    --modal-header-bg-colour: var(--colour1);
+    --modal-header-text-colour: var(--colour6);
+
+    /* placeholders */
+    --placeholder-text-colour: var(--colour4);
+    --placeholder-font-size: 1rem;
+
+    /*Accordion*/
+    /*--accordion-header-bg: black;
+    --accordion-header-text:#fff;*/
+
+    /*Filter Accordion*/
+    --filter-accordion-header-bg: var(--colour7);
+    --filter-accordion-header-text: var(--colour6);
+
+    /*Accordion*/
+    --accordion-header-bg: var(--colour3);
+    --accordion-header-text: var(--colour7);
+}
+
+
+/* 
+bootstrap 5 heading logic makes responsive headings
+
+h1 - font-size: calc(1.375rem + 1.5vw);
+h2 - font-size: calc(1.325rem + .9vw);
+h3 - font-size: calc(1.3rem + .6vw);
+h4 - font-size: calc(1.275rem + .3vw);
+h5 - font-size: 1.25rem;
+h6 - font-size: 1rem;
+
+media queries - 1200px and above
+h1 - font-size: 2.5rem;
+h2 - font-size: 2rem;
+h3 - font-size: 1.75rem;
+h4 - font-size: 1.5rem;
+h5 - font-size: 1.25rem;
+h6 - font-size: 1rem;
+    */

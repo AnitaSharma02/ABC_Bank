@@ -1,0 +1,329 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using ABC.Model;
+using Core.Platform.Member.Entites;
+using Core.Platform.ProgramMaster.Entities;
+using Core.Platform.MemberActivity.Entities;
+using System.Text.RegularExpressions;
+using Framework.EnterpriseLibrary.Adapters;
+using Core.Platform.MemberActivity.Constants;
+using Core.Platform.OTP.Entities;
+using Framework.EnterpriseLibrary.Security.Constants;
+using Framework.EnterpriseLibrary.Security;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Drawing;
+
+public partial class Subscription : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Request.QueryString["id"] != null)
+        {
+            string pstrId = Convert.ToString(Request.QueryString["id"]);
+            try
+            {
+                pstrId = Base64Decode(pstrId);
+                ABCModel lobjModel = new ABCModel();
+                MemberDetails lobjMemberDetails = lobjModel.GetMemberDetails(pstrId.Trim());
+                if (lobjMemberDetails != null && lobjMemberDetails.MemberRelationsList.Count > 0)
+                {
+                    MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
+                    if (!lobjMemberRelation.IsAccountActivated)
+                    {
+                        if (lobjMemberRelation.Status.Equals(Status.InActive) && lobjMemberRelation.WebPassword != string.Empty)
+                        {
+                            if (lobjModel.ActivteUserAfterLink(lobjMemberDetails))
+                            {
+                                lblMessagesDetails.ForeColor = Color.Blue;
+                                lblMessagesDetails.Text = "Your account has been activated. Now you can access your Verve Rewards account by logging to <em>https://absher.qib.com.qa</em>";
+                            }
+                            else
+                            {
+                                lblMessagesDetails.ForeColor = Color.Red;
+                                lblMessagesDetails.Text = "Invalid Request.";
+
+                            }
+                        }
+                        else
+                        {
+                            lblMessagesDetails.ForeColor = Color.Red;
+                            lblMessagesDetails.Text = "Account is " + lobjMemberRelation.Status;
+                        }
+                    }
+                    else
+                    {
+                        lblMessagesDetails.ForeColor = Color.Red;
+                        lblMessagesDetails.Text = "Account Already Activated.";
+                    }
+                }
+                else
+                {
+                    lblMessagesDetails.ForeColor = Color.Red;
+                    lblMessagesDetails.Text = "Invalid Member.";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMessagesDetails.ForeColor = Color.Red;
+                LoggingAdapter.WriteLog("Subscription Ex-" + ex.Message + ex.StackTrace + ex.InnerException);
+                lblMessagesDetails.Text = "Invalid Request.";
+
+            }
+        }
+        else
+        {
+            lblMessagesDetails.ForeColor = Color.Red;
+            lblMessagesDetails.Text = "Invalid Request.";
+
+        }
+    }
+
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static string GenerateOTP(string pstrQID, string pstRIM, string pstrSecurityCode)
+    {
+        ABCModel lobjModel = new ABCModel();
+        MemberDetails lobjMemberDetails = null;
+        string mstrRedirectEmptyURL = string.Empty;
+        bool lblstatus = false;
+        try
+        {
+            //lobjModel.LogActivity(string.Format("Generate Otp For ", pstrMemberid), ActivityType.Activation);
+
+            if (pstrSecurityCode.Equals(HttpContext.Current.Session["CAPTCHA"]))
+            {
+                lobjMemberDetails = lobjModel.GetMemberDetails(pstRIM.Trim());
+                if (lobjMemberDetails != null && lobjMemberDetails.MemberRelationsList.Count > 0)
+                {
+                    if (lobjMemberDetails.NationalId.ToUpper().Equals(pstrQID.ToUpper()))
+                    {
+                        MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
+                        if (!lobjMemberRelation.IsAccountActivated)
+                        {
+                            if (lobjMemberRelation.Status.Equals(Status.InActive))
+                            {
+                                string lstrSourceIpAddress = HttpContext.Current.Request.UserHostAddress;
+                                lblstatus = lobjModel.GenerateOTPByMemberId(lobjMemberRelation.RelationReference, lstrSourceIpAddress);
+                                if (lblstatus)
+                                {
+                                    mstrRedirectEmptyURL = "Success";
+                                    HttpContext.Current.Session["ActivationMemberDetails"] = lobjMemberDetails;
+                                }
+                                else
+                                {
+                                    mstrRedirectEmptyURL = "OTPFAILED";
+                                }
+                            }
+                            else
+                            {
+                                mstrRedirectEmptyURL = "Your Account is " + Convert.ToString(lobjMemberRelation.Status);
+                            }
+                        }
+                        else
+                        {
+                            mstrRedirectEmptyURL = "Already Activated";
+                        }
+                    }
+                    else
+                    {
+                        mstrRedirectEmptyURL = "Invalid QID";
+                    }
+                }
+                else
+                {
+                    mstrRedirectEmptyURL = "Invalid RIM";
+                }
+            }
+            else
+            {
+                //lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrQID, "Invalid Security Code"), ActivityType.ActivationOTPFailed);
+                mstrRedirectEmptyURL = "Invalid Code";
+            }
+            return mstrRedirectEmptyURL;
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("GenerateOTP Exception:" + ex.Message + Environment.NewLine + "InnerException:" + ex.InnerException + Environment.NewLine + "StackTrace:" + ex.StackTrace);
+            return mstrRedirectEmptyURL;
+        }
+    }
+
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static string MemberActivation(string pstrQID, string pstRIM, string pstrOTP, string pstrPwd, string pstrEmail)
+    {
+        ABCModel lobjModel = new ABCModel();
+        MemberDetails lobjMemberDetails = null;
+        bool lblStatus = false;
+        string mstrRedirectEmptyURL = string.Empty;
+        try
+        {
+            ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+            SystemParameter lobjPasswordPolicy = lobjModel.GetSystemParametres(lobjProgramDefinition.ProgramId);
+            if (lobjPasswordPolicy != null)
+            {
+                Regex regex = new Regex((lobjPasswordPolicy.PasswordPolicy));
+                if (regex.Match(pstrPwd).Success)
+                {
+                    bool IsEmailIdValid = false;
+                    lobjMemberDetails = lobjModel.GetMemberDetails(pstRIM.Trim());
+                    if (lobjMemberDetails != null && lobjMemberDetails.MemberRelationsList.Count > 0)
+                    {
+                        if (lobjMemberDetails.NationalId.ToUpper().Equals(pstrQID.ToUpper()))
+                        {
+                            MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
+                            if (!lobjMemberRelation.IsAccountActivated)
+                            {
+                                if (lobjMemberRelation.Status.Equals(Status.InActive))
+                                {
+                                    if (!lobjMemberDetails.Email.Equals(pstrEmail))
+                                    {
+                                        bool IsExist = lobjModel.CheckMemberExistsUsingEmailID(pstrEmail);
+                                        if (!IsExist)
+                                        {
+                                            IsEmailIdValid = true;
+                                        }
+                                        else
+                                        {
+                                            IsEmailIdValid = false;
+                                            mstrRedirectEmptyURL = "Invalid_Email";
+                                        }
+                                    }
+                                    else
+                                    {
+                                        IsEmailIdValid = true;
+                                    }
+                                }
+                                else
+                                {
+                                    mstrRedirectEmptyURL = "Account_Activated";
+                                }
+                            }
+                            else
+                            {
+                                mstrRedirectEmptyURL = "Account_Activated";
+                            }
+                        }
+                        else
+                        {
+                            mstrRedirectEmptyURL = "Invalid_QID";
+                        }
+                    }
+                    else
+                    {
+                        mstrRedirectEmptyURL = "Invalid_RIM";
+                    }
+
+                    if (IsEmailIdValid && mstrRedirectEmptyURL.Equals(string.Empty))
+                    {
+                        lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).WebPassword = pstrPwd.Trim();
+                        lobjMemberDetails.Email = pstrEmail;
+
+                        if (CheckOTP(lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).RelationReference, pstrOTP))
+                        {
+                            SearchMember lobjSearchMember = new SearchMember
+                            {
+                                UniquerefID = pstrQID,
+                                ProgramId = lobjProgramDefinition.ProgramId,
+                                RelationType = Convert.ToInt32(RelationType.LBMS)
+                            };
+                            lblStatus = lobjModel.ActivateAccount(lobjSearchMember);
+                            if (lblStatus)
+                            {
+                                mstrRedirectEmptyURL = "Success";
+                                HttpContext.Current.Session["loginMsg"] = "1";
+                                HttpContext.Current.Session["ActivationMemberDetails"] = null;
+                            }
+                            else
+                            {
+                                mstrRedirectEmptyURL = "Invalid_Credentials";
+                            }
+                        }
+                        else
+                        {
+                            mstrRedirectEmptyURL = "Invalid_OTP";
+                        }
+                    }
+                }
+                else
+                {
+                    return mstrRedirectEmptyURL = "Incorrect_Format";
+                }
+            }
+            else
+            {
+                mstrRedirectEmptyURL = "Invalid_Program";
+            }
+            lobjModel.LogActivity(string.Format("Member Activation {0}: {1}", pstRIM, mstrRedirectEmptyURL), ActivityType.Activation);
+            return mstrRedirectEmptyURL;
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("MemberActivation Exception:" + ex.Message + Environment.NewLine + "InnerException:" + ex.InnerException + Environment.NewLine + "StackTrace:" + ex.StackTrace);
+            return mstrRedirectEmptyURL;
+        }
+    }
+
+    public static bool CheckOTP(string pstrMemberId, string pstrOTP)
+    {
+        bool mblnStatus = false;
+        ABCModel lobjModel = new ABCModel();
+        OTPDetails lobjOTPDetails = new OTPDetails();
+        string lstrDestIpAddress = HttpContext.Current.Request.UserHostAddress;
+        string lstrDestAddress = "Web";
+        lobjOTPDetails.UniquerefID = pstrMemberId;
+        lobjOTPDetails.OTP = Convert.ToInt32(pstrOTP);
+        lobjOTPDetails.DestinationAddress = lstrDestIpAddress;
+        lobjOTPDetails.Destination = lstrDestAddress;
+        lobjOTPDetails.OtpType = OTPEnumTypes.ACTIVATION.ToString();
+        lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.ACTIVATION;
+        mblnStatus = lobjModel.CheckOTPExist(lobjOTPDetails);
+        return mblnStatus;
+    }
+
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static string GetMemberDetails(string pstrRIM)
+    {
+        string pstrResponse = string.Empty;
+        try
+        {
+            ABCModel lobjModel = new ABCModel();
+            MemberDetails lobjMemberDetails = null;
+            if (HttpContext.Current.Session["ActivationMemberDetails"] != null)
+            {
+                lobjMemberDetails = HttpContext.Current.Session["ActivationMemberDetails"] as MemberDetails;
+                if (lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).RelationReference.Equals(pstrRIM))
+                {
+                    pstrResponse = lobjMemberDetails.Email;
+                }
+            }
+            else
+            {
+                lobjMemberDetails = lobjModel.GetMemberDetails(pstrRIM.Trim());
+                if (lobjMemberDetails != null)
+                {
+                    pstrResponse = lobjMemberDetails.Email;
+                    HttpContext.Current.Session["ActivationMemberDetails"] = lobjMemberDetails;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("Activation GetMemberDetails-RIM-" + pstrRIM + "#" + ex.Message + ex.InnerException + ex.StackTrace);
+        }
+        return pstrResponse;
+    }
+
+    public static string Base64Decode(string base64EncodedData)
+    {
+        var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+        return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+    }
+
+}

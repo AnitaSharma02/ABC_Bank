@@ -1,0 +1,164 @@
+﻿<textarea class="searchResponse" style="display:none" id="ReturnTemplate">
+      <div class="flt-res-tbl">
+            <table cellpadding="0" cellspacing="0" width="100%" align="left" border="0">
+                <tr class="rptr_th_bg">
+                            <th align="left" valign="middle" width="8%" class="rptr_th">
+                                <div class="th_block">&nbsp</div>
+                            </th>
+                            <th align="left" valign="middle" width="74%" class="rptr_th">
+                                <div class="tbl_th">
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tr>
+                                            <td align="left" valign="middle" width="25%">
+                                                <div class="th_block">Airline</div>
+                                            </td>
+                                            <td align="left" valign="middle"  width="25%">
+                                                <div class="th_block">Depart</div>
+                                            </td>
+                                            <td align="left" valign="middle" width="25%">
+                                                <div class="th_block">Arrive</div>
+                                            </td>
+                                            <td align="left" valign="middle"  width="25%">
+                                                <div class="th_block">Duration</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                 </div>
+                        </th>
+                            <th align="left" valign="middle" width="18%" class="rptr_th">
+                                <div class="th_block th_block_miles">NPoints</div>
+                        </th>
+                       </tr>
+                       {#foreach $T as record}
+                       <tr class="seq_Return{$T.record.SequenceNo} TwoWay_Return_BG">
+                                    <td align="left" valign="middle" class="rptr_td_chkbx">
+                                        <div class="td_chkbox">
+                                            {#if $T.record.SequenceNo==1}
+                                              <input type="radio" id="Radio1" checked="checked" name="return" onchange="var retvalue = showTripSummary('Return','{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;"/>                                  
+                                                {#else} 
+                                            <input type="radio" id="Radio2" name="return" onchange="var retvalue = showTripSummary('Return','{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;"/>
+                                                 {#/if} 
+                                        </div>
+                                    </td>
+                                    <td align="left" valign="middle" class="rptr_td">
+                                       <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            {#foreach $T.record.ListOfFlightSegments as ListOfFlightSegments}
+                                             <tr>
+                                                 <td align="left" valign="middle" width="25%" class="rptr_td FlightsummaryBack">
+                                                     <div class="td_block">
+                                                     <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td align="left" valign="middle" class="rptr-td-airlogo">
+                                                                <img src='{$T.ListOfFlightSegments.Carrier.CarrierLogoPath}' />
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td align="left" valign="middle" class="rptr-td-flt-name">
+                                                                   {$T.ListOfFlightSegments.Carrier.CarrierName}
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td align="left" valign="middle" class="rptr-td-flt-code">
+                                                               ({$T.ListOfFlightSegments.Carrier.CarrierCode}{$T.ListOfFlightSegments.FlightNo})
+                                                            </td>
+                                                        </tr>
+                                                  </table>
+                                                         </div>
+                                                    </td>
+                                                 
+                                                 <td align="left" valign="middle"  width="25%" class="rptr_td FlightsummaryBack">
+                                                     <div class="td_block">
+                                                     <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td align="left" valign="middle" class="rptr-td-citycode">
+                                                               {$T.ListOfFlightSegments.DepartureAirField.City}
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td align="left" valign="middle" class="rptr-td-row">
+                                                              {$T.ListOfFlightSegments.DisplayDepartureDate}
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td align="left" valign="middle" class="rptr-td-row">
+                                                              {$T.ListOfFlightSegments.DisplayDepartureTime}
+                                                            </td>
+                                                        </tr>
+                                                      </table>
+                                                     </div>
+                                                    </td>
+
+                                                 <td align="left" valign="middle" width="25%" class="rptr_td FlightsummaryBack">
+                                                      <div class="td_block">
+                                                     <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td align="left" valign="middle" class="rptr-td-citycode">
+                                                              {$T.ListOfFlightSegments.ArrivalAirField.City}
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td align="left" valign="middle" class="rptr-td-row">
+                                                               {$T.ListOfFlightSegments.DisplayArrivalDate}
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td align="left" valign="middle" class="rptr-td-row">
+                                                              {$T.ListOfFlightSegments.DisplayArrivalTime}
+                                                            </td>
+                                                        </tr>
+                                                      </table>
+                                                          </div>
+                                                    </td>
+
+                                                 <td align="left" valign="middle"  width="25%" class="rptr_td FlightsummaryBack">
+                                                      <div class="td_block">
+                                                     <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td align="left" valign="middle" class="rptr-td-citycode">
+                                                                    {$T.ListOfFlightSegments.TotalDurationHrs} hrs {$T.ListOfFlightSegments.TotalDurationMins} mins
+                                                            </td>
+                                                        </tr>
+                                                         <tr>
+                                                            <td align="left" valign="middle" class="rptr-td-row">
+                                                                    1 stop
+                                                            </td>
+                                                        </tr>
+                                                         <!--<tr>
+                                                            <td align="left" valign="middle" class="rptr-td-row">
+                                                                  {$T.ListOfFlightSegments.DisplayArrivalTime}
+                                                            </td>
+                                                        </tr>-->
+                                                      </table>
+                                                          </div>
+                                                    </td>
+                                                </tr>
+                                            {#/for}    
+                                         </table>
+                                    </td>
+                                    <td align="left" valign="middle" class="rptr_td">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                              <td align="left" valign="middle">
+                                                <div class="rptr_td_miles robotbold"> 
+                                                    {$T.record.FareDetails.TotalPoints}
+                                                </div>
+                                              </td>
+                                            </tr>
+                                            <!--<tr>
+                                              <td align="left" valign="middle">
+                                                <div class="td_miles-type robotbold"> 
+                                                  UAB Points
+                                                </div>
+                                              </td>
+                                            </tr>-->
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr class="rowspace seq_{$T.record.SequenceNo} White_BG">
+                                    <td colspan="3" class="Td_Width_height">&nbsp;</td>
+                                </tr>
+                            {#/for}
+                        </table>
+      </div>
+</textarea>
+    

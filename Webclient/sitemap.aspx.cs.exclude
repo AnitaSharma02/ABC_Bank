@@ -1,0 +1,88 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class sitemap : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        System.Web.UI.HtmlControls.HtmlGenericControl sitemap = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("sitemap");
+        sitemap.Attributes.Add("Style", "display:none");
+    }
+
+    protected void TreeView1_TreeNodeDataBound(object sender, TreeNodeEventArgs e)
+    {
+        if (e.Node.Text == "Flight Search Result")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Passenger Details")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Review And Confirm")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Air Receipt")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Hotel Search Results")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Hotel Details")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Booking Details")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Hotel Receipt")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Car Search Results")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Car Details")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Driver Details")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Car Receipt")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Tour Search Results")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Review And Confirm Details")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Traveller Details")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Tour Grade Option")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+        if (e.Node.Text == "Tour Details")
+        {
+            e.Node.Parent.ChildNodes.Remove(e.Node);
+        }
+
+    }
+}

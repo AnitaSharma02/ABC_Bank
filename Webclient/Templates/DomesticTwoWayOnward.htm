@@ -1,0 +1,79 @@
+﻿<textarea class="searchResponse DisplayNone" id="OnwardTemplate">
+<table class="DomesticTwoWayMainTable width100 flightContainerOnward" cellpadding="0" cellspacing="0">
+        {#foreach $T as record}
+<tr class="seq_Onward{$T.record.SequenceNo} Domestic_TwoWay_TR_BG" style="border-bottom:2px solid #ccc;border-left:2px solid #ccc;border-top:2px solid #ccc;background-color:#E0E0E0">
+<td class="RdbDomestic Domestic_TwoWay_TR_BG">
+<div> {#if $T.record.SequenceNo==1}
+<input type="radio" id="FlightOneways" checked="checked" name="Oneway" onchange="var retvalue = showTripSummary('Onward','{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;" />
+
+                                    {#else} 
+<input type="radio" id="FlightOneway" name="Oneway" onchange="var retvalue = showTripSummary('Onward','{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;" />
+
+                                     {#/if} 
+                                
+                                </div>
+                        </td>
+<td class="DomesticFlight_ReturnInfo Domestic_TwoWay_TR_BG">
+<table class="width100" cellpadding="0" cellspacing="0">
+                        
+                        {#foreach $T.record.ListOfFlightSegments as ListOfFlightSegments}
+                        
+<tr class="International_FlightsummaryBack TwoWay_Return_BG">
+<td class="FlightsummaryAirlinesDesc TwoWay_Return_BG">
+<div class="AirImage_Div">
+<img src='{$T.ListOfFlightSegments.Carrier.CarrierLogoPath}' />
+
+                                </div>
+<div class="DomesticFlight_Commontext">
+                                {$T.ListOfFlightSegments.Carrier.CarrierName}
+                                </div>
+<div class="DomesticFlight_Commontext">
+                                ({$T.ListOfFlightSegments.Carrier.CarrierCode}{$T.ListOfFlightSegments.FlightNo})
+                                </div>
+                            </td>
+<td class="DomesticFlight_TDWidth TwoWay_Return_BG">
+<div class="DomesticFlight_Commontext">
+<b> {$T.ListOfFlightSegments.DepartureAirField.City}</b>
+<br />
+
+                                </div>
+<div class="DomesticFlight_Commontext">
+                                {$T.ListOfFlightSegments.DisplayDepartureDate}
+<br />
+
+                                {$T.ListOfFlightSegments.DisplayDepartureTime}
+                                </div>
+                            </td>
+<td class="DomesticFlight_TDWidth TwoWay_Return_BG">
+<div class="DomesticFlight_Commontext">
+<b> {$T.ListOfFlightSegments.ArrivalAirField.City}</b>
+<br />
+
+                                </div>
+<div class="DomesticFlight_Commontext">
+                                {$T.ListOfFlightSegments.DisplayArrivalDate}
+<br />
+
+                                {$T.ListOfFlightSegments.DisplayArrivalTime}
+                                </div>
+                            </td>
+                        </tr>
+                        
+                    {#/for}    
+                        </table>
+                        </td>
+<td class="DomesticFlight_price pad2P al_Center" valign="top" style="padding:9px 5px 0px 5px">
+<b>UAB Rewards</b>
+<br />
+
+<span class="SearchBox_Pricelbl">{Digits($T.record.FareDetails.TotalPoints)}</span>
+                            </td>
+                        </tr>
+<tr class="rowspace seq_{$T.record.SequenceNo} White_BG">
+<td colspan="3" class="Td_Width_height">&nbsp;</td>
+                        </tr>
+                        
+                    
+                    {#/for}
+        </table>
+    </textarea>

@@ -1,0 +1,25 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true"
+    CodeFile="ExtLoginSSO.aspx.cs" Inherits="ExtLoginSSO" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
+
+    <div style="width: 100%; text-align: center; font-family: Arial; text-align: center;">
+        <img src="Images/Header.jpg" />
+    </div>
+    <div style="width: 100%; text-align: center; font-family: Arial; height: 400px; text-align: center; margin-top: 100px">
+        <img style="border: 0px" src="Images/Loading_PG.GIF" />
+        <br />
+        <br />
+        <br />
+        Please wait while we process your request...
+   
+    </div>
+
+    <div id="divExtSSO" runat="server">
+        <div style="height: 400px;">
+            <div style="float: left; width: 100%; text-align: center; font-size: 24px; padding: 19% 0">
+                <asp:Label ID="lblMessage" runat="server"></asp:Label>
+            </div>
+        </div>
+    </div>
+</asp:Content>

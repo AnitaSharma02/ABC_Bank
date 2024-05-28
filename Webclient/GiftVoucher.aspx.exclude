@@ -1,0 +1,699 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="GiftVoucher.aspx.cs" Inherits="GiftVoucher" %>
+
+<%--<%@ Register Src="~/UserControl/UCPartnersList.ascx" TagName="Partners" TagPrefix="uc" %>--%>
+<asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
+    <script src="Jquery/Voucher.js" type="text/javascript"></script>
+    <link href="Css/Voucher.css" rel="stylesheet" type="text/css" />
+
+    <script src="Jquery/jquery.colorbox-min.js" type="text/javascript"></script>
+    <script src="Jquery/ColorBoxJScript.js" type="text/javascript"></script>
+    <link href="Css/colorbox.css" rel="stylesheet" type="text/css" />
+    <%--    <link href="Css/MasterStyleSheet.css" rel="stylesheet" type="text/css" />--%>
+    <%--<script src="Jquery/jquery.bxslider.min.js" type="text/javascript"></script>
+    <link href="Css/jquery.bxslider.css" rel="stylesheet" />--%>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+        <ProgressTemplate>
+            <div id="loading">
+                <img src="Images/PreLoader.gif" alt="Loading..." />
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+
+    <div class="static-conthdr">
+        <div class="StaticCover">
+            <!-- blk start-->
+            <div class="acco2">
+                <div class="StaticHead">
+                    Gift Voucher
+                </div>
+
+                <div class="Staticbody">
+                    <div id="inner-page-area" class="fl mBottom10">
+                        <div id="divBlockAll" style="display: none;">
+                        </div>
+
+                        <div class="content-page-top">
+                        </div>
+                        <div class="common_div">
+                            <div class="content-page-left-shadow">
+                            </div>
+                            <div class="Listgrid_24">
+                                <div id="siteMap" class="bread-crumb">
+                                </div>
+                                <div class="FlightMainupperDiv">
+                                    <div id="UpperRightpannel_custom" class="UpperRightside">
+                                        <%--<div class="Rewards_UpperDiv" id="divSearch">
+                                            <div id="ContentVoucher" class="paddCont fl width100 ">
+                                                <div class="common_div">
+                                                    <div class="ParticipatingPartners HeaderColor">
+                                                        Participating Partners
+                                                    </div>
+                                                </div>
+                                                <div class="common_div">
+                                                    <div class="CustomizeSub_Midimage" style="height: 560px;">
+                                                        <div class="ParticipatingPartners HeaderColor">
+                                                            <asp:LinkButton ID="lnkbtnFashionVoucher" runat="server" OnClientClick="var retvalue = ChangePartnerDiv('Fashion And Accessories',1); event.returnValue= retvalue; return retvalue;"
+                                                                CssClass="Account_LinkBtnStyle"> Fashion and Accessories</asp:LinkButton>
+                                                        </div>
+                                                        <div class="ParticipatingPartners HeaderColor">
+                                                            <asp:LinkButton ID="lnkbtnJewelleryVoucher" runat="server" OnClientClick="var retvalue = ChangePartnerDiv('Watches',2); event.returnValue= retvalue; return retvalue;"
+                                                                CssClass="Account_LinkBtnStyle">Watches</asp:LinkButton>
+                                                        </div>
+                                                        <div class="ParticipatingPartners HeaderColor">
+                                                            <asp:LinkButton ID="lnkbtnTravelAgencyVoucher" runat="server" OnClientClick="var retvalue = ChangePartnerDiv('Restaurants',3); event.returnValue= retvalue; return retvalue;"
+                                                                CssClass="Account_LinkBtnStyle"> Restaurants</asp:LinkButton>
+                                                        </div>
+                                                        <div class="ParticipatingPartners HeaderColor">
+                                                            <asp:LinkButton ID="lnkbtnCarVoucher" runat="server" OnClientClick="var retvalue = ChangePartnerDiv('Cars',4); event.returnValue= retvalue; return retvalue;"
+                                                                CssClass="Account_LinkBtnStyle"> Cars</asp:LinkButton>
+                                                        </div>
+                                                        <div class="ParticipatingPartners HeaderColor">
+                                                            <asp:LinkButton ID="LinkButton1" runat="server" OnClientClick="var retvalue = ChangePartnerDiv('Cars',5); event.returnValue= retvalue; return retvalue;"
+                                                                CssClass="Account_LinkBtnStyle"> Others</asp:LinkButton>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>--%>
+                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" class="Upate_right">
+                                            <ContentTemplate>
+                                                <script type="text/javascript">
+                                                    function commaFormat(inputString) {
+                                                        inputString = inputString.toString();
+                                                        var decimalPart = "";
+                                                        if (inputString.indexOf('.') != -1) {
+                                                            inputString = inputString.split(".");
+                                                            decimalPart = "." + inputString[1];
+                                                            inputString = inputString[0];
+                                                        }
+                                                        var outputString = "";
+                                                        var count = 0;
+                                                        for (var i = inputString.length - 1; i >= 0 && inputString.charAt(i) != '-'; i--) {
+                                                            if (count == 3) {
+                                                                outputString += ",";
+                                                                count = 0;
+                                                            }
+                                                            outputString += inputString.charAt(i);
+                                                            count++;
+                                                        }
+                                                        if (inputString.charAt(0) == '-') {
+                                                            outputString += "-";
+                                                        }
+                                                        return outputString.split("").reverse().join("") + decimalPart;
+                                                    };
+
+
+                                                </script>
+                                                <div class="Ourproduct_Rightpannel">
+                                                    <div class="width100  " id="DivSubmitContent" runat="server">
+                                                        <div class="fl width100 pTop10">
+                                                            Please select the quantity of Gift Vouchers you require.
+                                                        </div>
+                                                        <div class="fl width100 pTop10">
+                                                            Your Gift Vouchers can be redeemed at any of our participating partners.
+                                                        </div>
+                                                        <div class="width100 ">
+                                                            <div class="width100 mTop10">
+                                                                Select the following denomination:
+                                                            </div>
+                                                            <div id="divVoucherError" runat="server" class="ErrorLogin Slide_Content_Right Login_FormField_InputTxtBox Bg_Grey mtop_10 display_hide">
+                                                                <asp:Label ID="lblVoucherError" runat="server"></asp:Label>
+                                                            </div>
+
+                                                            <div class="width100">
+                                                                <div class="width96 ">
+                                                                    <div class="width100 mTop20">
+                                                                        <div class="width30 pTop5">
+                                                                            AED 100 Gift Voucher
+                                                                        </div>
+                                                                        <div class="width10 pTop5 alignCenter">
+                                                                            X
+                                                                        </div>
+                                                                        <div class="width25 topalign">
+                                                                            <div class="width100 TextFromDiv">
+                                                                                <div class="width100 slrmty">
+                                                                                    <asp:DropDownList ID="ddlLKR100" runat="server" class="Location_TextBox_Style_voucher mLeft5p">
+                                                                                        <asp:ListItem Value="0">Quantity</asp:ListItem>
+                                                                                        <asp:ListItem>1</asp:ListItem>
+                                                                                        <asp:ListItem>2</asp:ListItem>
+                                                                                        <asp:ListItem>3</asp:ListItem>
+                                                                                        <asp:ListItem>4</asp:ListItem>
+                                                                                        <asp:ListItem>5</asp:ListItem>
+                                                                                    </asp:DropDownList>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="" id="divLKR100Add">
+                                                                            <input type="button" class="Add" id="btn100" value="Add" onclick="var retvalue = selectQty(100, '#CP_ddlLKR100', '#divLKR100Add'); event.returnValue = retvalue; return retvalue;" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="width100 mTop20">
+                                                                        <div class="width30 pTop5">
+                                                                            AED 500 Gift Voucher
+                                                                        </div>
+                                                                        <div class="width10 pTop5 alignCenter">
+                                                                            X
+                                                                        </div>
+                                                                        <div class="width25 topalign">
+                                                                            <div class="width100 TextFromDiv">
+                                                                                <div class="width100 slrmty">
+                                                                                    <asp:DropDownList ID="ddlLKR500" runat="server" class="Location_TextBox_Style_voucher mLeft5p">
+                                                                                        <asp:ListItem Value="0">Quantity</asp:ListItem>
+                                                                                        <asp:ListItem>1</asp:ListItem>
+                                                                                        <asp:ListItem>2</asp:ListItem>
+                                                                                        <asp:ListItem>3</asp:ListItem>
+                                                                                        <asp:ListItem>4</asp:ListItem>
+                                                                                        <asp:ListItem>5</asp:ListItem>
+                                                                                    </asp:DropDownList>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="" id="divLKR500Add">
+                                                                            <input type="button" class="Add" id="btn500" value="Add" onclick="var retvalue = selectQty(500, '#CP_ddlLKR500', '#divLKR500Add'); event.returnValue = retvalue; return retvalue;" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="width100 mTop20">
+                                                                        <div class="width30 pTop5">
+                                                                            AED 1000 Gift Voucher
+                                                                        </div>
+                                                                        <div class="width10 pTop5 alignCenter">
+                                                                            X
+                                                                        </div>
+                                                                        <div class="width25 topalign">
+                                                                            <div class="width100 TextFromDiv">
+                                                                                <div class="width100 slrmty">
+                                                                                    <asp:DropDownList ID="ddlLKR1000" runat="server" class="Location_TextBox_Style_voucher mLeft5p">
+                                                                                        <asp:ListItem Value="0">Quantity</asp:ListItem>
+                                                                                        <asp:ListItem>1</asp:ListItem>
+                                                                                        <asp:ListItem>2</asp:ListItem>
+                                                                                        <asp:ListItem>3</asp:ListItem>
+                                                                                        <asp:ListItem>4</asp:ListItem>
+                                                                                        <asp:ListItem>5</asp:ListItem>
+                                                                                    </asp:DropDownList>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="" id="divLKR1000Add">
+                                                                            <input type="button" class="Add" value="Add" id="btn1000" onclick="var retvalue = selectQty(1000, '#CP_ddlLKR1000', '#divLKR1000Add'); event.returnValue = retvalue; return retvalue;" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="width100 mTop20">
+                                                                        <div class="width30 pTop5">
+                                                                            AED 3000 Gift Voucher
+                                                                        </div>
+                                                                        <div class="width10 pTop5 alignCenter">
+                                                                            X
+                                                                        </div>
+                                                                        <div class="width25 topalign">
+                                                                            <div class="width100 TextFromDiv">
+                                                                                <div class="width100 slrmty">
+                                                                                    <asp:DropDownList ID="ddlLKR3000" runat="server" class="Location_TextBox_Style_voucher mLeft5p">
+                                                                                        <asp:ListItem Value="0">Quantity</asp:ListItem>
+                                                                                        <asp:ListItem>1</asp:ListItem>
+                                                                                        <asp:ListItem>2</asp:ListItem>
+                                                                                        <asp:ListItem>3</asp:ListItem>
+                                                                                        <asp:ListItem>4</asp:ListItem>
+                                                                                        <asp:ListItem>5</asp:ListItem>
+                                                                                    </asp:DropDownList>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="" id="divLKR3000Add">
+                                                                            <input type="button" class="Add" value="Add" id="btn3000" onclick="var retvalue = selectQty(3000, '#CP_ddlLKR3000', '#divLKR3000Add'); event.returnValue = retvalue; return retvalue;" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="width100 mTop20 mb10">
+                                                                        <div class="width30 pTop5">
+                                                                            AED 5000 Gift Voucher
+                                                                        </div>
+                                                                        <div class="width10 pTop5 alignCenter">
+                                                                            X
+                                                                        </div>
+                                                                        <div class="width25 topalign">
+                                                                            <div class="width100 TextFromDiv">
+                                                                                <div class="width100 slrmty">
+                                                                                    <asp:DropDownList ID="ddlLKR5000" runat="server" class="Location_TextBox_Style_voucher mLeft5p">
+                                                                                        <asp:ListItem Value="0">Quantity</asp:ListItem>
+                                                                                        <asp:ListItem>1</asp:ListItem>
+                                                                                        <asp:ListItem>2</asp:ListItem>
+                                                                                        <asp:ListItem>3</asp:ListItem>
+                                                                                        <asp:ListItem>4</asp:ListItem>
+                                                                                        <asp:ListItem>5</asp:ListItem>
+                                                                                    </asp:DropDownList>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="" id="divLKR5000Add">
+                                                                            <input type="button" class="Add" value="Add" id="btn5000" onclick="var retvalue = selectQty(5000, '#CP_ddlLKR5000', '#divLKR5000Add'); event.returnValue = retvalue; return retvalue;" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="width100  mb10">
+                                                                        <div class="width30 pTop5">
+                                                                        </div>
+                                                                        <div class="width10 pTop5 alignCenter">
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="width100 mTop20">
+                                                                <div class="flleft pTop5">
+                                                                    Total Voucher Value in AED: 
+                                                                </div>
+                                                                <div class="width30 TextFromDiv">
+                                                                    <div class="width100 pntTotal" style="margin-top: 7px; margin-left: 4px;">
+                                                                        <asp:Label runat="server" ID="lblTotalValue" Text=""></asp:Label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="width100 mTop10">
+                                                                <div class="flleft pTop5">
+                                                                    Number of Rewards required to redeem: 
+                                                                </div>
+                                                                <div class="width30 TextFromDiv">
+                                                                    <div class="width100 pntTotal" style="margin-top: 7px; margin-left: 4px;">
+                                                                        <asp:Label runat="server" ID="lblPointRequired" Text=""></asp:Label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="width100 mTop10">
+                                                                <div class="" id="DivVoucherSubmit" style="float: left;">
+                                                                    <asp:Button CssClass="buttonContainer" runat="server" ID="btnSubmit" Text="Submit"
+                                                                        OnClientClick="var retvalue = ConfirmVoucher(); event.returnValue= retvalue; return retvalue;" />
+                                                                </div>
+                                                                <div style="float: left; padding-left: 12px;">
+                                                                    <div class="width15 Clear" id="divClearAll">
+                                                                        <asp:Button CssClass="buttonContainer" runat="server" ID="imgBtnClearAll" Text="Clear All"
+                                                                            OnClientClick="var retvalue = ClearFields(); event.returnValue= retvalue; return retvalue;" />
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class=" msgbxBG mTop20 display_hide" id="validateMsg">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="width100 display_hide" id="DivGlobalRewardsConfirm" runat="server">
+                                                        <div class="width100">
+                                                            <div id="divCurrencyDropDown" runat="server" class="Width100 display_hide pb10">
+                                                                Please select your currency : &nbsp
+                                                <asp:DropDownList ID="ddlProgramCurrency" runat="server" AppendDataBoundItems="true"
+                                                    OnSelectedIndexChanged="ddlProgramCurrency_SelectedIndexChanged" AutoPostBack="true">
+                                                </asp:DropDownList>
+                                                            </div>
+                                                            <div class="width100 pb10">
+                                                                Please find below the summary of QIBRewards REWARDS Gift Voucher:
+                                                            </div>
+                                                            <div class="Width99">
+                                                                <table cellspacing="0" style="float: left;" width="100%px">
+                                                                    <tr class="stylegridheader">
+                                                                        <td class="alignCenter">
+                                                                            <b>VOUCHER TYPE </b>
+                                                                        </td>
+                                                                        <td class="alignCenter">
+                                                                            <b>QUANTITY</b>
+                                                                        </td>
+                                                                        <td class="alignCenter">
+                                                                            <b>VOUCHER VALUE</b>
+                                                                        </td>
+                                                                        <td class="alignCenter">
+                                                                            <b>POINTS REQUIRED</b>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr id="trLKR100" runat="server" class="Statment_td_Voucher">
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">AED 100 Gift Voucher
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR100Quantity"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR100VoucherVal"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR100PointsRequired"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr id="trLKR500" runat="server" class="Statment_td_Voucher">
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">AED 500 Gift Voucher
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR500Quantity"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR500VoucherVal"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR500PointsRequired"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr id="trLKR1000" runat="server" class="Statment_td_Voucher">
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">AED 1000 Gift Voucher
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR1000Quantity"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR1000VoucherVal"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR1000PointsRequired"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr id="trLKR3000" runat="server" class="Statment_td_Voucher">
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">AED 3000 Gift Voucher
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR3000Quantity"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR3000VoucherVal"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR3000PointsRequired"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr id="trLKR5000" runat="server" class="Statment_td_Voucher">
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">AED 5000 Gift Voucher
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR5000Quantity"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR5000VoucherVal"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td style="border: 1px solid #ccc;">
+                                                                            <table class="tableBG" style="float: right; width: 100%;">
+                                                                                <tr>
+                                                                                    <td class="Statment_td_Voucher alignCenter">
+                                                                                        <asp:Label runat="server" ID="lblLKR5000PointsRequired"></asp:Label>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <div class="width100 pTop10">
+                                                                Total Gift voucher value is AED 
+                                                <asp:Label runat="server" ID="lblTotalVoucherValue" CssClass="pntTotal"></asp:Label>.
+                                                                  To redeem this you require
+                                                <asp:Label runat="server" ID="lblRequirPointToRedeem" CssClass="pntTotal"></asp:Label>
+                                                                <asp:Label runat="server" ID="lblVoucherCurrency" Text="" CssClass="pntTotal"></asp:Label>
+                                                                .<%--Points.--%>
+                                                            </div>
+                                                            <div class="width100 mTop10">
+                                                                <div class="fl">
+                                                                    <div id="divBtnConfirm" runat="server">
+                                                                        <asp:Button CssClass="buttonContainer" runat="server" ID="btnConfirm" Text="Confirm"
+                                                                            CausesValidation="false" OnClick="btnConfirm_Click" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="fl" style="margin-left: 15px;">
+                                                                    <asp:Button CssClass="buttonContainer" runat="server" ID="Button2" Text="Back" OnClientClick="var retvalue = BackToDenomination(); event.returnValue= retvalue; return retvalue;"
+                                                                        CausesValidation="false" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="width100 display_hide" id="divCreateVoucherSummary" runat="server">
+
+
+                                                        <div class="width100">
+                                                            <div class="width100 pb10">
+                                                                Please find below the summary of QIBRewards REWARDS Gift Voucher:
+                                                            </div>
+                                                            <div class="Width99">
+                                                                <asp:Repeater ID="RepCreateVoucherSummary" runat="server">
+                                                                    <HeaderTemplate>
+                                                                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="border_Voucher">
+                                                                            <tr class="stylegridheader">
+                                                                                <td>Sr. No
+                                                                                </td>
+                                                                                <td>Amount
+                                                                                </td>
+                                                                                <td>Status
+                                                                                </td>
+                                                                                <td>Voucher No
+                                                                                </td>
+
+                                                                            </tr>
+                                                                    </HeaderTemplate>
+                                                                    <ItemTemplate>
+                                                                        <tr class="stylealternate1">
+                                                                            <td align="center" valign="middle" height="25" class="borderTop_Voucher">
+                                                                                <%# Container.ItemIndex + 1%>
+                                                                            </td>
+                                                                            <td align="center" valign="middle" class="borderTop_Voucher">
+                                                                                <%# Eval("Amount","{0:0,0}")%>
+                                                                            </td>
+                                                                            <td align="center" valign="middle" class="borderTop_Voucher">
+                                                                                <asp:Label ID="lblStatus" runat="server" Text='<%# (Boolean.Parse(Eval("Status").ToString())) ? "Successful" : "Failed"%>'></asp:Label>
+                                                                            </td>
+                                                                            <td align="center" valign="middle" class="borderTop_Voucher">
+                                                                                <asp:Label ID="lblVoucherNo" runat="server" Text='<%# Eval("VoucherNo")%>'></asp:Label>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </ItemTemplate>
+                                                                    <FooterTemplate>
+                                                                        </table>
+                                                        <asp:Label ID="lblErrorMsg" runat="server" CssClass="errMsg" Text="No Records Found."
+                                                            Visible="false" />
+                                                                    </FooterTemplate>
+                                                                </asp:Repeater>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="width100 msgbxBG mTop20 display_hide" id="divConfirmationMsg" runat="server">
+                                                        Dear Customer,<br />
+                                                        <br />
+                                                        Thank you, your transaction is successful. To see a record of all your Gift Voucher codes, simply click on <b>“My Account”</b> and scroll down to <b>“Voucher Summary”</b>
+                                                        You may print your Gift Voucher codes and redeem at any of our participating partners.
+                                                    </div>
+                                                    <div class="width50 msgbxBG mTop20 display_hide" id="divCurrencyNotFound" runat="server">
+                                                        Dear Customer,<br />
+                                                        <br />
+                                                        This currency does not supports Gift Voucher redemption.
+                                                    </div>
+                                                    <div class="width50 msgbxBG mTop20 display_hide" id="divAvailability" runat="server">
+                                                        Dear Customer,<br />
+                                                        <br />
+                                                        You do not have sufficient points.<br />
+                                                        <%--<a href="PurchasePoints.aspx">Click here </a>to purchase additional points.--%>
+                                                    </div>
+                                                </div>
+                                            </ContentTemplate>
+                                            <Triggers>
+                                                <asp:AsyncPostBackTrigger ControlID="btnConfirm" EventName="Click" />
+                                            </Triggers>
+                                        </asp:UpdatePanel>
+                                        <div class="Ourproduct_Rightpannel" id="Partnersdiv" style="display: none;">
+                                            <div class="font20 fl width100 pTop10 pb10">
+                                                <div id="partnerheading"></div>
+                                            </div>
+                                            <div class="RightInnerContent width100">
+                                                <div class="width100 mTop10" id="partnerimagediv">
+                                                </div>
+                                                <div class="backVoucher" onclick="var retvalue = backtovoucherdiv(); event.returnValue= retvalue; return retvalue;"><span><< Go To Redeem Voucher</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clr"></div>
+                                    <!--sponser logo start here-->
+
+                                    <%--<div class="sponsor-logo" style="margin-top: 20px;">
+                                        <h2>Participating Partners</h2>
+                                        <ul class="slider6">
+                                            <li class="slide">
+                                                <img src="images/AVI-8-LOGO.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/berlin.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/calvin-kleinDef.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/ES-LOGO.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/Ferrari-Logo.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/GANT-Time-Logo.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/Hanowa-Logo.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/ilceilo.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/JM-LOGO.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/logo_maserati-page-001-(1).jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/loon_tao-new-logo.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/MORELLATO_TIME_BLUE_HR-page-001.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/NEW-logo-Sector-nolimits_black-page-001.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/PEPEJEANS_BLACK_HR-page-001.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/POLICE-Logo.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/Raja-Bojun-Logo-page-001.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/SECTOR_EXPANDER_BLACK_HR-page-001.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/SISLEY-Logo.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/Spring--Summer-Logo.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/Swiss-Military-Hanowa-Logo.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/Timberland-Logo.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/tsing-tao-logo-New.jpg" /></li>
+                                            <li class="slide">
+                                                <img src="images/UCB---Logo.jpg" /></li>
+
+                                        </ul>
+                                    </div>--%>
+
+
+                                    <!--sponser logo end here-->
+                                </div>
+                            </div>
+                            <div class="content-page-right-shadow">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="clear: both;"></div>
+    <asp:HiddenField ID="HDFLKRAmount" Value="0" runat="server" />
+    <asp:HiddenField ID="HDFPoints" runat="server" />
+    <asp:HiddenField ID="HDFVoucherRate" runat="server" />
+    <asp:HiddenField ID="HDFLKR100QTY" runat="server" Value="0" />
+    <asp:HiddenField ID="HDFLKR500QTY" runat="server" Value="0" />
+    <asp:HiddenField ID="HDFLKR1000QTY" runat="server" Value="0" />
+    <asp:HiddenField ID="HDFLKR3000QTY" runat="server" Value="0" />
+    <asp:HiddenField ID="HDFLKR5000QTY" runat="server" Value="0" />
+</asp:Content>
+

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SBL.ETL.DataAccess\SBL.ETL.DataAccess.csproj" />
+    <ProjectReference Include="..\SBL.ETL.Entities\SBL.ETL.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Core.Platform.ProgramMaster.Entities">
+      <HintPath>..\References\Core.Platform.ProgramMaster.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Adapters">
+      <HintPath>..\References\Framework.EnterpriseLibrary.Adapters.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

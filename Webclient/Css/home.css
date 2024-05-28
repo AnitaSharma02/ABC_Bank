@@ -1,0 +1,154 @@
+
+/*=========[ WELCOME ON HOMEPAGE ]=========*/
+.dvWelcome .scroll-hoz {
+  margin: 0;
+}
+/*=========[ WELCOME ON HOMEPAGE ]=========*/
+
+/*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
+.dvRedemptionMenu a .imageBox {
+    background-color: #fff;
+    border-radius: 50%;
+    width:80px;
+    height:80px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 4px 5px -2px, rgba(0, 0, 0, 0.3) 0px 0px 13px -2px;
+}
+.dvRedemptionMenu a .imageBox img {
+    width: 35px;
+    height: 35px;
+}
+.dvRedemptionMenu a:hover .imageBox {
+    background-color: var(--bg-colour1);
+}
+.dvRedemptionMenu a:hover .imageBox img {
+    filter: brightness(0) invert(1);
+}
+.dvRedemptionMenu a:hover p {font-weight:bold;}
+.dvRedemptionMenu a p {
+    color: var(--text-colour7);
+    font-size: .75rem;
+    font-family: var(--font-regular);
+    padding:5px 0;
+}
+/*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
+/*=========[ VOUCHERS ON HOMEPAGE ]=========*/
+.dvTurnText h2, .dvTurnText span {
+    color: var(--text-darkgray);
+}
+.dvTravelTheWorld{
+    background-color: var(--bg-colour2);
+}
+.dvVouchers {
+    background-color: var(--bg-colour6);
+}
+.dvVouchers .dvVoucherSlider .img-container img{
+    object-fit:contain;
+}
+.dvShopDeals {
+    background-color: var(--bg-colour3);
+}
+.dvShopDealsSlider a {
+    overflow: hidden;
+    display: block;
+}
+.dvShopDealsSlider .dvCardName {
+    box-shadow: 0px -6px 60px 40px #000;
+    position: relative;
+    margin: -60px 0 0;
+    background: rgb(0 0 0 / 89%);
+}
+
+.dvTravelTheWorld a {
+    overflow: hidden;
+    display: block;
+}
+.dvTravelTheWorld .dvCardName {
+    box-shadow: 0px -6px 60px 27px #000;
+    position: relative;
+    margin: -62px 0 0;
+    background: rgb(0 0 0 / 89%);
+}
+/*=========[ VOUCHERS ON HOMEPAGE ]=========*/
+
+
+/*=========[ FAQ ON HOMEPAGE ]=========*/
+.dvFaqSection {
+    background: url("/images/homepage/faq-section/bg-faq.jpg") no-repeat top center;
+    background-size: cover;
+    padding: 3rem 0;
+}
+.dvFaqSection .card {
+    background-color: unset;
+}
+.dvFaqSection .accordion .card-header,
+.dvFaqSection .accordion .card-header button {
+    background-color: rgba(0, 0, 0, .35);
+    color: var(--text-colour6);
+    font-family: var(--heading-bold);
+    text-transform: capitalize;
+}
+.dvFaqSection .bg-white {background: rgba(255, 255, 255, 0.5) !important;}
+.dvFaqSection .dvCheckImage img {width:30px;}
+/*=========[ FAQ ON HOMEPAGE ]=========*/
+
+
+/*=========[ TRAVEL ON HOMEPAGE ]=========*/
+.dvTravel {
+    background-color: var(--bg-section);
+}
+.dvTravel .img-container {
+  padding-bottom: 60%;
+}
+/*=========[ TRAVEL ON HOMEPAGE ]=========*/
+
+/*=========[ EARN ON HOMEPAGE ]=========*/
+.dvEarn .bg {
+  background: url("/images/homepage/earn/bg-image.svg") no-repeat top center;
+  background-size: cover;
+  padding: 3rem 1rem;
+}
+.dvEarn .bg p {
+  color: var(--secondary-colour);
+}
+.dvEarn .bg-icon {
+  background-color: var(--bg-section);
+}
+.dvEarn .bg-icon img {
+  max-width: 100%;
+  height: 70px;
+}
+.dvEarn .heading-bold {
+  color: var(--primary-colour);
+}
+/*=========[ EARN ON HOMEPAGE ]=========*/
+ 
+
+/*=========[ MEDIA QUERIES ]=========*/
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .dvEarn .bg {
+    min-height: 400px;
+  }
+  .dvEarn .mn-top {
+    margin-top: -13rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .dvEarn .mn-top {
+    margin-top: -9rem;
+  }
+
+  .dvHeader .navbar-nav .nav-item a.border-bottom {
+    border-bottom: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dvEarn .mn-top {
+    margin-top: -12rem;
+  }
+}
+/*=========[ MEDIA QUERIES ]=========*/

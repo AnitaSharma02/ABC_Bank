@@ -1,0 +1,385 @@
+/*=========[ ACCOUNT BG ]=========*/
+.dvMember {
+    /*background: url("../images/homepage/earn/bg-image.svg");*/
+    background: var(--bg-colour3);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+/*=========[ ACCOUNT BG ]=========*/
+
+/*=========[ ACCOUNT MENU ]=========*/
+.dvAccountMenu {
+  border-bottom: 1px solid var(--bg-colour3);
+}
+.dvAccountMenu .nav-link {
+  color: var(--bg-colour7);
+  padding: 0;
+  min-height: 70px;
+}
+.dvAccountMenu .active {
+  color: var(--text-colour2);
+  background: var(--bg-colour1);
+}
+/*=========[ ACCOUNT MENU ]=========*/
+
+/*=========[ STATEMENT SUMMARY ]=========*/
+.dvStatementSummary .bg-lightgray {
+  background-color: var(--bg-colour2);
+}
+.dvStatementSummary .rounded {
+  border-radius: 0.75rem 0.75rem 0 0 !important;
+}
+.dvStatementSummary .dvBalance .bg-primary {
+  background-color: var(--bg-colour1) !important;
+}
+.dvStatementSummary .dvBalance .bg-primary .heading-semibold {
+  color: #fff;
+}
+/*=========[ STATEMENT SUMMARY ]=========*/
+
+/*=========[ TRANSACTION SUMMARY ]=========*/
+.dvTransactionSummary .bg-lightgray {
+  background: var(--bg-colour2);
+}
+.dvTransactionSummary p.heading-bold span.heading-bold {
+  color: var(--bg-colour1);
+  font-size: 1.25rem;
+}
+/*=========[ TRANSACTION SUMMARY ]=========*/
+
+/*=========[ POINTS EXPIRY ]=========*/
+
+.dvExpiry .bg-lightgrey {
+  background: var(--bg-colour2);
+}
+
+.dvExpiry .bg-primary {
+  background: var(--bg-colour1) !important;
+}
+
+/* .dvExpiry .exp-body {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+} */
+
+/*=========[ POINTS EXPIRY ]=========*/
+
+/*=========[ ORDER HISTORY ]=========*/
+/*.dvOrderHistory .bg-lightgray {
+  background: var(--bg-colour3);
+}*/
+/* .dvOrderHistory p.heading-bold {
+  color: var(--bg-colour1);
+  font-size: 1.25rem;
+}
+.dvOrderHistory p.heading-bold span.heading-bold {
+  color: var(--bg-colour7);
+  font-size: 1.25rem;
+} */
+/*=========[ ORDER HISTORY ]=========*/
+
+/*=========[ ORDER DETAILS ]=========*/
+.dvOrderDetailsPopup .close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    z-index: 3;
+}
+.dvOrderDetailsPopup .modal-header {
+    padding: 0rem 1rem;
+    border-bottom: unset;
+}
+
+.dvOrderDetailsPopup .modal-dialog {
+    max-width: 92%;
+    margin: 1.75rem auto;
+}
+
+.dvOrderDetailsPopup .modal-header .close {
+    z-index: 999;
+    padding: 8px 1rem;
+    margin: -1rem -1rem -1rem auto;
+    position: relative;
+    right: -9px;
+    top: 7px;
+}
+.dvOrderDetailsPopup .modal-body .barcode-img {
+    width:150px;
+}
+/*.dvOrderDetails .bg-lightgray {
+  background: var(--bg-colour3);
+}*/
+
+/*delivery track*/
+.dvOrderDetails .dvDeliveryTrack .w-30{
+    width:30px;
+}
+.dvOrderDetails .dvDeliveryTrack .h-30 {
+    height: 30px;
+}
+.dvOrderDetails .dvDeliveryTrack{
+    position: relative;
+}
+.dvOrderDetails .dvDeliveryTrack .dvLine {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:0;
+    width:95%;
+}
+.dvOrderDetails .dvDeliveryTrack span.rounded-circle{
+    font-weight:bold;
+}
+.dvOrderDetails .dvDeliveryTrack .active > span.rounded-circle:first-child{
+    background-color:var(--colour1);
+    color:var(--colour6);
+    font-weight:bold;
+}
+/*delivery track*/
+/*.dvOrderDetails .dvOrder-steps-steps {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  margin: 8% auto;
+}
+.dvOrderDetails .dvOrder-steps .step-line {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 1px;
+  background: #e5e5e5;
+  left: 0;
+  display: none;
+}
+.dvOrderDetails .dvOrder-steps .steps {
+  width: 100%;
+  position: relative;
+  top: -16px;
+}
+.dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step {
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+.dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step:first-child {
+  text-align: left;
+  width: 32%;
+}
+.dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step .step {
+  background: #fff;
+  padding-right: 1rem;
+  font-weight: bold;
+  font-size: 10px;
+}
+.dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step .step .step-circle {
+  width: 30px;
+  height: 30px;
+  line-height: 23px;
+  text-align: center;
+  padding: 0.4rem 0.9rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  font-size: 16px;
+}
+.dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step .step {
+  background: #fff;
+  padding-right: 1rem;
+  font-weight: bold;
+  font-size: 10px;
+}
+.dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step .step .step-circle.future {
+  background: #f2f2f2;
+  color: #000;
+}*/
+
+/*=========[ ORDER DETAILS ]=========*/
+
+/*=========[ PROFILE PAGE ]=========*/
+
+.dvProfile .bg-lightgray {
+  background: var(--bg-colour2);
+}
+
+/*=========[ PROFILE PAGE ]=========*/
+
+/*=========[ MANAGE PAGE ]=========*/
+.dvManage .bg-lightgray {
+  background: var(--bg-colour2);
+}
+
+.dvManage .accordion .card {
+  border-radius: 0.25rem;
+}
+
+.dvManage .accordion .card-header {
+  margin-bottom: 0;
+}
+
+.dvManage .accordion .card-body {
+  background: var(--bg-colour3);
+  border-radius: 0.25rem;
+}
+
+.dvManage .accordion span.d-inline-block {
+  min-height: 42px;
+}
+
+.dvManage .wd-br-all {
+    word-break: break-all;
+}
+
+/*=========[ MANAGE PAGE ]=========*/
+
+/*=========[ VOUCHER PAGE ]=========*/
+
+.dvVoucher .vouch-main {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.dvVoucher .bg-head {
+  background: var(--bg-colour1);
+}
+
+.dvVoucher .bg-head img {
+  width: 200px;
+}
+
+.dvVoucher .bg-black {
+  background: var(--bg-colour7);
+  color: #fff;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.dvVoucher .bor-bg {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+}
+
+/*=========[ VOUCHER PAGE ]=========*/
+
+/*=========[ AIR RECEIPT PAGE ]=========*/
+
+.dvAirReceipt {
+    max-width: 800px;
+}
+
+.dvAirReceipt .vouch-main {
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+.dvAirReceipt .bg-black {
+    background: var(--bg-colour7);
+    color: #FFF;
+    border-radius: .25rem .25rem 0 0;
+}
+
+.dvAirReceipt .bor-bg {
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .25rem;
+}
+
+/*=========[ AIR RECEIPT PAGE ]=========*/
+
+/*=========[ AIR PRINT RECEIPT PAGE ]=========*/
+
+.dvAirPrintReceipt {
+    width: 800px;
+}
+
+.dvAirPrintReceipt .vouch-main {
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+.dvAirPrintReceipt .bg-head {
+    background: var(--primary-colour);
+}
+
+.dvAirPrintReceipt .bg-head img {
+    width: 200px;
+}
+
+.dvAirPrintReceipt .bg-black {
+    background: var(--bg-colour7);
+    color: #FFF;
+    border-radius: .25rem .25rem 0 0;
+}
+
+.dvAirPrintReceipt .bor-bg {
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .25rem;
+}
+
+/*=========[ AIR PRINT RECEIPT PAGE ]=========*/
+
+/*=========[ MEDIA QUERIES ]=========*/
+@media (min-width: 576px) {
+/*  .dvOrderDetails .dvOrder-steps {
+    width: 66%;
+  }*/
+}
+
+@media (min-width: 768px) {
+  /*.dvOrderDetails .dvOrder-steps .step-line {
+    display: block;
+  }
+  .dvOrderDetails .dvOrder-steps {
+    margin: 6% auto 1%;
+    width: 100%;
+    height: auto;
+  }
+  .dvOrderDetails .dvOrder-steps .step-line {
+    display: block;
+  }*/
+  /* .dvOrder-steps .steps {top: 30%;} */
+  /*.dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step:first-child {
+    text-align: left;
+    width: 34%;
+  }
+  .dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step:last-child {
+    text-align: right;
+    width: 32%;
+  }
+  .dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step .step {
+    font-size: 12px;
+    padding-left: 1rem;
+  }
+  .dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step .step .step-circle.active {
+    background: var(--green);
+  }
+  .dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step .step .stepText.active {
+    color: var(--green);
+  }
+  .dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step .step .step-circle {
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 0.5rem;
+  }
+  .dvOrderDetails .dvOrder-steps .steps .dvOrderTrack-step .step {
+    font-size: 14px;
+    padding-left: 1rem;
+    font-weight: bold;
+  }*/
+}
+
+@media (min-width: 992px) {
+/*  .dvOrderDetails .dvOrder-steps {
+    margin: 4% auto 0%;
+    width: 100%;
+    height: 3rem;
+  }*/
+}
+
+@media (min-width: 1200px) {
+  .dvOrderDetailsPopup .modal-dialog {
+    max-width: 65%;
+  }
+}
+/*=========[ MEDIA QUERIES ]=========*/

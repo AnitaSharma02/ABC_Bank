@@ -1,0 +1,265 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="GiftCards.aspx.cs" Inherits="GiftCards" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
+
+    <link href="css/voucher-en.css" rel="stylesheet" type="text/css" />
+    <link href="css/dropDown.css" rel="stylesheet" type="text/css" />
+    <style>
+        div#CP_divCategory {padding: 0px;margin-bottom: 15px;}
+        #CP_divCategory ul {white-space: normal;}
+	    #CP_divCategory ul li{display:inline-block;margin:0 8px 8px 0}
+        #CP_divCategory ul li:last-child{margin:0 0px 0 0}
+        #CP_divCategory ul li a{text-decoration:none; color:#1a1441;font-size:13px;border:1px solid #ddd;padding:10px 15px;margin:0;display:inline-block;border-radius:10px;line-height:22px;}
+        #CP_divCategory ul li a:hover{color:#fff;background:#320D6D;}
+        #CP_divCategory ul li a.active{color:#fff;background:#320D6D;}
+        @media screen and (max-width:800px) {
+		    .wrap_giftcard ul li {width: 46%;margin: 2%;}
+		    #CP_divCategory ul{width:100%;display:block;text-align:center;overflow:auto;white-space:nowrap;margin:0 auto; padding-bottom: 10px;}
+		    .wrap_giftcard ul li {min-height: 225px;}
+		    .blue_button, .blue_button:hover { padding: 15px 0px!important; width: 90%;}
+        }
+    </style>
+    <script>javascript: void (0);
+        var pageSize = 9;
+        var pageTotal = 0;
+        var pageIndex = 1;
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+                GetRecords();
+            }
+        });
+
+        function GetRecords() {
+            pageIndex++;
+            if (pageIndex == 2 || pageIndex <= pageTotal) {
+                //$("#loader").show();
+                pageData(pageIndex);
+                //$("#loader").hide();
+            }
+        }
+
+        $(document.body).on('change', '#<%=ddlCountries.ClientID %>', function () {
+            var lstrCountryVal = $("#CP_ddlCountries").val();
+            //var lstrCategoryVal = $("#CP_ddlCategories").val();
+            var lstrCategoryVal = $("#CP_ddlCategories option:selected").text();
+            BindGiftCard(lstrCountryVal, lstrCategoryVal);
+        });
+
+        $(document.body).on('change', '#<%=ddlCategories.ClientID %>', function () {
+            var lstrCountryVal = $("#CP_ddlCountries").val();
+            //var lstrCategoryVal = $("#CP_ddlCategories").val();
+            var lstrCategoryVal = $("#CP_ddlCategories option:selected").text();
+            BindGiftCard(lstrCountryVal, lstrCategoryVal);
+        });
+
+        /*$(document).on("langSelectorEvent", {}, function (event, lang) {
+            var lstrCountryVal = $("#CP_ddlCountries").val();
+            var lstrCategoryVal = $("#CP_ddlCategories option:selected").text();
+            BindGiftCard(lstrCountryVal, lstrCategoryVal);
+        });*/
+
+        $(document).ready(function () {
+           <%-- $("#CP_divGiftCard").text("");
+            $("#voucher").niceScroll({
+                cursorcolor: "#e3443e",
+                cursoropacitymin: 0.3,
+                background: "#bbb",
+                cursorborder: "0",
+                autohidemode: false,
+                cursorminheight: 30
+            });--%>
+
+            $("#dnarr").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+            $("#CP_cssload-wrapper").show();
+            BindGiftCard("All", "All");
+        });
+
+        function BindGiftCard(lstrCountry, lstrCategory) {
+            pageIndex = 1;
+            $.ajax({
+                type: "POST",
+                url: "GiftCards.aspx/BindGiftCards",
+                data: "{skip:0,take:" + pageSize + ",country:'" + lstrCountry + "',category:'" + lstrCategory + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: true,
+                cache: false,
+                success: function (msg) {
+                    var total = msg.d.TotalRecords;
+                    if (total > 0) {
+                        $("#paging").text("");
+                        $("#CP_divGiftCard").html("");
+                        printGiftCardData(msg);
+                        $("#CP_cssload-wrapper").hide();
+                        pageTotal = Math.ceil(total / pageSize);
+                    }
+                    else {
+                        $("#CP_cssload-wrapper").hide();
+                        $("#CP_divGiftCard").text("");
+                        $("#paging").text("No records were found.");
+                    }
+                    $("#totalRecords").text("Total records: " + total);
+                },
+                error: function () {
+                    $("#CP_divGiftCard").text("");
+                    $("#paging").text("No records were found.");
+                    $("#totalRecords").text("");
+                    $("#CP_cssload-wrapper").hide();
+                }
+            });
+        }
+
+        // This function accepts a customer object
+        // and prints the results to the div element.
+        function printGiftCardData(msg) {
+            var gc = msg.d.GC;
+            var html = '<ul class="ulContent row">';
+
+            for (var i = 0; i < gc.length; i++) {
+
+                html += '<li class="col col-10 mx-auto col-md-3 mx-lg-2">';
+                //html += '';
+                html += '<div class="voucher colorfull_border">';
+                html += '<img class="vouchercard" src="' + gc[i].ImageUrls[0] + '" alt="" class="img-fluid" style="width:100%;"></div>';
+                html += '<div class="card_detail pr-1 pl-1">';
+                html += '<h5>' + gc[i].Name + '</h5>';
+                html += '<p class="my-3"><span data-i18n="text-from" class="space d-none">' + $.i18n('text-from') + '</span>' + numberWithCommas(gc[i].Units[0].TotalPoints) + ' <span data-i18n="text-points">' + $.i18n('text-points') + '</span></p>';
+                html += '</div>';
+                html += '</div>';
+                //html += '</a>';
+                html += '<a cardId="' + gc[i].GiftCardId + '" onclick="return redirectGiftCardDetails(this)" href="#" class="txt-vou-Redeem align-bottom purple-btn" data-i18n="btn-redeem-now">' + $.i18n('btn-redeem-now') +'</a>';
+                html += '</li>';
+            }
+
+
+            html += '</ul>';
+            $("#CP_divGiftCard").append(html);
+        }
+
+        function redirectGiftCardDetails(e) {
+            window.location.href = 'GiftCardPurchase.aspx?CardId=' + $(e).attr('cardId') + '&Locale=' + $.i18n().locale;
+            return false;
+
+        }
+
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+        function pageData(e) {
+            var skip = e == 1 ? 0 : (e * pageSize) - pageSize;
+            var CountryVal = $("#CP_ddlCountries").val();
+            var CategoryVal = $("#CP_ddlCategories option:selected").text();
+            //var CountryVal = "";
+            //var CategoryVal = "";
+
+            $.ajax({
+                type: "POST",
+                url: "GiftCards.aspx/BindGiftCards",
+                data: "{skip:" + skip + ",take:" + pageSize + ",country:'" + CountryVal + "',category:'" + CategoryVal + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: true,
+                cache: false,
+                success: function (msg) {
+
+                    var total = msg.d.TotalRecords;
+
+                    if (total > 0) {
+                        printGiftCardData(msg);
+                    }
+                    else {
+                        $("#CP_divGiftCard").html("");
+                        $("#paging").text("No records were found.");
+                    }
+                }
+
+            });
+            $("#CP_cssload-wrapper").hide();
+            return false;
+        }
+        $(".InstoreCategory").click(function () {
+           
+            var ProductName = $('#txtOfferName').val();
+            var CategoryId = $(this).attr('id')
+            var Sort = "";
+            var Terms = "";
+            var PageNo = 1;
+
+            $("#hfCategoryID").val(CategoryId);
+
+            SearchProducts(CategoryId, ProductName, Sort, Terms, PageNo);
+
+            $(".InstoreCategory").removeClass("active");
+            $(this).addClass("active");
+
+           // alert(CategoryId);
+            
+        });
+    </script>
+
+   
+
+
+    <section>
+     <div class="banner">
+                <img src="../images/voucher-bg.jpg" />
+
+            </div>
+    <div class="container giftCards">
+        <div class="row">
+        <div class="col-md-10 col-12 mx-auto">
+                    <h2 class="sec-section-heading text-center">Vouchers</h2>
+                    <p class="sec-section-text text-center py-4 d-none"> You can now redeem your points for a Voucher of your choice. Choose from a range of options from travel to shopping, and make gifting even more special!</p>
+                    </div>
+        <h2 data-i18n="voucher-redeed-partners" class="d-none"></h2>
+        <h3 data-i18n="voucher-domore"  class="d-none">Do more with your loyalty points!</h3>
+        <div id="article" class="row">
+         
+            <div class="servindx col-md-12">
+                <div id="voucher" class="tabbertabVoucher voucher_cnf">
+                  
+
+                    <!--new html-->
+
+                    <div id="DivSubmitContent" runat="server">
+                        <div class="container my-5">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-4">
+                            <label class="cus-text">Country: </label>
+                            <asp:DropDownList ID="ddlCountries" runat="server" Style="width: 100%; margin-right: 3%;padding: 10px;"></asp:DropDownList>
+                                     </div>
+                                  <div class="col-md-4">
+                            <label class="cus-text">Category: </label>
+                            <asp:DropDownList ID="ddlCategories" runat="server" Style="width: 100%;padding: 10px;"></asp:DropDownList>
+                                       </div>
+                                </div>
+                            </div>
+                        <div class="container" id="divCategory" runat="server">
+                        </div>
+                        <div class="wrap_giftcard container" id="divGiftCard" runat="server">
+                        </div>
+                        <div id="paging"></div>
+                       <%-- <div class="txtBtn"><span id="totalRecords"></span></div>--%>
+                    </div>
+                </div>
+                <!--end of new html-->
+            </div>
+            <div class="clr">
+            </div>
+        </div>
+            </div>
+</div>
+    </section>
+</asp:Content>

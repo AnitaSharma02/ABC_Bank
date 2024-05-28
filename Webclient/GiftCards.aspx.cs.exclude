@@ -1,0 +1,307 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Giift.Integration.Client.Entities;
+using Giift.Integration.Client.Helper;
+using Core.Platform.Helper.ProgramName;
+using Core.Platform.ProgramMaster.Entities;
+using Framework.EnterpriseLibrary.Adapters;
+using System.Configuration;
+using ABC.Model;
+using System.Web.Services;
+using System.Security.Cryptography;
+using System.IO;
+using System.Text;
+using Newtonsoft.Json;
+using System.Text.RegularExpressions;
+using System.Web.Script.Serialization;
+
+public partial class GiftCards : System.Web.UI.Page
+{
+    ABCModel lobjmodel = new ABCModel();
+    public static List<GiftCard> lobjListOfGC = null;
+    private static readonly Regex lrgxWhitespace = new Regex(@"\s+");
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            if (!Page.IsPostBack)
+            {
+                lobjListOfGC = null;
+
+                LoggingAdapter.WriteLog("GiftCards Page_Load Request-");
+                BindCountry();
+                BindCategory();
+            }
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("GiftCards Page_Load Ex-" + ex.InnerException + ex.StackTrace + ex.Message);
+        }
+    }
+    public static string ReplaceWhitespace(string input, string replacement)
+    {
+        return lrgxWhitespace.Replace(input, replacement);
+    }
+    public void BindCountry()
+    {
+        CHelper lobjCHelper = new CHelper();
+        List<Countries> lobjListOfCountries = new List<Countries>();
+        lobjListOfCountries = lobjCHelper.GetCountries();
+
+        if (lobjListOfCountries != null)
+            LoggingAdapter.WriteLog("BindCountry Count-" + lobjListOfCountries.Count);
+
+        ddlCountries.DataSource = lobjListOfCountries;
+        ddlCountries.DataTextField = "CountryName";
+        ddlCountries.DataValueField = "CountryCode";
+        ddlCountries.DataBind();
+        ddlCountries.Items.Insert(0, "All");
+
+    }
+
+    public void BindCategory()
+    {
+        CHelper lobjCHelper = new CHelper();
+        List<Categories> lobjListOfCategories = new List<Categories>();
+
+        lobjListOfCategories = lobjCHelper.GetCategories();
+
+        if (lobjListOfCategories != null)
+            LoggingAdapter.WriteLog("BindCategory Count-" + lobjListOfCategories.Count);
+
+        ddlCategories.DataSource = lobjListOfCategories;
+        ddlCategories.DataValueField = "Id";
+        ddlCategories.DataTextField = "CategoryName";
+        ddlCategories.DataBind();
+        ddlCategories.Items.Insert(0, "All");
+        StringBuilder lsbCategories = new StringBuilder();
+        //LoggingAdapter.WriteLog("lobjListOfCategories - " + (new JavaScriptSerializer()).Serialize(lobjListOfCategories));
+        lsbCategories.Append("<ul>");
+        lsbCategories.Append("<li><a class='agccategory active' href='javascript:void(0);' onclick='BindGiftCard(\"All\",\"All\");'>All</a></li>");
+        string lsbSubCategories = string.Empty;
+        foreach (ListItem item in ddlCategories.Items)
+        {
+            if (item.Value.ToString() == "0")
+            {
+                lsbSubCategories = lsbSubCategories.ToString().Trim(',');
+                lsbCategories = lsbCategories.Replace("$SubCategories$", Convert.ToString(lsbSubCategories));
+                lsbSubCategories = string.Empty;
+                item.Attributes.Add("Style", "color:maroon;background-color:#dfdfdf;font:Bold");
+                item.Attributes.Add("Disabled", "true");
+                lsbCategories.Append("<li><a class='agccategory gccategory" + lrgxWhitespace.Replace(item.Text, "") + "' href='javascript:void(0);' onclick='$(\".agccategory\").removeClass(\"active\"); $(\".gccategory" + lrgxWhitespace.Replace(item.Text, "") + "\").addClass(\"active\");BindGiftCard(\"All\",\"$SubCategories$\");'>" + item.Text + "</a></li>");
+            }
+            else if(item.Value.ToLower() != "all")
+            {
+               lsbSubCategories += ReplaceWhitespace(item.Text, "") + ",";
+            }
+            //ReplaceWhitespace(lsbSubCategories,"");
+        }
+        if (!string.IsNullOrEmpty(lsbSubCategories))
+        {
+            lsbSubCategories = lsbSubCategories.ToString().Trim(',');
+            lsbCategories = lsbCategories.Replace("$SubCategories$", Convert.ToString(lsbSubCategories));
+        }
+        //lsbSubCategories = string.Empty;
+        //lsbCategories = lsbCategories.Replace("$SubCategories$", "");
+        lsbCategories.Append("</ul>");
+        divCategory.InnerHtml = Convert.ToString(lsbCategories);
+    }
+
+    public List<GiftCard> GetListOfGiftCardsNew(string pstrCountry, string pstrCategory)
+    {
+        CHelper lobjCHelper = new CHelper();
+        AuthenticationResponse lobjAuthenticationResponse = null;
+
+        try
+        {
+            string lstrProgramName = ProgramHelper.ProgramName();
+            ProgramDefinition lobjProgramDefinition = lobjmodel.GetProgramDetails(lstrProgramName);
+            string lstrCurrency = lobjmodel.GetDefaultCurrency();
+
+            string lstrGCUserName = Convert.ToString(ConfigurationManager.AppSettings["GCUserName"]);
+            string lstrGCPassword = Convert.ToString(ConfigurationManager.AppSettings["GCPassword"]);
+            string lstrGCCurrency = Convert.ToString(ConfigurationManager.AppSettings["GCCurrency"]);
+
+            lobjAuthenticationResponse = lobjCHelper.GetAuthenticationToken(lstrGCUserName, lstrGCPassword);
+            if (lobjAuthenticationResponse != null)
+            {
+                HttpContext.Current.Session["AuthToken"] = lobjAuthenticationResponse.AuthToken;
+
+                double Pointrate = lobjmodel.GetProgramRedemptionRate(lstrCurrency, RedemptionCodeKeys.AIR.ToString(), lobjProgramDefinition.ProgramId);
+
+                LoggingAdapter.WriteLog("Point Rate =" + Pointrate);
+
+                GiftCardListRequest lobjGiftCardListRequest = new GiftCardListRequest();
+                lobjGiftCardListRequest.AuthToken = lobjAuthenticationResponse.AuthToken;
+                lobjGiftCardListRequest.Username = Convert.ToString(ConfigurationManager.AppSettings["GCUserName"]);
+                lobjGiftCardListRequest.Password = Convert.ToString(ConfigurationManager.AppSettings["GCPassword"]);
+                lobjGiftCardListRequest.PointRate = lobjmodel.GetProgramRedemptionRate(lstrCurrency, RedemptionCodeKeys.AIR.ToString(), lobjProgramDefinition.ProgramId);
+                lobjGiftCardListRequest.CardType = Convert.ToString(ConfigurationManager.AppSettings["GCType"]);
+                lobjGiftCardListRequest.Currency = lstrGCCurrency;
+                lobjGiftCardListRequest.CategoryExclude = "lounges";
+                lobjGiftCardListRequest.ServiceType = Giift.Integration.Master.Entities.ServiceType.GIIFTCARD;
+
+                GiftCardListResponse lobjGiftCardListResponse = new GiftCardListResponse();
+                GiftCardListResponse lobjCompleteGiftCardList = new GiftCardListResponse();
+
+                lobjCompleteGiftCardList = lobjCHelper.GetGiftCardList(lobjGiftCardListRequest);
+
+                LoggingAdapter.WriteLog("GetListOfGiftCardsNew Start");
+                //if (!CachingAdapter.ContainsKey("GiftCardList"))
+                //{
+                //    LoggingAdapter.WriteLog("GetListOfGiftCardsNew Fetch New");
+                //    lobjCompleteGiftCardList = lobjCHelper.GetGiftCardList(lobjGiftCardListRequest);
+
+                //    if (lobjCompleteGiftCardList != null && lobjCompleteGiftCardList.GiftCards.Count > 0)
+                //    {
+                //        CachingAdapter.Add("GiftCardList", lobjCompleteGiftCardList);
+                //    }
+                //}
+                //else
+                //{
+                //    LoggingAdapter.WriteLog("GetListOfGiftCardsNew Fetch from Cache");
+                //    lobjCompleteGiftCardList = CachingAdapter.Get("GiftCardList") as GiftCardListResponse;
+                //}
+
+                if (pstrCountry != "All")
+                {
+                    LoggingAdapter.WriteLog("GetListOfGiftCardsNew pstrCountry != All");
+                    GiftCardListResponse lobjGiftCardListResponseCountryWise = new GiftCardListResponse();
+
+                    lobjGiftCardListResponseCountryWise.GiftCards = lobjCompleteGiftCardList.GiftCards.FindAll(lobj => lobj.Country.ToLower().Equals(pstrCountry.ToLower()));
+
+                    if (pstrCategory != "All")
+                    {
+                        LoggingAdapter.WriteLog("GetListOfGiftCardsNew pstrCategory != All");
+                        lobjGiftCardListResponse.GiftCards = lobjGiftCardListResponseCountryWise.GiftCards.FindAll(lobj => lobj.Categories[0].ToLower().Equals(pstrCategory.ToLower()));
+                    }
+                    else
+                    {
+                        LoggingAdapter.WriteLog("GetListOfGiftCardsNew pstrCategory == All");
+                        lobjGiftCardListResponse.GiftCards = lobjGiftCardListResponseCountryWise.GiftCards;
+                    }
+                }
+                else
+                {
+                    LoggingAdapter.WriteLog("GetListOfGiftCardsNew pstrCountry == All");
+                    if (pstrCategory != "All")
+                    {
+                        List<GiftCard> lobjGiftCardsList = new List<GiftCard>();
+                        //LoggingAdapter.WriteLog("GetListOfGiftCardsNew pstrCategory != All 2");
+                        //lobjGiftCardListResponse.GiftCards = lobjCompleteGiftCardList.GiftCards.FindAll(lobj => lobj.Categories[0].ToLower().Equals(pstrCategory.ToLower()));
+                        foreach (var lstrCategory in pstrCategory.ToLower().Split(','))  
+                        {
+                            LoggingAdapter.WriteLog("lobjCompleteGiftCardList - " + (new JavaScriptSerializer()).Serialize(lobjCompleteGiftCardList));
+                            GiftCard lobjGiftCards = new GiftCard();
+                            lobjGiftCards = lobjCompleteGiftCardList.GiftCards.FindAll(lobj => lobj.Categories.Any(lobjCategories => ReplaceWhitespace(lobjCategories,"").ToLower().Equals(lstrCategory))).Distinct().FirstOrDefault();
+                            if (lobjGiftCards != null)
+                            {
+                                lobjGiftCardsList.Add(lobjGiftCards);
+                            }
+                        }
+                        lobjGiftCardListResponse.GiftCards = lobjGiftCardsList;
+                    }
+                    else
+                    {
+                        LoggingAdapter.WriteLog("GetListOfGiftCardsNew pstrCategory == All 2");
+                        lobjGiftCardListResponse.GiftCards = lobjCompleteGiftCardList.GiftCards;
+                    }
+                }
+
+                if (lobjGiftCardListResponse != null && lobjGiftCardListResponse.GiftCards.Count > 0)
+                {
+                    return lobjGiftCardListResponse.GiftCards;
+                }
+                else
+                {
+                    LoggingAdapter.WriteLog("GiftCards GetListOfGiftCardsNew lobjGiftCardListResponse response is null.");
+                    return null;
+                }
+            }
+            else
+            {
+                LoggingAdapter.WriteLog("GiftCards GetListOfGiftCardsNew GetAuthenticationToken response is null.");
+                return null;
+            }
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("GiftCards GetListOfGiftCardsNew Exception: " + ex.Message + ex.StackTrace + ex.InnerException);
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public static GiftCardData BindGiftCards(int skip, int take, string country, string category)
+    {
+        LoggingAdapter.WriteLog("BindGiftCards Request " + skip + "-" + take + "-" + country + "-" + category);
+        GiftCards lobjGiftCards = new GiftCards();
+        //if (lobjListOfGC == null || lobjListOfGC.Count < 0)
+        if (skip == 0)
+        {
+            LoggingAdapter.WriteLog("BindGiftCards Request skip == 0");
+            lobjListOfGC = null;
+            lobjListOfGC = new List<GiftCard>();
+            lobjListOfGC = lobjGiftCards.GetListOfGiftCardsNew(country, category);
+            LoggingAdapter.WriteLog("BindGiftCards Request GetListOfGiftCardsNew Response");
+        }
+        LoggingAdapter.WriteLog("BindGiftCards Request skip == 0 Complete");
+        var data = new GiftCardData();
+        LoggingAdapter.WriteLog("BindGiftCards Request data");
+
+        if (lobjListOfGC != null)
+        {
+            var query = (from gc in lobjListOfGC
+                         select gc)
+                                .Skip(skip)
+                                .Take(take)
+                                .ToList();
+            LoggingAdapter.WriteLog("BindGiftCards Request lobjListOfGC != null");
+            data.GC = query;
+            data.TotalRecords = (from p in lobjListOfGC
+                                 select p).Count();
+            LoggingAdapter.WriteLog("BindGiftCards Request data.TotalRecords");
+            return data;
+        }
+        else
+        {
+            data.GC = null;
+            data.TotalRecords = 0;
+
+            return data;
+        }
+    }
+
+    private static string Encrypt(string clearText)
+    {
+        string EncryptionKey = Convert.ToString(ConfigurationManager.AppSettings["GCEncryptionKey"]);
+        byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
+        using (Aes encryptor = Aes.Create())
+        {
+            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+            encryptor.Key = pdb.GetBytes(32);
+            encryptor.IV = pdb.GetBytes(16);
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(clearBytes, 0, clearBytes.Length);
+                    cs.Close();
+                }
+                clearText = Convert.ToBase64String(ms.ToArray());
+            }
+        }
+        return clearText;
+    }
+
+}
+
+public class GiftCardData
+{
+    public List<GiftCard> GC { get; set; }
+    public int TotalRecords { get; set; }
+}

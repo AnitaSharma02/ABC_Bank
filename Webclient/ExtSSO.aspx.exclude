@@ -1,0 +1,86 @@
+﻿<%@ Page Title="ExtSSO" Language="C#" AutoEventWireup="true" CodeFile="ExtSSO.aspx.cs" Inherits="ExtSSO" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Welcome to Siddhartha Bank</title>
+</head>
+<body>
+    <link href="/Css/main.css" rel="stylesheet" />
+    <form id="form1" runat="server">
+        <style>
+            *{
+                margin:0; padding:0;
+                box-sizing:border-box;
+            }
+            .BottomText{
+                text-align: center;
+                position: absolute;
+                bottom: 30px;
+                width: 100%;
+                font-size: 1.5rem;
+            }
+            #lblMessage{
+                font-size: 3rem;
+                position: absolute;
+                width: 100%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                top: 50%;
+            }
+            @media(min-width:992px){
+                #lblMessage{
+                font-size: 1.5rem;
+            }
+                 .BottomText{
+                font-size: 1rem;
+            }
+            }
+        </style>
+        <div class="page-container">
+            <div class="MainData_container">
+                <div class="common_div">
+                    <div class="Toplinks">
+                    </div>
+                </div>
+                <%--<div class="common_div">
+                    <div class="left_logo">
+                        <img src="images/logo.svg" alt="Siddhartha Logo" style="border: 0;" />
+                    </div>
+                </div>--%>
+                <div id="inner-page-area">
+                    <div class="content-page-top">
+                    </div>
+                    <div class="common_div">
+                        <div class="content-page-left-shadow">
+                        </div>
+                        <div class="grid_24">
+                            <div class="loginMainupperDiv">
+                                <div class="common_div" style="margin-top: 5%;">
+                                    <div style="width: 100%; height: 280px; text-align: center; color: #707070; font-size: 16px;">
+                                        <div id="divErrorMsg" runat="server" style="border: none; text-align: center; width: 100%; display: none;">
+                                            <strong>
+                                                <asp:Label ID="lblMessage" runat="server" Text="Label"></asp:Label></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-page-right-shadow">
+                        </div>
+                    </div>
+                </div>
+                <div class="common_div">
+                    <div class="BottomInstruction">
+                        <div class="BottomText">
+                            Copyright © 2023 NIC Asia. All rights reserved.<br />
+                           <%-- This site is best viewed with Internet Explorer 8.0 or higher; Firefox or Google
+                            Chrome 2.0 or higher at a minimum screen resolution of 1024x768--%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

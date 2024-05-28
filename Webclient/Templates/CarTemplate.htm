@@ -1,0 +1,59 @@
+﻿<textarea style="display: none" id="CarTemplate">
+        <table class="Hotelcontainer" cellpadding="0" cellspacing="0"  border="0" width="100%">
+              {#foreach $T as record}
+              <tr class="car1">
+                  <td class="carTd">
+                  <input type="hidden" id="hdnCarClass{SetCarClass($T.record.Vehicle[0].group)}" value="{SetCarClass($T.record.Vehicle[0].group)}" />
+                  <input type="hidden" id="hdnCarCondition{$T.record.Vehicle[0].aircon}" value='{#if $T.record.Vehicle[0].aircon == "Yes"}Air Conditioning{#else}Non-Air Conditioning{#/if}' />
+                  <input type="hidden" id="hdnTransmission{$T.record.Vehicle[0].automatic}" value="{$T.record.Vehicle[0].automatic}" />
+                    <div class="car-list">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="CntBorder">
+                          <tr>
+                              <td class="flight-data">
+                                  <div class="carImg">
+                                      <img src='{$T.record.Vehicle[0].LargeImageURL}' width="135" height="85" onError="this.onerror=null;this.src='images/no-image.png';" />
+                                  </div>
+                                  <div class="carHlr">
+                                      <div class="miles-car">
+                                          <h2 class="robot carName">{$T.record.Vehicle[0].Name}</h2>
+                                          <div class="tPoints">
+                                              <span class="miles">{$T.record.Price[0].TotalPoints}</span> <span class="txtPoints" data-i18n="car-points-label">Points</span>
+                                          </div>
+                                      </div>
+
+                                  </div>
+                                  <div class="clr"></div>
+                                  <div class="carFeat mobNon">
+                                      <ul>
+                                          <li class="featDtl"> Car Class: <span id="divCarClass{$T.record.Vehicle[0].id}">{SetCarClass($T.record.Vehicle[0].group)}</span></li>
+                                          <li class="featDtl"><img src="images/icon-plane-sml.png" />&nbsp;{#if $T.record.Route[0].PickUp[0].onAirport == "no"} At Airport&nbsp; {#else} Off Airport{#/if}</li>
+                                          <li class="featDtl"><img src="Images/icon_fuelpolicy.png" alt="fuel" />&nbsp;{SetFuelPolicy($T.record.Vehicle[0].fuelPolicy)}</li>
+                                          <li class="featDtl">{#if $T.record.Vehicle[0].automatic == "Manual"}<img id="Automatic" src='Images/Manual.png' />Manual{#else}<img id="Img1" src='Images/Automatic.png' />Automatic{#/if}</li>
+                                          <li class="featDtlsmall"><img src="Images/Person_Icon.png" height="16" />{$T.record.Vehicle[0].seats}</li>
+                                          <li class="featDtlsmall"><img src="Images/Window_Icon.png" style="padding-top:3px;" /> {$T.record.Vehicle[0].doors}dr</li>
+                                          <li class="featDtlsmall"><img src="Images/AC_Car_Icon.png" />{#if $T.record.Vehicle[0].aircon == "Yes"} AC {#else} N-AC {#/if}</li>
+                                          <div class="clr"></div>
+                                      </ul>
+                                  </div>
+                                  <div class="btnBlk">
+                                      <a href="javascript:void(0);" onclick='return ViewCarInfo(&quot;{$T.record.Route[0].PickUp[0].id}&quot;)' data-i18n='footer-terms-conditions'>Terms and Conditions</a>
+                                      <div class="btn">
+                                          <input type="hidden" id="hdnReferenceId" value='{$T.record.Vehicle[0].id}' />
+                                          <button class="blue_button" onclick="var varReturn=gotoBooking(this);event.returnValue=varReturn; (event.preventDefault) ? event.preventDefault() : event.returnValue = false ;return varReturn;" data-i18n="hotel-book-now">Book Now</button>
+                                      </div>
+                                      <div class="clr"></div>
+                                  </div>
+                                  <div class="clr"></div>
+
+                                  <div class="jsondata">
+                                      <input type="hidden" value="{$T.record.Price[0].TotalPoints}" />
+                                  </div>
+                              </td>
+                          </tr>
+                        </table>
+                    </div>
+                  </td>
+              </tr>        
+              {#/for}
+        </table>
+      </textarea>

@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+  <configSections>
+    <sectionGroup name="system.web.extensions" type="System.Web.Configuration.SystemWebExtensionsSectionGroup, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
+      <sectionGroup name="scripting" type="System.Web.Configuration.ScriptingSectionGroup, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
+        <section name="jsonSerialization" type="System.Web.Configuration.ScriptingJsonSerializationSection, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" allowDefinition="Everywhere" />
+        <section name="profileService" type="System.Web.Configuration.ScriptingProfileServiceSection, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" allowDefinition="MachineToApplication" />
+        <section name="authenticationService" type="System.Web.Configuration.ScriptingAuthenticationServiceSection, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" allowDefinition="MachineToApplication" />
+        <section name="roleService" type="System.Web.Configuration.ScriptingRoleServiceSection, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" allowDefinition="MachineToApplication" />
+        <sectionGroup name="webServices" type="System.Web.Configuration.ScriptingWebServicesSectionGroup, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
+        </sectionGroup>
+      </sectionGroup>
+    </sectionGroup>
+    <section name="securitySwitch" type="SecuritySwitch.Configuration.Settings, SecuritySwitch" requirePermission="false" />
+    <section name="DataAccessSettings" type="Framework.EnterpriseLibrary.DataAccess.Entities.DataAccessSettings, Framework.EnterpriseLibrary.DataAccess.Entities" />
+    <section name="exceptionHandling" type="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.ExceptionHandlingSettings, Microsoft.Practices.EnterpriseLibrary.ExceptionHandling" />
+    <section name="loggingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LoggingSettings, Microsoft.Practices.EnterpriseLibrary.Logging" />
+    <section name="cachingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.CacheManagerSettings, Microsoft.Practices.EnterpriseLibrary.Caching" />
+  </configSections>
+  
+    <appSettings>
+      <add key="Version" value="1.0" />
+      <add key="ProgramName" value="CBQREWARDS" />
+      <add key="Culture" value="EN" />
+      <add key="SupplierId" value="1" />
+      <add key="MerchantName" value="INFINIA" />
+      <add key="SecretKey" value="5c4d53fad49e52f871a2bb9f1a7a1234" />
+      <add key="MerchantId" value="001" />
+
+      <add key="MerchantUserName" value="SU5GSU5JQQ==" />
+      <add key="MerchantPassword" value="cEBzc3dvcmQxMg==" />
+
+      <add key="SourceCurrency" value="QAR" />
+      <add key="InfiMerchantId" value="0038" />
+      <add key="InfiMerchantName" value="CBQREWARDS" />
+      <add key="DOBAirlineCode" value="SG,RQ,XY,TR,G9,AK,FR,3O,D7,QZ,LS,J9,4U,TT,B6,EI,FD,WW,5J,XR,VC,JE,E3,7H,WS,8J,JQ,3K,ZL,VY,AB,PC,DE,X5,5W,L9,LZ,BE,F7,RE,I9,ML,AP,SZ,L9,KF,BV,WX,T3,FC,FZ,TCX,F9,NM,8N,O6,JZ,BY,HV,IV,WJ,AF,MT,X3,JW,IG,SI,FL,VB,3L,2L,FY,BN,U2,SA,XC,W6,3J,RI,VF,BL,2P,DG,OD,BA,SQ,DL,EK,PK,TK,UA,KL,AA,US,LH,AC,BD,EY,AI,QR,AZ,KU,CI,GF,MU,MS,MH,QF,UL,LX,AY,TO" />
+      <add key="PassportIssueDateAirlineCode" value="XY" />
+      <add key="PassportExpiryDateAirlineCode" value="SG,TR,AK,D7,FD,TT,5J,0B,FY,FL,RQ,XC,W6,3J,RI,VF,BL,DG,XY,OD" />
+      <add key="PassportIssuingCountryAirlineCode" value="SG,TR,TT,5J,0B,FY,FL,RQ,XC,W6,3J,RI,VF,BL,DG,XY,OD,SV" />
+      <add key="PassportNoAirlineCode" value="SG,TR,TT,5J,0B,FY,FL,RQ,XC,W6,3J,RI,VF,BL,DG,XY,OD" />
+      <add key="ExcesProtection" value="Full Protection" />
+      <add key="FlightOffset" value="25" />
+      <add key="RefreshCacheUN" value="admin" />
+      <add key="RefreshCachePWD" value="admin" />
+
+
+
+
+
+      <add key="RefererId" value="36" />
+      <add key="RefererName" value="UUlCUkVXQVJEUw==" />
+      <add key="RefererPassword" value="UEBzc3dvcmQxMg==" />
+
+
+
+
+
+      <add key="VoucherURL" value="http://www..com/Vouchers/" />
+      <add key="DebugLogsCategory" value="DebugLogs" />
+      <add key="IsAuthentication" value="N" />
+      <add key="TotalPageCount" value="10" />
+      <add key="LBMSEMAILTO" value="abhishek.tambe@infiniasns.com" />
+
+      <add key="InfiVoucherSuccessMsg" value="Your InfiVoucher transaction is successful.please select continue to procced to Booking." />
+      <add key="IVSecretKey" value="601899D5-3794-43B9-89F6-FB3102945C19" />
+      <add key="IVMerchantId" value="0003" />
+      <add key="IVMerchantName" value="IVQARREWARDS" />
+      <add key="CallBackURL" value="http://www..com/PaymentResponse.aspx" />
+
+      <add key="LBMSRedirectionUrl" value="http://45.114.140.244/LBMSRedirection.aspx" />
+
+
+
+      <!-- <add key="ExtMerchantId" value="001" />
+    <add key="ExtMerchantPassword" value="p@ssword12" />-->
+
+
+      <add key="AnalyticsMainPage" value="DomIntSpendReport.aspx" />
+      <add key="AnalyticsRedirectURL" value="http://www..com/ProgramAnalytics.aspx" />
+      <add key="AnalyticsCallBackURL" value="http://www..com/LBMS/AnalyticsResponse.aspx" />
+      <add key="LBMsRedirectURL" value="http://45.114.140.244/lbms/login.aspx" />
+
+
+      <!-- <add key="SMTPUsername" value="info@infiniasns.info" />
+    <add key="SMTPPassword" value="P@ss1234#" />-->
+
+
+      <add key="SMTPPort" value="25" />
+      <add key="SMTPServer" value="69.73.180.161" />
+      <add key="MailFrom" value="info@infiniasns.info" />
+      <add key="MailTo" value="dilip.giri@infiniasns.com,shashwat.tiwari@infiniasns.com,abhishek.singh@infiniasns.com" />
+      <add key="MailSubject" value="Accrual report request" />
+      <add key="ENABLESSL" value="N" />
+      <add key="EmailMsg" value="Thank you Accrual report will be emailed to you." />
+      <add key="TimeFrom" value="900" />
+      <add key="TimeTo" value="1900" />
+      <add key="ChildMarkup" value="1" />
+      <add key="InfantMarkup" value="1" />
+
+      <add key="IsMemberActivityByRelationRef" value="Y" />
+
+      <!--<add key="EXTSSOMerchantId" value="100100" />
+    <add key="EXTSSOMerchantPassword" value="p@ssword12" />-->
+
+      <add key="TestRequestData" value="100100|p@ssword12|987654321||StatementSummary.aspx|||" />
+      <add key="RedirectURL" value="https://45.114.140.244/ExtSSO.aspx" />
+      <add key="ConfiguredURL" value="https://45.114.140.244/TestRequest.aspx" />
+      <add key="ConfiguredEmailID" value="nitin.mohite@infiniasns.com" />
+      <add key="InfishopURL" value="http://localhost:52699/Webclient/infishop/HomePageWithLogin/" />
+      <add key="InfishopDefaultURL" value="http://localhost:52699/Webclient/infishop/" />
+      <add key="InfishopMerchantId" value="100100" />
+      <add key="InfishopMerchantPwd" value="cWliQHFpYmluZmlzaG9w" />
+      <add key="InfishopMerchantUserName" value="UUlCSU5GSVNIT1A=" />
+      <add key="PageIndex" value="0" />
+      <add key="Pagesize" value="15" />
+      <add key="SessionMinutes" value="2"/>
+      <add key="IsResetPasswordWithOTP" value="N"/>
+      <add key="LBMSPasswordExpiration" value="45"/>
+      <add key="LBMSPasswordPolicy" value="^(?=.{8,})(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%*()?]).*$"/>
+      <add key="PasswordReuseAttempt" value="5"/>
+      <add key="AEDPointRate" value="0.01"/>
+      <add key="IsResetPasswordWithPWD" value="N" />
+      <add key="ManualTxnEmailTo" value="abhishek.tambe@infiniasns.com"/>
+      <add key="ProgramCurrency" value="CBQREWARDS"/>
+      <add key="ExpiryMinutes" value="30"/>
+      <add key ="ACTIVATEEMAIL" value="TRUE"/>
+      <add key="vs:EnableBrowserLink" value="false"/>
+      <add key="recaptcha-public-key" value="6LdejjoUAAAAAAxKgfawCDuLyodDJXc33YDInmiM" />
+      <add key="recaptcha-secret-key" value="6LdejjoUAAAAAEKmFSvkMeNI6DSLTNX9ivHuYSWh" />
+    </appSettings>
+  
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="ServiceSoap" closeTimeout="00:20:00" openTimeout="00:20:00" receiveTimeout="00:10:00" sendTimeout="00:20:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="524288" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="32" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="Transport">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_IRuleEngineService" closeTimeout="00:20:00" openTimeout="00:20:00" receiveTimeout="00:20:00" sendTimeout="00:20:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Streamed" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="32" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="">
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_IAdmin" closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="524288" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_IAirService" closeTimeout="00:20:00" openTimeout="00:20:00" receiveTimeout="00:10:00" sendTimeout="00:20:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Streamed" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="32" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="">
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_IHotelService" closeTimeout="00:03:00" openTimeout="00:03:00" receiveTimeout="00:10:00" sendTimeout="00:03:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_ICarService1" closeTimeout="00:03:00" openTimeout="00:10:00" receiveTimeout="00:10:00" sendTimeout="00:10:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="8192" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_IPGManager" closeTimeout="00:20:00" openTimeout="00:20:00" receiveTimeout="00:20:00" sendTimeout="00:20:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_IProgramInterface" closeTimeout="00:03:00" openTimeout="00:03:00" receiveTimeout="00:10:00" sendTimeout="00:03:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="">
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+        <binding name="BasicHttpBinding_IExchange" closeTimeout="00:01:00" openTimeout="00:10:00" receiveTimeout="00:10:00" sendTimeout="00:10:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="524288" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+
+        </binding>
+
+        <binding name="BasicHttpBinding_IVoucher" closeTimeout="00:20:00" openTimeout="00:20:00" receiveTimeout="00:10:00" sendTimeout="00:20:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="524288" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="32" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_IDepositAccount" closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="65536" maxBufferPoolSize="524288" maxReceivedMessageSize="65536" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_IVoucherRedemption" closeTimeout="00:03:00" openTimeout="00:03:00" receiveTimeout="00:10:00" sendTimeout="00:03:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="">
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_IReportService" closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="32" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="" />
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_IStoreZestService" closeTimeout="00:05:00" openTimeout="00:05:00" receiveTimeout="00:10:00" sendTimeout="00:05:00" allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered" useDefaultWebProxy="true">
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None" realm="">
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+        <binding name="BasicHttpBinding_IMember" closeTimeout="00:03:00"
+   openTimeout="00:03:00" receiveTimeout="00:10:00" sendTimeout="00:03:00"
+   allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard"
+   maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647"
+   messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered"
+   useDefaultWebProxy="true">
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647" maxArrayLength="2147483647"
+						maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None"
+							realm="">
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+        <binding name="BasicHttpBinding_ITransaction" closeTimeout="00:03:00"
+   openTimeout="00:03:00" receiveTimeout="00:10:00" sendTimeout="00:03:00"
+   allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard"
+   maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647"
+   messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered"
+   useDefaultWebProxy="true">
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647" maxArrayLength="2147483647"
+            maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None"
+              realm="">
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+        <binding name="BasicHttpBinding_IReport" closeTimeout="00:03:00"
+   openTimeout="00:03:00" receiveTimeout="00:10:00" sendTimeout="00:03:00"
+   allowCookies="false" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard"
+   maxBufferSize="2147483647" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647"
+   messageEncoding="Text" textEncoding="utf-8" transferMode="Buffered"
+   useDefaultWebProxy="true">
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647" maxArrayLength="2147483647"
+            maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" proxyCredentialType="None"
+              realm="">
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+
+      </basicHttpBinding>
+      <customBinding>
+        <binding name="ProvesioGatewaySoap12Binding" closeTimeout="00:10:00" sendTimeout="00:10:00">
+          <textMessageEncoding maxReadPoolSize="2147483647" maxWritePoolSize="2147483647" messageVersion="Soap12" writeEncoding="utf-8">
+            <readerQuotas maxDepth="32" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647" />
+          </textMessageEncoding>
+          <httpTransport manualAddressing="false" maxBufferPoolSize="2147483647" maxReceivedMessageSize="2147483647" allowCookies="false" authenticationScheme="Anonymous" bypassProxyOnLocal="false" hostNameComparisonMode="StrongWildcard" keepAliveEnabled="true" maxBufferSize="2147483647" proxyAuthenticationScheme="Anonymous" realm="" transferMode="Buffered" unsafeConnectionNtlmAuthentication="false" useDefaultWebProxy="true" />
+        </binding>
+      </customBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://localhost:8050/CEService/Service" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAdmin" contract="CommunicationEngineService.IAdmin" name="BasicHttpBinding_IAdmin" />
+      <endpoint address="https://dso.vectramind.com/api/service.asmx" binding="basicHttpBinding" bindingConfiguration="ServiceSoap" contract="SMSServices.ServiceSoap" name="ServiceSoap" />
+      <endpoint address="http://infinia.provesio.com:80/infiWebservice/services/ProvesioGateway.ProvesioGatewayHttpSoap12Endpoint/" binding="customBinding" bindingConfiguration="ProvesioGatewaySoap12Binding" contract="ProvisioService.ProvesioGatewayPortType" name="ProvesioGatewayHttpSoap12Endpoint" />
+      <endpoint address="http://localhost:8005/RulesEngine" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IRuleEngineService" contract="RulesEngineClient.IRuleEngineService" name="BasicHttpBinding_IRuleEngineService" />
+      <endpoint address="http://192.168.46.183:8007/AirService" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAirService" contract="CTServiceClient.IAirService" name="BasicHttpBinding_IAirService" behaviorConfiguration="SimpleEndPointBehavior" />
+      <endpoint address="http://192.168.46.183:8008/HotelService" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IHotelService" contract="CTHotelServiceClient.IHotelService" name="BasicHttpBinding_IHotelService" behaviorConfiguration="SimpleEndPointBehavior" />
+      <endpoint address="http://192.168.46.183:8010/CarService" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ICarService1" contract="CarServiceReference.ICarService" name="BasicHttpBinding_ICarService1" />
+      <endpoint address="http://localhost:7011/PGManager" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPGManager" contract="PGService.IPGManager" name="BasicHttpBinding_IPGManager" />
+      <endpoint address="http://localhost:7000/ProgramManager" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IProgramInterface" contract="InterfaceService.IProgramInterface" name="BasicHttpBinding_IProgramInterface" />
+      <endpoint address="http://localhost:5000/ExchangeManager" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IExchange" contract="InfiniaExchangeClientHelper.IExchange" name="BasicHttpBinding_IExchange" />
+      <endpoint address="http://localhost:7012/VoucherManager" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IVoucher" contract="VoucherService.IVoucher" name="BasicHttpBinding_IVoucher" />
+      <endpoint address="http://192.168.46.183:9000/DepositAccountService" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IDepositAccount" contract="DepositAccountServiceClient.IDepositAccount" name="BasicHttpBinding_IDepositAccount" />
+
+      <endpoint address="http://192.168.46.183:8000/ReportService" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IReportService" contract="IBEReportServiceClient.IReportService" name="BasicHttpBinding_IReportServi ce" />
+
+      <endpoint address="http://localhost:8005/LoyaltyManagement" binding="basicHttpBinding"
+          bindingConfiguration="BasicHttpBinding_IMember" contract="LoyaltyService.IMember"
+          name="BasicHttpBinding_IMember" />
+      <endpoint address="http://localhost:8005/LoyaltyManagement" binding="basicHttpBinding"
+          bindingConfiguration="BasicHttpBinding_ITransaction" contract="LoyaltyService.ITransaction"
+          name="BasicHttpBinding_ITransaction" />
+      <endpoint address="http://localhost:8005/LoyaltyManagement" binding="basicHttpBinding"
+          bindingConfiguration="BasicHttpBinding_IReport" contract="LoyaltyService.IReport"
+          name="BasicHttpBinding_IReport" />
+
+    </client>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior name="SimpleServiceBehavior">
+          <serviceDebug includeExceptionDetailInFaults="True" />
+        </behavior>
+      </serviceBehaviors>
+      <endpointBehaviors>
+        <behavior name="SimpleEndPointBehavior">
+          <dataContractSerializer maxItemsInObjectGraph="2147483647" />
+        </behavior>
+      </endpointBehaviors>
+    </behaviors>
+  </system.serviceModel>
+
+  <DataAccessSettings defaultDatabase="SQL" cachingPolicy="Cache Manager" exceptionPolicy="Default Exception Policy" commandTimeOut="600" />
+  <exceptionHandling configSource="Configs\exceptionHandlingConfiguration.config" />
+  <loggingConfiguration configSource="Configs\loggingConfiguration.config" />
+  <cachingConfiguration configSource="Configs\cachingConfiguration.config" />
+  <connectionStrings>
+    <add name="SQL" connectionString="Data Source=VINODKAMBLE\SQLEXPRESS;Initial Catalog=BOK;User Id=sa;Password=p@ssword12;" providerName="system.data.sqlclient" />
+  </connectionStrings>
+  <system.web.extensions>
+    <scripting>
+      <webServices>
+        <jsonSerialization maxJsonLength="90000000"></jsonSerialization>
+      </webServices>
+    </scripting>
+  </system.web.extensions>
+  <system.web>
+    <sessionState timeout="20">
+    </sessionState>
+    <machineKey validation="AES"/>
+    <httpCookies httpOnlyCookies="true" requireSSL="true" />
+     <compilation debug="true" targetFramework="4.0">
+      <assemblies>
+      </assemblies>
+      <buildProviders>
+        <add extension=".rdlc" type="Microsoft.Reporting.RdlBuildProvider, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      </buildProviders>
+    </compilation>
+
+    <customErrors mode="RemoteOnly" defaultRedirect="ErrorPage.aspx">
+      <error statusCode="403" redirect="ErrorPage.aspx" />
+      <error statusCode="404" redirect="ErrorPage.aspx" />
+    </customErrors>
+
+    <authentication mode="Windows" />
+    <pages validateRequest="false">
+      <controls>
+        <add tagPrefix="asp" namespace="System.Web.UI" assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add tagPrefix="asp" namespace="System.Web.UI.WebControls" assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add tagPrefix="telerik" namespace="Telerik.Web.UI" assembly="Telerik.Web.UI" />
+      </controls>
+    </pages>
+    <httpHandlers>
+      <remove path="*.asmx" verb="*" />
+      <add path="*.asmx" verb="*" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" validate="false" />
+      <add path="*_AppService.axd" verb="*" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" validate="false" />
+      <add path="ScriptResource.axd" verb="GET,HEAD" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" validate="false" />
+      <add path="Reserved.ReportViewerWebControl.axd" verb="*" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" validate="false" />
+      <add path="Telerik.Web.UI.WebResource.axd" type="Telerik.Web.UI.WebResource" verb="*" validate="false" />
+
+    </httpHandlers>
+    <httpModules>
+      <!--<add name="SecuritySwitch" type="SecuritySwitch.SecuritySwitchModule, SecuritySwitch" />-->
+      <add name="ScriptModule" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+    </httpModules>
+    <httpRuntime maxRequestLength="2147483647" executionTimeout="700" relaxedUrlToFileSystemMapping="true" />
+ 
+  </system.web>
+  <system.codedom>
+    <compilers>
+      <compiler language="c#;cs;csharp" extension=".cs" warningLevel="4" type="Microsoft.CSharp.CSharpCodeProvider, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <providerOption name="CompilerVersion" value="v4.0" />
+        <providerOption name="WarnAsError" value="false" />
+      </compiler>
+      <compiler language="vb;vbs;visualbasic;vbscript" extension=".vb" warningLevel="4" type="Microsoft.VisualBasic.VBCodeProvider, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <providerOption name="CompilerVersion" value="v4.0" />
+        <providerOption name="OptionInfer" value="true" />
+        <providerOption name="WarnAsError" value="false" />
+      </compiler>
+    </compilers>
+  </system.codedom>
+
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false" />
+    
+    <modules>
+      <!--<add name="SecuritySwitch" type="SecuritySwitch.SecuritySwitchModule, SecuritySwitch" />-->
+      <remove name="ScriptModule" />
+      <add name="ScriptModule" preCondition="managedHandler" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+    </modules>
+    <handlers>
+      <remove name="WebServiceHandlerFactory-Integrated" />
+      <remove name="ScriptHandlerFactory" />
+      <remove name="ScriptHandlerFactoryAppServices" />
+      <remove name="ScriptResource" />
+      <add name="ScriptHandlerFactory" verb="*" path="*.asmx" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+      <add name="ScriptHandlerFactoryAppServices" verb="*" path="*_AppService.axd" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+      <add name="ScriptResource" preCondition="integratedMode" verb="GET,HEAD" path="ScriptResource.axd" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+      <add name="ReportViewerWebControlHandler" preCondition="integratedMode" verb="*" path="Reserved.ReportViewerWebControl.axd" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    </handlers>
+    <httpCompression directory="%SystemDrive%\inetpub\temp\IIS Temporary Compresse d Files" minFileSizeForComp="256">
+      <staticTypes>
+        <add mimeType="text/*" enabled="true" />
+        <add mimeType="message/*" enabled="true" />
+        <add mimeType="application/x-javascript" enabled="true" />
+        <add mimeType="application/atom+xml" enabled="true" />
+        <add mimeType="application/xaml+xml" enabled="true" />
+        <add mimeType="*/*" enabled="false" />
+      </staticTypes>
+      <dynamicTypes>
+        <add mimeType="text/*" enabled="true" />
+        <add mimeType="message/*" enabled="true" />
+        <add mimeType="application/x-javascript" enabled="true" />
+        <add mimeType="*/*" enabled="false" />
+      </dynamicTypes>
+      <scheme name="gzip" dll="%Windir%\system32\inetsrv\gzip.dll" />
+    </httpCompression>
+    <staticContent>
+      <clientCache cacheControlMode="DisableCache" cacheControlMaxAge="00:00:15" />
+    </staticContent>
+    <defaultDocument>
+      <files>
+        <clear />
+        <add value="Index.aspx" />
+        <add value="AuthMember.aspx" />
+        <add value="Start.aspx" />
+        <add value="index.html" />
+        <add value="Default.htm" />
+        <add value="Default.asp" />
+        <add value="index.htm" />
+        <add value="default.aspx" />
+      </files>
+    </defaultDocument>
+    <httpProtocol allowKeepAlive="true">
+      <customHeaders>
+        <clear />
+        <add name="ETag" value="&quot;&quot;" />
+        <add name="Access-Control-Allow-Origin" value="*" />
+        <add name="Access-Control-Allow-Methods" value="GET,PUT,POST,DELETE,OPTIONS" />
+        <add name="Access-Control-Allow-Headers" value="Content-Type" />
+        <add name="Strict-Transport-Security" value="max-age=31536000"/>
+        <add name="X-Frame-Options" value="SAMEORIGIN" />
+      </customHeaders>
+    </httpProtocol>
+    <security>
+      <requestFiltering>
+        <verbs>
+          <add verb="TRACE" allowed="false" />
+          <add verb="DELETE" allowed="false" />
+          <add verb="PUT" allowed="false" />
+          <add verb="OPTIONS" allowed="false" />
+        </verbs>
+      </requestFiltering>
+    </security>
+
+  </system.webServer>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Extensions" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-1.1.0.0" newVersion="3.5.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Extensions.Design" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-1.1.0.0" newVersion="3.5.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>
+

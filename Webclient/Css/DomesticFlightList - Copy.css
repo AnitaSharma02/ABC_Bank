@@ -1,0 +1,1418 @@
+﻿@font-face {
+    font-family: RobotoThin;
+    src: url("../fonts/roboto/Roboto-Thin.ttf");
+}
+
+@font-face {
+    font-family: RobotoRegular;
+    src: url("../fonts/roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: RobotoLight;
+    src: url("../fonts/roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: RobotoMedium;
+    src: url("../fonts/roboto/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: RobotoBold;
+    src: url("../fonts/roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: RobotoBlack;
+    src: url("../fonts/roboto/Roboto-Black.ttf");
+}
+
+:root {
+    --thin: RobotoThin;
+    --light: RobotoLight;
+    --regular: RobotoRegular;
+    --medium: RobotoMedium;
+    --semibold: "";
+    --bold: RobotoBold;
+    --extrabold: "";
+    --black: RobotoBlack;
+    --primary-colour: #e5a812;
+    --secondary-colour: #000;
+    --bg-section: #F2F2F2;
+    --content-text-colour: #666;
+}
+/*=========[ OVERWRITE BOOTSTRAP TAGS ]=========*/
+a {
+    color: var(--content-text-colour);
+}
+
+    a:hover {
+        text-decoration: none;
+        color: var(--content-text-colour);
+    }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p,
+label {
+    margin: 0;
+    padding: 0;
+}
+/*=========[ OVERWRITE BOOTSTRAP TAGS ]=========*/
+.input-group > .input-group-prepend:not(:first-child) > .input-group-text {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+/*=========[ STICKY FOOTER ]=========*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.dvMain {
+    flex: 1;
+}
+
+.dvFooter {
+    flex-shrink: 0;
+}
+/*=========[ STICKY FOOTER ]=========*/
+
+/*=========[ BODY ]=========*/
+body {
+    font-family: var(--light);
+    color: var(--content-text-colour);
+}
+/*=========[ BODY ]=========*/
+
+/*=========[ PLACEHOLDER ]=========*/
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 0.875rem;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 0.875rem;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 0.875rem;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 0.875rem;
+}
+/*=========[ PLACEHOLDER ]=========*/
+
+/*=========[ MAIN LOADER ]=========*/
+#updProgress {
+    z-index: 2000 !important;
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    border: solid 1px #4682b4;
+    opacity: 0.5;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    width: 100%;
+    height: 80%;
+    padding: 5px 0;
+    background-color: rgba(50, 50, 50, 0.75);
+}
+
+    #updProgress img {
+        text-align: left;
+        margin-right: 7px;
+        margin-top: 17%;
+        padding: 10px;
+        background: #fff;
+        border-radius: 5px;
+        width: 60px;
+    }
+
+    #updProgress p {
+        border: 0 solid red;
+    }
+/*=========[ MAIN LOADER ]=========*/
+
+/*=========[ HORIZONTAL SCROLL ]=========*/
+.scroll-hoz {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+/*=========[ HORIZONTAL SCROLL ]=========*/
+
+/*=========[ VERTICAL SCROLL ]=========*/
+.scroll-ver {
+    overflow-x: hidden;
+}
+/*=========[ VERTICAL SCROLL ]=========*/
+
+/*=========[ EQUAL COLUMNS ]=========*/
+.equal-col {
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+    /* .equal-col [class*="col-"] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+} */
+    .equal-col > [class*="col-"] {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+/*=========[ EQUAL COLUMNS ]=========*/
+
+/*=========[ IMAGE FIX ]=========*/
+.img-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+    .img-container img {
+        width: 100% !important;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+/*=========[ IMAGE FIX ]=========*/
+
+/*=========[ RATINGS ]=========*/
+.dvRatings img {
+    width: 12px;
+}
+/*=========[ RATINGS ]=========*/
+
+/*=========[ SWIPER ARROW BUTTONS ]=========*/
+/* swiper's disabled button */
+.swiper-button-disabled {
+    opacity: 0.3;
+}
+/* disable original arrows of swiper */
+.swiper-button-next:after,
+.swiper-button-prev:after,
+.swiper-button-next-hero:after,
+.swiper-button-prev-hero:after,
+.swiper-button-next-vouchers:after,
+.swiper-button-next-vouchers:after {
+    display: none;
+}
+/* adjust width of arrow images */
+.swiper-button-prev img,
+.swiper-button-next img {
+    width: 30px;
+}
+/*=========[ SWIPER ARROW BUTTONS ]=========*/
+
+/*=========[ 
+  SWIPER BUTTONS - 
+  use "customizeButtons" class when you want to shift buttons or customize
+]=========*/
+.customizeButtons .swiper-button-prev,
+.customizeButtons .swiper-button-next {
+    position: static !important;
+    /* flex: 0 0 41.66; */
+    width: auto !important;
+    margin: 0 !important;
+    height: auto !important;
+}
+/*=========[ 
+  SWIPER BUTTONS - 
+  use "customizeButtons" class when you want to shift buttons or customize
+]=========*/
+
+/*=========[ SWIPER PAGINATION ]=========*/
+.swiper-pagination-bullet-active {
+    background-color: #fff !important;
+    border: 1px solid var(--primary-colour);
+}
+
+.swiper-pagination-bullet {
+    opacity: 1;
+    background-color: var(--secondary-colour);
+}
+/*=========[ SWIPER PAGINATION ]=========*/
+
+/*=========[ SWIPER THUMBSLIDER ]=========*/
+.dvThumbSwiperSlider .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.dvThumbSwiperSlider .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+    .dvThumbSwiperSlider .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.dvThumbSwiperSlider .swiper {
+    width: 100%;
+    /*height: 300px;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dvThumbSwiperSlider .mySwiper2 {
+    /*height: 50%;*/
+    height: auto;
+    width: 100%;
+}
+
+.dvThumbSwiperSlider .mySwiper {
+    /*height: 12%;*/
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+    .dvThumbSwiperSlider .mySwiper .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    .dvThumbSwiperSlider .mySwiper .swiper-slide-thumb-active {
+        opacity: 1;
+    }
+
+/* adjust arrows right & left */
+.dvThumbSwiperSlider .swiper-button-prev,
+.dvThumbSwiperSlider .swiper-rtl .swiper-button-next {
+    left: var(--swiper-navigation-sides-offset, 10px);
+    right: auto;
+}
+
+.dvThumbSwiperSlider .swiper-button-next,
+.dvThumbSwiperSlider .swiper-rtl .swiper-button-prev {
+    right: var(--swiper-navigation-sides-offset, 10px);
+    left: auto;
+}
+
+    /* adjust arrows width size */
+    .dvThumbSwiperSlider .swiper-button-prev img,
+    .dvThumbSwiperSlider .swiper-button-next img {
+        width: 25px;
+    }
+/*=========[ SWIPER THUMBSLIDER ]=========*/
+
+/*=========[ PAGINATION ]=========*/
+.dvPagination .page-link:focus {
+    box-shadow: none;
+}
+
+.dvPagination .page-link {
+    color: var(--primary-colour);
+}
+
+.dvPagination .page-item.active .page-link {
+    color: #fff;
+    background-color: var(--primary-colour);
+    border-color: var(--primary-colour);
+}
+
+.dvPagination .page-item.disabled .page-link {
+    background-color: #fff;
+    border-color: #dee2e6;
+    color: #6c757d;
+}
+.selWay span {
+    margin-right: 10px;
+    position: relative;
+    top: -2px;
+    font-family: var(--bold);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2E353A;
+}
+#CP_AdultInfo h3 span, #CP_ChildInfo h3 span, #CP_InfantInfo h3 span {
+    font-family: var(--medium);
+    font-size: 1rem;
+    font-weight:normal
+}
+.carBlk label, .select_box, .input {
+    margin-bottom: 0px !important;
+    display: block;
+}
+.orderSum .card-footer span {
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: 'RobotoMedium';
+}
+.checkoutheader h1 {
+    font-size: unset !important;
+    font-weight: unset !important;
+}
+.txt-itinerary h3 {
+    font-size: unset; 
+    font-weight: unset;
+}
+.txt-itinerary a { 
+    font-weight: normal;
+}
+/*=========[ PAGINATION ]=========*/
+/*=========[ RESPONSIVE HEADINGS ]=========*/
+/* large headings font-size:28px; */
+.heading-xl {
+    font-family: var(--thin);
+    font-size: 1.75rem;
+    color: var(--primary-colour);
+}
+.fDetails p, .text-blk {
+    font-family: var(--regular);
+}
+    .heading-light {
+    font-family: var(--light);
+    font-size: 1.75rem;
+    color: var(--primary-colour);
+}
+
+.heading-regular {
+    font-family: var(--regular);
+    font-size: 1.75rem;
+    color: var(--primary-colour);
+}
+
+.heading-xl-medium {
+    font-family: var(--medium);
+    font-size: 1.75rem;
+    color: var(--primary-colour);
+}
+
+.heading-semibold {
+    font-family: var(--semibold);
+    font-size: 1.75rem;
+    color: var(--primary-colour);
+}
+
+.heading-bold {
+    font-family: var(--bold);
+    font-size: 1.75rem;
+    color: var(--primary-colour);
+}
+
+.heading-xl-extrabold {
+    font-family: var(--extrabold);
+    font-size: 1.75rem;
+    color: var(--primary-colour);
+}
+
+.heading-xl-black {
+    font-family: var(--black);
+    font-size: 1.75rem;
+    color: var(--primary-colour);
+}
+
+/* medium headings font-size:20px; */
+.heading-md {
+    font-family: var(--thin);
+    font-size: 1.25rem;
+    color: var(--secondary-colour);
+}
+
+.heading-light {
+    font-family: var(--light);
+    font-size: 1.25rem;
+    color: var(--secondary-colour);
+}
+
+.heading-regular {
+    font-family: var(--regular);
+    font-size: 1.25rem;
+    color: var(--secondary-colour);
+}
+
+.heading-md-medium {
+    font-family: var(--medium);
+    font-size: 1.25rem;
+    color: var(--secondary-colour);
+}
+
+.heading-semibold {
+    font-family: var(--semibold);
+    font-size: 1.25rem;
+    color: var(--secondary-colour);
+}
+
+.heading-bold {
+    font-family: var(--bold);
+    font-size: 1.25rem;
+    color: var(--secondary-colour);
+}
+
+.heading-md-extrabold {
+    font-family: var(--extrabold);
+    font-size: 1.25rem;
+    color: var(--secondary-colour);
+}
+
+.heading-md-black {
+    font-family: var(--black);
+    font-size: 1.25rem;
+    color: var(--secondary-colour);
+}
+
+/* small headings font-size:16px; */
+.heading-sm {
+    font-family: var(--thin);
+    font-size: 1rem;
+    color: var(--secondary-colour);
+}
+
+.heading-light {
+    font-family: var(--light);
+    font-size: 1rem;
+    color: var(--secondary-colour);
+}
+
+.heading-regular {
+    font-family: var(--regular);
+    font-size: 1rem;
+    color: var(--secondary-colour);
+}
+
+.heading-semibold {
+    font-family: var(--medium);
+    font-size: 1rem;
+    color: var(--secondary-colour);
+}
+
+.heading-semibold {
+    font-family: var(--semibold);
+    font-size: 1rem;
+    color: var(--secondary-colour);
+}
+
+.heading-bold {
+    font-family: var(--bold);
+    font-size: 1rem;
+    color: var(--secondary-colour);
+}
+
+.heading-sm-extrabold {
+    font-family: var(--extrabold);
+    font-size: 1rem;
+    color: var(--secondary-colour);
+}
+
+.heading-sm-black {
+    font-family: var(--black);
+    font-size: 1rem;
+    color: var(--secondary-colour);
+}
+
+/* extra small headings font-size:14px; */
+.heading-xs {
+    font-family: var(--thin);
+    font-size: 0.875rem;
+    color: var(--secondary-colour);
+}
+
+.heading-light {
+    font-family: var(--light);
+    font-size: 0.875rem;
+    color: var(--secondary-colour);
+}
+
+.heading-regular {
+    font-family: var(--regular);
+    font-size: 0.875rem;
+    color: var(--secondary-colour);
+}
+
+.heading-semibold {
+    font-family: var(--medium);
+    font-size: 0.875rem;
+    color: var(--secondary-colour);
+}
+
+.heading-semibold {
+    font-family: var(--semibold);
+    font-size: 0.875rem;
+    color: var(--secondary-colour);
+}
+
+.heading-bold {
+    font-family: var(--bold);
+    font-size: 0.875rem;
+    color: var(--secondary-colour);
+}
+
+.heading-xs-extrabold {
+    font-family: var(--extrabold);
+    font-size: 0.875rem;
+    color: var(--secondary-colour);
+}
+
+.heading-xs-black {
+    font-family: var(--black);
+    font-size: 0.875rem;
+    color: var(--secondary-colour);
+}
+
+/*extra extra small headings font-size:12px; */
+.heading-xxs {
+    font-family: var(--thin);
+    font-size: 0.75rem;
+    color: var(--secondary-colour);
+}
+
+.heading-light {
+    font-family: var(--light);
+    font-size: 0.75rem;
+    color: var(--secondary-colour);
+}
+
+.heading-regular {
+    font-family: var(--regular);
+    font-size: 0.75rem;
+    color: var(--secondary-colour);
+}
+
+.heading-xxs-medium {
+    font-family: var(--medium);
+    font-size: 0.75rem;
+    color: var(--secondary-colour);
+}
+
+.heading-semibold {
+    font-family: var(--semibold);
+    font-size: 0.75rem;
+    color: var(--secondary-colour);
+}
+
+.heading-xxs-bold {
+    font-family: var(--bold);
+    font-size: 0.75rem;
+    color: var(--secondary-colour);
+}
+
+.heading-xxs-extrabold {
+    font-family: var(--extrabold);
+    font-size: 0.75rem;
+    color: var(--secondary-colour);
+}
+
+.heading-xxs-black {
+    font-family: var(--black);
+    font-size: 0.75rem;
+    color: var(--secondary-colour);
+}
+/*=========[ RESPONSIVE HEADINGS ]=========*/
+
+/*=========[ BUTTONS ]=========*/
+.btn.focus,
+.btn:focus {
+    box-shadow: none;
+}
+
+.btn-primary {
+    font-family: var(--regular);
+    background-color: var(--primary-colour);
+    color: #fff;
+    border: none;
+    text-transform: capitalize;
+}
+
+    .btn-primary:hover,
+    .btn-primary.focus,
+    .btn-primary:focus {
+        background-color: var(--secondary-colour) !important;
+        box-shadow: none !important;
+        color: #fff;
+        border-color: var(--secondary-colour);
+    }
+
+.btn-secondary {
+    font-family: var(--regular);
+    background-color: var(--secondary-colour);
+    color: #fff;
+    border: none;
+    text-transform: capitalize;
+}
+
+    .btn-secondary:hover,
+    .btn-secondary.focus,
+    .btn-secondary:focus {
+        background-color: var(--primary-colour) !important;
+        box-shadow: none !important;
+        color: #fff;
+        border-color: var(--primary-colour);
+    }
+/*=========[ BUTTONS ]=========*/
+
+/*=========[ TABS ]=========*/
+.dvTabs .nav-tabs .nav-item.show .nav-link,
+.dvTabs .nav-tabs .nav-link.active {
+    background-color: var(--primary-colour);
+    color: #fff;
+}
+
+.dvTabs .nav-tabs .nav-link {
+    border: 1px solid #dee2e6;
+}
+/*=========[ TABS ]=========*/
+
+/*=========[ ROTATE SINGLE COLLAPSE ARROW ICON ]=========*/
+.arrow-icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.collapsed .arrow-icon {
+    transform: rotate(180deg);
+}
+/*=========[ ROTATE SINGLE COLLAPSE ARROW ICON ]=========*/
+
+/*=========[ ACCORDION ]=========*/
+/*rotate icons*/
+.accordion .card-header .arrow-icon {
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.accordion .card-header .collapsed .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.accordion .card-header {
+    background-color: transparent;
+}
+
+    .accordion .card-header .arrow-icon {
+        right: 15px;
+    }
+
+.accordion .scroll-ver {
+    max-height: 200px;
+}
+/*=========[ ACCORDION ]=========*/
+
+/*=========[ CART ICON ]=========*/
+.dvCartIcon .fa-shopping-cart {
+    font-size: 1.5rem;
+}
+/*=========[ CART ICON ]=========*/
+
+/*=========[ SHOP MENU ]=========*/
+.dvMenu {
+    background-color: var(--bg-section);
+}
+
+    .dvMenu .navbar-light .navbar-nav .nav-link {
+        color: var(--secondary-colour);
+    }
+
+    .dvMenu .dropdown-item:focus,
+    .dvMenu .dropdown-item:hover {
+        background-color: var(--primary-colour) !important;
+        color: #fff;
+    }
+
+    .dvMenu .dropdown-item.active,
+    .dvMenu .dropdown-item:active {
+        background-color: var(--primary-colour) !important;
+        color: #fff;
+    }
+/*=========[ BREADCRUMBS ]=========*/
+
+/*=========[ SHOP MENU ]=========*/
+.dvBreadcrumbs .breadcrumb {
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+    .dvBreadcrumbs .breadcrumb li a {
+        color: var(--primary-colour);
+    }
+
+    .dvBreadcrumbs .breadcrumb li.active {
+        color: var(--content-text-colour);
+    }
+/*=========[ BREADCRUMBS ]=========*/
+
+/*=========[ BOOTSTRAP NAVBAR ]=========*/
+/*submenu css*/
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .dropdown-submenu a::after {
+        transform: rotate(-90deg);
+        position: absolute;
+        right: 6px;
+        top: 0.8em;
+    }
+
+.dropdown-item {
+    padding: 0.25rem 0.75rem;
+}
+/*submenu css*/
+
+/*rotate icon animation before 992px*/
+li .dropdown-toggle:after {
+    transition: all 0.5s;
+}
+
+li.show > .dropdown-toggle:after {
+    transform: rotate(180deg);
+}
+
+li li.show > .dropdown-toggle:after {
+    transform: rotate(90deg);
+}
+/*rotate icon animation before 992px*/
+/*=========[ BOOTSTRAP NAVBAR ]=========*/
+
+/*=========[ CHECKBOX ]=========*/
+.dvLabel {
+    margin-bottom: 0.25rem;
+}
+    /* The checkbox-container */
+    .dvLabel .checkbox-container {
+        position: relative;
+        padding-left: 15px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+        /* Hide the browser's default checkbox */
+        .dvLabel .checkbox-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+    /* Create a custom checkbox with an image */
+    .dvLabel .checkmark {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        border: 1px solid var(--primary-colour);
+        border-radius: 3px;
+    }
+    /* When the checkbox is checked */
+    .dvLabel .checkbox-container input:checked ~ .checkmark {
+        background-color: #2196f3;
+        background: url("/images/icons/arrows/checkmark.png") no-repeat center center var(--primary-colour);
+        background-size: contain;
+    }
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .dvLabel .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    /* Show the checkmark when checked */
+    .dvLabel .checkbox-container input:checked ~ .checkmark:after {
+        display: block;
+    }
+    /*=========[ CHECKBOX ]=========*/
+
+    /*=========[ RADIO ]=========*/
+    /* The container */
+    .dvLabel .radio-container {
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        /* Hide the browser's default radio button */
+        .dvLabel .radio-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+    /* Create a custom radio button */
+    .dvLabel .radiomark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 16px;
+        width: 16px;
+        background-color: #eee;
+        border-radius: 50%;
+        box-shadow: 0px 0px 0px 1px #bebebe;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .dvLabel .radio-container input:checked ~ .radiomark {
+        background-color: var(--primary-colour);
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .dvLabel .radiomark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .dvLabel .radio-container input:checked ~ .radiomark:after {
+        display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .dvLabel .radio-container .radiomark:after {
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 0 0 1px var(--primary-colour);
+    }
+/*=========[ RADIO ]=========*/
+
+/*=========[ FORM CONTROL ]=========*/
+/*disabled & readonly input*/
+.form-control[readonly] {
+    background-color: #fff;
+    opacity: 1;
+}
+
+.form-control:disabled {
+    background-color: #e9ecef;
+    opacity: 1;
+}
+/*disabled box shadow onfocus*/
+.form-select:focus,
+.form-control:focus {
+    box-shadow: none;
+    border-color: #dee2e6;
+}
+/*input or select style*/
+.form-control {
+    border-radius: 0.25rem !important;
+    font-size: 0.875rem;
+    border: 1px solid #e0e2ea;
+    resize: none;
+    padding: 1.25rem 0.75rem;
+}
+
+    .form-control.radius {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+/*input icon border*/
+.input-group-text {
+    /* border-radius: 0 10px 10px 0; */
+    border: 1px solid #e0e2ea;
+    height: 50px;
+}
+/*=========[ FORM CONTROL ]=========*/
+
+/*=========[ CUSTOM SELECT ]=========*/
+.select {
+    position: relative;
+    width: 100%;
+}
+
+    .select .selectBtn {
+        display: flex;
+        align-items: center;
+        /* background: red; */
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background: #fff;
+    }
+
+        .select .selectBtn:after {
+            content: "";
+            position: absolute;
+            top: 45%;
+            right: 15px;
+            width: 6px;
+            height: 6px;
+            transform: translateY(-50%) rotate(45deg);
+            border-right: 2px solid #666;
+            border-bottom: 2px solid #666;
+            transition: 0.2s ease;
+        }
+
+        .select .selectBtn.toggle {
+            border-radius: 3px 3px 0 0;
+        }
+
+            .select .selectBtn.toggle:after {
+                transform: translateY(-50%) rotate(-135deg);
+            }
+
+    .select .selectDropdown {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        border-radius: 0 0 3px 3px;
+        overflow-x: hidden;
+        max-height: 150px;
+        /* background: green; */
+        z-index: 2 !important;
+        background: #fff;
+        transform: scale(1, 0);
+        transform-origin: top center;
+        visibility: hidden;
+        transition: 0.2s ease;
+        /* box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); */
+        border: 1px solid #ddd;
+        left: 0;
+    }
+
+        .select .selectDropdown .option {
+            padding: 7px 10px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+            .select .selectDropdown .option:hover {
+                background: #f8f8f8;
+            }
+
+        .select .selectDropdown.toggle {
+            visibility: visible;
+            transform: scale(1, 1);
+        }
+/*=========[ CUSTOM SELECT ]=========*/
+
+/*=========[ JQUERY UI RANGE SLIDER ]=========*/
+/*wrapper height*/
+.dvRangeSlider .ui-slider-horizontal {
+    height: 0.25rem;
+}
+/*wrapper selected bg*/
+.dvRangeSlider .ui-slider .ui-slider-range {
+    background-color: var(--secondary-colour);
+}
+/* wrapper border */
+.dvRangeSlider .ui-widget.ui-widget-content {
+    border: 0;
+    background-color: var(--secondary-colour);
+}
+/* handle */
+.dvRangeSlider .ui-state-default,
+.dvRangeSlider .ui-widget-content .ui-state-default,
+.dvRangeSlider .ui-widget-header .ui-state-default,
+.dvRangeSlider .ui-button,
+.dvRangeSlider html .ui-button.ui-state-disabled:hover,
+.dvRangeSlider html .ui-button.ui-state-disabled:active {
+    border: 1px solid var(--primary-colour);
+    background: var(--primary-colour);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+}
+
+.dvRangeSlider .ui-slider-horizontal .ui-slider-handle {
+    top: -4px;
+    margin-left: -5px;
+}
+/*=========[ JQUERY UI RANGE SLIDER ]=========*/
+
+/*=========[ JQUERY UI DATEPICKER ]=========*/
+/* header bg */
+.ui-datepicker .ui-datepicker-header {
+    background-color: var(--primary-colour);
+}
+/* month & year selectbox */
+.ui-datepicker .ui-datepicker-title select {
+    /* font-size: 1em;
+  margin: 1px 0; */
+    border: 1px solid var(--primary-colour);
+    color: var(--secondary-colour);
+}
+/* prev & next buttons */
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #fff;
+}
+/* prev & next button position on hover */
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+    right: 2px;
+    top: 2px;
+}
+/* current or active date */
+.ui-datepicker .ui-state-highlight,
+.ui-datepicker .ui-widget-content .ui-state-highlight,
+.ui-datepicker .ui-widget-header .ui-state-highlight {
+    background-color: var(--primary-colour);
+    border: 1px solid var(--primary-colour);
+    color: #fff !important;
+}
+/* selected date */
+.ui-datepicker .ui-state-active,
+.ui-datepicker .ui-widget-content .ui-state-active,
+.ui-datepicker .ui-widget-header .ui-state-active,
+.ui-datepicker a.ui-button:active,
+.ui-datepicker .ui-button:active,
+.ui-datepicker .ui-button.ui-state-active:hover {
+    background-color: var(--primary-colour);
+    border: 1px solid var(--primary-colour);
+    color: #fff !important;
+}
+/* text colour for all dates */
+.ui-datepicker .ui-state-default,
+.ui-datepicker .ui-widget-content .ui-state-default,
+.ui-datepicker .ui-widget-header .ui-state-default,
+.ui-datepicker .ui-button,
+.ui-datepicker html .ui-button.ui-state-disabled:hover,
+.ui-datepicker html .ui-button.ui-state-disabled:active {
+    text-align: center;
+    color: var(--primary-colour);
+}
+
+/*=========[ JQUERY UI DATEPICKER ]=========*/
+
+/*=========[ ADD TO CART ]=========*/
+.btn-addtocart .fa-minus,
+.btn-addtocart .fa-plus {
+    border-radius: 50%;
+    background-color: var(--bg-section);
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-addtocart {
+    font-family: var(--regular);
+    /* background-color: var(--primary-colour); */
+    color: #000;
+    border: none;
+}
+
+    .btn-addtocart i {
+        background-color: var(--bg-section);
+        color: #000;
+        border: none;
+    }
+
+    .btn-addtocart:hover i {
+        background-color: var(--bg-section);
+        color: #000;
+        border: none;
+    }
+/*=========[ ADD TO CART ]=========*/
+
+/*=========[ DENOMIMATION ]=========*/
+.dvDenominations .denomination-btn {
+    padding: 0.5rem 0.75rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--bg-section);
+    color: var(--secondary-colour);
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    /* flex: 0 0 16.66%;
+max-width: 16.66%; */
+}
+
+.dvDenominations .denomination-checkbox {
+    display: none;
+}
+
+    .dvDenominations .denomination-checkbox:checked + .denomination-btn {
+        background-color: var(--primary-colour);
+        color: #fff;
+    }
+/*=========[ DENOMIMATION ]=========*/
+
+/*=========[ RESPONSIVE FILTER MODAL ]=========*/
+.dvProductList .dvFilter.modal .close {
+    padding: 12px 12px 0 0;
+    color: #fff;
+    opacity: 1;
+}
+/*=========[ RESPONSIVE FILTER MODAL ]=========*/
+
+/*=========[ TOTAL RECORDS ]=========*/
+.dvProductList .dvTotalRecords.bg-lightgray {
+    background-color: var(--primary-colour);
+    border-radius: 10px 10px 0 0;
+}
+/*=========[ TOTAL RECORDS ]=========*/
+
+/*=========[ Domestic FLIGHTLIST PAGE ]=========*/
+.dvFlightList .dvFlightInfo .heading-semibold {
+    color: var(--primary-colour);
+}
+ 
+.dvFlightList .dvFlightInfo .dvInfo .abbreviation {
+    font-size: 1rem;
+}
+
+.dvFlightList .dvFlightInfo .dvInfo span {
+    font-size: 0.875rem;
+}
+
+.dvFlightList .dvFlightInfo .bg-light {
+    background-color: var(--bg-section);
+}
+
+.dvFlightList .dvSeeDetails .arrowBtn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+.dvFlightDetails {
+    background-color: var(--bg-section);
+    border-radius:0 0 10px 10px;
+}
+    .dvFlightDetails a.heading-regular {
+        color: var(--primary-colour);
+    }
+
+.dvFlightList .dvFlightInfo .dvhover {
+    transition: 0.3s;
+}
+.dvFlightList .dvFlightInfo .dvhover:hover {
+    background: #fffcf6;
+    border: 1px solid #E5A812 !important;
+}
+.dvFlightList .dvFlightInfo .dvhover.active {
+    background: #fffcf6;
+    border: 1px solid #E5A812 !important;
+}
+
+.dvFlightList .dvFlightInfo {position:relative;background: #fff;}
+/*.fixedElement {
+    background: #fff;
+    position: fixed;
+    top: 100px;
+    z-index: 100;
+}*/
+/*.sticky_parent {
+    overflow: hidden;
+    background-color: #fff;
+}
+.sticky {
+    position: fixed;
+    z-index: 10;
+}*/
+/* .dvFlightList .dvSeeDetails .dvDeparture .bg-light {
+  background-color: var(--bg-section);
+} */
+/*=========[ Domestic FLIGHTLIST PAGE ]=========*/
+/*=========[ Domestic FLIGHTPASSENGER PAGE ]=========*/
+.dvFlightPassenger .bg {
+    background-color: var(--primary-colour);
+}
+
+.dvFlightPassenger .bg-lightgray {
+    background-color: var(--bg-section);
+}
+
+.dvFlightPassenger .rounded {
+    border-radius: 5px 5px 0 0 !important;
+}
+/*=========[ Domestic FLIGHTPASSENGER PAGE ]=========*/
+
+/*=========[ Domestic FLIGHTSEARCH PAGE ]=========*/
+
+.dvFlightSearch .bg-lightgray {
+    background-color: var(--bg-section);
+}
+.btn-yellow { 
+    padding: 7px 15px;
+}
+.dvProducts .rounded {border-radius:10px !important;}
+.dvFlightSearch input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    padding: 3px;
+    background-clip: content-box;
+    border: 1px solid #bbbbbb;
+    background-color: #e7e6e7;
+    border-radius: 50%;
+    outline: none;
+}
+
+    .dvFlightSearch input[type="radio"]:checked {
+        background-color: #213c69;
+        border: 1px solid #000;
+        outline: none;
+    }
+
+.dvProductList .product-text {
+    min-height: 70px;
+}
+.dvFlightList img {height:45px;}
+
+/*=========[ Domestic FLIGHTSEARCH PAGE ]=========*/
+
+/*=========[ Domestic AIRReview PAGE ]=========*/
+
+
+
+
+/*=========[ Domestic AIRReview PAGE ]=========*/
+/*=========[ BG GRAY STRIPE ]=========*/
+.dvProductList .bg-lightgray {
+    background-color: var(--bg-section);
+    border-radius:10px;
+}
+/*=========[ BG GRAY STRIPE ]=========*/
+
+/*=========[ MEDIA QUERIES ]=========*/
+@media (min-width: 576px) {
+    .scroll-hoz {
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 768px) {
+    .dvFlightList .dvFlightInfo .border-bottom-md {border-bottom:0 !important;}
+    .dvFlightList .dvFlightInfo .border-right-md {border-right: 1px solid #dee2e6 !important;}
+    .btn-yellow {padding: 7px 5px;}
+}
+
+@media (min-width: 992px) {
+    .heading-xl,
+    .heading-light,
+    .heading-regular,
+    .heading-semibold,
+    .heading-bold {
+        font-size: 2.5rem;
+    }
+    .btn-yellow {
+        padding: 7px 15px;
+    }
+
+    /* BOOTSTRAP NAVBAR ON HOVER */
+    /* open first dropdown menu on hover */
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+        /* open first dropdown menu on hover */
+
+        /* open submenus on hover after 992px */
+        .dropdown:hover .dropdown-menu .dropdown-submenu .dropdown-menu {
+            display: none;
+            margin-top: 0;
+        }
+
+        .dropdown:hover .dropdown-menu .dropdown-submenu:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+        /* open submenus on hover after 992px */
+
+        /* open subsubmenus on hover after 992px */
+        .dropdown:hover .dropdown-menu .dropdown-submenu .dropdown-menu .dropdown-submenu .dropdown-menu {
+            display: none;
+            margin-top: 0;
+        }
+
+        .dropdown:hover .dropdown-menu .dropdown-submenu .dropdown-menu .dropdown-submenu:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+    /* open subsubmenus on hover after 992px */
+
+    /*remove rotating icon animation after 992px*/
+    li .dropdown-toggle:after {
+        transition: none;
+    }
+
+    li.show > .dropdown-toggle:after {
+        transform: none;
+    }
+
+    li li.show > .dropdown-toggle:after {
+        transform: none;
+    }
+    /*remove rotating icon animation after 992px*/
+    /* BOOTSTRAP NAVBAR ON HOVER */
+
+    .dvProductList .dvFilter.modal {
+        position: static;
+        display: block;
+        width: auto;
+        height: auto;
+        overflow: auto;
+        opacity: 1;
+        z-index: 0;
+    }
+
+        .dvProductList .dvFilter.modal .modal-dialog {
+            margin: 0 auto;
+            transform: translate(0, 0);
+            min-height: auto;
+        }
+    .dvFlightList .dvFlightInfo .dvInfo .border-top-bottom-lg-0 {
+        border-top: 0 !important;
+        border-bottom: 0 !important;
+    }
+
+    .dvFlightList .dvFlightInfo .dvInfo .border-right-lg {
+        border-right: 1px solid #dee2e6 !important;
+    }
+
+    .dvFlightList .dvFlightInfo .dvInfo .border-bottom-lg {
+        border-bottom: 1px solid #dee2e6 !important;
+    }
+}
+
+@media (min-width: 1200px) {
+}
+/*=========[ MEDIA QUERIES ]=========*/

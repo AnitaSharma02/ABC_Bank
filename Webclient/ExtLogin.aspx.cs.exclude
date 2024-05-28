@@ -1,0 +1,234 @@
+﻿using Core.Platform.Authentication.Entities;
+using Core.Platform.Member.Entites;
+using Core.Platform.PointGateway.Service.Helper;
+using Core.Platform.PointGateway.Service.Helper.PGService;
+using Core.Platform.ProgramMaster.Entities;
+using Framework.EnterpriseLibrary.Adapters;
+using Framework.EnterpriseLibrary.Security;
+using Framework.EnterpriseLibrary.Security.Constants;
+using Framework.EnterpriseLibrary.UniqueNumberGenerator;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using ABC.Model;
+using Core.Platform.MemberActivity.Constants;
+using Core.Platform.MemberActivity.Entities;
+
+public partial class ExtLogin : System.Web.UI.Page
+{
+   ABCModel lobjModel = new ABCModel();
+    MemberDetails lobjMemberDetails = new MemberDetails();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            if (Request.Form.Count > 0)
+            {
+                string lstrEncryptedPostUrl = Request.Form["Merchant_Details"];
+                Core.Platform.Merchant.Entities.MerchantDetails lobjMerchantDetails = new Core.Platform.Merchant.Entities.MerchantDetails();
+                string lstrDecryptedPostUrl = RSAEncryptor.DecryptString(lstrEncryptedPostUrl, RSASecurityConstant.KeySize, RSASecurityConstant.PrivateKey);
+                string[] lstrMerchantDetails = lstrDecryptedPostUrl.Split("|".ToCharArray());
+                lobjMerchantDetails.MerchantCode = lstrMerchantDetails[0].ToString();
+                lobjMerchantDetails.Password = lstrMerchantDetails[1].ToString();
+                Core.Platform.Merchant.Entities.MerchantDetails lobjCurrentlobjMerchantDetails = null;
+                hdfContext.Value = lstrMerchantDetails[2].ToString();
+                lobjCurrentlobjMerchantDetails = lobjModel.GetMerchantDetails(lobjMerchantDetails);
+                if (lobjCurrentlobjMerchantDetails != null)
+                {
+                    Session["ExtMerchantDetails"] = lobjCurrentlobjMerchantDetails;
+                    Session["ExtMerchantURL"] = hdfContext.Value;
+                    //Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    Response.Redirect("InvalidCredential.aspx");
+                }
+            }
+            else
+            {
+                Response.Redirect("InvalidCredential.aspx");
+            }
+        }
+    }
+
+    public int InsertAuthenticationToken(string pstrMemberID, string pstrAuthenticationToken)
+    {
+        int lintStatus = 0;
+        try
+        {
+            int lintMinutes = Convert.ToInt32(ConfigurationManager.AppSettings["ExpiryMinutes"]);
+            AuthenticationDetails lobjAuthenticationDetails = new AuthenticationDetails();
+            lobjAuthenticationDetails.MemberId = pstrMemberID;
+            lobjAuthenticationDetails.AuthenticationToken = pstrAuthenticationToken;
+            lobjAuthenticationDetails.AuthenticationType = AuthenticationType.PG;
+            lobjAuthenticationDetails.CreationDate = DateTime.Now;
+            lobjAuthenticationDetails.ExpiryDate = DateTime.Now.AddMinutes(lintMinutes);
+            lobjAuthenticationDetails.IsActive = true;
+            lobjAuthenticationDetails.CreatedBy = "System";
+            lobjAuthenticationDetails.CreatedOn = DateTime.Now;
+            lobjAuthenticationDetails.UpdatedOn = DateTime.Now;
+            lintStatus = InsertAuthenticationDetails(lobjAuthenticationDetails);
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("InsertAuthenticationToken exception - " + ex.Message + Environment.NewLine + ex.StackTrace);
+        }
+        return lintStatus;
+    }
+
+    public void UpdateAuthenticationTokenStatus(string pstrRelationReference)
+    {
+        //AuthenticationFacade lobjAuthenticationFacade = new AuthenticationFacade();
+        AuthenticationDetails lobjAuthenticationDetails = new AuthenticationDetails();
+        lobjAuthenticationDetails.MemberId = pstrRelationReference;
+        lobjAuthenticationDetails.IsActive = false;
+        bool lblnStatus = false;
+        //lblnStatus = lobjAuthenticationFacade.UpdateAllAuthenticationStatus(lobjAuthenticationDetails);
+        lblnStatus = lobjModel.UpdateAllAuthenticationStatus(lobjAuthenticationDetails);
+    }
+
+    public int InsertAuthenticationDetails(AuthenticationDetails pobjAuthenticationDetails)
+    {
+        int lintStatus = 0;
+        try
+        {
+            //AuthenticationFacade lobjFacade = new AuthenticationFacade();
+            //return lobjFacade.InsertAuthenticationDetails(pobjAuthenticationDetails);
+            return lobjModel.InsertAuthenticationDetails(pobjAuthenticationDetails);
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("InsertAuthenticationDetails exception - " + ex.Message + Environment.NewLine + ex.StackTrace);
+            return lintStatus;
+        }
+    }
+
+    public void PostResponse(string pstrPostURL, string pstrResponseDetails)
+    {
+        string lstrEncryptedResponseDetails = RSAEncryptor.EncryptString(pstrResponseDetails, RSASecurityConstant.KeySize, RSASecurityConstant.RSAPublicKey);
+        StringBuilder sb = new StringBuilder();
+        sb.Append("<html>");
+        sb.AppendFormat(@"<body onload='document.forms[""form""].submit()'>");
+        sb.AppendFormat("<form name='form' action='{0}' method='post'>", pstrPostURL);
+        sb.AppendFormat("<input type='hidden' runat='server' name='Response_Details' value='{0}'>", lstrEncryptedResponseDetails);
+        sb.Append("</form>");
+        sb.Append("</body>");
+        sb.Append("</html>");
+        Response.Write(sb.ToString());
+        Response.End();
+    }
+
+    private string getMD5HashedString(string pstSecureData)
+    {
+        string lstSecureHash = string.Empty;
+        MD5 md5HashAlgo = MD5.Create();
+        byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(pstSecureData);
+        byte[] hashBytes = md5HashAlgo.ComputeHash(inputBytes);
+        StringBuilder secureData = new StringBuilder();
+        for (int i = 0; i < hashBytes.Length; i++)
+        {
+            secureData.Append(hashBytes[i].ToString("X2"));
+        }
+        lstSecureHash = Convert.ToString(secureData);
+        return lstSecureHash;
+    }
+
+    protected void btnValidateOTP_Click(object sender, EventArgs e)
+    {
+        txtMemberID.Text = txtMemberName.Value;
+        string pstrMemberid = txtMemberID.Text.Trim();
+        string pstrOTP = txtOTP.Text.Trim();
+        divOTP.Visible = true;
+        LoggingAdapter.WriteLog("btnValidateOTP_Click Call" + pstrMemberid + "#" + pstrOTP);
+
+       ABCModel lobjModel = new ABCModel();
+        MemberDetails lobjMemberDetails = null;
+        string mstrRedirectEmptyURL = string.Empty;
+        bool status = false;
+        PGServiceHelper lobjPGServiceHelper = new PGServiceHelper();
+        PGManagerClient lobjPGManagerClient = new PGManagerClient();
+        Core.Platform.PointGateway.Service.Helper.PGService.Response lobjResponse = new Core.Platform.PointGateway.Service.Helper.PGService.Response();
+        string lstrAvailablePoints = string.Empty;
+        string lstrResponseDetails = string.Empty;
+
+        try
+        {
+            lobjMemberDetails = lobjModel.GetMemberDetails(pstrMemberid);
+            if (lobjMemberDetails.NationalId != string.Empty)
+            {
+                MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(lobjRelation => lobjRelation.RelationType.Equals(RelationType.LBMS));
+                status = lobjModel.CheckLoginOTP(lobjMemberRelation.RelationReference, pstrOTP);
+                if (status)
+                {
+                    MemberActivitySession lobjMemberActivitySession = HttpContext.Current.Session["MemberActivitySession"] as MemberActivitySession;
+                    lobjMemberActivitySession.ReferenceNumber = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference;
+                    lobjMemberActivitySession.ActivityType = ActivityType.loginsuccessful;
+                    bool isMembershipUpdated = lobjModel.UpdateMemberShipActivitySession(lobjMemberActivitySession);
+                    lobjModel.LogActivity(string.Format(ActivityConstants.Login, pstrMemberid, "successful"), ActivityType.loginsuccessful);
+
+                    HttpContext.Current.Session["MemberLoginDetails"] = null;
+                    HttpContext.Current.Session["MemberDetails"] = lobjMemberDetails;
+                    Core.Platform.Merchant.Entities.MerchantDetails lobjMerchantDetails = null;
+                    lobjMerchantDetails = Session["ExtMerchantDetails"] as Core.Platform.Merchant.Entities.MerchantDetails;
+                    string lstrCurrency = lobjModel.GetDefaultCurrency();
+
+                    string lstrAuthenticationToken = string.Empty;
+                    int lintResponse = 0;
+                    lstrAuthenticationToken = GenerateUniqueNumber.Get12DigitNumberDateTime();
+                    LoggingAdapter.WriteLog("ExtLogin Authentication Token :" + lstrAuthenticationToken);
+                    lintResponse = InsertAuthenticationToken(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, lstrAuthenticationToken);
+
+                    if (lintResponse > 0)
+                    {
+                        LoggingAdapter.WriteLog("Ext Login - Insert Auth Token Successfully");
+                        lobjResponse = lobjPGManagerClient.CheckPointsAvailability(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToInt32(RelationType.LBMS), lstrCurrency, lobjMerchantDetails.MerchantCode, lobjMerchantDetails.UserName, lobjMerchantDetails.Password);
+                        if (lobjResponse.IsSucessful)
+                        {
+                            lstrAvailablePoints = lobjResponse.ReturnObject;
+                        }
+                        else
+                        {
+                            lstrResponseDetails = "1" + "|" + lobjResponse.ExceptionMessage;
+                            LoggingAdapter.WriteLog("Ext-Login Response String = " + lstrResponseDetails);
+                            PostResponse(lobjMerchantDetails.CallBackURL, lstrResponseDetails);
+                        }
+
+                        lstrResponseDetails = "0" + "|" + lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference + "|" + lobjMemberDetails.FullName + "|" + lobjMemberDetails.Email + "|" + lstrAvailablePoints + "|" + lstrAuthenticationToken + "|" + hdfContext.Value + "|" + "en";
+
+                        LoggingAdapter.WriteLog("Ext-Login Response String = " + lstrResponseDetails);
+
+                        PostResponse(lobjMerchantDetails.CallBackURL, lstrResponseDetails);
+                    }
+                    else
+                    {
+                        LoggingAdapter.WriteLog("ExtLogin AuthenticationToken insert Failed");
+                        lblLoginError.Text = "Please check the Authentication Token.";
+                    }
+                }
+                else
+                {
+                    lobjModel.LogActivity(string.Format(ActivityConstants.Login, pstrMemberid, "Failed"), ActivityType.Login);
+                    mstrRedirectEmptyURL = "InvalidOTP";
+                }
+            }
+            else
+            {
+                lobjModel.LogActivity(string.Format(ActivityConstants.Login, pstrMemberid, "Failed"), ActivityType.Login);
+            }
+        }
+        catch (Exception ex)
+        {
+            mstrRedirectEmptyURL = "Invalid Credentials";
+            lobjModel.LogActivity(string.Format(ActivityConstants.Login, pstrMemberid, mstrRedirectEmptyURL), ActivityType.Login);
+            LoggingAdapter.WriteLog("btnValidateOTP_Click Ex-" + ex.Message + ex.InnerException + ex.StackTrace);
+        }
+        lblLoginError.Text = mstrRedirectEmptyURL;
+    }
+}

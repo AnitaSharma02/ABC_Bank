@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "SBL.ETL.FileUploader.WorkerService": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

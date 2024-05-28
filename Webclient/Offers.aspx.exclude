@@ -1,0 +1,371 @@
+﻿<%@ Page Title="Offers" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="Offers.aspx.cs" Inherits="Offers" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
+  <%--  <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>--%>
+    <link href="css/shopstyle.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        .t-products {
+            background-image: linear-gradient(to right top, #5629c0, #5625cb, #5620d5, #551ae0, #5412eb);
+            color: #fff;
+            border-radius: 3px
+        }
+
+        .processor {
+            background-color: #fff;
+            margin-top: 5px;
+            border-bottom: 1px solid #eee
+        }
+
+        .brand {
+            background-color: #fff;
+            border-bottom: 1px solid #eee
+        }
+
+        .type {
+            background-color: #fff
+        }
+
+        .product {
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            position: relative
+        }
+
+        .about span {
+            color: #5629c0;
+            font-size: 16px
+        }
+
+        .cart-button button {
+            font-size: 12px;
+            color: #fff;
+            background-color: #5629c0;
+            height: 38px
+        }
+
+            .cart-button button:focus, button:active {
+                font-size: 12px;
+                color: #fff;
+                background-color: #5629c0;
+                box-shadow: none
+            }
+
+        .product_fav i {
+            line-height: 40px;
+            color: #5629c0;
+            font-size: 15px
+        }
+
+        .product_fav {
+            display: inline-block;
+            width: 36px;
+            height: 39px;
+            background: #FFFFFF;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 11%;
+            text-align: center;
+            cursor: pointer;
+            margin-left: 3px;
+            -webkit-transition: all 200ms ease;
+            -moz-transition: all 200ms ease;
+            -ms-transition: all 200ms ease;
+            -o-transition: all 200ms ease;
+            transition: all 200ms ease
+        }
+
+            .product_fav:hover {
+                background: #5629c0
+            }
+
+                .product_fav:hover i {
+                    color: #fff
+                }
+
+        .about {
+            margin-top: 12px
+        }
+
+        .off {
+            position: absolute;
+            left: 65%;
+            top: 6%;
+            width: 80px;
+            text-align: center;
+            height: 30px;
+            line-height: 8px;
+            border-radius: 5px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff
+        }
+
+        .shop h5 {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: normal;
+            min-height: 65px;
+        }
+
+        #CP_dvResult .product img {
+            width: auto;
+        }
+
+        .starRat {
+            text-align: center;
+        }
+
+            .starRat img {
+                width: 20px;
+            }
+
+        .sortBy #sortBy {
+            padding: 10px;
+            border-radius: 2px;
+            width: 200px;
+        }
+
+        .sortBy label {
+            padding-right: 10px;
+        }
+
+        .sortBy {
+            width: 100%;
+            overflow: hidden;
+            border-bottom: 1px solid #b0b0b0;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            padding-left: 0;
+            padding-right: 0px;
+        }
+
+        .fRight {
+            float: right;
+        }
+
+        #CP_divFilters .accordion {
+            padding: 5px 10px;
+        }
+
+        #CP_divFilters h6 {
+            padding: 0px;
+            margin: 0px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        #CP_divFilters .accordion.active:after, #CP_divFilters .accordion:after {
+            position: relative;
+            top: -3px;
+        }
+
+        .coupon .copyCode {
+            border: 1px dashed orange;
+            line-height: 30px;
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            background: #ffac341f;
+            color: #9f6715;
+        }
+
+        a.blue_button {
+            display: block;
+        }
+
+        .coupon .col-md-12 {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .row.C-copy {
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        .bTxt {
+            font-size: 24px;
+        }
+
+        .sTxt {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+    </style>
+
+    <div class="container topmar150 mb-5 shop">
+        <div class="row g-2">
+            <div id="divFilters" class="col-md-3" runat="server">
+            </div>
+            <div class="col-md-9">
+                <div class="col-md-12 sortBy">
+                    <div class="fRight">
+                        <label>Sort By:</label><select name="sortBy" id="sortBy" onchange="SortProducts(); return false;">
+                            <option value="" selected></option>
+                            <option value="priority-descending;name-ascending">Featured</option>
+                            <option value="best-selling">Best Selling</option>
+                            <option value="title-ascending">Alphabetically, A-Z</option>
+                            <option value="title-descending">Alphabetically, Z-A</option>
+                            <option value="price-ascending">Price, low to high</option>
+                            <option value="price-descending">Price, high to low</option>
+                            <option value="createddate-descending">Date, new to old</option>
+                            <option value="createddate-ascending">Date, old to new</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="dvResult" class="col-md-12" runat="server">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            BindProducts(1);
+        });
+
+        function BindProducts(PageNo) {
+            var CategoryId = getQuerystring("categoryid");
+            var ProductName = getQuerystring("ProductName");
+            var Sort = getQuerystring("sort");
+            var Terms = getQuerystring("terms");
+            SearchProducts(CategoryId, ProductName, Sort, Terms, PageNo);
+            $(window).scrollTop(0);
+        }
+
+        function SortProducts() {
+            var Sort = $("#sortBy").val();
+            if (Sort != '') {
+                var url = new URL(window.location.href);
+                url.searchParams.set("sort", Sort);
+                //var newUrl = url.href;
+                window.location.replace(url.href)
+            }
+            return false;
+        }
+
+        //function FilterProducts() {
+
+        //    var Terms = "";
+
+        //    $('#CP_CP_divFilters>.processor').each(function () {
+        //        var filter = $(this).attr("id") + ':';
+        //        var values = '';
+        //        var checkBoxList = $(':checkbox', this);
+        //        for (var i = 0; i < checkBoxList.length; i++) {
+        //            if (checkBoxList[i].checked) {
+        //                if (values != '') {
+        //                    values += ',' + checkBoxList[i].value;
+        //                } else {
+        //                    values += checkBoxList[i].value;
+        //                }
+        //            }
+        //        }
+
+        //        if (values != '') {
+        //            if (Terms != '') {
+        //                Terms += ';' + filter + values;
+        //            } else {
+        //                Terms += filter + values;
+        //            }
+        //        }
+
+        //    });
+
+        //    //console.log(Terms);
+
+        //    if (Terms != '') {
+        //        var qTerms = decodeURIComponent(getQuerystring("terms"));
+        //        if (qTerms != '') {
+        //            Terms = qTerms + ';' + Terms;
+        //        }
+        //        console.log(Terms);
+        //        var url = new URL(window.location.href);
+        //        url.searchParams.set("terms", Terms);
+        //        //var newUrl = url.href;
+        //        window.location.replace(url.href)
+        //    }
+        //    return false;
+        //}
+
+        function SearchProducts(CategoryId, ProductName, Sort, Terms, PageNo) {
+
+            $.ajax({
+                type: 'POST',
+                url: 'Offers.aspx/SearchProducts',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                data: "{CategoryId:'" + CategoryId + "',ProductName:'" + ProductName + "',Sort:'" + Sort + "',Terms:'" + Terms + "',PageNo:" + PageNo + "}",
+                success: function (msg) {
+                    if (msg.d) {
+                        GetProductList(PageNo);
+                        Filter();
+                        return false;
+                    }
+                }
+            })
+            return false;
+        }
+
+        function GetProductList(PageNo) {
+            $.ajax({
+                type: 'POST',
+                url: 'Offers.aspx/GetProductList',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                data: "{PageNo:" + PageNo + "}",
+                success: function (msg) {
+                    if (msg.d != '') {
+                        $("#CP_dvResult").html(msg.d);
+                    }
+                    return false;
+                }
+            })
+            return false;
+        }
+
+        function Filter() {
+            $.ajax({
+                type: 'POST',
+                url: 'Offers.aspx/Filter',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                data: "",
+                success: function (msg) {
+                    if (msg.d != '') {
+                        $("#CP_divFilters").html(msg.d);
+                    }
+                    return false;
+                }
+            })
+            return false;
+        }
+
+        function getQuerystring(key, default_) {
+            if (default_ == null) default_ = "";
+            key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
+            var qs = regex.exec(window.location.href);
+            if (qs == null)
+                return default_;
+            else
+                return qs[1];
+        }
+
+        function toggleAccordion(o) {
+            $(o).toggleClass("active");
+            var panel = $(o).next("div");
+            panel.toggle();
+        }
+    </script>
+</asp:Content>
+

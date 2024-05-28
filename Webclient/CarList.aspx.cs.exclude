@@ -1,0 +1,211 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using CB.IBE.Platform.Entities;
+using Framework.EnterpriseLibrary.Common.SerializationHelper;
+using System.IO;
+using CB.IBE.Platform.Car.ClientEntities;
+using CB.IBE.Platform.Car.Entities;
+using CB.IBE.Platform.Masters.Entities;
+using System.Globalization;
+using ABC.Model;
+using Core.Platform.MemberActivity.Entities;
+public partial class CarList : System.Web.UI.Page
+{
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //if (Session["CarSearchRequest"] != null && Session["Cars"] != null)
+        //{
+        //    hdnPaymentType.Value = lobjCarSearchRequest.PaymentType.ToString();
+        //}
+        if (Session["CarSearchRequest"] != null && Session["Cars"] != null)
+        {
+            Session["CarRefId"] = null;
+            Session["CarSelected"] = null;
+            Session["CarExtraListResponse"] = null;
+            Session["CarMakeBookingRequest"] = null;
+            Session["CarMakeBookingResponse"] = null;
+            string Searchdata = "";
+            if (!IsPostBack)
+            {
+                try
+                {
+                    CarSearchRequest lobjCarSearchRequest = Session["CarSearchRequest"] as CarSearchRequest;
+                    CarSearchResponse lobjCarSearchResponse = Session["Cars"] as CarSearchResponse;
+
+                    string strPickDate = lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].year;
+                    string resPickDate = SetviewDate(strPickDate);
+
+                    string strDropoffDate = lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].year;
+                    string resrDropoffDate = SetviewDate(strDropoffDate);
+
+                    //CarTextBoxCheckin.Value = resPickDate;
+                    //CarTextBoxCheckout.Value = resrDropoffDate;
+
+                    //CarTextBoxCheckin.Text = lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].year;
+                    //CarSearchLabelCheckin.Text = lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].year;
+                    //CarTextBoxCheckout.Text = lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].year;
+                    //CarSearchLabelCheckout.Text = lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].year;
+                    string strFromTime = Session["hdnddlFromTime"].ToString();
+                    string strToTime = Session["hdnddlToTime"].ToString();
+                    string[] ArrayFromTime = strFromTime.Split(',');
+                    string[] ArrayToTime = strToTime.Split(',');
+                    hdnPaymentType.Value = lobjCarSearchRequest.PaymentType.ToString();
+
+                    if (lobjCarSearchRequest.PaymentType.ToString() == "Cash")
+                    {
+                        //  lblByFilter.Text = "By AED";
+                    }
+                    else
+                    {
+                        //lblByFilter.Text = "By Points";
+                    }
+
+                    hdnModifySearchData.Value = Searchdata;
+                }
+                catch (Exception ex) { }
+                SetCarTemplate();
+            }
+
+            if (!IsPostBack)
+            {
+                Session["CarSearchPaymode"] = PaymentType.Points;
+            }
+
+        }
+        else
+        {
+            Response.Redirect("Index.aspx");
+        }
+    }
+
+    private string SetviewDate(string date)
+    {
+        DateTime dateTime = DateTime.ParseExact(date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+        string CalendarDate;
+        string Day = dateTime.ToString("dddd");
+        string NowDate = dateTime.ToString("dd");
+        string Month = dateTime.ToString("MMM");
+        CalendarDate = "<a class='cal'>" + Month + "<em>" + NowDate + "</em> " + Day + "</a>";
+        return CalendarDate;
+    }
+
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static string[] SetCarTemplate()
+    {
+        CarSearchResponse lobjCarSearchResponse = new CarSearchResponse();
+        List<Match> car = new List<Match>();
+        string[] lobjListOfData = new string[4];
+        FilterRange lobjFilterRange = new FilterRange();
+        string lstrResult = string.Empty;
+
+        if (HttpContext.Current.Session["Cars"] != null)
+        {
+            lobjCarSearchResponse = HttpContext.Current.Session["Cars"] as CarSearchResponse;
+            car = lobjCarSearchResponse.SearchResponse.MatchList[0].Match.ToList();
+        }
+        CarSearchRequest lobjCarSearchRequest = HttpContext.Current.Session["CarSearchRequest"] as CarSearchRequest;
+
+        lstrResult = JSONSerialization.Serialize(car);
+        List<string> lobjListOfCarType = new List<string>();
+        List<string> lobjListOfCarClass = new List<string>();
+        List<string> lobjListOfCarTransmission = new List<string>();
+        List<int> lobjListOfTotalMiles = new List<int>();
+        for (int i = 0; i < lobjCarSearchResponse.SearchResponse.MatchList[0].Match.Count(); i++)
+        {
+            Match lobjMatch1 = lobjCarSearchResponse.SearchResponse.MatchList[0].Match[i];
+            lobjListOfTotalMiles.Add(Convert.ToInt32(lobjMatch1.Price[0].TotalBaseFare));
+            lobjListOfCarTransmission.Add(lobjMatch1.Vehicle[0].automatic);
+            lobjListOfCarClass.Add(lobjMatch1.Vehicle[0].aircon);
+            lobjListOfCarType.Add(CarClassDescription.CarClass.Find(lobjMatch1.Vehicle[0].group));
+        }
+        lobjFilterRange.MaxRewards = lobjListOfTotalMiles.Max();
+        lobjFilterRange.MinRewards = lobjListOfTotalMiles.Min();
+        lobjFilterRange.CarTransmission = lobjListOfCarTransmission.Distinct().ToList();
+        lobjFilterRange.CarClass = lobjListOfCarClass.Distinct().ToList();
+        lobjFilterRange.CarType = lobjListOfCarType.Distinct().ToList();
+
+        string lstrTemplate = File.ReadAllText(HttpContext.Current.Server.MapPath("Templates/CarTemplate.htm"));
+
+        lobjListOfData[0] = lstrTemplate;
+        lobjListOfData[1] = lstrResult;
+        lobjListOfData[2] = JSONSerialization.Serialize(lobjFilterRange);
+        lobjListOfData[3] = "<b>Your Car Search for: Pick-up</b>: " + lobjCarSearchResponse.SearchResponse.MatchList[0].Match[0].Route[0].PickUp[0].locName.ToString()
+                                  + ", " + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.PickUp[0].Date[0].year
+                                  + " - <b>Drop-off: </b> " + lobjCarSearchResponse.SearchResponse.MatchList[0].Match[0].Route[0].DropOff[0].locName.ToString()
+                                  + ", " + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].day + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].month + "/" + lobjCarSearchRequest.SearchRequest.DropOff[0].Date[0].year;
+
+        return lobjListOfData;
+    }
+
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static bool IsMemberLoggedIn(string pstrRefId)
+    {
+        ABCModel lobjModel = new ABCModel();
+        lobjModel.LogActivity(string.Format("Car selected for booking"), ActivityType.CarBooking);
+        HttpContext.Current.Session["CarRefId"] = pstrRefId;
+        return HttpContext.Current.Session["MemberDetails"] != null;
+    }
+
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static string[] ModifySearchData()
+    {
+        string[] lobjListOfData = new string[4];
+        string lstrModifySearchRequest = string.Empty;
+        string lstrModifySearchResponse = string.Empty;
+        string lstrDepartDate = string.Empty;
+        string lstrArrivalDate = string.Empty;
+
+        CarSearchRequest lobjCarSearchRequest = HttpContext.Current.Session["CarSearchRequest"] as CarSearchRequest;
+        CarSearchResponse lobjCarSearchResponse = HttpContext.Current.Session["Cars"] as CarSearchResponse;
+
+        lstrModifySearchRequest = JSONSerialization.Serialize(lobjCarSearchRequest);
+        lstrModifySearchResponse = JSONSerialization.Serialize(lobjCarSearchResponse);
+
+        string strFromTime = HttpContext.Current.Session["hdnddlFromTime"].ToString();
+        string strToTime = HttpContext.Current.Session["hdnddlToTime"].ToString();
+
+        lobjListOfData[0] = lstrModifySearchRequest;
+        lobjListOfData[1] = lstrModifySearchResponse;
+        lobjListOfData[2] = strFromTime;
+        lobjListOfData[3] = strToTime;
+
+        return lobjListOfData;
+    }
+
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static string GetCarTermsCondtion(string pstrrefId)
+    {
+        if (HttpContext.Current.Session["Cars"] != null)
+        {
+            //return JSONSerialization.Serialize(lobjMAFModel.GetCarVehiclDetails((HttpContext.Current.Session["Cars"] as CarAvailabilityResponse).VehAvailRSCore.VehVendorAvails.VehVendorAvail.CarVehicles, pstrrefId));
+            ABCModel lobjModel = new ABCModel();
+
+            CarRentalTermsRequest lobjCarRentalTermsRequest = new CarRentalTermsRequest();
+            List<Location> lobjLocationList = new List<Location>();
+            Location lobjLocation = new Location();
+            lobjLocation.id = pstrrefId;
+            lobjLocationList.Add(lobjLocation);
+            RentalTermsRQ lobjRentalTermsRQ = new RentalTermsRQ();
+            lobjRentalTermsRQ.Location = lobjLocationList.ToArray();
+            lobjCarRentalTermsRequest.RentalTermsRQ = lobjRentalTermsRQ;
+            CarRentalTermsResponse lobjCarRentalTermsResponse = new CarRentalTermsResponse();
+            lobjCarRentalTermsResponse = lobjModel.CarRentalTermsResponse(lobjCarRentalTermsRequest);
+            //HttpContext.Current.Session["TermsAndConditions"] = lobjCarRentalTermsResponse;
+            return JSONSerialization.Serialize(lobjCarRentalTermsResponse);
+        }
+        else
+        {
+            return string.Empty;
+        }
+    }
+
+}

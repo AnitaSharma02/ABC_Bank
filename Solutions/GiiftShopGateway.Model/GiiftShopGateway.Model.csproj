@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70532E14-1D6C-44D4-B236-BD1683899852}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GiiftShopGateway.Model</RootNamespace>
+    <AssemblyName>GiiftShopGateway.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CB.IBE.Platform.Masters.Entities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\References\CB.IBE.Platform.Masters.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Common.Entities">
+      <HintPath>..\..\References\Core.Platform.Common.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Helper.ProgramName">
+      <HintPath>..\..\References\Core.Platform.Helper.ProgramName.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Member.Entites">
+      <HintPath>..\..\References\Core.Platform.Member.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.PointGateway.Service.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Core.Platform.PointGateway.Service.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ProgramInterface.ClientHelper">
+      <HintPath>..\..\References\Core.Platform.ProgramInterface.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ProgramMaster.Entities">
+      <HintPath>..\..\References\Core.Platform.ProgramMaster.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Adapters, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Adapters.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Entity">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Helper">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Giift.ShopGateway.Client.Entities">
+      <HintPath>..\..\References\Giift.ShopGateway.Client.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Giift.ShopGateway.Client.Helper">
+      <HintPath>..\..\References\Giift.ShopGateway.Client.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Giift.ShopGateway.Entities">
+      <HintPath>..\..\References\Giift.ShopGateway.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="LoyaltyManagement.Request">
+      <HintPath>..\..\References\LoyaltyManagement.Request.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="Stripe.net">
+      <HintPath>..\..\References\Stripe.net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ShopModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ABC.Model\ABC.Model.csproj">
+      <Project>{bcf8e756-8e46-4ce9-876e-c94fd33afd6c}</Project>
+      <Name>ABC.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.WebAPI.ClientHelper\Core.WebAPI.ClientHelper.csproj">
+      <Project>{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}</Project>
+      <Name>Core.WebAPI.ClientHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

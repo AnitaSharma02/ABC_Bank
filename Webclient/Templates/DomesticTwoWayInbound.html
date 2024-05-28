@@ -1,0 +1,67 @@
+﻿
+<textarea class="searchResponse" id="InboundTemplate" style="display: none">
+
+{#foreach $T as record}
+<div>
+    <span class="d-inline-block h7 heading-semibold">{$T.record.Departure} → {$T.record.Arrival}, {$T.record.FlightDate}</span>
+</div>
+<div class="dvProducts">
+    <div class="row equal-col">
+        <div class="dvFlightInfo col-12 col-md-12 col-lg-12 mb-4">
+            <div class="border dvhover inboundflight"  id="{$T.record.FlightNo}" name="ReturnFlight" onclick="var retvalue = showTripSummary('{$T.record.FlightId}',this); event.returnValue= retvalue;event.preventDefault(); return retvalue;">
+                <div class="flight-block">
+                    <div class="dvAirInfo d-flex flex-wrap justify-content-between align-items-center py-2">
+                        <div class="col-12 col-md-4 text-center text-md-left">
+                            <img src='{$T.record.AirlineLogo}' alt="" />
+                            <div>
+                                <span class="heading-semibold d-inline-block pl-2">{$T.record.AirlineName}  ({$T.record.FlightNo})</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="row justify-content-between align-items-center my-2">
+                                <div class="col-5 pr-md-0">
+                                    <span class="">{$T.record.DepartureTime}</span>
+                                </div>
+                                <div class="col-2 d-flex justify-content-between align-items-center px-0">
+                                    <div class="border-top w-100"></div>
+                                </div>
+                                <div class="col-5 pl-md-0 text-right ">
+                                    <span class="">{$T.record.ArrivalTime}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 text-center text-md-right">
+                            <h2 class="h6 heading-bold text-colour1 CommaSeperated">NPoints {$T.record.FareTotal}</h2>
+                            <h2 class="h7 heading-regular py-1">Round Trip</h2>
+                            {% if {$T.record.Refundable} %}
+                            <h2 class="h7 heading-regular">Refundable</h2>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    <!--<div class="dvInfo row">
+                        <div class="col-12 border-top">
+                            <div class="row">
+                                <div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-right text-lg-center border-right-lg border-bottom-lg">
+                                    <span class="">{$T.record.DepartureTime}</span>
+                                </div>
+                                <div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-right text-lg-center border-bottom">
+                                    <span class="">{$T.record.ArrivalTime}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>-->
+                    <div class="row">
+                        <div class="col-12 text-center"> 
+                            <p class="h7 heading-semibold border-top py-2">Baggage Allowance: {$T.record.FreeBaggage}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{#/for}
+</textarea>
+

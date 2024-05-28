@@ -1,0 +1,16 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Warningpage.aspx.cs" Inherits="Warningpage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Warning</title>
+
+</head>
+<body style="margin: 0 auto; width: 100%; font-family: 'Conv_tt0009m',Sans-Serif;">
+    <form id="form1" runat="server">
+        <div style="float: left; width: 100%; text-align: center; margin-top: 2%; font-size: 28px;">
+            Your page has expired !!!!
+        </div>
+    </form>
+</body>
+</html>

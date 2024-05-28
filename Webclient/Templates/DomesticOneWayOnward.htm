@@ -1,0 +1,62 @@
+﻿<textarea class="searchResponse" id="OnwardOneWayTemplate" style="display: none">
+
+
+{#foreach $T as record}
+<div class="flight-block seq_{$T.record.SequenceNo}">
+<div class="width78 brdright">
+<div class="bgDur">
+<span style="float:left;margin-top:3px;margin-left:3px">Departure >> </span>
+<img src="Images/inner-icn-timer.png" style="float:left;margin-left:40px"> <span style="float:left;margin-top:3px;margin-left:3px">Total Duration: {$T.record.TotalDurationDisplay}</span>
+</div>
+{#foreach $T.record.ListOfFlightSegments as ListOfFlightSegments}
+<div class="width100">
+<div class="width18">
+<img src='{$T.ListOfFlightSegments.Carrier.CarrierLogoPath}' /><br />
+
+<span style="font-size:1vw;overflow:hidden;color:#2C2C2C">{$T.ListOfFlightSegments.Carrier.CarrierName}<br />
+
+        ({$T.ListOfFlightSegments.Carrier.CarrierCode}{$T.ListOfFlightSegments.FlightNo})</span>
+    </div>
+<div class="width36 brdleft minHight80">
+<div class="flightName">
+<span class="CountryName">
+         {$T.ListOfFlightSegments.DepartureAirField.City} ({$T.ListOfFlightSegments.DepartureAirField.IATACode})</span><br />
+
+
+
+         {$T.ListOfFlightSegments.DepartureAirField.AirportName}
+         </div>
+         Departure Date : {$T.ListOfFlightSegments.DisplayDepartureDate}<br />
+
+         Departure Time : {$T.ListOfFlightSegments.DisplayDepartureTime}<br />
+
+    </div>
+<div class="width36 brdleft minHight80">
+<div class="flightName">
+<span class="CountryName">
+        {$T.ListOfFlightSegments.ArrivalAirField.City} ({$T.ListOfFlightSegments.ArrivalAirField.IATACode})</span><br />
+
+        {$T.ListOfFlightSegments.ArrivalAirField.AirportName}
+        </div>
+        Arrival Date: {$T.ListOfFlightSegments.DisplayArrivalDate}<br />
+
+        Arrival Time :  {$T.ListOfFlightSegments.DisplayArrivalTime}<br />
+
+    </div>
+</div>
+{#/for}    
+</div>
+<div class="width18 al_Center">
+<span style="color:#8A8A8A">NPOINTS</span><br />
+
+<span style="font-size:2.3vw;color:#525252">
+{$T.record.FareDetails.TotalPoints}</span><br />
+
+<img src="Images/btn-booknow.png" onclick="var retvalue = BookNowClick('{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;" style="cursor: pointer;" />
+
+</div>
+
+</div>
+{#/for}    
+
+</textarea>

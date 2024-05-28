@@ -1,0 +1,254 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Framework.EnterpriseLibrary.Adapters;
+using Giift.Integration.Client.Helper;
+using Giift.Integration.Master.Entities;
+using System.Configuration;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using Zen.Barcode;
+using Core.Platform.Member.Entites;
+using ABC.Model;
+using Newtonsoft.Json.Linq;
+
+public partial class GiftCardResponse : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string lstrResponse = string.Empty;
+        ABCModel lobjmodel = new ABCModel();
+
+        if (!Page.IsPostBack)
+        {
+            try
+            {
+                using (var reader = new StreamReader(Request.InputStream))
+                {
+                    lstrResponse = reader.ReadToEnd();
+                    LoggingAdapter.WriteLog("GiftCard Response Page Load Response: " + lstrResponse);
+
+                    JToken lobjResponse = JObject.Parse(lstrResponse);
+                    string lstrOrderId = (string)lobjResponse.SelectToken("OrderId");
+                    LoggingAdapter.WriteLog("GiftCardResponse 1");
+                    CHelper lobjCHelper = new CHelper();
+                    LoggingAdapter.WriteLog("GiftCardResponse 2");
+                    bool lblnStatus = lobjCHelper.UpdatePurchaseStatus(lstrResponse);
+                    LoggingAdapter.WriteLog("GiftCardResponse 3");
+                    if (lblnStatus)
+                    {
+                        LoggingAdapter.WriteLog("GiftCardResponse 4");
+                        List<GiftCardDetails> lobjListOfGiftCardDetails = new List<GiftCardDetails>();
+                        string lstrGCUserName = Convert.ToString(ConfigurationManager.AppSettings["GCUserName"]);
+                        string lstrGCPassword = Convert.ToString(ConfigurationManager.AppSettings["GCPassword"]);
+                        LoggingAdapter.WriteLog("GiftCardResponse 5");
+                        lobjListOfGiftCardDetails = lobjCHelper.GetGiftCardDetails(lstrGCUserName, lstrGCPassword, lstrOrderId);
+                        LoggingAdapter.WriteLog("GiftCardResponse 6");
+                        if (lobjListOfGiftCardDetails != null && lobjListOfGiftCardDetails.Count > 0)
+                        {
+
+                            LoggingAdapter.WriteLog("GiftCardResponse 7");
+                            MemberDetails lobjMemberDetails = new MemberDetails();
+                            lobjMemberDetails = lobjmodel.GetMemberDetails(lobjListOfGiftCardDetails[0].MemberId);
+                            LoggingAdapter.WriteLog("GiftCardResponse 8");
+                            if (lobjMemberDetails != null)
+                            {
+                                LoggingAdapter.WriteLog("GiftCardResponse 9");
+                                int maxheight = 40;
+                                Code128BarcodeDraw barcode128 = BarcodeDrawFactory.Code128WithChecksum;
+                                System.Drawing.Image img = barcode128.Draw(lobjListOfGiftCardDetails[0].GiftCardNumber, maxheight);
+                                Bitmap bm = new Bitmap(img);
+                                string filePath = HttpContext.Current.Server.MapPath("~/Barcodes/") + lobjListOfGiftCardDetails[0].OrderId + ".png";
+                                if (!File.Exists(filePath))
+                                {
+                                    LoggingAdapter.WriteLog("GiftCardResponse 10");
+                                    bm.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+                                }
+                                LoggingAdapter.WriteLog("GiftCardResponse 11");
+                                string ImageUrl = Convert.ToString(ConfigurationManager.AppSettings["GCBarcodeUrl"]) + lobjListOfGiftCardDetails[0].OrderId + ".png";
+                                LoggingAdapter.WriteLog("GiftCardResponse 12");
+                                List<string> lstrEmailParameters = new List<string>();
+                                List<string> lstrSMSParameters = new List<string>();
+
+                                if (lobjListOfGiftCardDetails[0].GiftCardNumber.Contains("http"))
+                                {
+                                    //lstrEmailParameters.Add("<a href='" + lobjGiftCardDetails.GiftCardNumber + ">'" + lobjGiftCardDetails.GiftCardNumber + "</a>");
+                                    lstrEmailParameters.Add("<a href=\"" + lobjListOfGiftCardDetails[0].GiftCardNumber + "\" target=\"_blank\">" + lobjListOfGiftCardDetails[0].GiftCardNumber + "</a>");
+                                    lstrSMSParameters.Add("<a href=\"" + lobjListOfGiftCardDetails[0].GiftCardNumber + "\" target=\"_blank\">" + lobjListOfGiftCardDetails[0].GiftCardNumber + "</a>");
+                                }
+                                else
+                                {
+                                    lstrEmailParameters.Add(lobjListOfGiftCardDetails[0].GiftCardNumber);
+                                    lstrSMSParameters.Add(lobjListOfGiftCardDetails[0].GiftCardNumber);
+                                }
+
+                                lstrEmailParameters.Add(Convert.ToString(lobjListOfGiftCardDetails[0].Value));
+
+                                // lstrSMSParameters.Add(Convert.ToString(lobjmodel.FloatToThousandSeperated(Convert.ToSingle(lobjListOfGiftCardDetails[0].Value))));
+
+                                LoggingAdapter.WriteLog("GiftCardResponse 13");
+                                if (lobjListOfGiftCardDetails[0].Expiration != null)
+                                {
+                                    if (DateTime.Now > lobjListOfGiftCardDetails[0].Expiration)
+                                    {
+                                        lstrEmailParameters.Add("-");
+                                    }
+                                    else
+                                    {
+                                        LoggingAdapter.WriteLog("GiftCardResponse 14");
+                                        DateTime temp = DateTime.ParseExact(Convert.ToString(lobjListOfGiftCardDetails[0].Expiration), "M/d/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                                        string str = temp.ToString("dd-MM-yyyy");
+                                        lstrEmailParameters.Add(str);
+                                    }
+                                }
+                                else
+                                {
+                                    LoggingAdapter.WriteLog("GiftCardResponse 15");
+                                    lstrEmailParameters.Add("");
+                                }
+
+                                if (lobjListOfGiftCardDetails[0].CCV != "0")
+                                {
+                                    LoggingAdapter.WriteLog("GiftCardResponse 16");
+                                    //lstrEmailParameters.Add("CCV:  " + Convert.ToString(lobjListOfGiftCardDetails[0].CCV));
+                                    lstrEmailParameters.Add(Convert.ToString(lobjListOfGiftCardDetails[0].CCV));
+                                }
+                                else
+                                {
+                                    LoggingAdapter.WriteLog("GiftCardResponse 17");
+                                    lstrEmailParameters.Add("N/A");
+                                }
+                                LoggingAdapter.WriteLog("GiftCardResponse 18");
+                                lstrEmailParameters.Add(lobjListOfGiftCardDetails[0].ImageUrls);
+                                lstrEmailParameters.Add(lobjListOfGiftCardDetails[0].Terms);
+                                lstrEmailParameters.Add(ImageUrl);
+                                LoggingAdapter.WriteLog("GiftCardResponse 19");
+                                if (!string.IsNullOrEmpty(lobjListOfGiftCardDetails[0].ExtraLogin))
+                                {
+                                    LoggingAdapter.WriteLog("GiftCardResponse 20");
+                                    lstrEmailParameters.Add("<a href=\"" + lobjListOfGiftCardDetails[0].ExtraLogin + "\" target=\"_blank\" style=\"padding: 8px 12px; border: 1px solid #ED2939;border-radius: 2px;font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #ffffff;text-decoration: none;font-weight:bold;display: inline-block;margin-left\">Redeem</a>");
+                                }
+                                else
+                                {
+                                    LoggingAdapter.WriteLog("GiftCardResponse 21");
+                                    lstrEmailParameters.Add("");
+                                }
+                                LoggingAdapter.WriteLog("GiftCardResponse 22");
+
+                                if (lobjMemberDetails.PreferredLanguage == "EN")
+                                {
+                                    SendEmail(lstrEmailParameters, lobjMemberDetails, "GIFTCARD");
+
+                                    if (lobjListOfGiftCardDetails[0].Name == "Al Meera")
+                                    {
+                                        SendSMS(ValidateSMSLength(lstrSMSParameters, "EN"), lobjMemberDetails, "GIFTCARD");
+                                    }
+
+                                }
+                                else if (lobjMemberDetails.PreferredLanguage == "AR")
+                                {
+                                    SendEmail(lstrEmailParameters, lobjMemberDetails, "GIFTCARDAR");
+
+                                    if (lobjListOfGiftCardDetails[0].Name == "Al Meera")
+                                    {
+                                        SendSMS(ValidateSMSLength(lstrSMSParameters, "AR"), lobjMemberDetails, "ARGIFTCARD");
+                                    }
+                                }
+                                else
+                                {
+                                    SendEmail(lstrEmailParameters, lobjMemberDetails, "GIFTCARD");
+
+                                    if (lobjListOfGiftCardDetails[0].Name == "Al Meera")
+                                    {
+                                        SendSMS(ValidateSMSLength(lstrSMSParameters, "EN"), lobjMemberDetails, "GIFTCARD");
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            LoggingAdapter.WriteLog("GiftCardResponse GiftCardDetails Null.");
+                        }
+                    }
+                    else
+                    {
+                        LoggingAdapter.WriteLog("GiftCardResponse UpdatePurchaseStatus False.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("GCRESPONSE Exception : " + ex.Message + ex.StackTrace);
+            }
+        }
+    }
+
+    public void SendEmail(List<string> pstrEmailparameter, MemberDetails pobjMemberDetails, string pstrTemplateCode)
+    {
+        Framework.EnterpriseLibrary.CommunicationEngine.Entity.EmailDetails lobjEmailDetail = new Framework.EnterpriseLibrary.CommunicationEngine.Entity.EmailDetails();
+        List<string> lstAttachment = new List<string>();
+        Framework.EnterpriseLibrary.CommunicationEngine.Helper.CEHelper lobjcehelper = new Framework.EnterpriseLibrary.CommunicationEngine.Helper.CEHelper();
+        lobjEmailDetail.TemplateCode = pstrTemplateCode;
+        lobjEmailDetail.ListParameter = pstrEmailparameter;
+        lobjEmailDetail.ProgramId = Convert.ToString(pobjMemberDetails.ProgramId);
+        lobjEmailDetail.MemberId = Convert.ToString(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
+        lobjEmailDetail.AttachmentList = lstAttachment;
+        lobjEmailDetail.To = pobjMemberDetails.Email;
+        lobjcehelper.InsertEmailDetails(lobjEmailDetail);
+    }
+
+    private List<string> ValidateSMSLength(List<string> pstrSMSParameters, string pstrSMSType)
+    {
+
+        string SMS = @"Dear Customer,Thank you for redeeming QIB Absher Rewards Points.Your Voucher Code is {0}.You can redeem it at any Al Meera Outlets.T&Cs Apply";
+        try
+        {
+            string lstrGiftCardSMS = string.Empty;
+            if (pstrSMSType == "EN")
+            {
+                lstrGiftCardSMS = SMS; //ConfigurationManager.AppSettings["GiftCardSMS"];
+            }
+            else if (pstrSMSType == "AR")
+            {
+                lstrGiftCardSMS = ConfigurationManager.AppSettings["GiftCardSMSAR"];
+            }
+            else
+            {
+                lstrGiftCardSMS = ConfigurationManager.AppSettings["GiftCardSMS"];
+            }
+
+            int lintGiftCardSMSLength = Convert.ToInt32(ConfigurationManager.AppSettings["GiftCardSMSLength"]);
+            string lstrFinalSMS = string.Format(lstrGiftCardSMS, pstrSMSParameters[0]);
+            if (!string.IsNullOrEmpty(lstrFinalSMS))
+            {
+                if (lstrFinalSMS.Length > lintGiftCardSMSLength)
+                {
+                    pstrSMSParameters[0] = pstrSMSParameters[0].Substring(0, pstrSMSParameters[0].Length - (lstrFinalSMS.Length - lintGiftCardSMSLength));
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("ValidateSMSLength Exception -- " + ex.Message + Environment.NewLine + "StackTrace -- " + ex.StackTrace + Environment.NewLine + "Message -- " + ex.Message);
+        }
+        return pstrSMSParameters;
+    }
+
+    private void SendSMS(List<string> lstrSMSParameters, MemberDetails pobjMemberDetails, string pstrTemplateCode)
+    {
+        Framework.EnterpriseLibrary.CommunicationEngine.Entity.SmsDetails lobjSmsDetails = new Framework.EnterpriseLibrary.CommunicationEngine.Entity.SmsDetails();
+        List<string> lstAttachment = new List<string>();
+        Framework.EnterpriseLibrary.CommunicationEngine.Helper.CEHelper lobjcehelper = new Framework.EnterpriseLibrary.CommunicationEngine.Helper.CEHelper();
+        lobjSmsDetails.TemplateCode = pstrTemplateCode;
+        lobjSmsDetails.ListParameter = lstrSMSParameters;
+        lobjSmsDetails.ProgramId = Convert.ToString(pobjMemberDetails.ProgramId);
+        lobjSmsDetails.MemberId = Convert.ToString(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
+        lobjSmsDetails.ReceiverMobile = pobjMemberDetails.MobileNumber;
+        lobjcehelper.InsertSmsDetails(lobjSmsDetails);
+    }
+
+}

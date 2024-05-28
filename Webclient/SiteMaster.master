@@ -1,0 +1,403 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteMaster.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head id="Head1" runat="server">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Welcome to NIC Asia</title>
+    <link rel="shortcut icon" type="image/x-icon" href="\Images/icons/favicon/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/fonts/fontawesome-free-6.5.1-web/css/all.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="\Css/jquery-ui.css" />
+    <link rel="stylesheet" href="\Css/bootstrap.min.css" />
+    <link rel="stylesheet" href="\Css/swiper.min.css" />
+    <link rel="stylesheet" href="\Css/root.css" />
+    <link rel="stylesheet" href="\Css/global.css" />
+    <link rel="stylesheet" href="\Css/home.css" />
+    <script src="\Jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="\Jquery/jquery-ui.js" type="text/javascript"></script>
+    <script src="\Jquery/common.js" type="text/javascript"></script>
+    <script src="\Jquery/bootstrap.min.js" type="text/javascript"></script>
+    <script src="\Jquery/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <script src="\Jquery/swiper.min.js"></script>
+    <!--Language Libs -->
+    <script src="\Jquery/i18n/jquery.i18n.min.js" type="text/javascript"></script>
+    <script src="\Jquery/i18n/jquery.i18n.emitter.bidi.js" type="text/javascript"></script>
+    <script src="\Jquery/i18n/i18n.custom.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).ajaxStart(function () {
+                //alert("ajax start");
+                $("#updProgress").show();
+            }).ajaxStop(function () {
+                //alert("ajax stop");
+                $("#updProgress").hide();
+            });
+            CheckPointsAvailability();
+            $('.popupclose').click(function () {
+                $('.hover_app_info').hide();
+            });
+
+            // this script is to Prevent dropdown menu from closing when clicking inside the dropdown all over the website
+            $('.dvDropdown .prevent-close').on('click', function (event) {
+                event.stopPropagation();
+            });
+        });
+        function BindBanner() {
+            try {
+                var bannerHTML = '<%=HttpContext.Current.Application[string.Format("{0}banner",Convert.ToString(Session["CategoryName"]))]%>';
+                if (bannerHTML != '') {
+                    $("#dvHeroSlider").append(bannerHTML);
+                    const heroSlider = new Swiper(".dvHeroSlider.swiper", {
+                        direction: "horizontal",
+                        loop: false,
+                        speed: 500,
+                        slidesPerView: 1,
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                        pagination: {
+                            el: ".swiper-pagination",
+                            clickable: true,
+                        },
+                        spaceBetween: 0,
+                        breakpoints: {
+                            0: {
+                                slidesPerView: 1,
+                            },
+                        },
+                        mousewheel: {
+                            enabled: false,
+                        },
+                        keyboard: {
+                            enabled: true,
+                        },
+                    });
+                }
+                else {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'Index.aspx/GetHomeBanner',
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        data: "{path:'" + '<%=string.Format("{0}banner",Convert.ToString(Session["CategoryName"]))%>' + "'}",
+                        success: function (msg) {
+                            if (msg.d != '') {
+                                $("#dvHeroSlider").append(msg.d);
+                                const heroSlider = new Swiper(".dvHeroSlider.swiper", {
+                                    direction: "horizontal",
+                                    loop: false,
+                                    speed: 500,
+                                    slidesPerView: 1,
+                                    navigation: {
+                                        nextEl: ".swiper-button-next",
+                                        prevEl: ".swiper-button-prev",
+                                    },
+                                    pagination: {
+                                        el: ".swiper-pagination",
+                                        clickable: true,
+                                    },
+                                    spaceBetween: 0,
+                                    breakpoints: {
+                                        0: {
+                                            slidesPerView: 1,
+                                        },
+                                    },
+                                    mousewheel: {
+                                        enabled: false,
+                                    },
+                                    keyboard: {
+                                        enabled: true,
+                                    },
+                                });
+                            }
+                        }
+                    });
+                }
+
+            } catch (e) {
+            }
+        }
+        function GetRedemptionOptions() {
+            try {
+                var redemptionOptionsHTML = '<%=HttpContext.Current.Application["HomeRedemptionOptions"]%>';
+                if (redemptionOptionsHTML != '') {
+                    $("#divRedemptionOptions").html(redemptionOptionsHTML);
+                    var categoryName = '<%=Convert.ToString(Session["CategoryName"])%>';
+                    if (categoryName != '') {
+                        $('.redemptionoptions').removeClass('SelRedemption');
+                        $('.' + categoryName + 'redemption').addClass('SelRedemption');
+                    }
+                } else {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'Index.aspx/GetRedemptionOptions',
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        data: "",
+                        success: function (msg) {
+                            if (msg.d != '') {
+                                $("#divRedemptionOptions").html(msg.d);
+                                var categoryName = '<%=Convert.ToString(Session["CategoryName"])%>';
+                                if (categoryName != '') {
+                                    $('.redemptionoptions').removeClass('SelRedemption');
+                                    $('.' + categoryName + 'redemption').addClass('SelRedemption');
+                                }
+                            }
+                        }
+                    });
+                }
+            } catch (e) {
+            }
+        }
+        function CheckPointsAvailability() {
+            try {
+                $.ajax({
+                    type: 'POST',
+                    url: 'Index.aspx/CheckPointsAvailability',
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    data: "",
+                    success: function (msg) {
+                        if (msg.d != '') {
+                            $("#lblCurrentBal").empty().html(msg.d);
+                            $('#spnMemberCurrentBal').empty().html(msg.d);
+                        } else {
+                            $("#lblCurrentBal").empty().html(0);
+                            $('#spnMemberCurrentBal').empty().html(0);
+                        }
+                    },
+                    beforeSend: function () {
+                        $("#updProgress").hide();
+                    }
+                });
+            } catch (e) {
+            }
+        }
+        // check url and apply classnames for different redemptions
+        $(document).ready(function () {
+            function getUrlParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+            function addClassBasedOnUrl() {
+                const type = getUrlParam('type');
+                const productType = getUrlParam('ProductType');
+                if (type === 'Giftcards') {
+                    $('.dvProductList ').addClass('dvGiftCardsPage');
+                }
+                else if (type === 'Lounges') {
+                    $('.dvProductList ').addClass('dvLoungesPage');
+                }
+                else if (type === 'Milesexchange') {
+                    $('.dvProductList ').addClass('dvMilesExchangePage');
+                }
+                else if (type === 'Offers') {
+                    $('.dvShopPage').addClass('dvOffersPage');
+                }
+                else if (type === 'utility') {
+                    $('.dvProductList ').addClass('dvUtilityPage');
+                }
+                else if (productType === 'Physical' && type === 'Shop') {
+                    $('.dvShopPage ').addClass('dvShopOfferPage');
+                }
+                else if (productType === 'Physical') {
+                    $('.dvProductList ').addClass('dvShopListPage');
+                }
+                else {
+                    return null;
+                }
+            }
+            addClassBasedOnUrl();
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="dvHeader shadow-sm sticky-top bg-white">
+            <div class="dvStripe">
+                <div class="container-lg">
+                    <div class="row">
+                        <div class="dvUserInfo col-12 mb-lg-0">
+                            <div class="d-flex align-items-center justify-content-end mx-lg-n3">
+                                <div class="dvName col-auto px-0">
+                                    <div id="liwelcome" runat="server" visible="true">
+                                        <div class="d-flex align-items-center h7 heading-regular text-colour7 ">
+                                            <span id="txtWelcome" class="" runat="server" data-i18n="navigation-welcome">Welcome, </span>
+                                            <asp:Label runat="server" CssClass="ml-1" ID="lblMemberName">
+                                             <span data-i18n="text-guest">Guest</span>
+                                            </asp:Label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dvPoints col-auto px-0 ml-3" runat="server" visible="false" id="dvPoints">
+                                    <div class="nav-item col-12" id="liPoints" runat="server" visible="false">
+                                        <a class="points h7 heading-regular" href="javascript:void(0);" data-i18n="navigation-points">NPoints<span>
+                                            <asp:Label ID="lblAvailablePoints" runat="server" Text="0"></asp:Label></span>
+                                        </a>
+                                    </div>
+                                    <div id="HeaderTot" class="text-client-name" runat="server" visible="false">
+                                        <asp:Label runat="server" CssClass="h7 heading-regular text-colour7 " ID="Label1" Text="NPoints" data-i18n="navigation-points"></asp:Label><span class="ml-1 h7 heading-regular text-colour7 " id="totAvbPointDiv" runat="server" visible="false"><asp:Label runat="server" ID="lblCurrentBal" class="loginbtn_personal login_btn" ForeColor="" Text="0"></asp:Label></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-lg">
+                <nav class="navbar navbar-expand-lg navbar-light px-0 py-2 py-lg-0 mx-lg-n3">
+                    <div class="logo m-0 col col-lg-3 px-0 px-lg-3 order-0">
+                        <a href="Index.aspx">
+                            <img src="../images/logos/nic-logo.svg" />
+                        </a>
+                    </div>
+                    <%-- remove d-lg-none and style="display:none !important;" from below to display language selectmenu --%>
+                    <div class="order-1 order-lg-2 col d-flex col-lg-auto align-items-center justify-content-end pr-0 pr-lg-0 d-lg-none">
+                        <div class="dvLanguage pr-3 pr-lg-0 mb-1 mb-lg-0 d-flex- align-items-center" style="display:none !important;">
+                            <div class="form-group select-dropdown selectUl selLanguage m-0">
+                                <select class="form-control px-1 py-0 mt-1 mt-lg-0 py-2" id="languageSelector">
+                                </select>
+                            </div>
+                        </div>
+                        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    </div>
+                    <div class="collapse navbar-collapse order-2 order-lg-1 col-lg-8 px-0 mb-1 mb-lg-0 justify-content-between ml-lg-auto" id="navbarSupportedContent">
+                        <ul class="navbar-nav align-items-lg-center">
+                            <li class="nav-item">
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" data-i18n="navigation-about-us" id="about" href="AboutUs.aspx">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" data-i18n="navigation-earn" id="earn" href="ComingSoon.aspx">Earn</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="Redeem.aspx" id="redeem" data-i18n="navigation-redeem">Redeem</a>
+                            </li>
+                            <li class="nav-item dropdown" runat="server" visible="true" id="limyaccount">
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="StatementSummary.aspx" id="navbarDropdown" data-i18n="navigation-my-account">My Account</a>
+                            </li>
+                        </ul>
+                        <div class="dvLogin">
+                            <div class="nav-item" id="lnkloginlogout" runat="server">
+                                <a href="Login.aspx" class="nav-link btn btn-one btn-sm d-inline-block mt-2 mt-lg-0" id="lnkLogin" runat="server">
+                                    <i class="fa-regular fa-user pr-1 d-inline-block"></i>
+                                    <span class="nav-link p-0 d-inline-block text-uppercase" data-i18n="navigation-login">Login</span>
+                                </a>
+                                <a id="liLogout" runat="server" visible="false">
+                                    <asp:LinkButton runat="server" CausesValidation="false" ID="logout" data-toggle="modal" data-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link header-text ml-lg-3 nav-link btn btn-one btn-sm d-inline-block mt-2 mt-lg-0">
+                                    <i class="fa-regular fa-user pr-1 d-inline-block"></i>
+                                     <span class="nav-link p-0 d-inline-block text-uppercase" data-i18n="navigation-logout">Logout</span>
+                                    </asp:LinkButton>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--header start here-->
+        <!--header end here-->
+        <!-- Homepage Banner Slider -->
+        <div id="dvHeroSlider" class="dvHeroSlider swiper w-100">
+        </div>
+        <div class="dvInnerBanner">
+            <img id="dvInnerBanner" alt="" class="w-100" />
+        </div>
+        <div class="dvRedemptionMenu py-4">
+            <div class="container-fluid">
+                <div class="row justify-content-center" id="divRedemptionOptions" runat="server">
+                </div>
+            </div>
+        </div>
+        <asp:ScriptManager ID="ScriptManager" runat="server" />
+        <!--main start here-->
+        <div class="dvMain">
+            <div class="container-lg">
+                <div class="row">
+                    <div class="dvBreadcrumbs col-12" id="sitemap" runat="server">
+                    </div>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="CP" runat="server"></asp:ContentPlaceHolder>
+            <div id="updProgress" style="z-index: 10000; height: 100%; display: none;">
+                <img src="../Images/loading.gif" alt="loading..." />
+            </div>
+        </div>
+        <!--main end here-->
+        <!--footer start here-->
+        <div class="dvFooter">
+            <div class="dvBgRedColor py-4">
+                <div class="container-lg">
+                    <div class="row align-items-lg-center">
+                        <div class="dvLinks col-lg-9 text-center text-lg-left mb-3 mb-lg-0 text-uppercase">
+                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-earn">Earn</a>
+                            <a class="d-block d-md-inline-block py-1" href="Redeem.aspx" data-i18n="navigation-redeem">Redeem</a>
+                            <a class="d-block d-md-inline-block py-1" href="AboutUs.aspx" data-i18n="navigation-about-us">About Us</a>
+                            <a class="d-block d-md-inline-block py-1" href="FAQ.aspx" data-i18n="navigation-faqs">FAQs</a>
+                            <a class="d-block d-md-inline-block py-1" href="TermsAndConditions.aspx" data-i18n="navigation-tnc">Terms &amp; Conditions</a>
+                            <a class="d-block d-md-inline-block py-1" href="PrivacyPolicy.aspx" data-i18n="bannertext-privacy">Privacy Policy</a>
+                            <a class="d-block d-md-inline-block py-1" href="BookingPolicy.aspx" data-i18n="navigation-booking-policy">Booking Policy</a>
+                            <a class="d-block d-md-inline-block py-1" href="Disclaimer.aspx" data-i18n="navigation-disclaimer">Disclaimer</a>
+                        </div>
+                        <div class="dvSocialIcons col-lg-3 text-center text-lg-right mb-3 mb-md-0">
+                            <a class="d-inline-block px-1" href="https://www.facebook.com/NicAsiaBank/" target="_blank">
+                                <img src="images/icons/social/facebook.svg" /></a>
+                            <a class="d-inline-block px-1" href="https://www.linkedin.com/company/nic-asia-bank/mycompany/" target="_blank">
+                                <img src="images/icons/social/linkedin.svg" /></a>
+                            <a class="d-inline-block px-1" href="https://www.instagram.com/nicasiabankofficial/?hl=en" target="_blank">
+                                <img src="images/icons/social/Instagram.svg" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-lg py-4">
+                <div class="row align-items-lg-center">
+                    <div class="col-sm-12 col-lg-2 text-center text-lg-right mb-3 mb-lg-0">
+                        <a href="Index.aspx">
+                            <img class="img-fluid footer-logo" src="images/logos/nic-logo.svg" alt="NIC Asia Logo" /></a>
+                    </div>
+                    <div class="col-sm-12 col-lg-5 text-center text-lg-left mb-3 mb-lg-0">
+                        <p class="h6 heading-semibold">
+                            ©
+                  <script>
+                      document.write(new Date().getFullYear());
+                  </script>
+                            NIC ASIA. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-lg-5 text-center text-lg-right">
+                        <a href="https://www.giift.com/" target="_blank">
+                            <img class="img-fluid" src="images/logos/giift-logo.svg" alt="Giift Logo" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--footer end here-->
+    </form>
+
+
+            <!-- dvLogoutModal -->
+            <div class="modal fade" id="dvLogoutModal" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="heading-semibold text-colour6">Logout</h5>
+                    <button type="button" class="close text-colour6" data-dismiss="modal">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-center">
+                      <p class="heading-semibold">Do you want to Signout?</p>
+                  </div>
+                  <div class="modal-footer justify-content-center">
+                    <a  class="btn btn-one" data-dismiss="modal">No</a>
+                    <a class="btn btn-one" id="dsktopYes" href="Logout.aspx">Yes</a> 
+                  </div>
+                </div>
+              </div>
+            </div>
+</body>
+</html>

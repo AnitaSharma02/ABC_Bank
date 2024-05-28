@@ -1,0 +1,318 @@
+﻿<textarea style="display: none" id="OnwardReturnTemplate">
+        
+    <div class="mobflt-conthdr">
+        <!--<p class="note"><span data-i18n="note-all-timigs-local">All timings are local. | Fare not guaranteed until ticketed.</span><span data-i18n="note-qib-absher-points">points displayed for redemption include Surcharges and Taxes.</span></p>-->
+        <table class="flightcontainerInternational DivFlightWidth" cellpadding="0" cellspacing="0"
+               border="0" width="100%">
+            {#foreach $T as record}
+            <tr class="Rightpannel_customDivFlight seq_{$T.record.SequenceNo}">
+                <td style="width:100%;float:left">
+                    <div class="flight-data">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                                <td style="width:100%;float:left">
+                                    <div class="miles-air">
+                                        <div class="divLeft">
+                                            <div class="airLogo"><img src="{$T.record.ListOfFlightDetails[0].ListOfFlightSegments[0].Carrier.CarrierLogoPath}" title="{$T.record.ListOfFlightDetails[0].ListOfFlightSegments[0].Carrier.CarrierName}" class="img" /></div>
+                                            <div class="flt-comp">{$T.record.ListOfFlightDetails[0].ListOfFlightSegments[0].Carrier.CarrierName}</div>
+                                        </div>
+                                        <div class="divRight">
+                                            <div class="milesWay">
+                                                <span data-i18n="managebooking-flight-points-label">Points</span><br />
+                                                {#if $T.record.Type=="Return"}
+                                                <span data-i18n="flightlist-round-trip">round trip</span>
+                                                {#else}
+                                                one way
+                                                {#/if}
+                                            </div>
+                                            <div class="miles ">{$T.record.FareDetails.TotalPoints}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {#foreach $T.record.ListOfFlightDetails as ListOfFlightDetails}
+                            {#foreach $T.ListOfFlightDetails.ListOfFlightSegments as ListOfFlightSegments}
+                            <tr>
+                                <td>
+                                    <label style="display:none">{$St=$T.ListOfFlightSegments$total}</label>
+                                    {#if $St==1}
+                                    <div class="air-detail">
+                                        <div class="air-time-city1"><span class="air-time">{ConvertTime($T.ListOfFlightSegments.DisplayDepartureTime)}</span><span class="air-city">{$T.ListOfFlightSegments.DepartureAirField.City} </span><span class="city">{$T.ListOfFlightSegments.DepartureAirField.IATACode}</span></div>
+                                        {#if $T.ListOfFlightDetails$iteration==0}
+                                        <div class="air-stop-time"><span class="stop-time">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">Non-Stop</span></div>
+                                        {#else}
+                                        <div class="air-stop-time"><span class="stop-time">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">Non-Stop</span></div>
+                                        {#/if}
+                                        <div class="air-time-city2"><span class="air-time">{ConvertTime($T.ListOfFlightSegments.DisplayArrivalTime)}</span><span class="air-city">{$T.ListOfFlightSegments.ArrivalAirField.City} </span><span class="city">{$T.ListOfFlightSegments.ArrivalAirField.IATACode}</span></div>
+
+                                    </div>
+                                    {#elseif $St==2}
+                                    {#if $T.ListOfFlightSegments$index==0}
+                                    <div class="air-detail">
+                                        <div class="air-time-city1"><span class="air-time">{ConvertTime($T.ListOfFlightSegments.DisplayDepartureTime)}</span><span class="air-city">{$T.ListOfFlightSegments.DepartureAirField.City} </span><span class="city">{$T.ListOfFlightSegments.DepartureAirField.IATACode}</span></div>
+                                        {#if $T.ListOfFlightDetails$iteration==0}
+                                        <div class="air-stop-time"><span class="stop-time">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">1 Stop</span></div>
+                                        {#else}
+                                        <div class="air-stop-time"><span class="stop-time">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">1 Stop</span></div>
+                                        {#/if}
+                                        <div class="air-time-city2"><span class="air-time">{ConvertTime($T.ListOfFlightSegments.DisplayArrivalTime)}</span><span class="air-city">{$T.ListOfFlightSegments.ArrivalAirField.City} </span><span class="city">{$T.ListOfFlightSegments.ArrivalAirField.IATACode}</span></div>
+
+                                    </div>
+                    </div>
+                    {#/if}
+                    {#else}
+                    {#if $T.ListOfFlightSegments$index==0}
+                    <div class="air-detail">
+                        <div class="air-time-city1"><span class="air-time">{ConvertTime($T.ListOfFlightSegments.DisplayDepartureTime)}</span> <span class="air-city">{$T.ListOfFlightSegments.DepartureAirField.City} </span><span class="city">{$T.ListOfFlightSegments.DepartureAirField.IATACode}</span></div>
+                        {#if $T.ListOfFlightDetails$iteration==0}
+                        <div class="air-stop-time"><span class="stop-time">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">2 Stop</span></div>
+                        {#else}
+                        <div class="air-stop-time"><span class="stop-time">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">2 Stop</span></div>
+                        {#/if}
+                        <div class="air-time-city2"><span class="air-time">{ConvertTime($T.ListOfFlightSegments.DisplayArrivalTime)}</span><span class="air-city">{$T.ListOfFlightSegments.ArrivalAirField.City} </span><span class="city">{$T.ListOfFlightSegments.ArrivalAirField.IATACode}</span></div>
+
+                    </div>
+                    {#/if} {#/if}
+
+                </td>
+            </tr>
+            {#/for}
+            {#/for}
+            <tr>
+                <td style="float:left;width:100%;">
+                    <div class="miles-cityHlr">
+                        <div class="dtls-book arial">
+
+                            <div class="linkF divseeflightsbtndivDetails{$T.record.SequenceNo}">
+                                <a href="javascript:void(0);" onclick="return showhideDetails('divDetails{$T.record.SequenceNo}');"><span data-i18n="flightlist-see-flight">See Flight Details</span> <img src="Images/fligh-arrow-down.svg"></a>
+                            </div>
+                            <div class="book-btn">
+                                <button data-i18n="flightlist-book-now" class="purple-btn" onclick="var retvalue = BookNowClick('{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;">Book Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr class="divDetails{$T.record.SequenceNo}" style="display:none">
+                <td style="float:left;width:100%">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        {#foreach $T.record.ListOfFlightDetails as ListOfFlightDetails}
+                        {#foreach $T.ListOfFlightDetails.ListOfFlightSegments as ListOfFlightSegments}
+                        <label style="display:none">{$LayOver=$T.ListOfFlightSegments$total}</label>
+                        <tr>
+                            <td style="float:left;width:100%">
+                                <ul class="f-more-details">
+                                    <li class="d-TimeBlk"><span class="d-time">{ConvertTime($T.ListOfFlightSegments.DisplayDepartureTime)}</span> - <span class="d-airlines">{$T.ListOfFlightSegments.DepartureAirField.AirportName}</span> - <span class="d-airCode">{$T.ListOfFlightSegments.DepartureAirField.IATACode}</span></li>
+                                    <li class="tTime">Total Time: {$T.ListOfFlightDetails.TotalDurationDisplay}</li>
+                                    <li class="aTimeBlk"><span class="a-time">{ConvertTime($T.ListOfFlightSegments.DisplayArrivalTime)}</span> - <span class="a-airlines">{$T.ListOfFlightSegments.ArrivalAirField.AirportName}</span> - <span class="a-airCode">{$T.ListOfFlightSegments.ArrivalAirField.IATACode}</span></li>
+                                    <li class="fOption"><span>{$T.ListOfFlightSegments.Carrier.CarrierName} - {$T.ListOfFlightSegments.FlightNo}</span> <span class="baggage"><img src="Images/icon-luggage.svg" style="vertical-align: unset;"> <span data-i18n="flightlist-baggage-allowance">Baggage Allowance</span> - {$T.ListOfFlightSegments.BaggageAllowance} </span></li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        {#/for}
+                        {#/for}
+                    </table>
+                    <div class="dtls-book arial"><a href="javascript:void(0);" onclick="return hideshowDetails('divDetails{$T.record.SequenceNo}');"><span data-i18n="flightlist-hide-flight">Hide Flight Details </span><img src="Images/fligh-arrow-up.svg"></a> </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+            </td>
+            </tr>
+            <tr class="rowspace seq_{$T.record.SequenceNo}">
+                <td colspan="3" style="height:0px;">
+                    &nbsp;
+                </td>
+            </tr>
+            {#/for}
+            </table>
+        </div>
+            <div class="flt-conthdr">
+                <!--<p class="note"><span data-i18n="note-all-timigs-local">All timings are local. | Fare not guaranteed until ticketed.</span><span data-i18n="note-qib-absher-points">points displayed for redemption include Surcharges and Taxes.</span></p>-->
+                <table class="flightcontainerInternational DivFlightWidth" cellpadding="0" cellspacing="0"
+                       border="0" width="100%">
+                    {#foreach $T as record}
+                    <tr class="Rightpannel_customDivFlight seq_{$T.record.SequenceNo}">
+                        <td style="width:100%;float:left">
+                            <div class="flight-data">
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tr>
+                                        <td>
+                                            <div class="miles-air">
+                                                <div class="divLeft">
+                                                    <div class="airLogo"><img src="{$T.record.ListOfFlightDetails[0].ListOfFlightSegments[0].Carrier.CarrierLogoPath}" title="{$T.record.ListOfFlightDetails[0].ListOfFlightSegments[0].Carrier.CarrierName}" class="img" /></div>
+                                                    <div class="flt-comp">{$T.record.ListOfFlightDetails[0].ListOfFlightSegments[0].Carrier.CarrierName}</div>
+                                                </div>
+                                                <div class="divRight">
+                                                    <div class="milesWay">
+                                                        <span data-i18n="managebooking-flight-points-label">Points</span><br />
+                                                        {#if $T.record.Type=="Return"}
+                                                        <span data-i18n="flightlist-round-trip">round trip</span>
+                                                        {#else}
+                                                        one way
+                                                        {#/if}
+                                                    </div>
+                                                    <div class="miles ">{$T.record.FareDetails.TotalPoints}</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {#foreach $T.record.ListOfFlightDetails as ListOfFlightDetails}
+                                    {#foreach $T.ListOfFlightDetails.ListOfFlightSegments as ListOfFlightSegments}
+                                    <tr>
+                                        <td>
+                                            <label style="display:none">{$St=$T.ListOfFlightSegments$total}</label>
+                                            {#if $St==1}
+                                            <div class="air-detail">
+                                                <div class="air-time-city1"><span class="air-time 1">{ConvertTime($T.ListOfFlightSegments.DisplayDepartureTime)}</span><span class="air-city">{$T.ListOfFlightSegments.DepartureAirField.City} </span><span class="city">{$T.ListOfFlightSegments.DepartureAirField.IATACode}</span></div>
+                                                {#if $T.ListOfFlightDetails$iteration==0}
+                                                <div class="air-stop-time"><span class="stop-time 2">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">Non-Stop</span></div>
+                                                {#else}
+                                                <div class="air-stop-time"><span class="stop-time 3">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">Non-Stop</span></div>
+                                                {#/if}
+                                                <div class="air-time-city2"><span class="air-time 4">{ConvertTime($T.ListOfFlightSegments.DisplayArrivalTime)}</span><span class="air-city">{$T.ListOfFlightSegments.ArrivalAirField.City} </span><span class="city">{$T.ListOfFlightSegments.ArrivalAirField.IATACode}</span></div>
+
+                                            </div>
+                                            {#elseif $St==2}
+                                            {#if $T.ListOfFlightSegments$index==0}
+                                            <div class="air-detail">
+                                                <div class="air-time-city1"><span class="air-time">{ConvertTime($T.ListOfFlightSegments.DisplayDepartureTime)}</span><span class="air-city">{$T.ListOfFlightSegments.DepartureAirField.City} </span><span class="city">{$T.ListOfFlightSegments.DepartureAirField.IATACode}</span></div>
+                                                {#if $T.ListOfFlightDetails$iteration==0}
+                                                <div class="air-stop-time"><span class="stop-time">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">1 Stop</span></div>
+                                                {#else}
+                                                <div class="air-stop-time"><span class="stop-time">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">1 Stop</span></div>
+                                                {#/if}
+                                                <div class="air-time-city2"><span class="air-time">{ConvertTime($T.ListOfFlightSegments.DisplayArrivalTime)}</span><span class="air-city">{$T.ListOfFlightSegments.ArrivalAirField.City} </span><span class="city">{$T.ListOfFlightSegments.ArrivalAirField.IATACode}</span></div>
+
+                                            </div>
+                            </div>
+                            {#/if}
+                            {#else}
+                            {#if $T.ListOfFlightSegments$index==0}
+                            <div class="air-detail">
+                                <div class="air-time-city1"><span class="air-time">{ConvertTime($T.ListOfFlightSegments.DisplayDepartureTime)}</span> <span class="air-city">{$T.ListOfFlightSegments.DepartureAirField.City} </span><span class="city">{$T.ListOfFlightSegments.DepartureAirField.IATACode}</span></div>
+                                {#if $T.ListOfFlightDetails$iteration==0}
+                                <div class="air-stop-time"><span class="stop-time">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">2 Stop</span></div>
+                                {#else}
+                                <div class="air-stop-time"><span class="stop-time">{$T.ListOfFlightDetails.TotalDurationDisplay}</span><span class="stop">2 Stop</span></div>
+                                {#/if}
+                                <div class="air-time-city2"><span class="air-time">{ConvertTime($T.ListOfFlightSegments.DisplayArrivalTime)}</span><span class="air-city">{$T.ListOfFlightSegments.ArrivalAirField.City} </span><span class="city">{$T.ListOfFlightSegments.ArrivalAirField.IATACode}</span></div>
+
+                            </div>
+                            {#/if} {#/if}
+
+                        </td>
+                    </tr>
+                    {#/for}
+                    {#/for}
+                    <tr>
+                        <td style="float:left;width:100%;">
+                            <div class="dtls-book arial">
+                                <div class="linkF divseeflightsbtndivDetails{$T.record.SequenceNo}">
+                                    <a href="javascript:void(0);" onclick="return showhideDetails('divDetails{$T.record.SequenceNo}');"><span data-i18n="flightlist-see-flight">See Flight Details</span> <img src="Images/fligh-arrow-down.svg"></a>
+                                </div>
+                            </div>
+                            <div class="book-btn raj">
+                                <button data-i18n="flightlist-book-now" class="purple-btn" onclick="var retvalue = BookNowClick('{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;">Book Now</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="divDetails{$T.record.SequenceNo}" style="display:none">
+                        <td style="float:left;width:100%">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                {#foreach $T.record.ListOfFlightDetails as ListOfFlightDetails}
+                                {#foreach $T.ListOfFlightDetails.ListOfFlightSegments as ListOfFlightSegments}
+                                <label style="display:none">{$LayOver=$T.ListOfFlightSegments$total}</label>
+                                <tr>
+                                    <td style="float:left;width:100%">
+                                        <div class="clr"></div>
+                                        <div class="flt-details">
+                                            {#if $T.ListOfFlightSegments$index==0}
+                                            {#if $T.ListOfFlightDetails$index==0}
+                                            <div class="flt-details-H" style="display:none;">
+                                                <div class="air-logo" data-i18n="flightlist-carrier-flight">Carrier & Flight No.</div>
+                                                <div class="stopDtail-1" data-i18n="text-from">From</div>
+                                                <div class="total-hrs" data-i18n="text-duration">Duration</div>
+                                                <div class="stopDtail-2" data-i18n="text-to">To</div>
+                                            </div>
+                                            {#/if}{#/if}
+                                            {#if $T.ListOfFlightDetails$iteration==0}
+                                            {#if $T.ListOfFlightSegments$index==0}
+                                            <div class="flt-layover" style="display:none;">
+                                                <span data-i18n="flightlist-departure">Departure</span>
+                                                <img src="Images/dep-icon-white.svg" alt="Depart" />
+                                                <span>Total Duration: {$T.ListOfFlightDetails.TotalDurationDisplay}</span>
+                                            </div>
+                                            {#/if}
+
+                                            {#else}
+                                            {#if $T.ListOfFlightSegments$index==0}
+                                            <div class="flt-layoverR" style="display:none;">
+                                                <span data-i18n="flightlist-return">Return</span>
+                                                <img src="Images/arv-icon-white.svg" alt="Arrival" />
+                                                <span>Total Duration: {$T.ListOfFlightDetails.TotalDurationDisplay}</span>
+                                            </div>
+                                            {#/if}
+                                            {#/if}
+                                            <div class="flt-details-L">
+                                                <div style="display:none;">
+                                                    <div class="air-logo">
+                                                        <img src="{$T.ListOfFlightSegments.Carrier.CarrierLogoPath}" class="img" width="33" height="33" />
+                                                    </div>
+                                                    <div class="flt-code">
+                                                        <div class="flt-comp">{$T.ListOfFlightSegments.Carrier.CarrierName}</div>
+                                                        <div class="flt-carrier">{$T.ListOfFlightSegments.Carrier.CarrierCode}{$T.ListOfFlightSegments.FlightNo}</div>
+                                                    </div>
+                                                    <div class="stopDtail-1">
+                                                        <div class="stopCity">{$T.ListOfFlightSegments.DepartureAirField.AirportName}</div>
+
+                                                        <div class="stopCode">
+                                                            <div>{$T.ListOfFlightSegments.DepartureAirField.IATACode}&nbsp;&nbsp;{ConvertTime($T.ListOfFlightSegments.DisplayDepartureTime)}</div>
+                                                            <div class="flt-date">{$T.ListOfFlightSegments.DisplayDepartureDate} </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="total-hrs">{$T.ListOfFlightSegments.TotalDurationHrs}hr {$T.ListOfFlightSegments.TotalDurationMins}m</div>
+                                                    <div class="stopDtail-2">
+                                                        <div class="stopCity">{$T.ListOfFlightSegments.ArrivalAirField.AirportName}</div>
+
+                                                        <div class="stopCode">
+                                                            <div>{$T.ListOfFlightSegments.ArrivalAirField.IATACode}&nbsp;&nbsp;{ConvertTime($T.ListOfFlightSegments.DisplayArrivalTime)}</div>
+                                                            <div class="flt-date">{$T.ListOfFlightSegments.DisplayArrivalDate} </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <ul class="f-more-details">
+                                                    <li class="d-TimeBlk"><span class="d-time">{ConvertTime($T.ListOfFlightSegments.DisplayDepartureTime)}</span> - <span class="d-airlines">{$T.ListOfFlightSegments.DepartureAirField.AirportName}</span> - <span class="d-airCode">{$T.ListOfFlightSegments.DepartureAirField.IATACode}</span></li>
+                                                    <li class="tTime">Total Time: {$T.ListOfFlightDetails.TotalDurationDisplay}</li>
+                                                    <li class="aTimeBlk"><span class="a-time">{ConvertTime($T.ListOfFlightSegments.DisplayArrivalTime)}</span> - <span class="a-airlines">{$T.ListOfFlightSegments.ArrivalAirField.AirportName}</span> - <span class="a-airCode">{$T.ListOfFlightSegments.ArrivalAirField.IATACode}</span></li>
+                                                    <li class="fOption"><span>{$T.ListOfFlightSegments.Carrier.CarrierName} - {$T.ListOfFlightSegments.FlightNo}</span> <span class="baggage"><img src="Images/icon-luggage.svg" style="vertical-align: unset;"> <span data-i18n="flightlist-baggage-allowance">Baggage Allowance</span> - {$T.ListOfFlightSegments.BaggageAllowance} </span></li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                {#/for}
+                                {#/for}
+                            </table>
+                            <div class="dtls-book arial" style="margin-top: 0px; padding-top: 5px;"><a href="javascript:void(0);" onclick="return hideshowDetails('divDetails{$T.record.SequenceNo}');"><span data-i18n="flightlist-hide-flight">Hide Flight Details </span><img src="Images/fligh-arrow-up.svg"></a> </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            </td>
+            </tr>
+            <tr class="rowspace seq_{$T.record.SequenceNo}">
+                <td colspan="3" style="height:0px;">
+                    &nbsp;
+                </td>
+            </tr>
+            {#/for}
+            </table>
+        </div>
+
+        </textarea>

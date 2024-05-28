@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7076DFF3-528B-4FDF-8614-3056220B4BEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core.Framework.Booking.Facade</RootNamespace>
+    <AssemblyName>Core.Framework.Booking.Facade</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CB.IBE.AirService.CTImplementor">
+      <HintPath>..\..\References\CB.IBE.AirService.CTImplementor.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.DepositAccountService.ClientHelper">
+      <HintPath>..\..\References\CB.IBE.DepositAccountService.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Plateform.Car.DataAccess">
+      <HintPath>..\..\References\CB.IBE.Plateform.Car.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Car.ClientEntities">
+      <HintPath>..\..\References\CB.IBE.Platform.Car.ClientEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Car.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Car.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.ClientEntities">
+      <HintPath>..\..\References\CB.IBE.Platform.ClientEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Hotels.ClientEntities">
+      <HintPath>..\..\References\CB.IBE.Platform.Hotels.ClientEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.IBECarClient">
+      <HintPath>..\..\References\CB.IBE.Platform.IBECarClient.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.IBEClient">
+      <HintPath>..\..\References\CB.IBE.Platform.IBEClient.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.IBEHotelClient">
+      <HintPath>..\..\References\CB.IBE.Platform.IBEHotelClient.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Masters.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Masters.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Transactions.Entites">
+      <HintPath>..\..\References\CB.IBE.Platform.Transactions.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Framework.Booking.Facade">
+      <HintPath>..\..\References\Core.Framework.Booking.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Booking.Entities">
+      <HintPath>..\..\References\Core.Platform.Booking.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Common.Entities">
+      <HintPath>..\..\References\Core.Platform.Common.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Configurations">
+      <HintPath>..\..\References\Core.Platform.Configurations.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.InfiVoucher.ClientHelper">
+      <HintPath>..\..\References\Core.Platform.InfiVoucher.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.InfiVoucher.Entities">
+      <HintPath>..\..\References\Core.Platform.InfiVoucher.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Member.Entites">
+      <HintPath>..\..\References\Core.Platform.Member.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.OTP.Entities">
+      <HintPath>..\..\References\Core.Platform.OTP.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.OTP.Facade">
+      <HintPath>..\..\References\Core.Platform.OTP.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.PointGateway.Service.Helper">
+      <HintPath>..\..\References\Core.Platform.PointGateway.Service.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ProgramMaster.Entities">
+      <HintPath>..\..\References\Core.Platform.ProgramMaster.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Transactions.Entites">
+      <HintPath>..\..\References\Core.Platform.Transactions.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Adapters">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Adapters.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Common.ConfigSections">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Common.ConfigSections.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Common.Helpers">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Common.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Common.SerializationHelper">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Common.SerializationHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Common.WCF">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Common.WCF.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Common.WCF.Faults">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Common.WCF.Faults.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Entity">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Helper">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.UniqueNumberGenerator">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.UniqueNumberGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integrations.Hotels.Entities">
+      <HintPath>..\..\References\Framework.Integrations.Hotels.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="InfiVoucher.Platform.Entities">
+      <HintPath>..\..\References\InfiVoucher.Platform.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="LoyaltyManagement.Request">
+      <HintPath>..\..\References\LoyaltyManagement.Request.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BookingIntegrationFacade.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CE.Entities\CE.Entities.csproj">
+      <Project>{e03a4fd9-25af-4ca0-8668-16cccf8cc349}</Project>
+      <Name>CE.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.WebAPI.ClientHelper\Core.WebAPI.ClientHelper.csproj">
+      <Project>{708bbd73-ca4e-457d-b5a4-5649ace53bfb}</Project>
+      <Name>Core.WebAPI.ClientHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactionDetailsAdditionalInfo.Entities\TransactionDetailsAdditionalInfo.Entities.csproj">
+      <Project>{BFB5D46A-15BA-4917-B26E-A5BD15105874}</Project>
+      <Name>TransactionDetailsAdditionalInfo.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

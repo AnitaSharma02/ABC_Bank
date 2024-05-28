@@ -1,0 +1,514 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Core.Platform.ProgramMaster.Entities;
+using ABC.Model;
+using Core.Platform.Member.Entites;
+//using InfiVoucher.Platform.ClientHelper.VoucherService;
+using CB.IBE.Platform.Transactions.Entites;
+using CB.IBE.Platform.Masters.Entities;
+using System.Configuration;
+using Framework.EnterpriseLibrary.Adapters;
+using Core.Platform.InfiVoucher.Entities;
+using Core.Platform.Transactions.Entites;
+using InfiVoucher.Platform.Entities;
+using Core.Platform.MemberActivity.Constants;
+using Core.Platform.MemberActivity.Entities;
+using System.Text;
+using System.Security.Cryptography;
+using System.IO;
+
+public partial class GiftVoucher : System.Web.UI.Page
+{
+    static string lstrMerchantId = Convert.ToString(ConfigurationManager.AppSettings["MerchantId"]);
+    static string lstrMerchantUserName = Convert.ToString(ConfigurationManager.AppSettings["MerchantUserName"]);
+    static string lstrMerchantPassword = Convert.ToString(ConfigurationManager.AppSettings["MerchantPassword"]);
+    public List<string> ListofPartners;
+   
+    public static List<VoucherPartners> lobjVoucherPartners;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            Session["PayCurrency"] = null;
+            Session["PayPoints"] = null;
+            if (Session["MemberDetails"] != null)
+            {
+                GetProductProgramCurrencyDefinition();
+                if (Session["VoucherDetails"] != null)
+                {
+                    BindVoucherDetails();
+                }
+            }
+            else
+            {
+                GetProgramCurrency();
+            }
+           // GeneratePartnerList();
+        }
+        if (Session["VoucherDetails"] == null)
+        {
+            DivGlobalRewardsConfirm.Attributes.Add("class", "display_hide");
+            DivSubmitContent.Attributes["class"] = DivGlobalRewardsConfirm.Attributes["class"].Replace("display_hide", "");
+        }
+
+    }
+    public void GeneratePartnerList()
+    {
+        ListofPartners = new List<string>();
+        lobjVoucherPartners = new List<VoucherPartners>();
+        string PartnerListfile = AppDomain.CurrentDomain.BaseDirectory + "Partners\\MasterPartnerList.txt";
+        string PartnerListfiletxt = "";
+        if (File.Exists(PartnerListfile))
+        {
+            PartnerListfiletxt = System.IO.File.ReadAllText(PartnerListfile);
+        }
+        string[] arr = PartnerListfiletxt.Split('|');
+        for (int i = 0; i < arr.Length; i++)
+        {
+            ListofPartners.Add(arr[i]);
+        }
+        for (int i = 0; i < ListofPartners.Count; i++)
+        {
+
+            string[] arrpartner = ListofPartners[i].Split(',');
+            VoucherPartners objVoucherPartners = new VoucherPartners();
+            objVoucherPartners.partnername = arrpartner[0];
+            string FilePath = AppDomain.CurrentDomain.BaseDirectory + "Partners\\Details\\" + arrpartner[0] + ".txt";
+            string text = "";
+            if (File.Exists(FilePath))
+            {
+                text = System.IO.File.ReadAllText(FilePath);
+            }
+            objVoucherPartners.popupcontent = text;
+            objVoucherPartners.partnerNo = (VoucherPartnersenum)Convert.ToInt32(arrpartner[1]);
+            lobjVoucherPartners.Add(objVoucherPartners);
+        }
+    }
+
+    public void GetProgramCurrency()
+    {
+        ABCModel objmodel = new ABCModel();
+        List<ProgramCurrencyDefinition> lobjListProgramCurrencyDefinition = new List<ProgramCurrencyDefinition>();
+        ProgramDefinition lobjProgramDefinition = new ProgramDefinition();
+        lobjProgramDefinition = objmodel.GetProgramMaster();
+
+        lobjListProgramCurrencyDefinition = objmodel.GetProgramCurrencyDefinition(lobjProgramDefinition.ProgramId);
+        ProgramCurrencyDefinition lobjProgramCurrencyDefinition = new ProgramCurrencyDefinition();
+        lobjProgramCurrencyDefinition = lobjListProgramCurrencyDefinition[0];
+        Session["VoucherProgramCurrency"] = lobjProgramCurrencyDefinition;
+        Session["VoucherRate"] = Convert.ToString(lobjProgramCurrencyDefinition.VoucherRate);
+        HDFVoucherRate.Value = Convert.ToString(lobjProgramCurrencyDefinition.VoucherRate);
+
+    }
+
+    public void GetProductProgramCurrencyDefinition()
+    {
+        Session["VoucherProgramCurrency"] = null;
+        Session["VoucherProgramCurrencyList"] = null;
+        string lstrResponse = string.Empty;
+        ABCModel objmodel = new ABCModel();
+        List<ProgramCurrencyDefinition> lobjListProgramCurrencyDefinition = new List<ProgramCurrencyDefinition>();
+        ProgramCurrencyDefinition lobjProgramCurrencyDefinition = new ProgramCurrencyDefinition();
+        MemberDetails lobjMemberDetails = new MemberDetails();
+
+        lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+        lobjListProgramCurrencyDefinition = objmodel.GetProductProgramCurrencyDefinition(lobjMemberDetails);
+
+        if (lobjListProgramCurrencyDefinition.Count > 0)
+        {
+            if (lobjListProgramCurrencyDefinition.Count > 1)
+            {
+                Session["VoucherProgramCurrencyList"] = lobjListProgramCurrencyDefinition;
+                ddlProgramCurrency.DataSource = lobjListProgramCurrencyDefinition;
+                ddlProgramCurrency.DataTextField = "Description";
+                ddlProgramCurrency.DataValueField = "Currency";
+                ddlProgramCurrency.DataBind();
+                divCurrencyDropDown.Attributes.Add("Style", "display:block");
+                Session["VoucherProgramCurrency"] = lobjProgramCurrencyDefinition;
+                Session["VoucherRate"] = Convert.ToString(lobjProgramCurrencyDefinition.VoucherRate);
+                HDFVoucherRate.Value = Convert.ToString(lobjProgramCurrencyDefinition.VoucherRate);
+
+            }
+            else
+            {
+                divCurrencyDropDown.Attributes.Add("Style", "display:none");
+                ddlProgramCurrency.Visible = true;
+                lobjProgramCurrencyDefinition = lobjListProgramCurrencyDefinition[0];
+                if (lobjProgramCurrencyDefinition != null)
+                {
+                    Session["VoucherProgramCurrency"] = lobjProgramCurrencyDefinition;
+                    Session["VoucherRate"] = Convert.ToString(lobjProgramCurrencyDefinition.VoucherRate);
+                    HDFVoucherRate.Value = Convert.ToString(lobjProgramCurrencyDefinition.VoucherRate);
+                    //lblVoucherCurrency.Text = objmodel.CurrencyDisplayText(lobjProgramCurrencyDefinition.Currency);
+                    lblVoucherCurrency.Text = "QIBRewards";
+
+                }
+
+            }
+        }
+        else
+        {
+            divCurrencyNotFound.Attributes["class"] = divCurrencyNotFound.Attributes["class"].Replace("display_hide", "");
+            DivSubmitContent.Attributes.Add("class", "display_hide");
+        }
+    }
+
+    public void BindVoucherDetails()
+    {
+        int lintLKR100Qty = 0;
+        int lintLKR500Qty = 0;
+        int lintLKR1000Qty = 0;
+        int lintLKR3000Qty = 0;
+        int lintLKR5000Qty = 0;
+
+        ProgramCurrencyDefinition lobjProgramCurrencyDefinition = new ProgramCurrencyDefinition();
+        lobjProgramCurrencyDefinition = HttpContext.Current.Session["VoucherProgramCurrency"] as ProgramCurrencyDefinition;
+        if (lobjProgramCurrencyDefinition != null)
+        {
+            List<VoucherDetails> lobjListVoucherDetails = new List<VoucherDetails>();
+            lobjListVoucherDetails = HttpContext.Current.Session["VoucherDetails"] as List<VoucherDetails>;
+
+            MemberDetails lobjMemberDetails = new MemberDetails();
+            lobjMemberDetails = Session["MemberDetails"] as MemberDetails;
+
+            lintLKR100Qty = lobjListVoucherDetails.FindAll(lobj => lobj.Value.Equals(100)).Count;
+            lintLKR500Qty = lobjListVoucherDetails.FindAll(lobj => lobj.Value.Equals(500)).Count;
+            lintLKR1000Qty = lobjListVoucherDetails.FindAll(lobj => lobj.Value.Equals(1000)).Count;
+            lintLKR3000Qty = lobjListVoucherDetails.FindAll(lobj => lobj.Value.Equals(3000)).Count;
+            lintLKR5000Qty = lobjListVoucherDetails.FindAll(lobj => lobj.Value.Equals(5000)).Count;
+
+            lblLKR100Quantity.Text = Convert.ToString(lintLKR100Qty);
+            lblLKR500Quantity.Text = Convert.ToString(lintLKR500Qty);
+            lblLKR1000Quantity.Text = Convert.ToString(lintLKR1000Qty);
+            lblLKR3000Quantity.Text = Convert.ToString(lintLKR3000Qty);
+            lblLKR5000Quantity.Text = Convert.ToString(lintLKR5000Qty);
+
+            trLKR100.Attributes.Add("class", "display_hide");
+            trLKR500.Attributes.Add("class", "display_hide");
+            trLKR1000.Attributes.Add("class", "display_hide");
+            trLKR3000.Attributes.Add("class", "display_hide");
+            trLKR5000.Attributes.Add("class", "display_hide");
+
+            if (lintLKR100Qty != 0)
+            {
+                trLKR100.Attributes["class"] = trLKR100.Attributes["class"].Replace("display_hide", "");
+            }
+            if (lintLKR500Qty != 0)
+            {
+                trLKR500.Attributes["class"] = trLKR500.Attributes["class"].Replace("display_hide", "");
+            }
+            if (lintLKR1000Qty != 0)
+            {
+                trLKR1000.Attributes["class"] = trLKR1000.Attributes["class"].Replace("display_hide", "");
+            }
+            if (lintLKR3000Qty != 0)
+            {
+                trLKR3000.Attributes["class"] = trLKR3000.Attributes["class"].Replace("display_hide", "");
+            }
+            if (lintLKR5000Qty != 0)
+            {
+                trLKR5000.Attributes["class"] = trLKR5000.Attributes["class"].Replace("display_hide", "");
+            }
+
+            lblLKR100VoucherVal.Text = Convert.ToString(lintLKR100Qty * 100);
+            lblLKR500VoucherVal.Text = Convert.ToString(lintLKR500Qty * 500);
+            lblLKR1000VoucherVal.Text = Convert.ToString(lintLKR1000Qty * 1000);
+            lblLKR3000VoucherVal.Text = Convert.ToString(lintLKR3000Qty * 3000);
+            lblLKR5000VoucherVal.Text = Convert.ToString(lintLKR5000Qty * 5000);
+
+            lblLKR100PointsRequired.Text = Convert.ToString(lintLKR100Qty * 100 / Convert.ToSingle(Session["VoucherRate"]));
+            lblLKR500PointsRequired.Text = Convert.ToString(lintLKR500Qty * 500 / Convert.ToSingle(Session["VoucherRate"]));
+            lblLKR1000PointsRequired.Text = Convert.ToString(lintLKR1000Qty * 1000 / Convert.ToSingle(Session["VoucherRate"]));
+            lblLKR3000PointsRequired.Text = Convert.ToString(lintLKR3000Qty * 3000 / Convert.ToSingle(Session["VoucherRate"]));
+            lblLKR5000PointsRequired.Text = Convert.ToString(lintLKR5000Qty * 5000 / Convert.ToSingle(Session["VoucherRate"]));
+
+
+            int totalAmount = Convert.ToInt32(lobjListVoucherDetails.Sum(lobj => lobj.Value));
+            int totalPoints = Convert.ToInt32(lobjListVoucherDetails.Sum(lobj => lobj.Value) / lobjProgramCurrencyDefinition.VoucherRate);
+
+            lblTotalVoucherValue.Text = Convert.ToString(totalAmount);
+            lblRequirPointToRedeem.Text = Convert.ToString(totalPoints);
+
+            DivGlobalRewardsConfirm.Attributes["class"] = DivGlobalRewardsConfirm.Attributes["class"].Replace("display_hide", "");
+            DivSubmitContent.Attributes.Add("class", "display_hide");
+
+        }
+    }
+
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static string CalculateAmount(string strbaseAmount, string strAmount, string strQty)
+    {
+        List<VoucherDetails> lobjListVoucherDetails = null;
+        if (HttpContext.Current.Session["VoucherDetails"] != null)
+        {
+
+            lobjListVoucherDetails = HttpContext.Current.Session["VoucherDetails"] as List<VoucherDetails>;
+        }
+        else
+        {
+            lobjListVoucherDetails = new List<VoucherDetails>();
+        }
+
+
+        VoucherDetails lobjVoucherDetails = null;
+        ABCModel objmodel = new ABCModel();
+        MemberDetails lobjMemberDetails = new MemberDetails();
+        lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+        ProgramCurrencyDefinition lobjProgramCurrencyDefinition = new ProgramCurrencyDefinition();
+        ProgramDefinition lobjProgramDefinition = new ProgramDefinition();
+        int lintBaseAmount = Convert.ToInt32(strbaseAmount);
+        int lintAmount = Convert.ToInt32(strAmount);
+        int lintQty = Convert.ToInt32(strQty);
+        string lstrTotalAmount;
+        if (lintBaseAmount > 0)
+        {
+            lstrTotalAmount = Convert.ToString(lintAmount * lintQty + lintBaseAmount);
+        }
+        else
+        {
+            lstrTotalAmount = Convert.ToString(lintAmount * lintQty);
+        }
+        int lintPoints = 0;
+
+        lobjProgramDefinition = objmodel.GetProgramMaster();
+
+        lobjProgramCurrencyDefinition = HttpContext.Current.Session["VoucherProgramCurrency"] as ProgramCurrencyDefinition;
+        lintPoints = Convert.ToInt32(Convert.ToSingle(lstrTotalAmount) / lobjProgramCurrencyDefinition.VoucherRate);
+        for (int i = 0; i < Convert.ToInt32(strQty); i++)
+        {
+            lobjVoucherDetails = new VoucherDetails();
+            lobjVoucherDetails.ProgramId = lobjProgramDefinition.ProgramId;
+            lobjVoucherDetails.ProgramName = lobjProgramDefinition.ProgramName;
+            lobjVoucherDetails.Value = Convert.ToSingle(strAmount);
+            lobjVoucherDetails.EventName = "Default";
+            lobjVoucherDetails.DateOfIssue = DateTime.Now;
+            lobjVoucherDetails.PaymentType = Convert.ToInt32(Core.Platform.Member.Entites.RelationType.Voucher);
+            lobjVoucherDetails.RedemptionType = Convert.ToInt32(LoyaltyTxnType.InfiVoucher);
+            lobjVoucherDetails.VoucherDescription = "InfiVoucher";
+            lobjVoucherDetails.Currency = lobjProgramDefinition.lobjProgramAttribute.BaseCurrency;
+            lobjVoucherDetails.MerchantId = lstrMerchantId;
+            lobjVoucherDetails.MerchantName = lstrMerchantUserName;
+            lobjVoucherDetails.MerchantPassword = lstrMerchantPassword;
+            lobjVoucherDetails.RelationType = Convert.ToInt32(Core.Platform.Member.Entites.RelationType.LBMS);
+            lobjListVoucherDetails.Add(lobjVoucherDetails);
+        }
+        HttpContext.Current.Session["VoucherDetails"] = lobjListVoucherDetails;
+        return Convert.ToString(lintPoints);
+
+    }
+
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static string BackToDenomination()
+    {
+        string lstrVoucherRate = string.Empty;
+        HttpContext.Current.Session["VoucherDetails"] = null;
+        lstrVoucherRate = Convert.ToString(HttpContext.Current.Session["VoucherRate"]);
+        return lstrVoucherRate;
+    }
+
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static string CheckAvailability(string strtotalPoints)
+    {
+        string lstrResponse = string.Empty;
+        int pintAvailablePoints = 0;
+        int lintPoints = 0;
+
+        ABCModel objmodel = new ABCModel();
+        MemberDetails lobjMemberDetails = new MemberDetails();
+        ProgramCurrencyDefinition lobjProgramCurrencyDefinition = new ProgramCurrencyDefinition();
+
+        lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+
+        if (lobjMemberDetails != null)
+        {
+            lobjProgramCurrencyDefinition = HttpContext.Current.Session["VoucherProgramCurrency"] as ProgramCurrencyDefinition;
+            HttpContext.Current.Session["VoucherRate"] = null;
+            HttpContext.Current.Session["VoucherRate"] = lobjProgramCurrencyDefinition.VoucherRate;
+
+            lintPoints = Convert.ToInt32(strtotalPoints);
+            pintAvailablePoints = objmodel.CheckAvailbility(lobjMemberDetails.MemberRelationsList[0].RelationReference, Convert.ToInt32(lobjMemberDetails.MemberRelationsList[0].RelationType), lobjProgramCurrencyDefinition.Currency, lobjProgramCurrencyDefinition.ProgramId);
+
+            if ((pintAvailablePoints - lintPoints) >= 0)
+            {
+                lstrResponse = Convert.ToString(lintPoints);
+            }
+            else
+            {
+                HttpContext.Current.Session["PayCurrency"] = lobjProgramCurrencyDefinition.Currency;
+                HttpContext.Current.Session["PayPoints"] = Convert.ToInt32(pintAvailablePoints - lintPoints);
+                lstrResponse = "0";
+            }
+        }
+        else
+        {
+            string CallbackUrl = HttpUtility.UrlEncode(Encrypt("GiftVoucher.aspx"));
+            lstrResponse = "Login.aspx?CallbackUrl=" + CallbackUrl;
+        }
+        return lstrResponse;
+    }
+
+    protected void btnConfirm_Click(object sender, EventArgs e)
+    {
+        List<VoucherSummary> lobjListVoucherSummary = new List<VoucherSummary>();
+
+        string lstrResponse = string.Empty;
+        ABCModel objmodel = new ABCModel();
+        string lstrCurrency = string.Empty;
+
+        ProgramCurrencyDefinition lobjProgramCurrencyDefinition = new ProgramCurrencyDefinition();
+        lobjProgramCurrencyDefinition = Session["VoucherProgramCurrency"] as ProgramCurrencyDefinition;
+        if (lobjProgramCurrencyDefinition != null)
+        {
+            lstrCurrency = lobjProgramCurrencyDefinition.Currency;
+        }
+        MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+        try
+        {
+            if (HttpContext.Current.Session["MemberDetails"] != null)
+            {
+                List<VoucherDetails> lobjListVoucherDetails = new List<VoucherDetails>();
+                if (HttpContext.Current.Session["VoucherDetails"] != null)
+                {
+                    lobjListVoucherDetails = HttpContext.Current.Session["VoucherDetails"] as List<VoucherDetails>;
+                }
+                int totalAmount = Convert.ToInt32(lobjListVoucherDetails.Sum(lobj => lobj.Value));
+                int totalPoints = Convert.ToInt32(lobjListVoucherDetails.Sum(lobj => lobj.Value) / lobjProgramCurrencyDefinition.VoucherRate);
+                int pintAvailablePoints = 0;
+                pintAvailablePoints = objmodel.CheckAvailbility(lobjMemberDetails.MemberRelationsList[0].RelationReference, Convert.ToInt32(lobjMemberDetails.MemberRelationsList[0].RelationType), lobjProgramCurrencyDefinition.Currency, lobjProgramCurrencyDefinition.ProgramId);
+                if ((pintAvailablePoints - totalPoints) >= 0)
+                {
+                    if (HttpContext.Current.Application["RefererSupplierDetails"] != null)
+                    {
+                        IBEAccountTransactionDetails lobjIBEAccountTransactionDetails = null;
+                        RefererDetails lobjRefererDetails = HttpContext.Current.Application["RefererSupplierDetails"] as RefererDetails;
+                        if (lobjRefererDetails.IsDepositAccountConfigured.Equals(true))
+                        {
+                            lobjIBEAccountTransactionDetails = new IBEAccountTransactionDetails();
+                            lobjIBEAccountTransactionDetails.RefererId = lobjRefererDetails.Id;
+                            lobjIBEAccountTransactionDetails.AccountId = lobjRefererDetails.Account_Id;
+                            lobjIBEAccountTransactionDetails.AccountId = lobjRefererDetails.Account_Id;
+                            lobjIBEAccountTransactionDetails.TransactionType = IBETransactionType.Debit;
+                            lobjIBEAccountTransactionDetails.Description = "Redemption InfiVoucher";
+                            lobjIBEAccountTransactionDetails.LoyaltyTxnType = IBELoyaltyTxnType.InfiVoucher;
+                            //lobjListVoucherSummary = lobjModel.CreateVoucher(lobjMemberDetails, lobjIBEAccountTransactionDetails, lobjListVoucherDetails, lstrCurrency);
+                            //Session["VoucherDetails"] = null;
+                        }
+                        lobjListVoucherSummary = objmodel.CreateVoucher(lobjMemberDetails, lobjIBEAccountTransactionDetails, lobjListVoucherDetails, lstrCurrency);
+                        Session["VoucherDetails"] = null;
+                    }
+                    if ((lobjListVoucherSummary.FindAll(lobj => lobj.Status.Equals(true)).Count) > 0)
+                    {
+                        objmodel.LogActivity(string.Format(ActivityConstants.Voucher + " For Member " + lobjMemberDetails.NationalId + " Status - Success"), ActivityType.Voucher);
+                        RepCreateVoucherSummary.DataSource = lobjListVoucherSummary;
+                        RepCreateVoucherSummary.DataBind();
+                        DivSubmitContent.Attributes.Add("class", "display_hide");
+                        DivGlobalRewardsConfirm.Attributes.Add("class", "display_hide");
+                        divCreateVoucherSummary.Attributes["class"] = divCreateVoucherSummary.Attributes["class"].Replace("display_hide", "");
+                        divConfirmationMsg.Attributes["class"] = divConfirmationMsg.Attributes["class"].Replace("display_hide", "");
+
+                    }
+                    else
+                    {
+                        objmodel.LogActivity(string.Format(ActivityConstants.Voucher + " For Member " + lobjMemberDetails.NationalId + " Status - Failed"), ActivityType.Voucher);
+                        DivSubmitContent.Attributes.Add("class", "display_hide");
+                        divBtnConfirm.Attributes.Add("class", "display_hide");
+                        divConfirmationMsg.InnerText = "Sorry the Gift Voucher could not be generated. Please try again after some time..";
+                        divConfirmationMsg.Attributes["class"] = divConfirmationMsg.Attributes["class"].Replace("display_hide", "");
+                    }
+                }
+                else
+                {
+                    Session["PayCurrency"] = lobjProgramCurrencyDefinition.Currency;
+                    Session["PayPoints"] = Convert.ToInt32(pintAvailablePoints - totalPoints);
+
+                    divBtnConfirm.Attributes.Add("class", "display_hide");
+                    divAvailability.Attributes.Add("class", "display_hide");
+                }
+
+            }
+
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("Voucher CreateVoucher :" + Environment.NewLine + ex.StackTrace);
+        }
+
+    }
+
+    protected void ddlProgramCurrency_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        List<ProgramCurrencyDefinition> lobjListProgramCurrencyDefinition = new List<ProgramCurrencyDefinition>();
+        lobjListProgramCurrencyDefinition = Session["VoucherProgramCurrencyList"] as List<ProgramCurrencyDefinition>;
+
+        List<VoucherDetails> lobjListVoucherDetails = new List<VoucherDetails>();
+        lobjListVoucherDetails = Session["VoucherDetails"] as List<VoucherDetails>;
+        ProgramCurrencyDefinition lobjProgramCurrencyDefinition = new ProgramCurrencyDefinition();
+        lobjProgramCurrencyDefinition = Session["VoucherProgramCurrency"] as ProgramCurrencyDefinition;
+
+        Session["VoucherRate"] = Convert.ToString(lobjProgramCurrencyDefinition.VoucherRate);
+        HDFVoucherRate.Value = Convert.ToString(lobjProgramCurrencyDefinition.VoucherRate);
+        lblVoucherCurrency.Text = ddlProgramCurrency.SelectedItem.Value;
+
+        BindVoucherDetails();
+    }
+
+    private static string Encrypt(string clearText)
+    {
+        string EncryptionKey = "MAKV2SPNIC99212";
+        byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
+        using (Aes encryptor = Aes.Create())
+        {
+            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+            encryptor.Key = pdb.GetBytes(32);
+            encryptor.IV = pdb.GetBytes(16);
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(clearBytes, 0, clearBytes.Length);
+                    cs.Close();
+                }
+                clearText = Convert.ToBase64String(ms.ToArray());
+            }
+        }
+        return clearText;
+    }
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static List<VoucherPartners> GetPartnerNames(int VoucherPartnerid)
+    {
+        List<VoucherPartners> lobjpartners = lobjVoucherPartners.Where(x => x.partnerNo == (VoucherPartnersenum)VoucherPartnerid).ToList();
+        List<string> lobjpartnernames = lobjpartners.Select(x => x.partnername).ToList();
+        return lobjpartners;
+    }
+}
+
+public enum VoucherPartnersenum
+{
+    Electronic = 1,
+    DepartmentStores = 2,
+    FashionAndAccessories = 3,
+    HomeFurnishing = 4,
+    LeisurePartners = 5,
+    JewelleryPartners = 6,
+    SpaPartners = 7,
+    TravelPartners = 8,
+    ToyPartners = 9,
+    BookStorePartners = 10
+}
+public class VoucherPartners
+{
+    public string partnername { get; set; }
+
+    public string popupcontent { get; set; }
+
+    public VoucherPartnersenum partnerNo { get; set; }
+
+}

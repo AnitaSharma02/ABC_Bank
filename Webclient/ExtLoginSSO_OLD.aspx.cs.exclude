@@ -1,0 +1,266 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Configuration;
+using Core.Platform.ProgramMaster.Entities;
+using Framework.EnterpriseLibrary.CommunicationEngine.Entity;
+using Framework.EnterpriseLibrary.CommunicationEngine.Helper;
+using Core.Platform.MemberActivity.Entities;
+using Core.Platform.MemberActivity.Constants;
+using Framework.EnterpriseLibrary.Adapters;
+using Core.Platform.Member.Entites;
+using ABC.Model;
+using Framework.EnterpriseLibrary.Security;
+using System.Text;
+using System.Security.Cryptography;
+
+public partial class ExtLoginSSO_OLD : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            Session["SSOErrorMessage"] = null;
+
+            if (!IsPostBack)
+            {
+                divExtSSO.Attributes.Add("style", "display:block");
+
+                string lstrHostUrl = string.Empty;
+                string lstrSourceUrl = string.Empty;
+
+                Uri lobjUri = new Uri(Request.UrlReferrer.AbsoluteUri);
+                lstrHostUrl = lobjUri.Host;
+                LoggingAdapter.WriteLog("ExtLoginSSO Host Address: " + lstrHostUrl);
+                lstrSourceUrl = HttpContext.Current.Request.UrlReferrer.ToString();
+                LoggingAdapter.WriteLog("ExtLoginSSO Source URL: " + lstrSourceUrl);
+
+                Session["MemberDetails"] = null;
+                if (Request.Form.Count > 0)
+                {
+                    try
+                    {
+                        int KeySize = 2048;
+                        string PrivateKey = string.Empty;
+
+                        if (Convert.ToString(System.Configuration.ConfigurationManager.AppSettings["ExtLoginSSOType"]) == "UAT")
+                        {
+                            PrivateKey = "<RSAKeyValue><Modulus>pwGUnvGEjUBalsR7Oc5fsqn/2z5B2S5jvJ4ty+U8A1TagyeKM3Ph6LOL54Z8pY9gSQKKMr8VDUXzpCIgolJHMzrgv2GWoyJqWVW7cpW294AWM2MhGEG21kP58z7/Va1xkFpSL0O6piZ1ldDhQCcqG/k4WCA7hSWgqlLoLEOZBtcjwCC044gc8DB1yrqbEZEFxB5woI0WNMwjwCTiE/HHQo/N67Yj08ipX1RwCdtcD95j+KQxsYVqRC6ggecw3MtDtIHjdMPCC0FCRKBJWh9iXkyDFRWnDWg+xOQigKcWX+o+DhpGvRorVtWzqHZE6Rzuh+C3uvPApvQ4kk51JIfOBw==</Modulus><Exponent>AQAB</Exponent><P>1Gg2LX8OPUA8Xt2jhcgs/DEicU1jNtZwPh1QT2a71txBKsTQcyMA+iHd3m/61ix9KhnXPpM/kYEK2IqHOIUY4jUsjc+Ha3jtbjXnXm9bvuq9R4uFuztOAzdbJEWd32bCD3ueeoH6C1/BKCW+4Rg2PILRtO8wpj+QXGFGmKq1MHE=</P><Q>yUgFwMaO1lezn3cp2hm5yZSfzL4yip21BMN3Wo1ZfSC+LFvMmgAhf8WobZATRLePE7Gg86D6K2IGDlkPLRS5TvBBxisuLN5pyJEDxsmtkS396oZOurRgd9xVvMH9s/cruWFpO27PLUzf3lPGH+ejC6UPJTla7ymH/MdIlc+vofc=</Q><DP>KDvtN0T/735BcT7OgMLgMo0kFw4vou2PqVRoKAIvxo1GEtHhIk4ZG0ha/I19mCApPVZTvVirC+bDpSzoXD5p7j9gRyRuZF8tqlivkOXLHSjd3bWCCWs8ZcOQkhhVxUFztPcXl+ES+iCTOAWeWIj7jQ7CpmFAd91GfRk4BCch1yE=</DP><DQ>GrRihwQQ+WEjZLnTpKsbGiKM3QYzAG8SEDK6yBnO0KoicRIw4BG6YBBiWz7tP4W3Bt7fQtONvWnA8fBg8hM4zr9Tiq457xwHHuQWgy5Ix+U5Nf9hvKWn0t85xNRcC590fqDs7ES0WgdEAGRO+faqjCX3D3I/nVF+SExMVgv6+ls=</DQ><InverseQ>sTeLDNDPBHsyNUmP+XUiGhdo5Uuvwqz/t6hEOJabaa3Cwrugtbt5Mk1DWZJSeTxP1ZXCna+Run1UwSrLUwMxT8FtfS0SvtNLzWws4fnhkzReLoMr6hIkvyYJjtFCbxmbwTvkdmrzYOkE8c4WekFVrUan6RrWuOawnRix5q2f7Ac=</InverseQ><D>pkO+kNbmHjI5fewyugQp5he1L7K1n+C9TuUzttCLhM2Plg9hWYQ/HorR+Dg+FB2/wDAVIhx2evZvb7LCRpgfZnNxmVcwv0zeD/54VcWTmKgech54rkuOGZcnWvIXBldcvlgNhhyp0Axt+C8yccoL9DmTzLiaSR6C688KcjcCPHmLtHsQ+dsrPH9B71e1GukmOLfVa9UovXvmWLnXzHCPGmyOt/hMTKXGkEHcQx3jihr4AvTQsQ8Ml6keSO0qz4xk26ifqOY8wm957TbPt1jf6/6WZuUaXvu4Rcw/nKDHVszeZ3KSUbctQCKdYCS2dZ7yHpT/JGks07L4o7DYSz30wQ==</D></RSAKeyValue>";
+                        }
+                        else
+                        {
+                            PrivateKey = "";
+                        }
+
+                        string lstrEncryptedData = string.Empty;
+                        string lstrDecryptData = string.Empty;
+                        string lstrMemberCIF = string.Empty;
+                        string[] DataList = new string[] { };
+                        string lstrMessage = string.Empty;
+                        lstrEncryptedData = Request.Form["Merchant_Details"];
+
+                        ABCModel lobjQIBModel = new ABCModel();
+                        MemberDetails lobjMemberDetails = new MemberDetails();
+
+                        LoggingAdapter.WriteLog("ExtLoginSSO Encrypted Data = " + lstrEncryptedData);
+                        lstrDecryptData = RSAEncryptor.DecryptString(lstrEncryptedData, KeySize, PrivateKey);
+                        LoggingAdapter.WriteLog("ExtLoginSSO after Decrypt = " + lstrDecryptData);
+
+                        if (lstrDecryptData != null || lstrDecryptData != "")
+                        {
+                            DataList = lstrDecryptData.Split("|".ToCharArray());
+                            if (DataList.Length != 0 && DataList.Length == 9)
+                            {
+                                StringBuilder sb = new StringBuilder();
+                                for (int i = 0; i < 8; i++)
+                                {
+                                    if (i == 7)
+                                    {
+                                        sb.Append(Convert.ToString(DataList[i]));
+                                    }
+                                    else
+                                    {
+                                        sb.Append(Convert.ToString(DataList[i]) + "|");
+                                    }
+                                }
+
+                                LoggingAdapter.WriteLog("ExtLoginSSO Md5EncyrptHashReq = " + sb.ToString());
+
+                                string Md5EncyrptHash = EncryptStringMD5(sb.ToString());
+
+                                LoggingAdapter.WriteLog("ExtLoginSSO Md5EncyrptHashRes = " + Md5EncyrptHash);
+
+                                bool validateMerchant = false;
+                                string ExtLoginSSOMerchantId = Convert.ToString(System.Configuration.ConfigurationManager.AppSettings["ExtLoginSSOMerchantId"]);
+                                string ExtLoginSSOMerchantPassword = Convert.ToString(System.Configuration.ConfigurationManager.AppSettings["ExtLoginSSOMerchantPassword"]);
+
+                                if (Md5EncyrptHash == DataList[8].ToString())
+                                {
+                                    if (ExtLoginSSOMerchantId == DataList[0].ToString() && ExtLoginSSOMerchantPassword == DataList[1].ToString())
+                                    {
+                                        validateMerchant = true;
+                                    }
+
+                                    if (validateMerchant)
+                                    {
+                                        LoggingAdapter.WriteLog("ExtLoginSSO 4 = ");
+                                        lstrMemberCIF = DataList[2];
+                                        LoggingAdapter.WriteLog("Relation Reference : " + lstrMemberCIF);
+                                        lobjMemberDetails = lobjQIBModel.GetMemberDetails(lstrMemberCIF);
+                                        if (lobjMemberDetails != null && lobjMemberDetails.FullName != "")
+                                        {
+                                            LoggingAdapter.WriteLog("ExtLoginSSO Member Details not null -" + lstrMemberCIF);
+                                            MemberRelation lobjMemberRelation = new MemberRelation();
+                                            lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS));
+
+                                            if (lobjMemberRelation.Status != Status.Cancelled)
+                                            {
+                                                LoggingAdapter.WriteLog("ExtLoginSSO Member Relation not null and status not equal to cancel ");
+                                                if (lobjMemberRelation.Status != Status.Suspended)
+                                                {
+                                                    LoggingAdapter.WriteLog("ExtLoginSSO Member Relation not null and status not equal to suspend ");
+
+                                                    if (lobjMemberRelation.Status != Status.Blocked)
+                                                    {
+                                                        LoggingAdapter.WriteLog("ExtLoginSSO Member Relation not null and status not equal to blocked ");
+
+                                                        if (lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).IsAccountActivated)
+                                                        {
+                                                            //disable shop for ExtSSO login
+                                                            Control myControlMenu = Page.Master.FindControl("icoshop");
+                                                            if (myControlMenu != null)
+                                                            {
+                                                                myControlMenu.Visible = false;
+                                                            }
+
+                                                            MemberActivitySession lobjMemberActivitySession = HttpContext.Current.Session["MemberActivitySession"] as MemberActivitySession;
+                                                            lobjMemberActivitySession.ReferenceNumber = lstrMemberCIF;
+                                                            lobjMemberActivitySession.ActivityType = ActivityType.loginsuccessful;
+                                                            bool isMembershipUpdated = lobjQIBModel.UpdateMemberShipActivitySession(lobjMemberActivitySession);
+                                                            lobjQIBModel.LogActivity(string.Format(ActivityConstants.Login, lstrMemberCIF, "ExtSSO login successful"), ActivityType.loginsuccessful);
+
+                                                            LoggingAdapter.WriteLog("ExtLoginSSO Member Relation not null and account is activated ");
+                                                            LoggingAdapter.WriteLog("ExtLoginSSO 5");
+                                                            Session["MemberDetails"] = lobjMemberDetails;
+
+                                                            Session["FromSSOLogin"] = "1";
+
+                                                            string lstExtLoginSSORedirectURL = Convert.ToString(System.Configuration.ConfigurationManager.AppSettings["ExtLoginSSORedirectURL"]);
+                                                            Response.Redirect(lstExtLoginSSORedirectURL, false);
+                                                        }
+                                                        else
+                                                        {
+                                                            LoggingAdapter.WriteLog("ExtLoginSSO Member Relation not null and account is InActivated ");
+                                                            Session["SSOErrorMessage"] = "Error - Your account has been InActivated. Please activate your account.";
+                                                            Response.Redirect("InvalidCredential.aspx", false);
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        LoggingAdapter.WriteLog("ExtLoginSSO 8");
+                                                        Session["SSOErrorMessage"] = "Error - Your account has been blocked, kindly visit your nearest branch";
+                                                        Response.Redirect("InvalidCredential.aspx", false);
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    LoggingAdapter.WriteLog("ExtLoginSSO 8");
+                                                    Session["SSOErrorMessage"] = "Error - Your account has been suspended, kindly visit your nearest branch";
+                                                    Response.Redirect("InvalidCredential.aspx", false);
+                                                }
+                                            }
+                                            else
+                                            {
+                                                LoggingAdapter.WriteLog("ExtLoginSSO 9");
+                                                Session["SSOErrorMessage"] = "Error - Your QIBRewards account has been cancelled, kindly visit your nearest branch";
+                                                Response.Redirect("InvalidCredential.aspx", false);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            LoggingAdapter.WriteLog("ExtLoginSSO 10");
+                                            Session["SSOErrorMessage"] = "Error - Kindly Check CIF with Bank.";
+                                            Response.Redirect("InvalidCredential.aspx", false);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        LoggingAdapter.WriteLog("ExtLoginSSO 11");
+                                        Session["SSOErrorMessage"] = "Error - Technical Error. Please try again later.";
+                                        Response.Redirect("InvalidCredential.aspx", false);
+                                    }
+                                }
+                                else
+                                {
+                                    LoggingAdapter.WriteLog("ExtLoginSSO 12");
+                                    Session["SSOErrorMessage"] = "Error - Technical Error. Please try again later.";
+                                    Response.Redirect("InvalidCredential.aspx", false);
+                                }
+                            }
+                            else
+                            {
+                                LoggingAdapter.WriteLog("ExtLoginSSO 13");
+                                Session["SSOErrorMessage"] = "Error - Technical Error. Please try again later.";
+                                Response.Redirect("InvalidCredential.aspx", false);
+                            }
+                        }
+                        else
+                        {
+                            LoggingAdapter.WriteLog("ExtLoginSSO 14");
+                            Session["SSOErrorMessage"] = "Error - Technical Error. Please try again later.";
+                            Response.Redirect("InvalidCredential.aspx", false);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        LoggingAdapter.WriteLog("ExtLoginSSO 15");
+                        Session["SSOErrorMessage"] = "Error - Sorry we could not process your request. Please Try again.";
+                        LoggingAdapter.WriteLog("ExtLoginSSO Ex -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace + ex.InnerException);
+                        Response.Redirect("InvalidCredential.aspx", false);
+                    }
+                }
+                else
+                {
+                    LoggingAdapter.WriteLog("ExtLoginSSO 16");
+                    LoggingAdapter.WriteLog("ExtLoginSSO Request From Error");
+                    Session["SSOErrorMessage"] = "Error - Sorry we could not process your request. Please Try again.";
+                    Response.Redirect("InvalidCredential.aspx", false);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("ExtLoginSSO 17");
+            LoggingAdapter.WriteLog("ExtLoginSSO Ex-" + ex.Message + ex.InnerException + ex.StackTrace);
+            Response.Redirect("InvalidCredential.aspx", false);
+        }
+    }
+
+    public static string EncryptStringMD5(string inputString)
+    {
+        string lstrResponse = String.Empty;
+        try
+        {
+            LoggingAdapter.WriteLog("lstSecureData:- " + inputString);
+            MD5 md5HashAlgo = MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(inputString);
+            byte[] hashBytes = md5HashAlgo.ComputeHash(inputBytes);
+            StringBuilder secureData = new StringBuilder();
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                secureData.Append(hashBytes[i].ToString("X2"));
+            }
+            lstrResponse = Convert.ToString(secureData);
+        }
+        catch (Exception ex)
+        {
+            lstrResponse = "EncryptStringMD5 Error-" + ex.Message;
+        }
+        return lstrResponse;
+    }
+}

@@ -1,0 +1,28 @@
+﻿
+/*=========[ InternetServiceProviderList ]=========*/
+.dvISP .dvProducts .img-container img{
+    object-fit:contain;
+}
+/*=========[ InternetServiceProviderList ]=========*/
+
+
+/*=========[ InternetServiceProviderListDetails ]=========*/
+.dvISPDetails .img-container img {
+    object-fit: contain;
+}
+/*=========[ InternetServiceProviderListDetails ]=========*/
+
+
+/*=========[ InsuranceList ]=========*/
+.dvInsuranceList .img-container img{
+    object-fit:contain;
+}
+/*=========[ InsuranceList ]=========*/
+
+
+/*=========[ InsuranceListDetails ]=========*/
+.dvInsuranceDetails .img-container img {
+    object-fit: contain;
+}
+/*=========[ InsuranceListDetails ]=========*/
+

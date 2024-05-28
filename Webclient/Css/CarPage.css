@@ -1,0 +1,1035 @@
+﻿/*amey*/
+.dvCarList .dvCarSteps .circle {
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg-section);
+  /* color: #fff; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dvCarList .dvCarSteps .circle-active {
+  background-color: var(--primary-colour);
+  color: #fff;
+}
+.dvCarList .dvCarSteps .text-active {
+  color: var(--primary-colour);
+}
+
+/* :root {
+  --blue-color: #00425f;
+  --maroon-color: #dc4437;
+  --saffron-color: #f7ca5c;
+  --black-color: #6b7280;
+  --Dark-black-color: #444344;
+}
+body {
+  font-family: var(--light);
+  color: var(--content-text-colour);
+} */
+.dvCarList .dvCarSearch .form-check-input {
+  margin-top: 7px;
+}
+/*.travelBtn button {width: 100%;text-align: center; display: inline-block; font-family: var(--light); font-weight: 600; font-size: 14px; line-height: 20px; color: #FFFFFF; padding: 8px 22px; background: #DC4437; border-radius: 5px; transition: .3s; }*/
+.dvCarList .travelBtn button.dvRemove {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  font-family: var(--light);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  padding: 8px 22px;
+  background: var(--black-color);
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.dvCarList .travelWhiteBtn a {
+  display: inline-block;
+  font-family: var(--light);
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid #6b7280;
+  color: var(--black-color);
+  padding: 8px 22px;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.dvCarList .travelGrayBtn button {
+  display: inline-block;
+  font-family: var(--light);
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid #6b7280;
+  font-weight: 600;
+  color: var(--black-color);
+  padding: 8px 22px;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+/*Car search Css*/
+.dvCarList .innerHeader {
+  height: auto;
+  padding: 0 70px;
+  background: transparent !important;
+  box-shadow: unset;
+  height: auto !important;
+}
+.dvCarList .services {
+  list-style: none;
+  padding: 0px;
+  margin: 0px 0;
+}
+.dvCarList .innerPages {
+  background-color: var(--bg-section);
+  border: 0px solid #e0e2ea;
+  border-radius: 5px;
+}
+/*.serviceWidget label {width:100%; margin: 0px 10px 5px 0px; font-family: var(--light); font-style: normal; font-weight: 700; font-size: 14px; color: #000000; }*/
+.dvCarList .from-icon {
+  border-radius: 0 10px 10px 0 !important;
+  background: url(../Images/from.png) no-repeat center #fff !important;
+  border: 1px solid #e0e2ea;
+}
+.dvCarList .calen-icon {
+  border-radius: 0 10px 10px 0 !important;
+  background: url(../Images/calendar.png) no-repeat center #fff !important;
+  border: 1px solid #e0e2ea;
+}
+.dvCarList .times-icon {
+  border-radius: 0 10px 10px 0 !important;
+  background: url(../Images/time.png) no-repeat center #fff !important;
+  border: 1px solid #e0e2ea;
+}
+.dvCarList .disc-icon {
+  border-radius: 0 10px 10px 0 !important;
+  border: 1px solid #e0e2ea;
+}
+/*.serviceWidget .form-control, .serviceWidget .selectricWrapper {background: #FFFFFF;font-size: 0.875rem; border: 1px solid #e0e2ea; resize: none;padding: 1.25rem 0.75rem;}*/
+.dvCarList .purple-btn {
+  width: 100%;
+  font-family: var(--light);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  padding: 14px 20px;
+  background: #dc4437 !important;
+  border-radius: 5px !important;
+  transition: 0.3s;
+}
+
+.dvCarList .input {
+  margin-bottom: 0px !important;
+}
+.dvCarList .form-control:focus {
+  box-shadow: unset;
+}
+.dvCarList input[type="checkbox"]:checked::after {
+  font-size: 0;
+}
+
+/*Car List Css*/
+.dvCarList .carList-steps {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  margin: 8% auto;
+}
+.dvCarList .carList-steps .step-line {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 1px;
+  background: #e5e5e5;
+  position: absolute;
+  top: 58%;
+  left: 0;
+  display: none;
+}
+.dvCarList .carList-steps .steps {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+}
+.dvCarList .carList-steps .steps .carList-step {
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+.dvCarList .carList-steps .steps .carList-step:first-child {
+  text-align: left;
+  width: 32%;
+}
+.dvCarList .carList-steps .steps .carList-step .step {
+  background: #fff;
+  padding-right: 1rem;
+  font-weight: bold;
+  font-size: 10px;
+}
+.dvCarList .carList-steps .steps .carList-step .step .step-circle {
+  width: 30px;
+  height: 30px;
+  line-height: 23px;
+  text-align: center;
+  padding: 0.4rem 0.9rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  font-size: 16px;
+}
+.dvCarList .carList-steps .steps .carList-step .step {
+  background: #fff;
+  padding-right: 1rem;
+  font-weight: bold;
+  font-size: 10px;
+}
+.dvCarList .carList-steps .steps .carList-step .step .step-circle.future {
+  background: #f2f2f2;
+  color: #000;
+}
+.dvCarList .borderBox {
+  border: 1px solid #ebe5e5;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.dvCarList .overflowCar {
+  overflow-x: auto;
+}
+
+/* The checkbox container */
+.dvCarList .dvCarChecked .checkbox-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default checkbox */
+.dvCarList .dvCarChecked .checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* On mouse-over, add a grey background color */
+.dvCarList .dvCarChecked .checkbox-container:hover input ~ .checkmark {
+  border: 1px solid var(--primary-colour);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+/* When the checkbox is checked, add a blue background */
+.dvCarList .dvCarChecked .checkbox-container input:checked ~ .checkmark {
+  border: 1px solid var(--primary-colour);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Show the checkmark when checked */
+.dvCarList .dvCarChecked .checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the checkmark/indicator */
+
+.dvCarList .dvCarChecked .checkbox-container .checkmark:after {
+  position: absolute;
+  right: 12%;
+  top: 6%;
+  content: url("/images/carpage/icons/checked.svg");
+  width: 15px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.dvCarList .dvCarChecked .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  right: 12%;
+  top: 6%;
+  width: 15px;
+}
+/*.checkbox-container .checkmark:after { content:url(../Images/icon/checked.svg); right: 10px; top: 2px; width: 8px; height: 15px; border: solid red; border-width: 0 4px 4px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }*/
+.dvCarList .dvCarChecked .checkbox-container .checkmark img {
+  max-width: 100%;
+}
+.dvCarList .checkmark p {
+  font-weight: bold;
+}
+/* .carBox {
+  margin: 60px 0 0;
+} */
+.dvCarList .carsFoundBox span {
+  color: var(--primary-colour);
+  font-size: 14px;
+  font-weight: 400;
+}
+.dvCarList .carsFoundBox {
+  color: #6b7280;
+  font-weight: 400;
+  font-size: 16px;
+}
+.dvCarList .carsFoundBox a {
+  color: var(--primary-colour);
+  font-weight: 400;
+}
+.dvCarList .carPicBox {
+  cursor: pointer;
+}
+.dvCarList .moreInfo {
+  cursor: pointer;
+  color: var(--primary-colour);
+}
+.dvCarList .carHead p {
+  font-size: 26px;
+  font-weight: 600;
+}
+.dvCarList .carHead span {
+  font-size: 13px;
+  color: var(--black-color);
+  font-weight: 600;
+  padding: 0px 0 0;
+}
+.dvCarList .priceBox p {
+  font-size: 24px;
+  color: var(--secondary-colour);
+  font-weight: 600;
+  /* padding: 0px 0 0; */
+}
+.dvCarList .priceBox span {
+  font-size: 14px;
+  color: var(--black-color);
+  font-weight: 600;
+  padding: 0px 0 0;
+  display: block;
+}
+.dvCarList .priceBox cite {
+  font-size: 14px;
+  color: var(--black-color);
+  font-weight: 400;
+  padding: 0px 0 0;
+  font-style: normal;
+}
+.dvCarList .ribbonBox {
+  width: 113px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  z-index: 2;
+}
+.dvCarList .ribbonBox span {
+  width: 193px;
+  position: absolute;
+  display: block;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  z-index: 3;
+  font-size: 12px;
+  font-weight: 500;
+  height: 25px;
+  line-height: 2;
+  left: -13px;
+  top: 19px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.dvCarList .vehicleLocation a {
+  color: var(--primary-colour);
+  font-weight: 400;
+  font-size: 16px;
+}
+.dvCarList .vehicleLocation span {
+  color: #6b7280;
+  font-weight: 400;
+  font-size: 14px;
+}
+.dvCarList .carLogo img {
+  width: 80px;
+}
+.dvCarList .cardBox .card {
+  border: none;
+}
+.dvCarList .cardDetails {
+  /* color: var(--black-color);
+  font-weight: 400; */
+  /* font-size: 14px; */
+}
+.dvCarList .cardDetails i {
+  color: var(--primary-colour);
+  position: absolute;
+  top: 4px;
+}
+.dvCarList .cardDetails p {
+  margin-left: 20px;
+  font-size: 14px;
+}
+.dvCarList .dviconBox span {
+  font-size: 14px;
+  font-weight: 400;
+}
+.dvCarList .borderColor {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 22px;
+  border: 1px solid #f7ca5c;
+  border-radius: 50%;
+}
+.dvCarList .borderColor i {
+  color: var(--saffron-color);
+}
+.dvCarList .borderColor img {
+  height: 15px;
+}
+.dvCarList .modal-header h4 {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0px 0 0;
+}
+.dvCarList .airportInfo p {
+  font-size: 14px;
+  font-weight: 600;
+}
+.dvCarList .airportInfo span {
+  font-size: 11px;
+  font-weight: 600;
+  width: 100%;
+  display: block;
+}
+.dvCarList .airportInfo cite {
+  font-size: 11px;
+  font-style: normal;
+}
+.dvCarList .travelWhiteBtn button {
+  color: var(--primary-colour);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.dvCarList .travelWhiteBtn {
+  text-align: right;
+}
+.dvCarList .airportInfo h1 {
+  font-size: 14px;
+  font-weight: 600;
+}
+/*.popupHead span{color:var(--blue-color);font-size:16px;font-weight:600; text-transform:uppercase;float:left;width: calc(100% - 20px);}*/
+.dvCarList .popupHead a {
+  color: var(--primary-colour);
+  font-size: 16px;
+  float: right;
+}
+.dvCarList .popupForm label {
+  width: 100%;
+  font-weight: 400;
+  color: #000;
+}
+.dvCarList select.form-control {
+  -webkit-appearance: none;
+}
+.dvCarList .form-control:focus {
+  border-color: #e0e2ea !important;
+}
+/* .boxShadow:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+} */
+.dvCarList .filterBtn button {
+  width: 100%;
+  display: inline-block;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: var(--light);
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid var(--primary-colour);
+  color: var(--primary-colour);
+  padding: 8px 5px;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.dvCarList .filterIcon span {
+  font-weight: 600;
+  font-size: 14px;
+}
+.dvCarList .dvMobFilter {
+  position: fixed;
+  bottom: 15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-colour);
+  text-align: center;
+  line-height: 60px;
+  z-index: 999999;
+  background: rgba(255, 255, 255, 0.8);
+}
+.dvCarList .dvMobFilter i {
+  font-size: 20px;
+  color: var(--primary-colour);
+}
+.dvCarList .dvFilter h5 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: -4px 0 5px;
+  color: var(--Dark-black-color);
+}
+.dvCarList .dvPickup a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--Dark-black-color);
+}
+.dvCarList .dvPickup label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black-color);
+  padding: 0 0 0 10px;
+}
+.dvCarList .dvPickup i {
+  font-size: 20px;
+  color: var(--primary-colour);
+  padding: 0 10px 0 0px;
+  position: relative;
+  top: 3px;
+}
+/* .dvCarList .dvPickup {
+  border-bottom: 1px solid #dee2e6;
+} */
+/* .dvCarList .modal-footer {
+  border: none;
+} */
+/* .dvCarList .modal-header {
+  padding: 1rem 1rem 0.3rem;
+} */
+.dvCarList .modal-header .close {
+  color: var(--secondary-colour);
+  opacity: 1;
+}
+/*
+.dvCarList .modal-header span {
+  color: #fff;
+  line-height: 21px;
+  font-size: 27px;
+  top: -2px;
+  position: relative;
+}
+.dvCarList .dvMyModal h4 {
+  margin: -4px 0 5px;
+} */
+
+/*Car details css*/
+.dvCarList .dvPayOption h1 {
+  font-size: 17px;
+  font-weight: 600;
+  padding: 0px 0 0;
+}
+.dvCarList .dvPayOption i {
+  color: var(--primary-colour);
+}
+.dvCarList .dvPayNow {
+  background: #fff;
+}
+.dvCarList .payNow:hover {
+  background: #fffdf9;
+}
+.dvCarList .rotate {
+  transition: transform 0.3s ease-in-out;
+}
+.dvCarList .collapsed .rotate {
+  transform: rotate(180deg);
+}
+
+.dvCarList .dvShield i {
+  color: var(--primary-colour);
+  font-size: 26px;
+}
+.dvCarList .dvExcess .heading-md-medium {
+  color: var(--primary-colour);
+  /* font-size: 16px;
+  float: none;
+  width: 100%;
+  font-weight: 600; */
+}
+.dvCarList .dvRibbon span {
+  left: -20px;
+  top: 26px;
+}
+/* .dvExcess h3 {
+  color: var(--primary-colour);
+  font-size: 16px;
+  float: none;
+  width: 100%;
+  font-weight: 600;
+} */
+/* .dvExcess span {
+  width: 100%;
+  padding: 10px 0 0;
+  display: block;
+  font-size: 11px;
+} */
+.dvCarList .dvPara p {
+  /* width: 100%;
+  padding: 0px 0 0;
+  display: block; */
+  font-size: 14px;
+}
+
+.dvCarList .dvPayNow label:has([type="radio"]) {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #aaa;
+  padding: 0;
+  border-radius: 3rem;
+}
+.dvCarList .dvPayNow label:has([type="radio"]:not(:disabled)) {
+  cursor: pointer;
+}
+.dvCarList [type="radio"] {
+  appearance: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  flex: 0 0 auto;
+  border: inherit;
+  border-radius: inherit;
+}
+.dvCarList .dvPayNow label:has([type="radio"]:checked) {
+  border-color: #fffdf9;
+  background-color: #fffdf9;
+  color: var(--primary-colour);
+}
+.dvCarList .dvPayNow [type="radio"]:checked {
+  color: #fff;
+  border-color: var(--primary-colour);
+  background-color: var(--primary-colour);
+}
+.dvCarList .dvPayNow input[type="radio"]:checked {
+  background-color: var(--primary-colour);
+  border: 1px solid #ccc;
+  outline: none;
+}
+.dvCarList .divRadioBtn {
+  color: var(--primary-colour);
+  font-size: 18px;
+  width: 100%;
+  font-weight: 600;
+  display: inline-block;
+}
+/* .divRadioBtn .dvFloatLeft {
+  float: left;
+  margin-right: 5px;
+} */
+.dvCarList .dvPayNow input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  padding: 3px;
+  background-clip: content-box;
+  border: 1px solid #bbbbbb;
+  background-color: #e7e6e7;
+  border-radius: 50%;
+  outline: none;
+}
+
+.dvCarList .divRadioBtn label,
+.dvCarList .divRadioBtn span {
+  color: var(--primary-colour);
+  font-size: 16px;
+  width: 100%;
+  font-weight: 600;
+}
+.dvCarList .dvChecked i {
+  color: #89bd30;
+  font-size: 18px;
+  padding: 0 0 0 15px;
+}
+.dvCarList .dvAccordian {
+  overflow: hidden;
+}
+/* .dvAccordian div#accordionExample .card {
+  background: 0 0;
+  border: unset;
+  border-radius: unset;
+} */
+.dvCarList .dvAccordian div#accordionExample .card-header {
+  background: var(--bg-section);
+  border: 1px solid #dee2e6;
+}
+.dvCarList .dvAccordian div#accordionExample .card button i {
+  color: var(--primary-colour);
+  /* background: unset;
+  width: auto;
+  float: right; */
+}
+/* .dvAccordian button {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  padding: 0px 0 0;
+  width: 100%;
+  text-align: left;
+  float: left;
+} */
+.dvCarList .dvMap i {
+  color: var(--primary-colour);
+  font-size: 26px;
+}
+/* .dvAccordian div#accordionExample {
+  margin: 0 0 0px 0;
+} */
+/* .dvAddress p strong {
+  color: var(--Dark-black-color);
+  font-size: 13px;
+  float: none;
+  width: 100%;
+  font-weight: 600;
+}*/
+.dvCarList .dvAddress p {
+  /* width: 100%;
+  padding: 0px 0 0;
+  display: block; */
+  font-size: 14px;
+  /* font-weight: 400; */
+}
+.dvCarList .dvPricing {
+  background: var(--bg-section);
+}
+/* .dvPricing p {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+} */
+/* .dvPricing {
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+} */
+.dvCarList .dvPayable {
+  background: #fffdf9;
+  border-top: 1px solid #dee2e6;
+}
+.dvCarList .dvPayable p {
+  color: var(--primary-colour);
+  /* font-size: 18px; */
+}
+.dvCarList .dvAddit p {
+  color: var(--Dark-black-color);
+  font-size: 18px;
+  float: none;
+  width: 100%;
+  font-weight: 600;
+}
+.dvCarList .dvSelectForm select {
+  padding: 0 5px;
+  width: 100%;
+  display: block;
+  height: 40px;
+  border: 1px solid #e0e2ea;
+  background: #ffffff;
+  border-radius: 10px !important;
+}
+.dvCarList .dvChildName p {
+  color: var(--Dark-black-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+/* .dvChildName .moreInfo, */
+.dvCarList .dvPrice span {
+  font-size: 12px;
+}
+.dvCarList .dvPrice p {
+  color: var(--Dark-black-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+.dvCarList .dvDeal h1 {
+  color: var(--Dark-black-color);
+  font-size: 13px;
+  font-weight: 400;
+}
+.dvCarList .dvDeal p {
+  color: var(--Dark-black-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+.dvCarList .dvDeal p span {
+  font-weight: normal;
+  font-size: 12px;
+}
+.dvCarList .dvpopupDeatils .modal-header {
+  border: none;
+}
+.dvCarList .dvpopupDeatils .modal-header .close {
+  background: unset;
+  opacity: 1;
+  color: var(--Dark-black-color);
+  line-height: 21px;
+  font-size: 27px;
+}
+.dvCarList .dvpopupDeatils .carPicBox {
+  width: 150px;
+}
+.dvCarList .dvpopupBooster p {
+  color: var(--primary-colour);
+  font-size: 18px;
+  font-weight: 600;
+}
+.dvCarList .dvpopupBooster span {
+  font-size: 18px;
+  color: var(--Dark-black-color);
+  font-weight: 600;
+  padding: 0px 0 0;
+}
+.dvCarList .dvPayText p {
+  color: var(--secondary-colour);
+  font-size: 14px;
+  /* font-weight: 400; */
+}
+/* .dvCarList .dvFilter .modal-dialog {
+  margin: 1.75rem auto 0;
+} */
+
+/*Car Payment Css*/
+.dvCarList .dvDriverbg {
+  background: var(--bg-section);
+  padding: 15px;
+}
+.dvCarList .anchorColor {
+  color: var(--primary-colour);
+}
+.dvCarList .dvWarning i {
+  color: var(--primary-colour);
+  font-size: 40px;
+  padding: 15px 0;
+}
+.dvCarList .dvWarning h1 {
+  color: var(--saffron-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+.dvCarList .dvWarning p,
+.dvCarList .dvWarning p i {
+  color: var(--primary-colour);
+  font-size: 16px;
+  font-weight: 600;
+}
+.dvCarList .dvWarning span {
+  font-size: 13px;
+  color: var(--Dark-black-color);
+  font-weight: 400;
+  padding: 10px 0 15px;
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+.dvCarList .dvExPoint p {
+  font-size: 14px;
+  color: var(--Dark-black-color);
+  font-weight: 400;
+}
+.dvCarList .dvExPoint p i {
+  color: var(--primary-colour);
+  font-size: 14px;
+  font-weight: 600;
+}
+.dvCarList .dvExPoint span {
+  font-size: 14px;
+  color: var(--Dark-black-color);
+  font-weight: 600;
+  padding: 0 10px 0;
+}
+.dvCarList .dvMakePay .travelBtn button {
+  width: 320px;
+}
+.dvCarList .dvMakePay input[type="checkbox"] {
+  position: unset;
+}
+.dvCarList .top_banner {
+  margin-top: 42px;
+}
+.dvCarList .dvAccordian button span {
+  font-weight: normal;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .dvCarList .carList-steps {
+    width: 66%;
+  }
+  .dvCarList .travelBtn button {
+    padding: 8px 15px;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .dvCarList .top_banner {
+    margin-top: 46px;
+  }
+  .dvCarList .carList-steps .step-line {
+    display: block;
+  }
+  .dvCarList .carList-steps {
+    margin: 1% auto 5%;
+    width: 90%;
+    height: 4rem;
+  }
+  .dvCarList .carList-steps .step-line {
+    display: block;
+  }
+  .dvCarList .carList-steps .steps {
+    top: 30%;
+  }
+  .dvCarList .carList-steps .steps .carList-step:first-child {
+    text-align: left;
+    width: 32%;
+  }
+  .dvCarList .carList-steps .steps .carList-step:last-child {
+    text-align: right;
+    width: 32%;
+  }
+  .dvCarList .carList-steps .steps .carList-step .step {
+    font-size: 12px;
+    padding-left: 1rem;
+  }
+  .dvCarList .carList-steps .steps .carList-step .step .step-circle.active {
+    background: var(--primary-colour);
+  }
+  .dvCarList .carList-steps .steps .carList-step .step .stepText.active {
+    color: var(--primary-colour);
+  }
+  .dvCarList .neg-margin {
+    margin-top: 65px;
+  }
+  .dvCarList .carList-steps .steps .carList-step .step .step-circle {
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 0.5rem;
+  }
+  .dvCarList .carList-steps .steps .carList-step .step {
+    font-size: 14px;
+    padding-left: 1rem;
+    font-weight: bold;
+  }
+  .dvCarList .overflowCar {
+    overflow-x: unset;
+  }
+  /* .carBox {
+    margin: 0px;
+  } */
+  .dvCarList .airportInfo p {
+    font-size: 13px;
+    font-weight: normal;
+  }
+  .dvCarList .travelWhiteBtn button {
+    font-weight: 400;
+    display: inline-block;
+    font-family: var(--light);
+    font-size: 14px;
+    line-height: 20px;
+    border: 1px solid #6b7280;
+    color: var(--black-color);
+    padding: 8px 22px;
+    background: #fff;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .dvCarList .travelWhiteBtn {
+    text-align: left;
+  }
+  .dvCarList .popupForm .form-check-label {
+    font-size: 12px;
+  }
+  .dvCarList .filterBtn button,
+  .dvCarList .filterIcon span {
+    font-size: 12px;
+  }
+  .dvCarList .dvFilter {
+    position: static;
+    opacity: 1 !important;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+  .dvCarList .dvFilter .modal-content {
+    border: none;
+  }
+  .dvCarList .dvFilter .modal-dialog-scrollable .modal-body {
+    overflow-y: visible;
+  }
+  /* .dvCarList .dvFilter .modal-body {
+    padding: 0;
+  } */
+  .dvCarList .dvFilter .modal-footer .btn {
+    width: 100%;
+  }
+  .dvCarList .dvFilter .modal-dialog,
+  .dvCarList .dvFilter .modal-dialog-scrollable .modal-content {
+    max-height: none;
+    transform: none;
+    margin: 0 auto;
+  }
+  /* .dvCarList .repMargin {
+    margin: 27px 0 20px;
+  } */
+  .dvCarList .dvExcess h2 {
+    float: left;
+    width: auto;
+    margin-right: 20px;
+  }
+  .dvCarList .dvExcess h3,
+  .dvCarList .dvExcess h2 {
+    font-size: 16px;
+  }
+  /* .dvAccordian button {
+    font-size: 14px;
+    font-weight: 600;
+  } */
+
+  .dvCarList .carHead p {
+    font-size: 22px;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .dvCarList .top_banner {
+    margin-top: 0px;
+  }
+  .dvCarList .carList-steps {
+    margin: 4% auto 4%;
+    width: 80%;
+    height: 4rem;
+  }
+  .dvCarList .neg-margin {
+    margin-top: 120px;
+  }
+  .dvCarList .dvPayable p {
+    font-size: 18px;
+  }
+  .dvCarList .dvExcess h3,
+  .dvCarList .dvExcess h2 {
+    font-size: 18px;
+  }
+  .dvCarList .carHead p {
+    font-size: 28px;
+  }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}

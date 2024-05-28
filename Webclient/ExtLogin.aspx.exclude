@@ -1,0 +1,273 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ExtLogin.aspx.cs" Inherits="ExtLogin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Welcome to QIB points!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="Jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="Jquery/jquery-ui.js" type="text/javascript"></script>
+    <link href="Css/main.css" rel="stylesheet" type="text/css" />
+    <link href="Css/slicknav.css" type="text/css" rel="stylesheet" />
+    <script src="Jquery/jquery.slicknav.js" type="text/javascript"></script>
+    <link href="Css/responsive.css" rel="stylesheet" />
+    <script src="Jquery/common.js" type="text/javascript"></script>
+    <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <script src="Jquery/jquery.md5.js" type="text/javascript"></script>
+    <script src="Jquery/Validation.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function showMyLoginDiv() {
+            $("#divLogin").css("display", "none");
+            $("#divOTP").css("display", "block");
+            $("#LoginValidation")[0].innerHTML = "";
+            $("#ct_SB_lblLoginError").text('');
+            $("#loginHeader")[0].innerHTML = "";
+            $("#loginHeader")[0].innerHTML = "Please enter received OTP for Login.";
+        }
+        function showOTPDiv() {
+            $("#divLogin").css("display", "none");
+            $("#divUnblockOTP").css("display", "block");
+            $("#LoginValidation")[0].innerHTML = "";
+            $("#lblLoginError")[0].innerHTML = "";
+            ExtGenerateBlockOTP();
+            $("#loginHeader")[0].innerHTML = "";
+            $("#loginHeader")[0].innerHTML = "Please enter received OTP for Login.";
+        }
+        function showLoginOTPDiv() {
+            $("#divLogin").css("display", "none");
+            $("#divOTP").css("display", "block");
+            $("#LoginValidation")[0].innerHTML = "";
+            $("#ct_SB_lblLoginError").text('');
+            $("#loginHeader")[0].innerHTML = "";
+            $("#loginHeader")[0].innerHTML = "Please enter received OTP for Login.";
+        }
+        function showLoginDiv() {
+            $("#divLogin").css("display", "block");
+            $("#divOTP").css("display", "none");
+            $("#LoginValidation")[0].innerHTML = "";
+            $("#ct_SB_lblLoginError").text('');
+            $("#loginHeader")[0].innerHTML = "";
+            $("#loginHeader")[0].innerHTML = "All fields are mandatory.";
+        }
+
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="">
+            <div class="hdr-bg">
+                <div class="logomenu">
+                    <div class="logo">
+                        <a href="Index.aspx">
+                            <img src="images/logo.svg" /></a>
+                    </div>
+                </div>
+                <div class="clr"></div>
+            </div>
+
+            <div class="wrap">
+                <section class="statcpgCont">
+                    <div class="pg-heading ">
+                        Login
+                    </div>
+                    <div class="clr">
+                    </div>
+                    <hr />
+                    <div class="flt-contehldr">
+                        <div class="flt-divR">
+                            <div class="row">
+                                <h5 class="robot mandatory-info" id="loginHeader">All fields are mandatory</h5>
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <div class="myacc-login">
+                                <div class="clr"></div>
+                                <%--<div id="ErrorMsgContainer" class=" ErrorMsgContainer mtop_10" runat="server">
+                                    <asp:Label runat="server" ID="lblLoginError" Text="" ForeColor="Red"></asp:Label>
+                                    <div id="LoginValidation" style="float: left; margin-bottom: 5px;">
+                                    </div>
+                                </div>--%>
+                                <div id="divLogin">
+                                    <input type="hidden" id="hdfContext" runat="server" />
+                                    <ul class="Login">
+                                        <li>
+                                            <div id="ErrorMsgContainer" class=" ErrorMsgContainer mtop_10" runat="server">
+                                                <asp:Label runat="server" ID="lblLoginError" Text="" ForeColor="Red"></asp:Label>
+                                                <div id="LoginValidation" style="float: left; margin-bottom: 5px;">
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="label">RIM:</li>
+                                        <li class="input">
+                                            <input type="text" class="robot" autocomplete="off" id="txtMemberName" runat="server" onkeypress="var retValue = ExtLoginOnEnter(event); event.returnValue = retValue; return retValue;" /></li>
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label">Password:</li>
+                                        <li class="input">
+                                            <input type="password" runat="server" autocomplete="off" class="robot" id="txtPassword" onkeypress="var retValue = ExtLoginOnEnter(event); event.returnValue = retValue; return retValue;" /></li>
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label"></li>
+                                        <li>
+                                            <ul class="chkbxtxt">
+                                                <li>
+                                                    <input type="checkbox" id="chkRememberMe" runat="server" /></li>
+                                                <li><span>Remember me on this computer.</span> </li>
+                                            </ul>
+                                        </li>
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label">&nbsp;</li>
+                                        <li class="input loginbtn">
+                                            <input type="button" class="robot" value="Continue" onclick="var retvalue = ExtLoginValidation(); event.returnValue = retvalue; return retvalue;" /></li>
+                                        <div class="clr"></div>
+                                        <li class="label">&nbsp;</li>
+
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label">&nbsp;</li>
+                                        <li>
+                                            <asp:LinkButton ID="FormLinkPassword" CausesValidation="false" CssClass="ForgotLine"
+                                                runat="server" Text="Forgot Password" OnClientClick="var retvalue = redirectLocation('ForgotPassword.aspx'); event.returnValue= retvalue; return retvalue;"></asp:LinkButton>
+                                            <asp:LinkButton ID="FormLinkActiveMembership" CausesValidation="false" runat="server"
+                                                OnClientClick="var retvalue = redirectLocation('Activation.aspx'); event.returnValue= retvalue; return retvalue;"
+                                                Text="Activate Membership"></asp:LinkButton>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="divOTP" runat="server" style="display: none;">
+                                    <ul>
+                                        <li class="label">RIM:</li>
+                                        <li class="input">
+                                            <asp:TextBox ID="txtMemberID" runat="server" Enabled="false" CssClass="robot"></asp:TextBox></li>
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label">OTP :</li>
+                                        <li class="input">
+                                            <%--<input type="password" runat="server" class="robot" id="txtOTP" maxlength="4" />--%>
+                                            <asp:TextBox ID="txtOTP" TextMode="Password" runat="server" MaxLength="4" CssClass="robot"></asp:TextBox>
+                                        </li>
+
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label"></li>
+
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label">&nbsp;</li>
+                                        <li class="input loginbtn">
+                                            <%--<input type="button" class="robot" value="Continue" onclick="var retvalue = ValidateLoginOTP(); event.returnValue = retvalue; return retvalue;" />--%>
+                                            <asp:Button ID="btnValidateOTP" class="robot" runat="server" Text="Continue" OnClick="btnValidateOTP_Click" />
+                                        </li>
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label">&nbsp;</li>
+                                    </ul>
+                                </div>
+                                <div id="divUnblockOTP" style="display: none;">
+                                    <ul>
+                                        <li class="label">RIM:</li>
+                                        <li class="input">
+                                            <asp:TextBox ID="txtRIM" runat="server" Enabled="false" CssClass="robot"></asp:TextBox></li>
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label">OTP :</li>
+                                        <li class="input">
+                                            <input type="password" runat="server" class="robot" id="txtUnblockOTP" maxlength="4" /></li>
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label"></li>
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label">&nbsp;</li>
+                                        <li class="input loginbtn">
+                                            <input type="button" class="robot" value="Continue" onclick="var retvalue = ExtUnLockMemberByOTP(); event.returnValue = retvalue; return retvalue;" /></li>
+                                        <li class="clear diNICk">&nbsp;</li>
+                                        <li class="label">&nbsp;</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="clr"></div>
+            <!--footer start here-->
+            <%-- <div class="footer" id="FootNav">
+                <div class="footer-text">
+                    <ul id="fnav">
+                        <li><a href="FAQ.aspx">FAQs </a></li>
+                        <li><a href="TermsAndConditions.aspx">Terms & Conditions </a></li>
+                        <li><a href="BookingPolicy.aspx">Booking Policy</a></li>
+                        <li><a href="Disclaimer.aspx">Disclaimer</a></li>
+                        <li><a href="sitemap.aspx">Sitemap</a></li>
+                        <li><a href="PrivacyPolicy.aspx">Privacy Policy</a></li>
+                        <li><a href="ContactUs.aspx">Contact us</a></li>
+                    </ul>
+                    <div class="btpStrip">
+                        <a href="#" class="pwdLogo">
+                            <img src="images/infinia-logo.png"></a>
+                        <ul class="socialIcn">
+                            <li class="followTxt">Follow Us</li>
+                            <li><a href="#">
+                                <img src="images/icon-fb.jpg"></a></li>
+                            <li><a href="#">
+                                <img src="images/icon-likd-in.jpg"></a></li>
+                            <li><a href="#">
+                                <img src="images/icon-twit.jpg"></a></li>
+                        </ul>
+                    </div>
+                    <p class="copyright">
+                        © Copyright. All Rights Reserved.
+                    </p>
+                </div>
+            </div>--%>
+            <div class="clr"></div>
+            <div class="footer">
+
+                <div class="ftr">
+
+
+                    <div class="col-xs">
+                        <p>Follow us on:</p>
+
+                        <ul class="list-inline">
+                            <li><a href="http://www.youtube.com/user/qibgroup" target="_blank">
+                                <img src="images/soc_ytube.png" /></a></li>
+                            <li><a href="https://instagram.com/qibgroup" target="_blank">
+                                <img src="images/Instagram-new2.png" /></a></li>
+                            <li><a href="https://www.twitter.com/qibgroup" target="_blank">
+                                <img src="images/soc_tw.png" /></a></li>
+                            <li><a href="https://linkedin.com/company/qib" target="_blank">
+                                <img src="images/soc_link.png" /></a></li>
+                            <li><a href="https://www.facebook.com/qibgroup" target="_blank">
+                                <img src="images/soc_fb.png" /></a></li>
+
+                        </ul>
+                    </div>
+                    <div class="socico">
+                        <p>
+                            <a href="http://infiniasns.com/" target="_blank">
+                                <img src="Images/inifi-logo.png" /></a>
+                        </p>
+                    </div>
+                </div>
+                <div class="clr"></div>
+                <div class="ftrmenu" id="MainNav">
+                    <ul id="nav">
+                        <li class="copyright">Copyright © 2017 QIB</li>
+                        <li>|</li>
+                        <li><a href="Index.aspx">Home</a></li>
+                        <li>|</li>
+                        <li><a href="BookingPolicy.aspx">Booking Policy</a></li>
+                        <li>|</li>
+                        <li><a href="TermsAndConditions.aspx">T&C</a> </li>
+                        <li>|</li>
+                        <li><a href="FAQ.aspx">FAQs</a> </li>
+                        <li>|</li>
+                        <li><a href="PrivacyPolicy.aspx">Privacy Policy</a></li>
+                        <li>|</li>
+                        <li><a href="Disclaimer.aspx">Disclaimer</a></li>
+                        <li>|</li>
+                        <li><a href="sitemap.aspx">Sitemap</a> </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!--footer end here-->
+        </div>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/*
+ * jQuery UI Autocomplete 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Autocomplete#theming
+ */
+.ui-autocomplete
+{
+	position: absolute;
+	cursor: progress;
+	background-color: #fff !important;
+	font-size: 16px;
+	max-height: 150px;
+    overflow:hidden;
+    padding-right: 20px;
+}
+
+/* workarounds */
+* html .ui-autocomplete
+{
+	width: 1px;
+}
+/* without this, the menu expands to 100% in IE6 */
+
+/*
+ * jQuery UI Menu 1.8.16
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Menu#theming
+ */
+.ui-menu
+{
+	list-style: none;
+	padding: 2px;
+	margin: 0;
+	display: block;
+	float: left;
+}
+.ui-menu .ui-menu
+{
+	margin-top: -3px;
+}
+.ui-menu .ui-menu-item
+{
+	margin: 0;
+	padding: 0;
+	float: left;
+	clear: left; /*background-color:#F5F5F5;*/
+}
+	.ui-menu .ui-menu-item a {
+		font-family: 'Roboto', sans-serif;
+		font-style: normal;
+		text-decoration: none;
+		display: block;
+		padding: 8px;
+		line-height: 0.7;
+		color: #1f1b1c;
+		width: auto;
+		font-size: 12px;
+		font-weight: bold;
+		height: 15px;
+		padding-top: 8px; /*font:inherit;*/
+		border-radius: 5px;
+	}
+
+		.ui-menu .ui-menu-item a.ui-state-hover, .ui-menu .ui-menu-item a.ui-state-active {
+			/*	font-weight:bold;*/
+			font-family: 'Roboto', sans-serif;
+			font-style: normal;
+			border: none;
+			background-color: #E5A812 !important;
+			color: #fff !important;
+			height: 15px;
+			padding: 8px;
+		}

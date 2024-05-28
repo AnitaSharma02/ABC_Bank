@@ -1,0 +1,24 @@
+﻿<%@ Page Title="Sitemap" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="sitemap.aspx.cs" Inherits="sitemap" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
+    <style>
+        .pageHeading{width:100%;}
+        .innerBox{width:100%;}
+    </style>
+<div class="innerPages">
+    <div class="container">
+            <div class="row">
+                <div class="pageHeading">
+                    <h2 data-i18n="bannertext-sitemap">Sitemap</h2>
+                </div>
+                <div class="wrap insidepgs innerBox">
+                    <p>
+                        <asp:SiteMapDataSource ID="nav1" runat="server" />
+                        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="nav1" ShowLines="true" OnTreeNodeDataBound="TreeView1_TreeNodeDataBound" />
+                    </p>
+                </div>
+            </div>
+     </div>
+</div>
+</asp:Content>
+

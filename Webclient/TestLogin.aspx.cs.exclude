@@ -1,0 +1,22 @@
+﻿using Core.Platform.Member.Entites;
+using ABC.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class TestLogin : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string lstrMemberid= Convert.ToString(System.Configuration.ConfigurationManager.AppSettings["ExtLoginSSOTestCIF"]);
+        ABCModel lobjModel = new ABCModel();
+        MemberDetails lobjMemberDetails = lobjModel.GetMemberDetailsUsingNationalID(lstrMemberid);
+
+        HttpContext.Current.Session["MemberDetails"] = lobjMemberDetails;
+
+        Response.Redirect("Index.aspx",false);
+    }
+}

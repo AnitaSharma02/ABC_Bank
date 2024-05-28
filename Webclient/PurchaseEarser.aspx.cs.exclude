@@ -1,0 +1,738 @@
+﻿using ABC.Model;
+
+using Core.Platform.Member.Entites;
+using Core.Platform.ProgramMaster.Entities;
+using Core.Platform.Transactions.Entites;
+using Framework.EnterpriseLibrary.Adapters;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Services;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class PurchaseEarser : System.Web.UI.Page
+{
+    #region Private Properties
+    private int CurrentPage
+    {
+        get
+        {
+            object objPage = ViewState["_CurrentPage"];
+            int _CurrentPage = 0;
+            if (objPage == null)
+            {
+                _CurrentPage = 0;
+            }
+            else
+            {
+                _CurrentPage = (int)objPage;
+            }
+            return _CurrentPage;
+        }
+        set { ViewState["_CurrentPage"] = value; }
+    }
+    private int fistIndex
+    {
+        get
+        {
+
+            int _FirstIndex = 0;
+            if (ViewState["_FirstIndex"] == null)
+            {
+                _FirstIndex = 0;
+            }
+            else
+            {
+                _FirstIndex = Convert.ToInt32(ViewState["_FirstIndex"]);
+            }
+            return _FirstIndex;
+        }
+        set { ViewState["_FirstIndex"] = value; }
+    }
+    private int lastIndex
+    {
+        get
+        {
+
+            int _LastIndex = 0;
+            if (ViewState["_LastIndex"] == null)
+            {
+                _LastIndex = 0;
+            }
+            else
+            {
+                _LastIndex = Convert.ToInt32(ViewState["_LastIndex"]);
+            }
+            return _LastIndex;
+        }
+        set { ViewState["_LastIndex"] = value; }
+    }
+    #endregion
+
+    #region PagedDataSource
+    PagedDataSource _PageDataSource = new PagedDataSource();
+    #endregion
+
+    int TotalPagecount = 10;
+    string ddlvalue = string.Empty;
+    List<TransactionDetails> LobjTransactionDetails = null;
+    List<string> LobjTotalpage = new List<string>();
+    static string lstrCurrencyName = string.Empty;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
+
+        // Stop Caching in Firefox
+        Response.Cache.SetNoStore();
+        if (Session["MemberDetails"] == null)
+        {
+            Response.Redirect("Login.aspx");
+        }
+        if (!Page.IsPostBack)
+        {
+            try
+            {
+                List<ProgramCurrencyDefinition> lobjlistProgramCurrencyDefinition = GetProgramCurrency();
+                if (lobjlistProgramCurrencyDefinition != null)
+                {
+                    if (lobjlistProgramCurrencyDefinition.Count > 0)
+                    {
+                        lblNoResult.Text = string.Empty;
+                        lstrCurrencyName = lobjlistProgramCurrencyDefinition[0].Currency;
+                        BindDataRangeFilter(lobjlistProgramCurrencyDefinition[0].Currency);
+                        BindTransactionSummaryInfo(lobjlistProgramCurrencyDefinition[0].Currency);
+                    }
+                    else
+                    {
+                        linkbuttonPrevious.Visible = false;
+                        linkbuttonNext.Visible = false;
+                        linkbuttonFirst.Visible = false;
+                        linkbuttonLast.Visible = false;
+                        lblNoResult.Text = "Perhaps you don't have any point ,Please Contact Call Center.";
+                    }
+                    //if (lobjlistProgramCurrencyDefinition.Count > 1)
+                    //{
+                    //    ddlProgramCurrency.DataSource = lobjlistProgramCurrencyDefinition;
+                    //    ddlProgramCurrency.DataTextField = "Currency";
+                    //    ddlProgramCurrency.DataValueField = "Id";
+                    //    ddlProgramCurrency.DataBind();
+                    //    ddlProgramCurrency.Visible = true;
+                    //    divCurrency.Visible = true;
+                    //}
+                    //else
+                    //{
+                    //    divCurrency.Visible = false;
+                    //    ddlProgramCurrency.Visible = false;
+                    //}
+                }
+                else
+                {
+                    ABCModel lobjModel = new ABCModel();
+                    List<CustomerSegment> lobjCustomerSegmentList = new List<CustomerSegment>();
+                    CustomerSegment lobjCustomerSegment = new CustomerSegment();
+                    ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+                    MemberDetails lobjMemberDetails = null;
+                    lobjMemberDetails = Session["MemberDetails"] as MemberDetails;
+                    lobjCustomerSegmentList = lobjModel.GetAllCustomerSegmentlst(lobjProgramDefinition.ProgramId);
+                    if (lobjCustomerSegmentList.Count > 0)
+                    {
+                        lobjCustomerSegment = lobjCustomerSegmentList.Find(lobj => lobj.SegmentCode.Equals(lobjMemberDetails.CustomerSegment));
+                        lblNoResult.Text = string.Empty;
+                        lstrCurrencyName = lobjCustomerSegment.Currency;
+                        BindDataRangeFilter(lstrCurrencyName);
+                        BindTransactionSummaryInfo(lstrCurrencyName);
+                    }
+                }
+                ViewState["CurrentPage"] = 1;
+                CurrentPage = Convert.ToInt32(ViewState["CurrentPage"]);
+
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog(ex.Message);
+            }
+        }
+    }
+
+    private List<ProgramCurrencyDefinition> GetProgramCurrency()
+    {
+        ABCModel lobjModel = new ABCModel();
+        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+        MemberDetails lobjMemberDetails = null;
+        lobjMemberDetails = Session["MemberDetails"] as MemberDetails;
+        List<ProgramCurrencyDefinition> lobjlistProgramCurrencyDefinition = new List<ProgramCurrencyDefinition>();
+        lobjlistProgramCurrencyDefinition = lobjModel.GetProductProgramCurrencyDefinition(lobjMemberDetails);
+        return lobjlistProgramCurrencyDefinition;
+    }
+
+    public List<string> BindDataRangeFilter(string pstrCurrencyName)
+    {
+        int TotalRowCount = 0;
+        ABCModel lobjModel = new ABCModel();
+        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+        SearchTransactions objSearchTransactions = new SearchTransactions();
+        objSearchTransactions.RelationType = Convert.ToInt32(RelationType.LBMS);
+        objSearchTransactions.TransactionCurrency = pstrCurrencyName;
+        objSearchTransactions.RelationReference = ((Session["MemberDetails"] as MemberDetails).MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
+        objSearchTransactions.ProgramId = lobjProgramDefinition.ProgramId;
+        LobjTransactionDetails = new List<TransactionDetails>();
+
+        string frommdate = DateTime.Now.AddMonths(-1).ToString("dd/MM/yyyy");
+        string Todate = DateTime.Now.ToString("dd/MM/yyyy");
+
+        //TotalRowCount = lobjModel.GetTotalMemberTransaction(objSearchTransactions);
+
+        objSearchTransactions.DateFrom = lobjModel.StringToDateTime(frommdate.ToString());
+        objSearchTransactions.DateTo = lobjModel.StringToDateTime(Todate.ToString());
+
+        LoggingAdapter.WriteLog("Serch Transaction Summary Datefrom -:" + objSearchTransactions.DateFrom + "Datefrom -:" + objSearchTransactions.DateTo);
+
+        TotalRowCount = lobjModel.GetTotalMemberTransactionByDate(objSearchTransactions);
+
+        LoggingAdapter.WriteLog("GetTotalMemberTransactionByDate  TotalRowCount -:" + TotalRowCount);
+
+
+        //if (TotalRowCount == 0)
+        //{
+        //    lblNoResult.Text = "No Transactions Found";
+        //    DivPaging.Visible = false;
+        //}
+        //else
+        //{
+        //    lblNoResult.Text = string.Empty;
+        //    //DivPaging.Visible = false;
+        //    DivPaging.Visible = true;
+        //}
+        //ViewState["TotalPages"] = TotalRowCount;
+        List<string> lobjstringList = new List<string>();
+        //lobjstringList = lobjModel.PageDataRangeList(TotalRowCount, TotalPagecount);
+        //LobjTotalpage = lobjstringList;
+        //if (lobjstringList.Count > 0)
+        //{
+        //    ddlvalue = lobjstringList[0];
+        //}
+        return lobjstringList;
+    }
+
+    public void BindTransactionSummaryInfo(string pstrCurrencyName)
+    {
+        ABCModel lobjModel = new ABCModel();
+        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+        SearchTransactions objSearchTransactions = new SearchTransactions();
+        objSearchTransactions.RelationReference = ((Session["MemberDetails"] as MemberDetails).MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
+        objSearchTransactions.ProgramId = lobjProgramDefinition.ProgramId;
+        objSearchTransactions.RelationType = Convert.ToInt32(RelationType.LBMS);
+        objSearchTransactions.TransactionCurrency = pstrCurrencyName;
+        objSearchTransactions.MinimumRange = 0;
+        objSearchTransactions.MaximumRange = 10;
+        //objSearchTransactions.TransactionCurrency = pstrCurrencyName;
+
+        LobjTransactionDetails = new List<TransactionDetails>();
+
+        string frommdate = DateTime.Now.AddMonths(-1).ToString("dd/MM/yyyy");
+        string Todate = DateTime.Now.ToString("dd/MM/yyyy");
+
+        objSearchTransactions.DateFrom = lobjModel.StringToDateTime(frommdate.ToString());
+        objSearchTransactions.DateTo = lobjModel.StringToDateTime(Todate.ToString());
+
+        //objSearchTransactions.DateFrom = lobjModel.StringToDateTime(FromDate.Text);
+        // objSearchTransactions.DateTo = lobjModel.StringToDateTime(Todate.Text);
+
+        LobjTransactionDetails = lobjModel.GetPurchaseEraserTransactionSummaryByDate(objSearchTransactions);
+
+        LobjTransactionDetails = LobjTransactionDetails.FindAll(lobj => lobj.TransactionType == TransactionType.Credit && (lobj.LoyaltyTxnType == LoyaltyTxnType.Spend && lobj.ServiceType != "ET"));
+
+        if (LobjTransactionDetails != null && LobjTransactionDetails.Count > 0)
+        {
+
+            RepSummaryInfo.DataSource = LobjTransactionDetails;
+            Session["PurchaseTransactionDetails"] = LobjTransactionDetails;
+            int TotalRowCount = 0;
+
+            TotalRowCount = LobjTransactionDetails.Count;
+
+            if (TotalRowCount == 0)
+            {
+                lblNoResult.Text = "No Transactions Found";
+                DivPaging.Visible = false;
+            }
+            else
+            {
+                lblNoResult.Text = string.Empty;
+                //DivPaging.Visible = false;
+                DivPaging.Visible = true;
+            }
+            ViewState["TotalPages"] = TotalRowCount;
+            List<string> lobjstringList = new List<string>();
+            lobjstringList = lobjModel.PageDataRangeList(TotalRowCount, TotalPagecount);
+            LobjTotalpage = lobjstringList;
+            if (lobjstringList.Count > 0)
+            {
+                ddlvalue = lobjstringList[0];
+            }
+        }
+        else
+        {
+            RepSummaryInfo.DataSource = null;
+        }
+
+        RepSummaryInfo.DataBind();
+
+        if (LobjTransactionDetails.Count > 0)
+        {
+            dlPaging.Visible = true;
+            if (CurrentPage == 1)
+            {
+                linkbuttonPrevious.Enabled = false;
+                linkbuttonNext.Enabled = true;
+                linkbuttonFirst.Enabled = false;
+                linkbuttonLast.Enabled = true;
+            }
+
+            if (Convert.ToInt32(LobjTotalpage.Count) == 1)
+            {
+                linkbuttonPrevious.Enabled = false;
+                linkbuttonNext.Enabled = false;
+                linkbuttonFirst.Enabled = false;
+                linkbuttonLast.Enabled = false;
+            }
+            else if (CurrentPage > 1 && CurrentPage < Convert.ToInt32(LobjTotalpage.Count))
+            {
+                linkbuttonPrevious.Enabled = true;
+                linkbuttonNext.Enabled = true;
+                linkbuttonFirst.Enabled = true;
+                linkbuttonLast.Enabled = true;
+            }
+            else if (CurrentPage == Convert.ToInt32(LobjTotalpage.Count))
+            {
+                linkbuttonPrevious.Enabled = true;
+                linkbuttonNext.Enabled = false;
+                linkbuttonFirst.Enabled = true;
+                linkbuttonLast.Enabled = false;
+            }
+            doPaging();
+        }
+        else
+        {
+            linkbuttonPrevious.Visible = false;
+            linkbuttonNext.Visible = false;
+            linkbuttonFirst.Visible = false;
+            linkbuttonLast.Visible = false;
+            dlPaging.Visible = false;
+
+            lblerrorMessage.Visible = true;
+            lblerrorMessage.Text = "<span data-i18n='text-no-records-found'>No Records found.</span>";
+
+        }
+
+    }
+    public void doPaging()
+    {
+        DataTable dt = new DataTable();
+        dt.Columns.Add("ID");
+        dt.Columns.Add("PageIndex");
+
+        fistIndex = CurrentPage - 5;
+        if (CurrentPage > 5)
+        {
+            lastIndex = CurrentPage + 5;
+        }
+        else
+        {
+            lastIndex = 10;
+        }
+        if (lastIndex > Convert.ToInt32(ViewState["TotalPages"]))
+        {
+            lastIndex = Convert.ToInt32(ViewState["TotalPages"]);
+            fistIndex = lastIndex - 10;
+        }
+
+        if (fistIndex < 0)
+        {
+            fistIndex = 0;
+        }
+        for (int i = fistIndex; i < lastIndex; i++)
+        {
+            if (LobjTotalpage.Count == i)
+            {
+                break;
+            }
+            else
+            {
+                dt.Rows.Add((i + 1).ToString(), LobjTotalpage[i]);
+            }
+        }
+        this.dlPaging.DataSource = dt;
+        this.dlPaging.DataBind();
+    }
+
+    protected void lbtnNext_Click(object sender, EventArgs e)
+    {
+        LobjTotalpage = BindDataRangeFilter(lstrCurrencyName);
+        CurrentPage += 1;
+        if (LobjTotalpage.Count > 0)
+        {
+            ddlvalue = LobjTotalpage[CurrentPage - 1];
+        }
+        else
+        {
+            ddlvalue = "0-0";
+        }
+        this.BindTransactionSummaryInfo(lstrCurrencyName);
+    }
+    protected void lbtnPrevious_Click(object sender, EventArgs e)
+    {
+        LobjTotalpage = BindDataRangeFilter(lstrCurrencyName);
+        CurrentPage -= 1;
+        if (LobjTotalpage.Count > 0)
+        {
+            ddlvalue = LobjTotalpage[CurrentPage - 1];
+        }
+        else
+        {
+            ddlvalue = "0-0";
+        }
+        this.BindTransactionSummaryInfo(lstrCurrencyName);
+    }
+    protected void dlPaging_ItemCommand(object source, DataListCommandEventArgs e)
+    {
+        if (e.CommandName.Equals("Paging"))
+        {
+            LobjTotalpage = BindDataRangeFilter(lstrCurrencyName);
+            LinkButton objlnkbtnPaging = (LinkButton)e.Item.FindControl("lnkbtnPaging");
+            ddlvalue = e.CommandArgument.ToString();
+            CurrentPage = Convert.ToInt16(objlnkbtnPaging.Text);
+            this.BindTransactionSummaryInfo(lstrCurrencyName);
+        }
+    }
+    protected void dlPaging_ItemDataBound(object sender, DataListItemEventArgs e)
+    {
+        LinkButton lnkbtnPage = (LinkButton)e.Item.FindControl("lnkbtnPaging");
+        if (lnkbtnPage.Text.ToString() == CurrentPage.ToString())
+        {
+            lnkbtnPage.Enabled = false;
+            lnkbtnPage.Style.Add("fone-size", "14px");
+            lnkbtnPage.Font.Bold = true;
+
+        }
+    }
+    protected void lbtnLast_Click(object sender, EventArgs e)
+    {
+        CurrentPage = (Convert.ToInt32(ViewState["TotalPages"]));
+        LobjTotalpage = BindDataRangeFilter(lstrCurrencyName);
+        if (LobjTotalpage.Count > 0)
+        {
+            ddlvalue = LobjTotalpage[LobjTotalpage.Count - 1];
+            CurrentPage = LobjTotalpage.Count;
+        }
+        else
+        {
+            ddlvalue = "0-0";
+        }
+        this.BindTransactionSummaryInfo(lstrCurrencyName);
+
+    }
+    protected void lbtnFirst_Click(object sender, EventArgs e)
+    {
+        LobjTotalpage = BindDataRangeFilter(lstrCurrencyName);
+        CurrentPage = 1;
+        if (LobjTotalpage.Count > 0)
+        {
+            ddlvalue = LobjTotalpage[CurrentPage - 1];
+        }
+        else
+        {
+            ddlvalue = "0-0";
+        }
+        this.BindTransactionSummaryInfo(lstrCurrencyName);
+    }
+
+    protected string GetFormattedPoints(string pobjpoints)
+    {
+        if (string.IsNullOrEmpty(pobjpoints))
+        {
+            return "0";
+        }
+        else
+        {
+            float flpoint = float.Parse(pobjpoints);
+            ABCModel lobjModel = new ABCModel();
+            string res = lobjModel.FloatToThousandSeperated(flpoint);
+            return res;
+        }
+    }
+    protected string GetFormattedAmount(string pobjamount)
+    {
+        ABCModel lobjModel = new ABCModel();
+        string pstrString = string.Empty;
+        float flamount = float.Parse(pobjamount);
+        int lintAmount = (int)flamount;
+        //NumberFormatInfo nfo = new CultureInfo("en-US", false).NumberFormat;
+        //int lintAmount = (int)flamount;
+
+        //pstrString = flamount.ToString("F0", nfo);
+        return lobjModel.FloatToThousandSeperated(lintAmount);
+    }
+
+
+    [WebMethod]
+    public static string GetTransactionDetail(int lstrTransactionId)
+    {
+        try
+        {
+            ABCModel lobjModel = new ABCModel();
+            MemberDetails lobjMemberDetails = new MemberDetails();
+            float pfltPointrate = 0.0f;
+            string result = string.Empty;
+            int RequiredPoints = 0;
+            int pintAvailablePoints = 0;
+
+            string lstrCurrency = lobjModel.GetDefaultCurrency();
+
+            lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+
+            MemberRelation lobjMemberRelation = new MemberRelation();
+            lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS));
+
+            pintAvailablePoints = lobjModel.CheckAvailbility(lobjMemberRelation.RelationReference, Convert.ToInt32(lobjMemberRelation.RelationType), lstrCurrency);
+
+            if (HttpContext.Current.Session["PurchaseTransactionDetails"] != null)
+            {
+                List<TransactionDetails> lobjTransactionDetailslist = new List<TransactionDetails>();
+                TransactionDetails lobjTransactionDetails = null;
+                lobjTransactionDetailslist = (List<TransactionDetails>)HttpContext.Current.Session["PurchaseTransactionDetails"];
+
+                if (lobjTransactionDetailslist != null && lobjTransactionDetailslist.Count > 0)
+                {
+                    lobjTransactionDetails = lobjTransactionDetailslist.Find(lobj => lobj.Id == lstrTransactionId);
+                    HttpContext.Current.Session["PurchaseEraserTransactionDetails"] = lobjTransactionDetails;
+                }
+
+                List<ProgramCurrencyDefinition> lobjProgramCurrency = lobjModel.GetProgramCurrencyDefinition(lobjTransactionDetails.ProgramId);
+                pfltPointrate = lobjProgramCurrency[0].RedemptionRate;
+                RequiredPoints = lobjModel.CalculatePoints(lobjTransactionDetails.Amounts, pfltPointrate);
+
+                if (pintAvailablePoints >= RequiredPoints)
+                {
+                    lobjTransactionDetails.AdditionalDetail = Convert.ToString(RequiredPoints);
+
+                    result = JsonConvert.SerializeObject(lobjTransactionDetails);
+                }
+                else
+                {
+                    result = "INSUFFICIENT_POINTS";
+                }
+            }
+            else
+            {
+                result = "";
+            }
+
+            return result;
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("Purchase Eraser GetTransactionDetail Ex -:" + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+            return null;
+        }
+    }
+
+    [WebMethod]
+    public static string TransactionEraser()
+    {
+        try
+        {
+            ABCModel lobjModel = new ABCModel();
+            MemberDetails lobjMemberDetails = new MemberDetails();
+            PurchaseEarser lobjPurchaseEarser = new PurchaseEarser();
+            float pfltPointrate = 0.0f;
+            string result = string.Empty;
+
+            string lstrCurrency = lobjModel.GetDefaultCurrency();
+
+            lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+            MemberRelation lobjMemberRelation = new MemberRelation();
+            lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS));
+
+            if (HttpContext.Current.Session["PurchaseEraserTransactionDetails"] != null)
+            {
+                TransactionDetails lobjTransactionDetails = null;
+                lobjTransactionDetails = (TransactionDetails)HttpContext.Current.Session["PurchaseEraserTransactionDetails"];
+
+                if (lobjTransactionDetails != null)
+                {
+                    bool lblnRedeemResponse = InsertTransactionDetails(lobjMemberDetails.MemberRelationsList.Find(lob => lob.RelationType.Equals(RelationType.LBMS)).RelationReference,
+                                                                                   Convert.ToSingle(lobjTransactionDetails.Amounts),
+                                                                                   Convert.ToInt32(lobjTransactionDetails.AdditionalDetail),
+                                                                                    TransactionType.Debit,
+                                                                                    LoyaltyTxnType.PurchaseEraser,
+                                                                                    Convert.ToString(Guid.NewGuid()),
+                                                                                    lobjTransactionDetails.MerchantName, lstrCurrency
+                                                                                   );
+
+
+                    if (lblnRedeemResponse)
+                    {
+                        lobjTransactionDetails.ServiceType = "ET";
+
+                        bool response = lobjModel.UpdateTransactionDetails(lobjTransactionDetails);
+
+                        if (response)
+                        {
+                            //* Add Code for post details to BOK API *//
+
+
+                            SendEmailandSMSNotification(lobjTransactionDetails, lobjMemberDetails, true);
+                        }
+                        else
+                        {
+                            SendEmailandSMSNotification(lobjTransactionDetails, lobjMemberDetails, false);
+                        }
+
+                        //lobjPurchaseEarser.BindTransactionSummaryInfo(lobjTransactionDetails.TransactionCurrency);
+
+                        result = "Success";
+                    }
+
+                }
+                else
+                {
+                    result = "Failed";
+                }
+            }
+            else
+            {
+                result = "Failed";
+            }
+
+            return result;
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("Purchase Eraser TransactionErase Ex -:" + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+            return null;
+        }
+    }
+
+    private static void SendEmailandSMSNotification(TransactionDetails pobjTransactionDetails, MemberDetails pobjMemberDetails, bool pblStatus)
+    {
+        ABCModel lobjmodel = new ABCModel();
+        List<string> lstrEmailParameters = new List<string>();
+        List<string> lstrSMSParameters = new List<string>();
+        string templatecodeEmail = string.Empty;
+        string templatecodeSMS = string.Empty;
+
+        if (!string.IsNullOrEmpty(pobjMemberDetails.Email))
+        {
+            lstrEmailParameters.Add(pobjTransactionDetails.AdditionalDetail); // Points
+            lstrEmailParameters.Add(Convert.ToString(pobjTransactionDetails.Amounts)); //Amount
+
+            if (pobjMemberDetails.PreferredLanguage == "EN")
+            {
+                if (pblStatus)
+                {
+                    templatecodeEmail = "PurchaseEraserSuccessfull";
+                }
+                else
+                {
+                    templatecodeEmail = "PurchaseEraserFailed";
+                }
+            }
+            else if (pobjMemberDetails.PreferredLanguage == "AR")
+            {
+                if (pblStatus)
+                {
+                    templatecodeEmail = "ARPurchaseEraserSuccessfull";
+                }
+                else
+                {
+                    templatecodeEmail = "ARPurchaseEraserFailed";
+                }
+            }
+
+            lobjmodel.SendEmail(lstrEmailParameters, pobjMemberDetails, templatecodeEmail);
+
+        }
+
+        if (!string.IsNullOrEmpty(pobjMemberDetails.MobileNumber))
+        {
+            lstrSMSParameters.Add(pobjTransactionDetails.AdditionalDetail);
+            lstrSMSParameters.Add(Convert.ToString(pobjTransactionDetails.Amounts));
+
+            if (pobjMemberDetails.PreferredLanguage == "EN")
+            {
+                if (pblStatus)
+                {
+                    templatecodeEmail = "PurchaseEraserSuccessfull";
+                }
+                else
+                {
+                    templatecodeEmail = "PurchaseEraserFailed";
+                }
+            }
+            else if (pobjMemberDetails.PreferredLanguage == "AR")
+            {
+                if (pblStatus)
+                {
+                    templatecodeEmail = "ARPurchaseEraserSuccessfull";
+                }
+                else
+                {
+                    templatecodeEmail = "ARPurchaseEraserFailed";
+                }
+            }
+
+            lobjmodel.SendSMS(lstrSMSParameters, pobjMemberDetails, templatecodeEmail);
+
+        }
+
+    }
+
+    public static bool InsertTransactionDetails(string pstrRelationReference, float pdcmAmount, int pintPoint, TransactionType pobjTransactionType, LoyaltyTxnType pobjLoyaltyTxnType, string pstrTransactionId, string pstrMerchantName, string pstrCurrency)
+    {
+        bool lblnResult = false;
+        try
+        {
+            ABCModel lobjModel = new ABCModel();
+            ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+            TransactionDetails lobjTransactionDetails = new TransactionDetails
+            {
+                TransactionType = pobjTransactionType,
+                RelationReference = pstrRelationReference,
+                Amounts = (decimal)pdcmAmount,
+                Points = pintPoint,
+                LoyaltyTxnType = pobjLoyaltyTxnType,
+                ProgramId = lobjProgramDefinition.ProgramId,
+                RelationType = RelationType.LBMS,
+                TransactionDate = DateTime.Now,
+                ProcessingDate = DateTime.Now,
+                ExpiryDate = DateTime.Now,
+                Narration = string.Format("{0} {1}", "Redemption", Convert.ToString(pobjLoyaltyTxnType)),
+                MerchantName = pstrMerchantName,
+                ExternalReference = pstrTransactionId,
+                TransactionCurrency = pstrCurrency,
+                IsDomestic = false
+            };
+            TransactionDetailsBreakage transactionDetailsBreakage = new TransactionDetailsBreakage
+            {
+                AccountNumber = "NA",
+                Amount = (decimal)pdcmAmount,
+                IsBillable = true,
+                SourceAmount = Convert.ToDecimal(pdcmAmount)
+            };
+            lobjTransactionDetails.TransactionDetailBreakage = transactionDetailsBreakage;
+            lblnResult = lobjModel.InsertTransactionDetails(lobjTransactionDetails);
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("PurchaseEraser InsertTransactionDetails Exception-: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
+        }
+        return lblnResult;
+    }
+
+}

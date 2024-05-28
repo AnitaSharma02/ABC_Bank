@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="Index.aspx" title="Home"  description="">
+		<siteMapNode url="FlightSearch.aspx" title="Flight"  description="">
+			<siteMapNode url="FlightList.aspx" title="Flight Search Result"  description="" />
+			<siteMapNode url="FlightPassenger.aspx" title="Passenger Details"  description="" />
+			<siteMapNode url="AirReviewAndConfirm.aspx" title="Review And Confirm"  description="" />
+			<siteMapNode url="AirReceipt.aspx" title="Air Receipt"  description="" />
+		</siteMapNode>
+		<siteMapNode url="HotelSearch.aspx" title="Hotel"  description="">
+			<siteMapNode url="HotelResults.aspx" title="Hotel Search Result"  description="" />
+			<siteMapNode url="HotelDetails.aspx" title="Hotel Details"  description="" />
+			<siteMapNode url="HotelBookingDetails.aspx" title="Booking Details"  description="" />
+			<siteMapNode url="HotelVoucher.aspx" title="Hotel Receipt"  description="" />
+		</siteMapNode>
+		<siteMapNode url="CarSearch.aspx" title="Car"  description="">
+			<siteMapNode url="CarList.aspx" title="Car Search Result"  description="" />
+			<siteMapNode url="CarDetails.aspx" title="Car Details"  description="" />
+			<siteMapNode url="DriverDetails.aspx" title="Driver Details"  description="" />
+			<siteMapNode url="CarVoucher.aspx" title="Car Receipt"  description="" />
+		</siteMapNode>
+		<siteMapNode url="Shop/Shop.aspx" title="Shop"  description="" />
+		<siteMapNode url="Earn.aspx" title="Earn"  description="" />
+		<siteMapNode url="Redeem.aspx" title="Redeem"  description="" />
+		<siteMapNode url="" title="My Account"  description="">
+			<siteMapNode url="StatementSummary.aspx" title="Statement Summary"  description="" />
+			<siteMapNode url="TransactionSummary.aspx" title="Transaction Summary"  description="" />
+			<siteMapNode url="ManageBooking.aspx" title="Booking Statement"  description="" />
+			<siteMapNode url="PointsExpiry.aspx" title="Points Expiry"  description="" />
+			<siteMapNode url="ViewMemberProfile.aspx" title="Member Profile"  description="" />
+			<siteMapNode url="ActivateMembership.aspx" title="Member Activation"  description="" />
+			<siteMapNode url="Login.aspx" title="Login"  description="" />
+			<siteMapNode url="ForgotPassword.aspx" title="Forgot Password"  description="" />
+		</siteMapNode>
+		<siteMapNode url="AboutUs.aspx" title="About Us"  description="" />
+		<siteMapNode url="BookingPolicy.aspx" title="Booking Policy"  description="" />
+		<siteMapNode url="TermsAndConditions.aspx" title="Terms and Conditions"  description="" />
+		<siteMapNode url="FAQ.aspx" title="FAQs"  description="" />
+		<siteMapNode url="PrivacyPolicy.aspx" title="Privacy Policy"  description="" />
+	</siteMapNode>
+</siteMap>

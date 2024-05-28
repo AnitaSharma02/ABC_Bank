@@ -1,0 +1,194 @@
+/*=========[ HOTELSEARCH PAGE ]=========*/
+/*active menu for flightsearch page*/
+.dvRedemptionMenu .SelRedemption .imageBox {
+    background-color: var(--bg-colour1);
+}
+
+    .dvRedemptionMenu .SelRedemption .imageBox img {
+        filter: brightness(0) invert(1);
+    }
+
+.dvRedemptionMenu .SelRedemption p {
+    font-weight: bold;
+}
+/*active menu for flightsearch page*/
+ 
+/*.dvHotelSearch .innerBox {
+    overflow: hidden;
+    background: var(--bg-colour2);
+    border: unset;
+    border-radius: var(--b-radius) !important;
+}*/
+.dvHotelSearch .bg-lightgray {
+    background: var(--bg-colour2);
+}
+.dvHotelSearch .dvForm .searchBtn .custom-width {
+    width: 100% !important;
+}
+/*.dvHotelSearch .dvPlace {
+    position: relative;
+}
+.dvHotelSearch .dvPlace .map-icon {
+    border-left: 1px solid #E0E2EA;
+    padding-left: 28px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 100%;
+}
+.dvHotelSearch .dvPlace .map-icon .fa-location-dot {
+    position: absolute;
+    top: 13px;
+    right: 3px;
+}*/
+/*.dvHotelSearch .form-control {
+    padding-right: 3rem !important;
+}*/
+.dvHotelProductList .img-container {
+    padding-bottom: 73%;
+}
+.dvHotelProductList .dvicon img {
+    display: inline;
+}
+.dvHotelProductList .product-text {
+    min-height:35px;
+}
+
+/*hotelsearch room dropdown*/
+.dvHotelSearch .dvDropdown .dropdown-menu,
+.dvHotelResult .dvDropdown .dropdown-menu {
+    padding: 0;
+    width: 250px;
+}
+.dvHotelSearch .dvQty .w-120,
+.dvHotelResult .dvQty .w-120 {
+    width: 120px;
+}
+.dvHotelSearch .dvDropdown .dropdown-menu-right {
+    right: 0 !important;
+    left: auto !important;
+    top: 21px !important;
+    transform: none !important;
+}
+/*hotelsearch room dropdown*/
+
+/*hotelsearch international and domestic errors*/
+.dvHotelSearch .dvForm .error,
+.dvHotelResult .dvModify .dvForm .error {
+    border: 1px solid var(--colour1);
+    color: var(--colour1);
+}
+/*hotelsearch international and domestic errors*/
+/*=========[ HOTELSEARCH PAGE ]=========*/
+
+/*=========[ HOTELDETAILS PAGE ]=========*/
+.dvHotelDetails .dvThumbSwiperSlider .mySwiper2 .img-container {
+  padding-bottom: 50%;
+}
+.dvHotelDetails .dvThumbSwiperSlider .mySwiper .img-container {
+    padding-bottom: 15%;
+}
+.dvHotelDetails .dvSelectRoom .bg-lightgray,
+.dvHotelDetails .dvAbout .bg-lightgray {
+    background-color: var(--bg-colour2);
+}
+.dvHotelDetails .dvAboutHotel p,
+.dvHotelDetails .dvAboutHotel ul{
+    margin-bottom:1rem;
+}
+.dvHotelDetails .dvAboutHotel ul {
+    padding-left:1rem;
+}
+/*=========[ HOTELDETAILS PAGE ]=========*/
+/*=========[ HOTELBOOKINGDETAILS PAGE ]=========*/
+.dvHotelBookingDetails a {
+    text-decoration:underline;
+}
+.dvHotelBookingDetails .bg {
+    background-color: var(--bg-colour1);
+}
+.dvHotelBookingDetails .bg-lightgray {
+  background-color: var(--bg-colour2);
+}
+.dvHotelBookingDetails .rounded {
+  border-radius: 5px 5px 0 0 !important;
+}
+.dvSimilarListing .img-container {
+    padding-bottom: 60%;
+}
+/*=========[ PLUS MINUS HOTEL FORM ]=========*/
+.qtySelector {position:relative}
+.qtySelector .special-text {
+    position: absolute;
+    top: .7rem;
+    left:.7rem;
+    z-index: 0;
+}
+.dvHotelSearch .qtySelector .form-control {
+    padding: 0.75rem 0 !important;
+}
+    .qtySelector .special-text::-webkit-input-placeholder {
+        font-size: var(--placeholder-font-size);
+        color: var(--placeholder-text-colour);
+    }
+
+    .qtySelector .special-text::-moz-placeholder {
+        font-size: var(--placeholder-font-size);
+        color: var(--placeholder-text-colour);
+    }
+
+    .qtySelector .special-text:-ms-input-placeholder {
+        font-size: var(--placeholder-font-size);
+        color: var(--placeholder-text-colour);
+    }
+
+    .qtySelector .special-text:-moz-placeholder {
+        font-size: var(--placeholder-font-size);
+        color: var(--placeholder-text-colour);
+    }
+/*=========[ PLUS MINUS HOTEL FORM ]=========*/
+/*=========[ HOTELBOOKINGDETAILS PAGE ]=========*/
+
+
+
+/*=========[ MEDIA QUERIES ]=========*/
+@media (min-width: 576px) {
+    .dvHotelSearch .dvDropdown .dropdown-menu-right,
+    .dvHotelResult .dvDropdown .dropdown-menu-right {
+        right: auto !important;
+        left: 0 !important;
+        top: 21px !important;
+        transform: none !important;
+    }
+}
+@media (min-width: 768px) {
+    .dvHotelSearch .dvForm .searchBtn .custom-width {
+        width: 48% !important;
+    }
+}
+@media (min-width: 992px) {
+    .dvHotelSearch .dvForm .searchBtn .custom-width {
+        width: 23% !important;
+    }
+    .dvHotelSearch .dvQty .w-120,
+    .dvHotelResult .dvQty .w-120 {
+        width: 80px;
+    }
+    .dvHotelSearch .dvDropdown .dropdown-menu-right,
+    .dvHotelResult .dvDropdown .dropdown-menu-right {
+        right: 0 !important;
+        left: auto !important;
+        top: 21px !important;
+        transform: none !important;
+    }
+}
+@media (min-width: 1200px) {
+    .dvHotelSearch .dvDropdown .dropdown-menu-right {
+        right: auto !important;
+        left: 0 !important;
+        top: 21px !important;
+        transform: none !important;
+    }
+
+}
+/*=========[ MEDIA QUERIES ]=========*/

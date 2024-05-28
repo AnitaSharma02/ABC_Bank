@@ -1,0 +1,115 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CarSearchWait.aspx.cs" Inherits="CarSearchWait" %>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head id="Head1" runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Verve Rewards</title>
+    <script type="text/javascript" src="Jquery/jquery.min.js"></script>
+    <script src="Jquery/mobile-detect.min.js" type="text/javascript"></script>
+     <!--Language Libs -->
+    <script src="Jquery/i18n/jquery.i18n.min.js" type="text/javascript"></script>
+    <script src="Jquery/i18n/jquery.i18n.emitter.bidi.js" type="text/javascript"></script>
+    <script src="Jquery/i18n/i18n.custom.js" type="text/javascript"></script>
+    <link href="Css/main.css" rel="stylesheet" />
+    <style>
+        .Search_lbl { width: 100%; text-align: center; font-size: 18px;}
+        .SearchImg_Container { width: 100%; float: left; margin: 0% 0% 10px 0%; text-align: center;}
+        .containerBG { margin-bottom: 3%;}
+        .cssload-wrapper {margin-top:0px;}
+        .spclpadd {padding:0 7px;}
+    </style>
+    <script language="javascript" type="text/javascript">
+
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(window.location.search);
+            if (results == null)
+                return "";
+            else
+                var qs = regex.exec(decodeURIComponent(window.location.href));
+        }
+        function getQuerystring(key, default_) {
+            if (default_ == null) default_ = "";
+            key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
+            var qs = regex.exec(decodeURIComponent(window.location.href));
+            if (qs == null)
+                return default_;
+            else
+                return qs[1];
+        }
+        $(document).ready(function () {
+            var pickupCity = getQuerystring("pickupCity");
+            pickupCity = pickupCity.replace('%20', ' ');
+            pickupCity = pickupCity.replace('%20', ' ');
+            var pickupLocation = getQuerystring("pickupLocationName");
+            pickupLocation = pickupLocation.replace('%20', ' ');
+            pickupLocation = pickupLocation.replace('%20', ' ');
+            // var dropofCountry = getQuerystring("dropofCountry");
+            var dropofCity = getQuerystring("dropofCity");
+            dropofCity = dropofCity.replace('%20', ' ');
+            dropofCity = dropofCity.replace('%20', ' ');
+            var dropoffLocation = getQuerystring("DropoffLocationName");
+            dropoffLocation = dropoffLocation.replace('%20', ' ');
+            dropoffLocation = dropoffLocation.replace('%20', ' ');
+            var departDate = getQuerystring("departDate");
+            departDate = departDate.replace('%20', '');
+            var departTime = getQuerystring("departTime");
+            departTime = departTime.replace('%20', ' ');
+            var arrDate = getQuerystring("arrDate");
+            arrDate = arrDate.replace('%20', '');
+            var arrTime = getQuerystring("arrTime");
+            arrTime = arrTime.replace('%20', ' ');
+
+            var SearchDetails = pickupLocation + ' (' + pickupCity + ') ' + 'To ' + dropoffLocation + '(' + dropofCity + ')' + ', ' + departDate + ', ' + departTime + ' - ' + arrDate + ', ' + arrTime
+
+            $("#LabelYourSearchDetails").text($.trim(SearchDetails));
+            $.ajax({
+                type: 'POST',
+                url: document.URL.toString().replace("CarSearchWait.aspx", "CarSearchWait.aspx/CarSearch"),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                data: '',
+                success: function (msg) {
+                    if (msg.d)
+                        window.location = "CarList.aspx";
+                    else
+                        window.location = "NoResultFound.aspx?ERR=RESULTNOTFOUND";
+                },
+                error: function () {
+                    window.location = "ErrorPage.aspx";
+                }
+            });
+        });
+
+    </script>
+</head>
+<body style="margin: 0 auto; width: 100%; text-align:center;">
+    <form id="form1" runat="server">
+        <div style="float: left; width: 100%;">
+            <div class="Search_lbl">
+                <div class="SearchImg_Container containerBG" style="margin:60px 0 30px 0;">
+                    <img alt="" src="../Images/verve-rewards-logo.svg" Width="240"  />
+                </div>
+                <div class="SearchImg_Container spclpadd">
+                    <asp:Label ID="Label1" runat="server" Text="Please wait while we search for best available fares..."></asp:Label>
+                </div>
+                <asp:Label ID="LabelYourSearchDetails" Font-Size="16px" Font-Bold="true" runat="server" Text="" CssClass="spclpadd"></asp:Label>
+                <div class="cssload-wrapper">
+                <div class="cssload-border">
+                    <div class="cssload-whitespace">
+                        <div class="cssload-line">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>

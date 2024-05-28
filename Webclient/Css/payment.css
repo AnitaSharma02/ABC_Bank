@@ -1,0 +1,73 @@
+.dvPaymentOptions.pay-options .range-slider .ui-slider-handle.ui-handle:focus-visible {
+    outline: 0
+}
+
+.dvPaymentOptions.pay-options .range-slider .ui-slider-horizontal .ui-slider-range-min {
+    background-color: var(--colour1);
+}
+
+.dvPaymentOptions.pay-options .range-slider .ui-slider-horizontal .ui-slider-range-min, .pay-options .range-slider .ui-widget.ui-widget-content {
+    border-radius: 15px !important;
+    box-shadow: none !important
+}
+
+.dvPaymentOptions.pay-options .range-slider .ui-widget.ui-widget-content {
+    border: 1px solid #f2f2f2 !important;
+    background: #f2f2f2 !important
+}
+
+.dvPaymentOptions.pay-options .range-slider .ui-slider-handle.ui-handle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: var(--colour1) !important;
+    border: 2px solid #fff !important;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0 3px var(--colour1);
+    box-shadow: 0 0 0 3px var(--colour1);
+    position: relative
+}
+
+    .dvPaymentOptions.pay-options .range-slider .ui-slider-handle.ui-handle:after {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 0;
+        margin-left: 0;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid var(--colour1);
+        z-index: 1;
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg)
+    }
+
+    .dvPaymentOptions.pay-options .range-slider .ui-slider-handle.ui-handle:before {
+        content: attr(data-value);
+        position: absolute;
+        top: -66px;
+        left: -7px;
+        padding: 7px;
+        border-radius: 5px;
+        background-color: var(--colour1);
+        color: #fff;
+        font-weight: 700;
+        max-width: 90px;
+        text-align: center;
+        z-index: 1;
+        font-weight: 400;
+        font-size: 12px
+    }

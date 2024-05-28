@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+	<ItemGroup>
+		<Reference Include="Core.Platform.ProgramMaster.BusinessFacade">
+			<HintPath>..\References\Core.Platform.ProgramMaster.BusinessFacade.dll</HintPath>
+		</Reference>
+		<Reference Include="Core.Platform.ProgramMaster.Entities">
+			<HintPath>..\References\Core.Platform.ProgramMaster.Entities.dll</HintPath>
+		</Reference>
+		<Reference Include="Framework.EnterpriseLibrary.Adapters">
+			<HintPath>..\References\Framework.EnterpriseLibrary.Adapters.dll</HintPath>
+		</Reference>
+		<Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.BusinessFacade">
+			<HintPath>..\References\Framework.EnterpriseLibrary.CommunicationEngine.BusinessFacade.dll</HintPath>
+		</Reference>
+		<Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Entity">
+			<HintPath>..\References\Framework.EnterpriseLibrary.CommunicationEngine.Entity.dll</HintPath>
+		</Reference>
+		<Reference Include="Framework.EnterpriseLibrary.UniqueNumberGenerator">
+			<HintPath>..\References\Framework.EnterpriseLibrary.UniqueNumberGenerator.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+			<HintPath>..\References\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>..\References\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+</Project>

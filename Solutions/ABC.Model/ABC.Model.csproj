@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCF8E756-8E46-4CE9-876E-C94FD33AFD6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NIC.Model</RootNamespace>
+    <AssemblyName>NIC.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CarBookingIntegrationFacade">
+      <HintPath>..\..\References\CarBookingIntegrationFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="CarClassDescription">
+      <HintPath>..\..\References\CarClassDescription.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.AirService.CTImplementor">
+      <HintPath>..\..\References\CB.IBE.AirService.CTImplementor.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.AirService.ProvisioImplementor">
+      <HintPath>..\..\References\CB.IBE.AirService.ProvisioImplementor.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.CarService.RCImplementor">
+      <HintPath>..\..\References\CB.IBE.CarService.RCImplementor.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.DepositAccountService.ClientHelper">
+      <HintPath>..\..\References\CB.IBE.DepositAccountService.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.HotelService.CTImplementor">
+      <HintPath>..\..\References\CB.IBE.HotelService.CTImplementor.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.IBEAdmin.Model">
+      <HintPath>..\..\References\CB.IBE.IBEAdmin.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Plateform.Car.DataAccess">
+      <HintPath>..\..\References\CB.IBE.Plateform.Car.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.AirClientModel">
+      <HintPath>..\..\References\CB.IBE.Platform.AirClientModel.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.AirServiceInterface">
+      <HintPath>..\..\References\CB.IBE.Platform.AirServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.BusinessFacade">
+      <HintPath>..\..\References\CB.IBE.Platform.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Car.BusinessFacade">
+      <HintPath>..\..\References\CB.IBE.Platform.Car.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Car.ClientEntities">
+      <HintPath>..\..\References\CB.IBE.Platform.Car.ClientEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Car.CommonHelper">
+      <HintPath>..\..\References\CB.IBE.Platform.Car.CommonHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Car.Constants">
+      <HintPath>..\..\References\CB.IBE.Platform.Car.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Car.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Car.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Car.Report.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Car.Report.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.CarClientModel">
+      <HintPath>..\..\References\CB.IBE.Platform.CarClientModel.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.CarServiceInterface">
+      <HintPath>..\..\References\CB.IBE.Platform.CarServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.ClientEntities">
+      <HintPath>..\..\References\CB.IBE.Platform.ClientEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.CommonConstants">
+      <HintPath>..\..\References\CB.IBE.Platform.CommonConstants.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.CommonHelper">
+      <HintPath>..\..\References\CB.IBE.Platform.CommonHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.CTFlightMapper">
+      <HintPath>..\..\References\CB.IBE.Platform.CTFlightMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.DataAccess">
+      <HintPath>..\..\References\CB.IBE.Platform.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.HotelClientModel">
+      <HintPath>..\..\References\CB.IBE.Platform.HotelClientModel.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.HotelHelper">
+      <HintPath>..\..\References\CB.IBE.Platform.HotelHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Hotels.BusinessFacade">
+      <HintPath>..\..\References\CB.IBE.Platform.Hotels.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Hotels.ClientEntities">
+      <HintPath>..\..\References\CB.IBE.Platform.Hotels.ClientEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Hotels.DataAccess">
+      <HintPath>..\..\References\CB.IBE.Platform.Hotels.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.HotelServiceInterface">
+      <HintPath>..\..\References\CB.IBE.Platform.HotelServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.IBECarClient">
+      <HintPath>..\..\References\CB.IBE.Platform.IBECarClient.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.IBEClient">
+      <HintPath>..\..\References\CB.IBE.Platform.IBEClient.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.IBEHotelClient">
+      <HintPath>..\..\References\CB.IBE.Platform.IBEHotelClient.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Masters.BusinessFacade">
+      <HintPath>..\..\References\CB.IBE.Platform.Masters.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Masters.DataAccess">
+      <HintPath>..\..\References\CB.IBE.Platform.Masters.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Masters.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Masters.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.ProvisioFlightMapper">
+      <HintPath>..\..\References\CB.IBE.Platform.ProvisioFlightMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Report.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Report.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Transactions.DataAccess">
+      <HintPath>..\..\References\CB.IBE.Platform.Transactions.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Transactions.Entites, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\CB.IBE.Platform.Transactions.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Transactions.Facade">
+      <HintPath>..\..\References\CB.IBE.Platform.Transactions.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.SearchHelper.AirServiceInterface">
+      <HintPath>..\..\References\CB.IBE.SearchHelper.AirServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.SearchHelper.CTFlightMapper">
+      <HintPath>..\..\References\CB.IBE.SearchHelper.CTFlightMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.SearchHelper.CTImplementor">
+      <HintPath>..\..\References\CB.IBE.SearchHelper.CTImplementor.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.SearchHelper.CTImplementorME">
+      <HintPath>..\..\References\CB.IBE.SearchHelper.CTImplementorME.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.SearchHelper.IBEImplementor">
+      <HintPath>..\..\References\CB.IBE.SearchHelper.IBEImplementor.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.SearchHelper.ProvisioFlightMapper">
+      <HintPath>..\..\References\CB.IBE.SearchHelper.ProvisioFlightMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.SearchHelper.ProvisioImplementor">
+      <HintPath>..\..\References\CB.IBE.SearchHelper.ProvisioImplementor.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Authentication.BuisnessFacade">
+      <HintPath>..\..\References\Core.Platform.Authentication.BuisnessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Authentication.DataAccess">
+      <HintPath>..\..\References\Core.Platform.Authentication.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Authentication.Entities">
+      <HintPath>..\..\References\Core.Platform.Authentication.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Booking.Entities">
+      <HintPath>..\..\References\Core.Platform.Booking.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Common.Entities">
+      <HintPath>..\..\References\Core.Platform.Common.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Configurations">
+      <HintPath>..\..\References\Core.Platform.Configurations.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ExpirySchedule.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.ExpirySchedule.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ExpirySchedule.DataAccess">
+      <HintPath>..\..\References\Core.Platform.ExpirySchedule.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ExpirySchedule.Entities">
+      <HintPath>..\..\References\Core.Platform.ExpirySchedule.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.FileParsing.Common.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.FileParsing.Common.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.FileParsing.Common.DataAccess">
+      <HintPath>..\..\References\Core.Platform.FileParsing.Common.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.FileParsing.Common.Entities">
+      <HintPath>..\..\References\Core.Platform.FileParsing.Common.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.FileParsing.ErrorDetails.Entities">
+      <HintPath>..\..\References\Core.Platform.FileParsing.ErrorDetails.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.FileParsing.MemberErrorDetails.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.FileParsing.MemberErrorDetails.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.FileParsing.MemberErrorDetails.DataAccess">
+      <HintPath>..\..\References\Core.Platform.FileParsing.MemberErrorDetails.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.FileParsing.PromotionCalculations">
+      <HintPath>..\..\References\Core.Platform.FileParsing.PromotionCalculations.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.FileParsing.TxnErrorDetails.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.FileParsing.TxnErrorDetails.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.FileParsing.TxnErrorDetails.DataAccess">
+      <HintPath>..\..\References\Core.Platform.FileParsing.TxnErrorDetails.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Helper.ProgramName">
+      <HintPath>..\..\References\Core.Platform.Helper.ProgramName.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.InfiVoucher.ClientHelper">
+      <HintPath>..\..\References\Core.Platform.InfiVoucher.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.InfiVoucher.Entities">
+      <HintPath>..\..\References\Core.Platform.InfiVoucher.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.LoyaltyManagement.ClientHelper">
+      <HintPath>..\..\References\Core.Platform.LoyaltyManagement.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Master.Entities">
+      <HintPath>..\..\References\Core.Platform.Master.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MasterManagement.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.MasterManagement.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MasterManagement.DataAccess">
+      <HintPath>..\..\References\Core.Platform.MasterManagement.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Member.Entites">
+      <HintPath>..\..\References\Core.Platform.Member.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MemberActivity.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.MemberActivity.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MemberActivity.Constants">
+      <HintPath>..\..\References\Core.Platform.MemberActivity.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MemberActivity.DataAccess">
+      <HintPath>..\..\References\Core.Platform.MemberActivity.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MemberActivity.Entities">
+      <HintPath>..\..\References\Core.Platform.MemberActivity.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MemberManagement.ClientHelper">
+      <HintPath>..\..\References\Core.Platform.MemberManagement.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MemberManagement.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Core.Platform.MemberManagement.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Merchant.Entities">
+      <HintPath>..\..\References\Core.Platform.Merchant.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MerchantManagement.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.MerchantManagement.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.MerchantManagement.DataAccess">
+      <HintPath>..\..\References\Core.Platform.MerchantManagement.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.OTP.ConfigurationConstants">
+      <HintPath>..\..\References\Core.Platform.OTP.ConfigurationConstants.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.OTP.DataAccess">
+      <HintPath>..\..\References\Core.Platform.OTP.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.OTP.Entities">
+      <HintPath>..\..\References\Core.Platform.OTP.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.OTP.Facade">
+      <HintPath>..\..\References\Core.Platform.OTP.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.PaymentGateway.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Core.Platform.PaymentGateway.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.PaymentGateway.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Core.Platform.PaymentGateway.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.PaymentGateway.Facade, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Core.Platform.PaymentGateway.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.PointAccrualCalculation">
+      <HintPath>..\..\References\Core.Platform.PointAccrualCalculation.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.PointGateway.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.PointGateway.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.PointGateway.Exceptions">
+      <HintPath>..\..\References\Core.Platform.PointGateway.Exceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.PointGateway.Service.Helper">
+      <HintPath>..\..\References\Core.Platform.PointGateway.Service.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.PointGateway.Services">
+      <HintPath>..\..\References\Core.Platform.PointGateway.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ProgramInterface.ClientHelper">
+      <HintPath>..\..\References\Core.Platform.ProgramInterface.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ProgramMaster.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.ProgramMaster.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ProgramMaster.DataAccess">
+      <HintPath>..\..\References\Core.Platform.ProgramMaster.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ProgramMaster.Entities">
+      <HintPath>..\..\References\Core.Platform.ProgramMaster.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ProgramMaster.Implementor">
+      <HintPath>..\..\References\Core.Platform.ProgramMaster.Implementor.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.RedemptionAuditTrail.Entities">
+      <HintPath>..\..\References\Core.Platform.RedemptionAuditTrail.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Report.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.Report.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Report.DataAccess">
+      <HintPath>..\..\References\Core.Platform.Report.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Report.Entities">
+      <HintPath>..\..\References\Core.Platform.Report.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.ServiceHelper">
+      <HintPath>..\..\References\Core.Platform.ServiceHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.TransactionManagement.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.TransactionManagement.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.TransactionManagement.ClientHelper">
+      <HintPath>..\..\References\Core.Platform.TransactionManagement.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Transactions.Entites, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Core.Platform.Transactions.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.TransactionSummary.BusinessFacade">
+      <HintPath>..\..\References\Core.Platform.TransactionSummary.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.TransactionSummary.DataAccess">
+      <HintPath>..\..\References\Core.Platform.TransactionSummary.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.TransactionSummary.Entites">
+      <HintPath>..\..\References\Core.Platform.TransactionSummary.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Adapters">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Adapters.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Common.ConfigSections">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Common.ConfigSections.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Common.Helpers">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Common.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Common.SerializationHelper">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Common.SerializationHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Common.WCF">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Common.WCF.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Common.WCF.Faults">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Common.WCF.Faults.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Common.WCF.ServiceBehavior">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Common.WCF.ServiceBehavior.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.AdminInterface">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.AdminInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.BookingInterface">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.BookingInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.BusinessFacade">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Contract.Sms">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.Contract.Sms.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.DataAccess">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Entity">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Helper">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.ImageTracker">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.ImageTracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Implementor">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.Implementor.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.ServiceInterface">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.DataAccess.BusinessFacade">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.DataAccess.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.DataAccess.Entities">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.DataAccess.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.DataAccess.Helpers">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.DataAccess.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.DataAccess.Providers">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.DataAccess.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.EmailComponent">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.EmailComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.EmailComponent.Entities">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.EmailComponent.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.ExceptionMessages.DataAccess">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.ExceptionMessages.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.ExceptionMessages.Entities">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.ExceptionMessages.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.ExceptionMessages.Facade">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.ExceptionMessages.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Integration.FlightStatusImplementor">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Integration.FlightStatusImplementor.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.PasswordGenerator">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.PasswordGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.PasswordReset.DataAccess">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.PasswordReset.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.PasswordReset.Entities">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.PasswordReset.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.PasswordReset.Facade">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.PasswordReset.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.RuleEngine.ClientHelper">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.RuleEngine.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.RuleEngine.Common">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.RuleEngine.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.RuleEngine.Configuration">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.RuleEngine.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Security">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.ServiceInvoker.BusinessFacade">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.ServiceInvoker.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.ServiceInvoker.Common">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.ServiceInvoker.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.ServiceInvoker.ConfigSections">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.ServiceInvoker.ConfigSections.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.ServiceInvoker.DataObjects">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.ServiceInvoker.DataObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.ServiceInvoker.Entities">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.ServiceInvoker.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.ServiceInvoker.Interface">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.ServiceInvoker.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.ServiceInvoker.Manager">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.ServiceInvoker.Manager.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.ServiceInvoker.Providers">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.ServiceInvoker.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.UniqueNumberGenerator">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.UniqueNumberGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integration.Flight.Entites">
+      <HintPath>..\..\References\Framework.Integration.Flight.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integrations.Common.Constants">
+      <HintPath>..\..\References\Framework.Integrations.Common.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integrations.Hotel.BusinessFacade">
+      <HintPath>..\..\References\Framework.Integrations.Hotel.BusinessFacade.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integrations.Hotel.CommonHelper">
+      <HintPath>..\..\References\Framework.Integrations.Hotel.CommonHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integrations.Hotels.Contract">
+      <HintPath>..\..\References\Framework.Integrations.Hotels.Contract.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integrations.Hotels.DataAccess">
+      <HintPath>..\..\References\Framework.Integrations.Hotels.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integrations.Hotels.Entities">
+      <HintPath>..\..\References\Framework.Integrations.Hotels.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integrations.Hotels.Implementor.CT">
+      <HintPath>..\..\References\Framework.Integrations.Hotels.Implementor.CT.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integrations.Hotels.Mapper.CT">
+      <HintPath>..\..\References\Framework.Integrations.Hotels.Mapper.CT.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integrations.Hotels.Model">
+      <HintPath>..\..\References\Framework.Integrations.Hotels.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Platform.CommunicationEngine.Helper">
+      <HintPath>..\..\References\Framework.Platform.CommunicationEngine.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Giift.ShopGateway.Client.Entities">
+      <HintPath>..\..\References\Giift.ShopGateway.Client.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Giift.ShopGateway.Client.Helper">
+      <HintPath>..\..\References\Giift.ShopGateway.Client.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="HotelIntegration.DataAccess">
+      <HintPath>..\..\References\HotelIntegration.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="InfiVoucher.Platform.Entities">
+      <HintPath>..\..\References\InfiVoucher.Platform.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="LoyaltyManagement.Request">
+      <HintPath>..\..\References\LoyaltyManagement.Request.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">
+      <HintPath>..\..\References\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\References\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
+      <HintPath>..\..\References\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging">
+      <HintPath>..\..\References\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\..\References\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\References\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\References\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\References\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomerDetail.cs" />
+    <Compile Include="PrepaidCardDetails.cs" />
+    <Compile Include="ABCModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StripePaymentDetails.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CB.IBE.DomesticFlight.Entities\CB.IBE.DomesticFlight.Entities.csproj">
+      <Project>{E8F9623E-7210-44F6-9E73-24262E589422}</Project>
+      <Name>CB.IBE.DomesticFlight.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CE.Entities\CE.Entities.csproj">
+      <Project>{E03A4FD9-25AF-4CA0-8668-16CCCF8CC349}</Project>
+      <Name>CE.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Framework.Booking.Facade\Core.Framework.Booking.Facade.csproj">
+      <Project>{7076DFF3-528B-4FDF-8614-3056220B4BEC}</Project>
+      <Name>Core.Framework.Booking.Facade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.WebAPI.ClientHelper\Core.WebAPI.ClientHelper.csproj">
+      <Project>{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}</Project>
+      <Name>Core.WebAPI.ClientHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GiiftPaymentGateway.Entities\GiiftPaymentGateway.Entities.csproj">
+      <Project>{3f7b6856-b36f-493e-a5b7-c0aa6cf46d80}</Project>
+      <Name>GiiftPaymentGateway.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Holibob.ClientHelper\Holibob.ClientHelper.csproj">
+      <Project>{0DB849C8-0890-4574-848A-E0B79DDF5255}</Project>
+      <Name>Holibob.ClientHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Holibob.Entities\Holibob.Entities.csproj">
+      <Project>{494E62E1-F1B2-4E96-93E5-9C370745BD55}</Project>
+      <Name>Holibob.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KhaltiInsurance.Entities\KhaltiInsurance.Entities.csproj">
+      <Project>{E4A8F51C-731D-404E-9441-BE72FDC75195}</Project>
+      <Name>KhaltiInsurance.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KhaltiISP.Entities\KhaltiISP.Entities.csproj">
+      <Project>{386D80CA-9D8A-4B16-B680-177AE8D42657}</Project>
+      <Name>KhaltiISP.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactionDetailsAdditionalInfo.Entities\TransactionDetailsAdditionalInfo.Entities.csproj">
+      <Project>{BFB5D46A-15BA-4917-B26E-A5BD15105874}</Project>
+      <Name>TransactionDetailsAdditionalInfo.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

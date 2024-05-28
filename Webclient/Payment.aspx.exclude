@@ -1,0 +1,21 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Payment.aspx.cs" Inherits="Payment" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <title></title>
+     <script src="https://checkout.stripe.com/checkout.js" data-key="<%= stripePublishableKey %>" class="stripe-button">
+
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+                <asp:Button ID="btnStripePayent" runat="server" Text="Payment" OnClick="btnStripePayent_Click1" />
+      
+        </div>
+    </form>
+</body>
+</html>

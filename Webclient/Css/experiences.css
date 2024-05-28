@@ -1,0 +1,1783 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight:400;
+}
+*/
+.searchBlk input:focus {
+    border: thin solid #32cd32;
+    border-bottom: solid medium #32cd32;
+    background-color: #fff
+}
+
+.searchBlk label {
+    color: #999;
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 10px;
+    transition: .2s
+}
+
+.searchBlk input:focus ~ label, .searchBlk input:valid ~ label {
+    top: -10px;
+    left: 15px;
+    font-size: small;
+    /*color: #32cd32;*/
+    background-color: #fff;
+    padding: 0 5px 0 5px
+}
+
+.MyExperiences .row {
+    margin-bottom: 15px;
+    width: auto
+}
+
+.MyExperiences {
+    /*padding: 0 0 30px 0;*/
+    width: 100%;
+    display: inline-block;
+    /*background: #EEEFF1;*/
+    text-align: center;
+}
+
+/*.expHead h3 {
+    color: #3c3c3b;
+    font-size: 26px;
+    font-weight: 200;
+    padding: 0px 0 10px;
+    font-weight:600;
+    
+}*/
+
+.expHead p {
+    /*font-size: 13px;*/
+    font-weight:400;
+}
+
+.MyExpeLeft h2 {
+    font-weight: 600;
+    color: #000;
+    font-size: 20px;
+    padding: 20px 0 15px 0;    
+    text-align: left;
+}
+
+.ui-widget.ui-widget-content {
+    width: 700px !important;
+    height: 150px;
+    overflow-y: scroll;
+    border: 1px solid #ccc !important;
+}
+
+    .ui-widget.ui-widget-content::-webkit-scrollbar {
+        width: 10px;
+        position: relative;
+        right: 10px;
+    }
+
+    .ui-widget.ui-widget-content::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+
+    .ui-widget.ui-widget-content::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #ccc;
+    }
+
+.ui-menu .ui-menu-item {
+    background: none;
+    width: 100%;
+}
+
+.ui-menu .ui-menu-item-wrapper {
+    font-size: 13px;
+}
+
+.expSearch .search-btn, .search-btn:hover {
+    background-color: unset;
+    height: 53px;
+    padding: 22px
+}
+
+.expSearch .searchIconNew {
+    background: transparent url(../Images/search.png) no-repeat scroll 0 0;
+    display: inline;
+    height: 22px;
+    left: 15px;
+    margin-top: -8px;
+    position: absolute;
+    width: 22px
+}
+
+.expSearch .input-group-btn {
+    position: absolute;
+    right: 18px;
+    top: -14px
+}
+
+.expSearch .btn-secondary:not(:disabled):not(.disabled).active:focus, .expSearch .btn-secondary:not(:disabled):not(.disabled):active:focus, .show > .expSearch .btn-secondary.dropdown-toggle:focus {
+    box-shadow: unset;
+    border: 0
+}
+
+.expSearch .btn {
+    border: 0
+}
+
+.expSearch .btn-secondary:not(:disabled):not(.disabled).active, .expSearch .btn-secondary:not(:disabled):not(.disabled):active, .show > .expSearch .btn-secondary.dropdown-toggle {
+    background-color: unset;
+    border-color: unset;
+    border: 0;
+    color: #fff
+}
+
+.expHead {
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.MyExperiences h3 {
+    color: #3c3c3b;
+    font-size: 36px;
+    font-weight: 200;
+    padding: 0px 0 10px;
+    
+}
+
+.searchBlk {
+    margin: 30px 20px 20px 20px
+}
+
+    .searchBlk input[type="text"] {
+        border: 1px solid #ccc;
+        padding: 15px 2%;
+        width: 100%;
+        position: relative; 
+        /*background: url(../images/search-icon.svg)#fff no-repeat center right 20px;*/
+    background: #fff url(../images/icn-search.svg) no-repeat center right 10px;
+    border-radius: 10px;
+}
+
+.searchBlk {
+    width: 700px;
+    margin: 20px auto;
+    position: relative
+}
+
+    .searchBlk button {
+        position: absolute;
+        right: 20px;
+        top: 15px
+    }
+
+    .searchBlk i.bi-search {
+        background: white;
+        font-size: 24px
+    }
+
+    .searchBlk input:focus {
+        border: 2px solid #E5A812 !important;
+        border-bottom: 2px solid #E5A812 !important;
+        background-color: #fff;
+        outline:0;
+    }
+
+    .searchBlk label {
+        color: #B4B2B0;
+        position: absolute;
+        pointer-events: none;
+        left: 15px;
+        top: 15px;
+        transition: .2s;
+        font-size: 13px;
+    }
+
+    .searchBlk input:focus ~ label {
+        top: -8px;
+        left: 15px;
+        font-size: small;
+        color: #000000;
+        background-color: #fff;
+        padding: 0 5px 0 5px
+    }
+
+.experience {
+    /*margin-bottom: 35px;*/
+    background: #fff;
+    border: 1px solid #E2E2E2;
+    /*box-shadow: 0px 2px 5px 2px #e4e4e4;*/
+    /*border-bottom: none;*/
+    /*box-shadow: 0 0 4px #777;*/
+    /*margin: 0 0 30px;*/
+    /*box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;*/
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /*max-height: 415px;*/
+}
+
+    .experience .card_detail {
+        text-align: center;
+        /*padding: 15px 20px 30px;*/
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+        .experience .card_detail h5 {
+            /*margin-top: 10px;*/
+            color: #000;
+            /*min-height: auto;*/
+            border-top: 1px solid #ddd;
+            /*padding-top: 10px;*/
+            /*padding-bottom: 15px;*/
+            padding:1rem 0;
+            font-weight: bold;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        .experience .card_detail p {
+            color: #000;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 18px
+        }
+
+        .experience .card_detail a {
+            cursor: pointer;
+            /*font-size: 14px;*/
+            /*margin-top: 15px;*/
+            margin-top:auto;
+            /*background: #FF375E;*/
+            /*color: #fff;*/
+            display: block;
+            /*padding: 15px;*/
+            /*line-height: 14px;*/
+            /*text-decoration: none;*/
+            /*border-radius: 10px;*/
+            /*font-weight: 600;*/
+
+            /*background-color: #E5A812;
+            border: 1px solid #E5A812;*/
+            /*border-radius: 16px;
+            color: white;
+            padding: 1rem;
+            font-size: 13px;
+            box-shadow: 0 4px 8px #28231C1F;*/
+        }
+
+.card_detail h3 {
+    padding: 0
+}
+
+    .card_detail h3 span {
+        font-weight: bold;
+        display: -webkit-box;
+        max-width: 100%;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: #3c3c3b;
+        font-size: 16px !important;
+        text-align: left;
+        margin-bottom: 10px;
+        
+    }
+
+.expHead ul.moreExp li {
+    display: inline-block;
+    margin: 0;
+}
+
+.moreExp li .iconBox {
+    float: left;
+    width: 25%;
+    text-align: left
+}
+
+.moreExp li .contentBox {
+    width: 68%;
+    float: left;
+    margin-top: 0;
+    margin-left: 5px;
+    font-size: 14px;
+    position: relative;
+    text-align: left
+}
+
+    .moreExp li .contentBox span {
+        color: #000;
+        font-size: 12px;
+        padding: 0px 0 0;
+        display: block
+    }
+
+.expHead ul.moreExp li i {
+    /*padding: 13px;*/
+    border-radius: 100px;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    color: #fff;
+    background: #E5A812;
+    height: 40px;
+    width: 40px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    list-style: cambodian;
+    justify-content: center;
+}
+
+.prdIcon ul.moreExp li {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 0px 10px 10px;
+    width: 25%;
+    vertical-align: top;
+}
+
+    .prdIcon ul.moreExp li p {
+        margin-top: 0 !important
+    }
+
+.expHead ul.moreExp li p {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px
+}
+
+ul.cancelDate li i {
+    padding: 0;
+    border-radius: 100px;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    position: relative;
+    color: #fff;
+    background: #E5A812;
+    height: 40px;
+    width: 40px;
+    /*line-height: 15px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.cancelDate li {
+    display: flex;
+    align-items:center;
+    margin: 0;
+    padding: 10px 0;
+    width: 100%;
+}
+
+    ul.cancelDate li p {
+        margin-top: 0 !important
+    }
+
+    ul.cancelDate li p {
+        font-size: 13px;
+        font-weight: bold;
+        margin-top: 10px
+    }
+
+    ul.cancelDate li .iconBox {
+    /*    width: 12%;
+        float: left*/
+    }
+
+    ul.cancelDate li .contentBox {
+        /*width: 85%;
+        float: left;*/
+        margin-top: 0;
+        margin-left: 10px;
+        font-size: 14px;
+        position: relative;
+        text-align: left;
+        /*height: 60px;
+        display: table;*/
+    }
+
+.card_detail .moreExp {
+    /*margin: 10px 0 10px 0;*/
+    margin: 0px 0 8px 0;
+    text-align: left;
+    display: block;
+    /*min-height: 90px*/
+}
+
+    .card_detail .moreExp li i {
+        float: left;
+        margin-right: 10px;
+        color: #000000;
+    }
+
+    .card_detail .moreExp li p {
+        font-size: 13px;
+        float: left;
+        line-height: normal;
+        margin: 0;
+        font-weight:400;
+    }
+
+.carousel {
+    position: relative
+}
+
+.carousel-item img {
+    object-fit: cover;
+    width: 100%
+}
+
+div#myCarousel {
+    border-top-left-radius: 5px;
+    overflow: hidden;
+    border-top-right-radius: 5px;
+}
+#carousel-thumbs {
+    bottom: 0;
+    left: 0;
+    padding: 0 40px;
+    right: 0;
+    width: 100%;
+    background: #F4F4F4;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+/*#carousel-thumbs .thumb{
+    flex:0 0 16.66%;
+}
+.carousel-container #carousel-thumbs img {
+    max-height:auto;
+}*/
+    #carousel-thumbs img {
+        border: 5px solid transparent;
+        cursor: pointer
+    }
+
+        #carousel-thumbs img:hover {
+            border-color: rgba(255,255,255,.3)
+        }
+
+    #carousel-thumbs .selected img {
+        border-color: #fff;
+        border:none;
+        height:28px;
+    }
+
+.carousel-control-prev, .carousel-control-next {
+    width: 50px
+}
+
+.card_detail .moreExp li {
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding: 0;
+    line-height: normal;
+    overflow:hidden;
+}
+
+.MyExperiences .accordion {
+    width: 100%;
+    /*background-color: #f1f1f1;*/
+    margin: 15px 0;
+}
+
+.accordion .accordion-head {
+    color: #333;
+    background-color: #E2E2E2;
+    border-bottom: none;
+    position: relative;
+    padding: 20px 15px;
+    font-size: .87em;
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: none;
+    margin: 0 0 10px 0;
+    border-radius: 5px;
+}
+.accordion .accordion-head.close{
+    opacity:1;
+}
+
+.close:not(:disabled):not(.disabled):hover {
+    opacity: 1
+}
+
+.accordion .accordion-head * {
+    cursor: pointer
+}
+
+.sortFilter {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+    .sortFilter label {
+        color: #3c3c3b;
+        font-size: 13px !important;
+        text-align: left;
+        margin-bottom: 10px;
+        
+    }
+
+.sortFilterBox {
+    width: 100%;
+    margin: 0;
+    display: inline-block
+}
+
+.sortFilter select {
+    border: 1px solid #ccc !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    width: 100%;
+    position: relative
+}
+
+.sortFilter .searchBlk {
+    width: 100%;
+    margin: 0 15px;
+}
+
+.imgBoxs img {
+    width: 255px;
+    padding: 0;
+    background: #fff;
+    border-radius: 5px 0 0 5px;
+    box-shadow: unset;
+    height: 225px;
+    object-fit: cover
+}
+
+.categoryBox > a {
+    color: #fff !important;
+    font-size: 13px !important;
+    padding: 8px 15px !important;
+    background: #FF375E;
+    margin: 0 0px 0 0;
+    height: 100%;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+    .categoryBox > a:hover {
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 13px !important;
+        padding: 5px 15px !important;
+        border: 2px solid #000000;
+    }
+
+div#divAttributeAccordion {
+    padding: 0px;
+}
+
+.contentBoxarea {
+    padding: 15px 0
+}
+
+    .contentBoxarea h2 {
+        color: #000000;
+        min-height: auto;
+        font-weight: bold;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    .contentBoxarea p {
+        padding: 10px 0 0;
+        display: -webkit-box;
+        overflow: hidden;
+        word-break: break-word;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        text-align: left;
+        margin-bottom:20px;
+    }
+
+    .contentBoxarea h6 {
+        border: 1px solid #ddd;
+        background: #fff;
+        float: left;
+        font-size: 14px;
+        display: block;
+        padding: 15px;
+        line-height: 14px;
+        font-weight: 500;
+        border-radius: 10px;
+    }
+
+    .contentBoxarea .bookNow {
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 10px;
+        background: #FF375E;
+        color: #fff;
+        display: block;
+        padding: 15px;
+        line-height: 14px;
+        border-radius: 10px;
+    }
+
+.marTop {
+    margin-bottom: 50px !important
+}
+
+select.form-controlarrow {
+    background: url(../images/icons/dropdown.png)#fff no-repeat 95% 15px;
+    -webkit-appearance: none
+}
+
+.RightBox {
+    overflow: hidden;
+    box-shadow: none;
+    border-color: #CCC;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    background: #fff;
+    margin: 0 0 20px
+}
+
+.searchAccor {
+    border: 0;
+    margin-bottom: 10px
+}
+
+    .searchAccor #accordion {
+        padding: 0
+    }
+
+    .searchAccor .accordion .accordion-head {
+        color: #333;
+        background-color: unset;
+        border-bottom: unset;
+        position: relative;
+        padding: 2px;
+        font-size: .87em;
+        cursor: pointer;
+        overflow: hidden;
+        width: 100%;
+        box-shadow: unset;
+        margin: 0 0 3px;
+        border-radius: 4px
+    }
+
+.leftArea {
+    width: 33%;
+    float: left;
+    margin: 0 15px 0 0
+}
+
+.rightArea {
+    width: 63%;
+    float: left
+}
+
+.searchAccor {
+    background-color: #fff;
+    border-radius: 10px;
+    padding:15px;
+}
+
+    .searchAccor .card {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        box-shadow: unset !important;
+        background-color: unset
+    }
+
+    .searchAccor .card-header {
+        background-color: unset;
+        border-bottom: unset;
+        margin-bottom: 0;
+        padding: 0 0 0px 0;
+        background: unset;
+        text-align: justify;
+    }
+.card-header h5 {
+    line-height: 20px;
+}
+.categoryBox {
+    padding: 0px 0 0;
+    width: 100%;
+    display: inline-block
+}
+
+    .categoryBox p {
+        color: #424242;
+        font-size: 13px;
+        float: left;
+        font-weight: 400;
+        margin-top: 5px;
+    }
+
+    .categoryBox a {
+        color: #424242;
+        font-size: 16px;
+        float: right;
+        font-weight: 400
+    }
+
+        
+
+.arrows {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    position: relative;
+    bottom: -5px;
+    left: -10px;
+    transition: .4s ease;
+    margin-top: 2px;
+    text-align: left;
+    transform: rotate(45deg);
+    float: right
+}
+
+    .arrows:before, .arrows:after {
+        position: absolute;
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 2px;
+        background-color: #808080;
+        transition: .4s ease
+    }
+
+    .arrows:after {
+        position: absolute;
+        transform: rotate(90deg);
+        top: -5px;
+        left: 5px
+    }
+
+.padrgt {
+    padding: 0 0 0 10px
+}
+
+.searchAccor .card-body {
+    min-height: unset !important;
+    padding: 2px 0 !important;
+    text-align: initial;
+}
+
+input.searchInput {
+    padding: 18.5px 14px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px 0 0
+}
+
+.accordion .accordion-head h4 {
+    float: left;
+    padding:0;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.accordion-body p {
+    text-align: left;
+    font-size: 12px;
+}
+
+.mb-0 a {
+    width: 100%;
+    position: relative;
+    color: #000000;
+    min-height: auto;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.MyExperiences .sliderBox .carousel-control-next,
+.MyExperiences .sliderBox .carousel-control-prev {
+    width: 25px !important;
+    z-index: 1;
+    height: 25px;
+    /*top: 21px;*/
+    background: #7e7e7e;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.MyExperiences .sliderBox .carousel-control-next-icon,
+.MyExperiences .sliderBox .carousel-control-prev-icon {
+    width: 10px;
+    height: 10px;
+}
+.MyExperiences .sliderBox .carousel-control-next {
+    right: 8px;
+}
+.MyExperiences .sliderBox .carousel-control-prev {
+    left: 8px;
+}
+
+.MyExperiences .carousel-inner .row {
+    margin: 0 -15px;
+    width: auto
+}
+
+/*.accordion .accordion-head:hover {
+    filter: alpha(opacity=80);
+    opacity: .80
+}*/
+
+.MyExperiences .accordion .accordion-body {
+    padding: 15px;
+    display: none;
+    border-radius: 0 0 4px 4px;
+    margin: 0 0 10px;
+    overflow-y: scroll;
+    height: 100px;
+    background-color: #f1f1f1;
+}
+
+.accordion-body li b {
+    display: inline-flex;
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.accordion-body li {
+    list-style: disc;
+    padding-left: 0px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 12px;
+}
+
+.accordion-body ul {
+    padding: 0px 20px;
+}
+
+select {
+    background: #fff
+}
+
+.arrow {
+    float: right;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    margin-top: 0;
+    border-top-color: #000;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    transform: rotate(-135deg)
+}
+
+.accordion-head.open .arrow {
+    margin-top: 5px;
+    border-bottom-color: #f3f3f3;
+    transform: rotate(45deg)
+}
+
+.ui-widget.ui-widget-content {
+    width: 100%
+}
+
+.myCalendar {
+    width: 100% !important;
+    border: 0 solid #ddd !Important
+}
+
+    .myCalendar td {
+        height: 45px
+    }
+
+    .myCalendar th {
+        height: 35px;
+        text-align: center
+    }
+
+td.lftArrow a {
+    color: #fff !important;
+    display: block;
+}
+
+td.lftArrow {
+    text-align: center;
+    line-height: 45px;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    cursor: pointer
+}
+
+.minusIcon {
+    padding: 0;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    color: #5D5A54;
+    background: #F2F2F2;
+    width: 25px;
+    height: 25px;
+    line-height: 31px;
+    top: 1px;
+    margin: 0 0 20px 0px;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+    .minusIcon[disabled="disabled"] {
+        pointer-events: none;
+        opacity: 0.3;
+    }
+
+.inputBox {
+    text-align: center;
+    background: unset;
+    width: 45px
+}
+
+.addIcon {
+    padding: 0;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    color: #5D5A54;
+    background: #F2F2F2;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    top: 1px;
+    line-height: 25px;
+}
+.pricingcategorylistinput {
+    width: 60px !important;
+    border: 0px !important;
+    margin: 0px;
+    padding: 0px !important;
+    display: initial !important;
+}
+    .addIcon[disabled="disabled"] {
+        pointer-events: none;
+        opacity: 0.3;
+    }
+
+.editBtn {
+    float: right;
+    cursor: pointer
+}
+
+.bookingBox {
+    width: 100%;
+    display: block;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    padding: 25px;
+    background: #fff;
+    margin: 0 0 15px
+}
+
+    .bookingBox h4 {
+        color: #000000;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 0 0 10px;
+        border-bottom: solid 3px whitesmoke;
+        margin: 0 0 15px;
+        text-align: left;
+    }
+
+    .bookingBox input {
+        width: 100% !important;
+        margin: 0;
+        border: 1px solid #ccc;
+        border-radius: 8px !important;
+        padding: 15px !important;
+    }
+
+#divBookingInput input {
+    padding: 18.5px 14px;
+    border: 1px solid #F2F2F2;
+    border-radius: 5px;
+    margin: 0;
+    box-shadow: 0 1px 8px #28231C0D;
+}
+.checkArea input#chkTAndC {
+    position: relative;
+    top: 0px;
+}
+#divBookingInput select {
+    padding: 18.5px 14px;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    width: 100%;
+    margin: 0;
+    padding: 15px !important;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 1px 8px #28231C0D;
+}
+
+#divBookingInput label {
+    width: 100%;
+    margin: 0 !important;
+    font-weight: 600;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #3c3c3b;
+    font-size: 13px !important;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+#divBookingInput .bookingBox .textBox ul{
+    padding-left:15px;
+}
+
+.checkArea input {
+    float: left;
+    position: relative;
+    top: 8px
+}
+
+.checkArea label {
+    width: unset !important;
+    display: block;
+    font-size: 20px;
+    font-size: 17px;
+    padding: 0 0 0 20px !important;
+    margin: 0 !important
+}
+
+.checkArea {
+    margin: 10px 0 10px 0
+}
+
+.rightBox {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px
+}
+
+.imgBox img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0
+}
+
+.contBox {
+    padding: 20px 0;
+}
+
+.textBox h5 {
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 0 10px;
+    border-bottom: solid 3px whitesmoke;
+    margin: 0 0 15px
+}
+
+.textBox span {
+    color: #000000;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 2px 0 6px;
+    margin: 0px 0 1px;
+    display: inline-block;
+}
+
+.textBox ul li p {
+    color: #949494;
+    font-weight: 400;
+    font-size: 13px;
+    margin: 0px 0 0 0;
+    /*display: table-cell;*/
+    /*vertical-align: top;*/
+    text-align:left;
+}
+
+.textBox ul li span {
+    color: #333;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.cancellation h6 {
+    padding: 15px 0;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    display: inline-block;
+}
+/*#spnTAndCMsg{
+    color:red;
+}*/
+.text-red {
+    color: red;
+    font-weight: 400;
+}
+#btnCompleteBooking {
+    /*   cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    background: #000000;
+    color: #fff;
+    display: block;
+    padding: 12px;
+    line-height: 14px;
+    border-radius: 0px;
+    border: 2px solid #000000;*/
+
+/*    cursor: pointer;
+    font-size: 13px;
+    margin-top: 10px;
+    background: #FF375E;
+    color: #fff;
+    display: block;
+    padding: 15px !important;
+    line-height: 14px !important;
+    border-radius: 0px;
+    border: 2px solid #000000;
+    width: 100%;
+    border-radius: 16px !important;
+    font-weight: 600;*/
+}
+
+.addBtn {
+    background: #EF233C;
+    color: #fff;
+    font-size: 14px;
+    padding: 15px 30px !important;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 400;
+    border-radius: 16px;
+    border: 1px solid #EF233C !important;
+}
+
+    td.lftArrow:hover {
+        background-color: #3b5a87
+    }
+
+.cldBookingDate label {
+    line-height: 1.2;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px 0 5px 0;
+    color: #000;
+}
+
+div#divBookingAvailabilityInput label {
+    font-size: 13px;
+    margin-top: 0;
+    font-weight: bold
+}
+
+
+
+#divBookingAvailabilityInput select, .cldBookingDate input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size:13px;
+}
+
+div#divBookingAvailabilityInput {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.ui-state-active, .ui-select-active {
+    border: none !important
+}
+
+.experienceerror {
+    margin: 0 !important;
+    border: 2px solid #f00 !important
+}
+
+.carousel-container {
+    margin: 0 !important
+}
+
+.mb-0 > a:after {
+    content: "";
+    background: transparent url(../Images/accord-down.svg) no-repeat scroll 0 0;
+    background-size: 15px 20px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.mb-0 > a[aria-expanded="true"]:after {
+    content: "";
+    background: transparent url(../Images/accord-up.svg) no-repeat scroll 0 0;
+    background-size: 15px 20px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.confirmMsg {
+    /*padding-top: 8px;*/
+    border-radius: 12px;
+    margin-bottom: 20px;
+    /*padding-bottom: 8px;*/
+    background-color:#E5A812;
+    padding:8px;
+}
+
+    .confirmMsg p {
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        margin: 0;
+        padding: 5px 0;
+        font-weight: 600;
+    }
+
+        .confirmMsg p i {
+            font-size: 30px;
+            position: relative;
+            top: 3px;
+            display:block;
+        }
+
+.textBox ul li p cite {
+    color: #0EBA00;
+    border: 1px solid #0EBA00;
+    padding: 7px 15px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-style: normal;
+}
+
+.textBox p {
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.completion p {
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.completion a {
+    color: #333;
+    font-weight: 400;
+    font-size: 1.2em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.completion span {
+    color: #333;
+    font-weight: 400;
+    font-size: 1.2em;
+    margin: 10px 0;
+    display: block
+}
+
+    .completion a i, .completion span i {
+        color:#E5A812;
+        font-size: 1.5rem;
+    }
+
+input#btnCompleteBooking:disabled,
+input#btnCompleteBooking[disabled] {
+    cursor: pointer;
+    font-size: 13px !important;
+    margin-top: 10px;
+    background: #EF233C;
+    color: #fff;
+    display: block;
+    padding: 18.5px 14px;
+    line-height: 14px;
+    border-radius: 0px;
+    border-radius: 16px;
+    border: 1px solid #EF233C;
+    font-weight: 400;
+    width: 100%;
+}
+
+.disClass {
+    cursor: default;
+}
+
+.loader-round {
+    text-align: center;
+    width: 100%;
+}
+
+#spnMinMaxPersonMsgADULT{
+    font-size:12px;
+}
+
+#divBookingAvailabilityInput div, #spnTotalPrice {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+div#divBookingErrorMsg {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.myCalendar td span, .myCalendar td a {
+    display: block;
+    line-height: 50px;
+}
+
+#divCategoryAccordionData input {
+    margin-right: 10px;
+    margin-left: 25px;
+}
+
+#divCategoryAccordionData label {
+    color: #888;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+li.timerBlk {
+    list-style: none;
+    padding: 0px;
+    clear: both;
+    width: 50%;
+    float: left;
+    margin: 0px !important;
+}
+
+.timerBlk .contentBox {
+    overflow: hidden;
+}
+
+span.timeIcn {
+    float: left;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+}
+
+.fLeft {
+    float: left;
+    margin-right: 20px;
+    min-width: 50%
+}
+
+.fRight {
+    float: left;
+}
+
+.timerBlk p {
+    font-weight: bold;
+}
+
+ul.moreExp1 {
+    overflow: hidden;
+    margin: 0px;
+    padding: 0;
+}
+
+span.timeIcn i {
+    font-size: 28px;
+}
+
+/*#divExperienceLoader img {
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+}*/
+
+ul.moreExp.row {
+    margin: 0px;
+    padding: 0px !important;
+}
+
+ul.moreExp li {
+    padding-left: 0px !important;
+}
+
+.moreExp {
+    padding: 30px 0 30px 0 !important;
+}
+
+.card_detail ul.moreExp {
+    padding: 0px !important;
+}
+.expSearch {
+    width: 700px;
+    margin: 0 auto;
+}
+.switcher {
+    display: inline-block;
+    border: 1px solid #E7E6E5;
+    padding: 5px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+    .switcher span {
+        margin: 0px;
+    }
+
+span.txtNew {
+    display: block;
+    margin-top: 10px;
+}
+.textTotal {
+    color: #000;
+}
+
+
+.rightBox .textBox ul {
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+.rightBox .cancelDate {
+    padding: 0 !important;
+}
+.rightBox .textBox ul li::marker{
+    
+}
+
+
+
+@media (max-width:1200px) {
+    /*.experience {
+        max-height: 385px;
+    }*/
+}
+
+@media (max-width:992px){
+ /*   .experience{
+        max-height:455px;
+    }*/
+}
+
+@media all and (max-width:768px) {
+/*    .experience {
+        max-height: 405px;
+    }*/
+
+    .expSearch {
+        width: 500px;
+       }
+
+
+    .searchBlk {
+        width: 500px;
+    }
+    .ui-widget.ui-widget-content {
+        width: 500px !important;
+    }
+
+/*    #carousel-thumbs .thumb {
+        flex: 0 0 auto;
+    }
+    .carousel-container #carousel-thumbs img {
+        border-width: 0;
+        max-height: 30px;
+    }*/
+   
+}
+
+@media all and (max-width:576px) {
+ /*   .experience {
+        max-height: 92%;
+    }*/
+
+    div#divBookingAvailabilityInput {
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+
+    #CP_divClndBookingDate {
+        margin: 0 0 20px;
+    }
+    .expSearch {
+        width: 100%;
+    }
+
+    .ui-widget.ui-widget-content {
+        width: 320px !important;
+    }
+
+    .searchBlk input[type="text"] {
+/*        padding: 15px 5%;
+        border: 1px solid #f2f2f2 !important;
+        border-radius: 8px;
+        box-shadow: 0px 1px 8px #28231C0D;*/
+        height: 50px;
+    }
+
+    .carousel-container #carousel-thumbs {
+        position: relative
+    }
+
+    .carousel-container #carousel-thumbs {
+        background: #F4F4F4;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    div#myCarousel {
+        border-top-left-radius: 10px;
+        overflow: hidden;
+        border-top-right-radius: 10px;
+    }
+
+/*    #carousel-thumbs .thumb {
+        flex: 0 0 auto;
+    }
+
+    .carousel-container #carousel-thumbs img {
+        border-width: 0;
+        max-height: auto;
+    }*/
+}
+    
+   
+
+@media only screen and (max-width:640px) {
+    .MyExpeLeft h2 {
+        color: #3c3c3b;
+        font-size: 14px;
+        font-weight: 600;
+        /*padding: 0px 0 15px;*/
+        text-align: left;
+    }
+
+    .cldBookingDate label {
+        line-height: 1.2;
+        color: #000000;
+        font-size: 16px;
+        font-weight: 200;
+        padding: 0px 0 10px;
+        font-weight: 400;
+    }
+
+    .imgBoxs img {
+        width: 100%;
+        padding: 0;
+        background: #fff;
+        border-radius: 5px 0 0 5px;
+        box-shadow: unset;
+        height: 225px;
+        object-fit: cover;
+    }
+
+    .searchBlk {
+        width: 100%
+    }
+
+    ul.cancelDate li .iconBox {
+        width: 50px
+    }
+
+    ul.cancelDate li .contentBox {
+        width: 75%
+    }
+
+    .rightBox {
+        margin: 25px 0 0
+    }
+
+    .sortFilter {
+        width: 100%
+    }
+
+        .sortFilter label {
+            margin: 0
+        }
+
+    .sortFilterBox {
+        margin: 0 auto
+    }
+
+    .contentBox h2 {
+        font-size: 18px;
+        padding: 15px 0 15px 0
+    }
+}
+
+.experienceerrormsg {
+    /*border: 1px solid #ff0000 !important;*/
+    color: #ff0000 !important;
+    font-weight: bold;
+}
+
+.cssload-wrapper {
+    width: 100%;
+    height: 8px;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.cssload-border {
+    background: #999 none repeat scroll 0 0;
+    height: 40%;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    clear: both;
+    top: 30px;
+}
+
+.cssload-whitespace {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.cssload-line {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #eee;
+    animation: cssload-slide 2.75s steps(40) infinite;
+    -o-animation: cssload-slide 2.75s steps(40) infinite;
+    -ms-animation: cssload-slide 2.75s steps(40) infinite;
+    -webkit-animation: cssload-slide 2.75s steps(40) infinite;
+    -moz-animation: cssload-slide 2.75s steps(40) infinite;
+}
+
+@keyframes cssload-slide {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@-o-keyframes cssload-slide {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@-ms-keyframes cssload-slide {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@-webkit-keyframes cssload-slide {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@-moz-keyframes cssload-slide {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.hint i {
+    color: #000000;
+    font-size: 14px;
+}
+.hint {
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+    .hint i {
+        float: left;
+        margin-right: 10px;
+        position: relative;
+        top: -1px;
+        color: #666;
+    }
+
+    .hint span {
+        font-size: 12px;
+    }
+
+
+.bookingfailed {
+    color: #EF233C !important;
+    border: 1px solid #EF233C !important;
+}
+.bookingconfirmed {
+    color: #0EBA00 !important;
+    border: 1px solid #0EBA00 !important;
+}
+
+
+@media(min-width:992px) {
+    #carousel-thumbs .thumb {
+        flex: 0 0 16.66%;
+    }
+    .carousel-container #carousel-thumbs img {
+        height:auto;
+    }
+}
+
+.ui-widget-header {
+    background: #E5A812;
+    border: 1px solid #E5A812;
+}

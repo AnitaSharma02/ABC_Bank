@@ -1,0 +1,60 @@
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true"
+    CodeFile="Subscription.aspx.cs" Inherits="Subscription" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Welcome to points!</title>
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="Css/main.css" rel="stylesheet" type="text/css" />
+    <link href="Css/responsive.css" rel="stylesheet" />
+
+    <style>
+        .insidepgs {
+            margin: 30px auto;
+        }
+
+        .statHead {
+            background-color: #2a6ebb;
+            height: 132px;
+        }
+
+        .statFoot {
+    background: #2a6ebb none repeat scroll 0 0;
+    color: #fff;
+    font-size: 13px;
+    line-height: 50px;
+    text-align: center;
+}
+    </style>
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+        <div class="statHead">
+            <img src="Images/stat-qib-header.jpg" />
+        </div>
+        <div class="wrap insidepgs">
+            <h1>Subscription</h1>
+            <hr />
+            <br />
+            <div>
+                <br />
+                <div id="ErrorMsgContainer" class=" ErrorMsgContainer mtop_10 Width50" runat="server">
+                    <asp:Label Style="float: left;" runat="server" ID="lblMessagesDetails"
+                        Text=""></asp:Label>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="statFoot">
+            Copyright © 2017 QIB
+        </div>
+    </form>
+</body>
+</html>
+
+

@@ -1,0 +1,570 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" MaintainScrollPositionOnPostback="true"
+    CodeFile="Voucher.aspx.cs" Inherits="Voucher" %>
+
+<%--<%@ Register Src="~/UserControl/UCPartnersList.ascx" TagName="Partners" TagPrefix="uc" %>--%>
+<asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
+
+    <script src="Jquery/Voucher.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        //accordion code
+
+        $(document).ready(function () {
+            // Add minus icon for collapse element which is open by default
+            $(".collapse.show").each(function () {
+                $(this)
+                    .prev(".card-header")
+                    .find(".fa")
+                    .addClass("fa-minus")
+                    .removeClass("fa-plus");
+            });
+
+            // Toggle plus minus icon on show hide of collapse element
+            $(".collapse")
+                .on("show.bs.collapse", function () {
+                    $(this)
+                        .prev(".card-header")
+                        .find(".fa")
+                        .removeClass("fa-plus")
+                        .addClass("fa-minus");
+                })
+                .on("hide.bs.collapse", function () {
+                    $(this)
+                        .prev(".card-header")
+                        .find(".fa")
+                        .removeClass("fa-minus")
+                        .addClass("fa-plus");
+                });
+        });
+
+
+        function ShowVoucher() {
+            $("html").scrollTop(40);
+            $("#Voucher").addClass("Hotel_Details_Cotent");
+            $("#Voucher").removeClass("hidecontent");
+            $("#Fade").show();
+            return false;
+        }
+        function HideVoucher() {
+            $("#CP_Voucher1").addClass("hidecontent");
+            $("#CP_Voucher1").removeClass("Hotel_Details_Cotent");
+            $("#CP_Fade").hide();
+            return false;
+        }
+        function PrintPanel(voucherNo) {
+            var ImgVoucherImage = document.getElementById('CP_imgVoucher');
+            //ImgVoucherImage.src = 'http://www.cbqrewards.com/Vouchers/' + voucherNo + '.png';
+            ImgVoucherImage.src = '<%=ConfigurationManager.AppSettings["CBQVoucherImagePath"].ToString() %>' + voucherNo + '.png';
+
+            var ImgVoucher = document.getElementById('DivimgVoucher');
+
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head><title></title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(ImgVoucher.innerHTML);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            setTimeout(function () {
+                printWindow.print();
+            }, 500);
+            return false;
+
+        }
+        function showVoucherSummary() {
+
+
+
+            if ($("#btnVoucherSummary")[0].className == "Modify_TabNonActive") {
+                $("#btnVoucherSummary").removeClass("Modify_TabNonActive");
+                $("#btnVoucherSummary").addClass("Modify_TabActive");
+                $("#CP_lblplusminus").text('-');
+                $("#CP_divVouchers").slideToggle("slow");
+                $("#CP_divVouchers").css("display", "block");
+            }
+            else {
+                $("#CP_divVouchers").slideToggle("slow");
+                $("#CP_divVouchers").css("display", "none");
+                $("#btnVoucherSummary").addClass("Modify_TabNonActive");
+                $("#btnVoucherSummary").removeClass("Modify_TabActive");
+                $("#CP_lblplusminus").text('+');
+            }
+
+
+        }
+    </script>
+    <style>
+        .brd-crms {display:none;}
+    </style>
+    <div class="banner">
+                <img src="../images/voucher-bg.jpg" />
+            </div>
+    <section class="travel prepaidCard">
+        <div class="container">
+        <h1 data-i18n="text-voucher">Voucher</h1>
+        <p data-i18n="text-voucher-desc">You can use the Verve Rewards Gift Vouchers for any of our esteemed partners from Lifestyle brands to Fine Dine and much more.</p>
+    <div class="row genCat">
+ <div id="inner-page-statement" class="col-md-12">
+    <div class="gift-voucher">
+        <div class="profileBox">
+             <div class="profile-form col-lg-12 col-md-12" style="margin: 0px auto; text-align: center">
+                 </div>
+            <div class="VoucherArea">
+           
+                <div class="">
+            <div id="siteMap" class="bread-crumb">
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server" Visible="true" CssClass="SiteMap_Root_Stlye"
+                    PathSeparator=">" PathSeparatorStyle-CssClass="PathSeparatorStyle">
+                    <NodeStyle />
+                    <RootNodeStyle />
+                </asp:SiteMapPath>
+            </div>
+            <div class="FlightMainupperDiv">
+                <div id="UpperRightpannel_custom" class="UpperRightside">
+                  <%--  <div class="Rewards_UpperDiv">
+                        <uc:Partners ID="Partners" runat="server" />
+                    </div>--%>
+                    <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                        <ContentTemplate>
+                            <script type="text/javascript">
+                                function commaFormat(inputString) {
+                                    inputString = inputString.toString();
+                                    var decimalPart = "";
+                                    if (inputString.indexOf('.') != -1) {
+                                        inputString = inputString.split(".");
+                                        decimalPart = "." + inputString[1];
+                                        inputString = inputString[0];
+                                    }
+                                    var outputString = "";
+                                    var count = 0;
+                                    for (var i = inputString.length - 1; i >= 0 && inputString.charAt(i) != '-'; i--) {
+                                        if (count == 3) {
+                                            outputString += ",";
+                                            count = 0;
+                                        }
+                                        outputString += inputString.charAt(i);
+                                        count++;
+                                    }
+                                    if (inputString.charAt(0) == '-') {
+                                        outputString += "-";
+                                    }
+                                    return outputString.split("").reverse().join("") + decimalPart;
+                                };
+
+
+                            </script>
+                            <div class="profile-form col-lg-12 col-md-12">
+                                
+                                <div class="width100" id="DivSubmitContent" runat="server">
+                                    <p class="text-select-quantity" data-i18n="text-select-quantity">Please select the quantity of gift vouchers you require:</p>
+                                    <div class="width100 RightInnerContent ">
+                                        <div class="form-group row custom-row">  
+                                       
+                                        <div id="divVoucherError" runat="server" class="ErrorLogin col-md-12 col-12 display_hide" style="text-align:center">
+                                                    <asp:Label ID="lblVoucherError" runat="server"></asp:Label>
+                                                </div>
+                                        </div>
+                                                
+                                                <div class="form-group row custom-row">
+                                            <div class="col-md-4 col-form-label">
+                                               <span data-i18n="gift-voucher-qar100"> QAR100 Gift Voucher </span><span class="x">x</span>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                        <asp:DropDownList ID="ddlQAR100" runat="server" class="form-control">
+                                                           <asp:ListItem Value="0">Quantity</asp:ListItem>
+                                                            <asp:ListItem>1</asp:ListItem>
+                                                            <asp:ListItem>2</asp:ListItem>
+                                                            <asp:ListItem>3</asp:ListItem>
+                                                            <asp:ListItem>4</asp:ListItem>
+                                                            <asp:ListItem>5</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                        
+                                        </div>
+                                            <div class="col-md-2 col-12" id="divQAR100Add">
+                                                <button class="add" id="btn100" onclick="var retvalue = selectQty(100,'#CP_ddlQAR100','#divQAR100Add'); event.returnValue= retvalue; return retvalue;">
+                                                    <span data-i18n="add">
+                        <span class="mm">+</span>
+                                  
+                        <span class="ww">ADD</span></span>
+                    </button>
+                                            </div>
+                                            </div>
+                                                <div class="form-group row custom-row">
+                                                    <label class="col-md-4 col-form-label"><span data-i18n="gift-voucher-qar500">QAR500 Gift Voucher</span><span class="x">x</span></label>
+                                                    <div class="col-md-6 col-12">
+                                                                <asp:DropDownList ID="ddlQAR500" runat="server" class="form-control">
+                                                                    <asp:ListItem Value="0">Quantity</asp:ListItem>
+                                                                    <asp:ListItem>1</asp:ListItem>
+                                                                    <asp:ListItem>2</asp:ListItem>
+                                                                    <asp:ListItem>3</asp:ListItem>
+                                                                    <asp:ListItem>4</asp:ListItem>
+                                                                    <asp:ListItem>5</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                    </div>
+                                                    <div class="col-md-2 col-12" id="divQAR500Add">
+                                                        <button class="add" id="btn500" onclick="var retvalue = selectQty(500,'#CP_ddlQAR500','#divQAR500Add'); event.returnValue= retvalue; return retvalue;"> <span data-i18n="add"><span class="mm">+</span><span class="ww">ADD</span></span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row custom-row">
+                                                    <div class="col-md-4 col-form-label"><span data-i18n="gift-voucher-qar1000">QAR1000 Gift Voucher</span><span class="x">x</span></div>
+                                                    <div class="col-md-6 col-12">
+                                                                <asp:DropDownList ID="ddlQAR1000" runat="server" class="form-control">
+                                                                    <asp:ListItem Value="0">Quantity</asp:ListItem>
+                                                                    <asp:ListItem>1</asp:ListItem>
+                                                                    <asp:ListItem>2</asp:ListItem>
+                                                                    <asp:ListItem>3</asp:ListItem>
+                                                                    <asp:ListItem>4</asp:ListItem>
+                                                                    <asp:ListItem>5</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                    </div>
+                                                    <div class="col-md-2 col-12" id="divQAR1000Add">
+                                                        <button class="add" id="btn1000" onclick="var retvalue = selectQty(1000,'#CP_ddlQAR1000','#divQAR1000Add'); event.returnValue= retvalue; return retvalue;"> <span data-i18n="add"><span class="mm">+</span><span class="ww">ADD</span></span></button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row custom-row">
+                                                    <div class="col-md-4 col-form-label"><span data-i18n="gift-voucher-qar3000">QAR3000 Gift Voucher</span><span class="x">x</span></div>
+                                                        <div class="col-md-6 col-12">
+                                                                <asp:DropDownList ID="ddlQAR3000" runat="server" class="form-control">
+                                                                    <asp:ListItem Value="0">Quantity</asp:ListItem>
+                                                                    <asp:ListItem>1</asp:ListItem>
+                                                                    <asp:ListItem>2</asp:ListItem>
+                                                                    <asp:ListItem>3</asp:ListItem>
+                                                                    <asp:ListItem>4</asp:ListItem>
+                                                                    <asp:ListItem>5</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                    </div>
+                                                    <div class="col-md-2 col-12" id="divQAR3000Add">
+                                                        <button class="add" id="btn3000" onclick="var retvalue = selectQty(3000,'#CP_ddlQAR3000','#divQAR3000Add'); event.returnValue= retvalue; return retvalue;"> <span data-i18n="add"><span class="mm">+</span><span class="ww">ADD</span></span></button>
+                                                    </div
+                                                </div>
+                                                    
+                                    </div>
+                                                <div class="form-group row custom-row">
+                                                    <div class="col-md-4 col-form-label"><span data-i18n="gift-voucher-qar5000">QAR5000 Gift Voucher</span><span class="x">x</span></div>
+                                                            <div class="col-md-6 col-12">
+                                                                <asp:DropDownList ID="ddlQAR5000" runat="server" class="form-control">
+                                                                    <asp:ListItem Value="0">Quantity</asp:ListItem>
+                                                                    <asp:ListItem>1</asp:ListItem>
+                                                                    <asp:ListItem>2</asp:ListItem>
+                                                                    <asp:ListItem>3</asp:ListItem>
+                                                                    <asp:ListItem>4</asp:ListItem>
+                                                                    <asp:ListItem>5</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                    </div>
+                                                    <div class="col-md-2 col-12" id="divQAR5000Add">
+                                                        <button class="add" id="btn5000" onclick="var retvalue = selectQty(5000,'#CP_ddlQAR5000','#divQAR5000Add'); event.returnValue= retvalue; return retvalue;"> <span data-i18n="add"><span class="mm">+</span><span class="ww">ADD</span></span></button>
+                                                    </div>
+                                                </div>
+                                                    
+                                                    
+                                        <br />        
+                                        <div class="form-group row custom-row">
+                                            <div class="col-md-4 col-form-label">
+                                                <span data-i18n="totalvouchervalueinqar">
+                                                Total Voucher Value in QAR 
+                                                    </span>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <asp:Label runat="server" ID="lblTotalValue" Text="" class="form-control value valMar" ></asp:Label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row custom-row">
+                                            <div class="col-md-4 col-form-label">
+                                                  <span data-i18n="noofpointsrequiredtoredeem">
+                                                Number of Points required to redeem 
+                                                      </span>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <asp:Label runat="server" ID="lblPointRequired" Text="" class="form-control value"></asp:Label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                    <div class="col-md-4 col-form-label"> &nbsp;</div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="txt-center-btn">
+                                                        <div id="divClearAll" ><asp:Button ID="Button1" CssClass="submit" data-i18n="[value]clearall" Text="Clear All" OnClientClick="return ClearFields()"  runat="server" /></div>
+                                                        <div id="DivVoucherSubmit"><asp:Button CssClass="submit" runat="server" ID="btnSubmit" data-i18n="[value]submit" Text="Submit" OnClientClick="var retvalue = ConfirmVoucher(); event.returnValue= retvalue; return retvalue;" />
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                        <div class=" msgbxBG mTop20 display_hide" id="validateMsg">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="width100 display_hide " id="DivGlobalRewardsConfirm" runat="server">
+                                    <%----%>
+                                   <p><span data-i18n="pleasefindbelowBOKvouchersummary">Please find below your Verve Rewards Voucher Summary:</span></p>
+                                    <div class="width100 RightInnerContent">
+                                        <div id="divCurrencyDropDown" runat="server" class="Width100 display_hide pb10">
+                                            <span style="font-size:20px;">Please select your currency: &nbsp</span>
+                                            <asp:DropDownList ID="ddlProgramCurrency" runat="server" AppendDataBoundItems="true"
+                                                OnSelectedIndexChanged="ddlProgramCurrency_SelectedIndexChanged" AutoPostBack="true" >
+                                            </asp:DropDownList>
+                                        </div>
+                                        <div class="Width99">
+                                            <table cellspacing="0" class="tblMatrix">
+                                                <tr class="stylegridheader">
+                                                    <th class="alignCenter">
+                                                        <span data-i18n="voucher-type">
+                                                        Voucher Type
+                                                            </span>
+                                                    </th>
+                                                    <th class="alignCenter">
+                                                         <span data-i18n="quantity">
+                                                        Quantity
+                                                             </span>
+                                                    </th>
+                                                    <th class="alignCenter">
+                                                           <span data-i18n="vouchervalue">
+                                                        Voucher Value
+                                                                </span>
+                                                    </th>
+                                                    <th class="alignCenter">
+                                                         <span data-i18n="points-required">
+                                                        Points Required
+                                                              </span>
+                                                    </th>
+                                                </tr>
+                                                <tr id="trQAR100" runat="server" class="Statment_td_Voucher">
+                                                    <td>
+                                                        <span data-i18n="gift-voucher-qar100">
+                                                        QAR100 Gift Voucher
+                                                            </span>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQAR100Quantity"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQar100VoucherVal"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                            <asp:Label runat="server" ID="lblQAR100PointsRequired"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr id="trQAR500" runat="server" class="Statment_td_Voucher">
+                                                    <td>
+                                                         <span data-i18n="gift-voucher-qar500">
+                                                        QAR500 Gift Voucher
+                                                             </span>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQAR500Quantity"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQar500VoucherVal"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQAR500PointsRequired"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr id="trQAR1000" runat="server" class="Statment_td_Voucher">
+                                                    <td>
+                                                         <span data-i18n="gift-voucher-qar1000">
+                                                        QAR1000 Gift Voucher
+                                                             </span>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQAR1000Quantity"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQar1000VoucherVal"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQAR1000PointsRequired"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr id="trQAR3000" runat="server" class="Statment_td_Voucher">
+                                                    <td>
+                                                         <span data-i18n="gift-voucher-qar3000">
+                                                        QAR3000 Gift Voucher
+                                                             </span>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQAR3000Quantity"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQar3000VoucherVal"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQAR3000PointsRequired"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                                <tr id="trQAR5000" runat="server" class="Statment_td_Voucher">
+                                                    <td>
+                                                         <span data-i18n="gift-voucher-qar5000">
+                                                        QAR5000 Gift Voucher
+                                                             </span>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQAR5000Quantity"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQar5000VoucherVal"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label runat="server" ID="lblQAR5000PointsRequired"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="width100 pTop10 totalFont"><span data-i18n="pleaseclickonconfirmtoredeem">
+                                           Please click on Confirm below to redeem 
+                                            </span>
+                                            <asp:Label runat="server" ID="lblRequirPointToRedeem"></asp:Label>
+                                            <asp:Label runat="server" ID="lblComercialbankreward"></asp:Label>
+                                        <%--    points for a Gift Voucher of QAR --%>
+                                            <span data-i18n="PointsforaGiftVoucherofQAR">
+                                             Points for a Gift Voucher of QAR
+                                                </span>
+                                             <asp:Label runat="server" ID="lblTotalVoucherValue" ></asp:Label>
+                                            <%-- <asp:Label runat="server" ID="lblVoucherCurrency" Text=""></asp:Label>--%>
+                                        </div>
+                                        <div class="txt-center-btn">
+                                            <div>
+                                            <asp:Button CssClass="submit" runat="server" ID="Button2" data-i18n="[value]btn-back" Text="Back" OnClientClick="var retvalue = BackToDenomination(); event.returnValue= retvalue; return retvalue;" CausesValidation="false" />
+                                            </div>               
+                                            <div id="divBtnConfirm" runat="server">
+                                                <asp:Button CssClass="submit" runat="server" data-i18n="[value]btn-confirm" ID="btnConfirm" Text="Confirm"  CausesValidation="false" OnClick="btnConfirm_Click" />
+                                            </div>
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="width100 display_hide" id="divCreateVoucherSummary" runat="server">
+                                   <%-- <div class="font20 fl width100 pTop10 pb10">
+                                        Gift Voucher</div>--%>
+                                    <div class="width100 RightInnerContent">
+                                        <div class="width100 pb10">
+                                            <span>Please find below your CBQ Voucher Summary:  
+                                            </span></div>
+                                        <div class="Width99" style="border: 2px solid #ccc;">
+                                            <asp:Repeater ID="RepCreateVoucherSummary" runat="server">
+                                                <HeaderTemplate>
+						
+                                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="border_Voucher">
+                                                        <tr class="stylegridheader">
+                                                            <td>
+                                                                Sr. No
+                                                            </td>
+                                                            <td>
+                                                                Amount
+                                                            </td>
+                                                            <td>
+                                                                Status
+                                                            </td>
+                                                            <td>
+                                                                Voucher No
+                                                            </td>
+                                                        </tr>
+                                                </HeaderTemplate>
+                                                <ItemTemplate>
+                                                    <tr class="stylealternate1">
+                                                        <td align="center" valign="middle" height="25" class="borderTop_Voucher">
+                                                            <%# Container.ItemIndex + 1%>
+                                                        </td>
+                                                        <td align="center" valign="middle" class="borderTop_Voucher">
+                                                            <%# Eval("Amount","{0:0,0}")%>
+                                                        </td>
+                                                        <td align="center" valign="middle" class="borderTop_Voucher">
+                                                            <asp:Label ID="lblStatus" runat="server" Text='<%# (Boolean.Parse(Eval("Status").ToString())) ? "Successful" : "Failed"%>'></asp:Label>
+                                                        </td>
+                                                        <td align="center" valign="middle" class="borderTop_Voucher">
+                                                            <asp:Label ID="lblVoucherNo" runat="server" Text='<%# Eval("VoucherNo")%>'></asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                </ItemTemplate>
+                                                <FooterTemplate>
+                                                    </table>
+						
+                                                    <asp:Label ID="lblErrorMsg" runat="server" CssClass="errMsg" Text="No Records Found."
+                                                        Visible="false" />
+                                                </FooterTemplate>
+                                            </asp:Repeater>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="width100 msgbxBG mTop20 display_hide" id="divConfirmationMsg" runat="server">
+                                 <span style="font-size:18px">   <%--Dear Customer,<br />
+                                    <br />--%>
+                                    Thank you! Your transaction has been successful. To view all your Gift Voucher codes, please click on <b>"Shopping"</b> and go to <b>"Voucher Summary".</b><br />
+Present your Gift Voucher codes to redeem them at any of our participating partners. </span>
+                                </div>
+                                <div class="width100p msgbxBG mTop20 display_hide" id="divCurrencyNotFound" runat="server">
+                                   <span style="font-size:18px"> Dear Customer,<br />
+                                    <br />
+                                    This currency does not supports Gift Voucher redemption.</span>
+                                </div>
+                                <div class="width100p msgbxBG mTop20 display_hide" id="divAvailability" runat="server">
+                                    <span style="font-size:18px"><%--Dear Customer,<br />
+                                    <br />--%>
+                                   You do not have sufficient points for redemption<br />
+                                    Please <a href="PurchasePoints.aspx">Click here </a>to purchase additional points. </span>
+                                </div>
+                            </div>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="btnConfirm" EventName="Click" />
+                        </Triggers>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+        </div>
+          
+            </div>
+       </div>
+    </div>
+</div>
+    
+    <div class="container d-none">
+    <div class="row">
+    <div class="col-12">
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="fa fa-plus"></i>Voucher Summary</button>
+            </div>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>Voucher Summary</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-12">
+    <ul class="voucherBlk">
+        <li><a href="ParterElectronics.aspx"><img src="../Images/img-vou-electronics.jpg" /></a><p>Electronics</p></li>
+        <li><a href="#"><img src="../Images/img-vou-depatmental-store.jpg" /></a><p>Department Stores</p></li>
+        <li><a href="#"><img src="../Images/img-vou-fashion-accessories.jpg" /></a><p>Fashion & Accessories</p></li>
+        <li><a href="#"><img src="../Images/img-vou-travel-agency.jpg" /></a><p>Travel Agency</p></li>
+        <li><a href="#"><img src="../Images/img-vou-dining.jpg" /></a><p>Dining</p></li>
+    </ul>
+
+    </div>
+    </div>
+    </div>
+
+
+
+        <asp:HiddenField ID="HDFQARAmount" Value="0" runat="server" />
+    <asp:HiddenField ID="HDFPoints" runat="server" />
+    <asp:HiddenField ID="HDFVoucherRate" runat="server" />
+    <asp:HiddenField ID="HDFQAR100QTY" runat="server" Value="0" />
+    <asp:HiddenField ID="HDFQAR500QTY" runat="server" Value="0" />
+    <asp:HiddenField ID="HDFQAR1000QTY" runat="server" Value="0" />
+    <asp:HiddenField ID="HDFQAR3000QTY" runat="server" Value="0" />
+    <asp:HiddenField ID="HDFQAR5000QTY" runat="server" Value="0" />
+        </div>
+        </div>
+    </section>
+    <script>
+        $('.slideDown').click(function () {
+            $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top
+            }, 1000);
+            return false;
+        });
+    </script>
+</asp:Content>

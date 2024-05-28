@@ -1,0 +1,182 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using ABC.Model;
+using CB.IBE.Platform.Car.ClientEntities;
+using CB.IBE.Platform.Car.Entities;
+using Core.Platform.ProgramMaster.Entities;
+using CB.IBE.Platform.Masters.Entities;
+using System.Configuration;
+using Core.Platform.Member.Entites;
+
+public partial class CarSearchWait : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    [System.Web.Script.Services.ScriptMethod]
+    [System.Web.Services.WebMethod()]
+    public static bool CarSearch()
+    {
+        ABCModel lobjModel = new ABCModel();
+        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+        if (lobjProgramDefinition != null)
+        {
+            string strPickupCountry = string.Empty;
+            string strDropofCountry = string.Empty;
+            string strPickupCity = string.Empty;
+            string strDropofCity = string.Empty;
+            string strpickuplocation = string.Empty;
+            string strpickuplocationName = string.Empty;
+            string strdropoffLocation = string.Empty;
+            string strdropoffLocationName = string.Empty;
+            string strisdropoff = string.Empty;
+            string strdepartDate = string.Empty;
+            string strdepartTime = string.Empty;
+            string strarrDate = string.Empty;
+            string strarrTime = string.Empty;
+            string strisdriverage = string.Empty;
+            string strdriverage = string.Empty;
+            //string strpickupCountry = string.Empty;
+            //string strdropofCountry = string.Empty;
+            string strhdnddlFromTime = string.Empty;
+            string strhdnddlToTime = string.Empty;
+            string isRedeemMiles = string.Empty;
+            if (HttpContext.Current.Request.QueryString["isRedeemMiles"] != null && HttpContext.Current.Request.QueryString["isRedeemMiles"] != "")
+                isRedeemMiles = HttpContext.Current.Request.QueryString["isRedeemMiles"].ToString();
+            if (HttpContext.Current.Request.QueryString["PickupCountry"] != null && HttpContext.Current.Request.QueryString["PickupCountry"] != "") { strPickupCountry = HttpContext.Current.Request.QueryString["PickupCountry"]; }
+            if (HttpContext.Current.Request.QueryString["DropofCountry"] != null && HttpContext.Current.Request.QueryString["DropofCountry"] != "") { strDropofCountry = HttpContext.Current.Request.QueryString["DropofCountry"]; }
+            if (HttpContext.Current.Request.QueryString["pickupCity"] != null && HttpContext.Current.Request.QueryString["pickupCity"] != "") { strPickupCity = HttpContext.Current.Request.QueryString["pickupCity"]; }
+            if (HttpContext.Current.Request.QueryString["dropofCity"] != null && HttpContext.Current.Request.QueryString["dropofCity"] != "") { strDropofCity = HttpContext.Current.Request.QueryString["dropofCity"]; }
+            if (HttpContext.Current.Request.QueryString["pickupLocation"] != null && HttpContext.Current.Request.QueryString["pickupLocation"] != "") { strpickuplocation = HttpContext.Current.Request.QueryString["pickupLocation"]; }
+            if (HttpContext.Current.Request.QueryString["pickupLocationName"] != null && HttpContext.Current.Request.QueryString["pickupLocationName"] != "") { strpickuplocationName = HttpContext.Current.Request.QueryString["pickupLocationName"]; }
+            if (HttpContext.Current.Request.QueryString["dropoffLocation"] != null && HttpContext.Current.Request.QueryString["dropoffLocation"] != "") { strdropoffLocation = HttpContext.Current.Request.QueryString["dropoffLocation"]; }
+            if (HttpContext.Current.Request.QueryString["dropoffLocationName"] != null && HttpContext.Current.Request.QueryString["dropoffLocationName"] != "") { strdropoffLocationName = HttpContext.Current.Request.QueryString["dropoffLocationName"]; }
+            if (HttpContext.Current.Request.QueryString["isdropoff"] != null && HttpContext.Current.Request.QueryString["isdropoff"] != "") { strisdropoff = HttpContext.Current.Request.QueryString["isdropoff"]; }
+            if (HttpContext.Current.Request.QueryString["departDate"] != null && HttpContext.Current.Request.QueryString["departDate"] != "") { strdepartDate = HttpContext.Current.Request.QueryString["departDate"]; }
+            if (HttpContext.Current.Request.QueryString["departTime"] != null && HttpContext.Current.Request.QueryString["departTime"] != "") { strdepartTime = HttpContext.Current.Request.QueryString["departTime"]; }
+            if (HttpContext.Current.Request.QueryString["arrDate"] != null && HttpContext.Current.Request.QueryString["arrDate"] != "") { strarrDate = HttpContext.Current.Request.QueryString["arrDate"]; }
+            if (HttpContext.Current.Request.QueryString["arrTime"] != null && HttpContext.Current.Request.QueryString["arrTime"] != "") { strarrTime = HttpContext.Current.Request.QueryString["arrTime"]; }
+            if (HttpContext.Current.Request.QueryString["isdriverage"] != null && HttpContext.Current.Request.QueryString["isdriverage"] != "") { strisdriverage = HttpContext.Current.Request.QueryString["isdriverage"]; }
+            if (HttpContext.Current.Request.QueryString["driverage"] != null && HttpContext.Current.Request.QueryString["driverage"] != "") { strdriverage = HttpContext.Current.Request.QueryString["driverage"]; }
+
+            if (HttpContext.Current.Request.QueryString["hdnddlFromTime"] != null && HttpContext.Current.Request.QueryString["hdnddlFromTime"] != "") { strhdnddlFromTime = HttpContext.Current.Request.QueryString["hdnddlFromTime"]; }
+            if (HttpContext.Current.Request.QueryString["hdnddlToTime"] != null && HttpContext.Current.Request.QueryString["hdnddlToTime"] != "") { strhdnddlToTime = HttpContext.Current.Request.QueryString["hdnddlToTime"]; }
+            //if (HttpContext.Current.Request.QueryString["strRedeemPoints"] != null && HttpContext.Current.Request.QueryString["strRedeemPoints"] != "") { isRedeemMiles = HttpContext.Current.Request.QueryString["strRedeemPoints"]; }
+
+
+            if (strPickupCountry != string.Empty && strDropofCountry != string.Empty && strPickupCity != string.Empty && strDropofCity != string.Empty && strpickuplocation != string.Empty && strdropoffLocation != string.Empty && strdepartDate != string.Empty && strdepartTime != string.Empty && strarrDate != string.Empty && strarrTime != string.Empty && strdriverage != string.Empty)
+            {
+
+
+                // if (Convert.ToBoolean(strisdriverage)) { strdriverage = "30"; }
+                CarSearchRequest lobjCarSearchRequest = new CarSearchRequest();
+
+                //PickUp
+                List<Location> lobjPickUpLocationList = new List<Location>();
+                Location lobjPickUpLocation = new Location();
+                lobjPickUpLocation.id = strpickuplocation;
+                lobjPickUpLocation.city = strPickupCity;
+                lobjPickUpLocation.country = strPickupCountry;
+                lobjPickUpLocation.locName = strpickuplocationName;
+                lobjPickUpLocationList.Add(lobjPickUpLocation);
+                List<PickUp> lobjPickUplist = new List<PickUp>();
+                PickUp lobjPickUp = new PickUp();
+                lobjPickUp.Location = lobjPickUpLocationList.ToArray();
+                lobjPickUplist.Add(lobjPickUp);
+                lobjCarSearchRequest.SearchRequest.PickUp = lobjPickUplist.ToArray();
+
+                List<Date> lobjListOfPickUpDate = new List<Date>();
+                Date lobjPickUpDate = new Date();
+                string[] PickUpDate = lobjModel.DateFormat(strdepartDate);
+                string[] PickUpTime = lobjModel.TimeFormat(strdepartTime);
+                lobjPickUpDate.day = PickUpDate[0];
+                lobjPickUpDate.month = PickUpDate[1];
+                lobjPickUpDate.year = PickUpDate[2];
+                lobjPickUpDate.minute = PickUpTime[1];
+                lobjPickUpDate.hour = PickUpTime[0];
+                lobjListOfPickUpDate.Add(lobjPickUpDate);
+                lobjCarSearchRequest.SearchRequest.PickUp[0].Date = lobjListOfPickUpDate.ToArray();
+
+                List<Location> lobjDropOffLocationList = new List<Location>();
+                Location lobjDropOffLocation = new Location();
+                lobjDropOffLocation.id = strdropoffLocation;
+                lobjDropOffLocation.city = strDropofCity;
+                lobjDropOffLocation.country = strDropofCountry;
+                lobjDropOffLocation.locName = strdropoffLocationName;
+                lobjDropOffLocationList.Add(lobjDropOffLocation);
+
+                List<DropOff> lobjDropOfflist = new List<DropOff>();
+                DropOff lobjDropOff = new DropOff();
+                lobjDropOff.Location = lobjDropOffLocationList.ToArray();
+                lobjDropOfflist.Add(lobjDropOff);
+                lobjCarSearchRequest.SearchRequest.DropOff = lobjDropOfflist.ToArray();
+
+                List<Date> lobjListOfDropOffDate = new List<Date>();
+                Date lobjDropOffDate = new Date();
+                string[] DropOffDate = lobjModel.DateFormat(strarrDate);
+                string[] DropOffTime = lobjModel.TimeFormat(strarrTime);
+                lobjDropOffDate.day = DropOffDate[0];
+                lobjDropOffDate.month = DropOffDate[1];
+                lobjDropOffDate.year = DropOffDate[2];
+                lobjDropOffDate.minute = DropOffTime[1];
+                lobjDropOffDate.hour = DropOffTime[0];
+                lobjListOfDropOffDate.Add(lobjDropOffDate);
+                lobjCarSearchRequest.SearchRequest.DropOff[0].Date = lobjListOfDropOffDate.ToArray();
+
+                lobjCarSearchRequest.SearchRequest.DriverAge = strdriverage;
+                RefererDetails lobjRefererData = HttpContext.Current.Application["RefererData"] as RefererDetails;
+                lobjCarSearchRequest.RefererDetails = lobjRefererData;
+
+
+
+                MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+
+                if (lobjMemberDetails != null)
+                {
+                    lobjCarSearchRequest.MembershipReference = lobjMemberDetails.MemberRelationsList[0].RelationReference;
+                }
+
+                string lstrCurrency = lobjModel.GetDefaultCurrency();
+                HttpContext.Current.Session["SearchCurrency"] = lstrCurrency;
+
+                lobjCarSearchRequest.RedemptionRate = lobjModel.GetProgramRedemptionRate(lstrCurrency, RedemptionCodeKeys.CAR.ToString(), lobjProgramDefinition.ProgramId);
+
+                lobjCarSearchRequest.IPAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+
+
+
+
+                lobjCarSearchRequest.PaymentType = PaymentType.Points;
+                
+                //if (Convert.ToBoolean(isRedeemMiles))
+                //{
+                //    lobjCarSearchRequest.PaymentType = PaymentType.Points;
+                //}
+                //else
+                //{
+                //    lobjCarSearchRequest.PaymentType = PaymentType.Cash;
+                //}
+                HttpContext.Current.Session["CarSearchPaymode"] = lobjCarSearchRequest.PaymentType;
+                CarSearchResponse lobjCarAvailabilityResponse = lobjModel.CarSearchResponse(lobjCarSearchRequest);
+                HttpContext.Current.Session["Cars"] = lobjCarAvailabilityResponse;
+                HttpContext.Current.Session["CarSearchRequest"] = lobjCarSearchRequest;
+                HttpContext.Current.Session["hdnddlFromTime"] = strhdnddlFromTime;
+                HttpContext.Current.Session["hdnddlToTime"] = strhdnddlToTime;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
