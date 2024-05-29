@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="text-center p-3">
-                            <a href="Index.aspx"><img src="../images/logos/nic-logo.svg" width="150" /></a>
+                            <a href="Index.aspx"><img src="../images/logos/infinity-logo.svg" width="150" /></a>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                 <div class="row align-items-lg-center">
                     <%--<div class="col-sm-12 col-lg-2 text-center text-lg-right mb-3 mb-lg-0">
                         <a href="Index.aspx">
-                            <img class="img-fluid" width="125" src="images/logos/nic-logo.svg" alt="NIC Asia Logo" /></a>
+                            <img class="img-fluid" width="125" src="images/logos/infinity-logo.svg" alt="NIC Asia Logo" /></a>
                     </div>--%>
                     <div class="col-sm-12 text-center">
                         <p class="h8 heading-semibold">

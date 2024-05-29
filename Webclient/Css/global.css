@@ -337,7 +337,7 @@ p {
 }
 
 .dvStripe {
-    background-color: var(--bg-colour3);
+    background-color: var(--bg-colour5);
     padding: 0.2rem 0;
 }
 /*.dvHeader {z-index:1;}*/

@@ -1,292 +1,117 @@
 ﻿<%@ Page Title="Index" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="Index.aspx.cs" Inherits="Index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <div class="featured-services mb-5">
+    <div class="dvTurnTransaction mb-5">
         <div class="container-lg">
             <div class="row">
-                <div class="dvTurnText col-12 col-lg-10 offset-lg-1">
-                    <h2 class="h1 heading-light pt-0 text-center" data-i18n="home-turn">Turn Transactions into Rewards</h2>
-                    <span class="h3 heading-light text-center d-block py-3" data-i18n="home-our-diverse">Our Diverse Loyalty Program</span>
-                    <p class="text-center " data-i18n="home-discover">
-                        Discover the extraordinary benefits of our Bank Loyalty Program. Designed for the discerning customer, it offers diverse redemption options like flight bookings, hotel stays, car rentals, vouchers, online shopping, and point exchanges.
-                    Experience the joy of rewards that fit your lifestyle, turning every transaction into a chance for delightful experiences.
-                    Join us for a journey of endless possibilities and rewards that cater to every desire.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="dvShopDeals py-5 d-none">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-12 col-lg-10 offset-lg-1 text-center mb-4">
-                    <h2 class="h1 heading-light text-colour1 mb-3" data-i18n="home-shopthebest">Shop the Best Deals</h2>
-                    <p data-i18n="home-maximize">
-                        Maximize your NPoints with our handpicked selection of top deals in electronics, fashion, home essentials, and more.
-                    </p>
-                </div>
-            </div>
-            <div class="dvShopDealsSlider swiper row my-2" id="dvShopDealsSlider">
-            </div>         
-        </div>
-    </div>
-    <div class="dvTravelTheWorld py-5 mb-3">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-12 col-lg-10 offset-lg-1 text-center mb-4">
-                    <h2 class="h1 heading-light text-colour1 mb-3" data-i18n="home-travel">Travel the world</h2>
-                    <p data-i18n="home-unlock">Unlock a world of travel with your NPoints, accessing over 10,000+ deals on flights, hotels, and more.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="shadow-sm mb-3">
-                        <a id="hrefFlight" runat="server">
-                            <div class="img-container">
-                                <img src="images/homepage/travel-section/flight.jpg" alt="" />
-                            </div>
-                            <div class="d-flex flex-column px-3 py-3 dvCardName">
-                                <h2 class="h6 heading-bold text-truncate text-white" data-i18n="home-flights">Flights
-                                    <img src="images/icons/arrows/right-arrow.svg" alt=""></h2>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="shadow-sm mb-3">
-                        <a id="hrefHotel"  runat="server">
-                            <div class="img-container">
-                                <img src="images/homepage/travel-section/hotel.jpg" alt="" />
-                            </div>
-                            <div class="d-flex flex-column px-3 py-3 dvCardName">
-                                <h2 class="h6 heading-bold text-truncate text-white" data-i18n="home-hotels">Hotels
-                                    <img src="images/icons/arrows/right-arrow.svg" alt=""></h2>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="shadow-sm mb-3">
-                        <a id="hrefLounges" runat="server">
-                            <div class="img-container">
-                                <img src="images/homepage/travel-section/airport-lounges.jpg" alt="" />
-                            </div>
-                            <div class="d-flex flex-column px-3 py-3 dvCardName">
-                                <h2 class="h6 heading-bold text-truncate text-white" data-i18n="home-airport-lounges">Airport Lounges
-                                    <img src="images/icons/arrows/right-arrow.svg" alt=""></h2>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="shadow-sm mb-3">
-                        <a id="hrefMiles" runat="server">
-                            <div class="img-container">
-                                <img src="images/homepage/travel-section/miles-exchange.jpg" alt="" />
-                            </div>
-                            <div class="d-flex flex-column px-3 py-3 dvCardName">
-                                <h2 class="h6 heading-bold text-truncate text-white" data-i18n="home-miles-exchange">Miles Exchange
-                                    <img src="images/icons/arrows/right-arrow.svg" alt=""></h2>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="dvVouchers py-5">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-12 col-lg-10 offset-lg-1 text-center mb-4">
-                    <h2 class="h1 heading-light text-colour1 mb-3" data-i18n="home-most-featured">Most Featured Vouchers</h2>
-                    <p data-i18n="home-choose-from">Choose from over 5,000+ gift vouchers in our expansive Loyalty Program selection.</p>
-                </div>
-            </div>
-            <div class="dvVoucherSlider swiper row" id="dvVoucherSlider">               
-            </div>
-        </div>
-    </div>
-    <div class="dvFaqSection pb-5">
-        <div class="container-lg">
-            <div class="row">
-                <div class="col-12 col-lg-10 offset-lg-1 text-center mb-4">
-                    <h2 class="h1 heading-light text-colour7 mb-1" data-i18n="home-faqs-helpful">FAQs: A Helpful Insights</h2>
-                </div>
                 <div class="col-12 col-lg-10 offset-lg-1">
-                    <div class="bg-lightgray">
-                        <div class="accordion" id="manage-accordion">
-                            <div class="card mb-3">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-block text-left p-3" type="button" data-toggle="collapse" data-target="#collapse1">
-                                            <span class="h6 heading-semibold" data-i18n="home-Hotel">Hotel</span>
-                                            <span class="arrow-icon">
-                                                <i class="fa fa-caret-up"></i>
-                                            </span>
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapse1" class="collapse show" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0">
-                                        <div>
-                                            <div class="row mb-1">
-                                                <div class="col-12">
-                                                    <div class="bg-white p-3">
-                                                        <div class="row align-items-lg-center justify-content-between">
-                                                            <div class="col-12">
-                                                                <div class="d-flex justify-content-start">
-                                                                    <div class="dvCheckImage">
-                                                                        <img src="images/homepage/faq-section/check.png" alt="" />
-                                                                    </div>
-                                                                    <div class="dvcheckContent ml-3">
-                                                                        <p class="h6 heading-bold">Can I make a hotel booking for today’s check-in?</p>
-                                                                        <p>Sorry this is not possible. Hotel reservations have to be booked a minimum of 3 days in advance.</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row dvBorderBottom">
-                                                            <div class="col-12">
-                                                                <div class="border-bottom my-3"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row align-items-lg-center justify-content-between">
-                                                            <div class="col-12">
-                                                                <div class="d-flex justify-content-start">
-                                                                    <div class="dvCheckImage">
-                                                                        <img src="images/homepage/faq-section/check.png" alt="" />
-                                                                    </div>
-                                                                    <div class="dvcheckContent ml-3">
-                                                                        <p class="h6 heading-bold">How can I access my recent hotel booking details?</p>
-                                                                        <p>Check your confirmation email or log in to the 'My Bookings' section on our website. Need help? Contact customer service.</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                    <h2 class="h1 heading-semibold pt-0 text-center" data-i18n="home-turn">Turn Transactions into Rewards</h2>
+                    <span class="h3 heading-regular text-center d-block py-3" data-i18n="home-our-diverse">Infinity Rewards - Our Diverse Loyalty Program</span>
+                    <p class="text-center " data-i18n="home-discover">
+                        Designed for the discerning customer, it offers diverse redemption options like flight bookings, hotel stays, car rentals, vouchers, online shopping, and point exchanges. Experience the joy of rewards that fit your lifestyle, turning every transaction into a chance for delightful experiences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-block text-left p-3 collapsed" type="button" data-toggle="collapse" data-target="#collapse2">
-                                            <span class="h6 heading-semibold" data-i18n="home-experiences">Experiences</span>
-                                            <span class="arrow-icon">
-                                                <i class="fa fa-caret-up"></i>
-                                            </span>
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapse2" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0">
-                                        <div>
-                                            <div class="row mb-1">
-                                                <div class="col-12">
-                                                    <div class="bg-white p-3">
-                                                        <div class="row align-items-lg-center justify-content-between">
-                                                            <div class="col-12">
-                                                                <div class="d-flex justify-content-start">
-                                                                    <div class="dvCheckImage">
-                                                                        <img src="images/homepage/faq-section/check.png" alt="" />
-                                                                    </div>
-                                                                    <div class="dvcheckContent ml-3">
-                                                                        <p class="h6 heading-bold">Can I make a hotel booking for today’s check-in?</p>
-                                                                        <p>Sorry this is not possible. Hotel reservations have to be booked a minimum of 3 days in advance.</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row dvBorderBottom">
-                                                            <div class="col-12">
-                                                                <div class="border-bottom my-3"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row align-items-lg-center justify-content-between">
-                                                            <div class="col-12">
-                                                                <div class="d-flex justify-content-start">
-                                                                    <div class="dvCheckImage">
-                                                                        <img src="images/homepage/faq-section/check.png" alt="" />
-                                                                    </div>
-                                                                    <div class="dvcheckContent ml-3">
-                                                                        <p class="h6 heading-bold">How can I access my recent hotel booking details?</p>
-                                                                        <p>Check your confirmation email or log in to the 'My Bookings' section on our website. Need help? Contact customer service.</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-block text-left p-3 collapsed" type="button" data-toggle="collapse" data-target="#collapse3">
-                                            <span class="h6 heading-semibold" data-i18n="home-vouchers">Vouchers</span>
-                                            <span class="arrow-icon">
-                                                <i class="fa fa-caret-up"></i>
-                                            </span>
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapse3" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0">
-                                        <div>
-                                            <div class="row mb-1">
-                                                <div class="col-12">
-                                                    <div class="bg-white p-3">
-                                                        <div class="row align-items-lg-center justify-content-between">
-                                                            <div class="col-12">
-                                                                <div class="d-flex justify-content-start">
-                                                                    <div class="dvCheckImage">
-                                                                        <img src="images/homepage/faq-section/check.png" alt="" />
-                                                                    </div>
-                                                                    <div class="dvcheckContent ml-3">
-                                                                        <p class="h6 heading-bold">Can I make a hotel booking for today’s check-in?</p>
-                                                                        <p>Sorry this is not possible. Hotel reservations have to be booked a minimum of 3 days in advance.</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row dvBorderBottom">
-                                                            <div class="col-12">
-                                                                <div class="border-bottom my-3"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row align-items-lg-center justify-content-between">
-                                                            <div class="col-12">
-                                                                <div class="d-flex justify-content-start">
-                                                                    <div class="dvCheckImage">
-                                                                        <img src="images/homepage/faq-section/check.png" alt="" />
-                                                                    </div>
-                                                                    <div class="dvcheckContent ml-3">
-                                                                        <p class="h6 heading-bold">How can I access my recent hotel booking details?</p>
-                                                                        <p>Check your confirmation email or log in to the 'My Bookings' section on our website. Need help? Contact customer service.</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="dvRedemptionLinks bg-colour4 py-5">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="h4 heading-semibold">Rewards that cater to every desire.</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 px-md-0">
+                    <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/flight-booking.jpg" alt="image not found" />
+                </div>
+                <div class="col-md-6 pl-md-4 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
+                    <div>
+                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-flight-red.svg" alt="image not found" />
+                    </div>
+                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Flight Booking</h2>                    
+                    <p>Redeem points for flights across a global network of airlines. Effortless booking process, broad selection of destinations, and exclusive deals for an unmatched air travel experience.</p>
+                    <div>
+                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6 px-md-0 order-md-1">
+                    <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/hotel-booking.jpg" alt="image not found" />
+                </div>
+                <div class="col-md-6 px-md-4 order-md-0 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
+                    <div>
+                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-hotel-red.svg" alt="image not found" />
+                    </div>
+                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Hotels</h2>
+                    <p>Use your loyalty points to book stays at luxurious hotels worldwide. Experience unparalleled comfort, exceptional service, and convenience, making every trip memorable.</p>
+                    <div>
+                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 px-md-0">
+                    <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/airport-lounge-booking.jpg" alt="image not found" />
+                </div>
+                <div class="col-md-6 pl-md-4 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
+                    <div>
+                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-ariport-lounges-red.svg" alt="image not found" />
+                    </div>
+                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Airport Lounge</h2>
+                    <p>Exchange points for access to exclusive airport lounges. Enjoy peace, comfort, and luxury amenities, making your wait time a pleasant part of the journey.</p>
+                    <div>
+                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 px-md-0 order-md-1">
+                    <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/miles-exchange-booking.jpg" alt="image not found" />
+                </div>
+                <div class="col-md-6 px-md-4 order-md-0 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
+                    <div>
+                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-miles-exchange-red.svg" alt="image not found" />
+                    </div>
+                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Miles Exchange</h2>
+                    <p>Exchange your points for airline miles. Elevate your travel experience with upgrades, flights, and more.</p>
+                    <div>
+                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 px-md-0">
+                    <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/experiences-booking.jpg" alt="image not found" />
+                </div>
+                <div class="col-md-6 pl-md-4 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
+                    <div>
+                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-experiences-red.svg" alt="image not found" />
+                    </div>
+                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Experiences</h2>
+                    <p>Redeem for unique experiences, from thrilling adventure sports to serene cultural tours. Dive into new activities that enrich your travels and create lasting memories.</p>
+                    <div>
+                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 px-md-0 order-md-1">
+                    <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/shop-booking.jpg" alt="image not found" />
+                </div>
+                <div class="col-md-6 px-md-4 order-md-0 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
+                    <div>
+                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-shop-red.svg" alt="image not found" />
+                    </div>
+                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Shop</h2>
+                    <p>Spend your points on a wide selection of products. From the latest electronics to trendy fashion, turn your loyalty into retail therapy.</p>
+                    <div>
+                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                    </div>
+                </div>
+            </div>            
         </div>
     </div>
 

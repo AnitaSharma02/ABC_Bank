@@ -251,7 +251,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light px-0 py-2 py-lg-0 mx-lg-n3">
                     <div class="logo m-0 col col-lg-3 px-0 px-lg-3 order-0">
                         <a href="Index.aspx">
-                            <img src="../images/logos/nic-logo.svg" />
+                            <img src="../images/logos/infinity-logo.svg" />
                         </a>
                     </div>
                     <%-- remove d-lg-none and style="display:none !important;" from below to display language selectmenu --%>
@@ -356,7 +356,7 @@
                 <div class="row align-items-lg-center">
                     <div class="col-sm-12 col-lg-2 text-center text-lg-right mb-3 mb-lg-0">
                         <a href="Index.aspx">
-                            <img class="img-fluid footer-logo" src="images/logos/nic-logo.svg" alt="NIC Asia Logo" /></a>
+                            <img class="img-fluid footer-logo" src="images/logos/infinity-logo.svg" alt="NIC Asia Logo" /></a>
                     </div>
                     <div class="col-sm-12 col-lg-5 text-center text-lg-left mb-3 mb-lg-0">
                         <p class="h6 heading-semibold">

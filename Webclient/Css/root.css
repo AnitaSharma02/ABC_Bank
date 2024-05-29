@@ -12,11 +12,11 @@
 }
 @font-face {
     font-family: FontLight;
-    src: url(../fonts/SegoeUI/segoeuilight.ttf);
+    src: url(../fonts/open_sans/OpenSans-Light.ttf);
 }
 @font-face {
     font-family: FontSemiLight;
-    src: url(../fonts/SegoeUI/segoeuisemilight.ttf);
+    src: url();
 }
 @font-face {
   font-family: FontExtraLight;
@@ -24,7 +24,7 @@
 }
 @font-face {
     font-family: FontRegular;
-    src: url(../fonts/SegoeUI/segoeuiregular.ttf);
+    src: url(../fonts/open_sans/OpenSans-Regular.ttf);
 }
 @font-face {
   font-family: FontSemiRegular;
@@ -36,7 +36,7 @@
 }
 @font-face {
   font-family: FontMedium;
-  src: url(../fonts/roboto/Roboto-Medium.ttf);
+  src: url(../fonts/open_sans/OpenSans-Medium.ttf);
 }
 @font-face {
   font-family: FontSemiMedium;
@@ -48,19 +48,19 @@
 }
 @font-face {
     font-family: FontBold;
-    src: url(../fonts/SegoeUI/segoeuibold.ttf);
+    src: url(../fonts/open_sans/OpenSans-Bold.ttf);
 }
 @font-face {
     font-family: FontSemiBold;
-    src: url(../fonts/SegoeUI/seguisemibold.ttf);
+    src: url(../fonts/open_sans/OpenSans-SemiBold.ttf);
 }
 @font-face {
   font-family: FontExtraBold;
-  src: url();
+  src: url(../fonts/open_sans/OpenSans-ExtraBold.ttf);
 }
 @font-face {
     font-family: FontBlack;
-    src: url(../fonts/SegoeUI/seguiblack.ttf);
+    src: url();
 }
 @font-face {
   font-family: FontSemiBlack;
@@ -93,14 +93,14 @@
     --font-extrablack: FontExtraBlack;
 
     /* theme colours */
-    --colour1: #DD2625; /*red*/
+    --colour1: #CB4F56; /*red*/
     --colour2: #F3F4F6; /*lightgray -- used for form bg mostly*/
-    --colour3: #E1E1E1; /*darkgray -- used for background mostly*/
-    --colour4: #666666; /*gray*/
+    --colour3: #EFEFEF; /*darkgray -- used for background mostly*/
+    --colour4: #F9F9F9; /*more lightgray*/
     --colour5: #FEF2F2; /*lightRed*/
     --colour6: #ffffff; /*white*/
     --colour7: #000000; /*black*/
-    --colour8: #5979a7; /*lightblue*/
+    --colour8: #666666; /*gray*/
     --colour9: #000A09; /*lightblack*/
 
     /* X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X */
@@ -136,30 +136,30 @@
     --b-radius: 0rem;
 
     /* text colours */
-    --text-colour1: var(--colour1); /*red*/
-    --text-colour2: var(--colour2); /*lightgray*/
-    --text-colour3: var(--colour3); /*darkgray*/
-    --text-colour4: var(--colour4); /*gray*/
-    --text-colour5: var(--colour5); /*lightRed*/
-    --text-colour6: var(--colour6); /*white*/
-    --text-colour7: var(--colour7); /*black*/
-    --text-colour8: var(--colour8); /*lightblue*/
-    --text-colour9: var(--colour9); /*lightblack*/
+    --text-colour1: var(--colour1);
+    --text-colour2: var(--colour2);
+    --text-colour3: var(--colour3);
+    --text-colour4: var(--colour4);
+    --text-colour5: var(--colour5);
+    --text-colour6: var(--colour6);
+    --text-colour7: var(--colour7);
+    --text-colour8: var(--colour8);
+    --text-colour9: var(--colour9);
 
     /* bg blur */
     --bg-blur: rgba(255, 255, 255, 0.3); /* Fallback for browsers that don't support */
     --backdrop-filter: blur(10px);
 
     /* background colours */
-    --bg-colour1: var(--colour1); /*red*/
-    --bg-colour2: var(--colour2); /*lightgray*/
-    --bg-colour3: var(--colour3); /*darkgray*/
-    --bg-colour4: var(--colour4); /*gray*/
-    --bg-colour5: var(--colour5); /*lightRed*/
-    --bg-colour6: var(--colour6); /*white*/
-    --bg-colour7: var(--colour7); /*black*/
-    --bg-colour8: var(--colour8); /*lightblue*/
-    --bg-colour9: var(--colour9); /*lightblack*/
+    --bg-colour1: var(--colour1);
+    --bg-colour2: var(--colour2);
+    --bg-colour3: var(--colour3);
+    --bg-colour4: var(--colour4);
+    --bg-colour5: var(--colour5);
+    --bg-colour6: var(--colour6);
+    --bg-colour7: var(--colour7);
+    --bg-colour8: var(--colour8);
+    --bg-colour9: var(--colour9);
 
     /*buttons*/
     --btn-family: var(--font-regular);

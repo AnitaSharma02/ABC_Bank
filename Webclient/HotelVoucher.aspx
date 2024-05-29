@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="bg-colour3 p-3">
-                                <img src="Images/logos/nic-logo.svg" alt="" />
+                                <img src="Images/logos/infinity-logo.svg" alt="" />
                             </div>
                         </div>
                     </div>

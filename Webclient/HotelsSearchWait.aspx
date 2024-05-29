@@ -199,7 +199,7 @@
     <form id="form1" runat="server">
         <div style="float: left; width: 100%;">
                 <div class="SearchImg_Container" style="margin:60px 0 30px 0;">
-                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/logos/nic-logo.svg" Width="240"  />
+                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/logos/infinity-logo.svg" Width="240"  />
                 </div>
                 <div class="SearchImg_Container spclpadd">
                     <asp:Label ID="Label1" runat="server" CssClass="spclpadd h6" Text="Please wait while  we search for best available rates..."></asp:Label>

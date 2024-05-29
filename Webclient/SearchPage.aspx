@@ -211,7 +211,7 @@
     <form id="form1" runat="server">
         <div style="float: left; width: 100%;"> 
             <div class="SearchImg_Container" style="margin: 60px 0 30px 0;">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logos/nic-logo.svg" Width="240" />
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/logos/infinity-logo.svg" Width="240" />
             </div>
             <div class="Search_lbl" >
                 <div class="SearchImg_Container">
