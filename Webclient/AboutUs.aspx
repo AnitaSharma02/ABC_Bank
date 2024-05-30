@@ -37,7 +37,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="h1 heading-light text-colour1 mb-3">About The Program</h2>
+                    <h2 class="h1 heading-semibold text-colour1 mb-3">About The Program</h2>
                     <p class="h6 mb-3 heading-regular text-colour7">NIC Express Reward is the most comprehensive rewards program, tailored to your needs, and gives you additional benefits and a rich experience every time you use the bank's products and services.</p>
                     <p class="h6 mb-3 heading-regular text-colour7">To deliver the best, we designed the Express NIC Express Reward program to suit your lifestyle. Now, you can earn NPoints for using our banking products. you can then replace NIC Express Rewards NPoints by:</p>
 

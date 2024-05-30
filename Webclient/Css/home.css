@@ -44,7 +44,7 @@
     background-color: var(--bg-colour2);
 }
 .dvVouchers {
-    background-color: var(--bg-colour6);
+    background-color: var(--bg-colour1);
 }
 .dvVouchers .dvVoucherSlider .img-container img{
     object-fit:contain;

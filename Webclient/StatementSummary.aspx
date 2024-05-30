@@ -117,7 +117,7 @@
     <div class="container-lg">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="h1 heading-light text-colour1" id="lblMemberName">
+                <h2 class="h1 heading-semibold text-colour1" id="lblMemberName">
                     <span data-i18n="account-welcome" class="">Welcome,</span>
                     <span class="ml-2" id="spnMemberName"></span>
                 </h2>

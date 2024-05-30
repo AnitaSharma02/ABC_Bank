@@ -37,7 +37,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="h1 heading-light text-colour1 mb-3">Website Terms of Use</h2>
+                    <h2 class="h1 heading-semibold text-colour1 mb-3">Website Terms of Use</h2>
                     <p class="h6 mb-3 heading-regular">These online Terms and Conditions are a legally binding agreement between you and NIC Asia. Use of this website implies that you accept these terms and conditions.</p>
                     <p class="h6 mb-3 heading-regular">NIC Asia makes no representation or warranty of any kind, express, implied or statutory regarding this website or the materials and information contained or referred to on each page associated with this website. The material and information contained on this website is provided for general information only and should not be used as a basis for making business decisions. Any advice or information received via this website should not be relied upon without consulting primary or more accurate or more up-to-date sources of information or specific professional advice. It is recommended to obtain professional advice and not rely on the information on the website.</p>
                     <p class="h6 mb-3 heading-regular">NIC Asia accepts no liability for any loss or damage arising directly or indirectly from action taken, or not taken, in reliance on material or information contained on this website. In particular, no warranty is given that economic reporting information, material or data is accurate, reliable or up to date. The data and information do not constitute specific advice but are for information purposes only.</p>

@@ -139,6 +139,47 @@
         </div>
     </div>
 
+    <div class="dvShopDeals py-5 d-none">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-12 col-lg-10 offset-lg-1 text-center mb-4">
+                    <h2 class="h1 heading-semibold text-colour1 mb-3" data-i18n="home-shopthebest">Shop the Best Deals</h2>
+                    <p data-i18n="home-maximize">
+                        Maximize your NPoints with our handpicked selection of top deals in electronics, fashion, home essentials, and more.
+                    </p>
+                </div>
+            </div>
+            <div class="dvShopDealsSlider swiper row my-2" id="dvShopDealsSlider">
+            </div>         
+        </div>
+    </div>
+
+    <div class="dvVouchers py-5">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-12 col-lg-10 offset-lg-1 text-center mb-4">
+                    <h2 class="h1 heading-semibold text-colour6 mb-3" data-i18n="home-most-featured">Most Featured Vouchers</h2>
+                    <p class="text-colour6" data-i18n="home-choose-from">Choose from over 5,000+ gift vouchers in our expansive Loyalty Program selection.</p>
+                </div>
+            </div>
+            <div class="dvVoucherSlider swiper row" id="dvVoucherSlider">               
+            </div>
+        </div>
+    </div>
+
+    <div class="dvRewards py-5">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="h5 heading-regular text-uppercase mb-3" data-i18n="home-unlocking-rewards">Unlocking Rewards: Your Guide</h2>
+                    <h2 class="h1 heading-semibold mb-3" data-i18n="home-from-earning">From Earning to Redeeming: We've Got Answers</h2>
+                    <p class="" data-i18n="home-navigating-our">Navigating our rewards program is as fun as a rollercoaster ride.
+Here are answers to some common questions to ensure your journey is smooth and rewarding.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript">
         $(document).ready(function () {
             $("#dvHeroSlider").show();

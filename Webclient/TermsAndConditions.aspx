@@ -38,7 +38,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="h1 heading-light text-colour1 mb-3">TERMS AND CONDITIONS</h2>
+                    <h2 class="h1 heading-semibold text-colour1 mb-3">TERMS AND CONDITIONS</h2>
                     <h2 class="h4 heading-semibold mb-3">NIC ASIA REWARD PROGRAM (NIC EXPRESS REWARD)</h2>
                     <p class="h6 mb-3 heading-regular">The following terms and conditions apply to the NIC ASIA Rewards Program (<strong>the “Program”</strong>) and will continue on an ongoing basis unless terminated in accordance with item 9 below.</p>
                     <p class="h6 mb-3 heading-regular">By participating in the Program you will be deemed to have read, understood and accepted these Terms and Conditions.</p>

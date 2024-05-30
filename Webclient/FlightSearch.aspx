@@ -589,7 +589,7 @@
                         <div class="dvFlightSearchProducts col-12">
                             <div class="row">
                                 <div class="text-center m-auto my-3">
-                                    <h2 class="h1 heading-light text-colour1 pb-4 px-3" data-i18n="flightsearch-top-destination">Top Destinations For Your Next Holiday</h2>
+                                    <h2 class="h1 heading-semibold text-colour1 pb-4 px-3" data-i18n="flightsearch-top-destination">Top Destinations For Your Next Holiday</h2>
                                 </div>
                             </div>
                           <div class="row">                                 
@@ -1191,7 +1191,7 @@
                         <div class="dvFlightSearchProducts col-12">
                             <div class="row">
                                 <div class="text-center m-auto my-3">
-                                    <h2 class="h1 heading-light text-colour1 pb-4 px-3" data-i18n="flightsearch-top-destination">Top Destinations For Your Next Holiday</h2>
+                                    <h2 class="h1 heading-semibold text-colour1 pb-4 px-3" data-i18n="flightsearch-top-destination">Top Destinations For Your Next Holiday</h2>
                                 </div>
                             </div>
                           <div class="row">                                 

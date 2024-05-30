@@ -37,7 +37,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="h1 heading-light text-colour1 mb-3">Internet Privacy Policy </h2>
+                    <h2 class="h1 heading-semibold text-colour1 mb-3">Internet Privacy Policy </h2>
                     <p class="h6 mb-3 heading-regular text-colour7">This Privacy Statement relates to information supplied by you on this website.</p>
                     <p class="h6 mb-3 heading-regular text-colour7">Information transmitted over the Internet is inherently insecure. However at NIC Asia, we are committed to safeguarding all your personal privacy and information.</p>
                     <p class="h6 mb-3 heading-regular text-colour7">Any personal information provided by you to NIC Asia through this website will be used for the purpose of providing and operating NIC Asia’s products and services and for other related purposes which may include updating records, understanding your financial needs, conducting credit checks, reviewing creditworthiness, advising you of other products and services which may be of interest to you, for crime/fraud prevention and debt collection purposes, for purposes required by law or regulation, and to plan, conduct and monitor NIC Asia’s business.</p>
