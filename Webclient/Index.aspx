@@ -35,7 +35,7 @@
                             <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Flight Booking</h2>
                             <p>Redeem points for flights across a global network of airlines. Effortless booking process, broad selection of destinations, and exclusive deals for an unmatched air travel experience.</p>
                             <div>
-                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                                <a href="/FlightSearch.aspx" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                             <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Hotels</h2>
                             <p>Use your loyalty points to book stays at luxurious hotels worldwide. Experience unparalleled comfort, exceptional service, and convenience, making every trip memorable.</p>
                             <div>
-                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                                <a href="/HotelSearch.aspx" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                             <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Miles Exchange</h2>
                             <p>Exchange your points for airline miles. Elevate your travel experience with upgrades, flights, and more.</p>
                             <div>
-                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                                <a href="/ShopList.aspx?CategoryId=fcbfa209-3820-44d6-9c14-b7e232df584e&type=Milesexchange" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
                             </div>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                             <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Shop</h2>
                             <p>Spend your points on a wide selection of products. From the latest electronics to trendy fashion, turn your loyalty into retail therapy.</p>
                             <div>
-                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                                <a href="/Shop.aspx?CategoryId=9149a75f-1f53-4ed7-b9b3-260b0fd6d606&ProductType=Physical&type=Shop" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
                             </div>
                         </div>
                     </div>

@@ -9,13 +9,17 @@ body {
 
 /*=========[ OVERWRITE BOOTSTRAP TAGS ]=========*/
 a {
-    color: var(--colour7);
+    text-decoration: none;
+    color:blue;
 }
 a:hover {
     text-decoration: none;
-    color: var(--colour4);
+    color:blue;
 }
-.text-underline {
+a.text-underline {
+    text-decoration: underline !important;
+}
+a.text-underline:hover {
     text-decoration: underline !important;
 }
 
