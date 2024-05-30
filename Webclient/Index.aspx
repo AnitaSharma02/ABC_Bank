@@ -30,7 +30,7 @@
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
-                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-flight-red.svg" alt="image not found" />
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/flight.svg" alt="image not found" />
                             </div>
                             <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Flight Booking</h2>
                             <p>Redeem points for flights across a global network of airlines. Effortless booking process, broad selection of destinations, and exclusive deals for an unmatched air travel experience.</p>
@@ -49,7 +49,7 @@
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
-                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-hotel-red.svg" alt="image not found" />
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/hotels.svg" alt="image not found" />
                             </div>
                             <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Hotels</h2>
                             <p>Use your loyalty points to book stays at luxurious hotels worldwide. Experience unparalleled comfort, exceptional service, and convenience, making every trip memorable.</p>
@@ -68,7 +68,7 @@
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
-                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-ariport-lounges-red.svg" alt="image not found" />
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/airport-lounge.svg" alt="image not found" />
                             </div>
                             <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Airport Lounge</h2>
                             <p>Exchange points for access to exclusive airport lounges. Enjoy peace, comfort, and luxury amenities, making your wait time a pleasant part of the journey.</p>
@@ -87,7 +87,7 @@
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
-                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-miles-exchange-red.svg" alt="image not found" />
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/miles-exchange.svg" alt="image not found" />
                             </div>
                             <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Miles Exchange</h2>
                             <p>Exchange your points for airline miles. Elevate your travel experience with upgrades, flights, and more.</p>
@@ -106,7 +106,7 @@
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
-                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-experiences-red.svg" alt="image not found" />
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/experiences.svg" alt="image not found" />
                             </div>
                             <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Experiences</h2>
                             <p>Redeem for unique experiences, from thrilling adventure sports to serene cultural tours. Dive into new activities that enrich your travels and create lasting memories.</p>
@@ -125,7 +125,7 @@
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
-                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-shop-red.svg" alt="image not found" />
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/shop.svg" alt="image not found" />
                             </div>
                             <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Shop</h2>
                             <p>Spend your points on a wide selection of products. From the latest electronics to trendy fashion, turn your loyalty into retail therapy.</p>
