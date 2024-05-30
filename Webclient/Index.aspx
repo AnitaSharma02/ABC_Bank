@@ -167,14 +167,60 @@
         </div>
     </div>
 
-    <div class="dvRewards py-5">
-        <div class="container-lg">
+    <div class="dvRewards pt-5">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-center mb-4">
                     <h2 class="h5 heading-regular text-uppercase mb-3" data-i18n="home-unlocking-rewards">Unlocking Rewards: Your Guide</h2>
                     <h2 class="h1 heading-semibold mb-3" data-i18n="home-from-earning">From Earning to Redeeming: We've Got Answers</h2>
                     <p class="" data-i18n="home-navigating-our">Navigating our rewards program is as fun as a rollercoaster ride.
 Here are answers to some common questions to ensure your journey is smooth and rewarding.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row mb-3">
+                        <div class="col-2 col-sm-1">
+                            <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
+                        </div>
+                        <div class="col-10 col-sm-11">
+                            <h2 class="h5 heading-semibold mb-2">How do I accumulate points?</h2>
+                            <p>Earn points with every transaction made through the bank. Start accumulating rewards with every interaction!</p>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-2 col-sm-1">
+                            <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
+                        </div>
+                        <div class="col-10 col-sm-11">
+                            <h2 class="h5 heading-semibold mb-2">What can I exchange my points for?</h2>
+                            <p>Your points are your gateway to discounts. Redeem them for exclusive Gift vouchers, shopping, flight & hotel booking and mobile top-up.</p>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-2 col-sm-1">
+                            <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
+                        </div>
+                        <div class="col-10 col-sm-11">
+                            <h2 class="h5 heading-semibold mb-2">How long are my points valid for?</h2>
+                            <p>Your points will remain active for 2 years from the date you earn them. Make sure to redeem them before they expire!</p>
+                        </div>
+                    </div>
+                    <div class="row mb-3 mb-lg-0">
+                        <div class="col-2 col-sm-1">
+                            <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
+                        </div>
+                        <div class="col-10 col-sm-11">
+                            <h2 class="h5 heading-semibold mb-2">How can I check my points balance?</h2>
+                            <p>To keep a tab on your rewards, simply log in and navigate to the 'My Account' dashboard. Your points balance will be available there.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-image h-100"></div>
+                    <%--<div class="img-container ">
+                        <img class="img-fluid" src="/Images/homepage/reward-section/rewards.jpg" alt="Image not found" />
+                    </div>--%>
                 </div>
             </div>
         </div>

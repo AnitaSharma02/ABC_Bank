@@ -30,9 +30,13 @@
     font-family: var(--font-regular);
     padding:5px 0;
 }
-/*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
-
-/*=========[ REDEMPTIONLINKS ON HOMEPAGE ]=========*/
+/*=========[ REWARDS ON HOMEPAGE ]=========*/
+.dvRewards .bg-image{
+    background:url('/Images/homepage/reward-section/rewards.jpg') no-repeat center center;
+    background-size:cover;
+    padding:10rem;
+}
+/*=========[ REWARDS ON HOMEPAGE ]=========*/
 
 /*=========[ REDEMPTIONLINKS ON HOMEPAGE ]=========*/
 
@@ -130,6 +134,9 @@
 
 /*=========[ MEDIA QUERIES ]=========*/
 @media (min-width: 576px) {
+    .dvRewards .bg-image {
+        padding: 18rem;
+    }
 }
 
 @media (min-width: 768px) {
@@ -145,6 +152,9 @@
 }
 
 @media (min-width: 992px) {
+    .dvRewards .bg-image {
+        padding: 14rem;
+    }
     .dvRedemptionLinks .icon {
         width: auto;
     }
