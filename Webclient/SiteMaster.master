@@ -331,7 +331,7 @@
             <div class="dvBgRedColor py-4">
                 <div class="container-lg">
                     <div class="row align-items-lg-center">
-                        <div class="dvLinks col-lg-9 text-center text-lg-left mb-3 mb-lg-0 text-uppercase">
+                        <div class="dvLinks col-lg-10 text-center text-lg-left mb-3 mb-lg-0 text-uppercase">
                             <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-earn">Earn</a>
                             <a class="d-block d-md-inline-block py-1" href="Redeem.aspx" data-i18n="navigation-redeem">Redeem</a>
                             <a class="d-block d-md-inline-block py-1" href="AboutUs.aspx" data-i18n="navigation-about-us">About Us</a>
@@ -341,12 +341,12 @@
                             <a class="d-block d-md-inline-block py-1" href="BookingPolicy.aspx" data-i18n="navigation-booking-policy">Booking Policy</a>
                             <a class="d-block d-md-inline-block py-1" href="Disclaimer.aspx" data-i18n="navigation-disclaimer">Disclaimer</a>
                         </div>
-                        <div class="dvSocialIcons col-lg-3 text-center text-lg-right mb-3 mb-md-0">
+                        <div class="dvSocialIcons col-lg-2 text-center text-lg-right mb-3 mb-md-0">
                             <a class="d-inline-block px-1" href="https://www.facebook.com/NicAsiaBank/" target="_blank">
                                 <img src="images/icons/social/facebook.svg" /></a>
                             <a class="d-inline-block px-1" href="https://www.linkedin.com/company/nic-asia-bank/mycompany/" target="_blank">
                                 <img src="images/icons/social/linkedin.svg" /></a>
-                            <a class="d-inline-block px-1" href="https://www.instagram.com/nicasiabankofficial/?hl=en" target="_blank">
+                            <a class="d-inline-block pl-1" href="https://www.instagram.com/nicasiabankofficial/?hl=en" target="_blank">
                                 <img src="images/icons/social/Instagram.svg" /></a>
                         </div>
                     </div>

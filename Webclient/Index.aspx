@@ -23,95 +23,119 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 px-md-0">
+                <div class="col-md-6 pr-md-0 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/flight-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 pl-md-4 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
-                    <div>
-                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-flight-red.svg" alt="image not found" />
-                    </div>
-                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Flight Booking</h2>                    
-                    <p>Redeem points for flights across a global network of airlines. Effortless booking process, broad selection of destinations, and exclusive deals for an unmatched air travel experience.</p>
-                    <div>
-                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pl-md-0">
+                    <div class="bg-colour3 p-3 p-md-4 h-100">
+                        <div class="d-md-flex flex-md-column justify-content-md-center h-100">
+                            <div>
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-flight-red.svg" alt="image not found" />
+                            </div>
+                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Flight Booking</h2>
+                            <p>Redeem points for flights across a global network of airlines. Effortless booking process, broad selection of destinations, and exclusive deals for an unmatched air travel experience.</p>
+                            <div>
+                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 px-md-0 order-md-1">
+                <div class="col-md-6 pl-md-0 order-md-1 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/hotel-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 px-md-4 order-md-0 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
-                    <div>
-                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-hotel-red.svg" alt="image not found" />
-                    </div>
-                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Hotels</h2>
-                    <p>Use your loyalty points to book stays at luxurious hotels worldwide. Experience unparalleled comfort, exceptional service, and convenience, making every trip memorable.</p>
-                    <div>
-                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pr-md-0">
+                    <div class="bg-colour3 p-3 p-md-4 h-100">
+                        <div class="d-md-flex flex-md-column justify-content-md-center h-100">
+                            <div>
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-hotel-red.svg" alt="image not found" />
+                            </div>
+                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Hotels</h2>
+                            <p>Use your loyalty points to book stays at luxurious hotels worldwide. Experience unparalleled comfort, exceptional service, and convenience, making every trip memorable.</p>
+                            <div>
+                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 px-md-0">
+                <div class="col-md-6 pr-md-0 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/airport-lounge-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 pl-md-4 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
-                    <div>
-                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-ariport-lounges-red.svg" alt="image not found" />
-                    </div>
-                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Airport Lounge</h2>
-                    <p>Exchange points for access to exclusive airport lounges. Enjoy peace, comfort, and luxury amenities, making your wait time a pleasant part of the journey.</p>
-                    <div>
-                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pl-md-0">
+                    <div class="bg-colour3 p-3 p-md-4 h-100">
+                        <div class="d-md-flex flex-md-column justify-content-md-center h-100">
+                            <div>
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-ariport-lounges-red.svg" alt="image not found" />
+                            </div>
+                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Airport Lounge</h2>
+                            <p>Exchange points for access to exclusive airport lounges. Enjoy peace, comfort, and luxury amenities, making your wait time a pleasant part of the journey.</p>
+                            <div>
+                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 px-md-0 order-md-1">
+                <div class="col-md-6 pl-md-0 order-md-1 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/miles-exchange-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 px-md-4 order-md-0 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
-                    <div>
-                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-miles-exchange-red.svg" alt="image not found" />
-                    </div>
-                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Miles Exchange</h2>
-                    <p>Exchange your points for airline miles. Elevate your travel experience with upgrades, flights, and more.</p>
-                    <div>
-                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pr-md-0">
+                    <div class="bg-colour3 p-3 p-md-4 h-100">
+                        <div class="d-md-flex flex-md-column justify-content-md-center h-100">
+                            <div>
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-miles-exchange-red.svg" alt="image not found" />
+                            </div>
+                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Miles Exchange</h2>
+                            <p>Exchange your points for airline miles. Elevate your travel experience with upgrades, flights, and more.</p>
+                            <div>
+                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 px-md-0">
+                <div class="col-md-6 pr-md-0 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/experiences-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 pl-md-4 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
-                    <div>
-                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-experiences-red.svg" alt="image not found" />
-                    </div>
-                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Experiences</h2>
-                    <p>Redeem for unique experiences, from thrilling adventure sports to serene cultural tours. Dive into new activities that enrich your travels and create lasting memories.</p>
-                    <div>
-                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pl-md-0">
+                    <div class="bg-colour3 p-3 p-md-4 h-100">
+                        <div class="d-md-flex flex-md-column justify-content-md-center h-100">
+                            <div>
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-experiences-red.svg" alt="image not found" />
+                            </div>
+                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Experiences</h2>
+                            <p>Redeem for unique experiences, from thrilling adventure sports to serene cultural tours. Dive into new activities that enrich your travels and create lasting memories.</p>
+                            <div>
+                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 px-md-0 order-md-1">
+                <div class="col-md-6 pl-md-0 order-md-1 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/shop-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 px-md-4 order-md-0 bg-colour3 d-md-flex flex-md-column justify-content-md-center">
-                    <div>
-                        <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-shop-red.svg" alt="image not found" />
-                    </div>
-                    <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Shop</h2>
-                    <p>Spend your points on a wide selection of products. From the latest electronics to trendy fashion, turn your loyalty into retail therapy.</p>
-                    <div>
-                        <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pr-md-0">
+                    <div class="bg-colour3 p-3 p-md-4 h-100">
+                        <div class="d-md-flex flex-md-column justify-content-md-center h-100">
+                            <div>
+                                <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/homepage/rewards-that-cater-to-every-desire/redemption-menu-icons/icon-shop-red.svg" alt="image not found" />
+                            </div>
+                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Shop</h2>
+                            <p>Spend your points on a wide selection of products. From the latest electronics to trendy fashion, turn your loyalty into retail therapy.</p>
+                            <div>
+                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
     </div>
 
