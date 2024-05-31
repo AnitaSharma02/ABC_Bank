@@ -198,9 +198,12 @@
     --arrow-fa-icon-size: 20px;
 
     /*swiper pagination colour*/
-    --pagination-active-colour: var(--colour7);
-    --pagination-fade-colour: var(--colour7);
-    --pagination-opacity: 0.3;
+    --pagination-bg: var(--colour6);
+    --pagination-border: var(--colour1);
+    --pagination-opacity: 1;
+    --pagination-active-bg: var(--colour1);
+    --pagination-active-border: var(--colour1);
+    --pagination-active-opacity: 1;
 
     /*modal*/
     --modal-header-bg-colour: var(--colour1);
