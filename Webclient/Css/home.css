@@ -5,6 +5,10 @@
 }
 /*=========[ WELCOME ON HOMEPAGE ]=========*/
 
+.dvRewards {
+    background-color: #fefefe;
+}
+
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
 .dvRedemptionMenu a .imageBox {
     background-color: #fff;
@@ -30,13 +34,6 @@
     font-family: var(--font-regular);
     padding:5px 0;
 }
-/*=========[ REWARDS ON HOMEPAGE ]=========*/
-.dvRewards .bg-image{
-    background:url('/Images/homepage/reward-section/rewards.jpg') no-repeat center center;
-    background-size:cover;
-    padding:10rem;
-}
-/*=========[ REWARDS ON HOMEPAGE ]=========*/
 
 /*=========[ REDEMPTIONLINKS ON HOMEPAGE ]=========*/
 
@@ -134,9 +131,6 @@
 
 /*=========[ MEDIA QUERIES ]=========*/
 @media (min-width: 576px) {
-    .dvRewards .bg-image {
-        padding: 18rem;
-    }
 }
 
 @media (min-width: 768px) {
@@ -152,8 +146,12 @@
 }
 
 @media (min-width: 992px) {
+    .dvRewards .img-container {
+        display:none;
+    }
     .dvRewards .bg-image {
-        padding: 14rem;
+        background:url('/Images/homepage/reward-section/rewards.jpg') no-repeat top right;
+        background-size:contain;
     }
     .dvRedemptionLinks .icon {
         width: auto;
@@ -168,6 +166,7 @@
 }
 
 @media (min-width: 1200px) {
+   
   .dvEarn .mn-top {
     margin-top: -12rem;
   }
