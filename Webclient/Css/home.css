@@ -11,37 +11,17 @@
 }
 /*=========[ WELCOME ON HOMEPAGE ]=========*/
 
+/*=========[ REWARDS ON HOMEPAGE ]=========*/
 .dvRewards {
     background-color: #fefefe;
 }
+/*=========[ REWARDS ON HOMEPAGE ]=========*/
 
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
-.dvRedemptionMenu a .imageBox {
-    background-color: #fff;
-    border-radius: 50%;
-    width:80px;
-    height:80px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 4px 5px -2px, rgba(0, 0, 0, 0.3) 0px 0px 13px -2px;
+.dvRedemptionMenu {
+    padding-top:0 !important;
 }
-.dvRedemptionMenu a .imageBox img {
-    width: 35px;
-    height: 35px;
-}
-.dvRedemptionMenu a:hover .imageBox {
-    background-color: var(--bg-colour1);
-}
-.dvRedemptionMenu a:hover .imageBox img {
-    filter: brightness(0) invert(1);
-}
-.dvRedemptionMenu a:hover p {font-weight:bold;}
-.dvRedemptionMenu a p {
-    color: var(--text-colour7);
-    font-size: .75rem;
-    font-family: var(--font-regular);
-    padding:5px 0;
-}
-
-/*=========[ REDEMPTIONLINKS ON HOMEPAGE ]=========*/
+/*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
 
 /*=========[ VOUCHERS ON HOMEPAGE ]=========*/
 .dvTurnText h2, .dvTurnText span {

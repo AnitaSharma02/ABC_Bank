@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="Index" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="Index.aspx.cs" Inherits="Index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
+    <link rel="stylesheet" href="\Css/home.css" />
+    <style>
+        .dvInnerBanner{
+            display:none;
+        }        
+    </style>
     <div class="dvTurnTransaction mb-5">
         <div class="container-lg">
             <div class="row">
