@@ -95,34 +95,36 @@
                 <div class="dvFilter modal fade col-lg-3" id="dvFilterModal" tabindex="-1">
                     <div id="divSearch" class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content border-0">
-                            <div class="modal-body p-lg-0">
-                                <button type="button" class="close d-lg-none" data-dismiss="modal">
-                                    <span>&times;</span>
-                                </button>
-                                <div class="dvTotalRecords p-3 bg-lightgray">
+                             <div class="modal-header d-lg-block p-0">
+                                <div class="modal-title dvTotalRecords p-3">
                                     <p id="totalHotel" class="h6 heading-semibold text-colour1">
                                         Total <span>Hotels</span> found <span>0</span>
                                     </p>
                                 </div>
+                                   <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
+                                       <i class="fa-solid fa-xmark"></i>
+                                   </button>
+                              </div>
+                             <div class="modal-body p-lg-0">
                                 <div class="accordion" id="filter-accordion">
                                     <div class="card">
                                         <div class="card-header p-0">
-                                            <h2 class="px-3 pt-3">
+                                            <h2 class="pt-3">
                                                 <button
-                                                    class="btn- btn-block text-left h6 heading-semibold"
+                                                    class="btn btn-block text-left"
                                                     type="button"
                                                     data-toggle="collapse-"
                                                     data-target="#collapse1">
-                                                    Total NPoints
-                              <span class="arrow-icon">
-                                  <i class="fa fa-caret-up-"></i>
-                              </span>
+                                                   <span class=" h6 heading-semibold text-colour7 "> Total NPoints</span>
+                                                  <span class="arrow-icon">
+                                                      <i class="fa fa-caret-up-"></i>
+                                                  </span>
                                                 </button>
                                             </h2>
                                         </div>
 
                                         <div id="collapse1" class="collapse- show" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver- p-3">
+                                            <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvRangeSlider">
                                                     <div id="priceSlider" class="mb-2"></div>
                                                     <div id="priceRange"></div>
@@ -139,21 +141,21 @@
 
                                     <div class="card">
                                         <div class="card-header p-0">
-                                            <h2 class="px-3 pt-3">
+                                            <h2 class="pt-3">
                                                 <button
-                                                    class="btn- btn-block text-left h6 heading-semibold"
+                                                    class="btn btn-block text-left h6 heading-semibold text-colour7"
                                                     type="button"
                                                     data-toggle="collapse-"
                                                     data-target="#collapse2">
-                                                    Star Rankings
-                              <span class="arrow-icon">
-                                  <i class="fa fa-caret-up-"></i>
-                              </span>
+                                                    <span class=" h6 heading-semibold text-colour7 ">Star Rankings</span>
+                                                      <span class="arrow-icon">
+                                                          <i class="fa fa-caret-up-"></i>
+                                                      </span>
                                                 </button>
                                             </h2>
                                         </div>
                                         <div id="collapse2" class="collapse-" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver- p-3">
+                                            <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvLabel d-flex justify-content-between">
                                                     <label class="checkbox-container d-flex">
                                                         <span class="d-inline-block">
@@ -176,21 +178,21 @@
 
                                     <div class="card">
                                         <div class="card-header p-0">
-                                            <h2 class="px-3 pt-3">
+                                            <h2 class="pt-3">
                                                 <button
-                                                    class="btn- btn-block text-left h6 heading-semibold"
+                                                    class="btn btn-block text-left h6 heading-semibold"
                                                     type="button"
                                                     data-toggle="collapse-"
                                                     data-target="#collapse3">
-                                                    Hotel Amenities
-                              <span class="arrow-icon">
-                                  <i class="fa fa-caret-up-"></i>
-                              </span>
+                                                   <span class=" h6 heading-semibold text-colour7 "> Hotel Amenities</span>
+                                                          <span class="arrow-icon">
+                                                              <i class="fa fa-caret-up-"></i>
+                                                          </span>
                                                 </button>
                                             </h2>
                                         </div>
                                         <div id="collapse3" class="collapse-" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver- p-3">
+                                            <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvLabel d-flex justify-content-between">
                                                     <label class="checkbox-container d-flex">
                                                         <span class="d-inline-block">
@@ -314,13 +316,13 @@
 
                                     <div class="card">
                                         <div class="card-header p-0">
-                                            <h2 class="px-3 pt-3">
+                                            <h2 class="pt-3">
                                                 <button
-                                                    class="btn- btn-block text-left h6 heading-semibold"
+                                                    class="btn btn-block text-left h6 heading-semibold"
                                                     type="button"
                                                     data-toggle="collapse-"
                                                     data-target="#collapse4">
-                                                    Hotel Chains
+                                                     <span class=" h6 heading-semibold text-colour7">Hotel Chains</span>
                                                     <span class="arrow-icon">
                                                         <i class="fa fa-caret-up-"></i>
                                                     </span>
@@ -328,7 +330,7 @@
                                             </h2>
                                         </div>
                                         <div id="collapse4" class="collapse-" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver- p-3 d-block">
+                                            <div class="card-body scroll-ver- px-0 pt-1 pb-2 d-block">
                                                     <div class="dvLabel d-flex justify-content-between">
                                                         <label class="checkbox-container d-flex">
                                                             <span class="d-inline-block">
@@ -353,13 +355,13 @@
 
                                     <div class="card">
                                         <div class="card-header p-0">
-                                            <h2 class="px-3 pt-3">
+                                            <h2 class="pt-3">
                                                 <button
-                                                    class="btn- btn-block text-left h6 heading-semibold"
+                                                    class="btn btn-block text-left h6 heading-semibold"
                                                     type="button"
                                                     data-toggle="collapse-"
                                                     data-target="#collapse5">
-                                                    Hotel Locations
+                                                    <span class=" h6 heading-semibold text-colour7">Hotel Locations</span>
                                                     <span class="arrow-icon">
                                                         <i class="fa fa-caret-up-"></i>
                                                     </span>
@@ -367,7 +369,7 @@
                                             </h2>
                                         </div>
                                         <div id="collapse5" class="collapse-" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver- p-3 d-block">
+                                            <div class="card-body scroll-ver- px-0 pt-1 pb-2 d-block">
                                                     <div class="dvLabel d-flex justify-content-between">
                                                         <label class="checkbox-container d-flex">
                                                             <span class="d-inline-block">
@@ -408,8 +410,7 @@
                 <div class="col-lg-9">
                     <div class="row">
                         <div class="dvModify col-12 mb-3">
-                            <div
-                                class="bg-lightgray d-flex flex-wrap justify-content-between align-items-center py-2 px-2 px-lg-3 mb-1">
+                            <div class="bg-colour2 d-flex flex-wrap justify-content-between align-items-center py-2 px-2 px-lg-3 mb-1">
                                 <button
                                     data-toggle="modal"
                                     data-target="#dvFilterModal"
@@ -444,7 +445,7 @@
                                     <div class="col-12 col-md-6 col-lg mb-3 order-1">
                                         <input type="hidden" id="hdnRoomString" />
                                         <label class="h8 heading-semibold">City</label>
-                                        <div class="dvCP_txtCity input-group">
+                                        <div class="dvCP_txtCity dvInputGroup input-group">
                                             <input id="txtCity" class="form-control" onfocus="placeholderOnFocus(this,'Enter City Name');" onblur="placeholderOnFocus(this,'Enter City Name');" value="Enter City Name" type="text" runat="server" />
                                             <div class="input-group-append">
                                                 <span class="input-group-text bg-white">
@@ -455,7 +456,7 @@
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3 order-2">
                                         <label class="h8 heading-semibold">Check-in</label>
-                                        <div class="dvTextBoxCheckin input-group">
+                                        <div class="dvTextBoxCheckin dvInputGroup input-group">
                                             <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="TextBoxCheckin" readonly="readonly"  runat="server"/>
                                             <div class="input-group-append">
                                                 <span class="input-group-text bg-white">
@@ -466,7 +467,7 @@
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3 order-3">
                                         <label class="h8 heading-semibold">Check-out</label>
-                                        <div class="dvTextBoxCheckout input-group">
+                                        <div class="dvTextBoxCheckout dvInputGroup input-group">
                                             <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="TextBoxCheckout" readonly="readonly" runat="server" />
                                             <div class="input-group-append">
                                                 <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
@@ -475,7 +476,7 @@
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3 order-4">
                                         <label class="h8 heading-semibold invisible-">Room(s)</label>
-                                        <div class="dvQty qtySelector form-control d-flex justify-content-end p-0 pr-lg-2">
+                                        <div class="dvQty qtySelector dvInput form-control d-flex justify-content-end p-0 pr-lg-2">
                                             <span class="special-text">Rooms(s)</span>
                                             <div class="d-flex align-items-center pr-0 w-120">
                                                 <div class="col-4 text-center px-0"><i role="button" class="fa fa-minus decreaseQty bg-colour2 border p-1 rounded HotelQynUpdateminus"></i></div>

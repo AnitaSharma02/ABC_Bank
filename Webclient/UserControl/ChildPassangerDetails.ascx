@@ -82,7 +82,7 @@
 <div class="row">
     <div class="col-md-6 mb-3">
         <label class="h8 heading-semibold text-colour7" data-i18n="flightpassenger-title">Title</label>
-        <div class="select_box">
+        <div class="dvInput select_box">
             <asp:DropDownList ID="ddlTitle" CssClass="form-control" runat="server" Style="width: 100%;">
                 <asp:ListItem Value="1" Selected="True">Title</asp:ListItem>
                 <asp:ListItem Value="Male">Mstr</asp:ListItem>
@@ -95,7 +95,7 @@
     </div>
     <div class="col-md-6 mb-3">
         <label class="h8 heading-semibold text-colour7" data-i18n="flightpassenger-first">First Name</label>
-        <div class="input-group ">
+        <div class="dvInput input-group ">
             <asp:TextBox ID="txtFirstName" MaxLength="27" CssClass="form-control" runat="server" Text="" AutoComplete="off"></asp:TextBox>
              </div>
             <asp:RequiredFieldValidator ID="rfvAdultFirstName" runat="server" ControlToValidate="txtFirstName"
@@ -107,7 +107,7 @@
     </div>
     <div class="col-md-6 mb-3">
         <label class="h8 heading-semibold text-colour7" data-i18n="flightpassenger-last">Last Name</label>
-        <div class="input-group">
+        <div class="dvInput input-group">
             <asp:TextBox ID="txtLastName" MaxLength="27" CssClass="form-control" runat="server" AutoComplete="off"></asp:TextBox>
              </div>
             <asp:RequiredFieldValidator ID="rfvAdultLastName" runat="server" ControlToValidate="txtLastName"
@@ -119,7 +119,7 @@
     </div>
     <div class="col-md-6 mb-3">
         <label class="h8 heading-semibold text-colour7" data-i18n="flightpassenger-date">Date of Birth</label>
-        <div class="dvTxtDOBChild input-group">
+        <div class="dvInputGroup dvTxtDOBChild input-group">
             <asp:TextBox ID="txtDOB" class="form-control icnDate" runat="server" AutoComplete="off"></asp:TextBox>
             <div class="input-group-append">
                 <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
@@ -135,7 +135,7 @@
 <div class="row">
     <div class="col-md-6 mb-3">
         <label class="h8 heading-semibold text-colour7" data-i18n="flightpassenger-passport">Passport Number</label>
-        <div class="input-group">
+        <div class="dvInput input-group">
             <asp:TextBox ID="txtPassportNo" CssClass="form-control" AutoComplete="off" runat="server"></asp:TextBox>
             </div>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtPassportNo"
@@ -146,7 +146,7 @@
     </div>
     <div class="col-md-6 mb-3">
         <label class="h8 heading-semibold text-colour7" data-i18n="flightpassenger-email">E-Mail ID</label>
-        <div class="input-group">
+        <div class="dvInput input-group">
             <asp:TextBox ID="txtEmailID" CssClass="form-control" runat="server" AutoComplete="off"></asp:TextBox>
             </div>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtEmailID"
@@ -162,7 +162,7 @@
     <div class="row">
         <div class="col-md-6 mb-3" id="divNationality" runat="server">
             <label class="h8 heading-semibold text-colour7" data-i18n="flightpassenger-nationality">Nationality</label>
-            <div class="input-group" id="divNationalityData" runat="server">
+            <div class="dvInput input-group" id="divNationalityData" runat="server">
                 <asp:DropDownList ID="drpNationality" class="form-control" runat="server">
                     <asp:ListItem Text="Select" Selected="true" Value="">
                     </asp:ListItem>
@@ -666,7 +666,7 @@
         </div>
         <div class="col-md-6 mb-3" id="divPassportPlace" runat="server">
             <label class="h8 heading-semibold text-colour7" data-i18n="flightpassenger-passport-place">Passport Issue Place</label>
-            <div class="input-group">
+            <div class="dvInput input-group">
                 <asp:TextBox ID="txtPassportIssueLocation" CssClass="form-control" runat="server" Text=""
                     AutoComplete="off"></asp:TextBox>
                 </div>
@@ -683,7 +683,7 @@
         </div>
         <div class="col-md-6 mb-3" id="divTelephone" runat="server">
             <label class="h8 heading-semibold text-colour7" data-i18n="flightpassenger-telephone">Telephone Number</label>
-            <div class="input-group">
+            <div class="dvInput input-group">
                 <asp:TextBox ID="txtTelephone" class="form-control" runat="server" Text="" MaxLength="12"
                     AutoComplete="off"></asp:TextBox>
                 </div>
@@ -701,7 +701,7 @@
         </div>
         <div class="col-md-6 mb-3">
             <label class="h8 heading-semibold text-colour7" id="divPassportissue" runat="server" data-i18n="flightpassenger-passport-date">Passport Issue Date</label>
-            <div class="dvTxtEffectiveDateChild input-group">
+            <div class="dvTxtEffectiveDateChild dvInputGroup input-group">
                 <asp:TextBox ID="txtEffectiveDate" runat="server" CssClass="form-control icnDate"
                     Text="" AutoComplete="off"></asp:TextBox>
                  <div class="input-group-append">
@@ -719,7 +719,7 @@
         </div>
         <div class="col-md-6 mb-3">
             <label class="h8 heading-semibold text-colour7" id="divPassportexpiry" runat="server" data-i18n="flightpassenger-passport-expiry">Passport Expiry Date</label>
-            <div class="dvTxtExpiryDateChild input-group">
+            <div class="dvTxtExpiryDateChild dvInputGroup input-group">
                 <asp:TextBox ID="txtExpiryDate" runat="server" CssClass="form-control icnDate" Text=""
                     AutoComplete="off"></asp:TextBox>
                  <div class="input-group-append">

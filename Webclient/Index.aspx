@@ -11,7 +11,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12 col-lg-10 offset-lg-1">
-                    <h2 class="h1 heading-semibold pt-0 text-center" data-i18n="home-turn">Turn Transactions into Rewards</h2>
+                    <h2 class="heading1 pt-0 text-center" data-i18n="home-turn">Turn Transactions into Rewards</h2>
                     <span class="h3 heading-regular text-center d-block py-3" data-i18n="home-our-diverse">Infinity Rewards - Our Diverse Loyalty Program</span>
                     <p class="text-center " data-i18n="home-discover">
                         Designed for the discerning customer, it offers diverse redemption options like flight bookings, hotel stays, car rentals, vouchers, online shopping, and point exchanges. Experience the joy of rewards that fit your lifestyle, turning every transaction into a chance for delightful experiences.
@@ -38,7 +38,7 @@
                             <div>
                                 <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/flight.svg" alt="image not found" />
                             </div>
-                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Flight Booking</h2>
+                            <h2 class="heading5 text-colour1 mb-3 mb-md-2 mb-lg-3">Flight Booking</h2>
                             <p>Redeem points for flights across a global network of airlines. Effortless booking process, broad selection of destinations, and exclusive deals for an unmatched air travel experience.</p>
                             <div>
                                 <a href="/FlightSearch.aspx" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
@@ -57,7 +57,7 @@
                             <div>
                                 <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/hotels.svg" alt="image not found" />
                             </div>
-                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Hotels</h2>
+                            <h2 class="heading5 text-colour1 mb-3 mb-md-2 mb-lg-3">Hotels</h2>
                             <p>Use your loyalty points to book stays at luxurious hotels worldwide. Experience unparalleled comfort, exceptional service, and convenience, making every trip memorable.</p>
                             <div>
                                 <a href="/HotelSearch.aspx" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
@@ -76,7 +76,7 @@
                             <div>
                                 <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/airport-lounge.svg" alt="image not found" />
                             </div>
-                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Airport Lounge</h2>
+                            <h2 class="heading5 text-colour1 mb-3 mb-md-2 mb-lg-3">Airport Lounge</h2>
                             <p>Exchange points for access to exclusive airport lounges. Enjoy peace, comfort, and luxury amenities, making your wait time a pleasant part of the journey.</p>
                             <div>
                                 <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
@@ -95,7 +95,7 @@
                             <div>
                                 <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/miles-exchange.svg" alt="image not found" />
                             </div>
-                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Miles Exchange</h2>
+                            <h2 class="heading5 text-colour1 mb-3 mb-md-2 mb-lg-3">Miles Exchange</h2>
                             <p>Exchange your points for airline miles. Elevate your travel experience with upgrades, flights, and more.</p>
                             <div>
                                 <a href="/ShopList.aspx?CategoryId=fcbfa209-3820-44d6-9c14-b7e232df584e&type=Milesexchange" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
@@ -114,7 +114,7 @@
                             <div>
                                 <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/experiences.svg" alt="image not found" />
                             </div>
-                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Experiences</h2>
+                            <h2 class="heading5 text-colour1 mb-3 mb-md-2 mb-lg-3">Experiences</h2>
                             <p>Redeem for unique experiences, from thrilling adventure sports to serene cultural tours. Dive into new activities that enrich your travels and create lasting memories.</p>
                             <div>
                                 <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
@@ -133,7 +133,7 @@
                             <div>
                                 <img class="my-3 my-md-2 my-lg-3 icon" src="/Images/icons/redemption-icons/shop.svg" alt="image not found" />
                             </div>
-                            <h2 class="h5 heading-semibold text-colour1 mb-3 mb-md-2 mb-lg-3">Shop</h2>
+                            <h2 class="heading5 text-colour1 mb-3 mb-md-2 mb-lg-3">Shop</h2>
                             <p>Spend your points on a wide selection of products. From the latest electronics to trendy fashion, turn your loyalty into retail therapy.</p>
                             <div>
                                 <a href="/Shop.aspx?CategoryId=9149a75f-1f53-4ed7-b9b3-260b0fd6d606&ProductType=Physical&type=Shop" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
@@ -149,7 +149,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12 col-lg-10 offset-lg-1 text-center mb-4">
-                    <h2 class="h1 heading-semibold text-colour1 mb-3" data-i18n="home-shopthebest">Shop the Best Deals</h2>
+                    <h2 class="heading1 text-colour1 mb-3" data-i18n="home-shopthebest">Shop the Best Deals</h2>
                     <p data-i18n="home-maximize">
                         Maximize your NPoints with our handpicked selection of top deals in electronics, fashion, home essentials, and more.
                     </p>
@@ -164,7 +164,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12 col-lg-10 offset-lg-1 text-center mb-4">
-                    <h2 class="h1 heading-semibold text-colour6 mb-3" data-i18n="home-most-featured">Most Featured Vouchers</h2>
+                    <h2 class="heading1 text-colour6 mb-3" data-i18n="home-most-featured">Most Featured Vouchers</h2>
                     <p class="text-colour6" data-i18n="home-choose-from">Choose from over 5,000+ gift vouchers in our expansive Loyalty Program selection.</p>
                 </div>
             </div>
@@ -178,7 +178,7 @@
             <div class="row">
                 <div class="col-12 text-center mb-4">
                     <h2 class="h5 heading-regular text-uppercase mb-3" data-i18n="home-unlocking-rewards">Unlocking Rewards: Your Guide</h2>
-                    <h2 class="h1 heading-semibold mb-3" data-i18n="home-from-earning">From Earning to Redeeming: We've Got Answers</h2>
+                    <h2 class="heading2 mb-3" data-i18n="home-from-earning">From Earning to Redeeming: We've Got Answers</h2>
                     <p class="" data-i18n="home-navigating-our">
                         Navigating our rewards program is as fun as a rollercoaster ride.
 Here are answers to some common questions to ensure your journey is smooth and rewarding.

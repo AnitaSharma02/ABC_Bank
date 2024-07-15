@@ -194,7 +194,7 @@
             <ItemTemplate>
                 <div class="col-4 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-lightgray p-2">
+                        <div class="col-12 bg-colour3 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-flight">Flight</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -207,7 +207,7 @@
                 </div>
                 <div class="col-4 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-lightgray p-2">
+                        <div class="col-12 bg-colour3 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-depart">Depart</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -220,7 +220,7 @@
                 </div>
                 <div class="col-4 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-lightgray p-2">
+                        <div class="col-12 bg-colour3 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-arrive">Arrive</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -233,7 +233,7 @@
                 </div>
                 <div class="col-4 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-lightgray p-2">
+                        <div class="col-12 bg-colour3 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-departtime">Depart Time</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -247,7 +247,7 @@
                 </div>
                 <div class="col-4 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-lightgray p-2">
+                        <div class="col-12 bg-colour3 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-arrivetime">Arrive Time</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -261,7 +261,7 @@
                 </div>
                 <div class="col-4 col-sm-4 col-md-2">
                     <div class="row">
-                        <div class="col-12 bg-lightgray p-2">
+                        <div class="col-12 bg-colour3 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-aircraft">Aircraft Type</h2>
                         </div>
                         <div class="col-12 p-2">

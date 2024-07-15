@@ -64,6 +64,10 @@
 .dvRedemptionMenu .SelRedemption p {
     font-weight: bold;
 }
+.dvFlightSearch .dvInput.input-group .form-control[readonly], .dvFlightList .dvInput.input-group .form-control[readonly],
+.dvFlightSearch .dvInputGroup.input-group .form-control[readonly], .dvFlightList .dvInputGroup.input-group .form-control[readonly] {
+    background-color: var(--colour6);
+}
 /*active menu for flightsearch page*/
 /*=========[ FLIGHTSEARCH ]=========*/
 

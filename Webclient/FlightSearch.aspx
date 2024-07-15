@@ -755,7 +755,7 @@
                 <div class="container-lg">
                     <div class="row"> 
                         <div class="col-md-12">
-                            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <ul class="nav nav-pills d-none" id="pills-tab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active tab" id="pills-international-tab" data-toggle="pill" href="#pills-international" role="tab" aria-controls="pills-international" aria-selected="true" data-i18n="flightsearch-international">International Flight</a>
                                 </li>
@@ -853,7 +853,7 @@
                                                      </div>
     
                                                 </div>
-                                                <div class="row equal-col"> 
+                                                <div class="row"> 
                                                 <div class="col-12 d-none">
                                                     <div class="row">
                                                         <div class="col-6 mb-3">
@@ -896,7 +896,7 @@
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
                                                         <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-from-label">From</label>
-                                                        <div class="dvTextBoxFrom input-group">
+                                                        <div class="dvTextBoxFrom dvInputGroup input-group">
                                                             <input class="form-control" id="textBoxFrom" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                             <input type="hidden" id="hdntrip" value="true" />
                                                             <div class="input-group-append">
@@ -910,7 +910,7 @@
                                                           </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
                                                     <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-to-label">To</label>
-                                                    <div class="dvTextBoxTo input-group">
+                                                    <div class="dvTextBoxTo dvInputGroup input-group">
                                                         <input class="input form-control" id="textBoxTo" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
@@ -919,7 +919,7 @@
                                                     </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
                                                     <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-departure-label">Departure</label>
-                                                    <div class="input-group">
+                                                    <div class="dvInputGroup input-group">
                                                         <input id="txtDepart" class="input datePicker form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
@@ -928,7 +928,7 @@
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3" id="divrtn">
                                                     <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-return-label">Return</label>
-                                                    <div class="input-group">
+                                                    <div class="dvInputGroup input-group">
                                                         <input class="input datePicker form-control cal-icon pr-5" id="txtReturn" onfocus="placeholderOnFocus(this,'Enter Date');"
                                                         onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
@@ -938,19 +938,21 @@
                                                 </div>
                                                 <div class="col-sm-6 col-lg-4 selTravel mb-3 r- d-none">
                                                     <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-travel-class-label">Travel Class</label>
-                                                        <select class="form-control" id="dropDownListEconomy">
-                                                            <option value="Economy" selected="selected" data-i18n="flightsearch-travel-class-economy">Economy</option>
-                                                            <option value="Business" data-i18n="flightsearch-travel-class-business">Business</option>
-                                                            <option value="First" data-i18n="flightsearch-travel-class-first">First</option>
-                                                        </select>
+                                                         <div class="dvInput input-group">
+                                                            <select class="form-control" id="dropDownListEconomy">
+                                                                <option value="Economy" selected="selected" data-i18n="flightsearch-travel-class-economy">Economy</option>
+                                                                <option value="Business" data-i18n="flightsearch-travel-class-business">Business</option>
+                                                                <option value="First" data-i18n="flightsearch-travel-class-first">First</option>
+                                                            </select>
+                                                        </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
                                                         <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-airline-preference-label">Airline Preference</label>
-                                                        
+                                                         <div class="dvInput input-group">
                                                             <input type="hidden" id="hdnCarrier" />
                                                             <input class="input air-icon form-control" id="txtAirline" onfocus="placeholderOnFocus(this, 'All Airlines');"
                                                         onblur="placeholderOnFocus(this, 'All Airlines');" data-i18n="[value]flight-airline-preference-all" value="All Airlines" type="text" />
-                                                        
+                                                       </div> 
                                                     </div>
                                                 <div class="col-12">
                                                     <div class="row">

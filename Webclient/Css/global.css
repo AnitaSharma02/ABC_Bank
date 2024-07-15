@@ -606,9 +606,9 @@ animation: var(--updProgress-loader-animation);
     color: #fff;
 }
 
-.dvHeader .nav-link {
+/*.dvHeader .nav-link {
     padding: .75rem 1rem;
-}
+}*/
 /*=========[ HEADER ]=========*/
 
 /*=========[ FOOTER ]=========*/
@@ -1247,7 +1247,7 @@ li li.show > .dropdown-toggle:after {
 /* When the checkbox is checked */
 .dvLabel .checkbox-container input:checked ~ .checkmark {
   background-color: #2196f3;
-  background: url("/images/icons/checkmark.png") no-repeat center center var(--colour1);
+  background: url("/images/icons/arrows/checkmark.png") no-repeat center center var(--colour1);
   background-size: contain;
 }
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -1656,7 +1656,7 @@ select.form-control:focus {
 /* wrapper border */
 .dvRangeSlider .ui-widget.ui-widget-content {
   border: 0;
-  background-color: var(--colour7);
+  background-color: var(--colour3);
 }
 /* handle */
 .dvRangeSlider .ui-state-default,
@@ -1866,6 +1866,7 @@ select.form-control:focus {
   border: var(--filter-mobile-accordion-card-border);
 }
 .dvFilter.modal .accordion .card-header {
+  background-color:var(--filter-mobile-accordion-background);
   border-bottom: var(--filter-mobile-accordion-card-header-border-bottom);
   padding: var(--filter-mobile-accordion-card-header-padding);
 }
@@ -1948,7 +1949,7 @@ select.form-control:focus {
 
 /*=========[ BG GRAY STRIPE ]=========*/
 .dvProductList .bg-lightgray {
-  background-color: var(--colour2);
+    background-color: var(--bg-colour5);
 }
 /*=========[ BG GRAY STRIPE ]=========*/
 

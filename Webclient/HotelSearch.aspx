@@ -181,7 +181,7 @@
                                         <div class="col-12 col-md-6 col-lg mb-3 order-1">
                                             <input type="hidden" id="hdnRoomString" />
                                             <label class="h8 heading-semibold">City</label>
-                                            <div class="dvCP_txtCity input-group">
+                                            <div class="dvCP_txtCity dvInputGroup input-group">
                                                 <input id="CP_txtCity" class="form-control" onfocus="placeholderOnFocus(this,'Enter City Name');" onblur="placeholderOnFocus(this,'Enter City Name');" value="Enter City Name" type="text" />
                                                 <div class="input-group-append">
                                                     <span class="input-group-text bg-white">
@@ -192,7 +192,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3 order-2">
                                             <label class="h8 heading-semibold">Check-in</label>
-                                            <div class="input-group">
+                                            <div class="dvInputGroup input-group">
                                                 <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="CP_TextBoxCheckin" readonly="readonly" />
                                                 <div class="input-group-append">
                                                     <span class="input-group-text bg-white">
@@ -203,7 +203,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3 order-3">
                                             <label class="h8 heading-semibold">Check-out</label>
-                                            <div class="input-group">
+                                            <div class="dvInputGroup input-group">
                                                 <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="CP_TextBoxCheckout" readonly="readonly" />
                                                 <div class="input-group-append">
                                                     <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
@@ -212,7 +212,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3 order-4">
                                             <label class="h8 heading-semibold invisible-">Room(s)</label>
-                                            <div class="dvQty qtySelector form-control d-flex justify-content-end p-0 pr-lg-2">
+                                            <div class="dvInput dvQty qtySelector form-control d-flex justify-content-end p-0 pr-lg-2">
                                                 <span class="special-text">Rooms(s)</span>
                                                 <div class="d-flex align-items-center pr-0 w-120">
                                                     <div class="col-4 text-center px-0"><i role="button" class="fa fa-minus decreaseQty bg-colour2 border p-1 rounded HotelQynUpdateminus"></i></div>
