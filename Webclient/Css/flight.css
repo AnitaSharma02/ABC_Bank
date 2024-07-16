@@ -195,7 +195,7 @@
     }
 
     .dvFlightListDomestic .dvFlightInfo .border-right-md {
-        border-right: 1px solid #dee2e6 !important;
+        border-right: 1px solid var(--border-bottom-colour) !important;
     }
 }
 
@@ -204,12 +204,12 @@
     border-top: 0 !important;
     border-bottom: 0 !important;
   }
-  .dvFlightList .dvFlightInfo .dvInfo .border-right-lg {
-    border-right: 1px solid #dee2e6 !important;
-  }
-  .dvFlightList .dvFlightInfo .dvInfo .border-bottom-lg {
-    border-bottom: 1px solid #dee2e6 !important;
-  }
+    .dvFlightList .dvFlightInfo .dvInfo .border-right-lg {
+        border-right: 1px solid var(--border-bottom-colour) !important;
+    }
+    .dvFlightList .dvFlightInfo .dvInfo .border-bottom-lg {
+        border-bottom: 1px solid var(--border-bottom-colour) !important;
+    }
     .dvFlightSearch .dvDropdown .dropdown-menu-sm-right,
     .dvFlightList .dvDropdown .dropdown-menu-sm-right,
     .dvFlightListDomestic .dvDropdown .dropdown-menu-sm-right {
@@ -218,11 +218,11 @@
     }
 
     .dvFlightListDomestic .dvFlightInfo .dvInfo .border-right-lg {
-        border-right: 1px solid #dee2e6 !important;
+        border-right: 1px solid var(--border-bottom-colour) !important;
     }
 
     .dvFlightListDomestic .dvFlightInfo .dvInfo .border-bottom-lg {
-        border-bottom: 1px solid #dee2e6 !important;
+        border-bottom: 1px solid var(--border-bottom-colour) !important;
     }
 }
 

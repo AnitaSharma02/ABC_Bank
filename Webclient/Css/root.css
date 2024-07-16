@@ -422,8 +422,8 @@
     /*border-radius*/
     --modal-b-radius: var(--b-radius);
     /*modal-header*/
-    --modal-header-padding: 0.5rem 1rem 0.5rem 1rem;
-    --modal-header-bg-colour: var(--colour6);
+    --modal-header-padding: 0.75rem 1rem;
+    --modal-header-bg-colour: var(--colour5);
     --modal-header-align-items: center;
     --modal-header-border-bottom: none;
     /*modal-title*/
@@ -579,7 +579,7 @@
     --breadcrumb-bg: transparent;
     --breadcrumb-margin-bottom: 0;
     --breadcrumb-anchor-bg: transparent;
-    --breadcrumb-anchor-text-colour: var(--colour1);
+    --breadcrumb-anchor-text-colour: var(--colour7);
     --breadcrumb-anchor-bg-active: transparent;
     --breadcrumb-anchor-text-colour-active: var(--colour1);
     /*BOOTSTRAP PAGINATION*/

@@ -40,14 +40,14 @@
                             <div class="col-12 mb-3" id="divLogin">
                                 <div class="row">
                                     <div class="col-12 mb-3">
-                                        <label class="h6 heading-regular text-colour7" data-i18n="text-member-id">ID</label>
-                                        <div class="input-group">
+                                        <label class="label" data-i18n="text-member-id">ID</label>
+                                        <div class="dvInput input-group">
                                             <input type="text" class="form-control" autocomplete="off" id="txtMemberID" runat="server" value="" />
                                         </div>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <label class="h6 heading-regular text-colour7" data-i18n="text-password">Password:</label>
-                                        <div class="input-group">
+                                        <label class="label" data-i18n="text-password">Password:</label>
+                                        <div class="dvInputGroup input-group">
                                             <input type="password" runat="server" autocomplete="off" class="form-control" id="txtPassword" />
                                             <div class="input-group-append">
                                                 <span toggle="#CP_txtPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>

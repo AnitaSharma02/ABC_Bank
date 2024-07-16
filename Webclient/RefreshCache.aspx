@@ -40,8 +40,8 @@
                                 <asp:Label runat="server" ID="lblLoginError" Text="" CssClass="mt-3 h7 heading-regular text-colour7"></asp:Label>
                             </div>
                             <div class="col-12 mt-3">
-                                <asp:Label ID="lblCache" runat="server" Text="Cache"></asp:Label>
-                                <div class="input-group">
+                                <asp:Label ID="lblCache" CssClass="label" runat="server" Text="Cache"></asp:Label>
+                                <div class="dvInput input-group">
                                     <asp:DropDownList ID="ddlCache" runat="server" class="form-control">
                                         <asp:ListItem Text="All" Value="All" Selected="True"></asp:ListItem>
                                         <asp:ListItem Text="RefererSupplier" Value="RefererSupplier"></asp:ListItem>
@@ -54,14 +54,14 @@
                                 </div>
                             </div>
                             <div class="col-12 mt-3">
-                                <asp:Label ID="Label1" runat="server" Text="UserName"></asp:Label>
-                                <div class="input-group">
+                                <asp:Label ID="Label1" CssClass="label" runat="server" Text="UserName"></asp:Label>
+                                <div class="dvInput input-group">
                                     <asp:TextBox ID="txtUN" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-12 mt-3">
-                                <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-                                <div class="input-group">
+                                <asp:Label ID="Label2" CssClass="label" runat="server" Text="Password"></asp:Label>
+                                <div class="dvInput input-group">
                                     <asp:TextBox ID="txtPwd" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>

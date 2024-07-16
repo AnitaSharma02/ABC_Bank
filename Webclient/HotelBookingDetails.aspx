@@ -13,8 +13,8 @@
                     <li class="mr-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="HotelDetails.aspx"> Hotel Details</a></li>
-                    <li class="breadcrumb-item active">Hotel Booking Details</li>
+                    <li class="breadcrumb-item"><a href="HotelDetails.aspx"> Hotel Details</a></li>
+                    <li class="breadcrumb-item">Hotel Booking Details</li>
                 </ul>
             </nav>
         </div>
@@ -31,7 +31,7 @@
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="h5 heading-regular text-white bg rounded p-3">Personal Details</h2>
+                            <h2 class="h6 heading-semibold text-colour6 bg p-3">Personal Details</h2>
                         </div>
                         <div class="col-12">
                             <div style="display: none">
@@ -43,7 +43,7 @@
                             <div class="bg-lightgray p-3 mb-3">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <%--<label class="h8 heading-semibold">Title.</label>
+                                        <%--<label class="label">Title.</label>
            <div class="select">
              <div class="selectBtn form-control" data-type="firstOption">Select</div>
              <div class="selectDropdown">
@@ -52,15 +52,17 @@
                <div class="option" data-type="thirdOption">Mrs.</div>
              </div>
            </div>--%>
-                                        <label class="h8 heading-semibold">Title*</label>
-                                        <asp:DropDownList ID="ddlPersonalTitle" runat="server" CssClass="form-control">
-                                            <asp:ListItem Text="Mr." Value="0"></asp:ListItem>
-                                            <asp:ListItem Text="Ms." Value="1"></asp:ListItem>
-                                            <asp:ListItem Text="Mrs." Value="2"></asp:ListItem>
-                                        </asp:DropDownList>
+                                        <label class="label">Title*</label>
+                                        <div class="dvInput input-group">
+                                            <asp:DropDownList ID="ddlPersonalTitle" runat="server" CssClass="form-control">
+                                                <asp:ListItem Text="Mr." Value="0"></asp:ListItem>
+                                                <asp:ListItem Text="Ms." Value="1"></asp:ListItem>
+                                                <asp:ListItem Text="Mrs." Value="2"></asp:ListItem>
+                                            </asp:DropDownList>
+                                        </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <%--<label class="h8 heading-semibold">First Name</label>
+                                        <%--<label class="label">First Name</label>
            <div class="input-group mb-3">
              <input
                autocomplete="off"
@@ -70,8 +72,10 @@
                placeholder="First Name"
              />
            </div>--%>
-                                        <label class="h8 heading-semibold">First Name*</label>
-                                        <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label class="label">First Name*</label>
+                                        <div class="dvInput input-group">
+                                            <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </div>
                                         <asp:RequiredFieldValidator ControlToValidate="txtFirstName" Style=""
                                             CssClass="h8 heading-regular text-danger" ID="RequiredFieldValidator1"
                                             runat="server" ErrorMessage="Enter First Name" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -82,7 +86,7 @@
                                             CssClass="h8 heading-regular text-danger" ErrorMessage="Please Enter valid First Name."></asp:RegularExpressionValidator>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <%--<label class="h8 heading-semibold">Last Name</label>
+                                        <%--<label class="label">Last Name</label>
            <div class="input-group mb-3">
              <input
                autocomplete="off"
@@ -91,8 +95,10 @@
                class="form-control"
                placeholder="Last Name"
              />--%>
-                                        <label class="h8 heading-semibold">Last Name*</label>
-                                        <asp:TextBox ID="txtLastname" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label class="label">Last Name*</label>
+                                        <div class="dvInput input-group">
+                                            <asp:TextBox ID="txtLastname" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </div>
                                         <asp:RequiredFieldValidator ControlToValidate="txtLastname" CssClass="h8 heading-regular text-danger"
                                             ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter Last Name" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <asp:CustomValidator runat="server" ID="CustomValidatorLastName" CssClass="h8 heading-regular text-danger d-none"
@@ -103,7 +109,7 @@
 
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <%--<label class="h8 heading-semibold">City</label>
+                                        <%--<label class="label">City</label>
            <div class="input-group mb-3">
              <input
                autocomplete="off"
@@ -112,8 +118,10 @@
                class="form-control"
                placeholder="City"
              />--%>
-                                        <label class="h8 heading-semibold">City*</label>
-                                        <asp:TextBox ID="txtCity" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label class="label">City*</label>
+                                        <div class="dvInput input-group">
+                                            <asp:TextBox ID="txtCity" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </div>
                                         <asp:RequiredFieldValidator ControlToValidate="txtCity" CssClass="h8 heading-regular text-danger"
                                             ID="RequiredFieldValidator4" runat="server" ErrorMessage="Enter City" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="revtxtCity" Display="Dynamic" runat="server"
@@ -122,7 +130,7 @@
 
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <%--<label class="h8 heading-semibold">Country</label>
+                                        <%--<label class="label">Country</label>
            <div class="input-group mb-3">
              <input
                autocomplete="off"
@@ -131,8 +139,10 @@
                class="form-control"
                placeholder="Country"
              />--%>
-                                        <label class="h8 heading-semibold">Country*</label>
-                                        <asp:TextBox ID="txtCountry" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label class="label">Country*</label>
+                                        <div class="dvInput input-group">
+                                            <asp:TextBox ID="txtCountry" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </div>
                                         <asp:RequiredFieldValidator ControlToValidate="txtCountry" CssClass="h8 heading-regular text-danger"
                                             ID="RequiredFieldValidator5" runat="server" ErrorMessage="Enter Country" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="revtxtCountry" Display="Dynamic" runat="server"
@@ -141,7 +151,7 @@
 
                                     </div>
                                     <div class="col-md-6 d-none mb-3">
-                                        <%--<label class="h8 heading-semibold">Postal Code</label>
+                                        <%--<label class="label">Postal Code</label>
            <div class="input-group mb-3">
              <input
                autocomplete="off"
@@ -150,12 +160,14 @@
                class="form-control"
                placeholder="Postal Code"
              />--%>
-                                        <label class="h8 heading-semibold">State</label>
-                                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label class="label">State</label>
+                                        <div class="dvInput input-group">
+                                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </div>
 
                                     </div>
                                     <div class="col-md-6 d-none mb-3">
-                                        <%--<label class="h8 heading-semibold">Mobile (without country code)</label>
+                                        <%--<label class="label">Mobile (without country code)</label>
            <div class="input-group mb-3">
              <input
                autocomplete="off"
@@ -164,11 +176,13 @@
                class="form-control"
                placeholder="Mobile without country code"
              />--%>
-                                        <label class="h8 heading-semibold">Phone Number</label>
-                                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label class="label">Phone Number</label>
+                                        <div class="dvInput input-group">
+                                            <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <%--<label class="h8 heading-semibold">Email Id</label>
+                                        <%--<label class="label">Email Id</label>
            <div class="input-group mb-3">
              <input
                autocomplete="off"
@@ -177,17 +191,19 @@
                class="form-control"
                placeholder="Email Id"
              />--%>
-                                        <label class="h8 heading-semibold" class="txt-postal-code">Postal Code*</label>
-                                        <asp:TextBox ID="txtPostalCode" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label class="label txt-postal-code">Postal Code*</label>
+                                        <div class="dvInput input-group">
+                                            <asp:TextBox ID="txtPostalCode" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </div>
                                         <asp:RequiredFieldValidator ControlToValidate="txtPostalCode" CssClass="h8 heading-regular text-danger"
                                             ID="RequiredFieldValidator6" runat="server" ErrorMessage="Enter Postal Code"
                                             Display="Dynamic"></asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Enter Only Digits"
-                                            ControlToValidate="txtPostalCode" CssClass="h8 heading-regular text-danger" ValidationExpression="^[0-9]+$">
+                                            Display="Dynamic" ControlToValidate="txtPostalCode" CssClass="h8 heading-regular text-danger" ValidationExpression="^[0-9]+$">
                                         </asp:RegularExpressionValidator>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <%--<label class="h8 heading-semibold">Special Address</label>
+                                        <%--<label class="label">Special Address</label>
            <div class="input-group mb-3">
              <textarea
                autocomplete="off"
@@ -196,26 +212,32 @@
                class="form-control"
                placeholder="Special Address"
              ></textarea>--%>
-                                        <label class="h8 heading-semibold">Mobile No (without country code)*</label>
-                                        <asp:TextBox ID="txtMobileNo" runat="server" CssClass="form-control"> </asp:TextBox>
+                                        <label class="label">Mobile No (without country code)*</label>
+                                        <div class="dvInput input-group">
+                                            <asp:TextBox ID="txtMobileNo" runat="server" CssClass="form-control"> </asp:TextBox>
+                                        </div>
                                         <asp:RequiredFieldValidator ControlToValidate="txtMobileNo" CssClass="h8 heading-regular text-danger"
                                             ID="RequiredFieldValidator7" runat="server" ErrorMessage="Enter Mobile No" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Enter Only Digits"
-                                            ControlToValidate="txtMobileNo" CssClass="h8 heading-regular text-danger" ValidationExpression="^[0-9]+$"> </asp:RegularExpressionValidator>
+                                             Display="Dynamic" ControlToValidate="txtMobileNo" CssClass="h8 heading-regular text-danger" ValidationExpression="^[0-9]+$"> </asp:RegularExpressionValidator>
 
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label class="h8 heading-semibold">E-Mail Address*</label>
-                                        <asp:TextBox ID="txtEmailID" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <label class="label">E-Mail Address*</label>
+                                        <div class="dvInput input-group">
+                                            <asp:TextBox ID="txtEmailID" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </div>
                                         <asp:RequiredFieldValidator ControlToValidate="txtEmailID" ID="RequiredFieldValidator9"
                                             CssClass="h8 heading-regular text-danger" runat="server" ErrorMessage="Enter Email" Display="Dynamic"></asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Email Address not valid"
-                                            CssClass="h8 heading-regular text-danger" ControlToValidate="txtEmailID" ValidationExpression="^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"></asp:RegularExpressionValidator>
+                                            Display="Dynamic" CssClass="h8 heading-regular text-danger" ControlToValidate="txtEmailID" ValidationExpression="^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"></asp:RegularExpressionValidator>
 
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <label class="h8 heading-semibold">Special Request</label>
-                                        <asp:TextBox ID="txtSpecialRequest" runat="server" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
+                                        <label class="label">Special Request</label>
+                                        <div class="dvInput input-group">
+                                            <asp:TextBox ID="txtSpecialRequest" runat="server" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
+                                        </div>
                                     </div>
                                     <div class="col-12 mb-3">
                                         <div class="dvLabel">
@@ -260,8 +282,8 @@
                 <div class="col-lg-5">
                     <div class="row">
                         <div class="col-12">
-                            <div class="bg d-flex justify-content-between align-items-center rounded">
-                                <h2 class="h5 heading-regular text-white bg rounded p-3">Hotel Details</h2>
+                            <div class="bg d-flex justify-content-between align-items-center">
+                                <h2 class="h6 heading-semibold text-colour6 bg p-3">Hotel Details</h2>
                                 <a href="HotelResults.aspx?edit=1" class="btn btn-two mr-2">Edit</a>
                             </div>
                         </div>
@@ -269,8 +291,8 @@
                             <div class="bg-lightgray p-3">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="h5 heading-regular text-colour7"><asp:Label runat="server" class="" ID="lblHotelName"></asp:Label></h2>
-                                        <p class="heading-regular text-colour7">
+                                        <h2 class="h5 heading-regular text-colour7 mb-1"><asp:Label runat="server" class="h6 heading-semibold text-colour7" ID="lblHotelName"></asp:Label></h2>
+                                        <p class="h7 heading-regular text-colour7">
                                             <asp:Label class="" ID="lblAddress" runat="server"></asp:Label>
                                         </p>
                                     </div>

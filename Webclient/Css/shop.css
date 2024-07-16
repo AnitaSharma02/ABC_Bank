@@ -118,12 +118,32 @@
 /*=========[ SHOP Checkout]=========*/
 /*=========[ GiftCard Product Details]=========*/
 .dvVouchersPopup .form-group legend {
-    color: var(--text-colour7); 
-    font-size: 1.25rem;
+    color: var(--text-colour1); 
     font-family: var(--font-semibold);
+    position: absolute;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    padding: .65rem 1rem;
+    background: var(--text-colour5);
+    font-size: 1.25rem;
+}
+
+.dvVouchersPopup .close {
+    z-index: 99999;
+    position: absolute;
+    right: 1rem;
+    top: .75rem;
+    color: var(--text-colour1);
+    opacity: var(--modal-close-btn-opacity);
+}
+    .dvVouchersPopup .close i {
+        font-size: 1.1rem;
+    }
+.dvProductDetail .dvVouchersPopup fieldset .form-group:nth-child(2){
+    margin-top:3rem;
 }
 /*=========[ GiftCard Product Details]=========*/
-
 /*=========[ redeem ]=========*/
 .dvRedeem .image {
     border-radius: 50%;

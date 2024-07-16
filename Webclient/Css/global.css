@@ -650,10 +650,10 @@ animation: var(--updProgress-loader-animation);
 
 /*=========[ Login Forms ]=========*/
 .dvLoginBoxbg .innerBox {
-  /*overflow: hidden;*/
-  background: var(--colour6);
-  border: none;
-  border-radius: var(--b-radius) !important;
+    /*overflow: hidden;*/
+    /*background: var(--colour2);*/
+    border: 1px solid var(--border-colour);
+    border-radius: var(--b-radius) !important;
 }
 
 /*.dvLogin a {
@@ -1057,7 +1057,7 @@ animation: var(--updProgress-loader-animation);
 
 /*=========[ BORDER SEPARATOR ]=========*/
 .dvBorderBottom .border-bottom {
-  border-bottom: 1px solid var(--colour3) !important;
+  border-bottom: 1px solid var(--border-bottom-colour) !important;
 }
 /*=========[ BORDER SEPARATOR ]=========*/
 
@@ -1166,7 +1166,7 @@ animation: var(--updProgress-loader-animation);
   background-color: var(--breadcrumb-anchor-bg);
   color: var(--breadcrumb-anchor-text-colour);
 }
-.dvBreadcrumbs .breadcrumb li.active {
+.dvBreadcrumbs .breadcrumb:last-child li, .dvBreadcrumbs .breadcrumb li:last-child a{
   background-color: var(--breadcrumb-anchor-bg-active);
   color: var(--breadcrumb-anchor-text-colour-active);
 }

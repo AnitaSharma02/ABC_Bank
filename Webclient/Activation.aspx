@@ -77,8 +77,8 @@
                                         <div class="col-12 mb-3">
                                             <div class="row">
                                                 <div class="col-12 mb-3">
-                                                    <label class="h6 heading-semibold text-colour7" data-i18n="text-member-id">ID</label>
-                                                    <div class="input-group">
+                                                    <label class="label" data-i18n="text-member-id">ID</label>
+                                                    <div class="dvInput input-group">
                                                         <asp:TextBox ID="txtMemberId" autocomplete="off" runat="server" CssClass="form-control" onkeypress="var retValue = ActivationOTPOnEnter(event); event.returnValue = retValue; return retValue;"></asp:TextBox>
                                                     </div>
                                                 </div>

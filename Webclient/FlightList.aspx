@@ -177,8 +177,8 @@
                     <li class="mr-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="FlightSearch.aspx"> Flight Search</a></li>
-                    <li class="breadcrumb-item active">Flight List</li>
+                    <li class="breadcrumb-item"><a href="FlightSearch.aspx"> Flight Search</a></li>
+                    <li class="breadcrumb-item">Flight List</li>
                 </ul>
             </nav>
         </div>
@@ -189,8 +189,8 @@
                 <div class="dvFilter modal fade col-lg-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content border-0">
-                            <div class="modal-header d-lg-block p-0">
-                                 <div class="modal-title dvTotalRecords border p-3">
+                            <div class="modal-header border-0 d-lg-block p-0">
+                                 <div class="modal-title dvTotalRecords border-0 p-3">
                                     <p class="h6 heading-semibold text-colour1"><span data-i18n="flightlist-total">Total Flights Found</span> <span class="filter-text" id="lblNoofFlight"></span></p>
                                 </div>
                                 <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
@@ -214,7 +214,7 @@
                                         </div>
                                     </div>
                                     <div class="dvBorderBottom">
-                                        <div class="col-12">
+                                        <div class="">
                                             <div class="border-bottom my-3"></div>
                                         </div>
                                     </div>
@@ -236,7 +236,7 @@
                                         </div>
                                     </div>
                                     <div class="dvBorderBottom">
-                                        <div class="col-12">
+                                        <div class="">
                                             <div class="border-bottom my-3"></div>
                                         </div>
                                     </div>
@@ -253,7 +253,7 @@
                                         </div>
                                     </div>
                                     <div class="dvBorderBottom">
-                                        <div class="col-12">
+                                        <div class="">
                                             <div class="border-bottom my-3"></div>
                                         </div>
                                     </div>
@@ -273,7 +273,7 @@
                                         </div>
                                     </div>
                                     <div class="dvBorderBottom">
-                                        <div class="col-12">
+                                        <div class="">
                                             <div class="border-bottom my-3"></div>
                                         </div>
                                     </div>
@@ -294,7 +294,7 @@
                                         </div>
                                     </div>
                                     <div class="dvBorderBottom">
-                                        <div class="col-12">
+                                        <div class="">
                                             <div class="border-bottom my-3"></div>
                                         </div>
                                     </div>

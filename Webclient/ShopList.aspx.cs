@@ -202,10 +202,10 @@ public partial class ShopList : Page
                     + "<img src = \"{0}\">"
                     + "</div>"
                     + "<div class=\"d-flex flex-wrap bg-white p-2\">"
-                    + "<p class='h6 heading-bold text-truncate mb-1 w-100'>{1}</p>"
+                    + "<p class='h6 heading-semibold text-colour7 text-truncate mb-2 w-100'>{1}</p>"
                     + "{4}"
                     + "<p class=\"h8 heading-regular w-100 mt-auto\">{5}</p>"
-                    + "<p class=\"h7 heading-semibold w-100 pt-2\">{2}</p>"
+                    + "<p class=\"h7 heading-regular w-100 pt-0\">{2}</p>"
                     + "<p class=\"h7 heading-regular w-100 pt-1 mt-auto\"></p>"
                     + "</div>"
                     + "<div class=\"cart-button mt-0 px-2 d-flex justify-content-between align-items-center\">"
@@ -344,13 +344,13 @@ public partial class ShopList : Page
                     {
                         if (i == 0)
                         {
-                            filterHtml.Append(string.Format("<div id='{0}' class=\"card my-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-left\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapse1\"><span class=\"h6 heading-semibold text-colour7 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
-                            filterHtml.Append("<div id=\"collapse1-\" class=\"collapse-\" data-parent=\"#filter-accordion\"><div class=\"card-body scroll-ver px-3 pt-1 pb-2\">");
+                            filterHtml.Append(string.Format("<div id='{0}' class=\"card mb-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-left\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapse1\"><span class=\"h6 heading-semibold text-colour7 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
+                            filterHtml.Append("<div id=\"collapse1-\" class=\"collapse-\" data-parent=\"#filter-accordion\"><div class=\"card-body scroll-ver pr-3 pt-1 pb-2\">");
                         }
                         else
                         {
-                            filterHtml.Append(string.Format("<div id='{0}' class=\"card my-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-left collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapse2\" ><span class=\"h6 heading-semibold text-colour7 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
-                            filterHtml.Append("<div id=\"collapse2-\" class=\"collapse-\" data-parent=\"#filter-accordion\"><div class=\"card-body scroll-ver px-3 pt-1 pb-2\">");
+                            filterHtml.Append(string.Format("<div id='{0}' class=\"card mb-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-left collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapse2\" ><span class=\"h6 heading-semibold text-colour7 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
+                            filterHtml.Append("<div id=\"collapse2-\" class=\"collapse-\" data-parent=\"#filter-accordion\"><div class=\"card-body scroll-ver pr-3 pt-1 pb-2\">");
                         }
                         i++;
                         foreach (var item in filter.Items)
@@ -367,9 +367,9 @@ public partial class ShopList : Page
                                 + "<input class=\"form-check-input\" type=\"checkbox\" value=\"" + item.Value + "\" onchange='FilterProducts();return false;' id=\"" + item.Value + "\" " + lstrChecked + ">"
                                 + "<span class=\"checkmark\"></span>"
                                 + "</span>"
-                                + "<span class=\"d-inline-block ml-2\" for=\"flexCheckChecked\">" + textInfo.ToTitleCase(item.Label) + "</span>"
+                                + "<span class=\"heading-regular h7 d-inline-block ml-2\" for=\"flexCheckChecked\">" + textInfo.ToTitleCase(item.Label) + "</span>"
                                 + "</label>"
-                                + "<span class=\"d-inline-block ml-2\">" + item.Count + "</span>"
+                                + "<span class=\"heading-regular h7 d-inline-block ml-2\">" + item.Count + "</span>"
                                 + "</div>");
                         }
                         filterHtml.Append("</div></div></div></div><div class=\"dvBorderBottom\">\r\n<div class=\"col-12\">\r\n<div class=\"border-bottom my-3\"></div>\r\n</div>\r\n</div>");

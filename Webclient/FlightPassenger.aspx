@@ -39,8 +39,8 @@
                          <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                  </li>
                  <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                 <li class="breadcrumb-item active"><a href="flightlist.aspx"> Flight List</a></li>
-                 <li class="breadcrumb-item active">Flight Passenger</li>
+                 <li class="breadcrumb-item "><a href="flightlist.aspx"> Flight List</a></li>
+                 <li class="breadcrumb-item">Flight Passenger</li>
              </ul>
          </nav>
      </div>
@@ -116,7 +116,7 @@
                      <div class="col-12">
                         <div class="bg d-flex justify-content-between align-items-center">
                             <h2 class="h6 heading-semibold text-colour6 p-3" data-i18n="flightpassenger-itinerary">Itinerary</h2>
-                            <a href="FlightList.aspx?edit=1" data-i18n="flightpassenger-edit" class="btn btn-two m-1">Edit</a>
+                            <a href="FlightList.aspx?edit=1" data-i18n="flightpassenger-edit" class="btn btn-two mr-2">Edit</a>
                         </div>
                      </div>
                     <div class="col-12">

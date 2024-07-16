@@ -30,7 +30,7 @@
                     <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                 </li>
                 <li class="breadcrumb-item"><a href="\">Home</a></li>
-                <li class="breadcrumb-item active">Forgot Password</li>
+                <li class="breadcrumb-item">Forgot Password</li>
             </ul>
         </nav>
     </div>
@@ -54,8 +54,8 @@
                                      <div id="ForgotPasswordValidation" class="h6 heading-semibold text-colour1"></div>
                                  </div>
                                  <div class="col-12 mb-4">
-                                     <label data-i18n="text-member-id" class="text-colour7 heading-regular h6 mb-2">ID:</label>
-                                     <div class="input-group"> 
+                                     <label data-i18n="text-member-id" class="label">ID:</label>
+                                     <div class="dvInput input-group"> 
                                         <input type="text" class="form-control" id="txtMemberId" runat="server" />
                                      </div>
                                  </div>   
@@ -67,14 +67,14 @@
                         <div id="divForgotPassword" class="col-12" style="display: none;">
                             <div class="row">
                                 <div class="col-12 mb-3">
-                                    <label class="h8 heading-semibold" data-i18n="text-otp">OTP:</label>
-                                    <div class="input-group">
+                                    <label class="label" data-i18n="text-otp">OTP:</label>
+                                    <div class="dvInput input-group">
                                         <input type="password" class="form-control" id="txtOTP" runat="server" maxlength="4" /></div>
                                     </div>
                                 
                                 <div class="col-12 mb-3">
-                                    <label class="h8 heading-semibold" data-i18n="text-password">Password:</label>
-                                    <div class="input-group">
+                                    <label class="label" data-i18n="text-password">Password:</label>
+                                    <div class="dvInput input-group">
                                         <input type="password" class="form-control" id="txtPassword" runat="server" />
                                          <div class="input-group-append">
                                              <span toggle="#CP_txtPassword" class="input-group-text bg-white fa fa-solid fa-eye-slash toggle-password passwordShow"></span>
@@ -82,8 +82,8 @@
                                      </div>
                                 </div>
                                 <div class="col-12 mb-4">
-                                    <label class="h8 heading-semibold" data-i18n="vp-confirm-password">Confirm Password:</label>
-                                    <div class="input-group">
+                                    <label class="label" data-i18n="vp-confirm-password">Confirm Password:</label>
+                                    <div class="dvInput input-group">
                                         <input type="password" class="form-control" id="txtConfirmPassword" runat="server" />
                                         <div class="input-group-append">
                                             <span toggle="#CP_txtConfirmPassword" class="input-group-text bg-white fa fa-solid fa-eye-slash toggle-password passwordShow"></span>

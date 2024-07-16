@@ -61,7 +61,7 @@
                 <div class="dvProductInfo col-lg-8 col-xl-8">
                     <div class="dvInfo row mb-3 mt-4 mt-lg-0"">
                         <div class="col-12">
-                          <h2 class="h2 heading-light text-colour1 mb-1" id="spanProductName" runat="server"></h2>
+                          <h2 class="h3 heading-bold text-colour1 mb-2" id="spanProductName" runat="server"></h2>
                             <div id="ratings" runat="server"></div>
                           <h2 class="h5 heading-semibold text-colour7 mb-3"><span id="spanPoints" runat="server"></span></h2>
                         </div>
@@ -265,7 +265,7 @@
               </div>--%>
               <div class="modal-body">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <i class="fa-solid fa-xmark text-colour7"></i>
+                      <i class="fa-solid fa-xmark text-colour1"></i>
                   </button>
                   <div id="divDynamicContent">
                   </div>

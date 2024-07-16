@@ -140,7 +140,7 @@
                 <div class="col-auto d-lg-none order-lg-0">
                     <button class="navbar-toggler px-1" type="button" data-toggle="collapse" data-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 </div>
-                <div class="dvShopSerachBox px-0 col-6 col-lg-3 order-lg-2 ml-auto">
+                <div class="dvShopSerachBox px-3 px-lg-3 px-xl-0 col-6 col-lg-3 order-lg-2 ml-auto">
                     <div class="dvSearch">
                         <div class="dvTxtProductName input-group">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductName">

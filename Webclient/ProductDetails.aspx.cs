@@ -73,8 +73,8 @@ public partial class ProductDetails : Page
                                 lstrHtmlContent.Append("<ul class=\"breadcrumb px-0 py-3\">" +
                                     "<li class=\"mr-3\"><a href=\"\\\"><img class=\"\" src=\"images/icons/arrows/back-arrow.svg\"></a></</li>" +
                                     "<li class=\"breadcrumb-item\"><a href=\"Index.aspx\">Home</a></li>" +
-                                    "<li class=\"breadcrumb-item active\"><a href =\"Shop.aspx?CategoryId=" + lstrcategoryId + "&ProductType=Physical" + "\">Shop</a></li>" +
-                                    "<li class=\"breadcrumb-item active\">Product Detail</li>" +
+                                    "<li class=\"breadcrumb-item \"><a href =\"Shop.aspx?CategoryId=" + lstrcategoryId + "&ProductType=Physical" + "\">Shop</a></li>" +
+                                    "<li class=\"breadcrumb-item\">Product Detail</li>" +
                                     "</ul>");
                                 btnBack.HRef = "Shop.aspx?CategoryId=" + lstrcategoryId + "&ProductType=Physical";
                             }
@@ -87,8 +87,8 @@ public partial class ProductDetails : Page
                                 lstrHtmlContent.Append("<ul class=\"breadcrumb px-0 py-3\">" +
                                     "<li class=\"mr-3\"><a href=\"\\\"><img class=\"\" src=\"images/icons/arrows/back-arrow.svg\"></a></</li>" +
                                     "<li class=\"breadcrumb-item\"><a href=\"Index.aspx\">Home</a></li>" +
-                                    "<li class=\"breadcrumb-item active\"><a href =\"Shoplist.aspx?CategoryId=" + lstrcategoryId + "&ProductType=Digital" + "\">" + mainmenus[0].Name + "</a></li>" +
-                                    "<li class=\"breadcrumb-item active\">Product Detail</li>" +
+                                    "<li class=\"breadcrumb-item \"><a href =\"Shoplist.aspx?CategoryId=" + lstrcategoryId + "&ProductType=Digital" + "\">" + mainmenus[0].Name + "</a></li>" +
+                                    "<li class=\"breadcrumb-item\">Product Detail</li>" +
                                     "</ul>");
                                 btnBack.HRef = "Shoplist.aspx?CategoryId=" + lstrcategoryId + "&ProductType=Digital";
                             }
@@ -337,11 +337,11 @@ public partial class ProductDetails : Page
                         if (lobjProduct.VariationProperties.Find(lobj => lobj.Name.Equals("Value")).Value == denomination)
                         {
                             hfValue.Value = denomination;
-                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"denomination-btn btn btnDenominationChange w-100 selected\" onclick=\"DenominationChange('" + denomination + "', this)\">" + denomination + "</button></div>";
+                            lstrHtml += "<div class=\"col-6 col-sm-2 mb-3\"><button type=\"button\" class=\"denomination-btn btn btnDenominationChange w-100 selected\" onclick=\"DenominationChange('" + denomination + "', this)\">" + denomination + "</button></div>";
                         }
                         else
                         {
-                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"denomination-btn btn btnDenominationChange w-100\" onclick=\"DenominationChange('" + denomination + "', this)\">" + denomination + "</button></div>";
+                            lstrHtml += "<div class=\"col-6 col-sm-2 mb-3\"><button type=\"button\" class=\"denomination-btn btn btnDenominationChange w-100\" onclick=\"DenominationChange('" + denomination + "', this)\">" + denomination + "</button></div>";
                         }
                     }
                     lstrHtml += "</div>";

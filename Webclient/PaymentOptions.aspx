@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="bg-white text-center border p-3">
-                                    <p class="h6 heading-semibold mb-2 mb-2">Total Amount to be Paid</p>
+                                    <p class="h6 heading-bold mb-2 text-colour7">Total Amount to be Paid</p>
                                     <span class="h5 heading-bold" id="spanProductAmount"></span>
                                     <p class="h6 heading-regular my-3">Would you like to use your NPoints in this Purchase?</p>
                                     <div class="range-slider col-12 pt-5 pb-2 px-3">
@@ -36,19 +36,19 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-12">
-                                <p class="h6 heading-semibold mb-2">NPoints</p>
+                                <p class="h6 heading-bold mb-2 text-colour7">NPoints</p>
                                 <div class="bg-white d-flex flex-wrap py-3">
                                     <div class="col-12 col-sm-6 mb-3 mb-sm-0">
                                         <p class="">
-                                            <span class="h6 heading-semibold d-inline-block mr-2">Balance:</span>
-                                            <span class="h6 heading-semibold d-inline-block" id="lblLoyaltypoints"></span>
+                                            <span class="h6 heading-bold text-colour7 d-inline-block mr-2">Balance:</span>
+                                            <span class="h6 heading-bold text-colour7 d-inline-block" id="lblLoyaltypoints"></span>
                                             <input type="hidden" name="name" id="hndActualProductPoints" value="0" />
                                         </p>
                                     </div>
                                     <div class="col-12 col-sm-6">
-                                        <p class="h6 heading-semibold">
-                                            <span class="h6 heading-semibold d-inline-block mr-2">NPoints</span>
-                                            <span class="h6 heading-semibold d-inline-block" id="lblSelectedpoints">0</span>
+                                        <p class="h6 heading-semibold text-lg-right">
+                                            <span class="h6 heading-bold text-colour7 d-inline-block mr-2">NPoints</span>
+                                            <span class="h6 heading-bold text-colour7 d-inline-block" id="lblSelectedpoints">0</span>
                                             <input type="hidden" name="name" id="hndSelectedRedeemPoints" value="0" />
                                         </p>
                                     </div>

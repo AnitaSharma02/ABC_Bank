@@ -84,8 +84,8 @@
                     <li class="mr-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="HotelResults.aspx"> Hotel Results</a></li>
-                    <li class="breadcrumb-item active">Hotel Details</li>
+                    <li class="breadcrumb-item"><a href="HotelResults.aspx"> Hotel Results</a></li>
+                    <li class="breadcrumb-item">Hotel Details</li>
                 </ul>
             </nav>
         </div>
@@ -132,7 +132,7 @@
                 <div class="dvHotelInfo col-md-6 mb-3">
                     <div class="row mb-3">
                         <div class="col-12">
-                            <h2 id="HotelName" class="h2 heading-light text-colour1"></h2>
+                            <h2 id="HotelName" class="heading2 text-colour1"></h2>
                             <p>
                                 <span id="HotelAddress"></span>
                                 <span id="HotelCity"></span>
@@ -212,7 +212,7 @@
 
             <div class="row pt-5 dvSimilarListing">
                 <div class="col-12 mb-3 text-center">
-                    <h2 class="h2 heading-light text-colour1">Similar Listing</h2>
+                    <h2 class="h2 heading-semibold text-colour1">Similar Listing</h2>
                 </div>
                 <div id="NextHotelList" class="col-12">
                 </div>

@@ -163,11 +163,7 @@
 
     </script>
 
-   
-
-
-   
-        <div class="dvHotelSearch pb-5" id="hotelscrollupAnchor">
+   <div class="dvHotelSearch pb-5" id="hotelscrollupAnchor">
             <div class="container-lg">
                 <div class="row">
                     <div class="col-12">

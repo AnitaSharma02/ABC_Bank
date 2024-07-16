@@ -190,7 +190,7 @@
                 else if (type === 'Lounges') {
                     $('.dvProductList ').addClass('dvLoungesPage');
                 }
-                else if (type === 'Milesexchange') {
+                else if (type === 'MilesExchange') {
                     $('.dvProductList ').addClass('dvMilesExchangePage');
                 }
                 else if (type === 'Offers') {
@@ -382,12 +382,12 @@
 
 
             <!-- dvLogoutModal -->
-            <div class="modal fade" id="dvLogoutModal" tabindex="-1">
+            <div class="dvCommonModal modal fade" id="dvLogoutModal" tabindex="-1">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="heading-semibold text-colour6">Logout</h5>
-                    <button type="button" class="close text-colour6" data-dismiss="modal">
+                    <h5 class="heading-semibold text-colour1">Logout</h5>
+                    <button type="button" class="close text-colour1" data-dismiss="modal">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>

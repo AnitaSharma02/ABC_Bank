@@ -72,8 +72,8 @@
                   <li class="mr-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                   </li>
                   <li class="breadcrumb-item"><a href="\">Home</a></li>
-                  <li class="breadcrumb-item active"><a href="HotelSearch.aspx"> Hotel Search</a></li>
-                  <li class="breadcrumb-item active">Hotel Results</li>
+                  <li class="breadcrumb-item"><a href="HotelSearch.aspx"> Hotel Search</a></li>
+                  <li class="breadcrumb-item">Hotel Results</li>
               </ul>
           </nav>
       </div>
@@ -95,8 +95,8 @@
                 <div class="dvFilter modal fade col-lg-3" id="dvFilterModal" tabindex="-1">
                     <div id="divSearch" class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content border-0">
-                             <div class="modal-header d-lg-block p-0">
-                                <div class="modal-title dvTotalRecords p-3">
+                             <div class="modal-header border-0 d-lg-block p-0">
+                                <div class="modal-title dvTotalRecords border-0 p-3">
                                     <p id="totalHotel" class="h6 heading-semibold text-colour1">
                                         Total <span>Hotels</span> found <span>0</span>
                                     </p>
@@ -107,9 +107,9 @@
                               </div>
                              <div class="modal-body p-lg-0">
                                 <div class="accordion" id="filter-accordion">
-                                    <div class="card">
+                                    <div class="card my-3">
                                         <div class="card-header p-0">
-                                            <h2 class="pt-3">
+                                            <h2>
                                                 <button
                                                     class="btn btn-block text-left"
                                                     type="button"
@@ -134,14 +134,14 @@
                                     </div>
 
                                     <div class="dvBorderBottom">
-                                        <div class="col-12">
+                                        <div class="">
                                             <div class="border-bottom"></div>
                                         </div>
                                     </div>
 
-                                    <div class="card">
+                                    <div class="card my-3">
                                         <div class="card-header p-0">
-                                            <h2 class="pt-3">
+                                            <h2>
                                                 <button
                                                     class="btn btn-block text-left h6 heading-semibold text-colour7"
                                                     type="button"
@@ -171,14 +171,14 @@
                                     </div>
 
                                     <div class="dvBorderBottom">
-                                        <div class="col-12">
+                                        <div class="">
                                             <div class="border-bottom"></div>
                                         </div>
                                     </div>
 
-                                    <div class="card">
+                                    <div class="card my-3">
                                         <div class="card-header p-0">
-                                            <h2 class="pt-3">
+                                            <h2>
                                                 <button
                                                     class="btn btn-block text-left h6 heading-semibold"
                                                     type="button"
@@ -309,14 +309,14 @@
                                     </div>
 
                                     <div class="dvBorderBottom">
-                                        <div class="col-12">
+                                        <div class="">
                                             <div class="border-bottom"></div>
                                         </div>
                                     </div>
 
-                                    <div class="card">
+                                    <div class="card my-3">
                                         <div class="card-header p-0">
-                                            <h2 class="pt-3">
+                                            <h2>
                                                 <button
                                                     class="btn btn-block text-left h6 heading-semibold"
                                                     type="button"
@@ -347,15 +347,15 @@
                                     </div>
 
                                     <div class="dvBorderBottom">
-                                        <div class="col-12">
+                                        <div class="">
                                             <div class="border-bottom"></div>
                                         </div>
                                     </div>
 
 
-                                    <div class="card">
+                                    <div class="card my-3">
                                         <div class="card-header p-0">
-                                            <h2 class="pt-3">
+                                            <h2>
                                                 <button
                                                     class="btn btn-block text-left h6 heading-semibold"
                                                     type="button"
@@ -410,7 +410,7 @@
                 <div class="col-lg-9">
                     <div class="row">
                         <div class="dvModify col-12 mb-3">
-                            <div class="bg-colour2 d-flex flex-wrap justify-content-between align-items-center py-2 px-2 px-lg-3 mb-1">
+                            <div class="bg-colour2 d-flex flex-wrap justify-content-between align-items-center py-2 py-lg-1 px-2 px-lg-3 mb-1">
                                 <button
                                     data-toggle="modal"
                                     data-target="#dvFilterModal"
@@ -419,7 +419,7 @@
                                     Filter
                                 </button>
                                 <p class="heading-regular col-auto col-lg-10 px-0">
-                                    <asp:Label CssClass="Content_Style" runat="server" ID="lblSearchSummary"></asp:Label>
+                                    <asp:Label CssClass="Content_Style h6 heading-regular text-colour7 col-auto px-0 mb-2 mb-lg-0" runat="server" ID="lblSearchSummary"></asp:Label>
                                     <%--<a href="#modify_search" class="btn btn-yellow" id="btnModify" data-toggle="collapse" data-i18n="flightlist-modify">Modify</a>--%>
                                     <%--<a class="purple-btn" id="btnfliter" data-i18n="button-filters">Filters</a>--%>
                                 </p>
