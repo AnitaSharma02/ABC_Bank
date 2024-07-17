@@ -220,7 +220,7 @@ public partial class Index : Page
                 List<Category> listOfCategories = model.SearchCategories();
                 if (listOfCategories != null && listOfCategories.Count > 0)
                 {
-                    listOfCategories = listOfCategories.FindAll(lobj => lobj.ParentId.IsNullOrEmpty() && lobj.IsActive && lobj.Name.ToLower() == "gift cards");
+                    listOfCategories = listOfCategories.FindAll(lobj => lobj.Name == "Giftcards");
                     //listOfCategories = listOfCategories.FindAll(lobj => lobj.ParentId.IsNullOrEmpty() && lobj.IsActive && lobj.Name.ToLower() == "vouchers");
                     try
                     {
@@ -251,7 +251,7 @@ public partial class Index : Page
                                 List<string> offers = item.Value.Split('|').ToList();
                                 if (offers[0].ToLower().Contains("giftcards"))
                                 {
-                                    var idName = offers[offers.Count - 1].ToLower() == "featured offers" ? "featured_offers" : "top_offerBox";
+                                    var idName = offers[offers.Count - 1].ToLower() == "featured giftcards" ? "featured giftcards" : "top_offerBox";
                                    
                                     Terms.Add("Tags:" + offers[0]);
                                   
