@@ -329,7 +329,7 @@
     /* SWIPER ARROWS */
     /* Both pagination and arrows cannot be displayed in the vertical center at the same time, so disable one of them. */
     --arrow-disabled-opacity: 0.3;
-    --display-swiper-buttons: none;
+    --display-swiper-buttons: block;
     /*swiper fontawesome icon arrows*/
     --arrow-prev-left-position: 30px;
     --arrow-prev-right-position: auto;
@@ -351,7 +351,7 @@
     --custom-arrow-image-width: 40px;
     /* SWIPER PAGINATION */
     /* Both pagination and arrows cannot be displayed in the vertical center at the same time, so disable one of them. */
-    --display-swiper-pagination: block;
+    --display-swiper-pagination: none;
     /* swiper pagination */
     --pagination-bg: var(--colour6);
     --pagination-border: var(--colour1);

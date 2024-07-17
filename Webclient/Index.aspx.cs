@@ -261,6 +261,7 @@ public partial class Index : Page
                                     index++;
                                     if (searchResult != null && searchResult.Products != null && searchResult.Products.Count > 0)
                                     {
+                                        sb.Append("<div class=\"swiper row\">");
                                         sb.Append("<div class=\"swiper-wrapper pb-3\">");
                                         foreach (var product in searchResult.Products)
                                         {                                          
@@ -269,24 +270,23 @@ public partial class Index : Page
                                             {
                                                 pstrProductType = "digital";
                                             }
-                                            sb.Append(string.Format("<div class=\"swiper-slide shadow-sm\"><a  href=\"ProductDetails.aspx?ProductId={4}&ProductType={2}\"><div class=\"img-container\"><img src=\"{0}\"  alt=\"\" /></div><div class=\"bg-white d-flex flex-column p-2\"><div class=\"d-flex justify-content-between\"><h2 class=\"h6 heading-bold text-truncate mb-2\">{1}</h2><p class=\"h8 heading-regular\">{2}</p></div><p class=\"h8 heading-semibold\">{3}</p></div></a></div>", product.PrimaryImage.Url, product.Name, pstrProductType, lobjModel.FormatPoints(Math.Ceiling(product.Price.SalePriceWithTax.Amount), "NPoints"), product.Id));                                            
+                                            sb.Append(string.Format("<div class=\"swiper-slide shadow-sm\"><a class=\" bg-colour6 d-block\" href=\"ProductDetails.aspx?ProductId={4}&ProductType={2}\"><div class=\"img-container\"><img src=\"{0}\"  alt=\"\" /></div><div class=\"bg-white d-flex flex-column p-2\"><p class=\"h6 heading-semibold text-colour7 text-truncate mb-2 w-100\">{1}</p><p class=\"h8 heading-regular\">{2}</p><p class=\"h7 heading-regular text-colour7 text-truncate pt-2\">{3}</p></div></a></div>", product.PrimaryImage.Url, product.Name, pstrProductType, lobjModel.FormatPoints(Math.Ceiling(product.Price.SalePriceWithTax.Amount), "NPoints"), product.Id));                                            
                                         }
-                                        sb.Append(" <div class=\"swiper-buttons\">");
-                                        sb.Append("<div class=\"d-flex justify-content-center\">");
-                                        sb.Append(" <div class=\"swiper-button-prev\">");
+                                        sb.Append("</div>");//swiper wrapper close 
+                                        sb.Append("<div class=\"swiper-buttons\">");
+                                        sb.Append("<div class=\"swiper-button-prev\">");
                                         sb.Append("<img src=\"images/icons/arrows/left-yellow-arrow-2.svg\" alt=\"\" />");
                                         sb.Append("</div>");
                                         sb.Append("<div class=\"swiper-button-next\">");
                                         sb.Append("<img src=\"images/icons/arrows/right-yellow-arrow-2.svg\" alt=\"\" />");
                                         sb.Append("</div>");
-                                        sb.Append("</div>");
-                                        sb.Append("</div>");
-                                        sb.Append("</div>");
-                                        sb.Append("<div class=\"d-flex justify-content-between align-items-center mt-4\">");
-                                        sb.Append(string.Format("<a href=\"ShopList.aspx?CategoryId={0}&ProductType=digital\" class=\"btn btn-one\" data-i18n=\"index-view-all\">View All</a>", categoryId));
+                                        sb.Append("</div>");//swiper buttons close
+                                        sb.Append("</div>");//swiper row close
+                                        sb.Append("<div class=\"d-flex justify-content-start align-items-center mt-4\">");
+                                        sb.Append(string.Format("<a href=\"ShopList.aspx?CategoryId={0}&ProductType=digital\" class=\"btn btn-two\" data-i18n=\"index-view-all\">View All</a>", categoryId));
                                         sb.Append("</div>");
                                     }
-                                    
+
                                 }
                                 result += sb.ToString();
 

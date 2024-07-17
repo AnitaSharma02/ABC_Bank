@@ -103,9 +103,9 @@ public partial class Cart : Page
                 for (int i = 0; i < lobjShoppingCart.ItemsCount; i++)
                 {
                     lstrHtmlContent += "<div class=\"row align-items-center justify-content-between\"><div class=\"pr-0 col-3 col-sm-2 col-lg-1\"><div class=\"img-container\"><img class=\"\" src=\"" + lobjShoppingCart.Items[i].ImageUrl + "\"/></div></div>"
-                        + "<div class=\"col-9 col-sm-7 col-lg-6 col-xl-7\"> <p class=\"heading-regular\"><span>Product:</span> " + "<span class=\"h6 heading-bold\">" + lobjShoppingCart.Items[i].Name + "</span></p>" + " </div>"
+                        + "<div class=\"col-9 col-sm-7 col-lg-6 col-xl-6\"> <p class=\"heading-regular\"><span>Product:</span> " + "<span class=\"h6 heading-bold\">" + lobjShoppingCart.Items[i].Name + "</span></p>" + " </div>"
                         + "<div class=\"col-12 col-sm-3 col-lg-2 my-1\"> <p class=\"heading-regular d-md-flex align-items-center\"><span class=\"pb-1 d-inline-block mr-1\" data-i18n=\"shopcart-qty\">Qty: </span> " + " <span class=\"heading-bold\"> <input class=\"form-control\"id=\"" + lobjShoppingCart.Items[i].ProductId + "\" type=\"text\" value=\"" + lobjShoppingCart.Items[i].Quantity + "\" onchange=\"var varReturn = UpdateLineItemQty('" + lobjShoppingCart.Items[i].ProductId + "','" + lobjShoppingCart.Items[i].MinQuantity + "','" + lobjShoppingCart.Items[i].MaxQuantity + "','" + lobjShoppingCart.Items[i].ProductType + "',this.value);event.returnValue = varReturn; (event.preventDefault) ? event.preventDefault() : event.returnValue = false; return varReturn;\"/> </span></p></div>"
-                        + "<div class=\"col-12 col-lg-3 col-xl-2\">"
+                        + "<div class=\"col-12 col-lg-3 col-xl-3\">"
                         + "<div class=\"row align-items-center justify-content-sm-end\">"
                         + "<div class=\"col-9 col-sm-auto\"> <p class=\"heading-bold\">" + "<span class=\"heading-regular\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Items[i].Price.SalePriceWithTax.Amount), "NPoints") + " </span>" + "</p></div>"
                         + "<div class=\"col-3 col-sm-auto text-right cart\">"
@@ -142,7 +142,7 @@ public partial class Cart : Page
                 }
                 lstrHtmlContent += "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"heading-regular\" data-i18n=\"shopcart-subtotal\">Sub-Total</p></div> <div class=\"col-6 col-md-3 text-right\"><p class=\"heading-regular\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.SubTotal.Amount), "NPoints") + "</p></div></div>"
                          + "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"heading-regular\" data-i18n=\"shopcart-shipping\">Shipping</p></div> <div class=\"col-6 col-md-3 text-right\"><p class=\"heading-regular\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.ShippingPrice.Amount), "NPoints") + "</p></div></div>"
-                         + "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"heading-regular\" data-i18n=\"shopcart-subtotal\">Total</p></div> <div class=\"col-6 col-md-3 text-right\"><p class=\"heading-regular\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.Total.Amount), "NPoints") + "</p></div></div>";
+                         + "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"heading-bold\" data-i18n=\"shopcart-subtotal\">Total</p></div> <div class=\"col-6 col-md-3 text-right\"><p class=\"heading-bold\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.Total.Amount), "NPoints") + "</p></div></div>";
                // lstrHtmlContent += "</tbody></table>";
             }
             else

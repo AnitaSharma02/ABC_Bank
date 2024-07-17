@@ -168,7 +168,7 @@
                     <p class="text-colour6" data-i18n="home-choose-from">Choose from over 5,000+ gift vouchers in our expansive Loyalty Program selection.</p>
                 </div>
             </div>
-            <div class="dvVoucherSlider swiper row" id="dvVoucherSlider">
+            <div class="dvVoucherSlider " id="dvVoucherSlider">
             </div>
         </div>
     </div>
@@ -348,7 +348,7 @@ Here are answers to some common questions to ensure your journey is smooth and r
                 var vouchersHTML = '<%=HttpContext.Current.Application["Vouchers"]%>';
                 if (vouchersHTML != '') {
                     $("#dvVoucherSlider").html(vouchersHTML);
-                    const voucherSlider = new Swiper(".dvVoucherSlider.swiper", {
+                    const voucherSlider = new Swiper(".dvVoucherSlider .swiper", {
                         direction: "horizontal",
                         loop: false,
                         speed: 500,
@@ -395,7 +395,7 @@ Here are answers to some common questions to ensure your journey is smooth and r
                             if (msg.d != '') {
                                 $("#dvVoucherSlider").show();
                                 $("#dvVoucherSlider").html(msg.d);
-                                const voucherSlider = new Swiper(".dvVoucherSlider.swiper", {
+                                const voucherSlider = new Swiper(".dvVoucherSlider .swiper", {
                                     direction: "horizontal",
                                     loop: false,
                                     speed: 500,

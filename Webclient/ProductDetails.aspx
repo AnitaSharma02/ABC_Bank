@@ -61,9 +61,9 @@
                 <div class="dvProductInfo col-lg-8 col-xl-8">
                     <div class="dvInfo row mb-3 mt-4 mt-lg-0"">
                         <div class="col-12">
-                          <h2 class="h3 heading-bold text-colour1 mb-2" id="spanProductName" runat="server"></h2>
+                          <h2 class="h5 heading-bold text-colour7 mb-2" id="spanProductName" runat="server"></h2>
                             <div id="ratings" runat="server"></div>
-                          <h2 class="h5 heading-semibold text-colour7 mb-3"><span id="spanPoints" runat="server"></span></h2>
+                          <h2 class="h6 heading-semibold text-colour7 mb-3"><span id="spanPoints" runat="server"></span></h2>
                         </div>
                     </div>
                     <div class="dvAdd row mb-4">

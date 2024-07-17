@@ -127,7 +127,7 @@ public partial class Shop : Page
                                 {
                                     pstrProductType = "digital";
                                 }
-                                sb.Append(string.Format("<div class='swiper-slide shadow-sm'><a href='ProductDetails.aspx?ProductId={2}&ProductType={5}'> <div class='img-container'><img style='width:100%;' src='{0}' /></div> <div class='bg-white d-flex flex-column p-2'><p class='card-text'> <p class='h6 heading-semibold text-colour7 text-truncate col-12 mb-2' >{1}</p> {4} </p> <p class='h8 heading-regular'>{5}</p>  <p class='h7 heading-regular text-colour7 text-truncate pt-2'>{3}</p> </div> </a></div>"
+                                sb.Append(string.Format("<div class='swiper-slide shadow-sm'><a href='ProductDetails.aspx?ProductId={2}&ProductType={5}'> <div class='img-container'><img style='width:100%;' src='{0}' /></div> <div class='bg-white d-flex flex-column p-2'><p class='card-text'> <p class='h6 heading-semibold text-colour7 text-truncate mb-2' >{1}</p> {4} </p> <p class='h8 heading-regular'>{5}</p>  <p class='h7 heading-regular text-colour7 text-truncate pt-2'>{3}</p> </div> </a></div>"
                                     , product.PrimaryImage.Url, product.Name, product.Id, lobjModel.FormatPoints(Math.Ceiling(product.Price.SalePriceWithTax.Amount), "NPoints"), string.Format("<div class='starRat'>{0}</div>", starratings), pstrProductType));
                             }
                             sb.Append("</div>");
