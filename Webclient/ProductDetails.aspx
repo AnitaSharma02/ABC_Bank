@@ -69,9 +69,25 @@
                     <div class="dvAdd row mb-4">
                         <div class="dvAddToCart col-12">
                             <div class="row">
-                                <div class="form-group col-12 col-sm-6" id="divQuantity" runat="server">
+                                <div class="form-group col-12 col-sm-3" id="divQuantity" runat="server">
                                      <h2 class="h6 heading-regular text-colour7 mb-2" data-i18n="quantity">Quantity</h2>
-                                        <div class="row align-items-center">
+                                      <div class="dvPlusMinusButtons">                                            
+                                          <div class="input-group">
+                                              <div class="input-group-prepend">
+                                                  <button type="button" class="btn btn-one" data-type="minus" data-field="" onclick="quantityMinus()">
+                                                      <i class="fa fa-minus"></i>
+                                                  </button>
+                                              </div>
+                                              <span id="qtyRealtime" runat="server" style="display: none;" />
+                                              <input type="text" class="form-control text-center text-colour7" runat="server" id="quantity" name="quantity" strp="1" readonly="readonly" min="1" max="100" value="1" />
+                                              <div class="input-group-append">
+                                                  <button type="button" class="btn btn-one" data-type="plus" data-field="" onclick="quantityPlus()">
+                                                      <i class="fa fa-plus"></i>
+                                                  </button>
+                                              </div>
+                                          </div>
+                                      </div>
+                                       <%-- <div class="row align-items-center">
                                           <div class="plus col-auto pr-0">
                                             <button type="button" class="btn btn-addtocart p-0" data-type="minus" data-field="" onclick="quantityMinus()">
                                               <i class="fa fa-minus"></i>
@@ -85,7 +101,7 @@
                                               <i class="fa fa-plus"></i>
                                             </button>
                                           </div>
-                                       </div>
+                                       </div>--%>
                                 </div>
                                  <div class="form-group col-12 col-sm-6">
                                      <label id="lbldivPoints" runat="server" class="h6 heading-regular text-colour7 mb-2" data-i18n="text-total-points">Total NPoints</label>

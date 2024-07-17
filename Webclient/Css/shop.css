@@ -16,7 +16,7 @@
 }*/
 
 .dvShopPage .dvBg1 {
-    background-color: var(--bg-colour3);
+    background-color: var(--bg-colour2);
     padding: 1rem 0;
 }
 .dvShopPage .dvBg0 {
@@ -34,12 +34,12 @@
 }
 .dvProductInfo #CP_CPSHOP_divspanpoints {
     width: 150px;
-    padding: 12px;
+    padding: 8px;
     background-color: var(--bg-colour2);
 }
-.dvProductInfo .input-group .btn {
+/*.dvProductInfo .input-group .btn {
     background-color: var(--bg-colour2);
-}
+}*/
 /*.dvDetails .card-body {
     padding: 0 1.25rem;
 }*/
@@ -110,10 +110,13 @@
     width: 30px;
     height: 30px;
     text-align: center;
-    line-height: 30px;
+    line-height: 15px;
 }
 .dvShopCheckout .bg-lightgray {
     background-color: var(--bg-colour2);
+}
+.dvShopCheckout .dvInput.input-group .form-control:disabled, .dvShopCheckout .dvInputGroup.input-group .form-control:disabled {
+    background-color: var(--colour6);
 }
 /*=========[ SHOP Checkout]=========*/
 /*=========[ GiftCard Product Details]=========*/

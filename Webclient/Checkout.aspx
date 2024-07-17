@@ -35,8 +35,8 @@
                                  <form class="needs-validation" novalidate>
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
-                                            <label for="firstName" data-i18n="flightpassenger-first">First name</label>
-                                             <div class="input-group">
+                                            <label class="label" for="firstName" data-i18n="flightpassenger-first">First name</label>
+                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="firstName" placeholder="" value="" />
                                              </div>
                                             <div class="invalid-feedback" data-i18n="shopcheckout-validfname">
@@ -44,8 +44,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label for="lastName" data-i18n="flightpassenger-last">Last name</label>
-                                             <div class="input-group">
+                                            <label class="label" for="lastName" data-i18n="flightpassenger-last">Last name</label>
+                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="lastName" placeholder="" value="" />
                                              </div>
                                             <div class="invalid-feedback" data-i18n="shopcheckout-validlname">
@@ -55,8 +55,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
-                                            <label for="email" data-i18n="flightpassenger-email">Email </label>
-                                              <div class="input-group">
+                                            <label class="label" for="email" data-i18n="flightpassenger-email">Email </label>
+                                              <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="email" placeholder="you@example.com" />
                                               </div>
                                             <div class="invalid-feedback" data-i18n="shopcheckout-validemail">
@@ -64,8 +64,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label for="email" data-i18n="shopcheckout-validphone">Phone</label>
-                                            <div class="input-group">
+                                            <label class="label" for="email" data-i18n="shopcheckout-validphone">Phone</label>
+                                            <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="phone" placeholder="9876543210" maxlength="15" />
                                             </div>
                                             <div class="invalid-feedback" data-i18n="shopcheckout-validphoneno">
@@ -75,8 +75,8 @@
                                     </div>
                                     <div class="row">
                                         <div class=" col-md-6 mb-3">
-                                            <label for="address" data-i18n="shopcheckout-address">Address</label>
-                                            <div class="input-group">
+                                            <label class="label" for="address" data-i18n="shopcheckout-address">Address</label>
+                                            <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="address" placeholder="1234 Main St" />
                                             </div>
                                             <div class="invalid-feedback" data-i18n="shopcheckout-shipping">
@@ -84,16 +84,16 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label for="address2" data-i18n="shopcheckout-addressoptional">Address 2 (Optional)</label>
-                                            <div class="input-group">
+                                            <label class="label" for="address2" data-i18n="shopcheckout-addressoptional">Address 2 (Optional)</label>
+                                            <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4 mb-3">
-                                            <label for="country" data-i18n="shopcheckout-country">Country</label>
-                                            <div class="input-group">
+                                            <label class="label" for="country" data-i18n="shopcheckout-country">Country</label>
+                                            <div class="dvInput input-group">
                                                 <select class="form-control custom-select d-block w-100" id="country" disabled>
                                                 <option value="">Choose...</option>
                                                 <option value="KE">Kenya</option>
@@ -352,8 +352,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <label for="state" data-i18n="shopcheckout-city">City</label>
-                                            <div class="input-group">
+                                            <label class="label" for="state" data-i18n="shopcheckout-city">City</label>
+                                            <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="city" placeholder="" />
                                             </div>
                                             <div class="invalid-feedback" data-i18n="shopcheckout-cityrequired">
@@ -361,8 +361,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <label for="zip" data-i18n="shopcheckout-zip">Zip</label>
-                                            <div class="input-group">
+                                            <label class="label" for="zip" data-i18n="shopcheckout-zip">Zip</label>
+                                            <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="zip" placeholder="" />
                                             </div>
                                             <div class="invalid-feedback" data-i18n="shopcheckout-ziprequired">

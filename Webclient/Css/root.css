@@ -108,7 +108,7 @@
     --body-bg-colour: var(--colour6);
     --body-text-colour: var(--colour7);
     /* PLACEHOLDERS */
-    --placeholder-text-colour: red;
+    --placeholder-text-colour: var(--colour8);
     --placeholder-font-size: .875rem;
     --placeholder-disabled-bg-colour: #eee;
     --placeholder-disabled-text-colour: #ccc;
@@ -381,7 +381,7 @@
     --filter-mobile-accordion-border: 1px solid transparent;
     --filter-mobile-accordion-card-border: 1px solid transparent;
     --filter-mobile-accordion-card-header-border-bottom: none;
-    --filter-mobile-accordion-background:transparent;
+    --filter-mobile-accordion-background: transparent;
     --filter-mobile-accordion-card-header-padding: 0;
     --filter-mobile-accordion-card-header-btn-border: 1px solid transparent;
     --filter-mobile-accordion-card-header-btn-padding: 0.5rem 0;
