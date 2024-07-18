@@ -29,13 +29,15 @@
                 <div class="dvFilter modal fade col-lg-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content border-0">
-                            <div class="modal-body p-lg-0">
-                                <button type="button" class="close d-lg-none" data-dismiss="modal">
-                                    <span>&times;</span>
-                                </button>
-                                <div class="dvTotalRecords p-3 bg-lightgray">
+                            <div class="modal-header border-0 d-lg-block p-0">
+                                <div class="modal-title dvTotalRecords border-0 p-3">
                                     <p class="h6 heading-semibold text-colour1"><span data-i18n="shopproddetails-totalrecord">Total Records found</span> <span id="spnTotalCount"></span></p>
                                 </div>
+                                <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
+                                   <i class="fa-solid fa-xmark"></i>
+                                </button>
+                              </div>
+                            <div class="modal-body p-lg-0">
                                 <div class="accordion" id="filter-accordion">
                                     <div id="divFilters" runat="server">
                                        <%-- <div class="card"></div>

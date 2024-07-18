@@ -680,15 +680,15 @@
                                                     <div class="img-container">
                                                         <img src="<%#Eval("basicinfo.thumbnailimage")%>" alt="Image not Available" />
                                                     </div>
-                                                    <div class="d-flex flex-wrap bg-white p-2">
-                                                        <h2 class="h6 heading-semibold text-colour7 text-truncate col-12 mb-2"><%#Eval("basicinfo.hotelname")%></h2>
-                                                        <h2 class="h7 heading-regular text-colour7 text-truncate col-6 order-1 mt-auto">
+                                                    <div class="bg-white d-flex flex-column p-2">
+                                                        <p class="h6 heading-semibold text-colour7 text-truncate mb-2"><%#Eval("basicinfo.hotelname")%></p>
+                                                        <p class="h7 heading-regular text-colour7 text-truncate order-1 mt-auto">
                                                             <asp:Label ID="lblmiles" runat="server"></asp:Label>
                                                             <asp:Label ID="Label1" runat="server" class="">Points</asp:Label>
-                                                        </h2>
-                                                        <h2
-                                                            class="h7 heading-regular text-colour7 text-truncate col-6 order-2 mt-auto text-right d-none">Physical
-                                                        </h2>
+                                                        </p>
+                                                        <p
+                                                            class="h7 heading-regular text-colour7 text-truncate order-2 mt-auto text-right d-none">Physical
+                                                        </p>
                                                     </div>
                                                     <asp:HiddenField ID="hdnHotelID" runat="server" Value='<%#Eval("HotelID")%>' />
                                                     <div class="rating d-none" rating='<%#Eval("basicinfo.hotelratings.HotelRating[0].rating")%>'>
