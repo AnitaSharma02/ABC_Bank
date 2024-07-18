@@ -218,7 +218,7 @@
                          
                                 <div class="row">
                                   <div class="col-12 d-flex justify-content-between">
-                                    <span data-i18n="flightpassenger-total-points" class="h6 heading-semibold text-colour7" >Total NPoints: </span>
+                                    <span data-i18n="flightpassenger-total-points" class="h6 heading-semibold text-colour7" >Total Points: </span>
                                     <asp:Label ID="lblTotalPoints" runat="server" CssClass="h6 heading-semibold text-colour7" />
                                   </div>
                                 </div>

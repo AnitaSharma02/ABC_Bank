@@ -19,7 +19,7 @@
                                 <div class="bg-white text-center border p-3">
                                     <p class="h6 heading-bold mb-2 text-colour7">Total Amount to be Paid</p>
                                     <span class="h5 heading-bold" id="spanProductAmount"></span>
-                                    <p class="h6 heading-regular my-3">Would you like to use your NPoints in this Purchase?</p>
+                                    <p class="h6 heading-regular my-3">Would you like to use your Points in this Purchase?</p>
                                     <div class="range-slider col-12 pt-5 pb-2 px-3">
                                         <input type="text" readonly style="border: 0; color: #f6931f; font-weight: bold;" data-value="$37">
                                         <div id="slider-range-min">
@@ -30,13 +30,13 @@
                                             <p class="h6 heading-regular" id="slidermaxvalue"></p>
                                         </div>
                                     </div>
-                                    <p class="h6 heading-regular my-3">Move the slider to use your NPoints for this purchase</p>
+                                    <p class="h6 heading-regular my-3">Move the slider to use your Points for this purchase</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-12">
-                                <p class="h6 heading-bold mb-2 text-colour7">NPoints</p>
+                                <p class="h6 heading-bold mb-2 text-colour7">Points</p>
                                 <div class="bg-white d-flex flex-wrap py-3">
                                     <div class="col-12 col-sm-6 mb-3 mb-sm-0">
                                         <p class="">
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <p class="h6 heading-semibold text-lg-right">
-                                            <span class="h6 heading-bold text-colour7 d-inline-block mr-2">NPoints</span>
+                                            <span class="h6 heading-bold text-colour7 d-inline-block mr-2">Points</span>
                                             <span class="h6 heading-bold text-colour7 d-inline-block" id="lblSelectedpoints">0</span>
                                             <input type="hidden" name="name" id="hndSelectedRedeemPoints" value="0" />
                                         </p>
@@ -69,7 +69,7 @@
                     <%-- <div class="spinner col-12 text-center mt-5" style="display: none;">
      <p class="text mb-3">
          Please wait..<br />
-         loading your ABSHER NPoints
+         loading your ABSHER Points
      </p>
      <img src="/images/loader/spinner.svg" alt="Spinner" id="spinner" class="img-fluid" />
  </div>--%>
@@ -187,7 +187,7 @@
                         var Point = parseInt(msg.d)
                         if (Point > 0) {
 
-                            $("#lblLoyaltypoints").html(Point.toLocaleString("en-US") + " NPoints");
+                            $("#lblLoyaltypoints").html(Point.toLocaleString("en-US") + " Points");
                             $("#hndLoyaltyPoints").val(msg.d);
                             $("#updProgress").hide();
                             //$(".spinner").hide();

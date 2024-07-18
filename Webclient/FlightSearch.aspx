@@ -530,7 +530,7 @@
                                                                     <label class="h8 heading-semibold text-colour7 checkbox-container d-flex">
                                                                         <span class="d-inline-block ml-1">
                                                                             <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
-                                                                            <span data-i18n="flight-redeem-pts-label">Redeem NPoints</span>
+                                                                            <span data-i18n="flight-redeem-pts-label">Redeem Points</span>
                                                                             <span class="checkmark" style="top:2px;"></span>
                                                                         </span>
                                                                    </label>
@@ -745,7 +745,7 @@
                                                 Singapore, officially the Republic of Singapore, is a sovereign island city-state in maritime Southeast Asia.
                                             </p>
                                               <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
-                                                  <span data-i18n="flightsearch-from">From</span> 1,234 <span data-i18n="flightsearch-points">NPoints</span>
+                                                  <span data-i18n="flightsearch-from">From</span> 1,234 <span data-i18n="flightsearch-points">Points</span>
                                               </h2>
                                            </div> 
                                       </div>
@@ -763,7 +763,7 @@
                                                     Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces
                                                 </p>
                                                 <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
-                                                    <span data-i18n="flightsearch-from">From</span> 4,500 <span data-i18n="flightsearch-points">NPoints</span>
+                                                    <span data-i18n="flightsearch-from">From</span> 4,500 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                              </div> 
                                         </div>
@@ -781,7 +781,7 @@
                                                     Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.
                                                 </p>
                                                 <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
-                                                    <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">NPoints</span>
+                                                    <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                              </div> 
                                         </div>
@@ -799,7 +799,7 @@
                                                     New Zealand is an island country in the south western Pacific Ocean. It consists of two main landmasses
                                                 </p>
                                                 <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
-                                                   <span data-i18n="flightsearch-from">From</span> 5,300 <span data-i18n="flightsearch-points">NPoints</span>
+                                                   <span data-i18n="flightsearch-from">From</span> 5,300 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                             </div> 
                                         </div>
@@ -817,7 +817,7 @@
                                                    London, the capital of England and the United Kingdom, is a 21st-century city with history stretching
                                                 </p>
                                                 <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
-                                                     <span data-i18n="flightsearch-from">From</span> 6,000 <span data-i18n="flightsearch-points">NPoints</span>
+                                                     <span data-i18n="flightsearch-from">From</span> 6,000 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                             </div> 
                                         </div>
@@ -835,7 +835,7 @@
                                                     Dubai is the most populous city in the UAE and the capital of the Emirate of Dubai,
                                                 </p>
                                                 <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
-                                                    <span data-i18n="flightsearch-from">From</span> 3,000 <span data-i18n="flightsearch-points">NPoints</span>
+                                                    <span data-i18n="flightsearch-from">From</span> 3,000 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                             </div> 
                                         </div>
@@ -853,7 +853,7 @@
                                                    Zürich is the largest city in Switzerland and the capital of the canton of Zürich.
                                                 </p>
                                                 <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
-                                                    <span data-i18n="flightsearch-from">From</span> 4,000 <span data-i18n="flightsearch-points">NPoints</span>
+                                                    <span data-i18n="flightsearch-from">From</span> 4,000 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                             </div> 
                                         </div>
@@ -871,7 +871,7 @@
                                                     Goa, a state on India's West coast, is a former Portuguese colony with a rich history.
                                                 </p>
                                                 <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
-                                                    <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">NPoints</span>
+                                                    <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                             </div> 
                                         </div>

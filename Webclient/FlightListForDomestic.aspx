@@ -447,7 +447,7 @@
                                         <div class="d-none">
                                             <label class="h8 heading-semibold d-flex align-items-center">
                                                 <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
-                                                <span class="ml-2 h8 heading-semibold" data-i18n="flight-redeem-pts-label">Redeem NPoints</span>
+                                                <span class="ml-2 h8 heading-semibold" data-i18n="flight-redeem-pts-label">Redeem Points</span>
                                             </label>
                                         </div>
                                         <button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="purple-btn Search hvr-sweep-to-right" value=" Search " data-i18n="flight-search-btn">Search Flight</button>
@@ -536,7 +536,7 @@
                                 <div class="row">
                                     <div class="col-md-6 col-6 valignM">
                                         <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
-                                        <label class="chkbox-txt-redeem-points" data-i18n="flight-redeem-pts-label">Redeem NPoints</label>
+                                        <label class="chkbox-txt-redeem-points" data-i18n="flight-redeem-pts-label">Redeem Points</label>
                                     </div>
                                     <div class="col-md-6 col-6 searchBtn">
                                         <%--<button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="purple-btn Search hvr-sweep-to-right" value=" Search " data-i18n="flight-search-btn">Search Flight</button>--%>
@@ -551,7 +551,7 @@
                             <p>
                                 <span class="h7 heading-semibold d-block">Note:</span>
                                 <span class="h7 heading-regular d-block">All timings are local. Fare not guaranteed until ticketed.</span>
-                                <span class="h7 heading-regular d-block">NIC Asia NPoints displayed for redemption include Surcharges and Taxes.</span>
+                                <span class="h7 heading-regular d-block">NIC Asia Points displayed for redemption include Surcharges and Taxes.</span>
                                 <span class="heading-semibold d-inline-block pt-2 text-danger" id="divInsufficient"></span>
                             </p>
                         </div>

@@ -78,12 +78,14 @@
     font-size: 0.75rem;
     font-family: var(--heading-semibold);
 }
-
+.dvProductDetail .dvProductInfo .dvAddToCart .form-control:disabled, 
+.dvProductDetail .dvProductInfo .dvAddToCart .form-control[readonly] {
+    background:var(--colour6)
+}
 /*Giftcard,lounges, etc. Userdetails Modal Popup*/
-
 /*=========[ SHOP Product Details ]=========*/
 /*=========[ SHOP List ]=========*/
-.dvProductList .dvFilter.modal .accordion .card-header, 
+.dvProductList .dvFilter.modal .accordion .card-header,
 .dvProductList .dvFilter.modal .accordion .card-header button {
     border-bottom: 1px solid transparent;
 }

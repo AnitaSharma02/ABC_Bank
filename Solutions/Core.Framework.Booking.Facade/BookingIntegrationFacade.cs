@@ -252,7 +252,7 @@ namespace Core.Framework.Booking.Facade
                                 dynamicCls.to_email = pobjMemberDetails.Email;
                                 dynamicCls.full_name = pobjMemberDetails.FullName;
                                 dynamicCls.TransactionReferenceCode = lobjItineraryDetails.ItineraryReference;
-                                dynamicCls.PaymentDetails = FloatToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints)+ " NPoints";
+                                dynamicCls.PaymentDetails = FloatToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints)+ " Points";
                                 dynamicCls.GDSPNR = strGDSPNR;
                                 dynamicCls.TblPassengerInfo = strPaxInfo;
                                 dynamicCls.Class = strClass;
@@ -772,7 +772,7 @@ namespace Core.Framework.Booking.Facade
                                 dynamicCls.phone = pobjHotel.basicinfo.communicationinfo.phone;
                                 dynamicCls.fax = pobjHotel.basicinfo.communicationinfo.fax;
                                 dynamicCls.starrating = pobjHotel.basicinfo.starrating;
-                                dynamicCls.TotalPoints= FloatToThousandSeperated(pobjHotel.roomrates.RoomRate[0].TotalPoints) +" NPoints";
+                                dynamicCls.TotalPoints= FloatToThousandSeperated(pobjHotel.roomrates.RoomRate[0].TotalPoints) +" Points";
                                 dynamicCls.roomdescription=pobjHotel.roomrates.RoomRate[0].roomtype.roomdescription;
                                 dynamicCls.SpecialRequest=pobjHotel.SpecialRequest;
                                 dynamicCls.to_mobile = pobjMemberDetails.MobileNumber;
@@ -2233,7 +2233,7 @@ namespace Core.Framework.Booking.Facade
                     int pintTotalPoints = Convert.ToInt32(pobjListVoucherDetails[i].Value / lobjProgramCurrencyDefinition.VoucherRate);
                     lobjRedemptionDetails.Points = pintTotalPoints;
                     lobjRedemptionDetails.Amount = pobjListVoucherDetails[i].Value;
-                    LoggingAdapter.WriteLog("DoOtherRedemption Request Amount " + lobjRedemptionDetails.Amount + " NPoints - " + lobjRedemptionDetails.Points + " RelationReference -  " + pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference + " Currency - " + lobjRedemptionDetails.Currency);
+                    LoggingAdapter.WriteLog("DoOtherRedemption Request Amount " + lobjRedemptionDetails.Amount + " Points - " + lobjRedemptionDetails.Points + " RelationReference -  " + pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference + " Currency - " + lobjRedemptionDetails.Currency);
                     strRedeemMilesResponse = lobjPGHelper.DoOtherRedemption(lobjRedemptionDetails.Amount, lobjRedemptionDetails.Amount, lobjRedemptionDetails.Points, string.Empty, string.Empty, pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword, "Redemption InfiVoucher", Convert.ToInt32(RelationType.LBMS), Convert.ToInt32(LoyaltyTxnType.InfiVoucher), lobjRedemptionDetails.Currency, lstrMerchantId, lstrMerchantUserName, lstrMerchantPassword);
                     LoggingAdapter.WriteLog(" DoOtherRedemption Response - " + strRedeemMilesResponse);
                     if (strRedeemMilesResponse != string.Empty)

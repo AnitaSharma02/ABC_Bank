@@ -81,11 +81,11 @@ public partial class HotelVoucher : System.Web.UI.Page
                         {
                             if (i.Equals(0))
                             {
-                                lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, " NPoints: ", lobjModel.FloatToThousandSeperated(lobjBookingResponse.BookingPaymentDetails.BookingPaymentBreakageList[i].Amount));
+                                lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, " Points: ", lobjModel.FloatToThousandSeperated(lobjBookingResponse.BookingPaymentDetails.BookingPaymentBreakageList[i].Amount));
                             }
                             else
                             {
-                                lstrPaymentDetails += string.Format(lstrPaymentDetailsHTML, " NPoints: ", lobjModel.FloatToThousandSeperated(lobjBookingResponse.BookingPaymentDetails.BookingPaymentBreakageList[i].Amount));
+                                lstrPaymentDetails += string.Format(lstrPaymentDetailsHTML, " Points: ", lobjModel.FloatToThousandSeperated(lobjBookingResponse.BookingPaymentDetails.BookingPaymentBreakageList[i].Amount));
                             }
                         }
 
@@ -93,7 +93,7 @@ public partial class HotelVoucher : System.Web.UI.Page
                     if (lobjBookingResponse.BookingPaymentDetails.BookingPaymentBreakageList.Count == 0)
                     {
                         ABCModel verveModel = new ABCModel();
-                        lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML,  " NPoints: ", lobjModel.FloatToThousandSeperated(lobjBookingResponse.BookingPaymentDetails.Points));
+                        lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML,  " Points: ", lobjModel.FloatToThousandSeperated(lobjBookingResponse.BookingPaymentDetails.Points));
                     }
                     divPaymentDetails.InnerHtml = lstrPaymentDetails;
                     divTotalMiles.InnerHtml = lstrPaymentDetails;

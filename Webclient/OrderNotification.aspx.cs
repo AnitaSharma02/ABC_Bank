@@ -65,33 +65,33 @@ public partial class OrderNotification : Page
                                     {
                                         lstrHtmlContent += "<tr style=\"background-color:#ebecee; text-align:center\">"
                                                         + "<td style=\"padding:0.6em 0.4em; text-align:left\">" + customerOrder.Items[i].Name + "</td>"
-                                                        + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Items[i].Price.ListPrice.Amount), "NPoints") + "</td>"
+                                                        + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Items[i].Price.ListPrice.Amount), "Points") + "</td>"
                                                         + "<td style=\"padding:0.6em 0.4em; text-align:center\">" + customerOrder.Items[i].Quantity + "</td>"
-                                                        + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Items[i].Price.ExtendedPrice.Amount), "NPoints") + "</td>"
+                                                        + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Items[i].Price.ExtendedPrice.Amount), "Points") + "</td>"
                                                         + "</tr>";
                                     }
                                     lstrHtmlContent += "<tr style=\"text-align:right\">"
                                                     + "<td></td>"
                                                     + "<td colspan=\"2\" style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>Sub-Total:</strong></td>"
-                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Price.SubTotal.Amount), "NPoints") + "</strong></td>"
+                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Price.SubTotal.Amount), "Points") + "</strong></td>"
                                                     + "</tr>"
 
                                                     + "<tr style=\"text-align:right\">"
                                                     + "<td></td>"
                                                     + "<td colspan = \"2\" style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>Shipping:</strong></td>"
-                                                    + "<td style = \"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Price.ShippingTotal.Amount), "NPoints") + "</strong></td>"
+                                                    + "<td style = \"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Price.ShippingTotal.Amount), "Points") + "</strong></td>"
                                                     + "</tr>"
 
                                                     + "<tr style=\"text-align:right\">"
                                                     + "<td></td>"
                                                     + "<td colspan = \"2\" style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>Tax:</strong></td>"
-                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Price.TaxTotal.Amount), "NPoints") + "</strong></td>"
+                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Price.TaxTotal.Amount), "Points") + "</strong></td>"
                                                     + "</tr>"
 
                                                     + "<tr style=\"text-align:right\">"
                                                     + "<td></td>"
                                                     + "<td colspan=\"2\" style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>Order Total:</strong></td>"
-                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Price.Total.Amount), "NPoints") + "</strong></td>"
+                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(customerOrder.Price.Total.Amount), "Points") + "</strong></td>"
                                                     + "</tr>"
 
                                                     + "</tbody>"
@@ -131,7 +131,7 @@ public partial class OrderNotification : Page
                                     dynamicCls.order_details = lstrHtmlContent;
                                     dynamicCls.order_shipping_details = customerOrder.ShippingAddress;
                                     dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
-                                    dynamicCls.point_issued = lobjModel.FormatPoints(Math.Ceiling(customerOrder.Price.Total.Amount), "NPoints");
+                                    dynamicCls.point_issued = lobjModel.FormatPoints(Math.Ceiling(customerOrder.Price.Total.Amount), "Points");
                                     Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
                                     IDictionary<string, object> dict = (IDictionary<string, object>)dynamicCls;
                                     foreach (var key in dict)
@@ -225,7 +225,7 @@ public partial class OrderNotification : Page
                                                 dynamicCls.to_email = lobjMemberDetails.Email;
                                                 dynamicCls.full_name = lobjMemberDetails.FullName;
                                                 dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
-                                                dynamicCls.point_issued = lobjModel.FormatPoints(lobjTransactionDetails.Points,"NPoints");
+                                                dynamicCls.point_issued = lobjModel.FormatPoints(lobjTransactionDetails.Points,"Points");
                                                 dynamicCls.order_no = customerOrder.Number;
                                                 DateTime ldtCreatedDate = DateTime.Parse(Convert.ToString(customerOrder.CreatedDate));
                                                 dynamicCls.order_date = Convert.ToString(ldtCreatedDate.ToLocalTime());

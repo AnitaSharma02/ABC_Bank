@@ -139,7 +139,7 @@
                         <li class="d-block">
                             <div class="text-center">
                                 <h3 class="h3 heading-semibold text-white">
-                                    <span id="totAvbPointDiv" data-i18n="account-total-points">Total NPoints</span>
+                                    <span id="totAvbPointDiv" data-i18n="account-total-points">Total Points</span>
                                     <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-white"></span>
                                 </h3>
                             </div>
@@ -166,7 +166,7 @@
                         <span class="ml-2" id="spnMemberName"></span>
                     </h2>
                     <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
-                        <span id="totAvbPointDiv">Total NPoints</span>
+                        <span id="totAvbPointDiv">Total Points</span>
                         <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-colour1">0</span>
                     </h2>
                     <a
@@ -196,7 +196,7 @@
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                    <li class="breadcrumb-item" data-i18n="bread-my-account">My Account</li>
+                     <li class="breadcrumb-item" ><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
                     <li class="breadcrumb-item active" data-i18n="bread-transaction">Transaction Summary</li>
                 </ul>
             </nav>
@@ -285,7 +285,7 @@
                                                 <div class="col-12 col-sm-6">
                                                     <h2 class="h6 heading-bold text-capitalize text-colour7"><%#Eval("LoyaltyTxnType").ToString()=="Bonus"?"Bonus":Eval("MerchantName")%></h2>
                                                     <h2 class="h6 heading-regular text-capitalize">
-                                                        <%#Eval("TransactionType").ToString() =="Debit" ?"Redeemed NPoints":"Earned NPoints"%>
+                                                        <%#Eval("TransactionType").ToString() =="Debit" ?"Redeemed Points":"Earned Points"%>
                                                         <span class="h6 heading-bold text-colour7"><%#Eval("Points")%></span>
                                                     </h2>
                                                     <h2 class="h6 heading-regular text-capitalize">Amount Paid

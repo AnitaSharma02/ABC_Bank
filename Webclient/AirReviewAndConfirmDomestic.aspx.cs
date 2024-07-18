@@ -65,7 +65,7 @@ public partial class AirReviewAndConfirmDomestic : System.Web.UI.Page
                     {
                         btnBookNow.Enabled = false;
                         divError.Style.Add("display", "block");
-                        lblError.Text = "You need " + Convert.ToDouble(lobjCreateDomesticBookingResponse.CreditsConsumed).ToString() + " NPoints to book this flight. Your available NPoints is " + Convert.ToDouble(Session["MemberMiles"]).ToString() + ".";
+                        lblError.Text = "You need " + Convert.ToDouble(lobjCreateDomesticBookingResponse.CreditsConsumed).ToString() + " Points to book this flight. Your available Points is " + Convert.ToDouble(Session["MemberMiles"]).ToString() + ".";
                     }
 
                 }

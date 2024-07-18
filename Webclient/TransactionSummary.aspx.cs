@@ -125,7 +125,7 @@ public partial class TransactionSummary : System.Web.UI.Page
                 }
                 dataTable.Columns["MerchantName"].ColumnName = "Description";
                 dataTable.Columns["Amounts"].ColumnName = "Amount";
-                dataTable.Columns["Points"].ColumnName = "NPoints";
+                dataTable.Columns["Points"].ColumnName = "Points";
                 dataTable.Columns["LoyaltyTxnType"].ColumnName = "Transaction Type";
                 base.Response.Clear();
                 base.Response.Buffer = true;
@@ -303,11 +303,11 @@ public partial class TransactionSummary : System.Web.UI.Page
                     }
                     if (transactionDetails.TransactionType.ToString() == "Debit")
                     {
-                        sb.Append("<h2 class='h6 heading-regular text-capitalize'>" + "Redeemed NPoints "+ "<span class='h6 heading-bold text-colour7'>" + transactionDetails.Points + "</span></h2>");
+                        sb.Append("<h2 class='h6 heading-regular text-capitalize'>" + "Redeemed Points "+ "<span class='h6 heading-bold text-colour7'>" + transactionDetails.Points + "</span></h2>");
                     }
                     else
                     {
-                        sb.Append("<h2 class='h6 heading-regular text-capitalize'>" + "Earned NPoints " + "<span class='h6 heading-bold text-colour7'>" + transactionDetails.Points + "</span></h2>");
+                        sb.Append("<h2 class='h6 heading-regular text-capitalize'>" + "Earned Points " + "<span class='h6 heading-bold text-colour7'>" + transactionDetails.Points + "</span></h2>");
                     }
                     sb.Append("<h2 class='h6 heading-regular text-capitalize'>Amount Paid<span class='h6 heading-bold text-colour1'> NPR</span><span class='h6 heading-bold text-colour7'> "+ transactionDetails.TransactionDetailBreakage.SourceAmount + "</span></h2>");
                     if (transactionDetails.TransactionType.ToString() == "Debit")

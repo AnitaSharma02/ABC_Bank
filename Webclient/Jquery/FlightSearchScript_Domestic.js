@@ -47,11 +47,11 @@ function showTripSummary(summaryType) {
                             Onwardindex = 1;
                             lastcount = flight.length - 1;
                             strOnwardsSummary += "<ul class='fL'><li><img src='images/trpsum-ico-flight-dprt.png' /></li><li><label class='trpsum-city'>" + flight[count].Departure;
-                            strOnwardsSummary += "</label><span class='trpsum-To'>to</span><label class='trpsum-city'>" + flight[lastcount].Arrival + "</label></li></ul><div class='fR'><ul><li><label class='trpsum-miles'>" + flight[lastcount].Fare_total + "</label></li><li><label class='trpsum-miles-type'>NPoints</label></li></ul></div>"
+                            strOnwardsSummary += "</label><span class='trpsum-To'>to</span><label class='trpsum-city'>" + flight[lastcount].Arrival + "</label></li></ul><div class='fR'><ul><li><label class='trpsum-miles'>" + flight[lastcount].Fare_total + "</label></li><li><label class='trpsum-miles-type'>Points</label></li></ul></div>"
                         }
                     } else {
                         strOnwardsSummary += "<ul class='fL'><li><img src='images/trpsum-ico-flight-dprt.png' /></li><li><label class='trpsum-city'>" + flight[count].Departure;
-                        strOnwardsSummary += "</label><span class='trpsum-To'>to</span><label class='trpsum-city'>" + flight[count].Arrival + "</label></li></ul><div class='fR'><ul><li><label class='trpsum-miles'>" + flight[count].Fare_total + "</label></li><li><label class='trpsum-miles-type'>NPoints+</label></li></ul></div>"
+                        strOnwardsSummary += "</label><span class='trpsum-To'>to</span><label class='trpsum-city'>" + flight[count].Arrival + "</label></li></ul><div class='fR'><ul><li><label class='trpsum-miles'>" + flight[count].Fare_total + "</label></li><li><label class='trpsum-miles-type'>Points+</label></li></ul></div>"
                     }
 
                     strOnwardFlightInfo += "<div class='trpsum-flt-logo'><img src=" + flight[count].Airline_logo + " /></div><div class='fltsumm-col-1'><ul class='fltsumm-dtrow'><li><span class='trpsum-fltname robotbold'>" + flight[count].Airline_name + "</span></li><li><span class='trpsum-fltcode'>(" + flight[count].Flight_no + ")</span></li></ul></div><div class='fltsumm-col-2'><ul class='fltsumm-dtrow'><li><span class='trpsum-c-code robotbold'>" + flight[count].Departure + "</span><img src='images/right-arrow.png' class='trpsum-c-arrow ' /><span class='trpsum-c-code robotbold'>" + flight[count].Arrival + "</span></li><li><label class='trpsum-dprtime'>" + flight[count].Departure_time + "</label><label class='trpsum-arrvtime'>" + flight[count].Arrival_time + "</label></li></ul></div><div class='fltsumm-col-3 alR'><ul class='fltsumm-dtrow'><li><label class='trpsum-dprtdate robotbold'>" + flight[count].Flight_date + "</label></li><li>1 stop</li></ul></div>";
@@ -67,13 +67,13 @@ function showTripSummary(summaryType) {
                             {
                                 lastcount = flight.length - 1;
                                 strReturnSummary += "<ul class='fL'><li><img src='images/trpsum-ico-flight-dprt.png' /></li><li><label class='trpsum-city'>" + flight[count].Departure;
-                                strReturnSummary += "</label><span class='trpsum-To'>to</span><label class='trpsum-city'>" + flight[lastcount].Arrival + "</label></li></ul><div class='fR'><ul><li><label class='trpsum-miles'>" + flight[lastcount].Fare_total + "</label></li><li><label class='trpsum-miles-type'>NPoints</label></li></ul></div>"
+                                strReturnSummary += "</label><span class='trpsum-To'>to</span><label class='trpsum-city'>" + flight[lastcount].Arrival + "</label></li></ul><div class='fR'><ul><li><label class='trpsum-miles'>" + flight[lastcount].Fare_total + "</label></li><li><label class='trpsum-miles-type'>Points</label></li></ul></div>"
 
                             }
                         }
                     } else {
                         strReturnSummary += "<ul class='fL'><li><img src='images/trpsum-ico-flight-dprt.png' /></li><li><label class='trpsum-city'>" + flight[count].Departure;
-                        strReturnSummary += "</label><span class='trpsum-To'>to</span><label class='trpsum-city'>" + flight[count].Arrival + "</label></li></ul><div class='fR'><ul><li><label class='trpsum-miles'>" + flight[count].Fare_total + "</label></li><li><label class='trpsum-miles-type'>NPoints</label></li></ul></div>"
+                        strReturnSummary += "</label><span class='trpsum-To'>to</span><label class='trpsum-city'>" + flight[count].Arrival + "</label></li></ul><div class='fR'><ul><li><label class='trpsum-miles'>" + flight[count].Fare_total + "</label></li><li><label class='trpsum-miles-type'>Points</label></li></ul></div>"
                     }
                     strReturnFlightInfo += "<div class='trpsum-flt-logo'><img src=" + flight[count].Airline_logo + " /></div><div class='fltsumm-col-1'><ul class='fltsumm-dtrow'><li><span class='trpsum-fltname'>" + flight[count].Airline_name + "</span></li><li><span class='trpsum-fltcode'>(" + flight[count].Flight_no + ")</span></li></ul></div><div class='fltsumm-col-2'><ul class='fltsumm-dtrow'><li><span class='trpsum-c-code'>" + flight[count].Departure + "</span><img src='images/right-arrow.png' class='trpsum-c-arrow ' /><span class='trpsum-c-code'>" + flight[count].Arrival + "</span></li><li><label class='trpsum-dprtime'>" + flight[count].Departure_time + "</label><label class='trpsum-arrvtime'>" + flight[count].Arrival_time + "</label></li></ul></div><div class='fltsumm-col-3 alR'><ul class='fltsumm-dtrow'><li><label class='trpsum-dprtdate'>" + flight[count].Flight_date + "</label></li><li>1 stop</li></ul></div>";
                 }
@@ -90,7 +90,7 @@ function showTripSummary(summaryType) {
             }
             $(".fixedBot-tripSumm").show();
 
-            strTotal += "<ul class='fR'><li><label class='trpsumm-totalmiles'>" + parseInt(flightDepAmt + flightRetAmt) + "</label></li><li><label class='trpsum-miletype'> Total NPoints</label></li></ul>";
+            strTotal += "<ul class='fR'><li><label class='trpsumm-totalmiles'>" + parseInt(flightDepAmt + flightRetAmt) + "</label></li><li><label class='trpsum-miletype'> Total Points</label></li></ul>";
             $("#divTotal").html(strTotal);
             var strheight = $("#Trip_Summary_Main").height();
             $("#domesticTwoWay").css("padding-bottom", strheight + "px");

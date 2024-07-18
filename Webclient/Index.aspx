@@ -151,7 +151,7 @@
                 <div class="col-12 col-lg-10 offset-lg-1 text-center mb-4">
                     <h2 class="heading1 text-colour1 mb-3" data-i18n="home-shopthebest">Shop the Best Deals</h2>
                     <p data-i18n="home-maximize">
-                        Maximize your NPoints with our handpicked selection of top deals in electronics, fashion, home essentials, and more.
+                        Maximize your Points with our handpicked selection of top deals in electronics, fashion, home essentials, and more.
                     </p>
                 </div>
             </div>

@@ -42,7 +42,7 @@
                         <li class="d-block">
                             <div class="text-center">
                                 <h3 class="h3 heading-semibold text-white">
-                                    <span id="totAvbPointDiv" data-i18n="account-total-points">Total NPoints</span>
+                                    <span id="totAvbPointDiv" data-i18n="account-total-points">Total Points</span>
                                     <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-white"></span></h3>
                             </div>
                         </li>
@@ -68,7 +68,7 @@
                     <span class="ml-2" id="spnMemberName"></span>
                 </h2>
                 <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
-                    <span id="totAvbPointDiv" >Total NPoints</span>
+                    <span id="totAvbPointDiv" >Total Points</span>
                     <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-colour1">0</span>
                 </h2>
                 <a
@@ -98,7 +98,7 @@
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                    <li class="breadcrumb-item" data-i18n="bread-my-account">My Account</li>
+                     <li class="breadcrumb-item" ><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
                     <li class="breadcrumb-item active" data-i18n="bread-profile">Profile</li>
                 </ul>
             </nav>
@@ -110,7 +110,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="bg-lightgray rounded p-3">
-                        <div class="accordion" id="manage-accordion">
+                        <div class="dvCommonAccordion accordion" id="manage-accordion">
                             <div class="card">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">

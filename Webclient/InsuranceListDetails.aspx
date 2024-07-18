@@ -318,12 +318,12 @@
                                         </div>
                                         <!-- Term -->
 
-                                        <!-- Amount/NPoints -->
+                                        <!-- Amount/Points -->
                                         <div class="col-12 mb-3" id="tramount">
                                             <div class="bg-white p-3">
                                                 <div class="row">
                                                     <div class="col-md-4 col-6">
-                                                        <p class="h6 text-regular">Amount/NPoints:</p>
+                                                        <p class="h6 text-regular">Amount/Points:</p>
                                                     </div>
                                                     <div class="col-md-8 col-6">
                                                         <p class="h6 heading-semibold text-right" id="amount"></p>
@@ -331,14 +331,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Amount/NPoints -->
+                                        <!-- Amount/Points -->
 
-                                        <!-- Premium Amount/NPoints -->
+                                        <!-- Premium Amount/Points -->
                                         <div class="col-12 mb-3" id="trpremiumamount">
                                             <div class="bg-white p-3">
                                                 <div class="row">
                                                     <div class="col-md-4 col-6">
-                                                        <p class="h6 text-regular">Premium Amount/NPoints:</p>
+                                                        <p class="h6 text-regular">Premium Amount/Points:</p>
                                                     </div>
                                                     <div class="col-md-8 col-6">
                                                         <p class="h6 heading-semibold text-right" id="premiumamount"></p>
@@ -346,14 +346,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Premium Amount/NPoints -->
+                                        <!-- Premium Amount/Points -->
 
-                                        <!-- Rebate Amount/NPoints -->
+                                        <!-- Rebate Amount/Points -->
                                         <div class="col-12 mb-3" id="trrebateamount">
                                             <div class="bg-white p-3">
                                                 <div class="row">
                                                     <div class="col-md-4 col-6">
-                                                        <p class="h6 text-regular">Rebate Amount/NPoints:</p>
+                                                        <p class="h6 text-regular">Rebate Amount/Points:</p>
                                                     </div>
                                                     <div class="col-md-8 col-6">
                                                         <p class="h6 heading-semibold text-right" id="rebateamount"></p>
@@ -361,14 +361,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Rebate Amount/NPoints: -->
+                                        <!-- Rebate Amount/Points: -->
 
-                                        <!-- Fine Amount/NPoints -->
+                                        <!-- Fine Amount/Points -->
                                         <div class="col-12 mb-3" id="trfineamount">
                                             <div class="bg-white p-3">
                                                 <div class="row">
                                                     <div class="col-md-4 col-6">
-                                                        <p class="h6 text-regular">Fine Amount/NPoints:</p>
+                                                        <p class="h6 text-regular">Fine Amount/Points:</p>
                                                     </div>
                                                     <div class="col-md-8 col-6">
                                                         <p class="h6 heading-semibold text-right" id="fineamount"></p>
@@ -376,14 +376,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Fine Amount/NPoints -->
+                                        <!-- Fine Amount/Points -->
 
-                                        <!-- Adjustment Amount/NPoints -->
+                                        <!-- Adjustment Amount/Points -->
                                         <div class="col-12 mb-3" id="trAdjustmentAmount">
                                             <div class="bg-white p-3">
                                                 <div class="row">
                                                     <div class="col-md-4 col-6">
-                                                        <p class="h6 text-regular">Adjustment Amount/NPoints:</p>
+                                                        <p class="h6 text-regular">Adjustment Amount/Points:</p>
                                                     </div>
                                                     <div class="col-md-8 col-6">
                                                         <p class="h6 heading-semibold text-right" id="AdjustmentAmount"></p>
@@ -391,14 +391,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Adjustment Amount/NPoints -->
+                                        <!-- Adjustment Amount/Points -->
 
-                                        <!-- TP Premium (Amount/NPoints) -->
+                                        <!-- TP Premium (Amount/Points) -->
                                         <div class="col-12 mb-3" id="trTPPremium">
                                             <div class="bg-white p-3">
                                                 <div class="row">
                                                     <div class="col-md-4 col-6">
-                                                        <p class="h6 text-regular">TP Premium (Amount/NPoints):</p>
+                                                        <p class="h6 text-regular">TP Premium (Amount/Points):</p>
                                                     </div>
                                                     <div class="col-md-8 col-6">
                                                         <p class="h6 heading-semibold text-right" id="TPPremium"></p>
@@ -406,14 +406,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- TP Premium (Amount/NPoints) -->
+                                        <!-- TP Premium (Amount/Points) -->
 
-                                        <!-- Sum Insured (Amount/NPoints) -->
+                                        <!-- Sum Insured (Amount/Points) -->
                                         <div class="col-12" id="trSumInsured">
                                             <div class="bg-white p-3">
                                                 <div class="row">
                                                     <div class="col-md-4 col-6">
-                                                        <p class="h6 text-regular">Sum Insured (Amount/NPoints):</p>
+                                                        <p class="h6 text-regular">Sum Insured (Amount/Points):</p>
                                                     </div>
                                                     <div class="col-md-8 col-6">
                                                         <p class="h6 heading-semibold text-right" id="SumInsured"></p>
@@ -421,7 +421,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Sum Insured (Amount/NPoints) -->
+                                        <!-- Sum Insured (Amount/Points) -->
 
                                     </div>
                                     <div class="">
@@ -433,7 +433,7 @@
 
                         <div class="col-12">
                             <div class="form-group pb-4 mt-3" id="divInsufficient" runat="server" style="display: none;">
-                                <h2 class="h6 heading-semibold text-danger">Insufficient NPoints</h2>
+                                <h2 class="h6 heading-semibold text-danger">Insufficient Points</h2>
                             </div>
                         </div>
                     </div>
@@ -753,49 +753,49 @@
                                 $("#trterm").addClass("d-none");
                             }
                             if (parseData.Amount != "") {
-                                $("#amount").html(parseData.Amount + " NPR / " + ConvertAmountToPoints(parseData.Amount, parseData.PointRate) + " NPoints");
+                                $("#amount").html(parseData.Amount + " NPR / " + ConvertAmountToPoints(parseData.Amount, parseData.PointRate) + " Points");
                                 $("#tramount").removeClass("d-none");
                             }
                             else {
                                 $("#tramount").addClass("d-none");
                             }
                             if (parseData.PremiumAmount != "") {
-                                $("#premiumamount").html(parseData.PremiumAmount + " NPR / " + ConvertAmountToPoints(parseData.PremiumAmount, parseData.PointRate) + " NPoints");
+                                $("#premiumamount").html(parseData.PremiumAmount + " NPR / " + ConvertAmountToPoints(parseData.PremiumAmount, parseData.PointRate) + " Points");
                                 $("#trpremiumamount").removeClass("d-none");
                             }
                             else {
                                 $("#trpremiumamount").addClass("d-none");
                             }
                             if (parseData.RebateAmount != "") {
-                                $("#rebateamount").html(parseData.RebateAmount + " NPR / " + ConvertAmountToPoints(parseData.RebateAmount, parseData.PointRate) + " NPoints");
+                                $("#rebateamount").html(parseData.RebateAmount + " NPR / " + ConvertAmountToPoints(parseData.RebateAmount, parseData.PointRate) + " Points");
                                 $("#trrebateamount").removeClass("d-none");
                             }
                             else {
                                 $("#trrebateamount").addClass("d-none");
                             }
                             if (parseData.FineAmount != "") {
-                                $("#fineamount").html(parseData.FineAmount + " NPR / " + ConvertAmountToPoints(parseData.FineAmount, parseData.PointRate) + " NPoints");
+                                $("#fineamount").html(parseData.FineAmount + " NPR / " + ConvertAmountToPoints(parseData.FineAmount, parseData.PointRate) + " Points");
                                 $("#trfineamount").removeClass("d-none");
                             }
                             else {
                                 $("#trfineamount").addClass("d-none");
                             }
                             if (parseData.AdjustmentAmount != "") {
-                                $("#AdjustmentAmount").html(parseData.AdjustmentAmount + " NPR / " + ConvertAmountToPoints(parseData.AdjustmentAmount, parseData.PointRate) + " NPoints");
+                                $("#AdjustmentAmount").html(parseData.AdjustmentAmount + " NPR / " + ConvertAmountToPoints(parseData.AdjustmentAmount, parseData.PointRate) + " Points");
                                 $("#trAdjustmentAmount").removeClass("d-none");
                             }
                             else {
                                 $("#trAdjustmentAmount").addClass("d-none");
                             }
                             if (parseData.TP_Premium != "") {
-                                $("#TPPremium").html(parseData.TP_Premium + " NPR / " + ConvertAmountToPoints(parseData.TP_Premium, parseData.PointRate) + " NPoints");
+                                $("#TPPremium").html(parseData.TP_Premium + " NPR / " + ConvertAmountToPoints(parseData.TP_Premium, parseData.PointRate) + " Points");
                                 $("#trTPPremium").removeClass("d-none");
                             }
                             else {
                                 $("#trTPPremium").addClass("d-none");
                             }
                             if (parseData.SumInsured != "") {
-                                $("#SumInsured").html(parseData.SumInsured + " NPR / " + ConvertAmountToPoints(parseData.SumInsured, parseData.PointRate) + " NPoints");
+                                $("#SumInsured").html(parseData.SumInsured + " NPR / " + ConvertAmountToPoints(parseData.SumInsured, parseData.PointRate) + " Points");
                                 $("#trSumInsured").removeClass("d-none");
                             }
                             else {

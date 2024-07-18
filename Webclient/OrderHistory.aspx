@@ -45,7 +45,7 @@
                         <span class="ml-2" id="spnMemberName"></span>
                     </h2>
                     <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
-                        <span id="totAvbPointDiv">Total NPoints</span>
+                        <span id="totAvbPointDiv">Total Points</span>
                         <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-colour1">0</span>
                     </h2>
                     <a
@@ -73,7 +73,7 @@
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                    <li class="breadcrumb-item" data-i18n="bread-my-account">My Account</li>
+                     <li class="breadcrumb-item" ><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
                     <li class="breadcrumb-item active" data-i18n="bread-order">Order History</li>
                 </ul>
             </nav>

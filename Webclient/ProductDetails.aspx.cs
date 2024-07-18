@@ -183,7 +183,7 @@ public partial class ProductDetails : Page
                     hfUserInputMetasAvailable.Value = "false";
                 }
                 spanProductName.InnerText = lobjProduct.Name;
-                spanPoints.InnerText = lobjModel.FormatPoints(Math.Ceiling(lobjProduct.Price.SalePriceWithTax.Amount), "NPoints");
+                spanPoints.InnerText = lobjModel.FormatPoints(Math.Ceiling(lobjProduct.Price.SalePriceWithTax.Amount), "Points");
 
                 string lstrProductImgContent = string.Empty;
                 for (int i = 0; i < lobjProduct.Images.Count; i++)

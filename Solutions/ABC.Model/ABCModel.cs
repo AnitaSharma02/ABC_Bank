@@ -2689,7 +2689,7 @@ namespace ABC.Model
                     float pfltPointrate = 0.0f;
                     pfltPointrate = GetProgramRedemptionRate(GetDefaultCurrency(), "EXPERIENCE", pintProgramId);
                     lintResponse = (int)Math.Ceiling(pstrAmount / pfltPointrate);
-                    pstrGrossFormattedText = string.Format("{0} NPoints", LongToThousandSeperated(Convert.ToInt64(lintResponse)));
+                    pstrGrossFormattedText = string.Format("{0} Points", LongToThousandSeperated(Convert.ToInt64(lintResponse)));
                 }
                 else
                 {

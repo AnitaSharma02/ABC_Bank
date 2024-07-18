@@ -846,7 +846,7 @@
                         $('#btnAddToBooking').hide();
                         $('#btnAddToBooking').removeAttr('onclick');
                         $('.textErrorMsg').show();
-                        $('#spnErrorMsg').html("<p style='color: red;'>Insufficient NPoints.</p>");
+                        $('#spnErrorMsg').html("<p style='color: red;'>Insufficient Points.</p>");
                         return false;
                     }
                 }

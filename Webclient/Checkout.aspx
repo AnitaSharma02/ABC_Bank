@@ -505,7 +505,7 @@
                             window.location.href = data;
                         }
                         else if (data == "INSUFFICIENT_POINTS") {
-                            $('#divCartContents').empty().html("Insufficient NPoints.");
+                            $('#divCartContents').empty().html("Insufficient Points.");
                         }
                         else {
                             $('#divCartContents').empty().html("Purchase failed!!! Please try again later.");

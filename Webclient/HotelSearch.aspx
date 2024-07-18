@@ -397,7 +397,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                <h2 class="h8 heading-semibold text-truncate ">From 4,000 NPoints
+                                <h2 class="h8 heading-semibold text-truncate ">From 4,000 Points
                                 </h2>
                                 <div class="dvicon">
                                     <img src="Images/hotelpage/hotel-icon1.svg" />
@@ -429,7 +429,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                <h2 class="h8 heading-semibold text-truncate ">From 5,000 NPoints
+                                <h2 class="h8 heading-semibold text-truncate ">From 5,000 Points
                                 </h2>
                                 <div class="dvicon">
                                     <img src="Images/hotelpage/hotel-icon1.svg" />
@@ -461,7 +461,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                <h2 class="h8 heading-semibold text-truncate ">From 6,000 NPoints
+                                <h2 class="h8 heading-semibold text-truncate ">From 6,000 Points
                                 </h2>
                                 <div class="dvicon">
                                     <img src="Images/hotelpage/hotel-icon1.svg" />
@@ -493,7 +493,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                <h2 class="h8 heading-semibold text-truncate ">From 4,800 NPoints
+                                <h2 class="h8 heading-semibold text-truncate ">From 4,800 Points
                                 </h2>
                                 <div class="dvicon">
                                     <img src="Images/hotelpage/hotel-icon1.svg" />

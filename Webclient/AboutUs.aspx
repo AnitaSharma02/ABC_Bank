@@ -39,7 +39,7 @@
                 <div class="col-12">
                     <h2 class="h1 heading-semibold text-colour1 mb-3">About The Program</h2>
                     <p class="h6 mb-3 heading-regular text-colour7">NIC Express Reward is the most comprehensive rewards program, tailored to your needs, and gives you additional benefits and a rich experience every time you use the bank's products and services.</p>
-                    <p class="h6 mb-3 heading-regular text-colour7">To deliver the best, we designed the Express NIC Express Reward program to suit your lifestyle. Now, you can earn NPoints for using our banking products. you can then replace NIC Express Rewards NPoints by:</p>
+                    <p class="h6 mb-3 heading-regular text-colour7">To deliver the best, we designed the Express NIC Express Reward program to suit your lifestyle. Now, you can earn Points for using our banking products. you can then replace NIC Express Rewards Points by:</p>
 
                     <div class="accordion" id="static-accordion">
                         <!-- Airlines -->
@@ -61,9 +61,9 @@
                                     <ul>
                                         <li class="h6 mb-3 heading-regular text-colour7 mx-3">More than 900 airlines: with NIC Express Reward, you won't be restricted to one airline or one departure point, and you can redeem your tickets online and directly from more than 900 airlines around the world, including low-cost airlines such as flydubai, air arabia, ryanair and more than 900 airlines: with NIC Express Reward  rewards, you won't be restricted to one airline or one departure point, but you can redeem your tickets online and directly from more than 900 airlines around the world, including economic airlines such as ryanair and others.</li>
                                         <li class="h6 mb-3 heading-regular text-colour7 mx-3">There are no dates where reservations are not allowed: you can book and travel on any date you choose.</li>
-                                        <li class="h6 mb-3 heading-regular text-colour7 mx-3">No restrictions: you can book your ticket even if you are in any City and want to exchange your reward NPoints from the bank for a flight ticket from London to Paris, for example, for you, your family, or friends.</li>
+                                        <li class="h6 mb-3 heading-regular text-colour7 mx-3">No restrictions: you can book your ticket even if you are in any City and want to exchange your reward Points from the bank for a flight ticket from London to Paris, for example, for you, your family, or friends.</li>
                                         <li class="h6 mb-3 heading-regular text-colour7 mx-3">Comfort: you can register comfortably in your home or office.</li>
-                                        <li class="h6 mb-3 heading-regular text-colour7 mx-3">Double benefits: enjoy additional rewards by earning "extra miles" for airline programs when traveling on their flights and using your NIC Express Reward NPoints to book tickets.</li>
+                                        <li class="h6 mb-3 heading-regular text-colour7 mx-3">Double benefits: enjoy additional rewards by earning "extra miles" for airline programs when traveling on their flights and using your NIC Express Reward Points to book tickets.</li>
                                         <li class="h6 mb-3 heading-regular text-colour7 mx-3">Hotels: more than 450,000 hotels around the world.</li>
                                         <li class="h6 mb-3 heading-regular text-colour7 mx-3">Book immediately at the touch of a button.</li>
                                     </ul>

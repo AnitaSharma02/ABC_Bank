@@ -130,7 +130,7 @@
                         <li class="d-block">
                             <div class="text-center">
                                 <h3 class="h3 heading-semibold text-white" >
-                                    <span id="totAvbPointDiv" data-i18n="account-total-points">Total NPoints</span>
+                                    <span id="totAvbPointDiv" data-i18n="account-total-points">Total Points</span>
                                         <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-white"></span></h3>
                             </div>
                         </li>
@@ -156,7 +156,7 @@
                     <span class="ml-2" id="spnMemberName"></span>
                 </h2>
                 <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
-                    <span id="totAvbPointDiv" >Total NPoints</span>
+                    <span id="totAvbPointDiv" >Total Points</span>
                     <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-colour1">0</span>
                 </h2>
                 <a
@@ -186,7 +186,7 @@
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                    <li class="breadcrumb-item" data-i18n="bread-my-account">My Account</li>
+                     <li class="breadcrumb-item" ><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
                     <li class="breadcrumb-item active" data-i18n="bread-manage">Manage Booking</li>
                 </ul>
             </nav>
@@ -219,7 +219,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="bg-lightgray p-3">
-                        <div class="accordion" id="manage-accordion">
+                        <div class="dvCommonAccordion accordion" id="manage-accordion">
 
                             <!-- FLIGHT BOOKING DETAILS -->
                             <div class="card mb-3">
@@ -253,7 +253,7 @@
                                                                 <div class="row justify-content-between">
                                                                     <div class="col-6 col-md-3 col-xl-2 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-flight-departure-label">Departure Date</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-departure-label">Departure Date</span>
                                                                             <span class="h6 d-block">
                                                                                 <%# Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.DepartureDate")).ToString("dd/MM/yyyy")%>
                                                                             </span>
@@ -261,7 +261,7 @@
                                                                     </div>
                                                                     <div class="col-6 col-md-3 col-xl-2 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-flight-booking-label">Return Date</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-booking-label">Return Date</span>
                                                                             <span class="h6 d-block">
                                                                                 <%# Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.ArrivalDate")).ToString("dd/MM/yyyy") == "01/01/0001" ? "NA" : Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.ArrivalDate")).ToString("dd/MM/yyyy") %>
                                                                             </span>
@@ -269,7 +269,7 @@
                                                                     </div>
                                                                     <div class="col-6 col-md-3 col-xl-2 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-flight-details-label">Details</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-details-label">Details</span>
                                                                             <span class="h6 d-block">
                                                                                 <%# DataBinder.Eval(Container, "DataItem.OriginLocation")%>
                                                                                     -
@@ -279,7 +279,7 @@
                                                                     </div>
                                                                     <div class="col-6 col-md-3 col-xl-2 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-flight-ref-label">Ref No.</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-ref-label">Ref No.</span>
                                                                             <span class="h6 d-block">
                                                                                 <%# DataBinder.Eval(Container, "DataItem.ItineraryReference")%>
                                                                             </span>
@@ -287,7 +287,7 @@
                                                                     </div>
                                                                     <div class="col-6 col-md-3 col-xl-1 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-flight-trip-label">Trip Id</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-trip-label">Trip Id</span>
                                                                             <span class="h6 d-block">
                                                                                 <%# DataBinder.Eval(Container, "DataItem.ItineraryTripId")%><asp:HiddenField ID="hdnTripId"
                                                                                     runat="server" Value='<%# DataBinder.Eval(Container, "DataItem.ItineraryReference")%>' />
@@ -297,7 +297,7 @@
                                                                     </div>
                                                                     <div class="col-6 col-md-3 col-xl-1 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-flight-points-label">NPoints</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-points-label">Points</span>
                                                                             <span class="h6 d-block">
                                                                                 <%# DataBinder.Eval(Container, "DataItem.FareDetails.TotalPoints")%>
                                                                             </span>
@@ -315,7 +315,7 @@
                                                     </div>
                                                 </ItemTemplate>
                                             </asp:Repeater>
-                                            <div id="divFlightrecord" runat="server" visible="false">
+                                            <div id="divFlightrecord" class="p-3" runat="server" visible="false">
                                                 <asp:Label runat="server" ID="lblFlightrecord" Visible="false"></asp:Label>
                                             </div>
                                         </div>
@@ -348,7 +348,7 @@
                                                                 <div class="row justify-content-between">
                                                                     <div class="col-6 col-md-3 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-hotel-checkin-label">Check-in Date</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-checkin-label">Check-in Date</span>
                                                                             <span class="h6 d-block">
                                                                                 <%#Convert.ToDateTime(Eval("searchCriteria.CheckInDate")).ToShortDateString()%>
                                                                             </span>
@@ -356,7 +356,7 @@
                                                                     </div>
                                                                     <div class="col-6 col-md-3 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-hotel-checkout-label">Check-out Date</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-checkout-label">Check-out Date</span>
                                                                             <span class="h6 d-block">
                                                                                 <%#Convert.ToDateTime(Eval("searchCriteria.CheckOutDate")).ToShortDateString()%>
                                                                             </span>
@@ -364,7 +364,7 @@
                                                                     </div>
                                                                     <div class="col-6 col-md-3 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-hotel-booking-label">Booking Date</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-booking-label">Booking Date</span>
                                                                             <span class="h6 d-block">
                                                                                 <%#Convert.ToDateTime(Eval("BookinDate")).ToShortDateString()%>
                                                                             </span>
@@ -372,7 +372,7 @@
                                                                     </div>
                                                                     <div class="col-6 col-md-3 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-hotel-details-label">Details</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-details-label">Details</span>
                                                                             <span class="h6 d-block">
                                                                                 <%#Eval("Hotel.basicinfo.hotelname")%>
                                                                             </span>
@@ -380,7 +380,7 @@
                                                                     </div>
                                                                     <div class="col-12 col-md-3 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-hotel-ref-label">Ref No.</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-ref-label">Ref No.</span>
                                                                             <span class="h6 d-block">
                                                                                 <%#Eval("TransactionReferenceCode")%>
                                                                             </span>
@@ -388,7 +388,7 @@
                                                                     </div>
                                                                     <div class="col-6 col-md-3 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-hotel-points-label">NPoints</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-points-label">Points</span>
                                                                             <span class="h6 d-block">
                                                                                 <%#Eval("TotalPoint")%>
                                                                             </span>
@@ -396,7 +396,7 @@
                                                                     </div>
                                                                     <div class="col-6 col-md-3 mb-1">
                                                                         <p>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-hotel-status-label">Status</span>
+                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-status-label">Status</span>
                                                                             <span class="h6 d-block">
                                                                                 <%# (Convert.ToInt32(Eval("Status")).Equals(1))? "BOOKED" : "CANCELLED" %>
                                                                             </span>
@@ -418,7 +418,7 @@
                                                     </div>
                                                 </ItemTemplate>
                                             </asp:Repeater>
-                                            <div id="divHotelrecord" runat="server" visible="false">
+                                            <div id="divHotelrecord" class="p-3" runat="server" visible="false">
                                                 <asp:Label runat="server" ID="lblHotelrecord" Visible="false"></asp:Label>
                                             </div>
                                         </div>
@@ -461,7 +461,7 @@
                                     </h2>
                                 </div>
                                 <div id="collapse4" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0" id="divDomesticFlightBookingDetails" runat="server">
+                                    <div class="card-body scroll-ver p-3" id="divDomesticFlightBookingDetails" runat="server">
                                     </div>
                                 </div>
                             </div>
@@ -481,7 +481,7 @@
                                     </h2>
                                 </div>
                                 <div id="collapse5" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0" id="divInsuranceFlightBookingDetails" runat="server">
+                                    <div class="card-body scroll-ver p-3" id="divInsuranceFlightBookingDetails" runat="server">
                                     </div>
                                 </div>
                             </div>
@@ -501,7 +501,7 @@
                                     </h2>
                                 </div>
                                 <div id="collapse6" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0" id="divISPFlightBookingDetails" runat="server">
+                                    <div class="card-body scroll-ver p-3" id="divISPFlightBookingDetails" runat="server">
                                     </div>
                                 </div>
                             </div>

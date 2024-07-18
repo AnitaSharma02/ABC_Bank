@@ -31,7 +31,7 @@
         <br />
         <div>
             <br />
-            <p style="text-align:center;">Your account has been activated. Now you can access your NPoints by logging to <a href="https://absher.qib.com.qa"> https://absher.qib.com.qa</a></p>
+            <p style="text-align:center;">Your account has been activated. Now you can access your Points by logging to <a href="https://absher.qib.com.qa"> https://absher.qib.com.qa</a></p>
             <br />
             
         </div>

@@ -209,7 +209,7 @@
                         }
                         else {
                             if (msg.d == "INSUFFICIENT_POINTS") {
-                                $('#divErrorMsg').empty().html("Insufficient NPoints.");
+                                $('#divErrorMsg').empty().html("Insufficient Points.");
                             }
                             else {
                                 $('#divErrorMsg').empty().html("Purchase failed!!! Please try again later.");

@@ -29,7 +29,7 @@
                                 <asp:Label CssClass="font-weight-bold" ID="lblPersonName" runat="server" Text="Nil"></asp:Label>, Your booking is now <span class="font-weight-bold">confirmed.</span></h2>
                             <p>
 
-                                <span class="font-weight-bold">NPoints:</span>
+                                <span class="font-weight-bold">Points:</span>
                                 <span id="divTotalMiles" runat="server"></span><br />
 
                                 <span class="font-weight-bold">Reference No:</span>

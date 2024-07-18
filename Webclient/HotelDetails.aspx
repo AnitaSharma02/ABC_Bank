@@ -220,12 +220,12 @@
         </div>
     </div>
 
-    <div class="modal fade" id="dvAmenitiesModal" tabindex="-1">
+    <div class="dvCommonModal modal fade" id="dvAmenitiesModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header py-2 align-items-center">
-                    <h2 class="h4 heading-semibold modal-title" id="DivAmenitiesCategoryName"></h2>
-                    <button type="button" class="close d-flex" data-dismiss="modal">
+                    <h5 class="heading-semibold text-colour1" id="DivAmenitiesCategoryName"></h5>
+                    <button type="button" class="close text-colour1 d-flex" data-dismiss="modal">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>

@@ -115,7 +115,7 @@
                                                     type="button"
                                                     data-toggle="collapse-"
                                                     data-target="#collapse1">
-                                                   <span class=" h6 heading-semibold text-colour7 "> Total NPoints</span>
+                                                   <span class=" h6 heading-semibold text-colour7 "> Total Points</span>
                                                   <span class="arrow-icon">
                                                       <i class="fa fa-caret-up-"></i>
                                                   </span>
@@ -684,7 +684,7 @@
                                                         <h2 class="h6 heading-semibold text-colour7 text-truncate col-12 mb-2"><%#Eval("basicinfo.hotelname")%></h2>
                                                         <h2 class="h7 heading-regular text-colour7 text-truncate col-6 order-1 mt-auto">
                                                             <asp:Label ID="lblmiles" runat="server"></asp:Label>
-                                                            <asp:Label ID="Label1" runat="server" class="">NPoints</asp:Label>
+                                                            <asp:Label ID="Label1" runat="server" class="">Points</asp:Label>
                                                         </h2>
                                                         <h2
                                                             class="h7 heading-regular text-colour7 text-truncate col-6 order-2 mt-auto text-right d-none">Physical

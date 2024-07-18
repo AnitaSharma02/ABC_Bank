@@ -203,7 +203,7 @@ public partial class ManageBooking : Page
 
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-2 mb-1\">");
                         lsbTrExperienceBookingDetailsHtml.Append("<p>");
-                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">NPoints</span> <span class=\"h6 d-block\">" + lobjModel.StringToThousandSeperated(item.Points.ToString()) + "</span>");
+                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span> <span class=\"h6 d-block\">" + lobjModel.StringToThousandSeperated(item.Points.ToString()) + "</span>");
                         lsbTrExperienceBookingDetailsHtml.Append("</p>");
                         lsbTrExperienceBookingDetailsHtml.Append("</div>");
 
@@ -414,7 +414,7 @@ public partial class ManageBooking : Page
 
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<p>");
-                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">NPoints</span> <span class=\"h6 d-block\">" + lobjModel.StringToThousandSeperated(item.CreditsConsumed.ToString()) + "</span>");
+                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span> <span class=\"h6 d-block\">" + lobjModel.StringToThousandSeperated(item.CreditsConsumed.ToString()) + "</span>");
                         lsbTrDomesticBookingDetailsHtml.Append("</p>");
                         lsbTrDomesticBookingDetailsHtml.Append("</div>");
 
@@ -499,7 +499,7 @@ public partial class ManageBooking : Page
                         int lintTotalPrice = model.ConvertToPoints(float.Parse(item.Amount.ToString())
                                 , lstrCurrency, lobjProgramDefinition.ProgramId, "INSURANCE");
                         lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">NPoints</span>");
+                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span>");
                         lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + lobjModel.FloatToThousandSeperated(lintTotalPrice) + "</span></p>");
                         lsbTrInsuranceBookingDetailsHtml.Append("</div>");
                         lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-12 offset-md-3 col-md-3 col-lg-3 col-xl-3 mt-2 mt-md-0\"><p>");
@@ -573,7 +573,7 @@ public partial class ManageBooking : Page
                         lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.PaymentId.ToString() + "</span></p>");
                         lsbTrISPBookingDetailsHtml.Append("</div>");
                         lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3\"><p>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">NPoints</span>");
+                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span>");
                         lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + lobjModel.FloatToThousandSeperated(item.Amount) + "</span></p>");
                         lsbTrISPBookingDetailsHtml.Append("</div>");
                         lsbTrISPBookingDetailsHtml.Append("</div></div></div></div>");
@@ -639,8 +639,8 @@ public partial class ManageBooking : Page
                     int lintTotalPrice = lobjmodel.ConvertToPoints(float.Parse(lobjInsuranceDetails.Amount.ToString())
                                      , lstrCurrency, lobjProgramDefinition.ProgramId, "INSURANCE");
                     lstrBookingdetailshtml.Append("<tr>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">NPoints</td>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">" + lobjmodel.FloatToThousandSeperated(lintTotalPrice) + " NPoints" + "</td></tr>");
+                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Points</td>");
+                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">" + lobjmodel.FloatToThousandSeperated(lintTotalPrice) + " Points" + "</td></tr>");
 
                     lstrBookingdetailshtml.Append("<tr>");
                     lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Transaction Date</td>");

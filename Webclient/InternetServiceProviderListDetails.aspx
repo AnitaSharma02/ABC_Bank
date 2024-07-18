@@ -209,12 +209,12 @@
                                             </div>
                                             <!-- Plan Type -->
 
-                                            <!-- Amount/NPoints -->
+                                            <!-- Amount/Points -->
                                             <div class="col-12 mb-3"  id="trCurrPlanAmount">
                                                 <div class="bg-white p-3">
                                                     <div class="row">
                                                         <div class="col-md-4 col-6">
-                                                            <p class="h6 text-regular">Amount/NPoints:</p>
+                                                            <p class="h6 text-regular">Amount/Points:</p>
                                                         </div>
                                                         <div class="col-md-8 col-6">
                                                             <p class="h6 heading-semibold text-right" id="CurrPlanAmount"></p>
@@ -222,7 +222,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Amount/NPoints -->
+                                            <!-- Amount/Points -->
 
                                             <!-- Days Remaining -->
                                             <div class="col-12 mb-3" id="trDaysRemaining">
@@ -239,12 +239,12 @@
                                             </div>
                                             <!-- Days Remaining -->
 
-                                            <!-- Due Amount/NPoints -->
+                                            <!-- Due Amount/Points -->
                                             <div class="col-12 mb-3" id="trDueAmount">
                                                 <div class="bg-white p-3" >
                                                     <div class="row">
                                                         <div class="col-md-4 col-6">
-                                                            <p class="h6 text-regular">Due Amount/NPoints:</p>
+                                                            <p class="h6 text-regular">Due Amount/Points:</p>
                                                         </div>
                                                         <div class="col-md-8 col-6">
                                                             <p class="h6 heading-semibold text-right" id="DueAmount"></p>
@@ -252,7 +252,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Due Amount/NPoints -->
+                                            <!-- Due Amount/Points -->
 
                                             <!-- Message -->
                                             <div class="col-12 mb-3" id="trCurrPlanMessage">
@@ -269,12 +269,12 @@
                                             </div>
                                             <!-- Message -->
 
-                                            <!-- Previous Balance (Amount/NPoints) -->
+                                            <!-- Previous Balance (Amount/Points) -->
                                             <div class="col-12 mb-3" id="trPreviousBalance">
                                                 <div class="bg-white p-3" >
                                                     <div class="row">
                                                         <div class="col-md-4 col-6">
-                                                            <p class="h6 text-regular">Previous Balance (Amount/NPoints):</p>
+                                                            <p class="h6 text-regular">Previous Balance (Amount/Points):</p>
                                                         </div>
                                                         <div class="col-md-8 col-6">
                                                             <p class="h6 heading-semibold text-right" id="PreviousBalance"></p>
@@ -282,7 +282,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Previous Balance (Amount/NPoints) -->
+                                            <!-- Previous Balance (Amount/Points) -->
 
                                             <!-- End Date -->
                                             <div class="col-12 mb-3" id="trEndDate">
@@ -344,12 +344,12 @@
                                             </div>
                                             <!-- Duration Code -->
 
-                                            <!-- Amount/NPoints -->
+                                            <!-- Amount/Points -->
                                             <div class="col-12" id="trDetailsAmount">
                                                 <div class="bg-white p-3" >
                                                     <div class="row">
                                                         <div class="col-md-4 col-6">
-                                                            <p class="h6 text-regular">Amount/NPoints:</p>
+                                                            <p class="h6 text-regular">Amount/Points:</p>
                                                         </div>
                                                         <div class="col-md-8 col-6">
                                                             <p class="h6 heading-semibold text-right" id="DetailsAmount"></p>
@@ -357,7 +357,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Amount/NPoints -->
+                                            <!-- Amount/Points -->
                                         </div>
                                     </div>
                                 </div>
@@ -412,12 +412,12 @@
                                             </div>
                                             <!-- Duration Code -->
 
-                                            <!-- Amount/NPoints -->
-                                            <div class="col-12 id="trPkgDetailsAmount">
+                                            <!-- Amount/Points -->
+                                            <div class="col-12" id="trPkgDetailsAmount">
                                                 <div class="bg-white p-3" >
                                                     <div class="row">
                                                         <div class="col-md-4 col-6">
-                                                            <p class="h6 text-regular">Amount/NPoints:</p>
+                                                            <p class="h6 text-regular">Amount/Points:</p>
                                                         </div>
                                                         <div class="col-md-8 col-6">
                                                             <p class="h6 heading-semibold text-right" id="PkgDetailsAmount"></p>
@@ -425,7 +425,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Amount/NPoints -->
+                                            <!-- Amount/Points -->
 
                                         </div>
                                     </div>
@@ -436,12 +436,12 @@
                                     <div class="bg-colour3 p-3">
                                         <div class="row">
 
-                                            <!-- Amount/NPoints -->
-                                            <div class="col-12  id="trAmount">
+                                            <!-- Amount/Points -->
+                                            <div class="col-12"  id="trAmount">
                                                 <div class="bg-white p-3">
                                                     <div class="row">
                                                         <div class="col-md-4 col-6">
-                                                            <p class="h6 text-regular">Amount/NPoints:</p>
+                                                            <p class="h6 text-regular">Amount/Points:</p>
                                                         </div>
                                                         <div class="col-md-8 col-6">
                                                             <p class="h6 heading-semibold form-control text-right" id="AmountPoints"></p>
@@ -449,24 +449,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Amount/NPoints -->
+                                            <!-- Amount/Points -->
 
                                         </div>
                                     </div>
                                 </div>
 
                                 <div id="TotalAmount">
-                                    <h3 class="h5 heading-semibold text-colour7 my-3">NPoints</h3>
-                                    <p id="duePresent" class="experienceerrormsg">Final NPoints includes Due NPoints + Package NPoints Selected.</p>
+                                    <h3 class="h5 heading-semibold text-colour7 my-3">Points</h3>
+                                    <p id="duePresent" class="experienceerrormsg">Final Points includes Due Points + Package Points Selected.</p>
                                     <div class="bg-colour3 p-3">
                                         <div class="row">
 
-                                            <!-- NPoints -->
-                                            <div class="col-12  id="trTotalAmount">
+                                            <!-- Points -->
+                                            <div class="col-12"  id="trTotalAmount">
                                                 <div class="bg-white p-3" >
                                                     <div class="row">
                                                         <div class="col-md-4 col-6">
-                                                            <p class="h6 text-regular">NPoints:</p>
+                                                            <p class="h6 text-regular">Points:</p>
                                                         </div>
                                                         <div class="col-md-8 col-6">
                                                             <p class="h6 heading-semibold form-control text-right" id="FinalAmount"></p>
@@ -474,7 +474,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- NPoints -->
+                                            <!-- Points -->
 
                                         </div>
                                     </div>
@@ -492,7 +492,7 @@
 
                     <div class="col-12">
                         <div class="form-group pb-4 mt-3" id="divInsufficient" runat="server" style="display: none;">
-                            <h2 class="h6 heading-semibold text-danger">Insufficient NPoints</h2>
+                            <h2 class="h6 heading-semibold text-danger">Insufficient Points</h2>
                         </div>
                     </div>
                 </div>
@@ -533,12 +533,12 @@
                 if (UserData.CurrentPlan.Details[0].Particular != null) {
                     $("#Particular").html($('option:selected', this)[0].text);
                     var Amount = UserData.CurrentPlan.Details.find(x => x.Id == $('option:selected', this)[0].value).Amount;
-                    $("#DetailsAmount").html(Amount + " NPR / " + ConvertAmountToPoints(Amount, PointRate) + " NPoints");
+                    $("#DetailsAmount").html(Amount + " NPR / " + ConvertAmountToPoints(Amount, PointRate) + " Points");
                 }
                 else {
                     $("#DurationCode").html($('option:selected', this)[0].value);
                     var Amount = UserData.CurrentPlan.Details.find(x => x.DurationCode == $('option:selected', this)[0].value).Amount;
-                    $("#DetailsAmount").html(Amount + " NPR / " + ConvertAmountToPoints(Amount, PointRate) + " NPoints");
+                    $("#DetailsAmount").html(Amount + " NPR / " + ConvertAmountToPoints(Amount, PointRate) + " Points");
                 }
 
             });
@@ -558,14 +558,14 @@
                     $("#trPkgDetailsDurationCode").removeClass("d-none");
                     $("#PkgDetailsDurationCode").html(UserData.Packages.find(x => x.Id == $('option:selected', this)[0].value).Details[0].DurationCode);
                     $("#trPkgDetailsAmount").removeClass("d-none");
-                    $("#PkgDetailsAmount").html(UserData.Packages.find(x => x.Id == $('option:selected', this)[0].value).Details[0].Amount + " NPR / " + ConvertAmountToPoints(UserData.Packages.find(x => x.Id == $('option:selected', this)[0].value).Details[0].Amount, PointRate) + " NPoints");
+                    $("#PkgDetailsAmount").html(UserData.Packages.find(x => x.Id == $('option:selected', this)[0].value).Details[0].Amount + " NPR / " + ConvertAmountToPoints(UserData.Packages.find(x => x.Id == $('option:selected', this)[0].value).Details[0].Amount, PointRate) + " Points");
                     if (UserData.CurrentPlan.DueAmount != 0) {
                         $("#duePresent").removeClass("d-none");
-                        $("#FinalAmount").html(parseInt($("#DueAmount").text().split("/")[1].replace("NPoints", "")) + parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("NPoints", "")));
+                        $("#FinalAmount").html(parseInt($("#DueAmount").text().split("/")[1].replace("Points", "")) + parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("Points", "")));
                     }
                     else {
                         $("#duePresent").addClass("d-none");
-                        $("#FinalAmount").html(parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("NPoints", "")));
+                        $("#FinalAmount").html(parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("Points", "")));
                     }
                     CheckAvailability($("#FinalAmount").text());
                 }
@@ -575,14 +575,14 @@
 
                     if (UserData.Packages.find(x => x.Id == $('option:selected', this)[0].value).Amount != 0) {
                         $("#trPkgDetailsAmount").removeClass("d-none");
-                        $("#PkgDetailsAmount").html(UserData.Packages.find(x => x.Id == $('option:selected', this)[0].value).Amount + " NPR / " + ConvertAmountToPoints(UserData.Packages.find(x => x.Id == $('option:selected', this)[0].value).Amount, PointRate) + " NPoints");
+                        $("#PkgDetailsAmount").html(UserData.Packages.find(x => x.Id == $('option:selected', this)[0].value).Amount + " NPR / " + ConvertAmountToPoints(UserData.Packages.find(x => x.Id == $('option:selected', this)[0].value).Amount, PointRate) + " Points");
                         if (UserData.CurrentPlan.DueAmount != 0) {
                             $("#duePresent").removeClass("d-none");
-                            $("#FinalAmount").html(parseInt($("#DueAmount").text().split("/")[1].replace("NPoints", "")) + parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("NPoints", "")));
+                            $("#FinalAmount").html(parseInt($("#DueAmount").text().split("/")[1].replace("Points", "")) + parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("Points", "")));
                         }
                         else {
                             $("#duePresent").addClass("d-none");
-                            $("#FinalAmount").html(parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("NPoints", "")));
+                            $("#FinalAmount").html(parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("Points", "")));
                         }
                         CheckAvailability($("#FinalAmount").text());
                     }
@@ -600,14 +600,14 @@
                     $("#trPkgDetailsAmount").removeClass("d-none");
                     $("#PkgDetailsDurationCode").html($('option:selected', this)[0].value);
                     var Amount = UserData.Packages.find(x => x.Id == $('option:selected', $("#ddPkg"))[0].value).Details.find(x => x.DurationCode == $('option:selected', this)[0].value).Amount;
-                    $("#PkgDetailsAmount").html(Amount + " NPR / " + ConvertAmountToPoints(Amount, PointRate) + " NPoints");
+                    $("#PkgDetailsAmount").html(Amount + " NPR / " + ConvertAmountToPoints(Amount, PointRate) + " Points");
                     if (UserData.CurrentPlan.DueAmount != 0) {
                         $("#duePresent").removeClass("d-none");
-                        $("#FinalAmount").html(parseInt($("#DueAmount").text().split("/")[1].replace("NPoints", "")) + parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("NPoints", "")));
+                        $("#FinalAmount").html(parseInt($("#DueAmount").text().split("/")[1].replace("Points", "")) + parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("Points", "")));
                     }
                     else {
                         $("#duePresent").addClass("d-none");
-                        $("#FinalAmount").html(parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("NPoints", "")));
+                        $("#FinalAmount").html(parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("Points", "")));
                     }
                     CheckAvailability($("#FinalAmount").text());
                 }
@@ -855,7 +855,7 @@
                                 $("#trPlanType").addClass("d-none");
                             }
                             if (parseData.CurrentPlan.Amount != 0) {
-                                $("#CurrPlanAmount").html(parseData.CurrentPlan.Amount + " NPR / " + ConvertAmountToPoints(parseData.CurrentPlan.Amount, PointRate) + " NPoints");
+                                $("#CurrPlanAmount").html(parseData.CurrentPlan.Amount + " NPR / " + ConvertAmountToPoints(parseData.CurrentPlan.Amount, PointRate) + " Points");
                                 $("#trCurrPlanAmount").removeClass("d-none");
                             }
                             else {
@@ -869,7 +869,7 @@
                                 $("#trDaysRemaining").addClass("d-none");
                             }
                             if (parseData.CurrentPlan.DueAmount != 0) {
-                                $("#DueAmount").html(parseData.CurrentPlan.DueAmount + " NPR / " + ConvertAmountToPoints(parseData.CurrentPlan.DueAmount, PointRate) + " NPoints");
+                                $("#DueAmount").html(parseData.CurrentPlan.DueAmount + " NPR / " + ConvertAmountToPoints(parseData.CurrentPlan.DueAmount, PointRate) + " Points");
                                 $("#trDueAmount").removeClass("d-none");
                             }
                             else {
@@ -883,7 +883,7 @@
                                 $("#trCurrPlanMessage").addClass("d-none");
                             }
                             if (parseData.CurrentPlan.PreviousBalance != 0) {
-                                $("#PreviousBalance").html(parseData.CurrentPlan.PreviousBalance + " NPR / " + ConvertAmountToPoints(parseData.CurrentPlan.PreviousBalance, PointRate) + " NPoints");
+                                $("#PreviousBalance").html(parseData.CurrentPlan.PreviousBalance + " NPR / " + ConvertAmountToPoints(parseData.CurrentPlan.PreviousBalance, PointRate) + " Points");
                                 $("#trPreviousBalance").removeClass("d-none");
                             }
                             else {
@@ -924,7 +924,7 @@
                                     $("#DurationCode").html(parseData.CurrentPlan.Details[0].DurationCode);
                                 }
                                 $("#trDetailsAmount").removeClass("d-none");
-                                $("#DetailsAmount").html(parseData.CurrentPlan.Details[0].Amount + " NPR / " + ConvertAmountToPoints(parseData.CurrentPlan.Details[0].Amount, PointRate) + " NPoints");
+                                $("#DetailsAmount").html(parseData.CurrentPlan.Details[0].Amount + " NPR / " + ConvertAmountToPoints(parseData.CurrentPlan.Details[0].Amount, PointRate) + " Points");
                             }
                             else {
                                 $("#trCurrPlanDetails").addClass("d-none");
@@ -958,14 +958,14 @@
                                     $("#trPkgDetailsDurationCode").removeClass("d-none");
                                     $("#PkgDetailsDurationCode").html(parseData.Packages[0].Details[0].DurationCode);
                                     $("#trPkgDetailsAmount").removeClass("d-none");
-                                    $("#PkgDetailsAmount").html(parseData.Packages[0].Details[0].Amount + " NPR / " + ConvertAmountToPoints(parseData.Packages[0].Details[0].Amount, PointRate) + " NPoints");
+                                    $("#PkgDetailsAmount").html(parseData.Packages[0].Details[0].Amount + " NPR / " + ConvertAmountToPoints(parseData.Packages[0].Details[0].Amount, PointRate) + " Points");
                                 }
                                 else {
                                     $("#trPkgDetails").addClass("d-none");
                                     $("#trPkgDetailsDurationCode").addClass("d-none");
                                     if (parseData.Packages[0].Amount != 0) {
                                         $("#trPkgDetailsAmount").removeClass("d-none");
-                                        $("#PkgDetailsAmount").html(parseData.Packages[0].Amount + " NPR / " + ConvertAmountToPoints(parseData.Packages[0].Amount, PointRate) + " NPoints");
+                                        $("#PkgDetailsAmount").html(parseData.Packages[0].Amount + " NPR / " + ConvertAmountToPoints(parseData.Packages[0].Amount, PointRate) + " Points");
                                     }
                                     else {
                                         $("#trPkgDetailsAmount").addClass("d-none");
@@ -984,7 +984,7 @@
                             } else {
                                 $("#lblAmount").removeClass("d-none");
                                 $("#Amount").removeClass("d-none");
-                                $("#AmountPoints").html(parseData.Amount + " NPR / " + parseInt(ConvertAmountToPoints(parseData.Amount, PointRate)) + " NPoints");
+                                $("#AmountPoints").html(parseData.Amount + " NPR / " + parseInt(ConvertAmountToPoints(parseData.Amount, PointRate)) + " Points");
                             }
                             //Final Amount
                             if (parseData.CurrentPlan.DueAmount == 0 && parseData.Packages.length == 0) {
@@ -993,11 +993,11 @@
                             }
                             else if (parseData.CurrentPlan.DueAmount == 0 && parseData.Packages.length > 0) {
                                 $("#duePresent").addClass("d-none");
-                                $("#FinalAmount").html(parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("NPoints", "")));
+                                $("#FinalAmount").html(parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("Points", "")));
                             }
                             else if (parseData.CurrentPlan.DueAmount != 0 && parseData.Packages.length > 0) {
                                 $("#duePresent").removeClass("d-none");
-                                $("#FinalAmount").html(parseInt($("#DueAmount").text().split("/")[1].replace("NPoints", "")) + parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("NPoints", "")));
+                                $("#FinalAmount").html(parseInt($("#DueAmount").text().split("/")[1].replace("Points", "")) + parseInt($("#PkgDetailsAmount").text().split("/")[1].replace("Points", "")));
                             }
                             CheckAvailability($("#FinalAmount").text());
                         }

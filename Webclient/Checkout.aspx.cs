@@ -96,9 +96,9 @@ public partial class Checkout : Page
                 sb.Append(string.Format(HeaderTemplate, Cart.ItemsQuantity));
                 foreach (var item in Cart.Items)
                 {
-                    sb.Append(string.Format(BodyTemplate, item.Name, item.Name, lobjModel.FormatPoints(Math.Ceiling(item.Price.SalePrice.Amount), "NPoints"), item.Quantity));
+                    sb.Append(string.Format(BodyTemplate, item.Name, item.Name, lobjModel.FormatPoints(Math.Ceiling(item.Price.SalePrice.Amount), "Points"), item.Quantity));
                 }
-                sb.Append(string.Format(TotalTemplate, lobjModel.FormatPoints(Math.Ceiling(Cart.Price.Total.Amount), "NPoints")));
+                sb.Append(string.Format(TotalTemplate, lobjModel.FormatPoints(Math.Ceiling(Cart.Price.Total.Amount), "Points")));
             }
             lstrHtmlResponse = sb.ToString();
         }

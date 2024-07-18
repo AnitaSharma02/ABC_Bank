@@ -284,7 +284,7 @@ function loadRoomsOnPage(noofRooms) {
     strTemplate += '<input type="checkbox" disabled="disabled" checked="checked" />';
     strTemplate += '<span class="checkmark"></span>';
     strTemplate += '</span>';
-    strTemplate += '<span class="d-inline-block ml-2">Redeem NPoints</span>';
+    strTemplate += '<span class="d-inline-block ml-2">Redeem Points</span>';
     strTemplate += '</label>';
     strTemplate += '</div>';
     strTemplate += '</div>';
@@ -495,7 +495,7 @@ function BindRoomsDynamic(Count) {
         htmlString += '<input type="checkbox" disabled="disabled" checked="checked" />';
         htmlString += '<span class="checkmark"></span>';
         htmlString += '</span>';
-        htmlString += '<span class="d-inline-block ml-2">Redeem NPoints</span>';
+        htmlString += '<span class="d-inline-block ml-2">Redeem Points</span>';
         htmlString += '</label>';
         htmlString += '</div>';
         htmlString += '</div>';
@@ -510,7 +510,7 @@ function BindRoomsDynamic(Count) {
         //htmlString += '<input type="checkbox" disabled="disabled" checked="checked" />';
         //htmlString += '<span class="checkmark"></span>';
         //htmlString += '</span>';
-        //htmlString += '<span class="d-inline-block ml-2">Redeem NPoints</span>';
+        //htmlString += '<span class="d-inline-block ml-2">Redeem Points</span>';
         //htmlString += '</label>';
         //htmlString += '</div>';
         //htmlString += '</div>';

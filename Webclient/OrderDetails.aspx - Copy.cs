@@ -67,14 +67,14 @@ public partial class OrderDetails : Page
                                         lstrHtmlContent += "<div class=\"row pb-2 border-bottom align-items-sm-center justify-content-between\"><div class=\"col-3 col-sm-2 col-lg-1\"><div class=\"img-container\"><img src=\"" + lobjCustomerOrder.Items[i].ImageUrl + "\"/></div></div>"
                                             + "<div class=\"col-12 col-sm-5 col-lg-6\"><p><span>Product</span> <span class=\"h6 heading-semibold\">" + lobjCustomerOrder.Items[i].Name + "</span></p></div>"
                                             + "<div class=\"col-12 col-sm-2 text-sm-right\"><p>Qty <span class=\"h6 heading-semibold\">" + lobjCustomerOrder.Items[i].Quantity + "</span></p></div>"
-                                            + "<div class=\"col-12 col-sm-3 text-sm-right\"><p class=\"heading-semibold\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Items[i].Price.ListPrice.Amount), "NPoints") + "</p></div></div>";
+                                            + "<div class=\"col-12 col-sm-3 text-sm-right\"><p class=\"heading-semibold\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Items[i].Price.ListPrice.Amount), "Points") + "</p></div></div>";
                                     }
                                     lstrHtmlContent += "<div class=\"row align-items-lg-center justify-content-between\"><div class=\"col-12 mt-2\"><div class=\"row my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"\">Sub-Total</p></div>"
-                                     + "<div class=\"col-6 col-md-3 text-right\"><p class=\"\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.SubTotal.Amount), "NPoints") + "</p></div></div></div>"
+                                     + "<div class=\"col-6 col-md-3 text-right\"><p class=\"\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.SubTotal.Amount), "Points") + "</p></div></div></div>"
                                      + "<div class=\"col-12\"><div class=\"row my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"\">Shipping</p></div>"
-                                     + "<div class=\"col-6 col-md-3 text-right\"><p class=\"\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.ShippingPrice.Amount), "NPoints") + "</p></div></div></div>"
+                                     + "<div class=\"col-6 col-md-3 text-right\"><p class=\"\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.ShippingPrice.Amount), "Points") + "</p></div></div></div>"
                                      + "<div class=\"col-12\"><div class=\"row my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"heading-semibold\">Total</p></div>"
-                                     + "<div class=\"col-6 col-md-3 text-right\"><p class=\"heading-semibold\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.Total.Amount), "NPoints") + "</p></div></div></div></div>"
+                                     + "<div class=\"col-6 col-md-3 text-right\"><p class=\"heading-semibold\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.Total.Amount), "Points") + "</p></div></div></div></div>"
                                      + "<div class=\"row align-items-lg-center justify-content-end\"><div class=\"col-12 mt-2 mt-lg-3 mt-lg-0 col-lg-auto text-left text-sm-right\"><button type=\"button\" class=\"btn btn-one\" data-toggle=\"modal\" data-target=\"#dvOrderDetailsModal\" onclick=\"ViewDetails();\">View Details</button></div></div>";
                                     lstrHtmlContent += "</div>";
                                     divOrderDetails.InnerHtml = lstrHtmlContent;
@@ -371,11 +371,11 @@ public partial class OrderDetails : Page
                                     lstrHtmlContent += "<tr><td><img style=\"height:100px;\" src=\"" + lobjCustomerOrder.Items[i].ImageUrl + "\"/></td>"
                                         + "<td>" + lobjCustomerOrder.Items[i].Name + "</td>"
                                         + "<td>" + lobjCustomerOrder.Items[i].Quantity + "</td>"
-                                        + "<td class=\"text-right\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Items[i].Price.ListPrice.Amount), "NPoints") + "</td></tr>";
+                                        + "<td class=\"text-right\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Items[i].Price.ListPrice.Amount), "Points") + "</td></tr>";
                                 }
-                                lstrHtmlContent += "<tr><td></td><td></td><td>Sub-Total</td><td class=\"text-right\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.SubTotal.Amount), "NPoints") + "</td></tr>"
-                                 + "<tr><td></td><td></td><td>Shipping</td><td class=\"text-right\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.ShippingPrice.Amount), "NPoints") + "</td></tr>"
-                                 + "<tr><td></td><td></td><td><strong>Total</strong></td><td class=\"text-right\"><strong>" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.Total.Amount), "NPoints") + "</strong></td></tr>";
+                                lstrHtmlContent += "<tr><td></td><td></td><td>Sub-Total</td><td class=\"text-right\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.SubTotal.Amount), "Points") + "</td></tr>"
+                                 + "<tr><td></td><td></td><td>Shipping</td><td class=\"text-right\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.ShippingPrice.Amount), "Points") + "</td></tr>"
+                                 + "<tr><td></td><td></td><td><strong>Total</strong></td><td class=\"text-right\"><strong>" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.Total.Amount), "Points") + "</strong></td></tr>";
                                 lstrHtmlContent += "</tbody></table>";
                                 divOrderDetails.InnerHtml = lstrHtmlContent;
                                 if (lobjCustomerOrder.Shipments[0].Status == "ReadyToSend")

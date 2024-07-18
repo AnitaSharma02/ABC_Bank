@@ -44,7 +44,7 @@
                                     <span class="font-weight-bold">PNR No.:</span><br />
                                     <asp:Label ID="lblGDSPNR" runat="server" /><br />
 
-                                    <span class="font-weight-bold">NPoints:</span><br />
+                                    <span class="font-weight-bold">Points:</span><br />
                                     <asp:Label ID="lblTotalMiles" runat="server"></asp:Label><br />
                                 </p>
                             </div>

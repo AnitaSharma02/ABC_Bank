@@ -68,7 +68,7 @@ public partial class AirReviewAndConfirm : System.Web.UI.Page
                     {
                         btnBookNow.Enabled = false;
                         divError.Style.Add("display", "block");
-                        lblError.Text = "You need " + Convert.ToDouble(lobjCreateItineraryResponse.ItineraryDetails.FareDetails.TotalPoints).ToString() + " NPoints to book this flight. Your available NPoints is " + Convert.ToDouble(Session["MemberMiles"]).ToString() + ".";
+                        lblError.Text = "You need " + Convert.ToDouble(lobjCreateItineraryResponse.ItineraryDetails.FareDetails.TotalPoints).ToString() + " Points to book this flight. Your available Points is " + Convert.ToDouble(Session["MemberMiles"]).ToString() + ".";
                     }
                     Session["ItineraryResponse"] = lobjCreateItineraryResponse;
                 }

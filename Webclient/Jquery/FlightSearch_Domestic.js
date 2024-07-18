@@ -202,7 +202,7 @@ function CheckAvailability(amount) {
             }
             else {
                 $("#divInsufficient").show();
-                $("#divInsufficient").text("Insufficient NPoints");
+                $("#divInsufficient").text("Insufficient Points");
                 $("#btnRedeemFlight").addClass('d-none');
                 return false;
             }

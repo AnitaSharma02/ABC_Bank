@@ -5,7 +5,7 @@
 <head id="Head1" runat="server">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Welcome to ABC BANK</title>
+    <title>Welcome to Infinity Rewards</title>
     <link rel="shortcut icon" type="image/x-icon" href="\Images/icons/favicon/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" type="text/css" href="~/fonts/fontawesome-free-6.5.1-web/css/all.min.css" asp-append-version="true" />
@@ -233,12 +233,12 @@
                                 </div>
                                 <div class="dvPoints col-auto px-0 ml-3" runat="server" visible="false" id="dvPoints">
                                     <div class="nav-item col-12" id="liPoints" runat="server" visible="false">
-                                        <a class="points h7 heading-regular" href="javascript:void(0);" data-i18n="navigation-points">NPoints<span>
+                                        <a class="points h7 heading-regular" href="javascript:void(0);" data-i18n="navigation-points">Points<span>
                                             <asp:Label ID="lblAvailablePoints" runat="server" Text="0"></asp:Label></span>
                                         </a>
                                     </div>
                                     <div id="HeaderTot" class="text-client-name" runat="server" visible="false">
-                                        <asp:Label runat="server" CssClass="h7 heading-regular text-colour7 " ID="Label1" Text="NPoints" data-i18n="navigation-points"></asp:Label><span class="ml-1 h7 heading-regular text-colour7 " id="totAvbPointDiv" runat="server" visible="false"><asp:Label runat="server" ID="lblCurrentBal" class="loginbtn_personal login_btn" ForeColor="" Text="0"></asp:Label></span>
+                                        <asp:Label runat="server" CssClass="h7 heading-regular text-colour7 " ID="Label1" Text="Points" data-i18n="navigation-points"></asp:Label><span class="ml-1 h7 heading-regular text-colour7 " id="totAvbPointDiv" runat="server" visible="false"><asp:Label runat="server" ID="lblCurrentBal" class="loginbtn_personal login_btn" ForeColor="" Text="0"></asp:Label></span>
                                     </div>
                                 </div>
                             </div>
@@ -269,13 +269,13 @@
                     <div class="collapse navbar-collapse order-2 order-lg-1 col-lg-8 px-0 mb-1 mb-lg-0 justify-content-between ml-lg-auto" id="navbarSupportedContent">
                         <ul class="navbar-nav align-items-lg-center">
                             <li class="nav-item">
-                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" data-i18n="navigation-about-us" id="about" href="AboutUs.aspx">About Us</a>
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" data-i18n="navigation-about-us" id="about" href="ComingSoon.aspx">About Us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" data-i18n="navigation-earn" id="earn" href="ComingSoon.aspx">Earn</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="Redeem.aspx" id="redeem" data-i18n="navigation-redeem">Redeem</a>
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="ComingSoon.aspx" id="redeem" data-i18n="navigation-redeem">Redeem</a>
                             </li>
                             <li class="nav-item dropdown" runat="server" visible="true" id="limyaccount">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="StatementSummary.aspx" id="navbarDropdown" data-i18n="navigation-my-account">My Account</a>
@@ -335,13 +335,13 @@
                     <div class="row align-items-lg-center">
                         <div class="dvLinks col-lg-10 text-center text-lg-left mb-3 mb-lg-0 text-uppercase">
                             <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-earn">Earn</a>
-                            <a class="d-block d-md-inline-block py-1" href="Redeem.aspx" data-i18n="navigation-redeem">Redeem</a>
-                            <a class="d-block d-md-inline-block py-1" href="AboutUs.aspx" data-i18n="navigation-about-us">About Us</a>
-                            <a class="d-block d-md-inline-block py-1" href="FAQ.aspx" data-i18n="navigation-faqs">FAQs</a>
-                            <a class="d-block d-md-inline-block py-1" href="TermsAndConditions.aspx" data-i18n="navigation-tnc">Terms &amp; Conditions</a>
-                            <a class="d-block d-md-inline-block py-1" href="PrivacyPolicy.aspx" data-i18n="bannertext-privacy">Privacy Policy</a>
-                            <a class="d-block d-md-inline-block py-1" href="BookingPolicy.aspx" data-i18n="navigation-booking-policy">Booking Policy</a>
-                            <a class="d-block d-md-inline-block py-1" href="Disclaimer.aspx" data-i18n="navigation-disclaimer">Disclaimer</a>
+                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-redeem">Redeem</a>
+                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-about-us">About Us</a>
+                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-faqs">FAQs</a>
+                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-tnc">Terms &amp; Conditions</a>
+                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="bannertext-privacy">Privacy Policy</a>
+                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-booking-policy">Booking Policy</a>
+                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-disclaimer">Disclaimer</a>
                         </div>
                         <div class="dvSocialIcons col-lg-2 text-center text-lg-right mb-3 mb-md-0">
                             <a class="d-inline-block px-1" href="https://www.facebook.com/NicAsiaBank/" target="_blank">

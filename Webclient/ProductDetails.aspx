@@ -104,7 +104,7 @@
                                        </div>--%>
                                 </div>
                                  <div class="form-group col-12 col-sm-6">
-                                     <label id="lbldivPoints" runat="server" class="h6 heading-regular text-colour7 mb-2" data-i18n="text-total-points">Total NPoints</label>
+                                     <label id="lbldivPoints" runat="server" class="h6 heading-regular text-colour7 mb-2" data-i18n="text-total-points">Total Points</label>
                                      <div class="border h6 text-colour7 heading-regular " id="divspanpoints" runat="server">
                                      </div>
                                  </div>
@@ -179,7 +179,7 @@
                                 <h2 class="h6 heading-semibold text-danger" data-i18n="shopproddetails-total">Out Of Stock</h2>
                             </div>
                             <div class="form-group" id="divInsufficient" runat="server" style="display: none;">
-                                <h2 class="h6 heading-semibold text-danger" data-i18n="text-insufficient">Insufficient NPoints</h2>
+                                <h2 class="h6 heading-semibold text-danger" data-i18n="text-insufficient">Insufficient Points</h2>
                             </div>
                              <div class="form-group" id="divEmailErrorMsg" runat="server">
                                 <h2 class="h6 heading-semibold text-danger">You cannot proceed for redemption since there is no email address updated , kindly contact bank to update the email address.</h2>
@@ -530,7 +530,7 @@
                         }
                         else if (data == "INSUFFICIENT_POINTS") {
                             var pop = document.getElementById("alertmessage");
-                            pop.innerHTML = "Insufficient NPoints.";
+                            pop.innerHTML = "Insufficient Points.";
                             $('#alertModal').modal('show');
                             //alert("Insufficient points.");
                         }
@@ -733,7 +733,7 @@
                             }
                             else {
                                 if (data == "INSUFFICIENT_POINTS") {
-                                    $('#divErrorMsg').empty().html("Insufficient NPoints.");
+                                    $('#divErrorMsg').empty().html("Insufficient Points.");
                                 }
                                 else if (data == "Invalid Product") {
                                     $('#divErrorMsg').empty().html("Invalid Product.");
@@ -801,7 +801,7 @@
                         $('#CP_CPSHOP_hfProductId').val(data[0].Id);
                         $('#CP_CPSHOP_imgProductImageMain').attr("src", data[0].PrimaryImage.Url);
                         $('#CP_CPSHOP_spanProductName').text(data[0].Name);
-                        $('#CP_CPSHOP_spanPoints').text(ConvertThousandSeparator(data[0].Price.SalePrice.Amount * quantity) + " " + "NPoints");
+                        $('#CP_CPSHOP_spanPoints').text(ConvertThousandSeparator(data[0].Price.SalePrice.Amount * quantity) + " " + "Points");
                         $('#CP_CPSHOP_divspanpoints').text(ConvertThousandSeparator(data[0].Price.SalePrice.Amount * quantity));
                         for (var i = 0; i < data[0].Images.length; i++) {
                             $('#CP_CPSHOP_divThumbnailImages').html('<img src="' + data[0].Images[i].Url + '" class="img-thumbnail"  width="100" height="100" onclick="changeImage(this)">');

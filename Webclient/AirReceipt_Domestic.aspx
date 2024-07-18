@@ -69,7 +69,7 @@
                         </div>
                         <div class="col2">
                             <div>
-                                NPoints: 
+                                Points: 
                             </div>
                             <asp:Label ID="lblTotalMiles" runat="server"></asp:Label>
                         </div>

@@ -276,15 +276,15 @@ public partial class PointGateway : System.Web.UI.Page
                         {
                             lstrHtmlContent += "<tr style=\"background-color:#ebecee; text-align:center\">"
                                             + "<td style=\"padding:0.6em 0.4em; text-align:left\">" + Order.Items[i].Name + "</td>"
-                                            + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjModel.FormatPoints(Math.Ceiling(Order.Items[i].Price.ListPrice.Amount), "NPoints") + "</td>"
+                                            + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjModel.FormatPoints(Math.Ceiling(Order.Items[i].Price.ListPrice.Amount), "Points") + "</td>"
                                             + "<td style=\"padding:0.6em 0.4em; text-align:center\">" + Order.Items[i].Quantity + "</td>"
-                                            + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjModel.FormatPoints(Math.Ceiling(Order.Items[i].Price.ExtendedPrice.Amount), "NPoints") + "</td>"
+                                            + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjModel.FormatPoints(Math.Ceiling(Order.Items[i].Price.ExtendedPrice.Amount), "Points") + "</td>"
                                             + "</tr>";
                         }
                         lstrHtmlContent += "<tr style=\"text-align:right\">"
                                         + "<td></td>"
                                         + "<td colspan=\"2\" style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>Sub-Total:</strong></td>"
-                                        + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(Order.Price.SubTotal.Amount), "NPoints") + "</strong></td>"
+                                        + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(Order.Price.SubTotal.Amount), "Points") + "</strong></td>"
                                         + "</tr>"
 
                                         //+ "<tr style=\"text-align:right\">"
@@ -302,7 +302,7 @@ public partial class PointGateway : System.Web.UI.Page
                                         + "<tr style=\"text-align:right\">"
                                         + "<td></td>"
                                         + "<td colspan=\"2\" style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>Order Total:</strong></td>"
-                                        + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(Order.Price.Total.Amount), "NPoints") + "</strong></td>"
+                                        + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjModel.FormatPoints(Math.Ceiling(Order.Price.Total.Amount), "Points") + "</strong></td>"
                                         + "</tr>"
 
                                         + "</tbody>"
@@ -373,7 +373,7 @@ public partial class PointGateway : System.Web.UI.Page
                         dynamicCls.order_details = lstrHtmlContent;
                         dynamicCls.order_shipping_details = lstrShippingAddressContent;
                         dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
-                        dynamicCls.point_issued = lobjModel.FormatPoints(Math.Ceiling(Order.Price.Total.Amount), "NPoints");
+                        dynamicCls.point_issued = lobjModel.FormatPoints(Math.Ceiling(Order.Price.Total.Amount), "Points");
                         Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
                         IDictionary<string, object> dict = (IDictionary<string, object>)dynamicCls;
                         foreach (var key in dict)
@@ -503,34 +503,34 @@ public partial class PointGateway : System.Web.UI.Page
                                     {
                                         lstrHtmlContent += "<tr style=\"background-color:#ebecee; text-align:center\">"
                                                         + "<td style=\"padding:0.6em 0.4em; text-align:left\">" + Order.Items[i].Name + "</td>"
-                                                        + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Items[i].Price.ListPrice.Amount), "NPoints") + "</td>"
+                                                        + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Items[i].Price.ListPrice.Amount), "Points") + "</td>"
                                                         + "<td style=\"padding:0.6em 0.4em; text-align:center\">" + Order.Items[i].Quantity + "</td>"
-                                                        + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Items[i].Price.ExtendedPrice.Amount), "NPoints") + "</td>"
+                                                        + "<td style=\"padding:0.6em 0.4em; text-align:right\">" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Items[i].Price.ExtendedPrice.Amount), "Points") + "</td>"
                                                         + "</tr>";
                                     }
 
                                     lstrHtmlContent += "<tr style=\"text-align:right\">"
                                                     + "<td></td>"
                                                     + "<td colspan=\"2\" style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>Sub-Total:</strong></td>"
-                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Price.SubTotal.Amount), "NPoints") + "</strong></td>"
+                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Price.SubTotal.Amount), "Points") + "</strong></td>"
                                                     + "</tr>"
 
                                                     + "<tr style=\"text-align:right\">"
                                                     + "<td></td>"
                                                     + "<td colspan = \"2\" style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>Shipping:</strong></td>"
-                                                    + "<td style = \"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Price.ShippingTotal.Amount), "NPoints") + "</strong></td>"
+                                                    + "<td style = \"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Price.ShippingTotal.Amount), "Points") + "</strong></td>"
                                                     + "</tr>"
 
                                                     + "<tr style=\"text-align:right\">"
                                                     + "<td></td>"
                                                     + "<td colspan = \"2\" style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>Tax:</strong></td>"
-                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Price.TaxTotal.Amount), "NPoints") + "</strong></td>"
+                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Price.TaxTotal.Amount), "Points") + "</strong></td>"
                                                     + "</tr>"
 
                                                     + "<tr style=\"text-align:right\">"
                                                     + "<td></td>"
                                                     + "<td colspan=\"2\" style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>Order Total:</strong></td>"
-                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Price.Total.Amount), "NPoints") + "</strong></td>"
+                                                    + "<td style=\"background-color:#dde2e6; padding:0.6em 0.4 em\"><strong>" + lobjVerveModel.FormatPoints(Math.Ceiling(Order.Price.Total.Amount), "Points") + "</strong></td>"
                                                     + "</tr>"
 
                                                     + "</tbody>"
@@ -590,7 +590,7 @@ public partial class PointGateway : System.Web.UI.Page
                                     dynamicCls.order_details = lstrHtmlContent;
                                     dynamicCls.order_shipping_details = lstrShippingAddressContent;
                                     dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
-                                    dynamicCls.point_issued = lobjVerveModel.FormatPoints(Math.Ceiling(Order.Price.Total.Amount), "NPoints");
+                                    dynamicCls.point_issued = lobjVerveModel.FormatPoints(Math.Ceiling(Order.Price.Total.Amount), "Points");
                                     Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
                                     IDictionary<string, object> dict = (IDictionary<string, object>)dynamicCls;
                                     foreach (var key in dict)
@@ -840,7 +840,7 @@ public partial class PointGateway : System.Web.UI.Page
                                         dynamicCls.PolicyNo = HttpContext.Current.Session["InsurancePolicyNo"].ToString();
                                         dynamicCls.ReferenceId = lobjPaymentResponse.results.ReferenceId;
                                         //dynamicCls.CreditsConsumed = lobjModel.FloatToThousandSeperated(float.Parse(lobjUserdetails.results.Amount.ToString())) + " NPR";
-                                        dynamicCls.Points = lobjModel.FloatToThousandSeperated(lintTotalPrice) + " NPoints";
+                                        dynamicCls.Points = lobjModel.FloatToThousandSeperated(lintTotalPrice) + " Points";
                                         dynamicCls.TransactionDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt");
                                         dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
                                         Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
@@ -1044,7 +1044,7 @@ public partial class PointGateway : System.Web.UI.Page
                                 dynamicCls.to_email = lobjMemberDetails.Email;
                                 dynamicCls.full_name = lobjMemberDetails.FullName;
                                 dynamicCls.TransactionReferenceCode = lobjBookingResponse.Detail.Reference;
-                                dynamicCls.PaymentDetails = lobjModel.FloatToThousandSeperated(Convert.ToSingle(lobjBookingDetailsResponse.CreditsConsumed)) + " NPoints";
+                                dynamicCls.PaymentDetails = lobjModel.FloatToThousandSeperated(Convert.ToSingle(lobjBookingDetailsResponse.CreditsConsumed)) + " Points";
                                 dynamicCls.TblPassengerInfo = strPaxInfo;
                                 dynamicCls.TblDeparture = strDepartute;
                                 dynamicCls.ReturnFlight = strReturn;
@@ -1170,7 +1170,7 @@ public partial class PointGateway : System.Web.UI.Page
                                                 dynamicCls.CustomerName = lobjUserdetails.results.CustomerDetails.CustomerName;
                                                 dynamicCls.ReferenceId = lobjPaymentResponse.results.ReferenceId;
                                                 //dynamicCls.CreditsConsumed = lobjModel.FloatToThousandSeperated(float.Parse(lobjGetDiscountResponse.results.Amount.ToString())) + " NPR";
-                                                dynamicCls.Points = lobjModel.FloatToThousandSeperated(lintTotalPrice) + " NPoints";
+                                                dynamicCls.Points = lobjModel.FloatToThousandSeperated(lintTotalPrice) + " Points";
                                                 dynamicCls.TransactionDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt");
                                                 dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
                                                 Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
@@ -1305,7 +1305,7 @@ public partial class PointGateway : System.Web.UI.Page
                                         dynamicCls.CustomerName = lobjUserdetails.results.CustomerDetails.CustomerName;
                                         dynamicCls.ReferenceId = lobjPaymentResponse.results.ReferenceId;
                                         //dynamicCls.CreditsConsumed = lobjModel.FloatToThousandSeperated(lobjModel.CalculatePointstoAmount(decimal.Parse(FinalAmountPayable.ToString()), Pointrate)) + " NPR";
-                                        dynamicCls.Points = lobjModel.FloatToThousandSeperated(float.Parse(FinalAmountPayable.ToString())) + " NPoints";
+                                        dynamicCls.Points = lobjModel.FloatToThousandSeperated(float.Parse(FinalAmountPayable.ToString())) + " Points";
                                         dynamicCls.TransactionDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt");
                                         dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
                                         Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();

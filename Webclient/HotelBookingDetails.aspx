@@ -258,7 +258,7 @@
                                                <span class="checkmark"></span>
                                            </span>
                                            <span class="d-inline-block ml-2">I agree to redeem
-                                               <asp:Label ID="lblTotalCharge" runat="server" Text=""></asp:Label>. I also understand and accept that.the redeemed NPoints cannot be refunded or credited upon cancellation of a hotel booking.</span>
+                                               <asp:Label ID="lblTotalCharge" runat="server" Text=""></asp:Label>. I also understand and accept that.the redeemed Points cannot be refunded or credited upon cancellation of a hotel booking.</span>
                                        </label>
                                         </div>
                                     </div>
@@ -333,7 +333,7 @@
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-between">
                                         <span class="h6 heading-semibold text-colour7">
-                                            Total NPoints 
+                                            Total Points 
                                         </span>
                                         <span class="h6 heading-semibold text-colour7">
                                             <asp:Label runat="server" ID="lblTotalMiles"></asp:Label>

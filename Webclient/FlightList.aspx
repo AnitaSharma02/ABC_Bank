@@ -221,7 +221,7 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span data-i18n="flightlist-total-points" class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Total NPoints</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span data-i18n="flightlist-total-points" class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Total Points</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
 
@@ -565,7 +565,7 @@
                                                             <label class="h8 heading-semibold text-colour7 checkbox-container d-flex">
                                                                 <span class="d-inline-block ml-1">
                                                                     <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
-                                                                    <span data-i18n="flight-redeem-pts-label">Redeem NPoints</span>
+                                                                    <span data-i18n="flight-redeem-pts-label">Redeem Points</span>
                                                                     <span class="checkmark" style="top:2px;"></span>
                                                                 </span>
                                                             </label>
@@ -706,7 +706,7 @@
                                                                 <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />                                                        
                                                                 <span class="checkmark"></span>
                                                             </span>
-                                                            <span class="d-inline-block ml-2">Redeem NPoints</span>
+                                                            <span class="d-inline-block ml-2">Redeem Points</span>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -720,7 +720,7 @@
 
                         <div class="dvNote col-12 mb-3">
                             <span data-i18n="flightlist-all-timigs-local" class="h7 heading-regular text-colour7 ">All timings are local. Fare not guaranteed until ticketed.</span>
-                            <span data-i18n="flightlist-brandname-points" class="h7 heading-regular text-colour7 ">NIC Asia NPoints displayed for redemption include Surcharges and Taxes.</span>
+                            <span data-i18n="flightlist-brandname-points" class="h7 heading-regular text-colour7 ">NIC Asia Points displayed for redemption include Surcharges and Taxes.</span>
 
                         </div>
                         <div class="dvProducts col-12">

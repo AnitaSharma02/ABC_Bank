@@ -266,7 +266,7 @@ public partial class ShopList : Page
                         }
                     }
                     ABCModel lobjModel = new ABCModel();
-                    sb.Append(string.Format(Template, product.PrimaryImage.Url, product.Name, lobjModel.FormatPoints(Math.Ceiling(product.Price.SalePriceWithTax.Amount), "NPoints"), "ProductDetails.aspx?ProductId=" + product.Id + "&ProductType=" + pstrProductType, string.Format("<div class='starRat'>{0}</div>", starratings), countryName));
+                    sb.Append(string.Format(Template, product.PrimaryImage.Url, product.Name, lobjModel.FormatPoints(Math.Ceiling(product.Price.SalePriceWithTax.Amount), "Points"), "ProductDetails.aspx?ProductId=" + product.Id + "&ProductType=" + pstrProductType, string.Format("<div class='starRat'>{0}</div>", starratings), countryName));
                 }
                 sb.Append("</div>");
                 if (result.totalCount > PageSize)

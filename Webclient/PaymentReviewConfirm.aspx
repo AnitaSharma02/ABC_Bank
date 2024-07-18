@@ -23,7 +23,7 @@
                                                 <span class="font-weight-bold" id="spanProductName">Lulu gift Voucher</span>
                                             </div>--%>
                                         <div class="col-lg-6 offset-lg-3 text-center mb-3">
-                                            <p class="heading-regular">Total NPoints to be Paid</p>
+                                            <p class="heading-regular">Total Points to be Paid</p>
                                             <span class="heading-bold" id="spanProductAmount"></span>
                                         </div>
                                         <div class="col-lg-6 offset-lg-3 text-center mb-3">
@@ -112,8 +112,8 @@
                 success: function (msg) {
                     if (msg.d != "") {
 
-                        $("#spanProductAmount").empty().html("NPoints " + msg.d[0]);//ProductAmount
-                        $("#spanredeemPoint").empty().html("NPoints " + msg.d[1]);//Selectedpoints
+                        $("#spanProductAmount").empty().html("Points " + msg.d[0]);//ProductAmount
+                        $("#spanredeemPoint").empty().html("Points " + msg.d[1]);//Selectedpoints
                         // $("#CP_hndSelectedAbsherpoints").val(msg.d[2]);//hndSelectedAbsherpoints
                         $("#spanredeemAmount").empty().html("NPR " + msg.d[3]);//RemainingAmount
 

@@ -39,13 +39,13 @@
                 return true;
             }
             if ((document.getElementById('CP_chkAcceptAgreements').checked == false) && (document.getElementById('CP_chkAcceptPayMiles').checked == false)) {
-                msg = "Accept Terms And Conditions and agree to pay NPoints";
+                msg = "Accept Terms And Conditions and agree to pay Points";
             }
             if (document.getElementById('CP_chkAcceptAgreements').checked == false) {
                 msg = "Accept Terms And Conditions";
             }
             if (document.getElementById('CP_chkAcceptPayMiles').checked == false) {
-                msg = "Accept & agree to pay NPoints";
+                msg = "Accept & agree to pay Points";
             }
             if (msg.length > 0) {
                 $("#errorDiv")[0].innerHTML = msg;
@@ -92,7 +92,7 @@
                                         <div class="col-12 mb-1">
                                             <label class="checkbox-container d-flex">
                                                 <span class="d-inline-block ml-1">
-                                                    <input id="chkAcceptAgreements" type="checkbox" value="rewards Npoints" runat="server" />
+                                                    <input id="chkAcceptAgreements" type="checkbox" value="rewards Points" runat="server" />
                                                     <span data-i18n="flightpassenger-ihave">I have read and agree to NIC Asia</span> <a href="TermsandConditions.aspx" target="_blank" data-i18n="footer-terms-conditions">Terms & Conditions </a><span data-i18n="flightpassenger-andthe">and the </span><a href="BookingPolicy.aspx" target="_blank" data-i18n="flightpassenger-booking-cancel">Booking & Cancellation policy</a>
                                                     <span data-i18n="flightpassenger-ofthe">of the respective service provider.</span>
                                                     <span class="checkmark"></span>
@@ -102,10 +102,10 @@
                                         <div class="col-12">
                                             <label class="checkbox-container d-flex">
                                                 <span class="d-inline-block ml-1">
-                                                    <input id="chkAcceptPayMiles" type="checkbox" value="rewards NPoints" runat="server" />
+                                                    <input id="chkAcceptPayMiles" type="checkbox" value="rewards Points" runat="server" />
                                                     <span data-i18n="flightpassenger-iagree">I agree to redeem</span>
                                                     <asp:Label ID="lblTotalPoints" runat="server" />
-                                                    <span data-i18n="flightpassenger-ialso">NPoints. I also understand and accept that the redeemed NIC Asia NPoints cannot be refunded or credited upon Cancellation of a flight booking.</span>
+                                                    <span data-i18n="flightpassenger-ialso">Points. I also understand and accept that the redeemed NIC Asia Points cannot be refunded or credited upon Cancellation of a flight booking.</span>
                                                     <span class="checkmark"></span>
                                                 </span>
                                             </label>
