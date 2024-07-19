@@ -93,7 +93,7 @@
                                             <label class="checkbox-container d-flex">
                                                 <span class="d-inline-block ml-1">
                                                     <input id="chkAcceptAgreements" type="checkbox" value="rewards Points" runat="server" />
-                                                    <span data-i18n="flightpassenger-ihave">I have read and agree to NIC Asia</span> <a href="TermsandConditions.aspx" target="_blank" data-i18n="footer-terms-conditions">Terms & Conditions </a><span data-i18n="flightpassenger-andthe">and the </span><a href="BookingPolicy.aspx" target="_blank" data-i18n="flightpassenger-booking-cancel">Booking & Cancellation policy</a>
+                                                    <span data-i18n="flightpassenger-ihave">I have read and agree to Infinity Rewards</span> <a href="TermsandConditions.aspx" target="_blank" data-i18n="footer-terms-conditions">Terms & Conditions </a><span data-i18n="flightpassenger-andthe">and the </span><a href="BookingPolicy.aspx" target="_blank" data-i18n="flightpassenger-booking-cancel">Booking & Cancellation policy</a>
                                                     <span data-i18n="flightpassenger-ofthe">of the respective service provider.</span>
                                                     <span class="checkmark"></span>
                                                 </span>
@@ -105,7 +105,7 @@
                                                     <input id="chkAcceptPayMiles" type="checkbox" value="rewards Points" runat="server" />
                                                     <span data-i18n="flightpassenger-iagree">I agree to redeem</span>
                                                     <asp:Label ID="lblTotalPoints" runat="server" />
-                                                    <span data-i18n="flightpassenger-ialso">Points. I also understand and accept that the redeemed NIC Asia Points cannot be refunded or credited upon Cancellation of a flight booking.</span>
+                                                    <span data-i18n="flightpassenger-ialso">Points. I also understand and accept that the redeemed Infinity Rewards Points cannot be refunded or credited upon Cancellation of a flight booking.</span>
                                                     <span class="checkmark"></span>
                                                 </span>
                                             </label>

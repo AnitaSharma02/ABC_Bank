@@ -150,7 +150,7 @@
                                     <p>
                                         <label>
                                             <asp:CheckBox ID="chkAcceptAgreements" runat="server" />
-                                            <span data-i18n="hotel-booking-ihave">I have read and agree to NIC Asia </span><a href="TermsandConditions.aspx" target="_blank"><span data-i18n="hotel-booking-terms">Terms
+                                            <span data-i18n="hotel-booking-ihave">I have read and agree to Infinity Rewards </span><a href="TermsandConditions.aspx" target="_blank"><span data-i18n="hotel-booking-terms">Terms
                                                 & Conditions</span></a> <span data-i18n="hotel-booking-andthe">and the </span><a href="BookingPolicy.aspx" target="_blank"><span data-i18n="hotel-booking-bookingcancel">Booking & Cancellation Policy</span></a>
                                             <span data-i18n="hotel-booking-ofthe-resp">of the respective service provider.</span></label>
                                     </p>

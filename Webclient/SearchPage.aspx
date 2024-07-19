@@ -5,7 +5,7 @@
 <head id="Head1" runat="server">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <title>Welcome to NIC Asia</title>
+    <title>Welcome to Infinity Rewards</title>
     <script type="text/javascript" src="Jquery/jquery.min.js"></script>
     <script src="Jquery/mobile-detect.min.js" type="text/javascript"></script>
      <!--Language Libs --> 

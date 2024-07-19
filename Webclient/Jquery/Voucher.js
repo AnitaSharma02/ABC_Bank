@@ -237,7 +237,7 @@ function ConfirmVoucher() {
 
                             $('#CP_lblTotalVoucherValue').text(commaFormat(totalVoucherValue));
                             $('#CP_lblRequirPointToRedeem').text(commaFormat(totalVoucherPoints));
-                            $('#CP_lblComercialbankreward').text('NIC Asia Points');
+                            $('#CP_lblComercialbankreward').text('Infinity Rewards Points');
 
                             $("#loading").hide();
 

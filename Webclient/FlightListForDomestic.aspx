@@ -551,7 +551,7 @@
                             <p>
                                 <span class="h7 heading-semibold d-block">Note:</span>
                                 <span class="h7 heading-regular d-block">All timings are local. Fare not guaranteed until ticketed.</span>
-                                <span class="h7 heading-regular d-block">NIC Asia Points displayed for redemption include Surcharges and Taxes.</span>
+                                <span class="h7 heading-regular d-block">Infinity Rewards Points displayed for redemption include Surcharges and Taxes.</span>
                                 <span class="heading-semibold d-inline-block pt-2 text-danger" id="divInsufficient"></span>
                             </p>
                         </div>
@@ -561,7 +561,7 @@
                             <div id="finalresult" style="display: none;"></div>
                         </div>
                     </div>
-                    <%--<p class="note"><span data-i18n="note-all-timigs-local">All timings are local. Fare not guaranteed until ticketed.</span> <span data-i18n="note-qib-absher-points">NIC Asia Points displayed for redemption include Surcharges and Taxes.</span></p>--%>
+                    <%--<p class="note"><span data-i18n="note-all-timigs-local">All timings are local. Fare not guaranteed until ticketed.</span> <span data-i18n="note-qib-absher-points">Infinity Rewards Points displayed for redemption include Surcharges and Taxes.</span></p>--%>
                     <div class="row flightBlk">
                         <div class="resultContent col-12">
                             <div class="row dvShowAndReturn">

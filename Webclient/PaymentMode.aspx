@@ -88,14 +88,14 @@
                 <div class="row align-items-lg-center">
                     <%--<div class="col-sm-12 col-lg-2 text-center text-lg-right mb-3 mb-lg-0">
                         <a href="Index.aspx">
-                            <img class="img-fluid" width="125" src="images/logos/infinity-logo.svg" alt="NIC Asia Logo" /></a>
+                            <img class="img-fluid" width="125" src="images/logos/infinity-logo.svg" alt="Infinity Rewards Logo" /></a>
                     </div>--%>
                     <div class="col-sm-12 text-center">
                         <p class="h8 heading-semibold">
                             ©
                   <script>
                       document.write(new Date().getFullYear());
-                  </script> NIC ASIA. All rights reserved.
+                  </script> Infinity Rewards. All rights reserved.
                         </p>
                     </div>
                     <%--<div class="col-sm-12 col-lg-5 text-center text-lg-right">

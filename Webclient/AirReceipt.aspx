@@ -27,7 +27,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="h5 heading-semibold text-colour7 my-3">Congratulations for your NIC Asia Ticket!</h2>
+                            <h2 class="h5 heading-semibold text-colour7 my-3">Congratulations for your Infinity Rewards Ticket!</h2>
                             <p>
                                 This is your E-ticket. Do present it with a valid photo identification at the airport check-in counter.<br />
                                 <span class="font-weight-bold">For international travel:</span><br />

@@ -246,7 +246,7 @@
                                                     <asp:CheckBox ID="chkAcceptAgreements" runat="server" />
                                                     <span class="checkmark"></span>
                                                 </span>
-                                                <span class="d-inline-block ml-2">I have read and agree to NIC Asia <a href="TermsandConditions.aspx" target="_blank">Terms & Conditions</a> and the <a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation Policy</a> of the respective service provider.</span>
+                                                <span class="d-inline-block ml-2">I have read and agree to Infinity Rewards <a href="TermsandConditions.aspx" target="_blank">Terms & Conditions</a> and the <a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation Policy</a> of the respective service provider.</span>
                                             </label>
                                         </div>
                                     </div>

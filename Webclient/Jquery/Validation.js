@@ -554,7 +554,7 @@ function ValidateLoginOTP() {
                             $("#divOTP").hide();
 
                             //  $("#CP_lblLoginError").html('Your Account is Locked.Please <a class="ErrorMessageLink" onclick="showOTPDivNew();">click here</a> to unlock the same.');
-                            $("#CP_lblLoginError").html('Your Account is Locked.Please kindly contact NIC Asia customer care to unlock the same.');
+                            $("#CP_lblLoginError").html('Your Account is Locked.Please kindly contact Infinity Rewards customer care to unlock the same.');
 
 
                         }
@@ -609,7 +609,7 @@ function LoginMsgCodeBehind(data) {
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#divOTP").hide();
-            $("#CP_lblLoginError").html('Your Account is Locked.Please kindly contact NIC Asia customer care to unlock the same.');
+            $("#CP_lblLoginError").html('Your Account is Locked.Please kindly contact Infinity Rewards customer care to unlock the same.');
         }
         else if (data.d == "SomethingWentWrong") {
             $("#LoginValidation")[0].innerHTML = "";
@@ -1957,7 +1957,7 @@ function LoginMsgCodeBehind(data) {
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#divOTP").hide();
-            $("#CP_lblLoginError").html('Your Account is Locked.Please kindly contact NIC Asia customer care to unlock the same.');
+            $("#CP_lblLoginError").html('Your Account is Locked.Please kindly contact Infinity Rewards customer care to unlock the same.');
         }
         else if (data == "SomethingWentWrong") {
             showLoginOTPDiv();

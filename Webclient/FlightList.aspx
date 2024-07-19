@@ -720,7 +720,7 @@
 
                         <div class="dvNote col-12 mb-3">
                             <span data-i18n="flightlist-all-timigs-local" class="h7 heading-regular text-colour7 ">All timings are local. Fare not guaranteed until ticketed.</span>
-                            <span data-i18n="flightlist-brandname-points" class="h7 heading-regular text-colour7 ">NIC Asia Points displayed for redemption include Surcharges and Taxes.</span>
+                            <span data-i18n="flightlist-brandname-points" class="h7 heading-regular text-colour7 ">Infinity Rewards Points displayed for redemption include Surcharges and Taxes.</span>
 
                         </div>
                         <div class="dvProducts col-12">
