@@ -73,15 +73,15 @@ public partial class OrderDetails : Page
                                     {
                                         lstrHtmlContent += "<div class=\"row pb-2 border-bottom align-items-sm-center justify-content-between\"><div class=\"col-3 col-sm-2 col-lg-1\"><div class=\"img-container\"><img src=\"" + lobjCustomerOrder.Items[i].ImageUrl + "\"/></div></div>"
                                             + "<div class=\"col-12 col-sm-5 col-lg-6\"><p><span>Product</span> <span class=\"h6 heading-semibold\">" + lobjCustomerOrder.Items[i].Name + "</span></p></div>"
-                                            + "<div class=\"col-12 col-sm-2 text-sm-right\"><p>Qty <span class=\"h6 heading-semibold\">" + lobjCustomerOrder.Items[i].Quantity + "</span></p></div>"
-                                            + "<div class=\"col-12 col-sm-3 text-sm-right\"><p class=\"heading-semibold\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Items[i].Price.ListPrice.Amount), "Points") + "</p></div></div>";
+                                            + "<div class=\"col-12 col-sm-2 text-sm-right\"><p class=\"h7 heading-bold text-colour7\">Qty: <span class=\"h6 heading-regular\">" + lobjCustomerOrder.Items[i].Quantity + "</span></p></div>"
+                                            + "<div class=\"col-12 col-sm-3 text-sm-right\"><p class=\"h7 heading-bold text-colour7\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Items[i].Price.ListPrice.Amount), "Points") + "</p></div></div>";
                                     }
                                     lstrHtmlContent += "<div class=\"row align-items-lg-center justify-content-between\"><div class=\"col-12 mt-2\"><div class=\"row my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"\">Sub-Total</p></div>"
                                      + "<div class=\"col-6 col-md-3 text-right\"><p class=\"\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.SubTotal.Amount), "Points") + "</p></div></div></div>"
                                      + "<div class=\"col-12\"><div class=\"row my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"\">Shipping</p></div>"
                                      + "<div class=\"col-6 col-md-3 text-right\"><p class=\"\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.ShippingPrice.Amount), "Points") + "</p></div></div></div>"
-                                     + "<div class=\"col-12\"><div class=\"row my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"heading-semibold\">Total</p></div>"
-                                     + "<div class=\"col-6 col-md-3 text-right\"><p class=\"heading-semibold\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.Total.Amount), "Points") + "</p></div></div></div></div>";
+                                     + "<div class=\"col-12\"><div class=\"row my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"h6 heading-bold text-colour7\">Total</p></div>"
+                                     + "<div class=\"col-6 col-md-3 text-right\"><p class=\"h6 heading-bold text-colour7\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.Total.Amount), "Points") + "</p></div></div></div></div>";
                                      if (lobjCustomerOrder.Status != "Cancelled")
                                     {
                                         lstrHtmlContent += "<div class=\"row align-items-lg-center justify-content-end\"><div class=\"col-12 mt-2 mt-lg-3 mt-lg-0 col-lg-auto text-left text-sm-right\"><button type=\"button\" class=\"btn btn-one\" data-toggle=\"modal\" data-target=\"#dvOrderDetailsModal\" onclick=\"ViewDetails();\">View Details</button></div></div>";
@@ -126,30 +126,30 @@ public partial class OrderDetails : Page
                                                         ImageUrl = Convert.ToString(ConfigurationManager.AppSettings["GCBarcodeUrl"]) + giftCardDetails.GiftCardInfo[i].ExternalReference + ".png";
                                                     }
                                                     lstrHtml += "<div class=\"row\"><div class=\"col-12\"><div class=\"bg-colour6 p-3\"><div class=\"row\">";
-                                                    lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block\">GiftCard No:</span> <span class=\"heading-semibold text-break\">" + giftCardDetails.GiftCardInfo[i].Code + "</span></p>";
+                                                    lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">GiftCard No:</span> <span class=\"heading-semibold text-break\">" + giftCardDetails.GiftCardInfo[i].Code + "</span></p>";
                                                     if (!string.IsNullOrEmpty(giftCardDetails.GiftCardInfo[i].RedirectionUrl))
                                                     {
-                                                        lstrHtml += "for detail please click : <a href=\"" + giftCardDetails.GiftCardInfo[i].RedirectionUrl + "\" target=\"_blank\" style=\"font-family: Helvetica, Arial, sans-serif;font-size: 13px; color: #000000;display: inline-block;margin-left\">" + giftCardDetails.GiftCardInfo[i].RedirectionUrl + "</a>";
+                                                        lstrHtml += "for detail please click : <a class=\"text-break\" href=\"" + giftCardDetails.GiftCardInfo[i].RedirectionUrl + "\" target=\"_blank\" style=\"font-family: Helvetica, Arial, sans-serif;font-size: 13px; color: #000000;display: inline-block;margin-left\">" + giftCardDetails.GiftCardInfo[i].RedirectionUrl + "</a>";
                                                     }
                                                     lstrHtml += "</div>";
-                                                    lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block\">GiftCard Value:</span> <span class=\"heading-semibold\">" + giftCardDetails.GiftCardInfo[i].Value + "</span></p></div>";
+                                                    lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">GiftCard Value:</span> <span class=\"heading-semibold\">" + giftCardDetails.GiftCardInfo[i].Value + "</span></p></div>";
                                                     if (giftCardDetails.GiftCardInfo[i].ExpiryDate != null)
                                                     {
                                                         try
                                                         {
-                                                            lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block\">Date:</span> <span class=\"heading-semibold\">" + Convert.ToDateTime(giftCardDetails.GiftCardInfo[i].ExpiryDate).ToString("dd/MM/yyyy") + "</span></p></div>";
+                                                            lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">Date:</span> <span class=\"heading-semibold\">" + Convert.ToDateTime(giftCardDetails.GiftCardInfo[i].ExpiryDate).ToString("dd/MM/yyyy") + "</span></p></div>";
                                                         }
                                                         catch (Exception ex)
                                                         {
-                                                            lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block\">Date:</span> <span class=\"heading-semibold\">" + giftCardDetails.GiftCardInfo[i].ExpiryDate + "</span></p></div>";
+                                                            lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">Date:</span> <span class=\"heading-semibold\">" + giftCardDetails.GiftCardInfo[i].ExpiryDate + "</span></p></div>";
                                                             LoggingAdapter.WriteLog("Error GiftCards Expiry Date - " + ex.Message + Environment.NewLine + ex.StackTrace);
                                                         }
                                                     }
                                                     if (!string.IsNullOrEmpty(giftCardDetails.GiftCardInfo[i].Pin))
                                                     {
-                                                        lstrHtml += "<div class=\"col-12 col-sm-6\"><p class=\"\"><span class=\"d-block d-md-inline-block\">CGiftCard Info:</span> <span class=\"heading-semibold\">" + Convert.ToString(giftCardDetails.GiftCardInfo[i].Pin) + "</span></p></div>";
+                                                        lstrHtml += "<div class=\"col-12 col-sm-6\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">CGiftCard Info:</span> <span class=\"heading-semibold\">" + Convert.ToString(giftCardDetails.GiftCardInfo[i].Pin) + "</span></p></div>";
                                                     }
-                                                    lstrHtml += "<div class=\"col-12 col-sm-6\"><p class=\"\"><span class=\"d-block d-md-inline-block\">CGiftCard Info:</span> <img class=\"img-fluid barcode-img\" src=\"" + ImageUrl + "\"/></p></div>";
+                                                    lstrHtml += "<div class=\"col-12 col-sm-6\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">CGiftCard Info:</span> <img class=\"img-fluid barcode-img\" src=\"" + ImageUrl + "\"/></p></div>";
                                                     lstrHtml += "</div> </div></div></div>";
                                                 }
                                                 LoggingAdapter.WriteLog("View Details html -:" + lstrHtml);

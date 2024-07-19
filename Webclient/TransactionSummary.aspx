@@ -249,8 +249,8 @@
                         <div id="tblsearchinfo" runat="server" class="dvCustomSearch" style="display: none">
                             <div class="row">
                                 <div class="col-12 col-sm-6 col-md-4 mb-3">
-                                    <label class="heading-regular" data-i18n="ts-label-from">From</label>
-                                    <div class="dvCP_FromDate input-group">
+                                    <label class="label" data-i18n="ts-label-from">From</label>
+                                    <div class="dvCP_FromDate dvInputGroup input-group">
                                         <asp:TextBox ID="FromDate" runat="server" CssClass="FromDate form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" Text="Enter Date" readonly="true"/>
                                         <div class="input-group-append">
                                             <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
@@ -259,8 +259,8 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="FromDate" ErrorMessage="Enter From Date<br/>" Style="color: #ff0000" Display="Dynamic" ValidationGroup="DateSearch"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-4 mb-3">
-                                    <label class="heading-regular" data-i18n="ts-label-to">To</label>
-                                    <div class="dvCP_Todate input-group">
+                                    <label class="label" data-i18n="ts-label-to">To</label>
+                                    <div class="dvCP_Todate dvInputGroup input-group">
                                         <asp:TextBox ID="Todate" runat="server" CssClass="Todate form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" Text="Enter Date" readonly="true"/>
                                         <div class="input-group-append">
                                             <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>

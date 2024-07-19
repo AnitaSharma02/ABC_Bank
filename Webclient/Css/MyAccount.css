@@ -47,6 +47,9 @@
   color: var(--bg-colour1);
   font-size: 1.25rem;
 }
+.dvTransactionSummary .dvInput.input-group .form-control[readonly], .dvTransactionSummary .dvInputGroup.input-group .form-control[readonly] {
+    background-color: var(--colour6);
+}
 /*=========[ TRANSACTION SUMMARY ]=========*/
 
 /*=========[ POINTS EXPIRY ]=========*/

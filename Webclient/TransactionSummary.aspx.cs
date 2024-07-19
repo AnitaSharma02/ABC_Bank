@@ -312,11 +312,11 @@ public partial class TransactionSummary : System.Web.UI.Page
                     sb.Append("<h2 class='h6 heading-regular text-capitalize'>Amount Paid<span class='h6 heading-bold text-colour1'> NPR</span><span class='h6 heading-bold text-colour7'> "+ transactionDetails.TransactionDetailBreakage.SourceAmount + "</span></h2>");
                     if (transactionDetails.TransactionType.ToString() == "Debit")
                     {
-                        sb.Append("<h2 class='h6 heading-bold text-success'>" +  "Redeemed"+ "</h2>");
+                        sb.Append("<h2 class='h6 heading-bold text-success py-2 py-lg-0'>" +  "Redeemed"+ "</h2>");
                     }
                     else
                     {
-                        sb.Append("<h2 class='h6 heading-bold text-success'>" + "Spend" + "</h2>");
+                        sb.Append("<h2 class='h6 heading-bold text-success py-2 py-lg-0'>" + "Spend" + "</h2>");
                     }
                         
                     sb.Append("</div>");

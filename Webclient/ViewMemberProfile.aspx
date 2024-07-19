@@ -111,7 +111,7 @@
                 <div class="col-12">
                     <div class="bg-lightgray rounded p-3">
                         <div class="dvCommonAccordion accordion" id="manage-accordion">
-                            <div class="card">
+                            <div class="card mb-3">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
                                         <button
@@ -132,38 +132,38 @@
                                         <div class="row">
                                             <div class="form-group col-sm-3">
                                                 <p class="">
-                                                    <span class="d-block h7 heading-semibold" data-i18n="vp-name">Name</span>
+                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-name">Name</span>
                                                     <asp:Label runat="server" CssClass="d-block" ID="labelMemberNameValue"></asp:Label>
                                                 </p>
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <p class="">
-                                                    <span class="d-block h7 heading-semibold" data-i18n="vp-mobile-no">Mobile No.</span>
+                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-mobile-no">Mobile No.</span>
                                                     <asp:Label CssClass="d-block" ID="labelMobileNo" runat="server"></asp:Label>
                                                     <asp:HiddenField ID="hfRelationRef" runat="server"></asp:HiddenField>
                                                 </p>
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <p class="">
-                                                    <span class="d-block h7 heading-semibold" data-i18n="vp-email-id">E-mail ID</span>
+                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-email-id">E-mail ID</span>
                                                     <asp:Label ID="labelEmailValue" CssClass="d-block" runat="server"></asp:Label>
                                                 </p>
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <p class="">
-                                                    <span class="d-block h7 heading-semibold" data-i18n="vp-gender">Gender</span>
+                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-gender">Gender</span>
                                                     <asp:Label runat="server" CssClass="d-block" ID="lblGender"></asp:Label>
                                                 </p>
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <p class="">
-                                                    <span class="d-block h7 heading-semibold" data-i18n="vp-nationality">Nationality</span>
+                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-nationality">Nationality</span>
                                                     <asp:Label ID="lblNationality" CssClass="d-block" runat="server"></asp:Label>
                                                 </p>
                                             </div>
                                             <div class="form-group col-sm-3">
                                                 <p class="">
-                                                    <span class="d-block h7 heading-semibold" data-i18n="vp-address">Address</span>
+                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-address">Address</span>
                                                     <asp:Label ID="labelAddressValue" CssClass="d-block" runat="server"></asp:Label>
                                                 </p>
                                             </div>
@@ -193,8 +193,8 @@
                                             <div class="col-lg-6">
                                                 <div class="row">
                                                     <div class="col-12 position-relative fontawesome">
-                                                        <label class="h8 heading-semibold">Current Password</label>
-                                                        <div class="input-group mb-3">
+                                                        <label class="label">Current Password</label>
+                                                        <div class="dvInputGroup input-group mb-3">
                                                             <input
                                                                 autocomplete="off"
                                                                 type="password"
@@ -210,8 +210,8 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-12 position-relative fontawesome">
-                                                        <label class="h8 heading-semibold">New Password</label>
-                                                        <div class="input-group mb-3">
+                                                        <label class="label">New Password</label>
+                                                        <div class="dvInputGroup input-group mb-3">
                                                             <input
                                                                 autocomplete="off"
                                                                type="password"
@@ -227,8 +227,8 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-12 position-relative fontawesome">
-                                                        <label class="h8 heading-semibold">Confirm Password</label>
-                                                        <div class="input-group mb-3">
+                                                        <label class="label">Confirm Password</label>
+                                                        <div class="dvInputGroup input-group mb-3">
                                                             <input
                                                                 autocomplete="off"
                                                                 type="password"
@@ -253,7 +253,7 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="pri-pol">
-                                                    <h2 class="h2 heading-regular">Password Policy:</h2>
+                                                    <h2 class="h6 heading-bold">Password Policy:</h2>
                                                     <ul class="p-3">
                                                         <li class="heading-regular">Minimum 8 characters in length</li>
                                                         <li class="heading-regular">Should contain at least one capital case character</li>

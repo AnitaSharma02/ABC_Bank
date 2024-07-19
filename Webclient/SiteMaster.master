@@ -386,7 +386,7 @@
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="heading-semibold text-colour1">Logout</h5>
+                    <h5 class="modal-title heading-semibold text-colour1">Logout</h5>
                     <button type="button" class="close text-colour1" data-dismiss="modal">
                       <span aria-hidden="true">&times;</span>
                     </button>

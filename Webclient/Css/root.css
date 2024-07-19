@@ -450,7 +450,7 @@
     --accordion-header-active-text: var(--colour7);
     --accordion-header-active-border: var(--colour4);
     --accordion-header-active-b-radius: var(--b-radius) var(--b-radius) 0 0;
-    --accordion-body-bg: var(--colour4);
+    --accordion-body-bg: var(--colour6);
     --accordion-body-text: var(--colour7);
     --accordion-body-border: var(--colour3);
     --accordion-body-b-radius: 0 0 var(--b-radius) var(--b-radius);
