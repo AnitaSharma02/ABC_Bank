@@ -79,7 +79,7 @@
                             <h2 class="heading5 text-colour1 mb-3 mb-md-2 mb-lg-3">Airport Lounge</h2>
                             <p>Exchange points for access to exclusive airport lounges. Enjoy peace, comfort, and luxury amenities, making your wait time a pleasant part of the journey.</p>
                             <div>
-                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                                <a href="/ShopList.aspx?CategoryId=e6f87a75-e235-47ec-a58f-76c623ca9a6f&type=Lounges&Locale=en" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                             <h2 class="heading5 text-colour1 mb-3 mb-md-2 mb-lg-3">Miles Exchange</h2>
                             <p>Exchange your points for airline miles. Elevate your travel experience with upgrades, flights, and more.</p>
                             <div>
-                                <a href="/ShopList.aspx?CategoryId=fcbfa209-3820-44d6-9c14-b7e232df584e&type=Milesexchange" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                                <a href="/ShopList.aspx?CategoryId=e7d76f9c-4af7-49a8-89bb-4733b43f4e96&type=MilesExchange&Locale=en" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
                             </div>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                             <h2 class="heading5 text-colour1 mb-3 mb-md-2 mb-lg-3">Experiences</h2>
                             <p>Redeem for unique experiences, from thrilling adventure sports to serene cultural tours. Dive into new activities that enrich your travels and create lasting memories.</p>
                             <div>
-                                <a href="#" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                                <a href="/ExperienceProductList.aspx?Locale=en" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
                             </div>
                         </div>
                     </div>
@@ -136,7 +136,7 @@
                             <h2 class="heading5 text-colour1 mb-3 mb-md-2 mb-lg-3">Shop</h2>
                             <p>Spend your points on a wide selection of products. From the latest electronics to trendy fashion, turn your loyalty into retail therapy.</p>
                             <div>
-                                <a href="/Shop.aspx?CategoryId=9149a75f-1f53-4ed7-b9b3-260b0fd6d606&ProductType=Physical&type=Shop" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
+                                <a href="/Shop.aspx?CategoryId=f0cf96b5-bf6a-48f1-bedf-a350328d7dc9&ProductType=Physical&Locale=en" class="btn btn-one text-uppercase my-3 my-md-2 my-lg-3">learn more</a>
                             </div>
                         </div>
                     </div>

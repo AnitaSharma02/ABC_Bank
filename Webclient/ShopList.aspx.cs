@@ -372,7 +372,7 @@ public partial class ShopList : Page
                                 + "<span class=\"heading-regular h7 d-inline-block ml-2\">" + item.Count + "</span>"
                                 + "</div>");
                         }
-                        filterHtml.Append("</div></div></div></div><div class=\"dvBorderBottom\">\r\n<div class=\"col-12\">\r\n<div class=\"border-bottom my-3\"></div>\r\n</div>\r\n</div>");
+                        filterHtml.Append("</div></div></div></div><div class=\"dvBorderBottom\">\r\n<div class=\"\">\r\n<div class=\"border-bottom my-3\"></div>\r\n</div>\r\n</div>");
                     }
                 }
                 html = filterHtml.ToString();
