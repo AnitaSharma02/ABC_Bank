@@ -384,27 +384,29 @@
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img1.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-wrap bg-white px-3 pt-3">
-                                <h2 class="h6 heading-bold text-truncate col-12 mb-2">leonardo</h2>
-                                <h2 class="h7 heading-regular col-12 mb-1 product-text">Seminyak-Beach-Denpasar, -BA, Indonesia
-                                </h2>
-                                <div class="mb-3">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-blank.svg" alt="">
-                                    <img src="images/icons/other/star-blank.svg" alt="">
+                            <div class="h-100">
+                                <div class="d-flex flex-column bg-white px-3 pt-3">
+                                    <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">leonardo</h2>
+                                    <p class="h7 heading-regular text-colour7 mb-1 product-text">Seminyak-Beach-Denpasar, -BA, Indonesia
+                                    </p>
+                                    <div class="mb-3">
+                                        <img src="images/icons/other/star-fill.svg" alt="">
+                                        <img src="images/icons/other/star-fill.svg" alt="">
+                                        <img src="images/icons/other/star-fill.svg" alt="">
+                                        <img src="images/icons/other/star-blank.svg" alt="">
+                                        <img src="images/icons/other/star-blank.svg" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                <h2 class="h8 heading-semibold text-truncate ">From 4,000 Points
-                                </h2>
-                                <div class="dvicon">
-                                    <img src="Images/hotelpage/hotel-icon1.svg" />
-                                    <img src="Images/hotelpage/hotel-icon2.svg" />
-                                    <img src="Images/hotelpage/hotel-icon3.svg" />
-                                    <img src="Images/hotelpage/hotel-icon4.svg" />
-                                    <img src="Images/hotelpage/hotel-icon5.svg" />
+                                <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
+                                    <h2 class="h7 heading-regular text-colour7 text-truncate">From 4,000 Points
+                                    </h2>
+                                    <div class="dvicon">
+                                        <img src="Images/hotelpage/hotel-icon1.svg" />
+                                        <img src="Images/hotelpage/hotel-icon2.svg" />
+                                        <img src="Images/hotelpage/hotel-icon3.svg" />
+                                        <img src="Images/hotelpage/hotel-icon4.svg" />
+                                        <img src="Images/hotelpage/hotel-icon5.svg" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -416,27 +418,29 @@
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img2.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-wrap bg-white px-3 pt-3">
-                                <h2 class="h6 heading-bold text-truncate col-12 mb-2">The-Hoxton</h2>
-                                <h2 class="h7 heading-regular col-12 mb-1 product-text">Rome, Italy
-                                </h2>
-                                <div class="mb-3">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-blank.svg" alt="">
-                                    <img src="images/icons/other/star-blank.svg" alt="">
+                            <div class="h-100">
+                                <div class="d-flex flex-column bg-white px-3 pt-3">
+                                    <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">The-Hoxton</h2>
+                                    <p class="h7 heading-regular text-colour7 mb-1 product-text">Rome, Italy
+                                    </p>
+                                    <div class="mb-3">
+                                        <img src="images/icons/other/star-fill.svg" alt="">
+                                        <img src="images/icons/other/star-fill.svg" alt="">
+                                        <img src="images/icons/other/star-fill.svg" alt="">
+                                        <img src="images/icons/other/star-blank.svg" alt="">
+                                        <img src="images/icons/other/star-blank.svg" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                <h2 class="h8 heading-semibold text-truncate ">From 5,000 Points
-                                </h2>
-                                <div class="dvicon">
-                                    <img src="Images/hotelpage/hotel-icon1.svg" />
-                                    <img src="Images/hotelpage/hotel-icon2.svg" />
-                                    <img src="Images/hotelpage/hotel-icon3.svg" />
-                                    <img src="Images/hotelpage/hotel-icon4.svg" />
-                                    <img src="Images/hotelpage/hotel-icon5.svg" />
+                                <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
+                                    <h2 class="h7 heading-regular text-colour7 text-truncate">From 5,000 Points
+                                    </h2>
+                                    <div class="dvicon">
+                                        <img src="Images/hotelpage/hotel-icon1.svg" />
+                                        <img src="Images/hotelpage/hotel-icon2.svg" />
+                                        <img src="Images/hotelpage/hotel-icon3.svg" />
+                                        <img src="Images/hotelpage/hotel-icon4.svg" />
+                                        <img src="Images/hotelpage/hotel-icon5.svg" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -448,10 +452,10 @@
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img3.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-wrap bg-white px-3 pt-3">
-                                <h2 class="h6 heading-bold text-truncate col-12 mb-2">The-Singular-Patagonia</h2>
-                                <h2 class="h7 heading-regular col-12 mb-1 product-text">Puerto-Natales
-                                </h2>
+                            <div class="d-flex flex-column bg-white px-3 pt-3">
+                                <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">The-Singular-Patagonia</h2>
+                                <p class="h7 heading-regular text-colour7 mb-1 product-text">Puerto-Natales
+                                </p>
                                 <div class="mb-3">
                                     <img src="images/icons/other/star-fill.svg" alt="">
                                     <img src="images/icons/other/star-fill.svg" alt="">
@@ -461,7 +465,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                <h2 class="h8 heading-semibold text-truncate ">From 6,000 Points
+                                <h2 class="h7 heading-regular text-colour7 text-truncate">From 6,000 Points
                                 </h2>
                                 <div class="dvicon">
                                     <img src="Images/hotelpage/hotel-icon1.svg" />
@@ -480,10 +484,10 @@
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img4.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-wrap bg-white px-3 pt-3">
-                                <h2 class="h6 heading-bold text-truncate col-12 mb-2">Taj falaknuma palace</h2>
-                                <h2 class="h7 heading-regular col-12 mb-1 product-text">Hyderabad, India
-                                </h2>
+                            <div class="d-flex flex-column bg-white px-3 pt-3">
+                                <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">Taj falaknuma palace</h2>
+                                <p class="h7 heading-regular text-colour7 mb-1 product-text">Hyderabad, India
+                                </p>
                                 <div class="mb-3">
                                     <img src="images/icons/other/star-fill.svg" alt="">
                                     <img src="images/icons/other/star-fill.svg" alt="">
@@ -493,7 +497,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                <h2 class="h8 heading-semibold text-truncate ">From 4,800 Points
+                                <h2 class="h7 heading-regular text-colour7 text-truncate">From 4,800 Points
                                 </h2>
                                 <div class="dvicon">
                                     <img src="Images/hotelpage/hotel-icon1.svg" />
