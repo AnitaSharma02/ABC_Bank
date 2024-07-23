@@ -76,7 +76,7 @@
                 <div class="col-12">
                     <div class="vouch-main border mb-5">
                         <div class="">
-                            <h2 class="h6 heading-semibold text-colour6 bg p-3" data-i18n="flightpassenger-airreview-review">Review & Confirm</h2>
+                            <h2 class="h6 heading-bold text-colour6 bg p-3" data-i18n="flightpassenger-airreview-review">Review & Confirm</h2>
                         </div>
 
                         <div class="airBox" id="innerPageAboutUs">

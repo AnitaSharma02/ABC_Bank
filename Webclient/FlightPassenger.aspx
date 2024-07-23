@@ -55,7 +55,7 @@
                 <div class="col-lg-7">
                    <div class="row">
                         <div class="col-12">
-                           <h2 class="h6 heading-semibold text-colour6 bg p-3" data-i18n="flightpassenger-passenger">Passenger Details</h2>
+                           <h2 class="h6 heading-bold text-colour6 bg p-3" data-i18n="flightpassenger-passenger">Passenger Details</h2>
                          </div>
                          <div class="col-12">
                             <div class="bg-lightgray p-3">
@@ -115,7 +115,7 @@
                 <div class="row">
                      <div class="col-12">
                         <div class="bg d-flex justify-content-between align-items-center">
-                            <h2 class="h6 heading-semibold text-colour6 p-3" data-i18n="flightpassenger-itinerary">Itinerary</h2>
+                            <h2 class="h6 heading-bold text-colour6 p-3" data-i18n="flightpassenger-itinerary">Itinerary</h2>
                             <a href="FlightList.aspx?edit=1" data-i18n="flightpassenger-edit" class="btn btn-two mr-2">Edit</a>
                         </div>
                      </div>
@@ -218,8 +218,8 @@
                          
                                 <div class="row">
                                   <div class="col-12 d-flex justify-content-between">
-                                    <span data-i18n="flightpassenger-total-points" class="h6 heading-semibold text-colour7" >Total Points: </span>
-                                    <asp:Label ID="lblTotalPoints" runat="server" CssClass="h6 heading-semibold text-colour7" />
+                                    <span data-i18n="flightpassenger-total-points" class="h6 heading-bold text-colour7" >Total Points: </span>
+                                    <asp:Label ID="lblTotalPoints" runat="server" CssClass="h6 heading-bold text-colour7" />
                                   </div>
                                 </div>
                             

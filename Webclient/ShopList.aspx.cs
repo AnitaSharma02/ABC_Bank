@@ -205,7 +205,7 @@ public partial class ShopList : Page
                     + "<p class='h6 heading-semibold text-colour7 text-truncate mb-2 w-100'>{1}</p>"
                     + "{4}"
                     + "<p class=\"h8 heading-regular w-100 mt-auto\">{5}</p>"
-                    + "<p class=\"h7 heading-regular w-100 pt-0\">{2}</p>"
+                    + "<p class=\"h7 heading-medium text-colour7 w-100 pt-0\">{2}</p>"
                     + "<p class=\"h7 heading-regular w-100 pt-1 mt-auto\"></p>"
                     + "</div>"
                     + "<div class=\"cart-button mt-0 px-2 d-flex justify-content-between align-items-center\">"

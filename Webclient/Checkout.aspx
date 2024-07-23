@@ -28,7 +28,7 @@
                  <div class="col-lg-7">
                         <div class="row">
                             <div class="col-12">
-                               <h2 class="h6 heading-semibold text-colour6 bg p-3" data-i18n="shopcheckout-billing">Delivery Address</h2>
+                               <h2 class="h6 heading-bold text-colour6 bg p-3" data-i18n="shopcheckout-billing">Delivery Address</h2>
                              </div>
                             <div class="col-12">
                                 <div id="divCheckoutPhysical" runat="server" class="bg-lightgray p-3">

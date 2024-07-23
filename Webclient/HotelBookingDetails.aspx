@@ -31,7 +31,7 @@
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="h6 heading-semibold text-colour6 bg p-3">Personal Details</h2>
+                            <h2 class="h6 heading-bold text-colour6 bg p-3">Personal Details</h2>
                         </div>
                         <div class="col-12">
                             <div style="display: none">
@@ -283,7 +283,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="bg d-flex justify-content-between align-items-center">
-                                <h2 class="h6 heading-semibold text-colour6 bg p-3">Hotel Details</h2>
+                                <h2 class="h6 heading-bold text-colour6 bg p-3">Hotel Details</h2>
                                 <a href="HotelResults.aspx?edit=1" class="btn btn-two mr-2">Edit</a>
                             </div>
                         </div>
@@ -332,10 +332,10 @@
                                 <div class="border my-3"></div>
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-between">
-                                        <span class="h6 heading-semibold text-colour7">
+                                        <span class="h6 heading-bold text-colour7">
                                             Total Points 
                                         </span>
-                                        <span class="h6 heading-semibold text-colour7">
+                                        <span class="h6 heading-bold text-colour7">
                                             <asp:Label runat="server" ID="lblTotalMiles"></asp:Label>
                                         </span>
                                     </div>
