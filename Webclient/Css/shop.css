@@ -45,6 +45,8 @@
 }*/
 .dvProductDetail .dvThumbSwiperSlider #CP_CPSHOP_divThumbnailImages .img-container {
     padding-bottom: 25%;
+    border: 1px solid #ccc; 
+    border-radius: 12px;
 }
 .dvVouchersPopup #divDynamicContent button.btn {
     background-color: transparent;

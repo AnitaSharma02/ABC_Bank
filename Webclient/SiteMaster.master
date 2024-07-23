@@ -209,7 +209,9 @@
                     return null;
                 }
             }
-            addClassBasedOnUrl();
+            setTimeout(() => {
+                addClassBasedOnUrl();
+            },1000)
         });
     </script>
 </head>

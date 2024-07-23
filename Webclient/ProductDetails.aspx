@@ -11,7 +11,7 @@
         .dvRedemptionMenu{
             display:none;
         }
-    </style>
+    </style> 
 <div class="dvBreadcrumbs">
      <div class="container-lg">
          <nav  id="divBreadbrums" runat="server">
@@ -384,7 +384,47 @@
                 $('#formpopup').modal('hide');
             });
             IsValidProduct(ProductId);
+
+             setTimeout(() => {
+                 addClassBasedOnUrlProductDetails();
+            }, 1000)
+            
         });
+        // check url and apply classnames for different redemptions
+        function getUrlParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        function addClassBasedOnUrlProductDetails() {
+            const type = getUrlParam('type');
+            const productType = getUrlParam('ProductType');
+            const breadcrumbItems = document.querySelectorAll('.dvBreadcrumbs .breadcrumb');
+            let breadcrumbItem = "";
+            breadcrumbItems.forEach(item => {
+                let anchors = item.querySelectorAll('a');
+                if (anchors.length > 1) {
+                    //console.log(anchors[2].innerText); // Log the inner text of the second anchor
+                    breadcrumbItem += anchors[2].innerText + " ";
+                }
+            });
+            breadcrumbItem = breadcrumbItem.trim();
+            console.log('breadcrumbItem ' + breadcrumbItem);
+            if (productType === 'digital' && breadcrumbItem === 'MilesExchange') {
+                $('.dvProductDetail').addClass('dvMilesExchangeDigital');
+            }
+            else if (productType === 'digital' && breadcrumbItem === 'Lounges') {
+                $('.dvProductDetail').addClass('dvLoungesDigital');
+            }
+            else if (productType === 'digital' && breadcrumbItem === 'Giftcards') {
+                $('.dvProductDetail').addClass('dvGiftcardsDigital');
+            }
+            else if (productType === 'physical' && breadcrumbItem === 'Shop') {
+                $('.dvProductDetail').addClass('dvShopPhysical');
+            }
+            else {
+                return null;
+            }
+        }
         function rate(rating) {
             $("#productRating").val(rating);
             for (var i = 1; i <= 5; i++) {

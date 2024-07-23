@@ -1961,6 +1961,9 @@ select.form-control:focus {
 .dvUtilityPage .img-container img {
   object-fit: contain;
 }
+.dvMilesExchangeDigital .img-container img, .dvGiftcardsDigital .img-container img {
+    object-fit: contain;
+}
 /*=========[ DIFFERENT CLASS NAMES FOR DIFFERENT REDEMPTIONS ]=========*/
 
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/

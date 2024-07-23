@@ -178,7 +178,7 @@
                       <i class="fa-solid fa-xmark"></i>
                     </button>
                </div> 
-                <div class="modal-body bg-colour2 p-2">
+                <div class="modal-body bg-colour2 p-1">
                     <div id="divDynamicContent"></div>
                 </div>
                 <!-- <div class="modal-footer">

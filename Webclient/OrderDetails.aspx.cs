@@ -126,30 +126,30 @@ public partial class OrderDetails : Page
                                                         ImageUrl = Convert.ToString(ConfigurationManager.AppSettings["GCBarcodeUrl"]) + giftCardDetails.GiftCardInfo[i].ExternalReference + ".png";
                                                     }
                                                     lstrHtml += "<div class=\"row\"><div class=\"col-12\"><div class=\"bg-colour6 p-3\"><div class=\"row\">";
-                                                    lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">GiftCard No:</span> <span class=\"heading-semibold text-break\">" + giftCardDetails.GiftCardInfo[i].Code + "</span></p>";
+                                                    lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h7 heading-bold text-colour7\">GiftCard No:</span> <span class=\"heading-semibold text-break\">" + giftCardDetails.GiftCardInfo[i].Code + "</span></p>";
                                                     if (!string.IsNullOrEmpty(giftCardDetails.GiftCardInfo[i].RedirectionUrl))
                                                     {
                                                         lstrHtml += "for detail please click : <a class=\"text-break\" href=\"" + giftCardDetails.GiftCardInfo[i].RedirectionUrl + "\" target=\"_blank\" style=\"font-family: Helvetica, Arial, sans-serif;font-size: 13px; color: #000000;display: inline-block;margin-left\">" + giftCardDetails.GiftCardInfo[i].RedirectionUrl + "</a>";
                                                     }
                                                     lstrHtml += "</div>";
-                                                    lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">GiftCard Value:</span> <span class=\"heading-semibold\">" + giftCardDetails.GiftCardInfo[i].Value + "</span></p></div>";
+                                                    lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h7 heading-bold text-colour7\">GiftCard Value:</span> <span class=\"heading-semibold\">" + giftCardDetails.GiftCardInfo[i].Value + "</span></p></div>";
                                                     if (giftCardDetails.GiftCardInfo[i].ExpiryDate != null)
                                                     {
                                                         try
                                                         {
-                                                            lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">Date:</span> <span class=\"heading-semibold\">" + Convert.ToDateTime(giftCardDetails.GiftCardInfo[i].ExpiryDate).ToString("dd/MM/yyyy") + "</span></p></div>";
+                                                            lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h7 heading-bold text-colour7\">Date:</span> <span class=\"heading-semibold\">" + Convert.ToDateTime(giftCardDetails.GiftCardInfo[i].ExpiryDate).ToString("dd/MM/yyyy") + "</span></p></div>";
                                                         }
                                                         catch (Exception ex)
                                                         {
-                                                            lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">Date:</span> <span class=\"heading-semibold\">" + giftCardDetails.GiftCardInfo[i].ExpiryDate + "</span></p></div>";
+                                                            lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h7 heading-bold text-colour7\">Date:</span> <span class=\"heading-semibold\">" + giftCardDetails.GiftCardInfo[i].ExpiryDate + "</span></p></div>";
                                                             LoggingAdapter.WriteLog("Error GiftCards Expiry Date - " + ex.Message + Environment.NewLine + ex.StackTrace);
                                                         }
                                                     }
                                                     if (!string.IsNullOrEmpty(giftCardDetails.GiftCardInfo[i].Pin))
                                                     {
-                                                        lstrHtml += "<div class=\"col-12 col-sm-6\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">CGiftCard Info:</span> <span class=\"heading-semibold\">" + Convert.ToString(giftCardDetails.GiftCardInfo[i].Pin) + "</span></p></div>";
+                                                        lstrHtml += "<div class=\"col-12 col-sm-6\"><p class=\"\"><span class=\"d-block d-md-inline-block h7 heading-bold text-colour7\">CGiftCard Info:</span> <span class=\"heading-semibold\">" + Convert.ToString(giftCardDetails.GiftCardInfo[i].Pin) + "</span></p></div>";
                                                     }
-                                                    lstrHtml += "<div class=\"col-12 col-sm-6\"><p class=\"\"><span class=\"d-block d-md-inline-block h6 heading-bold text-colour7\">CGiftCard Info:</span> <img class=\"img-fluid barcode-img\" src=\"" + ImageUrl + "\"/></p></div>";
+                                                    lstrHtml += "<div class=\"col-12 col-sm-6\"><p class=\"\"><span class=\"d-block d-md-inline-block h7 heading-bold text-colour7\">CGiftCard Info:</span> <img class=\"img-fluid barcode-img\" src=\"" + ImageUrl + "\"/></p></div>";
                                                     lstrHtml += "</div> </div></div></div>";
                                                 }
                                                 LoggingAdapter.WriteLog("View Details html -:" + lstrHtml);
