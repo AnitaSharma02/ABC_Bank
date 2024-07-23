@@ -466,7 +466,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3">
-                                                <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-from-label">From</label>
+                                                <label class="label" data-i18n="flightsearch-from-label">From</label>
                                                 <div class="dvTextBoxFrom dvInputGroup input-group">
                                                     <input class="form-control" id="textBoxFrom" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                     <input type="hidden" id="hdntrip" value="true" />
@@ -480,7 +480,7 @@
                                                         <img src="images/flightpage/flight-arrow.png" />
                                                     </div>
                                         <div class="col-12 col-md-6 col-lg mb-3">
-                                            <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-to-label">To</label>
+                                            <label class="label" data-i18n="flightsearch-to-label">To</label>
                                             <div class="dvTextBoxTo dvInputGroup input-group">
                                                 <input class="input form-control" id="textBoxTo" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                 <div class="input-group-append">
@@ -489,7 +489,7 @@
                                             </div>
                                             </div>
                                         <div class="col-12 col-md-6 col-lg mb-3">
-                                            <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-departure-label">Departure</label>
+                                            <label class="label" data-i18n="flightsearch-departure-label">Departure</label>
                                             <div class="dvInputGroup input-group">
                                                 <input id="txtDepart" class="input datePicker form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                                 <div class="input-group-append">
@@ -498,7 +498,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3" id="divrtn">
-                                            <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-return-label">Return</label>
+                                            <label class="label" data-i18n="flightsearch-return-label">Return</label>
                                             <div class="dvInputGroup input-group">
                                                 <input class="input datePicker form-control cal-icon" id="txtReturn" onfocus="placeholderOnFocus(this,'Enter Date');"
                                                 onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
@@ -508,7 +508,7 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-lg-4 selTravel mb-3 r- d-none">
-                                            <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-travel-class-label">Travel Class</label>
+                                            <label class="label" data-i18n="flightsearch-travel-class-label">Travel Class</label>
                                             <div class="dvInput input-group">
                                                 <select class="form-control" id="dropDownListEconomy">
                                                     <option value="Economy" selected="selected" data-i18n="flightsearch-travel-class-economy">Economy</option>
@@ -518,7 +518,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3">
-                                                <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-airline-preference-label">Airline Preference</label>
+                                                <label class="label" data-i18n="flightsearch-airline-preference-label">Airline Preference</label>
                                                 <div class="dvInput input-group">
                                                     <input type="hidden" id="hdnCarrier" />
                                                     <input class="input air-icon form-control" id="txtAirline" onfocus="placeholderOnFocus(this, 'All Airlines');"
@@ -528,7 +528,7 @@
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-adult-label">Adult(s) 12+ Yrs</label>
+                                                    <label class="label" data-i18n="flightsearch-adult-label">Adult(s) 12+ Yrs</label>
                                                         <select id="DropDownListAdult" class="dropdown-select form-control">
                                                             <option value="1" selected="selected">1</option>
                                                             <option value="2">2</option>
@@ -538,7 +538,7 @@
                                                         </select>
                                                 </div>
                                                 <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-child-label">Child(ren) 2 - 11 Yrs</label>
+                                                    <label class="label" data-i18n="flightsearch-child-label">Child(ren) 2 - 11 Yrs</label>
                                                         <select id="DropDownListChild" class="dropdown-select form-control">
                                                             <option value="0" selected="selected">0</option>
                                                             <option value="1">1</option>
@@ -549,7 +549,7 @@
                                                         </select>
                                                 </div>
                                                 <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 r- d-none">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-infant-label">Infant(s) Below 2 Yrs</label>
+                                                    <label class="label" data-i18n="flightsearch-infant-label">Infant(s) Below 2 Yrs</label>
                                                     <select id="DropDownListInfant" class="dropdown-select form-control">
                                                         <option value="0" selected="selected">0</option>
                                                         <option value="1">1</option>
@@ -562,7 +562,7 @@
                                                 <div class="col-12 mb-md-0">
                                                     <div class="row">
                                                         <div class="col-md-12 dvLabel invisible d-none">
-                                                            <label class="h8 heading-semibold text-colour7 checkbox-container d-flex">
+                                                            <label class="label checkbox-container d-flex">
                                                                 <span class="d-inline-block ml-1">
                                                                     <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
                                                                     <span data-i18n="flight-redeem-pts-label">Redeem Points</span>
@@ -578,143 +578,8 @@
                    
                                             </div>
                                         </div>
-           
                                         </div>
-    
-                            </div>
-                                <%-- 
-                                    OLD DESIGN
-                                    <div id="divflt">
-                                    <!--Flight Search Panel Start -->
-                                    <div class="p-1 mb-2 alert alert-danger text-center text-danger h6 heading-semibold" id="requiredValidation" style="display:none;"></div>
-                                        <div class="row">
-                                            <div class="col-6 col-sm-4 col-md-3 col-lg-3 mb-2">
-                                                <div class="dvLabel">
-                                                    <label class="radio-container d-flex">
-                                                        <span class="d-inline-block ml-1">
-                                                            <input id="oneli" class="radio" name="iternary" onchange="return onwayShow();" type="radio"><span data-i18n="flightsearch-one-way" class="pl-2 h6 heading-regular text-colour7">One-Way</span>
-                                                            <span class="radiomark"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 col-sm-4 col-md-9 col-lg-9 mb-2">
-                                                <div class="dvLabel">
-                                                    <label class="radio-container d-flex">
-                                                        <span class="d-inline-block ml-1">
-                                                            <input class="radio" name="iternary" checked="checked" onchange="return RoundTripShow();" id="retli" type="radio"><span data-i18n="flightsearch-return" class="pl-2 h6 heading-regular text-colour7">Return</span>
-                                                            <span class="radiomark"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                                <div class="col-12 col-sm-6 mb-3">
-                                                <label class="h8 heading-semibold" data-i18n="flightsearch-from-label">From</label>
-                                                <div class="input-group">
-                                                    <input class="input form-control" id="textBoxFrom" onfocus="placeholderOnFocus(this, $.i18n('flightsearch-from-label'));" onblur="placeholderOnFocus(this, $.i18n('flightsearch-from-label'));" value="Enter City or Airport" type="text" />
-                                                    <input type="hidden" id="hdntrip" value="true" />
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-6 mb-3">
-                                                <label class="h8 heading-semibold" data-i18n="flightsearch-to-label">To</label>
-                                                <div class="input-group">
-                                                    <input class="input form-control" id="textBoxTo" onfocus="placeholderOnFocus(this, $.i18n('flightsearch-to-label'));" onblur="placeholderOnFocus(this, $.i18n('flightsearch-to-label'));" value="Enter City or Airport" type="text" />
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                <div class="col-12 col-sm-6 mb-3">
-                                                    <label class="h8 heading-semibold" data-i18n="flightsearch-departure-label">Departure</label>
-                                                    <div class="dvTxtDepart input-group">
-                                                        <input id="txtDepart" class="input datePicker form-control" onfocus="placeholderOnFocus(this, $.i18n('flight-departure-input'));"
-                                                            onblur="placeholderOnFocus(this, $.i18n('flight-departure-input'));" value="Enter Date" type="text" readonly="readonly" />
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12 col-sm-6 mb-3" id="divrtn">
-                                                    <label class="h8 heading-semibold" data-i18n="flightsearch-return-label">Return</label>
-                                                    <div class="dvTxtReturn input-group">
-                                                        <input class="input datePicker form-control" id="txtReturn" onfocus="placeholderOnFocus(this, $.i18n('flight-return-input'));"
-                                                            onblur="placeholderOnFocus(this, $.i18n('flight-return-input'));" value="Enter Date" type="text" readonly="readonly" />
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            <div class="col-12 mb-3">
-                                                <div class="row">
-                                                    <div class="col-6 col-sm-4 mb-3 mb-sm-0">
-                                                        <label class="h8 heading-semibold" data-i18n="flightsearch-adult-label">Adult(s) 12+ Yrs</label>
-                                                        <select id="DropDownListAdult" class="form-control">
-                                                            <option value="1" selected="selected">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-6 col-sm-4 mb-3 mb-sm-0">
-                                                        <label class="h8 heading-semibold" data-i18n="flightsearch-child-label">Child(ren) 2 - 11 Yrs</label>
-                                                        <select id="DropDownListChild" class="form-control">
-                                                            <option value="0" selected="selected">0</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-12 col-sm-4">
-                                                        <label class="h8 heading-semibold" data-i18n="flightsearch-infant-label">Infant(s) Below 2 Yrs</label>
-                                                        <select id="DropDownListInfant" class="form-control">
-                                                            <option value="0" selected="selected">0</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-6 mb-3 mb-sm-0">
-                                                <label class="h8 heading-semibold" data-i18n="flightsearch-travel-class-label">Travel Class</label>
-                                                <select class="form-control" id="dropDownListEconomy">
-                                                    <option value="Economy" selected="selected" data-i18n="flightsearch-travel-class-economy">Economy</option>
-                                                    <option value="Business" data-i18n="flightsearch-travel-class-business">Business</option>
-                                                    <option value="First" data-i18n="flightsearch-travel-class-first">First</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-12 col-sm-6">
-                                                <label class="h8 heading-semibold" data-i18n="flightsearch-airline-preference-label">Airline Preference</label>
-                                                %--<label>Airline Preference</label>--%
-                                                <input type="hidden" id="hdnCarrier" />
-                                                <input class="input air-icon form-control" id="txtAirline" onfocus="placeholderOnFocus(this, $.i18n('flightsearch-airline-preference-all'));"
-                                                    onblur="placeholderOnFocus(this, $.i18n('flightsearch-airline-preference-all'));" value="All Airlines" type="text" />
-                                            </div>
-                                            <div class="col-md-12 col-lg-4 mt-3">
-                                                <div class="invisible d-none w-100">
-                                                    <div class="dvLabel d-flex justify-content-between">
-                                                        <label class="checkbox-container d-flex">
-                                                            <span class="d-inline-block">
-                                                                <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />                                                        
-                                                                <span class="checkmark"></span>
-                                                            </span>
-                                                            <span class="d-inline-block ml-2">Redeem Points</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <button onclick="var retvalue = FlightValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one w-100" value=" Search " data-i18n="flightsearch-search-btn">Search Flight</button>
-                                            </div>
-                                        </div>
-                                    <!--Flight Search Panel Ends-->
-                                </div>--%>
+                                    </div>
                             </div>
                         </div>
 

@@ -431,7 +431,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                        <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-from-label">From</label>
+                                                        <label class="label" data-i18n="flightsearch-from-label">From</label>
                                                         <div class="dvTextBoxFrom dvInputGroup input-group">
                                                             <input class="form-control" id="textBoxFrom" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                             <input type="hidden" id="hdntrip" value="true" />
@@ -445,7 +445,7 @@
                                                               <img src="images/flightpage/flight-arrow.png" />
                                                           </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-to-label">To</label>
+                                                    <label class="label" data-i18n="flightsearch-to-label">To</label>
                                                     <div class="dvTextBoxTo dvInputGroup input-group">
                                                         <input class="input form-control" id="textBoxTo" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                         <div class="input-group-append">
@@ -454,7 +454,7 @@
                                                     </div>
                                                     </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-departure-label">Departure</label>
+                                                    <label class="label" data-i18n="flightsearch-departure-label">Departure</label>
                                                     <div class="dvInputGroup input-group">
                                                         <input id="txtDepart" class="input datePicker form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
@@ -463,7 +463,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3" id="divrtn">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-return-label">Return</label>
+                                                    <label class="label" data-i18n="flightsearch-return-label">Return</label>
                                                     <div class="dvInputGroup input-group">
                                                         <input class="input datePicker form-control cal-icon pr-5" id="txtReturn" onfocus="placeholderOnFocus(this,'Enter Date');"
                                                         onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
@@ -473,7 +473,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-lg-4 selTravel mb-3 r- d-none">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-travel-class-label">Travel Class</label>
+                                                    <label class="label" data-i18n="flightsearch-travel-class-label">Travel Class</label>
                                                          <div class="dvInput input-group">
                                                             <select class="form-control" id="dropDownListEconomy">
                                                                 <option value="Economy" selected="selected" data-i18n="flightsearch-travel-class-economy">Economy</option>
@@ -483,7 +483,7 @@
                                                         </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                        <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-airline-preference-label">Airline Preference</label>
+                                                        <label class="label" data-i18n="flightsearch-airline-preference-label">Airline Preference</label>
                                                          <div class="dvInput input-group">
                                                             <input type="hidden" id="hdnCarrier" />
                                                             <input class="input air-icon form-control" id="txtAirline" onfocus="placeholderOnFocus(this, 'All Airlines');"
@@ -493,7 +493,7 @@
                                                 <div class="col-12">
                                                     <div class="row">
                                                         <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                            <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-adult-label">Adult(s) 12+ Yrs</label>
+                                                            <label class="label" data-i18n="flightsearch-adult-label">Adult(s) 12+ Yrs</label>
                                                                 <select id="DropDownListAdult" class="dropdown-select form-control">
                                                                     <option value="1" selected="selected">1</option>
                                                                     <option value="2">2</option>
@@ -503,7 +503,7 @@
                                                                 </select>
                                                         </div>
                                                         <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                            <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-child-label">Child(ren) 2 - 11 Yrs</label>
+                                                            <label class="label" data-i18n="flightsearch-child-label">Child(ren) 2 - 11 Yrs</label>
                                                                 <select id="DropDownListChild" class="dropdown-select form-control">
                                                                     <option value="0" selected="selected">0</option>
                                                                     <option value="1">1</option>
@@ -514,7 +514,7 @@
                                                                 </select>
                                                         </div>
                                                         <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 r- d-none">
-                                                            <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-infant-label">Infant(s) Below 2 Yrs</label>
+                                                            <label class="label" data-i18n="flightsearch-infant-label">Infant(s) Below 2 Yrs</label>
                                                             <select id="DropDownListInfant" class="dropdown-select form-control">
                                                                 <option value="0" selected="selected">0</option>
                                                                 <option value="1">1</option>
@@ -527,7 +527,7 @@
                                                         <div class="col-12">
                                                             <div class="row">
                                                                 <div class="col-md-12 dvLabel invisible d-none">
-                                                                    <label class="h8 heading-semibold text-colour7 checkbox-container d-flex">
+                                                                    <label class="label checkbox-container d-flex">
                                                                         <span class="d-inline-block ml-1">
                                                                             <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
                                                                             <span data-i18n="flight-redeem-pts-label">Redeem Points</span>
@@ -554,7 +554,7 @@
                                             <div class="p-1 mb-2 alert alert-danger text-danger text-center h6 heading-semibold" id="requiredValidationdomestic" style="display:none;"></div>
                                              <div class="row dvLabel r- d-none">
                                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">
-                                                    <label class="h8 heading-semibold text-colour7 radio-container d-flex">
+                                                    <label class="label radio-container d-flex">
                                                         <span class="d-inline-block ml-1">
                                                             <input id="onelidomestic" class="radio " name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span data-i18n="flightsearch-one-way" class="pr-3 pl-2 h6 heading-regular text-colour7">One-Way</span>
                                                             <span class="radiomark"></span>
@@ -562,7 +562,7 @@
                                                     </label>
                                                 </div>
                                                 <div class="col-6 col-sm-4 col-md-9 col-lg-10 selTravel mb-3">
-                                                    <label class="h8 heading-semibold text-colour7 radio-container d-flex">
+                                                    <label class="label radio-container d-flex">
                                                         <span class="d-inline-block ml-1">
                                                             <input class="radio" name="iternarydomestic" checked="checked" onchange="return RoundTripShowDomestic();" id="retlidomestic" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7" data-i18n="flightsearch-return">Return</span>
                                                             <span class="radiomark"></span>
@@ -638,7 +638,7 @@
                                                   </div>
                                                  <div class="row equal-col form_box">
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                   <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-from-label">From</label>
+                                                   <label class="label" data-i18n="flightsearch-from-label">From</label>
                                                     <div class="dvTextBoxFromdomestic input-group">
                                                         <input class="input from-icon form-control pr-5" id="textBoxFromdomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                         <div class="input-group-append">
@@ -652,7 +652,7 @@
                                                         <img src="images/flightpage/flight-arrow.png" />
                                                     </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-to-label">To</label>
+                                                    <label class="label" data-i18n="flightsearch-to-label">To</label>
                                                     <div class="dvTextBoxTodomestic input-group">
                                                         <input class="input from-icon form-control pr-5" id="textBoxTodomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                         <div class="input-group-append">
@@ -661,7 +661,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-departure-label">Departure</label>
+                                                    <label class="label" data-i18n="flightsearch-departure-label">Departure</label>
                                                     <div class="input-group">
                                                         <input id="txtDepartdomestic" class="input datePicker form-control cal-icon pr-5" onfocus="placeholderOnFocusdomestic(this,'Enter Date');" onblur="placeholderOnFocusdomestic(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
@@ -670,7 +670,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3" id="divrtndomestic">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-return-label">Return</label>
+                                                    <label class="label" data-i18n="flightsearch-return-label">Return</label>
                                                     <div class="input-group"> 
                                                         <input class="input datePicker form-control cal-icon pr-5" id="txtReturndomestic" onfocus="placeholderOnFocusdomestic(this,'Enter Date');"
                                                         onblur="placeholderOnFocusdomestic(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
@@ -682,7 +682,7 @@
                                                 <div class="col-12">
                                                         <div class="row">
                                                             <div class="col-6 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                                <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-adult-label">Adult(12+Yrs)</label>
+                                                                <label class="label" data-i18n="flightsearch-adult-label">Adult(12+Yrs)</label>
                                                                 <div class="input-bg">
                                                                     <select id="DropDownListAdultdomestic" class="dropdown-select form-control">
                                                                         <option value="1" selected="selected">1</option>
@@ -694,7 +694,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-6 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                                <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-child-label">Children(2-11Yrs)</label>
+                                                                <label class="label" data-i18n="flightsearch-child-label">Children(2-11Yrs)</label>
                                                                 <div class="input-bg">
                                                                     <select id="DropDownListChilddomestic" class="dropdown-select form-control">
                                                                         <option value="0" selected="selected">0</option>
@@ -740,11 +740,11 @@
                                                 <img class="w-100" src="Images/flightpage/flight-img1.jpg" style="cursor: pointer;" />
                                           </div>
                                           <div class="d-flex flex-wrap bg-white p-3 h-100"> 
-                                            <h2 class="h6 heading-bold text-colour7 text-truncate col-12 mb-2" data-i18n="flightsearch-sg">Singapore</h2>
-                                            <p class="h7 heading-regular text-colour7 col-12 mb-3 product-text" data-i18n="flightsearch-sg-desc">
+                                            <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-sg">Singapore</h2>
+                                            <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-sg-desc">
                                                 Singapore, officially the Republic of Singapore, is a sovereign island city-state in maritime Southeast Asia.
                                             </p>
-                                              <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
+                                              <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
                                                   <span data-i18n="flightsearch-from">From</span> 1,234 <span data-i18n="flightsearch-points">Points</span>
                                               </h2>
                                            </div> 
@@ -758,11 +758,11 @@
                                                 <img class="w-100" src="Images/flightpage/flight-img2.jpg" style="cursor: pointer;" />
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate col-12 mb-2" data-i18n="flightsearch-th">Thailand</h2>
-                                                <p class="h7 heading-regular text-colour7 col-12 mb-3 product-text" data-i18n="flightsearch-th-desc">
+                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-th">Thailand</h2>
+                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-th-desc">
                                                     Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces
                                                 </p>
-                                                <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
+                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
                                                     <span data-i18n="flightsearch-from">From</span> 4,500 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                              </div> 
@@ -776,11 +776,11 @@
                                                     <img class="w-100" src="Images/flightpage/flight-img3.jpg" style="cursor: pointer;" />
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate col-12 mb-2" data-i18n="flightsearch-pa">Paris</h2>
-                                                <p class="h7 heading-regular text-colour7 col-12 mb-3 product-text" data-i18n="flightsearch-pa-desc">
+                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-pa">Paris</h2>
+                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-pa-desc">
                                                     Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.
                                                 </p>
-                                                <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
+                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
                                                     <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                              </div> 
@@ -794,11 +794,11 @@
                                                     <img class="w-100" src="Images/flightpage/flight-img4.jpg" style="cursor: pointer;" />
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate col-12 mb-2" data-i18n="flightsearch-nz">New Zealand</h2>
-                                                <p class="h7 heading-regular text-colour7 col-12 mb-3 product-text" data-i18n="flightsearch-nz-desc">
+                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-nz">New Zealand</h2>
+                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-nz-desc">
                                                     New Zealand is an island country in the south western Pacific Ocean. It consists of two main landmasses
                                                 </p>
-                                                <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
+                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
                                                    <span data-i18n="flightsearch-from">From</span> 5,300 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                             </div> 
@@ -812,11 +812,11 @@
                                                     <img class="w-100" src="Images/flightpage/flight-img5.jpg" style="cursor: pointer;" />
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate col-12 mb-2" data-i18n="flightsearch-ln">London</h2>
-                                                <p class="h7 heading-regular text-colour7 col-12 mb-3 product-text" data-i18n="flightsearch-ln-desc">
+                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-ln">London</h2>
+                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-ln-desc">
                                                    London, the capital of England and the United Kingdom, is a 21st-century city with history stretching
                                                 </p>
-                                                <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
+                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
                                                      <span data-i18n="flightsearch-from">From</span> 6,000 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                             </div> 
@@ -830,11 +830,11 @@
                                                 <img class="w-100" src="Images/flightpage/flight-img6.jpg" style="cursor: pointer;" />
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate col-12 mb-2" data-i18n="flightsearch-db">Dubai</h2>
-                                                <p class="h7 heading-regular text-colour7 col-12 mb-3 product-text" data-i18n="flightsearch-db-desc">
+                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-db">Dubai</h2>
+                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-db-desc">
                                                     Dubai is the most populous city in the UAE and the capital of the Emirate of Dubai,
                                                 </p>
-                                                <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
+                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
                                                     <span data-i18n="flightsearch-from">From</span> 3,000 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                             </div> 
@@ -848,11 +848,11 @@
                                                 <img class="w-100" src="Images/flightpage/flight-img7.jpg" style="cursor: pointer;" />
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate col-12 mb-2" data-i18n="flightsearch-zu">Zurich</h2>
-                                                <p class="h7 heading-regular text-colour7 col-12 mb-3 product-text" data-i18n="flightsearch-zu-desc">
+                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-zu">Zurich</h2>
+                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-zu-desc">
                                                    Zürich is the largest city in Switzerland and the capital of the canton of Zürich.
                                                 </p>
-                                                <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
+                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
                                                     <span data-i18n="flightsearch-from">From</span> 4,000 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                             </div> 
@@ -866,11 +866,11 @@
                                                 <img class="w-100" src="Images/flightpage/flight-img8.jpg" style="cursor: pointer;" />
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate col-12 mb-2" data-i18n="flightsearch-go">Goa</h2>
-                                                <p class="h7 heading-regular text-colour7 col-12 mb-3 product-text" data-i18n="flightsearch-go-desc">
+                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-go">Goa</h2>
+                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-go-desc">
                                                     Goa, a state on India's West coast, is a former Portuguese colony with a rich history.
                                                 </p>
-                                                <h2 class="h8 heading-semibold text-colour7 text-truncate col-12 mt-auto">
+                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
                                                     <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points</span>
                                                 </h2>
                                             </div> 

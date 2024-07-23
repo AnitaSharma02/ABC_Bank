@@ -206,12 +206,11 @@
 .dvProfile .bg-lightgray {
   background: var(--bg-colour2);
 }
-
+.dvProfile .dvCommonAccordion .card .card-body .dvInputGroup.input-group .form-control {height:auto;}
 /*=========[ PROFILE PAGE ]=========*/
-
 /*=========[ MANAGE PAGE ]=========*/
 .dvManage .bg-lightgray {
-  background: var(--bg-colour2);
+    background: var(--bg-colour2);
 }
 
 .dvManage .accordion .card {

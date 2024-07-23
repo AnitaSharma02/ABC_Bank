@@ -444,7 +444,7 @@
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3 order-1">
                                         <input type="hidden" id="hdnRoomString" />
-                                        <label class="h8 heading-semibold">City</label>
+                                        <label class="label">City</label>
                                         <div class="dvCP_txtCity dvInputGroup input-group">
                                             <input id="txtCity" class="form-control" onfocus="placeholderOnFocus(this,'Enter City Name');" onblur="placeholderOnFocus(this,'Enter City Name');" value="Enter City Name" type="text" runat="server" />
                                             <div class="input-group-append">
@@ -455,7 +455,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3 order-2">
-                                        <label class="h8 heading-semibold">Check-in</label>
+                                        <label class="label">Check-in</label>
                                         <div class="dvTextBoxCheckin dvInputGroup input-group">
                                             <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="TextBoxCheckin" readonly="readonly"  runat="server"/>
                                             <div class="input-group-append">
@@ -466,7 +466,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3 order-3">
-                                        <label class="h8 heading-semibold">Check-out</label>
+                                        <label class="label">Check-out</label>
                                         <div class="dvTextBoxCheckout dvInputGroup input-group">
                                             <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="TextBoxCheckout" readonly="readonly" runat="server" />
                                             <div class="input-group-append">
@@ -475,7 +475,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3 order-4">
-                                        <label class="h8 heading-semibold invisible-">Room(s)</label>
+                                        <label class="label invisible-">Room(s)</label>
                                         <div class="dvQty qtySelector dvInput form-control d-flex justify-content-end p-0 pr-lg-2">
                                             <span class="special-text">Rooms(s)</span>
                                             <div class="d-flex align-items-center pr-0 w-120">
@@ -624,7 +624,7 @@
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <input type="hidden" id="hdnRoomString" />
-                                            <label class="h8 heading-semibold" data-i18n="hotel-city-destination">Destination</label>
+                                            <label class="label" data-i18n="hotel-city-destination">Destination</label>
                                             <div class="input-group">
                                                 <input class="input1 ui-autocomplete-input locationIcon form-control from-icon" type="text" autocomplete="off" runat="server" id="txtCity" onfocus="placeholderOnFocus(this,'Enter City Name');" onblur="placeholderOnFocus(this,'Enter City Name');" value="Enter City Name" />
                                                 <div class="input-group-append">
@@ -635,7 +635,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12 mb-3">
-                                            <label class="h8 heading-semibold" data-i18n="hotel-check-in-label">Check-In</label>
+                                            <label class="label" data-i18n="hotel-check-in-label">Check-In</label>
                                             <div class="dvTextBoxCheckin input-group">
                                                 <input id="TextBoxCheckin" runat="server" autocomplete="off" class="input1 ui-autocomplete-input datePicker form-control cal-icon" type="text" onfocus="placeholderOnFocus(this,'dd/mm/yyyy');" onblur="placeholderOnFocus(this,'dd/mm/yyyy');" value="dd/mm/yyyy" readonly="readonly" />
                                                 <div class="input-group-append">
@@ -646,7 +646,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12 mb-3">
-                                            <label class="h8 heading-semibold" data-i18n="hotel-check-out-label">Check-Out</label>
+                                            <label class="label" data-i18n="hotel-check-out-label">Check-Out</label>
                                             <div class="dvTextBoxCheckout input-group">
                                                 <input class="input1 ui-autocomplete-input datePicker form-control cal-icon" autocomplete="off" type="text" onfocus="placeholderOnFocus(this,'dd/mm/yyyy');" onblur="placeholderOnFocus(this,'dd/mm/yyyy');" value="dd/mm/yyyy" id="TextBoxCheckout" runat="server" readonly="readonly" />
                                                 <div class="input-group-append">
@@ -655,7 +655,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="h8 heading-semibold" data-i18n="hotel-rooms-label">Room(s)</label>
+                                            <label class="label" data-i18n="hotel-rooms-label">Room(s)</label>
                                             <select class="form-control" id="ddlnoofroom">
                                                     <option value="1" selected="selected">1</option>
                                                     <option value="2">2</option>
@@ -682,7 +682,7 @@
                                                     </div>
                                                     <div class="bg-white d-flex flex-column p-2">
                                                         <p class="h6 heading-semibold text-colour7 text-truncate mb-2"><%#Eval("basicinfo.hotelname")%></p>
-                                                        <p class="h7 heading-regular text-colour7 text-truncate order-1 mt-auto">
+                                                        <p class="h7 heading-medium text-colour7 text-truncate order-1 mt-auto">
                                                             <asp:Label ID="lblmiles" runat="server"></asp:Label>
                                                             <asp:Label ID="Label1" runat="server" class="">Points</asp:Label>
                                                         </p>

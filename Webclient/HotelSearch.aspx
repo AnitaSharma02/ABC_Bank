@@ -176,7 +176,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3 order-1">
                                             <input type="hidden" id="hdnRoomString" />
-                                            <label class="h8 heading-semibold">City</label>
+                                            <label class="label">City</label>
                                             <div class="dvCP_txtCity dvInputGroup input-group">
                                                 <input id="CP_txtCity" class="form-control" onfocus="placeholderOnFocus(this,'Enter City Name');" onblur="placeholderOnFocus(this,'Enter City Name');" value="Enter City Name" type="text" />
                                                 <div class="input-group-append">
@@ -187,7 +187,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3 order-2">
-                                            <label class="h8 heading-semibold">Check-in</label>
+                                            <label class="label">Check-in</label>
                                             <div class="dvInputGroup input-group">
                                                 <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="CP_TextBoxCheckin" readonly="readonly" />
                                                 <div class="input-group-append">
@@ -198,7 +198,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3 order-3">
-                                            <label class="h8 heading-semibold">Check-out</label>
+                                            <label class="label">Check-out</label>
                                             <div class="dvInputGroup input-group">
                                                 <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="CP_TextBoxCheckout" readonly="readonly" />
                                                 <div class="input-group-append">
@@ -207,7 +207,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3 order-4">
-                                            <label class="h8 heading-semibold invisible-">Room(s)</label>
+                                            <label class="label invisible-">Room(s)</label>
                                             <div class="dvInput dvQty qtySelector form-control d-flex justify-content-end p-0 pr-lg-2">
                                                 <span class="special-text">Rooms(s)</span>
                                                 <div class="d-flex align-items-center pr-0 w-120">
@@ -218,7 +218,7 @@
                                                     <div class="col-4 text-center px-0"><i role="button" class="fa fa-plus increaseQty bg-colour2 border p-1 rounded HotelQynUpdateplus"></i></div>
                                                 </div>
                                             </div>
-                                            <%--<label class="h8 heading-semibold">Room(s)</label>
+                                            <%--<label class="label">Room(s)</label>
                                             <select class="form-control" id="ddlnoofroom">
                                                 <option value="1" selected="selected">1</option>
                                                 <option value="2">2</option>
@@ -398,7 +398,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                    <h2 class="h7 heading-regular text-colour7 text-truncate">From 4,000 Points
+                                    <h2 class="h7 heading-medium text-colour7 text-truncate">From 4,000 Points
                                     </h2>
                                     <div class="dvicon">
                                         <img src="Images/hotelpage/hotel-icon1.svg" />
@@ -432,7 +432,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                    <h2 class="h7 heading-regular text-colour7 text-truncate">From 5,000 Points
+                                    <h2 class="h7 heading-medium text-colour7 text-truncate">From 5,000 Points
                                     </h2>
                                     <div class="dvicon">
                                         <img src="Images/hotelpage/hotel-icon1.svg" />
@@ -465,7 +465,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                <h2 class="h7 heading-regular text-colour7 text-truncate">From 6,000 Points
+                                <h2 class="h7 heading-medium text-colour7 text-truncate">From 6,000 Points
                                 </h2>
                                 <div class="dvicon">
                                     <img src="Images/hotelpage/hotel-icon1.svg" />
@@ -497,7 +497,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center flex-wrap bg-white px-3 pb-3">
-                                <h2 class="h7 heading-regular text-colour7 text-truncate">From 4,800 Points
+                                <h2 class="h7 heading-medium text-colour7 text-truncate">From 4,800 Points
                                 </h2>
                                 <div class="dvicon">
                                     <img src="Images/hotelpage/hotel-icon1.svg" />

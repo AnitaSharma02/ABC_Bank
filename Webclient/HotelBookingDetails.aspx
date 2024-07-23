@@ -241,23 +241,23 @@
                                     </div>
                                     <div class="col-12 mb-3">
                                         <div class="dvLabel">
-                                            <label class="checkbox-container d-flex">
+                                            <label class="heading-regular checkbox-container d-flex">
                                                 <span class="d-inline-block">
                                                     <asp:CheckBox ID="chkAcceptAgreements" runat="server" />
                                                     <span class="checkmark"></span>
                                                 </span>
-                                                <span class="d-inline-block ml-2">I have read and agree to Infinity Rewards <a href="TermsandConditions.aspx" target="_blank">Terms & Conditions</a> and the <a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation Policy</a> of the respective service provider.</span>
+                                                <span class="d-inline-block ml-2 text-colour7 ">I have read and agree to Infinity Rewards <a href="TermsandConditions.aspx" target="_blank">Terms & Conditions</a> and the <a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation Policy</a> of the respective service provider.</span>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col-12 mb-2">
                                         <div class="dvLabel">
-                                       <label class="checkbox-container d-flex">
+                                       <label class="heading-regular text-colour7 checkbox-container d-flex">
                                            <span class="d-inline-block">
                                                <asp:CheckBox ID="chkCancellationPolicy" runat="server" />
                                                <span class="checkmark"></span>
                                            </span>
-                                           <span class="d-inline-block ml-2">I agree to redeem
+                                           <span class="d-inline-block ml-2 text-colour7 ">I agree to redeem
                                                <asp:Label ID="lblTotalCharge" runat="server" Text=""></asp:Label>. I also understand and accept that.the redeemed Points cannot be refunded or credited upon cancellation of a hotel booking.</span>
                                        </label>
                                         </div>
