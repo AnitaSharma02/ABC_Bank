@@ -54,21 +54,12 @@
 }
 /*flightsearch international and domestic errors*/
 
-/*active menu for flightsearch page*/
-.dvRedemptionMenu .SelRedemption .imageBox {
-    background-color: var(--bg-colour1);
-}
-.dvRedemptionMenu .SelRedemption .imageBox img {
-    filter: brightness(0) invert(1);
-}
-.dvRedemptionMenu .SelRedemption p {
-    font-weight: bold;
-}
+
 .dvFlightSearch .dvInput.input-group .form-control[readonly], .dvFlightList .dvInput.input-group .form-control[readonly],
 .dvFlightSearch .dvInputGroup.input-group .form-control[readonly], .dvFlightList .dvInputGroup.input-group .form-control[readonly] {
     background-color: var(--colour6);
 }
-/*active menu for flightsearch page*/
+
 /*=========[ FLIGHTSEARCH ]=========*/
 
 

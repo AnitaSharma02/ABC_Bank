@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-12 col-lg-10 offset-lg-1">
                     <h2 class="heading1 pt-0 text-center" data-i18n="home-turn">Turn Transactions into Rewards</h2>
-                    <span class="h3 heading-regular text-center d-block py-3" data-i18n="home-our-diverse">Infinity Rewards - Our Diverse Loyalty Program</span>
+                    <span class="h4 heading-regular text-center d-block py-3" data-i18n="home-our-diverse">Infinity Rewards - Our Diverse Loyalty Program</span>
                     <p class="text-center " data-i18n="home-discover">
                         Designed for the discerning customer, it offers diverse redemption options like flight bookings, hotel stays, car rentals, vouchers, online shopping, and point exchanges. Experience the joy of rewards that fit your lifestyle, turning every transaction into a chance for delightful experiences.
                     </p>
@@ -181,7 +181,9 @@
                     <h2 class="heading2 mb-3" data-i18n="home-from-earning">From Earning to Redeeming: We've Got Answers</h2>
                     <p class="" data-i18n="home-navigating-our">
                         Navigating our rewards program is as fun as a rollercoaster ride.
-Here are answers to some common questions to ensure your journey is smooth and rewarding.
+                    </p>
+                    <p class="" data-i18n="home-here-are">
+                        Here are answers to some common questions to ensure your journey is smooth and rewarding.
                     </p>
                 </div>
             </div>

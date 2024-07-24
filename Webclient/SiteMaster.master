@@ -309,7 +309,7 @@
         <div class="dvInnerBanner">
             <img id="dvInnerBanner" alt="" class="w-100" />
         </div>
-        <div class="dvRedemptionMenu py-4">
+        <div class="dvRedemptionMenu py-0">
             <div class="container-fluid">
                 <div class="row justify-content-center my-5" id="divRedemptionOptions" runat="server">
                 </div>

@@ -1,17 +1,4 @@
 /*=========[ HOTELSEARCH PAGE ]=========*/
-/*active menu for flightsearch page*/
-.dvRedemptionMenu .SelRedemption .imageBox {
-    background-color: var(--bg-colour1);
-}
-
-    .dvRedemptionMenu .SelRedemption .imageBox img {
-        filter: brightness(0) invert(1);
-    }
-
-.dvRedemptionMenu .SelRedemption p {
-    font-weight: bold;
-}
-/*active menu for flightsearch page*/
  
 /*.dvHotelSearch .innerBox {
     overflow: hidden;
