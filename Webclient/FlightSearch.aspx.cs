@@ -12,7 +12,7 @@ public partial class FlightSearch : Page
     {
         System.Web.UI.HtmlControls.HtmlGenericControl sitemap = (System.Web.UI.HtmlControls.HtmlGenericControl)Master.FindControl("sitemap");
         sitemap.Attributes.Add("Style", "display:none");
-        Session["CategoryName"] = "flight";
+        Session["CategoryName"] = "flights";
         if (Session["MemberDetails"] != null)
         {
             tabdomesticTab.Visible = true;
