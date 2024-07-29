@@ -20,6 +20,10 @@
     border: 1px solid var(--text-danger);
     color: var(--text-danger);
 }
+.dvCarSearch .dvInput.input-group .form-control[readonly], .dvCarSearch .dvInput.input-group .form-control[readonly],
+.dvCarList .dvInputGroup.input-group .form-control[readonly], .dvCarList .dvInputGroup.input-group .form-control[readonly] {
+    background-color: var(--colour6);
+}
 
 .dvCarSearch .dvParent .dvLabel .checkmark {
     top: 3px;
@@ -92,6 +96,9 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
 
 /*=========[ CARLIST PAGE ]=========*/
 /*filter button only for mobile*/
+.dvCarList .dviconBox i {
+    color:var(--colour8)
+}
 .dvCarList .dvFilterBtn {
   position: fixed;
   bottom: 1rem;
@@ -140,13 +147,17 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
   display: block;
 }
 /* Style the checkmark/indicator */
-.dvCarList .dvCarSelection .checkbox-container .checkmark:after {
-  position: absolute;
-  right: 12%;
-  top: 6%;
-  content: url("/images/carpage/icons/checked.svg");
-  width: 15px;
-}
+    .dvCarList .dvCarSelection .checkbox-container .checkmark:after {
+        position: absolute;
+        right: 12%;
+        top: 6%;
+        /* content: url("/images/carpage/icons/checked.svg");*/
+        content: '\f058';
+        font-weight: 900;
+        font-family: "Font Awesome 6 Free";
+        width: 15px;
+        color: var(--colour1)
+    }
 /* Create the checkmark/indicator (hidden when not checked) */
 .dvCarList .dvCarSelection .checkmark:after {
   content: "";

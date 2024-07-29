@@ -165,21 +165,21 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append(" <div class=\"row dviconBox\">");
                 sb.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                 sb.Append("<div class=\"borderColor\">");
-                sb.Append("<img src=\"images/carpage/icons/seat-icon.svg\" class=\"img-fluid\" />");
+                sb.Append("<i class=\"fa-solid fa-couch\"></i>");
                 sb.Append("</div>");
                 sb.Append("<span class=\"ml-2 heading-medium h8\">x " + item.vehicle.seats + "</span>");
                 sb.Append("</div>");
 
                 sb.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                 sb.Append("<div class=\"borderColor\">");
-                sb.Append("<img src=\"images/carpage/icons/gear-icon.svg\" class=\"img-fluid\" />");
+                sb.Append("<i class=\"fa-solid fa-life-ring\"></i>");
                 sb.Append("</div>");
                 sb.Append("<span class=\"ml-2 heading-medium h8\"> " + item.vehicle.transmission + "</span>");
                 sb.Append("</div>");
 
                 sb.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                 sb.Append("<div class=\"borderColor\">");
-                sb.Append("<img src=\"images/carpage/icons/door-icon.svg\" class=\"img-fluid\" />");
+                sb.Append("<i class=\"fa-solid fa-door-closed\"></i>");
                 sb.Append("</div>");
                 sb.Append("<span class=\"ml-2 heading-medium h8\"> " + item.vehicle.doors + "</span>");
                 sb.Append("</div>");
@@ -195,14 +195,14 @@ public partial class CarList : System.Web.UI.Page
 
                 sb.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                 sb.Append("<div class=\"borderColor\">");
-                sb.Append("<img src=\"images/carpage/icons/ac-icon.svg\" class=\"img-fluid\" />");
+                sb.Append("<i class=\"fa-solid fa-snowflake\"></i>");
                 sb.Append("</div>");
                 sb.Append("<span class=\"ml-2 heading-medium h8\">" + lstrAircon + "</span>");
                 sb.Append("</div>");
 
                 sb.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                 sb.Append("<div class=\"borderColor\">");
-                sb.Append("<img src=\"images/carpage/icons/fuel-icon.svg\" class=\"img-fluid\" />");
+                sb.Append("<i class=\"fa-solid fa-gas-pump\"></i>");
                 sb.Append("</div>");
                 sb.Append("<span class=\"ml-2 heading-medium h8\">Fair Fuel Policy</span>");
                 sb.Append("</div>");
@@ -449,35 +449,35 @@ public partial class CarList : System.Web.UI.Page
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"borderColor\">");
-                    sbmoreInfo.Append("<img src=\"images/carpage/icons/seat-icon.svg\" class=\"img-fluid\" />");
+                    sbmoreInfo.Append("<i class=\"fa-solid fa-couch\"></i>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<span class=\"ml-2 heading-medium h8\">x " + lobjVehicle.vehicle.seats + "</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"borderColor\">");
-                    sbmoreInfo.Append("<img src=\"images/carpage/icons/gear-icon.svg\" class=\"img-fluid\" />");
+                    sbmoreInfo.Append("<i class=\"fa-solid fa-life-ring\"></i>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<span class=\"ml-2 heading-medium h8\"> " + lobjVehicle.vehicle.transmission + "</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"borderColor\">");
-                    sbmoreInfo.Append("<img src=\"images/carpage/icons/door-icon.svg\" class=\"img-fluid\" />");
+                    sbmoreInfo.Append("<i class=\"fa-solid fa-door-closed\"></i>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<span class=\"ml-2 heading-medium h8\"> " + lobjVehicle.vehicle.doors + "</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"borderColor\">");
-                    sbmoreInfo.Append("<img src=\"images/carpage/icons/fuel-icon.svg\" class=\"img-fluid\" />");
+                    sbmoreInfo.Append("<i class=\"fa-solid fa-gas-pump\"></i>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<span class=\"ml-2 heading-medium h8\">Fair Fuel Policy</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"borderColor\">");
-                    sbmoreInfo.Append("<img src=\"images/carpage/icons/ac-icon.svg\" class=\"img-fluid\" />");
+                    sbmoreInfo.Append("<i class=\"fa-solid fa-snowflake\"></i>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<span class=\"ml-2 heading-medium h8\">" + lstrAircon + "</span>");
                     sbmoreInfo.Append("</div>");
@@ -577,21 +577,21 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append(" <div class=\"row dviconBox\">");
                 sb.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                 sb.Append("<div class=\"borderColor\">");
-                sb.Append("<img src=\"images/carpage/icons/seat-icon.svg\" class=\"img-fluid\" />");
+                sb.Append("<i class=\"fa-solid fa-couch\"></i>");
                 sb.Append("</div>");
                 sb.Append("<span class=\"ml-2 heading-medium h8\">x " + item.vehicle.seats + "</span>");
                 sb.Append("</div>");
 
                 sb.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                 sb.Append("<div class=\"borderColor\">");
-                sb.Append("<img src=\"images/carpage/icons/gear-icon.svg\" class=\"img-fluid\" />");
+                sb.Append("<i class=\"fa-solid fa-life-ring\"></i>");
                 sb.Append("</div>");
                 sb.Append("<span class=\"ml-2 heading-medium h8\"> " + item.vehicle.transmission + "</span>");
                 sb.Append("</div>");
 
                 sb.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                 sb.Append("<div class=\"borderColor\">");
-                sb.Append("<img src=\"images/carpage/icons/door-icon.svg\" class=\"img-fluid\" />");
+                sb.Append("<i class=\"fa-solid fa-door-closed\"></i>");
                 sb.Append("</div>");
                 sb.Append("<span class=\"ml-2 heading-medium h8\"> " + item.vehicle.doors + "</span>");
                 sb.Append("</div>");
@@ -607,14 +607,14 @@ public partial class CarList : System.Web.UI.Page
 
                 sb.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                 sb.Append("<div class=\"borderColor\">");
-                sb.Append("<img src=\"images/carpage/icons/ac-icon.svg\" class=\"img-fluid\" />");
+                sb.Append("<i class=\"fa-solid fa-snowflake\"></i>");
                 sb.Append("</div>");
                 sb.Append("<span class=\"ml-2 heading-medium h8\">" + lstrAircon + "</span>");
                 sb.Append("</div>");
 
                 sb.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                 sb.Append("<div class=\"borderColor\">");
-                sb.Append("<img src=\"images/carpage/icons/fuel-icon.svg\" class=\"img-fluid\" />");
+                sb.Append("<i class=\"fa-solid fa-gas-pump\"></i>");
                 sb.Append("</div>");
                 sb.Append("<span class=\"ml-2 heading-medium h8\" data-i18n=\"carlist-fair-fuel-policy\">Fair Fuel Policy</span>");
                 sb.Append("</div>");

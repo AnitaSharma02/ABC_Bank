@@ -3,26 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <link href="Css/car.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/CarResultScript.js" type="text/javascript"></script>
-    <style>
-        .navdiv {
-            background: #00425F;
-        }
+    <style> 
         #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner {
             display: none;
-        }
-
-        .innerHeader {
-            height: auto;
-            padding: 0 70px;
-            background: #00425F !important;
-            box-shadow: rgb(0 0 0 / 25%) 0px 5px 15px;
-            height: auto !important;
-        }
-
-       /* .dvParent .dvInput1 input, .dvParent .dvInput2 input, .dvParent .dvInput3 input {
-            border-radius: 10px !important;
-        }*/
-
+        } 
+       
         .fade-in {
             /*animation: fadeIn 0.5s ease-in-out forwards;*/
             display: block;
@@ -104,8 +89,8 @@
                         <div class="row">
                             <div class="col-12 leftBoxCont">
                                 <div class="row align-items-center flex-md-column ">
-                                    <div class="col-3 mb-md-3 mt-md-1 col-md-12 vehicleBox">
-                                        <img src="images/carpage/car.png" class="img-fluid" width="50" />
+                                    <div class="col-3 mb-md-3 mt-md-1 col-md-12 vehicleBox h2">
+                                        <i class="fa-solid fa-car-side"></i>
                                     </div>
                                     <div class="col-6 col-md-12 airportInfo d-none d-md-block p-0 pl-md-3 pb-md-1 pr-md-3">
                                         <h1 class="d-none d-md-block heading-semibold mb-1 h7" data-i18n="carlist-pickup-location">PICK UP LOCATION</h1>
@@ -142,7 +127,7 @@
                                         <div class="form-row dvParent">
                                             <div class="col-lg-12 col-md-12 col-12 mb-2 mt-2">
                                                 <label for="validationDefaultUsername" class="label" data-i18n="carlist-pickup-location">Pick up location?</label>
-                                                <div class="input-group dvPickupLocation">
+                                                <div class="dvInputGroup input-group dvPickupLocation">
                                                     <input type="text" class="form-control" id="txtpickupLocation" data-i18n="[placeholder]carlist-please-enter-pickup-location" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2" required>
                                                     <input type="hidden" id="hndpickupLocationId" value="">
                                                     <div class="input-group-append">
@@ -154,7 +139,7 @@
                                             </div>
                                             <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
                                                 <label class="label" data-i18n="carlist-pickup-date">Pick-Up Date</label>
-                                                <div class="input-group">
+                                                <div class="dvInputGroup input-group">
                                                     <input class="input form-control" data-i18n="[value]carlist-enter-date" value="Enter Date" onfocus="placeholderOnFocus(this);"
                                                         type="text" id="txtpickupDate" readonly="readonly" />
                                                     <div class="input-group-append">
@@ -166,7 +151,7 @@
                                             </div>
                                             <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
                                                  <label for="exampleFormControlSelect1" class="label" data-i18n="carlist-pickup-time">Pick-Up Time</label>
-                                                 <div class="input-group">
+                                                 <div class="dvInput input-group">
                                                     <select class="form-control" id="ddlPickupTime">
                                                         <option>00:00</option>
                                                         <option>00:15</option>
@@ -283,7 +268,7 @@
                                             <div class="col-12 col-lg-12 col-xl-12">
                                                 <div class="form-group dvInput1 fade-out">
                                                     <label class="label"  data-i18n="carlist-car-dropoff-location">Car Drop off location?</label>
-                                                    <div class="input-group dvDopoffLocation">
+                                                    <div class="dvInputGroup input-group dvDopoffLocation">
                                                         <input type="text" class="form-control" id="txtDopoffLocation">
                                                         <input type="hidden" id="hndDopoffLocationId" value="">
                                                         <div class="input-group-append">
@@ -297,7 +282,7 @@
 
                                             <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
                                                 <label class="label" data-i18n="carlist-drop-off-date">Drop off date</label>
-                                                <div class="input-group">
+                                                <div class="dvInputGroup input-group">
                                                     <input class="input form-control" value="Enter Date" onfocus="placeholderOnFocus(this);"
                                                         onblur="placeholderOnFocus(this);" data-i18n="[value]carlist-check-out-input" type="text" id="txtDropoffDate" readonly="readonly" />
                                                     <div class="input-group-append">
@@ -309,7 +294,7 @@
                                             </div>
                                             <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
                                                  <label for="exampleFormControlSelect2" class="label" data-i18n="carlist-pickup-time">Pick-Up Time</label>
-                                                <div class="input-group">
+                                                <div class="dvInput input-group">
                                                      <select class="form-control" id="ddlDropoffTime">
                                                         <option>00:00</option>
                                                         <option>00:15</option>
@@ -432,7 +417,7 @@
 
                                             <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2" style="display:none;">
                                                 <label class="label" data-i18n="carlist-discount">Discount</label>
-                                                <div class="input-group">
+                                                <div class="dvInputGroup input-group">
                                                     <input class="input form-control" value="Discount" onfocus="placeholderOnFocus(this);"
                                                         type="text" id="Text1" runat="server" readonly="readonly" />
                                                     <div class="input-group-append">
@@ -487,11 +472,11 @@
                     <div class="btn dvFilterBtn d-lg-none" data-toggle="modal" data-target="#filterBox">
                         <i class="fa fa-filter"></i>
                     </div>
-                    <div class="dvFilters modal fade col-lg-12 px-0" id="filterBox">
+                    <div class="dvFilter modal fade col-lg-12 px-0" id="filterBox">
                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                             <div class="modal-content">
                                 <div class="modal-header align-items-center d-lg-none order-lg-1">
-                                    <h5 class="modal-title heading-semibold h6" id="exampleModalLabel" data-i18n="carlist-filter-results">Filter Results</h5>
+                                    <h5 class="h6 heading-semibold text-colour1" id="exampleModalLabel" data-i18n="carlist-filter-results">Filter Results</h5>
                                     <button type="button" class="close text-colour6" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>

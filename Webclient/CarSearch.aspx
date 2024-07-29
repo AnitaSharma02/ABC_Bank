@@ -7,85 +7,13 @@
         #sitemap {
             display: none;
         }
-        /*#ui-id-1 {
-            display:block !important;
-        } */
-        /*.ui-menu .ui-menu-item span:hover {
-            background-color: #00425F !important;
-            color: #ffffff !important;
-        }
-
-        .ui-menu .ui-menu-item span {
-            font-size: 13px !important;
-            font-weight: 600 !important;
-            color: #28231C !important;
-            padding: 8px 10px !important;
-            border-bottom: 1px solid #E8E4EE !important;
-            background-color: white !important;
-            display: flex;
-            justify-content: space-between;
-            align-items: center; 
-        }*/
-
-        /*.ui-menu .ui-menu-item span::after {
-            content: ">";
-            display: inline-block !important;
-            float: right !important;
-            color: #B4B2B0 !important;
-            font-size: 13px !important;
-            }*/
-
-        /*.ui-autocomplete {
-            background-color: transparent !important;
-            border: none !important;
-            max-height: 135px;
-        }*/
-
-        /*.hdr-bg {
-            display: none !important;
-        }*/
-
-        /*.dvParent .dvInput1 input, 
-        .dvParent .dvInput2 input, 
-        .dvParent .dvInput3 input {
-            border-radius: 10px !important;
-        }*/
-
-        /*.fade-in {
-            animation: fadeIn 0.5s ease-in-out forwards;
-            display: block;
-        }
-
-        .fade-out {
-            animation: fadeOut 0.5s ease-in-out forwards;
-            display: none;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-
-            to {
-                opacity: 0;
-            }
-        }*/
+         
     </style>
 
     <%--<div class="banner top_banner">
         <img class="w-100" src="../Images/carpage/car-banner.jpg" />
     </div>--%>
-    <div class="dvCarSearch pb-5 mt-5">
+    <div class="dvCarSearch mb-5">
         <div class="container-lg">
             <div class="dvForm row">
                 <div class="bg-colour2 p-3">
@@ -97,7 +25,7 @@
                             <div class="form-row">
                                 <div class="col-lg-4 col-md-12 col-12 mb-3">
                                     <label for="validationDefaultUsername" class="label" data-i18n="car-pickup-location">Pick up location?</label>
-                                    <div class="dvPickupLocation input-group">
+                                    <div class="dvInputGroup input-group">
                                         <input type="text" class="form-control" id="txtpickupLocation" data-i18n="[placeholder]car-enter-pickup-location" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2">
                                         <input type="hidden" id="hndpickupLocationId" value="">
                                         <div class="input-group-append">
@@ -109,7 +37,7 @@
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-2 mb-3">
                                     <label class="label" data-i18n="car-pickup-date">Pick-Up Date</label>
-                                    <div class="input-group">
+                                    <div class="dvInputGroup input-group">
                                         <input class="input form-control" data-i18n="[placeholder]car-enter-date" placeholder="Enter Date"
                                             type="text" id="txtpickupDate" readonly="readonly" />
                                         <div class="input-group-append">
@@ -121,7 +49,7 @@
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-2 mb-3">
                                     <label for="exampleFormControlSelect1" class="label" data-i18n="car-time">Time</label>
-                                    <div class="input-group">
+                                    <div class="dvInput input-group">
                                         <select class="form-control " id="ddlPickupTime">
                                             <option>00:00</option>
                                             <option>00:15</option>
@@ -225,8 +153,7 @@
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-2 mb-3">
                                     <label class="label" data-i18n="car-drop-off-date">Drop off date</label>
-                                    <div class="input-group">
-
+                                    <div class="dvInputGroup input-group">
                                         <input class="input datePicker form-control" data-i18n="[placeholder]car-enter-date" placeholder="Enter Date" type="text" id="txtDropoffDate" readonly="readonly" />
                                         <div class="input-group-append">
                                             <span class="input-group-text bg-white">
@@ -237,7 +164,7 @@
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-2 mb-3">
                                     <label for="exampleFormControlSelect2" class="label" data-i18n="car-time">Time</label>
-                                    <div class="input-group">
+                                    <div class="dvInput input-group">
                                         <select class="form-control" id="ddlDropoffTime">
                                             <option>00:00</option>
                                             <option>00:15</option>
@@ -355,7 +282,7 @@
 
                                     <div class="form-group dvInput1 fade-out ">
                                         <label class="label" data-i18n="car-dropoff-location">Drop off location?</label>
-                                        <div class="input-group dvDopoffLocation input-group">
+                                        <div class="dvInputGroup dvDopoffLocation input-group">
                                             <input type="text" class="form-control" id="txtDopoffLocation" data-i18n="[placeholder]car-enter-location" placeholder="Enter Location">
                                             <input type="hidden" id="hndDopoffLocationId" value="">
                                             <div class="input-group-append">
