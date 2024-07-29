@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.34407.143
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Framework.Booking.Facade", "Core.Framework.Booking.Facade\Core.Framework.Booking.Facade.csproj", "{7076DFF3-528B-4FDF-8614-3056220B4BEC}"
 EndProject
@@ -65,6 +65,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiiftPaymentGateway.Entities", "GiiftPaymentGateway.Entities\GiiftPaymentGateway.Entities.csproj", "{3F7B6856-B36F-493E-A5B7-C0AA6CF46D80}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABC.Model", "ABC.Model\ABC.Model.csproj", "{BCF8E756-8E46-4CE9-876E-C94FD33AFD6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBEAPI.ClientEntities", "IBEAPI.ClientEntities\IBEAPI.ClientEntities.csproj", "{270B47A1-9A4C-431B-934A-D8D161C7CEA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBEAPI.ClientHelper", "IBEAPI.ClientHelper\IBEAPI.ClientHelper.csproj", "{DA816F60-D5AE-499F-A45D-7EC0C03C30FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBEAPIGateway.Model", "IBEAPIGateway.Model\IBEAPIGateway.Model.csproj", "{F5392AEC-B226-4E34-8807-E6CB6D2503D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -226,6 +232,30 @@ Global
 		{BCF8E756-8E46-4CE9-876E-C94FD33AFD6C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BCF8E756-8E46-4CE9-876E-C94FD33AFD6C}.Release|x64.ActiveCfg = Release|Any CPU
 		{BCF8E756-8E46-4CE9-876E-C94FD33AFD6C}.Release|x64.Build.0 = Release|Any CPU
+		{270B47A1-9A4C-431B-934A-D8D161C7CEA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{270B47A1-9A4C-431B-934A-D8D161C7CEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{270B47A1-9A4C-431B-934A-D8D161C7CEA0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{270B47A1-9A4C-431B-934A-D8D161C7CEA0}.Debug|x64.Build.0 = Debug|Any CPU
+		{270B47A1-9A4C-431B-934A-D8D161C7CEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{270B47A1-9A4C-431B-934A-D8D161C7CEA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{270B47A1-9A4C-431B-934A-D8D161C7CEA0}.Release|x64.ActiveCfg = Release|Any CPU
+		{270B47A1-9A4C-431B-934A-D8D161C7CEA0}.Release|x64.Build.0 = Release|Any CPU
+		{DA816F60-D5AE-499F-A45D-7EC0C03C30FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA816F60-D5AE-499F-A45D-7EC0C03C30FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA816F60-D5AE-499F-A45D-7EC0C03C30FD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DA816F60-D5AE-499F-A45D-7EC0C03C30FD}.Debug|x64.Build.0 = Debug|Any CPU
+		{DA816F60-D5AE-499F-A45D-7EC0C03C30FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA816F60-D5AE-499F-A45D-7EC0C03C30FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA816F60-D5AE-499F-A45D-7EC0C03C30FD}.Release|x64.ActiveCfg = Release|Any CPU
+		{DA816F60-D5AE-499F-A45D-7EC0C03C30FD}.Release|x64.Build.0 = Release|Any CPU
+		{F5392AEC-B226-4E34-8807-E6CB6D2503D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5392AEC-B226-4E34-8807-E6CB6D2503D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5392AEC-B226-4E34-8807-E6CB6D2503D0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F5392AEC-B226-4E34-8807-E6CB6D2503D0}.Debug|x64.Build.0 = Debug|Any CPU
+		{F5392AEC-B226-4E34-8807-E6CB6D2503D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5392AEC-B226-4E34-8807-E6CB6D2503D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5392AEC-B226-4E34-8807-E6CB6D2503D0}.Release|x64.ActiveCfg = Release|Any CPU
+		{F5392AEC-B226-4E34-8807-E6CB6D2503D0}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
