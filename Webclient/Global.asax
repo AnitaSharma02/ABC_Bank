@@ -22,6 +22,8 @@
             GetSearchCategories();
             GetInsuranceServiceList();
             GetISPList();
+            GetAllCarLocations();
+            GetCountriesList();
         }).ConfigureAwait(false);
     }
     private void getAllAirCraftDetails()
@@ -246,6 +248,42 @@
             Framework.EnterpriseLibrary.Adapters.LoggingAdapter.WriteLog("GetStoreDetails Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
+
+    private void GetAllCarLocations()
+    {
+        try
+        {
+            if (Application["CarLocations"] == null)
+            {
+                IBEAPI.ClientEntities.BulkResponse lobjListOfLocation = new IBEAPI.ClientEntities.BulkResponse();
+                IBEAPIGateway.Model.IBEAPIModel model = new IBEAPIGateway.Model.IBEAPIModel();
+                lobjListOfLocation = model.GetLocations();
+                Application["CarLocations"] = lobjListOfLocation;
+            }
+        }
+        catch (Exception ex)
+        {
+            Framework.EnterpriseLibrary.Adapters.LoggingAdapter.WriteLog("GetAllCarLocations Exception : " + ex.StackTrace + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
+        }
+    }
+    private void GetCountriesList()
+    {
+        try
+        {
+            if (Application["CarCountries"] == null)
+            {
+                IBEAPI.ClientEntities.CarCountryResponse lobjListOfCountry = new IBEAPI.ClientEntities.CarCountryResponse();
+                IBEAPIGateway.Model.IBEAPIModel model = new IBEAPIGateway.Model.IBEAPIModel();
+                lobjListOfCountry = model.GetCountriesList();
+                Application["CarCountries"] = lobjListOfCountry;
+            }
+        }
+        catch (Exception ex)
+        {
+            Framework.EnterpriseLibrary.Adapters.LoggingAdapter.WriteLog("GetCountriesList Exception : " + ex.StackTrace + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
+        }
+    }
+
     void Application_End(object sender, EventArgs e)
     {
         //  Code that runs on application shutdown
