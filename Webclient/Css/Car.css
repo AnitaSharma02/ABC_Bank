@@ -1,20 +1,28 @@
 ﻿/*=========[ GLOBAL FOR CAR PAGES ONLY ]=========*/
 /*car steps section*/
 .dvCarSteps .circle {
-  width: 30px;
-  height: 30px;
-  background-color: var(--bg-section);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--colour2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .dvCarSteps .circle-active {
-  background-color: var(--primary-colour);
+  background-color: var(--colour1);
   color: #fff;
 }
 .dvCarSteps .text-active {
-  color: var(--primary-colour);
+    color: var(--colour1);
+}
+.dvCarSearch .dvForm .error {
+    border: 1px solid var(--text-danger);
+    color: var(--text-danger);
+}
+
+.dvCarSearch .dvParent .dvLabel .checkmark {
+    top: 3px;
 }
 /*car steps section*/
 
@@ -23,13 +31,40 @@ purposely kept without parent class. small-icon class are using in multiple plac
 */
 .small-icon {
   width: 15px;
-  color: var(--primary-colour);
+  color: var(--colour8);
 }
 /* smallicon */
 
 /* ribbon section 
 purposely kept without parent class. Ribbon Section is using in multiple places on this page
 */
+.dvCarList .ribbonBox {
+    width: 113px;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    z-index: 2;
+}
+    .dvCarList .ribbonBox span {
+        width: 193px;
+        position: absolute;
+        display: block;
+        text-align: center;
+        color: #fff;
+        background: #000;
+        z-index: 3;
+        font-size: 12px;
+        font-weight: 500;
+        height: 25px;
+        line-height: 2;
+        left: -13px;
+        top: 19px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
 .dvRibbon {
   position: absolute;
   top: 0;
@@ -50,7 +85,7 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
 
 /* moreInfo button */
 .dvMoreInfoBtn {
-  color: var(--primary-colour);
+  color: var(--colour1);
 }
 /* moreInfo button */
 /*=========[ GLOBAL FOR CAR PAGES ONLY ]=========*/
@@ -64,7 +99,7 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid var(--primary-colour);
+  border: 2px solid var(--colour1);
   text-align: center;
   z-index: 2;
   background: #fff;
@@ -92,12 +127,12 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
 }
 /* On mouse-over, */
 .dvCarList .dvCarSelection .checkbox-container:hover input ~ .checkmark {
-  /* border: 1px solid var(--primary-colour); */
+  /* border: 1px solid var(--colour1); */
   /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); */
 }
 /* When the checkbox is checked,  */
 .dvCarList .dvCarSelection .checkbox-container input:checked ~ .checkmark {
-  border: 1px solid var(--primary-colour);
+  border: 1px solid var(--colour8);
   /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); */
 }
 /* Show the checkmark when checked */
@@ -130,35 +165,42 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
 /*cars found section*/
 .dvFound .border .heading-semibold,
 .dvFound .border a {
-  color: var(--primary-colour);
+  color: var(--colour1);
 }
 /*cars found section*/
-
+ 
 .dvCarList .dvIncluded .dvLocation a {
-  color: var(--primary-colour);
+    color: var(--colour1);
 }
+.dvCarList .boxShadow .travelWhiteBtn .btn {
+    background: transparent;
+    text-transform: capitalize;
+}
+.productInfo .moreInfo, .dvCarDetails .moreInfo {
+    cursor: pointer;
+}
+.dvPickupLocation .ui-autocomplete {z-index:99999}
 /*=========[ CARLIST PAGE ]=========*/
-
 /*=========[ CARDETAILS PAGE ]=========*/
 .dvCarDetails .dvBookingSummary .card {
-  border-radius: 0;
+    border-radius: 0;
 }
 .dvCarDetails .dvBookingSummary .card-header {
   background-color: var(--bg-section);
 }
-.dvCarDetails .dvBookingSummary .dvPayable .heading-semibold,
-.dvCarDetails .dvBookingSummary .dvPayable .heading-bold {
-  color: var(--primary-colour);
+.dvCarDetails .dvBookingSummary .dvPayable .heading-sm-medium,
+.dvCarDetails .dvBookingSummary .dvPayable .heading-sm-bold {
+  color: var(--colour1);
 }
-.dvCarDetails .dvPayOption .heading-semibold {
-  color: var(--primary-colour);
+.dvCarDetails .dvPayOption .heading-sm-medium {
+  color: var(--colour1);
 }
 .dvCarDetails .dvPayOption .fa-check {
   color: var(--text-success);
 }
 .dvCarDetails .dvItem .heading-md-medium,
 .dvCarDetails .dvItem .fa-shield {
-  color: var(--primary-colour);
+  color: var(--colour1);
 }
 .dvCarDetails .dvPayOption .tickmark {
   font-size: 1.5rem;
@@ -177,11 +219,11 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
 
 /*=========[ CAR SEARCH PAGE ]=========*/
 .dvCarSearch .dvForm .fade-in {
-  animation: fadeIn 0.5s ease-in-out forwards;
+  /*animation: fadeIn 0.5s ease-in-out forwards;*/
   display: block;
 }
 .dvCarSearch .dvForm .fade-out {
-  animation: fadeOut 0.5s ease-in-out forwards;
+  /*animation: fadeOut 0.5s ease-in-out forwards;*/
   display: none;
 }
 @keyframes fadeIn {
