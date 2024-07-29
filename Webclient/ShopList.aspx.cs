@@ -196,21 +196,21 @@ public partial class ShopList : Page
             if (result != null)
             {
                 StringBuilder sb = new StringBuilder();
-                string Template = "<div class=\"col-sm-6 col-md-4 mb-3\">"
-                    + "<a href = \"{3}\" class=\"d-block shadow-sm\"><div class=\"bg-white border h-100 d-flex flex-column\">"
+                string Template = "<div class=\"col-sm-6 col-md-4 mb-3 dvProductCard\">"
+                    + "<div class=\"dvItem\">"
+                    + "<a href = \"{3}\" class=\"anchor\">"
                     + "<div class=\"img-container\">"
                     + "<img src = \"{0}\">"
                     + "</div>"
-                    + "<div class=\"d-flex flex-wrap bg-white p-2\">"
-                    + "<p class='h6 heading-semibold text-colour7 text-truncate mb-2 w-100'>{1}</p>"
+                    + "<h2>{1}</h2>"
                     + "{4}"
-                    + "<p class=\"h8 heading-regular w-100 mt-auto\">{5}</p>"
-                    + "<p class=\"h7 heading-medium text-colour7 w-100 pt-0\">{2}</p>"
-                    + "<p class=\"h7 heading-regular w-100 pt-1 mt-auto\"></p>"
-                    + "</div>"
+                    + "<p class=\"\">{5}</p>"
+                    + "<p class=\"points\">{2}</p>"
+                    + "<p class=\"\"></p>"
                     + "<div class=\"cart-button mt-0 px-2 d-flex justify-content-between align-items-center\">"
                     + "</div>"
-                    + "</div></a>"
+                    + "</a>"
+                    + "</div>"
                     + "</div>";
                 sb.Append("<div class='row'>");
                 foreach (var product in result.Products)

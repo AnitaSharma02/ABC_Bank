@@ -26,11 +26,11 @@ function BindNextHotel() {
             var HotelList = '';
             HotelList += '<div class="row">'
             for (icount = 0; icount < HotelNextList.length; icount++) {
-                HotelList += '<div class="col-6 col-md-4 mb-4"><a class="d-block shadow-sm h-100" onclick="return getHotelDetails(' + HotelNextList[icount].hotelid + ')"><div class="bg-white border h-100 d-flex flex-column"><div class="img-container"><img onError="this.onerror=null;this.src=&quot;images/no-image.png&quot;" src="' + HotelNextList[icount].basicinfo.thumbnailimage + '" /></div><div class="bg-white d-flex flex-column p-2"><p class="h6 heading-semibold text-colour7 order-0 text-capitalize mb-2">' + HotelNextList[icount].basicinfo.hotelname + '</p><p class="h6 heading-medium text-colour7 order-1 mt-auto AmtStylePoint">' + HotelNextList[icount].roomrates.RoomRate[0].ratebreakdown.rate[0].RatePoint + ' Points </p><p class="h6 heading-regular text-colour7 order-2 mt-auto text-right"></p><div class="rating order-3 mt-2">'
+                HotelList += '<div class="dvProductCard col-6 col-md-4 mb-4"><div class="dvItem"><a class="anchor" onclick="return getHotelDetails(' + HotelNextList[icount].hotelid + ')"><div class="img-container"><img onError="this.onerror=null;this.src=&quot;images/no-image.png&quot;" src="' + HotelNextList[icount].basicinfo.thumbnailimage + '" /></div><h2>' + HotelNextList[icount].basicinfo.hotelname + '</h2><div class="d-flex flex-wrap justify-content-between"><p class="points">' + HotelNextList[icount].roomrates.RoomRate[0].ratebreakdown.rate[0].RatePoint + ' Points </p><p class="points"></p></div><div class="rating mb-3 mx-3">'
                     for (irating = 0; irating < parseInt(HotelNextList[icount].basicinfo.starrating); irating++) {
-                        HotelList += '<img src="Images/icons/other/star-fill.svg">';
+                        HotelList += '<img class="mr-1" src="Images/icons/other/star-fill.svg">';
                     }
-                HotelList += '</div></div></div></a></div>'
+                HotelList += '</div></a></div></div>'
                 //HotelList += '<div class="rating">';
                 /*for (irating = 0; irating < parseInt(HotelNextList[icount].basicinfo.starrating); irating++) {
                     HotelList += '<img src="Images/icons/other/star-fill.svg">';
@@ -70,7 +70,7 @@ function BindHotelDetails() {
             $("#minrate").html("<span class='h3 heading-semibold text-colour7 totalPointValue'>" + HotelResponse[0].roomrates.RoomRate[0].TotalPoints + "</span><span class='h6 heading-regular text-colour7'> Points</span> <span class='h6 heading-regular text-colour7'>(for " + msg.d[1] + " night(s))</span>");
             $("#rptRoomDetails").append(rptRoom);
             for (irating = 0; irating < parseInt(HotelResponse[0].basicinfo.starrating); irating++) {
-                HotelRating += '<img src="Images/icons/other/star-fill.svg">';
+                HotelRating += '<img class="mr-1" src="Images/icons/other/star-fill.svg">';
             }
             $("#divrating").append(HotelRating);
             $(".totalPointValue").digits();

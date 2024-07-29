@@ -91,6 +91,7 @@
     --font-black: FontBlack;
     --font-semiblack: FontSemiBlack;
     --font-extrablack: FontExtraBlack;
+
     /* theme colours */
     --colour1: #CB4F56; /*red*/
     --colour2: #F3F4F6; /*lightgray -- used for form bg mostly*/
@@ -101,12 +102,14 @@
     --colour7: #000000; /*black*/
     --colour8: #666666; /*gray*/
     --colour9: #000A09; /*lightblack*/
+
     /*|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- COMPONENTS |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-*/
     /* BODY */
     --body-f-family: var(--font-medium);
     --body-font-size: 1rem;
     --body-bg-colour: var(--colour6);
     --body-text-colour: var(--colour7);
+
     /* PLACEHOLDERS */
     --placeholder-text-colour: var(--colour8);
     --placeholder-font-size: .875rem;
@@ -120,15 +123,18 @@
     --placeholder-readonly-font-size: .875rem;
     --placeholder-readonly-opacity: 1;
     --placeholder-readonly-cursor: not-allowed;
+
     /* PARAGRAPH */
     --paragraph-family: var(--font-medium);
     --paragraph-colour: var(--colour8);
+
     /* ANCHOR */
     /*regular anchor*/
     --a-text-decoration: none;
     --a-text-decoration-hover: none;
     --a-text-colour: blue;
     --a-text-colour-hover: blue;
+
     /*.link*/
     --link1-text-colour: var(--colour8);
     --link1-bg-colour: none;
@@ -138,6 +144,7 @@
     --link1-bg-colour-hover: none;
     --link1-text-decoration-hover: none;
     --link1-display-hover: inline-block;
+
     /* HEADINGS */
     --heading-thin: var(--font-thin);
     --heading-semithin: var(--font-semithin);
@@ -157,20 +164,24 @@
     --heading-black: var(--font-black);
     --heading-semiblack: var(--font-semiblack);
     --heading-extrablack: var(--font-extrablack);
+
     /* BORDER RADIUS */
     --b-radius: 0;
+
     /* BORDERS */
     --border-colour: var(--colour3);
     --border-top-colour: var(--colour3);
     --border-right-colour: var(--colour3);
     --border-bottom-colour: var(--colour3);
     --border-left-colour: var(--colour3);
+
     /* FORM CONTROL */
     --fc-border-width: 1px;
     --fc-border-style: solid;
     --fc-border-colour: var(--border-colour);
     --fc-font-size: .875rem;
     --fc-text-colour: var(--colour8);
+
     /* form-control with dvInput.input-group */
     --fc-border-top: 1px solid var(--fc-border-colour);
     --fc-border-right: 1px solid var(--fc-border-colour);
@@ -181,6 +192,7 @@
     --fc-radius-top-right: var(--b-radius);
     --fc-radius-bottom-right: var(--b-radius);
     --fc-bg-colour: #ffffff;
+
     /* form-control with dvInputGroup.input-group */
     --ig-fc-border-top: 1px solid var(--fc-border-colour);
     --ig-fc-border-right: 1px solid transparent;
@@ -191,6 +203,7 @@
     --ig-fc-radius-top-right: 0;
     --ig-fc-radius-bottom-right: 0;
     --ig-fc-bg-colour: #ffffff;
+
     /* input-group-text */
     --input-group-text-border-top: 1px solid var(--fc-border-colour);
     --input-group-text-border-right: 1px solid var(--fc-border-colour);
@@ -202,6 +215,7 @@
     --input-group-text-radius-bottom-right: var(--b-radius);
     --input-group-text-bg-colour: #ffffff;
     --input-group-text-margin-left: 0px; /*chage to -1px if want to remove space*/
+
     /* form-control with select */
     --select-text-colour: var(--colour8);
     --select-border-top: 1px solid var(--fc-border-colour);
@@ -213,6 +227,7 @@
     --select-radius-top-right: var(--b-radius);
     --select-radius-bottom-right: var(--b-radius);
     --select-bg-colour: #ffffff;
+
     /* TEXT COLOURS */
     --text-colour1: var(--colour1);
     --text-colour2: var(--colour2);
@@ -226,9 +241,11 @@
     --text-colour10: var(--colour10);
     --text-colour11: var(--colour11);
     --text-colour12: var(--colour12);
+
     /* BG BLUR */
     --bg-blur: rgba(255, 255, 255, 0.3); /* Fallback for browsers that don't support */
     --backdrop-filter: blur(10px);
+
     /* BACKGROUND COLOURS */
     --bg-colour1: var(--colour1);
     --bg-colour2: var(--colour2);
@@ -242,17 +259,20 @@
     --bg-colour10: var(--colour10);
     --bg-colour11: var(--colour11);
     --bg-colour12: var(--colour12);
+
     /* BOOTSTRAP DEFAULT BTN */
     --btn-family: var(--font-regular);
     --btn-bg: var(--colour6);
     --btn-bg-hover: var(--colour3);
     --btn-text: var(--colour7);
     --btn-text-hover: var(--colour7);
+
     /* BUTTON DISABLED */
     --btn-disabled-bg: var(--colour3);
     --btn-disabled-text-colour: var(--colour6);
     --btn-disabled-border: 1px solid var(--colour3);
     --btn-disabled-cursor: not-allowed;
+
     /* BUTTON ONE */
     --btn-one-family: var(--font-semibold);
     --btn-one-bg: var(--colour1);
@@ -264,6 +284,7 @@
     --btn-one-text-transform: capitalize;
     --btn-one-b-radius: var(--b-radius);
     --btn-one-padding: .375rem .75rem .375rem .75rem;
+
     /* BUTTON TWO */
     --btn-two-family: var(--font-semibold);
     --btn-two-bg: var(--colour6);
@@ -275,6 +296,7 @@
     --btn-two-text-transform: capitalize;
     --btn-two-b-radius: var(--b-radius);
     --btn-two-padding: .375rem .75rem .375rem .75rem;
+
     /* BUTTON THREE */
     --btn-three-family: var(--font-semibold);
     --btn-three-bg: var(--colour1);
@@ -286,50 +308,60 @@
     --btn-three-text-transform: capitalize;
     --btn-three-b-radius: var(--b-radius);
     --btn-three-padding: .375rem .75rem .375rem .75rem;
+
     /* INDEPENDENT BACKGROUND CLASSES */
     --background1: var(--colour2);
     --background2: var(--colour3);
     --background3: var(--colour4);
+
     /* LABEL */
     --label-family: var(--heading-semibold);
     --label-fontsize: 0.875rem;
     --label-text-colour: var(--colour7);
     --label-margin-bottom: .25rem;
+
     /* GROUP HEADINGS */
     /* heading1 */
     --heading1-family: var(--heading-bold);
     --heading1-text-colour: var(--colour9);
     --heading1-font-size-mobile: calc(1.375rem + 1.5vw); /*do not change values*/
     --heading1-font-size-desktop: 2.5rem; /*do not change values*/
+
     /* heading2 */
     --heading2-family: var(--heading-bold);
     --heading2-text-colour: var(--colour9);
     --heading2-font-size-mobile: calc(1.325rem + 0.9vw); /*do not change values*/
     --heading2-font-size-desktop: 2rem; /*do not change values*/
+
     /* heading3 */
     --heading3-family: var(--heading-light);
     --heading3-text-colour: var(--colour1);
     --heading3-font-size-mobile: calc(1.3rem + 0.6vw); /*do not change values*/
     --heading3-font-size-desktop: 1.75rem; /*do not change values*/
+
     /* heading4 */
     --heading4-family: var(--heading-bold);
     --heading4-text-colour: var(--colour7);
     --heading4-font-size-mobile: calc(1.275rem + 0.3vw); /*do not change values*/
     --heading4-font-size-desktop: 1.25rem; /*do not change values*/
+
     /* heading5 */
     --heading5-family: var(--heading-semibold);
     --heading5-text-colour: var(--colour7);
     --heading5-font-size-mobile: 1.25rem; /*do not change values*/
     --heading5-font-size-desktop: 1.25rem; /*do not change values*/
+
     /* heading6 */
     --heading6-family: var(--heading-bold);
     --heading6-text-colour: var(--colour7);
     --heading6-font-size-mobile: 1rem; /*do not change values*/
     --heading6-font-size-desktop: 1rem; /*do not change values*/
+
     /* SWIPER ARROWS */
     /* Both pagination and arrows cannot be displayed in the vertical center at the same time, so disable one of them. */
     --arrow-disabled-opacity: 0.3;
     --display-swiper-buttons: block;
+
     /*swiper fontawesome icon arrows*/
     --arrow-prev-left-position: 30px;
     --arrow-prev-right-position: auto;
@@ -340,8 +372,10 @@
     --arrow-fa-icon-bg-colour: var(--colour1);
     --arrow-fa-icon-padding: .75rem;
     --arrow-fa-icon-b-radius: var(--b-radius);
+
     /*swiper image arrows*/
     --arrow-image-width: 30px;
+
     /* SWIPER CUSTOMIZED ARROWS */
     --display-swiper-arrows: none; /* change only if you want default arrows */
     --custom-arrow-position: static; /* do not change values */
@@ -349,9 +383,11 @@
     --custom-arrow-margin: 0; /* do not change values */
     --custom-arrow-height: auto; /* do not change values */
     --custom-arrow-image-width: 40px;
+
     /* SWIPER PAGINATION */
     /* Both pagination and arrows cannot be displayed in the vertical center at the same time, so disable one of them. */
     --display-swiper-pagination: none;
+
     /* swiper pagination */
     --pagination-bg: var(--colour6);
     --pagination-border: var(--colour1);
@@ -359,6 +395,7 @@
     --pagination-active-bg: var(--colour1);
     --pagination-active-border: var(--colour6);
     --pagination-active-opacity: 1;
+
     /******* FILTER MODAL MOBILE *******/
     --filter-mobile-modal-content-border: 0;
     --filter-mobile-modal-content-b-radius: var(--b-radius);
@@ -366,17 +403,21 @@
     --filter-mobile-modal-body-padding: 0 1rem 0 1rem;
     --filter-mobile-modal-header-bg: var(--colour5);
     --filter-mobile-modal-header-padding: 0.5rem 1rem;
+
     /* modal title */
     --filter-mobile-modal-title-family: var(--font-bold);
     --filter-mobile-modal-title-fontsize: 1rem;
     --filter-mobile-modal-title-text-colour: var(--colour7);
+
     /* modal close btn */
     --filter-mobile-modal-close-padding: 0.75rem 0 0.75rem 0.75rem;
     --filter-mobile-modal-close-margin: 0;
     --filter-mobile-modal-close-text-colour: var(--colour1);
     --filter-mobile-modal-close-opacity: 1;
+
     /* modal close btn icon */
     --filter-mobile-modal-close-icon-text-colour: var(--colour1);
+
     /******* FILTER ACCORDION MOBILE *******/
     --filter-mobile-accordion-border: 1px solid transparent;
     --filter-mobile-accordion-card-border: 1px solid transparent;
@@ -386,14 +427,17 @@
     --filter-mobile-accordion-card-header-btn-border: 1px solid transparent;
     --filter-mobile-accordion-card-header-btn-padding: 0.5rem 0;
     --filter-mobile-accordion-card-body-padding: 0;
+
     /* show or hide scroll-ver */
     --filter-mobile-accordion-scroll-ver-overflow-x: hidden;
     --filter-mobile-accordion-scroll-ver-margin: 0;
     --filter-mobile-accordion-scroll-ver-max-height: 240px; /* none to hide scroll */
+
     /* style scrollbar */
     --filter-mobile-accordion-scrollbar-width: 3px;
     --filter-mobile-accordion-scrollbar-track-bg: #f1f1f1;
     --filter-mobile-accordion-scrollbar-thumb-bg: #888888;
+
     /******* FILTER MODAL DESKTOP *******/
     /* converted modal to static */
     --filter-desktop-modal-position: static;
@@ -403,40 +447,50 @@
     --filter-desktop-modal-overflow: auto;
     --filter-desktop-modal-opacity: 1;
     --filter-desktop-modal-z-index: 0;
+
     /* modal-dialog */
     --filter-desktop-modal-dialog-margin: 0 auto;
     --filter-desktop-modal-dialog-transform: translate(0, 0);
     --filter-desktop-modal-dialog-min-height: auto;
+
     /* modal-scrollable */
     --filter-desktop-modal-dialog-scrollable-justify-content: auto;
     --filter-desktop-modal-dialog-scrollable-max-height: auto;
+
     /* modal-footer */
     --filter-desktop-modal-footer-border: 1px solid transparent;
+
     /******* FILTER ACCORDION DESKTOP *******/
     --filter-desktop-accordion-border: 1px solid var(--border-colour);
     --filter-desktop-accordion-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --filter-desktop-accordion-b-radius: var(--b-radius);
     --filter-desktop-accordion-overflow: hidden;
     --filter-desktop-accordion-padding: 0.75rem 1rem;
+
     /* COMMON MODAL */
     /*border-radius*/
     --modal-b-radius: var(--b-radius);
+
     /*modal-header*/
     --modal-header-padding: 0.75rem 1rem;
     --modal-header-bg-colour: var(--colour5);
     --modal-header-align-items: center;
     --modal-header-border-bottom: none;
+
     /*modal-title*/
     --modal-title-text-colour: var(--colour1);
     --modal-title-fontsize: 1rem;
+
     /*modal-footer*/
     --modal-footer-border-top: none;
     --modal-footer-padding: 0 1rem 1rem 1rem;
+
     /*modal close button*/
     --modal-close-btn-opacity: 1;
     --modal-close-icon-bg: transparent;
     --modal-close-icon-text-colour: var(--colour1);
     --modal-close-icon-fontsize: 1rem;
+
     /* COMMON ACCORDION */
     --accordion-header-family: var(--font-semibold);
     --accordion-body-family: var(--font-semibold);
@@ -458,6 +512,7 @@
     --accordion-body-active-text: var(--colour4);
     --accordion-body-active-border: var(--colour4);
     --accordion-body-active-b-radius: 0 0 var(--b-radius) var(--b-radius);
+
     /* BOOTSTRAP DEFAULT VARIABLES */
     --text-danger: #dc3545;
     --text-success: #28a745;
@@ -465,6 +520,7 @@
     --bg-danger: #dc3545;
     --bg-success: #28a745;
     --bg-warning: #ffc107;
+
     /* VALIDATION ERRORS */
     --danger-family: var(--heading-medium);
     --danger-fontsize: .75rem;
@@ -475,24 +531,31 @@
     --warning-family: var(--heading-medium);
     --warning-fontsize: .75rem;
     --warning-colour: var(--text-warning);
+
     /* PRODUCT CARD */
     /*dvItem*/
     --p-card-border-colour: var(--border-colour);
     --p-card-border-radius: var(--b-radius);
-    --p-card-padding: 1rem;
+    --p-card-padding: 0rem;
+
     /*img-container*/
     --p-card-img-container-border-radius: 0;
+
     /*anchor*/
     --p-card-anchor-display: block;
     --p-card-anchor-margin: 0;
+
     /*h2*/
     --p-card-h2-family: var(--font-bold);
     --p-card-h2-fontsize: 1rem;
     --p-card-h2-text-colour: var(--colour7);
+    --p-card-h2-padding: 0rem 1rem;
+
     /*points*/
-    --p-card-points-family: var(--font-medium);
+    --p-card-points-family: var(--font-regular);
     --p-card-points-fontsize: .875rem;
-    --p-card-points-text-colour: var(--colour1);
+    --p-card-points-text-colour: var(--colour7);
+
     /*button*/
     --p-card-button-border-colour: var(--btn-one-border-colour);
     --p-card-button-family: var(--btn-one-family);
@@ -506,9 +569,11 @@
     --p-card-button-bg-hover: var(--btn-one-bg-hover);
     --p-card-button-text-colour-hover: var(--btn-one-text-hover);
     --p-card-button-border-colour-hover: 1px solid var(--btn-one-border-colour-hover);
+
     /*paragraph*/
     --p-card-paragraph-family: var(--paragraph-family);
     --p-card-paragraph-text-colour: var(--paragraph-colour);
+
     /* DENOMINATION */
     --denomination-btn-active-background: none no-repeat 0 0 var(--bg-colour1);
     --denomination-btn-active-text-colour: var(--bg-colour6);
@@ -520,6 +585,7 @@
     --denomination-btn-cursor: pointer;
     --denomination-btn-border: 1px solid var(--border-colour);
     --denomination-btn-border-radius: var(--b-radius);
+
     /* UPDPROGRESS LOADER */
     --updProgress-position: fixed;
     --updProgress-width: 100%;
@@ -528,11 +594,13 @@
     --updProgress-left: 0;
     --updProgress-z-index: 10000;
     --updProgress-bg: rgba(0, 0, 0, 0.5);
+
     /*dvLoader*/
     --updProgress-dvLoader-display: flex;
     --updProgress-dvLoader-justify-content: center;
     --updProgress-dvLoader-align-items: center;
     --updProgress-dvLoader-height: 100%;
+
     /* updProgress loader */
     --updProgress-loader-width: 48px;
     --updProgress-loader-height: 48px;
@@ -541,6 +609,7 @@
     --updProgress-loader-b-radius: 50%;
     --updProgress-loader-display: inline-block;
     --updProgress-loader-animation: rotation 1s linear infinite;
+
     /* updProgress image */
     --updProgress-image-width: 60px;
     --updProgress-image-bg: #ffffff;
@@ -550,12 +619,14 @@
     --updProgress-image-left: 50%;
     --updProgress-image-transform: translate(-50%, -50%);
     --updProgress-image-z-index: 2;
+
     /*IMAGE CONTAINER*/
     --img-container-width: 100%;
     --img-container-height: 0;
     --img-container-padding-bottom: 100%;
     --img-container-position: relative;
     --img-container-overflow: hidden;
+
     /*image container img*/
     --img-container-img-width: 100% !important;
     --img-container-img-height: 100%;
@@ -564,17 +635,21 @@
     --img-container-img-position: absolute;
     --img-container-img-top: 0;
     --img-container-img-left: 0;
+
     /*SCROLL HORIZONTAL*/
     --scroll-horizontal-mobile-overflow-x: auto;
     --scroll-horizontal-mobile-overflow-y: hidden;
     --scroll-horizontal-desktop-overflow: hidden;
+
     /*SCROLL VERTICAL*/
     --scroll-vertical-mobile-overflow-x: hidden;
+
     /*EAUAL COLUMNS*/
     --equal-columns-margin-left: 0.469rem;
     --equal-columns-margin-right: 0.469rem;
     --equal-columns-padding-left: .5rem;
     --equal-columns-padding-right: .5rem;
+
     /*BREADCRUMBS*/
     --breadcrumb-bg: transparent;
     --breadcrumb-margin-bottom: 0;
@@ -582,19 +657,61 @@
     --breadcrumb-anchor-text-colour: var(--colour7);
     --breadcrumb-anchor-bg-active: transparent;
     --breadcrumb-anchor-text-colour-active: var(--colour1);
+
     /*BOOTSTRAP PAGINATION*/
     --b-pagination-box-shadow-focus: none;
     --b-pagination-pagelink-bg: transparent;
     --b-pagination-pagelink-text-colour: var(--colour1);
     --b-pagination-pagelink-cursor: pointer;
+
     /*active*/
     --b-pagination-pagelink-bg-active: var(--colour1);
     --b-pagination-pagelink-text-colour-active: var(--colour6);
     --b-pagination-pagelink-border-colour-active: var(--colour1);
+
     /*disabled*/
     --b-pagination-pagelink-bg-disabled: var(--colour6);
     --b-pagination-pagelink-text-colour-disabled: #6c757d;
     --b-pagination-pagelink-border-colour-disabled: #dee2e6;
+
+    /*=========[ HOTEL PRODUCT CARD ]=========*/
+ 
+    /* HOTEL PRODUCT CARD */
+    /*dvItem*/
+    --hp-card-border-colour: var(--border-colour);
+    --hp-card-border-radius: var(--b-radius);
+    --hp-card-padding: 1rem;
+
+    /*img-container*/
+    --hp-card-img-container-border-radius: 0;
+
+    /*anchor*/
+    --hp-card-anchor-display: block;
+    --hp-card-anchor-margin: 0;
+
+    /*h2*/
+    --hp-card-h2-family: var(--font-semibold);
+    --hp-card-h2-fontsize: 1rem;
+    --hp-card-h2-text-colour: var(--colour1);
+
+    /*points*/
+    --hp-card-points-family: var(--font-medium);
+    --hp-card-points-fontsize: .875rem;
+    --hp-card-points-text-colour: var(--colour5);
+
+    /*button*/
+    --hp-card-button-border-colour: var(--btn-one-border-colour);
+    --hp-card-button-family: var(--btn-one-family);
+    --hp-card-button-bg: var(--btn-one-bg);
+    --hp-card-button-text-colour: var(--btn-one-text);
+    --hp-card-button-border-colour: 1px solid var(--btn-one-border-colour);
+    --hp-card-button-text-transform: var(--btn-one-text-transform);
+    --hp-card-button-border-radius: var(--btn-one-b-radius);
+    --hp-card-button-padding: var(--btn-one-padding);
+    --hp-card-button-margin-top: auto;
+    --hp-card-button-bg-hover: var(--btn-one-bg-hover);
+    --hp-card-button-text-colour-hover: var(--btn-one-text-hover);
+    --hp-card-button-border-colour-hover: 1px solid var(--btn-one-border-colour-hover); 
 }
 
 

@@ -674,38 +674,38 @@
                             <div class="dvProducts row hotels">
                                 <asp:Repeater ID="rptHotelList" runat="server" OnItemDataBound="rptHotelList_ItemDataBound">
                                     <ItemTemplate>
-                                        <div class="col-sm-6 col-md-4 mb-3 hotelrow">
-                                            <a href="/" class="d-block shadow-sm" onclick='<%# "return getHotelDetails(" + Eval("hotelid") + ");"%>'>
-                                                <div class="bg-white border h-100 d-flex flex-column">
-                                                    <div class="img-container">
-                                                        <img src="<%#Eval("basicinfo.thumbnailimage")%>" alt="Image not Available" />
-                                                    </div>
-                                                    <div class="bg-white d-flex flex-column p-2">
-                                                        <p class="h6 heading-semibold text-colour7 text-truncate mb-2"><%#Eval("basicinfo.hotelname")%></p>
-                                                        <p class="h7 heading-medium text-colour7 text-truncate order-1 mt-auto">
-                                                            <asp:Label ID="lblmiles" runat="server"></asp:Label>
-                                                            <asp:Label ID="Label1" runat="server" class="">Points</asp:Label>
-                                                        </p>
-                                                        <p
-                                                            class="h7 heading-regular text-colour7 text-truncate order-2 mt-auto text-right d-none">Physical
-                                                        </p>
-                                                    </div>
-                                                    <asp:HiddenField ID="hdnHotelID" runat="server" Value='<%#Eval("HotelID")%>' />
-                                                    <div class="rating d-none" rating='<%#Eval("basicinfo.hotelratings.HotelRating[0].rating")%>'>
-                                                    </div>
-                                                    <div class="Amenities d-none">
-                                                        <asp:Image ID="imgMeeting" runat="server" ImageUrl="~/Images/meet-icon-inactive.svg"
-                                                            ToolTip="Meeting Facilities Not Available" />
-                                                        <asp:Image ID="imgGym" runat="server" ImageUrl="~/Images/gym-icon-inactive.svg" ToolTip="Gym/Spa Not Available" />
-                                                        <asp:Image ID="imgInternet" runat="server" ImageUrl="~/Images/wifi-icon-inactive.svg"
-                                                            ToolTip="Internet/Wi-Fi Not Available" />
-                                                        <asp:Image ID="imgResturent" runat="server" ImageUrl="~/Images/resto-icon-inactive.svg.png"
-                                                            ToolTip="Restaurant/Coffee Shop Not Available" />
-                                                        <asp:Image ID="imgswimmingPool" runat="server" ImageUrl="~/Images/pool-icon-inactive.svg.png"
-                                                            ToolTip="Swimming Pool Not Available" />
-                                                    </div>
-                                                </div>
-                                            </a>
+                                        <div class="dvProductCard col-sm-6 col-md-4 mb-3 hotelrow">
+                                            <div class="dvItem">
+                                                <a href="/" class="anchor" onclick='<%# "return getHotelDetails(" + Eval("hotelid") + ");"%>'>
+                                                        <div class="img-container">
+                                                            <img src="<%#Eval("basicinfo.thumbnailimage")%>" alt="Image not Available" />
+                                                        </div>
+                                                          <h2><%#Eval("basicinfo.hotelname")%></h2>
+                                                            <div class="d-flex flex-wrap justify-content-between">
+                                                                <p class="points">
+                                                                    <asp:Label ID="lblmiles" runat="server"></asp:Label>
+                                                                    <asp:Label ID="Label1" runat="server" class="">Points</asp:Label>
+                                                                </p>
+                                                                <p
+                                                                    class="points d-none">Physical
+                                                                </p>
+                                                        </div>
+                                                        <asp:HiddenField ID="hdnHotelID" runat="server" Value='<%#Eval("HotelID")%>' />
+                                                        <div class="rating d-none" rating='<%#Eval("basicinfo.hotelratings.HotelRating[0].rating")%>'>
+                                                        </div>
+                                                        <div class="Amenities d-none">
+                                                            <asp:Image ID="imgMeeting" runat="server" ImageUrl="~/Images/meet-icon-inactive.svg"
+                                                                ToolTip="Meeting Facilities Not Available" />
+                                                            <asp:Image ID="imgGym" runat="server" ImageUrl="~/Images/gym-icon-inactive.svg" ToolTip="Gym/Spa Not Available" />
+                                                            <asp:Image ID="imgInternet" runat="server" ImageUrl="~/Images/wifi-icon-inactive.svg"
+                                                                ToolTip="Internet/Wi-Fi Not Available" />
+                                                            <asp:Image ID="imgResturent" runat="server" ImageUrl="~/Images/resto-icon-inactive.svg.png"
+                                                                ToolTip="Restaurant/Coffee Shop Not Available" />
+                                                            <asp:Image ID="imgswimmingPool" runat="server" ImageUrl="~/Images/pool-icon-inactive.svg.png"
+                                                                ToolTip="Swimming Pool Not Available" />
+                                                        </div>
+                                                  </a>
+                                             </div>
                                             <div class="jsondata">
                                                 <asp:HiddenField ID="hdnHotelJsonData" runat="server"></asp:HiddenField>
                                             </div>
