@@ -42,7 +42,7 @@ purposely kept without parent class. small-icon class are using in multiple plac
 /* ribbon section 
 purposely kept without parent class. Ribbon Section is using in multiple places on this page
 */
-.dvCarList .ribbonBox {
+ .ribbonBox {
     width: 113px;
     height: 100px;
     overflow: hidden;
@@ -51,20 +51,20 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
     right: 15px;
     z-index: 2;
 }
-    .dvCarList .ribbonBox span {
-        width: 193px;
+    .ribbonBox span {
+        width: 198px;
         position: absolute;
         display: block;
         text-align: center;
         color: #fff;
         background: #000;
         z-index: 3;
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 500;
         height: 25px;
-        line-height: 2;
-        left: -13px;
-        top: 19px;
+        line-height: 2.5;
+        left: -22px;
+        top: 25px;
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         transform: rotate(45deg);
@@ -190,8 +190,8 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
 .productInfo .moreInfo, .dvCarDetails .moreInfo {
     cursor: pointer;
 }
-.dvPickupLocation .ui-autocomplete {z-index:99999}
-.dvCarList .dvFilters.modal .modal-header .close, .dvMoreInfoModal.modal .modal-header .close {
+/*.dvPickupLocation .ui-autocomplete {z-index:99999}*/
+/*.dvCarList .dvFilters.modal .modal-header .close, .dvMoreInfoModal.modal .modal-header .close {
     padding: .25rem .25rem;
     margin: var(--filter-mobile-modal-close-margin);
     color: var(--filter-mobile-modal-close-text-colour);
@@ -201,13 +201,13 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
 .dvCarList .dvFilters.modal .modal-header, .dvMoreInfoModal.modal .modal-header {
     background-color: var(--filter-mobile-modal-header-bg);
     padding: var(--filter-mobile-modal-header-padding);
-}
-.dvMoreInfoModal.modal .modal-title {
+}*/
+/*.dvMoreInfoModal.modal .modal-title {
     padding: .25rem .25rem;
     margin: var(--filter-mobile-modal-close-margin);
     color: var(--filter-mobile-modal-close-text-colour);
     font-size: var(--filter-mobile-modal-title-fontsize)
-}
+}*/
 /*=========[ CARLIST PAGE ]=========*/
 /*=========[ CARDETAILS PAGE ]=========*/
 .dvCarDetails .dvBookingSummary .card {
@@ -273,62 +273,13 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
 /*=========[ CAR SEARCH PAGE ]=========*/
 
 @media (min-width: 576px) {
-  /* dvMoreInfoModal  */
-  .dvMoreInfoModal .modal-dialog {
-    max-width: 90%;
-  }
-  /* dvMoreInfoModal  */
+   
 }
 
 @media (min-width: 768px) {
-  /* dvMoreInfoModal  */
-  .dvMoreInfoModal .modal-dialog {
-    max-width: 90%;
-  }
-  /* dvMoreInfoModal  */
+  
 }
 
 @media (min-width: 992px) {
-  /* dvMoreInfoModal  */
-  .dvMoreInfoModal .modal-dialog {
-    max-width: 70%;
-  }
-  /* dvMoreInfoModal  */
-
-  /*responsive filter modal div*/
-  .dvCarList .dvFilters.modal {
-    position: static;
-    top: auto;
-    left: auto;
-    z-index: auto;
-    display: block !important;
-    width: 100%;
-    height: 100%;
-    overflow: auto !important;
-    outline: 0;
-    opacity: 1;
-  }
-  .dvCarList .dvFilters .modal-content {
-    border: none;
-  }
-  .dvCarList .dvFilters .modal-dialog-scrollable .modal-body {
-    overflow-y: visible;
-  }
-  .dvCarList .dvFilters .modal-footer .btn {
-    width: 100%;
-  }
-  .dvCarList .dvFilters .modal-dialog,
-  .dvCarList .dvFilters .modal-dialog-scrollable .modal-content {
-    max-height: none;
-    transform: none;
-    margin: 0 auto;
-  }
-  .dvCarList .dvFilters.modal .modal-body .border-lg {
-    border: 1px solid #dee2e6;
-  }
-  .dvCarList .dvFilters.modal .modal-footer {
-    border-top: 0;
-  }
-   
-  /*responsive filter modal div*/
+  
 }

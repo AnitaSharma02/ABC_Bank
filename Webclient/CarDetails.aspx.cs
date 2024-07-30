@@ -87,8 +87,8 @@ public partial class CarDetails : System.Web.UI.Page
                     StringBuilder sbinclusions = new StringBuilder();
                     foreach (var inclusions in lobjVehicle.packages[0].inclusions)
                     {
-                        sbinclusions.Append("<div class=\"col-6 col-md-6 d-flex align-items-center mb-3\">");
-                        sbinclusions.Append("<i class=\"fa-solid fa-check mr-2 small-icon\"></i>");
+                        sbinclusions.Append("<div class=\"col-12 col-md-6 d-flex align-items-center mb-3\">");
+                        sbinclusions.Append("<i class=\"fa-solid fa-check mx-2 small-icon\"></i>");
                         sbinclusions.Append("<p class=\"heading-medium h7\"> " + inclusions.name + " </p>");
                         sbinclusions.Append("</div>");
                        
@@ -109,7 +109,7 @@ public partial class CarDetails : System.Web.UI.Page
                     sbcardetails.Append("<img class=\"img-fluid mt-auto mb-auto\" src=" + lobjVehicle.vehicle.images[0].url + " />");
                     sbcardetails.Append("</div>");
                     sbcardetails.Append("<div class=\"dvProvider\">");
-                    sbcardetails.Append("<img class=\"img-fluid mt-auto mb-auto\" src=\"images/logos/giift-logo-blue.svg\" width=\"100\" />");
+                    sbcardetails.Append("<img class=\"img-fluid mt-auto mb-auto\" src=\"images/logos/giift-logo-blue.svg\" width=\"50\" />");
                     sbcardetails.Append("</div>");
                     sbcardetails.Append("</div>");
                     sbcardetails.Append("<div class=\"col-12 mt-4\">");
@@ -122,21 +122,21 @@ public partial class CarDetails : System.Web.UI.Page
 
                     sbcardetails.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbcardetails.Append("<div class=\"borderColor\">");
-                    sbcardetails.Append("<img src=\"images/carpage/icons/seat-icon.svg\" class=\"img-fluid\" />");
+                    sbcardetails.Append("<i class=\"fa-solid fa-couch\"></i>");
                     sbcardetails.Append("</div>");
                     sbcardetails.Append("<span class=\"ml-2 heading-medium h8\">x " + lobjVehicle.vehicle.seats + "</span>");
                     sbcardetails.Append("</div>");
 
                     sbcardetails.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbcardetails.Append("<div class=\"borderColor\">");
-                    sbcardetails.Append("<img src=\"images/carpage/icons/gear-icon.svg\" class=\"img-fluid\" />");
+                    sbcardetails.Append("<i class=\"fa-solid fa-life-ring\"></i>");
                     sbcardetails.Append("</div>");
                     sbcardetails.Append("<span class=\"ml-2 heading-medium h8\"> " + lobjVehicle.vehicle.transmission + "</span>");
                     sbcardetails.Append("</div>");
 
                     sbcardetails.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbcardetails.Append("<div class=\"borderColor\">");
-                    sbcardetails.Append("<img src=\"images/carpage/icons/door-icon.svg\" class=\"img-fluid\" />");
+                    sbcardetails.Append("<i class=\"fa-solid fa-door-closed\"></i>");
                     sbcardetails.Append("</div>");
                     sbcardetails.Append("<span class=\"ml-2 heading-medium h8\"> " + lobjVehicle.vehicle.doors + "</span>");
                     sbcardetails.Append("</div>");
@@ -152,14 +152,14 @@ public partial class CarDetails : System.Web.UI.Page
 
                     sbcardetails.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbcardetails.Append("<div class=\"borderColor\">");
-                    sbcardetails.Append("<img src=\"images/carpage/icons/ac-icon.svg\" class=\"img-fluid\" />");
+                    sbcardetails.Append("<i class=\"fa-solid fa-snowflake\"></i>");
                     sbcardetails.Append("</div>");
                     sbcardetails.Append("<span class=\"ml-2 heading-medium h8\">" + lstrAircon + "</span>");
                     sbcardetails.Append("</div>");
 
                     sbcardetails.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbcardetails.Append("<div class=\"borderColor\">");
-                    sbcardetails.Append("<img src=\"images/carpage/icons/fuel-icon.svg\" class=\"img-fluid\" />");
+                    sbcardetails.Append("<i class=\"fa-solid fa-gas-pump\"></i>");
                     sbcardetails.Append("</div>");
                     sbcardetails.Append("<span class=\"ml-2 heading-medium h8\">Fair Fuel Policy</span>");
                     sbcardetails.Append("</div>");
@@ -188,35 +188,35 @@ public partial class CarDetails : System.Web.UI.Page
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"borderColor\">");
-                    sbmoreInfo.Append("<img src=\"images/carpage/icons/seat-icon.svg\" class=\"img-fluid\" />");
+                    sbmoreInfo.Append("<i class=\"fa-solid fa-couch\"></i>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<span class=\"ml-2 heading-medium h8\">x " + lobjVehicle.vehicle.seats + "</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"borderColor\">");
-                    sbmoreInfo.Append("<img src=\"images/carpage/icons/gear-icon.svg\" class=\"img-fluid\" />");
+                    sbmoreInfo.Append("<i class=\"fa-solid fa-life-ring\"></i>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<span class=\"ml-2 heading-medium h8\"> " + lobjVehicle.vehicle.transmission + "</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"borderColor\">");
-                    sbmoreInfo.Append("<img src=\"images/carpage/icons/door-icon.svg\" class=\"img-fluid\" />");
+                    sbmoreInfo.Append("<i class=\"fa-solid fa-door-closed\"></i>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<span class=\"ml-2 heading-medium h8\"> " + lobjVehicle.vehicle.doors + "</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"borderColor\">");
-                    sbmoreInfo.Append("<img src=\"images/carpage/icons/fuel-icon.svg\" class=\"img-fluid\" />");
+                    sbmoreInfo.Append("<i class=\"fa-solid fa-gas-pump\"></i>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<span class=\"ml-2 heading-medium h8\">Fair Fuel Policy</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"borderColor\">");
-                    sbmoreInfo.Append("<img src=\"images/carpage/icons/ac-icon.svg\" class=\"img-fluid\" />");
+                    sbmoreInfo.Append("<i class=\"fa-solid fa-snowflake\"></i>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<span class=\"ml-2 heading-medium h8\">" + lstrAircon + "</span>");
                     sbmoreInfo.Append("</div>");
@@ -224,18 +224,18 @@ public partial class CarDetails : System.Web.UI.Page
                     sbmoreInfo.Append("<div class=\"dvDeal mt-3\">");
                     sbmoreInfo.Append("<h1 class=\"heading-reqular h5 pb-2\"> Your Deal </h1>");
                     //sbmoreInfo.Append("<p>" + lobjVehicle.packages[0].payments.payNow.vehicle.display.amount + "<i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
-                    sbmoreInfo.Append("<p class=\"heading-bold h6\">" + lobjVehicle.packages[0].payments.estimatedTotal.total.display.amount + " Points</p>");
+                    sbmoreInfo.Append("<p class=\"heading-bold h6 text-colour1\">" + lobjVehicle.packages[0].payments.estimatedTotal.total.display.amount + " Points</p>");
                     sbmoreInfo.Append("</div>"); 
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<div class=\"col-12 border-top pt-3 mt-3 pr-0 pl-0 productDetails\">");
                     sbmoreInfo.Append("<div class=\"d-flex flex-wrap justify-content-between align-items-center\">");
-                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-6 order-md-0\">");
+                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-1 order-md-0\">");
                     sbmoreInfo.Append("<div class=\"carLogo\">");
                     sbmoreInfo.Append("<img width=\"50\" class=\"img-fluid mt-auto mb-auto\" src=\"images/logos/giift-logo-blue.svg\" alt=\"Logo\">");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("</div>");
-                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-6 mt-2 mt-md-0 order-md-1 text-left\">");
+                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-11 mt-2 mt-md-0 order-md-1 text-left\">");
                     sbmoreInfo.Append("<div class=\"vehicleLocation\">");
                     sbmoreInfo.Append("<a class=\"heading-medium text-colour1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i> Vehicle location:</a>");
 
@@ -346,12 +346,12 @@ public partial class CarDetails : System.Web.UI.Page
                                     sbextras.Append("<div class=\"col-12\">");
                                     sbextras.Append("<div class=\"p-3\">");
                                     sbextras.Append("<div class=\"row\">");
-                                    sbextras.Append("<div class=\"ribbonBox dvRibbon\">");
+                                    sbextras.Append("<div class=\"ribbonBox\">");
                                     sbextras.Append("<span> RECOMMENDED </span>");
                                     sbextras.Append("</div>");
                                     sbextras.Append("<div class=\"col-12 productInfo position-relative\">");
                                     sbextras.Append("<div class=\"row\">");
-                                    sbextras.Append("<div class=\"col-1 mt-1 col-md-1 dvShield text-colour8\">");
+                                    sbextras.Append("<div class=\"col-1 col-md-1 dvShield text-colour8\">");
                                     sbextras.Append("<i class=\"fa-solid fa-shield-halved\"></i>");
                                     sbextras.Append("</div>");
                                     sbextras.Append("<div class=\"col-10 col-md-10 mt-0 mb-2 mb-md-0 dvExcess\">");
@@ -403,7 +403,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     //sbextras.Append("</div>");
                                     sbextras.Append("<div class=\"col-12 productInfo position-relative\">");
                                     sbextras.Append("<div class=\"row\">");
-                                    sbextras.Append("<div class=\"col-1 mt-1 col-md-1 dvShield text-colour8\">");
+                                    sbextras.Append("<div class=\"col-1 col-md-1 dvShield text-colour8\">");
                                     sbextras.Append("<i class=\"fa-solid fa-shield-halved\"></i>");
                                     sbextras.Append("</div>");
                                     sbextras.Append("<div class=\"col-10 col-md-10 mt-0 mb-2 mb-md-0 dvExcess\">");
@@ -530,7 +530,7 @@ public partial class CarDetails : System.Web.UI.Page
                         sbextras.Append("</div>");
                         sbextras.Append("<div class=\"col-12 productInfo position-relative\">");
                         sbextras.Append("<div class=\"row\">");
-                        sbextras.Append("<div class=\"col-1 mt-1 col-md-1 dvShield text-colour8\">");
+                        sbextras.Append("<div class=\"col-1 col-md-1 dvShield text-colour8\">");
                         sbextras.Append("<i class=\"fa-solid fa-shield-halved\"></i>");
                         sbextras.Append("</div>");
                         sbextras.Append("<div class=\"col-10 col-md-10 mt-0 mb-2 mb-md-0 dvExcess\">");
@@ -581,7 +581,7 @@ public partial class CarDetails : System.Web.UI.Page
                         //sbextras.Append("</div>");
                         sbextras.Append("<div class=\"col-12 productInfo position-relative\">");
                         sbextras.Append("<div class=\"row\">");
-                        sbextras.Append("<div class=\"col-1 mt-1 col-md-1 dvShield text-colour8\">");
+                        sbextras.Append("<div class=\"col-1 col-md-1 dvShield text-colour8\">");
                         sbextras.Append("<i class=\"fa-solid fa-shield-halved\"></i>");
                         sbextras.Append("</div>");
                         sbextras.Append("<div class=\"col-10 col-md-10 mt-0 mb-2 mb-md-0 dvExcess\">");

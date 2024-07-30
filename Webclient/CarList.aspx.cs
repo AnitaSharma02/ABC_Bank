@@ -136,7 +136,7 @@ public partial class CarList : System.Web.UI.Page
         {
             foreach (var item in lobjCarAvailabilityResponse.data.rates)
             {
-                sb.Append("<div class=\"border boxShadow rounded-lg my-2\">");
+                sb.Append("<div class=\"border boxShadow b-radius my-2\">");
                 sb.Append("<div class=\"row\">");
                 sb.Append("<div class=\"col-12\">");
                 sb.Append("<div class=\"p-3\">");
@@ -550,7 +550,7 @@ public partial class CarList : System.Web.UI.Page
 
             foreach (var item in lobjFilterCarAvailabilityResponse.data.rates)
             {
-                sb.Append("<div class=\"border boxShadow rounded-lg my-2\">");
+                sb.Append("<div class=\"border boxShadow b-radius my-2\">");
                 sb.Append("<div class=\"row\">");
                 sb.Append("<div class=\"col-12\">");
                 sb.Append("<div class=\"p-3\">");

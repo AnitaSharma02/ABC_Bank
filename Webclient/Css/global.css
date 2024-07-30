@@ -722,6 +722,13 @@ animation: var(--updProgress-loader-animation);
 }
 /*=========[ RATINGS ]=========*/
 
+/*=========[ SWIPER CARD if swiper-slide contain .dvProductCard html structure & want equal border height ]=========*/
+.dvSwiperCard .swiper-wrapper,
+.dvSwiperCard .swiper-slide {
+    height: auto;
+}
+/*=========[ SWIPER CARD if swiper-slide contain .dvProductCard html structure & want equal border height ]=========*/
+
 /*=========[ SWIPER ARROW BUTTONS ]=========*/
 /* display swiper buttons */
 .swiper-buttons {
@@ -811,7 +818,20 @@ animation: var(--updProgress-loader-animation);
 /*=========[ SWIPER PAGINATION ]=========*/
 
 /*=========[ SWIPER THUMBSLIDER ]=========*/
-.dvThumbSwiperSlider .swiper {
+.dvThumbSwiperSlider .swiper-wrapper {
+    height: auto;
+}
+
+.dvThumbSwiperSlider .mySwiper2 .img-container {
+    padding-bottom: 60%;
+}
+
+.dvThumbSwiperSlider .mySwiper .img-container {
+    padding-bottom: 15%;
+}
+/*=========[ SWIPER THUMBSLIDER ]=========*/
+/*=========[ SWIPER THUMBSLIDER ]=========*/
+/*.dvThumbSwiperSlider .swiper {
   width: 100%;
   height: 100%;
 }
@@ -835,21 +855,21 @@ animation: var(--updProgress-loader-animation);
 }
 
 .dvThumbSwiperSlider .swiper {
-  width: 100%;
+  width: 100%;*/
   /*height: 300px;*/
-  margin-left: auto;
+  /*margin-left: auto;
   margin-right: auto;
 }
 
-.dvThumbSwiperSlider .mySwiper2 {
+.dvThumbSwiperSlider .mySwiper2 {*/
   /*height: 50%;*/
-  height: auto;
+  /*height: auto;
   width: 100%;
 }
 
-.dvThumbSwiperSlider .mySwiper {
+.dvThumbSwiperSlider .mySwiper {*/
   /*height: 12%;*/
-  height: auto;
+  /*height: auto;
   box-sizing: border-box;
   padding: 10px 0;
 }
@@ -862,9 +882,9 @@ animation: var(--updProgress-loader-animation);
 
 .dvThumbSwiperSlider .mySwiper .swiper-slide-thumb-active {
   opacity: 1;
-}
+}*/
 /* adjust arrows right & left */
-.dvThumbSwiperSlider .swiper-button-prev,
+/*.dvThumbSwiperSlider .swiper-button-prev,
 .dvThumbSwiperSlider .swiper-rtl .swiper-button-next {
   left: var(--swiper-navigation-sides-offset, 10px);
   right: auto;
@@ -874,12 +894,12 @@ animation: var(--updProgress-loader-animation);
 .dvThumbSwiperSlider .swiper-rtl .swiper-button-prev {
   right: var(--swiper-navigation-sides-offset, 10px);
   left: auto;
-}
+}*/
 /* adjust arrows width size */
-.dvThumbSwiperSlider .swiper-button-prev img,
+/*.dvThumbSwiperSlider .swiper-button-prev img,
 .dvThumbSwiperSlider .swiper-button-next img {
   width: 25px;
-}
+}*/
 /*=========[ SWIPER THUMBSLIDER ]=========*/
 
 /*=========[ BOOTSTRAP PAGINATION ]=========*/
@@ -1908,6 +1928,11 @@ select.form-control:focus {
 .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-thumb {
   background: var(--filter-mobile-accordion-scrollbar-thumb-bg);
 }
+.dvFilter.modal .modal-header .close i {
+    background-color: var(--modal-close-icon-bg);
+    color: var(--modal-close-icon-text-colour);
+    font-size: var(--modal-close-icon-fontsize);
+}
 /*=========[ FILTER ACCORDION MOBILE ]=========*/
 
 /*=========[ FILTER MODAL MOBILE ]=========*/
@@ -1964,6 +1989,39 @@ select.form-control:focus {
 .dvMilesExchangeDigital .img-container img, .dvGiftcardsDigital .img-container img {
     object-fit: contain;
 }
+/*airtime productlist page*/
+.dvAirtimePage .img-container {
+    text-align: center;
+    height: auto;
+    /*padding-bottom: 0 !important;*/
+    padding: 2rem 0 2rem 0 !important;
+}
+
+    .dvAirtimePage .img-container img {
+        height: auto;
+        width: auto !important;
+        position: static;
+    }
+/*airtime productlist page*/
+
+/*airtime productdetail page*/
+/*.dvAirtimeDigital .dvThumbSwiperSlider .swiper-slide img {
+    object-fit: contain;
+}*/
+
+.dvAirtimeDigital .dvThumbSwiperSlider .swiper-slide.img-container {
+    text-align: center;
+    height: auto;
+    /*padding-bottom: 0 !important;*/
+    padding: 5rem 0 5rem 0 !important;
+}
+
+.dvAirtimeDigital .dvThumbSwiperSlider .swiper-slide img {
+    height: auto;
+    width: auto !important;
+    position: static;
+}
+/*airtime productdetail page*/
 /*=========[ DIFFERENT CLASS NAMES FOR DIFFERENT REDEMPTIONS ]=========*/
 
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/

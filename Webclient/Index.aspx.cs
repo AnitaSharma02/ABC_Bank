@@ -261,7 +261,7 @@ public partial class Index : Page
                                     index++;
                                     if (searchResult != null && searchResult.Products != null && searchResult.Products.Count > 0)
                                     {
-                                        sb.Append("<div class=\"swiper row\">");
+                                        sb.Append("<div class=\"dvSwiperCard swiper row\">");
                                         sb.Append("<div class=\"swiper-wrapper pb-3\">");
                                         foreach (var product in searchResult.Products)
                                         {                                          

@@ -108,7 +108,7 @@
                 <div class="col-md-5 col-lg-4">
                     <div class="border rounded-lg">
                         <div class="dvAccordian">
-                            <div class="accordion" id="accordionExample">
+                            <div class="dvCommonAccordion accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-header p-0" id="headingOne">
                                         <h2 class="mb-0">
@@ -345,13 +345,13 @@
                     <div class="mt-1 border boxShadow rounded-lg">
                         <div class="row">
                             <div class="col-12">
-                                <div class="p-4">
+                                <div class="p-3">
                                     <div class="row">
                                         <div class="col-12 productInfo position-relative">
                                             <div class="row">
                                                 <div class="col-12 dvExcess">
                                                     <div class="row pt-2">
-                                                        <div class="col-12 dvPara">
+                                                        <div class="col-12 dvPara pb-3">
                                                             <p data-i18n="car-addiotional-info">Please note these additional extras are payable locally and do not form part of the rental price shown. Prices are displayed by pressing the title of each extra.</p>
                                                         </div>
                                                     </div>
@@ -381,15 +381,19 @@
         </div>
     </div>
     <!-- CarLarge modal pop up start-->
-    <div class="dvMoreInfoModal pr-lg-0 modal fade" id="myModal">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="dvCommonModal dvMoreInfoModal modal fade pr-lg-0" id="myModal">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
             <div class="modal-content">
 
                 <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title" data-i18n="car-important-information">Important information</h4>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i></button>
-                </div>
+                <div class="modal-header border-0">
+                     <div class="modal-title border-0">
+                         <h5 class="h6 heading-semibold text-colour1" data-i18n="carlist-important-information">Important information</h5>
+                      </div>
+                         <button type="button" class="close px-3" data-dismiss="modal" aria-label="Close">
+                          <i class="fa-solid fa-xmark"></i>
+                      </button>
+                  </div>
 
                 <!-- Modal body -->
                 <div class="modal-body mb-2" id="divmoreInfoDetails">
@@ -518,18 +522,20 @@
     </div>
 
     <!-- child popup modal pop up end-->
-    <div class="dvMyModal dvpopupDeatils modal fade" id="myModal2">
-        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="dvMyModal dvCommonModal dvpopupDeatils modal fade" id="myModal2">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
 
                 <!-- Modal Header -->
-                <div class="modal-header">
-                    <h5 class="h5 heading-semibold text-colour6">Info</h5>
-                     <button type="button" class="close text-colour6" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                     </button>
+                 <div class="modal-header border-0">
+                      <div class="modal-title border-0">
+                          <h5 class="h6 heading-semibold text-colour1">Info</h5>
+                       </div>
+                          <button type="button" class="close px-3" data-dismiss="modal" aria-label="Close">
+                           <i class="fa-solid fa-xmark"></i>
+                       </button>
                 </div>
-
+             
                 <!-- Modal body -->
                 <div class="modal-body">
                     <%--<div class="row">
@@ -567,17 +573,19 @@
     </div>
 
     <!-- Add popup modal pop up end-->
-    <div class="dvMyModal dvpopupDeatils modal fade" id="myModal3">
-        <div class="modal-dialog modal-dialog-scrollable">
+    <div class="dvMyModal dvCommonModal dvpopupDeatils modal fade" id="myModal3">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
-
                 <!-- Modal Header -->
-                <div class="modal-header">
-                     <button type="button" class="close text-colour6" data-dismiss="modal" aria-label="Close">
-                         <span aria-hidden="true">&times;</span>
-                     </button>
+                 <div class="modal-header border-0">
+                      <%--<div class="modal-title border-0">
+                          <h5 class="h6 heading-semibold text-colour1">Info</h5>
+                       </div>--%>
+                          <button type="button" class="close px-3" data-dismiss="modal" aria-label="Close">
+                           <i class="fa-solid fa-xmark"></i>
+                       </button>
                 </div>
-
+               
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="row">
