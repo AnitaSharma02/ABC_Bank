@@ -20,7 +20,7 @@
     border: 1px solid var(--text-danger);
     color: var(--text-danger);
 }
-.dvCarSearch .dvInput.input-group .form-control[readonly], .dvCarSearch .dvInput.input-group .form-control[readonly],
+.dvCarSearch .dvInput.input-group .form-control[readonly], .dvCarSearch .dvInputGroup.input-group .form-control[readonly],
 .dvCarList .dvInputGroup.input-group .form-control[readonly], .dvCarList .dvInputGroup.input-group .form-control[readonly] {
     background-color: var(--colour6);
 }
@@ -191,6 +191,23 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
     cursor: pointer;
 }
 .dvPickupLocation .ui-autocomplete {z-index:99999}
+.dvCarList .dvFilters.modal .modal-header .close, .dvMoreInfoModal.modal .modal-header .close {
+    padding: .25rem .25rem;
+    margin: var(--filter-mobile-modal-close-margin);
+    color: var(--filter-mobile-modal-close-text-colour);
+    opacity: var(--filter-mobile-modal-close-opacity);
+}
+
+.dvCarList .dvFilters.modal .modal-header, .dvMoreInfoModal.modal .modal-header {
+    background-color: var(--filter-mobile-modal-header-bg);
+    padding: var(--filter-mobile-modal-header-padding);
+}
+.dvMoreInfoModal.modal .modal-title {
+    padding: .25rem .25rem;
+    margin: var(--filter-mobile-modal-close-margin);
+    color: var(--filter-mobile-modal-close-text-colour);
+    font-size: var(--filter-mobile-modal-title-fontsize)
+}
 /*=========[ CARLIST PAGE ]=========*/
 /*=========[ CARDETAILS PAGE ]=========*/
 .dvCarDetails .dvBookingSummary .card {
@@ -312,5 +329,6 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
   .dvCarList .dvFilters.modal .modal-footer {
     border-top: 0;
   }
+   
   /*responsive filter modal div*/
 }

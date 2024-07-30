@@ -472,7 +472,7 @@
                     <div class="btn dvFilterBtn d-lg-none" data-toggle="modal" data-target="#filterBox">
                         <i class="fa fa-filter"></i>
                     </div>
-                    <div class="dvFilter modal fade col-lg-12 px-0" id="filterBox">
+                    <div class="dvFilters modal fade col-lg-12 px-0" id="filterBox">
                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                             <div class="modal-content">
                                 <div class="modal-header align-items-center d-lg-none order-lg-1">
@@ -483,7 +483,7 @@
                                 </div>
                                 <div class="modal-body order-lg-2 p-lg-0 mt-0">
                                     <div class="border-lg rounded-lg p-lg-3">
-                                        <div class="d-flex repMargin flex-wrap justify-content-between align-items-center mb-3">
+                                        <div class="d-flex repMargin flex-wrap justify-content-between align-items-center">
                                             <div class="modal-footer justify-content-center py-lg-0 mt-lg-1 px-0 border-0">
                                                 <i class="fa fa-filter"></i>
                                                 <span class="h7 heading-semibold" data-i18n="carlist-filter-results">Filters Results</span>
@@ -683,8 +683,10 @@
             <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title heading-medium" data-i18n="carlist-important-information">Important information</h4>
-                   <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                    <h4 class="modal-title heading-semibold " data-i18n="carlist-important-information">Important information</h4>
+                   <button type="button" class="close text-colour6" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
 
                 <!-- Modal body -->

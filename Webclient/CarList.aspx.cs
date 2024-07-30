@@ -213,14 +213,14 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append("<div class=\"row mt-2\">");
                 sb.Append("<div class=\"col-6 col-md-6 col-lg-12\">");
                 sb.Append("<div class=\"priceBox\">");
-                sb.Append("<p class=\"heading-bold h6\"> " + item.packages[0].payments.estimatedTotal.vehicle.display.amount + " <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
+                sb.Append("<p class=\"heading-bold h6 text-colour1\"> " + item.packages[0].payments.estimatedTotal.vehicle.display.amount + " <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
                 //sb.Append("<span> 22,13 <i class=\"fa fa-usd\" aria-hidden=\"true\"></i>a day</span>");
                 sb.Append("<p class=\"heading-reqular h8\"><span data-i18n=\"text-mandaory-fees-includ\">(mandatory fees included)</span></cite>");
                 sb.Append("</div>");
                 sb.Append("</div>");
 
                 sb.Append("<div class=\"col-6 col-md-6 col-lg-12 mt-0 mt-lg-4\">");
-                sb.Append("<div class=\"travelBtn\">");
+                sb.Append("<div class=\"travelBtn text-right text-lg-left\">");
                 sb.Append("<button type=\"button\" class=\"btn btn-one\" onclick=\"ViewDeal('" + item.vehicle.uniqueRef + "');\"><span data-i18n=\"car-view-deal\">View Deal</span></button>");
                 sb.Append("</div>");
                 sb.Append("</div>");
@@ -256,8 +256,8 @@ public partial class CarList : System.Web.UI.Page
                 StringBuilder sbinclusions = new StringBuilder();
                 foreach (var inclusions in item.packages[0].inclusions)
                 {
-                    sbinclusions.Append("<div class=\"col-6 col-md-4 d-flex align-items-center mb-3\">");
-                    sbinclusions.Append("<i class=\"fa-solid fa-check mr-2 small-icon\"></i>");
+                    sbinclusions.Append("<div class=\"col-12 col-md-4 d-flex align-items-center mb-3\">");
+                    sbinclusions.Append("<i class=\"fa-solid fa-check mx-2 small-icon\"></i>");
                     sbinclusions.Append("<p class=\"heading-medium h7\"> " + inclusions.name + " </p>");
                     sbinclusions.Append("</div>");
                 }
@@ -416,8 +416,8 @@ public partial class CarList : System.Web.UI.Page
                     StringBuilder sbinclusions = new StringBuilder();
                     foreach (var inclusions in lobjVehicle.packages[0].inclusions)
                     {
-                        sbinclusions.Append("<div class=\"col-6 col-md-4 d-flex align-items-center mb-3\">");
-                        sbinclusions.Append("<i class=\"fa-solid fa-check mr-2 small-icon\"></i>");
+                        sbinclusions.Append("<div class=\"col-12 col-md-4 d-flex align-items-center mb-3\">");
+                        sbinclusions.Append("<i class=\"fa-solid fa-check mx-2 small-icon\"></i>");
                         sbinclusions.Append("<p class=\"heading-medium h7\"> " + inclusions.name + " </p>");
                         sbinclusions.Append("</div>");
                     }
@@ -490,14 +490,14 @@ public partial class CarList : System.Web.UI.Page
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<div class=\"col-12 border-top pt-3 mt-3 pr-0 pl-0 productDetails\">");
                     sbmoreInfo.Append("<div class=\"d-flex flex-wrap justify-content-between align-items-center\">");
-                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-6 order-md-0\">");
+                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-1 order-md-0\">");
                     sbmoreInfo.Append("<div class=\"carLogo\">");
                     sbmoreInfo.Append("<img width=\"50\" class=\"img-fluid mt-auto mb-auto\" src=\"images/logos/giift-logo-blue.svg\" alt=\"Logo\">");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("</div>");
-                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-8 mt-2 mt-md-0 order-md-1 text-left\">");
+                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-11 mt-2 mt-md-0 order-md-1 text-left\">");
                     sbmoreInfo.Append("<div class=\"vehicleLocation\">");
-                    sbmoreInfo.Append("<a class=\"heading-medium text-colour1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i><span data-i18n=\"text-vehical-location\">Vehicle location:</span></a>");
+                    sbmoreInfo.Append("<a class=\"heading-medium text-colour1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i><span data-i18n=\"text-vehical-location\"> Vehicle location:</span></a>");
 
                     Branch lobjBranch = lobjCarAvailabilityResponse.data.branches.Find(x => x.id == lobjVehicle.pickUpBranchId);
 
@@ -626,14 +626,14 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append("<div class=\"col-5 col-md-6 col-lg-12\">");
                 sb.Append("<div class=\"priceBox\">");
                 //sb.Append("<p> " + item.packages[0].payments.estimatedTotal.vehicle.display.amount + " <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
-                sb.Append("<p class=\"heading-bold h6\"> " + item.packages[0].payments.estimatedTotal.total.display.amount + " Points </p>");
+                sb.Append("<p class=\"heading-bold h6 text-colour1\"> " + item.packages[0].payments.estimatedTotal.total.display.amount + " Points </p>");
                 //sb.Append("<span> 22,13 <i class=\"fa fa-usd\" aria-hidden=\"true\"></i>a day</span>");
                 sb.Append("<p class=\"heading-reqular h8\"><span data-i18n=\"text-mandaory-fees-includ\">(mandatory fees included)</span></cite>");
                 sb.Append("</div>");
                 sb.Append("</div>");
 
                 sb.Append("<div class=\"col-7 col-md-6 col-lg-12 mt-0 mt-lg-4\">");
-                sb.Append("<div class=\"travelBtn \">");
+                sb.Append("<div class=\"travelBtn text-right text-lg-left\">");
                 sb.Append("<button type=\"button\" class=\"btn btn-one\" onclick=\"ViewDeal('" + item.vehicle.uniqueRef + "');\" data-i18n=\"carlist-view-deal\">View Deal</button>");
                 sb.Append("</div>");
                 sb.Append("</div>");
@@ -650,12 +650,12 @@ public partial class CarList : System.Web.UI.Page
                 //sb.Append("<img width=\"50\" class=\"img-fluid mt-auto mb-auto\" src=\"images/logos/giift-logo-blue.svg\" alt=\"Logo\">");
                 //sb.Append("</div>");
                 //sb.Append("</div>");
-                sb.Append("<div class=\"col-9 col-md-4 order-md-2 p-0\">");
-                sb.Append("<div class=\"travelWhiteBtn float-right\">");
+                sb.Append("<div class=\"col-12 col-md-4 order-md-2 p-0\">");
+                sb.Append("<div class=\"travelWhiteBtn float-lg-right\">");
                 sb.Append("<button data-toggle =\"collapse\" type=\"button\" class=\"btn arrowBtn col-auto d-flex border collapsed\" href=\"#" + item.vehicle.uniqueRef + "\" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseExample\"><span class=\"d-inline-block\" data-i18n=\"carlist-included-in-the-price\">Included in the price</span> <span class=\"arrow-icon ml-2\"><i class=\"fa fa-caret-up\"></i></span></button>");
                 sb.Append("</div>");
                 sb.Append("</div>");
-                sb.Append("<div class=\"col-12 col-md-8 mt-3 mt-md-0 order-md-1\">");
+                sb.Append("<div class=\"col-12 col-md-8 mt-3 mt-md-0 p-0 order-md-1\">");
                 sb.Append("<div class=\"vehicleLocation\">");
 
                 Branch lobjBranch = lobjCarAvailabilityResponse.data.branches.Find(x => x.id == item.pickUpBranchId);
@@ -671,8 +671,8 @@ public partial class CarList : System.Web.UI.Page
                 StringBuilder sbinclusions = new StringBuilder();
                 foreach (var inclusions in item.packages[0].inclusions)
                 {
-                    sbinclusions.Append("<div class=\"col-6 col-md-4 d-flex align-items-center mb-3\">");
-                    sbinclusions.Append("<i class=\"fa-solid fa-check mr-2 small-icon\"></i>");
+                    sbinclusions.Append("<div class=\"col-12 col-md-4 d-flex align-items-center mb-3\">");
+                    sbinclusions.Append("<i class=\"fa-solid fa-check mx-2 small-icon\"></i>");
                     sbinclusions.Append("<p class=\"heading-medium h7\"> " + inclusions.name + " </p>");
                     sbinclusions.Append("</div>");
                 }
