@@ -1087,7 +1087,7 @@ animation: var(--updProgress-loader-animation);
 /*=========[ COMMON ACCORDION ]=========*/
 /* accordion parent border */
 .dvCommonAccordion.accordion {
-  border: 1px solid var(--accordion-border);
+  /*border: 1px solid var(--accordion-border);*/
 }
 /* accordion card border */
 .dvCommonAccordion.accordion .card {
@@ -1111,14 +1111,14 @@ animation: var(--updProgress-loader-animation);
 .dvCommonAccordion.accordion .card-header button {
   background-color: var(--accordion-header-bg);
   color: var(--accordion-header-text);
-  border: 1px solid var(--accordion-header-border);
+  border: unset;
   border-radius: var(--accordion-header-b-radius);
   font-family: var(--accordion-header-family);
 }
 /* card-header > button when it is not collapsed. */
 .dvCommonAccordion.accordion .card-header button:not(.collapsed) {
   background: var(--accordion-header-active-bg);
-  border: 1px solid var(--accordion-header-active-border);
+  border:unset;
   border-radius: var(--accordion-header-active-b-radius);
   font-family: var(--accordion-header-family);
 }

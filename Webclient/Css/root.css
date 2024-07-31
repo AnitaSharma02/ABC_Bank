@@ -496,11 +496,11 @@
     --accordion-body-family: var(--font-semibold);
     --accordion-border: transparent;
     --accordion-card-border: transparent;
-    --accordion-header-bg: var(--colour5);
-    --accordion-header-text: var(--colour1);
+    --accordion-header-bg: var(--colour2);
+    --accordion-header-text: var(--colour7);
     --accordion-header-border: var(--border-colour);
     --accordion-header-b-radius: var(--b-radius);
-    --accordion-header-active-bg: var(--colour5);
+    --accordion-header-active-bg: var(--colour2);
     --accordion-header-active-text: var(--colour7);
     --accordion-header-active-border: var(--colour4);
     --accordion-header-active-b-radius: var(--b-radius) var(--b-radius) 0 0;

@@ -113,7 +113,7 @@
                                     <div class="card-header p-0" id="headingOne">
                                         <h2 class="mb-0">
                                             <button class="btn btn-block text-left p-3" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                <span class="heading-bold h7" data-i18n="car-your-booking-summary">Your booking summary</span>
+                                                <span class="heading-bold h6" data-i18n="car-your-booking-summary">Your booking summary</span>
                                                 <span class="arrow-icon">
                                                     <i class="fa fa-caret-up" aria-hidden="true"></i>
                                                 </span>
@@ -130,7 +130,7 @@
                                                         <i class="fa-solid fa-location-dot"></i>
                                                     </div>
                                                     <div class="col-11 mb-3 dvAddress">
-                                                        <h2 class="mb-2 heading-semibold h7" data-i18n="car-pickup-from">Pick up from:</h2>
+                                                        <h2 class="mb-2 heading-semibold h6" data-i18n="car-pickup-from">Pick up from:</h2>
                                                         <p id="spnpickupDetails" class="h7"></p>
                                                         <p class="mb-2 heading-medium h8" id="spnpickupDate"></p>
                                                        

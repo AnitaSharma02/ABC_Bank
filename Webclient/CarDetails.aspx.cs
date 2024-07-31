@@ -97,7 +97,7 @@ public partial class CarDetails : System.Web.UI.Page
                     sbcardetails.Append("<div class=\"card-header p-0\" id=\"headingTwo\">");
                     sbcardetails.Append("<h2 class=\"mb-0\">");
                     sbcardetails.Append("<button class=\"btn btn-block text-left p-3 collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapseTwo\" aria-expanded=\"false\" aria-controls=\"collapseTwo\">");
-                    sbcardetails.Append("<span class=\"heading-bold h7\">" + lobjVehicle.vehicle.name + "</span" + "<span> (Similar)</span > <span class=\"arrow-icon\"> <i class=\"fa fa-caret-up\" aria-hidden=\"true\"></i> </span>");
+                    sbcardetails.Append("<span class=\"heading-bold h6\">" + lobjVehicle.vehicle.name + "</span" + "<span> (Similar)</span > <span class=\"arrow-icon\"> <i class=\"fa fa-caret-up\" aria-hidden=\"true\"></i> </span>");
                     sbcardetails.Append("</button></h2></div>");
                     sbcardetails.Append("<div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionExample\">");
                     sbcardetails.Append("<div class=\"card-body row\">");

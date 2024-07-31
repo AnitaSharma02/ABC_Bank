@@ -57,14 +57,14 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-md-5 col-lg-4 mb-3">
-                    <div class="border rounded-lg">
+                    <div class="border b-radius">
                         <div class="dvAccordian">
                             <div class="dvCommonAccordion accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-header p-0" id="headingOne">
                                         <h2 class="mb-0">
                                             <button class="btn btn-block text-left p-3" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                <span class="heading-bold h7" data-i18n="car-your-booking-summary">Your booking summary</span>
+                                                <span class="heading-bold h6" data-i18n="car-your-booking-summary">Your booking summary</span>
                                                 <span class="arrow-icon">
                                                     <i class="fa fa-caret-up" aria-hidden="true"></i>
                                                 </span>
@@ -148,10 +148,10 @@
                 </div>
                 <div class="col-md-7 col-lg-8">
 
-                    <div class="border boxShadow rounded-lg my-3 mt-md-0">
+                    <div class="border boxShadow b-radius my-3 mt-md-0">
                         <div class="row">
                             <div class="col-12">
-                                <div class="bg-colour2 rounded-top p-3">
+                                <div class="bg-colour2 p-3">
                                     <h2 class="heading-bold h6"><i class="fa-regular fa-circle-user text-colour8"></i>  <span data-i18n="car-driver-details">Driver Details</span></h2>
                                 </div>
                                 <div class="p-3">

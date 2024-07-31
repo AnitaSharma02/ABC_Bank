@@ -473,7 +473,7 @@
                     <div class="btn dvFilterBtn d-lg-none" data-toggle="modal" data-target="#dvFilterBox">
                         <i class="fa fa-filter"></i>
                     </div>
-                       <div class="dvFilter modal fade" id="dvFilterBox" tabindex="-1">
+                       <div class="dvFilter modal fade mb-3" id="dvFilterBox" tabindex="-1">
                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                <div class="modal-content border b-radius p-3">
                                    <div class="modal-header border-0 d-lg-none p-0">
@@ -485,13 +485,13 @@
                                         </button>
                                     </div>
                                     <div class="modal-body p-lg-0">
-                                        <div class="d-flex repMargin flex-wrap justify-content-between align-items-center">
-                                 <div class="modal-footer justify-content-center py-lg-0 mt-lg-1 px-0 border-0">
-                                     <i class="fa fa-filter"></i>
+                                        <div class="d-flex repMargin justify-content-between align-items-center">
+                                 <div class="modal-footer justify-content-center py-lg-0 mt-lg-0 px-0 border-0">
+                                     <i class="fa fa-filter mx-0"></i>
                                      <span class="h7 heading-semibold" data-i18n="carlist-filter-results">Filters Results</span>
                                  </div>
-                                 <div class="modal-footer justify-content-center py-lg-0 mt-lg-1 px-0 border-0">
-                                     <button type="button" class="btn btn-one" onclick="FilterCarList('All');" data-i18n="carlist-reset">Reset</button>
+                                 <div class="modal-footer justify-content-center py-lg-0 mt-lg-0 px-0 border-0">
+                                     <button type="button" class="btn btn-one mx-0" onclick="FilterCarList('All');" data-i18n="carlist-reset">Reset</button>
                                  </div>
                              </div>
                             <%-- <div class="row dvPickup">
