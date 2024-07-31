@@ -61,8 +61,8 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
         z-index: 3;
         font-size: 10px;
         font-weight: 500;
-        height: 25px;
-        line-height: 2.5;
+        height: 20px;
+        line-height: 2;
         left: -22px;
         top: 25px;
         -webkit-transform: rotate(45deg);
@@ -139,7 +139,7 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
 }
 /* When the checkbox is checked,  */
 .dvCarList .dvCarSelection .checkbox-container input:checked ~ .checkmark {
-  border: 1px solid var(--colour8);
+  border: 1px solid var(--colour1);
   /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); */
 }
 /* Show the checkmark when checked */

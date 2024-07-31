@@ -6,22 +6,11 @@
     <link href="Css/jquery.ui.datepicker.css" rel="stylesheet" type="text/css" />
     <link href="Css/car.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/CarResultScript.js" type="text/javascript"></script>
-    <style>
-        .navdiv {
-            background: #00425F;
-        }
+    <style> 
 
         #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner {
             display: none;
-        }
-
-        .innerHeader {
-            height: auto;
-            padding: 0 70px;
-            background: #00425F !important;
-            box-shadow: rgb(0 0 0 / 25%) 0px 5px 15px;
-            height: auto !important;
-        }
+        } 
     </style>
 
     <script type="text/javascript">
@@ -70,7 +59,7 @@
                 <div class="col-md-5 col-lg-4 mb-3">
                     <div class="border rounded-lg">
                         <div class="dvAccordian">
-                            <div class="accordion" id="accordionExample">
+                            <div class="dvCommonAccordion accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-header p-0" id="headingOne">
                                         <h2 class="mb-0">
@@ -169,27 +158,37 @@
                                     <div class="row">
                                         <div class="col-12 col-sm-6 mb-3">
                                             <label for="#" class="label" data-i18n="car-first-name">First name*</label>
-                                            <asp:TextBox runat="server" ID="txtFirstName" CssClass="form-control"></asp:TextBox>
+                                            <div class="dvInput input-group">
+                                                <asp:TextBox runat="server" ID="txtFirstName" CssClass="form-control"></asp:TextBox>
+                                            </div>
                                             <p class="text-danger" id="errorFirtsname"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
                                             <label for="#" class="label" data-i18n="car-surname">Surname*</label>
-                                            <asp:TextBox runat="server" ID="txtSurName" CssClass="form-control"></asp:TextBox>
+                                            <div class="dvInput input-group">
+                                                <asp:TextBox runat="server" ID="txtSurName" CssClass="form-control"></asp:TextBox>
+                                            </div>
                                             <p class="text-danger" id="errorSurName"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
                                             <label for="#" class="label" data-i18n="car-email-address">E-mail Address*</label>
-                                           <asp:TextBox runat="server" ID="txtEmailId" CssClass="form-control"></asp:TextBox>
+                                            <div class="dvInput input-group">
+                                                <asp:TextBox runat="server" ID="txtEmailId" CssClass="form-control"></asp:TextBox>
+                                            </div>
                                             <p class="text-danger" id="errorEmailId"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
                                             <label for="#" class="label" data-i18n="car-phone-number">Phone number*</label>
-                                            <asp:TextBox runat="server" ID="txtMobileNo" CssClass="form-control"></asp:TextBox>
+                                            <div class="dvInput input-group">
+                                                <asp:TextBox runat="server" ID="txtMobileNo" CssClass="form-control"></asp:TextBox>
+                                            </div>
                                             <p class="text-danger" id="errorMobileNo"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
                                             <label for="#" class="label" data-i18n="car-flight-number">Flight number*</label>
-                                            <asp:TextBox runat="server" ID="txtFlightNo" CssClass="form-control"></asp:TextBox>
+                                            <div class="dvInput input-group">
+                                                <asp:TextBox runat="server" ID="txtFlightNo" CssClass="form-control"></asp:TextBox>
+                                            </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="dvLabel d-flex justify-content-between mb-2">
@@ -221,16 +220,18 @@
     </div>
     </div>
     <!-- CarLarge modal pop up start-->
-    <div class="dvMoreInfoModal pr-lg-0 modal fade" id="myModal">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="dvCommonModal dvMoreInfoModal modal fade pr-lg-0" id="myModal">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
             <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Important information</h4>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i></button>
-                </div>
-
+                 <!-- Modal Header -->
+                 <div class="modal-header border-0">
+                      <div class="modal-title border-0">
+                          <h5 class="h6 heading-semibold text-colour1" data-i18n="carlist-important-information">Important information</h5>
+                       </div>
+                          <button type="button" class="close px-3" data-dismiss="modal" aria-label="Close">
+                           <i class="fa-solid fa-xmark"></i>
+                       </button>
+                   </div> 
                 <!-- Modal body -->
 
                 <div class="modal-body mb-2" id="divmoreInfoDetails">

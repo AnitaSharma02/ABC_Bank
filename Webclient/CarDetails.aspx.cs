@@ -230,12 +230,12 @@ public partial class CarDetails : System.Web.UI.Page
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<div class=\"col-12 border-top pt-3 mt-3 pr-0 pl-0 productDetails\">");
                     sbmoreInfo.Append("<div class=\"d-flex flex-wrap justify-content-between align-items-center\">");
-                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-1 order-md-0\">");
+                    sbmoreInfo.Append("<div class=\"col-12 col-sm-2 col-lg-1 order-md-0\">");
                     sbmoreInfo.Append("<div class=\"carLogo\">");
                     sbmoreInfo.Append("<img width=\"50\" class=\"img-fluid mt-auto mb-auto\" src=\"images/logos/giift-logo-blue.svg\" alt=\"Logo\">");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("</div>");
-                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-11 mt-2 mt-md-0 order-md-1 text-left\">");
+                    sbmoreInfo.Append("<div class=\"col-12 col-sm-10 col-lg-11 mt-2 mt-md-0 order-md-1 text-left\">");
                     sbmoreInfo.Append("<div class=\"vehicleLocation\">");
                     sbmoreInfo.Append("<a class=\"heading-medium text-colour1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i> Vehicle location:</a>");
 
@@ -311,9 +311,9 @@ public partial class CarDetails : System.Web.UI.Page
                             TotalAmount = PaymentOption.payments.estimatedTotal.total.display.amount;
 
 
-                            sb.Append("<div class=\"dvPayOption col-sm-6\">");
+                            sb.Append("<div class=\"dvPayOption col-12 col-lg-6\">");
                             sb.Append("<div class=\"dvLabel\">");
-                            sb.Append("<label class=\"checkbox-container border rounded-lg mt-3\">");
+                            sb.Append("<label class=\"checkbox-container border b-radius mt-3\">");
                             sb.Append("<div class=\"col-12 d-flex align-items-center p-3\">");
                             sb.Append("<span class=\"d-inline-block\">");
                             sb.Append("<input type=\"radio\" value=\"" + PaymentOption.rateReference + "\" onchange=\"GetRateDetails('" + PaymentOption.rateReference + "');\" name=\"payment\" id=" + PaymentOption.paymentType + " checked>");
@@ -339,7 +339,7 @@ public partial class CarDetails : System.Web.UI.Page
                             {
                                 if (extras.name.Equals("Excess Protection"))
                                 {
-                                    sbextras.Append("<div class=\"border boxShadow rounded-lg mt-4\">");
+                                    sbextras.Append("<div class=\"border boxShadow b-radius mt-4\">");
                                     sbextras.Append("<input type=\"hidden\" name=\"ExessProtection\" id=\"hndExessProtection\" value=" + extras.rentalPrice.display.amount + " />");
                                     sbextras.Append("<input type=\"hidden\" name=\"ExessProtectiondata\" id=\"hndExessProtectiondata\" value=" + extras.productId + "|" + extras.rentalPrice.display.amount + " />");
                                     sbextras.Append("<div class=\"row\">");
@@ -393,7 +393,7 @@ public partial class CarDetails : System.Web.UI.Page
                                 }
                                 else
                                 {
-                                    sbextras.Append("<div class=\"border boxShadow rounded-lg mt-4\">");
+                                    sbextras.Append("<div class=\"border boxShadow b-radius mt-4\">");
                                     sbextras.Append("<div class=\"row\">");
                                     sbextras.Append("<div class=\"col-12\">");
                                     sbextras.Append("<div class=\"p-3\">");
@@ -518,7 +518,7 @@ public partial class CarDetails : System.Web.UI.Page
                 {
                     if (extras.name.Equals("Excess Protection"))
                     {
-                        sbextras.Append("<div class=\"border boxShadow rounded-lg mt-4\">");
+                        sbextras.Append("<div class=\"border boxShadow b-radius mt-4\">");
                         sbextras.Append("<input type=\"hidden\" name=\"ExessProtection\" id=\"hndExessProtection\" value=" + extras.rentalPrice.display.amount + " />");
                         sbextras.Append("<input type=\"hidden\" name=\"ExessProtectiondata\" id=\"hndExessProtectiondata\" value=" + extras.productId + "|" + extras.rentalPrice.display.amount + " />");
                         sbextras.Append("<div class=\"row\">");
@@ -571,7 +571,7 @@ public partial class CarDetails : System.Web.UI.Page
                     }
                     else if (extras.name.Equals("Cancellation Protection (Prepay)"))
                     {
-                        sbextras.Append("<div class=\"border boxShadow rounded-lg mt-4\">");
+                        sbextras.Append("<div class=\"border boxShadow b-radius mt-4\">");
                         sbextras.Append("<div class=\"row\">");
                         sbextras.Append("<div class=\"col-12\">");
                         sbextras.Append("<div class=\"p-3\">");

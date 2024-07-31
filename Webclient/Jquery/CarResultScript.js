@@ -1444,10 +1444,10 @@ function ViewMoreInfoAdditionalCharges(CodeId) {
 
                 completeHTML += "<div class=\"col-12 productDetails\">";
                 completeHTML += "<div class=\"row justify-content-between align-items-center mb-3\">";
-                completeHTML += "<div class=\"col-12 col-md-10 order-md-0\">";
+                completeHTML += "<div class=\"col-12 col-sm-8 col-md-8 col-lg-10 order-md-0\">";
                 completeHTML += "<p><i class=\"fa fa-clipboard mr-2\" aria-hidden=\"true\"></i>" + extras.name + "</p>";
                 completeHTML += "</div>";
-                completeHTML += "<div class=\"col-12 col-md-2 mt-2 mt-md-0 order-md-1 text-left\">";
+                completeHTML += "<div class=\"col-12 col-sm-4 col-md-4 col-lg-2 mt-2 mt-md-0 order-md-1 text-left\">";
                 completeHTML += "<span> " + extras.rentalPrice.display.amount + " Points</span>"; // mapp dynamic amount pending.
                 completeHTML += "</div>";
                 completeHTML += "</div>";

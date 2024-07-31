@@ -106,7 +106,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-md-5 col-lg-4">
-                    <div class="border rounded-lg">
+                    <div class="border b-radius">
                         <div class="dvAccordian">
                             <div class="dvCommonAccordion accordion" id="accordionExample">
                                 <div class="card">
@@ -342,7 +342,7 @@
                             <p class="heading-bold h6" data-i18n="car-addiotional-equipment">Additional Equipment</p>
                         </div>
                     </div>
-                    <div class="mt-1 border boxShadow rounded-lg">
+                    <div class="mt-1 border boxShadow b-radius">
                         <div class="row">
                             <div class="col-12">
                                 <div class="p-3">
