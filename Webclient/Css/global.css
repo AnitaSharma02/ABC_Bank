@@ -823,11 +823,12 @@ animation: var(--updProgress-loader-animation);
 }
 
 .dvThumbSwiperSlider .mySwiper2 .img-container {
-    padding-bottom: 60%;
+    padding-bottom: 100%;
 }
 
 .dvThumbSwiperSlider .mySwiper .img-container {
-    padding-bottom: 15%;
+    padding-bottom: 25%;
+    margin-top: 15px;
 }
 /*=========[ SWIPER THUMBSLIDER ]=========*/
 /*=========[ SWIPER THUMBSLIDER ]=========*/

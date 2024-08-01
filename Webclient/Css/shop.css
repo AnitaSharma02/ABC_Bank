@@ -27,10 +27,10 @@
 .dvThumbSwiperSlider .mySwiper2 { 
     border: 1px solid #ccc;
     padding: 12px;
-    border-radius: 12px;
+    border-radius: 0px;
 }
 .dvThumbSwiperSlider .swiper-slide img { 
-    border-radius: 12px;
+    border-radius: 0px;
 }
 .dvProductInfo #CP_CPSHOP_divspanpoints {
     width: 150px;
@@ -46,7 +46,7 @@
 .dvProductDetail .dvThumbSwiperSlider #CP_CPSHOP_divThumbnailImages .img-container {
     padding-bottom: 25%;
     border: 1px solid #ccc; 
-    border-radius: 12px;
+    border-radius: 0px;
 }
 .dvVouchersPopup #divDynamicContent button.btn {
     background-color: transparent;
