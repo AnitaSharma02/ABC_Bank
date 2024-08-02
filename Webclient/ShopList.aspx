@@ -93,6 +93,7 @@
         $(document).ready(function () {
             $('.shop').hide();
             BindProducts(1);
+            BindBanner()
         });
        
         function BindProducts(PageNo) {

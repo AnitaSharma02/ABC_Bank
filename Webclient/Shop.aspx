@@ -11,7 +11,7 @@
     <div id="shopoffers" class="dvShopPage"></div> 
     <script type="text/javascript">
         $(document).ready(function () {
-            BindShoppageBanner()
+            BindBanner()
             BindOffers();
             GetRedemptionOptions();
            // $("#dvInnerBanner").attr("src", "images/shoppage/shop-banner.jpg");
