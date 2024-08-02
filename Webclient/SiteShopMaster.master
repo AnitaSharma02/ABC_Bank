@@ -5,8 +5,9 @@
     <script src="../Jquery/PrepaidCard.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.dvMain').insertBefore('.dvRedemptionMenu');
-            $('.dvRedemptionMenu').insertBefore('.dvShopOfferPage');
+            //$('.dvMain').insertBefore('.dvRedemptionMenu');
+            $('.dvRedemptionMenu').insertBefore('.dvShopPage');
+            GetRedemptionOptions()            
             $('.hover_app_info').hide();
             $("#txtProductName").autocomplete({
                 source: function (request, response) {
@@ -112,39 +113,6 @@
             else
                 return qs[1];
         }
-        function GetRedemptionOptions() {
-            try {
-                var redemptionOptionsHTML = '<%=HttpContext.Current.Application["HomeRedemptionOptions"]%>';
-                if (redemptionOptionsHTML != '') {
-                    $("#CP_divRedemptionOptions").html(redemptionOptionsHTML);
-                    var categoryName = '<%=Convert.ToString(Session["CategoryName"])%>';
-                    if (categoryName != '') {
-                        $('.redemptionoptions').removeClass('SelRedemption');
-                        $('.' + categoryName + 'redemption').addClass('SelRedemption');
-                    }
-                } else {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'Index.aspx/GetRedemptionOptions',
-                        contentType: 'application/json; charset=utf-8',
-                        dataType: 'json',
-                        data: "",
-                        success: function (msg) {
-                            if (msg.d != '') {
-                                $("#CP_divRedemptionOptions").html(msg.d);
-                                var categoryName = '<%=Convert.ToString(Session["CategoryName"])%>';
-                                if (categoryName != '') {
-                                    $('.redemptionoptions').removeClass('SelRedemption');
-                                    $('.' + categoryName + 'redemption').addClass('SelRedemption');
-                                }
-                            }
-                        }
-                    });
-                }
-            } catch (e) {
-            }
-        }
-
 
         // this script is only if you need submenu. check testing folder for html submenu markup reference
         $(function () {
@@ -310,14 +278,7 @@
 
     <!-- Shoppage Banner Slider -->
     <div id="dvHeroShopSlider" class="dvHeroSlider swiper w-100">
-    </div>
-
-    <div class="dvRedemptionMenu py-4">
-        <div class="container-fluid">
-            <div class="row justify-content-center" id="divRedemptionOptions" runat="server">
-            </div>
-        </div>
-    </div>
+    </div>    
 
     <asp:ContentPlaceHolder ID="CPSHOP" runat="server">
     </asp:ContentPlaceHolder>
