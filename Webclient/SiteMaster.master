@@ -257,7 +257,7 @@
                     </div>
                     <%-- remove d-lg-none and style="display:none !important;" from below to display language selectmenu --%>
                     <div class="order-1 order-lg-2 col d-flex col-lg-auto align-items-center justify-content-end pr-0 pr-lg-0 d-lg-none">
-                        <div class="dvLanguage pr-3 pr-lg-0 mb-1 mb-lg-0 d-flex- align-items-center" style="display:none !important;">
+                        <div class="dvLanguage pr-3 pr-lg-0 mb-1 mb-lg-0 d-flex- align-items-center" style="display: none !important;">
                             <div class="form-group select-dropdown selectUl selLanguage m-0">
                                 <select class="form-control px-1 py-0 mt-1 mt-lg-0 py-2" id="languageSelector">
                                 </select>
@@ -383,25 +383,25 @@
     </form>
 
 
-            <!-- dvLogoutModal -->
-            <div class="dvCommonModal modal fade" id="dvLogoutModal" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
+    <!-- dvLogoutModal -->
+    <div class="dvCommonModal modal fade" id="dvLogoutModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
                     <h5 class="modal-title heading-semibold text-colour1">Logout</h5>
                     <button type="button" class="close text-colour1" data-dismiss="modal">
-                      <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
-                  </div>
-                  <div class="modal-body text-center">
-                      <p class="heading-semibold">Do you want to Signout?</p>
-                  </div>
-                  <div class="modal-footer justify-content-center">
-                    <a  class="btn btn-one" data-dismiss="modal">No</a>
-                    <a class="btn btn-one" id="dsktopYes" href="Logout.aspx">Yes</a> 
-                  </div>
                 </div>
-              </div>
+                <div class="modal-body text-center">
+                    <p class="heading-semibold">Do you want to Signout?</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <a class="btn btn-one" data-dismiss="modal">No</a>
+                    <a class="btn btn-one" id="dsktopYes" href="Logout.aspx">Yes</a>
+                </div>
             </div>
+        </div>
+    </div>
 </body>
 </html>

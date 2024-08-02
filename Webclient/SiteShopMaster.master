@@ -204,38 +204,38 @@
                         contentType: 'application/json; charset=utf-8',
                         dataType: 'json',
                         data: "{path:'" + '<%=string.Format("{0}banner",Convert.ToString(Session["CategoryName"]))%>' + "'}",
-                success: function (msg) {
-                    if (msg.d != '') {
-                        $("#dvHeroShopSlider").append(msg.d);
-                        const heroSlider = new Swiper(".dvHeroSlider.swiper", {
-                            direction: "horizontal",
-                            loop: false,
-                            speed: 500,
-                            slidesPerView: 1,
-                            navigation: {
-                                nextEl: ".swiper-button-next",
-                                prevEl: ".swiper-button-prev",
-                            },
-                            pagination: {
-                                el: ".swiper-pagination",
-                                clickable: true,
-                            },
-                            spaceBetween: 0,
-                            breakpoints: {
-                                0: {
+                        success: function (msg) {
+                            if (msg.d != '') {
+                                $("#dvHeroShopSlider").append(msg.d);
+                                const heroSlider = new Swiper(".dvHeroSlider.swiper", {
+                                    direction: "horizontal",
+                                    loop: false,
+                                    speed: 500,
                                     slidesPerView: 1,
-                                },
-                            },
-                            mousewheel: {
-                                enabled: false,
-                            },
-                            keyboard: {
-                                enabled: true,
-                            },
-                        });
-                    }
-                }
-            });
+                                    navigation: {
+                                        nextEl: ".swiper-button-next",
+                                        prevEl: ".swiper-button-prev",
+                                    },
+                                    pagination: {
+                                        el: ".swiper-pagination",
+                                        clickable: true,
+                                    },
+                                    spaceBetween: 0,
+                                    breakpoints: {
+                                        0: {
+                                            slidesPerView: 1,
+                                        },
+                                    },
+                                    mousewheel: {
+                                        enabled: false,
+                                    },
+                                    keyboard: {
+                                        enabled: true,
+                                    },
+                                });
+                            }
+                        }
+                    });
                 }
 
             } catch (e) {
@@ -272,12 +272,7 @@
             </nav>
         </div>
     </div>
-    <div class="dvRedemptionMenu py-4">
-        <div class="container-fluid">
-            <div class="row justify-content-center" id="divRedemptionOptions" runat="server">
-            </div>
-        </div>
-    </div>
+
     <%--<div class="dvShopMenu">
         <div class="container-xl">
             <div dir="ltr" style="direction: ltr;" id="divShopMenuBar" runat="server">
@@ -312,11 +307,23 @@
             </div>
         </div>
     </div>--%>
+
     <!-- Shoppage Banner Slider -->
     <div id="dvHeroShopSlider" class="dvHeroSlider swiper w-100">
     </div>
+
+    <div class="dvRedemptionMenu py-4">
+        <div class="container-fluid">
+            <div class="row justify-content-center" id="divRedemptionOptions" runat="server">
+            </div>
+        </div>
+    </div>
+
     <asp:ContentPlaceHolder ID="CPSHOP" runat="server">
     </asp:ContentPlaceHolder>
+
+
+
     <div id="updProgress" style="z-index: 10000; height: 100%; display: none;">
         <img src="../Images/loading.gif" alt="loading..." />
     </div>
