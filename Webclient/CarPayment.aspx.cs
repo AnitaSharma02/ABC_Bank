@@ -86,10 +86,10 @@ public partial class CarPayment : System.Web.UI.Page
                 sbcardetails.Append("<div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionExample\">");
                 sbcardetails.Append("<div class=\"card-body row\">");
                 sbcardetails.Append("<div class=\"col-12\">");
-                sbcardetails.Append("<div class=\"moreInfo text-colour1\" data-toggle=\"modal\" data-target=\"#myModal\">");
+                sbcardetails.Append("<div class=\"moreInfo text-colour1\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
                 sbcardetails.Append("<i class=\"fa fa-info-circle text-colour8\" aria-hidden=\"true\"></i> More info");
                 sbcardetails.Append("</div>");
-                sbcardetails.Append("<div class=\"carPicBox\" data-toggle=\"modal\" data-target=\"#myModal\">");
+                sbcardetails.Append("<div class=\"carPicBox\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
                 sbcardetails.Append("<img class=\"img-fluid mt-auto mb-auto\" src=" + lobjVehicle.vehicle.images[0].url + " />");
                 sbcardetails.Append("</div>");
                 sbcardetails.Append("<div class=\"dvProvider\">");

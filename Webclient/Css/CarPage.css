@@ -505,27 +505,11 @@ body {
 /* .dvCarList .dvPickup {
   border-bottom: 1px solid #dee2e6;
 } */
-/* .dvCarList .modal-footer {
-  border: none;
-} */
-/* .dvCarList .modal-header {
-  padding: 1rem 1rem 0.3rem;
-} */
 .dvCarList .modal-header .close {
   color: var(--secondary-colour);
   opacity: 1;
 }
-/*
-.dvCarList .modal-header span {
-  color: #fff;
-  line-height: 21px;
-  font-size: 27px;
-  top: -2px;
-  position: relative;
-}
-.dvCarList .dvMyModal h4 {
-  margin: -4px 0 5px;
-} */
+
 
 /*Car details css*/
 .dvCarList .dvPayOption h1 {

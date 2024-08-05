@@ -478,6 +478,7 @@
     --modal-header-border-bottom: none;
 
     /*modal-title*/
+    --modal-title-font-family: var(--heading-bold); 
     --modal-title-text-colour: var(--colour1);
     --modal-title-fontsize: 1rem;
 

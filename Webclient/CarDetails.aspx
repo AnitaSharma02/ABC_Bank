@@ -164,10 +164,10 @@
                                     <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                         <div class="card-body row">
                                             <div class="col-12 ">
-                                                <div class="moreInfo" data-toggle="modal" data-target="#myModal">
+                                                <div class="moreInfo" data-toggle="modal" data-target="#dvAdditionalEquipmentModal">
                                                     <i class="fa fa-info-circle" aria-hidden="true"></i>More info
                                                 </div>
-                                                <div class="carPicBox" data-toggle="modal" data-target="#myModal">
+                                                <div class="carPicBox" data-toggle="modal" data-target="#dvAdditionalEquipmentModal">
                                                     <img class="img-fluid mt-auto mb-auto" src="https://cdn.enjoytravel.com/img/vehicleimages/volkswagen_polo.jpg" />
                                                 </div>
                                                 <div class="dvProvider">
@@ -381,7 +381,7 @@
         </div>
     </div>
     <!-- CarLarge modal pop up start-->
-    <div class="dvCommonModal dvMoreInfoModal modal fade pr-lg-0" id="myModal">
+    <div class="dvCommonModal dvMoreInfoModal modal fade pr-lg-0" id="dvMoreInfoModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
             <div class="modal-content">
 
@@ -522,7 +522,7 @@
     </div>
 
     <!-- child popup modal pop up end-->
-    <div class="dvMyModal dvCommonModal dvpopupDeatils modal fade" id="myModal2">
+    <div class="dvCommonModal modal fade" id="dvAdditionalEquipmentModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
 
@@ -546,9 +546,7 @@
                         </div>
                     </div>--%>
 
-                    <div id="divMoreinfoAdditionalEquipment">
-
-                    </div>
+                    <div id="divMoreinfoAdditionalEquipment"></div>
                     
                    <%-- <div class="col-12 pt-3 mt-3 pr-0 pl-0 productDetails">
                         <div class="d-flex dvpopupBooster flex-wrap justify-content-between align-items-center mt-2">
@@ -573,17 +571,15 @@
     </div>
 
     <!-- Add popup modal pop up end-->
-    <div class="dvMyModal dvCommonModal dvpopupDeatils modal fade" id="myModal3">
+    <div class="dvCommonModal modal fade" id="dvExcessProtectionModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
                 <!-- Modal Header -->
                  <div class="modal-header border-0">
-                      <%--<div class="modal-title border-0">
-                          <h5 class="h6 heading-semibold text-colour1">Info</h5>
-                       </div>--%>
-                          <button type="button" class="close px-3" data-dismiss="modal" aria-label="Close">
-                           <i class="fa-solid fa-xmark"></i>
-                       </button>
+                      <h5 class="modal-title">Info</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                 </div>
                
                 <!-- Modal body -->

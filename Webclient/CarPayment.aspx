@@ -220,7 +220,7 @@
     </div>
     </div>
     <!-- CarLarge modal pop up start-->
-    <div class="dvCommonModal dvMoreInfoModal modal fade pr-lg-0" id="myModal">
+    <div class="dvCommonModal dvMoreInfoModal modal fade pr-lg-0" id="dvMoreInfoModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
             <div class="modal-content">
                  <!-- Modal Header -->

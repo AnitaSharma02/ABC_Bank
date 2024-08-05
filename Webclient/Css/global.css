@@ -1846,11 +1846,13 @@ select.form-control:focus {
     border-bottom: var(--modal-header-border-bottom);
 }
 .dvCommonModal.modal .modal-header .modal-title {
+    font-family: var(--modal-title-font-family);
     color: var(--modal-title-text-colour);
     font-size: var(--modal-title-fontsize);
  }
 .dvCommonModal.modal .modal-header .close {
     opacity: var(--modal-close-btn-opacity);
+    color: var(--modal-close-icon-text-colour);
 }
 .dvCommonModal.modal .modal-header .close i {
     background-color: var(--modal-close-icon-bg);

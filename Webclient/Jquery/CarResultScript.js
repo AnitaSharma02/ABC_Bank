@@ -856,7 +856,7 @@ function ViewMoreInfo(uniqueRef) {
 
                 $("#divmoreInfoDetails")[0].innerHTML = msg.d[0].toString(); //Car more Info popup
 
-                $("#myModal").modal("show");
+                $("#dvMoreInfoModal").modal("show");
             }
             else {
                 window.location.href = "ErrorPage.aspx";
@@ -1088,7 +1088,7 @@ function CreateCarPayment() {
 
     //if (IsExcessprotectionAdded != "true") {
 
-    //    $("#myModal3").modal("show");
+    //    $("#dvExcessProtectionModal").modal("show");
     //}
     //else {
     //    window.location.href = "CarPayment.aspx";
@@ -1460,7 +1460,7 @@ function ViewMoreInfoAdditionalCharges(CodeId) {
 
                 $("#divMoreinfoAdditionalEquipment")[0].innerHTML = completeHTML;
 
-                $("#myModal2").modal("show");
+                $("#dvAdditionalEquipmentModal").modal("show");
             }
             else {
 

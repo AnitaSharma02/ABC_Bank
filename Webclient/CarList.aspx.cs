@@ -147,11 +147,11 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append("<div class=\"col-12 productInfo position-relative\">");
                 sb.Append("<div class=\"row\">");
                 sb.Append("<div class=\"col-12 col-md-5 col-lg-4\">");
-                //sb.Append("<div class=\"carPicBox\" data-toggle=\"modal\" data-target=\"#myModal\">");
+                //sb.Append("<div class=\"carPicBox\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
                 sb.Append("<div class=\"carPicBox\" onclick=\"ViewMoreInfo('" + item.vehicle.uniqueRef + "');\">");
                 sb.Append("<img class=\"img-fluid mt-auto mb-auto\" src=" + item.vehicle.images[0].url + " />");
                 sb.Append("</div>");
-                //sb.Append("<div class=\"moreInfo\" data-toggle=\"modal\" data-target=\"#myModal\">");
+                //sb.Append("<div class=\"moreInfo\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
                 sb.Append("<div class=\"moreInfo text-colour1\" onclick=\"ViewMoreInfo('" + item.vehicle.uniqueRef + "');\">");
                 sb.Append("<i class=\"fa-solid fa-circle-info text-colour8\"></i> <span data-i18n=\"more-info\">More info</span>");
                 sb.Append("</div>");
