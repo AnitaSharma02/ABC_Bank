@@ -387,11 +387,9 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header border-0">
-                     <div class="modal-title border-0">
-                         <h5 class="h6 heading-semibold text-colour1" data-i18n="carlist-important-information">Important information</h5>
-                      </div>
-                         <button type="button" class="close px-3" data-dismiss="modal" aria-label="Close">
-                          <i class="fa-solid fa-xmark"></i>
+                    <h5 class="modal-title" data-i18n="carlist-important-information">Important information</h5>
+                      <button type="button" class="close" data-dismiss="modal">
+                          <span aria-hidden="true">&times;</span>
                       </button>
                   </div>
 
@@ -528,12 +526,10 @@
 
                 <!-- Modal Header -->
                  <div class="modal-header border-0">
-                      <div class="modal-title border-0">
-                          <h5 class="h6 heading-semibold text-colour1">Info</h5>
-                       </div>
-                          <button type="button" class="close px-3" data-dismiss="modal" aria-label="Close">
-                           <i class="fa-solid fa-xmark"></i>
-                       </button>
+                      <h5 class="modal-title">Info</h5>
+                      <button type="button" class="close" data-dismiss="modal">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
                 </div>
              
                 <!-- Modal body -->
