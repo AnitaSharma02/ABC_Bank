@@ -87,27 +87,27 @@
                 <div class="dvSidebar col-lg-3 mb-3 mb-lg-0"">
                     <div class="border b-radius p-3 mb-3">
                         <div class="row">
-                            <div class="col-12 leftBoxCont">
-                                <div class="row align-items-center flex-md-column ">
-                                    <div class="col-3 mb-md-3 mt-md-1 col-md-12 vehicleBox h2">
+                            <div class="col-12">
+                                <div class="row align-items-lg-center">
+                                    <div class="col-12 col-md-12 col-lg-6 mb-1">
                                         <i class="fa-solid fa-car-side"></i>
                                     </div>
-                                    <div class="col-6 col-md-12 airportInfo d-none d-md-block p-0 pl-md-3 pb-md-1 pr-md-3">
-                                        <h1 class="d-none d-md-block heading-semibold mb-1 h7" data-i18n="carlist-pickup-location">PICK UP LOCATION</h1>
-                                        <p id="spnpickuplocation" class="heading-regular h8" ></p>
-                                        <p id="spnpickupdate" class="heading-regular h8"></p>
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
+                                        <h2 class="h6 heading-semibold" data-i18n="carlist-pickup-location">PICK UP LOCATION</h2>
+                                        <p id="spnpickuplocation" class="" ></p>
+                                        <p id="spnpickupdate" class=""></p>
                                     </div>
-                                    <div class="col-5 col-md-12 airportInfo p-0 p-md-3">
-                                        <h1 class="d-none d-md-block heading-semibold mb-1 h7" data-i18n="carlist-car-dropoff-location">CAR DROP OFF LOCATION</h1>
-                                        <p id="spndroppoffLocation" class="heading-regular h8" ></p>
-                                        <p id="spndropoffdate" class="heading-regular h8"></p>
-
-                                        <span class="pt-0 pt-md-3 heading-semibold h8" data-i18n="carlist-driver-residence-country">Driver's Residence Country </span> <span id="spndriverresidenceCountry" class="heading-semibold h8"> </span>
-                                        
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
+                                        <h2 class="h6 heading-semibold" data-i18n="carlist-car-dropoff-location">CAR DROP OFF LOCATION</h2>
+                                        <p id="spndroppoffLocation" class="" ></p>
+                                        <p id="spndropoffdate" class=""></p>
                                     </div>
-
-                                    <div class="col-4 col-md-12 travelWhiteBtn text-right text-md-left">
-                                        <button type="button" class="btn btn-one editBtn" data-i18n="carlist-edit" onclick="bindcountry()">Edit</button>
+                                    <div class="col-12 col-md-4 col-lg-12 mb-3">
+                                        <h2 class="h6 heading-semibold" data-i18n="carlist-driver-residence-country">Driver's Residence Country</h2>
+                                        <p id="spndriverresidenceCountry" class=""></p>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <button type="button" class="btn btn-one w-100" data-i18n="carlist-edit" onclick="bindcountry()">Edit</button>
                                     </div>
                                 </div>
                             </div>
@@ -475,143 +475,108 @@
                     </div>
                        <div class="dvFilter modal fade mb-3" id="dvFilterBox" tabindex="-1">
                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                               <div class="modal-content border b-radius p-3">
-                                   <div class="modal-header border-0 d-lg-none p-0">
-                                       <div class="modal-title border-0 p-3">
-                                           <h5 class="h6 heading-semibold text-colour1" id="exampleModalLabel" data-i18n="carlist-filter-results">Filter Results</h5>
+                               <div class="modal-content border-0 b-radius">
+                                   <div class="modal-header border-0 p-0">
+                                        <div class="modal-title border-0 p-3">
+                                            <h5 class="h6 heading-semibold text-colour1">
+                                                <i class="fa fa-filter mx-0"></i>
+                                                <span data-i18n="carlist-filter-results">Filters</span>
+                                            </h5>
                                         </div>
-                                           <button type="button" class="close d-lg-none px-3" data-dismiss="modal" aria-label="Close">
-                                            <i class="fa-solid fa-xmark"></i>
-                                        </button>
+                                       <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
+                                           <i class="fa-solid fa-xmark"></i>
+                                       </button>
+                                       
+                                       <%--<i class="fa fa-filter mx-0"></i>
+                                        <span class="h7 heading-semibold" data-i18n="carlist-filter-results">Filters Results</span>--%>
                                     </div>
                                     <div class="modal-body p-lg-0">
-                                        <div class="d-flex repMargin justify-content-between align-items-center">
-                                 <div class="modal-footer justify-content-center py-lg-0 mt-lg-0 px-0 border-0">
-                                     <i class="fa fa-filter mx-0"></i>
-                                     <span class="h7 heading-semibold" data-i18n="carlist-filter-results">Filters Results</span>
-                                 </div>
-                                 <div class="modal-footer justify-content-center py-lg-0 mt-lg-0 px-0 border-0">
-                                     <button type="button" class="btn btn-one mx-0" onclick="FilterCarList('All');" data-i18n="carlist-reset">Reset</button>
-                                 </div>
-                             </div>
-                            <%-- <div class="row dvPickup">
-                                 <div class="col-12 col-lg-12 col-xl-12">
-                                     <a class="heading-semibold h7 text-colour7 mb-2" data-toggle="collapse" href="#filterPickup" role="button" aria-expanded="true" aria-controls="filterPickup" data-i18n="carlist-pickup">Pickup
-                                     </a>
-                                 </div>
-                                 <div class="col-12 collapse show mt-3" id="filterPickup">
+                                        <div class="accordion" id="filter-accordion">
+                                            <div class="card my-3 mb-lg-3 mt-lg-0">
+                                                <div class="card-header p-0">
+                                                    <h2 class="mb-0">
+                                                        <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="h6 heading-semibold text-colour7 mb-2 text-capitalize" data-i18n="carlist-passengers">Passengers</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                    </h2>
+                                                </div>
+                                                <div id="collapse1" class="collapse- show" data-parent="#filter-accordion">
+                                                    <div class="card-body scroll-ver- px-0 pt-1 pb-2">
+                                                        <div class="dvLabel">
+                                                             <label class="checkbox-container d-flex">
+                                                              <span class="d-inline-block">
+                                                                <input name="PASSENGERS" onchange="FilterCarList('');" value="3,4" type="checkbox" id="gridCheckPASSENGERS3-4"/>
+                                                                <span class="checkmark"></span>
+                                                              </span>
+                                                              <span class="d-inline-block ml-2">3 to 4</span>
+                                                            </label>
+                                                             <label class="checkbox-container d-flex">
+                                                                 <span class="d-inline-block">
+                                                                    <input name="PASSENGERS" onchange="FilterCarList('');" value="5,6" type="checkbox" id="gridCheckPASSENGERS5-6">
+                                                                    <span class="checkmark"></span>
+                                                                 </span>
+                                                             <span class="d-inline-block ml-2"> 5 to 6 </span>
+                                                            </label>
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input name="PASSENGERS" onchange="FilterCarList('');" value="7,8" type="checkbox" id="gridCheckPASSENGERS7-8">
+                                                                    <span class="checkmark"></span>
+                                                                </span>
+                                                                <span class="d-inline-block ml-2"> 7 to 8 </span>
+                                                            </label>
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input name="PASSENGERS" onchange="FilterCarList('');" value="8,9" type="checkbox" id="gridCheckPASSENGERS8-9">
+                                                                    <span class="checkmark"></span>
+                                                                 </span>
+                                                                    <span class="d-inline-block ml-2">  8 to 9 </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                 
+                                            <div class="dvBorderBottom">
+                                                <div class="">
+                                                    <div class="border-bottom my-3"></div>
+                                                </div>
+                                            </div>
 
-                                 </div>
-                             </div>--%>
-                            <%-- <div class="row py-2">
-                                 <div class="col-12 border-bottom"></div>
-                             </div>--%>
-                             <div class="row dvPickup">
-                                 <div class="col-12 col-lg-12 col-xl-12 mt-3">
-                                     <a class="heading-semibold h7 text-colour7 mb-2" data-toggle="collapse" href="#filterPassenger" role="button" aria-expanded="true" aria-controls="filterPassenger" data-i18n="carlist-passengers">Passengers
-                                     </a>
-                                 </div>
-                                 <div class="col-12 collapse show mt-3" id="filterPassenger">
-                                      <div class="row">
-                                     <div class="col-12 ">
-                                          <div class="dvLabel">
-                                               <label class="checkbox-container d-flex">
-                                                <span class="d-inline-block">
-                                                  <input name="PASSENGERS" onchange="FilterCarList('');" value="3,4" type="checkbox" id="gridCheckPASSENGERS3-4"/>
-                                                  <span class="checkmark"></span>
-                                                </span>
-                                                <span class="d-inline-block ml-2">3 to 4</span>
-                                              </label>
-                                          </div>
-                                     </div>
-                                     <div class="col-12">
-                                         <div class="dvLabel">
-                                              <label class="checkbox-container d-flex">
-                                                  <span class="d-inline-block">
-                                                     <input name="PASSENGERS" onchange="FilterCarList('');" value="5,6" type="checkbox" id="gridCheckPASSENGERS5-6">
-                                                     <span class="checkmark"></span>
-                                                  </span>
-                                              <span class="d-inline-block ml-2"> 5 to 6 </span>
-                                             </label>
-                                         </div>
-                                     </div>
-                                     <div class="col-12">
-                                         <div class="dvLabel">
-                                             <label class="checkbox-container d-flex">
-                                                 <span class="d-inline-block">
-                                                     <input name="PASSENGERS" onchange="FilterCarList('');" value="7,8" type="checkbox" id="gridCheckPASSENGERS7-8">
-                                                     <span class="checkmark"></span>
-                                                 </span>
-                                                 <span class="d-inline-block ml-2"> 7 to 8 </span>
-                                             </label>
-                                         </div>
-                                     </div>
-                                     <div class="col-12">
-                                         <div class="dvLabel">
-                                             <label class="checkbox-container d-flex">
-                                                 <span class="d-inline-block">
-                                                     <input name="PASSENGERS" onchange="FilterCarList('');" value="8,9" type="checkbox" id="gridCheckPASSENGERS8-9">
-                                                     <span class="checkmark"></span>
-                                                  </span>
-                                                     <span class="d-inline-block ml-2">  8 to 9 </span>
-                                             </label>
-                                         </div>
-                                     </div>
-                                     </div>
-
-                                 </div>
-                             </div>
-                             <%--<div class="row py-2">
-                                 <div class="col-12 border-bottom"></div>
-                             </div>--%>
-                            <%-- <div class="row dvPickup">
-                                 <div class="col-12 col-lg-12 col-xl-12 mt-3">
-                                     <a class="heading-semibold h7 text-colour7 mb-2" data-toggle="collapse" href="#filterSupplier" role="button" aria-expanded="true" aria-controls="filterSupplier" data-i18n="carlist-supplier">Supplier
-                                     </a>
-                                 </div>
-                                 <div class="col-12 collapse show mt-3" id="filterSupplier">
-                
-                                 </div>
-                             </div>--%>
-                             <div class="row py-2">
-                                 <div class="col-12 border-bottom"></div>
-                             </div>
-                             <div class="row dvPickup">
-                                 <div class="col-12 col-lg-12 col-xl-12 mt-3">
-                                     <a class="heading-semibold h7 text-colour7 mb-2" data-toggle="collapse" href="#filterTrans" role="button" aria-expanded="true" aria-controls="filterTrans" data-i18n="carlist-transmission">Transmission
-                                     </a>
-                                 </div>
-                                 <div class="col-12 collapse show mt-3" id="filterTrans">
-                                     <div class="row">
-                                         <div class="col-12">
-                                             <div class="dvLabel">
-                                                  <label class="checkbox-container d-flex">
-                                                    <span class="d-inline-block">
-                                                       <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" data-i18n="[value]carlist-manual" value="Manual" id="gridCheckManual">
-                                                      <span class="checkmark"></span>
-                                                    </span>
-                                                    <span class="d-inline-block ml-2" data-i18n="carlist-manual">Manual</span>
-                                                  </label>
-                                             </div>
-                                         </div>
-                                         <div class="col-12">
-                                             <div class="dvLabel">
-                                              <label class="checkbox-container d-flex">
-                                                   <span class="d-inline-block">
-                                                     <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" data-i18n="[value]carlist-automatic" value="Automatic" id="gridCheckAutomatic">
-                                                     <span class="checkmark"></span>
-                                                   </span>
-                                                 <span class="d-inline-block ml-2" data-i18n="carlist-automatic">Automatic</span>
-                                             </label>
-                                         </div>
-                                     </div>
-                                     </div>
-                                 </div>
-                             </div>
-
-                                   </div>
+                                            <div class="card">
+                                                <div class="card-header p-0">
+                                                    <h2 class="mb-0">
+                                                        <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span class="h6 heading-semibold text-colour7 mb-2 text-capitalize" data-i18n="carlist-transmission">Transmission</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                    </h2>
+                                                </div>
+                                                <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">
+                                                    <div class="card-body scroll-ver- px-0 pt-1 pb-2">
+                                                        <div class="dvLabel">
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" data-i18n="[value]carlist-manual" value="Manual" id="gridCheckManual">
+                                                                <span class="checkmark"></span>
+                                                                </span>
+                                                                <span class="d-inline-block ml-2" data-i18n="carlist-manual">Manual</span>
+                                                            </label>
+                                                             <label class="checkbox-container d-flex">
+                                                                  <span class="d-inline-block">
+                                                                    <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" data-i18n="[value]carlist-automatic" value="Automatic" id="gridCheckAutomatic">
+                                                                    <span class="checkmark"></span>
+                                                                  </span>
+                                                                <span class="d-inline-block ml-2" data-i18n="carlist-automatic">Automatic</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dvBorderBottom">
+                                                <div class="">
+                                                    <div class="border-bottom my-3"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                   </div>                                    
+                                    <div class="modal-footer justify-content-center border p-lg-2">
+                                        <button type="button" class="btn btn-one w-100" onclick="FilterCarList('All');" data-i18n="carlist-reset">Reset</button>
+                                    </div>                                    
                                </div>
                            </div>
                        </div>

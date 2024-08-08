@@ -110,6 +110,10 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
   text-align: center;
   z-index: 2;
   background: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /*filter button only for mobile*/
 

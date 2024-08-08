@@ -188,7 +188,7 @@
             <div class="row">
                 <div class="dvFilter modal fade col-lg-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content border-0">
+                        <div class="modal-content border-0 b-radius">
                             <div class="modal-header border-0 d-lg-block p-0">
                                  <div class="modal-title dvTotalRecords border-0 p-3">
                                     <p class="h6 heading-semibold text-colour1"><span data-i18n="flightlist-total">Total Flights Found</span> <span class="filter-text" id="lblNoofFlight"></span></p>
@@ -206,7 +206,7 @@
                                             </h2>
                                         </div>
                                         <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver px-0 pt-1 pb-2">
+                                            <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="">
                                                     <div class="dvLabel divStops airList"></div>
                                                 </div>
@@ -226,7 +226,7 @@
                                         </div>
 
                                         <div id="collapse1" class="collapse- show" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver px-0 pt-1 pb-2">
+                                            <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvRangeSlider flt-stop-chkbox robothik f_sliderW fl">
                                                     <div id="priceSlider" class="PriceSlider">
                                                     </div>
@@ -264,7 +264,7 @@
                                             </h2>
                                         </div>
                                         <div id="collapse4" class="collapse-" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver px-0 pt-1 pb-2">
+                                            <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvRangeSlider flt-stop-chkbox robothik f_sliderW fl">
                                                     <div id="durationSlider" class="PriceSlider"></div>
                                                     <span id="durationRange" class="h7 heading-regular text-colour7 d-block mt-2"></span>
@@ -285,7 +285,7 @@
                                         </div>
 
                                         <div id="collapse5" class="collapse-" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver px-0 pt-1 pb-2">
+                                            <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvRangeSlider flt-stop-chkbox robothik f_sliderW fl">
                                                     <div id="departureSlider" class="PriceSlider"></div>
                                                     <span id="departureRange" class="h7 heading-regular text-colour7 d-block mt-2"></span>
@@ -306,7 +306,7 @@
                                         </div>
 
                                         <div id="collapse6" class="collapse-" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver px-0 pt-1 pb-2">
+                                            <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvRangeSlider flt-stop-chkbox robothik f_sliderW fl">
                                                     <div id="arrivalSlider" class="PriceSlider"></div>
                                                     <span id="arrivalRange" class="h7 heading-regular text-colour7 d-block mt-2"></span>
