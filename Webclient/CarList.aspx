@@ -87,7 +87,7 @@
                 <div class="dvSidebar col-lg-3 mb-3 mb-lg-0"">
                     <div class="border b-radius p-3 mb-3">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-12 leftBoxCont">
                                 <div class="row align-items-lg-center">
                                     <div class="col-12 col-md-12 col-lg-6 mb-1">
                                         <i class="fa-solid fa-car-side"></i>
@@ -107,7 +107,7 @@
                                         <p id="spndriverresidenceCountry" class=""></p>
                                     </div>
                                     <div class="col-12 col-lg-6">
-                                        <button type="button" class="btn btn-one w-100" data-i18n="carlist-edit" onclick="bindcountry()">Edit</button>
+                                        <button type="button" class="btn btn-one w-100 editBtn" data-i18n="carlist-edit" onclick="bindcountry()">Edit</button>
                                     </div>
                                 </div>
                             </div>
@@ -574,7 +574,7 @@
                                             </div>
                                         </div>
                                    </div>                                    
-                                    <div class="modal-footer justify-content-center border p-lg-2">
+                                    <div class="modal-footer justify-content-center border-left border-right border-bottom p-lg-2">
                                         <button type="button" class="btn btn-one w-100" onclick="FilterCarList('All');" data-i18n="carlist-reset">Reset</button>
                                     </div>                                    
                                </div>
@@ -642,133 +642,16 @@
     <div class="dvCommonModal dvMoreInfoModal modal fade pr-lg-0" id="dvMoreInfoModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
             <div class="modal-content">
-                <!-- Modal Header -->
-                 <div class="modal-header border-0">
-                     <h5 class="modal-title" data-i18n="carlist-important-information">Important information</h5>
+                 <div class="modal-header border-0">         
+                    <h5 class="modal-title border-0">
+                        <i class="fa fa-filter mx-0"></i>
+                        <span data-i18n="carlist-important-information">Important information</span>
+                    </h5>
                     <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
-                  </div>
-                
-                <!-- Modal body -->
+                  </div>                
                 <div class="modal-body mb-2" id="divmoreInfoDetails"></div>
-                <%--<div class="modal-body">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="carPicBox">
-                                <img class="img-fluid mt-auto mb-auto" src="https://cdn.enjoytravel.com/img/vehicleimages/volkswagen_polo.jpg" />
-                            </div>
-
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="carHead">
-                                <p>Volkswagen Polo</p>
-                                <span>or similar (Small)</span>
-                            </div>
-                            <div class="row dviconBox">
-                                <div class="col-6 col-md-6 d-flex mb-1 mt-2 align-items-center">
-                                    <div class="borderColor">
-                                        <img src="images/icon/seat-icon.svg" class="img-fluid" />
-                                    </div>
-                                    <span class="ml-2">x 5</span>
-                                </div>
-                                <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                    <div class="borderColor">
-                                        <img src="images/icon/gear-icon.svg" class="img-fluid" />
-                                    </div>
-                                    <span class="ml-2">Automatic</span>
-                                </div>
-                                <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                    <div class="borderColor">
-                                        <img src="images/icon/door-icon.svg" class="img-fluid" />
-                                    </div>
-                                    <span class="ml-2">2-4</span>
-                                </div>
-                                <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                    <div class="borderColor">
-                                        <i class="fa fa-bus" aria-hidden="true"></i>
-                                    </div>
-                                    <span class="ml-2">Shuttle </span>
-                                </div>
-                                <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                    <div class="borderColor">
-                                        <img src="images/icon/ac-icon.svg" class="img-fluid" />
-                                    </div>
-                                    <span class="ml-2">AirCon</span>
-                                </div>
-                                <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                    <div class="borderColor">
-                                        <img src="images/icon/fuel-icon.svg" class="img-fluid" />
-                                    </div>
-                                    <span class="ml-2">Fair Fuel Policy</span>
-                                </div>
-
-                            </div>
-
-                            <div class="travelBtn mt-4">
-                                <a href="#" class="hvr-sweep-to-right">BOOK NOW 154,93 <i class="fa fa-inr" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 border-top pt-3 mt-3 pr-0 pl-0 productDetails">
-                        <div class="d-flex flex-wrap justify-content-between align-items-center">
-                            <div class="col-6 col-md-6 order-md-0">
-                                <div class="carLogo">
-                                    <img class="img-fluid mt-auto mb-auto" src="\images/giift-logo.svg" alt="Logo">
-                                </div>
-                            </div>
-                            <div class="col-6 col-md-6 mt-2 mt-md-0 order-md-1 text-right">
-                                <div class="vehicleLocation">
-                                    <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Vehicle location:</a>
-                                    <span>Dubai, 2128</span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-12 mt-4">
-                                <div class="row">
-                                    <div class="col-6 col-md-4 pb-2">
-                                        <div class="cardDetails">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                            <p>Unlimited Mileage</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 pb-2">
-                                        <div class="cardDetails">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                            <p>Stay Safe Initiative</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 pb-2">
-                                        <div class="cardDetails">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                            <p>Other taxes and service charges</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 pb-2">
-                                        <div class="cardDetails">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                            <p>Collision damage waiver</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 pb-2">
-                                        <div class="cardDetails">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                            <p>Theft protection</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4 pb-2">
-                                        <div class="cardDetails">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                            <p>Unlimited Travel</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>--%>
             </div>
         </div>
     </div>

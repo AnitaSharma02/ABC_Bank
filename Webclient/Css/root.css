@@ -472,7 +472,7 @@
     --modal-b-radius: var(--b-radius);
 
     /*modal-header*/
-    --modal-header-padding: 0.75rem 1rem;
+    --modal-header-padding: 1rem 1rem;
     --modal-header-bg-colour: var(--colour5);
     --modal-header-align-items: center;
     --modal-header-border-bottom: none;
@@ -488,6 +488,7 @@
 
     /*modal close button*/
     --modal-close-btn-opacity: 1;
+    --modal-close-btn-fontsize: 1rem;
     --modal-close-icon-bg: transparent;
     --modal-close-icon-text-colour: var(--colour1);
     --modal-close-icon-fontsize: 1rem;

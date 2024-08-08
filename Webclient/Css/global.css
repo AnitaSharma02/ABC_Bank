@@ -1853,6 +1853,7 @@ select.form-control:focus {
 .dvCommonModal.modal .modal-header .close {
     opacity: var(--modal-close-btn-opacity);
     color: var(--modal-close-icon-text-colour);
+    font-size:var(--modal-close-btn-fontsize);
 }
 .dvCommonModal.modal .modal-header .close i {
     background-color: var(--modal-close-icon-bg);
