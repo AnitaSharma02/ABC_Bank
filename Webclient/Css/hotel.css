@@ -156,6 +156,13 @@
 /*=========[ HOTELBOOKINGDETAILS PAGE ]=========*/
 
 
+.dvHotelSearch .dvInput.input-group .form-control[readonly],
+.dvHotelResult .dvInput.input-group .form-control[readonly],
+.dvHotelSearch .dvInputGroup.input-group .form-control[readonly],
+.dvHotelResult .dvInputGroup.input-group .form-control[readonly] {
+    background-color: var(--colour6);
+    cursor: default;
+}
 
 /*=========[ MEDIA QUERIES ]=========*/
 @media (min-width: 576px) {

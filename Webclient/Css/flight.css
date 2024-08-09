@@ -42,7 +42,12 @@
 }
 .dvFlightSearchProducts .dvProductList .product-text {
     min-height: 120px;
-} 
+}
+.dvFlightSearch .dvInput.input-group .form-control[readonly],
+.dvFlightSearch .dvInputGroup.input-group .form-control[readonly] {
+    background: var(--colour6);
+    cursor: default;
+}
 /*Flight Search DropDown css*/
 
 /*flightsearch international and domestic errors*/
@@ -53,12 +58,6 @@
     color: var(--colour1);
 }
 /*flightsearch international and domestic errors*/
-
-
-.dvFlightSearch .dvInput.input-group .form-control[readonly], .dvFlightList .dvInput.input-group .form-control[readonly],
-.dvFlightSearch .dvInputGroup.input-group .form-control[readonly], .dvFlightList .dvInputGroup.input-group .form-control[readonly] {
-    background-color: var(--colour6);
-}
 
 /*=========[ FLIGHTSEARCH ]=========*/
 
@@ -146,6 +145,15 @@
     border: 1px solid var(--colour1) !important;
 }
 /*=========[ FLIGHTLIST DOMESTIC ]=========*/
+
+
+.dvFlightSearch .dvInput.input-group .form-control[readonly],
+.dvFlightList .dvInput.input-group .form-control[readonly],
+.dvFlightSearch .dvInputGroup.input-group .form-control[readonly],
+.dvFlightList .dvInputGroup.input-group .form-control[readonly] {
+    background-color: var(--colour6);
+    cursor: default;
+}
 
 /*=========[ MEDIA QUERIES ]=========*/
 @media (min-width: 576px) {
