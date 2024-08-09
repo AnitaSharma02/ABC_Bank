@@ -4,6 +4,7 @@ body {
     color: var(--body-text-colour);
     font-size: var(--body-font-size);
     background-color: var(--body-bg-colour);
+    overflow-x: hidden;
 }
 /*=========[ BODY ]=========*/
 
@@ -19,7 +20,6 @@ a {
     }
 
 .link1 {
-    font-family: var(--link1-family);
     color: var(--link1-text-colour);
     background-color: var(--link1-bg-colour);
     text-decoration: var(--link1-text-decoration);
@@ -31,21 +31,6 @@ a {
         background-color: var(--link1-bg-colour-hover);
         text-decoration: var(--link1-text-decoration-hover);
         display: var(--link1-display-hover);
-    }
-
-.link2 {
-    font-family: var(--link2-family);
-    color: var(--link2-text-colour);
-    background-color: var(--link2-bg-colour);
-    text-decoration: var(--link2-text-decoration);
-    display: var(--link2-display);
-}
-
-    .link2:hover {
-        color: var(--link2-text-colour-hover);
-        background-color: var(--link2-bg-colour-hover);
-        text-decoration: var(--link2-text-decoration-hover);
-        display: var(--link2-display-hover);
     }
 
 h1,
@@ -216,47 +201,7 @@ p {
             text-decoration: underline;
         }
 /******** alert important ********/
-
-/******** alert-danger ********/
-.alert {
-    position: relative;
-    padding: .75rem 1.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: var(--b-radius);
-}
-
-    .alert.alert-danger {
-        color: #000;
-        background-color: #fce7e7;
-        border-color: #e84040;
-    }
-
-        .alert.alert-danger i {
-            color: #e84040;
-        }
-/******** alert-danger ********/
-
 /*=========[ ALERTS ]=========*/
-
-/*=========[ ALERT INFO ]=========*/
-
-.dvGreenBox {
-    background: var(--colour13);
-    border: 1px solid var(--colour11);
-}
-
-.dvBlueBox {
-    background: var(--colour14);
-    border: 1px solid var(--colour1);
-}
-
-.dvRedBox {
-    background: var(--colour15);
-    border: 1px solid var(--colour12);
-}
-
-/*=========[ ALERT INFO ]=========*/
 
 /*=========[ BADGES ]=========*/
 .badge {
@@ -278,7 +223,6 @@ p {
     font-size: var(--label-fontsize);
     color: var(--label-text-colour);
     margin-bottom: var(--label-margin-bottom);
-    /*display:inline;*/
 }
 /*=========[ LABEL ]=========*/
 
@@ -354,26 +298,6 @@ p {
         background-color: var(--colour1);
     }
 /*=========[ DROPDOWN ]=========*/
-
-
-/*=========[ DROPDOWN WITH FILTER ]=========*/
-.dvDropDownFilter .dropdown-menu {
-    display: none;
-    position: absolute;
-    z-index: 1000;
-    width: 100%;
-}
-
-.dvDropDownFilter.show .dropdown-menu {
-    display: block;
-}
-
-.dvDropDownFilter .card-header h2 button {
-    border: none;
-    padding: 0 1rem;
-}
-/*=========[ DROPDOWN WITH FILTER ]=========*/
-
 
 /*=========[ GROUP HEADINGS ]=========*/
 .heading1 {
@@ -675,97 +599,67 @@ p {
 /*=========[ MAIN LOADER ]=========*/
 
 /*=========[ HEADER ]=========*/
-.dvLanguage .dvSelectMenu select.form-control,
-.dvLanguage .dvSelectMenu select.form-select:focus,
-.dvLanguage .dvSelectMenu select.form-control:focus {
-    color: var(--colour6);
+.dvHeader .logo img {
+    width: 140px;
 }
-
-    .dvLanguage .dvSelectMenu select.form-control option {
-        color: var(--colour7);
-    }
 
 .dvStripe {
-    background-color: var(--colour3);
+    background-color: var(--bg-colour5);
     padding: 0.2rem 0;
 }
-
-.dvHeader {
-    z-index: 1001;
+/*.dvHeader {z-index:1;}*/
+.dvHeader .navbar-nav .nav-item.active a {
+    color: var(--primary-colour);
+    /*border-top: 1px solid var(--primary-colour);*/
 }
 
-    .dvHeader .logo img {
-        width: 100px;
-    }
-
-    .dvHeader .navbar-nav .navbar-toggler {
-        border: 0px !important;
-    }
-
-    .dvHeader .navbar-nav .navbar-toggler-icon {
-        background-image: url("../Images/icons/Hamburger.svg");
-    }
-
-    .dvHeader .navbar-nav .nav-item.active a {
-        color: var(--colour7);
-        border-top: 1px solid var(--primary-colour);
-    }
-
-    .dvHeader .navbar-nav .nav-item a {
-        color: var(--colour6);
-        font-size: 1rem;
-        white-space: nowrap;
-    }
-
-        .dvHeader .navbar-nav .nav-item a:hover {
-            color: var(--colour6);
-        }
-
-    .dvHeader .navbar-nav .nav-item.dropdown .dropdown-menu a:hover {
-        background-color: var(--colour1);
-        color: #fff;
-    }
-
-.dvLogoutDropdown .dropdown-toggle::after {
-    color: var(--colour6);
-}
-
-.dvLogoutDropdown .dropdown-item:focus, .dvLogoutDropdown .dropdown-item:hover {
-    color: var(--colour6);
-    text-decoration: none;
-    background-color: var(--colour1);
-}
-
-.dvLogoutDropdown .dropdown-menu {
-    padding: 0;
-}
-
-.dvLogoutDropdown.btn-group > .btn-group:not(:first-child) > .btn, .dvLogoutDropdown.btn-group > .btn:not(:first-child) {
-    border-radius: var(--b-radius) !important;
-}
-
-/*=========[ HEADER ]=========*/
-/*=========[ FOOTER ]=========*/
-.dvFooter .dvLinks a {
-    padding: 0 0.2rem;
-    color: var(--colour6);
+.dvHeader .navbar-nav .nav-item a {
+    color: var(--text-colour7);
+    padding: 0 1rem;
     font-size: 1rem;
-    font-family: var(--font-regular);
-    text-transform: capitalize;
-    vertical-align: middle;
+    font-family: var(--font-semibold);
+    text-transform: uppercase;
 }
 
-.dvFooter .footer-logo {
-    width: 150px;
+    .dvHeader .navbar-nav .nav-item a:hover {
+        color: var(--text-colour1);
+    }
+
+.dvHeader .navbar-nav .nav-item.dropdown .dropdown-menu a:hover {
+    background-color: var(--text-colour1);
+    color: #fff;
 }
 
-.dvFooter .border-thin {
-    border-top: 1px solid #303030;
+/*.dvHeader .nav-link {
+    padding: .75rem 1rem;
+}*/
+/*=========[ HEADER ]=========*/
+
+/*=========[ FOOTER ]=========*/
+.dvBgRedColor {
+    background-color: var(--bg-colour1);
 }
 
-.dvAddress p {
-    color: var(--colour6);
+.dvFooter {
+    background-color: var(--bg-section);
 }
+
+    .dvFooter .dvLinks a {
+        padding: 0 0.2rem;
+        color: var(--text-colour5);
+        font-size: 1rem;
+        font-family: var(--font-semibold);
+        text-transform: uppercase;
+        vertical-align: middle;
+    }
+
+    .dvFooter .footer-logo {
+        width: 150px;
+    }
+
+    .dvFooter .border-thin {
+        border-top: 1px solid #303030;
+    }
 /*=========[ FOOTER ]=========*/
 
 /*=========[ Flight Search ]=========*/
@@ -781,9 +675,18 @@ p {
 /*=========[ Login Forms ]=========*/
 .dvLoginBoxbg .innerBox {
     /*overflow: hidden;*/
-    background: var(--colour6);
-    border: none;
+    /*background: var(--colour2);*/
+    border: 1px solid var(--border-colour);
     border-radius: var(--b-radius) !important;
+}
+
+/*.dvLogin a {
+    border: 1px solid #fff;
+    border-radius: 5px;
+}*/
+
+.dvImageContainer {
+    gap: 10px;
 }
 /*=========[ Login Forms ]=========*/
 
@@ -941,13 +844,85 @@ p {
     height: auto;
 }
 
-.dvThumbSwiperSlider .dvThumbBannerSlide .img-container {
-    padding-bottom: 60%;
+.dvThumbSwiperSlider .mySwiper2 .img-container {
+    padding-bottom: 100%;
 }
 
-.dvThumbSwiperSlider .dvThumbSlide .img-container {
-    padding-bottom: 15%;
+.dvThumbSwiperSlider .mySwiper .img-container {
+    padding-bottom: 25%;
+    margin-top: 15px;
 }
+/*=========[ SWIPER THUMBSLIDER ]=========*/
+/*=========[ SWIPER THUMBSLIDER ]=========*/
+/*.dvThumbSwiperSlider .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.dvThumbSwiperSlider .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.dvThumbSwiperSlider .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dvThumbSwiperSlider .swiper {
+  width: 100%;*/
+/*height: 300px;*/
+/*margin-left: auto;
+  margin-right: auto;
+}
+
+.dvThumbSwiperSlider .mySwiper2 {*/
+/*height: 50%;*/
+/*height: auto;
+  width: 100%;
+}
+
+.dvThumbSwiperSlider .mySwiper {*/
+/*height: 12%;*/
+/*height: auto;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.dvThumbSwiperSlider .mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.dvThumbSwiperSlider .mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}*/
+/* adjust arrows right & left */
+/*.dvThumbSwiperSlider .swiper-button-prev,
+.dvThumbSwiperSlider .swiper-rtl .swiper-button-next {
+  left: var(--swiper-navigation-sides-offset, 10px);
+  right: auto;
+}
+
+.dvThumbSwiperSlider .swiper-button-next,
+.dvThumbSwiperSlider .swiper-rtl .swiper-button-prev {
+  right: var(--swiper-navigation-sides-offset, 10px);
+  left: auto;
+}*/
+/* adjust arrows width size */
+/*.dvThumbSwiperSlider .swiper-button-prev img,
+.dvThumbSwiperSlider .swiper-button-next img {
+  width: 25px;
+}*/
 /*=========[ SWIPER THUMBSLIDER ]=========*/
 
 /*=========[ BOOTSTRAP PAGINATION ]=========*/
@@ -1143,14 +1118,14 @@ p {
 
 /*=========[ BORDER SEPARATOR ]=========*/
 .dvBorderBottom .border-bottom {
-    border-bottom: 1px solid var(--colour3) !important;
+    border-bottom: 1px solid var(--border-bottom-colour) !important;
 }
 /*=========[ BORDER SEPARATOR ]=========*/
 
 /*=========[ COMMON ACCORDION ]=========*/
 /* accordion parent border */
 .dvCommonAccordion.accordion {
-    border: 1px solid var(--accordion-border);
+    /*border: 1px solid var(--accordion-border);*/
 }
     /* accordion card border */
     .dvCommonAccordion.accordion .card {
@@ -1175,14 +1150,14 @@ p {
         .dvCommonAccordion.accordion .card-header button {
             background-color: var(--accordion-header-bg);
             color: var(--accordion-header-text);
-            border: 1px solid var(--accordion-header-border);
+            border: unset;
             border-radius: var(--accordion-header-b-radius);
             font-family: var(--accordion-header-family);
         }
             /* card-header > button when it is not collapsed. */
             .dvCommonAccordion.accordion .card-header button:not(.collapsed) {
                 background: var(--accordion-header-active-bg);
-                border: 1px solid var(--accordion-header-active-border);
+                border: unset;
                 border-radius: var(--accordion-header-active-b-radius);
                 font-family: var(--accordion-header-family);
             }
@@ -1259,12 +1234,8 @@ p {
         background-color: var(--breadcrumb-anchor-bg);
         color: var(--breadcrumb-anchor-text-colour);
     }
-    /*.dvBreadcrumbs .breadcrumb li.active {
-  background-color: var(--breadcrumb-anchor-bg-active);
-  color: var(--breadcrumb-anchor-text-colour-active);
-}*/
-    .dvBreadcrumbs .breadcrumb:last-child li,
-    .dvBreadcrumbs .breadcrumb li:last-child a {
+
+    .dvBreadcrumbs .breadcrumb:last-child li, .dvBreadcrumbs .breadcrumb li:last-child a {
         background-color: var(--breadcrumb-anchor-bg-active);
         color: var(--breadcrumb-anchor-text-colour-active);
     }
@@ -1365,7 +1336,7 @@ li li.show > .dropdown-toggle:after {
     .dvLabel .radio-container {
         display: block;
         position: relative;
-        padding-left: 25px;
+        padding-left: 10px;
         cursor: pointer;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -1383,7 +1354,7 @@ li li.show > .dropdown-toggle:after {
     /* Create a custom radio button */
     .dvLabel .radiomark {
         position: absolute;
-        top: 4px;
+        top: 2px;
         left: 0;
         height: 14px;
         width: 14px;
@@ -1422,64 +1393,82 @@ li li.show > .dropdown-toggle:after {
     }
 /*=========[ RADIO ]=========*/
 
-/*=========[ TEXTAREA ]=========*/
-textarea {
-    resize: none;
-}
-/*=========[ TEXTAREA ]=========*/
-
 /*=========[ FORM CONTROL ]=========*/
 /* FORM CONTROL PLACEHOLDER START */
-.form-control::placeholder {
+.dvInput.input-group .form-control::-webkit-input-placeholder,
+.dvInputGroup.input-group .form-control::-webkit-input-placeholder {
     font-size: var(--placeholder-font-size);
     color: var(--placeholder-text-colour);
 }
 
-.form-control::-webkit-input-placeholder {
+.dvInput.input-group .form-control::-moz-placeholder,
+.dvInputGroup.input-group .form-control::-moz-placeholder {
     font-size: var(--placeholder-font-size);
     color: var(--placeholder-text-colour);
 }
 
-.form-control::-moz-placeholder {
+.dvInput.input-group .form-control:-ms-input-placeholder,
+.dvInputGroup.input-group .form-control:-ms-input-placeholder {
     font-size: var(--placeholder-font-size);
     color: var(--placeholder-text-colour);
 }
 
-.form-control:-ms-input-placeholder {
-    font-size: var(--placeholder-font-size);
-    color: var(--placeholder-text-colour);
-}
-
-.form-control:-moz-placeholder {
+.dvInput.input-group .form-control:-moz-placeholder,
+.dvInputGroup.input-group .form-control:-moz-placeholder {
     font-size: var(--placeholder-font-size);
     color: var(--placeholder-text-colour);
 }
 /* FORM CONTROL PLACEHOLDER END */
 
+/* FORM CONTROL DISABLED & READONLY START */
+.dvInput.input-group .form-control:disabled::-webkit-input-placeholder,
+.dvInputGroup.input-group .form-control[readonly]::-webkit-input-placeholder {
+    font-size: var(--placeholder-disabled-font-size);
+    color: var(--placeholder-disabled-text-colour);
+}
 
-/* FORM CONTROL DISABLED & READONLY PLACEHOLDER START */
-.form-control:disabled {
+.dvInput.input-group .form-control:disabled::-moz-placeholder,
+.dvInputGroup.input-group .form-control[readonly]::-moz-placeholder {
+    font-size: var(--placeholder-disabled-font-size);
+    color: var(--placeholder-disabled-text-colour);
+}
+
+.dvInput.input-group .form-control:disabled:-ms-input-placeholder,
+.dvInputGroup.input-group .form-control[readonly]:-ms-input-placeholder {
+    font-size: var(--placeholder-disabled-font-size);
+    color: var(--placeholder-disabled-text-colour);
+}
+
+.dvInput.input-group .form-control:disabled:-moz-placeholder,
+.dvInputGroup.input-group .form-control[readonly]:-moz-placeholder {
+    font-size: var(--placeholder-disabled-font-size);
+    color: var(--placeholder-disabled-text-colour);
+}
+
+.dvInput.input-group .form-control:disabled,
+.dvInputGroup.input-group .form-control:disabled {
     background-color: var(--placeholder-disabled-bg-colour);
     opacity: var(--placeholder-disabled-opacity);
     cursor: var(--placeholder-disabled-cursor);
 }
 
-.form-control[readonly] {
+.dvInput.input-group .form-control[readonly],
+.dvInputGroup.input-group .form-control[readonly] {
     background-color: var(--placeholder-readonly-bg-colour);
     opacity: var(--placeholder-readonly-opacity);
     cursor: var(--placeholder-readonly-cursor);
 }
-/* FORM CONTROL DISABLED & READONLY PLACEHOLDER END */
+/* FORM CONTROL DISABLED & READONLY START */
 
-
-/* FORM-CONTROL & FORM-SELECT FOCUS START */
-.form-select:focus,
-.form-control:focus {
+/* FORM CONTROL FOCUS START */
+.dvInput.input-group .form-select:focus,
+.dvInputGroup.input-group .form-select:focus,
+.dvInput.input-group .form-control:focus,
+.dvInputGroup.input-group .form-control:focus {
     box-shadow: none;
     border-color: var(--border-colour);
 }
-/* FORM-CONTROL & FORM-SELECT FOCUS END */
-
+/* FORM CONTROL FOCUS END */
 
 /* FORM-CONTROL WITHOUT ICON START */
 .dvInput.input-group .form-control {
@@ -1496,7 +1485,6 @@ textarea {
     background-color: var(--fc-bg-colour);
 }
 /* FORM-CONTROL WITHOUT ICON END */
-
 
 /* FORM-CONTROL WITH ICON START */
 .dvInputGroup.input-group .form-control {
@@ -1527,11 +1515,7 @@ textarea {
 }
 /* FORM-CONTROL WITH ICON END */
 
-
 /* SELECT WITH FORM-CONTROL START */
-.dvSelectMenu select.form-control,
-.dvSelectMenu select.form-select:focus,
-.dvSelectMenu select.form-control:focus,
 select.form-control,
 select.form-select:focus,
 select.form-control:focus {
@@ -1551,97 +1535,6 @@ select.form-control:focus {
 /* SELECT WITH FORM-CONTROL END */
 /*=========[ FORM CONTROL ]=========*/
 
-
-/*=========[ CUSTOM SELECT ]=========*/
-.dvSelectMenu {
-    position: relative;
-    width: 100%;
-}
-
-    .dvSelectMenu .form-control {
-        color: var(--fc-text-colour);
-        font-size: var(--fc-font-size);
-        border-top: var(--fc-border-top);
-        border-right: var(--fc-border-right);
-        border-bottom: var(--fc-border-bottom);
-        border-left: var(--fc-border-left);
-        border-top-left-radius: var(--fc-radius-top-left) !important;
-        border-bottom-left-radius: var(--fc-radius-bottom-left) !important;
-        border-top-right-radius: var(--fc-radius-top-right) !important;
-        border-bottom-right-radius: var(--fc-radius-bottom-right) !important;
-        background-color: var(--fc-bg-colour);
-    }
-
-    .dvSelectMenu .dvSelectedValue {
-        display: flex;
-        align-items: center;
-        /* background: red; */
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        background: #fff;
-    }
-
-        .dvSelectMenu .dvSelectedValue:after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: 15px;
-            width: 6px;
-            height: 6px;
-            transform: translateY(-50%) rotate(45deg);
-            border-right: 2px solid #666;
-            border-bottom: 2px solid #666;
-            transition: 0.2s ease;
-        }
-
-        .dvSelectMenu .dvSelectedValue.toggle {
-            border-radius: var(--b-radius) var(--b-radius) 0 0;
-        }
-
-            .dvSelectMenu .dvSelectedValue.toggle:after {
-                transform: translateY(-50%) rotate(-135deg);
-            }
-
-    .dvSelectMenu .dvSelectDropdown {
-        position: absolute;
-        top: 100%;
-        width: 100%;
-        border-radius: 0 0 var(--b-radius) var(--b-radius);
-        overflow-x: hidden;
-        max-height: 150px;
-        /* background: green; */
-        z-index: 2 !important;
-        background: #fff;
-        transform: scale(1, 0);
-        transform-origin: top center;
-        visibility: hidden;
-        transition: 0.2s ease;
-        /* box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); */
-        border: 1px solid #ddd;
-        left: 0;
-        font-size: var(--fc-font-size);
-    }
-
-        .dvSelectMenu .dvSelectDropdown .option {
-            padding: 7px 10px;
-            box-sizing: border-box;
-            cursor: pointer;
-        }
-
-            .dvSelectMenu .dvSelectDropdown .option:hover {
-                background: #f8f8f8;
-            }
-
-        .dvSelectMenu .dvSelectDropdown.toggle {
-            visibility: visible;
-            transform: scale(1, 1);
-        }
-/*=========[ CUSTOM SELECT ]=========*/
-
-
 /*=========[ PLUS MINUS BUTTONS ]=========*/
 .dvPlusMinus .minusBtn,
 .dvPlusMinus .plusBtn {
@@ -1658,7 +1551,6 @@ select.form-control:focus {
     cursor: pointer;
 }
 /*=========[ PLUS MINUS BUTTONS ]=========*/
-
 
 /*=========[ BOOTSTRAP TOOLTIP ]=========*/
 /* Custom CSS for the tooltip */
@@ -1847,7 +1739,7 @@ select.form-control:focus {
     /* wrapper border */
     .dvRangeSlider .ui-widget.ui-widget-content {
         border: 0;
-        background-color: var(--colour7);
+        background-color: var(--colour3);
     }
     /* handle */
     .dvRangeSlider .ui-state-default,
@@ -2015,12 +1907,15 @@ select.form-control:focus {
 }
 
     .dvCommonModal.modal .modal-header .modal-title {
+        font-family: var(--modal-title-font-family);
         color: var(--modal-title-text-colour);
         font-size: var(--modal-title-fontsize);
     }
 
     .dvCommonModal.modal .modal-header .close {
         opacity: var(--modal-close-btn-opacity);
+        color: var(--modal-close-icon-text-colour);
+        font-size: var(--modal-close-btn-fontsize);
     }
 
         .dvCommonModal.modal .modal-header .close i {
@@ -2041,6 +1936,18 @@ select.form-control:focus {
 }
 /*=========[ PRODUCT CARD MODAL ]=========*/
 
+/*=========[ REDEEM MODAL ]=========*/
+
+/*=========[ REDEEM MODAL ]=========*/
+
+/*=========[ SUCCESS MODAL ]=========*/
+
+/*=========[ SUCCESS MODAL ]=========*/
+
+/*=========[ ACCOUNT EDIT MODAL ]=========*/
+
+/*=========[ ACCOUNT EDIT MODAL ]=========*/
+
 /*==[ -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- FILTER MOBILE -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- ]==*/
 /*=========[ FILTER ACCORDION MOBILE ]=========*/
 .dvFilter.modal .accordion {
@@ -2052,6 +1959,7 @@ select.form-control:focus {
     }
 
     .dvFilter.modal .accordion .card-header {
+        background-color: var(--filter-mobile-accordion-background);
         border-bottom: var(--filter-mobile-accordion-card-header-border-bottom);
         padding: var(--filter-mobile-accordion-card-header-padding);
     }
@@ -2096,6 +2004,12 @@ select.form-control:focus {
         .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-thumb {
             background: var(--filter-mobile-accordion-scrollbar-thumb-bg);
         }
+
+.dvFilter.modal .modal-header .close i {
+    background-color: var(--modal-close-icon-bg);
+    color: var(--modal-close-icon-text-colour);
+    font-size: var(--modal-close-icon-fontsize);
+}
 /*=========[ FILTER ACCORDION MOBILE ]=========*/
 
 /*=========[ FILTER MODAL MOBILE ]=========*/
@@ -2145,7 +2059,7 @@ select.form-control:focus {
 
 /*=========[ BG GRAY STRIPE ]=========*/
 .dvProductList .bg-lightgray {
-    background-color: var(--colour2);
+    background-color: var(--bg-colour5);
 }
 /*=========[ BG GRAY STRIPE ]=========*/
 
@@ -2154,103 +2068,159 @@ select.form-control:focus {
 .dvUtilityPage .img-container img {
     object-fit: contain;
 }
+
+.dvMilesExchangeDigital .img-container img, .dvGiftcardsDigital .img-container img {
+    object-fit: contain;
+}
+/*airtime productlist page*/
+.dvAirtimePage .img-container {
+    text-align: center;
+    height: auto;
+    /*padding-bottom: 0 !important;*/
+    padding: 2rem 0 2rem 0 !important;
+}
+
+    .dvAirtimePage .img-container img {
+        height: auto;
+        width: auto !important;
+        position: static;
+    }
+/*airtime productlist page*/
+
+/*airtime productdetail page*/
+/*.dvAirtimeDigital .dvThumbSwiperSlider .swiper-slide img {
+    object-fit: contain;
+}*/
+
+.dvAirtimeDigital .dvThumbSwiperSlider .swiper-slide.img-container {
+    text-align: center;
+    height: auto;
+    /*padding-bottom: 0 !important;*/
+    padding: 5rem 0 5rem 0 !important;
+}
+
+.dvAirtimeDigital .dvThumbSwiperSlider .swiper-slide img {
+    height: auto;
+    width: auto !important;
+    position: static;
+}
+/*airtime productdetail page*/
 /*=========[ DIFFERENT CLASS NAMES FOR DIFFERENT REDEMPTIONS ]=========*/
 
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
-.dvRedemptionMenu a {
-    display: block;
-    margin-bottom: 1rem;
+.dvRedemptionMenu a .imageBox {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 4px 5px -2px, rgba(0, 0, 0, 0.3) 0px 0px 13px -2px;
 }
 
-.dvRedemptionMenu p {
-    font-family: var(--font-semibold);
-    color: var(--colour7);
-}
-
-.dvRedemptionMenu .bg {
-    padding: 1rem;
-    background-color: transparent;
-    border-bottom: 5px solid transparent;
-    border-radius: 0.5rem;
-}
-
-    .dvRedemptionMenu .bg.active,
-    .dvRedemptionMenu .bg:hover {
-        background: var(--colour2);
-        border-bottom: 5px solid var(--colour1);
-        cursor: pointer;
+    .dvRedemptionMenu a .imageBox img {
+        width: 35px;
+        height: 35px;
     }
+
+.dvRedemptionMenu a:hover .imageBox {
+    background-color: var(--bg-colour1);
+}
+
+    .dvRedemptionMenu a:hover .imageBox img {
+        filter: brightness(0) invert(1);
+    }
+
+.dvRedemptionMenu a:hover p {
+    font-weight: bold;
+}
+
+.dvRedemptionMenu a p {
+    color: var(--text-colour7);
+    font-size: .75rem;
+    font-family: var(--font-regular);
+    padding: 5px 0;
+}
+/*active menu for flightsearch page*/
+.dvRedemptionMenu .SelRedemption .imageBox {
+    background-color: var(--bg-colour1);
+}
+
+    .dvRedemptionMenu .SelRedemption .imageBox img {
+        filter: brightness(0) invert(1);
+    }
+
+.dvRedemptionMenu .SelRedemption p {
+    font-weight: bold;
+}
+/*active menu for flightsearch page*/
+
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
 
 /*=========[ PRODUCT CARD ]=========*/
-.dvProductCard {
+.dvProductCard .dvItem {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--p-card-border-colour);
+    border-radius: var(--p-card-border-radius);
+    height: 100%;
+    padding: var(--p-card-padding);
+    background: var(--colour6)
 }
 
-    .dvProductCard .dvItem {
-        display: flex;
-        flex-direction: column;
-        border: 1px solid var(--p-card-border-colour);
-        border-radius: var(--p-card-border-radius);
-        height: 100%;
-        padding: var(--p-card-padding);
+.dvProductCard .anchor {
+    display: var(--p-card-anchor-display);
+    margin: var(--p-card-anchor-margin);
+}
+
+.dvProductCard .img-container {
+    border-radius: var(--p-card-img-container-border-radius);
+}
+
+    .dvProductCard .img-container img {
     }
 
-    .dvProductCard .anchor {
-        display: var(--p-card-anchor-display);
-        margin: var(--p-card-anchor-margin);
+.dvProductCard h2 {
+    font-family: var(--p-card-h2-family);
+    font-size: var(--p-card-h2-fontsize);
+    margin-top: 1rem;
+    color: var(--p-card-h2-text-colour);
+    padding: var(--p-card-h2-padding);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*.dvProductCard p{padding:1rem}*/
+.dvProductCard .points
+/*,.dvProductCard .points a */ {
+    font-family: var(--p-card-points-family);
+    color: var(--p-card-points-text-colour);
+    font-size: var(--p-card-points-fontsize);
+    border-radius: var(--b-radius);
+    padding: 0rem 1rem;
+    margin: 0.5rem 0;
+}
+
+.dvProductCard .button {
+    font-family: var(--p-card-button-family);
+    background-color: var(--p-card-button-bg);
+    color: var(--p-card-button-text-colour);
+    border: var(--p-card-button-border-colour);
+    text-transform: var(--p-card-button-text-transform);
+    border-radius: var(--p-card-button-border-radius);
+    padding: var(--p-card-button-padding);
+    margin-top: var(--p-card-button-margin-top);
+}
+
+    .dvProductCard .button:hover {
+        background-color: var(--p-card-button-bg-hover);
+        color: var(--p-card-button-text-colour-hover);
+        border: var(--p-card-button-border-colour-hover);
     }
 
-    .dvProductCard .img-container {
-        border-radius: var(--p-card-img-container-border-radius);
-    }
-
-        .dvProductCard .img-container img {
-        }
-
-    .dvProductCard h2 {
-        font-family: var(--p-card-h2-family);
-        font-size: var(--p-card-h2-fontsize);
-        margin: 1rem 0;
-        color: var(--p-card-h2-text-colour);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .dvProductCard .points,
-    .dvProductCard .points a {
-        font-family: var(--p-card-points-family);
-        background-color: var(--colour2);
-        color: var(--p-card-points-text-colour);
-        font-size: var(--p-card-points-fontsize);
-        border-radius: var(--b-radius);
-        padding: 0.25rem 0.5rem;
-        margin: auto 0 .5rem 0;
-    }
-
-    .dvProductCard .button {
-        font-family: var(--p-card-button-family);
-        background-color: var(--p-card-button-bg);
-        color: var(--p-card-button-text-colour);
-        border: var(--p-card-button-border-colour);
-        text-transform: var(--p-card-button-text-transform);
-        border-radius: var(--p-card-button-border-radius);
-        padding: var(--p-card-button-padding);
-        margin-top: var(--p-card-button-margin-top);
-    }
-
-        .dvProductCard .button:hover {
-            background-color: var(--p-card-button-bg-hover);
-            color: var(--p-card-button-text-colour-hover);
-            border: var(--p-card-button-border-colour-hover);
-        }
-
-    .dvProductCard .paragraph {
-        font-family: var(--paragraph-family);
-        color: var(--paragraph-colour);
-    }
+.dvProductCard .paragraph {
+    font-family: var(--paragraph-family);
+    color: var(--paragraph-colour);
+}
 /*=========[ PRODUCT CARD ]=========*/
-
 /*=========[ HOTEL PRODUCT CARD ]=========*/
 .dvHotelProductCard .dvItem {
     display: flex;
@@ -2328,31 +2298,16 @@ select.form-control:focus {
 /*=========[ HOTEL PRODUCT CARD ]=========*/
 
 /*=========[ STATIC CONTENT ]=========*/
-.dvStatic .dvStaticContent p {
+
+.dvStatic ol, .dvStatic ul {
+    margin: 0.5rem 1rem;
+}
+
+.dvStatic p {
     margin-bottom: 0.5rem;
 }
 
-.dvStatic .dvStaticContent ul, .dvStatic .dvStaticContent ol {
-    padding-left: 0;
-    list-style: none;
-}
-
-.dvStatic .pr-0 .bg-colour1 {
-    border-top-left-radius: var(--b-radius);
-}
-
-.dvStatic .pl-0 .bg-colour1 {
-    border-top-right-radius: var(--b-radius);
-}
 /*=========[ STATIC CONTENT ]=========*/
-
-
-/*=========[ PROGRESS BAR ]=========*/
-.progress {
-    height: .5rem;
-}
-/*=========[ PROGRESS BAR ]=========*/
-
 
 /*=========[ MEDIA QUERIES ]=========*/
 @media (min-width: 576px) {
@@ -2362,15 +2317,11 @@ select.form-control:focus {
 }
 
 @media (min-width: 768px) {
-    .dvStatic .dvStaticContent ul, .dvStatic .dvStaticContent ol {
-        padding-left: 1rem;
-        list-style: revert;
-    }
 }
 
 @media (min-width: 992px) {
-    .dvDropDownFilter:hover .dropdown-menu {
-        display: block !important;
+    .dvHeader .navbar-nav .nav-item a.border-bottom {
+        border-bottom: none !important;
     }
 
     .dvTabs .scroll-hoz {
