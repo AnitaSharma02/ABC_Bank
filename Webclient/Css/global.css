@@ -1393,82 +1393,64 @@ li li.show > .dropdown-toggle:after {
     }
 /*=========[ RADIO ]=========*/
 
+/*=========[ TEXTAREA ]=========*/
+textarea {
+    resize: none;
+}
+/*=========[ TEXTAREA ]=========*/
+
 /*=========[ FORM CONTROL ]=========*/
 /* FORM CONTROL PLACEHOLDER START */
-.dvInput.input-group .form-control::-webkit-input-placeholder,
-.dvInputGroup.input-group .form-control::-webkit-input-placeholder {
+.form-control::placeholder {
     font-size: var(--placeholder-font-size);
     color: var(--placeholder-text-colour);
 }
 
-.dvInput.input-group .form-control::-moz-placeholder,
-.dvInputGroup.input-group .form-control::-moz-placeholder {
+.form-control::-webkit-input-placeholder {
     font-size: var(--placeholder-font-size);
     color: var(--placeholder-text-colour);
 }
 
-.dvInput.input-group .form-control:-ms-input-placeholder,
-.dvInputGroup.input-group .form-control:-ms-input-placeholder {
+.form-control::-moz-placeholder {
     font-size: var(--placeholder-font-size);
     color: var(--placeholder-text-colour);
 }
 
-.dvInput.input-group .form-control:-moz-placeholder,
-.dvInputGroup.input-group .form-control:-moz-placeholder {
+.form-control:-ms-input-placeholder {
+    font-size: var(--placeholder-font-size);
+    color: var(--placeholder-text-colour);
+}
+
+.form-control:-moz-placeholder {
     font-size: var(--placeholder-font-size);
     color: var(--placeholder-text-colour);
 }
 /* FORM CONTROL PLACEHOLDER END */
 
-/* FORM CONTROL DISABLED & READONLY START */
-.dvInput.input-group .form-control:disabled::-webkit-input-placeholder,
-.dvInputGroup.input-group .form-control[readonly]::-webkit-input-placeholder {
-    font-size: var(--placeholder-disabled-font-size);
-    color: var(--placeholder-disabled-text-colour);
-}
 
-.dvInput.input-group .form-control:disabled::-moz-placeholder,
-.dvInputGroup.input-group .form-control[readonly]::-moz-placeholder {
-    font-size: var(--placeholder-disabled-font-size);
-    color: var(--placeholder-disabled-text-colour);
-}
-
-.dvInput.input-group .form-control:disabled:-ms-input-placeholder,
-.dvInputGroup.input-group .form-control[readonly]:-ms-input-placeholder {
-    font-size: var(--placeholder-disabled-font-size);
-    color: var(--placeholder-disabled-text-colour);
-}
-
-.dvInput.input-group .form-control:disabled:-moz-placeholder,
-.dvInputGroup.input-group .form-control[readonly]:-moz-placeholder {
-    font-size: var(--placeholder-disabled-font-size);
-    color: var(--placeholder-disabled-text-colour);
-}
-
-.dvInput.input-group .form-control:disabled,
-.dvInputGroup.input-group .form-control:disabled {
+/* FORM CONTROL DISABLED & READONLY PLACEHOLDER START */
+.form-control:disabled {
     background-color: var(--placeholder-disabled-bg-colour);
     opacity: var(--placeholder-disabled-opacity);
     cursor: var(--placeholder-disabled-cursor);
 }
 
-.dvInput.input-group .form-control[readonly],
-.dvInputGroup.input-group .form-control[readonly] {
+.form-control[readonly] {
     background-color: var(--placeholder-readonly-bg-colour);
     opacity: var(--placeholder-readonly-opacity);
     cursor: var(--placeholder-readonly-cursor);
 }
-/* FORM CONTROL DISABLED & READONLY START */
+/* FORM CONTROL DISABLED & READONLY PLACEHOLDER END */
 
-/* FORM CONTROL FOCUS START */
-.dvInput.input-group .form-select:focus,
-.dvInputGroup.input-group .form-select:focus,
-.dvInput.input-group .form-control:focus,
-.dvInputGroup.input-group .form-control:focus {
+
+/* FORM-CONTROL & FORM-SELECT FOCUS START */
+.form-select:focus,
+.form-control:focus {
     box-shadow: none;
     border-color: var(--border-colour);
 }
-/* FORM CONTROL FOCUS END */
+/* FORM-CONTROL & FORM-SELECT FOCUS END */
+
 
 /* FORM-CONTROL WITHOUT ICON START */
 .dvInput.input-group .form-control {
@@ -1485,6 +1467,7 @@ li li.show > .dropdown-toggle:after {
     background-color: var(--fc-bg-colour);
 }
 /* FORM-CONTROL WITHOUT ICON END */
+
 
 /* FORM-CONTROL WITH ICON START */
 .dvInputGroup.input-group .form-control {
@@ -1515,7 +1498,11 @@ li li.show > .dropdown-toggle:after {
 }
 /* FORM-CONTROL WITH ICON END */
 
+
 /* SELECT WITH FORM-CONTROL START */
+.dvSelectMenu select.form-control,
+.dvSelectMenu select.form-select:focus,
+.dvSelectMenu select.form-control:focus,
 select.form-control,
 select.form-select:focus,
 select.form-control:focus {
@@ -1534,6 +1521,96 @@ select.form-control:focus {
 }
 /* SELECT WITH FORM-CONTROL END */
 /*=========[ FORM CONTROL ]=========*/
+
+
+/*=========[ CUSTOM SELECT ]=========*/
+.dvSelectMenu {
+    position: relative;
+    width: 100%;
+}
+
+    .dvSelectMenu .form-control {
+        color: var(--fc-text-colour);
+        font-size: var(--fc-font-size);
+        border-top: var(--fc-border-top);
+        border-right: var(--fc-border-right);
+        border-bottom: var(--fc-border-bottom);
+        border-left: var(--fc-border-left);
+        border-top-left-radius: var(--fc-radius-top-left) !important;
+        border-bottom-left-radius: var(--fc-radius-bottom-left) !important;
+        border-top-right-radius: var(--fc-radius-top-right) !important;
+        border-bottom-right-radius: var(--fc-radius-bottom-right) !important;
+        background-color: var(--fc-bg-colour);
+    }
+
+    .dvSelectMenu .dvSelectedValue {
+        display: flex;
+        align-items: center;
+        /* background: red; */
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background: #fff;
+    }
+
+        .dvSelectMenu .dvSelectedValue:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            width: 6px;
+            height: 6px;
+            transform: translateY(-50%) rotate(45deg);
+            border-right: 2px solid #666;
+            border-bottom: 2px solid #666;
+            transition: 0.2s ease;
+        }
+
+        .dvSelectMenu .dvSelectedValue.toggle {
+            border-radius: var(--b-radius) var(--b-radius) 0 0;
+        }
+
+            .dvSelectMenu .dvSelectedValue.toggle:after {
+                transform: translateY(-50%) rotate(-135deg);
+            }
+
+    .dvSelectMenu .dvSelectDropdown {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        border-radius: 0 0 var(--b-radius) var(--b-radius);
+        overflow-x: hidden;
+        max-height: 150px;
+        /* background: green; */
+        z-index: 2 !important;
+        background: #fff;
+        transform: scale(1, 0);
+        transform-origin: top center;
+        visibility: hidden;
+        transition: 0.2s ease;
+        /* box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); */
+        border: 1px solid #ddd;
+        left: 0;
+        font-size: var(--fc-font-size);
+    }
+
+        .dvSelectMenu .dvSelectDropdown .option {
+            padding: 7px 10px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+            .dvSelectMenu .dvSelectDropdown .option:hover {
+                background: #f8f8f8;
+            }
+
+        .dvSelectMenu .dvSelectDropdown.toggle {
+            visibility: visible;
+            transform: scale(1, 1);
+        }
+/*=========[ CUSTOM SELECT ]=========*/
 
 /*=========[ PLUS MINUS BUTTONS ]=========*/
 .dvPlusMinus .minusBtn,
