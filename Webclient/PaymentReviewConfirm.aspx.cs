@@ -16,7 +16,6 @@ using Framework.Integrations.Hotels.Entities;
 using Giift.ShopGateway.Client.Entities;
 using GiiftPaymentGateway.Entities;
 using GiiftShopGateway.Model;
-using Holibob.Entities;
 using KhaltiInsurance.Entities;
 using KhaltiISP.Entities;
 using Newtonsoft.Json;

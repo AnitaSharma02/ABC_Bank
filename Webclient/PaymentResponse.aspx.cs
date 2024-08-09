@@ -16,7 +16,6 @@ using Framework.EnterpriseLibrary.Adapters;
 using Giift.ShopGateway.Client.Entities;
 using GiiftPaymentGateway.Entities;
 using GiiftShopGateway.Model;
-using Holibob.Entities;
 using KhaltiInsurance.Entities;
 using KhaltiISP.Entities;
 using Newtonsoft.Json;
@@ -36,6 +35,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CB.IBE.Platform.AirClientModel;
 
 public partial class PaymentResponse : System.Web.UI.Page
 {
@@ -90,7 +90,7 @@ public partial class PaymentResponse : System.Web.UI.Page
             Session["SearchDetails"] = lobjDict[11] as HotelSearchRequest;
             Session["HotelBookingPaymentDetails"] = lobjDict[12] as BookingPaymentDetails;
 
-            Session["ExperienceBookingDetails"] = lobjDict[13] as OrderStatusResponse;
+            //Session["ExperienceBookingDetails"] = lobjDict[13] as OrderStatusResponse;
 
             Session["InsuranceUserDetails"] = lobjDict[14] as InsuranceUserDetailsResponse;
 
@@ -200,276 +200,231 @@ public partial class PaymentResponse : System.Web.UI.Page
     private void BookPackage()
     {
         ABCModel lobjModel = new ABCModel();
-        MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
-        PGRequest pgRequest = null;
-        pgRequest = HttpContext.Current.Session["PGPaymentRequest"] as PGRequest;
-        string lstrProductName = string.Empty;
-        OrderStatusResponse lobjOrderStatusResponse = HttpContext.Current.Session["ExperienceBookingDetails"] as OrderStatusResponse;
-        OrderStatusRawData lobjOrderStatus = JsonConvert.DeserializeObject<OrderStatusRawData>(lobjOrderStatusResponse.data.getOrderStatus);
-
+        PGRequest pgRequest = HttpContext.Current.Session["PGPaymentRequest"] as PGRequest;
+        BeMyGuest.Entities.BookingRequest bookingRequest = HttpContext.Current.Session["ExperienceBookingRequest"] as BeMyGuest.Entities.BookingRequest;
         try
         {
-            string lstrResponse = string.Empty;
-            LoggingAdapter.WriteLog("Booking Experience Start");
-            LoggingAdapter.WriteLog((HttpContext.Current.Session["ExperienceBookingDetails"] != null).ToString());
-
-            PlaceOrderResponse lobjPlaceOrderResponse = null;
-            StripePaymentDetails lobjStripePaymentDetails = null;
-            PaymentGatewayDetails lobjTransactionDetails = null;
-            ShopModel lobjShopModel = new ShopModel();
-            lobjStripePaymentDetails = (StripePaymentDetails)HttpContext.Current.Session["StripePaymentDetails"];
-            PGDetails lobjPGDetails = null;
-            lobjPGDetails = lobjModel.GetPaymentStatusByOrderId(pgRequest.orderId);
-            if (lobjMemberDetails != null)
+            BeMyGuest.Entities.BookingResponse bookingResponse = lobjModel.ExperienceBooking(bookingRequest);
+            if (bookingResponse.success == 1)
             {
-                if (HttpContext.Current.Session["ExperienceBookingDetails"] != null)
-                {
-                    LoggingAdapter.WriteLog("Inside Book Experience");
-                    lobjModel.LogActivity(string.Format(ActivityConstants.BookPackage), ActivityType.PackageBooking);
-                    string lstrCurrency = lobjModel.GetDefaultCurrency();
-                    try
-                    {
-                        lstrProductName = lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault().Length > 150 ?
-                            lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault().Substring(0, 150)
-                            : lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault();
-                    }
-                    catch { }
+                HttpContext.Current.Session["PackageBookingId"] = bookingResponse.bookingData.uuid;
 
-                    ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
-                    var lintTotalPrice = lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.totalPrice.gross).FirstOrDefault();
-
-                    try
-                    {
-                        lobjPlaceOrderResponse = lobjModel.PlaceOrder(lobjOrderStatus.data.id);
-
-                        if (lobjPlaceOrderResponse != null && lobjPlaceOrderResponse.data != null && !string.IsNullOrEmpty(lobjPlaceOrderResponse.data.placeOrder))
-                        {
-                            PlaceOrder lobjPlaceOrder = JsonConvert.DeserializeObject<PlaceOrder>(lobjPlaceOrderResponse.data.placeOrder);
-                            if (lobjPlaceOrder.status.ToLower() == "success")
-                            {
-                                HttpContext.Current.Session["PackageBookingId"] = lobjOrderStatus.data.id;
-
-                                SendExperienceEmail();
-                                Response.Redirect("ExperienceProductStatus.aspx?Success=true", false);
-                                lstrResponse = "Success";
-                            }
-                            else
-                            {
-                                if (!string.IsNullOrEmpty(pgRequest.orderId) && lobjStripePaymentDetails.ReqRedeemPoint != "0")
-                                {
-                                    lobjModel.RollBackTransaction(pgRequest.orderId, lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, string.Format("{0} #{1}#{2}", lstrProductName, lobjOrderStatus.data.id, lobjOrderStatus.data.code));
-                                    lobjModel.InitiatePaymentRefund(pgRequest.orderId, Convert.ToDecimal(lobjPGDetails.data[0].orderAmount), "refund it please");
-                                }
-                                lstrResponse = "Failed";
-                                Response.Redirect("ExperienceProductStatus.aspx?Success=false", false);
-                            }
-                        }
-                        else
-                        {
-                            if (!string.IsNullOrEmpty(pgRequest.orderId) && lobjStripePaymentDetails.ReqRedeemPoint != "0")
-                            {
-                                lobjModel.RollBackTransaction(pgRequest.orderId, lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, string.Format("{0} #{1}#{2}", lstrProductName, lobjOrderStatus.data.id, lobjOrderStatus.data.code));
-                                lobjModel.InitiatePaymentRefund(pgRequest.orderId, Convert.ToDecimal(lobjPGDetails.data[0].orderAmount), "refund it please");
-                            }
-                            Response.Redirect("ExperienceProductStatus.aspx?Success=false", false);
-                            LoggingAdapter.WriteLog("BookExperience Response failed.");
-                            lstrResponse = "Failed";
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        lstrResponse = "Failed";
-                        lobjModel.RollBackTransaction(pgRequest.orderId, lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, string.Format("{0} #{1}#{2}", lstrProductName, lobjOrderStatus.data.id, lobjOrderStatus.data.code));
-                        LoggingAdapter.WriteLog("BookExperience Ex-: " + ex.StackTrace + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace);
-
-                    }
-
-                }
+                SendExperienceEmail(bookingRequest, bookingResponse);
+                Response.Redirect("ExperienceProductStatus.aspx?Success=true", false);
             }
-            lobjModel.LogActivity(string.Format(ActivityConstants.BookPackage) + "Status:" + lstrResponse + " - " + lobjPlaceOrderResponse, ActivityType.PackageBooking);
+            else
+            {
+                if (!string.IsNullOrEmpty(pgRequest.orderId) && bookingRequest.totalAmount != 0)
+                {
+                    lobjModel.RollBackTransaction(pgRequest.orderId, bookingRequest.memberId, bookingRequest.titleName);
+                    lobjModel.InitiatePaymentRefund(pgRequest.orderId, Convert.ToDecimal(bookingRequest.totalAmount), "refund it please");
+                }
+                Response.Redirect("ExperienceProductStatus.aspx?Success=false", false);
+            }
         }
         catch (Exception ex)
         {
-            lobjModel.RollBackTransaction(pgRequest.orderId, lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, string.Format("{0} #{1}#{2}", lstrProductName, lobjOrderStatus.data.id, lobjOrderStatus.data.code));
+            lobjModel.RollBackTransaction(pgRequest.orderId, bookingRequest.memberId, bookingRequest.titleName);
             LoggingAdapter.WriteLog("PaymentResponse BookPackage Ex-:" + ex.InnerException + ex.StackTrace + ex.Message);
         }
     }
 
-    private void SendExperienceEmail()
+    private void SendExperienceEmail(BeMyGuest.Entities.BookingRequest bookingRequest, BeMyGuest.Entities.BookingResponse bookingResponse)
     {
+        ABCModel lobjModel = new ABCModel();
         try
         {
-            MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
-            ABCModel lobjModel = new ABCModel();
-            PGRequest pgRequest = null;
-            pgRequest = HttpContext.Current.Session["PGPaymentRequest"] as PGRequest;
-            PGDetails lobjPGDetails = null;
-            lobjPGDetails = lobjModel.GetPaymentStatusByOrderId(pgRequest.orderId);
-            if (lobjMemberDetails != null)
+            ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+            if (!string.IsNullOrEmpty(bookingRequest.customer.email))
             {
-                string lstrBookId = Convert.ToString(HttpContext.Current.Session["PackageBookingId"]);
-                HttpContext.Current.Session["PackageBookingId"] = null;
-                string lstrOrderStatusResponse = GetOrderStatus(lstrBookId);
-                HolibobOrderStatus lobjOrderStatus = JsonConvert.DeserializeObject<HolibobOrderStatus>(lstrOrderStatusResponse);
-                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-                List<string> lstrEmailParameters = new List<string>
+                StringBuilder sbAdditionalInfoHtml = new StringBuilder();
+                if (bookingResponse.bookingData.options.Count > 0)
                 {
-                    lobjOrderStatus.data.code,//0
-                    textInfo.ToTitleCase(lobjOrderStatus.data.leadPassengerName.ToLower()),//1
-                    lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].product.name//2
-                };
-
-                StringBuilder lsbPersonListHtmlContent = new StringBuilder();
-                List<PersonListNode> llstobjPersonListNode = new List<PersonListNode>();
-                int m = 0;
-                for (int i = 0; i < lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].personList.nodes.Count; i++)
-                {
-                    PersonListNode lobjPersonListNode = new PersonListNode();
-                    if (llstobjPersonListNode.FindAll(x => x.pricingCategoryLabel.ToLower() == lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].personList.nodes[i].pricingCategoryLabel.ToLower()).Count == 0)
+                    int optionsItemIndex = 0;
+                    foreach (var optionsItem in bookingResponse.bookingData.options)
                     {
-                        m = 1;
-                        lobjPersonListNode.pricingCategoryLabel = lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].personList.nodes[i].pricingCategoryLabel;
-                        lobjPersonListNode.count = m;
-                        string lstrLabelName = string.Empty;
-                        for (var o = 0; o < lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].personList.nodes[i].questionList.nodes.Count; o++)
+                        if (optionsItemIndex % 2 == 0)
                         {
-                            lstrLabelName += lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].personList.nodes[i].questionList.nodes[o].label + ",";
-                        }
-                        lstrLabelName = lstrLabelName.TrimEnd(',');
-                        lobjPersonListNode.labelName = lstrLabelName;
-                        llstobjPersonListNode.Add(lobjPersonListNode);
-                    }
-                    else if (llstobjPersonListNode.FindAll(x => x.pricingCategoryLabel.ToLower() == lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].personList.nodes[i].pricingCategoryLabel.ToLower()).Count > 0)
-                    {
-                        llstobjPersonListNode.FindAll(x => x.pricingCategoryLabel.ToLower() == lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].personList.nodes[i].pricingCategoryLabel.ToLower())[0].count++;
-                    }
-                }
-                lsbPersonListHtmlContent.Append("<tr bgcolor=\"#FFFFFF\" width=\"100%\">");
-                lsbPersonListHtmlContent.Append("<td bgcolor=\"#FFFFFF\" style=\"font-family: Arial; font-size: 13px;\">");
-                for (int n = 0; n < llstobjPersonListNode.Count; n++)
-                {
-                    lsbPersonListHtmlContent.Append(llstobjPersonListNode[n].pricingCategoryLabel + ":" + Convert.ToString(llstobjPersonListNode[n].count));
-                }
-                lsbPersonListHtmlContent.Append("</td>");
-                lsbPersonListHtmlContent.Append("</tr>");
-                lsbPersonListHtmlContent.Append("<tr bgcolor=\"#FFFFFF\" width=\"100%\">");
-                lsbPersonListHtmlContent.Append("<td bgcolor=\"#FFFFFF\" style=\"font-family: Arial; font-size: 13px; font-weight: bold;\"> TOTAL " + lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].totalPrice.grossFormattedText + "</td>");
-                lsbPersonListHtmlContent.Append("</tr>");
-                lstrEmailParameters.Add(Convert.ToString(lsbPersonListHtmlContent));//3
-                StringBuilder lsbQuestionListHtmlContent = new StringBuilder();
-                lsbQuestionListHtmlContent.Append("<tbody>");
-                lsbQuestionListHtmlContent.Append("<tr>");
-                lsbQuestionListHtmlContent.Append("<td width=\"21%\" height=\"30\" style=\"font-family: Arial; font-size:13px;\">Activity Date:</td>");
-                lsbQuestionListHtmlContent.Append("<td width=\"79%\" height=\"30\" style=\"font-family:Arial; font-size:13px; font-weight: bold;\">" + Convert.ToDateTime(lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].date).ToString("dddd dd MMMM yyyy") + "</td>");
-                lsbQuestionListHtmlContent.Append("</tr>");
-                int p = 0;
-                for (int j = 0; j < lobjOrderStatus.data.questionList.Count; j++)
-                {
-                    if (lobjOrderStatus.data.questionList[j].properties.ToLower() == "bookingavailabilityquestions" || lobjOrderStatus.data.questionList[j].properties.ToLower() == "bookingquestions")
-                    {
-                        lsbQuestionListHtmlContent.Append("<tr>");
-                        if (lobjOrderStatus.data.questionList[j].dataType.ToLower() == "options")
-                        {
-                            foreach (var item in lobjOrderStatus.data.questionList[j].availableOptions)
+                            sbAdditionalInfoHtml.Append("<tr>");
+                            sbAdditionalInfoHtml.Append("<td width='20%' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                            sbAdditionalInfoHtml.Append("<strong>" + optionsItem.label + ":</strong></td>");
+                            sbAdditionalInfoHtml.Append("<td width='30%' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                            if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("datetime"))
                             {
-                                if (item.value.ToLower() == lobjOrderStatus.data.questionList[j].answerValue.ToLower())
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("dd/MM/yyyy HH:mm tt"));
+                            }
+                            else if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("time")
+                                && !optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("select")
+                                && !optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("date"))
+                            {
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("HH:mm tt"));
+                            }
+                            else if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("date"))
+                            {
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("dd/MM/yyyy"));
+                            }
+                            else if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Equals("freelunch"))
+                            {
+                                if (Convert.ToInt32(optionsItem.value) == 1)
                                 {
-                                    lsbQuestionListHtmlContent.Append("<td width=\"21%\" height=\"30\" style=\"font-family: Arial; font-size:13px;\">" + lobjOrderStatus.data.questionList[j].label + ":</td>");
-                                    lsbQuestionListHtmlContent.Append("<td width=\"79%\" height=\"30\" style=\"font-family:Arial; font-size:13px; font-weight: bold;\">" + item.label + "</td>");
+                                    sbAdditionalInfoHtml.Append("Yes");
+                                }
+                                else
+                                {
+                                    sbAdditionalInfoHtml.Append("No");
                                 }
                             }
+                            else
+                            {
+                                sbAdditionalInfoHtml.Append(optionsItem.value);
+                            }
+                            sbAdditionalInfoHtml.Append("</td>");
                         }
                         else
                         {
-                            lsbQuestionListHtmlContent.Append("<td width=\"21%\" height=\"30\" style=\"font-family: Arial; font-size:13px;\">" + lobjOrderStatus.data.questionList[j].label + ":</td>");
-                            lsbQuestionListHtmlContent.Append("<td width=\"79%\" height=\"30\" style=\"font-family:Arial; font-size:13px; font-weight: bold;\">" + lobjOrderStatus.data.questionList[j].answerValue + "</td>");
-                        }
-                    }
-                    else if (lobjOrderStatus.data.questionList[j].properties.ToLower() == "bookingpersonquestions")
-                    {
-                        if (lobjOrderStatus.data.questionList[j].pricingCategoryLabel != lobjOrderStatus.data.questionList[j - 1].pricingCategoryLabel)
-                        {
-                            p++;
-                            lsbQuestionListHtmlContent.Append("<tr><td colspan=\"2\" width=\"21%\" height=\"30\" style=\"font-family: Arial; font-size:13px;font-weight: bold;\">Participants " + p + ": " + lobjOrderStatus.data.questionList[j].pricingCategoryLabel + "</td></tr>");
-                        }
-                        else if (lobjOrderStatus.data.questionList[j].pricingCategoryLabel == lobjOrderStatus.data.questionList[j - 1].pricingCategoryLabel)
-                        {
-                            for (var q = 0; q < llstobjPersonListNode.Count; q++)
+                            sbAdditionalInfoHtml.Append("<td width='15%' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                            sbAdditionalInfoHtml.Append("<strong>" + optionsItem.label + ":</strong></td>");
+                            sbAdditionalInfoHtml.Append("<td width='30%' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                            if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("datetime"))
                             {
-                                if (llstobjPersonListNode[q].pricingCategoryLabel == lobjOrderStatus.data.questionList[j].pricingCategoryLabel)
-                                {
-                                    if (llstobjPersonListNode[q].labelName.Split(',')[0] == lobjOrderStatus.data.questionList[j].label)
-                                    {
-                                        p++;
-                                        lsbQuestionListHtmlContent.Append("<tr><td colspan=\"2\" width=\"21%\" height=\"30\" style=\"font-family: Arial; font-size:13px;font-weight: bold;\">Participants " + p + ": " + lobjOrderStatus.data.questionList[j].pricingCategoryLabel + "</td></tr>");
-                                    }
-                                }
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("dd/MM/yyyy HH:mm tt"));
                             }
+                            else if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("time")
+                                && !optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("select")
+                                && !optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("date"))
+                            {
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("HH:mm tt"));
+                            }
+                            else if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("date"))
+                            {
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("dd/MM/yyyy"));
+                            }
+                            else
+                            {
+                                sbAdditionalInfoHtml.Append(optionsItem.value);
+                            }
+                            sbAdditionalInfoHtml.Append("</td>");
+                            sbAdditionalInfoHtml.Append("</tr>");
                         }
-                        lsbQuestionListHtmlContent.Append("<tr>");
-                        lsbQuestionListHtmlContent.Append("<td width=\"21%\" height=\"30\" style=\"font-family: Arial; font-size:13px;\">" + lobjOrderStatus.data.questionList[j].label + ":</td>");
-                        lsbQuestionListHtmlContent.Append("<td width=\"79%\" height=\"30\" style=\"font-family:Arial; font-size:13px; font-weight: bold;\">" + lobjOrderStatus.data.questionList[j].answerValue + "</td>");
-                    }
-                }
-                lsbQuestionListHtmlContent.Append("</tbody>");
-                lstrEmailParameters.Add(Convert.ToString(lsbQuestionListHtmlContent));//4
-                StringBuilder lsbOptionListHtmlContent = new StringBuilder();
-                lsbOptionListHtmlContent.Append("<tbody>");
-                for (int l = 0; l < lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].optionList.nodes.Count; l++)
-                {
-                    lsbOptionListHtmlContent.Append("<tr>");
-                    lsbOptionListHtmlContent.Append("<td width=\"21%\" height=\"30\" style=\"font-family:Arial; font-size:13px;\">" + lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].optionList.nodes[l].label + ":</td>");
-                    lsbOptionListHtmlContent.Append("<td width=\"79 %\" height=\"30\" style=\"font-family:Arial; font-size: 13px; font-weight: bold;\">" + lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].optionList.nodes[l].answerFormattedText + "</td>");
-                    lsbOptionListHtmlContent.Append("</tr>");
-                }
-                lsbOptionListHtmlContent.Append("</tbody>");
-                lstrEmailParameters.Add(Convert.ToString(lsbOptionListHtmlContent));//5
-                StringBuilder lsbCancellationPolicyHtmlContent = new StringBuilder();
-                if (lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].product.cancellationPolicy.isCancellable)
-                {
-                    for (int k = 0; k < lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].product.cancellationPolicy.penaltyList.nodes.Count; k++)
-                    {
-                        lsbCancellationPolicyHtmlContent.Append("<p>• ");
-                        lsbCancellationPolicyHtmlContent.Append(lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].product.cancellationPolicy.penaltyList.nodes[k].formattedText + " <br/>"); ;
-                        lsbCancellationPolicyHtmlContent.Append("</p>");
+                        if (optionsItemIndex % 2 == 0 && bookingResponse.bookingData.options.Count == (optionsItemIndex + 1))
+                        {
+                            sbAdditionalInfoHtml.Append("<td width='45%' colspan='2' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'></td>");
+                            sbAdditionalInfoHtml.Append("</tr>");
+                        }
+                        optionsItemIndex++;
                     }
                 }
                 else
                 {
-                    lsbCancellationPolicyHtmlContent.Append("<p>No Cancellation Policy.</p>");
+                    sbAdditionalInfoHtml.Append("<tr>");
+                    sbAdditionalInfoHtml.Append("<td width='100%' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>No additional info available.</td>");
+                    sbAdditionalInfoHtml.Append("</tr>");
                 }
-                lstrEmailParameters.Add(Convert.ToString(lsbCancellationPolicyHtmlContent));//6
-
-                dynamic dynamicCls = new System.Dynamic.ExpandoObject();
-                dynamicCls.event_name = "Package_Booking";
-                dynamicCls.relation_reference = Convert.ToString(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
-                dynamicCls.program_id = Convert.ToInt32(lobjMemberDetails.ProgramId); ;
-                dynamicCls.to_email = lobjMemberDetails.Email;
-                dynamicCls.full_name = lobjMemberDetails.FullName;
-                dynamicCls.BookingRef = lobjOrderStatus.data.code;
-                dynamicCls.PassengerName = textInfo.ToTitleCase(lobjOrderStatus.data.leadPassengerName.ToLower());
-                dynamicCls.ProductName = lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].product.name;
-                dynamicCls.Personlistdetails = Convert.ToString(lsbPersonListHtmlContent);
-                dynamicCls.BookingDate = Convert.ToDateTime(lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].date).ToString("dddd dd MMMM yyyy");
-                dynamicCls.QuestionList = Convert.ToString(lsbQuestionListHtmlContent);
-                dynamicCls.OptionList = Convert.ToString(lsbOptionListHtmlContent);
-                dynamicCls.CancellationPolicy = Convert.ToString(lsbCancellationPolicyHtmlContent);
-                dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
-                dynamicCls.CreditsConsumed = lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes[0].totalPrice.grossFormattedText;
-                Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
-                IDictionary<string, object> dict = (IDictionary<string, object>)dynamicCls;
-                foreach (var key in dict)
+                StringBuilder sbPickup_MeetingPointInformationHtml = new StringBuilder();
+                if (!string.IsNullOrEmpty(bookingResponse.bookingData.meetingTime)
+                   || !string.IsNullOrEmpty(bookingResponse.bookingData.meetingAddress)
+                   || !string.IsNullOrEmpty(bookingResponse.bookingData.meetingLocation))
                 {
-                    lobjDictionary.Add(key.Key, key.Value);
+                    if (!string.IsNullOrEmpty(bookingResponse.bookingData.meetingTime))
+                    {
+                        sbPickup_MeetingPointInformationHtml.Append("<tr>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='115' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                        sbPickup_MeetingPointInformationHtml.Append("<strong>Time:</strong>");
+                        sbPickup_MeetingPointInformationHtml.Append("</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='613' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>" + bookingResponse.bookingData.meetingTime + "</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("</tr>");
+                    }
+                    if (!string.IsNullOrEmpty(bookingResponse.bookingData.meetingAddress))
+                    {
+                        sbPickup_MeetingPointInformationHtml.Append("<tr>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='115' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                        sbPickup_MeetingPointInformationHtml.Append("<strong>Address:</strong>");
+                        sbPickup_MeetingPointInformationHtml.Append("</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='613' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>" + bookingResponse.bookingData.meetingAddress + "</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("</tr>");
+                    }
+                    if (!string.IsNullOrEmpty(bookingResponse.bookingData.meetingLocation))
+                    {
+                        sbPickup_MeetingPointInformationHtml.Append("<tr>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='115' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                        sbPickup_MeetingPointInformationHtml.Append("<strong>Location:</strong>");
+                        sbPickup_MeetingPointInformationHtml.Append("</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='613' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>" + bookingResponse.bookingData.meetingLocation + "</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("</tr>");
+                    }
                 }
-                string jsonParameters = JsonConvert.SerializeObject(lobjDictionary);
-                lobjModel.SendEmails(jsonParameters, lobjMemberDetails);
-                //lobjModel.SendEmail(lstrEmailParameters, lobjMemberDetails, "PackageBooked");
+                else
+                {
+                    sbPickup_MeetingPointInformationHtml.Append("<tr>");
+                    sbPickup_MeetingPointInformationHtml.Append("<td width='115' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                    sbPickup_MeetingPointInformationHtml.Append("No pickup/meeting point information available.");
+                    sbPickup_MeetingPointInformationHtml.Append("</td>");
+                    sbPickup_MeetingPointInformationHtml.Append("</tr>");
+                }
+                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+                List<string> emailParameters = new List<string>();
+                string PGTranPct = Convert.ToString(ConfigurationManager.AppSettings["PGTranPct"]);
+                string WebsiteUrl = Convert.ToString(ConfigurationManager.AppSettings["WebsiteUrl"]);
+                emailParameters.Add(string.Format("{0} {1}", bookingRequest.customer.firstName, bookingRequest.customer.lastName));//0
+                emailParameters.Add(bookingResponse.bookingData.code);//1
+                emailParameters.Add(bookingResponse.bookingData.prodtitle);//2
+                emailParameters.Add(bookingResponse.bookingData.productTypeTitle);//3
+                emailParameters.Add(DateTime.Parse(bookingResponse.bookingData.createdAt).ToLocalTime().ToString("dd/MM/yyyy hh:mm tt"));//4
+                emailParameters.Add(DateTime.Parse(bookingResponse.bookingData.updatedAt).ToLocalTime().ToString("dd/MM/yyyy hh:mm tt"));//5
+                emailParameters.Add(DateTime.Parse(bookingResponse.bookingData.arrivalDate).ToString("dd MMM yyyy"));//6
+                emailParameters.Add(string.IsNullOrEmpty(bookingResponse.bookingData.timeSlot) ? "N/A" : string.Format("{0} hrs", bookingResponse.bookingData.timeSlot));//7
+                emailParameters.Add(bookingResponse.bookingData.adults > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.adults,
+                                    FormatCurrency(Math.Ceiling(bookingResponse.bookingData.amountBreakdown.FindAll(x => x.name.ToLower().Equals("adult")).FirstOrDefault().convertedAmount)
+                                    , bookingResponse.bookingData.convertedCurrency)) : "0");//8
+                emailParameters.Add(bookingResponse.bookingData.children > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.children,
+                                    FormatCurrency(Math.Ceiling(bookingResponse.bookingData.amountBreakdown.FindAll(x => x.name.ToLower().Equals("child")).FirstOrDefault().convertedAmount)
+                                    , bookingResponse.bookingData.convertedCurrency)) : "0");//9
+                emailParameters.Add(bookingResponse.bookingData.seniors > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.seniors,
+                                    FormatCurrency(Math.Ceiling(bookingResponse.bookingData.amountBreakdown.FindAll(x => x.name.ToLower().Equals("senior")).FirstOrDefault().convertedAmount)
+                                    , bookingResponse.bookingData.convertedCurrency)) : "0");//10
+                emailParameters.Add(FormatCurrency(Math.Ceiling(bookingResponse.bookingData.grandTotalAmount), bookingResponse.bookingData.convertedCurrency));//11
+                emailParameters.Add(bookingResponse.bookingData.firstName);//12
+                emailParameters.Add(bookingResponse.bookingData.lastName);//13
+                emailParameters.Add(bookingResponse.bookingData.email);//14
+                emailParameters.Add(bookingResponse.bookingData.phone);//15
+                emailParameters.Add("Cancellations are non refundable.");//16
+                emailParameters.Add(DateTime.Now.Year.ToString());//17
+                emailParameters.Add(textInfo.ToTitleCase(bookingResponse.bookingData.status));//18
+                emailParameters.Add(sbAdditionalInfoHtml.ToString());//19
+                emailParameters.Add(bookingResponse.bookingData.prodavailaddress);//20
+                emailParameters.Add(bookingResponse.bookingData.uuid);//21
+                emailParameters.Add(FormatCurrency(bookingResponse.bookingData.grandTotalAmount * (Convert.ToDecimal(PGTranPct) / 100), bookingResponse.bookingData.convertedCurrency, true));//22
+                emailParameters.Add(FormatCurrency(bookingResponse.bookingData.grandTotalAmount + (bookingResponse.bookingData.grandTotalAmount * (Convert.ToDecimal(PGTranPct) / 100)), bookingResponse.bookingData.convertedCurrency, true));//23
+                emailParameters.Add(WebsiteUrl);//24
+                emailParameters.Add(sbPickup_MeetingPointInformationHtml.ToString());//25
+                bool ceresponse = lobjModel.InsertEmailDetails(emailParameters,
+                     bookingRequest.customer.email, "ExperiencesBooked", bookingRequest.memberId, lobjProgramDefinition.ProgramId);
+                if (ceresponse)
+                {
+                    LoggingAdapter.WriteLog("PaymentResponse Page Experience Email Send Successfully");
+                }
+                else
+                {
+                    LoggingAdapter.WriteLog("PaymentResponse Page Experience Email Send Failed");
+                }
+            }
+            else
+            {
+                #region Logging
+                LoggingAdapter.WriteLog(
+                string.Format("PaymentResponse Experiences customerEmailId is null; Date - {0} | BookingCode - {1}" +
+                " | BookingUUID - {2};",
+                DateTime.Now, bookingResponse.bookingData.code, bookingResponse.bookingData.uuid));
+                #endregion
             }
         }
         catch (Exception ex)
         {
-            LoggingAdapter.WriteLog("ExperienceProductStatus SendExperienceEmail Exception: " + ex.Message + Environment.NewLine + ex.StackTrace);
+            #region Logging
+            LoggingAdapter.WriteLog(
+            string.Format("PaymentResponse Experiences InsertEmailDetails Exception; Date - {0} | EX Message - {1} | EX StackTrace - {2} | EX InnerException - {3};",
+            DateTime.Now, ex.Message, ex.StackTrace, ex.InnerException));
+            #endregion
         }
     }
 
@@ -1610,65 +1565,65 @@ public partial class PaymentResponse : System.Web.UI.Page
         public string labelName { get; set; }
     }
 
-    public static string GetOrderStatus(string pstrBookId)
-    {
-        string lstrResponse = string.Empty;
-        StringBuilder lsbLogRequestResponse = new StringBuilder();
-        ABCModel lobjModel = new ABCModel();
-        try
-        {
-            MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
-            if (lobjMemberDetails != null && !string.IsNullOrEmpty(lobjMemberDetails.LastName))
-            {
-                lsbLogRequestResponse.Append(string.Format("GetOrderStatus Request: pstrBookId - {0}", pstrBookId));
-                OrderStatusResponse lobjOrderStatusResponse = lobjModel.GetOrderStatusByBookingId(pstrBookId);
-                lsbLogRequestResponse.Append(string.Format(" GetOrderStatus Response: {0}", JsonConvert.SerializeObject(lobjOrderStatusResponse)));
-                if (lobjOrderStatusResponse != null
-                    && lobjOrderStatusResponse.data != null
-                    && !string.IsNullOrEmpty(lobjOrderStatusResponse.data.getOrderStatus))
-                {
-                    HolibobOrderStatus lobjOrderStatus = JsonConvert.DeserializeObject<HolibobOrderStatus>(lobjOrderStatusResponse.data.getOrderStatus);
-                    if (lobjOrderStatus != null && lobjOrderStatus.data != null && lobjOrderStatus.status.ToLower() == "success")
-                    {
-                        lobjModel.LogActivity(string.Format("GetOrderStatus; ActivityType-: {0}; Response-: {1}", ActivityConstants.BookPackage, lobjOrderStatus.status), ActivityType.PackageBooking);
+    //public static string GetOrderStatus(string pstrBookId)
+    //{
+    //    string lstrResponse = string.Empty;
+    //    StringBuilder lsbLogRequestResponse = new StringBuilder();
+    //    ABCModel lobjModel = new ABCModel();
+    //    try
+    //    {
+    //        MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+    //        if (lobjMemberDetails != null && !string.IsNullOrEmpty(lobjMemberDetails.LastName))
+    //        {
+    //            lsbLogRequestResponse.Append(string.Format("GetOrderStatus Request: pstrBookId - {0}", pstrBookId));
+    //            OrderStatusResponse lobjOrderStatusResponse = null; //lobjModel.GetOrderStatusByBookingId(pstrBookId);
+    //            lsbLogRequestResponse.Append(string.Format(" GetOrderStatus Response: {0}", JsonConvert.SerializeObject(lobjOrderStatusResponse)));
+    //            if (lobjOrderStatusResponse != null
+    //                && lobjOrderStatusResponse.data != null
+    //                && !string.IsNullOrEmpty(lobjOrderStatusResponse.data.getOrderStatus))
+    //            {
+    //                HolibobOrderStatus lobjOrderStatus = JsonConvert.DeserializeObject<HolibobOrderStatus>(lobjOrderStatusResponse.data.getOrderStatus);
+    //                if (lobjOrderStatus != null && lobjOrderStatus.data != null && lobjOrderStatus.status.ToLower() == "success")
+    //                {
+    //                    lobjModel.LogActivity(string.Format("GetOrderStatus; ActivityType-: {0}; Response-: {1}", ActivityConstants.BookPackage, lobjOrderStatus.status), ActivityType.PackageBooking);
 
-                        string lstrCurrency = lobjModel.GetDefaultCurrency();
-                        string lstrProgramName = ProgramHelper.ProgramName();
-                        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramDetails(lstrProgramName);
-                        if (lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes != null)
-                        {
-                            foreach (var lobjAvailabilityListNode in lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes)
-                            {
-                                string pstrGrossFormattedText = string.Empty;
-                                lobjAvailabilityListNode.totalPrice.gross = lobjModel.ConvertToPointsOrCurrency(lobjAvailabilityListNode.totalPrice.gross, lstrCurrency, lobjProgramDefinition.ProgramId, out pstrGrossFormattedText);
-                                lobjAvailabilityListNode.totalPrice.grossFormattedText = pstrGrossFormattedText;
-                                foreach (var lobjPersonListNode in lobjAvailabilityListNode.personList.nodes)
-                                {
-                                    string pstrFormattedText = string.Empty;
-                                    lobjPersonListNode.totalPrice = lobjModel.ConvertToPointsOrCurrency(lobjPersonListNode.totalPrice, lstrCurrency, lobjProgramDefinition.ProgramId, out pstrFormattedText);
-                                }
-                            }
-                            lobjOrderStatusResponse.data.getOrderStatus = JsonConvert.SerializeObject(lobjOrderStatus);
-                        }
-                        lstrResponse = JsonConvert.SerializeObject(lobjOrderStatus);
-                    }
-                    else
-                    {
-                        lobjModel.LogActivity(string.Format("GetOrderStatus; ActivityType-: {0}; Response-: {1}", ActivityConstants.BookPackage, "Failed"), ActivityType.PackageBooking);
-                    }
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            lobjModel.LogActivity(string.Format("GetOrderStatus; ActivityType-: {0}; Response-: {1}", ActivityConstants.BookPackage, "Failed"), ActivityType.PackageBooking);
-            LoggingAdapter.WriteLog("ExperienceProductBooking GetOrderStatus Exception: " + ex.Message + Environment.NewLine + ex.StackTrace);
-        }
-        finally
-        {
-        }
-        return lstrResponse;
-    }
+    //                    string lstrCurrency = lobjModel.GetDefaultCurrency();
+    //                    string lstrProgramName = ProgramHelper.ProgramName();
+    //                    ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramDetails(lstrProgramName);
+    //                    if (lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes != null)
+    //                    {
+    //                        foreach (var lobjAvailabilityListNode in lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes)
+    //                        {
+    //                            string pstrGrossFormattedText = string.Empty;
+    //                            lobjAvailabilityListNode.totalPrice.gross = lobjModel.ConvertToPointsOrCurrency(lobjAvailabilityListNode.totalPrice.gross, lstrCurrency, lobjProgramDefinition.ProgramId, out pstrGrossFormattedText);
+    //                            lobjAvailabilityListNode.totalPrice.grossFormattedText = pstrGrossFormattedText;
+    //                            foreach (var lobjPersonListNode in lobjAvailabilityListNode.personList.nodes)
+    //                            {
+    //                                string pstrFormattedText = string.Empty;
+    //                                lobjPersonListNode.totalPrice = lobjModel.ConvertToPointsOrCurrency(lobjPersonListNode.totalPrice, lstrCurrency, lobjProgramDefinition.ProgramId, out pstrFormattedText);
+    //                            }
+    //                        }
+    //                        lobjOrderStatusResponse.data.getOrderStatus = JsonConvert.SerializeObject(lobjOrderStatus);
+    //                    }
+    //                    lstrResponse = JsonConvert.SerializeObject(lobjOrderStatus);
+    //                }
+    //                else
+    //                {
+    //                    lobjModel.LogActivity(string.Format("GetOrderStatus; ActivityType-: {0}; Response-: {1}", ActivityConstants.BookPackage, "Failed"), ActivityType.PackageBooking);
+    //                }
+    //            }
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        lobjModel.LogActivity(string.Format("GetOrderStatus; ActivityType-: {0}; Response-: {1}", ActivityConstants.BookPackage, "Failed"), ActivityType.PackageBooking);
+    //        LoggingAdapter.WriteLog("ExperienceProductBooking GetOrderStatus Exception: " + ex.Message + Environment.NewLine + ex.StackTrace);
+    //    }
+    //    finally
+    //    {
+    //    }
+    //    return lstrResponse;
+    //}
 
     static string UppercaseFirst(string s)
     {
@@ -1709,4 +1664,32 @@ public partial class PaymentResponse : System.Web.UI.Page
         }
         return clearText;
     }
+    public string FormatCurrency(decimal decValue, string currencyCode, bool requiredDecimal = false)
+    {
+        NumberFormatInfo nfo = new CultureInfo("en-US", false).NumberFormat;
+        if (requiredDecimal)
+        {
+            nfo.NumberDecimalDigits = 2;
+            if (!string.IsNullOrEmpty(currencyCode))
+            {
+                return string.Format("{0} {1}", currencyCode, decValue.ToString("N", nfo));
+            }
+            else
+            {
+                return string.Format("{0}", decValue.ToString("N", nfo));
+            }
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(currencyCode))
+            {
+                return string.Format("{0} {1}", currencyCode, decValue.ToString("N", nfo).Split('.')[0]);
+            }
+            else
+            {
+                return string.Format("{0}", decValue.ToString("N", nfo).Split('.')[0]);
+            }
+        }
+    }
+
 }

@@ -6,7 +6,7 @@ using Core.Platform.Member.Entites;
 using Core.Platform.MemberActivity.Entities;
 using Core.Platform.ProgramMaster.Entities;
 using Framework.EnterpriseLibrary.Adapters;
-using Holibob.Entities;
+
 using Newtonsoft.Json;
 using ABC.Model;
 using System;

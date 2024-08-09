@@ -10,7 +10,6 @@ using Core.Platform.ProgramMaster.Entities;
 using Core.Platform.Transactions.Entites;
 using Framework.EnterpriseLibrary.Adapters;
 using Giift.ShopGateway.Client.Entities;
-using Holibob.Entities;
 using KhaltiInsurance.Entities;
 using KhaltiISP.Entities;
 using Newtonsoft.Json;

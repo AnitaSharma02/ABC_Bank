@@ -58,11 +58,5 @@
     <Compile Include="HolibobImplementor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Holibob.Entities\Holibob.Entities.csproj">
-      <Project>{494E62E1-F1B2-4E96-93E5-9C370745BD55}</Project>
-      <Name>Holibob.Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

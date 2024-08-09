@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BeMyGuest.Entities</RootNamespace>
+    <AssemblyName>BeMyGuest.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseWinFormsOutOfProcDesigner>False</UseWinFormsOutOfProcDesigner>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseWinFormsOutOfProcDesigner>False</UseWinFormsOutOfProcDesigner>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AmountBreakdown.cs" />
+    <Compile Include="BookingData.cs" />
+    <Compile Include="BookingOption.cs" />
+    <Compile Include="BookingRequest.cs" />
+    <Compile Include="BookingResponse.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="ExperiencesBookingRequestOptions.cs" />
+    <Compile Include="ExperiencesCriteria.cs" />
+    <Compile Include="ExperiencesCurrency.cs" />
+    <Compile Include="ExperiencesData.cs" />
+    <Compile Include="ExperiencesLanguage.cs" />
+    <Compile Include="ExperiencesPerBooking.cs" />
+    <Compile Include="ExperiencesPerBookingItem.cs" />
+    <Compile Include="ExperiencesPerPax.cs" />
+    <Compile Include="ExperiencesRequest.cs" />
+    <Compile Include="ExperiencesResponse.cs" />
+    <Compile Include="ExperiencesTypesAndCategory.cs" />
+    <Compile Include="ItemUUID.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="Meta.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Pagination.cs" />
+    <Compile Include="Paths.cs" />
+    <Compile Include="PaymentDetailsModel.cs" />
+    <Compile Include="Photo.cs" />
+    <Compile Include="ProductInfo.cs" />
+    <Compile Include="ProductInfoRequest.cs" />
+    <Compile Include="ProductInfoResponse.cs" />
+    <Compile Include="ProductMeta.cs" />
+    <Compile Include="ProductsByFilterRequest.cs" />
+    <Compile Include="ProductsByFilterResponse.cs" />
+    <Compile Include="ProductSelectedDetails.cs" />
+    <Compile Include="ProductTypeDetail.cs" />
+    <Compile Include="ProductTypesPriceByDateRequest.cs" />
+    <Compile Include="ProductTypesPriceByDateResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rate.cs" />
+    <Compile Include="SearchError.cs" />
+    <Compile Include="SearchExperiencesCriteria.cs" />
+    <Compile Include="SearchExperiencesData.cs" />
+    <Compile Include="SearchExperiencesModel.cs" />
+    <Compile Include="SearchExperiencesRequest.cs" />
+    <Compile Include="SearchExperiencesResponse.cs" />
+    <Compile Include="TicketType.cs" />
+    <Compile Include="TimeSlots.cs" />
+    <Compile Include="TypeInfo.cs" />
+    <Compile Include="TypePriceByDateData.cs" />
+    <Compile Include="ValidateCVMember.cs" />
+    <Compile Include="ValidateCVMemberResponse.cs" />
+    <Compile Include="Validity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

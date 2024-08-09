@@ -1,59 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CB.IBE.Platform.Hotels.ClientEntities;
-using Core.Platform.Member.Entites;
-using System.Web;
-using Framework.Integrations.Hotels.Entities;
-using CB.IBE.Platform.HotelClientModel;
-using CB.IBE.Platform.Masters.Entities;
-using Core.Platform.MemberActivity.Entities;
-using Core.Platform.Transactions.Entites;
-using Framework.EnterpriseLibrary.Security;
-using Framework.EnterpriseLibrary.PasswordReset.Entities;
-using Framework.EnterpriseLibrary.Security.Constants;
-using CB.IBE.Platform.AirClientModel;
-using Core.Platform.OTP.Entities;
-using CB.IBE.Platform.Entities;
-using CB.IBE.Platform.ClientEntities;
-using Framework.EnterpriseLibrary.Adapters;
-using CB.IBE.Platform.Car.ClientEntities;
-using CB.IBE.Platform.CarClientModel;
-using CB.IBE.Platform.Car.Entities;
-using CB.IBE.Platform.IBEClient;
-using Core.Platform.ProgramMaster.Entities;
-using Core.Platform.ProgramInterface.ClientHelper;
-using Core.Platform.Booking.Entities;
-using CB.IBE.Platform.IBECarClient;
-using Framework.EnterpriseLibrary.CommunicationEngine.Helper;
-using Framework.EnterpriseLibrary.CommunicationEngine.Entity;
-using System.Globalization;
-using Core.Platform.ExpirySchedule.Entities;
-using CB.IBE.Platform.Transactions.Entites;
-using InfiVoucher.Platform.Entities;
-using Core.Platform.InfiVoucher.Entities;
-using Core.Platform.Authentication.Entities;
-using Core.Platform.LoyaltyManagement.ClientHelper;
-using Core.Platform.InfiVoucher.ClientHelper;
-using System.Configuration;
-using Core.Platform.TransactionSummary.Entites;
-using LoyaltyManagement.Request;
-using Core.WebAPI.ClientHelper;
-using Core.Framework.Booking.Facade;
-using System.Security.Cryptography;
-using System.Text;
-using Core.Platform.RedemptionAuditTrail.Entities;
-using Holibob.Entities;
-using Holibob.ClientHelper;
-using Core.Platform.TransactionManagement.BusinessFacade;
+﻿using BeMyGuest.ClientHelper;
+using BeMyGuest.Entities;
 using CB.IBE.DomesticFlight.Entities;
+using CB.IBE.Platform.AirClientModel;
+using CB.IBE.Platform.Car.ClientEntities;
+using CB.IBE.Platform.Car.Entities;
+using CB.IBE.Platform.CarClientModel;
+using CB.IBE.Platform.ClientEntities;
+using CB.IBE.Platform.Entities;
+using CB.IBE.Platform.HotelClientModel;
+using CB.IBE.Platform.Hotels.ClientEntities;
+using CB.IBE.Platform.IBECarClient;
+using CB.IBE.Platform.IBEClient;
+using CB.IBE.Platform.Masters.Entities;
+using CB.IBE.Platform.Transactions.Entites;
 using CE.Entities;
-using System.Dynamic;
-using Newtonsoft.Json;
+using Core.Framework.Booking.Facade;
+using Core.Platform.Booking.Entities;
+using Core.Platform.ExpirySchedule.Entities;
+using Core.Platform.InfiVoucher.ClientHelper;
+using Core.Platform.InfiVoucher.Entities;
+using Core.Platform.LoyaltyManagement.ClientHelper;
+using Core.Platform.Member.Entites;
+using Core.Platform.MemberActivity.Entities;
+using Core.Platform.OTP.Entities;
+using Core.Platform.ProgramMaster.Entities;
+using Core.Platform.RedemptionAuditTrail.Entities;
+using Core.Platform.Transactions.Entites;
+using Core.Platform.TransactionSummary.Entites;
+using Core.WebAPI.ClientHelper;
+using Framework.EnterpriseLibrary.Adapters;
+using Framework.EnterpriseLibrary.CommunicationEngine.Entity;
+using Framework.EnterpriseLibrary.CommunicationEngine.Helper;
+using Framework.EnterpriseLibrary.PasswordReset.Entities;
+using Framework.EnterpriseLibrary.Security;
+using Framework.EnterpriseLibrary.Security.Constants;
+using Framework.Integrations.Hotels.Entities;
+using GiiftPaymentGateway.Entities;
+using InfiVoucher.Platform.Entities;
 using KhaltiInsurance.Entities;
 using KhaltiISP.Entities;
+using LoyaltyManagement.Request;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Globalization;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Web;
 using TransactionDetailsAdditionalInfo.Entities;
-using GiiftPaymentGateway.Entities;
+using Customer = Framework.Integrations.Hotels.Entities.Customer;
 
 namespace ABC.Model
 {
@@ -328,11 +325,11 @@ namespace ABC.Model
                 return null;
             }
         }
-        public BookingResponse BookForFlight(BookingRequest pobjBookingRequest, MemberDetails pobjMemberDetails, List<RedemptionDetails> pobjListOfRedemptionDetails)
+        public CB.IBE.Platform.ClientEntities.BookingResponse BookForFlight(CB.IBE.Platform.ClientEntities.BookingRequest pobjBookingRequest, MemberDetails pobjMemberDetails, List<RedemptionDetails> pobjListOfRedemptionDetails)
         {
             try
             {
-                BookingResponse lobjBookingResponse = null;
+                CB.IBE.Platform.ClientEntities.BookingResponse lobjBookingResponse = null;
                 try
                 {
                     BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
@@ -613,63 +610,7 @@ namespace ABC.Model
             catch (Exception ex) { LoggingAdapter.WriteLog("CarRentalTermsResponse - " + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace); }
             return lobjCarRentalTermsResponse;
         }
-        public CarPickUpOpenTimeResponce CarPickUpOpenTimeResponce(string Pickupdate, string LocationId)
-        {
-            CarPickUpOpenTimeResponce lobjCarPickUpOpenTimeResponce = new CarPickUpOpenTimeResponce();
-            try
-            {
-                CarPickUpOpenTimeRequest pstrPickUpOpenTimeRQ = new CarPickUpOpenTimeRequest();
-                string[] Date = DateFormat(Pickupdate);
-                List<Date> lobjDateList = new List<Date>();
-                Date lobjDate = new Date
-                {
-                    day = Date[0],
-                    month = Date[1],
-                    year = Date[2]
-                };
-                lobjDateList.Add(lobjDate);
-                List<Location> lobjListOfLocation = new List<Location>();
-                Location lobjLocation = new Location();
-                lobjLocation.id = LocationId;
-                lobjListOfLocation.Add(lobjLocation);
-                pstrPickUpOpenTimeRQ.PickUpOpenTimeRequest.Location = lobjListOfLocation.ToArray();
-                pstrPickUpOpenTimeRQ.PickUpOpenTimeRequest.Date = lobjDateList.ToArray();
-                IBECarModel lobjModel = new IBECarModel();
-                lobjCarPickUpOpenTimeResponce = lobjModel.CarPickUpOpenTimeResponce(pstrPickUpOpenTimeRQ);
-            }
-            catch (Exception ex) { LoggingAdapter.WriteLog("CarPickUpOpenTimeResponce - " + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace); }
-            return lobjCarPickUpOpenTimeResponce;
-        }
-        public CarDropOffOpenTimeResponce CarDropOffOpenTimeResponce(string DropOffDate, string LocationId)
-        {
-            CarDropOffOpenTimeResponce CarDropOffOpenTimeResponce = new CarDropOffOpenTimeResponce();
-            try
-            {
-                CarDropOffOpenTimeRequest CarDropOffOpenTimeRequest = new CarDropOffOpenTimeRequest();
-                string[] Date = DateFormat(DropOffDate);
-                List<Date> lobjDateList = new List<Date>();
-                Date lobjDate = new Date
-                {
-                    day = Date[0],
-                    month = Date[1],
-                    year = Date[2]
-                };
-                lobjDateList.Add(lobjDate);
-                List<Location> lobjListOfLocation = new List<Location>();
-                Location lobjLocation = new Location
-                {
-                    id = LocationId
-                };
-                lobjListOfLocation.Add(lobjLocation);
-                CarDropOffOpenTimeRequest.DropOffOpenTimeRequest.Location = lobjListOfLocation.ToArray();
-                CarDropOffOpenTimeRequest.DropOffOpenTimeRequest.Date = lobjDateList.ToArray();
-                IBECarModel lobjModel = new IBECarModel();
-                CarDropOffOpenTimeResponce = lobjModel.CarDropOffOpenTimeResponce(CarDropOffOpenTimeRequest);
-            }
-            catch (Exception ex) { LoggingAdapter.WriteLog("CarDropOffOpenTimeResponce - " + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace); }
-            return CarDropOffOpenTimeResponce;
-        }
-        public Match GetCarVehiclDetails(List<Match> list, string pstrref)
+       public Match GetCarVehiclDetails(List<Match> list, string pstrref)
         {
             Match lobjMatchResult = new Match();
             try
@@ -1799,7 +1740,7 @@ namespace ABC.Model
                     try
                     {
                         string lstrToken = GetAuthTokenforWebAPI();
-                        lobjMemberDetails = lobjAPIClientHelper.GetMemberDetailsByEmailID(pstrEmailId, lobjProgramDefinition.ProgramId, Convert.ToInt32(RelationType.LBMS), lstrToken);
+                        lobjMemberDetails = lobjAPIClientHelper.GetMemberDetailsByEmailID( lobjProgramDefinition.ProgramId, pstrEmailId,Convert.ToInt32(RelationType.LBMS), lstrToken);
                     }
                     catch (Exception ex)
                     {
@@ -1818,6 +1759,22 @@ namespace ABC.Model
             }
             return lobjMemberDetails;
         }
+        public bool CreateProfile(InsertMemberRequest lobjInsertMemberRequest)
+        {
+            bool isSaved = false;
+            try
+            {
+                string lstrToken = GetAuthTokenforWebAPI();
+                string pstrInsertMemberRequest = JsonConvert.SerializeObject(lobjInsertMemberRequest);
+                isSaved = lobjAPIClientHelper.CreateProfile(pstrInsertMemberRequest, lstrToken);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("Model CreateProfile Ex-" + ex.InnerException + ex.StackTrace + ex.Message);
+            }
+            return isSaved;
+        }
+
         public bool GenerateOTPByMemberId(string pstrMemberid, string pstrSourceIpAddress)
         {
             bool lboolResponse = false;
@@ -2506,13 +2463,13 @@ namespace ABC.Model
         #endregion
 
         #region Experience
-        public ProductListResponse GetExperienceProductList(int pintPage, int pintLimit, string pstrSort, string pstrPlaceName, string pstrGuidePrice)
+        public ExperiencesResponse GetExperienceProductList(int pintPage, int pintPageSize, ExperiencesRequest lobjProductListRequest)
         {
-            ProductListResponse lstrResponse = null;
+            ExperiencesResponse lstrResponse = null;
             try
             {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lstrResponse = lobjHelper.GetProductList(pintPage, pintLimit, pstrSort, pstrPlaceName, pstrGuidePrice);
+                BeMyGuestClientHelper lobjHelper = new BeMyGuestClientHelper();
+                lstrResponse = lobjHelper.GetProductList(pintPage, pintPageSize, lobjProductListRequest);
             }
             catch (Exception ex)
             {
@@ -2520,147 +2477,68 @@ namespace ABC.Model
             }
             return lstrResponse;
         }
-        public ProductInfoResponse GetExperienceProductInfo(string pstrProductId)
+
+
+        public ProductInfoResponse GetProductInfo(ProductInfoRequest productInfoRequest)
         {
-            ProductInfoResponse lobjResponse = null;
+            ProductInfoResponse lstrResponse = null;
             try
             {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.GetProductInfo(pstrProductId);
+                BeMyGuestClientHelper lobjHelper = new BeMyGuestClientHelper();
+                lstrResponse = lobjHelper.GetProductInfo(productInfoRequest);
             }
             catch (Exception ex)
             {
-                LoggingAdapter.WriteLog("Model GetExperienceProductList Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
+                LoggingAdapter.WriteLog("Model GetExperienceProductInfo Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
             }
-            return lobjResponse;
+            return lstrResponse;
         }
-        public ProductStatusResponse GetExperienceProductStatus(string pstrProductId, string pstrStartDate, string pstrEndDate, string pstrAvailabilityType)
+
+        public ProductTypesPriceByDateResponse GetProductTypesPriceByDate(ProductTypesPriceByDateRequest productTypesPriceByDateRequest)
         {
-            ProductStatusResponse lobjResponse = null;
+            ProductTypesPriceByDateResponse lstrResponse = null;
             try
             {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.GetProductStatus(pstrProductId, pstrStartDate, pstrEndDate, pstrAvailabilityType);
+                BeMyGuestClientHelper lobjHelper = new BeMyGuestClientHelper();
+                lstrResponse = lobjHelper.GetProductTypesPriceByDate(productTypesPriceByDateRequest);
             }
             catch (Exception ex)
             {
-                LoggingAdapter.WriteLog("Model GetExperienceProductList Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
+                LoggingAdapter.WriteLog("Model GetProductTypesPriceByDate Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
             }
-            return lobjResponse;
+            return lstrResponse;
         }
-        public FetchAvailabilityResponse FetchAvailability(string pstrAvailabilityId)
+
+        public ExperiencesTypesAndCategory GetTypesAndCategory()
         {
-            FetchAvailabilityResponse lobjResponse = null;
+            ExperiencesTypesAndCategory lstrResponse = null;
             try
             {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.FetchAvailability(pstrAvailabilityId);
+                BeMyGuestClientHelper lobjHelper = new BeMyGuestClientHelper();
+                lstrResponse = lobjHelper.GetTypesAndCategory();
             }
             catch (Exception ex)
             {
-                LoggingAdapter.WriteLog("Model FetchAvailability Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
+                LoggingAdapter.WriteLog("Model GetTypesAndCategory Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
             }
-            return lobjResponse;
+            return lstrResponse;
         }
-        public FetchAvailabilityResponse FetchAvailabilityWithOptionList(string pstrAvailabilityId, string pstrInputId, string pstrInputValue)
+
+        public BeMyGuest.Entities.BookingResponse ExperienceBooking(BeMyGuest.Entities.BookingRequest bookingRequest)
         {
-            FetchAvailabilityResponse lobjResponse = null;
+            BeMyGuest.Entities.BookingResponse lstrResponse = null;
             try
             {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.FetchAvailabilityWithOptionList(pstrAvailabilityId, pstrInputId, pstrInputValue);
+                BeMyGuestClientHelper lobjHelper = new BeMyGuestClientHelper();
+                lstrResponse = lobjHelper.ExperienceBooking(bookingRequest);
             }
             catch (Exception ex)
             {
-                LoggingAdapter.WriteLog("Model FetchAvailabilityWithOptionList Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
+                LoggingAdapter.WriteLog("Model ExperienceBooking Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
             }
-            return lobjResponse;
+            return lstrResponse;
         }
-        public FetchAvailabilityResponse FetchAvailabilityWithOptionList(string pstrAvailabilityId, List<FetchAvailabilityWithPricingCategoryOptionList> plstobjFetchAvailabilityWithPricingCategoryOptionList)
-        {
-            FetchAvailabilityResponse lobjResponse = null;
-            try
-            {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.FetchAvailabilityWithOptionList(pstrAvailabilityId, plstobjFetchAvailabilityWithPricingCategoryOptionList);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("Model FetchAvailabilityWithOptionList Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-            }
-            return lobjResponse;
-        }
-        public CreateBookingResponse CreateBooking()
-        {
-            CreateBookingResponse lobjResponse = null;
-            try
-            {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.CreateBooking();
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("Model CreateBooking Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-            }
-            return lobjResponse;
-        }
-        public AddAvailabilityToBookingResponse AddAvailabilityToBooking(string pstrAvailabilityId, string pstrBookId)
-        {
-            AddAvailabilityToBookingResponse lobjResponse = null;
-            try
-            {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.AddAvailabilityToBooking(pstrAvailabilityId, pstrBookId);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("Model CreateBooking Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-            }
-            return lobjResponse;
-        }
-        public OrderStatusResponse GetOrderStatus(string pstrBookId, string pstrLeadPassengerName)
-        {
-            OrderStatusResponse lobjResponse = null;
-            try
-            {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.GetOrderStatus(pstrBookId, pstrLeadPassengerName);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("Model GetOrderStatus Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-            }
-            return lobjResponse;
-        }
-        public OrderStatusResponse GetOrderStatusByBookingId(string pstrBookId)
-        {
-            OrderStatusResponse lobjResponse = null;
-            try
-            {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.GetOrderStatusByBookingId(pstrBookId);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("Model GetOrderStatusByBookingId Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-            }
-            return lobjResponse;
-        }
-        public OrderStatusResponse SubmitBookingAnswer(string pstrBookId, List<ExperienceBookingAnswerList> plstobjAnswerList)
-        {
-            OrderStatusResponse lobjResponse = null;
-            try
-            {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.SubmitBookingAnswer(pstrBookId, plstobjAnswerList);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("Model SubmitBookingAnswer Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-            }
-            return lobjResponse;
-        }
-        public int ConvertToPoints(float pstrAmount, string pstrCurrency, int pintProgramId, string pstrRedemtionCode)
+       public int ConvertToPoints(float pstrAmount, string pstrCurrency, int pintProgramId, string pstrRedemtionCode)
         {
             int lintResponse = 0;
             try
@@ -2689,7 +2567,7 @@ namespace ABC.Model
                     float pfltPointrate = 0.0f;
                     pfltPointrate = GetProgramRedemptionRate(GetDefaultCurrency(), "EXPERIENCE", pintProgramId);
                     lintResponse = (int)Math.Ceiling(pstrAmount / pfltPointrate);
-                    pstrGrossFormattedText = string.Format("{0} Points", LongToThousandSeperated(Convert.ToInt64(lintResponse)));
+                    pstrGrossFormattedText = string.Format("{0} NPoints", LongToThousandSeperated(Convert.ToInt64(lintResponse)));
                 }
                 else
                 {
@@ -2705,49 +2583,49 @@ namespace ABC.Model
             return lintResponse;
         }
 
-        public PlaceOrderResponse PlaceOrder(string pstrBookId)
-        {
-            PlaceOrderResponse lobjResponse = null;
-            try
-            {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.PlaceOrder(pstrBookId);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("Model PlaceOrder Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-            }
-            return lobjResponse;
-        }
-        public ProductSearchResponse GetSearchList(string pstrSearchText)
-        {
-            ProductSearchResponse lobjResponse = null;
-            try
-            {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.GetSearchList(pstrSearchText);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("Model GetSearchList Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-            }
-            return lobjResponse;
-        }
-        public SearchProductListResponse GetExperienceProductListByPlaceId(string pstrPlaceId, bool pblnIsPrivate, bool pblnIsNew, string pstrIsRecommended,
-            string pstrGuidePrice, string pstrSearch, List<string> plstCategoryIds, List<string> plstAttributeIds)
-        {
-            SearchProductListResponse lobjResponse = null;
-            try
-            {
-                HolibobHelper lobjHelper = new HolibobHelper();
-                lobjResponse = lobjHelper.GetExperienceProductListByPlaceId(pstrPlaceId, pblnIsPrivate, pblnIsNew, pstrIsRecommended, pstrGuidePrice, pstrSearch, plstCategoryIds, plstAttributeIds);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("Model GetExperienceProductListByPlaceId Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-            }
-            return lobjResponse;
-        }
+        //public PlaceOrderResponse PlaceOrder(string pstrBookId)
+        //{
+        //    PlaceOrderResponse lobjResponse = null;
+        //    try
+        //    {
+        //        HolibobHelper lobjHelper = new HolibobHelper();
+        //        lobjResponse = lobjHelper.PlaceOrder(pstrBookId);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        LoggingAdapter.WriteLog("Model PlaceOrder Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
+        //    }
+        //    return lobjResponse;
+        //}
+        //public ProductSearchResponse GetSearchList(string pstrSearchText)
+        //{
+        //    ProductSearchResponse lobjResponse = null;
+        //    try
+        //    {
+        //        HolibobHelper lobjHelper = new HolibobHelper();
+        //        lobjResponse = lobjHelper.GetSearchList(pstrSearchText);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        LoggingAdapter.WriteLog("Model GetSearchList Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
+        //    }
+        //    return lobjResponse;
+        //}
+        //public SearchProductListResponse GetExperienceProductListByPlaceId(string pstrPlaceId, bool pblnIsPrivate, bool pblnIsNew, string pstrIsRecommended,
+        //    string pstrGuidePrice, string pstrSearch, List<string> plstCategoryIds, List<string> plstAttributeIds)
+        //{
+        //    SearchProductListResponse lobjResponse = null;
+        //    try
+        //    {
+        //        HolibobHelper lobjHelper = new HolibobHelper();
+        //        lobjResponse = lobjHelper.GetExperienceProductListByPlaceId(pstrPlaceId, pblnIsPrivate, pblnIsNew, pstrIsRecommended, pstrGuidePrice, pstrSearch, plstCategoryIds, plstAttributeIds);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        LoggingAdapter.WriteLog("Model GetExperienceProductListByPlaceId Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
+        //    }
+        //    return lobjResponse;
+        //}
         public string LongToThousandSeperated(long pfltValue)
         {
             NumberFormatInfo nfo = new CultureInfo("en-US", false).NumberFormat;
@@ -3139,12 +3017,12 @@ namespace ABC.Model
             }
         }
 
-        public BookingResponse BookForFlight(BookingRequest pobjBookingRequest, MemberDetails pobjMemberDetails)
+        public CB.IBE.Platform.ClientEntities.BookingResponse BookForFlight(CB.IBE.Platform.ClientEntities.BookingRequest pobjBookingRequest, MemberDetails pobjMemberDetails)
         {
             try
             {
                 BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
-                BookingResponse lobjBookingResponse = lobjBookingIntegrationFacade.BookForFlight(pobjBookingRequest, pobjMemberDetails);
+                CB.IBE.Platform.ClientEntities.BookingResponse lobjBookingResponse = lobjBookingIntegrationFacade.BookForFlight(pobjBookingRequest, pobjMemberDetails);
 
                 return lobjBookingResponse;
             }
@@ -3322,6 +3200,75 @@ namespace ABC.Model
             return lboolResponse;
         }
 
+                public bool InsertEmailDetails(List<string> pstrEmailparameter, string emailId, string templateCode, string memberId, int pintProgramId)
+        {
+            bool isSend = false;
+            try
+            {
+                EmailDetails lobjEmailDetail = new EmailDetails();
+                List<string> lstAttachment = new List<string>();
+                string lstrToken = GetAuthTokenforWebAPI();
+                List<Attachments> lstAttachments = new List<Attachments>();
+                APIClientHelper lobjcehelper = new APIClientHelper();
+                lobjEmailDetail.TemplateCode = templateCode;
+                lobjEmailDetail.ListParameter = pstrEmailparameter;
+                lobjEmailDetail.ProgramId = Convert.ToString(pintProgramId);
+                lobjEmailDetail.MemberId = memberId;
+                lobjEmailDetail.AttachmentList = lstAttachment;
+                lobjEmailDetail.To = emailId;
+                isSend=lobjcehelper.InsertEmailDetails(lobjEmailDetail, lstAttachments, lstrToken);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("Model SendEmail Ex-" + ex.InnerException + ex.StackTrace + ex.Message);
+            }
+            return isSend;
+        }
+        public bool GenerateReviewnConfirmOTP(OTPDetails pobjOTPDetails, string EmailId, string MemberId, int ProgramId, string FullName, string Phone)
+        {
+            try
+            {
+                //bool lboolResponse = false;
+                bool status = false;
+                ProgramDefinition lobjProgramDefinition = null;
+                lobjProgramDefinition = GetProgramMaster();
+                SystemParameter lobjSystemParameter = null;
+                lobjSystemParameter = GetSystemParametres(lobjProgramDefinition.ProgramId);
+                if (lobjProgramDefinition != null)
+                {
+                    try
+                    {
+                        OTPDetails lobjOTPDetails = new OTPDetails();
+                        lobjOTPDetails.UniquerefID = MemberId;
+                        lobjOTPDetails.SourceAddress = HttpContext.Current.Request.UserHostAddress;
+                        lobjOTPDetails.SourceCode = Core.Platform.OTP.ConfigurationConstants.SourceCode.Web;
+                        lobjOTPDetails.ProgramId = lobjProgramDefinition.ProgramId;
+                        lobjOTPDetails.RelationType = Convert.ToInt32(Core.Platform.Member.Entites.RelationType.LBMS);
+                        lobjOTPDetails.OtpType = Convert.ToString(pobjOTPDetails.OtpEnumTypes);
+                        lobjOTPDetails.OtpEnumTypes = pobjOTPDetails.OtpEnumTypes;
+                        lobjOTPDetails.AddExpirationTimeInMinutes = Convert.ToString(lobjSystemParameter.OTPExpirationTime);
+
+                        BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
+                        status = lobjBookingIntegrationFacade.GenerateReviewnConfirmOTP(lobjOTPDetails, EmailId, MemberId, ProgramId, FullName, Phone);
+                    }
+                    catch (Exception ex)
+                    {
+                        LoggingAdapter.WriteLog("Model GenerateReviewnConfirmOTP Ex-" + ex.InnerException + ex.StackTrace + ex.Message);
+                    }
+                    return status;
+                }
+                else
+                {
+                    LoggingAdapter.WriteLog("MODEL GenerateReviewnConfirmOTP (Activation Facade) program Detail Invalid");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("GenerateReviewnConfirmOTP -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
+                return false;
+            }
+        }
 
         public MemberDetails GetMemberDetailsByUniqueAttribute(int pintProgramId, string pstrUniqueAttributeValue)
         {
@@ -3337,6 +3284,21 @@ namespace ABC.Model
             }
             return lobjMemberDetails;
         }
+        public MemberDetails GetMemberDetailsbyEmailId(int pintProgramId, string EmailId, int RelationType)
+        {
+            MemberDetails lobjMemberDetails = null;
+            try
+            {
+                string lstrToken = GetAuthTokenforWebAPI();
+                lobjMemberDetails = lobjAPIClientHelper.GetMemberDetailsByEmailID(pintProgramId, EmailId, RelationType, lstrToken);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("Model GetMemberDetailsbyEmailId Ex-" + ex.InnerException + ex.StackTrace + ex.Message);
+            }
+            return lobjMemberDetails;
+        }
+
         #endregion
     }
 }

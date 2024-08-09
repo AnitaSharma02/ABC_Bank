@@ -14,7 +14,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Webclient", "..\Webclient\", "{AC12742B-0F73-4EEB-8B47-F30F6D719608}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
-		ProjectReferences = "{7076DFF3-528B-4FDF-8614-3056220B4BEC}|Core.Framework.Booking.Facade.dll;{F71BD815-82A2-4409-B44C-8186C81ED79D}|IBE.Client.FlightFilter.dll;{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}|Core.WebAPI.ClientHelper.dll;{6587ce90-e5b8-4a9e-a230-479460a5cedb}|Core.Framework.PostHelper.dll;{70532e14-1d6c-44d4-b236-bd1683899852}|GiiftShopGateway.Model.dll;{0DB849C8-0890-4574-848A-E0B79DDF5255}|Holibob.ClientHelper.dll;{494E62E1-F1B2-4E96-93E5-9C370745BD55}|Holibob.Entities.dll;{F73B01CF-A114-4908-B0E3-FB4FDDAD11EF}|Holibob.Implementor.dll;{e4a8f51c-731d-404e-9441-be72fdc75195}|KhaltiInsurance.Entities.dll;{e8f9623e-7210-44f6-9e73-24262e589422}|CB.IBE.DomesticFlight.Entities.dll;{386d80ca-9d8a-4b16-b680-177ae8d42657}|KhaltiISP.Entities.dll;{E03A4FD9-25AF-4CA0-8668-16CCCF8CC349}|CE.Entities.dll;{bfb5d46a-15ba-4917-b26e-a5bd15105874}|TransactionDetailsAdditionalInfo.Entities.dll;{3f7b6856-b36f-493e-a5b7-c0aa6cf46d80}|GiiftPaymentGateway.Entities.dll;{BCF8E756-8E46-4CE9-876E-C94FD33AFD6C}|NIC.Model.dll;{270b47a1-9a4c-431b-934a-d8d161c7cea0}|IBEAPI.ClientEntities.dll;{da816f60-d5ae-499f-a45d-7ec0c03c30fd}|IBEAPI.ClientHelper.dll;{f5392aec-b226-4e34-8807-e6cb6d2503d0}|IBEAPIGateway.Model.dll;"
+		ProjectReferences = "{7076DFF3-528B-4FDF-8614-3056220B4BEC}|Core.Framework.Booking.Facade.dll;{F71BD815-82A2-4409-B44C-8186C81ED79D}|IBE.Client.FlightFilter.dll;{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}|Core.WebAPI.ClientHelper.dll;{6587ce90-e5b8-4a9e-a230-479460a5cedb}|Core.Framework.PostHelper.dll;{70532e14-1d6c-44d4-b236-bd1683899852}|GiiftShopGateway.Model.dll;{e4a8f51c-731d-404e-9441-be72fdc75195}|KhaltiInsurance.Entities.dll;{e8f9623e-7210-44f6-9e73-24262e589422}|CB.IBE.DomesticFlight.Entities.dll;{386d80ca-9d8a-4b16-b680-177ae8d42657}|KhaltiISP.Entities.dll;{E03A4FD9-25AF-4CA0-8668-16CCCF8CC349}|CE.Entities.dll;{bfb5d46a-15ba-4917-b26e-a5bd15105874}|TransactionDetailsAdditionalInfo.Entities.dll;{3f7b6856-b36f-493e-a5b7-c0aa6cf46d80}|GiiftPaymentGateway.Entities.dll;{BCF8E756-8E46-4CE9-876E-C94FD33AFD6C}|ABC.Model.dll;{270b47a1-9a4c-431b-934a-d8d161c7cea0}|IBEAPI.ClientEntities.dll;{da816f60-d5ae-499f-a45d-7ec0c03c30fd}|IBEAPI.ClientHelper.dll;{f5392aec-b226-4e34-8807-e6cb6d2503d0}|IBEAPIGateway.Model.dll;{3564FE39-89E0-4FE0-B964-0E9B266A25D8}|BeMyGuest.ClientHelper.dll;{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}|BeMyGuest.Entities.dll;{DF3BA6F8-189E-4D98-8955-A1700383B711}|BeMyGuest.Implementor.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_63462"
 		Debug.AspNetCompiler.PhysicalPath = "..\Webclient\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63462\"
@@ -39,12 +39,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holibob.Entities", "Holibob.Entities\Holibob.Entities.csproj", "{494E62E1-F1B2-4E96-93E5-9C370745BD55}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holibob.ClientHelper", "Holibob.ClientHelper\Holibob.ClientHelper.csproj", "{0DB849C8-0890-4574-848A-E0B79DDF5255}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Holibob.Implementor", "Holibob.Implementor\Holibob.Implementor.csproj", "{F73B01CF-A114-4908-B0E3-FB4FDDAD11EF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Platform.Activation.BusinessFacade", "Core.Platform.Activation.BusinessFacade 6.0\Core.Platform.Activation.BusinessFacade.csproj", "{FE235288-4DA4-4C6B-BBC8-DF3D71013F4B}"
 EndProject
@@ -71,6 +65,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBEAPI.ClientHelper", "IBEAPI.ClientHelper\IBEAPI.ClientHelper.csproj", "{DA816F60-D5AE-499F-A45D-7EC0C03C30FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBEAPIGateway.Model", "IBEAPIGateway.Model\IBEAPIGateway.Model.csproj", "{F5392AEC-B226-4E34-8807-E6CB6D2503D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeMyGuest.Implementor", "BeMyGuest.Implementor\BeMyGuest.Implementor.csproj", "{DF3BA6F8-189E-4D98-8955-A1700383B711}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeMyGuest.Entities", "BeMyGuest.Entities\BeMyGuest.Entities.csproj", "{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeMyGuest.ClientHelper", "BeMyGuest.ClientHelper\BeMyGuest.ClientHelper.csproj", "{3564FE39-89E0-4FE0-B964-0E9B266A25D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -128,30 +128,6 @@ Global
 		{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}.Release|x64.ActiveCfg = Release|Any CPU
 		{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}.Release|x64.Build.0 = Release|Any CPU
-		{494E62E1-F1B2-4E96-93E5-9C370745BD55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{494E62E1-F1B2-4E96-93E5-9C370745BD55}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{494E62E1-F1B2-4E96-93E5-9C370745BD55}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{494E62E1-F1B2-4E96-93E5-9C370745BD55}.Debug|x64.Build.0 = Debug|Any CPU
-		{494E62E1-F1B2-4E96-93E5-9C370745BD55}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{494E62E1-F1B2-4E96-93E5-9C370745BD55}.Release|Any CPU.Build.0 = Release|Any CPU
-		{494E62E1-F1B2-4E96-93E5-9C370745BD55}.Release|x64.ActiveCfg = Release|Any CPU
-		{494E62E1-F1B2-4E96-93E5-9C370745BD55}.Release|x64.Build.0 = Release|Any CPU
-		{0DB849C8-0890-4574-848A-E0B79DDF5255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DB849C8-0890-4574-848A-E0B79DDF5255}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DB849C8-0890-4574-848A-E0B79DDF5255}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{0DB849C8-0890-4574-848A-E0B79DDF5255}.Debug|x64.Build.0 = Debug|Any CPU
-		{0DB849C8-0890-4574-848A-E0B79DDF5255}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DB849C8-0890-4574-848A-E0B79DDF5255}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0DB849C8-0890-4574-848A-E0B79DDF5255}.Release|x64.ActiveCfg = Release|Any CPU
-		{0DB849C8-0890-4574-848A-E0B79DDF5255}.Release|x64.Build.0 = Release|Any CPU
-		{F73B01CF-A114-4908-B0E3-FB4FDDAD11EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F73B01CF-A114-4908-B0E3-FB4FDDAD11EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F73B01CF-A114-4908-B0E3-FB4FDDAD11EF}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{F73B01CF-A114-4908-B0E3-FB4FDDAD11EF}.Debug|x64.Build.0 = Debug|Any CPU
-		{F73B01CF-A114-4908-B0E3-FB4FDDAD11EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F73B01CF-A114-4908-B0E3-FB4FDDAD11EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F73B01CF-A114-4908-B0E3-FB4FDDAD11EF}.Release|x64.ActiveCfg = Release|Any CPU
-		{F73B01CF-A114-4908-B0E3-FB4FDDAD11EF}.Release|x64.Build.0 = Release|Any CPU
 		{FE235288-4DA4-4C6B-BBC8-DF3D71013F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE235288-4DA4-4C6B-BBC8-DF3D71013F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE235288-4DA4-4C6B-BBC8-DF3D71013F4B}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -256,6 +232,30 @@ Global
 		{F5392AEC-B226-4E34-8807-E6CB6D2503D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5392AEC-B226-4E34-8807-E6CB6D2503D0}.Release|x64.ActiveCfg = Release|Any CPU
 		{F5392AEC-B226-4E34-8807-E6CB6D2503D0}.Release|x64.Build.0 = Release|Any CPU
+		{DF3BA6F8-189E-4D98-8955-A1700383B711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF3BA6F8-189E-4D98-8955-A1700383B711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF3BA6F8-189E-4D98-8955-A1700383B711}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DF3BA6F8-189E-4D98-8955-A1700383B711}.Debug|x64.Build.0 = Debug|Any CPU
+		{DF3BA6F8-189E-4D98-8955-A1700383B711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF3BA6F8-189E-4D98-8955-A1700383B711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF3BA6F8-189E-4D98-8955-A1700383B711}.Release|x64.ActiveCfg = Release|Any CPU
+		{DF3BA6F8-189E-4D98-8955-A1700383B711}.Release|x64.Build.0 = Release|Any CPU
+		{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}.Debug|x64.Build.0 = Debug|Any CPU
+		{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}.Release|x64.ActiveCfg = Release|Any CPU
+		{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}.Release|x64.Build.0 = Release|Any CPU
+		{3564FE39-89E0-4FE0-B964-0E9B266A25D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3564FE39-89E0-4FE0-B964-0E9B266A25D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3564FE39-89E0-4FE0-B964-0E9B266A25D8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3564FE39-89E0-4FE0-B964-0E9B266A25D8}.Debug|x64.Build.0 = Debug|Any CPU
+		{3564FE39-89E0-4FE0-B964-0E9B266A25D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3564FE39-89E0-4FE0-B964-0E9B266A25D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3564FE39-89E0-4FE0-B964-0E9B266A25D8}.Release|x64.ActiveCfg = Release|Any CPU
+		{3564FE39-89E0-4FE0-B964-0E9B266A25D8}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
