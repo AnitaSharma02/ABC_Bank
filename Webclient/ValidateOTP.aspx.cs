@@ -18,7 +18,6 @@ using Core.Platform.Booking.Entities;
 using CB.IBE.Platform.ClientEntities;
 using CB.IBE.DomesticFlight.Entities;
 using CB.IBE.Platform.Hotels.ClientEntities;
-using Holibob.Entities;
 using KhaltiInsurance.Entities;
 using KhaltiISP.Entities;
 using CB.IBE.Platform.Masters.Entities;
@@ -69,6 +68,8 @@ public partial class ValidateOTP : Page
             lobjOTPDetails.OTP = Convert.ToInt32(pstrOTP);
             ShopModel lobjshopmodel = new ShopModel();
             string merchantname = string.Empty;
+            BeMyGuest.Entities.BookingRequest lobjbookingRequest = HttpContext.Current.Session["ExperienceBookingRequest"] as BeMyGuest.Entities.BookingRequest;
+
             if (strFlag == "Air")
             {
                 lobjOTPDetails.OtpType = OTPEnumTypes.AIRREVIEWNCONFIRM.ToString();
@@ -160,7 +161,7 @@ public partial class ValidateOTP : Page
                         BookingPaymentDetails lobjBookingPaymentDetails = HttpContext.Current.Session["HotelBookingPaymentDetails"] as BookingPaymentDetails;
 
                         //experience
-                        OrderStatusResponse lobjOrderStatusResponse = HttpContext.Current.Session["ExperienceBookingDetails"] as OrderStatusResponse;
+                        lobjbookingRequest = HttpContext.Current.Session["ExperienceBookingRequest"] as BeMyGuest.Entities.BookingRequest;
 
                         //Insurance
                         InsuranceUserDetailsResponse lobjUserdetails = HttpContext.Current.Session["InsuranceUserDetails"] as InsuranceUserDetailsResponse;
@@ -217,29 +218,17 @@ public partial class ValidateOTP : Page
                             else if (lstrBookingFlag.ToLower().Equals("experience"))
                             {
                                 lobjStripePaymentDetails.ProductName = "Redemption Package";
-                                HolibobOrderStatus lobjOrderStatus = JsonConvert.DeserializeObject<HolibobOrderStatus>(lobjOrderStatusResponse.data.getOrderStatus);
 
                                 string lstrCurrency = lobjModel.GetDefaultCurrency();
-                                double ldblAmount = lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.totalPrice.gross).FirstOrDefault();
-                                string lstrProductName = string.Empty;
-                                try
-                                {
-                                    lstrProductName = lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault().Length > 150 ?
-                                        lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault().Substring(0, 150)
-                                        : lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault();
-                                }
-                                catch(Exception ex) 
-                                {
-                                    LoggingAdapter.WriteLog("ValidateOTP - lstrProductName Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-                                }
-                                if (lobjStripePaymentDetails.ReqRedeemPoint != "0")
-                                {
-                                    merchantname = string.Format("{0} #{1}#{2}", lstrProductName, lobjOrderStatus.data.id, lobjOrderStatus.data.code);
-                                    bool response = lobjModel.InsertTransactionDetails(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToDecimal(ldblAmount),
-                                   Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint), TransactionType.Debit, LoyaltyTxnType.Packages, orderId,
-                                   string.Format("{0} #{1}#{2}", lstrProductName, lobjOrderStatus.data.id, lobjOrderStatus.data.code), string.Format("{0}|{1}", lobjMemberDetails.Email, lobjMemberDetails.MobileNumber), string.Format("BookingCode:{0}|BookingUUID:{1}", lobjOrderStatus.data.rawData.data.booking.code, lobjOrderStatus.data.rawData.data.booking.id),
-                                   Convert.ToDecimal(lobjStripePaymentDetails.ReqRedeemAmount), lstrCurrency);
-                                }
+                                double ldblAmount = Convert.ToInt32(lobjbookingRequest.totalAmount);
+                                string lstrProductName = lobjbookingRequest.titleName;
+
+
+                                bool response = lobjModel.InsertTransactionDetails(lobjbookingRequest.memberId.ToString(), Convert.ToDecimal(ldblAmount),
+                               Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint), TransactionType.Debit, LoyaltyTxnType.Packages, orderId,
+                               string.Format("{0}", lstrProductName), string.Format("{0}|{1}", lobjbookingRequest.customer.email, lobjbookingRequest.customer.phone), string.Format("orderId:{0}", orderId),
+                               Convert.ToDecimal(lobjStripePaymentDetails.ReqRedeemAmount), lstrCurrency);
+
                             }
                             else if (lstrBookingFlag.ToLower().Equals("physicalproduct"))
                             {
@@ -435,7 +424,7 @@ public partial class ValidateOTP : Page
                             lobject.Add(lobjHotelSearchRequest); //[11]
                             lobject.Add(lobjBookingPaymentDetails); //[12]
 
-                            lobject.Add(lobjOrderStatusResponse); //[13]
+                            //lobject.Add(lobjOrderStatusResponse); //[13]
                             lobject.Add(lobjUserdetails); //[14]
                             lobject.Add(lobjISPUserdetails);//[15]
                             lobject.Add(lobjBookingDetailsResponse);//[16]

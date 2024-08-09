@@ -146,7 +146,7 @@ namespace Core.WebAPI.ClientHelper
             return lobjResponse;
         }
 
-        public MemberDetails GetMemberDetailsByEmailID(string pstrEmailID, int pintProgramId, int pintRelationType, string pstrToken)
+        public MemberDetails GetMemberDetailsByEmailID(int pintProgramId,string pstrEmailID,  int pintRelationType, string pstrToken)
         {
             MemberDetails lobjResponse;
             try
@@ -354,6 +354,29 @@ namespace Core.WebAPI.ClientHelper
                 lobjResponse = null;
             }
             return lobjResponse;
+        }
+        public bool CreateProfile(string pstrInsertMemberRequest, string pstrToken)
+        {
+            bool isSaved = false;
+            try
+            {
+                APIResponseResults lobjAPIResponseResults = new APIResponseResults();
+                lobjAPIResponseResults = JsonConvert.DeserializeObject<APIResponseResults>(WebAPIHelper.PostData(string.Format("{0}", APIConstant.CreateProfile), "POST", "CreateProfile", pstrInsertMemberRequest, pstrToken));
+                if (lobjAPIResponseResults.results.IsSucessful)
+                {
+                    isSaved = true;
+                }
+                else
+                {
+                    isSaved = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("APIClientHelper CreateProfile Exception: " + ex.Message + Environment.NewLine + ex.StackTrace);
+                isSaved = false;
+            }
+            return isSaved;
         }
 
         public bool ValidateResetToken(ResetPassword pobjResetPassword, string pstrToken)

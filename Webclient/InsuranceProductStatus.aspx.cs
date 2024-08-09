@@ -4,7 +4,6 @@ using Core.Platform.MemberActivity.Constants;
 using Core.Platform.MemberActivity.Entities;
 using Core.Platform.ProgramMaster.Entities;
 using Framework.EnterpriseLibrary.Adapters;
-using Holibob.Entities;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

@@ -1,16 +1,47 @@
-﻿<%@ Page Title="Experience Product List" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="ExperienceProductList.aspx.cs" Inherits="ExperienceProductList" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="ExperienceProductList.aspx.cs" Inherits="ExperienceProductList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="Css/jquery.ui.autocomplete.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/experiences.css">
-    <style>
-        #divSearchCart{
-            display:none !important;
-        }
-    </style>
+    <link rel="stylesheet" href="\Css/experience.css" />
+
+
+    <div class="dvExperience mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="expHead mx-auto col-12 text-center">
+                    <h2 class="heading-semibold mt-5 mb-2 mt-md-5 mt-lg-5">Experiences</h2>
+                    <p class="pb-2">Find activities, attractions, tours & more!</p>
+                    <div class="expSearch">
+                        <div class="dvSearch">
+                            <div class="input-group input-group-lg">
+                                <input id="txtSearchTerm" autocomplete="off" class="form-control" type="text" name="searchTerm" placeholder="Search Destination" required />
+                                <div class="input-group-prepend">
+                                    <span id="btnSearchExperiences" type="button" class="input-group-text">
+                                        <img src="../images/icons/other/search-icon.svg"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dvCardBox mt-5 mb-4 pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row no-gutters" id="divExperienceProductList">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript">
-    /*    document.getElementById("pageName").innerHTML = "Experience";*/
-        var pageSize = 40;
+        var pageSize = 16;
         var pageTotal = 0;
         var pageIndex = 1;
         $(window).scroll(function () {
@@ -32,62 +63,8 @@
                     alert('loadedFromBrowserCache');
                 }
             });
+            BindBanner();
             fnGetExperienceProductList(pageIndex, pageSize);
-            $("#txtExperiencesProductSearch").autocomplete({
-                source: function (request, response) {
-                    var list = [];
-                    var alphanumericRegex = /^[0-9a-zA-Z_]+$/;
-                    var pstrSearchText = request.term.toString();
-                    if (pstrSearchText.replace(/\s+/g, '') != '' && !pstrSearchText.replace(/\s+/g, '').match(alphanumericRegex)) {
-                        $("#txtExperiencesProductSearch").addClass('experienceerror');
-                        return response(list);
-                    }
-                    else {
-                        $.ajax({
-                            type: 'POST',
-                            url: 'ExperienceProductList.aspx/GetSearchList',
-                            contentType: 'application/json; charset=utf-8',
-                            dataType: 'json',
-                            data: "{'pstrSearchText':'" + pstrSearchText + "'}",
-                            cache: false,
-                            success: function (msg) {
-                                $("#updProgress").hide();
-                                if (msg.d != '') {
-                                    response($.map(msg.d, function (item) {
-                                        return {
-                                            label: item.title,
-                                            val: item.id,
-                                            type: item.type
-                                        }
-                                    }));
-                                } else {
-                                    list.push({ label: 'No result found.', val: '', type: '' });
-                                    response(list);
-                                }
-                            },
-                            error: function (errmsg) {
-                                response(list);
-                            },
-                            beforeSend: function () {
-                                $("#updProgress").show();
-                            }
-                        });
-                    }
-                },
-                select: function (event, ui) {
-                    if (ui.item.val != '') {
-                        if (ui.item.type.toLowerCase() == 'product') {
-                            fnRedirectingToExperiencesProductDetails(ui.item.val);
-                        } else {
-                            fnRedirectingToExperiencesSerachProductList(ui.item.val);
-                        }
-                    }
-                    return false;
-                },
-                minLength: 3,
-                scroll: true,
-                scrollHeight: 300
-            });
         });
         var IsGetExperienceProductListAjaxCalled = false;
         function fnGetExperienceProductList(pageIndex, pageSize) {
@@ -96,10 +73,7 @@
                     IsGetExperienceProductListAjaxCalled = true;
                     var arrData = {};
                     arrData.pintPage = pageIndex;
-                    arrData.pintLimit = pageSize;
-                    arrData.pstrSort = 'asc';
-                    arrData.pstrPlaceName = $('#slcCountries option:selected').val();
-                    arrData.pstrGuidePrice = 'asc';
+                    arrData.pintPageSize = pageSize;
                     $.ajax({
                         type: 'POST',
                         url: 'ExperienceProductList.aspx/GetExperienceProductList',
@@ -126,8 +100,8 @@
         }
         function fnShowLoader(id) {
             var html = '';
-            html += '<div id="divExperienceLoader" class="spin-loader">';
-            html += '<img class="spin" width="50" src="Images/loader/spinner-2.gif" alt="" />';
+            html += '<div id="divExperienceLoader" class="spin-loader" style="margin: auto;">';
+            html += '<img class="spin" width="50" src="Images/loading.gif" alt="" />';
             html += '</div>';
             $("#" + id + "").append(html);
             $("#" + id + "").show();
@@ -136,33 +110,38 @@
             var html = '';
             if (data != '') {
                 var parseData = JSON.parse(data);
-                pageTotal = parseData.totalCount;
-                if (parseData.data != null && parseData.status.toLowerCase() == 'success' && parseData.data.length > 0) {
-                    for (var i = 0; i < parseData.data.length; i++) {
-                        html += '<div class="col-sm-6 col-lg-3 mb-4"><div class="experience">';
-                        if (parseData.data[i].previewImage == null) {
-                            html += '<div title=\"Product Image\"><span><img class="w-100 img-fluid" alt=\"Product Image\" src =\"\"></span></div>';
+                pageTotal = parseData.length;
+                if (parseData != null  && parseData.length > 0) {
+                    for (var i = 0; i < parseData.length; i++) {
+                        html += '<div class="col-sm-6 col-lg-3 mb-4">';
+                        html += '<a href=\"javascript:void(0);\" class="d-block shadow-sm bg-white border h-100"  onclick=\"fnRedirectingToExperiencesProductDetails(\'' + parseData[i].uuid + '\');\">';
+                        html += '<div class="h-100 d-flex flex-column">';
+
+                        html += '<div class="img-container">';
+                        if (parseData[i].image == null) {
+                            html += '<img class="w-100 img-fluid" alt=\"Product Image\" src =\"\"/>';
                         } else {
-                            html += '<div title=\"Product Image\"><span><img class="w-100 img-fluid" alt=\"Product Image\" src =\"' + parseData.data[i].previewImage.urlSmall + '\"></span></div>';
+                            html += '<img class="w-100 img-fluid" alt=\"Product Image\" src =\"' + parseData[i].image + '\"/>';
                         }
-                        html += '<div class="card_detail"><h3><span>' + parseData.data[i].name + '</span></h3><h5>' + parseData.data[i].holibobGuidePrice.grossFormattedText + '</h5>';
-                        html += '<ul class="moreExp">';
-                        html += '<li><i class="bi bi-lightning-fill"></i><p>Instant Confirmation</p></li>';
-                        var durationHtml = fnSetProductMinAndMaxDuration(parseData.data[i].minDuration, parseData.data[i].maxDuration);
-                        if (durationHtml != '') {
-                            html += '<li><i class="bi bi-stopwatch"></i><p>' + durationHtml + '</p></li>';
-                        }
-                        if (parseData.data[i].cancellationPolicy.hasFreeCancellation) {
-                            html += '<li><i class="bi bi-x-circle"></i><p>Free Cancellation</p></li>';
-                        }
-                        if (parseData.data[i].place.cityName != '') {
-                            html += '<li><i class="bi bi-geo-alt-fill"></i><p>' + parseData.data[i].place.cityName + '</p></li>';
-                        }
-                        html += '</ul >';
-                        html += '<a href=\"javascript:void(0);\" onclick=\"fnRedirectingToExperiencesProductDetails(\'' + parseData.data[i].id + '\');\" class="btn btn-one">Learn More</a></div>';
-                        html += '</div></div>';
+                        html += '</div >';
+
+                        html += '<div class="p-3">';
+                        html += '<div class="card_detail">';
+                        html += '<h2 class="h6 heading-semibold mt-2 mb-2">' + parseData[i].title + '</h2>';
+                        html += ' <p class="h7 heading-regular">' + parseData[i].city + ',' + parseData[i].country+'</p>';
+                        html += '</div>';
+                        html += '<div class="cardPoints d-flex justify-content-between align-items-center pt-4">';
+                        html += '<p class="h8 heading-semibold text-colour5 text-truncate">'+ parseData[i].typeName+'</p>';
+                        html += '<p class="h8 heading-semibold text-colour5">from <span class="font-weight-bold">' + FormatCurrency(parseData[i].basePrice, parseData[i].convertedCurrency)+'</span> /pax</p>';
+                        html += '</div>';
+                        html += '</div>';
+
+                        html += '</div >';
+                        html += '</a >';
+                        html += '</div >';
                     }
-                } else {
+                }
+                else {
                     if ($("#divExperienceProductList").html().length == 0) {
                         html = "No products found.";
                     }
@@ -175,26 +154,6 @@
             $("#divExperienceProductList").append(html);
             $("#divExperienceLoader").remove();
         }
-        function fnSetProductMinAndMaxDuration(minDuration, maxDuration) {
-            var html = '';
-            try {
-                if (minDuration != null && maxDuration != null && minDuration != 'P0D' && maxDuration != 'P0D' && minDuration != maxDuration) {
-                    html = minDuration + ' - ' + maxDuration;
-                } else if (minDuration != null && maxDuration != null && minDuration != 'P0D' && maxDuration != 'P0D' && minDuration == maxDuration) {
-                    html = minDuration;
-                }
-                if (html != '') {
-                    html = html.replace(/PT/g, '');
-                    html = html.replace(/P/g, '');
-                    html = html.replace(/T/g, '');
-                    html = html.replace(/H/g, ' hours ');
-                    html = html.replace(/M/g, ' minutes');
-                    html = html.replace(/D/g, ' day');
-                }
-            } catch (e) {
-            }
-            return html;
-        }
         function fnRedirectingToExperiencesSerachProductList(id) {
             try {
                 $("#updProgress").show();
@@ -205,74 +164,71 @@
         function fnRedirectingToExperiencesProductDetails(id) {
             try {
                 $("#updProgress").show();
-                window.location.href = "ExperienceProductDetails.aspx?Id=" + id;
+                window.location.href = "ExperienceProductDetails.aspx?uuid=" + id;
             } catch (e) {
             }
         }
-        function fnCallExperienceProductList() {
-            try {
-                pageIndex = 1;
-                $('#divExperienceProductList').empty();
-                fnGetExperienceProductList(pageIndex, pageSize);
-            } catch (e) {
+        function FormatCurrency( decValue,  currencyCode)
+        {
+            if (currencyCode != "" && currencyCode != null) {
+                return currencyCode+" "+parseFloat(decValue).toLocaleString(window.document.documentElement.lang);
+            }
+            else {
+                return parseFloat(decValue).toLocaleString(window.document.documentElement.lang);
+            }
+        }
+        function ValidateSearchExperiencesFields() {
+            var isValidated = true;
+            $(".error").remove();
+            var searchTerm = $.trim($('#txtSearchTerm').val());
+            if (searchTerm.length == 0) {
+                isValidated = false;
+                $('#txtSearchTerm').closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
+            } else if (searchTerm.length > 0) {
+                if (searchTerm.length >= 3) {
+                    var filter = /^[a-zA-Z0-9\s]*$/;
+                    if (!filter.test(searchTerm)) {
+                        isValidated = false;
+                        $('#txtSearchTerm').closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid product name</span>');
+                    }
+                } else if (searchTerm.length < 3) {
+                    isValidated = false;
+                    $('#txtSearchTerm').closest("div").after('<span class="error h8 heading-regular text-danger">Please enter atleast 3 characters</span>');
+                }
+            }
+            return isValidated;
+        }
+        $('#btnSearchExperiences').on('click', function (e) {
+            e.preventDefault();
+            $(this).prop('disabled', true);
+            $('#updProgress').show();
+            if (ValidateSearchExperiencesFields()) {
+                GetSearchExperiences($("#txtSearchTerm").val());
+                //search code here
+            } else {
+                $(this).prop('disabled', false);
+                $('#updProgress').hide();
+            }
+        });
+        $("#txtSearchTerm").keydown(function (event) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                var pageNo = 1;
+                $('#updProgress').show();
+                if (ValidateSearchExperiencesFields()) {
+                    GetSearchExperiences($("#txtSearchTerm").val());
+                    //search code here
+                } else {
+                    $('#updProgress').hide();
+                }
+            }
+        });
+        function GetSearchExperiences(searchTerm)
+        {
+            if (searchTerm != '')
+            {
+                window.location.href = 'ExperiencesSearch.aspx?searchterm=' + searchTerm;
             }
         }
     </script>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="expHead mx-auto col-md-12">
-                    <h3 class="heading-yellow mt-2 mb-2 mt-lg-5">Experiences</h3>
-                    <p>Enjoy a handpicked selection of experiences from our collection.</p>
-                    <div class="expSearch">
-                        <div class="searchBlk">
-                            <input id="txtExperiencesProductSearch" type="text" name="search" required />
-                            <label>Search Destination</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="MyExperiences">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 pt-5">
-                    <div class="expHead d-none">
-                        <ul class="moreExp row">
-                            <li class="col-md-3 col-6"><i class="bi bi-trophy-fill"></i>
-                                <p>Best rates and availability</p>
-                            </li>
-                            <li class="col-md-3 col-6"><i class="bi bi-x-circle"></i>
-                                <p>Flexible cancellation policies</p>
-                            </li>
-                            <li class="col-md-3 col-6"><i class="bi bi-lightning-fill"></i>
-                                <p>Live and instant booking</p>
-                            </li>
-                            <li class="col-md-3 col-6"><i class="bi bi-people-fill"></i>
-                                <p>Trusted suppliers</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="glist">
-                        <select id="slcCountries" class="form-control" onchange="fnCallExperienceProductList()" style="display: none;">
-                            <option value="">All</option>
-                            <option value="Bahrain">Bahrain</option>
-                            <option value="Egypt">Egypt</option>
-                            <option value="India">India</option>
-                            <option value="Oman">Oman</option>
-                            <option value="Qatar">Qatar</option>
-                            <option value="Saudi Arabia">Saudi Arabia</option>
-                            <option value="United Arab Emirates">United Arab Emirates</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="United States">United States</option>
-                            <option selected="selected" value="Nepal">Nepal</option>
-                        </select>
-                        <div class="row" id="divExperienceProductList"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 </asp:Content>
-

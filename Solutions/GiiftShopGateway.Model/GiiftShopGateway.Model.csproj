@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GiiftShopGateway.Model</RootNamespace>
     <AssemblyName>GiiftShopGateway.Model</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -98,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ABC.Model\ABC.Model.csproj">
-      <Project>{bcf8e756-8e46-4ce9-876e-c94fd33afd6c}</Project>
+      <Project>{BCF8E756-8E46-4CE9-876E-C94FD33AFD6C}</Project>
       <Name>ABC.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Core.WebAPI.ClientHelper\Core.WebAPI.ClientHelper.csproj">

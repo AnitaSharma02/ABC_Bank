@@ -1,42 +1,38 @@
-﻿using CB.IBE.Platform.Transactions.Entites;
-using Core.Platform.Member.Entites;
-using Framework.EnterpriseLibrary.Adapters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Core.Platform.Booking.Entities;
-using CB.IBE.DepositAccountService.ClientHelper;
-using Core.Platform.ProgramMaster.Entities;
-using Core.Platform.PointGateway.Service.Helper;
-using Core.Platform.Configurations;
-using Core.Platform.Transactions.Entites;
-using CB.IBE.Platform.ClientEntities;
-using CB.IBE.Platform.Masters.Entities;
-using CB.IBE.Platform.IBEClient;
-using CB.IBE.Platform.Entities;
-using CB.IBE.Platform.Hotels.ClientEntities;
-using Framework.Integrations.Hotels.Entities;
-using Framework.EnterpriseLibrary.CommunicationEngine.Entity;
-using Framework.EnterpriseLibrary.CommunicationEngine.Helper;
+﻿using CB.IBE.DepositAccountService.ClientHelper;
 using CB.IBE.Platform.Car.ClientEntities;
 using CB.IBE.Platform.Car.Entities;
+using CB.IBE.Platform.ClientEntities;
+using CB.IBE.Platform.Entities;
+using CB.IBE.Platform.Hotels.ClientEntities;
 using CB.IBE.Platform.IBECarClient;
+using CB.IBE.Platform.IBEClient;
+using CB.IBE.Platform.Masters.Entities;
+using CB.IBE.Platform.Transactions.Entites;
+using CE.Entities;
+using Core.Platform.Booking.Entities;
+using Core.Platform.Configurations;
+using Core.Platform.InfiVoucher.ClientHelper;
+using Core.Platform.InfiVoucher.Entities;
+using Core.Platform.Member.Entites;
 using Core.Platform.OTP.Entities;
 using Core.Platform.OTP.Facade;
-using Framework.EnterpriseLibrary.UniqueNumberGenerator;
-using System.Configuration;
-using InfiVoucher.Platform.Entities;
-using Core.Platform.InfiVoucher.Entities;
-using Core.Platform.InfiVoucher.ClientHelper;
-using Framework.EnterpriseLibrary.Common.SerializationHelper;
-using LoyaltyManagement.Request;
+using Core.Platform.PointGateway.Service.Helper;
+using Core.Platform.ProgramMaster.Entities;
+using Core.Platform.Transactions.Entites;
 using Core.WebAPI.ClientHelper;
-using System.Web;
+using Framework.EnterpriseLibrary.Adapters;
+using Framework.EnterpriseLibrary.Common.SerializationHelper;
+using Framework.EnterpriseLibrary.CommunicationEngine.Entity;
+using Framework.Integrations.Hotels.Entities;
+using InfiVoucher.Platform.Entities;
+using LoyaltyManagement.Request;
 using Newtonsoft.Json;
-using CE.Entities;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Globalization;
+using System.Linq;
+using System.Web;
 
 namespace Core.Framework.Booking.Facade
 {
@@ -167,7 +163,7 @@ namespace Core.Framework.Booking.Facade
                                         strPaxInfo += "</tr>";
                                     }
 
-                                    strPaxInfo+= "</table>";
+                                    strPaxInfo += "</table>";
                                 }
 
                                 // Code for Departure table
@@ -241,18 +237,18 @@ namespace Core.Framework.Booking.Facade
                                                 strArrival += "<td width='50%' align='right' style='font-family:Arial; font-size:12px; color:#231f20; padding: 10px 0px; text-align:right'> Baggage Allowance:&nbsp;" + lobjFlightSegmentlst[j].BaggageAllowance + "</td>";
                                                 strArrival += "<tr></table></td></tr>";
                                             }
-                                        }                                       
+                                        }
                                     }
                                 }
                                 string strGDSPNR = lobjItineraryDetails.PaxPricingInfoList.PaxPricingInfo[0].BookingInfoList.BookingInfo[0].gdspnr;
                                 dynamic dynamicCls = new System.Dynamic.ExpandoObject();
                                 dynamicCls.event_name = "Flight_Booking_Success";
                                 dynamicCls.relation_reference = Convert.ToString(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
-                                dynamicCls.program_id = Convert.ToInt32(pobjMemberDetails.ProgramId); 
+                                dynamicCls.program_id = Convert.ToInt32(pobjMemberDetails.ProgramId);
                                 dynamicCls.to_email = pobjMemberDetails.Email;
                                 dynamicCls.full_name = pobjMemberDetails.FullName;
                                 dynamicCls.TransactionReferenceCode = lobjItineraryDetails.ItineraryReference;
-                                dynamicCls.PaymentDetails = FloatToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints)+ " Points";
+                                dynamicCls.PaymentDetails = FloatToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints) + " Points";
                                 dynamicCls.GDSPNR = strGDSPNR;
                                 dynamicCls.TblPassengerInfo = strPaxInfo;
                                 dynamicCls.Class = strClass;
@@ -295,9 +291,9 @@ namespace Core.Framework.Booking.Facade
 
                             if (strFailureType != "" && strFailureType != string.Empty)
                             {
-                                List<string> lstEmailparameter = new List<string>();                               
+                                List<string> lstEmailparameter = new List<string>();
                                 lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                               SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
+                                SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
                             }
                         }
                         else
@@ -755,26 +751,26 @@ namespace Core.Framework.Booking.Facade
                                 dynamic dynamicCls = new System.Dynamic.ExpandoObject();
                                 dynamicCls.event_name = "Hotel_Booking_Success";
                                 dynamicCls.relation_reference = Convert.ToString(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
-                                dynamicCls.program_id = Convert.ToInt32(pobjMemberDetails.ProgramId); 
+                                dynamicCls.program_id = Convert.ToInt32(pobjMemberDetails.ProgramId);
                                 dynamicCls.to_email = pobjMemberDetails.Email;
                                 dynamicCls.full_name = pobjMemberDetails.FullName;
                                 dynamicCls.vouchernumber = lobjBookingResponse.BookingResponse.confirmationnumber;
-                                dynamicCls.BookingRef= lobjBookingResponse.BookingResponse.TransactionRefCode;
+                                dynamicCls.BookingRef = lobjBookingResponse.BookingResponse.TransactionRefCode;
                                 dynamicCls.BookedBy = pobjCustomer.title + " " + pobjCustomer.firstname + " " + pobjCustomer.lastname;
                                 dynamicCls.email = pobjCustomer.email;
-                                dynamicCls.address=pobjCustomer.city;
-                                dynamicCls.NoOfRooms=Convert.ToString(pobjHotelSearchRequest.SearchRequest.NoOfRooms);
-                                dynamicCls.NoOfDays=Convert.ToString((pobjHotelSearchRequest.SearchRequest.CheckOutDate - pobjHotelSearchRequest.SearchRequest.CheckInDate).Days);
-                                dynamicCls.CheckInDate=pobjHotelSearchRequest.SearchRequest.CheckInDate.ToString("dd/MM/yyyy");
-                                dynamicCls.CheckOutDate=pobjHotelSearchRequest.SearchRequest.CheckOutDate.ToString("dd/MM/yyyy");
+                                dynamicCls.address = pobjCustomer.city;
+                                dynamicCls.NoOfRooms = Convert.ToString(pobjHotelSearchRequest.SearchRequest.NoOfRooms);
+                                dynamicCls.NoOfDays = Convert.ToString((pobjHotelSearchRequest.SearchRequest.CheckOutDate - pobjHotelSearchRequest.SearchRequest.CheckInDate).Days);
+                                dynamicCls.CheckInDate = pobjHotelSearchRequest.SearchRequest.CheckInDate.ToString("dd/MM/yyyy");
+                                dynamicCls.CheckOutDate = pobjHotelSearchRequest.SearchRequest.CheckOutDate.ToString("dd/MM/yyyy");
                                 dynamicCls.hotelname = pobjHotel.basicinfo.hotelname;
                                 dynamicCls.hoteladdress = pobjHotel.basicinfo.address;
                                 dynamicCls.phone = pobjHotel.basicinfo.communicationinfo.phone;
                                 dynamicCls.fax = pobjHotel.basicinfo.communicationinfo.fax;
                                 dynamicCls.starrating = pobjHotel.basicinfo.starrating;
-                                dynamicCls.TotalPoints= FloatToThousandSeperated(pobjHotel.roomrates.RoomRate[0].TotalPoints) +" Points";
-                                dynamicCls.roomdescription=pobjHotel.roomrates.RoomRate[0].roomtype.roomdescription;
-                                dynamicCls.SpecialRequest=pobjHotel.SpecialRequest;
+                                dynamicCls.TotalPoints = FloatToThousandSeperated(pobjHotel.roomrates.RoomRate[0].TotalPoints) + " Points";
+                                dynamicCls.roomdescription = pobjHotel.roomrates.RoomRate[0].roomtype.roomdescription;
+                                dynamicCls.SpecialRequest = pobjHotel.SpecialRequest;
                                 dynamicCls.to_mobile = pobjMemberDetails.MobileNumber;
                                 dynamicCls.CreditsConsumed = FloatToThousandSeperated(pobjHotel.roomrates.RoomRate[0].TotalPoints);
                                 Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
@@ -785,7 +781,7 @@ namespace Core.Framework.Booking.Facade
                                 }
                                 string jsonParameters = JsonConvert.SerializeObject(lobjDictionary);
                                 SendEmails(jsonParameters, pobjMemberDetails);
-                               // SendEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "HotelBooked");
+                                // SendEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "HotelBooked");
                                 LoggingAdapter.WriteLog("Mail sent. ", "HotelBookingLogCategory");
                             }
                             catch (Exception ex)
@@ -811,7 +807,7 @@ namespace Core.Framework.Booking.Facade
                             if (strFailureType != "" && strFailureType != string.Empty)
                             {
                                 //List<string> lstEmailparameter = new List<string>();
-                               GenerateHotelBookingFailedEmailParameters(lobjBookingResponse, pobjHotel, pobjMemberDetails, pobjHotelSearchRequest, pobjCustomer, strFailureType);
+                                GenerateHotelBookingFailedEmailParameters(lobjBookingResponse, pobjHotel, pobjMemberDetails, pobjHotelSearchRequest, pobjCustomer, strFailureType);
                                 //SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "HotelBookingFailed");                              
                             }
                         }
@@ -842,7 +838,7 @@ namespace Core.Framework.Booking.Facade
                                 //List<string> lstEmailparameter = new List<string>();
                                 GenerateHotelBookingFailedEmailParameters(lobjBookingResponse, pobjHotel, pobjMemberDetails, pobjHotelSearchRequest, pobjCustomer, strFailureType);
                                 //SendEmail(lstEmailparameter, pobjMemberDetails, "HotelBookingFailed");
-                               // SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "HotelBookingFailed");
+                                // SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "HotelBookingFailed");
                             }
                         }
                     }
@@ -863,7 +859,7 @@ namespace Core.Framework.Booking.Facade
 
                             LoggingAdapter.WriteLog("RollBackMiles Success On Exception : " + strRollBackMilesResponse + " \n Exception \n" + ex.StackTrace, "HotelBookingLogCategory");
                             strFailureType += string.Format("{0}/", FailureType.CTRESPONSE);
-                           // List<string> lstEmailparameter = new List<string>();
+                            // List<string> lstEmailparameter = new List<string>();
                             GenerateHotelBookingFailedEmailParameters(lobjBookingResponse, pobjHotel, pobjMemberDetails, pobjHotelSearchRequest, pobjCustomer, strFailureType);
                             //SendEmail(lstEmailparameter, pobjMemberDetails, "HotelBookingFailed");
                             //SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "HotelBookingFailed");
@@ -2153,6 +2149,139 @@ namespace Core.Framework.Booking.Facade
                 LoggingAdapter.WriteLog("Send Communication error :" + ex.Message);
             }
             return lblnEmailSend;
+        }
+        public bool GenerateReviewnConfirmOTP(OTPDetails pobjOTPDetails, string EmailId, string MemberId, int ProgramId, string FullName, string Phone)
+        {
+
+            OTPDetails lobjOTPDetails = GenerateOTPDetails(pobjOTPDetails);
+            string lstrTemplateCode = string.Empty;
+            if (lobjOTPDetails != null)
+            {
+                //if (lobjOTPDetails.OtpEnumTypes.Equals(OTPEnumTypes.AIRREVIEWNCONFIRM))
+                //{
+                //    lstrTemplateCode = "FlightOTP";
+                //}
+                //else if (lobjOTPDetails.OtpEnumTypes.Equals(OTPEnumTypes.HOTELREVIEWNCONFIRM))
+                //{
+                //    lstrTemplateCode = "HotelOTP";
+                //}
+                //else if (lobjOTPDetails.OtpEnumTypes.Equals(OTPEnumTypes.PACKAGEREVIEWNCONFIRM))
+                //{
+                //    lstrTemplateCode = "PackageOTP";
+                //}
+                lstrTemplateCode = "SendOTP";
+                SendOTPEmail(EmailId, MemberId, ProgramId, lobjOTPDetails.OTP.ToString(), lobjOTPDetails.ExpiryDateTime, lstrTemplateCode, FullName);
+                SendOTPSMS(EmailId, MemberId, ProgramId, lobjOTPDetails.OTP.ToString(), lobjOTPDetails.ExpiryDateTime, lstrTemplateCode, pobjOTPDetails.AdditionalDetails, Phone);
+                return true;
+            }
+            return false;
+        }
+        private bool SendOTPEmail(string EmailId, string MemberId, int ProgramId, string pstrOTPstirng, DateTime pdtExpirydatetime, string pstrTemplateCode, string FullName)
+        {
+            bool lblnEmailSend = false;
+            try
+            {
+                if (EmailId != string.Empty)
+                {
+                    string lstrToken = GetAuthTokenforWebAPI();
+                    string lstrexpirydt = pdtExpirydatetime.ToString("dd/MM/yyyy");
+
+                    EmailDetails lobjEmailDetail = new EmailDetails();
+                    List<string> lstEmailparameter = new List<string>();
+                    List<string> lstAttachment = new List<string>();
+                    List<Attachments> lstAttachments = new List<Attachments>();
+                    APIClientHelper lobjcehelper = new APIClientHelper();
+                    lstEmailparameter.Add(pstrOTPstirng);
+                    lstEmailparameter.Add(FullName);
+                    lobjEmailDetail.TemplateCode = pstrTemplateCode;
+                    lobjEmailDetail.ListParameter = lstEmailparameter;
+                    lobjEmailDetail.AttachmentList = lstAttachment;
+                    lobjEmailDetail.To = EmailId;
+                    lobjEmailDetail.ProgramId = Convert.ToString(ProgramId);
+                    lobjEmailDetail.MemberId = Convert.ToString(MemberId);
+                    lblnEmailSend = lobjcehelper.InsertEmailDetails(lobjEmailDetail, lstAttachments, lstrToken);
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("OTP password error :" + ex.Message);
+                throw ex;
+            }
+            return lblnEmailSend;
+        }
+
+        //private bool SendOTPEmail(MemberDetails pobjMemberDetails, string pstrOTPstirng, string pstrTemplateCode, string redemption_type)
+        //{
+        //    bool lblnEmailSend = false;
+        //    try
+        //    {
+        //        CBCEmailDetailsResponse lobjEmailResponse = new CBCEmailDetailsResponse();
+        //        APIClientHelper lobjcehelper = new APIClientHelper();
+        //        if (pobjMemberDetails.Email != string.Empty)
+        //        {
+        //            CBCEmailDetails lobjEmailDetail = new CBCEmailDetails();
+        //            lobjEmailDetail.CE_Event = pstrTemplateCode;
+        //            lobjEmailDetail.relation_reference = Convert.ToString(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
+        //            lobjEmailDetail.program_id = Convert.ToInt32(pobjMemberDetails.ProgramId);
+        //            lobjEmailDetail.to_email = pobjMemberDetails.Email;
+        //            lobjEmailDetail.full_name = pobjMemberDetails.FullName;
+        //            lobjEmailDetail.otp = pstrOTPstirng;
+        //            lobjEmailDetail.to_mobile = pobjMemberDetails.MobileNumber;
+        //            lobjEmailDetail.redemption_type = redemption_type;
+        //            string parameters = JsonConvert.SerializeObject(lobjEmailDetail);
+        //            string lstrToken = GetAuthTokenforWebAPI();
+        //            lobjEmailResponse = lobjcehelper.CBCEmailDetails(parameters, lstrToken);
+        //            if (lobjEmailResponse != null)
+        //            {
+        //                if (lobjEmailResponse.results.IsSucessful)
+        //                {
+        //                    lblnEmailSend = true;
+        //                }
+        //                else
+        //                {
+        //                    LoggingAdapter.WriteLog("Send Communication UnSuccessful :" + lobjEmailResponse.results.ExceptionMessage);
+        //                    lblnEmailSend = false;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        LoggingAdapter.WriteLog("Send Communication error :" + ex.Message);
+        //    }
+        //    return lblnEmailSend;
+        //}
+
+        private bool SendOTPSMS(string EmailId, string MemberId, int ProgramId, string pstrOTPstring, DateTime pdtExpirydatetime, string pstrTemplateCode, string pstrTotalPoints, string Phone)
+        {
+            bool lblnSMSSend = false;
+            try
+            {
+                if (Phone != string.Empty)
+                {
+                    string lstrToken = GetAuthTokenforWebAPI();
+                    string lstrexpirydt = pdtExpirydatetime.ToString("dd/MM/yyyy");
+                    //Communication Engine Call For SMS. 
+                    APIClientHelper lobjcehelper = new APIClientHelper();
+                    SmsDetails lobjSmsDetail = new SmsDetails();
+                    List<string> lstSmsparameter = new List<string>
+                    {
+                        pstrOTPstring,
+                        pstrTotalPoints
+                    };
+                    lobjSmsDetail.TemplateCode = pstrTemplateCode;
+                    lobjSmsDetail.ListParameter = lstSmsparameter;
+                    lobjSmsDetail.ReceiverMobile = Convert.ToString(Phone);
+                    lobjSmsDetail.ProgramId = Convert.ToString(ProgramId);
+                    lobjSmsDetail.MemberId = Convert.ToString(MemberId);
+                    lblnSMSSend = lobjcehelper.InsertSmsDetails(lobjSmsDetail, lstrToken);
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("OTP SMS ERROR :" + ex.Message);
+            }
+            return lblnSMSSend;
         }
 
         private bool SendOTPSMS(MemberDetails lobjMemberDetails, string pstrOTPstring, DateTime pdtExpirydatetime, string pstrTemplateCode)

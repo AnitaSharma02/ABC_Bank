@@ -7,9 +7,9 @@
     <ProjectGuid>{BCF8E756-8E46-4CE9-876E-C94FD33AFD6C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NIC.Model</RootNamespace>
-    <AssemblyName>NIC.Model</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <RootNamespace>ABC.Model</RootNamespace>
+    <AssemblyName>ABC.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -604,12 +604,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerDetail.cs" />
+    <Compile Include="InsertMemberRequest.cs" />
     <Compile Include="PrepaidCardDetails.cs" />
     <Compile Include="ABCModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StripePaymentDetails.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BeMyGuest.ClientHelper\BeMyGuest.ClientHelper.csproj">
+      <Project>{3564fe39-89e0-4fe0-b964-0e9b266a25d8}</Project>
+      <Name>BeMyGuest.ClientHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeMyGuest.Entities\BeMyGuest.Entities.csproj">
+      <Project>{edd7d84d-5921-45f3-8da9-0bca3ac04135}</Project>
+      <Name>BeMyGuest.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CB.IBE.DomesticFlight.Entities\CB.IBE.DomesticFlight.Entities.csproj">
       <Project>{E8F9623E-7210-44F6-9E73-24262E589422}</Project>
       <Name>CB.IBE.DomesticFlight.Entities</Name>
@@ -629,14 +638,6 @@
     <ProjectReference Include="..\GiiftPaymentGateway.Entities\GiiftPaymentGateway.Entities.csproj">
       <Project>{3f7b6856-b36f-493e-a5b7-c0aa6cf46d80}</Project>
       <Name>GiiftPaymentGateway.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Holibob.ClientHelper\Holibob.ClientHelper.csproj">
-      <Project>{0DB849C8-0890-4574-848A-E0B79DDF5255}</Project>
-      <Name>Holibob.ClientHelper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Holibob.Entities\Holibob.Entities.csproj">
-      <Project>{494E62E1-F1B2-4E96-93E5-9C370745BD55}</Project>
-      <Name>Holibob.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\KhaltiInsurance.Entities\KhaltiInsurance.Entities.csproj">
       <Project>{E4A8F51C-731D-404E-9441-BE72FDC75195}</Project>

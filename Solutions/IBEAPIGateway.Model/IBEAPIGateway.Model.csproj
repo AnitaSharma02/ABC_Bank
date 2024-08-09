@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IBEAPIGateway.Model</RootNamespace>
     <AssemblyName>IBEAPIGateway.Model</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -64,6 +64,9 @@
     <Reference Include="IBEAPI.ClientEntities">
       <HintPath>..\IBEAPI.ClientEntities\bin\Debug\IBEAPI.ClientEntities.dll</HintPath>
     </Reference>
+    <Reference Include="IBEAPI.ClientHelper">
+      <HintPath>..\IBEAPI.ClientHelper\bin\Debug\IBEAPI.ClientHelper.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\Newtonsoft.Json.dll</HintPath>
@@ -82,12 +85,6 @@
   <ItemGroup>
     <Compile Include="IBEAPIModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IBEAPI.ClientHelper\IBEAPI.ClientHelper.csproj">
-      <Project>{da816f60-d5ae-499f-a45d-7ec0c03c30fd}</Project>
-      <Name>IBEAPI.ClientHelper</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

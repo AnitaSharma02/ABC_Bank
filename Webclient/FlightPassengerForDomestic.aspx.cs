@@ -5,7 +5,6 @@ using Core.Platform.Member.Entites;
 using Core.Platform.MemberActivity.Entities;
 using Core.Platform.ProgramMaster.Entities;
 using Framework.EnterpriseLibrary.Adapters;
-using Holibob.Entities;
 using ABC.Model;
 using System;
 using System.Collections.Generic;
