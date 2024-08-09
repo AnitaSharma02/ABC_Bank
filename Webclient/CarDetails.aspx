@@ -387,10 +387,13 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header border-0">
-                    <h5 class="modal-title" data-i18n="carlist-important-information">Important information</h5>
-                      <button type="button" class="close" data-dismiss="modal">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
+                    <h5 class="modal-title">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span data-i18n="carlist-important-information">Important information</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                   </div>
 
                 <!-- Modal body -->
@@ -526,10 +529,13 @@
 
                 <!-- Modal Header -->
                  <div class="modal-header border-0">
-                      <h5 class="modal-title">Info</h5>
-                      <button type="button" class="close" data-dismiss="modal">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
+                      <h5 class="modal-title">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Info</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
              
                 <!-- Modal body -->
@@ -572,9 +578,12 @@
             <div class="modal-content">
                 <!-- Modal Header -->
                  <div class="modal-header border-0">
-                      <h5 class="modal-title">Info</h5>
+                      <h5 class="modal-title">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>Info</span>
+                        </h5>
                         <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
+                            <i class="fa-solid fa-xmark"></i>
                         </button>
                 </div>
                

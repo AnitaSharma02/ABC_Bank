@@ -172,10 +172,14 @@
     <div class="dvCommonModal dvOrderDetailsPopup modal fade" id="dvOrderDetailsModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-               <div class="modal-header d-block">
-                    <h5 class="modal-title heading-semibold text-colour1 d-inline-block">Details</h5>
+               <div class="modal-header border-0">
+                    <%--<h5 class="modal-title heading-semibold text-colour1 d-inline-block">Details</h5>
                     <button type="button" class="close text-colour1 pr-4" data-dismiss="modal">
                       <i class="fa-solid fa-xmark"></i>
+                    </button>--%>
+                   <h5 class="modal-title">Details</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
                </div> 
                 <div class="modal-body bg-colour2 p-1">

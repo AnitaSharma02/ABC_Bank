@@ -94,17 +94,17 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
                                         <h2 class="h6 heading-semibold" data-i18n="carlist-pickup-location">PICK UP LOCATION</h2>
-                                        <p id="spnpickuplocation" class="" ></p>
-                                        <p id="spnpickupdate" class=""></p>
+                                        <p id="spnpickuplocation" class="h7" ></p>
+                                        <p id="spnpickupdate" class="h7"></p>
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
                                         <h2 class="h6 heading-semibold" data-i18n="carlist-car-dropoff-location">CAR DROP OFF LOCATION</h2>
-                                        <p id="spndroppoffLocation" class="" ></p>
-                                        <p id="spndropoffdate" class=""></p>
+                                        <p id="spndroppoffLocation" class="h7" ></p>
+                                        <p id="spndropoffdate" class="h7"></p>
                                     </div>
                                     <div class="col-12 col-md-4 col-lg-12 mb-3">
                                         <h2 class="h6 heading-semibold" data-i18n="carlist-driver-residence-country">Driver's Residence Country</h2>
-                                        <p id="spndriverresidenceCountry" class=""></p>
+                                        <p id="spndriverresidenceCountry" class="h7"></p>
                                     </div>
                                     <div class="col-12 col-lg-6">
                                         <button type="button" class="btn btn-one w-100 editBtn" data-i18n="carlist-edit" onclick="bindcountry()">Edit</button>
@@ -643,15 +643,15 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
             <div class="modal-content">
                  <div class="modal-header border-0">         
-                    <h5 class="modal-title border-0">
-                        <i class="fa fa-filter mx-0"></i>
+                    <h5 class="modal-title">
+                        <i class="fa-solid fa-circle-info"></i>
                         <span data-i18n="carlist-important-information">Important information</span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                   </div>                
-                <div class="modal-body mb-2" id="divmoreInfoDetails"></div>
+                <div class="modal-body" id="divmoreInfoDetails"></div>
             </div>
         </div>
     </div>
