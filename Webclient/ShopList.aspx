@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="Shop List" Language="C#" MasterPageFile="SiteShopMaster.master" AutoEventWireup="true" CodeFile="ShopList.aspx.cs" Inherits="ShopList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CPSHOP" runat="Server">
-    <style>
-     .dvRedemptionMenu,
+    <style>     
      .dvInnerBanner,
      .dvShopMenu .navbar-toggler{
          display:none;

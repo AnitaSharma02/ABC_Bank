@@ -12,8 +12,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             BindBanner()
-            BindOffers();
-            GetRedemptionOptions();
+            BindOffers();            
            // $("#dvInnerBanner").attr("src", "images/shoppage/shop-banner.jpg");
         });
         function BindOffers() {

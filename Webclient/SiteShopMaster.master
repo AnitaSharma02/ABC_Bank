@@ -6,7 +6,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             //$('.dvMain').insertBefore('.dvRedemptionMenu');
-            $('.dvRedemptionMenu').insertBefore('.dvShopPage');
+            $('.dvShopMenu').insertBefore('.dvHeroSlider');
             GetRedemptionOptions()            
             $('.hover_app_info').hide();
             $("#txtProductName").autocomplete({
