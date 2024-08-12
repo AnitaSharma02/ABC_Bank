@@ -65,6 +65,7 @@
             });
             BindBanner();
             fnGetExperienceProductList(pageIndex, pageSize);
+            GetRedemptionOptions();
         });
         var IsGetExperienceProductListAjaxCalled = false;
         function fnGetExperienceProductList(pageIndex, pageSize) {
