@@ -553,6 +553,12 @@
     --p-card-h2-text-colour: var(--colour7);
     --p-card-h2-padding: 0rem 1rem;
 
+    /*h3*/
+    --p-card-h3-family: var(--font-regular);
+    --p-card-h3-fontsize: .875rem;
+    --p-card-h3-text-colour: var(--colour7);
+    --p-card-h3-padding: 0rem 1rem;
+
     /*points*/
     --p-card-points-family: var(--font-regular);
     --p-card-points-fontsize: .875rem;

@@ -23,29 +23,44 @@
             <div class="row">
                 <div class="dvFilter modal fade col-lg-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content border-0">
-                            <%--<div class="modal-header d-none align-items-center">
-                            <h2 class="h6 heading-semibold text-colour6">Filter</h2>
-                           
-                        </div>--%>
+                        <div class="modal-content border-0 b-radius">
+                           <div class="modal-header border-0 p-0">
+                                 <div class="modal-title border-0 p-3">
+                                     <h5 class="h6 heading-semibold text-colour1">
+                                         <i class="fa fa-filter mx-0"></i>
+                                         <span data-i18n="carlist-filter-results">Filters</span>
+                                     </h5>
+                                 </div>
+                                <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+    
+                                <%--<i class="fa fa-filter mx-0"></i>
+                                 <span class="h7 heading-semibold" data-i18n="carlist-filter-results">Filters Results</span>--%>
+                             </div>
                             <div class="modal-body p-lg-0">
-                                <button type="button" class="close d-lg-none pt-3" data-dismiss="modal">
+                                <%--<button type="button" class="close d-lg-none pt-3" data-dismiss="modal">
                                     <span class=" text-colour1">&times;</span>
                                 </button>
                                 <div class="dvTotalRecords p-3 bg-colour11 d-lg-block">
                                     <p class="h6 heading-semibold text-colour1">Filters</p>
 
-                                </div>
+                                </div>--%>
                                 <div class="accordion" id="filter-accordion">
-                                    <div class="col-auto p-3">
+                                    <%--<div class="col-auto p-3">
                                         <button class="btn btn-one w-100 resetBtn d-flex justify-content-center" type="button" onclick="ClearFilters();">
                                             <span class="d-inline-block">Reset</span>
                                             <span class="arrow-icon- ml-2">
                                                 <i class="fas fa-undo"></i>
                                             </span>
                                         </button>
-                                    </div>
-                                    <div class="card">
+                                    </div>--%>
+                                    <div class="card my-3 mb-lg-3 mt-lg-0">
+                                         <div class="card-header p-0">
+                                             <h2 class="mb-0">
+                                                 <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="h6 heading-semibold text-colour7 mb-2 text-capitalize" data-i18n="carlist-passengers">Passengers</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                             </h2>
+                                         </div>
                                         <div class="card-header bg-transparent border-bottom-0 p-0">
                                             <h2 class="mx-3 mb-3">
                                                 <button class="btn- btn-block text-left h6 heading-semibold text-colour1 text-capitalize"

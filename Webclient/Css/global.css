@@ -2265,6 +2265,19 @@ select.form-control:focus {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.dvProductCard h3 {
+    font-family: var(--p-card-h3-family);
+    font-size: var(--p-card-h3-fontsize);
+    margin: 1rem 0 .5rem;
+    color: var(--p-card-h3-text-colour);
+    padding: var(--p-card-h3-padding);
+}
+.dvProductCard p {
+    font-family: var(--p-card-h3-family);
+    font-size: var(--p-card-h3-fontsize);
+    margin: .5rem 0;
+    color: var(--p-card-h3-text-colour); 
+}
 /*.dvProductCard p{padding:1rem}*/
 .dvProductCard .points
 /*,.dvProductCard .points a */ {

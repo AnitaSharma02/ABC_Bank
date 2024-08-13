@@ -8,15 +8,14 @@
         <div class="container">
             <div class="row">
                 <div class="expHead mx-auto col-12 text-center">
-                    <h2 class="heading-semibold mt-5 mb-2 mt-md-5 mt-lg-5">Experiences</h2>
+                    <h2 class="heading-semibold mt-5 mb-2 mt-md-2 mt-lg-2">Experiences</h2>
                     <p class="pb-2">Find activities, attractions, tours & more!</p>
                     <div class="expSearch">
                         <div class="dvSearch">
                             <div class="input-group input-group-lg">
                                 <input id="txtSearchTerm" autocomplete="off" class="form-control" type="text" name="searchTerm" placeholder="Search Destination" required />
                                 <div class="input-group-prepend">
-                                    <span id="btnSearchExperiences" type="button" class="input-group-text">
-                                        <img src="../images/icons/other/search-icon.svg"></span>
+                                    <span id="btnSearchExperiences" type="button" class="input-group-text"> <i class="fa-solid fa-magnifying-glass"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -114,32 +113,26 @@
                 pageTotal = parseData.length;
                 if (parseData != null  && parseData.length > 0) {
                     for (var i = 0; i < parseData.length; i++) {
-                        html += '<div class="col-sm-6 col-lg-3 mb-4">';
-                        html += '<a href=\"javascript:void(0);\" class="d-block shadow-sm bg-white border h-100"  onclick=\"fnRedirectingToExperiencesProductDetails(\'' + parseData[i].uuid + '\');\">';
-                        html += '<div class="h-100 d-flex flex-column">';
-
+                        html += '<div class="dvProductCard col-sm-6 col-lg-3 mb-4">';
+                        html += '<div class="dvItem">';
+                        html += '<a href=\"javascript:void(0);\" class="anchor"  onclick=\"fnRedirectingToExperiencesProductDetails(\'' + parseData[i].uuid + '\');\">';
+                        
                         html += '<div class="img-container">';
                         if (parseData[i].image == null) {
-                            html += '<img class="w-100 img-fluid" alt=\"Product Image\" src =\"\"/>';
+                            html += '<img class="" alt=\"Product Image\" src =\"\"/>';
                         } else {
-                            html += '<img class="w-100 img-fluid" alt=\"Product Image\" src =\"' + parseData[i].image + '\"/>';
+                            html += '<img class="" alt=\"Product Image\" src =\"' + parseData[i].image + '\"/>';
                         }
                         html += '</div >';
-
-                        html += '<div class="p-3">';
-                        html += '<div class="card_detail">';
-                        html += '<h2 class="h6 heading-semibold mt-2 mb-2">' + parseData[i].title + '</h2>';
-                        html += ' <p class="h7 heading-regular">' + parseData[i].city + ',' + parseData[i].country+'</p>';
-                        html += '</div>';
-                        html += '<div class="cardPoints d-flex justify-content-between align-items-center pt-4">';
-                        html += '<p class="h8 heading-semibold text-colour5 text-truncate">'+ parseData[i].typeName+'</p>';
-                        html += '<p class="h8 heading-semibold text-colour5">from <span class="font-weight-bold">' + FormatCurrency(parseData[i].basePrice, parseData[i].convertedCurrency)+'</span> /pax</p>';
-                        html += '</div>';
-                        html += '</div>';
-
+                        html += '<h2>' + parseData[i].title + '</h2>';
+                        html += ' <h3>' + parseData[i].city + ',' + parseData[i].country+'</h3>';
+                        html += '<div class="cardPoints d-flex justify-content-between align-items-center mb-2">';
+                        html += '<p class="points">'+ parseData[i].typeName+'</p>';
+                        html += '<p class="points">from <span class="font-weight-bold">' + FormatCurrency(parseData[i].basePrice, parseData[i].convertedCurrency)+'</span> /pax</p>';
                         html += '</div >';
                         html += '</a >';
                         html += '</div >';
+                        html += '</div>';
                     }
                 }
                 else {
