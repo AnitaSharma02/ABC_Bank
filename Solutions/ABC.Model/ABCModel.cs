@@ -2069,6 +2069,20 @@ namespace ABC.Model
             }
             return lboolResponse;
         }
+        public bool InsertManualTransactionDetails(TransactionDetails lobjtransactionRequest, string pstrToken)
+        {
+            bool lboolResponse = false;
+            try
+            {
+                string lstrToken = GetAuthTokenforWebAPI();
+                lboolResponse = lobjAPIClientHelper.InsertManualTransactionDetails(lobjtransactionRequest, lstrToken);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("Model ActivateAccount Ex-" + ex.InnerException + ex.StackTrace + ex.Message);
+            }
+            return lboolResponse;
+        }
 
         public bool ActivateAccountByRelationReference(SearchMember pobjSearchMember)
         {

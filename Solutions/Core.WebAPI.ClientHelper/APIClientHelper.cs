@@ -1868,13 +1868,13 @@ namespace Core.WebAPI.ClientHelper
         }
         #endregion
         #region Payment gateway
-        public bool InsertManualTransactionDetails(TransactionDetails lobjPGRedeemRequest, string pstrToken)
+        public bool InsertManualTransactionDetails(TransactionDetails lobjtransactionRequest, string pstrToken)
         {
             bool lobjResponse = false;
             try
             {
                 APIResponseResults lobjAPIResponseResults = new APIResponseResults();
-                lobjAPIResponseResults = JsonConvert.DeserializeObject<APIResponseResults>(WebAPIHelper.PostData(APIConstant.InsertManualTransactionDetails, "POST", "InsertManualTransactionDetails", JsonConvert.SerializeObject(lobjPGRedeemRequest), pstrToken));
+                lobjAPIResponseResults = JsonConvert.DeserializeObject<APIResponseResults>(WebAPIHelper.PostData(APIConstant.InsertManualTransactionDetails, "POST", "InsertManualTransactionDetails", JsonConvert.SerializeObject(lobjtransactionRequest), pstrToken));
                 if (lobjAPIResponseResults.results.IsSucessful)
                 {
                     lobjResponse = JsonConvert.DeserializeObject<bool>(JsonConvert.SerializeObject(lobjAPIResponseResults.results.ReturnObject));
@@ -1986,7 +1986,7 @@ namespace Core.WebAPI.ClientHelper
             try
             {
                 APIResponseResults lobjAPIResponseResults = new APIResponseResults();
-                string pstrUniqueAttributeKey = Convert.ToString(ConfigurationManager.AppSettings["UniqueMemberAttributeKey"]);
+                string pstrUniqueAttributeKey = Convert.ToString(ConfigurationManager.AppSettings["UniqueUserAttributeKey"]);
                 lobjAPIResponseResults = JsonConvert.DeserializeObject<APIResponseResults>(WebAPIHelper.PostData(string.Format("{0}?pintProgramId={1}&pstrUniqueAttributeKey={2}&pstrUniqueAttributeValue={3}", APIConstant.GetMemberDetailsByUniqueAttribute, pintProgramId, pstrUniqueAttributeKey, pstrUniqueAttributeValue), "GET", "GetMemberDetailsByUniqueAttribute", string.Empty, pstrToken));
                 if (lobjAPIResponseResults.results.IsSucessful)
                 {

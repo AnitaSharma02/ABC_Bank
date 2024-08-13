@@ -1825,7 +1825,7 @@ function LoginValidationCodeBehind() {
         msg += " Please enter Member ID.<br/>";
     }
     else {
-        if (!AcceptAlphanumericOnly($('#CP_txtMemberID').val())) {
+        if (!isValidEmailAddress($('#CP_txtMemberID').val())) {
             msg += " Please enter valid Member ID. <br/>";
         }
     }

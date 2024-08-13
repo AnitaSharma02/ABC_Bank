@@ -142,9 +142,9 @@ public partial class Login : Page
                     objMemberLocalAttrDetails = Session["MemberLocalAttrDetails"] as List<MemberLocalAttrDetails>;
                 }
                 string User_name = objMemberLocalAttrDetails[0].UserName;
-                if (User_name.EndsWith(lstrMemberID))
+                if (true)
                 {
-                    strMD5Password = lobjModel.GenerateMD5(lstrMemberID + lstrPassword);
+                    strMD5Password = lobjModel.GenerateMD5(lobjMemberDetails.MemberRelationsList[0].RelationReference.Trim() + lstrPassword);
                     MemberRelation lobjMemberRelations = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
                     if (lobjMemberRelations.WebPassword != strMD5Password.ToUpper())
                     {
