@@ -9,7 +9,7 @@ namespace BeMyGuest.Entities
     public class Paths
     {
         [DataMember]
-        public string noriginal { get; set; }
+        public string original { get; set; }
         [DataMember]
         [JsonProperty("75x50")]
         public string _75x50 { get; set; }

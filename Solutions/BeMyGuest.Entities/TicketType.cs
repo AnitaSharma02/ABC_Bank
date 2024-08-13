@@ -8,19 +8,19 @@ namespace BeMyGuest.Entities
     public class TicketType
     {
         [DataMember]
-        public string type { get; set; }
+        public string type { get; set; }=null;
         [DataMember]
-        public string label { get; set; }
+        public string label { get; set; } = null;
         [DataMember]
         public bool? allowed { get; set; }
         [DataMember]
-        public int min { get; set; }
+        public int? min { get; set; }
         [DataMember]
-        public int max { get; set; }
+        public int? max { get; set; }
         [DataMember]
-        public int minAge { get; set; }
+        public int? minAge { get; set; }
         [DataMember]
-        public int maxAge { get; set; }
+        public int? maxAge { get; set; }
         [DataMember]
         public decimal? recommendedMarkup { get; set; }
         [DataMember]

@@ -173,7 +173,10 @@
             window.location = "ExperienceProductList.aspx";
         }
         // });
-
+        $(document).ready(function () {
+            BindBanner();
+            GetRedemptionOptions();
+        });
         function getQuerystring(key, default_) {
             if (default_ == null) default_ = "";
             key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");

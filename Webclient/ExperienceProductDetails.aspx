@@ -71,6 +71,10 @@
         }
     </style>
     <script>
+        $(document).ready(function () {           
+            BindBanner();
+            GetRedemptionOptions();
+        });
         // $(document).ready(function () {
         $(".dvtxtBookingDate .input-group-append .input-group-text").on("click", function () {
             $("#txtBookingDate").datepicker("show");
