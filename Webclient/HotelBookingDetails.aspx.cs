@@ -16,10 +16,15 @@ using System.Text.RegularExpressions;
 using ABC.Model;
 using Framework.EnterpriseLibrary.Adapters;
 using System.Web;
+using IBEAPI.ClientEntities;
+using IBEAPIGateway.Model;
+using System.Configuration;
 
 public partial class HotelBookingDetails : Page
 {
     ABCModel lobjModel = new ABCModel();
+    IBEAPIModel lobjIBEAPIModel = new IBEAPIModel();
+    public static string pstrDisplayCurrency = Convert.ToString(ConfigurationManager.AppSettings["ProgramCurrency"]);
     public int count = 0;
     static string lstrCurrency = string.Empty;
 
@@ -41,11 +46,12 @@ public partial class HotelBookingDetails : Page
                         lobjMemberDetails = Session["MemberDetails"] as MemberDetails;
                         HotelRepriceRequest hotelRepriceRequest = new HotelRepriceRequest();
                         hotelRepriceRequest.Hotel = lobjHotel;
+                        hotelRepriceRequest.Hotel.SearchId = Convert.ToString(lobjSearchResponse.SearchId);
                         hotelRepriceRequest.RefererDetails = Application["RefererData"] as RefererDetails;
                         lstrCurrency = lobjModel.GetDefaultCurrency();
                         ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
                         hotelRepriceRequest.RedemptionRate = lobjModel.GetProgramRedemptionRate(lstrCurrency, RedemptionCodeKeys.HOT.ToString(), lobjProgramDefinition.ProgramId);
-                        HotelRepriceResponse hotelRepriceResponse = lobjModel.HotelReprice(hotelRepriceRequest);
+                        HotelRepriceResponse hotelRepriceResponse = lobjIBEAPIModel.HotelReprice(hotelRepriceRequest);
                         if (hotelRepriceResponse != null)
                         {
                             lobjHotel = hotelRepriceResponse.Hotel;
@@ -53,32 +59,7 @@ public partial class HotelBookingDetails : Page
                             hotels.Add(hotelRepriceResponse.Hotel);
                             lobjSelectedSearchResponse.SearchResponse.hotels.hotel = hotels.ToArray();
                             Session["SelectedHotel"] = lobjSelectedSearchResponse;
-                            Session["MemberMiles"] = Convert.ToString(lobjModel.CheckAvailbility(lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToInt32(RelationType.LBMS), lstrCurrency, lobjProgramDefinition.ProgramId));
-                            if (string.IsNullOrEmpty(lobjMemberDetails.Email))
-                            {
-                                divError.Style.Add("display", "block");
-                                lblError.Text = "You cannot proceed for redemption since there is no email address updated , kindly contact bank to update the email address.";
-                                btnBook.Enabled = false;
-                                Bookbtn.Visible = false;
-                            }
-                            else
-                            {
-                                if (Convert.ToDouble(Session["MemberMiles"]) >= Convert.ToDouble(lobjHotel.roomrates.RoomRate[0].TotalPoints))
-                                {
-                                    divError.Style.Add("display", "none");
-                                    lblError.Text = "";
-                                    btnBook.Enabled = true;
-                                    Bookbtn.Visible = true;
-                                }
-                                else
-                                {
-                                    divError.Style.Add("display", "block");
-                                    double ldblAmount = lobjHotel.roomrates.RoomRate[0].TotalPoints;
-                                    lblError.Text = "You need " + lobjModel.FloatToThousandSeperated(Convert.ToSingle(lobjHotel.roomrates.RoomRate[0].TotalPoints)) + " points to book this hotel. Your available points is " + lobjModel.FloatToThousandSeperated(Convert.ToSingle(Session["MemberMiles"])) + ".";
-                                    btnBook.Enabled = false;
-                                    Bookbtn.Visible = false;
-                                }
-                            }
+
                             lblTotalCharge.Text = lobjModel.FloatToThousandSeperated(lobjHotel.roomrates.RoomRate[0].TotalPoints) + " <span data-i18n='car-points-label'>points </span>";
                             lblHotelName.Text = lobjHotel.basicinfo.hotelname;
                             lblAddress.Text = lobjHotel.basicinfo.address + " - " + lobjHotel.basicinfo.city + ", " + lobjHotel.basicinfo.state + ", " + lobjHotel.basicinfo.country + " " + lobjHotel.basicinfo.countrycode + ".";
@@ -95,30 +76,33 @@ public partial class HotelBookingDetails : Page
                             {
                                 imgHotel.ImageUrl = "http://www.cleartrip.com" + lobjSearchResponse.SearchResponse.baseurl + lobjHotel.basicinfo.thumbnailimage;
                             }
-                            HotelSearchRequest lobjSearchRequest = Session["SearchDetails"] as HotelSearchRequest;
+                            HotelsSearchRequest lobjSearchRequest = Session["SearchDetails"] as HotelsSearchRequest;
                             lblTotalMiles.Text = lobjModel.FloatToThousandSeperated(lobjHotel.roomrates.RoomRate[0].TotalPoints);
                             DateTime Chkin = Convert.ToDateTime(lobjSearchResponse.SearchResponse.searchcriteria.checkindate);
                             lblCheckinDate.Text = Chkin.ToString("MMM dd");
                             DateTime ChkOut = Convert.ToDateTime(lobjSearchResponse.SearchResponse.searchcriteria.checkoutdate);
                             lblCheckoutDate.Text = ChkOut.ToString("MMM dd");
                             lblNoofNights.Text = lobjSearchResponse.SearchResponse.searchcriteria.numberofnights + " Night(s)";
-                            int TotalAdult = 0;
-                            string[] arrayAdultPerRoom = lobjSearchRequest.SearchRequest.AdultPerRoom.Split(',');
-                            for (int i = 0; i < arrayAdultPerRoom.Count(); i++)
+                            int TotalAdult = 0; if (lobjSearchRequest != null)
                             {
-                                TotalAdult = TotalAdult + Convert.ToInt32(arrayAdultPerRoom[i]);
+                                string[] arrayAdultPerRoom = lobjSearchRequest.AdultPerRoom.Split(',');
+                                for (int i = 0; i < arrayAdultPerRoom.Count(); i++)
+                                {
+                                    TotalAdult = TotalAdult + Convert.ToInt32(arrayAdultPerRoom[i]);
+                                }
+                                int TotalChild = 0;
+
+                                string[] arrayChildPerRoom = lobjSearchRequest.ChildrenPerRoom.Split(',');
+                                for (int i = 0; i < arrayChildPerRoom.Count(); i++)
+                                {
+                                    TotalChild = TotalChild + Convert.ToInt32(arrayChildPerRoom[i]);
+                                }
+                                if (TotalChild.Equals(0))
+                                    lblNoOfAdult.Text = Convert.ToString(TotalAdult) + " Adult(s)";
+                                else
+                                    lblNoOfAdult.Text = Convert.ToString(TotalAdult) + " Adult(s)<br/>" + Convert.ToString(TotalChild) + " Child(ren)";
+                                lobjModel.LogActivity(string.Format("HotelBookingDetails page load; HotelName-:{0}; TotalCharge-:{1} NPR;", lobjHotel.basicinfo.hotelname, lobjHotel.roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
                             }
-                            int TotalChild = 0;
-                            string[] arrayChildPerRoom = lobjSearchRequest.SearchRequest.ChildrenPerRoom.Split(',');
-                            for (int i = 0; i < arrayChildPerRoom.Count(); i++)
-                            {
-                                TotalChild = TotalChild + Convert.ToInt32(arrayChildPerRoom[i]);
-                            }
-                            if (TotalChild.Equals(0))
-                                lblNoOfAdult.Text = Convert.ToString(TotalAdult) + " Adult(s)";
-                            else
-                                lblNoOfAdult.Text = Convert.ToString(TotalAdult) + " Adult(s)<br/>" + Convert.ToString(TotalChild) + " Child(ren)";
-                            lobjModel.LogActivity(string.Format("HotelBookingDetails page load; HotelName-:{0}; TotalCharge-:{1} NPR;", lobjHotel.basicinfo.hotelname, lobjHotel.roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
                         }
                         else
                         {
@@ -141,6 +125,7 @@ public partial class HotelBookingDetails : Page
             LoggingAdapter.WriteLog("HotelBookingDetails.aspx- Page_Load Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
+
     public HotelSearchResponse GetSelectedHotel(HotelSearchResponse pobjSearchResponse)
     {
         Hotel lobjHotel = new Hotel();
@@ -170,12 +155,33 @@ public partial class HotelBookingDetails : Page
         }
         return lobjSearchResponse;
     }
+
     public Customer CustomerInfo(CustomerDetail objCustomerInfo)
     {
-        ABCModel lobjModel = new ABCModel();
-        Customer lobjCustomer = lobjModel.CustomerInfo(objCustomerInfo);
+        Customer lobjCustomer = new Customer();
+        try
+        {
+            lobjCustomer.title = objCustomerInfo.PersonalTitle;
+            lobjCustomer.firstname = objCustomerInfo.FirstName;
+            lobjCustomer.lastname = objCustomerInfo.Lastname;
+            lobjCustomer.city = objCustomerInfo.City;
+            lobjCustomer.country = objCustomerInfo.Country;
+            lobjCustomer.landline = objCustomerInfo.PhoneNo;
+            lobjCustomer.mobile = objCustomerInfo.MobileNo;
+            lobjCustomer.streetaddress1 = objCustomerInfo.Address;
+            lobjCustomer.streetaddress2 = objCustomerInfo.Address2;
+            lobjCustomer.postalcode = objCustomerInfo.PostalCode;
+            lobjCustomer.state = objCustomerInfo.State;
+            lobjCustomer.email = objCustomerInfo.EmailID;
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("CustomerInfo - " + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
+            return null;
+        }
         return lobjCustomer;
     }
+
     protected void custom_NameValidate(object sender, ServerValidateEventArgs e)
     {
         Regex r = new Regex("^[a-zA-Z]+$");
@@ -184,6 +190,7 @@ public partial class HotelBookingDetails : Page
         else
             e.IsValid = false; ;
     }
+
     protected void btnBook_Click(object sender, EventArgs e)
     {
         try
@@ -228,42 +235,42 @@ public partial class HotelBookingDetails : Page
                     List<RedemptionDetails> lobjListOfRedemptionDetails = new List<RedemptionDetails>();
                     RedemptionDetails lobjRedemptionDetails = new RedemptionDetails();
                     lobjRedemptionDetails.Currency = lstrCurrency;
-                    lobjRedemptionDetails.DisplayCurrency = lobjModel.CurrencyDisplayText(lstrCurrency);
+                    lobjRedemptionDetails.DisplayCurrency = pstrDisplayCurrency;//lobjModel.CurrencyDisplayText(lstrCurrency);
                     lobjRedemptionDetails.Points = lintTotalPoints;
                     lobjRedemptionDetails.RelationReference = lobjMemberDetails.MemberRelationsList[0].RelationReference;
                     lobjRedemptionDetails.Amount = lftAmount;
                     lobjListOfRedemptionDetails.Add(lobjRedemptionDetails);
                     Session["RedemptionDetails"] = lobjListOfRedemptionDetails;
+
                     if (ThreshouldValue <= lintTotalPoints && !ThreshouldValue.Equals(-1))
                     {
                         bool Status = false;
+
                         OTPDetails lobjOTPDetails = new OTPDetails();
                         lobjOTPDetails.UniquerefID = lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference;
                         lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.HOTELREVIEWNCONFIRM;
                         lobjOTPDetails.OtpType = Convert.ToString(OTPEnumTypes.HOTELREVIEWNCONFIRM);
-                        HttpContext.Current.Session["OtpDetails"] = lobjOTPDetails as OTPDetails;
-                        //Status = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "redemption_otp", lobjOTPDetails, "Hotel");
-                        ////Status = lobjModel.GenerateReviewnConfirmOTP(lobjOTPDetails, lobjMemberDetails);
-                        //if (Status)
-                        //{
-                        //    lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "HOTEL", lobjRedemptionDetails.RelationReference, "Success"), ActivityType.ReviewConfirmOTPSuccess);
-                        //    Response.Redirect("ValidateOTP.aspx?flag=Hotel", false);
-                        //}
-                        //else
-                        //{
-                        //    lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "HOTEL", lobjRedemptionDetails.RelationReference, "Failed"), ActivityType.ReviewConfirmOTPFailed);
-                        //    Response.Redirect("BookingFailure.aspx", false);
-                        //}
-                    }
-                    //else
-                    //{
-                    //    lobjModel.LogActivity(string.Format("Hotel Booking {0}: Requested", lobjRedemptionDetails.RelationReference), ActivityType.HotelBooking);
-                    //    Response.Redirect("PointGateway.aspx?flag=Hotel", false);
-                    //}
-                    HttpContext.Current.Session["BookingFlag"] = "hotel";
-                    HttpContext.Current.Session["HotelTotalRedeemAmount"] = lobjHotel.roomrates.RoomRate[0].TotalPoints;
 
-                    Response.Redirect("PaymentOptions.aspx");
+                        Status = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "redemption_otp", lobjOTPDetails, "Hotel");
+
+                        if (Status)
+                        {
+                            lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "HOTEL", lobjRedemptionDetails.RelationReference, "Success"), ActivityType.ReviewConfirmOTPSuccess);
+                            Response.Redirect("ValidateOTP.aspx?flag=Hotel", false);
+                        }
+                        else
+                        {
+                            lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "HOTEL", lobjRedemptionDetails.RelationReference, "Failed"), ActivityType.ReviewConfirmOTPFailed);
+                            Response.Redirect("BookingFailure.aspx", false);
+                        }
+                    }
+                    else
+                    {
+                        lobjModel.LogActivity(string.Format("Hotel Booking {0}: Requested", lobjRedemptionDetails.RelationReference), ActivityType.HotelBooking);
+                        Response.Redirect("PointGateway.aspx?flag=Hotel", false);
+                    }
+
+                    lobjModel.LogActivity(string.Format("HotelBookingDetails page load; HotelName-:{0}; TotalCharge-:{1} NPR;", lobjHotel.basicinfo.hotelname, lobjHotel.roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
                 }
                 else
                 {

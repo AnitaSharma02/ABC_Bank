@@ -96,9 +96,6 @@ function showTripSummary(summaryType, sequenceNo) {
             $("#domesticTwoWay").css("padding-bottom", strheight + "px");
             //$("#divTotal").html(strSummary);
             return false;
-        },
-        beforeSend: function () {
-            $("#updProgress").show();
         }
     });
 }
@@ -121,9 +118,6 @@ function BookDomestic() {
             else
                 window.location = "Login.aspx";
         },
-        beforeSend: function () {
-            $("#updProgress").show();
-        },
         error: function (errmsg) {
 
         }
@@ -144,9 +138,6 @@ function BookDomesticOneWay(pstrSequenceNo) {
                 window.location = "FlightPassenger.aspx";
             else
                 window.location = "Login.aspx";
-        },
-        beforeSend: function () {
-            $("#updProgress").show();
         },
         error: function (errmsg) {
 
@@ -170,9 +161,6 @@ function BookNowClick(pstrSequenceNo) {
                 window.location = "FlightPassenger.aspx";
             else
                 window.location = "Login.aspx";
-        },
-        beforeSend: function () {
-            $("#updProgress").show();
         },
         error: function (errmsg) {
 
@@ -218,7 +206,7 @@ function FlightValidation() {
             $("#requiredValidation")[0].innerHTML = "*Infants is more than Adults.";
         }
         else {
-            $("#requiredValidation")[0].innerHTML = "Below fields are mandatory.";
+            $("#requiredValidation")[0].innerHTML = "<span class='heading-semibold text-danger' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
         }
         return false;
     }
@@ -226,102 +214,115 @@ function FlightValidation() {
         return clicktoflightsearch();
     }
 };
+
 function clicktoflightsearch() {
     //debugger
-    //var strFrom = "departure=" + $("#textBoxFrom").val().split(',')[0] + "&";
-    //var strdepCity = "DepCity=" + $("#textBoxFrom").val().split(',')[2] + "&";
-    //var strTo = "arrival=" + $("#textBoxTo").val().split(',')[0] + "&";
-    //var strarrCity = "arrCity=" + $("#textBoxTo").val().split(',')[2] + "&";
-    //var strDepartDate = "departuredate=" + $("#txtDepart").val() + "&";
-    //var strReturnDate = "arrivaldate=" + $("#txtReturn").val() + "&";
-    //var isReturn = "isReturn=" + $("#hdntrip").val().toString() + "&";
-    //var strAirlinePrefernce = "airline=" + $("#txtAirline").val() + "&";
-    //var strAirlineIATACode = "airlineIATACode=" + $("#hdnCarrier").val() + "&";
-    //var strAdultNo = "adult=" + $("#DropDownListAdult").val() + "&";
-    //var strChildNo = "child=" + $("#DropDownListChild").val() + "&";
-    //var strInfantNo = "infant=" + $("#DropDownListInfant").val() + "&";
-    //var strEconomy = "economy=" + $("#dropDownListEconomy").val();
-    //var queryString = strFrom + strdepCity + strTo + strarrCity + strDepartDate + strReturnDate + isReturn + strAirlinePrefernce + strAirlineIATACode + strAdultNo + strChildNo + strInfantNo + strEconomy;
-    //window.location = "SearchPage.aspx?" + queryString;
-    var departure = $("#textBoxFrom").val().split(',')[0];
-    var arrival = $("#textBoxTo").val().split(',')[0];
-    var departuredate = $("#txtDepart").val();
-    var isReturn = "";
-    var routetype = "";
-    if ($("#returnSelectMenu").val() == "Return") {
-        isReturn = true;
-        routetype = "Round Trip";
-    } else {
-        isReturn = false;
-        routetype = "One Way";
-    }
-    var arrivaldate = $("#txtReturn").val();
-    if (routetype == "One Way") {
-        arrivaldate = "";
-    }
+    var strFrom = "departure=" + $("#textBoxFrom").val().split(',')[0] + "&";
+    var strdepCity = "DepCity=" + $("#textBoxFrom").val().split(',')[2] + "&";
+    var strTo = "arrival=" + $("#textBoxTo").val().split(',')[0] + "&";
+    var strarrCity = "arrCity=" + $("#textBoxTo").val().split(',')[2] + "&";
+    var strDepartDate = "departuredate=" + $("#txtDepart").val() + "&";
+    var strReturnDate = "arrivaldate=" + $("#txtReturn").val() + "&";
+    var isReturn = "isReturn=" + $("#hdntrip").val().toString() + "&";
+    var strAirlinePrefernce = "airline=" + $("#txtAirline").val() + "&";
+    var strAirlineIATACode = "airlineIATACode=" + $("#hdnCarrier").val() + "&";
+    var strAdultNo = "adult=" + $("#qtyValueAdult").val() + "&";
+    var strChildNo = "child=" + $("#qtyValueChild").val() + "&";
+    var strInfantNo = "infant=" + $("#qtyValueInfant").val() + "&";
+    var strEconomy = "economy=" + $("#economySelectMenu").val();
+    var queryString = strFrom + strdepCity + strTo + strarrCity + strDepartDate + strReturnDate + isReturn + strAirlinePrefernce + strAirlineIATACode + strAdultNo + strChildNo + strInfantNo + strEconomy;
+    window.location = "SearchPage.aspx?" + queryString;
+    return false;
+}
 
-    var airline = $("#txtAirline").val();
-    var airlineIATACode = $("#hdnCarrier").val();
-    var passengerType = "";
-    var adult = $("#qtyValueAdult").val();
-    if (parseInt(adult) > 0) {
-        passengerType = $("#qtyValueAdult").val() + " Adult ";
-    }
-    var child = $("#qtyValueChild").val();
-    if (parseInt(child) > 0) {
-        passengerType += $("#qtyValueChild").val() + " Child ";
-    }
-    var infant = $("#qtyValueInfant").val();
-    if (parseInt(infant) > 0) {
-        passengerType += $("#qtyValueInfant").val() + " Infant";
-    }
-    var economy = $("#economySelectMenu").val();
+function ModifyFlightValidation() {
+    //debugger
+    var msg = "";
+    $('input').removeClass("error");
+    $('div').removeClass("error");
+    $("#requiredValidation").empty();
 
-    var searchDetails = "";
-    if (arrivaldate == "" || arrivaldate == null) {
-        searchDetails = departure + " to " + arrival + ", " + routetype + ", " + economy + ", " + departuredate + ", " + passengerType;
-        searchDetails = searchDetails;
+    if (($("#textBoxFrom").val() == '' || $("#textBoxFrom").val() == null) || $("#textBoxFrom").val() == "Enter City or Airport") {
+        msg += "*Enter departure Location.<br>";
+        $("#textBoxFrom").addClass("error");
+    }
+    if (($("#textBoxTo").val() == '' || $("#textBoxTo").val() == null) || $("#textBoxTo").val() == "Enter City or Airport") {
+        msg += "*Enter destination Location.<br>";
+        $("#textBoxTo").addClass("error");
+    }
+    if (($("#txtDepart").val() == '' || $("#txtDepart").val() == null || $("#txtDepart").val() == 'Enter Date')) {
+        msg += "*Enter departure date.<br>";
+        $("#txtDepart").addClass("error");
+    }
+    if ($("#hdntrip").val() == "true") {
+        if ($("#txtReturn").val() == '' || $("#txtReturn").val() == null || $("#txtReturn").val() == 'Enter Date') {
+            msg += "*Enter return date.<br>";
+            $("#txtReturn").addClass("error");
+        }
+    }
+    if (parseInt($("#qtyValueInfant").val()) > parseInt($("#qtyValueAdult").val())) {
+        msg += "*Infants is more than Adults. <br>";
+        $("#divInfant").addClass("error");
+    }
+    if (msg.length > 0) {
+        $("#requiredValidation").show();
+
+        if (msg == "*Infants is more than Adults. <br>") {
+            $("#requiredValidation")[0].innerHTML = "*Infants is more than Adults.";
+        }
+        else {
+            $("#requiredValidation")[0].innerHTML = "<span class='heading-semibold text-danger' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
+        }
+        return false;
     }
     else {
-        searchDetails = departure + " to " + arrival + ", " + routetype + ", " + economy + ", " + departuredate + " - " + arrivaldate + ", " + passengerType;
-        searchDetails = searchDetails.replace('%20', ' ');
+        return clicktonModifyflightsearch();
     }
+};
 
-    var arrData = {};
-    arrData.departure = departure;
-    arrData.arrival = arrival;
-    arrData.departuredate = departuredate;
-    arrData.isReturn = isReturn;
-    arrData.arrivaldate = arrivaldate;
-    arrData.airline = airline;
-    arrData.airlineIATACode = airlineIATACode;
-    arrData.adult = adult;
-    arrData.child = child;
-    arrData.infant = infant;
-    arrData.economy = economy;
-
-    $.ajax({
-        type: 'POST',
-        url: "../SearchPage.aspx/FlightSearch",
-        contentType: 'application/json; charset=utf-8',
-        dataType: 'json',
-        data: JSON.stringify(arrData),
-        success: function (msg) {
-            if (msg.d)
-                window.location = "FlightList.aspx";
-            else
-                window.location = "NoResultFound.aspx?ERR=RESULTNOTFOUND&FROM=FLIGHT";
-
-            $("#updProgress").hide();
-        },
-        error: function (jqXHR, status, errorThrown) {
-            window.location = "NoResultFound.aspx?ERR=RESULTNOTFOUND&FROM=FLIGHT";
-        },
-        beforeSend: function () {
-            $("#updProgress").show();
-        }
-    });
+function clicktonModifyflightsearch() {
+    //debugger
+    var strFrom = "departure=" + $("#textBoxFrom").val().split(',')[0] + "&";
+    var strdepCity = "DepCity=" + $("#textBoxFrom").val().split(',')[2] + "&";
+    var strTo = "arrival=" + $("#textBoxTo").val().split(',')[0] + "&";
+    var strarrCity = "arrCity=" + $("#textBoxTo").val().split(',')[2] + "&";
+    var strDepartDate = "departuredate=" + $("#txtDepart").val() + "&";
+    var strReturnDate = "arrivaldate=" + $("#txtReturn").val() + "&";
+    var isReturn = "isReturn=" + $("#hdntrip").val().toString() + "&";
+    var strAirlinePrefernce = "airline=" + $("#txtAirline").val() + "&";
+    var strAirlineIATACode = "airlineIATACode=" + $("#hdnCarrier").val() + "&";
+    var strAdultNo = "adult=" + $("#qtyValueAdult").val() + "&";
+    var strChildNo = "child=" + $("#qtyValueChild").val() + "&";
+    var strInfantNo = "infant=" + $("#qtyValueInfant").val() + "&";
+    var strEconomy = "economy=" + $("#hdnFlightClass").val();
+    var queryString = strFrom + strdepCity + strTo + strarrCity + strDepartDate + strReturnDate + isReturn + strAirlinePrefernce + strAirlineIATACode + strAdultNo + strChildNo + strInfantNo + strEconomy;
+    window.location = "SearchPage.aspx?" + queryString;
     return false;
+}
+
+function JourneyTypeChanged(JourneyType) {
+
+    if (JourneyType.selectedIndex == 0) {
+        $("#divrtn").show();
+        $("#hdntrip").val('true');
+        $("#txtDepart").val('Enter Date');
+        $("#txtReturn").val('Enter Date');
+    } else {
+        $("#divrtn").hide();
+        $("#hdntrip").val('false');
+    }
+}
+
+function FlightClassChanged(FlightClass) {
+
+    if (FlightClass.selectedIndex == 0) {
+        $("#hdnFlightClass").val('Economy');
+    } else if (FlightClass.selectedIndex == 1) {
+        $("#hdnFlightClass").val('Business');
+    }
+    else {
+        $("#hdnFlightClass").val('First');
+    }
 }
 
 function onwayShow() {
@@ -369,9 +370,6 @@ $(document).ready(function () {
                     response(msg.d)
                 },
                 error: function (errmsg) {
-                },
-                beforeSend: function () {
-                    $("#updProgress").show();
                 }
             });
             response(list);
@@ -409,9 +407,6 @@ $(document).ready(function () {
                     imgAirlines.attr("src", "Images/ClearTextBox.png");
                 },
                 error: function (errmsg) {
-                },
-                beforeSend: function () {
-                    $("#updProgress").show();
                 }
             });
             response(list);
@@ -441,9 +436,6 @@ $(document).ready(function () {
                     response(msg.d)
                 },
                 error: function (errmsg) {
-                },
-                beforeSend: function () {
-                    $("#updProgress").show();
                 }
             });
             response(list);
@@ -467,23 +459,23 @@ $(document).ready(function () {
             var countryname = strArr[1];
             var countryCode = strArr[2];
             var autoResult = "<span style='font-size:11px;padding-botom:5px'>" + cityname + "," + countryname + "," + countryCode + "</span>";
-            return $("<li style='width:100%'></li>").data("item.autocomplete", item).append("<a style='' class='h7 heading-regular text-colour7'>" + autoResult + "</a>").appendTo(ul);
+            return $("<li style='width:100%'></li>").data("item.autocomplete", item).append("<a style='line-height: 14px;height: auto;width:auto' class='h7 heading-regular text-colour7'>" + autoResult + "</a>").appendTo(ul);
         }
         else if (strArr.length == 1)//for Airline
         {
             var Airline = strArr[0];
-            return $("<li style='width:100%'></li>").data("item.autocomplete", item).append("<a style='' class='h7 heading-regular text-colour7'>" + Airline + "</a>").appendTo(ul);
+            return $("<li style='width:100%'></li>").data("item.autocomplete", item).append("<a style='line-height: 14px;height: auto;width:auto' class='h7 heading-regular text-colour7'>" + Airline + "</a>").appendTo(ul);
         }
         else if (strArr.length == 2) {
             var airportname = strArr[0] + ", " + strArr[1];
             var autoResult = "<span style='font-size:12px;font-weight:bold'>" + airportname + "</span><br/>";
-            return $("<li style='width:100%'></li>").data("item.autocomplete", item).append("<a style='' class='h7 heading-regular text-colour7'>" + autoResult + "</a>").appendTo(ul);
+            return $("<li style='width:100%'></li>").data("item.autocomplete", item).append("<a style='line-height: 14px;height: auto;width:auto' class='h7 heading-regular text-colour7'>" + autoResult + "</a>").appendTo(ul);
         }
         else {
             var airportname = strArr[2] + ", " + strArr[3];
             var airportcity = strArr[1] + "(" + strArr[0].replace(" ", "") + ")";
             var autoResult = "<span style='font-size:12px;font-weight:bold'>" + airportname + "</span><br/>" + "<span style='font-size:11px;font-weight:normal'>" + airportcity + "</span>";
-            return $("<li style='width:100%'></li>").data("item.autocomplete", item).append("<a style='' class='h7 heading-regular text-colour7'>" + autoResult + "</a>").appendTo(ul);
+            return $("<li style='width:100%'></li>").data("item.autocomplete", item).append("<a style='line-height: 14px;height: auto;width:auto' class='h7 heading-regular text-colour7'>" + autoResult + "</a>").appendTo(ul);
         }
 
     };
@@ -505,19 +497,20 @@ function showModifyFlight() {
         dataType: 'json',
         data: "",
         success: function (msg) {
-            debugger;
             var objModifySerach = $.parseJSON(msg.d[0]);
             var DepartDate = msg.d[1];
             var ArrivalDate = msg.d[2];
             $("#textBoxFrom").val(objModifySerach.SearchDetails.OriginLocation + ',' + objModifySerach.SearchDetails.DepCode.AirportName + ',' + objModifySerach.SearchDetails.DepCode.City + ',' + objModifySerach.SearchDetails.DepCountryName);
             $("#textBoxTo").val(objModifySerach.SearchDetails.DestinationLocation + ',' + objModifySerach.SearchDetails.ArrCode.AirportName + ',' + objModifySerach.SearchDetails.ArrCode.City + ',' + objModifySerach.SearchDetails.ArrCountryName);
             $("#txtAirline").val(objModifySerach.SearchDetails.FlightType);
-            $("#economySelectMenu").val(objModifySerach.SearchDetails.Cabin.toString());
+            /*$("#FlightClass").val(objModifySerach.SearchDetails.Cabin.toString());*/
             $("#chkboxRedeem").prop("checked", true);
             $("#qtyValueAdult").val(objModifySerach.SearchDetails.Adults.toString());
             $("#qtyValueChild").val(objModifySerach.SearchDetails.Childrens.toString());
             $("#qtyValueInfant").val(objModifySerach.SearchDetails.Infants.toString());
             $("#txtDepart").val(DepartDate);
+            $("#chkboxRedeem").prop("checked", true);
+
             if (objModifySerach.SearchDetails.IsReturn.toString() == 'true') {
                 $("#txtReturn").val(ArrivalDate);
                 $("#hdnreturnDate").val(DepartDate);
@@ -526,24 +519,33 @@ function showModifyFlight() {
                 $("#hdntrip").val('true');
                 $("#oneli").prop("checked", false);
                 $("#retli").prop("checked", true);
-                $("#returnSelectMenu").val("Return");
+                //$("#JourneyType").val("Return");
+                document.getElementById("JourneyType").selectedIndex = "0";
                 $("#divrtn").show();
-            }
-            else {
+            } else {
                 $("#oneli").addClass("tab-act");
                 $("#retli").removeClass("tab-act");
                 $("#hdntrip").val('false');
                 $("#oneli").prop("checked", true);
                 $("#retli").prop("checked", false);
-                $("#returnSelectMenu").val("One Way");
+                //$("#JourneyType").val("One Way");
+                document.getElementById("JourneyType").selectedIndex = "1";
                 $("#divrtn").hide();
-
             }
-            $("#returnSelectMenu").selectmenu({}).selectmenu("menuWidget").addClass("select-menu-css");
-            $("#economySelectMenu").selectmenu({}).selectmenu("menuWidget").addClass("select-menu-css");
-        },
-        beforeSend: function () {
-            $("#updProgress").show();
+
+            var CabinValue = objModifySerach.SearchDetails.Cabin.toString();
+            if (CabinValue == "Economy") {
+                document.getElementById("FlightClass").selectedIndex = "0";
+            }
+            else if (CabinValue == "Business") {
+                document.getElementById("FlightClass").selectedIndex = "1";
+            }
+            else {
+                document.getElementById("FlightClass").selectedIndex = "2";
+            }
+
+            //$("#returnSelectMenu").selectmenu({}).selectmenu("menuWidget").addClass("select-menu-css");
+            //$("#economySelectMenu").selectmenu({}).selectmenu("menuWidget").addClass("select-menu-css");
         }
     });
 }
@@ -638,8 +640,9 @@ function bindDatepicker() {
         }
 
     });
+
     //$("#txtReturn").datepicker({
-    //    minDate: $("#txtDepart").val(),
+    //    minDate: 4,
     //    numberOfMonths: 1,
     //    buttonImageOnly: true,
     //    dateFormat: 'dd/mm/yy'
@@ -667,12 +670,12 @@ function bindMobDatepicker() {
         }
 
     });
-    //debugger
-    //$("#txtReturn").datepicker({
-    //    numberOfMonths: 1,
-    //    buttonImageOnly: true,
-    //    dateFormat: 'dd/mm/yy'
-    //});
+    $("#txtReturn").datepicker({
+        minDate: 4,
+        numberOfMonths: 1,
+        buttonImageOnly: true,
+        dateFormat: 'dd/mm/yy'
+    });
 }
 function SetPassenger(className, ControlID, minval, maxval) {
     if (className == "plus") {

@@ -82,12 +82,12 @@ public partial class ValidateOTP : Page
                 lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.HOTELREVIEWNCONFIRM;
                 strFlag = "PointGateway.aspx?flag=Hotel";
             }
-            //else if (strFlag == "Car")
-            //{
-            //    lobjOTPDetails.OtpType = OTPEnumTypes.CARREVIEWNCONFIRM.ToString();
-            //    lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.CARREVIEWNCONFIRM;
-            //    strFlag = "PointGateway.aspx?flag=Car";
-            //}
+            else if (strFlag == "Car")
+            {
+                lobjOTPDetails.OtpType = OTPEnumTypes.CARREVIEWNCONFIRM.ToString();
+                lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.CARREVIEWNCONFIRM;
+                strFlag = "PointGateway.aspx?flag=Car";
+            }
             //else if (strFlag == "GiftCard" || strFlag == "EventGiftCard" || strFlag == "AirMilesTopUp" || strFlag == "TopUp" || strFlag == "Lounge" || strFlag == "UtilityGiftCard")
             //{
             //    lobjOTPDetails.OtpType = OTPEnumTypes.GIFTCARDREVIEWNCONFIRM.ToString();

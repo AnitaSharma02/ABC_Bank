@@ -12,6 +12,7 @@ using Core.Platform.Member.Entites;
 using Core.Platform.MemberActivity.Entities;
 using Core.Platform.ProgramMaster.Entities;
 using Framework.EnterpriseLibrary.Adapters;
+using IBEAPIGateway.Model;
 
 public partial class FlightPassenger : System.Web.UI.Page
 {
@@ -23,6 +24,7 @@ public partial class FlightPassenger : System.Web.UI.Page
         base.OnInit(e);
         disableCachingOnBrowsers();
     }
+
     private void disableCachingOnBrowsers()
     {
         // Do any of these result in META tags e.g. <META HTTP-EQUIV="Expire" CONTENT="-1">
@@ -36,6 +38,7 @@ public partial class FlightPassenger : System.Web.UI.Page
         // Response.Headers.Add( directly
         Response.Cache.SetExpires(DateTime.UtcNow.AddYears(-1));
     }
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["PageTitle"] != null)
@@ -54,7 +57,7 @@ public partial class FlightPassenger : System.Web.UI.Page
                     int lintChild;
                     int lintInfants;
 
-                    lobjSearchFlight = (SearchRequest)Session["SearchFlight"]; ;
+                    lobjSearchFlight = (SearchRequest)Session["SearchFlight"];
 
                     lintAdults = lobjSearchFlight.SearchDetails.Adults;
                     lintChild = lobjSearchFlight.SearchDetails.Childrens;
@@ -127,11 +130,11 @@ public partial class FlightPassenger : System.Web.UI.Page
                     }
                     if (Session["DomesticOnwardFlights"] != null)
                     {
-                        lblTotalPoints.Text = objmodel.IntToThousandSeperated(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.TotalPoints);
+                        lblTotalPoints.Text = Convert.ToString(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.TotalPoints);
                         lintTotalPoints = Convert.ToInt32(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.TotalPoints);
                         if (Session["DomesticReturnFlights"] != null)
                         {
-                            lblTotalPoints.Text = objmodel.IntToThousandSeperated(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.TotalPoints + lobjItineraryDetails.ListOfFlightDetails[1].FareDetails.TotalPoints);
+                            lblTotalPoints.Text = Convert.ToString(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.TotalPoints + lobjItineraryDetails.ListOfFlightDetails[1].FareDetails.TotalPoints);
                             lintTotalPoints = Convert.ToInt32(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.TotalPoints + lobjItineraryDetails.ListOfFlightDetails[1].FareDetails.TotalPoints);
                         }
                         Session["DomesticOnwardFlights"] = null;
@@ -139,7 +142,7 @@ public partial class FlightPassenger : System.Web.UI.Page
                     }
                     else
                     {
-                        lblTotalPoints.Text = objmodel.IntToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints);
+                        lblTotalPoints.Text = Convert.ToString(lobjItineraryDetails.FareDetails.TotalPoints);
                         lintTotalPoints = Convert.ToInt32(lobjItineraryDetails.FareDetails.TotalPoints);
                     }
                     ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
@@ -178,6 +181,7 @@ public partial class FlightPassenger : System.Web.UI.Page
             LoggingAdapter.WriteLog("FlightPassenger.aspx Pageload Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
+
     public bool FFPValidator(string drpVal, string pstrFFPno)
     {
         if (drpVal == string.Empty && pstrFFPno != string.Empty)
@@ -200,14 +204,16 @@ public partial class FlightPassenger : System.Web.UI.Page
         else
             return false;
     }
+
     protected void btnBookFlight_Click(object sender, EventArgs e)
     {
         try
         {
             ABCModel lobjModel = new ABCModel();
+            IBEAPIModel lobjIBEAPIModel = new IBEAPIModel();
             RefererDetails lobjRefererDetails = HttpContext.Current.Application["RefererSupplierDetails"] as RefererDetails;
-            int SupplierID = lobjRefererDetails.RefererSupplierProperties.SupplierId;
-
+            //    int SupplierID = lobjRefererDetails.RefererSupplierProperties.SupplierId;
+            int SupplierID = 0;
             if (Page.IsValid)
             {
                 if (Session["SelectedItinerary"] != null && Session["MemberDetails"] != null)
@@ -234,8 +240,6 @@ public partial class FlightPassenger : System.Web.UI.Page
                         TextBox txtEffectiveDate = lobjAdultControl.FindControl("txtEffectiveDate") as TextBox;
                         TextBox txtExpiryDate = lobjAdultControl.FindControl("txtExpiryDate") as TextBox;
 
-
-
                         PassengerDetails lobjADTPassengerDetails = new PassengerDetails();
                         lobjADTPassengerDetails.Prefix = ddlTitle.SelectedItem.Text.ToString();
                         lobjADTPassengerDetails.FirstName = txtFirstName.Text;
@@ -244,23 +248,25 @@ public partial class FlightPassenger : System.Web.UI.Page
 
                         if (txtEffectiveDate.Text != "")
                         {
-                            lobjADTPassengerDetails.PassportIssueDate = Convert.ToDateTime(lobjModel.StringToDateTime(txtEffectiveDate.Text));
+                            lobjADTPassengerDetails.PassportIssueDate = Convert.ToDateTime(lobjIBEAPIModel.StringToDateTime(txtEffectiveDate.Text));
                         }
                         lobjADTPassengerDetails.Nationality = ddlNationality.SelectedItem.Text.ToString();
 
                         if (txtExpiryDate.Text != "")
                         {
-                            lobjADTPassengerDetails.PassportExpiryDate = Convert.ToDateTime(lobjModel.StringToDateTime(txtExpiryDate.Text));
+                            lobjADTPassengerDetails.PassportExpiryDate = Convert.ToDateTime(lobjIBEAPIModel.StringToDateTime(txtExpiryDate.Text));
                         }
 
                         lobjADTPassengerDetails.EmailId = txtEmailID.Text;
                         lobjADTPassengerDetails.MobileNo = txtTelephone.Text;
-                        lobjADTPassengerDetails.DOB = Convert.ToDateTime(lobjModel.StringToDateTime(txtDOB.Text));
+                        lobjADTPassengerDetails.DOB = Convert.ToDateTime(lobjIBEAPIModel.StringToDateTime(txtDOB.Text));
                         lobjADTPassengerDetails.PaxType = "ADT";
-                        lobjADTPassengerDetails.Age = CalculateAge(lobjModel.StringToDateTime(txtDOB.Text));
+                        lobjADTPassengerDetails.Age = CalculateAge(lobjIBEAPIModel.StringToDateTime(txtDOB.Text));
                         lobjADTPassengerDetails.PassportNumber = txtPassportNumber.Text.ToString();
                         lobjADTPassengerDetails.Gender = ddlTitle.SelectedItem.Value.ToString();
-                        lobjADTPassengerDetails.Country = ddlNationality.SelectedValue;
+                        lobjADTPassengerDetails.Country = ddlNationality.SelectedItem.Text.ToString();
+                        lobjADTPassengerDetails.CountryCode = ddlNationality.SelectedValue;
+
                         lobjADTPassengerDetails.Address = ddlNationality.SelectedValue;
                         lobjADTPassengerDetails.CityName = ddlNationality.SelectedValue;
 
@@ -293,18 +299,18 @@ public partial class FlightPassenger : System.Web.UI.Page
 
                         if (txtEffectiveDate.Text != "")
                         {
-                            lobjCNNPassengerDetails.PassportIssueDate = Convert.ToDateTime(lobjModel.StringToDateTime(txtEffectiveDate.Text));
+                            lobjCNNPassengerDetails.PassportIssueDate = Convert.ToDateTime(lobjIBEAPIModel.StringToDateTime(txtEffectiveDate.Text));
                         }
                         lobjCNNPassengerDetails.Nationality = ddlNationality.SelectedItem.Text.ToString();
 
                         if (txtExpiryDate.Text != "")
                         {
-                            lobjCNNPassengerDetails.PassportExpiryDate = Convert.ToDateTime(lobjModel.StringToDateTime(txtExpiryDate.Text));
+                            lobjCNNPassengerDetails.PassportExpiryDate = Convert.ToDateTime(lobjIBEAPIModel.StringToDateTime(txtExpiryDate.Text));
                         }
 
                         lobjCNNPassengerDetails.EmailId = txtEmailID.Text;
                         lobjCNNPassengerDetails.MobileNo = txtTelephone.Text;
-                        lobjCNNPassengerDetails.DOB = Convert.ToDateTime(lobjModel.StringToDateTime(txtDOB.Text));
+                        lobjCNNPassengerDetails.DOB = Convert.ToDateTime(lobjIBEAPIModel.StringToDateTime(txtDOB.Text));
 
                         if (SupplierID.Equals(6))
                         {
@@ -315,7 +321,7 @@ public partial class FlightPassenger : System.Web.UI.Page
                             lobjCNNPassengerDetails.PaxType = "CHD";
                         }
 
-                        lobjCNNPassengerDetails.Age = CalculateAge(lobjModel.StringToDateTime(txtDOB.Text));
+                        lobjCNNPassengerDetails.Age = CalculateAge(lobjIBEAPIModel.StringToDateTime(txtDOB.Text));
                         lobjCNNPassengerDetails.PassportNumber = txtPassportNumber.Text.ToString();
                         lobjCNNPassengerDetails.Gender = ddlTitle.SelectedItem.Value.ToString();
                         lobjCNNPassengerDetails.Country = ddlNationality.SelectedValue;
@@ -351,23 +357,24 @@ public partial class FlightPassenger : System.Web.UI.Page
 
                         if (txtEffectiveDate.Text != "")
                         {
-                            lobjINFPassengerDetails.PassportIssueDate = Convert.ToDateTime(lobjModel.StringToDateTime(txtEffectiveDate.Text));
+                            lobjINFPassengerDetails.PassportIssueDate = Convert.ToDateTime(lobjIBEAPIModel.StringToDateTime(txtEffectiveDate.Text));
                         }
                         lobjINFPassengerDetails.Nationality = ddlNationality.SelectedItem.Text.ToString();
 
                         if (txtExpiryDate.Text != "")
                         {
-                            lobjINFPassengerDetails.PassportExpiryDate = Convert.ToDateTime(lobjModel.StringToDateTime(txtExpiryDate.Text));
+                            lobjINFPassengerDetails.PassportExpiryDate = Convert.ToDateTime(lobjIBEAPIModel.StringToDateTime(txtExpiryDate.Text));
                         }
 
                         lobjINFPassengerDetails.EmailId = txtEmailID.Text;
                         lobjINFPassengerDetails.MobileNo = txtTelephone.Text;
-                        lobjINFPassengerDetails.DOB = Convert.ToDateTime(lobjModel.StringToDateTime(txtDOB.Text));
+                        lobjINFPassengerDetails.DOB = Convert.ToDateTime(lobjIBEAPIModel.StringToDateTime(txtDOB.Text));
                         lobjINFPassengerDetails.PaxType = "INF";
-                        lobjINFPassengerDetails.Age = CalculateAge(lobjModel.StringToDateTime(txtDOB.Text));
+                        lobjINFPassengerDetails.Age = CalculateAge(lobjIBEAPIModel.StringToDateTime(txtDOB.Text));
                         lobjINFPassengerDetails.PassportNumber = txtPassportNumber.Text.ToString();
                         lobjINFPassengerDetails.Gender = ddlTitle.SelectedItem.Value.ToString();
-                        lobjINFPassengerDetails.Country = ddlNationality.SelectedValue;
+                        lobjINFPassengerDetails.Country = ddlNationality.SelectedItem.Text.ToString();
+                        lobjINFPassengerDetails.CountryCode = ddlNationality.SelectedValue;
                         lobjINFPassengerDetails.Address = ddlNationality.SelectedValue;
                         lobjINFPassengerDetails.CityName = ddlNationality.SelectedValue;
 
@@ -386,8 +393,8 @@ public partial class FlightPassenger : System.Web.UI.Page
                     lobjItineraryDetails.Adults = lobjSearchFlight.SearchDetails.Adults;
                     lobjItineraryDetails.Childrens = lobjSearchFlight.SearchDetails.Childrens;
                     lobjItineraryDetails.Infants = lobjSearchFlight.SearchDetails.Infants;
-                    lobjItineraryDetails.RefererDetails = lobjSearchFlight.RefererDetails;
-                    lobjItineraryDetails.AirSearchId = lobjSearchFlight.SearchDetails.SearchId;
+                    // lobjItineraryDetails.RefererDetails = lobjSearchFlight.RefererDetails;
+                    // lobjItineraryDetails.AirSearchId = lobjSearchFlight.SearchId;
                     lobjItineraryDetails.MemberId = Convert.ToString(lobjMemberDetails.MemberRelationsList[0].RelationReference);
 
                     if (lobjMemberDetails != null)
@@ -409,9 +416,6 @@ public partial class FlightPassenger : System.Web.UI.Page
                         lobjItineraryDetails.DeliveryInfo = lobjListOfPassengerDetails[0];
                     }
 
-
-                    //Session["SearchFlight"] = null;
-                    //Session["Flights"] = null;
                     Session["SelectedItinerary"] = null;
 
                     SearchResponse lobjSearchResponse = new SearchResponse();
@@ -421,11 +425,11 @@ public partial class FlightPassenger : System.Web.UI.Page
                     lobjCreateItineraryRequest.SupplierDetails.Id = SupplierID;
                     lobjCreateItineraryRequest.SessionId = lobjSearchResponse.SessionId;
                     lobjCreateItineraryRequest.ItineraryDetails = lobjItineraryDetails;
-                    lobjCreateItineraryRequest.ItineraryDetails.RefererDetails = lobjSearchFlight.RefererDetails;
-                    lobjCreateItineraryRequest.PointRate = lobjSearchFlight.PointRate;
+                    //    lobjCreateItineraryRequest.ItineraryDetails.RefererDetails = lobjSearchFlight.RefererDetails;
+                    lobjCreateItineraryRequest.PointRate = Convert.ToSingle(lobjSearchFlight.PointRate);
                     Session["ItineraryRequest"] = lobjCreateItineraryRequest;
 
-                    CreateItineraryResponse lobjCreateItineraryResponse = lobjModel.GetItineraryResponse(lobjCreateItineraryRequest);
+                    CreateItineraryResponse lobjCreateItineraryResponse = lobjIBEAPIModel.CreateItinerary(lobjCreateItineraryRequest);
                     if (lobjCreateItineraryResponse != null)
                     {
                         Session["ReviewFlightDetails"] = lobjCreateItineraryResponse.ItineraryDetails;
@@ -440,7 +444,6 @@ public partial class FlightPassenger : System.Web.UI.Page
                     }
 
                 }
-
                 else
                 {
                     lobjModel.LogActivity("Create Itinerary : Failed", ActivityType.FlightBooking);
@@ -453,6 +456,7 @@ public partial class FlightPassenger : System.Web.UI.Page
             LoggingAdapter.WriteLog("FlightPassenger.aspx btnBookFlight_Click Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
+
     public static int CalculateAge(DateTime birthDate)
     {
         DateTime now = DateTime.Now;

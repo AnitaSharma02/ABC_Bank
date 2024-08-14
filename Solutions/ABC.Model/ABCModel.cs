@@ -348,53 +348,6 @@ namespace ABC.Model
                 throw ex;
             }
         }
-        public HotelBookingResponse BookForHotel(MemberDetails pobjMemberDetails, Hotel pobjHotel, HotelSearchRequest pobjSearchRequest, Customer pobjCustomer, List<RedemptionDetails> pobjListOfRedemptionDetails)
-        {
-            HotelBookingResponse lobjHotelBookingResponse = null;
-            try
-            {
-                List<int> lobjListOfAdult = new List<int>();
-                string[] arrayAdultPerRoom = pobjSearchRequest.SearchRequest.AdultPerRoom.Split(',');
-                for (int i = 0; i < arrayAdultPerRoom.Count(); i++)
-                {
-                    lobjListOfAdult.Add(Convert.ToInt32(arrayAdultPerRoom[i]));
-                }
-                List<int> lobjListOfChild = new List<int>();
-                string[] arrayChildPerRoom = pobjSearchRequest.SearchRequest.ChildrenPerRoom.Split(',');
-                for (int i = 0; i < arrayChildPerRoom.Count(); i++)
-                {
-                    lobjListOfChild.Add(Convert.ToInt32(arrayChildPerRoom[i]));
-                }
-                HotelBookingRequest lobjBookingRequest = new HotelBookingRequest();
-                lobjBookingRequest.BookRequest.customer = pobjCustomer;
-                lobjBookingRequest.BookRequest.checkindate = pobjSearchRequest.SearchRequest.CheckInDate;
-                lobjBookingRequest.BookRequest.checkoutdate = pobjSearchRequest.SearchRequest.CheckOutDate;
-                lobjBookingRequest.BookRequest.numberofrooms = pobjSearchRequest.SearchRequest.NoOfRooms;
-                lobjBookingRequest.BookRequest.nri = false;
-                lobjBookingRequest.BookRequest.adultsperroom = lobjListOfAdult.ToArray();
-                lobjBookingRequest.BookRequest.childrenperroom = lobjListOfChild.ToArray();
-                lobjBookingRequest.BookRequest.bookingcode = pobjHotel.roomrates.RoomRate[0].bookingcode;
-                lobjBookingRequest.BookRequest.roomtypecode = pobjHotel.roomrates.RoomRate[0].roomtype.roomtypecode;
-                lobjBookingRequest.BookRequest.TotalPoints = pobjHotel.roomrates.RoomRate[0].TotalPoints;
-                lobjBookingRequest.BookRequest.customeripaddress = pobjSearchRequest.SearchRequest.IpAddress;
-                lobjBookingRequest.BookRequest.hotelid = pobjHotel.hotelid;
-                lobjBookingRequest.BookRequest.bookingamount = Convert.ToDouble(pobjHotel.roomrates.RoomRate[0].TotalDefaultAmount);
-                lobjBookingRequest.BookRequest.totalBaseFare = Convert.ToDouble(pobjHotel.roomrates.RoomRate[0].TotalBaseAmount);
-                lobjBookingRequest.BookRequest.totalDefaulFare = Convert.ToDouble(pobjHotel.roomrates.RoomRate[0].TotalDefaultAmount);
-                pobjSearchRequest.SearchRequest.MembershipReference = pobjMemberDetails.MemberRelationsList[0].RelationReference;
-                try
-                {
-                    BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
-                    lobjHotelBookingResponse = lobjBookingIntegrationFacade.BookHotel(lobjBookingRequest, pobjHotel, pobjSearchRequest, pobjMemberDetails, pobjCustomer, pobjListOfRedemptionDetails);
-                }
-                catch (Exception ex)
-                {
-                    LoggingAdapter.WriteLog("Model BookHotel Ex-" + ex.InnerException + ex.StackTrace + ex.Message);
-                }
-            }
-            catch (Exception ex) { LoggingAdapter.WriteLog("BookForHotel - " + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace); }
-            return lobjHotelBookingResponse;
-        }
         public bool SendApplyNowEmailMsg(string pstrFullName, string pstrCountry, string pstEmail, string pstrMobno, string pstrAccountStatus, string pstrApplyStatus, string pstrMessage)
         {
             bool lboolStatus = false;
@@ -610,7 +563,7 @@ namespace ABC.Model
             catch (Exception ex) { LoggingAdapter.WriteLog("CarRentalTermsResponse - " + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace); }
             return lobjCarRentalTermsResponse;
         }
-       public Match GetCarVehiclDetails(List<Match> list, string pstrref)
+        public Match GetCarVehiclDetails(List<Match> list, string pstrref)
         {
             Match lobjMatchResult = new Match();
             try
@@ -1740,7 +1693,7 @@ namespace ABC.Model
                     try
                     {
                         string lstrToken = GetAuthTokenforWebAPI();
-                        lobjMemberDetails = lobjAPIClientHelper.GetMemberDetailsByEmailID( lobjProgramDefinition.ProgramId, pstrEmailId,Convert.ToInt32(RelationType.LBMS), lstrToken);
+                        lobjMemberDetails = lobjAPIClientHelper.GetMemberDetailsByEmailID(lobjProgramDefinition.ProgramId, pstrEmailId, Convert.ToInt32(RelationType.LBMS), lstrToken);
                     }
                     catch (Exception ex)
                     {
@@ -2330,12 +2283,12 @@ namespace ABC.Model
             bool lblnEmailSend = false;
             try
             {
-                NICEmailDetailsResponse lobjEmailResponse = new NICEmailDetailsResponse();
+                ABCEmailDetailsResponse lobjEmailResponse = new ABCEmailDetailsResponse();
                 APIClientHelper lobjcehelper = new APIClientHelper();
                 if (pobjMemberDetails.Email != string.Empty)
                 {
                     string lstrToken = GetAuthTokenforWebAPI();
-                    lobjEmailResponse = lobjcehelper.NICEmailDetails(Parameters, lstrToken);
+                    lobjEmailResponse = lobjcehelper.ABCEmailDetails(Parameters, lstrToken);
                     if (lobjEmailResponse != null)
                     {
                         if (lobjEmailResponse.results.IsSucessful)
@@ -2406,12 +2359,12 @@ namespace ABC.Model
             bool lblnEmailSend = false;
             try
             {
-                NICEmailDetailsResponse lobjEmailResponse = new NICEmailDetailsResponse();
+                ABCEmailDetailsResponse lobjEmailResponse = new ABCEmailDetailsResponse();
                 APIClientHelper lobjcehelper = new APIClientHelper();
                 if (lobjMemberDetails.Email != string.Empty)
                 {
                     string lstrToken = GetAuthTokenforWebAPI();
-                    lobjEmailResponse = lobjcehelper.NICEmailDetails(jsonParameters, lstrToken);
+                    lobjEmailResponse = lobjcehelper.ABCEmailDetails(jsonParameters, lstrToken);
                     if (lobjEmailResponse != null)
                     {
                         if (lobjEmailResponse.results.IsSucessful)
@@ -2552,7 +2505,7 @@ namespace ABC.Model
             }
             return lstrResponse;
         }
-       public int ConvertToPoints(float pstrAmount, string pstrCurrency, int pintProgramId, string pstrRedemtionCode)
+        public int ConvertToPoints(float pstrAmount, string pstrCurrency, int pintProgramId, string pstrRedemtionCode)
         {
             int lintResponse = 0;
             try
@@ -2977,84 +2930,6 @@ namespace ABC.Model
             }
         }
         #endregion
-        // Only IBE Flight Hotel Booking without Redemption 
-        public HotelBookingResponse BookForHotel(MemberDetails pobjMemberDetails, Hotel pobjHotel, HotelSearchRequest pobjSearchRequest, Customer pobjCustomer, CB.IBE.Platform.Masters.Entities.BookingPaymentDetails pobjBookingPaymentDetails)
-        {
-            try
-            {
-                List<int> lobjListOfAdult = new List<int>();
-                string[] arrayAdultPerRoom = pobjSearchRequest.SearchRequest.AdultPerRoom.Split(',');
-                for (int i = 0; i < arrayAdultPerRoom.Count(); i++)
-                {
-                    lobjListOfAdult.Add(Convert.ToInt32(arrayAdultPerRoom[i]));
-                }
-                List<int> lobjListOfChild = new List<int>();
-                string[] arrayChildPerRoom = pobjSearchRequest.SearchRequest.ChildrenPerRoom.Split(',');
-                for (int i = 0; i < arrayChildPerRoom.Count(); i++)
-                {
-                    lobjListOfChild.Add(Convert.ToInt32(arrayChildPerRoom[i]));
-                }
-                HotelBookingRequest lobjBookingRequest = new HotelBookingRequest();
-                lobjBookingRequest.BookRequest.customer = pobjCustomer;
-                lobjBookingRequest.BookRequest.checkindate = pobjSearchRequest.SearchRequest.CheckInDate;
-                lobjBookingRequest.BookRequest.checkoutdate = pobjSearchRequest.SearchRequest.CheckOutDate;
-                lobjBookingRequest.BookRequest.numberofrooms = pobjSearchRequest.SearchRequest.NoOfRooms;
-                lobjBookingRequest.BookRequest.nri = false;
-                lobjBookingRequest.BookRequest.adultsperroom = lobjListOfAdult.ToArray();
-                lobjBookingRequest.BookRequest.childrenperroom = lobjListOfChild.ToArray();
-                lobjBookingRequest.BookRequest.bookingcode = pobjHotel.roomrates.RoomRate[0].bookingcode;
-                lobjBookingRequest.BookRequest.roomtypecode = pobjHotel.roomrates.RoomRate[0].roomtype.roomtypecode;
-                lobjBookingRequest.BookRequest.TotalPoints = pobjHotel.roomrates.RoomRate[0].TotalPoints;
-                lobjBookingRequest.BookRequest.customeripaddress = pobjSearchRequest.SearchRequest.IpAddress;
-                lobjBookingRequest.BookRequest.hotelid = pobjHotel.hotelid;
-                lobjBookingRequest.BookRequest.bookingamount = Convert.ToDouble(pobjHotel.roomrates.RoomRate[0].TotalDefaultAmount);
-                lobjBookingRequest.BookRequest.totalBaseFare = Convert.ToDouble(pobjHotel.roomrates.RoomRate[0].TotalBaseAmount);
-                lobjBookingRequest.BookRequest.totalDefaulFare = Convert.ToDouble(pobjHotel.roomrates.RoomRate[0].TotalDefaultAmount);
-                lobjBookingRequest.BookingPaymentDetails = pobjBookingPaymentDetails;
-                pobjSearchRequest.SearchRequest.MembershipReference = pobjMemberDetails.MemberRelationsList[0].RelationReference;
-
-                BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
-                HotelBookingResponse lobjHotelBookingResponse = new HotelBookingResponse();
-                lobjHotelBookingResponse = lobjBookingIntegrationFacade.BookForHotel(lobjBookingRequest, pobjHotel, pobjSearchRequest, pobjMemberDetails, pobjCustomer, pobjBookingPaymentDetails.PointsTxnRefererence);
-
-                return lobjHotelBookingResponse;
-
-            }
-            catch (ApplicationException ex)
-            {
-                throw new ApplicationException(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("Model BookForHotel Ex-:" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
-                throw new ApplicationException(ex.Message);
-            }
-        }
-
-        public CB.IBE.Platform.ClientEntities.BookingResponse BookForFlight(CB.IBE.Platform.ClientEntities.BookingRequest pobjBookingRequest, MemberDetails pobjMemberDetails)
-        {
-            try
-            {
-                BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
-                CB.IBE.Platform.ClientEntities.BookingResponse lobjBookingResponse = lobjBookingIntegrationFacade.BookForFlight(pobjBookingRequest, pobjMemberDetails);
-
-                return lobjBookingResponse;
-            }
-            catch (ApplicationException ex)
-            {
-                LoggingAdapter.WriteLog("Model Book For Flight Application Exception" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace + Environment.NewLine + "Inner Exception-" + ex.InnerException);
-                throw new ApplicationException(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("Model Book For Flight Ex" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace + Environment.NewLine + "Inner Exception-" + ex.InnerException);
-                throw new ApplicationException(ex.Message);
-
-            }
-
-        }
-
-        // Only IBE Flight Hotel Booking without Redemption 
 
         #region PG
         public bool InsertTransactionDetails(string relationReference, decimal amount, int points,
@@ -3214,7 +3089,7 @@ namespace ABC.Model
             return lboolResponse;
         }
 
-                public bool InsertEmailDetails(List<string> pstrEmailparameter, string emailId, string templateCode, string memberId, int pintProgramId)
+        public bool InsertEmailDetails(List<string> pstrEmailparameter, string emailId, string templateCode, string memberId, int pintProgramId)
         {
             bool isSend = false;
             try
@@ -3230,7 +3105,7 @@ namespace ABC.Model
                 lobjEmailDetail.MemberId = memberId;
                 lobjEmailDetail.AttachmentList = lstAttachment;
                 lobjEmailDetail.To = emailId;
-                isSend=lobjcehelper.InsertEmailDetails(lobjEmailDetail, lstAttachments, lstrToken);
+                isSend = lobjcehelper.InsertEmailDetails(lobjEmailDetail, lstAttachments, lstrToken);
             }
             catch (Exception ex)
             {

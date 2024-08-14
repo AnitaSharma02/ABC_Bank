@@ -11,23 +11,36 @@ using Framework.Integrations.Hotels.Entities;
 using CB.IBE.Platform.Masters.Entities;
 using Core.Platform.MemberActivity.Entities;
 using Framework.EnterpriseLibrary.Adapters;
+using IBEAPI.ClientEntities;
 
 public partial class HotelResults : System.Web.UI.Page
 {
     private FilterRange lobjFilterRange = new FilterRange();
+
     private List<int> lobjListOfPrice = new List<int>();
+
     private List<string> lobjListOfChain = new List<string>();
+
     private List<string> lobjListOfProertyType = new List<string>();
+
     private List<string> lobjListOfLocations = new List<string>();
+
     private List<string> lobjListOfHotelAmenities = new List<string>();
+
     private List<string> lobjListOfBasicAmenities = new List<string>();
+
     private List<string> lobjListOfBussinessService = new List<string>();
+
     private List<string> lobjListOfRoomAmenities = new List<string>();
+
     private HotelInfoRequest lobjhotelinforequest = new HotelInfoRequest();
+
     private HotelInfo lobjHotelInfo = new HotelInfo();
+
     public int count = 0;
     public int countJson = 0;
     public string lstrCurrency = string.Empty;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -36,35 +49,36 @@ public partial class HotelResults : System.Web.UI.Page
             {
                 if (Session["SearchDetails"] != null)
                 {
-                    HotelSearchRequest lobjSearchRequest = Session["SearchDetails"] as HotelSearchRequest;
+                    HotelsSearchRequest lobjSearchRequest = Session["SearchDetails"] as HotelsSearchRequest;
                     if (lobjSearchRequest != null)
                     {
                         MemberDetails lobjMemberDetails = Session["MemberDetails"] as MemberDetails;
-                        txtCity.Value = lobjSearchRequest.SearchRequest.CountryISOCode.ToString() + ", " + lobjSearchRequest.SearchRequest.Country.ToString() + ", " + lobjSearchRequest.SearchRequest.CityName.ToString();
-                        string ChkinDate = SetviewDate(lobjSearchRequest.SearchRequest.CheckInDate);
+                        txtCity.Value = lobjSearchRequest.CountryISOCode.ToString() + ", " + lobjSearchRequest.Country.ToString() + ", " + lobjSearchRequest.CityName.ToString();
+                        string ChkinDate = SetviewDate(lobjSearchRequest.CheckInDate);
                         TextBoxCheckin.Value = ChkinDate;
-                        string ChkOutDate = SetviewDate(lobjSearchRequest.SearchRequest.CheckOutDate);
+                        string ChkOutDate = SetviewDate(lobjSearchRequest.CheckOutDate);
                         TextBoxCheckout.Value = ChkOutDate;
-                        qtyValue.Value = Convert.ToString(lobjSearchRequest.SearchRequest.NoOfRooms);
-                        switch (Convert.ToString(lobjSearchRequest.SearchRequest.NoOfRooms))
+                        qtyValue.Value = Convert.ToString(lobjSearchRequest.NoOfRooms);
+
+                        switch (Convert.ToString(lobjSearchRequest.NoOfRooms))
                         {
                             case "1":
-                                qtyValueAdult1.Value = Convert.ToString(lobjSearchRequest.SearchRequest.AdultPerRoom);
-                                qtyValueChild1.Value = Convert.ToString(lobjSearchRequest.SearchRequest.ChildrenPerRoom);
+                                qtyValueAdult1.Value = Convert.ToString(lobjSearchRequest.AdultPerRoom);
+                                qtyValueChild1.Value = Convert.ToString(lobjSearchRequest.ChildrenPerRoom);
                                 break;
                             case "2":
                             case "3":
                             case "4":
-                                string[] SplitAdult = Convert.ToString(lobjSearchRequest.SearchRequest.AdultPerRoom).Split(',');
-                                string[] SplitChild = Convert.ToString(lobjSearchRequest.SearchRequest.ChildrenPerRoom).Split(',');
-                                if (Convert.ToString(lobjSearchRequest.SearchRequest.NoOfRooms) == "2")
+                                string[] SplitAdult = Convert.ToString(lobjSearchRequest.AdultPerRoom).Split(',');
+                                string[] SplitChild = Convert.ToString(lobjSearchRequest.ChildrenPerRoom).Split(',');
+                                if (Convert.ToString(lobjSearchRequest.NoOfRooms) == "2")
                                 {
                                     qtyValueAdult1.Value = SplitAdult[0];
                                     qtyValueChild1.Value = SplitChild[0];
                                     qtyValueAdult2.Value = SplitAdult[1];
                                     qtyValueChild2.Value = SplitChild[1];
                                 }
-                                else if (Convert.ToString(lobjSearchRequest.SearchRequest.NoOfRooms) == "3")
+                                else if (Convert.ToString(lobjSearchRequest.NoOfRooms) == "3")
                                 {
                                     qtyValueAdult1.Value = SplitAdult[0];
                                     qtyValueChild1.Value = SplitChild[0];
@@ -73,7 +87,7 @@ public partial class HotelResults : System.Web.UI.Page
                                     qtyValueAdult3.Value = SplitAdult[2];
                                     qtyValueChild3.Value = SplitChild[2];
                                 }
-                                else if (Convert.ToString(lobjSearchRequest.SearchRequest.NoOfRooms) == "4")
+                                else if (Convert.ToString(lobjSearchRequest.NoOfRooms) == "4")
                                 {
                                     qtyValueAdult1.Value = SplitAdult[0];
                                     qtyValueChild1.Value = SplitChild[0];
@@ -87,9 +101,7 @@ public partial class HotelResults : System.Web.UI.Page
                                 break;
                         }
                     }
-
                     hdnPaymentType.Value = "Points";
-
                 }
                 SetHotelTemplate();
             }
@@ -99,6 +111,7 @@ public partial class HotelResults : System.Web.UI.Page
             LoggingAdapter.WriteLog("HotelResults.aspx- Page_Load Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
+
     private string SetviewDate(DateTime dateTime)
     {
         string CalendarDate;
@@ -108,6 +121,7 @@ public partial class HotelResults : System.Web.UI.Page
         CalendarDate = Date + "/" + Month + "/" + year;
         return CalendarDate;
     }
+
     public void SetHotelTemplate()
     {
         try
@@ -115,23 +129,23 @@ public partial class HotelResults : System.Web.UI.Page
             if (Session["Hotels"] != null)
             {
                 HotelSearchResponse lobjSearchResponse = Session["Hotels"] as HotelSearchResponse;
-                HotelSearchRequest lobjSearchRequest = Session["SearchDetails"] as HotelSearchRequest;
+                HotelsSearchRequest lobjSearchRequest = Session["SearchDetails"] as HotelsSearchRequest;
                 if (lobjSearchResponse != null)
                 {
                     lobjSearchResponse.SearchResponse.hotels.hotel = lobjSearchResponse.SearchResponse.hotels.hotel.OrderBy(lobj => lobj.roomrates.RoomRate[0].TotalPoints).ToArray<Hotel>();
                     rptHotelList.DataSource = lobjSearchResponse.SearchResponse.hotels.hotel;
                     rptHotelList.DataBind();
                 }
-                lblSearchSummary.Text += "<b>Your Hotel Search: </b>" + lobjSearchResponse.SearchResponse.searchcriteria.city.ToString();
+                lblSearchSummary.Text += "<b class=\"heading-medium d-none\">Your Hotel Search: </b>" + lobjSearchResponse.SearchResponse.searchcriteria.city.ToString();
                 lblSearchSummary.Text += " " + lobjSearchResponse.SearchResponse.searchcriteria.country.ToString() + ", ";
                 DateTime Chkin = Convert.ToDateTime(lobjSearchResponse.SearchResponse.searchcriteria.checkindate);
                 lblSearchSummary.Text += Chkin.ToString("ddd, MMM d");
                 DateTime ChkOut = Convert.ToDateTime(lobjSearchResponse.SearchResponse.searchcriteria.checkoutdate);
                 lblSearchSummary.Text += " - " + ChkOut.ToString("ddd, MMM d");
-                lblSearchSummary.Text += ", " + lobjSearchRequest.SearchRequest.NoOfRooms.ToString() + " Room(s)";
-                HFNoOfRooms.Value = lobjSearchRequest.SearchRequest.NoOfRooms.ToString();
-                hdnNoAdult.Value = lobjSearchRequest.SearchRequest.AdultPerRoom.ToString();
-                hdnNoChild.Value = lobjSearchRequest.SearchRequest.ChildrenPerRoom.ToString();
+                lblSearchSummary.Text += ", " + lobjSearchRequest.NoOfRooms.ToString() + " Room(s)";
+                HFNoOfRooms.Value = lobjSearchRequest.NoOfRooms.ToString();
+                hdnNoAdult.Value = lobjSearchRequest.AdultPerRoom.ToString();
+                hdnNoChild.Value = lobjSearchRequest.ChildrenPerRoom.ToString();
                 for (int i = 0; i < lobjSearchResponse.SearchResponse.hotels.hotel.Count(); i++)
                 {
                     lobjListOfChain.Add(lobjSearchResponse.SearchResponse.hotels.hotel[i].basicinfo.chain);
@@ -154,19 +168,20 @@ public partial class HotelResults : System.Web.UI.Page
                         }
                     }
                     lobjhotelinforequest.hotelid = Convert.ToInt32(lobjSearchResponse.SearchResponse.hotels.hotel[i].hotelid);
-                    if (lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate != null && lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate.Count() >= 0)
-                    {
-                        lobjSearchRequest.PaymentType = PaymentType.Points;
-                        if (lobjSearchRequest.PaymentType.Equals(PaymentType.Points))
-                            if (hdnPaymentType.Value.Equals(Convert.ToString(PaymentType.Points)))
-                            {
-                                lobjListOfPrice.Add(Convert.ToInt32(Convert.ToSingle(lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate[0].TotalPoints)));
-                            }
-                            else
-                            {
-                                lobjListOfPrice.Add(Convert.ToInt32(Convert.ToSingle(lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate[0].TotalBaseAmount)));
-                            }
-                    }
+                    //if (lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate != null && lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate.Count() >= 0)
+                    //{
+                    //    lobjSearchRequest.PaymentType = PaymentType.Points;
+                    //    if (lobjSearchRequest.PaymentType.Equals(PaymentType.Points))
+                    //        if (hdnPaymentType.Value.Equals(Convert.ToString(PaymentType.Points)))
+                    //        {
+                    //            lobjListOfPrice.Add(Convert.ToInt32(Convert.ToSingle(lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate[0].TotalPoints)));
+                    //        }
+                    //        else
+                    //        {
+                    //            lobjListOfPrice.Add(Convert.ToInt32(Convert.ToSingle(lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate[0].TotalBaseAmount)));
+                    //        }
+                    //}
+                    lobjListOfPrice.Add(Convert.ToInt32(Convert.ToSingle(lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate[0].TotalBaseAmount)));
                     lobjFilterRange.MaxPrice = lobjListOfPrice.Max();
                     lobjFilterRange.MinPrice = lobjListOfPrice.Min();
                     lobjListOfLocations = lobjListOfLocations.Distinct().ToList();
@@ -190,6 +205,7 @@ public partial class HotelResults : System.Web.UI.Page
             LoggingAdapter.WriteLog("HotelResults.aspx- SetHotelTemplate Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
+
     protected void rptHotelList_ItemDataBound(Object Sender, RepeaterItemEventArgs e)
     {
         try
@@ -234,7 +250,7 @@ public partial class HotelResults : System.Web.UI.Page
                                         (e.Item.FindControl("imgResturent") as Image).ImageUrl = "Images/resto-icon.svg";
                                         (e.Item.FindControl("imgResturent") as Image).ToolTip = "Restaurant/Coffee Shop";
 
-                                        (e.Item.FindControl("imgswimmingPool") as Image).ImageUrl = "Images/pool-icon-.svg";
+                                        (e.Item.FindControl("imgswimmingPool") as Image).ImageUrl = "Images/pool-icon.svg";
                                         (e.Item.FindControl("imgswimmingPool") as Image).ToolTip = "Swimming Pool";
                                     }
                                     else
@@ -290,6 +306,7 @@ public partial class HotelResults : System.Web.UI.Page
             LoggingAdapter.WriteLog("HotelResults.aspx- rptHotelList_ItemDataBound Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
+
     [System.Web.Script.Services.ScriptMethod()]
     [System.Web.Services.WebMethod]
     public static bool SetHotelId(string pstrHotelId)

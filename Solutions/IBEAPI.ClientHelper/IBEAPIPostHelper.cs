@@ -10,8 +10,8 @@ namespace IBEAPI.ClientHelper
 {
     public class IBEAPIPostHelper
     {
-        public static string IBEAPIUsername = Convert.ToString(ConfigurationManager.AppSettings["RefererName"]);
-        public static string IBEAPIPassword = Convert.ToString(ConfigurationManager.AppSettings["RefererPassword"]);
+        public static string IBEAPIUsername = Convert.ToString(ConfigurationManager.AppSettings["HotelFlightsRefererName"]);
+        public static string IBEAPIPassword = Convert.ToString(ConfigurationManager.AppSettings["HotelFlightsRefererPassword"]);
         public static string EnjoyTravelAPIUsername = Convert.ToString(ConfigurationManager.AppSettings["EnjoyTravelAPIUsername"]);
         public static string EnjoyTravelAPIPassword = Convert.ToString(ConfigurationManager.AppSettings["EnjoyTravelAPIPassword"]);
 

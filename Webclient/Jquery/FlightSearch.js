@@ -6,61 +6,6 @@
 $(document).ready(function () {
     showLoading();
     GetFilterCriteria();
-    PaintCounts();
-
-    $.ajax({
-        type: 'POST',
-        url: 'FlightList.aspx/GetFilterData',
-        contentType: 'application/json; charset=utf-8',
-        dataType: 'json',
-        data: "",
-        success: function (msg) {
-            objFilterRange = $.parseJSON(msg.d);
-
-            $("#priceSlider").slider({
-                range: true,
-                max: objFilterRange.MaxPoints,
-                min: objFilterRange.MinPoints,
-                step: 1,
-                values: [objFilterRange.MinPoints, objFilterRange.MaxPoints],
-                slide: function (event, ui) {
-                    var textValue = CommaSep(ui.values[0]) + " - " + CommaSep(ui.values[1]);
-
-                    $("#priceRange").text(textValue);
-                },
-                stop: function (event, ui) {
-                    return FilterSlider(1, ui.values[0], ui.values[1]);
-                }
-            });
-            //default initiliztion
-            $("#priceRange").text(CommaSep(objFilterRange.MinPoints) + " - " + CommaSep(objFilterRange.MaxPoints));
-
-            //take max and min duration
-            $("#durationSlider").slider({
-                range: true,
-                min: objFilterRange.MinDuration,
-                max: objFilterRange.MaxDuration,
-                step: 15,
-                values: [objFilterRange.MinDuration, objFilterRange.MaxDuration],
-                slide: function (event, ui) {
-                    var textValue = filtersData.getSlidervalues(ui.values[0], ui.values[1]);
-                    $("#durationRange").text(textValue);
-                },
-                stop: function (event, ui) {
-                    return FilterSlider(3, ui.values[0], ui.values[1]);
-                }
-            });
-            //default initiliztion
-            $("#durationRange").text(filtersData.getSlidervalues(objFilterRange.MinDuration, objFilterRange.MaxDuration));
-
-
-        },
-        beforeSend: function () {
-            $("#updProgress").show();
-        }
-    });
-
-
     //take max and min departure time
     $("#departureSlider").slider({
         range: true,
@@ -98,13 +43,12 @@ $(document).ready(function () {
 
     PaintAirlines();
     PaintStops();
-
     GetFlightData(1);
 
 });
 
 function GetFlightData(pstrIsNext) {
-    
+
     $('.flightDomReturnSwitchLayoutbtn').hide();
     var isMobileView = 0;
     if ($(window).width() >= 768) {
@@ -152,7 +96,7 @@ function GetFlightData(pstrIsNext) {
                 $("#domesticTwoWay").show();
                 $("#result1").show();
                 $("#result2").show();
-                
+
 
                 if (msg.d[1] != "[]" && msg.d[0] != "[]") {
                     showTripSummary('Onward', DomesticOnwardData[0].SequenceNo);
@@ -180,13 +124,13 @@ function GetFlightData(pstrIsNext) {
                 $("#LoadNext").hide();
             }
             if (msg.d[5].toString() != '') {
-               
+
                 var totalcount = msg.d[5].toString();
                 // $('#CP_lblNoofFlight').val() = totalcount.slice(21, 24);
                 $("#totalvalue").val(totalcount.toString());
-            } 
+            }
             $(".miles").digits();
-         //   $('#CP_lblNoofFlight').val($("#totalvalue").val());
+            //   $('#CP_lblNoofFlight').val($("#totalvalue").val());
             $("#lblNoofFlight").text($("#totalvalue").val());
 
             $(".CommaSeperated").each(function () {
@@ -250,11 +194,12 @@ function PaintCounts() {
         url: 'FlightList.aspx/FlightData',
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
+        async: false,
         data: "",
         success: function (msg) {
 
             var Counts = msg.d[0];
-           // $("#CP_lblNoofFlight").append(Counts.toString());
+            // $("#CP_lblNoofFlight").append(Counts.toString());
             //$("#ContentPlaceHolder1_lblNoofFlight").text(Counts.toString() + " of " + Counts.toString() + " Flights");
             $("#lblNoofFlight").text(Counts);
 
@@ -298,9 +243,11 @@ function GetFilterCriteria() {
         url: 'FlightList.aspx/GetFilterCriteria',
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
+        async: false,
         data: "",
         success: function (msg) {
-
+            PaintCounts();
+            GetFilterData();
         },
         beforeSend: function () {
             $("#updProgress").show();
@@ -400,4 +347,59 @@ function showLoading() {
 function hideImage() {
     $("#LoadingResult").slideUp(1000);
     return true;
+}
+
+function GetFilterData() {
+    $.ajax({
+        type: 'POST',
+        url: 'FlightList.aspx/GetFilterData',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        async: false,
+        data: "",
+        success: function (msg) {
+            objFilterRange = $.parseJSON(msg.d);
+
+            $("#priceSlider").slider({
+                range: true,
+                max: objFilterRange.MaxPoints,
+                min: objFilterRange.MinPoints,
+                step: 1,
+                values: [objFilterRange.MinPoints, objFilterRange.MaxPoints],
+                slide: function (event, ui) {
+                    var textValue = CommaSep(ui.values[0]) + " - " + CommaSep(ui.values[1]);
+
+                    $("#priceRange").text(textValue);
+                },
+                stop: function (event, ui) {
+                    return FilterSlider(1, ui.values[0], ui.values[1]);
+                }
+            });
+            //default initiliztion
+            $("#priceRange").text(CommaSep(objFilterRange.MinPoints) + " - " + CommaSep(objFilterRange.MaxPoints));
+
+            //take max and min duration
+            $("#durationSlider").slider({
+                range: true,
+                min: objFilterRange.MinDuration,
+                max: objFilterRange.MaxDuration,
+                step: 15,
+                values: [objFilterRange.MinDuration, objFilterRange.MaxDuration],
+                slide: function (event, ui) {
+                    var textValue = filtersData.getSlidervalues(ui.values[0], ui.values[1]);
+                    $("#durationRange").text(textValue);
+                },
+                stop: function (event, ui) {
+                    return FilterSlider(3, ui.values[0], ui.values[1]);
+                }
+            });
+            //default initiliztion
+            $("#durationRange").text(filtersData.getSlidervalues(objFilterRange.MinDuration, objFilterRange.MaxDuration));
+
+
+        },
+        beforeSend: function () {
+            $("#updProgress").show();
+        }
+    });
 }

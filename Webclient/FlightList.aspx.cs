@@ -28,6 +28,7 @@ public partial class FlightList : System.Web.UI.Page
         base.OnInit(e);
         disableCachingOnBrowsers();
     }
+
     private void disableCachingOnBrowsers()
     {
         // Do any of these result in META tags e.g. <META HTTP-EQUIV="Expire" CONTENT="-1">
@@ -48,7 +49,6 @@ public partial class FlightList : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                ABCModel lobjModel = new ABCModel();
                 SearchRequest lobjSearchRequest = HttpContext.Current.Session["FlightSearchDetails"] as SearchRequest;
             }
         }
@@ -67,6 +67,7 @@ public partial class FlightList : System.Web.UI.Page
         CalendarDate = "<a class='cal'>" + Month + "<em>" + NowDate + "</em> " + Day + "</a>";
         return CalendarDate;
     }
+
     public static List<FlightDetails> FilterDomesticData(int PageSize, FilterCriteria lobjFilterCriteria, List<FlightDetails> lobjFlightList)
     {
         List<FlightDetails> lobjListOfFlightDetails = new List<FlightDetails>();
@@ -119,7 +120,6 @@ public partial class FlightList : System.Web.UI.Page
     }
 
     //FilterByAirline
-
     private static bool FilterByAirline(FlightDetails pobjFlightDetails, List<string> ListOfAirlines)
     {
         bool Result = false;
@@ -204,7 +204,6 @@ public partial class FlightList : System.Web.UI.Page
     {
         return pobjFlightDetails.FareDetails.DiscountedAmount >= pintMinValue && pobjFlightDetails.FareDetails.DiscountedAmount <= pintMaxValue;
     }
-
 
     [System.Web.Script.Services.ScriptMethod()]
     [System.Web.Services.WebMethod]
@@ -441,8 +440,8 @@ public partial class FlightList : System.Web.UI.Page
 
         try
         {
-            lstrAirLineList += "<label class=\"checkbox-container d-flex\" id='Airstop'>";
-            lstrAirLineList += "<span class=\"d-inline-block ml-1\"><input type='checkbox' onclick='return FilterAirlines(&quot;SelectAll&quot;)' checked='checked'  ID='chkSelectAll' class='checkbox_pading ArialNarrow' /></div>";
+            lstrAirLineList += "<label class=\"checkbox-container d-flex heading-regular\" id='Airstop'>";
+            lstrAirLineList += "<span class=\"d-inline-block ml-1 heading-regular\"><input type='checkbox' onclick='return FilterAirlines(&quot;SelectAll&quot;)' checked='checked'  ID='chkSelectAll' class='checkbox_pading ArialNarrow' /></div>";
             lstrAirLineList += "<span class=\"checkmark\"></span>";
             lstrAirLineList += "Select All";
             lstrAirLineList += "</span>";
@@ -451,8 +450,8 @@ public partial class FlightList : System.Web.UI.Page
             {
                 if (lobjFilterCriteria.Airlines[count] != "Multiple Carrier")
                 {
-                    lstrAirLineList += "<label class=\"checkbox-container d-flex\" id='Airstop'>";
-                    lstrAirLineList += "<span class=\"d-inline-block ml-1\"><input type='checkbox' onclick='return FilterAirlines(&quot;" + lobjFilterCriteria.Airlines[count] + "&quot;);' checked='checked' ID='chk" + lobjFilterCriteria.Airlines[count].ToString().Replace(" ", "").Replace("(", "").Replace(")", "") + "' class='checkbox_pading ArialNarrow' /></div>";
+                    lstrAirLineList += "<label class=\"checkbox-container d-flex heading-regular\" id='Airstop'>";
+                    lstrAirLineList += "<span class=\"d-inline-block heading-regular ml-1\"><input type='checkbox' onclick='return FilterAirlines(&quot;" + lobjFilterCriteria.Airlines[count] + "&quot;);' checked='checked' ID='chk" + lobjFilterCriteria.Airlines[count].ToString().Replace(" ", "").Replace("(", "").Replace(")", "") + "' class='checkbox_pading ArialNarrow' /></div>";
                     lstrAirLineList += "<span class=\"checkmark\"></span>";
                     lstrAirLineList += lobjFilterCriteria.Airlines[count].ToString();
                     lstrAirLineList += "</span>";
@@ -460,7 +459,7 @@ public partial class FlightList : System.Web.UI.Page
                 }
 
             }
-           
+
         }
         catch (Exception ex)
         {
@@ -481,7 +480,7 @@ public partial class FlightList : System.Web.UI.Page
             {
                 if (countStops == 0)
                 {
-                    lstrStop += "<label class=\"checkbox-container d-flex\" id='Airstop'>";
+                    lstrStop += "<label class=\"checkbox-container d-flex heading-regular\" id='Airstop'>";
                     lstrStop += "<span class=\"d-inline-block\">";
                     lstrStop += "<input type='checkbox' id='chkStops" + countStops + "' checked onclick='return FilterNoOfStops(" + countStops + ");'>&nbsp;" + 0 + " Stop";
                     lstrStop += "<span class=\"checkmark\"></span>";
@@ -490,7 +489,7 @@ public partial class FlightList : System.Web.UI.Page
                 }
                 else
                 {
-                    lstrStop += "<label class=\"checkbox-container d-flex\" id='Airstop'>";
+                    lstrStop += "<label class=\"checkbox-container d-flex heading-regular\" id='Airstop'>";
                     lstrStop += "<span class=\"d-inline-block\">";
                     lstrStop += "<input type='checkbox' id='chkStops" + countStops + "' checked onclick='return FilterNoOfStops(" + countStops + ");'>&nbsp;" + countStops + " Stop";
                     lstrStop += "<span class=\"checkmark\"></span>";
@@ -498,7 +497,7 @@ public partial class FlightList : System.Web.UI.Page
                     lstrStop += "</label>";
 
                 }
-            }            
+            }
         }
         catch (Exception ex)
         {
@@ -514,7 +513,6 @@ public partial class FlightList : System.Web.UI.Page
         FilterCriteria lobjFilterCriteria = new FilterCriteria();
         try
         {
-            SearchRequest lobjSearchRequest = HttpContext.Current.Session["FlightSearchDetails"] as SearchRequest;
             SearchResponse lobjSearchResponse = HttpContext.Current.Session["Flights"] as SearchResponse;
 
             if (lobjSearchResponse != null)
@@ -1023,10 +1021,8 @@ public partial class FlightList : System.Web.UI.Page
         }
     }
 
-
     public static FilterCriteria GetFilterCriteriaForFlights<T>(List<T> pobjFlightList) where T : FlightDetails
     {
-        SearchRequest lobjSearchRequest = HttpContext.Current.Session["FlightSearchDetails"] as SearchRequest;
         FilterCriteria lobjFilterCriteria = new FilterCriteria();
         try
         {
@@ -1070,7 +1066,6 @@ public partial class FlightList : System.Web.UI.Page
 
     public static FilterCriteria GetFilterCriteriaForReturnFlights<T>(List<T> pobjFlightList, List<T> pobjOnwardFlightList) where T : FlightDetails
     {
-        SearchRequest lobjSearchRequest = HttpContext.Current.Session["FlightSearchDetails"] as SearchRequest;
         FilterCriteria lobjFilterCriteria = new FilterCriteria();
         try
         {
@@ -1294,12 +1289,11 @@ public partial class FlightList : System.Web.UI.Page
         }
         return script;
     }
+
     [System.Web.Script.Services.ScriptMethod()]
     [System.Web.Services.WebMethod]
     public static string SetPaymentMode(string pstrPaymentMode)
     {
         return HttpContext.Current.Session["SearchCurrency"].ToString();
     }
-
-
 }

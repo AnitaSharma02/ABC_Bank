@@ -14,7 +14,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Webclient", "..\Webclient\", "{AC12742B-0F73-4EEB-8B47-F30F6D719608}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
-		ProjectReferences = "{7076DFF3-528B-4FDF-8614-3056220B4BEC}|Core.Framework.Booking.Facade.dll;{F71BD815-82A2-4409-B44C-8186C81ED79D}|IBE.Client.FlightFilter.dll;{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}|Core.WebAPI.ClientHelper.dll;{6587ce90-e5b8-4a9e-a230-479460a5cedb}|Core.Framework.PostHelper.dll;{70532e14-1d6c-44d4-b236-bd1683899852}|GiiftShopGateway.Model.dll;{e4a8f51c-731d-404e-9441-be72fdc75195}|KhaltiInsurance.Entities.dll;{e8f9623e-7210-44f6-9e73-24262e589422}|CB.IBE.DomesticFlight.Entities.dll;{386d80ca-9d8a-4b16-b680-177ae8d42657}|KhaltiISP.Entities.dll;{E03A4FD9-25AF-4CA0-8668-16CCCF8CC349}|CE.Entities.dll;{bfb5d46a-15ba-4917-b26e-a5bd15105874}|TransactionDetailsAdditionalInfo.Entities.dll;{3f7b6856-b36f-493e-a5b7-c0aa6cf46d80}|GiiftPaymentGateway.Entities.dll;{BCF8E756-8E46-4CE9-876E-C94FD33AFD6C}|ABC.Model.dll;{270b47a1-9a4c-431b-934a-d8d161c7cea0}|IBEAPI.ClientEntities.dll;{da816f60-d5ae-499f-a45d-7ec0c03c30fd}|IBEAPI.ClientHelper.dll;{f5392aec-b226-4e34-8807-e6cb6d2503d0}|IBEAPIGateway.Model.dll;{3564FE39-89E0-4FE0-B964-0E9B266A25D8}|BeMyGuest.ClientHelper.dll;{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}|BeMyGuest.Entities.dll;{DF3BA6F8-189E-4D98-8955-A1700383B711}|BeMyGuest.Implementor.dll;"
+		ProjectReferences = "{7076DFF3-528B-4FDF-8614-3056220B4BEC}|Core.Framework.Booking.Facade.dll;{F71BD815-82A2-4409-B44C-8186C81ED79D}|IBE.Client.FlightFilter.dll;{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}|Core.WebAPI.ClientHelper.dll;{6587ce90-e5b8-4a9e-a230-479460a5cedb}|Core.Framework.PostHelper.dll;{70532e14-1d6c-44d4-b236-bd1683899852}|GiiftShopGateway.Model.dll;{e4a8f51c-731d-404e-9441-be72fdc75195}|KhaltiInsurance.Entities.dll;{e8f9623e-7210-44f6-9e73-24262e589422}|CB.IBE.DomesticFlight.Entities.dll;{386d80ca-9d8a-4b16-b680-177ae8d42657}|KhaltiISP.Entities.dll;{E03A4FD9-25AF-4CA0-8668-16CCCF8CC349}|CE.Entities.dll;{bfb5d46a-15ba-4917-b26e-a5bd15105874}|TransactionDetailsAdditionalInfo.Entities.dll;{3f7b6856-b36f-493e-a5b7-c0aa6cf46d80}|GiiftPaymentGateway.Entities.dll;{BCF8E756-8E46-4CE9-876E-C94FD33AFD6C}|ABC.Model.dll;{270b47a1-9a4c-431b-934a-d8d161c7cea0}|IBEAPI.ClientEntities.dll;{da816f60-d5ae-499f-a45d-7ec0c03c30fd}|IBEAPI.ClientHelper.dll;{f5392aec-b226-4e34-8807-e6cb6d2503d0}|IBEAPIGateway.Model.dll;{3564FE39-89E0-4FE0-B964-0E9B266A25D8}|BeMyGuest.ClientHelper.dll;{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}|BeMyGuest.Entities.dll;{DF3BA6F8-189E-4D98-8955-A1700383B711}|BeMyGuest.Implementor.dll;{9c4084f4-0165-40f4-9d60-6efc0c265409}|CB.IBE.Platform.Entities.dll;{03A92A74-7D52-41AA-B5DA-E3D947DC2E0B}|CB.IBE.Platform.Masters.Entities.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_63462"
 		Debug.AspNetCompiler.PhysicalPath = "..\Webclient\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63462\"
@@ -42,10 +42,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Platform.Activation.BusinessFacade", "Core.Platform.Activation.BusinessFacade 6.0\Core.Platform.Activation.BusinessFacade.csproj", "{FE235288-4DA4-4C6B-BBC8-DF3D71013F4B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CB.IBE.Platform.Entities", "CB.IBE.Platform.Entities\CB.IBE.Platform.Entities.csproj", "{2FAC4991-D766-4F48-80B8-A7F774E370AA}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CB.IBE.Platform.Masters.Entities", "CB.IBE.Platform.Masters.Entities\CB.IBE.Platform.Masters.Entities.csproj", "{8CAF2624-1E39-4B82-A47B-256B732B654D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KhaltiInsurance.Entities", "KhaltiInsurance.Entities\KhaltiInsurance.Entities.csproj", "{E4A8F51C-731D-404E-9441-BE72FDC75195}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CB.IBE.DomesticFlight.Entities", "CB.IBE.DomesticFlight.Entities\CB.IBE.DomesticFlight.Entities.csproj", "{E8F9623E-7210-44F6-9E73-24262E589422}"
@@ -71,6 +67,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeMyGuest.Entities", "BeMyGuest.Entities\BeMyGuest.Entities.csproj", "{EDD7D84D-5921-45F3-8DA9-0BCA3AC04135}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeMyGuest.ClientHelper", "BeMyGuest.ClientHelper\BeMyGuest.ClientHelper.csproj", "{3564FE39-89E0-4FE0-B964-0E9B266A25D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CB.IBE.Platform.Entities", "CB.IBE.Platform.Entities\CB.IBE.Platform.Entities.csproj", "{9C4084F4-0165-40F4-9D60-6EFC0C265409}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CB.IBE.Platform.Masters.Entities", "CB.IBE.Platform.Masters.Entities\CB.IBE.Platform.Masters.Entities.csproj", "{03A92A74-7D52-41AA-B5DA-E3D947DC2E0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -136,22 +136,6 @@ Global
 		{FE235288-4DA4-4C6B-BBC8-DF3D71013F4B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FE235288-4DA4-4C6B-BBC8-DF3D71013F4B}.Release|x64.ActiveCfg = Release|Any CPU
 		{FE235288-4DA4-4C6B-BBC8-DF3D71013F4B}.Release|x64.Build.0 = Release|Any CPU
-		{2FAC4991-D766-4F48-80B8-A7F774E370AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2FAC4991-D766-4F48-80B8-A7F774E370AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2FAC4991-D766-4F48-80B8-A7F774E370AA}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{2FAC4991-D766-4F48-80B8-A7F774E370AA}.Debug|x64.Build.0 = Debug|Any CPU
-		{2FAC4991-D766-4F48-80B8-A7F774E370AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2FAC4991-D766-4F48-80B8-A7F774E370AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2FAC4991-D766-4F48-80B8-A7F774E370AA}.Release|x64.ActiveCfg = Release|Any CPU
-		{2FAC4991-D766-4F48-80B8-A7F774E370AA}.Release|x64.Build.0 = Release|Any CPU
-		{8CAF2624-1E39-4B82-A47B-256B732B654D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CAF2624-1E39-4B82-A47B-256B732B654D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CAF2624-1E39-4B82-A47B-256B732B654D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{8CAF2624-1E39-4B82-A47B-256B732B654D}.Debug|x64.Build.0 = Debug|Any CPU
-		{8CAF2624-1E39-4B82-A47B-256B732B654D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CAF2624-1E39-4B82-A47B-256B732B654D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8CAF2624-1E39-4B82-A47B-256B732B654D}.Release|x64.ActiveCfg = Release|Any CPU
-		{8CAF2624-1E39-4B82-A47B-256B732B654D}.Release|x64.Build.0 = Release|Any CPU
 		{E4A8F51C-731D-404E-9441-BE72FDC75195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E4A8F51C-731D-404E-9441-BE72FDC75195}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4A8F51C-731D-404E-9441-BE72FDC75195}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -256,6 +240,22 @@ Global
 		{3564FE39-89E0-4FE0-B964-0E9B266A25D8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3564FE39-89E0-4FE0-B964-0E9B266A25D8}.Release|x64.ActiveCfg = Release|Any CPU
 		{3564FE39-89E0-4FE0-B964-0E9B266A25D8}.Release|x64.Build.0 = Release|Any CPU
+		{9C4084F4-0165-40F4-9D60-6EFC0C265409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C4084F4-0165-40F4-9D60-6EFC0C265409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C4084F4-0165-40F4-9D60-6EFC0C265409}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9C4084F4-0165-40F4-9D60-6EFC0C265409}.Debug|x64.Build.0 = Debug|Any CPU
+		{9C4084F4-0165-40F4-9D60-6EFC0C265409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C4084F4-0165-40F4-9D60-6EFC0C265409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C4084F4-0165-40F4-9D60-6EFC0C265409}.Release|x64.ActiveCfg = Release|Any CPU
+		{9C4084F4-0165-40F4-9D60-6EFC0C265409}.Release|x64.Build.0 = Release|Any CPU
+		{03A92A74-7D52-41AA-B5DA-E3D947DC2E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03A92A74-7D52-41AA-B5DA-E3D947DC2E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03A92A74-7D52-41AA-B5DA-E3D947DC2E0B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{03A92A74-7D52-41AA-B5DA-E3D947DC2E0B}.Debug|x64.Build.0 = Debug|Any CPU
+		{03A92A74-7D52-41AA-B5DA-E3D947DC2E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03A92A74-7D52-41AA-B5DA-E3D947DC2E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03A92A74-7D52-41AA-B5DA-E3D947DC2E0B}.Release|x64.ActiveCfg = Release|Any CPU
+		{03A92A74-7D52-41AA-B5DA-E3D947DC2E0B}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

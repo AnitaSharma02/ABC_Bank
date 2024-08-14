@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CE.Entities
 {
-    public class NICEmailDetailsResponse
+    public class ABCEmailDetailsResponse
     {
         public EmailResults results { get; set; }
     }

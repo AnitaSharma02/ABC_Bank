@@ -24,6 +24,8 @@ using Framework.EnterpriseLibrary.Adapters;
 using Framework.EnterpriseLibrary.Common.SerializationHelper;
 using Framework.EnterpriseLibrary.CommunicationEngine.Entity;
 using Framework.Integrations.Hotels.Entities;
+using IBEAPI.ClientEntities;
+using IBEAPIGateway.Model;
 using InfiVoucher.Platform.Entities;
 using LoyaltyManagement.Request;
 using Newtonsoft.Json;
@@ -54,10 +56,9 @@ namespace Core.Framework.Booking.Facade
             string strRollBackMilesResponse = string.Empty;
             bool lboolRollBackResponse = false;
             string strFailureType = "";
-
+            dynamic dynamicCls = new System.Dynamic.ExpandoObject();
             BookingResponse lobjBookingResponse = new BookingResponse();
-            PGHelper lobjPGHelper = new PGHelper();
-
+            bool lblFailureemail = false;
             try
             {
                 bool IsRedeem = true;
@@ -91,7 +92,7 @@ namespace Core.Framework.Booking.Facade
                 if (IsRedeem)
                 {
                     pobjBookingRequest.ItineraryDetails.TransactionReference = pobjListOfRedemptionDetails[0].TransactionReference;
-                    IBECTClient lobjIBECTClient = new IBECTClient();
+                    IBEAPIModel lobjIBEAPIModel = new IBEAPIModel();
 
                     try
                     {
@@ -99,7 +100,7 @@ namespace Core.Framework.Booking.Facade
                         try
                         {
                             LoggingAdapter.WriteLog("BookFlight pobjBookingRequest: " + JsonConvert.SerializeObject(pobjBookingRequest), "BookingLogCategory");
-                            lobjBookingResponse = lobjIBECTClient.CreateBooking(pobjBookingRequest);
+                            lobjBookingResponse = lobjIBEAPIModel.CreateBooking(pobjBookingRequest);
                             LoggingAdapter.WriteLog("BookFlight lobjBookingResponse: " + JsonConvert.SerializeObject(lobjBookingResponse), "BookingLogCategory");
                         }
                         catch (Exception ex)
@@ -121,11 +122,8 @@ namespace Core.Framework.Booking.Facade
                         {
                             try
                             {
-                                //communication Engine call for Email send
-                                //List<string> lstEmailparameter = new List<string>();
-                                //lstEmailparameter = GenerateFlightEmailParameters(lobjBookingResponse);
-                                ItineraryDetails lobjItineraryDetails = new ItineraryDetails();
-                                lobjItineraryDetails = GetFlightReceipt(Convert.ToInt32(lobjBookingResponse.BookingId.ToString().Trim()));
+                                RetriveItineraryDetails lobjRetriveItineraryDetails = new RetriveItineraryDetails();
+                                lobjRetriveItineraryDetails = GetFlightReceipt(lobjBookingResponse.PNRDetails.BookingReference.ToString().Trim());
                                 string strPaxInfo = "";
                                 strPaxInfo += "<table cellpadding='0' cellspacing='0' width='100 %' border='0'><tr>";
                                 strPaxInfo += "<td align='left' valign='top' bgcolor='#E3E3E3' width='15%' style='font-family: Arial; font-size: 13px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #000000; padding: 10px; border: 1px solid #dddddd; border-bottom: 1px solid #dddddd;'> Title </td>";
@@ -135,13 +133,12 @@ namespace Core.Framework.Booking.Facade
                                 strPaxInfo += "<td align='left' valign='top' bgcolor='#E3E3E3' width='7%'  style='font-family: Arial; font-size: 13px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #000000; padding: 10px; border: 1px solid #dddddd; border-bottom: 1px solid #dddddd;'>Age</td>";
                                 strPaxInfo += "</tr>";
                                 List<PassengerDetails> lobjListOfPassengerDetails = new List<PassengerDetails>();
-                                if (lobjItineraryDetails.TravelerInfo != null)
+                                if (lobjRetriveItineraryDetails.ItineraryDetails.TravelerInfo != null)
                                 {
                                     string lstrPaxtype = "";
-                                    lobjListOfPassengerDetails = lobjItineraryDetails.TravelerInfo;
+                                    lobjListOfPassengerDetails = lobjRetriveItineraryDetails.ItineraryDetails.TravelerInfo;
                                     for (int k = 0; k < lobjListOfPassengerDetails.Count; k++)
                                     {
-
                                         if (Convert.ToString(lobjListOfPassengerDetails[k].PaxType) == "ADT")
                                         {
                                             lstrPaxtype = "Adult";
@@ -168,7 +165,7 @@ namespace Core.Framework.Booking.Facade
 
                                 // Code for Departure table
                                 List<FlightSegment> lobjFlightSegmentlst = new List<FlightSegment>();
-                                lobjFlightSegmentlst = lobjItineraryDetails.ListOfFlightDetails[0].ListOfFlightSegments;
+                                lobjFlightSegmentlst = lobjRetriveItineraryDetails.ItineraryDetails.ListOfFlightDetails[0].ListOfFlightSegments;
                                 string strDepartute = "";
                                 strDepartute += "<tr>";
                                 strDepartute += "<td align='left' bgcolor='#E3E3E3' width='10%' style='font-family:Arial; font-size:12px; color:#000000; padding: 10px; border: 1px solid #dddddd; border-bottom: 1px solid #dddddd;'>Flight</td>";
@@ -197,17 +194,17 @@ namespace Core.Framework.Booking.Facade
 
                                 string strReturn = "";
                                 string strArrival = "";
-                                string strClass = (lobjItineraryDetails.CabinType != null && Convert.ToString(lobjItineraryDetails.CabinType) != "") ? Convert.ToString(lobjItineraryDetails.CabinType) : "";
-                                if (lobjItineraryDetails.ListOfFlightDetails.Count > 1)
+                                string strClass = (lobjRetriveItineraryDetails.ItineraryDetails.CabinType != null && Convert.ToString(lobjRetriveItineraryDetails.ItineraryDetails.CabinType) != "") ? Convert.ToString(lobjRetriveItineraryDetails.ItineraryDetails.CabinType) : "";
+                                if (lobjRetriveItineraryDetails.ItineraryDetails.ListOfFlightDetails.Count > 1)
                                 {
-                                    if (lobjItineraryDetails != null && lobjItineraryDetails.ListOfFlightDetails[1].ListOfFlightSegments != null)
+                                    if (lobjRetriveItineraryDetails != null && lobjRetriveItineraryDetails.ItineraryDetails.ListOfFlightDetails[1].ListOfFlightSegments != null)
                                     {
                                         // Code for Arrival Table
                                         strReturn += "<tr><td colspan='6'><table width='100%' border='0' cellpadding='0' cellspacing='0'><tr>";
                                         strReturn += "<td width='50%' height='25' valign='top' style='font-family: Arial; font-size: 13px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-align: left; color: #000000; padding: 0px;'>Itinerary Details <span style='color: #231f20;'>(Return)</span></td>";
                                         strReturn += "<td width='50%' height='25' align='right' valign='top' style='font-family: Arial; font-size: 13px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-align: right; color: #000000; padding: 0px;'>Class: <span style='color: #231f20;'>" + strClass + "</span></td>";
                                         strReturn += "<tr></table></td></tr>";
-                                        lobjFlightSegmentlst = lobjItineraryDetails.ListOfFlightDetails[1].ListOfFlightSegments;
+                                        lobjFlightSegmentlst = lobjRetriveItineraryDetails.ItineraryDetails.ListOfFlightDetails[1].ListOfFlightSegments;
 
                                         if (lobjFlightSegmentlst != null && lobjFlightSegmentlst.Count > 0)
                                         {
@@ -240,24 +237,24 @@ namespace Core.Framework.Booking.Facade
                                         }
                                     }
                                 }
-                                string strGDSPNR = lobjItineraryDetails.PaxPricingInfoList.PaxPricingInfo[0].BookingInfoList.BookingInfo[0].gdspnr;
-                                dynamic dynamicCls = new System.Dynamic.ExpandoObject();
+                                //string strGDSPNR = lobjRetriveItineraryDetails.ItineraryDetails.PaxPricingInfoList.PaxPricingInfo[0].BookingInfoList.BookingInfo[0].gdspnr;
+
                                 dynamicCls.event_name = "Flight_Booking_Success";
                                 dynamicCls.relation_reference = Convert.ToString(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
                                 dynamicCls.program_id = Convert.ToInt32(pobjMemberDetails.ProgramId);
                                 dynamicCls.to_email = pobjMemberDetails.Email;
                                 dynamicCls.full_name = pobjMemberDetails.FullName;
-                                dynamicCls.TransactionReferenceCode = lobjItineraryDetails.ItineraryReference;
-                                dynamicCls.PaymentDetails = FloatToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints) + " Points";
-                                dynamicCls.GDSPNR = strGDSPNR;
+                                dynamicCls.TransactionReferenceCode = lobjRetriveItineraryDetails.ItineraryDetails.TransactionReference;
+                                dynamicCls.PaymentDetails = FloatToThousandSeperated(lobjRetriveItineraryDetails.ItineraryDetails.FareDetails.TotalPoints) + " Points";
+                                //dynamicCls.GDSPNR = strGDSPNR;
+                                dynamicCls.BookingReference = lobjBookingResponse.PNRDetails.BookingReference.ToString().Trim();
                                 dynamicCls.TblPassengerInfo = strPaxInfo;
                                 dynamicCls.Class = strClass;
                                 dynamicCls.TblDeparture = strDepartute;
                                 dynamicCls.ReturnFlight = strReturn;
                                 dynamicCls.TblArrival = strArrival;
-                                dynamicCls.MobileNo = pobjMemberDetails.MobileNumber;
                                 dynamicCls.to_mobile = pobjMemberDetails.MobileNumber;
-                                dynamicCls.CreditsConsumed = FloatToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints);
+                                dynamicCls.CreditsConsumed = FloatToThousandSeperated(lobjRetriveItineraryDetails.ItineraryDetails.FareDetails.TotalPoints);
                                 Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
                                 IDictionary<string, object> dict = (IDictionary<string, object>)dynamicCls;
                                 foreach (var key in dict)
@@ -265,6 +262,8 @@ namespace Core.Framework.Booking.Facade
                                     lobjDictionary.Add(key.Key, key.Value);
                                 }
                                 string jsonParameters = JsonConvert.SerializeObject(lobjDictionary);
+                                LoggingAdapter.WriteLog("BookFlight EmailParameters: " + jsonParameters, "BookingLogCategory");
+
                                 SendEmails(jsonParameters, pobjMemberDetails);
 
                                 //SendEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBooked");
@@ -272,7 +271,7 @@ namespace Core.Framework.Booking.Facade
                             }
                             catch (Exception ex)
                             {
-                                LoggingAdapter.WriteLog("Communication engine Email exception in booking ", "BookingLogCategory");
+                                LoggingAdapter.WriteLog("Communication engine Email exception in booking ex -- " + ex.InnerException + Environment.NewLine + "Message -- " + ex.Message + Environment.NewLine + "StackTrace -- " + ex.StackTrace, "BookingLogCategory");
                                 strFailureType += string.Format("{0}/", FailureType.FAILUREEMAIL);
                             }
                             try
@@ -280,7 +279,7 @@ namespace Core.Framework.Booking.Facade
                                 List<string> lstSMSparameter = new List<string>();
                                 lstSMSparameter = GenerateFlightSMSParameters(lobjBookingResponse);
                                 lstSMSparameter.Add(pobjMemberDetails.LastName);
-                                SendSms(lstSMSparameter, pobjMemberDetails, "FlightBooked");
+                                SendSms(lstSMSparameter, pobjMemberDetails, "Flight_Booking_Success");
                                 LoggingAdapter.WriteLog("Mail and SMS sent.", "BookingLogCategory");
                             }
                             catch (Exception ex)
@@ -291,9 +290,8 @@ namespace Core.Framework.Booking.Facade
 
                             if (strFailureType != "" && strFailureType != string.Empty)
                             {
-                                List<string> lstEmailparameter = new List<string>();
-                                lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                                SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
+                                lblFailureemail = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
+                                //SendEmail(lstEmailparameter, pobjMemberDetails, "flight_booking_failed");
                             }
                         }
                         else
@@ -313,17 +311,17 @@ namespace Core.Framework.Booking.Facade
                                     LoggingAdapter.WriteLog("RollBackMiles Success : " + lboolRollBackResponse, "BookingLogCategory");
                                 }
                                 strFailureType += string.Format("{0}/", FailureType.CTRESPONSE);
-                                List<string> lstEmailparameter = new List<string>();
-                                lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                                SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
+
+                                lblFailureemail = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
+
+                                //SendFailureEmail(lstEmailparameter, pobjMemberDetails, "flight_booking_failed");
                             }
                             catch (Exception ex)
                             {
                                 LoggingAdapter.WriteLog("Communication engine exception in booking: " + lboolRollBackResponse + " \n Exception \n" + ex.StackTrace, "BookingLogCategory");
                                 strFailureType += string.Format("{0}/", FailureType.ROLLBACKMILES);
-                                List<string> lstEmailparameter = new List<string>();
-                                lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                                SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
+                                lblFailureemail = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
+                                //SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
                             }
                         }
                     }
@@ -343,17 +341,17 @@ namespace Core.Framework.Booking.Facade
                                 LoggingAdapter.WriteLog("RollBackMiles Success On Exception : " + lboolRollBackResponse + " \n Exception \n" + ex.StackTrace, "BookingLogCategory");
                             }
                             strFailureType += string.Format("{0}/", FailureType.CTRESPONSE);
-                            List<string> lstEmailparameter = new List<string>();
-                            lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                            SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
+
+                            lblFailureemail = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
+                            //SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
                         }
                         catch (Exception ex1)
                         {
                             LoggingAdapter.WriteLog("Communication engine exception in booking: " + lboolRollBackResponse, "BookingLogCategory");
                             strFailureType += string.Format("{0}/", FailureType.ROLLBACKMILES);
-                            List<string> lstEmailparameter = new List<string>();
-                            lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                            SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
+
+                            lblFailureemail = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
+                            //SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
                         }
                     }
                 }
@@ -371,9 +369,9 @@ namespace Core.Framework.Booking.Facade
                     }
 
                     strFailureType += string.Format("{0}/", FailureType.REDEEMMILES);
-                    List<string> lstEmailparameter = new List<string>();
-                    lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                    SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
+
+                    lblFailureemail = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
+                    //SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
                 }
             }
             catch (Exception ex)
@@ -384,36 +382,20 @@ namespace Core.Framework.Booking.Facade
             return lobjBookingResponse;
         }
 
-        //private List<string> GenerateFlightEmailParameters(BookingResponse pobjBookingResponse)
-        //{
-        //    List<string> lstEmailparameter = new List<string>();
-        //    lstEmailparameter.Add(Convert.ToString(pobjBookingResponse.BookingId));
-        //    lstEmailparameter.Add("FlightBooked");
-        //    lstEmailparameter.Add(Convert.ToString(pobjBookingResponse.PNRDetails.IsItineraryDateChange));
-        //    lstEmailparameter.Add(GetAppSettingValue("CEReceiptPOSTURL"));
-        //    return lstEmailparameter;
-        //}
-
-        private List<string> GenerateFlightBookingFailedEmailParameter(BookingResponse pobjBookingResponse, MemberDetails pobjMemberDetails)
+        private bool GenerateFlightBookingFailedEmailParameter(BookingResponse pobjBookingResponse, MemberDetails pobjMemberDetails)
         {
-            List<string> lstEmailparameter = new List<string>();
-            //0
-            lstEmailparameter.Add((pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference));
-            //1
-            lstEmailparameter.Add(pobjMemberDetails.FirstName + " " + pobjMemberDetails.LastName);
-            //2
-            lstEmailparameter.Add(Convert.ToString(pobjBookingResponse.PNRDetails.ItineraryDetails.FareDetails.TotalPoints));
-            //3
-            lstEmailparameter.Add(pobjMemberDetails.MobileNumber);
-            //4
-            lstEmailparameter.Add(pobjBookingResponse.PNRDetails.ItineraryDetails.CabinType);
+            dynamic dynamicCls = new System.Dynamic.ExpandoObject();
 
+            string strReturn = string.Empty;
+            string lstrPaxtype = "";
+            string strPaxInfo = string.Empty;
+            string strArrival = string.Empty;
             // Code for Departure table
             List<FlightSegment> lobjFlightSegmentlst = new List<FlightSegment>();
             lobjFlightSegmentlst = pobjBookingResponse.PNRDetails.ItineraryDetails.ListOfFlightDetails[0].ListOfFlightSegments;
             string strDepartute = string.Empty;
             string strImagePath = GetAppSettingValue("ClientImageUrl");
-
+            string strClass = (pobjBookingResponse.PNRDetails.ItineraryDetails.CabinType != null && Convert.ToString(pobjBookingResponse.PNRDetails.ItineraryDetails.CabinType) != "") ? Convert.ToString(pobjBookingResponse.PNRDetails.ItineraryDetails.CabinType) : "";
             for (int i = 0; i < lobjFlightSegmentlst.Count; i++)
             {
                 strDepartute += "<tr style='font-family:Arial; font-size:14px; color:#000000;' >";
@@ -426,18 +408,13 @@ namespace Core.Framework.Booking.Facade
                 strDepartute += "<td bgcolor='#ffffff' style='font-family:Arial; font-size:14px; color:#000000;'>" + lobjFlightSegmentlst[i].ArrivalDate.ToString("dd/MM/yyyy") + "<br/>" + lobjFlightSegmentlst[i].ArrivalDate.ToString("HH:mm") + "</td>";
                 strDepartute += "<td bgcolor='#ffffff' style='font-family:Arial; font-size:14px; color:#000000;'>" + lobjFlightSegmentlst[i].Carrier.EquipmentType + "</td>";
                 strDepartute += "</tr>";
-
-
             }
-            //5
-            lstEmailparameter.Add(strDepartute);
 
             if (pobjBookingResponse.PNRDetails.ItineraryDetails.ListOfFlightDetails.Count > 1)
             {
                 if (pobjBookingResponse.PNRDetails.ItineraryDetails != null && pobjBookingResponse.PNRDetails.ItineraryDetails.ListOfFlightDetails[1].ListOfFlightSegments != null)
                 {
                     // Code for Arrival Table
-                    string strReturn = string.Empty;
                     strReturn = "<tr> <td colspan='8' bgcolor='#CCCCCC' style='font-family: Arial; font-size: 14px;color: #000000;'>";
                     strReturn += "<table width='720' border='0' cellpadding='0' cellspacing='0' style='font-family: Arial;font-size: 14px; color: #000000;'>";
                     strReturn += "<tr> <td width='20' bgcolor='#CCCCC' >&nbsp;</td>";
@@ -447,14 +424,12 @@ namespace Core.Framework.Booking.Facade
                     strReturn += "<td align='left' width='150'  bgcolor='#CCCCCC' style='font-family:Arial; font-size:14px; color:#000000;'>" + pobjBookingResponse.PNRDetails.ItineraryDetails.CabinType + "</td>";
                     strReturn += "</tr></table>";
                     strReturn += "</tr>";
-                    //6
-                    lstEmailparameter.Add(strReturn);
+
                     lobjFlightSegmentlst = pobjBookingResponse.PNRDetails.ItineraryDetails.ListOfFlightDetails[1].ListOfFlightSegments;
 
                     if (lobjFlightSegmentlst != null && lobjFlightSegmentlst.Count > 0)
                     {
                         // Arrival Header Row
-                        string strArrival = string.Empty;
                         strArrival += "<tr height='25'>";
                         strArrival += "<td width='20' bgcolor='#CCCCCC' >&nbsp;</td>";
                         strArrival += "<td width='11' bgcolor='#CCCCCC' >&nbsp;</td>";
@@ -480,30 +455,15 @@ namespace Core.Framework.Booking.Facade
                             strArrival += "</tr>";
 
                         }
-                        //7
-                        lstEmailparameter.Add(strArrival);
-                        //8
-                        lstEmailparameter.Add("");
                     }
                 }
             }
-            else
-            {
-                //6
-                lstEmailparameter.Add("");
-                //7
-                lstEmailparameter.Add("");
-                //8
-                lstEmailparameter.Add("");
 
-            }
             // Code For Travellor Info
 
             List<PassengerDetails> lobjListOfPassengerDetails = new List<PassengerDetails>();
             if (pobjBookingResponse.PNRDetails.ItineraryDetails.TravelerInfo != null)
             {
-                string lstrPaxtype = "";
-                string strPaxInfo = string.Empty;
                 lobjListOfPassengerDetails = pobjBookingResponse.PNRDetails.ItineraryDetails.TravelerInfo;
                 for (int k = 0; k < lobjListOfPassengerDetails.Count; k++)
                 {
@@ -531,14 +491,33 @@ namespace Core.Framework.Booking.Facade
                     strPaxInfo += "<td width='73'  bgcolor='#ffffff'> " + Convert.ToString(lobjListOfPassengerDetails[k].Age) + " </td>";
                     strPaxInfo += "</tr>";
                 }
-                //9
-                lstEmailparameter.Add(strPaxInfo);
 
             }
-            //10
-            lstEmailparameter.Add(pobjBookingResponse.PNRDetails.BookingReference);
 
-            return lstEmailparameter;
+            dynamicCls.event_name = "flight_booking_failed";
+            dynamicCls.relation_reference = Convert.ToString(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
+            dynamicCls.program_id = Convert.ToInt32(pobjMemberDetails.ProgramId);
+            dynamicCls.to_email = pobjMemberDetails.Email;
+            dynamicCls.full_name = pobjMemberDetails.FullName;
+            dynamicCls.TransactionReferenceCode = pobjBookingResponse.PNRDetails.ItineraryDetails.TransactionReference;
+            dynamicCls.PaymentDetails = FloatToThousandSeperated(pobjBookingResponse.PNRDetails.ItineraryDetails.FareDetails.TotalPoints) + " Points";
+            dynamicCls.BookingReference = pobjBookingResponse.PNRDetails.BookingReference.ToString().Trim();
+            dynamicCls.TblPassengerInfo = strPaxInfo;
+            dynamicCls.Class = strClass;
+            dynamicCls.TblDeparture = strDepartute;
+            dynamicCls.ReturnFlight = strReturn;
+            dynamicCls.TblArrival = strArrival;
+            dynamicCls.to_mobile = pobjMemberDetails.MobileNumber;
+            dynamicCls.CreditsConsumed = FloatToThousandSeperated(pobjBookingResponse.PNRDetails.ItineraryDetails.FareDetails.TotalPoints);
+            Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
+            IDictionary<string, object> dict = (IDictionary<string, object>)dynamicCls;
+            foreach (var key in dict)
+            {
+                lobjDictionary.Add(key.Key, key.Value);
+            }
+            string jsonParameters = JsonConvert.SerializeObject(lobjDictionary);
+            bool lblresult = SendEmails(jsonParameters, pobjMemberDetails);
+            return lblresult;
         }
 
         private List<string> GenerateFlightSMSParameters(BookingResponse pobjBookingResponse)
@@ -558,122 +537,12 @@ namespace Core.Framework.Booking.Facade
             lstEmailparameter.Add(Convert.ToString(pobjBookingResponse.PNRDetails.IsItineraryDateChange));
             return lstEmailparameter;
         }
-        //Added For Infipay
-        public BookingResponse BookForFlight(BookingRequest pobjBookingRequest, MemberDetails pobjMemberDetails)
-        {
-            bool IsBookingConfirm = true;
-            string strFailureType = "";
-
-            BookingResponse lobjBookingResponse = new BookingResponse();
-
-            try
-            {
-                IBECTClient lobjIBECTClient = new IBECTClient();
-
-                try
-                {
-                    lobjBookingResponse = lobjIBECTClient.CreateBooking(pobjBookingRequest);
-                }
-                catch (Exception ex)
-                {
-                    LoggingAdapter.WriteLog("CreateBooking Failure BookingFacade:" + ex.Message + ex.StackTrace);
-                }
-
-                if (lobjBookingResponse != null && lobjBookingResponse.PNRDetails.TripId != null && lobjBookingResponse.PNRDetails.TripId != string.Empty && lobjBookingResponse.PNRDetails.Status.Equals(1))
-                {
-                    IsBookingConfirm = true;
-                    LoggingAdapter.WriteLog("Booking called Trip Id  : " + lobjBookingResponse.PNRDetails.TripId + "IsBookingConfirm:" + IsBookingConfirm, "BookingLogCategory");
-                }
-                else
-                {
-                    IsBookingConfirm = false;
-                    LoggingAdapter.WriteLog("IsBookingConfirm:" + IsBookingConfirm, "BookingLogCategory");
-                }
-                if (IsBookingConfirm)
-                {
-
-                    try
-                    {
-                        //communication Engine call for Email send
-                        List<string> lstEmailparameter = new List<string>();
-                        lstEmailparameter = GenerateFlightEmailParameters(lobjBookingResponse);
-                        SendEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBooked");
-                        //Communication Engine Call for Sms Sending
-                    }
-                    catch (Exception ex)
-                    {
-                        strFailureType += string.Format("{0}/", FailureType.FAILUREEMAIL);
-                    }
-                    try
-                    {
-                        List<string> lstSMSparameter = new List<string>();
-                        lstSMSparameter = GenerateFlightSMSParameters(lobjBookingResponse);
-                        SendSms(lstSMSparameter, pobjMemberDetails, "FlightBooked");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        strFailureType += string.Format("{0}/", FailureType.SMS);
-                    }
-
-                    if (strFailureType != "" && strFailureType != string.Empty)
-                    {
-                        List<string> lstEmailparameter = new List<string>();
-                        lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                        SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
-                    }
-                }
-                else
-                {
-                    try
-                    {
-
-                        strFailureType += string.Format("{0}/", FailureType.CTRESPONSE);
-                        List<string> lstEmailparameter = new List<string>();
-                        lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                        SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
-                    }
-                    catch (Exception ex)
-                    {
-
-
-                        List<string> lstEmailparameter = new List<string>();
-                        lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                        SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                try
-                {
-
-
-                    strFailureType += string.Format("{0}/", FailureType.CTRESPONSE);
-                    List<string> lstEmailparameter = new List<string>();
-                    lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                    SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
-                }
-                catch (Exception ex1)
-                {
-
-
-                    List<string> lstEmailparameter = new List<string>();
-                    lstEmailparameter = GenerateFlightBookingFailedEmailParameter(lobjBookingResponse, pobjMemberDetails);
-                    SendFailureEmail(lstEmailparameter, pobjMemberDetails, pobjMemberDetails.PreferredLanguage + "FlightBookingFailed");
-                }
-            }
-
-
-
-            return lobjBookingResponse;
-        }
 
         #endregion
 
         #region Hotel
 
-        public HotelBookingResponse BookHotel(HotelBookingRequest pobjBookingRequest, Hotel pobjHotel, HotelSearchRequest pobjHotelSearchRequest, MemberDetails pobjMemberDetails, Customer pobjCustomer, List<RedemptionDetails> pobjListOfRedemptionDetails)
+        public HotelBookingResponse BookHotel(HotelBookingRequest pobjBookingRequest, Hotel pobjHotel, HotelsSearchRequest pobjHotelSearchRequest, MemberDetails pobjMemberDetails, Customer pobjCustomer, List<RedemptionDetails> pobjListOfRedemptionDetails, int SearchId)
         {
             bool IsBookingConfirm = false;
             string strRedeemMilesResponse = string.Empty;
@@ -704,7 +573,7 @@ namespace Core.Framework.Booking.Facade
                     lobjListOfBookingPaymentBreakage.Add(lobjBookingPaymentBreakage);
                 }
 
-                IBECTHotelClient lobjIBECTClient = new IBECTHotelClient();
+                IBEAPIModel lobjIBEAPIModel = new IBEAPIModel();
 
                 BookingPaymentDetails lobjBookingPaymentDetails = new BookingPaymentDetails();
                 lobjBookingPaymentDetails.BookingPaymentBreakageList = lobjListOfBookingPaymentBreakage;
@@ -724,7 +593,7 @@ namespace Core.Framework.Booking.Facade
 
                         try
                         {
-                            lobjBookingResponse = lobjIBECTClient.GetHotelBookingResponse(pobjBookingRequest, pobjHotel, pobjHotelSearchRequest, pobjCustomer, pobjListOfRedemptionDetails[0].TransactionReference);
+                            lobjBookingResponse = lobjIBEAPIModel.GetHotelBookingResponse(pobjMemberDetails, pobjHotel, pobjHotelSearchRequest, pobjCustomer, lobjBookingPaymentDetails, SearchId);
                         }
                         catch (Exception ex)
                         {
@@ -759,10 +628,10 @@ namespace Core.Framework.Booking.Facade
                                 dynamicCls.BookedBy = pobjCustomer.title + " " + pobjCustomer.firstname + " " + pobjCustomer.lastname;
                                 dynamicCls.email = pobjCustomer.email;
                                 dynamicCls.address = pobjCustomer.city;
-                                dynamicCls.NoOfRooms = Convert.ToString(pobjHotelSearchRequest.SearchRequest.NoOfRooms);
-                                dynamicCls.NoOfDays = Convert.ToString((pobjHotelSearchRequest.SearchRequest.CheckOutDate - pobjHotelSearchRequest.SearchRequest.CheckInDate).Days);
-                                dynamicCls.CheckInDate = pobjHotelSearchRequest.SearchRequest.CheckInDate.ToString("dd/MM/yyyy");
-                                dynamicCls.CheckOutDate = pobjHotelSearchRequest.SearchRequest.CheckOutDate.ToString("dd/MM/yyyy");
+                                dynamicCls.NoOfRooms = Convert.ToString(pobjHotelSearchRequest.NoOfRooms);
+                                dynamicCls.NoOfDays = Convert.ToString((pobjHotelSearchRequest.CheckOutDate - pobjHotelSearchRequest.CheckInDate).Days);
+                                dynamicCls.CheckInDate = pobjHotelSearchRequest.CheckInDate.ToString("dd/MM/yyyy");
+                                dynamicCls.CheckOutDate = pobjHotelSearchRequest.CheckOutDate.ToString("dd/MM/yyyy");
                                 dynamicCls.hotelname = pobjHotel.basicinfo.hotelname;
                                 dynamicCls.hoteladdress = pobjHotel.basicinfo.address;
                                 dynamicCls.phone = pobjHotel.basicinfo.communicationinfo.phone;
@@ -795,7 +664,7 @@ namespace Core.Framework.Booking.Facade
                                 List<string> lstSMSparameter = new List<string>();
                                 lstSMSparameter = GenerateHotelSMSParameters(lobjBookingResponse);
                                 lstSMSparameter.Add(pobjMemberDetails.LastName);
-                                SendSms(lstSMSparameter, pobjMemberDetails, "HotelBooked");
+                                SendSms(lstSMSparameter, pobjMemberDetails, "Hotel_Booking_Success");
                                 LoggingAdapter.WriteLog("SMS sent.", "HotelBookingLogCategory");
                             }
                             catch (Exception ex)
@@ -973,7 +842,7 @@ namespace Core.Framework.Booking.Facade
             return lstSMSparameter;
         }
 
-        private void GenerateHotelBookingFailedEmailParameters(HotelBookingResponse pobjBookingResponse, Hotel pobjHotel, MemberDetails pobjMemberDetails, HotelSearchRequest pobjSearchRequest, Customer pobjCustomer, string pstrFailureType)
+        private void GenerateHotelBookingFailedEmailParameters(HotelBookingResponse pobjBookingResponse, Hotel pobjHotel, MemberDetails pobjMemberDetails, HotelsSearchRequest pobjSearchRequest, Customer pobjCustomer, string pstrFailureType)
         {
             dynamic dynamicCls = new System.Dynamic.ExpandoObject();
             dynamicCls.event_name = "Hotel_Booking_Failed";
@@ -986,24 +855,24 @@ namespace Core.Framework.Booking.Facade
             dynamicCls.TransactionRefCode = "NA";
             dynamicCls.hotelname = pobjHotel.basicinfo.hotelname;
             dynamicCls.city = pobjHotel.basicinfo.city;
-            dynamicCls.NoOfRooms = Convert.ToString(pobjSearchRequest.SearchRequest.NoOfRooms);
+            dynamicCls.NoOfRooms = Convert.ToString(pobjSearchRequest.NoOfRooms);
             dynamicCls.to_mobile = pobjMemberDetails.MobileNumber;
             int TotalAdult = 0;
-            string[] arrayAdultPerRoom = pobjSearchRequest.SearchRequest.AdultPerRoom.Split(',');
+            string[] arrayAdultPerRoom = pobjSearchRequest.AdultPerRoom.Split(',');
             for (int i = 0; i < arrayAdultPerRoom.Count(); i++)
             {
                 TotalAdult = TotalAdult + Convert.ToInt32(arrayAdultPerRoom[i]);
             }
             dynamicCls.TotalAdult = (Convert.ToString(TotalAdult));
             int TotalChild = 0;
-            string[] arrayChildPerRoom = pobjSearchRequest.SearchRequest.ChildrenPerRoom.Split(',');
+            string[] arrayChildPerRoom = pobjSearchRequest.ChildrenPerRoom.Split(',');
             for (int i = 0; i < arrayChildPerRoom.Count(); i++)
             {
                 TotalChild = TotalChild + Convert.ToInt32(arrayChildPerRoom[i]);
             }
             dynamicCls.TotalChild = Convert.ToString(TotalChild);
-            dynamicCls.CheckInDate = pobjSearchRequest.SearchRequest.CheckInDate.ToString("dd/MM/yyyy");
-            dynamicCls.CheckOutDate = pobjSearchRequest.SearchRequest.CheckOutDate.ToString("dd/MM/yyyy");
+            dynamicCls.CheckInDate = pobjSearchRequest.CheckInDate.ToString("dd/MM/yyyy");
+            dynamicCls.CheckOutDate = pobjSearchRequest.CheckOutDate.ToString("dd/MM/yyyy");
             dynamicCls.CheckOutDate = pobjCustomer.title + pobjCustomer.firstname + " " + pobjCustomer.lastname;
             dynamicCls.address = pobjCustomer.city;
             dynamicCls.country = pobjCustomer.country;
@@ -1080,116 +949,6 @@ namespace Core.Framework.Booking.Facade
             return lstEmailparameter;
         }
 
-
-        //Added For InfiPay
-        public HotelBookingResponse BookForHotel(HotelBookingRequest pobjBookingRequest, Hotel pobjHotel, HotelSearchRequest pobjHotelSearchRequest, MemberDetails pobjMemberDetails, Customer pobjCustomer, string pstrReferenceId)
-        {
-            bool IsBookingConfirm = true;
-            string strFailureType = "";
-
-            HotelBookingResponse lobjBookingResponse = new HotelBookingResponse();
-            try
-            {
-                IBECTHotelClient lobjIBECTClient = new IBECTHotelClient();
-
-                try
-                {
-                    lobjBookingResponse = lobjIBECTClient.GetHotelBookingResponse(pobjBookingRequest, pobjHotel, pobjHotelSearchRequest, pobjCustomer, pstrReferenceId);
-                }
-                catch (Exception ex)
-                {
-                    LoggingAdapter.WriteLog("Hotel GetHotelBookingResponse in BookingFacade Failure" + ex.Message + ex.StackTrace);
-                }
-
-                if (lobjBookingResponse != null && lobjBookingResponse.BookingResponse.bookingid != null && lobjBookingResponse.BookingResponse.bookingid != string.Empty)
-                {
-                    LoggingAdapter.WriteLog("Booking called Booking Id  : " + lobjBookingResponse.BookingResponse.bookingid, "HotelBookingLogCategory");
-                    IsBookingConfirm = lobjBookingResponse.BookingResponse.confirmationnumber != "" && lobjBookingResponse.BookingResponse.confirmationnumber != null && lobjBookingResponse.BookingResponse.bookingid != "" && lobjBookingResponse.BookingResponse.bookingid != null;
-                }
-                else
-                    IsBookingConfirm = false;
-
-                if (IsBookingConfirm)
-                {
-                    try
-                    {
-                        //communication Engine call for Email send
-                        List<string> lstEmailparameter = new List<string>();
-                        lobjBookingResponse.BookingPaymentDetails = pobjBookingRequest.BookingPaymentDetails;
-                        lstEmailparameter = GenerateHotelEmailParameters(lobjBookingResponse, pobjHotel, pobjHotelSearchRequest, pobjCustomer, pobjBookingRequest.BookingPaymentDetails.BookingPaymentBreakageList);
-                        SendEmail(lstEmailparameter, pobjMemberDetails, "HotelBooked");
-
-                    }
-                    catch (Exception ex)
-                    {
-
-                        strFailureType += string.Format("{0}/", FailureType.FAILUREEMAIL);
-                    }
-                    try
-                    {
-                        //Communication Engine Call for Sms Sending
-                        List<string> lstSMSparameter = new List<string>();
-                        lstSMSparameter = GenerateHotelSMSParameters(lobjBookingResponse);
-                        SendSms(lstSMSparameter, pobjMemberDetails, "HotelBooked");
-
-                    }
-                    catch (Exception ex)
-                    {
-
-                        strFailureType += string.Format("{0}/", FailureType.SMS);
-                    }
-
-                    if (strFailureType != "" && strFailureType != string.Empty)
-                    {
-                        List<string> lstEmailparameter = new List<string>();
-                        lstEmailparameter = GenerateHotelBookingFailedEmailParametersInfiPay(lobjBookingResponse, pobjHotel, pobjMemberDetails, pobjHotelSearchRequest, pobjCustomer, strFailureType);
-
-                        SendFailureEmail(lstEmailparameter, pobjMemberDetails, "HotelBookingFailed");
-                    }
-                }
-                else
-                {
-                    try
-                    {
-
-                        strFailureType += string.Format("{0}/", FailureType.CTRESPONSE);
-                        List<string> lstEmailparameter = new List<string>();
-                        lstEmailparameter = GenerateHotelBookingFailedEmailParametersInfiPay(lobjBookingResponse, pobjHotel, pobjMemberDetails, pobjHotelSearchRequest, pobjCustomer, strFailureType);
-
-                        SendFailureEmail(lstEmailparameter, pobjMemberDetails, "HotelBookingFailed");
-                    }
-                    catch (Exception ex)
-                    {
-                        strFailureType += string.Format("{0}/", FailureType.FAILUREEMAIL);
-                        List<string> lstEmailparameter = new List<string>();
-                        lstEmailparameter = GenerateHotelBookingFailedEmailParametersInfiPay(lobjBookingResponse, pobjHotel, pobjMemberDetails, pobjHotelSearchRequest, pobjCustomer, strFailureType);
-
-                        SendFailureEmail(lstEmailparameter, pobjMemberDetails, "HotelBookingFailed");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                try
-                {
-
-                    strFailureType += string.Format("{0}/", FailureType.CTRESPONSE);
-                    List<string> lstEmailparameter = new List<string>();
-                    lstEmailparameter = GenerateHotelBookingFailedEmailParametersInfiPay(lobjBookingResponse, pobjHotel, pobjMemberDetails, pobjHotelSearchRequest, pobjCustomer, strFailureType);
-                    SendFailureEmail(lstEmailparameter, pobjMemberDetails, "HotelBookingFailed");
-                }
-                catch (Exception exp)
-                {
-                    List<string> lstEmailparameter = new List<string>();
-                    lstEmailparameter = GenerateHotelBookingFailedEmailParametersInfiPay(lobjBookingResponse, pobjHotel, pobjMemberDetails, pobjHotelSearchRequest, pobjCustomer, strFailureType);
-                    SendFailureEmail(lstEmailparameter, pobjMemberDetails, "HotelBookingFailed");
-                }
-            }
-
-
-            return lobjBookingResponse;
-        }
-
         #endregion
 
         #region SendEmail
@@ -1222,12 +981,12 @@ namespace Core.Framework.Booking.Facade
             bool lblnEmailSend = false;
             try
             {
-                NICEmailDetailsResponse lobjEmailResponse = new NICEmailDetailsResponse();
+                ABCEmailDetailsResponse lobjEmailResponse = new ABCEmailDetailsResponse();
                 APIClientHelper lobjcehelper = new APIClientHelper();
                 if (pobjMemberDetails.Email != string.Empty)
                 {
                     string lstrToken = GetAuthTokenforWebAPI();
-                    lobjEmailResponse = lobjcehelper.NICEmailDetails(Parameters, lstrToken);
+                    lobjEmailResponse = lobjcehelper.ABCEmailDetails(Parameters, lstrToken);
                     if (lobjEmailResponse != null)
                     {
                         if (lobjEmailResponse.results.IsSucessful)
@@ -1248,12 +1007,12 @@ namespace Core.Framework.Booking.Facade
             }
             return lblnEmailSend;
         }
-        private ItineraryDetails GetFlightReceipt(int pintBookingId)
+        private RetriveItineraryDetails GetFlightReceipt(string pstrBookingId)
         {
-            IBECTClient lobjIBECTClient = new IBECTClient();
+            IBEAPIModel lobjIBEAPIModel = new IBEAPIModel();
             try
             {
-                return lobjIBECTClient.GetFlightReceipt(pintBookingId);
+                return lobjIBEAPIModel.GetBookedFlightItinerary(pstrBookingId);
             }
             catch (Exception ex)
             {
@@ -2114,11 +1873,11 @@ namespace Core.Framework.Booking.Facade
             bool lblnEmailSend = false;
             try
             {
-                NICEmailDetailsResponse lobjEmailResponse = new NICEmailDetailsResponse();
+                ABCEmailDetailsResponse lobjEmailResponse = new ABCEmailDetailsResponse();
                 APIClientHelper lobjcehelper = new APIClientHelper();
                 if (pobjMemberDetails.Email != string.Empty)
                 {
-                    NICEmailDetails lobjEmailDetail = new NICEmailDetails();
+                    ABCEmailDetails lobjEmailDetail = new ABCEmailDetails();
                     lobjEmailDetail.CE_Event = pstrTemplateCode;
                     lobjEmailDetail.relation_reference = Convert.ToString(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
                     lobjEmailDetail.program_id = Convert.ToInt32(pobjMemberDetails.ProgramId);
@@ -2129,7 +1888,7 @@ namespace Core.Framework.Booking.Facade
                     lobjEmailDetail.redemption_type = redemption_type;
                     string parameters = JsonConvert.SerializeObject(lobjEmailDetail);
                     string lstrToken = GetAuthTokenforWebAPI();
-                    lobjEmailResponse = lobjcehelper.NICEmailDetails(parameters, lstrToken);
+                    lobjEmailResponse = lobjcehelper.ABCEmailDetails(parameters, lstrToken);
                     if (lobjEmailResponse != null)
                     {
                         if (lobjEmailResponse.results.IsSucessful)

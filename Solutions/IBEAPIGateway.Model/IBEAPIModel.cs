@@ -123,6 +123,46 @@ namespace IBEAPIGateway.Model
             catch (Exception ex) { LoggingAdapter.WriteLog("CreateBooking - " + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace); }
             return lobjCreateItineraryResponse;
         }
+        public HotelBookingResponse GetHotelBookingResponse(MemberDetails pobjMemberDetails, Hotel pobjHotel, HotelsSearchRequest pobjSearchRequest, Customer pobjCustomer, CB.IBE.Platform.Masters.Entities.BookingPaymentDetails pobjBookingPaymentDetails, int SearchId)
+        {
+            try
+            {
+                List<int> lobjListOfAdult = new List<int>();
+                string[] arrayAdultPerRoom = pobjSearchRequest.AdultPerRoom.Split(',');
+                for (int i = 0; i < arrayAdultPerRoom.Count(); i++)
+                {
+                    lobjListOfAdult.Add(Convert.ToInt32(arrayAdultPerRoom[i]));
+                }
+                string lstadults = string.Join(",", lobjListOfAdult);
+                List<int> lobjListOfChild = new List<int>();
+                string[] arrayChildPerRoom = pobjSearchRequest.ChildrenPerRoom.Split(',');
+                for (int i = 0; i < arrayChildPerRoom.Count(); i++)
+                {
+                    lobjListOfChild.Add(Convert.ToInt32(arrayChildPerRoom[i]));
+                }
+                string lstchildren = string.Join(",", lobjListOfChild);
+                HotelBookRequest lobjBookingRequest = new HotelBookRequest();
+                lobjBookingRequest.Customer = pobjCustomer;
+                lobjBookingRequest.CheckInDate = Convert.ToString(pobjSearchRequest.CheckInDate);
+                lobjBookingRequest.CheckOutDate = Convert.ToString(pobjSearchRequest.CheckOutDate);
+                lobjBookingRequest.NoOfRooms = pobjSearchRequest.NoOfRooms;
+                lobjBookingRequest.SearchId = pobjSearchRequest.SearchId;
+                lobjBookingRequest.AdultPerRoom = lstadults;
+                lobjBookingRequest.ChildrenPerRoom = lstchildren;
+                lobjBookingRequest.Hotel = pobjHotel;
+                lobjBookingRequest.MembershipReference = pobjMemberDetails.MemberRelationsList[0].RelationReference;
+                lobjBookingRequest.ReferenceId = pobjBookingPaymentDetails.BookingPaymentBreakageList[0].TxnReference;
+                IBEAPIClientHelper lobjIBEAPIClientHelper = new IBEAPIClientHelper();
+                //string res = JsonConvert.SerializeObject(lobjBookingRequest);
+                return lobjIBEAPIClientHelper.GetHotelBookingResponse(lobjBookingRequest);
+
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("Model GetHotelBookingResponse Ex-:" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
+                throw new ApplicationException(ex.Message);
+            }
+        }
 
         public List<ItineraryDetails> GetFlightBookingListForMember(string pstrMemberId)
         {

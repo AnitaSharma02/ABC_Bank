@@ -16,6 +16,9 @@ using System.IO;
 using CB.IBE.Platform.Hotels.ClientEntities;
 using Framework.Integrations.Hotels.Entities;
 using Core.Platform.ProgramMaster.Entities;
+using IBEAPI.ClientEntities;
+using IBEAPIGateway.Model;
+using System.Configuration;
 
 
 public partial class HotelsSearchWait : System.Web.UI.Page
@@ -31,22 +34,40 @@ public partial class HotelsSearchWait : System.Web.UI.Page
         try
         {
             ABCModel lobjModel = new ABCModel();
+            IBEAPIModel lobjIBEAPIModel = new IBEAPIModel();
             lobjModel.LogActivity(string.Format("HotelSearch Request;City-:{0}; Checkin-:{1}; Checkout-:{2}; RoomString-:{3};  Rating-:{4};", pstrCity, pCheckIn, pCheckOut, pRoomString, strRating), ActivityType.HotelSearch);
             ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
-            HotelSearchRequest lobjHotelSearchRequest = new HotelSearchRequest();
-            lobjHotelSearchRequest.SearchRequest = lobjModel.CreateHotelSearchRequest(pstrCity, pCheckIn, pCheckOut, pRoomString);
-            lobjHotelSearchRequest.SearchRequest.IpAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+            HotelsSearchRequest lobjSearchRequest = new HotelsSearchRequest();
+
+            lobjSearchRequest.IpAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
             MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
             if (lobjMemberDetails != null)
             {
-                lobjHotelSearchRequest.SearchRequest.MembershipReference = lobjMemberDetails.MemberRelationsList[0].RelationReference;
+                lobjSearchRequest.MembershipReference = lobjMemberDetails.MemberRelationsList[0].RelationReference;
             }
             string lstrCurrency = lobjModel.GetDefaultCurrency();
             HttpContext.Current.Session["SearchCurrency"] = lstrCurrency;
-            lobjHotelSearchRequest.SearchRequest.RedemptionRate = lobjModel.GetProgramRedemptionRate(lstrCurrency, RedemptionCodeKeys.HOT.ToString(), lobjProgramDefinition.ProgramId);
-            HotelSearchResponse lobjHotelSearchResponse = lobjModel.SearchHotel(lobjHotelSearchRequest);
-            lobjHotelSearchRequest.SearchRequest.SearchId = lobjHotelSearchResponse.SearchId;
-            HttpContext.Current.Session["SearchDetails"] = lobjHotelSearchRequest;
+            lobjSearchRequest.RedemptionRate = lobjModel.GetProgramRedemptionRate(lstrCurrency, RedemptionCodeKeys.HOT.ToString(), lobjProgramDefinition.ProgramId);
+            lobjSearchRequest.CheckInDate = lobjIBEAPIModel.StringToDateTime(pCheckIn);
+            lobjSearchRequest.CheckOutDate = lobjIBEAPIModel.StringToDateTime(pCheckOut);
+
+            string[] arrayRoomPersonType = pRoomString.TrimEnd(':').Split(':');
+            lobjSearchRequest.NoOfRooms = arrayRoomPersonType[0].TrimEnd(',').Split(',').Count();
+            lobjSearchRequest.AdultPerRoom = arrayRoomPersonType[0].TrimEnd(',');//adult
+            lobjSearchRequest.ChildrenPerRoom = arrayRoomPersonType[1].TrimEnd(',');//child
+
+            lobjSearchRequest.CityName = HttpUtility.UrlDecode(pstrCity.Split(',')[2].ToString());
+            lobjSearchRequest.CountryISOCode = pstrCity.Split(',')[0].ToString();
+            lobjSearchRequest.Country = HttpUtility.UrlDecode(pstrCity.Split(',')[1].ToString());
+            lobjSearchRequest.StarRating = "All";
+            lobjSearchRequest.OrderBy = "PriceAsc";
+
+            lobjSearchRequest.ResultCount = string.IsNullOrEmpty(Convert.ToString(ConfigurationManager.AppSettings["HotelResultCount"])) ? 500 : Convert.ToInt32(Convert.ToString(ConfigurationManager.AppSettings["HotelResultCount"]));
+
+            HotelSearchResponse lobjHotelSearchResponse = lobjIBEAPIModel.GetHotelSearchResponse(lobjSearchRequest);
+
+            lobjSearchRequest.SearchId = lobjHotelSearchResponse.SearchId;
+            HttpContext.Current.Session["SearchDetails"] = lobjSearchRequest;
             HttpContext.Current.Session["Hotels"] = lobjHotelSearchResponse;
             if (lobjHotelSearchResponse != null)
             {

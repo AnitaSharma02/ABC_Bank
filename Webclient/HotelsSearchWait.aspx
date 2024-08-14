@@ -45,6 +45,7 @@
                 timeout: 80000,
                 data: "{'pstrCity':'" + strCity + "', 'pCheckIn':'" + strCheckIn + "', 'pCheckOut':'" + strCheckOut + "', 'pRoomString':'" + strRoomString + "', 'pisRedeemMiles':'" + strisRedeemMiles + "', 'strRating':'" + strRating + "'}",
                 success: function (msg) {
+                    alert(msg.d);
                     if (msg.d)
                         window.location = "HotelResults.aspx";
                     else

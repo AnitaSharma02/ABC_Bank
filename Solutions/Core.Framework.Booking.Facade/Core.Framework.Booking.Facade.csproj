@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Core.Framework.Booking.Facade</RootNamespace>
     <AssemblyName>Core.Framework.Booking.Facade</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <SccProjectName>SAK</SccProjectName>
@@ -179,6 +179,14 @@
     <ProjectReference Include="..\Core.WebAPI.ClientHelper\Core.WebAPI.ClientHelper.csproj">
       <Project>{708bbd73-ca4e-457d-b5a4-5649ace53bfb}</Project>
       <Name>Core.WebAPI.ClientHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBEAPI.ClientEntities\IBEAPI.ClientEntities.csproj">
+      <Project>{270b47a1-9a4c-431b-934a-d8d161c7cea0}</Project>
+      <Name>IBEAPI.ClientEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBEAPIGateway.Model\IBEAPIGateway.Model.csproj">
+      <Project>{f5392aec-b226-4e34-8807-e6cb6d2503d0}</Project>
+      <Name>IBEAPIGateway.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\TransactionDetailsAdditionalInfo.Entities\TransactionDetailsAdditionalInfo.Entities.csproj">
       <Project>{BFB5D46A-15BA-4917-B26E-A5BD15105874}</Project>

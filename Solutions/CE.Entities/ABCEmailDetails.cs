@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CE.Entities
 {
-    public class NICEmailDetails
+    public class ABCEmailDetails
     {
         [JsonProperty("event_name")]
         public string CE_Event = string.Empty;

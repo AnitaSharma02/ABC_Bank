@@ -56,7 +56,7 @@ public partial class AirReviewAndConfirm : System.Web.UI.Page
                     }
                     else
                     {
-                        lblTotalPoints.Text = lobjModel.IntToThousandSeperated(lobjCreateItineraryResponse.ItineraryDetails.FareDetails.TotalPoints);
+                        lblTotalPoints.Text = Convert.ToString(lobjCreateItineraryResponse.ItineraryDetails.FareDetails.TotalPoints);
                     }
                     if (Convert.ToDouble(Session["MemberMiles"]) >= Convert.ToDouble(lobjCreateItineraryResponse.ItineraryDetails.FareDetails.TotalPoints))
                     {
@@ -78,7 +78,6 @@ public partial class AirReviewAndConfirm : System.Web.UI.Page
         {
             LoggingAdapter.WriteLog("AirReviewAndConfirm.aspx Pageload Exception:" + ex.Message + Environment.NewLine + "InnerException:" + ex.InnerException + Environment.NewLine + "StackTrace:" + ex.StackTrace);
         }
-
     }
 
     protected void btnBookNow_Click(object sender, EventArgs e)
@@ -89,7 +88,6 @@ public partial class AirReviewAndConfirm : System.Web.UI.Page
 
         try
         {
-
             lobjCreateItineraryRequest = Session["ItineraryRequest"] as CreateItineraryRequest;
             lobjCreateItineraryResponse = Session["ItineraryResponse"] as CreateItineraryResponse;
             Session["FlightSearchPaymode"] = null;
@@ -124,37 +122,30 @@ public partial class AirReviewAndConfirm : System.Web.UI.Page
                 lobjOTPDetails.UniquerefID = lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference;
                 lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.AIRREVIEWNCONFIRM;
                 lobjOTPDetails.OtpType = Convert.ToString(OTPEnumTypes.AIRREVIEWNCONFIRM);
-                HttpContext.Current.Session["OtpDetails"] = lobjOTPDetails as OTPDetails;
-                //Status = lobjModel.GenerateReviewnConfirmOTP(lobjOTPDetails, lobjMemberDetails);
-                //Status = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "redemption_otp", lobjOTPDetails, "International Flight");
 
-                //if (Status)
-                //{
-                //    lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "AIR", lobjRedemptionDetails.RelationReference, "Success"), ActivityType.ReviewConfirmOTPSuccess);
-                //    lstrResponse = "ValidateOTP.aspx?flag=Air";
-                //    Response.Redirect("ValidateOTP.aspx?flag=Air", false);
-                //}
-                //else
-                //{
-                //    lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "AIR", lobjRedemptionDetails.RelationReference, "Failed"), ActivityType.ReviewConfirmOTPFailed);
-                //    lstrResponse = "BookingFailure.aspx";
-                //    Response.Redirect("BookingFailure.aspx", false);
+                Status = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "redemption_otp", lobjOTPDetails, "International Flight");
 
-                //}
+                if (Status)
+                {
+                    lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "AIR", lobjRedemptionDetails.RelationReference, "Success"), ActivityType.ReviewConfirmOTPSuccess);
+                    lstrResponse = "ValidateOTP.aspx?flag=Air";
+                    Response.Redirect("ValidateOTP.aspx?flag=Air", false);
+                }
+                else
+                {
+                    lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "AIR", lobjRedemptionDetails.RelationReference, "Failed"), ActivityType.ReviewConfirmOTPFailed);
+                    lstrResponse = "BookingFailure.aspx";
+                    Response.Redirect("BookingFailure.aspx", false);
+                }
             }
-            //else
-            //{
-            //    lobjModel.LogActivity(string.Format("Flight Booking {0}: Requested", lobjRedemptionDetails.RelationReference), ActivityType.FlightBooking);
-            //    lstrResponse = "PointGateway.aspx";
-            //    Response.Redirect("PointGateway.aspx", false);
-            //}
+            else
+            {
+                lobjModel.LogActivity(string.Format("Flight Booking {0}: Requested", lobjRedemptionDetails.RelationReference), ActivityType.FlightBooking);
+                lstrResponse = "PointGateway.aspx";
+                Response.Redirect("PointGateway.aspx", false);
+            }
 
-            HttpContext.Current.Session["BookingFlag"] = "flight";
-            HttpContext.Current.Session["FlightTotalRedeemAmount"] = lobjCreateItineraryResponse.ItineraryDetails.FareDetails.TotalPoints;
-
-            Response.Redirect("PaymentOptions.aspx", false);
             lobjModel.LogActivity(string.Format("AirReviewAndConfirm; Flight BookNow click; TotalFare-:{0}; Destination-:{1} Response-:{2};", lobjCreateItineraryResponse.ItineraryDetails.FareDetails.TotalBaseFare, lobjCreateItineraryRequest.ItineraryDetails.OriginLocation + "-" + lobjCreateItineraryRequest.ItineraryDetails.DestinationLocation, lstrResponse), ActivityType.FlightBooking);
-
         }
         catch (Exception ex)
         {

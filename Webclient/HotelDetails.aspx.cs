@@ -15,19 +15,19 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Net.NetworkInformation;
 using CB.IBE.Platform.AirClientModel;
+using IBEAPIGateway.Model;
 
 public partial class HotelDetails : Page
 {
-
     [System.Web.Script.Services.ScriptMethod()]
     [System.Web.Services.WebMethod]
     public static string GetHotelInfo()
     {
         string pstrHotelId = Convert.ToString(HttpContext.Current.Session["hotelId"]);
-        ABCModel lobjModel = new ABCModel();
-        HotelInformationRequest lobjHotelInformationRequest = new HotelInformationRequest();
-        lobjHotelInformationRequest.InformationRequest.hotelid = Convert.ToInt32(pstrHotelId);
-        HotelInformationResponse lobjReturn = lobjModel.GetHotelInformation(lobjHotelInformationRequest);
+        IBEAPIModel lobjIBEAPIModel = new IBEAPIModel();
+        //HotelInformationRequest lobjHotelInformationRequest = new HotelInformationRequest();
+        //lobjHotelInformationRequest.InformationRequest.hotelid = Convert.ToInt32(pstrHotelId);
+        HotelInformationResponse lobjReturn = lobjIBEAPIModel.GetHotelInformation(pstrHotelId);
         return JSONSerialization.Serialize(lobjReturn.HotelInformation);
     }
     [System.Web.Script.Services.ScriptMethod()]
@@ -71,7 +71,7 @@ public partial class HotelDetails : Page
         }
         catch (Exception ex)
         {
-            LoggingAdapter.WriteLog("HotelDetails.aspx- Bookroom Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);           
+            LoggingAdapter.WriteLog("HotelDetails.aspx- Bookroom Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
         return urlLink;
     }
@@ -205,4 +205,5 @@ public partial class HotelDetails : Page
         bool lblnIsLastHotel = Convert.ToInt32(pobjHotelList[pobjHotelList.Count - 1].hotelid) == pintCurrentHotelID ? true : false;
         return lblnIsLastHotel;
     }
+
 }

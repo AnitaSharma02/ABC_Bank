@@ -36,6 +36,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CB.IBE.Platform.AirClientModel;
+using Core.Framework.Booking.Facade;
 
 public partial class PaymentResponse : System.Web.UI.Page
 {
@@ -126,7 +127,7 @@ public partial class PaymentResponse : System.Web.UI.Page
                     }
                     else if (lstrBookingFlag.ToLower().Equals("hotel"))
                     {
-                        BookHotel();
+                       // BookHotel();
                     }
                     else if (lstrBookingFlag.ToLower().Equals("experience"))
                     {
@@ -428,57 +429,57 @@ public partial class PaymentResponse : System.Web.UI.Page
         }
     }
 
-    private void BookHotel()
-    {
-        try
-        {
-            StripePaymentDetails lobjStripePaymentDetails = Session["StripePaymentDetails"] as StripePaymentDetails;
-            ABCModel lobjModel = new ABCModel();
-            PaymentGatewayDetails lobjTransactionDetails = null;
-            ShopModel lobjShopModel = new ShopModel();
+    //private void BookHotel()
+    //{
+    //    try
+    //    {
+    //        StripePaymentDetails lobjStripePaymentDetails = Session["StripePaymentDetails"] as StripePaymentDetails;
+    //        ABCModel lobjModel = new ABCModel();
+    //        PaymentGatewayDetails lobjTransactionDetails = null;
+    //        ShopModel lobjShopModel = new ShopModel();
+    //        BookingIntegrationFacade lobjBookingIntegrationModel = new BookingIntegrationFacade();
+    //        PGRequest pgRequest = null;
+    //        pgRequest = HttpContext.Current.Session["PGPaymentRequest"] as PGRequest;
+    //        PGDetails lobjPGDetails = null;
+    //        lobjPGDetails = lobjModel.GetPaymentStatusByOrderId(pgRequest.orderId);
+    //        if (HttpContext.Current.Session["BookedHotel"] != null && HttpContext.Current.Session["CustomerDetails"] != null && HttpContext.Current.Session["SearchDetails"] != null)
+    //        {
+    //            MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+    //            HotelSearchResponse lobjSearchResponse = HttpContext.Current.Session["BookedHotel"] as HotelSearchResponse;
+    //            HotelSearchResponse lobjHotelBooked = new HotelSearchResponse();
+    //            lobjHotelBooked = lobjSearchResponse;
+    //            HotelSearchRequest lobjSearchRequest = HttpContext.Current.Session["SearchDetails"] as HotelSearchRequest;
+    //            Framework.Integrations.Hotels.Entities.Customer lobjCustomer = HttpContext.Current.Session["CustomerDetails"] as Framework.Integrations.Hotels.Entities.Customer;
+    //            List<RedemptionDetails> lobjListOfRedemptionDetails = HttpContext.Current.Session["RedemptionDetails"] as List<RedemptionDetails>;
+    //            HotelBookingResponse lobjBookingResponse = lobjBookingIntegrationModel.BookHotel(lobjBookingRequest, lobjSearchResponse.SearchResponse.hotels.hotel[0], lobjSearchRequest, lobjMemberDetails, lobjCustomer, lobjListOfRedemptionDetails, lobjSearchResponse.SearchId);
+    //            HttpContext.Current.Session["BookingResponse"] = lobjBookingResponse;       
+    //            if (lobjBookingResponse != null && lobjBookingResponse.BookingResponse.bookingid != null && lobjBookingResponse.BookingResponse.confirmationnumber != null && lobjBookingResponse.BookingResponse.bookingid != string.Empty && lobjBookingResponse.BookingResponse.confirmationnumber != string.Empty)
+    //            {
+    //                lobjModel.LogActivity(string.Format("HotelBooking Success; HotelId-:{0};HotelName-:{1}; BookingId-:{2};Total Amount-:{3};", lobjHotelBooked.SearchResponse.hotels.hotel[0].hotelid, lobjHotelBooked.SearchResponse.hotels.hotel[0].basicinfo.hotelname, lobjBookingResponse.BookingId, lobjHotelBooked.SearchResponse.hotels.hotel[0].roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
+    //                HttpContext.Current.Session["BookedHotel"] = null;
+    //                HttpContext.Current.Session["HotelBooked"] = lobjHotelBooked;
 
-            PGRequest pgRequest = null;
-            pgRequest = HttpContext.Current.Session["PGPaymentRequest"] as PGRequest;
-            PGDetails lobjPGDetails = null;
-            lobjPGDetails = lobjModel.GetPaymentStatusByOrderId(pgRequest.orderId);
-            if (HttpContext.Current.Session["BookedHotel"] != null && HttpContext.Current.Session["CustomerDetails"] != null && HttpContext.Current.Session["SearchDetails"] != null)
-            {
-                MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
-                HotelSearchResponse lobjSearchResponse = HttpContext.Current.Session["BookedHotel"] as HotelSearchResponse;
-                HotelSearchResponse lobjHotelBooked = new HotelSearchResponse();
-                lobjHotelBooked = lobjSearchResponse;
-                HotelSearchRequest lobjSearchRequest = HttpContext.Current.Session["SearchDetails"] as HotelSearchRequest;
-                Framework.Integrations.Hotels.Entities.Customer lobjCustomer = HttpContext.Current.Session["CustomerDetails"] as Framework.Integrations.Hotels.Entities.Customer;
-                List<RedemptionDetails> lobjListOfRedemptionDetails = HttpContext.Current.Session["RedemptionDetails"] as List<RedemptionDetails>;
-                HotelBookingResponse lobjBookingResponse = lobjModel.BookForHotel(lobjMemberDetails, lobjSearchResponse.SearchResponse.hotels.hotel[0], lobjSearchRequest, lobjCustomer, lobjListOfRedemptionDetails);
-                HttpContext.Current.Session["BookingResponse"] = lobjBookingResponse;       
-                if (lobjBookingResponse != null && lobjBookingResponse.BookingResponse.bookingid != null && lobjBookingResponse.BookingResponse.confirmationnumber != null && lobjBookingResponse.BookingResponse.bookingid != string.Empty && lobjBookingResponse.BookingResponse.confirmationnumber != string.Empty)
-                {
-                    lobjModel.LogActivity(string.Format("HotelBooking Success; HotelId-:{0};HotelName-:{1}; BookingId-:{2};Total Amount-:{3};", lobjHotelBooked.SearchResponse.hotels.hotel[0].hotelid, lobjHotelBooked.SearchResponse.hotels.hotel[0].basicinfo.hotelname, lobjBookingResponse.BookingId, lobjHotelBooked.SearchResponse.hotels.hotel[0].roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
-                    HttpContext.Current.Session["BookedHotel"] = null;
-                    HttpContext.Current.Session["HotelBooked"] = lobjHotelBooked;
+    //                Response.Redirect("HotelVoucher.aspx", false);
+    //            }
+    //            else
+    //            {
+    //                if (!string.IsNullOrEmpty(pgRequest.orderId) && lobjStripePaymentDetails.ReqRedeemPoint != "0")
+    //                {
+    //                    lobjModel.RollBackTransaction(pgRequest.orderId, lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjSearchResponse.SearchResponse.hotels.hotel[0].basicinfo.hotelname);
+    //                    lobjModel.InitiatePaymentRefund(pgRequest.orderId, Convert.ToDecimal(lobjPGDetails.data[0].orderAmount), "refund it please");
+    //                }
 
-                    Response.Redirect("HotelVoucher.aspx", false);
-                }
-                else
-                {
-                    if (!string.IsNullOrEmpty(pgRequest.orderId) && lobjStripePaymentDetails.ReqRedeemPoint != "0")
-                    {
-                        lobjModel.RollBackTransaction(pgRequest.orderId, lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjSearchResponse.SearchResponse.hotels.hotel[0].basicinfo.hotelname);
-                        lobjModel.InitiatePaymentRefund(pgRequest.orderId, Convert.ToDecimal(lobjPGDetails.data[0].orderAmount), "refund it please");
-                    }
+    //                lobjModel.LogActivity(string.Format("HotelBooking Failed; HotelId-:{0};HotelName-:{1}; BookingId-:{2};Total Amount-:{3};", lobjHotelBooked.SearchResponse.hotels.hotel[0].hotelid, lobjSearchResponse.SearchResponse.hotels.hotel[0].basicinfo.hotelname, lobjBookingResponse.BookingId, lobjHotelBooked.SearchResponse.hotels.hotel[0].roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
+    //                Response.Redirect("BookingFailure.aspx", false);
+    //            }
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
 
-                    lobjModel.LogActivity(string.Format("HotelBooking Failed; HotelId-:{0};HotelName-:{1}; BookingId-:{2};Total Amount-:{3};", lobjHotelBooked.SearchResponse.hotels.hotel[0].hotelid, lobjSearchResponse.SearchResponse.hotels.hotel[0].basicinfo.hotelname, lobjBookingResponse.BookingId, lobjHotelBooked.SearchResponse.hotels.hotel[0].roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
-                    Response.Redirect("BookingFailure.aspx", false);
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-
-            LoggingAdapter.WriteLog("PaymentResponse BookHotel Ex-:" + ex.InnerException + ex.StackTrace + ex.Message);
-        }
-    }
+    //        LoggingAdapter.WriteLog("PaymentResponse BookHotel Ex-:" + ex.InnerException + ex.StackTrace + ex.Message);
+    //    }
+    //}
 
     private void BookFlight()
     {

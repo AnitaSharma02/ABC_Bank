@@ -1842,17 +1842,17 @@ namespace Core.WebAPI.ClientHelper
         }
         #endregion
 
-        #region NIC Email Configuration
-        public NICEmailDetailsResponse NICEmailDetails(string parameters, string lstrToken)
+        #region ABC Email Configuration
+        public ABCEmailDetailsResponse ABCEmailDetails(string parameters, string lstrToken)
         {
-            NICEmailDetailsResponse lobjEmailResponse = new NICEmailDetailsResponse();
+            ABCEmailDetailsResponse lobjEmailResponse = new ABCEmailDetailsResponse();
             try
             {
                 // string json = JsonConvert.SerializeObject(pobjEmailDetails);
                 string APIResponse = WebAPIHelper.PostData(APIConstant.SendCommunication, "POST", "SendCommunication", parameters, lstrToken);
                 if (APIResponse.Length > 0)
                 {
-                    lobjEmailResponse = JsonConvert.DeserializeObject<NICEmailDetailsResponse>(APIResponse);
+                    lobjEmailResponse = JsonConvert.DeserializeObject<ABCEmailDetailsResponse>(APIResponse);
                 }
                 else
                 {
@@ -1861,7 +1861,7 @@ namespace Core.WebAPI.ClientHelper
             }
             catch (Exception ex)
             {
-                LoggingAdapter.WriteLog("APIClientHelper NICEmailDetails Exception: " + ex.Message + Environment.NewLine + ex.StackTrace);
+                LoggingAdapter.WriteLog("APIClientHelper ABCEmailDetails Exception: " + ex.Message + Environment.NewLine + ex.StackTrace);
                 lobjEmailResponse = null;
             }
             return lobjEmailResponse;
