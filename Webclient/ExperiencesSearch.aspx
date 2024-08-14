@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <link rel="stylesheet" href="\Css/experience.css" />
 
-    <div class="dvBreadcrumbs mt-3 mb-3">
+   <%-- <div class="dvBreadcrumbs mt-3 mb-3">
         <div class="container-lg">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
@@ -17,14 +17,14 @@
                 </ul>
             </nav>
         </div>
-    </div>
-    <div class="dvProductList dvSearchProducts pb-5" id="dvSearchProducts">
+    </div>--%>
+    <div class="dvProductList dvSearchProducts pb-5 mt-3" id="dvSearchProducts">
         <div class="container-lg">
             <div class="row">
-                <div class="dvFilter modal fade col-lg-3" id="dvFilterModal" tabindex="-1">
+                <div class="dvFilter modal fade mb-3 col-lg-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content border-0 b-radius">
-                           <div class="modal-header border-0 p-0">
+                            <div class="modal-header border-0 p-0">
                                  <div class="modal-title border-0 p-3">
                                      <h5 class="h6 heading-semibold text-colour1">
                                          <i class="fa fa-filter mx-0"></i>
@@ -34,94 +34,67 @@
                                 <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
                                     <i class="fa-solid fa-xmark"></i>
                                 </button>
-    
                                 <%--<i class="fa fa-filter mx-0"></i>
                                  <span class="h7 heading-semibold" data-i18n="carlist-filter-results">Filters Results</span>--%>
                              </div>
-                            <div class="modal-body p-lg-0">
-                                <%--<button type="button" class="close d-lg-none pt-3" data-dismiss="modal">
-                                    <span class=" text-colour1">&times;</span>
-                                </button>
-                                <div class="dvTotalRecords p-3 bg-colour11 d-lg-block">
-                                    <p class="h6 heading-semibold text-colour1">Filters</p>
-
-                                </div>--%>
-                                <div class="accordion" id="filter-accordion">
-                                    <%--<div class="col-auto p-3">
-                                        <button class="btn btn-one w-100 resetBtn d-flex justify-content-center" type="button" onclick="ClearFilters();">
-                                            <span class="d-inline-block">Reset</span>
-                                            <span class="arrow-icon- ml-2">
-                                                <i class="fas fa-undo"></i>
-                                            </span>
-                                        </button>
-                                    </div>--%>
-                                    <div class="card my-3 mb-lg-3 mt-lg-0">
+                             <div class="modal-body p-lg-0">
+                                 <div class="accordion" id="filter-accordion">
+                                     <div class="card my-3 mb-lg-3 mt-lg-0">
                                          <div class="card-header p-0">
                                              <h2 class="mb-0">
-                                                 <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="h6 heading-semibold text-colour7 mb-2 text-capitalize" data-i18n="carlist-passengers">Passengers</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                 <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Types</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                              </h2>
                                          </div>
-                                        <div class="card-header bg-transparent border-bottom-0 p-0">
-                                            <h2 class="mx-3 mb-3">
-                                                <button class="btn- btn-block text-left h6 heading-semibold text-colour1 text-capitalize"
-                                                    type="button"
-                                                    data-toggle="collapse-"
-                                                    data-target="#collapse2">
-                                                    Types
-                                                <span class="arrow-icon d-none">
-                                                    <i class="fa fa-caret-up"></i>
-                                                </span>
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver px-3 py-0" id="divtype">
+                                         <div id="collapse1" class="collapse- show" data-parent="#filter-accordion">
+                                            <div class="card-body scroll-ver- px-0 pt-1 pb-2" id="divtype">
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="dvBorderBottom">
-                                        <div class="col-12">
-                                            <div class="border-bottom my-3"></div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header bg-transparent border-bottom-0 p-0">
-                                            <h2 class="mx-3 mb-3">
-                                                <button class="btn- btn-block text-left h6 heading-semibold text-colour1 text-capitalize collapsed"
-                                                    type="button"
-                                                    data-toggle="collapse-"
-                                                    data-target="#collapse3">
-                                                    Categories
-                                                <span class="arrow-icon d-none">
-                                                    <i class="fa fa-caret-up"></i>
-                                                </span>
-                                                </button>
-                                            </h2>
-                                        </div>
-                                        <div id="collapse3" class="collapse- show" data-parent="#filter-accordion">
-                                            <div class="card-body scroll-ver- px-3 pb-2 pt-0" id="divCategories">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                         </div>
+                                     </div>
+
+                                     <div class="dvBorderBottom">
+                                         <div class="">
+                                             <div class="border-bottom my-3"></div>
+                                         </div>
+                                     </div>
+
+                                     <div class="card">
+                                         <div class="card-header p-0">
+                                             <h2 class="mb-0">
+                                                 <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Categories</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                             </h2>
+                                         </div>
+                                         <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">
+                                             <div class="card-body scroll-ver px-0 pt-1 pb-2" id="divCategories">
+                                                </div>
+                                         </div>
+                                     </div>
+                                     <div class="dvBorderBottom">
+                                         <div class="">
+                                             <div class="border-bottom my-3"></div>
+                                         </div>
+                                     </div>
+                                 </div>
+                            </div>                                    
+                             <div class="modal-footer justify-content-center border-left border-right border-bottom p-lg-2">
+                     <button type="button" class="btn btn-one w-100" onclick="ClearFilters();" data-i18n="carlist-reset">Reset</button>
+                 </div>                                   
                         </div>
                     </div>
                 </div>
+              
                 <div class="col-lg-9">
                     <div class="row">
                         <div class="dvModify col-12 mb-3">
                             <div class="row justify-content-between align-items-center mb-1">
                                 <div class="col-lg-12">
+                                    <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none mb-2">Filter </button>
                                     <div class="row justify-content-end align-items-center">
-                                        <div class="dvSearch col-9 col-lg-12">
+                                        <div class="dvSearch col-12 col-lg-12">
                                             <div>
-                                                <div class="input-group input-group-lg">
-                                                    <input id="txtSearchTerm" autocomplete="off" class="form-control" type="text" name="searchTerm" value="" placeholder="Search Destination" />
-                                                    <div class="input-group-prepend">
-                                                        <button id="btnSearchExperiences" type="button" class="input-group-text">
-                                                            <span>
-                                                                <img src="../images/icons/other/search-icon.svg"></span></button>
+                                                <div class="dvInputGroup input-group">
+                                                    <input id="txtSearchTerm" autocomplete="off" class="input form-control" type="text" name="searchTerm" value="" placeholder="Search Destination" />
+                                                    <div class="input-group-append">
+                                                        <span id="btnSearchExperiences" class="input-group-text bg-colour1"> <i class="fa-solid fa-magnifying-glass"></i> </span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -253,24 +226,20 @@
                 $("#recommendedtxt").empty().append("Showing " + parseData.data.length + " recommended things to do in results <span>with keyword '" + parseData.ExperiencesCriteria.searchTerm + "'</span>");
 
                 $.each(parseData.data, function (i) {
-                    html += "<div class=\"col-sm-6 col-lg-4 mb-4\">";
-                    html += "<a href = \"javascript:void(0);\" class=\"d-block shadow-sm bg-white border h-100\" onclick=\"fnRedirectingToExperiencesProductDetails(\'" + parseData.data[i].uuid + "\');\">";
-                    html += "<div class=\"h-100 d-flex flex-column\">";
+                    html += "<div class=\"dvProductCard col-sm-6 col-lg-4 mb-4\">";
+                    html += '<div class="dvItem">';
+                    html += "<a href = \"javascript:void(0);\" class=\"anchor\" onclick=\"fnRedirectingToExperiencesProductDetails(\'" + parseData.data[i].uuid + "\');\">";
                     html += "<div class=\"img-container\">";
                     html += "<img alt = \"Product Image\" src =\"" + parseData.data[i].image + " \" />";
-                    html += "</div>";
-                    html += "<div class=\"p-3\">";
-                    html += "<div class=\"card_detail\">";
-                    html += "<h2 class=\"h6 heading-semibold mt-2 mb-2\">" + parseData.data[i].title + "</h2>";
-                    html += "<p class=\"h7 heading-regular\">" + parseData.data[i].city + ',' + parseData.data[i].country + "</p>";
-                    html += "</div>";
-                    html += "<div class=\"cardPoints d-flex justify-content-between align-items-center pt-4\">";
-                    html += "<p class=\"h8 heading-semibold text-colour5 text-truncate\">" + parseData.data[i].typeName + "</p>";
-                    html += "<p class=\"h8 heading-semibold text-colour5\">from <span class=\"font-weight-bold\">" + FormatCurrency(parseData.data[i].basePrice, parseData.data[i].convertedCurrency) + "</span> /pax</p>";
-                    html += "</div>";
-                    html += "</div>";
+                    html += "</div>"; 
+                    html += "<h2>" + parseData.data[i].title + "</h2>";
+                    html += "<h3>" + parseData.data[i].city + ',' + parseData.data[i].country + "</h3>";
+                    html += "<div class=\"cardPoints d-flex flex-column justify-content-between mb-3\">";
+                    html += "<p class=\"points m-0\">" + parseData.data[i].typeName + "</p>";
+                    html += "<p class=\"points m-0\">from <span class=\"font-weight-bold\">" + FormatCurrency(parseData.data[i].basePrice, parseData.data[i].convertedCurrency) + "</span> /pax</p>";
                     html += "</div>";
                     html += "</a>";
+                    html += "</div>";
                     html += "</div>";
                 });
                 $("#productlist").empty().append(html);

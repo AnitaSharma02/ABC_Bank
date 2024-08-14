@@ -17,7 +17,7 @@
     padding-bottom: 65%;
 }
 
-.dvSearch .input-group-text {
+.dvInputGroup.input-group .input-group-text {
     background-color: var(--colour1);
     color: var(--colour5);
 }
@@ -86,7 +86,7 @@
         transform: translate(-50%, -50%);
     }
 /********* - Experiences Search *********/
-.dvProductList .dvFilter.modal .close {
+/*.dvProductList .dvFilter.modal .close {
     padding: 0px 12px 0 0;
     color: var(--text-colour6);
     opacity: 1;
@@ -94,7 +94,7 @@
 
 .dvProductList .dvFilter .modal .modal-header {
     background-color: var(--bg-colour11);
-}
+}*/
 /********* - Experiences Product Details *********/
 .scroll-ver {
     overflow-x: hidden;

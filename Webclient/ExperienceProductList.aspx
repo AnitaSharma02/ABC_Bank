@@ -12,10 +12,10 @@
                     <p class="pb-2">Find activities, attractions, tours & more!</p>
                     <div class="expSearch">
                         <div class="dvSearch">
-                            <div class="input-group input-group-lg">
-                                <input id="txtSearchTerm" autocomplete="off" class="form-control" type="text" name="searchTerm" placeholder="Search Destination" required />
-                                <div class="input-group-prepend">
-                                    <span id="btnSearchExperiences" type="button" class="input-group-text"> <i class="fa-solid fa-magnifying-glass"></i></span>
+                            <div class="dvInputGroup input-group">
+                                <input id="txtSearchTerm" autocomplete="off" class="input form-control" type="text" name="searchTerm" placeholder="Search Destination" required />
+                                <div class="input-group-append">
+                                    <span id="btnSearchExperiences" class="input-group-text bg-colour1"> <i class="fa-solid fa-magnifying-glass"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -125,10 +125,10 @@
                         }
                         html += '</div >';
                         html += '<h2>' + parseData[i].title + '</h2>';
-                        html += ' <h3>' + parseData[i].city + ',' + parseData[i].country+'</h3>';
-                        html += '<div class="cardPoints d-flex justify-content-between align-items-center mb-2">';
-                        html += '<p class="points">'+ parseData[i].typeName+'</p>';
-                        html += '<p class="points">from <span class="font-weight-bold">' + FormatCurrency(parseData[i].basePrice, parseData[i].convertedCurrency)+'</span> /pax</p>';
+                        html += ' <h3>' + parseData[i].city + ', ' + parseData[i].country+'</h3>';
+                        html += '<div class="cardPoints d-flex flex-column justify-content-between mb-3">';
+                        html += '<p class="points m-0">'+ parseData[i].typeName+'</p>';
+                        html += '<p class="points m-0">from <span class="font-weight-bold">' + FormatCurrency(parseData[i].basePrice, parseData[i].convertedCurrency)+'</span> /pax</p>';
                         html += '</div >';
                         html += '</a >';
                         html += '</div >';
