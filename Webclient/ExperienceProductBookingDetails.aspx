@@ -197,7 +197,7 @@
                         <div class="row">
                             <div class="cancelBox col-12 col-lg-6">
                                 <p class="heading-semibold h6 pb-2">Cancellation Policy:</p>
-                                <p class="heading-light">Cancellations are non refundable.</p>
+                                <p class="heading-regular">Cancellations are non refundable.</p>
                             </div>
                             <div class="ihaveRead col-12 col-lg-6 mt-lg-0 mt-3">
                                 <div class="dvLabel mb-3">
@@ -206,7 +206,7 @@
                                             <input type="checkbox" onchange="ValidateBookingDetailsFields();" id="chkTnCPolicy" />
                                             <span class="checkmark"></span>
                                         </span>
-                                        <span id="spnTnCPolicy" class="d-inline-block ml-2 heading-light">I have read and agree to China Bank <b><a href="TermsAndConditions.aspx" target="_blank">Terms & Conditions</a></b> and
+                                        <span id="spnTnCPolicy" class="d-inline-block ml-2 heading-regular">I have read and agree to China Bank <b><a href="TermsAndConditions.aspx" target="_blank">Terms & Conditions</a></b> and
                                            <b><a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation Policy</a></b> of the respective service provider.
                                         </span>
                                     </label>
@@ -354,7 +354,7 @@
                     html += '</div>';
                     html += '<div class="dvCityName pl-3 pr-3">';
                     html += '<h2 class="h6 heading-semibold text-truncate pt-4">' + data.ProductInfoResponse.data.title + '</h2>';
-                    html += '<p class="heading-light">Option: ' + data.ProductInfoResponse.producttypedetails.item_uuid.filter(obj => obj.uuid == ptuuid)[0].title + '</p>';
+                    html += '<p class="heading-regular">Option: ' + data.ProductInfoResponse.producttypedetails.item_uuid.filter(obj => obj.uuid == ptuuid)[0].title + '</p>';
                     html += '</div>';
                     html += '<div class="dvSelectDate pl-3 pr-3 mt-3">';
                     html += '<div class="d-flex justify-content-between">';
