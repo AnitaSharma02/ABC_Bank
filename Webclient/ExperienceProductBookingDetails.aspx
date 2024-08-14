@@ -11,7 +11,7 @@
                     <div class="payment-step">
                         <span class="step">
                             <span class="step-circle future rounded-circle">1</span>
-                            <span class="d-block d-md-inline heading-reqular"><a id="hrefBookingDetailsId" runat="server">Booking Details</a></span>
+                            <span class="d-block d-md-inline heading-reqular"><a id="hrefBookingDetailsId" class="text-colour9" runat="server">Booking Details</a></span>
                         </span>
                     </div>
 
@@ -349,7 +349,7 @@
                     html += '<div class="dvBookingDetails p-3">';
                     html += '<div class="d-flex justify-content-between">';
                     html += '<p class="heading-semibold h6">Your booking details</p>';
-                    html += '<p class="heading-semibold h6"><a id="hrefEditbuttonId" runat="server">Edit</a></p>';
+                    html += '<p class="heading-semibold h6"><a id="hrefEditbuttonId" class="text-colour1" runat="server">Edit</a></p>';
                     html += '</div>';
                     html += '</div>';
                     html += '<div class="dvCityName pl-3 pr-3">';

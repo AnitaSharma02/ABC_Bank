@@ -19,7 +19,7 @@
 
 .dvInputGroup.input-group .input-group-text {
     background-color: var(--colour1);
-    color: var(--colour5);
+    /*color: var(--colour5);*/
 }
 
 .dvCardBox {
@@ -225,7 +225,7 @@
 
     .dvReadMore .toggle_btn span {
         cursor: pointer;
-        color: var(--primary-colour);
+        color: var(--a-text-colour);
         transition: 0.3s;
         font-size: 0.875rem;
     }
@@ -251,7 +251,7 @@
 
     .dvDescription .dvReadMore2 .toggle_btn2 span {
         cursor: pointer;
-        color: var(--primary-colour);
+        color: var(--a-text-colour);
         transition: 0.3s;
         font-size: 0.875rem;
     }
@@ -272,6 +272,73 @@
     border-radius: var(--btn-two-b-radius);
 }
 
+dvInnerBanner, .dvRedemptionMenu {
+    display: none;
+}
+
+
+
+.dvThumbSwiperSlider .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.dvThumbSwiperSlider .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.dvThumbSwiperSlider .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dvThumbSwiperSlider .swiper {
+  width: 100%;
+/*height: 300px;*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dvThumbSwiperSlider .mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.dvThumbSwiperSlider .mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+/* adjust arrows right & left */
+.dvThumbSwiperSlider .swiper-button-prev,
+.dvThumbSwiperSlider .swiper-rtl .swiper-button-next {
+  left: var(--swiper-navigation-sides-offset, 10px);
+  right: auto;
+}
+
+.dvThumbSwiperSlider .swiper-button-next,
+.dvThumbSwiperSlider .swiper-rtl .swiper-button-prev {
+  right: var(--swiper-navigation-sides-offset, 10px);
+  left: auto;
+}
+/* adjust arrows width size */
+.dvThumbSwiperSlider .swiper-button-prev img,
+.dvThumbSwiperSlider .swiper-button-next img {
+  width: 25px;
+}
+
+.swiper-thumbs {
+    margin-top: 0.75rem;
+}
+
 /********* - Experiences Payment Details *********/
 .dvPaymentList-steps {
     position: relative;
@@ -280,72 +347,76 @@
     margin: 8% auto;
 }
 
-    .dvPaymentList-steps .step-line {
-        content: "";
-        display: block;
-        width: 90%;
-        height: 1px;
-        background: #e5e5e5;
-        position: absolute;
-        top: 58%;
-        left: 0;
-        display: none;
-    }
+.dvPaymentList-steps .step-line {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 1px;
+    background: #e5e5e5;
+    position: absolute;
+    top: 58%;
+    left: 0;
+    display: none;
+}
 
-    .dvPaymentList-steps .steps {
-        position: absolute;
-        top: 1rem;
-        left: 0;
-        width: 100%;
-    }
+.dvPaymentList-steps .steps {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    width: 100%;
+}
 
-        .dvPaymentList-steps .steps .payment-step {
-            width: 33%;
-            float: left;
-            text-align: center;
-        }
+.dvPaymentList-steps .steps .payment-step {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
 
-            .dvPaymentList-steps .steps .payment-step:first-child {
-                text-align: left;
-                width: 32%;
-            }
+.dvPaymentList-steps .steps .payment-step:first-child {
+    text-align: left;
+    width: 32%;
+}
 
-            .dvPaymentList-steps .steps .payment-step .step {
-                background: #fff;
-                padding-right: 1rem;
-                font-weight: bold;
-                font-size: 10px;
-            }
+.dvPaymentList-steps .steps .payment-step .step {
+    background: #fff;
+    padding-right: 1rem;
+    font-weight: bold;
+    font-size: 10px;
+}
 
-                .dvPaymentList-steps .steps .payment-step .step .step-circle {
-                    width: 30px;
-                    height: 30px;
-                    line-height: 23px;
-                    text-align: center;
-                    padding: 0.4rem 0.9rem;
-                    color: #fff;
-                    margin-bottom: 0.5rem;
-                    display: inline-block;
-                    font-size: 16px;
-                }
+.dvPaymentList-steps .steps .payment-step .step .step-circle {
+    width: 30px;
+    height: 30px;
+    line-height: 23px;
+    text-align: center;
+    padding: 0.4rem 0.9rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    font-size: 16px;
+}
 
-            .dvPaymentList-steps .steps .payment-step .step {
-                background: #fff;
-                padding-right: 1rem;
-                font-weight: bold;
-                font-size: 10px;
-            }
+.dvPaymentList-steps .steps .payment-step .step {
+    background: #fff;
+    padding-right: 1rem;
+    font-weight: bold;
+    font-size: 10px;
+}
 
-                .dvPaymentList-steps .steps .payment-step .step .step-circle.future {
-                    background: var(--colour2);
-                }
+.dvPaymentList-steps .steps .payment-step .step .step-circle.future {
+    background: var(--colour2);
+}
 
-.dvPaymentBox {
-    background-color: var(--bg-section);
+/*.dvPaymentBox {
+    background-color: var(--colour2);
+}*/
+
+.dvExperienceMsg {
+    background-color: var(--colour2);
 }
 
 .dvBookingDetails {
-    background-color: var(--colour11);
+    background-color: var(--colour5);
     padding: 12px;
 }
 
@@ -364,6 +435,10 @@
 
 .dvCreditCard .img-container {
     padding-bottom: 10%;
+}
+
+.dvPaymentBox a {
+    text-decoration: underline;
 }
 
 /********* - Experiences Thank You *********/

@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="dvPaymentBox mt-0 mt-md-2 pt-md-5 pt-3 pb-5" style="min-height: 350px;">
+    <div class="dvPaymentBox dvExperienceMsg mt-0 mt-md-2 pt-md-5 pt-3 pb-5" style="min-height: 350px;">
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-8 col-lg-8 mt-3 mt-md-0" id="divMessage" runat="server">

@@ -65,11 +65,6 @@
             </div>
         </div>
     </div>
-    <style>
-        a {
-            color: #4527A0;
-        }
-    </style>
     <script>
         $(document).ready(function () {           
             BindBanner();
@@ -139,7 +134,7 @@
                 if (parseData.data != null) {
                     $("#Errordiv").show();
                     html += '<div class="row pt-4">';
-                    html += '<div class="scroll-ver- col-12">';
+                    html += '<div class="scroll-ver col-12">';
                     html += '<div class="row">';
                     html += '<div class="col-12">';
                     html += '<p class="heading-regular">' + parseData.data.locations[0].city + ',' + parseData.data.locations[0].country + '</p>';
@@ -292,8 +287,8 @@
                     }
                     html += '</ul>';
                     html += '<div class="toggle_btn">';
-                    html += '<span class="toggle_text text-primary">Show More</span>';
-                    html += '<span class="arrow text-primary">';
+                    html += '<span class="toggle_text">Show More</span>';
+                    html += '<span class="arrow">';
                     html += '<i class="fa fa-angle-down" aria-hidden="true"></i>';
                     html += '</span>';
                     html += '</div>';
@@ -327,8 +322,8 @@
                         });
                         html += '</ul>';
                         html += '<div class="toggle_btn2">';
-                        html += '<span class="toggle_text2 text-primary">Show More</span>';
-                        html += '<span class="arrow text-primary">';
+                        html += '<span class="toggle_text2">Show More</span>';
+                        html += '<span class="arrow">';
                         html += '<i class="fa fa-angle-down" aria-hidden="true"></i>';
                         html += '</span>';
                         html += '</div>';
@@ -460,27 +455,27 @@
                             html += '<p "class="ptypepricebydate heading-regular"><i class="fa-solid"></i> Valid only on <span>' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isBmgVoucher == true) {
-                            html += '<p class="heading-regular"><i class="fa-solid fa-mobile-screen-button"></i>Show on mobile</p>';
+                            html += '<p class="heading-regular"><i class="fa-solid fa-mobile-screen-button"></i><span class="ml-2">Show on mobile</span></p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isNonRefundable == true) {
                             html += '<p class="heading-regular">';
-                            html += '<i class="fa-solid fa-triangle-exclamation"></i>Non Refundable';
+                            html += '<i class="fa-solid fa-triangle-exclamation"></i><span class="ml-2">Non Refundable</span>';
                             html += '</p>';
                         }
                         else {
                             html += '<p class="heading-regular">';
-                            html += '<i class="fa-solid fa-triangle-exclamation"></i>Refundable';
+                            html += '<i class="fa-solid fa-triangle-exclamation"></i><span class="ml-2">Refundable</span>';
                             html += '</p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.voucherRequiresPrinting == true) {
-                            html += '<p class="heading-regular"><i class="fa-solid fa-bolt"></i>Print ticket</p>';
+                            html += '<p class="heading-regular"><i class="fa-solid fa-bolt"></i><span class="ml-2">Print ticket</p></span>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.instantConfirmation == true) {
-                            html += '<p class="heading-regular"><i class="fa-solid fa-bolt"></i>Instant</p>';
+                            html += '<p class="heading-regular"><i class="fa-solid fa-bolt"></i><span class="ml-2">Instant</p></span>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.directAdmission == true) {
                             html += '<p class="heading-regular">';
-                            html += '<i class="fa fa-address-book" aria-hidden="true"></i>Direct admission';
+                            html += '<i class="fa fa-address-book" aria-hidden="true"></i><span class="ml-2">Direct admission</span>';
                             html += '</p>';
                         }
                         html += '</div>';
