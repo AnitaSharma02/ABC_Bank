@@ -25,13 +25,12 @@ a {
     text-decoration: var(--link1-text-decoration);
     display: var(--link1-display);
 }
-
-    .link1:hover {
-        color: var(--link1-text-colour-hover);
-        background-color: var(--link1-bg-colour-hover);
-        text-decoration: var(--link1-text-decoration-hover);
-        display: var(--link1-display-hover);
-    }
+.link1:hover {
+    color: var(--link1-text-colour-hover);
+    background-color: var(--link1-bg-colour-hover);
+    text-decoration: var(--link1-text-decoration-hover);
+    display: var(--link1-display-hover);
+}
 
 h1,
 h2,

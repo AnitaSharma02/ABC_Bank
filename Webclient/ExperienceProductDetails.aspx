@@ -342,7 +342,7 @@
 
                     var swiper = new Swiper(".dvThumbSlide", {
                         spaceBetween: 10,
-                        slidesPerView: 2,
+                        slidesPerView: 4,
                         freeMode: true,
                         watchSlidesProgress: true,
                         navigation: {
