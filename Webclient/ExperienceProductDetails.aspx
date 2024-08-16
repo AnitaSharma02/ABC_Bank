@@ -137,8 +137,8 @@
                     html += '<div class="scroll-ver col-12">';
                     html += '<div class="row">';
                     html += '<div class="col-12">';
-                    html += '<p class="heading-regular">' + parseData.data.locations[0].city + ',' + parseData.data.locations[0].country + '</p>';
-                    html += '<p class="heading-semibold">' + parseData.data.title + '</p>';
+                    html += '<p>' + parseData.data.locations[0].city + ',' + parseData.data.locations[0].country + '</p>';
+                    html += '<p>' + parseData.data.title + '</p>';
                     html += '</div>';
                     html += '</div>';
                     html += '<div class="row mt-3">';
@@ -185,44 +185,44 @@
                         if (parseData.data.producttypedetails.item_uuid[0].typeinfo.durationDays > 0
                             && parseData.data.producttypedetails.item_uuid[0].typeinfo.durationHours == 0
                             && parseData.data.producttypedetails.item_uuid[0].typeinfo.durationMinutes == 0) {
-                            html += '<p class="heading-light"><i class="fa-solid fa-clock"></i> ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationDays + ' day</p>';
+                            html += '<p><i class="fa-solid fa-clock"></i> ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationDays + ' day</p>';
                         }
                         else if (parseData.data.producttypedetails.item_uuid[0].typeinfo.durationDays == 0
                             && parseData.data.producttypedetails.item_uuid[0].typeinfo.durationHours > 0
                             && parseData.data.producttypedetails.item_uuid[0].typeinfo.durationMinutes == 0) {
-                            html += '<p class="heading-light"><i class="fa-solid fa-clock"></i> ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationHours + ' hr</p>';
+                            html += '<p><i class="fa-solid fa-clock"></i> ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationHours + ' hr</p>';
                         }
                         else if (parseData.data.producttypedetails.item_uuid[0].typeinfo.durationDays == 0
                             && parseData.data.producttypedetails.item_uuid[0].typeinfo.durationHours == 0
                             && parseData.data.producttypedetails.item_uuid[0].typeinfo.durationMinutes > 0) {
-                            html += '<p class="heading-light"><i class="fa-solid fa-clock"></i> ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationMinutes + ' min</p>';
+                            html += '<p><i class="fa-solid fa-clock"></i> ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationMinutes + ' min</p>';
                         }
                         else if (parseData.data.producttypedetails.item_uuid[0].typeinfo.durationDays == 0
                             && parseData.data.producttypedetails.item_uuid[0].typeinfo.durationHours > 0
                             && parseData.data.producttypedetails.item_uuid[0].typeinfo.durationMinutes > 0) {
-                            html += '<p class="heading-light"><i class="fa-solid fa-clock"></i> ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationHours + ' hr ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationMinutes + ' min</p>';
+                            html += '<p><i class="fa-solid fa-clock"></i> ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationHours + ' hr ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationMinutes + ' min</p>';
                         }
                         else if (parseData.data.producttypedetails.item_uuid[0].typeinfo.durationDays > 0
                             && parseData.data.producttypedetails.item_uuid[0].typeinfo.durationHours > 0
                             && parseData.data.producttypedetails.item_uuid[0].typeinfo.durationMinutes > 0) {
-                            html += '<p class="heading-light"><i class="fa-solid fa-clock"></i> ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationDays + ' day ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationHours + ' hr ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationMinutes + ' min</p>';
+                            html += '<p><i class="fa-solid fa-clock"></i> ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationDays + ' day ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationHours + ' hr ' + parseData.data.producttypedetails.item_uuid[0].typeinfo.durationMinutes + ' min</p>';
                         }
                     }
                     if (parseData.data != null && parseData.data.tourType != null && parseData.data.tourType != "") {
                         switch (parseData.data.tourType.toLowerCase()) {
                             case "join":
-                                html += '<p class="heading-light pt-1"><i class="fa-solid fa-share-nodes"></i> Shared</p>';
+                                html += '<p class="pt-1"><i class="fa-solid fa-share-nodes"></i> Shared</p>';
                                 break;
                             case "private":
-                                html += '<p class="heading-light pt-1"><i class="fa-solid fa-user"></i> Private Tour</p>';
+                                html += '<p class="pt-1"><i class="fa-solid fa-user"></i> Private Tour</p>';
                                 break;
                         }
                     }
-                    html += '<p class="heading-light pt-1">';
+                    html += '<p class="pt-1">';
                     html += '<i class="fa-solid fa-people-group"></i> Group Size: min: ' + parseData.data.minPax + ' pax | Max: ' + parseData.data.maxPax + ' pax';
                     html += '</p>';
                     if (parseData.data != null && parseData.data.businessHoursFrom != null && parseData.data.businessHoursFrom != '' && parseData.data.businessHoursTo != null && parseData.data.businessHoursTo != '') {
-                        html += '<p class="heading-light pt-1">Opening hours: ' + parseData.data.businessHoursFrom + 'am —' + parseData.data.businessHoursTo + 'pm</p>';
+                        html += '<p class="pt-1">Opening hours: ' + parseData.data.businessHoursFrom + 'am —' + parseData.data.businessHoursTo + 'pm</p>';
                     }
                     html += '</div>';
                     html += '</div>';
@@ -231,7 +231,7 @@
                         html += '<div class="border-bottom my-4"></div>';
                         html += '<div class="row">';
                         html += '<div class="dvHighligts col-12">';
-                        html += '<p class="heading-semibold">Highlights</p>';
+                        html += '<p>Highlights</p>';
                         html += '<ul class="mt-2">';
                         $.each(parseData.data.highlights.split("\n"), function (i) {
                             html += '<li class="heading-light">' + parseData.data.highlights.split("\n")[i] + '</li>';
@@ -244,9 +244,9 @@
                     html += '<div class="border-bottom my-4"></div>';
                     html += '<div class="row">';
                     html += '<div class="dvHighligts col-12">';
-                    html += '<p class="heading-semibold">Additional Info</p>';
+                    html += '<p>Additional Info</p>';
                     if (parseData.data != null && parseData.data.priceIncludes != null && parseData.data.priceIncludes != '') {
-                        html += '<p class="heading-regular pt-2">Price Includes</p>';
+                        html += '<p class="pt-2">Price Includes</p>';
                         html += '<ul>';
                         $.each(parseData.data.priceIncludes.split("\n"), function (i) {
                             html += '<li class="heading-light">' + parseData.data.priceIncludes.split("\n")[i] + '</li>';
@@ -254,7 +254,7 @@
                         html += '</ul>';
                     }
                     if (parseData.data != null && parseData.data.priceExcludes != null && parseData.data.priceExcludes != '') {
-                        html += '<p class="heading-regular pt-2">Price Excludes</p>';
+                        html += '<p class="pt-2">Price Excludes</p>';
                         html += '<ul>';
                         $.each(parseData.data.priceExcludes.split("\n"), function (i) {
                             html += '<li class="heading-light">' + parseData.data.priceExcludes.split("\n")[i] + '</li>';
@@ -268,7 +268,7 @@
                     if (parseData.data != null && parseData.data.additionalInfo != null && parseData.data.additionalInfo != '') {
                         $.each(parseData.data.additionalInfo.split("\n"), function (i) {
                             if (parseData.data.additionalInfo.split("\n")[i] != null && parseData.data.additionalInfo.split("\n")[i] != '') {
-                                html += '<p class="heading-light pt-2">' + parseData.data.additionalInfo.split("\n")[i] + '</p>';
+                                html += '<p class="pt-2">' + parseData.data.additionalInfo.split("\n")[i] + '</p>';
                             }
                         });
                     }
@@ -276,7 +276,7 @@
                         html += '<p class="font-weight-bold pt-2">Warnings of the activity</p>';
                         $.each(parseData.data.warnings.split("\r\n"), function (i) {
                             if (parseData.data.warnings.split("\r\n")[i]) {
-                                html += '<p class="heading-regular pt-2">' + parseData.data.warnings.split("\r\n")[i] + '</p>';
+                                html += '<p class="pt-2">' + parseData.data.warnings.split("\r\n")[i] + '</p>';
                             }
                         });
                     }
@@ -301,7 +301,7 @@
                         html += '<div class="border-bottom my-4"></div>';
                         html += '<div class="row">';
                         html += '<div class="dvHighligts col-12">';
-                        html += '<p class="heading-semibold">Itinerary</p>';
+                        html += '<p>Itinerary</p>';
                         html += '<ul class="mt-2">';
                         $.each(parseData.data.itinerary.split("\n"), function (i) {
                             html += '<li class="heading-light">' + parseData.data.itinerary.split("\n")[i] + '</li>';
@@ -315,7 +315,7 @@
                     html += '<div class="dvHighligts dvDescription col-12">';
 
                     if (parseData.data != null && parseData.data.description != null && parseData.data.description != '') {
-                        html += '<p class="heading-semibold">Description</p>';
+                        html += '<p>Description</p>';
                         html += '<div class="dvReadMore2">';
                         html += '<ul>';
                         $.each(parseData.data.description.split("\r\n"), function (i) {
@@ -334,7 +334,7 @@
                     //html += '<img alt="Product Image" src="images/carpage/map.png" />';
                     //html += '</div>';
                     if (parseData.data != null && parseData.data.title != null && parseData.data.title != '' && parseData.data.address != null && parseData.data.address != '') {
-                        html += '<p class="heading-regular pt-2 pb-5">Address: <a target="_blank" href="http://maps.google.com/maps?q=' + parseData.data.title + ',' + parseData.data.address + '">' + parseData.data.title + ',' + parseData.data.address + '</a></p>';
+                        html += '<p class="pt-2 pb-5">Address: <a target="_blank" href="http://maps.google.com/maps?q=' + parseData.data.title + ',' + parseData.data.address + '">' + parseData.data.title + ',' + parseData.data.address + '</a></p>';
                     }
                     html += '</div>';
                     html += '</div>';
@@ -391,7 +391,7 @@
                         let maxAdult = parseData.producttypedetails.item_uuid[0].typeinfo.maxPax;
                         /* $("#lblAdult").text("Adult(" + parseData.producttypedetails.item_uuid[0].typeinfo.minAdultAge + "-" + parseData.producttypedetails.item_uuid[0].typeinfo.maxAdultAge + " Yrs)");*/
                         html += '<label class="label" id="lblSenior">Adult( ' + parseData.producttypedetails.item_uuid[0].typeinfo.minAdultAge + '-' + parseData.producttypedetails.item_uuid[0].typeinfo.maxAdultAge + ' Yrs)</label>';
-                        html += '<div class=" dvInputGroup input-group" id="sltAdult">';
+                        html += '<div class=" dvInput input-group" id="sltAdult">';
                         html += '<select class="select selectBtn selectDropdown form-control" name="DrpDownAdult" id="selectDrpDownAdult" onchange="SelectDrpDownChangeFunction()">';
                         /*html += '<option  selected="selected" value="firstOption">Select</option>';*/
                         for (let i = (minAdult == null ? 0 : minAdult); i <= maxAdult; i++) {
@@ -406,7 +406,7 @@
                         let minSenior = parseData.producttypedetails.item_uuid[0].typeinfo.minSeniors;
                         let maxSenior = parseData.producttypedetails.item_uuid[0].typeinfo.maxSeniors;
                         html += '<label class="label" id="lblSenior">Senior( ' + parseData.producttypedetails.item_uuid[0].typeinfo.minSeniorAge + '-' + parseData.producttypedetails.item_uuid[0].typeinfo.maxSeniorAge + ' Yrs)</label>';
-                        html += '<div class="dvInputGroup input-group" id="sltSenior">';
+                        html += '<div class="dvInput input-group" id="sltSenior">';
                         html += '<select class="select selectBtn selectDropdown form-control" name="DrpDownSenior" id="selectDrpDownSenior" onchange="SelectDrpDownChangeFunction()">';
                         /*html += '<option  selected="selected" value="firstOption">Select</option>';*/
                         for (let i = (minSenior == null ? 0 : minSenior); i <= maxSenior; i++) {
@@ -425,7 +425,7 @@
                         let minChildren = parseData.producttypedetails.item_uuid[0].typeinfo.minChildren;
                         let maxChildren = parseData.producttypedetails.item_uuid[0].typeinfo.maxChildren;
                         html += '<label class="label" id="lblChildren">Child( ' + parseData.producttypedetails.item_uuid[0].typeinfo.minChildAge + '-' + parseData.producttypedetails.item_uuid[0].typeinfo.maxChildAge + ' Yrs)</label>';
-                        html += '<div class="dvInputGroup input-group" id="sltChild">';
+                        html += '<div class="dvInput input-group" id="sltChild">';
                         html += '<select class="select selectBtn selectDropdown form-control" name="DrpDownChildren" id="selectDrpDownChildren" onchange="SelectDrpDownChangeFunction()">';
                         /*html += '<option  selected="selected" value="firstOption">Select</option>';*/
                         for (let i = (minChildren == null ? 0 : minChildren); i <= maxChildren; i++) {
@@ -443,7 +443,7 @@
                     $.each(parseData.producttypedetails.item_uuid, function (i) {
                         html += '<div class="border-bottom p-3">';
                         html += '<div class="d-flex justify-content-between">';
-                        html += '<p class="heading-medium">' + parseData.producttypedetails.item_uuid[i].typeinfo.title + '</p>';
+                        html += '<p>' + parseData.producttypedetails.item_uuid[i].typeinfo.title + '</p>';
                         html += '</div>';
                         html += '<div class="voucherName pt-1">';
                         html += '<p class="C">' + parseData.producttypedetails.item_uuid[i].typeinfo.description + '</p>';
@@ -456,26 +456,26 @@
                             html += '<p "class="ptypepricebydate heading-regular"><i class="fa-solid"></i> Valid only on <span>' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isBmgVoucher == true) {
-                            html += '<p class="heading-regular"><i class="fa-solid fa-mobile-screen-button"></i><span class="ml-2">Show on mobile</span></p>';
+                            html += '<p><i class="fa-solid fa-mobile-screen-button"></i><span class="ml-2">Show on mobile</span></p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isNonRefundable == true) {
-                            html += '<p class="heading-regular">';
+                            html += '<p>';
                             html += '<i class="fa-solid fa-triangle-exclamation"></i><span class="ml-2">Non Refundable</span>';
                             html += '</p>';
                         }
                         else {
-                            html += '<p class="heading-regular">';
+                            html += '<p>';
                             html += '<i class="fa-solid fa-triangle-exclamation"></i><span class="ml-2">Refundable</span>';
                             html += '</p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.voucherRequiresPrinting == true) {
-                            html += '<p class="heading-regular"><i class="fa-solid fa-bolt"></i><span class="ml-2">Print ticket</p></span>';
+                            html += '<p><i class="fa-solid fa-bolt"></i><span class="ml-2">Print ticket</p></span>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.instantConfirmation == true) {
-                            html += '<p class="heading-regular"><i class="fa-solid fa-bolt"></i><span class="ml-2">Instant</p></span>';
+                            html += '<p><i class="fa-solid fa-bolt"></i><span class="ml-2">Instant</p></span>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.directAdmission == true) {
-                            html += '<p class="heading-regular">';
+                            html += '<p>';
                             html += '<i class="fa fa-address-book" aria-hidden="true"></i><span class="ml-2">Direct admission</span>';
                             html += '</p>';
                         }
@@ -509,17 +509,17 @@
                                     var recommendedPriceFormat = ratesAarray[n].convertedCurrency + FormatCurrency(recommendedPrice);
                                     if (parseInt($('#selectDrpDownAdult').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "adult") {
                                         showBookNow = true;
-                                        html += '<p class="heading-bold">' + $('#selectDrpDownAdult').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p>' + $('#selectDrpDownAdult').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                     else if (parseInt($('#selectDrpDownSenior').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "senior" && showBookNow) {
-                                        html += '<p class="heading-bold">' + $('#selectDrpDownSenior').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p>' + $('#selectDrpDownSenior').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                     else if (parseInt($('#selectDrpDownChildren').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "child" && showBookNow) {
-                                        html += '<p class="heading-bold">' + $('#selectDrpDownChildren').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p>' + $('#selectDrpDownChildren').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                 });
                                 if (!showBookNow) {
-                                    html += '<p class="heading-bold">Unavailable</p>';
+                                    html += '<p>Unavailable</p>';
                                 }
                                 if (parseData.producttypedetails.item_uuid[i] != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots.length > 0 && showBookNow) {
                                     isTimeslotsAvailable = 1;
@@ -660,7 +660,7 @@
                     $.each(parseData.producttypedetails.item_uuid, function (i) {
                         html += '<div class="border-bottom p-3">';
                         html += '<div class="d-flex justify-content-between">';
-                        html += '<p class="heading-medium">' + parseData.producttypedetails.item_uuid[i].typeinfo.title + '</p>';
+                        html += '<p>' + parseData.producttypedetails.item_uuid[i].typeinfo.title + '</p>';
                         html += '</div>';
                         html += '<div class="voucherName pt-1">';
                         html += '<p class="C">' + parseData.producttypedetails.item_uuid[i].typeinfo.description + '</p>';
@@ -673,26 +673,26 @@
                             html += '<p "class="ptypepricebydate heading-regular"><i class="fa-solid"></i> Valid only on <span>' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isBmgVoucher == true) {
-                            html += '<p class="heading-regular"><i class="fa-solid fa-mobile-screen-button"></i>Show on mobile</p>';
+                            html += '<p><i class="fa-solid fa-mobile-screen-button"></i>Show on mobile</p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isNonRefundable == true) {
-                            html += '<p class="heading-regular">';
+                            html += '<p>';
                             html += '<i class="fa-solid fa-triangle-exclamation"></i>Non Refundable';
                             html += '</p>';
                         }
                         else {
-                            html += '<p class="heading-regular">';
+                            html += '<p>';
                             html += '<i class="fa-solid fa-triangle-exclamation"></i>Refundable';
                             html += '</p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.voucherRequiresPrinting == true) {
-                            html += '<p class="heading-regular"><i class="fa-solid fa-bolt"></i>Print ticket</p>';
+                            html += '<p><i class="fa-solid fa-bolt"></i>Print ticket</p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.instantConfirmation == true) {
-                            html += '<p class="heading-regular"><i class="fa-solid fa-bolt"></i>Instant</p>';
+                            html += '<p><i class="fa-solid fa-bolt"></i>Instant</p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.directAdmission == true) {
-                            html += '<p class="heading-regular">';
+                            html += '<p>';
                             html += '<i class="fa fa-address-book" aria-hidden="true"></i>Direct admission';
                             html += '</p>';
                         }
@@ -727,17 +727,17 @@
                                     var recommendedPriceFormat = ratesAarray[n].convertedCurrency + " " + FormatCurrency(recommendedPrice);
                                     if (parseInt($('#selectDrpDownAdult').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "adult") {
                                         showBookNow = true;
-                                        html += '<p class="heading-bold">' + $('#selectDrpDownAdult').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p>' + $('#selectDrpDownAdult').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                     else if (parseInt($('#selectDrpDownSenior').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "senior" && showBookNow) {
-                                        html += '<p class="heading-bold">' + $('#selectDrpDownSenior').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p>' + $('#selectDrpDownSenior').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                     else if (parseInt($('#selectDrpDownChildren').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "child" && showBookNow) {
-                                        html += '<p class="heading-bold">' + $('#selectDrpDownChildren').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p>' + $('#selectDrpDownChildren').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                 });
                                 if (!showBookNow) {
-                                    html += '<p class="heading-bold">Unavailable</p>';
+                                    html += '<p>Unavailable</p>';
                                 }
                                 if (parseData.producttypedetails.item_uuid[i] != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots.length > 0 && showBookNow) {
                                     isTimeslotsAvailable = 1;

@@ -41,11 +41,11 @@
                 </div>
                 <div class="col-12 col-md-7 col-lg-8 mt-3 mt-md-0" id="divContactdetails">
                     <div class="border bg-white p-3">
-                        <p class="heading-semibold h6">Guest Contact Details</p>
+                        <p>Guest Contact Details</p>
                         <div class="row mt-3">
                             <div class="col-12 col-md-12 col-lg-4 mb-3 mb-lg-0">
                                 <label class="label">Title<span class="text-danger">*</span></label>
-                                <div class="dvInputGroup input-group mb-3">
+                                <div class="dvInput input-group mb-3">
                                     <select class="select selectBtn selectDropdown form-control" id="sltitle">
                                         <option selected="selected" value="">Select Title</option>
                                         <option value="Mr">Mr.</option>
@@ -196,8 +196,8 @@
                     <div class="col-12 border bg-white p-3 mt-3">
                         <div class="row">
                             <div class="cancelBox col-12 col-lg-6">
-                                <p class="heading-semibold h6 pb-2">Cancellation Policy:</p>
-                                <p class="heading-regular">Cancellations are non refundable.</p>
+                                <p class="font-weight-bold">Cancellation Policy:</p>
+                                <p>Cancellations are non refundable.</p>
                             </div>
                             <div class="ihaveRead col-12 col-lg-6 mt-lg-0 mt-3">
                                 <div class="dvLabel mb-3">
@@ -214,7 +214,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="dvNote">
-                                    <p class="pt-2 h7" id="txtImpNote" runat="server"></p>
+                                    <p class="pt-2" id="txtImpNote" runat="server"></p>
                                     <%--  <p class="pt-2 h7">Once the transaction is successful you will get CV points* within 40-45 days. Please refer to <b><a href="TermsAndConditions.aspx" target="_blank">Terms & Conditions</a></b> for more details.</p>--%>
                                 </div>
                             </div>
@@ -348,30 +348,30 @@
                 if (data.ProductInfoResponse != null) {
                     html += '<div class="dvBookingDetails p-3">';
                     html += '<div class="d-flex justify-content-between">';
-                    html += '<p class="heading-semibold h6">Your booking details</p>';
-                    html += '<p class="heading-semibold h6"><a id="hrefEditbuttonId" class="text-colour1" runat="server">Edit</a></p>';
+                    html += '<p>Your booking details</p>';
+                    html += '<p><a id="hrefEditbuttonId" class="text-colour1" runat="server">Edit</a></p>';
                     html += '</div>';
                     html += '</div>';
                     html += '<div class="dvCityName pl-3 pr-3">';
                     html += '<h2 class="h6 heading-semibold text-truncate pt-4">' + data.ProductInfoResponse.data.title + '</h2>';
-                    html += '<p class="heading-regular">Option: ' + data.ProductInfoResponse.producttypedetails.item_uuid.filter(obj => obj.uuid == ptuuid)[0].title + '</p>';
+                    html += '<p>Option: ' + data.ProductInfoResponse.producttypedetails.item_uuid.filter(obj => obj.uuid == ptuuid)[0].title + '</p>';
                     html += '</div>';
                     html += '<div class="dvSelectDate pl-3 pr-3 mt-3">';
                     html += '<div class="d-flex justify-content-between">';
-                    html += '<p class="heading-regular">Selected Date:</p>';
-                    html += '<p class="heading-regular">' + formatDate(selectedDate) + '</p>';
+                    html += '<p>Selected Date:</p>';
+                    html += '<p>' + formatDate(selectedDate) + '</p>';
                     html += '</div>';
                     html += '</div>';
 
                     if (timeslotuuid != null && timeslotuuid != '') {
                         html += '<div class="dvSelectDate pl-3 pr-3 pt-2">';
                         html += '<div class="d-flex justify-content-between">';
-                        html += '<p class="heading-regular">Time Slot:</p>';
+                        html += '<p>Time Slot:</p>';
                         $.each(data.ProductInfoResponse.producttypedetails.item_uuid, function (i) {
                             if (ptuuid == data.ProductInfoResponse.producttypedetails.item_uuid[i].uuid) {
                                 $.each(data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots, function (j) {
                                     if (timeslotuuid == data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots[j].uuid) {
-                                        html += '<p class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots[j].startTime.slice(0, -3) + ' - ' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots[j].endTime.slice(0, -3) + ' hrs </p>';
+                                        html += '<p>' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots[j].startTime.slice(0, -3) + ' - ' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots[j].endTime.slice(0, -3) + ' hrs </p>';
                                     }
                                 });
                             }
@@ -393,24 +393,24 @@
                                     totalPax += parseInt(adultCount);
                                     totalAmount += (parseInt(adultCount) * recommendedPrice);
                                     html += '<div class="d-flex justify-content-between">';
-                                    html += '<p class="heading-regular">' + adultCount + ' x ' + categoryName + ':</p>';
-                                    html += '<p class="heading-regular">' + recommendedPriceFormat + '</p>';
+                                    html += '<p>' + adultCount + ' x ' + categoryName + ':</p>';
+                                    html += '<p>' + recommendedPriceFormat + '</p>';
                                     html += '</div>';
                                 }
                                 else if (parseInt(seniorsCount) > 0 && ratesAarray[n].category.toLowerCase() == "senior") {
                                     totalPax += parseInt(seniorsCount);
                                     totalAmount += (parseInt(seniorsCount) * recommendedPrice);
                                     html += '<div class="d-flex justify-content-between">';
-                                    html += '<p class="heading-regular">' + seniorsCount + ' x ' + categoryName + ':</p>';
-                                    html += '<p class="heading-regular">' + recommendedPriceFormat + '</p>';
+                                    html += '<p>' + seniorsCount + ' x ' + categoryName + ':</p>';
+                                    html += '<p>' + recommendedPriceFormat + '</p>';
                                     html += '</div>';
                                 }
                                 else if (parseInt(childrenCount) > 0 && ratesAarray[n].category.toLowerCase() == "child") {
                                     totalPax += parseInt(childrenCount);
                                     totalAmount += (parseInt(childrenCount) * recommendedPrice);
                                     html += '<div class="d-flex justify-content-between">';
-                                    html += '<p class="heading-regular">' + childrenCount + ' x ' + categoryName + ':</p>';
-                                    html += '<p class="heading-regular">' + recommendedPriceFormat + '</p>';
+                                    html += '<p>' + childrenCount + ' x ' + categoryName + ':</p>';
+                                    html += '<p>' + recommendedPriceFormat + '</p>';
                                     html += '</div>';
                                 }
                             });
@@ -421,8 +421,8 @@
                     html += '<div class="border-top mt-1 mb-1"></div>';
                     html += '<div class="dvSelectDate pl-3 pr-3 pt-2 pb-2">';
                     html += '<div class="d-flex justify-content-between">';
-                    html += '<p class="heading-regular">Service fee</p>';
-                    html += '<p class="heading-regular">' + data.ProductInfoResponse.data.convertedCurrency.code + " " + FormatCurrency(0) + '</p>';
+                    html += '<p>Service fee</p>';
+                    html += '<p>' + data.ProductInfoResponse.data.convertedCurrency.code + " " + FormatCurrency(0) + '</p>';
                     html += '</div>';
                     html += '</div>';
                     html += '<div class="border-bottom mt-2 mb-1"></div>';
@@ -437,8 +437,8 @@
                     html += '</div>';
                     html += '<div class="dvSelectDate pl-3 pr-3 pb-3">';
                     html += '<div class="d-flex justify-content-between">';
-                    html += '<p class="heading-sm-bold"></p>';
-                    html += '<p class="heading-regular">Price incl. GST</p>';
+                    html += '<p></p>';
+                    html += '<p>Price incl. GST</p>';
                     html += '</div>';
                     html += '</div>';
                     $("#divPaymentdetails").empty().append(html);
@@ -447,7 +447,7 @@
                     $.each(data.ProductInfoResponse.producttypedetails.item_uuid, function (i) {
                         if (ptuuid == data.ProductInfoResponse.producttypedetails.item_uuid[i].uuid) {
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.hasOptions == true) {
-                                html += '<p class="heading-semibold h6">Additional Info</p>';
+                                html += '<p>Additional Info</p>';
                                 html += '<div class="row">';
                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking.length > 0) {
                                     let optionsPerBooking = 0;
@@ -857,16 +857,16 @@
                         if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != null
                             || data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress != null
                             || data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation != null) {
-                            html += '<p class="h5 heading-bold text-colour1 pb-2">Pickup/Meeting Point Information</p>';
-                            html += '<p class="heading-regular">Extra Information:</p>';
+                            html += '<p class="heading4 text-colour1 pb-2">Pickup/Meeting Point Information</p>';
+                            html += '<p>Extra Information:</p>';
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != '') {
-                                html += '<p class="heading-regular">Time :' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime + '</p>';
+                                html += '<p>Time :' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime + '</p>';
                             }
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress != '') {
-                                html += '<p class="heading-regular">Address :' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress + '</p>';
+                                html += '<p>Address :' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress + '</p>';
                             }
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation != '') {
-                                html += '<p class="heading-regular">Location :' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation + '</p>';
+                                html += '<p>Location :' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation + '</p>';
                             }
                             $("#divPickupInformation").empty().append(html);
                         }
