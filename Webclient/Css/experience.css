@@ -260,9 +260,9 @@
     padding-bottom: 33%;
 }
 
-.dvThumbSwiperSlider .img-container {
+/*.dvThumbSwiperSlider .img-container {
     padding-bottom: 40%;
-}
+}*/
 
 .shadow-on-hover:hover .btn-two {
     font-family: var(--btn-two-family);
@@ -278,7 +278,7 @@ dvInnerBanner, .dvRedemptionMenu {
 
 
 
-.dvThumbSwiperSlider .swiper {
+/*.dvThumbSwiperSlider .swiper {
   width: 100%;
   height: 100%;
 }
@@ -302,9 +302,9 @@ dvInnerBanner, .dvRedemptionMenu {
 }
 
 .dvThumbSwiperSlider .swiper {
-  width: 100%;
+  width: 100%;*/
 /*height: 300px;*/
-  margin-left: auto;
+  /*margin-left: auto;
   margin-right: auto;
 }
 
@@ -316,9 +316,9 @@ dvInnerBanner, .dvRedemptionMenu {
 
 .dvThumbSwiperSlider .mySwiper .swiper-slide-thumb-active {
   opacity: 1;
-}
+}*/
 /* adjust arrows right & left */
-.dvThumbSwiperSlider .swiper-button-prev,
+/*.dvThumbSwiperSlider .swiper-button-prev,
 .dvThumbSwiperSlider .swiper-rtl .swiper-button-next {
   left: var(--swiper-navigation-sides-offset, 10px);
   right: auto;
@@ -328,16 +328,16 @@ dvInnerBanner, .dvRedemptionMenu {
 .dvThumbSwiperSlider .swiper-rtl .swiper-button-prev {
   right: var(--swiper-navigation-sides-offset, 10px);
   left: auto;
-}
+}*/
 /* adjust arrows width size */
-.dvThumbSwiperSlider .swiper-button-prev img,
+/*.dvThumbSwiperSlider .swiper-button-prev img,
 .dvThumbSwiperSlider .swiper-button-next img {
   width: 25px;
-}
+}*/
 
-.swiper-thumbs {
+/*.swiper-thumbs {
     margin-top: 0.75rem;
-}
+}*/
 
 /********* - Experiences Payment Details *********/
 .dvPaymentList-steps {

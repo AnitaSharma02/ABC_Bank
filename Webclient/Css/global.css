@@ -844,13 +844,13 @@ p {
     height: auto;
 }
 
-.dvThumbSwiperSlider .mySwiper2 .img-container {
-    padding-bottom: 100%;
+.dvThumbSwiperSlider .dvThumbBannerSlide .img-container {
+    padding-bottom: 60%;
 }
 
-.dvThumbSwiperSlider .mySwiper .img-container {
-    padding-bottom: 25%;
-    margin-top: 15px;
+.dvThumbSwiperSlider .dvThumbSlide .img-container {
+    padding-bottom: 15%;
+/*    margin-top:15px;*/
 }
 /*=========[ SWIPER THUMBSLIDER ]=========*/
 /*=========[ SWIPER THUMBSLIDER ]=========*/

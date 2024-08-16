@@ -144,7 +144,7 @@
                     html += '<div class="row mt-3">';
                     html += '<div class="dvThumbSwiperSlider col-lg-12 col-xl-12">';
                     html += '<div class="bg-colour3 p-3">';
-                    html += '<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">';
+                    html += '<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper dvThumbBannerSlide">';
                     html += '<div class="swiper-wrapper">';
                     for (var i = 0; i < parseData.data.photos.length; i++) {
                         html += '<div class="swiper-slide img-container">';
@@ -159,11 +159,12 @@
                     html += '<img src="images/carpage/icons/left-arrow-violet.svg" />';
                     html += '</div>';
                     html += '</div>';
-                    html += '<div class="swiper mySwiper">';
+                    html += '<div class="my-2"></div>';
+                    html += '<div class="swiper dvThumbSlide">';
                     html += '<div class="swiper-wrapper">';
 
                     for (var i = 0; i < parseData.data.photos.length; i++) {
-                        html += '<div class="swiper-slide">';
+                        html += '<div class="swiper-slide img-container">';
                         html += '<img src="' + parseData.data.photos[i].paths.original + '"/>';
                         html += '</div>';
                     }
@@ -339,9 +340,9 @@
                     html += '</div>';
                     $("#divExpProductName").append(html);
 
-                    var swiper = new Swiper(".mySwiper", {
+                    var swiper = new Swiper(".dvThumbSlide", {
                         spaceBetween: 10,
-                        slidesPerView: 4,
+                        slidesPerView: 2,
                         freeMode: true,
                         watchSlidesProgress: true,
                         navigation: {
@@ -349,7 +350,7 @@
                             prevEl: ".swiper-button-prev",
                         },
                     });
-                    var swiper2 = new Swiper(".mySwiper2", {
+                    var swiper2 = new Swiper(".dvThumbBannerSlide", {
                         spaceBetween: 10,
                         navigation: {
                             nextEl: ".swiper-button-next",
