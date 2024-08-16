@@ -231,6 +231,7 @@ function clicktoflightsearch() {
     var strInfantNo = "infant=" + $("#qtyValueInfant").val() + "&";
     var strEconomy = "economy=" + $("#economySelectMenu").val();
     var queryString = strFrom + strdepCity + strTo + strarrCity + strDepartDate + strReturnDate + isReturn + strAirlinePrefernce + strAirlineIATACode + strAdultNo + strChildNo + strInfantNo + strEconomy;
+
     window.location = "SearchPage.aspx?" + queryString;
     return false;
 }

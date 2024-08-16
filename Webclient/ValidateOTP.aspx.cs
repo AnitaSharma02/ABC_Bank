@@ -68,8 +68,6 @@ public partial class ValidateOTP : Page
             lobjOTPDetails.OTP = Convert.ToInt32(pstrOTP);
             ShopModel lobjshopmodel = new ShopModel();
             string merchantname = string.Empty;
-            BeMyGuest.Entities.BookingRequest lobjbookingRequest = HttpContext.Current.Session["ExperienceBookingRequest"] as BeMyGuest.Entities.BookingRequest;
-
             if (strFlag == "Air")
             {
                 lobjOTPDetails.OtpType = OTPEnumTypes.AIRREVIEWNCONFIRM.ToString();
@@ -88,16 +86,16 @@ public partial class ValidateOTP : Page
                 lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.CARREVIEWNCONFIRM;
                 strFlag = "PointGateway.aspx?flag=Car";
             }
-            //else if (strFlag == "GiftCard" || strFlag == "EventGiftCard" || strFlag == "AirMilesTopUp" || strFlag == "TopUp" || strFlag == "Lounge" || strFlag == "UtilityGiftCard")
-            //{
-            //    lobjOTPDetails.OtpType = OTPEnumTypes.GIFTCARDREVIEWNCONFIRM.ToString();
-            //    lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.GIFTCARDREVIEWNCONFIRM;
-            //}
-            //else if (strFlag == "Donation")
-            //{
-            //    lobjOTPDetails.OtpType = OTPEnumTypes.GIFTCARDREVIEWNCONFIRM.ToString();
-            //    lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.GIFTCARDREVIEWNCONFIRM;
-            //}
+            else if (strFlag == "GiftCard" || strFlag == "EventGiftCard" || strFlag == "AirMilesTopUp" || strFlag == "TopUp" || strFlag == "Lounge" || strFlag == "UtilityGiftCard")
+            {
+                lobjOTPDetails.OtpType = OTPEnumTypes.GIFTCARDREVIEWNCONFIRM.ToString();
+                lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.GIFTCARDREVIEWNCONFIRM;
+            }
+            else if (strFlag == "Donation")
+            {
+                lobjOTPDetails.OtpType = OTPEnumTypes.GIFTCARDREVIEWNCONFIRM.ToString();
+                lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.GIFTCARDREVIEWNCONFIRM;
+            }
             else if (strFlag == "Package")
             {
                 lobjOTPDetails.OtpType = OTPEnumTypes.PACKAGEREVIEWNCONFIRM.ToString();
@@ -116,324 +114,13 @@ public partial class ValidateOTP : Page
                 lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.SHOPDIGITALREVIEWNCONFIRM;
                 strFlag = "PointGateway.aspx?flag=ShopDigital";
             }
-            else if (strFlag == "Insurance")
-            {
-                lobjOTPDetails.OtpType = OTPEnumTypes.INSURANCEREVIEWNCONFIRM.ToString();
-                lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.INSURANCEREVIEWNCONFIRM;
-                strFlag = "PointGateway.aspx?flag=Insurance";
-            }
-            else if (strFlag == "KhaltiAir")
-            {
-                lobjOTPDetails.OtpType = OTPEnumTypes.DOMESTICFLIGHTREVIEWNCONFIRM.ToString();
-                lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.DOMESTICFLIGHTREVIEWNCONFIRM;
-                strFlag = "PointGateway.aspx?flag=KhaltiAir";
-            }
-            else if (strFlag == "ISP")
-            {
-                lobjOTPDetails.OtpType = OTPEnumTypes.ISPREVIEWNCONFIRM.ToString();
-                lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.ISPREVIEWNCONFIRM;
-                strFlag = "PointGateway.aspx?flag=ISP";
-            }
+
             bool Status = lobjModel.CheckRedemptionOTP(lobjOTPDetails);
+
             if (lstrOTPCount < 5)
             {
                 if (Status)
                 {
-
-                    StripePaymentDetails lobjStripePaymentDetails = null;
-                    if (HttpContext.Current.Session["StripePaymentDetails"] != null)
-                    {
-                        lobjStripePaymentDetails = (StripePaymentDetails)HttpContext.Current.Session["StripePaymentDetails"];
-                        ShoppingCart Cart = null;
-                        Giift.ShopGateway.Client.Entities.Product lobjProduct = new Giift.ShopGateway.Client.Entities.Product();
-                        Giift.ShopGateway.Client.Entities.Address deliveryaddress = null;
-
-                        //Flight
-                        CreateItineraryRequest lobjCreateItineraryRequest = HttpContext.Current.Session["ItineraryRequest"] as CreateItineraryRequest;
-                        CreateItineraryResponse lobjCreateItineraryResponse = HttpContext.Current.Session["ItineraryResponse"] as CreateItineraryResponse;
-                        SearchRequest lobjSearchRequest = HttpContext.Current.Session["FlightSearchDetails"] as SearchRequest;
-                        BookingResponse lobjBookingResponse = HttpContext.Current.Session["FlightBookedFailedResponse"] as BookingResponse;
-
-                        //Hotel
-                        HotelSearchResponse lobjHotelSearchResponse = HttpContext.Current.Session["BookedHotel"] as HotelSearchResponse;
-                        Framework.Integrations.Hotels.Entities.Customer lobjCustomer = HttpContext.Current.Session["CustomerDetails"] as Framework.Integrations.Hotels.Entities.Customer;
-                        HotelSearchRequest lobjHotelSearchRequest = HttpContext.Current.Session["SearchDetails"] as HotelSearchRequest;
-                        BookingPaymentDetails lobjBookingPaymentDetails = HttpContext.Current.Session["HotelBookingPaymentDetails"] as BookingPaymentDetails;
-
-                        //experience
-                        lobjbookingRequest = HttpContext.Current.Session["ExperienceBookingRequest"] as BeMyGuest.Entities.BookingRequest;
-
-                        //Insurance
-                        InsuranceUserDetailsResponse lobjUserdetails = HttpContext.Current.Session["InsuranceUserDetails"] as InsuranceUserDetailsResponse;
-
-                        //ISP
-                        ISPUserDetailsResponse lobjISPUserdetails = HttpContext.Current.Session["ISPUserDetails"] as ISPUserDetailsResponse;
-
-                        //Domestic Flight
-                        CreateDomesticBookingResponse lobjBookingDetailsResponse = HttpContext.Current.Session["DomesticFlightBookingResponse"] as CreateDomesticBookingResponse;
-
-                        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
-                        if (Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemAmount) > 0)
-                        {
-                            string orderId = string.Format("GIIFT-{0}", GenereteRandomNumber());
-                            string lstrBookingFlag = string.Empty;
-                            if (HttpContext.Current.Session["BookingFlag"] != null)
-                            {
-                                lstrBookingFlag = HttpContext.Current.Session["BookingFlag"].ToString();
-                            }
-                            if (lstrBookingFlag.ToLower().Equals("flight"))
-                            {
-                                lobjStripePaymentDetails.ProductName = "Redemption Flight";
-                                List<RedemptionDetails> lobjListOfRedemptionDetails = HttpContext.Current.Session["RedemptionDetails"] as List<RedemptionDetails>;
-
-                                string lstrCurrency = lobjModel.GetDefaultCurrency();
-                                double ldblAmount = Convert.ToInt32(lobjListOfRedemptionDetails[0].Amount);
-                                if (lobjStripePaymentDetails.ReqRedeemPoint != "0")
-                                {
-                                    merchantname = lobjCreateItineraryResponse.ItineraryDetails.OriginLocation + "-" + lobjCreateItineraryResponse.ItineraryDetails.DestinationLocation;
-                                    bool response = lobjModel.InsertTransactionDetails(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToDecimal(ldblAmount),
-                                     Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint), TransactionType.Debit, LoyaltyTxnType.Air, orderId,
-                                     lobjCreateItineraryResponse.ItineraryDetails.OriginLocation + "-" + lobjCreateItineraryResponse.ItineraryDetails.DestinationLocation, string.Format("{0}|{1}", lobjMemberDetails.Email, lobjMemberDetails.MobileNumber), string.Format("BookingId:{0}|BookingRefCode:{1}", lobjBookingResponse.BookingId, lobjBookingResponse.PNRDetails.BookingReference),
-                                     Convert.ToDecimal(lobjStripePaymentDetails.ReqRedeemAmount), lstrCurrency);
-                                }
-                            }
-                            else if (lstrBookingFlag.ToLower().Equals("hotel"))
-                            {
-
-                                lobjStripePaymentDetails.ProductName = "Redemption Hotel";
-
-                                List<RedemptionDetails> lobjListOfRedemptionDetails = HttpContext.Current.Session["RedemptionDetails"] as List<RedemptionDetails>;
-
-                                string lstrCurrency = lobjModel.GetDefaultCurrency();
-                                double ldblAmount = Convert.ToInt32(lobjListOfRedemptionDetails[0].Amount);
-                                if (lobjStripePaymentDetails.ReqRedeemPoint != "0")
-                                {
-                                    merchantname = lobjHotelSearchResponse.SearchResponse.hotels.hotel[0].basicinfo.hotelname;
-                                    bool response = lobjModel.InsertTransactionDetails(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToDecimal(ldblAmount),
-                                    Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint), TransactionType.Debit, LoyaltyTxnType.Hotel, orderId,
-                                    lobjHotelSearchResponse.SearchResponse.hotels.hotel[0].basicinfo.hotelname, string.Format("{0}|{1}", lobjMemberDetails.Email, lobjMemberDetails.MobileNumber), string.Format("BookingId:{0}|BookingRefCode:{1}", lobjBookingPaymentDetails.Id, lobjBookingPaymentDetails.BookingRefererence),
-                                    Convert.ToDecimal(lobjStripePaymentDetails.ReqRedeemAmount), lstrCurrency);
-                                }
-                            }
-                            else if (lstrBookingFlag.ToLower().Equals("experience"))
-                            {
-                                lobjStripePaymentDetails.ProductName = "Redemption Package";
-
-                                string lstrCurrency = lobjModel.GetDefaultCurrency();
-                                double ldblAmount = Convert.ToInt32(lobjbookingRequest.totalAmount);
-                                string lstrProductName = lobjbookingRequest.titleName;
-
-
-                                bool response = lobjModel.InsertTransactionDetails(lobjbookingRequest.memberId.ToString(), Convert.ToDecimal(ldblAmount),
-                               Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint), TransactionType.Debit, LoyaltyTxnType.Packages, orderId,
-                               string.Format("{0}", lstrProductName), string.Format("{0}|{1}", lobjbookingRequest.customer.email, lobjbookingRequest.customer.phone), string.Format("orderId:{0}", orderId),
-                               Convert.ToDecimal(lobjStripePaymentDetails.ReqRedeemAmount), lstrCurrency);
-
-                            }
-                            else if (lstrBookingFlag.ToLower().Equals("physicalproduct"))
-                            {
-                                lobjStripePaymentDetails.ProductName = "Redemption Merchant";
-
-                                if (HttpContext.Current.Session["ShoppingCart"] as ShoppingCart != null)
-                                {
-                                    Cart = HttpContext.Current.Session["ShoppingCart"] as ShoppingCart;
-                                }
-
-                                if (HttpContext.Current.Session["CheckoutAddress"] != null)
-                                {
-                                    deliveryaddress = HttpContext.Current.Session["CheckoutAddress"] as Giift.ShopGateway.Client.Entities.Address;
-                                }
-
-                                string lstrCurrency = lobjModel.GetDefaultCurrency();
-                                float lfltPointRate = 0.0f;
-                                List<ProgramCurrencyDefinition> lobjProgramCurrency = lobjModel.GetProgramCurrencyDefinition(lobjMemberDetails.ProgramId);
-                                lfltPointRate = lobjProgramCurrency[0].RedemptionRate;
-                                double ldblAmount = Convert.ToInt32(Math.Ceiling(Cart.Price.Total.Amount)) * lfltPointRate;
-                                if (lobjStripePaymentDetails.ReqRedeemPoint != "0")
-                                {
-                                    merchantname = Cart.Items[0].Name;
-                                    bool response = lobjModel.InsertTransactionDetails(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToDecimal(ldblAmount),
-                                     Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint), TransactionType.Debit, LoyaltyTxnType.Merchant, orderId,
-                                    Cart.Items[0].Name, string.Format("{0}|{1}", lobjMemberDetails.Email, lobjMemberDetails.MobileNumber), string.Format("CartId:{0}|ProductName:{1}|ProductId:{2}", Cart.Id, lobjProduct.Name, lobjProduct.Id),
-                                     Convert.ToDecimal(lobjStripePaymentDetails.ReqRedeemAmount), lstrCurrency);
-                                }
-                            }
-                            else if (lstrBookingFlag.ToLower().Equals("digitalproduct"))
-                            {
-                                lobjStripePaymentDetails.ProductName = "Redemption Merchant";
-
-                                if (HttpContext.Current.Session["ShoppingCart"] as ShoppingCart != null)
-                                {
-                                    Cart = HttpContext.Current.Session["ShoppingCart"] as ShoppingCart;
-                                }
-
-                                string lstrCurrency = lobjModel.GetDefaultCurrency();
-                                float lfltPointRate = 0.0f;
-                                List<ProgramCurrencyDefinition> lobjProgramCurrency = lobjModel.GetProgramCurrencyDefinition(lobjMemberDetails.ProgramId);
-                                lfltPointRate = lobjProgramCurrency[0].RedemptionRate;
-                                double ldblAmount = Convert.ToInt32(Math.Ceiling(Cart.Price.Total.Amount)) * lfltPointRate;
-                                lobjProduct = lobjshopmodel.GetProductById(Cart.Items[0].ProductId);
-                                string lstrDigitalProductType = lobjProduct.Properties.ToList().Find(lobj => lobj.Name.Equals("Type")).Value;
-                                LoyaltyTxnType lintMerchant = LoyaltyTxnType.Merchant;
-                                switch (lstrDigitalProductType.ToLower())
-                                {
-                                    case "donation":
-                                        lintMerchant = LoyaltyTxnType.Charity;
-                                        break;
-                                    case "giftcard":
-                                        lintMerchant = LoyaltyTxnType.GiftCard;
-                                        break;
-                                    case "game":
-                                        lintMerchant = LoyaltyTxnType.Game;
-                                        break;
-                                    case "topup":
-                                        lintMerchant = LoyaltyTxnType.Topup;
-                                        break;
-                                    case "lounge":
-                                        lintMerchant = LoyaltyTxnType.Lounge;
-                                        break;
-                                    case "miles exchange":
-                                    case "milesexchange":
-                                        lintMerchant = LoyaltyTxnType.Partner;
-                                        break;
-                                    case "utiliy":
-                                    case "bill pay":
-                                    case "billpay":
-                                    case "utilites":
-                                        lintMerchant = LoyaltyTxnType.BillPayment;
-                                        break;
-                                }
-                                if (lobjStripePaymentDetails.ReqRedeemPoint != "0")
-                                {
-                                    merchantname = lobjProduct.Name;
-                                    bool response = lobjModel.InsertTransactionDetails(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToDecimal(ldblAmount),
-                                      Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint), TransactionType.Debit, lintMerchant, orderId,
-                                      lobjProduct.Name, string.Format("{0}|{1}", lobjMemberDetails.Email, lobjMemberDetails.MobileNumber), string.Format("CartId:{0}|ProductName:{1}|ProductId:{2}", Cart.Id, lobjProduct.Name, lobjProduct.Id),
-                                      Convert.ToDecimal(lobjStripePaymentDetails.ReqRedeemAmount), Cart.Price.Currency.Code);
-                                }
-                            }
-                            else if (lstrBookingFlag.ToLower().Equals("insuranceserviceproviders"))
-                            {
-                                lobjStripePaymentDetails.ProductName = lobjUserdetails.results.Key;
-                                string lstrCurrency = lobjModel.GetDefaultCurrency();
-                                double ldblAmount = Convert.ToInt32(lobjUserdetails.results.Amount);
-                                if (lobjStripePaymentDetails.ReqRedeemPoint != "0")
-                                {
-                                    merchantname = lobjUserdetails.results.Key;
-                                    bool response = lobjModel.InsertTransactionDetails(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToDecimal(ldblAmount),
-                                    Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint), TransactionType.Debit, LoyaltyTxnType.Insurance, orderId,
-                                    lobjUserdetails.results.Key, string.Format("{0}|{1}", lobjMemberDetails.Email, lobjMemberDetails.MobileNumber), string.Format("TransactionId:{0}", lobjUserdetails.results.TransactionId),
-                                    Convert.ToDecimal(lobjStripePaymentDetails.ReqRedeemAmount), lstrCurrency);
-                                }
-                            }
-                            else if (lstrBookingFlag.ToLower().Equals("domesticflight"))
-                            {
-                                lobjStripePaymentDetails.ProductName = "Redemption Domestic Flight";
-                                string lstrCurrency = lobjModel.GetDefaultCurrency();
-                                float lfltPointRate = 0.0f;
-                                List<ProgramCurrencyDefinition> lobjProgramCurrency = lobjModel.GetProgramCurrencyDefinition(lobjMemberDetails.ProgramId);
-                                lfltPointRate = lobjProgramCurrency[0].RedemptionRate;
-                                float ldblAmount = Convert.ToInt32(Math.Ceiling(float.Parse(lobjBookingDetailsResponse.CreditsConsumed.ToString()))) * lfltPointRate;
-                                if (lobjStripePaymentDetails.ReqRedeemPoint != "0")
-                                {
-                                    merchantname = lobjBookingDetailsResponse.SectorFrom + "-" + lobjBookingDetailsResponse.SectorTo;
-                                    bool response = lobjModel.InsertTransactionDetails(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToDecimal(ldblAmount),
-                                     Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint), TransactionType.Debit, LoyaltyTxnType.Air, orderId,
-                                     lobjBookingDetailsResponse.SectorFrom + "-" + lobjBookingDetailsResponse.SectorTo, string.Format("{0}|{1}", lobjMemberDetails.Email, lobjMemberDetails.MobileNumber), "",
-                                     Convert.ToDecimal(lobjStripePaymentDetails.ReqRedeemAmount), lstrCurrency);
-                                }
-                            }
-                            else if (lstrBookingFlag.ToLower().Equals("internetserviceproviders"))
-                            {
-                                lobjStripePaymentDetails.ProductName = lobjISPUserdetails.results.Key;
-                                string lstrCurrency = lobjModel.GetDefaultCurrency();
-                                string serviceCode = Convert.ToString(HttpContext.Current.Session["ISPServiceCode"]);
-                                decimal FinalAmountPayable = Convert.ToDecimal(HttpContext.Current.Session["FinalAmountPayable"]);
-                                Packages PackageData = HttpContext.Current.Session["ISPSelectedPackageData"] as Packages;
-                                Details PackageDetailsData = HttpContext.Current.Session["ISPSelectedPackageDetailsData"] as Details;
-                                string RequestId = HttpContext.Current.Session["ISPUserName"].ToString();
-                                int lintPoints = 0;
-                                if (lobjISPUserdetails != null)
-                                {
-
-                                    if (lobjISPUserdetails.results.Key == "BroadLink" && lobjISPUserdetails.results.Packages.Count > 0)
-                                    {
-                                        //call GetDiscount and then ISPPaymentRequest API
-                                        GetDiscountRequest lobjGetDiscountRequest = new GetDiscountRequest();
-                                        GetDiscountResponse lobjGetDiscountResponse = new GetDiscountResponse();
-                                        lobjGetDiscountRequest.ServiceCode = serviceCode;
-                                        lobjGetDiscountRequest.SessionId = lobjISPUserdetails.results.SessionId;
-                                        lobjGetDiscountRequest.Package = PackageData;
-                                        lobjGetDiscountResponse = lobjModel.GetDiscount(lobjGetDiscountRequest);
-                                        if (lobjGetDiscountResponse != null)
-                                        {
-                                            if (lobjGetDiscountResponse.results.Status)
-                                            {
-
-                                                lintPoints = lobjModel.ConvertToPoints(float.Parse(lobjGetDiscountResponse.results.Amount.ToString())
-                                                   , lstrCurrency, lobjProgramDefinition.ProgramId, "ISP");
-                                            }
-                                            else
-                                            {
-                                                LoggingAdapter.WriteLog("GetDiscountforISPBroadLink_Packages Failed");
-                                            }
-                                        }
-                                        else
-                                        {
-                                            LoggingAdapter.WriteLog("GetDiscountforISPBroadLink_Packages Failed");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        lintPoints = Convert.ToInt32(HttpContext.Current.Session["FinalAmountPayable"]);
-                                    }
-                                }
-                                // int lintPoints = Convert.ToInt32(HttpContext.Current.Session["FinalAmountPayable"]);
-                                List<ProgramCurrencyDefinition> lobjProgramCurrencyDefinition = lobjModel.GetProgramCurrencyDefinition(lobjProgramDefinition.ProgramId);
-                                var PointRate = lobjProgramCurrencyDefinition[0].RedemptionRate;
-                                double ldblAmount = lobjModel.CalculateAmount(lintPoints, PointRate);
-                                if (lobjStripePaymentDetails.ReqRedeemPoint != "0")
-                                {
-                                    merchantname = lobjISPUserdetails.results.Key;
-                                    bool response = lobjModel.InsertTransactionDetails(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToDecimal(ldblAmount),
-                                    Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint), TransactionType.Debit, LoyaltyTxnType.BillPayment, orderId,
-                                    lobjISPUserdetails.results.Key, string.Format("{0}|{1}", lobjMemberDetails.Email, lobjMemberDetails.MobileNumber), "",
-                                    Convert.ToDecimal(lobjStripePaymentDetails.ReqRedeemAmount), lstrCurrency);
-                                }
-                            }
-
-                            string lstrClientRefId = Convert.ToString(Guid.NewGuid());
-                            lobjStripePaymentDetails.ClientReferenceId = lstrClientRefId;
-                            lobjStripePaymentDetails.orderId = orderId;
-
-                            List<object> lobject = new List<object>();
-                            lobject.Add(lobjMemberDetails); //[0]
-                            lobject.Add(lobjStripePaymentDetails); //[1]
-                            lobject.Add(lstrBookingFlag); //[2]
-
-                            lobject.Add(Cart);//[3]
-                            lobject.Add(deliveryaddress);//[4]
-
-                            lobject.Add(lobjCreateItineraryRequest);//[5]
-                            lobject.Add(lobjCreateItineraryResponse);//[6]
-                            lobject.Add(lobjSearchRequest);//[7]
-                            lobject.Add(lobjBookingResponse);//[8]
-
-                            lobject.Add(lobjHotelSearchResponse); //[09]
-                            lobject.Add(lobjCustomer); //[10]
-                            lobject.Add(lobjHotelSearchRequest); //[11]
-                            lobject.Add(lobjBookingPaymentDetails); //[12]
-
-                            //lobject.Add(lobjOrderStatusResponse); //[13]
-                            lobject.Add(lobjUserdetails); //[14]
-                            lobject.Add(lobjISPUserdetails);//[15]
-                            lobject.Add(lobjBookingDetailsResponse);//[16]
-                            LoggingAdapter.WriteLog("PaymentReviewConfirm CachingAdapter ClientRefId-:" + lstrClientRefId);
-                            CachingAdapter.Add(lstrClientRefId, lobject);
-
-                            strFlag = CreateStipePayment(lobjStripePaymentDetails, lobjMemberDetails, orderId, merchantname);
-                        }
-                    }
                     lobjModel.LogActivity("Validate ReviewConfirmOTP: Success", ActivityType.ReviewConfirmOTPSuccess);
                     return strFlag;
                 }
@@ -456,6 +143,7 @@ public partial class ValidateOTP : Page
         }
         return strFlag;
     }
+
     protected void btnResendOTP_Click(object sender, EventArgs e)
     {
         string strFlag = Convert.ToString(Request.QueryString["flag"]);
@@ -535,29 +223,14 @@ public partial class ValidateOTP : Page
                             lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.SHOPDIGITALREVIEWNCONFIRM;
                             redemptionType = Convert.ToString(Request.QueryString["redemptiontype"]);
                         }
-                        else if (strFlag == "Insurance")
-                        {
-                            lobjOTPDetails.OtpType = OTPEnumTypes.INSURANCEREVIEWNCONFIRM.ToString();
-                            lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.INSURANCEREVIEWNCONFIRM;
-                            redemptionType = "Insurance";
-                        }
-                        else if (strFlag == "KhaltiAir")
-                        {
-                            lobjOTPDetails.OtpType = OTPEnumTypes.DOMESTICFLIGHTREVIEWNCONFIRM.ToString();
-                            lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.DOMESTICFLIGHTREVIEWNCONFIRM;
-                            redemptionType = "Domestic Flight";
-                        }
-                        else if (strFlag == "ISP")
-                        {
-                            lobjOTPDetails.OtpType = OTPEnumTypes.ISPREVIEWNCONFIRM.ToString();
-                            lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.ISPREVIEWNCONFIRM;
-                            redemptionType = "Internet Service Provider";
-                        }
+
                         Status = lobjModel.GenerateReviewnConfirmOTP(lobjOTPDetails, lobjMemberDetails, redemptionType);
+
                         if (Status)
                         {
                             lblResendOTPMsg.Text = "OTP Resend Successful.";
                         }
+
                         HttpContext.Current.Session["ResendOTPRequestTime"] = DateTime.Now;
                     }
                     else
@@ -572,7 +245,6 @@ public partial class ValidateOTP : Page
             LoggingAdapter.WriteLog("ValidateOTP.aspx btnResendOTP_Click Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
-
     public static string GenereteRandomNumber()
     {
         Random mobjRandom = new Random();

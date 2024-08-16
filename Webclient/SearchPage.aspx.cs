@@ -23,7 +23,7 @@ public partial class SearchPage : Page
 
     [System.Web.Script.Services.ScriptMethod()]
     [System.Web.Services.WebMethod]
-    public static bool FlightSearch(string departure, string arrival, string departuredate, string isReturn, string arrivaldate, string airline, string airlineIATACode, string adult, string child, string infant, string economy)
+    public static bool FlightSearch()
     {
         ABCModel lobjModel = new ABCModel();
         IBEAPIModel lobjIBEAPIModel = new IBEAPIModel();
@@ -32,6 +32,48 @@ public partial class SearchPage : Page
             ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
             if (lobjProgramDefinition != null)
             {
+
+                string departure = string.Empty;
+                if (HttpContext.Current.Request.QueryString["departure"] != null && HttpContext.Current.Request.QueryString["departure"] != "")
+                    departure = HttpContext.Current.Request.QueryString["departure"].ToString();
+                string arrival = string.Empty;
+                if (HttpContext.Current.Request.QueryString["arrival"] != null && HttpContext.Current.Request.QueryString["arrival"] != "")
+                    arrival = HttpContext.Current.Request.QueryString["arrival"].ToString();
+                string departuredate = string.Empty;
+                if (HttpContext.Current.Request.QueryString["departuredate"] != null && HttpContext.Current.Request.QueryString["departuredate"] != "")
+                    departuredate = HttpContext.Current.Request.QueryString["departuredate"].ToString();
+                departuredate = departuredate.Replace(" ", string.Empty);
+
+                string isReturn = string.Empty;
+                if (HttpContext.Current.Request.QueryString["isReturn"] != null && HttpContext.Current.Request.QueryString["isReturn"] != "")
+                    isReturn = HttpContext.Current.Request.QueryString["isReturn"].ToString();
+                string arrivaldate = string.Empty;
+                if (isReturn == "true")
+                {
+                    if (HttpContext.Current.Request.QueryString["arrivaldate"] != null && HttpContext.Current.Request.QueryString["arrivaldate"] != "")
+                        arrivaldate = HttpContext.Current.Request.QueryString["arrivaldate"].ToString();
+                    arrivaldate = arrivaldate.Replace(" ", string.Empty);
+                }
+
+                string airline = string.Empty;
+                if (HttpContext.Current.Request.QueryString["airline"] != null && HttpContext.Current.Request.QueryString["airline"] != "")
+                    airline = HttpContext.Current.Request.QueryString["airline"].ToString();
+                string airlineIATACode = string.Empty;
+                if (HttpContext.Current.Request.QueryString["airlineIATACode"] != null && HttpContext.Current.Request.QueryString["airlineIATACode"] != "")
+                    airlineIATACode = HttpContext.Current.Request.QueryString["airlineIATACode"].ToString();
+                string adult = string.Empty;
+                if (HttpContext.Current.Request.QueryString["adult"] != null && HttpContext.Current.Request.QueryString["adult"] != "")
+                    adult = HttpContext.Current.Request.QueryString["adult"].ToString();
+                string child = string.Empty;
+                if (HttpContext.Current.Request.QueryString["child"] != null && HttpContext.Current.Request.QueryString["child"] != "")
+                    child = HttpContext.Current.Request.QueryString["child"].ToString();
+                string infant = string.Empty;
+                if (HttpContext.Current.Request.QueryString["infant"] != null && HttpContext.Current.Request.QueryString["infant"] != "")
+                    infant = HttpContext.Current.Request.QueryString["infant"].ToString();
+                string economy = string.Empty;
+                if (HttpContext.Current.Request.QueryString["economy"] != null && HttpContext.Current.Request.QueryString["economy"] != "")
+                    economy = HttpContext.Current.Request.QueryString["economy"].ToString();
+
                 if (departure != string.Empty && arrival != string.Empty && departuredate != string.Empty && isReturn != string.Empty && adult != string.Empty && child != string.Empty && infant != string.Empty && economy != string.Empty)
                 {
                     List<AirField> lobjListOfAirfield = HttpContext.Current.Application["AllAirfields"] as List<AirField>;
@@ -158,7 +200,6 @@ public partial class SearchPage : Page
             return false;
         }
     }
-
     private static string getAirfieldName(string psrtPar)
     {
         if (psrtPar.Length > 3)

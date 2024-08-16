@@ -182,7 +182,7 @@
                 //Flight
                 $.ajax({
                     type: 'POST',
-                    url: 'PointGateway.aspx/BookForFlight',
+                    url: 'PointGateway.aspx/BookFlight',
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json',
                     data: "",
