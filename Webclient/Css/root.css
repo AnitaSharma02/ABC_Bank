@@ -105,10 +105,10 @@
 
     /*|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- COMPONENTS |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-*/
     /* BODY */
-    --body-f-family: var(--font-medium);
+    --body-f-family: var(--font-regular);
     --body-font-size: 1rem;
     --body-bg-colour: var(--colour6);
-    --body-text-colour: var(--colour7);
+    --body-text-colour: var(--colour8);
 
     /* PLACEHOLDERS */
     --placeholder-text-colour: var(--colour8);
@@ -125,24 +125,24 @@
     --placeholder-readonly-cursor: not-allowed;
 
     /* PARAGRAPH */
-    --paragraph-family: var(--font-medium);
-    --paragraph-colour: var(--colour8);
+    --paragraph-family: var(--body-f-family);
+    --paragraph-colour: var(--body-text-colour);
 
     /* ANCHOR */
     /*regular anchor*/
     --a-text-decoration: none;
     --a-text-decoration-hover: none;
-    --a-text-colour: blue;
-    --a-text-colour-hover: blue;
+    --a-text-colour: var(--colour1);
+    --a-text-colour-hover: var(--colour7);
 
     /*.link*/
-    --link1-text-colour: var(--colour8);
+    --link1-text-colour: var(--colour1);
     --link1-bg-colour: none;
-    --link1-text-decoration: none;
+    --link1-text-decoration: underline;
     --link1-display: inline-block;
     --link1-text-colour-hover: var(--colour7);
     --link1-bg-colour-hover: none;
-    --link1-text-decoration-hover: none;
+    --link1-text-decoration-hover: underline;
     --link1-display-hover: inline-block;
 
     /* HEADINGS */
@@ -771,3 +771,12 @@ h4 - font-size: 1.5rem;
 h5 - font-size: 1.25rem;
 h6 - font-size: 1rem;
     */
+
+/*
+headings used
+heading1
+heading2
+heading5 - on index
+heading6
+link1
+*/

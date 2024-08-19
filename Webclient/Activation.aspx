@@ -101,7 +101,7 @@
                                                 <div>
                                                     <asp:LinkButton ID="FormLinkLogin" CausesValidation="false" runat="server"
                                                         OnClientClick="var retvalue = redirectLocation('Login.aspx'); event.returnValue= retvalue; return retvalue;"
-                                                        data-i18n="text-back-to-login" CssClass="h6 heading-semibold text-colour1 text-underline">Back to Login</asp:LinkButton>
+                                                        data-i18n="text-back-to-login" CssClass="heading-semibold link1">Back to Login</asp:LinkButton>
                                                 </div>
                                             </div>
                                         </div>
@@ -182,7 +182,7 @@
                                                     <label class="checkbox-container d-flex">
                                                         <span class="d-inline-block ml-1">
                                                             <input id="chkTnC" runat="server" type="checkbox" />
-                                                            <span data-i18n="text-login-please-accept">Please accept </span><a class="text-underline" href="\TermsAndConditions.aspx" data-i18n="text-terms-conditions">Terms and Conditions</a>
+                                                            <span data-i18n="text-login-please-accept">Please accept </span><a class="link1" href="\TermsAndConditions.aspx" data-i18n="text-terms-conditions">Terms and Conditions</a>
                                                             <span class="checkmark"></span>
                                                         </span>
                                                     </label>

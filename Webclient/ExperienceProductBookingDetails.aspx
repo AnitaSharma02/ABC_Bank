@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-12 col-md-7 col-lg-8 mt-3 mt-md-0" id="divContactdetails">
                     <div class="border bg-white p-3">
-                        <p>Guest Contact Details</p>
+                        <p class="heading6">Guest Contact Details</p>
                         <div class="row mt-3">
                             <div class="col-12 col-md-12 col-lg-4 mb-3 mb-lg-0">
                                 <label class="label">Title<span class="text-danger">*</span></label>
@@ -196,7 +196,7 @@
                     <div class="col-12 border bg-white p-3 mt-3">
                         <div class="row">
                             <div class="cancelBox col-12 col-lg-6">
-                                <p class="font-weight-bold">Cancellation Policy:</p>
+                                <p class="heading6">Cancellation Policy:</p>
                                 <p>Cancellations are non refundable.</p>
                             </div>
                             <div class="ihaveRead col-12 col-lg-6 mt-lg-0 mt-3">
@@ -206,8 +206,8 @@
                                             <input type="checkbox" onchange="ValidateBookingDetailsFields();" id="chkTnCPolicy" />
                                             <span class="checkmark"></span>
                                         </span>
-                                        <span id="spnTnCPolicy" class="d-inline-block ml-2 heading-regular">I have read and agree to China Bank <b><a href="TermsAndConditions.aspx" target="_blank">Terms & Conditions</a></b> and
-                                           <b><a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation Policy</a></b> of the respective service provider.
+                                        <span id="spnTnCPolicy" class="d-inline-block ml-2 heading-regular">I have read and agree to China Bank <b><a href="TermsAndConditions.aspx" class="link1" target="_blank">Terms & Conditions</a></b> and
+                                           <b><a href="BookingPolicy.aspx" class="link1" target="_blank">Booking & Cancellation Policy</a></b> of the respective service provider.
                                         </span>
                                     </label>
                                 </div>
@@ -348,12 +348,12 @@
                 if (data.ProductInfoResponse != null) {
                     html += '<div class="dvBookingDetails p-3">';
                     html += '<div class="d-flex justify-content-between">';
-                    html += '<p>Your booking details</p>';
-                    html += '<p><a id="hrefEditbuttonId" class="text-colour1" runat="server">Edit</a></p>';
+                    html += '<p class="heading6 text-colour1">Your booking details</p>';
+                    html += '<p><a id="hrefEditbuttonId" class="link1" runat="server">Edit</a></p>';
                     html += '</div>';
                     html += '</div>';
                     html += '<div class="dvCityName pl-3 pr-3">';
-                    html += '<h2 class="h6 heading-semibold text-truncate pt-4">' + data.ProductInfoResponse.data.title + '</h2>';
+                    html += '<h2 class="heading6 text-truncate pt-4">' + data.ProductInfoResponse.data.title + '</h2>';
                     html += '<p>Option: ' + data.ProductInfoResponse.producttypedetails.item_uuid.filter(obj => obj.uuid == ptuuid)[0].title + '</p>';
                     html += '</div>';
                     html += '<div class="dvSelectDate pl-3 pr-3 mt-3">';
@@ -428,9 +428,9 @@
                     html += '<div class="border-bottom mt-2 mb-1"></div>';
                     html += '<div class="dvSelectDate pl-3 pr-3 pt-2">';
                     html += '<div class="d-flex justify-content-between">';
-                    html += '<p class="heading-semibold">TOTAL:</p>';
+                    html += '<p class="heading6">TOTAL:</p>';
                     html += '<div>';
-                    html += '<span class="heading-semibold pr-2" id="currencycode">' + data.ProductInfoResponse.data.convertedCurrency.code + '</span><span class="heading-semibold" id="totalAmount">' + FormatCurrency(totalAmount) + '</span>';
+                    html += '<span class="heading6 pr-2" id="currencycode">' + data.ProductInfoResponse.data.convertedCurrency.code + '</span><span class="heading6" id="totalAmount">' + FormatCurrency(totalAmount) + '</span>';
                     html += '</div>';
                     /*                 html += '<p class="heading-semibold" id="totalAmount">' + data.ProductInfoResponse.data.convertedCurrency.code + " " + FormatCurrency(totalAmount) + '</p>';*/
                     html += '</div>';
@@ -438,7 +438,7 @@
                     html += '<div class="dvSelectDate pl-3 pr-3 pb-3">';
                     html += '<div class="d-flex justify-content-between">';
                     html += '<p></p>';
-                    html += '<p>Price incl. GST</p>';
+                    html += '<p class="text-colour7">Price incl. GST</p>';
                     html += '</div>';
                     html += '</div>';
                     $("#divPaymentdetails").empty().append(html);
@@ -447,7 +447,7 @@
                     $.each(data.ProductInfoResponse.producttypedetails.item_uuid, function (i) {
                         if (ptuuid == data.ProductInfoResponse.producttypedetails.item_uuid[i].uuid) {
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.hasOptions == true) {
-                                html += '<p>Additional Info</p>';
+                                html += '<p class="heading6">Additional Info</p>';
                                 html += '<div class="row">';
                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking.length > 0) {
                                     let optionsPerBooking = 0;
@@ -857,7 +857,7 @@
                         if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != null
                             || data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress != null
                             || data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation != null) {
-                            html += '<p class="heading4 text-colour1 pb-2">Pickup/Meeting Point Information</p>';
+                            html += '<p class="heading6 pb-2">Pickup/Meeting Point Information</p>';
                             html += '<p>Extra Information:</p>';
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != '') {
                                 html += '<p>Time :' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime + '</p>';

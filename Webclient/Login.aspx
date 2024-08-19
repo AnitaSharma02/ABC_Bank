@@ -70,11 +70,11 @@
                                     <div class="col-12">
                                         <div class="d-flex flex-wrap justify-content-between">
                                             <div class="mb-2 mb-sm-0">
-                                                <asp:LinkButton ID="FormLinkPassword" CausesValidation="false" CssClass="h6 heading-semibold text-colour1 text-underline"
+                                                <asp:LinkButton ID="FormLinkPassword" CausesValidation="false" CssClass="heading-semibold link1"
                                                     runat="server" OnClientClick="var retvalue = redirectLocation('ForgotPassword.aspx'); event.returnValue= retvalue; return retvalue;" data-i18n="text-forgot-password">Forgot Password</asp:LinkButton>
                                             </div>
                                             <div>
-                                                <asp:LinkButton ID="FormLinkActiveMembership" CssClass="h6 heading-semibold text-colour1 text-underline" CausesValidation="false" runat="server"
+                                                <asp:LinkButton ID="FormLinkActiveMembership" CssClass="heading-semibold link1" CausesValidation="false" runat="server"
                                                     OnClientClick="var retvalue = redirectLocation('Activation.aspx'); event.returnValue= retvalue; return retvalue;"
                                                     data-i18n="text-activate-membership">Activate Membership</asp:LinkButton>
                                             </div>

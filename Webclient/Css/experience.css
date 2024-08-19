@@ -420,9 +420,6 @@ dvInnerBanner, .dvRedemptionMenu {
     padding: 12px;
 }
 
-    .dvBookingDetails p {
-        color: var(--colour1);
-    }
 
 .dvSelectDate .heading-sm-bold {
     color: var(--primary-colour)
@@ -435,10 +432,6 @@ dvInnerBanner, .dvRedemptionMenu {
 
 .dvCreditCard .img-container {
     padding-bottom: 10%;
-}
-
-.dvPaymentBox a {
-    text-decoration: underline;
 }
 
 /********* - Experiences Thank You *********/
