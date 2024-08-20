@@ -15,7 +15,7 @@
                             <div class="dvInputGroup input-group">
                                 <input id="txtSearchTerm" autocomplete="off" class="input form-control" type="text" name="searchTerm" placeholder="Search Destination" required />
                                 <div class="input-group-append">
-                                    <span id="btnSearchExperiences" class="input-group-text bg-colour1"> <i class="fa-solid fa-magnifying-glass"></i></span>
+                                    <span id="btnSearchExperiences" class="input-group-text bg-colour1"><i class="fa-solid fa-magnifying-glass"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -111,12 +111,12 @@
             if (data != '') {
                 var parseData = JSON.parse(data);
                 pageTotal = parseData.length;
-                if (parseData != null  && parseData.length > 0) {
+                if (parseData != null && parseData.length > 0) {
                     for (var i = 0; i < parseData.length; i++) {
                         html += '<div class="dvProductCard col-sm-6 col-lg-3 mb-4">';
                         html += '<div class="dvItem">';
                         html += '<a href=\"javascript:void(0);\" class="anchor"  onclick=\"fnRedirectingToExperiencesProductDetails(\'' + parseData[i].uuid + '\');\">';
-                        
+
                         html += '<div class="img-container">';
                         if (parseData[i].image == null) {
                             html += '<img class="" alt=\"Product Image\" src =\"\"/>';
@@ -125,10 +125,10 @@
                         }
                         html += '</div >';
                         html += '<h2>' + parseData[i].title + '</h2>';
-                        html += ' <h3>' + parseData[i].city + ', ' + parseData[i].country+'</h3>';
+                        html += ' <h3>' + parseData[i].city + ', ' + parseData[i].country + '</h3>';
                         html += '<div class="cardPoints d-flex flex-column justify-content-between mb-3">';
-                        html += '<p class="points m-0">'+ parseData[i].typeName+'</p>';
-                        html += '<p class="points m-0">from <span class="font-weight-bold">' + FormatCurrency(parseData[i].basePrice, parseData[i].convertedCurrency)+'</span> /pax</p>';
+                        html += '<p class="points m-0">' + parseData[i].typeName + '</p>';
+                        html += '<p class="points m-0">from <span class="font-weight-bold">' + FormatCurrency(parseData[i].basePrice, parseData[i].convertedCurrency) + '</span> /pax</p>';
                         html += '</div >';
                         html += '</a >';
                         html += '</div >';
@@ -162,10 +162,9 @@
             } catch (e) {
             }
         }
-        function FormatCurrency( decValue,  currencyCode)
-        {
+        function FormatCurrency(decValue, currencyCode) {
             if (currencyCode != "" && currencyCode != null) {
-                return currencyCode+" "+parseFloat(decValue).toLocaleString(window.document.documentElement.lang);
+                return currencyCode + " " + parseFloat(decValue).toLocaleString(window.document.documentElement.lang);
             }
             else {
                 return parseFloat(decValue).toLocaleString(window.document.documentElement.lang);
@@ -217,11 +216,11 @@
                 }
             }
         });
-        function GetSearchExperiences(searchTerm)
-        {
-            if (searchTerm != '')
-            {
-                window.location.href = 'ExperiencesSearch.aspx?searchterm=' + searchTerm;
+        function GetSearchExperiences(searchTerm) {
+            if (searchTerm != '') {
+                var Querystring = "searchterm=" + $.trim($("#txtSearchTerm").val()) ;
+
+                window.location.href = "ExperiencesSearch.aspx?" + Querystring;
             }
         }
     </script>

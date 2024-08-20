@@ -11,6 +11,7 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Core.Platform.MemberActivity.Entities;
+using System.Text.RegularExpressions;
 
 public partial class ExperiencesSearch : System.Web.UI.Page
 {
@@ -48,12 +49,13 @@ public partial class ExperiencesSearch : System.Web.UI.Page
             //{
             //    CategoriesArray = searchExperiencesModel.TypesAndCategory.categories;
             //}
+            
             ExperiencesRequest lobjProductListRequest = new ExperiencesRequest
             {
                 page = pintPage,
                 per_page = pintPageSize,
                 category = categories,
-                search_term = pstrsearchTerm,
+                search_term = Regex.Replace(Regex.Replace(pstrsearchTerm, @"[^0-9a-zA-Z]+", " ").Replace("20"," "), @"\s\s+", " "),
                 type_name = types,
             };
             ExperiencesResponse lstrProductListResponse = lobjModel.GetExperienceProductList(pintPage, pintPageSize, lobjProductListRequest);
@@ -61,7 +63,7 @@ public partial class ExperiencesSearch : System.Web.UI.Page
             {
                 lstrProductListResponse.ExperiencesCriteria = new ExperiencesCriteria()
                 {
-                    searchTerm = pstrsearchTerm,
+                    searchTerm = pstrsearchTerm.Replace("%20", " "),
                     categoryNames = categories,
                     typeNames = types
                 };
