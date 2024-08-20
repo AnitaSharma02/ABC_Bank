@@ -55,13 +55,13 @@
             });
             return false;
         }
-        function ShowCarVoucher(BookingReferenceId) {
+        function ShowCarVoucher(BookingReferenceId, accessToken, reservationNumber) {
             $.ajax({
                 type: 'POST',
                 url: 'ManageBooking.aspx/ShowCarVoucher',
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',
-                data: "{'BookingReferenceId':'" + BookingReferenceId + "'}",
+                data: "{'BookingReferenceId':'" + BookingReferenceId + "','accessToken':'" + accessToken + "','reservationNumber':'" + reservationNumber + "'}",
                 cache: false,
                 success: function (msg) {
                     if (msg.d) {
@@ -75,29 +75,29 @@
             });
             return false;
         }
-        function ViewDetails(ReferenceId) {
-            //debugger
-            $.ajax({
-                type: 'POST',
-                url: 'ManageBooking.aspx/ShowInsuranceBookingDetails',
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
-                //data: "{'ReferenceId':" + ReferenceId + "}",
-                data: "{ReferenceId:'" + ReferenceId + "'}",
-                cache: false,
-                success: function (msg) {
-                    //debugger;
-                    if (msg.d != null) {
-                        var pop = document.getElementById("bookingDetails");
-                        pop.innerHTML = msg.d;
-                        $('#exampleModal').modal('show');
-                    }
-                },
-                error: function (errmsg) {
-                }
-            });
-            return false;
-        }
+        //function ViewDetails(ReferenceId) {
+        //    //debugger
+        //    $.ajax({
+        //        type: 'POST',
+        //        url: 'ManageBooking.aspx/ShowInsuranceBookingDetails',
+        //        contentType: 'application/json; charset=utf-8',
+        //        dataType: 'json',
+        //        //data: "{'ReferenceId':" + ReferenceId + "}",
+        //        data: "{ReferenceId:'" + ReferenceId + "'}",
+        //        cache: false,
+        //        success: function (msg) {
+        //            //debugger;
+        //            if (msg.d != null) {
+        //                var pop = document.getElementById("bookingDetails");
+        //                pop.innerHTML = msg.d;
+        //                $('#exampleModal').modal('show');
+        //            }
+        //        },
+        //        error: function (errmsg) {
+        //        }
+        //    });
+        //    return false;
+        //}
     </script>
     <style>
         #dvHeroSlider {
@@ -468,7 +468,7 @@
                             <!-- DOMESTIC FLIGHT BOOKING DETAILS -->
 
                             <!-- INSURANCE BOOKING DETAILS -->
-                            <div class="card mb-3">
+                            <div class="card mb-3" style="display:none;">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
                                         <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
@@ -488,7 +488,7 @@
                             <!-- INSURANCE BOOKING DETAILS -->
 
                             <!-- ISP BOOKING DETAILS -->
-                            <div class="card">
+                            <div class="card" style="display:none;">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
                                         <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
@@ -506,6 +506,109 @@
                                 </div>
                             </div>
                             <!-- ISP BOOKING DETAILS -->
+
+                                                        <!-- CAR BOOKING DETAILS -->
+                            <div class="card">
+                                <div class="card-header p-0">
+                                    <h2 class="mb-0 ">
+
+                                        <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
+                                            data-toggle="collapse" data-target="#collapse3">
+                                            <span data-i18n="mb-car-booking-details">Car Booking Details</span>
+                                            <span class="arrow-icon">
+                                                <i class="fa fa-caret-up"></i>
+                                            </span>
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapse3" class="collapse" data-parent="#manage-accordion">
+                                    <div class="card-body scroll-ver p-0">
+                                        <div>
+                                            <asp:Repeater ID="rptCarBookingDetails" runat="server">
+                                                <ItemTemplate>
+                                                    <div class="row mb-1">
+                                                        <div class="col-12">
+                                                            <div class="bg-white px-3 pt-3">
+                                                                <div class="row justify-content-between">
+                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
+                                                                        <p>
+                                                                            <span class="h7 d-block heading-semibold">Car Name</span>
+                                                                            <span class="d-block h6 heading-regular pt-1">
+                                                                                <%#Eval("Vehicle_name")%>
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
+                                                                        <p>
+                                                                            <span class="h7 d-block heading-semibold">Booking Ref Id</span>
+                                                                            <span class="d-block h6 heading-regular pt-1">
+                                                                                <%#Eval("Reference_Unique_Id") %>
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
+                                                                        <p>
+                                                                            <span class="h7 d-block heading-semibold">Pick-Up Details</span>
+                                                                            <span class="d-block h6 heading-regular pt-1">
+                                                                              <%--  <%#Eval("pickUpDateTime")%>--%>
+                                                                                 <%#Eval("pickUpBranchLine")%> 
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
+                                                                        <p>
+                                                                            <span class="h7 d-block heading-semibold">Drop-Off Details</span>
+                                                                            <span class="d-block h6 heading-regular pt-1">
+                                                                              <%--  <%#Eval("dropOffDateTime")%>--%>
+                                                                                   <%#Eval("dropOffBranchLine")%> 
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
+                                                                        <p>
+                                                                            <span class="h7 d-block heading-semibold">Booking Status</span>
+                                                                            <span class="d-block h6 heading-regular pt-1">
+                                                                                <%#Eval("Status")%>
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
+                                                                        <span>
+                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-hotel-points-label">Points</span>
+                                                                            <span class="d-block- h6 heading-regular pt-1">
+                                                                                  <%#Eval("Payment_Amount")%>
+                                                                            </span>
+                                                                        </span>
+                                                                        <asp:HiddenField ID="HiddenField1" Value='<%#Eval("Reference_Unique_Id").ToString()%>' runat="server"></asp:HiddenField>
+                                                                        <asp:LinkButton CssClass="btn btn-one w-50 ml-2" ID="LinkButton1" runat="server" Text="Print" OnClientClick='<%#String.Format("javascript:return ShowCarVoucher(\"{0}\",\"{1}\",\"{2}\")",Eval("Reference_Unique_Id").ToString(),Eval("Access_Token").ToString(),Eval("Reserve_Number").ToString())%>'></asp:LinkButton>
+                                                                    </div>
+                                                                   <%-- <div class="col-12 col-md-3 mb-1">
+                                                                        <p>
+                                                                            <span class="h7 d-block heading-semibold">Booking Pickup Location</span>
+                                                                            <span class="d-block h6 heading-regular pt-1"> 
+                                                                            </span>
+                                                                        </p>
+                                                                    </div>--%>
+                                                                  <%--  <div class="col-12 col-md-3 mb-1 mt-2 mt-lg-0">
+                                                                        <p>
+                                                                            <span class="h7 d-block heading-semibold">Booking Drop-Off Location</span>
+                                                                             </p>
+                                                                    </div>--%>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                            <div id="divCarrecord" runat="server" visible="false">
+                                                <asp:Label runat="server" ID="lblCarrecord" Visible="false"></asp:Label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!-- CAR BOOKING DETAILS -->
                         </div>
                     </div>
                 </div>

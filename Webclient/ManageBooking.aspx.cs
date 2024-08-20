@@ -13,8 +13,6 @@ using System.Web.UI;
 using Core.Platform.MemberActivity.Entities;
 using Core.Platform.InfiVoucher.Entities;
 using CB.IBE.DomesticFlight.Entities;
-using KhaltiInsurance.Entities;
-using KhaltiISP.Entities;
 using CB.IBE.Platform.AirClientModel;
 using System.Configuration;
 using System.Web.Services;
@@ -23,6 +21,8 @@ using System.Linq;
 using Giift.ShopGateway.Client.Entities;
 using Core.Platform.ProgramMaster.Entities;
 using System.Security.Cryptography;
+using IBEAPI.ClientEntities;
+using IBEAPIGateway.Model;
 
 public partial class ManageBooking : Page
 {
@@ -39,8 +39,7 @@ public partial class ManageBooking : Page
                 BindHotelBooking(lobjMemberDetails);
                 BindExperienceBookingDetails(lobjMemberDetails);
                 BindDomesticBookingDetails(lobjMemberDetails);
-                BindInsuranceBookingDetails(lobjMemberDetails);
-                BindISPBookingDetails(lobjMemberDetails);
+              
                 lobjModel.LogActivity(string.Format("Visited ManageBooking.aspx; MemberId-:{0}", lobjMemberDetails.MemberRelationsList[0].RelationReference), ActivityType.PageLoad);
             }
             else
@@ -451,210 +450,260 @@ public partial class ManageBooking : Page
         }
     }
 
-    public void BindInsuranceBookingDetails(MemberDetails pobjMemberDetails)
+    public void BindCarBooking(MemberDetails pobjMemberDetails)
     {
-        StringBuilder lsbTrInsuranceBookingDetailsHtml = new StringBuilder();
-        try
+        IBEAPIModel lobjApimodel = new IBEAPIModel();
+        if (Session["MemberDetails"] != null)
         {
-            if (Session["MemberDetails"] != null)
-            {
-                List<InsuranceBookingResponse> lobjListInsuranceDetails = lobjModel.GetBookedInsuranceListForMember(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
-                ABCModel model = new ABCModel();
-                string lstrCurrency = model.GetDefaultCurrency();
-                ProgramDefinition lobjProgramDefinition = model.GetProgramMaster();
-                Session["InsuranceBookingDetailsofMember"] = lobjListInsuranceDetails;
-                lobjListInsuranceDetails = lobjListInsuranceDetails.OrderByDescending(x => x.PaymentDate).ToList();
-                if (lobjListInsuranceDetails != null && lobjListInsuranceDetails.Count > 0)
-                {
+            UserBookingRequest lobjUserBookingRequest = new UserBookingRequest();
+            lobjUserBookingRequest.member_id = pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference;
 
-                    int i = 1;
-                    foreach (InsuranceBookingResponse item in lobjListInsuranceDetails)
-                    {
-                        lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-white p-3\">");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
-                        //lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-12 col-xl-3 col-lg-4 col-md-6 mb-3\"><p>");
-                        //lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">No.</span>");
-                        //lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + i + "</span></p>");
-                        //lsbTrInsuranceBookingDetailsHtml.Append("</div>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Service Name</span>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ServiceName.ToString() + "</span></p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("</div>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-2 col-xl-2 mb-1\"><p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment Date</span>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + Convert.ToDateTime(item.PaymentDate).ToString("dd/MM/yyyy") + "</span></p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("</div>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-2 col-xl-2 mb-1\"><p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Next Due Date</span>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + (string.IsNullOrEmpty(item.NextDueDate) ? "NA" :item.NextDueDate) + "</span></p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("</div>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-5 col-xl-5 mb-1\"><p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Reference Id</span>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ReferenceId.ToString() + "</span></p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("</div>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment Id</span>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.PaymentId.ToString() + "</span></p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("</div>");
-                        int lintTotalPrice = model.ConvertToPoints(float.Parse(item.Amount.ToString())
-                                , lstrCurrency, lobjProgramDefinition.ProgramId, "INSURANCE");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + lobjModel.FloatToThousandSeperated(lintTotalPrice) + "</span></p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("</div>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-12 offset-md-3 col-md-3 col-lg-3 col-xl-3 mt-2 mt-md-0\"><p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("<a id=\"ViewDetails\" class=\"btn btn-one w-100\" onclick=\"return ViewDetails('" + item.ReferenceId.ToString()+"');\" data-i18n=\"btn-view-details\" data-toggle=\"modal\">View Details</a>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("</p>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("</div>");
-                        lsbTrInsuranceBookingDetailsHtml.Append("</div></div></div></div>");
-                        i++;
-                    }
-                }
-                else
-                {
-                    lsbTrInsuranceBookingDetailsHtml.Append("No Records Found.");
-                }
-                divInsuranceFlightBookingDetails.InnerHtml = lsbTrInsuranceBookingDetailsHtml.ToString();
+            UserBookingResponse lobjUserBookingResponse = lobjApimodel.GetUserBookings(lobjUserBookingRequest);
+
+            if (lobjUserBookingResponse != null && lobjUserBookingResponse.data.Count > 0)
+            {
+                rptCarBookingDetails.DataSource = lobjUserBookingResponse.data;
+
             }
             else
             {
-                Response.Redirect("Login.aspx", false);
+                rptCarBookingDetails.DataSource = null;
+                lblCarrecord.Visible = true;
+                lblCarrecord.Text = "<span data-i18n='managebooking-norecords-label' class=\"heading-regular\">No Records Found.</span>";
+                divCarrecord.Visible = true;
+
             }
+            rptCarBookingDetails.DataBind();
         }
-        catch (Exception ex)
+        else
         {
-            LoggingAdapter.WriteLog("ManageBooking.aspx- BindInsuranceBookingDetails Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+            Response.Redirect("Login.aspx");
         }
     }
 
-    public void BindISPBookingDetails(MemberDetails pobjMemberDetails)
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static bool ShowCarVoucher(string BookingReferenceId, string accessToken, string reservationNumber)
     {
-        StringBuilder lsbTrISPBookingDetailsHtml = new StringBuilder();
-        try
-        {
-            if (Session["MemberDetails"] != null)
-            {
-                List<ISPBookingResponse> lobjListISPDetails = lobjModel.GetBookedISPListForMember(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
-                lobjListISPDetails = lobjListISPDetails.OrderByDescending(x => x.PaymentDate).ToList();
-                if (lobjListISPDetails != null && lobjListISPDetails.Count > 0)
-                {
+        IBEAPIModel lobjModel = new IBEAPIModel();
+        string EnjoyTraveldisplayCurrency = Convert.ToString(ConfigurationManager.AppSettings["EnjoyTraveldisplayCurrency"]);
 
-                    int i = 1;
-                    foreach (ISPBookingResponse item in lobjListISPDetails)
-                    {
-                        lsbTrISPBookingDetailsHtml.Append("<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-white p-3\">");
-                        lsbTrISPBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
-                        //lsbTrISPBookingDetailsHtml.Append("<div class=\"col-12 col-xl-3 col-lg-4 col-md-6 mb-3\"><p>");
-                        //lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">No.</span>");
-                        //lsbTrISPBookingDetailsHtml.Append("<span class=\"d-inline-block heading-regular\">" + i + "</span></p>");
-                        //lsbTrISPBookingDetailsHtml.Append("</div>");
-                        lsbTrISPBookingDetailsHtml.Append("<div class=\"col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Customer Name</span>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.CustomerName.ToString() + "</span></p>");
-                        lsbTrISPBookingDetailsHtml.Append("</div>");
-                        lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Service Name</span>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ServiceName.ToString() + "</span></p>");
-                        lsbTrISPBookingDetailsHtml.Append("</div>");
-                        lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment Date</span>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + Convert.ToDateTime(item.PaymentDate).ToString("dd/MM/yyyy") + "</span></p>");
-                        lsbTrISPBookingDetailsHtml.Append("</div>");
-                        lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Next Due Date</span>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + (string.IsNullOrEmpty(item.NextDueDate) ? "NA" : Convert.ToDateTime(item.NextDueDate).ToString("dd/MM/yyyy")) + "</span></p>");
-                        lsbTrISPBookingDetailsHtml.Append("</div>");
-                        lsbTrISPBookingDetailsHtml.Append("<div class=\"col-12 col-sm-6 col-md-6 col-xl-6 mb-1\"><p>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Reference Id</span>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ReferenceId.ToString() + "</span></p>");
-                        lsbTrISPBookingDetailsHtml.Append("</div>");
-                        lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment ID</span>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.PaymentId.ToString() + "</span></p>");
-                        lsbTrISPBookingDetailsHtml.Append("</div>");
-                        lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3\"><p>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span>");
-                        lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + lobjModel.FloatToThousandSeperated(item.Amount) + "</span></p>");
-                        lsbTrISPBookingDetailsHtml.Append("</div>");
-                        lsbTrISPBookingDetailsHtml.Append("</div></div></div></div>");
-                        i++;
-                    }
-                }
-                else
-                {
-                    lsbTrISPBookingDetailsHtml.Append("No Records Found.");
-                }
-                divISPFlightBookingDetails.InnerHtml = lsbTrISPBookingDetailsHtml.ToString();
-            }
-            else
-            {
-                Response.Redirect("Login.aspx", false);
-            }
-        }
-        catch (Exception ex)
+        CarBookingRoot lobjCarBookingResponse = lobjModel.GetCarBookingDetailsbyRefId(BookingReferenceId, accessToken, reservationNumber, EnjoyTraveldisplayCurrency);
+        if (lobjCarBookingResponse.success == 1)
         {
-            LoggingAdapter.WriteLog("ManageBooking.aspx- BindISPBookingDetails Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+            HttpContext.Current.Session["CarSearchPrint"] = lobjCarBookingResponse;
+            return true;
         }
-
+        else
+        {
+            return false;
+        }
     }
 
-    [WebMethod]
-    public static string ShowInsuranceBookingDetails(string ReferenceId)
-    {
-        StringBuilder lstrBookingdetailshtml = new StringBuilder();
-        try
-        {
-            List<InsuranceBookingResponse> lobjListInsuranceDetails = HttpContext.Current.Session["InsuranceBookingDetailsofMember"] as List<InsuranceBookingResponse>;
-            ABCModel lobjmodel = new ABCModel();
-            string lstrCurrency = lobjmodel.GetDefaultCurrency();
-            ProgramDefinition lobjProgramDefinition = lobjmodel.GetProgramMaster();
-            if (lobjListInsuranceDetails != null && lobjListInsuranceDetails.Count > 0)
-            {
-                InsuranceBookingResponse lobjInsuranceDetails = lobjListInsuranceDetails.Find(x => x.ReferenceId == ReferenceId);
-                if(lobjInsuranceDetails != null)
-                {
-                    lstrBookingdetailshtml.Append("<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">");
-                    lstrBookingdetailshtml.Append("<tr>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Service Name</td>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">"+ lobjInsuranceDetails.ServiceName+ "</td></tr>");
+    //public void BindInsuranceBookingDetails(MemberDetails pobjMemberDetails)
+    //{
+    //    StringBuilder lsbTrInsuranceBookingDetailsHtml = new StringBuilder();
+    //    try
+    //    {
+    //        if (Session["MemberDetails"] != null)
+    //        {
+    //            List<InsuranceBookingResponse> lobjListInsuranceDetails = lobjModel.GetBookedInsuranceListForMember(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
+    //            ABCModel model = new ABCModel();
+    //            string lstrCurrency = model.GetDefaultCurrency();
+    //            ProgramDefinition lobjProgramDefinition = model.GetProgramMaster();
+    //            Session["InsuranceBookingDetailsofMember"] = lobjListInsuranceDetails;
+    //            lobjListInsuranceDetails = lobjListInsuranceDetails.OrderByDescending(x => x.PaymentDate).ToList();
+    //            if (lobjListInsuranceDetails != null && lobjListInsuranceDetails.Count > 0)
+    //            {
 
-                    lstrBookingdetailshtml.Append("<tr>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Customer Name</td>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">"+ lobjInsuranceDetails .CustomerName+ "</td></tr>");
+    //                int i = 1;
+    //                foreach (InsuranceBookingResponse item in lobjListInsuranceDetails)
+    //                {
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-white p-3\">");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
+    //                    //lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-12 col-xl-3 col-lg-4 col-md-6 mb-3\"><p>");
+    //                    //lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">No.</span>");
+    //                    //lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + i + "</span></p>");
+    //                    //lsbTrInsuranceBookingDetailsHtml.Append("</div>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Service Name</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ServiceName.ToString() + "</span></p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-2 col-xl-2 mb-1\"><p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment Date</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + Convert.ToDateTime(item.PaymentDate).ToString("dd/MM/yyyy") + "</span></p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-2 col-xl-2 mb-1\"><p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Next Due Date</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + (string.IsNullOrEmpty(item.NextDueDate) ? "NA" :item.NextDueDate) + "</span></p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-5 col-xl-5 mb-1\"><p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Reference Id</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ReferenceId.ToString() + "</span></p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment Id</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.PaymentId.ToString() + "</span></p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
+    //                    int lintTotalPrice = model.ConvertToPoints(float.Parse(item.Amount.ToString())
+    //                            , lstrCurrency, lobjProgramDefinition.ProgramId, "INSURANCE");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + lobjModel.FloatToThousandSeperated(lintTotalPrice) + "</span></p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-12 offset-md-3 col-md-3 col-lg-3 col-xl-3 mt-2 mt-md-0\"><p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<a id=\"ViewDetails\" class=\"btn btn-one w-100\" onclick=\"return ViewDetails('" + item.ReferenceId.ToString()+"');\" data-i18n=\"btn-view-details\" data-toggle=\"modal\">View Details</a>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("</p>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("</div></div></div></div>");
+    //                    i++;
+    //                }
+    //            }
+    //            else
+    //            {
+    //                lsbTrInsuranceBookingDetailsHtml.Append("No Records Found.");
+    //            }
+    //            divInsuranceFlightBookingDetails.InnerHtml = lsbTrInsuranceBookingDetailsHtml.ToString();
+    //        }
+    //        else
+    //        {
+    //            Response.Redirect("Login.aspx", false);
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        LoggingAdapter.WriteLog("ManageBooking.aspx- BindInsuranceBookingDetails Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+    //    }
+    //}
 
-                    if (Convert.ToString(lobjInsuranceDetails.PolicyNo).IsNullOrEmpty())
-                    {
-                        lstrBookingdetailshtml.Append("<tr>");
-                        lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Request Id</td>");
-                        lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">" + lobjInsuranceDetails.RequestId + "</td></tr>");
-                    }
-                    else {
-                        lstrBookingdetailshtml.Append("<tr>");
-                        lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Policy No</td>");
-                        lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">" + lobjInsuranceDetails.PolicyNo + "</td></tr>");
-                    }
-                    lstrBookingdetailshtml.Append("<tr>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Reference Id</td>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">"+ lobjInsuranceDetails.ReferenceId+ "</td></tr>");
-                    int lintTotalPrice = lobjmodel.ConvertToPoints(float.Parse(lobjInsuranceDetails.Amount.ToString())
-                                     , lstrCurrency, lobjProgramDefinition.ProgramId, "INSURANCE");
-                    lstrBookingdetailshtml.Append("<tr>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Points</td>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">" + lobjmodel.FloatToThousandSeperated(lintTotalPrice) + " Points" + "</td></tr>");
+    //public void BindISPBookingDetails(MemberDetails pobjMemberDetails)
+    //{
+    //    StringBuilder lsbTrISPBookingDetailsHtml = new StringBuilder();
+    //    try
+    //    {
+    //        if (Session["MemberDetails"] != null)
+    //        {
+    //            List<ISPBookingResponse> lobjListISPDetails = lobjModel.GetBookedISPListForMember(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
+    //            lobjListISPDetails = lobjListISPDetails.OrderByDescending(x => x.PaymentDate).ToList();
+    //            if (lobjListISPDetails != null && lobjListISPDetails.Count > 0)
+    //            {
 
-                    lstrBookingdetailshtml.Append("<tr>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Transaction Date</td>");
-                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">"+ DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt")+"</td></tr>");
-                    lstrBookingdetailshtml.Append("</table>");
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            LoggingAdapter.WriteLog("ManageBooking.aspx- ShowInsuranceBookingDetails Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-        }
-        return lstrBookingdetailshtml.ToString();
-    }
+    //                int i = 1;
+    //                foreach (ISPBookingResponse item in lobjListISPDetails)
+    //                {
+    //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-white p-3\">");
+    //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
+    //                    //lsbTrISPBookingDetailsHtml.Append("<div class=\"col-12 col-xl-3 col-lg-4 col-md-6 mb-3\"><p>");
+    //                    //lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">No.</span>");
+    //                    //lsbTrISPBookingDetailsHtml.Append("<span class=\"d-inline-block heading-regular\">" + i + "</span></p>");
+    //                    //lsbTrISPBookingDetailsHtml.Append("</div>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Customer Name</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.CustomerName.ToString() + "</span></p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("</div>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Service Name</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ServiceName.ToString() + "</span></p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("</div>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment Date</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + Convert.ToDateTime(item.PaymentDate).ToString("dd/MM/yyyy") + "</span></p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("</div>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Next Due Date</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + (string.IsNullOrEmpty(item.NextDueDate) ? "NA" : Convert.ToDateTime(item.NextDueDate).ToString("dd/MM/yyyy")) + "</span></p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("</div>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-12 col-sm-6 col-md-6 col-xl-6 mb-1\"><p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Reference Id</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ReferenceId.ToString() + "</span></p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("</div>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment ID</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.PaymentId.ToString() + "</span></p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("</div>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3\"><p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + lobjModel.FloatToThousandSeperated(item.Amount) + "</span></p>");
+    //                    lsbTrISPBookingDetailsHtml.Append("</div>");
+    //                    lsbTrISPBookingDetailsHtml.Append("</div></div></div></div>");
+    //                    i++;
+    //                }
+    //            }
+    //            else
+    //            {
+    //                lsbTrISPBookingDetailsHtml.Append("No Records Found.");
+    //            }
+    //            divISPFlightBookingDetails.InnerHtml = lsbTrISPBookingDetailsHtml.ToString();
+    //        }
+    //        else
+    //        {
+    //            Response.Redirect("Login.aspx", false);
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        LoggingAdapter.WriteLog("ManageBooking.aspx- BindISPBookingDetails Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+    //    }
+
+    //}
+
+    //[WebMethod]
+    //public static string ShowInsuranceBookingDetails(string ReferenceId)
+    //{
+    //    StringBuilder lstrBookingdetailshtml = new StringBuilder();
+    //    try
+    //    {
+    //        List<InsuranceBookingResponse> lobjListInsuranceDetails = HttpContext.Current.Session["InsuranceBookingDetailsofMember"] as List<InsuranceBookingResponse>;
+    //        ABCModel lobjmodel = new ABCModel();
+    //        string lstrCurrency = lobjmodel.GetDefaultCurrency();
+    //        ProgramDefinition lobjProgramDefinition = lobjmodel.GetProgramMaster();
+    //        if (lobjListInsuranceDetails != null && lobjListInsuranceDetails.Count > 0)
+    //        {
+    //            InsuranceBookingResponse lobjInsuranceDetails = lobjListInsuranceDetails.Find(x => x.ReferenceId == ReferenceId);
+    //            if(lobjInsuranceDetails != null)
+    //            {
+    //                lstrBookingdetailshtml.Append("<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">");
+    //                lstrBookingdetailshtml.Append("<tr>");
+    //                lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Service Name</td>");
+    //                lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">"+ lobjInsuranceDetails.ServiceName+ "</td></tr>");
+
+    //                lstrBookingdetailshtml.Append("<tr>");
+    //                lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Customer Name</td>");
+    //                lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">"+ lobjInsuranceDetails .CustomerName+ "</td></tr>");
+
+    //                if (Convert.ToString(lobjInsuranceDetails.PolicyNo).IsNullOrEmpty())
+    //                {
+    //                    lstrBookingdetailshtml.Append("<tr>");
+    //                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Request Id</td>");
+    //                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">" + lobjInsuranceDetails.RequestId + "</td></tr>");
+    //                }
+    //                else {
+    //                    lstrBookingdetailshtml.Append("<tr>");
+    //                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Policy No</td>");
+    //                    lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">" + lobjInsuranceDetails.PolicyNo + "</td></tr>");
+    //                }
+    //                lstrBookingdetailshtml.Append("<tr>");
+    //                lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Reference Id</td>");
+    //                lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">"+ lobjInsuranceDetails.ReferenceId+ "</td></tr>");
+    //                int lintTotalPrice = lobjmodel.ConvertToPoints(float.Parse(lobjInsuranceDetails.Amount.ToString())
+    //                                 , lstrCurrency, lobjProgramDefinition.ProgramId, "INSURANCE");
+    //                lstrBookingdetailshtml.Append("<tr>");
+    //                lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Points</td>");
+    //                lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">" + lobjmodel.FloatToThousandSeperated(lintTotalPrice) + " Points" + "</td></tr>");
+
+    //                lstrBookingdetailshtml.Append("<tr>");
+    //                lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: bold; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">Transaction Date</td>");
+    //                lstrBookingdetailshtml.Append("<td width=\"50%\" style=\"font-family: Calibri; font-size: 14px; letter-spacing: normal; line-height: 18px; font-weight: normal; text-transform: capitalize; text-align: left; color: #231f20; padding: 10px; border:1px solid #dddddd; border-bottom: 2px solid #dddddd;\">"+ DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt")+"</td></tr>");
+    //                lstrBookingdetailshtml.Append("</table>");
+    //            }
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        LoggingAdapter.WriteLog("ManageBooking.aspx- ShowInsuranceBookingDetails Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+    //    }
+    //    return lstrBookingdetailshtml.ToString();
+    //}
     private static string Encrypt(string clearText)
     {
         try
