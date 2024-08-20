@@ -237,7 +237,7 @@ public partial class CarDetails : System.Web.UI.Page
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<div class=\"col-12 col-sm-10 col-lg-11 mt-2 mt-md-0 order-md-1 text-left\">");
                     sbmoreInfo.Append("<div class=\"vehicleLocation\">");
-                    sbmoreInfo.Append("<a class=\"heading-medium text-colour1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i> Vehicle location:</a>");
+                    sbmoreInfo.Append("<a class=\"link1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i> Vehicle location:</a>");
 
                     Branch lobjBranch = lobjCarAvailabilityResponse.data.branches.Find(x => x.id == lobjVehicle.pickUpBranchId);
                     if (lobjBranch != null)

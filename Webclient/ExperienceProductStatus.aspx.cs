@@ -25,12 +25,12 @@ public partial class ExperienceProductStatus : System.Web.UI.Page
                     }
                     else
                     {
-                        divMessage.InnerHtml = "<div class='border dvCongrat bg-white p-5 text-center'>We could not process your request.<p class=\"heading-light pt-2\">Please<a href=\"Index.aspx\" target=\"_self\"> click here</a> and try again.<p></div>";
+                        divMessage.InnerHtml = "<div class='border dvCongrat bg-white p-5 text-center'>We could not process your request.<p class=\"heading-light pt-2\">Please<a href=\"Index.aspx\" target=\"_self\" class=\"link1\"> click here</a> and try again.<p></div>";
                     }
                 }
                 else
                 {
-                    divMessage.InnerHtml = "<div class='border dvCongrat bg-white p-5 text-center'>We could not process your request.<p class=\"heading-light pt-2\">Please<a href=\"Index.aspx\" target=\"_self\"> click here</a> and try again.</p></div>";
+                    divMessage.InnerHtml = "<div class='border dvCongrat bg-white p-5 text-center'>We could not process your request.<p class=\"heading-light pt-2\">Please<a href=\"Index.aspx\" target=\"_self\" class=\"link1\"> click here</a> and try again.</p></div>";
                 }
             }
         }

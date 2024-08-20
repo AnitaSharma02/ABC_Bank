@@ -34,7 +34,7 @@
     <div class="dvOrderStatus d-flex flex-wrap justify-content-center align-items-center vh-center- pb-5 pt-3 pt-lg-5">
         <div class="col-sm-8 text-center" runat="server">
             <div class="bg-colour2 p-5">
-                <h2 class="h6 heading-regular text-center mb-3">We could not process your request, Please <a href="Index.aspx" class="text-underline" target="_self">try again</a>.</h2>
+                <h2 class="h6 heading-regular text-center mb-3">We could not process your request, Please <a href="Index.aspx" class="link1" target="_self">try again</a>.</h2>
                 <h2 class="h6 heading-regular text-center">Your Transaction Reference Code:
                     <asp:Label ID="lblTransactionReferenceCode" runat="server" Text=""></asp:Label></h2>
             </div>

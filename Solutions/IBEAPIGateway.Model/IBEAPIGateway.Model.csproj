@@ -61,12 +61,6 @@
     <Reference Include="Framework.Integrations.Hotels.Entities">
       <HintPath>..\..\References\Framework.Integrations.Hotels.Entities.dll</HintPath>
     </Reference>
-    <Reference Include="IBEAPI.ClientEntities">
-      <HintPath>..\IBEAPI.ClientEntities\bin\Debug\IBEAPI.ClientEntities.dll</HintPath>
-    </Reference>
-    <Reference Include="IBEAPI.ClientHelper">
-      <HintPath>..\IBEAPI.ClientHelper\bin\Debug\IBEAPI.ClientHelper.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\Newtonsoft.Json.dll</HintPath>
@@ -85,6 +79,16 @@
   <ItemGroup>
     <Compile Include="IBEAPIModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IBEAPI.ClientEntities\IBEAPI.ClientEntities.csproj">
+      <Project>{270b47a1-9a4c-431b-934a-d8d161c7cea0}</Project>
+      <Name>IBEAPI.ClientEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBEAPI.ClientHelper\IBEAPI.ClientHelper.csproj">
+      <Project>{da816f60-d5ae-499f-a45d-7ec0c03c30fd}</Project>
+      <Name>IBEAPI.ClientHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

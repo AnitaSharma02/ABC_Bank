@@ -66,11 +66,6 @@
     color: var(--colour1);
 }
 
-.dvHotelSearch .dvInput.input-group .form-control[readonly], .dvHotelResult .dvInput.input-group .form-control[readonly],
-.dvHotelSearch .dvInputGroup.input-group .form-control[readonly], .dvHotelResult .dvInputGroup.input-group .form-control[readonly] {
-    background-color: var(--colour6);
-}
-
 .dvInput.qtySelector.form-control {
     color: var(--fc-text-colour);
     font-size: var(--fc-font-size);

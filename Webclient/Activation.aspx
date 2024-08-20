@@ -138,13 +138,13 @@
                                                 </div>
                                                 <div class="col-12 mb-3">
                                                     <div>
-                                                        <p class="h7 heading-regular text-colour7">Your Password Should be:</p>
+                                                        <p class="h7 text-colour7">Your Password Should be:</p>
                                                         <ul class="mx-3">
-                                                            <li class="h7 heading-regular text-colour7">Minimum 8 characters in length</li>
-                                                            <li class="h7 heading-regular text-colour7">Should contain at least one capital case character</li>
-                                                            <li class="h7 heading-regular text-colour7">Should contain at least one small character</li>
-                                                            <li class="h7 heading-regular text-colour7">Should contain at least one special character (@#$%&*) </li>
-                                                            <li class="h7 heading-regular text-colour7">Should contain at least one numeric digit.</li>
+                                                            <li class="h7 text-colour7">Minimum 8 characters in length</li>
+                                                            <li class="h7 text-colour7">Should contain at least one capital case character</li>
+                                                            <li class="h7 text-colour7">Should contain at least one small character</li>
+                                                            <li class="h7 text-colour7">Should contain at least one special character (@#$%&*) </li>
+                                                            <li class="h7 text-colour7">Should contain at least one numeric digit.</li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -198,19 +198,19 @@
                                     <div class="row">
                                         <div class="col-12 mb-3">
                                             <div>
-                                                <p class="h7 heading-regular text-colour7">
+                                                <p class="h7 text-colour7">
                                                     1. Please enter One Time Password (OTP) that has been sent to your registered email and mobile number.
                                                 </p>
-                                                <p class="h7 heading-regular text-colour7">
+                                                <p class="h7 text-colour7">
                                                     2. Create a new permanent password of your choice to access your account in the future.
                                                 </p>
-                                                <p class="h7 heading-regular text-colour7">Your Password Should be:</p>
+                                                <p class="h7 text-colour7">Your Password Should be:</p>
                                                 <ul class="mx-3">
-                                                    <li class="h7 heading-regular text-colour7">Minimum 8 characters in length</li>
-                                                    <li class="h7 heading-regular text-colour7">Should contain at least one capital case character</li>
-                                                    <li class="h7 heading-regular text-colour7">Should contain at least one small character</li>
-                                                    <li class="h7 heading-regular text-colour7">Should contain at least one special character (@#$%&*) </li>
-                                                    <li class="h7 heading-regular text-colour7">Should contain at least one numeric digit.</li>
+                                                    <li class="h7 text-colour7">Minimum 8 characters in length</li>
+                                                    <li class="h7 text-colour7">Should contain at least one capital case character</li>
+                                                    <li class="h7 text-colour7">Should contain at least one small character</li>
+                                                    <li class="h7 text-colour7">Should contain at least one special character (@#$%&*) </li>
+                                                    <li class="h7 text-colour7">Should contain at least one numeric digit.</li>
                                                 </ul>
                                             </div>
                                         </div>

@@ -19,6 +19,6 @@
 
     <div class="errPg">
         Sorry we could not process your request...<br />
-        Please <a href="Index.aspx">click here</a> to try again..!!
+        Please <a class="link1" href="Index.aspx">click here</a> to try again..!!
     </div>
 </asp:Content>

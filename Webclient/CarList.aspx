@@ -65,14 +65,14 @@
       <div
         class="col-6 col-sm-3 col-lg-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center"
       >
-        <p class="circle mr-lg-2 heading-regular">2</p>
+        <p class="circle mr-lg-2">2</p>
         <p class="d-lg-flex align-items-lg-center"><span class="d-none d-sm-block mr-lg-1" data-i18n="carlist-view">View</span> <span data-i18n="carlist-deal">Deal</span></p>
       </div>
       <div class="col-sm-1 d-sm-flex align-items-sm-center justify-content-sm-center d-none d-sm-block px-sm-0">
         <div class="border w-100"></div>
       </div>
       <div class="col-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center">
-        <p class="circle mr-lg-2 heading-regular">3</p>
+        <p class="circle mr-lg-2">3</p>
         <p class="d-lg-flex align-items-lg-center">
           <span class="d-none d-sm-block mr-lg-1" data-i18n="carlist-booking">Booking &amp;</span> <span data-i18n="carlist-payment">Payment</span>
         </p>
@@ -588,7 +588,7 @@
                                 <input type="checkbox" checked name="VehicleType" value="small" onchange="FilterCarList('');" />
                                 <div class="checkmark d-block p-2 text-center b-radius">
                                     <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                                    <p class="heading-regular h7" data-i18n="carlist-small">Small</p>
+                                    <p class="h7" data-i18n="carlist-small">Small</p>
                                     <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
                                 </div>
                             </label>
@@ -598,7 +598,7 @@
                                 <input type="checkbox" name="VehicleType" value="medium" onchange="FilterCarList('');" />
                                 <div class="checkmark d-block p-2 text-center b-radius">
                                     <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                                    <p class="heading-regular h7" data-i18n="carlist-medium">Medium</p>
+                                    <p class="h7" data-i18n="carlist-medium">Medium</p>
                                     <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
                                 </div>
                             </label>
@@ -608,7 +608,7 @@
                                 <input type="checkbox" name="VehicleType" value="large" onchange="FilterCarList('');" />
                                 <div class="checkmark d-block p-2 text-center b-radius">
                                     <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                                    <p class="heading-regular h7" data-i18n="carlist-large">Large</p>
+                                    <p class="h7" data-i18n="carlist-large">Large</p>
                                     <%--  <span class="d-none d-lg-block">from 119,39C</span>--%>
                                 </div>
                             </label>
@@ -618,7 +618,7 @@
                                 <input type="checkbox" name="VehicleType" value="luxury" onchange="FilterCarList('');" />
                                 <div class="checkmark d-block p-2 text-center b-radius">
                                     <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                                    <p class="heading-regular h7" data-i18n="carlist-luxury">Luxury</p>
+                                    <p class="h7" data-i18n="carlist-luxury">Luxury</p>
                                     <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
                                 </div>
                             </label>
@@ -627,7 +627,7 @@
                     <div class="dvFound my-3">
                         <div class="carsFoundBox border b-radius p-3">
                             <span id="spancarcount" class="heading-semibold">0</span> <span data-i18n="carlist-cars-found">cars found</span>
-                            <a href="#" class="heading-medium ml-3"><i class="fa-solid fa-location-dot"></i> <span data-i18n="carlist-view-locations-on-map">View locations on a map</span></a>
+                            <a href="#" class="link1 ml-3"><i class="fa-solid fa-location-dot"></i> <span data-i18n="carlist-view-locations-on-map">View locations on a map</span></a>
                         </div>
                     </div>
 

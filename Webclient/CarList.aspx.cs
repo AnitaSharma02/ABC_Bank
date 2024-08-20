@@ -215,7 +215,7 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append("<div class=\"priceBox\">");
                 sb.Append("<p class=\"heading-bold h6 text-colour1\"> " + item.packages[0].payments.estimatedTotal.vehicle.display.amount + " <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
                 //sb.Append("<span> 22,13 <i class=\"fa fa-usd\" aria-hidden=\"true\"></i>a day</span>");
-                sb.Append("<p class=\"heading-reqular h8\"><span data-i18n=\"text-mandaory-fees-includ\">(mandatory fees included)</span></cite>");
+                sb.Append("<p class=\"h8\"><span data-i18n=\"text-mandaory-fees-includ\">(mandatory fees included)</span></cite>");
                 sb.Append("</div>");
                 sb.Append("</div>");
 
@@ -247,7 +247,7 @@ public partial class CarList : System.Web.UI.Page
 
                 Branch lobjBranch = lobjCarAvailabilityResponse.data.branches.Find(x => x.id == item.pickUpBranchId);
 
-                sb.Append("<a href =\"#\" class=\"heading-medium text-colour1\"><i class=\"fa-solid fa-location-dot\"></i> <span data-i18n=\"carlist-vehicle-location\">Vehicle location:</span></a>");
+                sb.Append("<a href =\"#\" class=\"link1\"><i class=\"fa-solid fa-location-dot\"></i> <span data-i18n=\"carlist-vehicle-location\">Vehicle location:</span></a>");
                 sb.Append("<span> " + lobjBranch.addressData.line1 + "," + lobjBranch.addressData.line3 + "," + lobjBranch.addressData.postalCode + " </span>");
                 sb.Append("</div>");
                 sb.Append("</div>");
@@ -497,7 +497,7 @@ public partial class CarList : System.Web.UI.Page
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-11 mt-2 mt-md-0 order-md-1 text-left\">");
                     sbmoreInfo.Append("<div class=\"vehicleLocation\">");
-                    sbmoreInfo.Append("<a class=\"heading-medium text-colour1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i><span data-i18n=\"text-vehical-location\"> Vehicle location:</span></a>");
+                    sbmoreInfo.Append("<a class=\"link1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i><span data-i18n=\"text-vehical-location\"> Vehicle location:</span></a>");
 
                     Branch lobjBranch = lobjCarAvailabilityResponse.data.branches.Find(x => x.id == lobjVehicle.pickUpBranchId);
 
@@ -628,7 +628,7 @@ public partial class CarList : System.Web.UI.Page
                 //sb.Append("<p> " + item.packages[0].payments.estimatedTotal.vehicle.display.amount + " <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
                 sb.Append("<p class=\"heading-bold h6 text-colour1\"> " + item.packages[0].payments.estimatedTotal.total.display.amount + " Points </p>");
                 //sb.Append("<span> 22,13 <i class=\"fa fa-usd\" aria-hidden=\"true\"></i>a day</span>");
-                sb.Append("<p class=\"heading-reqular h8\"><span data-i18n=\"text-mandaory-fees-includ\">(mandatory fees included)</span></cite>");
+                sb.Append("<p class=\"h8\"><span data-i18n=\"text-mandaory-fees-includ\">(mandatory fees included)</span></cite>");
                 sb.Append("</div>");
                 sb.Append("</div>");
 
@@ -661,7 +661,7 @@ public partial class CarList : System.Web.UI.Page
                 Branch lobjBranch = lobjCarAvailabilityResponse.data.branches.Find(x => x.id == item.pickUpBranchId);
                 if (lobjBranch != null)
                 {
-                    sb.Append("<a href =\"#\" class=\"heading-medium text-colour1\"><i class=\"fa-solid fa-location-dot\"></i> <span data-i18n=\"carlist-vehicle-location\">Vehicle location:</span></a>");
+                    sb.Append("<a href =\"#\" class=\"link1\"><i class=\"fa-solid fa-location-dot\"></i> <span data-i18n=\"carlist-vehicle-location\">Vehicle location:</span></a>");
                     sb.Append("<span> " + lobjBranch.addressData.line1 + "," + lobjBranch.addressData.line3 + "," + lobjBranch.addressData.postalCode + " </span>");
                 }
                 sb.Append("</div>");

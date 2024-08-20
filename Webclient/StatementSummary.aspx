@@ -200,10 +200,10 @@
                     </div>
                     <div class="d-flex flex-wrap">
                         <div class="col-6 border-bottom border-right border-left py-3">
-                            <p class="heading-regular" data-i18n="ss-points">Points</p>
+                            <p data-i18n="ss-points">Points</p>
                         </div>
                         <div class="col-6 border-bottom border-right py-3">
-                            <p class="heading-regular">
+                            <p>
                                 <asp:Label ID="lblRedeemedmile" runat="server" Text="0"></asp:Label>
                             </p>
                         </div>
@@ -217,10 +217,10 @@
                     </div>
                     <div class="d-flex flex-wrap">
                         <div class="col-6 border-bottom border-right border-left py-3">
-                            <p class="heading-regular" data-i18n="ss-points">Points</p>
+                            <p data-i18n="ss-points">Points</p>
                         </div>
                         <div class="col-6 border-bottom border-right py-3">
-                            <p class="heading-regular">
+                            <p>
                                 <asp:Label ID="lblExpiredPoints" runat="server" Text="0"></asp:Label>
                             </p>
                         </div>

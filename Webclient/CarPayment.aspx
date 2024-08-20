@@ -28,7 +28,7 @@
         <div class="container-lg">
             <div class="dvCarSteps row py-4 justify-content-between justify-content-sm-center">
                 <div class="col-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center">
-                    <p class="circle mr-lg-2 heading-regular">1</p>
+                    <p class="circle mr-lg-2">1</p>
                     <p class="d-lg-flex align-items-lg-center">
                         Choose <span class="d-none d-sm-block ml-lg-1">Your Car</span>
                     </p>
@@ -45,7 +45,7 @@
                     <div class="border w-100"></div>
                 </div>
                 <div class="col-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center">
-                    <p class="circle mr-lg-2 circle-active heading-regular">3</p>
+                    <p class="circle mr-lg-2 circle-active">3</p>
                     <p class="d-lg-flex text-active heading-semibold align-items-lg-center">
                         <span class="d-none d-sm-block mr-lg-1">Booking &amp;</span> Payment
                     </p>
@@ -198,7 +198,7 @@
                                                         <span class="checkmark"></span>
                                                     </span>
                                                     <span class="d-inline-block ml-2"><span data-i18n="car-have-read-accept">I have read and accept the</span>
-                                                  <a href="TermsAndConditions.aspx" target="_blank" class="heading-semibold text-colour7" data-i18n="car-terms">Terms & Conditions</a></span>
+                                                  <a href="TermsAndConditions.aspx" target="_blank" class="link1" data-i18n="car-terms">Terms & Conditions</a></span>
                                                 </label>
                                             </div>
                                             <p class="text-danger mb-2" id="errorTnC"></p>

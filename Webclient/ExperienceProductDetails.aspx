@@ -289,12 +289,7 @@
                         html += '<li><li class="pt-2">Languages for Audio Headset material:' + Array.prototype.map.call(parseData.data.audioHeadsetLanguages, function (item) { return toTitleCase(item.name); }).join(",") + '</li></ul>';
                     }
                     //html += '</ul>';
-                    html += '<div class="toggle_btn">';
-                    html += '<span class="toggle_text">Show More</span>';
-                    html += '<span class="arrow">';
-                    html += '<i class="fa fa-angle-down" aria-hidden="true"></i>';
-                    html += '</span>';
-                    html += '</div>';
+                    
                     html += '</div>';
                     html += '</div>';
                     
@@ -317,25 +312,19 @@
 
                     if (parseData.data != null && parseData.data.description != null && parseData.data.description != '') {
                         html += '<p class="heading6">Description</p>';
-                        html += '<div class="dvReadMore2">';
+                        html += '<div>';
                         html += '<ul>';
                         $.each(parseData.data.description.split("\r\n"), function (i) {
                             html += '<li class="pt-2">' + parseData.data.description.split("\r\n")[i] + '</li>';
                         });
                         html += '</ul>';
-                        html += '<div class="toggle_btn2">';
-                        html += '<span class="toggle_text2">Show More</span>';
-                        html += '<span class="arrow">';
-                        html += '<i class="fa fa-angle-down" aria-hidden="true"></i>';
-                        html += '</span>';
-                        html += '</div>';
                         html += '</div>';
                     }
                     //html += '<div class="img-container mt-3">';
                     //html += '<img alt="Product Image" src="images/carpage/map.png" />';
                     //html += '</div>';
                     if (parseData.data != null && parseData.data.title != null && parseData.data.title != '' && parseData.data.address != null && parseData.data.address != '') {
-                        html += '<p class="pt-2 pb-5">Address: <a class="link1" target="_blank" href="http://maps.google.com/maps?q=' + parseData.data.title + ',' + parseData.data.address + '">' + parseData.data.title + ',' + parseData.data.address + '</a></p>';
+                        html += '<p class="pt-2 pb-5"><span class="heading6">Address:</span> <a class="link1" target="_blank" href="http://maps.google.com/maps?q=' + parseData.data.title + ',' + parseData.data.address + '">' + parseData.data.title + ',' + parseData.data.address + '</a></p>';
                     }
                     html += '</div>';
                     html += '</div>';
@@ -362,26 +351,26 @@
                         },
                     });
 
-                    $(".toggle_btn").click(function () {
-                        $(this).toggleClass("active");
-                        $(".dvReadMore ul").toggleClass("active");
+                    //$(".toggle_btn").click(function () {
+                    //    $(this).toggleClass("active");
+                    //    $(".dvReadMore ul").toggleClass("active");
 
-                        if ($(".toggle_btn").hasClass("active")) {
-                            $(".toggle_text").text("Show Less");
-                        } else {
-                            $(".toggle_text").text("Show More");
-                        }
-                    });
-                    $(".toggle_btn2").click(function () {
-                        $(this).toggleClass("active");
-                        $(".dvReadMore2 ul").toggleClass("active");
+                    //    if ($(".toggle_btn").hasClass("active")) {
+                    //        $(".toggle_text").text("Show Less");
+                    //    } else {
+                    //        $(".toggle_text").text("Show More");
+                    //    }
+                    //});
+                    //$(".toggle_btn2").click(function () {
+                    //    $(this).toggleClass("active");
+                    //    $(".dvReadMore2 ul").toggleClass("active");
 
-                        if ($(".toggle_btn2").hasClass("active")) {
-                            $(".toggle_text2").text("Show Less");
-                        } else {
-                            $(".toggle_text2").text("Show More");
-                        }
-                    });
+                    //    if ($(".toggle_btn2").hasClass("active")) {
+                    //        $(".toggle_text2").text("Show Less");
+                    //    } else {
+                    //        $(".toggle_text2").text("Show More");
+                    //    }
+                    //});
                     var firstAvailabilityDate = new Date(parseData.producttypedetails.item_uuid[0].typeinfo.firstAvailabilityDate);
                     var lastAvailabilityDate = new Date();
                     lastAvailabilityDate.setFullYear(firstAvailabilityDate.getFullYear() + 2)
@@ -454,7 +443,7 @@
                         html += '<div class="pointsBox p-3">';
                         html += '<div class="d-inline-flex d-sm-flex justify-content-between flex-wrap">';
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.available == true) {
-                            html += '<p "class="ptypepricebydate heading-regular text-colour7"><i class="fa-solid"></i> Valid only on <span>' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></p>';
+                            html += '<p "class="ptypepricebydate text-colour7"><i class="fa-solid"></i> Valid only on <span>' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isBmgVoucher == true) {
                             html += '<p class="text-colour7"><i class="fa-solid fa-mobile-screen-button"></i><span class="ml-2">Show on mobile</span></p>';
@@ -671,7 +660,7 @@
                         html += '<div class="pointsBox p-3">';
                         html += '<div class="d-inline-flex d-sm-flex justify-content-between flex-wrap">';
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.available == true) {
-                            html += '<p "class="ptypepricebydate heading-regular text-colour7"><i class="fa-solid"></i> Valid only on <span>' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></p>';
+                            html += '<p "class="ptypepricebydate text-colour7"><i class="fa-solid"></i> Valid only on <span>' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></p>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isBmgVoucher == true) {
                             html += '<p class="text-colour7"><i class="fa-solid fa-mobile-screen-button"></i><span class="ml-2">Show on mobile</span></p>';

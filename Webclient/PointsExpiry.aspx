@@ -78,7 +78,7 @@
                     <div class="bg-lightgrey p-3">
                         <div class="row align-items-center">
                             <div class="col-7 col-sm-9 col-lg-10">
-                                <p class="h6 heading-semibold" data-i18n="pe-please-select-the-year">Please select the year to view your Points expiry schedule:</p>
+                                <p class="heading-semibold" data-i18n="pe-please-select-the-year">Please select the year to view your Points expiry schedule:</p>
                             </div>
                             <div class="col-5 col-sm-3 col-lg-2">
                                 <asp:DropDownList ID="dtYear" runat="server" OnSelectedIndexChanged="dtYear_SelectedIndexChanged"
