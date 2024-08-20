@@ -7,7 +7,6 @@ using Core.Platform.ProgramMaster.Entities;
 using System.Configuration;
 using System;
 using GiiftShopGateway.Model;
-using KhaltiInsurance.Entities;
 using System.Web;
 using CB.IBE.Platform.AirClientModel;
 
@@ -47,11 +46,11 @@ public partial class RefreshCache : Page
                 }
                 else if (ddlCache.SelectedItem.Value.Equals("Insurance"))
                 {
-                    GetInsuranceServiceList();
+                   // GetInsuranceServiceList();
                 }
                 else if (ddlCache.SelectedItem.Value.Equals("ISP"))
                 {
-                    GetISPList();
+                    //GetISPList();
                 }
                 else if (ddlCache.SelectedItem.Value.Equals("All"))
                 {
@@ -68,8 +67,8 @@ public partial class RefreshCache : Page
                     GetRefererDetailsWithSupplier();
                     GetStoreDetails();
                     GetSearchCategories();
-                    GetInsuranceServiceList();
-                    GetISPList();
+                   // GetInsuranceServiceList();
+                    //GetISPList();
                 }
             }
             else
@@ -268,43 +267,5 @@ public partial class RefreshCache : Page
             LoggingAdapter.WriteLog("GetSearchCategories : " + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
         }
     }
-    private void GetInsuranceServiceList()
-    {
-        try
-        {
-            ABCModel lobjModel = new ABCModel();
-            string UserName = string.Empty;
-            string PageName = string.Empty;
-            UserName = Convert.ToString(ConfigurationManager.AppSettings["KhaltiInsuranceUserName"]);
-            PageName = "Insurance List";
-            Application["SearchInsuranceProducts"] = null;
-            Application["SearchInsuranceProducts"] = lobjModel.SearchInsuranceProducts(UserName, PageName);
-            lblLoginError.Text += "Insurance Details Cache refreshed successfully<br/>";
-        }
-        catch (Exception ex)
-        {
-            LoggingAdapter.WriteLog("GetInsuranceServiceList Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-            lblLoginError.Text += "Insurance Details Cache refreshed failed<br/>";
-        }
-    }
-
-    private void GetISPList()
-    {
-        try
-        {
-            ABCModel lobjModel = new ABCModel();
-            string UserName = string.Empty;
-            string PageName = string.Empty;
-            UserName = Convert.ToString(ConfigurationManager.AppSettings["KhaltiISPUserName"]);
-            PageName = "Internet Service Provider";
-            Application["SearchISPProducts"] = null;
-            Application["SearchISPProducts"] = lobjModel.SearchInsuranceProducts(UserName, PageName);
-            lblLoginError.Text += "ISP Details Cache refreshed successfully<br/>";
-        }
-        catch (Exception ex)
-        {
-            LoggingAdapter.WriteLog("GetStoreDetails Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-            lblLoginError.Text += "ISP Details Cache refreshed failed<br/>";
-        }
-    }
+   
 }

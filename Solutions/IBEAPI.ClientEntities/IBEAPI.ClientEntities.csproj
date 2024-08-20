@@ -57,6 +57,7 @@
     <Compile Include="CarBookingResponse.cs" />
     <Compile Include="CarCountryList.cs" />
     <Compile Include="CarCountryResponse.cs" />
+    <Compile Include="CustomerCarBookingDetails.cs" />
     <Compile Include="GetAvailabilityRequest.cs" />
     <Compile Include="HotelBookRequest.cs" />
     <Compile Include="HotelsSearchRequest.cs" />

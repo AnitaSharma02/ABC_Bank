@@ -103,7 +103,7 @@ public partial class FlightPassengerForDomestic : System.Web.UI.Page
                             rptArrival.DataBind();
                         }
                     }
-                    lblTotalPoints.Text = objmodel.IntToThousandSeperated(Convert.ToInt32(lobjItineraryDetails.FareTotal));
+                    lblTotalPoints.Text = objmodel.IntToThousandSeperated(Convert.ToDouble(lobjItineraryDetails.FareTotal));
                     lintTotalPoints = Convert.ToInt32(lobjItineraryDetails.FareTotal);
 
 

@@ -1,8 +1,0 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="overview.aspx.cs" Inherits="overview" %>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="CP" Runat="Server">
-     <div class="wrap insidepgs">
-        <h1>Overview</h1>
-        </div>
-</asp:Content>
-

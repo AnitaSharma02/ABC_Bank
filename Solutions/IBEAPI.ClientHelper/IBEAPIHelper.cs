@@ -488,6 +488,29 @@ namespace IBEAPI.ClientHelper
             }
             return lobjUserBookingResponse;
         }
+        public CarBookingRoot GetMemberBookedCar(string pobjUserBookingRequest, string accessToken, string reservationNumber, string EnjoyTraveldisplayCurrency)
+        {
+            string lobjResponse = string.Empty;
+            string lstrpostdata = string.Empty;
+            string language = "en-gb";
+
+            CarBookingRoot lobjUserBookingResponse = null;
+            try
+            {
+                lstrpostdata = "{\"reference_id\": \"" + pobjUserBookingRequest + "\",\"accessToken\": \"" + accessToken + "\",\"reservationNumber\":\"" + reservationNumber + "\" ,\"displayCurrency\":\"" + EnjoyTraveldisplayCurrency + "\",\"lang\":\"" + language + "\"}";
+
+                lobjResponse = IBEAPIPostHelper.PostDataAPI(IBEAPIConstant.GetUserBookingdetails, "POST", "GetUserBookingdetails", lstrpostdata, string.Empty);
+                if (!string.IsNullOrEmpty(lobjResponse))
+                {
+                    lobjUserBookingResponse = JsonConvert.DeserializeObject<CarBookingRoot>(lobjResponse);
+                }
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("EnjoyTravelAPIClientHelper GetUserBookings Exception: " + ex.Message + Environment.NewLine + ex.StackTrace);
+            }
+            return lobjUserBookingResponse;
+        }
 
         #endregion
     }

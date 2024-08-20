@@ -642,14 +642,6 @@
       <Project>{3f7b6856-b36f-493e-a5b7-c0aa6cf46d80}</Project>
       <Name>GiiftPaymentGateway.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KhaltiInsurance.Entities\KhaltiInsurance.Entities.csproj">
-      <Project>{E4A8F51C-731D-404E-9441-BE72FDC75195}</Project>
-      <Name>KhaltiInsurance.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\KhaltiISP.Entities\KhaltiISP.Entities.csproj">
-      <Project>{386D80CA-9D8A-4B16-B680-177AE8D42657}</Project>
-      <Name>KhaltiISP.Entities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TransactionDetailsAdditionalInfo.Entities\TransactionDetailsAdditionalInfo.Entities.csproj">
       <Project>{BFB5D46A-15BA-4917-B26E-A5BD15105874}</Project>
       <Name>TransactionDetailsAdditionalInfo.Entities</Name>

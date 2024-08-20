@@ -37,8 +37,6 @@ using Framework.EnterpriseLibrary.Security.Constants;
 using Framework.Integrations.Hotels.Entities;
 using GiiftPaymentGateway.Entities;
 using InfiVoucher.Platform.Entities;
-using KhaltiInsurance.Entities;
-using KhaltiISP.Entities;
 using LoyaltyManagement.Request;
 using Newtonsoft.Json;
 using System;
@@ -721,12 +719,19 @@ namespace ABC.Model
             return lstrArray[0];
         }
 
-        public string IntToThousandSeperated(int pfltValue)
+        public string IntToThousandSeperated(double pfltValue)
         {
             NumberFormatInfo nfo = new CultureInfo("en-US", false).NumberFormat;
             string pstrString = pfltValue.ToString("N", nfo);
-            string[] lstrArray = pstrString.Split('.');
-            return lstrArray[0];
+            if (pstrString.Contains('.'))
+            {
+                string[] lstrArray = pstrString.Split('.');
+                return lstrArray[0];
+            }
+            else
+            {
+                return pstrString;
+            }
         }
         public string FormatPoints(decimal pdecValue, string pstrCurrency)
         {
@@ -2619,46 +2624,17 @@ namespace ABC.Model
             }
             return lobjlstTransactionDetails;
         }
-        public string StringToThousandSeperated(string pfltValue)
+        public List<DomesticItineraryDetails> GetDomesticFlightBookingDetails(string pstrMemberId)
         {
-            decimal value = Convert.ToDecimal(pfltValue);
-
-            string[] lstrArray = null;
-            string pstrString = string.Empty;
-            NumberFormatInfo nfo = new CultureInfo("en-US", false).NumberFormat;
-            pstrString = value.ToString("N", nfo);
-            lstrArray = pstrString.Split('.');
-            return lstrArray[0];
-
-        }
-
-        #region Khalti
-        public SearchResponseForDomestic MapSearchResponseForDomesticFlights(SearchRequestForDomestic pobjSearchRequest)
-        {
-            SearchResponseForDomestic lobjSearchResponse = new SearchResponseForDomestic();
+            List<DomesticItineraryDetails> lobjSearchResponse = new List<DomesticItineraryDetails>();
             try
             {
                 APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResponse = lobjAPIClientHelper.MapSearchResponseForDomesticFlights(pobjSearchRequest);
+                lobjSearchResponse = lobjAPIClientHelper.GetDomesticFlightBookingDetails(pstrMemberId);
             }
             catch (Exception ex)
             {
-                LoggingAdapter.WriteLog("MapSearchResponseForDomesticFlights -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
-            }
-            return lobjSearchResponse;
-        }
-
-        public CreateDomesticItineraryResponse CreateItineraryForDomesticFlights(CreateDomesticItineraryRequest pobjSearchRequest)
-        {
-            CreateDomesticItineraryResponse lobjSearchResponse = new CreateDomesticItineraryResponse();
-            try
-            {
-                APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResponse = lobjAPIClientHelper.CreateItineraryForDomesticFlights(pobjSearchRequest);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("CreateItineraryForDomesticFlights -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
+                LoggingAdapter.WriteLog("GetDomesticFlightBookingDetails -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
             }
             return lobjSearchResponse;
         }
@@ -2677,22 +2653,34 @@ namespace ABC.Model
             }
             return lobjSearchResponse;
         }
-
-        public BookingStatusResponseForDomestic BookForKhaltiFlight(BookingStatusRequestForDomestic pobjSearchRequest)
+        public SearchResponseForDomestic MapSearchResponseForDomesticFlights(SearchRequestForDomestic pobjSearchRequest)
         {
-            BookingStatusResponseForDomestic lobjSearchResponse = new BookingStatusResponseForDomestic();
+            SearchResponseForDomestic lobjSearchResponse = new SearchResponseForDomestic();
             try
             {
                 APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResponse = lobjAPIClientHelper.BookingStatusForDomesticFlights(pobjSearchRequest);
+                lobjSearchResponse = lobjAPIClientHelper.MapSearchResponseForDomesticFlights(pobjSearchRequest);
             }
             catch (Exception ex)
             {
-                LoggingAdapter.WriteLog("BookForKhaltiFlight -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
+                LoggingAdapter.WriteLog("MapSearchResponseForDomesticFlights -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
             }
             return lobjSearchResponse;
         }
-
+        public CreateDomesticItineraryResponse CreateItineraryForDomesticFlights(CreateDomesticItineraryRequest pobjSearchRequest)
+        {
+            CreateDomesticItineraryResponse lobjSearchResponse = new CreateDomesticItineraryResponse();
+            try
+            {
+                APIClientHelper lobjAPIClientHelper = new APIClientHelper();
+                lobjSearchResponse = lobjAPIClientHelper.CreateItineraryForDomesticFlights(pobjSearchRequest);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("CreateItineraryForDomesticFlights -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
+            }
+            return lobjSearchResponse;
+        }
         public TicketDownloadResponse TicketDownload(TicketDownloadRequest pobjSearchRequest)
         {
             TicketDownloadResponse lobjSearchResponse = new TicketDownloadResponse();
@@ -2707,205 +2695,20 @@ namespace ABC.Model
             }
             return lobjSearchResponse;
         }
-
-        public List<DomesticItineraryDetails> GetDomesticFlightBookingDetails(string pstrMemberId)
+        public string StringToThousandSeperated(string pfltValue)
         {
-            List<DomesticItineraryDetails> lobjSearchResponse = new List<DomesticItineraryDetails>();
-            try
-            {
-                APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResponse = lobjAPIClientHelper.GetDomesticFlightBookingDetails(pstrMemberId);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("GetDomesticFlightBookingDetails -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
-            }
-            return lobjSearchResponse;
+            decimal value = Convert.ToDecimal(pfltValue);
+
+            string[] lstrArray = null;
+            string pstrString = string.Empty;
+            NumberFormatInfo nfo = new CultureInfo("en-US", false).NumberFormat;
+            pstrString = value.ToString("N", nfo);
+            lstrArray = pstrString.Split('.');
+            return lstrArray[0];
+
         }
 
-        public List<InsuranceBookingResponse> GetBookedInsuranceListForMember(string pstrMemberId)
-        {
-            List<InsuranceBookingResponse> lobjSearchResponse = new List<InsuranceBookingResponse>();
-            try
-            {
-                APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResponse = lobjAPIClientHelper.GetBookedInsuranceListForMember(pstrMemberId);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("GetBookedInsuranceListForMember -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
-            }
-            return lobjSearchResponse;
-        }
-
-        public List<ISPBookingResponse> GetBookedISPListForMember(string pstrMemberId)
-        {
-            List<ISPBookingResponse> lobjSearchResponse = new List<ISPBookingResponse>();
-            try
-            {
-                APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResponse = lobjAPIClientHelper.GetBookedISPListForMember(pstrMemberId);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("GetBookedISPListForMember -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
-            }
-            return lobjSearchResponse;
-        }
-
-        public InsuranceServiceProvidersResponse SearchInsuranceProducts(string UserName, string PageName)
-        {
-            InsuranceServiceProvidersResponse lobjSearchResult = new InsuranceServiceProvidersResponse();
-            try
-            {
-                string Token = string.Empty;
-                if (PageName.Contains("Internet"))
-                {
-
-                    Token = Convert.ToString(ConfigurationManager.AppSettings["KhaltiISPToken"]);
-                    if (HttpContext.Current.Application["SearchISPProducts"] != null)
-                    {
-                        lobjSearchResult = HttpContext.Current.Application["SearchISPProducts"] as InsuranceServiceProvidersResponse;
-                    }
-                    else
-                    {
-                        APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                        lobjSearchResult = lobjAPIClientHelper.GetInsuranceServiceProviders(Token, UserName, PageName);
-                        HttpContext.Current.Application["SearchISPProducts"] = lobjSearchResult;
-                    }
-                }
-                else
-                {
-                    Token = Convert.ToString(ConfigurationManager.AppSettings["KhaltiInsuranceToken"]);
-                    if (HttpContext.Current.Application["SearchInsuranceProducts"] != null)
-                    {
-                        lobjSearchResult = HttpContext.Current.Application["SearchInsuranceProducts"] as InsuranceServiceProvidersResponse;
-                    }
-                    else
-                    {
-                        APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                        lobjSearchResult = lobjAPIClientHelper.GetInsuranceServiceProviders(Token, UserName, PageName);
-                        HttpContext.Current.Application["SearchInsuranceProducts"] = lobjSearchResult;
-                    }
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("ShopModel SearchInsuranceProducts Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-            }
-            return lobjSearchResult;
-        }
-
-        public InsuranceRequiredDetailsResponse GetRequiredDetails(int code, string PageName)
-        {
-            InsuranceRequiredDetailsResponse lobjSearchResult = new InsuranceRequiredDetailsResponse();
-            try
-            {
-                string Token = string.Empty;
-                string UserName = string.Empty;
-                if (PageName.Contains("ISPListDetails"))
-                {
-                    Token = Convert.ToString(ConfigurationManager.AppSettings["KhaltiISPToken"]);
-                    UserName = Convert.ToString(ConfigurationManager.AppSettings["KhaltiISPUserName"]);
-                }
-                else
-                {
-                    Token = Convert.ToString(ConfigurationManager.AppSettings["KhaltiInsuranceToken"]);
-                    UserName = Convert.ToString(ConfigurationManager.AppSettings["KhaltiInsuranceUserName"]);
-                }
-
-                APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResult = lobjAPIClientHelper.GetRequiredDetails(code, UserName, Token, PageName);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("ShopModel GetRequiredDetails Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-            }
-            return lobjSearchResult;
-        }
-
-        public InsuranceUserDetailsResponse GetUserDetails(int code, string Policyno, string DOB, string MembershipReference)
-        {
-            InsuranceUserDetailsResponse lobjSearchResult = new InsuranceUserDetailsResponse();
-            try
-            {
-                string Token = Convert.ToString(ConfigurationManager.AppSettings["KhaltiInsuranceToken"]);
-                string UserName = Convert.ToString(ConfigurationManager.AppSettings["KhaltiInsuranceUserName"]);
-                APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResult = lobjAPIClientHelper.GetUserDetails(code, Policyno, DOB, UserName, Token, MembershipReference);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("ShopModel GetUserDetails Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-            }
-            return lobjSearchResult;
-        }
-
-        public InsurancePaymentRequestResponse InsurancePaymentRequest(string code, decimal Amount, int SessionId, string PolicyNo, string TransactionId, string ServiceName, string MembershipReference, string CustomerName)
-        {
-            InsurancePaymentRequestResponse lobjSearchResult = new InsurancePaymentRequestResponse();
-            try
-            {
-                string Token = Convert.ToString(ConfigurationManager.AppSettings["KhaltiInsuranceToken"]);
-                string UserName = Convert.ToString(ConfigurationManager.AppSettings["KhaltiInsuranceUserName"]);
-                APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResult = lobjAPIClientHelper.InsurancePaymentRequest(code, Amount, SessionId, PolicyNo, TransactionId, UserName, Token, ServiceName, MembershipReference, CustomerName);
-
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("ShopModel InsurancePaymentRequest Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-            }
-            return lobjSearchResult;
-        }
-
-        public ISPUserDetailsResponse GetISPUserDetails(int code, string UserId, string ServiceName, string MembershipReference)
-        {
-            ISPUserDetailsResponse lobjSearchResult = new ISPUserDetailsResponse();
-            try
-            {
-                string Token = Convert.ToString(ConfigurationManager.AppSettings["KhaltiISPToken"]);
-                string UserName = Convert.ToString(ConfigurationManager.AppSettings["KhaltiISPUserName"]);
-                APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResult = lobjAPIClientHelper.GetISPUserDetails(code, UserId, ServiceName, UserName, Token, MembershipReference);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("ShopModel GetUserDetails Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-            }
-            return lobjSearchResult;
-        }
-        public GetDiscountResponse GetDiscount(GetDiscountRequest pobjSearchRequest)
-        {
-            GetDiscountResponse lobjSearchResponse = new GetDiscountResponse();
-            try
-            {
-                APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResponse = lobjAPIClientHelper.GetDiscount(pobjSearchRequest);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("GetDiscount -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
-            }
-            return lobjSearchResponse;
-        }
-        public ISPPaymentResponse ISPPaymentRequest(ISPPaymentRequest pobjSearchRequest)
-        {
-            ISPPaymentResponse lobjSearchResponse = new ISPPaymentResponse();
-            try
-            {
-                APIClientHelper lobjAPIClientHelper = new APIClientHelper();
-                lobjSearchResponse = lobjAPIClientHelper.ISPPaymentRequest(pobjSearchRequest);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("ISPPaymentRequest -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
-            }
-            return lobjSearchResponse;
-        }
-        #endregion
+        
         #region Stripe psyment Gateway
         public bool InsertManualTransactionDetails(TransactionDetails pobjAuditTrailForRedemption)
         {

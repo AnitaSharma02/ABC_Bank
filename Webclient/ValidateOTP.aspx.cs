@@ -18,8 +18,6 @@ using Core.Platform.Booking.Entities;
 using CB.IBE.Platform.ClientEntities;
 using CB.IBE.DomesticFlight.Entities;
 using CB.IBE.Platform.Hotels.ClientEntities;
-using KhaltiInsurance.Entities;
-using KhaltiISP.Entities;
 using CB.IBE.Platform.Masters.Entities;
 using Newtonsoft.Json;
 using GiiftPaymentGateway.Entities;

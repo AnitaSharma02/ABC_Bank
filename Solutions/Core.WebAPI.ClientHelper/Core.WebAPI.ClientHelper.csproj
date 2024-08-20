@@ -114,14 +114,6 @@
       <Project>{e03a4fd9-25af-4ca0-8668-16cccf8cc349}</Project>
       <Name>CE.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KhaltiISP.Entities\KhaltiISP.Entities.csproj">
-      <Project>{386D80CA-9D8A-4B16-B680-177AE8D42657}</Project>
-      <Name>KhaltiISP.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\KhaltiInsurance.Entities\KhaltiInsurance.Entities.csproj">
-      <Project>{E4A8F51C-731D-404E-9441-BE72FDC75195}</Project>
-      <Name>KhaltiInsurance.Entities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TransactionDetailsAdditionalInfo.Entities\TransactionDetailsAdditionalInfo.Entities.csproj">
       <Project>{BFB5D46A-15BA-4917-B26E-A5BD15105874}</Project>
       <Name>TransactionDetailsAdditionalInfo.Entities</Name>

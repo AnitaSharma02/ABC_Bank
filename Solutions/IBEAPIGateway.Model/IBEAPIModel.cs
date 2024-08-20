@@ -440,6 +440,21 @@ namespace IBEAPIGateway.Model
             }
         }
 
+        public CarBookingRoot GetCarBookingDetailsbyRefId(string pstrBookingRefId, string accessToken, string reservationNumber, string EnjoyTraveldisplayCurrency)
+        {
+            try
+            {
+
+                IBEAPIClientHelper lobjClient = new IBEAPIClientHelper();
+                return lobjClient.GetMemberBookedCar(pstrBookingRefId, accessToken, reservationNumber, EnjoyTraveldisplayCurrency);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("GetBookedHotelInfo -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
+                return null;
+            }
+        }
+
         #endregion
 
         public DateTime StringToDateTime(string pstrDate)

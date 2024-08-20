@@ -20,8 +20,8 @@
             getAllAirCraftDetails();
             getRefererDetailsWithSupplier();
             GetSearchCategories();
-            GetInsuranceServiceList();
-            GetISPList();
+            //GetInsuranceServiceList();
+            //GetISPList();
             GetAllCarLocations();
             GetCountriesList();
         }).ConfigureAwait(false);
@@ -215,39 +215,39 @@
             Framework.EnterpriseLibrary.Adapters.LoggingAdapter.WriteLog("GetAllAirFieldsForDomestic : " + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
         }
     }
-    private void GetInsuranceServiceList()
-    {
-        try
-        {
-            ABC.Model.ABCModel lobjModel = new ABC.Model.ABCModel();
-            string UserName = string.Empty;
-            string PageName = string.Empty;
-            UserName = Convert.ToString(ConfigurationManager.AppSettings["KhaltiInsuranceUserName"]);
-            PageName = "Insurance List";
-            lobjModel.SearchInsuranceProducts(UserName, PageName);
-        }
-        catch (Exception ex)
-        {
-            Framework.EnterpriseLibrary.Adapters.LoggingAdapter.WriteLog("GetInsuranceServiceList Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-        }
-    }
+    //private void GetInsuranceServiceList()
+    //{
+    //    try
+    //    {
+    //        ABC.Model.ABCModel lobjModel = new ABC.Model.ABCModel();
+    //        string UserName = string.Empty;
+    //        string PageName = string.Empty;
+    //        UserName = Convert.ToString(ConfigurationManager.AppSettings["KhaltiInsuranceUserName"]);
+    //        PageName = "Insurance List";
+    //        lobjModel.SearchInsuranceProducts(UserName, PageName);
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Framework.EnterpriseLibrary.Adapters.LoggingAdapter.WriteLog("GetInsuranceServiceList Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+    //    }
+    //}
 
-    private void GetISPList()
-    {
-        try
-        {
-            ABC.Model.ABCModel lobjModel = new ABC.Model.ABCModel();
-            string UserName = string.Empty;
-            string PageName = string.Empty;
-            UserName = Convert.ToString(ConfigurationManager.AppSettings["KhaltiISPUserName"]);
-            PageName = "Internet Service Provider";
-            lobjModel.SearchInsuranceProducts(UserName, PageName);
-        }
-        catch (Exception ex)
-        {
-            Framework.EnterpriseLibrary.Adapters.LoggingAdapter.WriteLog("GetStoreDetails Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-        }
-    }
+    //private void GetISPList()
+    //{
+    //    try
+    //    {
+    //        ABC.Model.ABCModel lobjModel = new ABC.Model.ABCModel();
+    //        string UserName = string.Empty;
+    //        string PageName = string.Empty;
+    //        UserName = Convert.ToString(ConfigurationManager.AppSettings["KhaltiISPUserName"]);
+    //        PageName = "Internet Service Provider";
+    //        lobjModel.SearchInsuranceProducts(UserName, PageName);
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Framework.EnterpriseLibrary.Adapters.LoggingAdapter.WriteLog("GetStoreDetails Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+    //    }
+    //}
 
     private void GetAllCarLocations()
     {

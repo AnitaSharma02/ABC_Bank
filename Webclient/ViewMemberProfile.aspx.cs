@@ -70,9 +70,9 @@ public partial class ViewMemberProfile : System.Web.UI.Page
             labelMobileNo.Text = lobjMemberDetails.MobileNumber;
             labelEmailValue.Text = lobjMemberDetails.Email;
             labelMemberNameValue.Text = lobjMemberDetails.FullName;
-            hfRelationRef.Value = objMemberLocalAttrDetails[0].UserName;
+            hfRelationRef.Value = lobjMemberDetails.FullName;
             lblGender.Text = lobjMemberDetails.Gender.ToLower() == "m" ? "Male" : "Female";
-            lblNationality.Text = string.IsNullOrEmpty(objMemberLocalAttrDetails[0].Nationality) ? "NA" : objMemberLocalAttrDetails[0].Nationality;
+            lblNationality.Text = string.IsNullOrEmpty(lobjMemberDetails.Nationality) ? "NA" : lobjMemberDetails.Nationality;
         }
         catch (Exception ex)
         {
