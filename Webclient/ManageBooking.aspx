@@ -511,9 +511,8 @@
                             <div class="card">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0 ">
-
                                         <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapse3">
+                                            data-toggle="collapse" data-target="#collapse7">
                                             <span data-i18n="mb-car-booking-details">Car Booking Details</span>
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
@@ -522,7 +521,7 @@
                                     </h2>
                                 </div>
 
-                                <div id="collapse3" class="collapse" data-parent="#manage-accordion">
+                                <div id="collapse7" class="collapse" data-parent="#manage-accordion">
                                     <div class="card-body scroll-ver p-0">
                                         <div>
                                             <asp:Repeater ID="rptCarBookingDetails" runat="server">
