@@ -601,6 +601,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>..\..\References\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerDetail.cs" />

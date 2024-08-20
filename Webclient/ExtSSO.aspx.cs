@@ -120,6 +120,9 @@ public partial class ExtSSO : Page
 
                                     if (lblStatus)
                                     {
+                                        Session["MemberDetails"] = lobjMemberDetails;
+                                        Session["FromSSOLogin"] = "1";
+
                                         TransactionDetails transactionDetails = new TransactionDetails()
                                         {
                                             TransactionType = (TransactionType)1,
