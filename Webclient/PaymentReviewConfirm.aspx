@@ -19,19 +19,19 @@
                                 <div class="bg-white border p-3">
                                     <div class="row">
                                         <%--<div class="col-12 mb-3">
-                                                <p class="heading-regular mb-2">Product Name</p>
+                                                <p class="mb-2">Product Name</p>
                                                 <span class="font-weight-bold" id="spanProductName">Lulu gift Voucher</span>
                                             </div>--%>
                                         <div class="col-lg-6 offset-lg-3 text-center mb-3">
-                                            <p class="heading-regular">Total Points to be Paid</p>
+                                            <p>Total Points to be Paid</p>
                                             <span class="heading-bold" id="spanProductAmount"></span>
                                         </div>
                                         <div class="col-lg-6 offset-lg-3 text-center mb-3">
-                                            <p class="heading-regular">Total NPoint to be redeem</p>
+                                            <p>Total NPoint to be redeem</p>
                                             <span class="heading-bold" id="spanredeemPoint"></span>
                                         </div>
                                         <div class="col-lg-6 offset-lg-3 text-center mb-3">
-                                            <p class="heading-regular">Total Amount to be redeem</p>
+                                            <p>Total Amount to be redeem</p>
                                             <span class="heading-bold" id="spanredeemAmount"></span>
                                         </div>
                                         

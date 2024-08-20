@@ -186,7 +186,7 @@
                     >
                       Filter
                     </button>--%>
-                        <p class="heading-regular col-auto col-lg-10 px-0">
+                        <p class="col-auto col-lg-10 px-0">
                             <asp:Label ID="LabelYourSearchDetails" runat="server" CssClass="Content_Style heading-semibold" Text=""></asp:Label>
                         </p>
 

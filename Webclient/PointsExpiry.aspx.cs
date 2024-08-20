@@ -87,8 +87,8 @@ public partial class PointsExpiry : System.Web.UI.Page
             if (Session["dtYearvalue"].ToString() == temp[2].Substring(0, 4))
             {
 
-                strExpiryPeriod += "<div class='col-6 pr-0 text-center bg-white border-left border-right border-bottom py-3'><p class='heading-regular'>"
-                    + setDate(ExpiryPeriod[icount].ScheduleDate) + "</p></div><div class='col-6 pl-0 text-center bg-white border-right border-bottom py-3'><p class='heading-regular'>"
+                strExpiryPeriod += "<div class='col-6 pr-0 text-center bg-white border-left border-right border-bottom py-3'><p>"
+                    + setDate(ExpiryPeriod[icount].ScheduleDate) + "</p></div><div class='col-6 pl-0 text-center bg-white border-right border-bottom py-3'><p>"
                     + Convert.ToString(lobjModel.FloatToThousandSeperated(ExpiryPeriod[icount].TotalExpiredPoints)) + "</p></div>";
             }
         }

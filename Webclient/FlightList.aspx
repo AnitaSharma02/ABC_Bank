@@ -191,7 +191,7 @@
                         <div class="modal-content border-0 b-radius">
                             <div class="modal-header border-0 d-lg-block p-0">
                                  <div class="modal-title dvTotalRecords border-0 p-3">
-                                    <p class="h6 heading-semibold text-colour1"><span data-i18n="flightlist-total">Total Flights Found</span> <span class="filter-text" id="lblNoofFlight"></span></p>
+                                    <p class="heading-semibold text-colour1"><span data-i18n="flightlist-total">Total Flights Found</span> <span class="filter-text" id="lblNoofFlight"></span></p>
                                 </div>
                                 <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
                                      <i class="fa-solid fa-xmark"></i>

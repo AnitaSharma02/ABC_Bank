@@ -324,7 +324,7 @@
                     </button>
                 </div>
                 <div class="modal-body text-center py-2" id="divmessage">
-                    <p class="h6 heading-regular" id="popupmessage"></p>
+                    <p id="popupmessage"></p>
                 </div>
                 <div class="modal-footer justify-content-center border-0 py-2 pb-0 px-0">
                     <button type="button" class="btn btn-one" data-dismiss="modal">Ok</button>

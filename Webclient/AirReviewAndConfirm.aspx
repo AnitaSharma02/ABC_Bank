@@ -93,7 +93,7 @@
                                             <label class="checkbox-container d-flex">
                                                 <span class="d-inline-block ml-1">
                                                     <input id="chkAcceptAgreements" type="checkbox" value="rewards Points" runat="server" />
-                                                    <span data-i18n="flightpassenger-ihave">I have read and agree to Infinity Rewards</span> <a href="TermsandConditions.aspx" target="_blank" data-i18n="footer-terms-conditions">Terms & Conditions </a><span data-i18n="flightpassenger-andthe">and the </span><a href="BookingPolicy.aspx" target="_blank" data-i18n="flightpassenger-booking-cancel">Booking & Cancellation policy</a>
+                                                    <span data-i18n="flightpassenger-ihave">I have read and agree to Infinity Rewards</span> <a class="link1" href="TermsandConditions.aspx" target="_blank" data-i18n="footer-terms-conditions">Terms & Conditions </a><span data-i18n="flightpassenger-andthe">and the </span><a href="BookingPolicy.aspx" target="_blank" data-i18n="flightpassenger-booking-cancel">Booking & Cancellation policy</a>
                                                     <span data-i18n="flightpassenger-ofthe">of the respective service provider.</span>
                                                     <span class="checkmark"></span>
                                                 </span>

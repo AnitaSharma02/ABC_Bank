@@ -140,23 +140,23 @@
                                                     <div class="col-6 offset-3 offset-sm-0 col-sm-3 col-lg-3 d-flex align-items-center flex-lg-column text-lg-center mb-3 mb-sm-0 px-lg-1">
                                                       <i class="fa-regular fa-clock"></i>
                                                       <div class="ml-2 ml-lg-0 mt-lg-1">
-                                                        <p class="h7 heading-regular text-colour7"><%#Eval("DepartureAirField.City")%> (<%#Eval("DepartureAirField.IATACode")%>)</p>
-                                                        <p class="h7 heading-regular text-colour7"><%#Convert.ToDateTime(Eval("DepartureDate").ToString()).ToString("dd/MM/yyyy")%></p>
-                                                        <p class="h7 heading-regular text-colour7"><%#Convert.ToDateTime(Eval("DisplayDepartureTime").ToString()).ToString("hh:mm tt")%></p>
+                                                        <p class="h7 text-colour7"><%#Eval("DepartureAirField.City")%> (<%#Eval("DepartureAirField.IATACode")%>)</p>
+                                                        <p class="h7 text-colour7"><%#Convert.ToDateTime(Eval("DepartureDate").ToString()).ToString("dd/MM/yyyy")%></p>
+                                                        <p class="h7 text-colour7"><%#Convert.ToDateTime(Eval("DisplayDepartureTime").ToString()).ToString("hh:mm tt")%></p>
                                                       </div>
                                                     </div>
                                                     <div class="col-6 col-sm-3 col-lg-3 col-xl-4 d-flex align-items-center flex-lg-column text-lg-center px-lg-1"  >
                                                         <i class="fa-regular fa-clock"></i>
                                                         <div class="ml-2 ml-lg-0 mt-lg-1">
-                                                          <p class="h7 heading-regular text-colour7"><%#Eval("TotalDurationHrs")%> hr <%#Eval("TotalDurationMins")%> m</p>
+                                                          <p class="h7 text-colour7"><%#Eval("TotalDurationHrs")%> hr <%#Eval("TotalDurationMins")%> m</p>
                                                         </div>
                                                       </div>
                                                     <div class="col-6 col-sm-3 col-lg-3 d-flex align-items-center flex-lg-column text-lg-center pl-lg-1">
                                                       <i class="fa-regular fa-clock"></i>
                                                       <div class="ml-2 ml-lg-0 mt-lg-1">
-                                                        <p class="h7 heading-regular text-colour7"><%#Eval("ArrivalAirField.City")%> (<%#Eval("ArrivalAirField.IATACode")%>)</p>
-                                                        <p class="h7 heading-regular text-colour7"><%#Convert.ToDateTime(Eval("ArrivalDate").ToString()).ToString("dd/MM/yyyy")%></p>
-                                                        <p class="h7 heading-regular text-colour7"><%#Convert.ToDateTime(Eval("DisplayArrivalTime").ToString()).ToString("hh:mm tt")%></p>
+                                                        <p class="h7 text-colour7"><%#Eval("ArrivalAirField.City")%> (<%#Eval("ArrivalAirField.IATACode")%>)</p>
+                                                        <p class="h7 text-colour7"><%#Convert.ToDateTime(Eval("ArrivalDate").ToString()).ToString("dd/MM/yyyy")%></p>
+                                                        <p class="h7 text-colour7"><%#Convert.ToDateTime(Eval("DisplayArrivalTime").ToString()).ToString("hh:mm tt")%></p>
                                                       </div>
                                                     </div>
                                                 </div>
@@ -187,23 +187,23 @@
                                                           <div class="col-6 offset-3 offset-sm-0 col-sm-3 col-lg-3 d-flex align-items-center flex-lg-column text-lg-center mb-3 mb-sm-0 px-lg-1">
                                                             <i class="fa-regular fa-clock"></i>
                                                             <div class="ml-2 ml-lg-0 mt-lg-1">
-                                                              <p class="h7 heading-regular text-colour7"><%#Eval("DepartureAirField.City")%> (<%#Eval("DepartureAirField.IATACode")%>)</p>
-                                                              <p class="h7 heading-regular text-colour7"><%#Convert.ToDateTime(Eval("DepartureDate").ToString()).ToString("dd/MM/yyyy")%></p>
-                                                              <p class="h7 heading-regular text-colour7"><%#Convert.ToDateTime(Eval("DisplayDepartureTime").ToString()).ToString("hh:mm tt")%></p>
+                                                              <p class="h7 text-colour7"><%#Eval("DepartureAirField.City")%> (<%#Eval("DepartureAirField.IATACode")%>)</p>
+                                                              <p class="h7 text-colour7"><%#Convert.ToDateTime(Eval("DepartureDate").ToString()).ToString("dd/MM/yyyy")%></p>
+                                                              <p class="h7 text-colour7"><%#Convert.ToDateTime(Eval("DisplayDepartureTime").ToString()).ToString("hh:mm tt")%></p>
                                                             </div>
                                                           </div> 
                                                           <div class="col-6 col-sm-3 col-lg-3 col-xl-4 d-flex align-items-center flex-lg-column text-lg-center px-lg-1"  >
                                                               <i class="fa-regular fa-clock"></i>
                                                               <div class="ml-2 ml-lg-0 mt-lg-1">
-                                                                <p class="h7 heading-regular text-colour7"><%#Eval("TotalDurationHrs")%> hr <%#Eval("TotalDurationMins")%> m</p>
+                                                                <p class="h7 text-colour7"><%#Eval("TotalDurationHrs")%> hr <%#Eval("TotalDurationMins")%> m</p>
                                                               </div>
                                                             </div>
                                                         <div class="col-6 col-sm-3 col-lg-3 d-flex align-items-center flex-lg-column text-lg-center pl-lg-1">
                                                           <i class="fa-regular fa-clock"></i>
                                                           <div class="ml-2 ml-lg-0 mt-lg-1">
-                                                            <p class="h7 heading-regular text-colour7"><%#Eval("ArrivalAirField.City")%> (<%#Eval("ArrivalAirField.IATACode")%>)</p>
-                                                            <p class="h7 heading-regular text-colour7"><%#Convert.ToDateTime(Eval("ArrivalDate").ToString()).ToString("dd/MM/yyyy")%></p>
-                                                            <p class="h7 heading-regular text-colour7"><%#Convert.ToDateTime(Eval("DisplayArrivalTime").ToString()).ToString("hh:mm tt")%></p>
+                                                            <p class="h7 text-colour7"><%#Eval("ArrivalAirField.City")%> (<%#Eval("ArrivalAirField.IATACode")%>)</p>
+                                                            <p class="h7 text-colour7"><%#Convert.ToDateTime(Eval("ArrivalDate").ToString()).ToString("dd/MM/yyyy")%></p>
+                                                            <p class="h7 text-colour7"><%#Convert.ToDateTime(Eval("DisplayArrivalTime").ToString()).ToString("hh:mm tt")%></p>
                                                           </div>
                                                         </div>
                                                        

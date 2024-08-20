@@ -115,22 +115,22 @@
                                             <div class="row">
                                                 <div class="col-4 text-center">
                                                     <img width="60" src='<%#Eval("AirlineLogo")%>' />
-                                                    <p class="h7 heading-regular"><%#Eval("AirlineName")%></p>
-                                                    <p class="h7 heading-regular"><%#Eval("FlightNo")%></p>
+                                                    <p><%#Eval("AirlineName")%></p>
+                                                    <p><%#Eval("FlightNo")%></p>
                                                 </div>
                                                 <div class="col-4 text-center">
                                                     <%--<i class="fa-regular fa-clock"></i>--%>
-                                                    <p class="h7 heading-regular"><%#Eval("Departure")%></p>
-                                                    <p class="h7 heading-regular"><%#Convert.ToDateTime(Eval("FlightDate").ToString()).ToString("dd/MM/yyyy")%></p>
-                                                    <p class="h7 heading-regular"><%#Convert.ToDateTime(Eval("DepartureTime").ToString()).ToString("hh:mm tt")%></p>
+                                                    <p><%#Eval("Departure")%></p>
+                                                    <p><%#Convert.ToDateTime(Eval("FlightDate").ToString()).ToString("dd/MM/yyyy")%></p>
+                                                    <p><%#Convert.ToDateTime(Eval("DepartureTime").ToString()).ToString("hh:mm tt")%></p>
                                                 </div>
                                                 <%-- <div class="col-md-3 col-4 text-blk">
                                                     <i class="fa-regular fa-clock"></i><%#Eval("TotalDurationHrs")%> hr <%#Eval("TotalDurationMins")%> m
        
                                                 </div>--%>
                                                 <div class="col-4 text-center">
-                                                    <p class="h7 heading-regular"><%#Eval("Arrival")%></p>
-                                                    <p class="h7 heading-regular"><%#Convert.ToDateTime(Eval("ArrivalTime").ToString()).ToString("hh:mm tt")%></p>
+                                                    <p><%#Eval("Arrival")%></p>
+                                                    <p><%#Convert.ToDateTime(Eval("ArrivalTime").ToString()).ToString("hh:mm tt")%></p>
                                                 </div>
                                             </div>
                                         </ItemTemplate>
@@ -149,22 +149,22 @@
                                             <div class="row">
                                                 <div class="col-4 text-center">
                                                     <img width="60" class="img-fluid" src='<%#Eval("AirlineLogo")%>' />
-                                                    <p class="h7 heading-regular"><%#Eval("AirlineName")%></p>
-                                                    <p class="h7 heading-regular"><%#Eval("FlightNo")%></p>
+                                                    <p><%#Eval("AirlineName")%></p>
+                                                    <p><%#Eval("FlightNo")%></p>
                                                 </div>
                                                 <div class="col-4 text-center">
                                                     <%--<i class="fa-regular fa-clock"></i>--%>
-                                                    <p class="h7 heading-regular"><%#Eval("Departure")%></p>
-                                                    <p class="h7 heading-regular"><%#Convert.ToDateTime(Eval("FlightDate").ToString()).ToString("dd/MM/yyyy")%></p>
-                                                    <p class="h7 heading-regular"><%#Convert.ToDateTime(Eval("DepartureTime").ToString()).ToString("hh:mm tt")%></p>
+                                                    <p><%#Eval("Departure")%></p>
+                                                    <p><%#Convert.ToDateTime(Eval("FlightDate").ToString()).ToString("dd/MM/yyyy")%></p>
+                                                    <p><%#Convert.ToDateTime(Eval("DepartureTime").ToString()).ToString("hh:mm tt")%></p>
                                                 </div>
                                                 <%-- <div class="col-md-3 col-4 text-blk">
                                                     <i class="fa-regular fa-clock"></i><%#Eval("TotalDurationHrs")%> hr <%#Eval("TotalDurationMins")%> m
        
                                                 </div>--%>
                                                 <div class="col-4 text-center">
-                                                    <p class="h7 heading-regular"><%#Eval("Arrival")%></p>
-                                                    <p class="h7 heading-regular"><%#Convert.ToDateTime(Eval("ArrivalTime").ToString()).ToString("hh:mm tt")%></p>
+                                                    <p><%#Eval("Arrival")%></p>
+                                                    <p><%#Convert.ToDateTime(Eval("ArrivalTime").ToString()).ToString("hh:mm tt")%></p>
                                                 </div>
                                             </div>
                                         </ItemTemplate>

@@ -363,11 +363,11 @@
                             <img class="img-fluid footer-logo" src="images/logos/abc-footer-logo.svg" alt="Infinity Rewards Logo" /></a>
                     </div>
                     <div class="col-sm-12 col-lg-6 text-center text-lg-left mb-3 mb-lg-0">
-                        <p class="h6 heading-semibold">
-                            ©
-                  <script>
-                      document.write(new Date().getFullYear());
-                  </script>
+                        <p class="heading-semibold">
+                            &copy;
+                          <script>
+                              document.write(new Date().getFullYear());
+                          </script>
                             ABC BANKING CORPORATION LTD. All rights reserved.
                         </p>
                     </div>

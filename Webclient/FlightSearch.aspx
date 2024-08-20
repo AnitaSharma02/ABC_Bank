@@ -741,7 +741,7 @@
                                           </div>
                                           <div class="d-flex flex-wrap bg-white p-3 h-100"> 
                                             <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-sg">Singapore</h2>
-                                            <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-sg-desc">
+                                            <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-sg-desc">
                                                 Singapore, officially the Republic of Singapore, is a sovereign island city-state in maritime Southeast Asia.
                                             </p>
                                               <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
@@ -759,7 +759,7 @@
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-th">Thailand</h2>
-                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-th-desc">
+                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-th-desc">
                                                     Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces
                                                 </p>
                                                 <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
@@ -777,7 +777,7 @@
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-pa">Paris</h2>
-                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-pa-desc">
+                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-pa-desc">
                                                     Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.
                                                 </p>
                                                 <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
@@ -795,7 +795,7 @@
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-nz">New Zealand</h2>
-                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-nz-desc">
+                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-nz-desc">
                                                     New Zealand is an island country in the south western Pacific Ocean. It consists of two main landmasses
                                                 </p>
                                                 <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
@@ -813,7 +813,7 @@
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-ln">London</h2>
-                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-ln-desc">
+                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-ln-desc">
                                                    London, the capital of England and the United Kingdom, is a 21st-century city with history stretching
                                                 </p>
                                                 <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
@@ -831,7 +831,7 @@
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-db">Dubai</h2>
-                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-db-desc">
+                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-db-desc">
                                                     Dubai is the most populous city in the UAE and the capital of the Emirate of Dubai,
                                                 </p>
                                                 <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
@@ -849,7 +849,7 @@
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-zu">Zurich</h2>
-                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-zu-desc">
+                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-zu-desc">
                                                    Zürich is the largest city in Switzerland and the capital of the canton of Zürich.
                                                 </p>
                                                 <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
@@ -867,7 +867,7 @@
                                             </div>
                                             <div class="d-flex flex-wrap bg-white p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-go">Goa</h2>
-                                                <p class="h7 heading-regular text-colour7 mb-3 product-text" data-i18n="flightsearch-go-desc">
+                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-go-desc">
                                                     Goa, a state on India's West coast, is a former Portuguese colony with a rich history.
                                                 </p>
                                                 <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
