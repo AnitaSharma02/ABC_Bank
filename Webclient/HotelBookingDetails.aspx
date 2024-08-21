@@ -292,7 +292,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h2 class="h5 heading-regular text-colour7 mb-1"><asp:Label runat="server" class="h6 heading-semibold text-colour7" ID="lblHotelName"></asp:Label></h2>
-                                        <p class="h7 heading-regular text-colour7">
+                                        <p class="h7 text-colour7">
                                             <asp:Label class="" ID="lblAddress" runat="server"></asp:Label>
                                         </p>
                                     </div>
@@ -308,24 +308,24 @@
                                         class="col-4 col-sm-3 col-lg-3 d-flex flex-column align-items-center justify-content-center text-center px-lg-1">
                                         <img src="Images/icons/other/time.png" alt="" />
                                         <div class="mt-lg-1">
-                                            <p class="h7 heading-regular text-colour7">Check-in</p>
-                                            <p class="h7 heading-regular text-colour7"><asp:Label runat="server" ID="lblCheckinDate"></asp:Label></p>
+                                            <p class="h7 text-colour7">Check-in</p>
+                                            <p class="h7 text-colour7"><asp:Label runat="server" ID="lblCheckinDate"></asp:Label></p>
                                         </div>
                                     </div>
                                     <div
                                         class="col-4 col-sm-3 col-lg-3 col-xl-4 d-flex align-items-center flex-column text-center px-lg-1">
                                         <img src="Images/icons/other/time.png" alt="" />
                                         <div class="mt-lg-1">
-                                            <p class="h7 heading-regular text-colour7"><asp:Label ID="lblNoofNights" runat="server"></asp:Label></p>
-                                            <p class="h7 heading-regular text-colour7"><asp:Label runat="server" ID="lblNoOfAdult"></asp:Label></p>
+                                            <p class="h7 text-colour7"><asp:Label ID="lblNoofNights" runat="server"></asp:Label></p>
+                                            <p class="h7 text-colour7"><asp:Label runat="server" ID="lblNoOfAdult"></asp:Label></p>
                                         </div>
                                     </div>
                                     <div
                                         class="col-4 col-sm-3 col-lg-3 d-flex align-items-center flex-column text-center pl-lg-1">
                                         <img src="Images/icons/other/time.png" alt="" />
                                         <div class="mt-lg-1">
-                                            <p class="h7 heading-regular text-colour7">Check-out</p>
-                                            <p class="h7 heading-regular text-colour7"><asp:Label runat="server" ID="lblCheckoutDate"></asp:Label></p>
+                                            <p class="h7 text-colour7">Check-out</p>
+                                            <p class="h7 text-colour7"><asp:Label runat="server" ID="lblCheckoutDate"></asp:Label></p>
                                         </div>
                                     </div>
                                 </div>
