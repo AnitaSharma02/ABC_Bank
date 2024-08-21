@@ -32,14 +32,14 @@
                             <p class="my-3">
                                 Thank you
                                 <asp:Label ID="lblMemberName" runat="server" Text="NIL"></asp:Label>
-                                (Giift ID-:
+                                (Infinity Rewards ID-:
                                     <asp:Label ID="lblMembershipReference" runat="server" Text="NIL"></asp:Label>) for
-                                using Giift-Points to book your car. Please use your Reference ID for any communication
+                                using Infinity Reward Points to book your car. Please use your Reference ID for any communication
                                 pertaining to this booking.
                             </p>
                             <p>
-                                Your Current booking status is Car  <span class="font-weight-bold">
-                                    <asp:Label ID="lblBookingStatus" runat="server" Text="NIL"></asp:Label>*.</span>
+                                Your Current booking status for Car Booking is <span class="font-weight-bold">
+                                <asp:Label ID="lblBookingStatus" runat="server" Text="NIL"></asp:Label>*.</span>
                             </p>
                             <p style="display: none;">
                                 Supplier ID: <span class="font-weight-bold">
@@ -302,7 +302,7 @@
 
                         <div class="col-12">
                             <p>
-                                In case your booking status is not yet confirmed, you will receive a confirmation message via email within the next 24 hours of your booking. If you do not receive the confirmation message, all your Giift-Points will be refunded back into your account.
+                                In case your booking status is not yet confirmed, you will receive a confirmation message via email within the next 24 hours of your booking. If you do not receive the confirmation message, all your Infinity Reward Points will be refunded back into your account.
                             </p>
                             <h2 class="h6 heading-semibold text-colour7 my-3">We thank you for using Giift-Points and wish you a safe journey.
                             </h2>

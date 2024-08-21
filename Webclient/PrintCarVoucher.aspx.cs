@@ -88,7 +88,7 @@ public partial class PrintCarVoucher : System.Web.UI.Page
 
                 string lstrCurrency = lobjModel.GetDefaultCurrency();
                 string lstrPaymentDetails = string.Empty;
-                string lstrPaymentDetailsHTML = "<td><table width='100%' border='0' cellspacing='0' cellpadding='0'align='left'><tr><td style='font-size: 14px; padding-left: 7px;padding-bottom:3px;font-weight:bold' width='30%' valign='top'>{0}</td><td style='font-size: 14px;padding-bottom:3px;' valign='middle'>{1}</td></tr></table></td>";
+                string lstrPaymentDetailsHTML = "<td><table width='100%' border='0' cellspacing='0' cellpadding='0'align='left'><tr><td style='font-size: 14px; font-weight:bold' width='30%' valign='top'>{0}</td><td style='font-size: 14px;padding-bottom:3px;' valign='middle'>{1}</td></tr></table></td>";
                 lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, lstrCurrency + " : ", lobjModel.IntToThousandSeperated(lobjCarBookingdetails.data[0].package.payments.estimatedTotal.total.display.amount));
 
                 lstrPaymentDetails = "<table width='100%' border='0' cellspacing='0' cellpadding='0' align='left'><tr>" + lstrPaymentDetails + "</tr></table>";

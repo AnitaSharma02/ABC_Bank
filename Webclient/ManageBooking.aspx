@@ -522,7 +522,7 @@
                                 </div>
 
                                 <div id="collapse7" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0">
+                                    <div class="card-body scroll-ver p-3">
                                         <div>
                                             <asp:Repeater ID="rptCarBookingDetails" runat="server">
                                                 <ItemTemplate>
