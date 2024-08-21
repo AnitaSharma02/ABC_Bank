@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{144B0390-C460-419F-A905-8BDB5F95A11A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core.Framework.Booking.Model</RootNamespace>
+    <AssemblyName>Core.Framework.Booking.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CB.IBE.Platform.Car.ClientEntities">
+      <HintPath>..\..\References\CB.IBE.Platform.Car.ClientEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Car.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Car.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.ClientEntities">
+      <HintPath>..\..\References\CB.IBE.Platform.ClientEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Hotels.ClientEntities">
+      <HintPath>..\..\References\CB.IBE.Platform.Hotels.ClientEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.IBECarClient">
+      <HintPath>..\..\References\CB.IBE.Platform.IBECarClient.dll</HintPath>
+    </Reference>
+    <Reference Include="CB.IBE.Platform.Masters.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Masters.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Booking.Entities">
+      <HintPath>..\..\References\Core.Platform.Booking.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Member.Entites">
+      <HintPath>..\..\References\Core.Platform.Member.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.OTP.Entities">
+      <HintPath>..\..\References\Core.Platform.OTP.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.OTP.Facade">
+      <HintPath>..\..\References\Core.Platform.OTP.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="Core.Platform.Transactions.Entites">
+      <HintPath>..\..\References\Core.Platform.Transactions.Entites.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.Adapters">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.Adapters.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.EnterpriseLibrary.CommunicationEngine.Entity">
+      <HintPath>..\..\References\Framework.EnterpriseLibrary.CommunicationEngine.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Integrations.Hotels.Entities">
+      <HintPath>..\..\References\Framework.Integrations.Hotels.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="LoyaltyManagement.Request">
+      <HintPath>..\..\References\LoyaltyManagement.Request.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BookingIntegrationModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CE.Entities\CE.Entities.csproj">
+      <Project>{E03A4FD9-25AF-4CA0-8668-16CCCF8CC349}</Project>
+      <Name>CE.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.WebAPI.ClientHelper\Core.WebAPI.ClientHelper.csproj">
+      <Project>{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}</Project>
+      <Name>Core.WebAPI.ClientHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBEAPI.ClientEntities\IBEAPI.ClientEntities.csproj">
+      <Project>{270B47A1-9A4C-431B-934A-D8D161C7CEA0}</Project>
+      <Name>IBEAPI.ClientEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IBEAPIGateway.Model\IBEAPIGateway.Model.csproj">
+      <Project>{F5392AEC-B226-4E34-8807-E6CB6D2503D0}</Project>
+      <Name>IBEAPIGateway.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

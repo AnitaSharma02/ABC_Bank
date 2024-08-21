@@ -25,7 +25,7 @@ public partial class CarVoucher : System.Web.UI.Page
                 Rate lobjSelectedCar = Session["SelectedCar"] as Rate;
                 CarBookingResponse lobjCarBookingResponse = Session["CarBookingResponse"] as CarBookingResponse;
                 MemberDetails lobjMemberDetails = Session["MemberDetails"] as MemberDetails;
-                 int RequierdRedeemPoint = Convert.ToInt32(HttpContext.Current.Session["CarTotalRedeemAmount"]);
+                double RequierdRedeemPoint = Convert.ToDouble(HttpContext.Current.Session["CarTotalRedeemAmount"]);
 
                 lblMemberName.Text = lobjMemberDetails.FullName;
                 lblMembershipReference.Text = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference; //lobjMemberDetails.MembershipReference;

@@ -769,6 +769,7 @@ public partial class CarDetails : System.Web.UI.Page
 
                         lobjCarBookingDetails.AdditonalCharges.Remove(lobjAdditonalCharge);
                     }
+                    lobjCarBookingDetails.PayableAmount = Convert.ToString(Convert.ToDecimal(lobjCarBookingDetails.PayableAmount) + Convert.ToDecimal(pstramount));
 
                     lobjAdditonalCharges.Name = pstrname;
                     lobjAdditonalCharges.Code = pstrProductId;

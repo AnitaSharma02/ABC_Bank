@@ -31,6 +31,7 @@
             }
             //Car
             else if (flag == "Car") {
+               
                 $.ajax({
                     type: 'POST',
                     url: 'PointGateway.aspx/BookCar',
@@ -244,7 +245,7 @@
                     <asp:Label ID="LabelYourSearchDetails" runat="server" Text="Please do not press back or refresh button...."></asp:Label>
                 </div>
                 <div class="SearchImg_Container">
-                    <img alt="" src="Images/ldrlogo.gif" border="0" />
+                    <img alt="" src="Images/Loading.gif" border="0" />
                 </div>
             </div>
         </div>

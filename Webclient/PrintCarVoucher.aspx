@@ -10,45 +10,325 @@
     <script language="javascript" type="text/javascript">
         window.print();
     </script>
-    <style>
-        .bkreference .col1, .bkreference .col2 {
-            float: left;
-            margin-top: 10px;
-            width: 50%;
-        }
-
-        ul {
-            display: inline;
-            float: left;
-            margin-top: 3% !important;
-        }
-
-        .w50P {
-            float: left;
-            width: 48%;
-        }
-
-        .bkreference {
-            float: left;
-            margin: 5% 0 0;
-            width: 100%;
-        }
-
-        .logoCover {
-            float: left;
-            width: 48%;
-        }
-
-        .body-bdr {
-            margin-bottom: 2%;
-        }
-
-        .FL {
-            float: left;
-        }
-    </style>
+    
 </head>
-<body style="margin: 0 auto; width: 800px">
+    <body>
+        <form id="form1" runat="server">
+        <div class="container-lg my-3">
+            <div class="row">
+                <div class="col-12">
+                    <div class="border p-3">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bg-colour2 p-3">
+                                    <img class="img-fluid" src="Images/logos/gim-logo.svg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="h5 heading-semibold text-colour7 my-3">Congratulations for your GIM REWARDS Ticket!</h2>
+                                <p>
+                                    Reference No:
+                                    <asp:Label ID="lblbookingReferenceNo" runat="server" Text="NIL" CssClass="font-weight-bold"></asp:Label>
+                                </p>
+                                <p>Payment Info: <span id="PaymentInfo" runat="server" class="font-weight-bold"></span></p>
+                                <p class="my-3 font-weight-bold">
+                                    Thank you
+                                    <asp:Label ID="lblMemberName" runat="server" Text="NIL"></asp:Label>
+                                    (Giift ID-:
+                                        <asp:Label ID="lblMembershipReference" runat="server" Text="NIL"></asp:Label>) for
+                                    using Giift-Points to book your car. Please use your Reference ID for any communication
+                                    pertaining to this booking.
+                                </p>
+                                <p>
+                                    Your Current booking status is Car  <span class="font-weight-bold">
+                                        <asp:Label ID="lblBookingStatus" runat="server" Text="NIL"></asp:Label>*.</span>
+                                </p>
+                                <p style="display: none;">
+                                    Supplier ID: <span class="font-weight-bold">
+                                        <asp:Label ID="lblbookingId" runat="server" Text="NIL"></asp:Label></span>
+                                </p>
+                            </div>
+                        </div>
+                        <%--<UC:ItineraryDetails ID="ucItinarary" runat="server" />--%>
+                        <div class="row dvAdditionalDetails mt-3">
+                            <div class="col-12 mb-3">
+                                <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border">Booking Details</h2>
+                                <div class="px-3 border">
+                                    <div class="row">
+                                        <div class="col-6 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Pick-Up</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="text-break">
+                                                        <asp:Label ID="lblpickUp" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Pick-Up Date</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="">
+                                                        <asp:Label ID="lblpickUpDate" runat="server" Text="NIL"></asp:Label>
+                                                        at
+                                                        <asp:Label ID="lblPickUpTime" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Drop-Off</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="">
+                                                        <asp:Label ID="lbldropOff" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-gender">Drop-Off Date</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="">
+                                                        <asp:Label ID="lbldropOffDate" runat="server" Text="NIL"></asp:Label>
+                                                        at
+                                                        <asp:Label ID="lbldropOffTime" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <%--<div class="col-8 col-sm-8 col-md-2">
+                                         <div class="row">
+                                             <div class="col-12 bg-colour3 p-2">
+                                                 <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-age">Email</h2>
+                                             </div>
+                                             <div class="col-12 p-2">
+                                                 <p class="text-break">
+                                                     <asp:Label ID="lblCustomerEmail" runat="server" Text="Label"></asp:Label>
+                                                 </p>
+                                             </div>
+                                         </div>
+                                     </div>--%>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border">Car Details</h2>
+                                <div class="px-3 border">
+                                    <div class="row">
+                                        <div class="col-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Car Name</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="text-break">
+                                                        <asp:Label ID="lblcarName" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Transmission type</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="">
+                                                        <asp:Label ID="lblTransmissionType" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Air Condition</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="">
+                                                        <asp:Label ID="lblAirCondition" runat="server" Text="No"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-3" style="display:none;">
+                                <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border">Driver Details</h2>
+                                <div class="px-3 border">
+                                    <div class="row">
+                                        <div class="col-4 col-sm-4 col-md-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Name</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="text-break">
+                                                        <asp:Label ID="lblDriverTitle" runat="server" Text=""></asp:Label>
+                                                        <asp:Label ID="lblDriverFName" runat="server" Text="NIL"></asp:Label>
+                                                        <asp:Label ID="lblDriverLName" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8 col-sm-8 col-md-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Address</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="">
+                                                        <asp:Label ID="lblAddress" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Phone Number</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="">
+                                                        <asp:Label ID="lblPhoneNo" runat="server" Text="No"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-3"  style="display:none;">
+                                <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border">Pick-Up Location Details</h2>
+                                <div class="px-3 border">
+                                    <div class="row">
+                                        <div class="col-4 col-sm-4 col-md-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Pick-Up</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="text-break">
+                                                        <asp:Label ID="lblPickupPlace" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8 col-sm-8 col-md-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">City</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="">
+                                                        <asp:Label ID="lblCityName" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Country</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="">
+                                                        <asp:Label ID="lblCountry" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-3" style="display:none;">
+                                <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border">Drop-Off Location Details</h2>
+                                <div class="px-3 border">
+                                    <div class="row">
+                                        <div class="col-4 col-sm-4 col-md-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Drop-Off</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="text-break">
+                                                        <asp:Label ID="lblDropOffLoc" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8 col-sm-8 col-md-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">City</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="">
+                                                        <asp:Label ID="lblDropOffCity" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-4 border-right">
+                                            <div class="row">
+                                                <div class="col-12 bg-colour3 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Country</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="">
+                                                        <asp:Label ID="lblDropOffCon" runat="server" Text="NIL"></asp:Label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <p>
+                                    In case your booking status is not yet confirmed, you will receive a confirmation message via email within the next 24 hours of your booking. If you do not receive the confirmation message, all your Giift-Points will be refunded back into your account.
+                                </p>
+                                <h2 class="h5 heading-semibold text-colour7 my-3">We thank you for using Giift-Points and wish you a safe journey.
+                                </h2>
+                            </div>
+
+                            <%--<div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 mt-3 text-right">
+                                        <a onclick="window.open('PrintCarVoucher.aspx')" class="btn btn-one">PRINT
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>--%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </body>
+
+    <%--<body style="margin: 0 auto; width: 800px">
     <form id="form1" runat="server">
         <div class="tickets">
             <div class="wrapper">
@@ -83,16 +363,16 @@
                     <p>
                         Thank you
                         <asp:Label ID="lblMemberName" runat="server" Text="NIL"> </asp:Label>
-                        (Verve ID:
+                        (Giift ID-:
                         <asp:Label ID="lblMembershipReference" runat="server" Text="NIL"></asp:Label>) for
-                        using points to book your car. Please use your Reference ID for any communication
+                        using Giift-Points to book your car. Please use your Reference ID for any communication
                         pertaining to this booking.
                     </p>
                     <p>
-                        Your Current booking status is Car <strong>
+                        Your Current booking status is Car  <strong>
                             <asp:Label ID="lblBookingStatus" runat="server" Text="NIL"></asp:Label>*.</strong>
                     </p>
-                    <p>
+                    <p style="display:none;">
                         Supplier ID: <strong>
                             <asp:Label ID="lblbookingId" runat="server" Text="NIL"></asp:Label></strong>
                     </p>
@@ -100,14 +380,14 @@
                     <div class="w50P">
                         <table class="commonTable" cellspacing="0" cellpadding="1">
                             <tr>
-                                <th>Pick-Up
+                                <th>Pick-Up-:
                                 </th>
                                 <td>
                                     <asp:Label ID="lblpickUp" runat="server" Text="NIL"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Pick-Up Date
+                                <th>Pick-Up Date-:
                                 </th>
                                 <td>
                                     <asp:Label ID="lblpickUpDate" runat="server" Text="NIL"></asp:Label>
@@ -120,14 +400,14 @@
                     <div class="w50P imFR">
                         <table class="commonTable" cellspacing="0" cellpadding="1">
                             <tr>
-                                <th>Drop-Off
+                                <th>Drop-Off-:
                                 </th>
                                 <td>
                                     <asp:Label ID="lbldropOff" runat="server" Text="NIL"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Drop-Off Date
+                                <th>Drop-Off Date-:
                                 </th>
                                 <td>
                                     <asp:Label ID="lbldropOffDate" runat="server" Text="NIL"></asp:Label>
@@ -141,21 +421,21 @@
                         <h3 class="CarHeading">Car Details</h3>
                         <table class="commonTable" cellspacing="0" cellpadding="1">
                             <tr>
-                                <th>Car Name
+                                <th>Car Name-:
                                 </th>
                                 <td>
                                     <asp:Label ID="lblcarName" runat="server" Text="NIL"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Transmission type
+                                <th>Transmission type-:
                                 </th>
                                 <td>
                                     <asp:Label ID="lblTransmissionType" runat="server" Text="NIL"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Air Condition
+                                <th>Air Condition-:
                                 </th>
                                 <td>
                                     <asp:Label ID="lblAirCondition" runat="server" Text="No"></asp:Label>
@@ -167,23 +447,23 @@
                         <h3 class="CarHeading">Driver Details</h3>
                         <table class="commonTable" cellspacing="0" cellpadding="1">
                             <tr>
-                                <th>Name
+                                <th>Name-:
                                 </th>
                                 <td>
-                                    <asp:Label ID="lblDriverTitle" runat="server" Text="NIL"></asp:Label>
+                                    <asp:Label ID="lblDriverTitle" runat="server" Text=""></asp:Label>
                                     <asp:Label ID="lblDriverFName" runat="server" Text="NIL"></asp:Label>
                                     <asp:Label ID="lblDriverLName" runat="server" Text="NIL"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Address
+                                <th>Address-:
                                 </th>
                                 <td>
                                     <asp:Label ID="lblAddress" runat="server" Text="NIL"></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <th>Phone Number
+                                <th>Phone Number-:
                                 </th>
                                 <td>
                                     <asp:Label ID="lblPhoneNo" runat="server" Text="No"></asp:Label>
@@ -191,7 +471,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="w50P">
+                    <div class="w50P" style="display:none;">
                         <h3 class="CarHeading">Pick-Up location details</h3>
                         <table class="commonTable" cellspacing="0" cellpadding="1">
                             <tr>
@@ -217,7 +497,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="w50P imFR">
+                    <div class="w50P imFR" style="display:none;">
                         <h3 class="CarHeading">Drop-Off location details</h3>
                         <table class="commonTable" cellspacing="0" cellpadding="1">
                             <tr>
@@ -244,9 +524,9 @@
                         </table>
                     </div>
                     <p>
-                        In case your booking status is not yet confirmed, you will receive a confirmation message via email within the next 24 hours of your booking. If you do not receive the confirmation message, all your  points will be refunded back into your account.
+                        In case your booking status is not yet confirmed, you will receive a confirmation message via email within the next 24 hours of your booking. If you do not receive the confirmation message, all your  Giift-Points will be refunded back into your account.
                     </p>
-                    <h3 style="color: #666; margin: 2% 0; text-align: center;">We thank you for using points and wish you a safe journey.</h3>
+                    <h3 style="color: #666; margin: 2% 0; text-align: center;">We thank you for using Giift-Points and wish you a safe journey.</h3>
 
                     <br class="clr" />
                     <br class="clr" />
@@ -255,5 +535,5 @@
             </div>
         </div>
     </form>
-</body>
+</body>--%>
 </html>

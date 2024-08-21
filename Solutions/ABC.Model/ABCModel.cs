@@ -14,7 +14,7 @@ using CB.IBE.Platform.IBEClient;
 using CB.IBE.Platform.Masters.Entities;
 using CB.IBE.Platform.Transactions.Entites;
 using CE.Entities;
-using Core.Framework.Booking.Facade;
+using Core.Framework.Booking.Model;
 using Core.Platform.Booking.Entities;
 using Core.Platform.ExpirySchedule.Entities;
 using Core.Platform.InfiVoucher.ClientHelper;
@@ -330,7 +330,7 @@ namespace ABC.Model
                 CB.IBE.Platform.ClientEntities.BookingResponse lobjBookingResponse = null;
                 try
                 {
-                    BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
+                    BookingIntegrationModel lobjBookingIntegrationFacade = new BookingIntegrationModel();
                     lobjBookingResponse = lobjBookingIntegrationFacade.BookFlight(pobjBookingRequest, pobjMemberDetails, pobjListOfRedemptionDetails);
                 }
                 catch (Exception ex)
@@ -598,7 +598,7 @@ namespace ABC.Model
             CarMakeBookingResponse lobjCarMakeBookingResponse = null;
             try
             {
-                BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
+                BookingIntegrationModel lobjBookingIntegrationFacade = new BookingIntegrationModel();
                 lobjCarMakeBookingResponse = lobjBookingIntegrationFacade.BookCar(pobjCarMakeBookingRequest, pobjCarSearchRequest, pobjMatch, pobjCarExtrasListResponse, pobjMemberDetails, pobjListOfRedemptionDetails);
             }
             catch (Exception ex)
@@ -772,21 +772,6 @@ namespace ABC.Model
             }
             return lobjTransactionDetails;
         }
-        public List<VoucherSummary> CreateVoucher(MemberDetails pobjMemberDetails, IBEAccountTransactionDetails pobjIBEAccountTransactionDetails, List<VoucherDetails> pobjListVoucherDetails, string pstrCurrency)
-        {
-            List<VoucherSummary> lobjVoucherSummary = new List<VoucherSummary>();
-            try
-            {
-                BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
-                List<string> lstrVoucherNoList = new List<string>();
-                lobjVoucherSummary = lobjBookingIntegrationFacade.CreateVoucher(pobjMemberDetails, pobjIBEAccountTransactionDetails, pobjListVoucherDetails, pstrCurrency);
-            }
-            catch (Exception ex)
-            {
-                LoggingAdapter.WriteLog("ABQModel CreateVoucher : " + Environment.NewLine + ex.StackTrace);
-            }
-            return lobjVoucherSummary;
-        }
         public bool CheckLoginOTP(string pstrMemberId, string pstrOTP)
         {
             bool mblnStatus = false;
@@ -842,6 +827,11 @@ namespace ABC.Model
         public double CalculateAmount(int pintPonits, double pintPointRate)
         {
             //double ldecAmount = Math.Ceiling(pintPonits * pintPointRate);
+            double ldecAmount = Convert.ToDouble(string.Format("{0:0.00}", Convert.ToDecimal(pintPonits * pintPointRate)));
+            return ldecAmount;
+        }
+        public double CalculateCarAmount(double pintPonits, double pintPointRate)
+        {
             double ldecAmount = Convert.ToDouble(string.Format("{0:0.00}", Convert.ToDecimal(pintPonits * pintPointRate)));
             return ldecAmount;
         }
@@ -2191,7 +2181,7 @@ namespace ABC.Model
                         lobjOTPDetails.OtpEnumTypes = pobjOTPDetails.OtpEnumTypes;
                         lobjOTPDetails.AddExpirationTimeInMinutes = Convert.ToString(lobjSystemParameter.OTPExpirationTime);
 
-                        BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
+                        BookingIntegrationModel lobjBookingIntegrationFacade = new BookingIntegrationModel();
                         status = lobjBookingIntegrationFacade.GenerateReviewnConfirmOTP(lobjOTPDetails, pobjMemberDetails, redemptionType);
                     }
                     catch (Exception ex)
@@ -2351,7 +2341,7 @@ namespace ABC.Model
             lobjOTPDetails.OtpEnumTypes = pobjOTPDetails.OtpEnumTypes;
             lobjOTPDetails.AddExpirationTimeInMinutes = Convert.ToString(lobjSystemParameter.OTPExpirationTime);
 
-            BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
+            BookingIntegrationModel lobjBookingIntegrationFacade = new BookingIntegrationModel();
             dynamicCls.otp = lobjBookingIntegrationFacade.GenerateOTPDetails(lobjOTPDetails).OTP;
 
             Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
@@ -2940,7 +2930,7 @@ namespace ABC.Model
                         lobjOTPDetails.OtpEnumTypes = pobjOTPDetails.OtpEnumTypes;
                         lobjOTPDetails.AddExpirationTimeInMinutes = Convert.ToString(lobjSystemParameter.OTPExpirationTime);
 
-                        BookingIntegrationFacade lobjBookingIntegrationFacade = new BookingIntegrationFacade();
+                        BookingIntegrationModel lobjBookingIntegrationFacade = new BookingIntegrationModel();
                         status = lobjBookingIntegrationFacade.GenerateReviewnConfirmOTP(lobjOTPDetails, EmailId, MemberId, ProgramId, FullName, Phone);
                     }
                     catch (Exception ex)

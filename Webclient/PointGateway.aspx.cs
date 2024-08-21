@@ -27,7 +27,8 @@ using System.Web.Services;
 using CB.IBE.DomesticFlight.Entities;
 using System.Web.Query.Dynamic;
 using IBEAPI.ClientEntities;
-using Core.Framework.Booking.Facade;
+using Core.Framework.Booking.Model;
+using IBEAPIGateway.Model;
 
 public partial class PointGateway : System.Web.UI.Page
 {
@@ -39,7 +40,7 @@ public partial class PointGateway : System.Web.UI.Page
     public static bool BookFlight()
     {
         ABCModel lobjModel = new ABCModel();
-        BookingIntegrationFacade lobjBookingIntegrationModel = new BookingIntegrationFacade();
+        BookingIntegrationModel lobjBookingIntegrationModel = new BookingIntegrationModel();
         bool Result = false;
         try
         {
@@ -106,7 +107,7 @@ public partial class PointGateway : System.Web.UI.Page
     {
         bool Result = false;
         ABCModel lobjModel = new ABCModel();
-        BookingIntegrationFacade lobjBookingIntegrationModel = new BookingIntegrationFacade();
+        BookingIntegrationModel lobjBookingIntegrationModel = new BookingIntegrationModel();
         try
         {
             LoggingAdapter.WriteLog("Booking Hotel");
@@ -172,6 +173,151 @@ public partial class PointGateway : System.Web.UI.Page
         }
         lobjModel.LogActivity(string.Format(ActivityConstants.BookHotel) + "Status:" + Result, ActivityType.HotelBooking);
         return Result;
+    }
+
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static bool BookCar()
+    {
+        IBEAPIModel lobjModel = new IBEAPIModel();
+        ABCModel lobjGimModel = new ABCModel();
+        bool Result = false;
+        string strRedeemMilesResponse = string.Empty;
+        try
+        {
+            if (HttpContext.Current.Session["MemberDetails"] != null && HttpContext.Current.Session["CarSearchRequest"] != null && HttpContext.Current.Session["CarBookingRequest"] != null && HttpContext.Current.Session["SelectedCar"] != null)
+            {
+                CarBookingResponse lobjCarBookingResponse = new CarBookingResponse();
+                MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+                GetAvailabilityRequest lobjCarSearchRequest = HttpContext.Current.Session["CarSearchRequest"] as GetAvailabilityRequest;
+                CarBookingRequest lobjCarBookingRequest = HttpContext.Current.Session["CarBookingRequest"] as CarBookingRequest;
+                IBEAPI.ClientEntities.Rate lobjMatch = HttpContext.Current.Session["SelectedCar"] as IBEAPI.ClientEntities.Rate;
+
+                ProgramDefinition lobjProgramDefinition = lobjGimModel.GetProgramMaster();
+                List<ProgramCurrencyDefinition> lobjProgramCurrencyDefinition = lobjGimModel.GetProgramCurrencyDefinition(lobjProgramDefinition.ProgramId);
+                var PointRate = lobjProgramCurrencyDefinition[0].RedemptionRate;
+                string lstrCurrency = lobjGimModel.GetDefaultCurrency();
+                double RequierdRedeemPoint = Convert.ToDouble(HttpContext.Current.Session["CarTotalRedeemAmount"]);
+                double ldblAmount = lobjGimModel.CalculateCarAmount(Convert.ToDouble(HttpContext.Current.Session["CarTotalRedeemAmount"]), PointRate);
+
+                strRedeemMilesResponse = lobjGimModel.RedeemPoints(Convert.ToSingle(ldblAmount), Convert.ToInt32(RequierdRedeemPoint),
+                       lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference,
+                       lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword,
+                       "Car Redemption " + lobjCarSearchRequest.pickUp.location.name + "-" + lobjCarSearchRequest.dropOff.location.name, (int)LoyaltyTxnType.Car, lstrCurrency, "");
+
+                if (!string.IsNullOrEmpty(strRedeemMilesResponse))
+                {
+                    lobjCarBookingRequest.brokerReference = strRedeemMilesResponse;
+
+                    lobjCarBookingResponse = lobjModel.CreateCarBooking(lobjCarBookingRequest);
+                    LoggingAdapter.WriteLog("PointGateway.aspx bookcar lobjCarBookingResponse : " + lobjCarBookingResponse);
+
+                    if (lobjCarBookingResponse != null && lobjCarBookingResponse.data.reference_id != string.Empty)
+                    {
+                        HttpContext.Current.Session["CarBookingResponse"] = lobjCarBookingResponse;
+                        SendCarBookingEmailSMS("Success");
+                        lobjGimModel.LogActivity(string.Format("CarBooking Success; Car Pickup Drop Loc-:{0}; BookingId-:{1};Total Amount-:{2};", lobjCarSearchRequest.pickUp.location.name + "-" + lobjCarSearchRequest.dropOff.location.name, lobjCarBookingResponse.data.reference_id, RequierdRedeemPoint), ActivityType.CarBooking);
+                        Result = true;
+                    }
+                    else
+                    {
+                        lobjGimModel.RollBackTransaction(strRedeemMilesResponse, lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, "Rollback Car Redemption " + lobjCarSearchRequest.pickUp.location.name + "-" + lobjCarSearchRequest.dropOff.location.name);
+                        LoggingAdapter.WriteLog("PointGateway.aspx RollBackTransaction redeemmilesresponse : " + strRedeemMilesResponse);
+                        Result = false;
+                    }
+
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("PointGateway.aspx BookCar Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+        }
+        lobjGimModel.LogActivity(string.Format(ActivityConstants.BookCar) + "Status:" + Result, ActivityType.CarBooking);
+        return Result;
+    }
+    private static void SendCarBookingEmailSMS(string status)
+    {
+        try
+        {
+            ABCModel lobjModel = new ABCModel();
+            List<string> lstrEmailParameters = new List<string>();
+            MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+            GetAvailabilityRequest lobjGetAvailabilityRequest = HttpContext.Current.Session["CarSearchRequest"] as GetAvailabilityRequest;
+            CarBookingRequest lobjCarBookingRequest = HttpContext.Current.Session["CarBookingRequest"] as CarBookingRequest;
+            CarBookingResponse lobjCarBookingResponse = HttpContext.Current.Session["CarBookingResponse"] as CarBookingResponse;
+            IBEAPI.ClientEntities.Rate lobjSelectedCar = HttpContext.Current.Session["SelectedCar"] as IBEAPI.ClientEntities.Rate;
+            double RequierdRedeemPoint = Convert.ToDouble(HttpContext.Current.Session["CarTotalRedeemAmount"]);
+            dynamic dynamicCls = new System.Dynamic.ExpandoObject();
+            string lsrtTemplateLangCode = "";
+            if (HttpContext.Current.Session["MemberDetails"] != null && HttpContext.Current.Session["CarBookingResponse"] != null && HttpContext.Current.Session["CarSearchRequest"] != null && HttpContext.Current.Session["CarBookingRequest"] != null && HttpContext.Current.Session["SelectedCar"] != null)
+            {
+                dynamicCls.relation_reference = Convert.ToString(lobjMemberDetails.MemberRelationsList[0].RelationReference);
+                dynamicCls.LastName = lobjMemberDetails.LastName;
+                dynamicCls.program_id = lobjMemberDetails.ProgramId;
+                dynamicCls.to_email = lobjMemberDetails.Email;
+                dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
+                dynamicCls.program_id = lobjMemberDetails.ProgramId;
+                dynamicCls.reference_id = lobjCarBookingResponse.data.reference_id;
+                dynamicCls.pickuplocationname = lobjGetAvailabilityRequest.pickUp.location.name;
+                dynamicCls.dropofflocationname = lobjGetAvailabilityRequest.dropOff.location.name;
+                dynamicCls.pickupdate = lobjGetAvailabilityRequest.pickUp.date;
+                dynamicCls.dropoffdate = lobjGetAvailabilityRequest.dropOff.date;
+                dynamicCls.dropofftime = lobjGetAvailabilityRequest.dropOff.Time;
+                dynamicCls.Pickuptime = lobjGetAvailabilityRequest.pickUp.Time;
+                dynamicCls.vehiclename = lobjSelectedCar.vehicle.name;
+                dynamicCls.vehicletransmission = lobjSelectedCar.vehicle.transmission;
+                dynamicCls.vehicleairco = (lobjSelectedCar.vehicle.airco.ToString() == "1" ? "Yes" : "No");
+                dynamicCls.vehicletype = lobjSelectedCar.vehicle.type;
+                dynamicCls.fueltype = lobjSelectedCar.vehicle.fuelType;
+                dynamicCls.firstName = lobjCarBookingRequest.customer.firstName + " " + lobjCarBookingRequest.customer.lastName;
+                dynamicCls.vehicleprice = lobjSelectedCar.vehicle.payment;
+                dynamicCls.vehicleseat = lobjSelectedCar.vehicle.seats;
+                dynamicCls.TotalPoints = RequierdRedeemPoint;
+            }
+            if (status.ToLower().Equals("success"))
+            {
+                if (lobjMemberDetails.PreferredLanguage == "EN")
+                {
+                    dynamicCls.event_name = "Car_Booked";
+                }
+                if (lobjMemberDetails.PreferredLanguage.ToUpper() != "EN")
+                {
+                    lsrtTemplateLangCode = lobjMemberDetails.PreferredLanguage.ToUpper();
+                    dynamicCls.event_name = "Car_Booked";
+                }
+                // dynamicCls.Status = "Confirmed";
+            }
+            else
+            {
+                if (lobjMemberDetails.PreferredLanguage == "EN")
+                {
+                    dynamicCls.event_name = "Car_Booking_Failed";
+                }
+                if (lobjMemberDetails.PreferredLanguage.ToUpper() != "EN")
+                {
+                    lsrtTemplateLangCode = lobjMemberDetails.PreferredLanguage.ToUpper();
+                    dynamicCls.event_name = "Car_Booking_Failed";
+                }
+                // dynamicCls.Status = "Failed";
+            }
+            Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
+            IDictionary<string, object> dict = (IDictionary<string, object>)dynamicCls;
+            foreach (var key in dict)
+            {
+                lobjDictionary.Add(key.Key, key.Value);
+            }
+            string jsonParameters = JsonConvert.SerializeObject(lobjDictionary);
+            lobjModel.SendEmails(jsonParameters, lobjMemberDetails);
+            //Communication Engine Call for Sms Sending
+            List<string> lstSMSparameter = JsonConvert.DeserializeObject<List<string>>(jsonParameters);
+            lobjModel.SendSMS(lstSMSparameter, lobjMemberDetails, dynamicCls.event_name);
+            LoggingAdapter.WriteLog("Car SMS Sent parameters=" + lstSMSparameter);
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("PointGateway SendCarBookingEmailSMS Ex-:" + ex.InnerException + ex.StackTrace + ex.Message);
+        }
     }
 
     [System.Web.Script.Services.ScriptMethod()]

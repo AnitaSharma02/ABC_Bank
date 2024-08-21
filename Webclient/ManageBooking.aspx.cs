@@ -39,7 +39,7 @@ public partial class ManageBooking : Page
                 BindHotelBooking(lobjMemberDetails);
                 BindExperienceBookingDetails(lobjMemberDetails);
                 BindDomesticBookingDetails(lobjMemberDetails);
-              
+                BindCarBooking(lobjMemberDetails);
                 lobjModel.LogActivity(string.Format("Visited ManageBooking.aspx; MemberId-:{0}", lobjMemberDetails.MemberRelationsList[0].RelationReference), ActivityType.PageLoad);
             }
             else
@@ -469,7 +469,7 @@ public partial class ManageBooking : Page
             {
                 rptCarBookingDetails.DataSource = null;
                 lblCarrecord.Visible = true;
-                lblCarrecord.Text = "<span data-i18n='managebooking-norecords-label' class=\"heading-regular\">No Records Found.</span>";
+                lblCarrecord.Text = "<span data-i18n='managebooking-norecords-label'>No Records Found.</span>";
                 divCarrecord.Visible = true;
 
             }

@@ -630,9 +630,9 @@
       <Project>{E03A4FD9-25AF-4CA0-8668-16CCCF8CC349}</Project>
       <Name>CE.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Core.Framework.Booking.Facade\Core.Framework.Booking.Facade.csproj">
-      <Project>{7076DFF3-528B-4FDF-8614-3056220B4BEC}</Project>
-      <Name>Core.Framework.Booking.Facade</Name>
+    <ProjectReference Include="..\Core.Framework.Booking.Model\Core.Framework.Booking.Model.csproj">
+      <Project>{144b0390-c460-419f-a905-8bdb5f95a11a}</Project>
+      <Name>Core.Framework.Booking.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Core.WebAPI.ClientHelper\Core.WebAPI.ClientHelper.csproj">
       <Project>{708BBD73-CA4E-457D-B5A4-5649ACE53BFB}</Project>

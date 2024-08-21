@@ -170,21 +170,23 @@
                         //else if (data.d == 'ISP') {
                         //    window.location = "PointGateway.aspx?flag=ISP";
                         //}
-                        if (data.d != null && data.d !="")
-                        {
-                            window.location = data.d;
-                        }
-                        else if (data.d == 'Exceed OTP limit') {
-                            $("#validationResult").show();
-                            $("#validationResult")[0].innerHTML = data.d + ' <br />';
-                            $("#validationResult").css('color', '#ff0000');
-                            return false;
-                        }
-                        else if (data.d == 'Invalid OTP') {
-                            $("#validationResult").show();
-                            $("#validationResult")[0].innerHTML = data.d + ' <br />';
-                            $("#validationResult").css('color', '#ff0000');
-                            return false;
+                        if (data.d != null && data.d != "") {
+
+                            if (data.d == 'Exceed OTP limit') {
+                                $("#validationResult").show();
+                                $("#validationResult")[0].innerHTML = data.d + ' <br />';
+                                $("#validationResult").css('color', '#ff0000');
+                                return false;
+                            }
+                            else if (data.d == 'Invalid OTP') {
+                                $("#validationResult").show();
+                                $("#validationResult")[0].innerHTML = data.d + ' <br />';
+                                $("#validationResult").css('color', '#ff0000');
+                                return false;
+                            }
+                            else {
+                                window.location = data.d;
+                            }
                         }
                     },
                     error: function (errmsg) {
