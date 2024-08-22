@@ -38,7 +38,7 @@
                                 pertaining to this booking.
                             </p>
                             <p>
-                                Your Current booking status for Car Booking is <span class="font-weight-bold">
+                                Your Current status for Car Booking is <span class="font-weight-bold">
                                 <asp:Label ID="lblBookingStatus" runat="server" Text="NIL"></asp:Label>*.</span>
                             </p>
                             <p style="display: none;">
@@ -53,7 +53,7 @@
                             <h2 class="h7 heading-semibold text-colour7 bg-colour3 py-3 px-2 border">Booking Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
-                                    <div class="col-4 col-sm-4 col-md-4 border-right">
+                                    <div class="col-12 col-sm-4 col-md-4 border-right">
                                         <div class="row">
                                             <div class="col-12 bg-colour4 p-2">
                                                 <h2 class="h7 heading-semibold text-colour7">Pick-Up</h2>
@@ -66,7 +66,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-8 col-sm-8 col-md-2 border-right">
+                                    <div class="col-12 col-sm-8 col-md-2 border-right">
                                         <div class="row">
                                             <div class="col-12 bg-colour4 p-2">
                                                 <h2 class="h7 heading-semibold text-colour7">Pick-Up Date</h2>
@@ -80,7 +80,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-sm-6 col-md-4 border-right">
+                                    <div class="col-12 col-sm-6 col-md-4 border-right">
                                         <div class="row">
                                             <div class="col-12 bg-colour4 p-2">
                                                 <h2 class="h7 heading-semibold text-colour7">Drop-Off</h2>
@@ -92,7 +92,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-sm-6 col-md-2 border-right">
+                                    <div class="col-12 col-sm-6 col-md-2 border-right">
                                         <div class="row">
                                             <div class="col-12 bg-colour4 p-2">
                                                 <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-gender">Drop-Off Date</h2>
@@ -166,7 +166,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12 mb-3">
+                        <div class="col-12 mb-3 d-none">
                             <h2 class="h7 heading-semibold text-colour7 bg-colour3 py-3 px-2 border">Driver Details</h2>
                             <div class="px-3 border">
                                 <div class="row">

@@ -4,6 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Car Receipt</title>
     <link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="Css/root.css" rel="stylesheet" type="text/css" />
@@ -23,7 +25,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="bg-colour2 p-3">
-                                    <img class="img-fluid" src="Images/logos/gim-logo.svg" alt="" />
+                                    <img class="img-fluid" src="Images/logos/infinity-logo.svg" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -38,13 +40,13 @@
                                 <p class="my-3 font-weight-bold">
                                     Thank you
                                     <asp:Label ID="lblMemberName" runat="server" Text="NIL"></asp:Label>
-                                        (Infinity Rewards ID :-&nbsp;<asp:Label ID="lblMembershipReference" runat="server" Text="NIL"></asp:Label>) for
+                                    (Infinity Rewards ID :-&nbsp;<asp:Label ID="lblMembershipReference" runat="server" Text="NIL"></asp:Label>) for
                                         using Infinity Reward Points to book your car. Please use your Reference ID for any communication
                                         pertaining to this booking.
                                 </p>
                                 <p>
-                                    Your Current booking status for Car Booking is  <span class="font-weight-bold">
-                                    <asp:Label ID="lblBookingStatus" runat="server" Text="NIL"></asp:Label>*.</span>
+                                    Your Current status for Car Booking is  <span class="font-weight-bold">
+                                        <asp:Label ID="lblBookingStatus" runat="server" Text="NIL"></asp:Label>*.</span>
                                 </p>
                                 <p style="display: none;">
                                     Supplier ID: <span class="font-weight-bold">
@@ -58,7 +60,7 @@
                                 <h2 class="h7 heading-semibold text-colour7 bg-colour2 py-3 px-2 border">Booking Details</h2>
                                 <div class="px-3 border">
                                     <div class="row">
-                                        <div class="col-4 col-sm-4 col-md-4 border-right">
+                                        <div class="col-12 col-sm-4 col-md-4 border-right">
                                             <div class="row">
                                                 <div class="col-12 bg-colour3 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Pick-Up</h2>
@@ -71,7 +73,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-8 col-sm-8 col-md-2 border-right">
+                                        <div class="col-12 col-sm-8 col-md-2 border-right">
                                             <div class="row">
                                                 <div class="col-12 bg-colour3 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Pick-Up Date</h2>
@@ -85,7 +87,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-6 col-sm-6 col-md-4 border-right">
+                                        <div class="col-12 col-sm-6 col-md-4 border-right">
                                             <div class="row">
                                                 <div class="col-12 bg-colour3 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Drop-Off</h2>
@@ -97,7 +99,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-6 col-sm-6 col-md-2 border-right">
+                                        <div class="col-12 col-sm-6 col-md-2 border-right">
                                             <div class="row">
                                                 <div class="col-12 bg-colour3 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-gender">Drop-Off Date</h2>
@@ -171,7 +173,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 mb-3">
+                            <div class="col-12 mb-3 d-none">
                                 <h2 class="h7 heading-semibold text-colour7 bg-colour2 py-3 px-2 border">Driver Details</h2>
                                 <div class="px-3 border">
                                     <div class="row">
