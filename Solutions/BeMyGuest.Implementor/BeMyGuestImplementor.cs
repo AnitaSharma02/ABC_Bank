@@ -83,5 +83,20 @@ namespace BeMyGuest.Implementor
             }
             return lobjResponse;
         }
+
+        public BookingInfoByUUIDResponse GetBookingInfoByUUID(BookingInfoByUUIDRequest lobjbookingInfoByUUIDRequest)
+        {
+            BookingInfoByUUIDResponse lobjResponse = null;
+            try
+            {
+                lobjResponse = JsonConvert.DeserializeObject<BookingInfoByUUIDResponse>(DataPostHelper.PostData(BeMyGuestConstants.GetBookingInfoByUUID, "POST", "bookings", JsonConvert.SerializeObject(lobjbookingInfoByUUIDRequest), ExperienceUsername, ExperiencePassword));
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("PostData - GetBookingInfoByUUID - Ex -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace + ex.InnerException);
+            }
+            return lobjResponse;
+        }
+
     }
 }

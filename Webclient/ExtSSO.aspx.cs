@@ -52,18 +52,21 @@ public partial class ExtSSO : Page
                 ABCModel lobjModel = new ABCModel();
                 try
                 {
-                    LoggingAdapter.WriteLog("ExtSSO_oAuth - AccessToken Data: " + lstrToken + Environment.NewLine + "DateTime -- " + DateTime.Now);
-                    if (!string.IsNullOrEmpty(lstrToken))
+                   if (!string.IsNullOrEmpty(lstrToken))
                     {
                         MemberLogin lobjMemberLogin = new MemberLogin();
                         lobjModel.LogActivity(string.Format("ExtSSO_oAuth; AccessToken Data:  {0}: DateTime {1}", lstrToken, DateTime.Now), ActivityType.Login);
                         ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+                     
                         var lobjDynamic = JsonConvert.DeserializeObject<Root>(Convert.ToString(lobjMemberLogin.GetMemberProfile(lobjProgramDefinition.ProgramId.ToString(), (int)RelationType.LBMS, lstrToken)));
+                       
                         Results lobjResults = JsonConvert.DeserializeObject<Results>(lobjDynamic.results.ToString());
+                       
                         if (lobjResults.IsSucessful)
                         {
                             MemberDetails lobjMemberDetails = JsonConvert.DeserializeObject<MemberDetails>(lobjResults.ReturnObject.ToString());
                             MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS));
+     
                             if (lobjMemberDetails != null && !string.IsNullOrEmpty(lobjMemberDetails.FullName))
                             {
                                 LoggingAdapter.WriteLog("ExtSSO_oAuth - Member Validation: TRUE Member Status: " + lobjMemberRelation.Status.ToString());
@@ -78,7 +81,7 @@ public partial class ExtSSO : Page
                                     lobjMemberRelation.Id = lobjMemberDetails.Id;
                                     lobjModel.ResetLoginAttempt(lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)));
                                     lobjModel.LogActivity(string.Format(ActivityConstants.Login, lobjMemberRelation.RelationReference, "ExtSSO_oAuth login successful"), ActivityType.loginsuccessful);
-                                    Session["MemberDetails"] = lobjMemberDetails;
+                                    HttpContext.Current.Session.Add("MemberDetails", lobjMemberDetails);
                                     Session["FromSSOLogin"] = "1";
                                     LoggingAdapter.WriteLog("ExtSSO_oAuth - Member Account Activated: TRUE");
                                     divErrorMsg.Style.Add("Display", "None");

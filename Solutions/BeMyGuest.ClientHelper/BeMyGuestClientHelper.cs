@@ -85,6 +85,20 @@ namespace BeMyGuest.ClientHelper
             }
             return lobjResponse;
         }
+        public BookingInfoByUUIDResponse GetBookingInfoByUUID(BookingInfoByUUIDRequest lobjbookingInfoByUUIDRequest)
+        {
+            BookingInfoByUUIDResponse lobjResponse = null;
+            try
+            {
+                lobjResponse = lobjImplementor.GetBookingInfoByUUID(lobjbookingInfoByUUIDRequest);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("BeMyGuestClientHelper GetBookingInfoByUUID Ex - " + Environment.NewLine + ex.Message + Environment.NewLine + ex.InnerException +
+                    Environment.NewLine + ex.StackTrace + Environment.NewLine + "DateTime - " + DateTime.Now);
+            }
+            return lobjResponse;
+        }
 
     }
 }

@@ -2425,6 +2425,22 @@ namespace ABC.Model
         #endregion
 
         #region Experience
+        public BookingInfoByUUIDResponse GetBookingInfoByUUID(string uuid)
+        {
+            BookingInfoByUUIDResponse lstrResponse = null;
+            BookingInfoByUUIDRequest lobjbookingInfoByUUIDRequest = new BookingInfoByUUIDRequest();
+            lobjbookingInfoByUUIDRequest.uuid = uuid;
+            try
+            {
+                BeMyGuestClientHelper lobjHelper = new BeMyGuestClientHelper();
+                lstrResponse = lobjHelper.GetBookingInfoByUUID(lobjbookingInfoByUUIDRequest);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("Model GetBookingInfoByUUID Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
+            }
+            return lstrResponse;
+        }
         public ExperiencesResponse GetExperienceProductList(int pintPage, int pintPageSize, ExperiencesRequest lobjProductListRequest)
         {
             ExperiencesResponse lstrResponse = null;

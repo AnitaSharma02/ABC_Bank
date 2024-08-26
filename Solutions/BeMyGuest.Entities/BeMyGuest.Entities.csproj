@@ -50,6 +50,9 @@
   <ItemGroup>
     <Compile Include="AmountBreakdown.cs" />
     <Compile Include="BookingData.cs" />
+    <Compile Include="BookingInfoByUUIDRequest.cs" />
+    <Compile Include="BookingInfoByUUIDResponse.cs" />
+    <Compile Include="BookingInfoByUUIDResponseData.cs" />
     <Compile Include="BookingOption.cs" />
     <Compile Include="BookingRequest.cs" />
     <Compile Include="BookingResponse.cs" />

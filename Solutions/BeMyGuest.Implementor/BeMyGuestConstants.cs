@@ -15,5 +15,7 @@ namespace BeMyGuest.Implementor
         public static string GetProductTypesPriceByDate = string.Format("{0}/getproducttypespricebydate", BeMyGuestExperienceAPIURL);
         public static string GetTypesAndCategory = string.Format("{0}/gettypesandcategory", BeMyGuestExperienceAPIURL);
         public static string ExperienceBooking = string.Format("{0}/bookings", BeMyGuestExperienceAPIURL);
+        public static string GetBookingInfoByUUID = string.Format("{0}/getbookinginfo", BeMyGuestExperienceAPIURL);
+
     }
 }
