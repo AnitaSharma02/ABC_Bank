@@ -494,26 +494,26 @@
     --modal-close-icon-fontsize: 1rem;
 
     /* COMMON ACCORDION */
-    --accordion-header-family: var(--font-semibold);
-    --accordion-body-family: var(--font-semibold);
-    --accordion-border: transparent;
+    --accordion-header-family: var(--font-medium);
+    --accordion-body-family: var(--font-medium);
+    --accordion-border-colour: transparent;
     --accordion-card-border: transparent;
-    --accordion-header-bg: var(--colour2);
-    --accordion-header-text: var(--colour7);
-    --accordion-header-border: var(--border-colour);
+    --accordion-header-bg: var(--colour1);
+    --accordion-header-text: var(--colour6);
+    --accordion-header-border: var(--colour1);
     --accordion-header-b-radius: var(--b-radius);
-    --accordion-header-active-bg: var(--colour2);
-    --accordion-header-active-text: var(--colour7);
-    --accordion-header-active-border: var(--colour4);
+    --accordion-header-active-bg: var(--colour1);
+    --accordion-header-active-text: var(--colour6);
+    --accordion-header-active-border: var(--colour1);
     --accordion-header-active-b-radius: var(--b-radius) var(--b-radius) 0 0;
     --accordion-body-bg: var(--colour6);
     --accordion-body-text: var(--colour7);
     --accordion-body-border: var(--colour3);
-    --accordion-body-b-radius: 0 0 var(--b-radius) var(--b-radius);
-    --accordion-body-active-bg: var(--colour4);
+    --accordion-body-b-radius: var(--b-radius);
+    --accordion-body-active-bg: var(--colour6);
     --accordion-body-active-text: var(--colour4);
     --accordion-body-active-border: var(--colour4);
-    --accordion-body-active-b-radius: 0 0 var(--b-radius) var(--b-radius);
+    --accordion-body-active-b-radius: var(--b-radius);
 
     /* BOOTSTRAP DEFAULT VARIABLES */
     --text-danger: #dc3545;

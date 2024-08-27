@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Order History" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="OrderHistory.aspx.cs" Inherits="OrderHistory" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="Css/account.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/Validation.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {

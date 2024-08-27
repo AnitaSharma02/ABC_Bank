@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="ExperienceBookingDetails.aspx.cs" Inherits="ExperienceBookingDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="Css/MyAccount.css" rel="stylesheet" />
+    <link href="Css/account.css" rel="stylesheet" />
     <link href="Css/experience.css" rel="stylesheet" />
     <div class="dvBreadcrumbs">
         <div class="container-xl">
@@ -32,7 +32,7 @@
                     <div class="bg-colour3 p-3 mt-sm-0">
                         <div class="row">
                             <div class="col-12">
-                                <div class="bg-white p-3">
+                                <div class="bg-colour6 p-3">
                                     <div class="row align-items-sm-center justify-content-between">
                                         <div class="col-12 col-sm-auto col-lg-auto mb-2 mb-lg-0">
                                             <p class="h6 heading-regular">Product Name:</p>
@@ -64,7 +64,7 @@
                                     <p class="h6 heading-semibold">Booking Details</p>
                                 </div>
                             </div>
-                            <div class="bg-white px-3">
+                            <div class="bg-colour6 px-3">
                                 <div class="row">
                                     <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
                                         <p class="h6 heading-semibold">Booked Date:</p>
@@ -165,7 +165,7 @@
                                     <p class="h6 heading-semibold">Guest Info</p>
                                 </div>
                             </div>
-                            <div class="bg-white px-3">
+                            <div class="bg-colour6 px-3">
                                 <div class="row">
                                     <div class="dvSelectDate col-4 my-2">
                                         <p class="h6 heading-semibold">Name:</p>
@@ -202,7 +202,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-8 mt-3 mt-md-0">
-                        <div class="border bg-white mb-3">
+                        <div class="border bg-colour6 mb-3">
                             <div class="dvBookingDetails">
                                 <div class="d-flex justify-content-between">
                                     <p class="h6 heading-semibold">Cancellation Policy</p>
@@ -214,7 +214,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="border bg-white mb-3">
+                        <div class="border bg-colour6 mb-3">
                             <div class="dvBookingDetails">
                                 <div class="d-flex justify-content-between">
                                     <p class="h6 heading-semibold">Additional Info</p>
@@ -225,7 +225,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="border bg-white mb-3">
+                        <div class="border bg-colour6 mb-3">
                             <div class="dvBookingDetails">
                                 <div class="d-flex justify-content-between">
                                     <p class="h6 heading-semibold">Pickup/Meeting Point Information</p>

@@ -180,7 +180,7 @@
                                             <div class="dvCP_txtCity dvInputGroup input-group">
                                                 <input id="CP_txtCity" class="form-control" onfocus="placeholderOnFocus(this,'Enter City Name');" onblur="placeholderOnFocus(this,'Enter City Name');" value="Enter City Name" type="text" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white">
+                                                    <span class="input-group-text bg-colour6">
                                                         <i class="fa-solid fa-location-dot"></i>
                                                     </span>
                                                 </div>
@@ -191,7 +191,7 @@
                                             <div class="dvInputGroup input-group">
                                                 <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="CP_TextBoxCheckin" readonly="readonly" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white">
+                                                    <span class="input-group-text bg-colour6">
                                                         <i class="fa-regular fa-calendar"></i>
                                                     </span>
                                                 </div>
@@ -202,7 +202,7 @@
                                             <div class="dvInputGroup input-group">
                                                 <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="CP_TextBoxCheckout" readonly="readonly" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                    <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -211,11 +211,11 @@
                                             <div class="dvInput dvQty qtySelector form-control d-flex justify-content-end p-0 pr-lg-2">
                                                 <span class="special-text">Rooms(s)</span>
                                                 <div class="d-flex align-items-center pr-0 w-120">
-                                                    <div class="col-4 text-center px-0"><i role="button" class="fa fa-minus decreaseQty bg-colour2 border p-1 rounded HotelQynUpdateminus"></i></div>
+                                                    <div class="col-4 text-center px-0"><i role="button" class="fa fa-minus decreaseQty bg-colour2 border p-1 b-radius HotelQynUpdateminus"></i></div>
                                                     <div class="col-4 text-center px-0">
                                                         <input id="qtyValue" name="NoOfRooms" type="text" class="form-control bg-transparent border-0 text-center qtyValue px-0" value="1" readonly="readonly" runat="server"/>
                                                     </div>
-                                                    <div class="col-4 text-center px-0"><i role="button" class="fa fa-plus increaseQty bg-colour2 border p-1 rounded HotelQynUpdateplus"></i></div>
+                                                    <div class="col-4 text-center px-0"><i role="button" class="fa fa-plus increaseQty bg-colour2 border p-1 b-radius HotelQynUpdateplus"></i></div>
                                                 </div>
                                             </div>
                                             <%--<label class="label">Room(s)</label>
@@ -249,21 +249,21 @@
                                                             <div class="dvQtySelectorAdult1 dropdown-item d-flex align-items-center">
                                                                 <div class="col-6 special-text h7">Adults 18+</div>
                                                                 <div class="col-6 d-flex align-items-center pr-0">
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(1)" class="fa fa-minus decreaseQtyAdult1 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(1)" class="fa fa-minus decreaseQtyAdult1 border p-1 b-radius"></i></div>
                                                                     <div class="col-4 text-center px-0">
                                                                         <input type="text" id="qtyValueAdult1" class="form-control bg-transparent border-0 text-center qtyValueAdult1" value="1" readonly="readonly" runat="server">
                                                                     </div>
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(1)" class="fa fa-plus increaseQtyAdult1 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(1)" class="fa fa-plus increaseQtyAdult1 border p-1 b-radius"></i></div>
                                                                 </div>
                                                             </div>
                                                             <div class="dvQtySelectorChild1 dropdown-item d-flex align-items-center">
                                                                 <div class="col-6 special-text h7">Childrens</div>
                                                                 <div class="col-6 d-flex align-items-center pr-0">
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(1)" class="fa fa-minus decreaseQtyChild1 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(1)" class="fa fa-minus decreaseQtyChild1 border p-1 b-radius"></i></div>
                                                                     <div class="col-4 text-center px-0">
                                                                         <input type="text" id="qtyValueChild1" class="form-control bg-transparent border-0 text-center qtyValueChild1" value="0" readonly="readonly" runat="server">
                                                                     </div>
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(1)" class="fa fa-plus increaseQtyChild1 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(1)" class="fa fa-plus increaseQtyChild1 border p-1 b-radius"></i></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -279,21 +279,21 @@
                                                             <div class="dvQtySelectorAdult2 dropdown-item d-flex align-items-center">
                                                                 <div class="col-6 special-text h7">Adults 18+</div>
                                                                 <div class="col-6 d-flex align-items-center pr-0">
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(2)"  class="fa fa-minus decreaseQtyAdult2 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(2)"  class="fa fa-minus decreaseQtyAdult2 border p-1 b-radius"></i></div>
                                                                     <div class="col-4 text-center px-0">
                                                                         <input type="text" id="qtyValueAdult2" class="form-control bg-transparent border-0 text-center qtyValueAdult2" value="1" readonly="readonly" runat="server">
                                                                     </div>
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(2)" class="fa fa-plus increaseQtyAdult2 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(2)" class="fa fa-plus increaseQtyAdult2 border p-1 b-radius"></i></div>
                                                                 </div>
                                                             </div>
                                                             <div class="dvQtySelectorChild2 dropdown-item d-flex align-items-center">
                                                                 <div class="col-6 special-text h7">Childrens</div>
                                                                 <div class="col-6 d-flex align-items-center pr-0">
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(2)" class="fa fa-minus decreaseQtyChild2 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(2)" class="fa fa-minus decreaseQtyChild2 border p-1 b-radius"></i></div>
                                                                     <div class="col-4 text-center px-0">
                                                                         <input type="text" id="qtyValueChild2" class="form-control bg-transparent border-0 text-center qtyValueChild2" value="1" readonly="readonly" runat="server">
                                                                     </div>
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(2)" class="fa fa-plus increaseQtyChild2 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(2)" class="fa fa-plus increaseQtyChild2 border p-1 b-radius"></i></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -309,21 +309,21 @@
                                                             <div class="dvQtySelectorAdult3 dropdown-item d-flex align-items-center">
                                                                 <div class="col-6 special-text h7">Adults 18+</div>
                                                                 <div class="col-6 d-flex align-items-center pr-0">
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(3)" onclick="IncreaseAdultCount(3)" class="fa fa-minus decreaseQtyAdult3 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(3)" onclick="IncreaseAdultCount(3)" class="fa fa-minus decreaseQtyAdult3 border p-1 b-radius"></i></div>
                                                                     <div class="col-4 text-center px-0">
                                                                         <input type="text" id="qtyValueAdult3" class="form-control bg-transparent border-0 text-center qtyValueAdult3" value="1" readonly="readonly" runat="server">
                                                                     </div>
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(3)" class="fa fa-plus increaseQtyAdult3 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(3)" class="fa fa-plus increaseQtyAdult3 border p-1 b-radius"></i></div>
                                                                 </div>
                                                             </div>
                                                             <div class="dvQtySelectorChild3 dropdown-item d-flex align-items-center">
                                                                 <div class="col-6 special-text h7">Childrens</div>
                                                                 <div class="col-6 d-flex align-items-center pr-0">
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(3)" class="fa fa-minus decreaseQtyChild3 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(3)" class="fa fa-minus decreaseQtyChild3 border p-1 b-radius"></i></div>
                                                                     <div class="col-4 text-center px-0">
                                                                         <input type="text" id="qtyValueChild3" class="form-control bg-transparent border-0 text-center qtyValueChild3" value="1" readonly="readonly" runat="server">
                                                                     </div>
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(3)" class="fa fa-plus increaseQtyChild3 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(3)" class="fa fa-plus increaseQtyChild3 border p-1 b-radius"></i></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -339,21 +339,21 @@
                                                             <div class="dvQtySelectorAdult4 dropdown-item d-flex align-items-center">
                                                                 <div class="col-6 special-text h7">Adults 18+</div>
                                                                 <div class="col-6 d-flex align-items-center pr-0">
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(4)"  class="fa fa-minus decreaseQtyAdult4 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(4)"  class="fa fa-minus decreaseQtyAdult4 border p-1 b-radius"></i></div>
                                                                     <div class="col-4 text-center px-0">
                                                                         <input type="text" id="qtyValueAdult4" class="form-control bg-transparent border-0 text-center qtyValueAdult4" value="1" readonly="readonly" runat="server">
                                                                     </div>
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(4)" class="fa fa-plus increaseQtyAdult4 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(4)" class="fa fa-plus increaseQtyAdult4 border p-1 b-radius"></i></div>
                                                                 </div>
                                                             </div>
                                                             <div class="dvQtySelectorChild4 dropdown-item d-flex align-items-center">
                                                                 <div class="col-6 special-text h7">Childrens</div>
                                                                 <div class="col-6 d-flex align-items-center pr-0">
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(4)" class="fa fa-minus decreaseQtyChild4 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(4)" class="fa fa-minus decreaseQtyChild4 border p-1 b-radius"></i></div>
                                                                     <div class="col-4 text-center px-0">
                                                                         <input type="text" id="qtyValueChild4" class="form-control bg-transparent border-0 text-center qtyValueChild4" value="1" readonly="readonly" runat="server">
                                                                     </div>
-                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(4)" class="fa fa-plus increaseQtyChild4 border p-1 rounded"></i></div>
+                                                                    <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(4)" class="fa fa-plus increaseQtyChild4 border p-1 b-radius"></i></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -380,11 +380,11 @@
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('SG,Singapore,Singapore');">
                     <a href="#hotelscrollupAnchor" rel="" id="hotelAnchorSG" class="d-block shadow-sm">
-                        <div class="bg-white border d-flex flex-column">
+                        <div class="bg-colour6 border d-flex flex-column">
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img1.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-column bg-white p-3 h-100">
+                            <div class="d-flex flex-column bg-colour6 p-3 h-100">
                                  <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">leonardo</h2>
                                     <p class="h7 heading-regular text-colour7 mb-1 product-text">Seminyak-Beach-Denpasar, -BA, Indonesia
                                     </p>
@@ -396,7 +396,7 @@
                                         <img src="images/icons/other/star-blank.svg" alt="">
                                     </div>
                                 
-                                <div class="d-flex justify-content-between align-items-center flex-wrap bg-white">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap bg-colour6">
                                     <h2 class="h7 heading-medium text-colour7 text-truncate">From 4,000 Points
                                     </h2>
                                     <div class="dvicon">
@@ -413,11 +413,11 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('TH,Thailand,Bangkok');">
                     <a href="#hotelscrollupAnchor" rel="" id="hotelAnchorTH" class="d-block shadow-sm">
-                        <div class="bg-white border d-flex flex-column">
+                        <div class="bg-colour6 border d-flex flex-column">
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img2.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-column bg-white p-3 h-100">
+                            <div class="d-flex flex-column bg-colour6 p-3 h-100">
                                  
                                     <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">The-Hoxton</h2>
                                     <p class="h7 heading-regular text-colour7 mb-1 product-text">Rome, Italy
@@ -430,7 +430,7 @@
                                         <img src="images/icons/other/star-blank.svg" alt="">
                                     </div>
                                
-                                <div class="d-flex justify-content-between align-items-center flex-wrap bg-white">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap bg-colour6">
                                     <h2 class="h7 heading-medium text-colour7 text-truncate">From 5,000 Points
                                     </h2>
                                     <div class="dvicon">
@@ -447,11 +447,11 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('FR,France,Paris');">
                     <a href="#hotelscrollupAnchor" rel="" id="hotelAnchorFR" class="d-block shadow-sm">
-                        <div class="bg-white border d-flex flex-column">
+                        <div class="bg-colour6 border d-flex flex-column">
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img3.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-column bg-white p-3 h-100">
+                            <div class="d-flex flex-column bg-colour6 p-3 h-100">
                                 <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">The-Singular-Patagonia</h2>
                                 <p class="h7 heading-regular text-colour7 mb-1 product-text">Puerto-Natales
                                 </p>
@@ -463,7 +463,7 @@
                                     <img src="images/icons/other/star-blank.svg" alt="">
                                 </div>
                             
-                            <div class="d-flex justify-content-between align-items-center flex-wrap bg-white">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap bg-colour6">
                                 <h2 class="h7 heading-medium text-colour7 text-truncate">From 6,000 Points
                                 </h2>
                                 <div class="dvicon">
@@ -480,11 +480,11 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('NZ,New Zealand,Christchurch');">
                     <a href="#hotelscrollupAnchor" rel="" id="hotelAnchorNZ" class="d-block shadow-sm">
-                        <div class="bg-white border d-flex flex-column">
+                        <div class="bg-colour6 border d-flex flex-column">
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img4.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-column bg-white p-3 h-100">
+                            <div class="d-flex flex-column bg-colour6 p-3 h-100">
                                 <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">Taj falaknuma palace</h2>
                                 <p class="h7 heading-regular text-colour7 mb-1 product-text">Hyderabad, India
                                 </p>
@@ -496,7 +496,7 @@
                                     <img src="images/icons/other/star-blank.svg" alt="">
                                 </div>
                             
-                            <div class="d-flex justify-content-between align-items-center flex-wrap bg-white">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap bg-colour6">
                                 <h2 class="h7 heading-medium text-colour7 text-truncate">From 4,800 Points
                                 </h2>
                                 <div class="dvicon">

@@ -2,7 +2,7 @@
     CodeFile="ViewMemberProfile.aspx.cs" Inherits="ViewMemberProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="Css/account.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/jquery.md5.js" type="text/javascript"></script>
     <script src="Jquery/Validation.js" type="text/javascript"></script>
 
@@ -109,7 +109,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-lightgray rounded p-3">
+                    <div class="bg-colour2 b-radius p-3">
                         <div class="dvCommonAccordion accordion" id="manage-accordion">
                             <div class="card mb-3">
                                 <div class="card-header p-0">
@@ -203,7 +203,7 @@
                                                                 onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;" 
                                                                 id="txtOldPassword"/>
                                                             <div class="input-group-append">
-                                                                <span toggle="#txtOldPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                <span toggle="#txtOldPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -220,7 +220,7 @@
                                                                 onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
                                                                 id="txtPassword"/>
                                                             <div class="input-group-append">
-                                                                <span toggle="#txtPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                <span toggle="#txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -237,7 +237,7 @@
                                                                 onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
                                                                 id="txtNewPassword"/>
                                                             <div class="input-group-append">
-                                                                <span toggle="#txtNewPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                <span toggle="#txtNewPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -2,7 +2,7 @@
     CodeFile="ManageBooking.aspx.cs" Inherits="ManageBooking" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="\Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="\Css/account.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/Validation.js" type="text/javascript"></script>
     <script type="text/javascript">
         $.fn.digits = function () {
@@ -218,7 +218,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-lightgray p-3">
+                    <div class="bg-colour2 p-3">
                         <div class="dvCommonAccordion accordion" id="manage-accordion">
 
                             <!-- FLIGHT BOOKING DETAILS -->
@@ -249,7 +249,7 @@
                                                 <ItemTemplate>
                                                     <div class="row mb-1">
                                                         <div class="col-12">
-                                                            <div class="bg-white p-3">
+                                                            <div class="bg-colour6 p-3">
                                                                 <div class="row justify-content-between">
                                                                     <div class="col-6 col-md-3 col-xl-2 mb-1">
                                                                         <p>
@@ -344,7 +344,7 @@
                                                 <ItemTemplate>
                                                     <div class="row mb-1">
                                                         <div class="col-12">
-                                                            <div class="bg-white p-3">
+                                                            <div class="bg-colour6 p-3">
                                                                 <div class="row justify-content-between">
                                                                     <div class="col-6 col-md-3 mb-1">
                                                                         <p>
@@ -528,7 +528,7 @@
                                                 <ItemTemplate>
                                                     <div class="row mb-1">
                                                         <div class="col-12">
-                                                            <div class="bg-white px-3 pt-3">
+                                                            <div class="bg-colour6 px-3 pt-3">
                                                                 <div class="row justify-content-between">
                                                                     <div class="col-12 col-sm-6 col-lg-4 mb-1">
                                                                         <p>

@@ -217,7 +217,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="dvHeader shadow-sm sticky-top bg-white">
+        <div class="dvHeader shadow-sm sticky-top bg-colour6">
             <div class="dvStripe">
                 <div class="container-lg">
                     <div class="row">
@@ -332,7 +332,7 @@
         <!--main end here-->
         <!--footer start here-->
         <div class="dvFooter">
-            <div class="dvBgRedColor py-4">
+            <div class="bg-colour1 py-4">
                 <div class="container-lg">
                     <div class="row align-items-lg-center">
                         <div class="dvLinks col-lg-10 text-center text-lg-left mb-3 mb-lg-0 text-uppercase">

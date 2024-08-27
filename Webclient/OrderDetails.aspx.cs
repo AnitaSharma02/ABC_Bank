@@ -46,29 +46,29 @@ public partial class OrderDetails : Page
                                 StringBuilder sb = new StringBuilder();
                                 if (lobjCustomerOrder.Shipments[0].Status == "ReadyToSend")
                                 {
-                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
-                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">2</span><span class=\"h6 heading-regular\">Delivered</span></div></div>");
+                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
+                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">2</span><span class=\"h6 heading-regular\">Delivered</span></div></div>");
                                     dvDeliveryTrack.InnerHtml=sb.ToString();
-                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
+                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
                                     //divOrderPicked.Visible = false;
                                     //divOtw.Visible = false;
                                 }
                                 if (lobjCustomerOrder.Shipments[0].Status == "Delivered")
                                 {
-                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
-                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">2</span><span class=\"h6 heading-regular\">Delivered</span></div></div>");
+                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
+                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">2</span><span class=\"h6 heading-regular\">Delivered</span></div></div>");
                                     dvDeliveryTrack.InnerHtml = sb.ToString();
-                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
+                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
                                     //divOrderPicked.Visible = false;
                                     //divOtw.Visible = false;
-                                    //divDelivered.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
+                                    //divDelivered.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
                                 }
                                 Product lobjProduct = new Product();
                                 lobjProduct = lobjModel.GetProductById(lobjCustomerOrder.Items[0].ProductId);
                                 if (lobjProduct != null)
                                 {
                                     spanOrderId.InnerText = lobjCustomerOrder.Number;
-                                    lstrHtmlContent += "<div class=\"bg-white p-3\">";
+                                    lstrHtmlContent += "<div class=\"bg-colour6 p-3\">";
                                     for (int i = 0; i < lobjCustomerOrder.Items.Count; i++)
                                     {
                                         lstrHtmlContent += "<div class=\"row pb-2 border-bottom align-items-sm-center justify-content-between\"><div class=\"col-3 col-sm-2 col-lg-1\"><div class=\"img-container\"><img src=\"" + lobjCustomerOrder.Items[i].ImageUrl + "\"/></div></div>"
@@ -390,7 +390,7 @@ public partial class OrderDetails : Page
                                 else
                                     spanDeliveryTimeEst.InnerText = ldtShippingDateTime.ToString();
                                 spanShippingBy.InnerText = lobjCustomerOrder.Shipments[0].EmployeeName;
-                                lstrHtmlContent += "<div class=\"bg-white p-3\">";
+                                lstrHtmlContent += "<div class=\"bg-colour6 p-3\">";
                                 for (int i = 0; i < lobjCustomerOrder.Items.Count; i++)
                                 {
                                     lstrHtmlContent += "<div class=\"row mb-3 pb-3 border-bottom align-items-sm-center\"><div class=\"col-3 col-sm-2 col-lg-1 mb-2 mb-sm-0\"><img class=\"img-fluid\" src=\"" + lobjCustomerOrder.Items[i].ImageUrl + "\"/></div>"
@@ -406,42 +406,42 @@ public partial class OrderDetails : Page
                                 StringBuilder sb=new StringBuilder();
                                 if (lobjCustomerOrder.Shipments[0].Status == "ReadyToSend")
                                 {
-                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
+                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
                                     dvDeliveryTrack.InnerHtml = sb.ToString();
-                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
+                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
                                 }
                                 if (lobjCustomerOrder.Shipments[0].Status == "PackagePickedUp")
                                 {
-                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
-                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">2</span><span class=\"h6 heading-regular\">Picked by courier</span></div></div>");
-                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">3</span><span class=\"h6 heading-regular\">On the way</span></div></div>");
-                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">4</span><span class=\"h6 heading-regular\">Delivered</span></div></div>");
+                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
+                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">2</span><span class=\"h6 heading-regular\">Picked by courier</span></div></div>");
+                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">3</span><span class=\"h6 heading-regular\">On the way</span></div></div>");
+                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">4</span><span class=\"h6 heading-regular\">Delivered</span></div></div>");
                                     dvDeliveryTrack.InnerHtml = sb.ToString();
-                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
-                                    //divOrderPicked.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
+                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
+                                    //divOrderPicked.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
                                 }
                                 if (lobjCustomerOrder.Shipments[0].Status == "Dispatched")
                                 {
-                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
-                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">2</span><span class=\"h6 heading-regular\">Picked by courier</span></div></div>");
-                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">3</span><span class=\"h6 heading-regular\">On the way</span></div></div>");
-                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">4</span><span class=\"h6 heading-regular\">Delivered</span></div></div>");
+                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
+                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">2</span><span class=\"h6 heading-regular\">Picked by courier</span></div></div>");
+                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">3</span><span class=\"h6 heading-regular\">On the way</span></div></div>");
+                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">4</span><span class=\"h6 heading-regular\">Delivered</span></div></div>");
                                     dvDeliveryTrack.InnerHtml = sb.ToString();
-                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
-                                    //divOrderPicked.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
-                                    //divOtw.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
+                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
+                                    //divOrderPicked.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
+                                    //divOtw.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
                                 }
                                 if (lobjCustomerOrder.Shipments[0].Status == "Delivered")
                                 {
-                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
-                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">2</span><span class=\"h6 heading-regular\">Picked by courier</span></div></div>");
-                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">3</span><span class=\"h6 heading-regular\">On the way</span></div></div>");
-                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">4</span><span class=\"h6 heading-regular\">Delivered</span></div></div>");
+                                    sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
+                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">2</span><span class=\"h6 heading-regular\">Picked by courier</span></div></div>");
+                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">3</span><span class=\"h6 heading-regular\">On the way</span></div></div>");
+                                    sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2\">4</span><span class=\"h6 heading-regular\">Delivered</span></div></div>");
                                     dvDeliveryTrack.InnerHtml = sb.ToString();
-                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
-                                    //divOrderPicked.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
-                                    //divOtw.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
-                                    //divDelivered.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3 active");
+                                    //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
+                                    //divOrderPicked.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
+                                    //divOtw.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
+                                    //divDelivered.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
                                 }
                             }
                         }

@@ -100,7 +100,7 @@
                                             </div>
                                         </div>
                                         <div class="dvTotalRecords col-12 ">
-                                            <div class="bg-colour2 rounded p-3 my-3 ">
+                                            <div class="bg-colour2 b-radius p-3 my-3 ">
                                                 <p class="h6 heading-semibold text-colour7" id="recommendedtxt"></p>
                                             </div>
                                         </div>

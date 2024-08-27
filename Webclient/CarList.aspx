@@ -131,7 +131,7 @@
                                                     <input type="text" class="form-control" id="txtpickupLocation" data-i18n="[placeholder]carlist-please-enter-pickup-location" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2" required>
                                                     <input type="hidden" id="hndpickupLocationId" value="">
                                                     <div class="input-group-append">
-                                                        <span class="input-group-text bg-white">
+                                                        <span class="input-group-text bg-colour6">
                                                             <i class="fa-solid fa-location-dot"></i>
                                                         </span>
                                                     </div>
@@ -143,7 +143,7 @@
                                                     <input class="input form-control" data-i18n="[value]carlist-enter-date" value="Enter Date" onfocus="placeholderOnFocus(this);"
                                                         type="text" id="txtpickupDate" readonly="readonly" />
                                                     <div class="input-group-append">
-                                                        <span class="input-group-text bg-white">
+                                                        <span class="input-group-text bg-colour6">
                                                             <i class="fa-regular fa-calendar"></i>
                                                         </span>
                                                     </div>
@@ -272,7 +272,7 @@
                                                         <input type="text" class="form-control" id="txtDopoffLocation">
                                                         <input type="hidden" id="hndDopoffLocationId" value="">
                                                         <div class="input-group-append">
-                                                        <span class="input-group-text bg-white">
+                                                        <span class="input-group-text bg-colour6">
                                                             <i class="fa-solid fa-location-dot"></i>
                                                         </span>
                                                     </div>
@@ -286,7 +286,7 @@
                                                     <input class="input form-control" value="Enter Date" onfocus="placeholderOnFocus(this);"
                                                         onblur="placeholderOnFocus(this);" data-i18n="[value]carlist-check-out-input" type="text" id="txtDropoffDate" readonly="readonly" />
                                                     <div class="input-group-append">
-                                                        <span class="input-group-text bg-white">
+                                                        <span class="input-group-text bg-colour6">
                                                             <i class="fa-regular fa-calendar"></i>
                                                         </span>
                                                     </div>
@@ -421,7 +421,7 @@
                                                     <input class="input form-control" value="Discount" onfocus="placeholderOnFocus(this);"
                                                         type="text" id="Text1" runat="server" readonly="readonly" />
                                                     <div class="input-group-append">
-                                                        <span class="input-group-text bg-white">
+                                                        <span class="input-group-text bg-colour6">
                                                              <i class="fa-solid fa-percent"></i>
                                                         </span>
                                                     </div>

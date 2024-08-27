@@ -448,7 +448,7 @@
                                         <div class="dvCP_txtCity dvInputGroup input-group">
                                             <input id="txtCity" class="form-control" onfocus="placeholderOnFocus(this,'Enter City Name');" onblur="placeholderOnFocus(this,'Enter City Name');" value="Enter City Name" type="text" runat="server" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white">
+                                                <span class="input-group-text bg-colour6">
                                                     <i class="fa-solid fa-location-dot"></i>
                                                 </span>
                                             </div>
@@ -459,7 +459,7 @@
                                         <div class="dvTextBoxCheckin dvInputGroup input-group">
                                             <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="TextBoxCheckin" readonly="readonly"  runat="server"/>
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white">
+                                                <span class="input-group-text bg-colour6">
                                                     <i class="fa-regular fa-calendar"></i>
                                                 </span>
                                             </div>
@@ -470,7 +470,7 @@
                                         <div class="dvTextBoxCheckout dvInputGroup input-group">
                                             <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="TextBoxCheckout" readonly="readonly" runat="server" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -479,11 +479,11 @@
                                         <div class="dvQty qtySelector dvInput form-control d-flex justify-content-end p-0 pr-lg-2">
                                             <span class="special-text">Rooms(s)</span>
                                             <div class="d-flex align-items-center pr-0 w-120">
-                                                <div class="col-4 text-center px-0"><i role="button" class="fa fa-minus decreaseQty bg-colour2 border p-1 rounded HotelQynUpdateminus"></i></div>
+                                                <div class="col-4 text-center px-0"><i role="button" class="fa fa-minus decreaseQty bg-colour2 border p-1 b-radius HotelQynUpdateminus"></i></div>
                                                 <div class="col-4 text-center px-0">
                                                     <input id="qtyValue" name="NoOfRooms" type="text" class="form-control bg-transparent border-0 text-center qtyValue px-0" readonly="readonly" runat="server"/>
                                                 </div>
-                                                <div class="col-4 text-center px-0"><i role="button" class="fa fa-plus increaseQty bg-colour2 border p-1 rounded HotelQynUpdateplus"></i></div>
+                                                <div class="col-4 text-center px-0"><i role="button" class="fa fa-plus increaseQty bg-colour2 border p-1 b-radius HotelQynUpdateplus"></i></div>
                                             </div>
                                         </div>
                                     </div>
@@ -503,21 +503,21 @@
                                                         <div class="dvQtySelectorAdult1 dropdown-item d-flex align-items-center">
                                                             <div class="col-6 special-text h7">Adults 18+</div>
                                                             <div class="col-6 d-flex align-items-center pr-0">
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(1)" class="fa fa-minus decreaseQtyAdult1 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(1)" class="fa fa-minus decreaseQtyAdult1 border p-1 b-radius"></i></div>
                                                                 <div class="col-4 text-center px-0">
                                                                     <input type="text" id="qtyValueAdult1" class="form-control bg-transparent border-0 text-center qtyValueAdult1" runat="server">
                                                                 </div>
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(1)" class="fa fa-plus increaseQtyAdult1 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(1)" class="fa fa-plus increaseQtyAdult1 border p-1 b-radius"></i></div>
                                                             </div>
                                                         </div>
                                                         <div class="dvQtySelectorChild1 dropdown-item d-flex align-items-center">
                                                             <div class="col-6 special-text h7">Childrens</div>
                                                             <div class="col-6 d-flex align-items-center pr-0">
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(1)" class="fa fa-minus decreaseQtyChild1 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(1)" class="fa fa-minus decreaseQtyChild1 border p-1 b-radius"></i></div>
                                                                 <div class="col-4 text-center px-0">
                                                                     <input type="text" id="qtyValueChild1" class="form-control bg-transparent border-0 text-center qtyValueChild1" value="0"  readonly="readonly" runat="server">
                                                                 </div>
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(1)" class="fa fa-plus increaseQtyChild1 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(1)" class="fa fa-plus increaseQtyChild1 border p-1 b-radius"></i></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -533,21 +533,21 @@
                                                         <div class="dvQtySelectorAdult2 dropdown-item d-flex align-items-center">
                                                             <div class="col-6 special-text h7">Adults 18+</div>
                                                             <div class="col-6 d-flex align-items-center pr-0">
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(2)"  class="fa fa-minus decreaseQtyAdult2 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(2)"  class="fa fa-minus decreaseQtyAdult2 border p-1 b-radius"></i></div>
                                                                 <div class="col-4 text-center px-0">
                                                                     <input type="text" id="qtyValueAdult2" class="form-control bg-transparent border-0 text-center qtyValueAdult2" value="1"  readonly="readonly" runat="server">
                                                                 </div>
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(2)" class="fa fa-plus increaseQtyAdult2 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(2)" class="fa fa-plus increaseQtyAdult2 border p-1 b-radius"></i></div>
                                                             </div>
                                                         </div>
                                                         <div class="dvQtySelectorChild2 dropdown-item d-flex align-items-center">
                                                             <div class="col-6 special-text h7">Childrens</div>
                                                             <div class="col-6 d-flex align-items-center pr-0">
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(2)" class="fa fa-minus decreaseQtyChild2 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(2)" class="fa fa-minus decreaseQtyChild2 border p-1 b-radius"></i></div>
                                                                 <div class="col-4 text-center px-0">
                                                                     <input type="text" id="qtyValueChild2" class="form-control bg-transparent border-0 text-center qtyValueChild2" value="1"  readonly="readonly" runat="server">
                                                                 </div>
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(2)" class="fa fa-plus increaseQtyChild2 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(2)" class="fa fa-plus increaseQtyChild2 border p-1 b-radius"></i></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -563,21 +563,21 @@
                                                         <div class="dvQtySelectorAdult3 dropdown-item d-flex align-items-center">
                                                             <div class="col-6 special-text h7">Adults 18+</div>
                                                             <div class="col-6 d-flex align-items-center pr-0">
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(3)" class="fa fa-minus decreaseQtyAdult3 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(3)" class="fa fa-minus decreaseQtyAdult3 border p-1 b-radius"></i></div>
                                                                 <div class="col-4 text-center px-0">
                                                                     <input type="text" id="qtyValueAdult3" class="form-control bg-transparent border-0 text-center qtyValueAdult3" value="1" readonly="readonly" runat="server">
                                                                 </div>
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(3)" class="fa fa-plus increaseQtyAdult3 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(3)" class="fa fa-plus increaseQtyAdult3 border p-1 b-radius"></i></div>
                                                             </div>
                                                         </div>
                                                         <div class="dvQtySelectorChild3 dropdown-item d-flex align-items-center">
                                                             <div class="col-6 special-text h7">Childrens</div>
                                                             <div class="col-6 d-flex align-items-center pr-0">
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(3)" class="fa fa-minus decreaseQtyChild3 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(3)" class="fa fa-minus decreaseQtyChild3 border p-1 b-radius"></i></div>
                                                                 <div class="col-4 text-center px-0">
                                                                     <input type="text" id="qtyValueChild3" class="form-control bg-transparent border-0 text-center qtyValueChild3" value="1"  readonly="readonly" runat="server">
                                                                 </div>
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(3)" class="fa fa-plus increaseQtyChild3 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(3)" class="fa fa-plus increaseQtyChild3 border p-1 b-radius"></i></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -593,21 +593,21 @@
                                                         <div class="dvQtySelectorAdult4 dropdown-item d-flex align-items-center">
                                                             <div class="col-6 special-text h7">Adults 18+</div>
                                                             <div class="col-6 d-flex align-items-center pr-0">
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(4)"  class="fa fa-minus decreaseQtyAdult4 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseAdultCount(4)"  class="fa fa-minus decreaseQtyAdult4 border p-1 b-radius"></i></div>
                                                                 <div class="col-4 text-center px-0">
                                                                     <input type="text" id="qtyValueAdult4" class="form-control bg-transparent border-0 text-center qtyValueAdult4" value="1" readonly="readonly" runat="server">
                                                                 </div>
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(4)" class="fa fa-plus increaseQtyAdult4 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseAdultCount(4)" class="fa fa-plus increaseQtyAdult4 border p-1 b-radius"></i></div>
                                                             </div>
                                                         </div>
                                                         <div class="dvQtySelectorChild4 dropdown-item d-flex align-items-center">
                                                             <div class="col-6 special-text h7">Childrens</div>
                                                             <div class="col-6 d-flex align-items-center pr-0">
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(4)" class="fa fa-minus decreaseQtyChild4 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseChildCount(4)" class="fa fa-minus decreaseQtyChild4 border p-1 b-radius"></i></div>
                                                                 <div class="col-4 text-center px-0">
                                                                     <input type="text" id="qtyValueChild4" class="form-control bg-transparent border-0 text-center qtyValueChild4" value="1"  readonly="readonly" runat="server">
                                                                 </div>
-                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(4)" class="fa fa-plus increaseQtyChild4 border p-1 rounded"></i></div>
+                                                                <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseChildCount(4)" class="fa fa-plus increaseQtyChild4 border p-1 b-radius"></i></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -628,7 +628,7 @@
                                             <div class="input-group">
                                                 <input class="input1 ui-autocomplete-input locationIcon form-control from-icon" type="text" autocomplete="off" runat="server" id="txtCity" onfocus="placeholderOnFocus(this,'Enter City Name');" onblur="placeholderOnFocus(this,'Enter City Name');" value="Enter City Name" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white">
+                                                    <span class="input-group-text bg-colour6">
                                                         <i class="fa-solid fa-location-dot"></i>
                                                     </span>
                                                 </div>
@@ -639,7 +639,7 @@
                                             <div class="dvTextBoxCheckin input-group">
                                                 <input id="TextBoxCheckin" runat="server" autocomplete="off" class="input1 ui-autocomplete-input datePicker form-control cal-icon" type="text" onfocus="placeholderOnFocus(this,'dd/mm/yyyy');" onblur="placeholderOnFocus(this,'dd/mm/yyyy');" value="dd/mm/yyyy" readonly="readonly" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white">
+                                                    <span class="input-group-text bg-colour6">
                                                         <i class="fa-regular fa-calendar"></i>
                                                     </span>
                                                 </div>
@@ -650,7 +650,7 @@
                                             <div class="dvTextBoxCheckout input-group">
                                                 <input class="input1 ui-autocomplete-input datePicker form-control cal-icon" autocomplete="off" type="text" onfocus="placeholderOnFocus(this,'dd/mm/yyyy');" onblur="placeholderOnFocus(this,'dd/mm/yyyy');" value="dd/mm/yyyy" id="TextBoxCheckout" runat="server" readonly="readonly" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                    <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                                 </div>
                                             </div>
                                         </div>

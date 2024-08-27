@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <input type="hidden" id="hdnResendOTPEnableTime" value="<%=ResendOTPEnableTime%>" />
-   <%-- <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" />
+   <%-- <link href="Css/account.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/purify.min.js" type="text/javascript"></script>--%>
 
     <script src="Jquery/purify.min.js" type="text/javascript"></script>

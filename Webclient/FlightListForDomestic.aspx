@@ -177,7 +177,7 @@
             <div class="row">
                 <div class="dvModify col-12 mb-3">
                     <div
-                        class="bg-lightgray d-flex flex-wrap justify-content-between align-items-center py-2 px-2 px-lg-3 mb-1">
+                        class="bg-colour2 d-flex flex-wrap justify-content-between align-items-center py-2 px-2 px-lg-3 mb-1">
                         <%--<button
                       data-toggle="modal"
                       data-target="#dvFilterModal"
@@ -201,7 +201,7 @@
                             </span>
                         </button>
                     </div>
-                    <div id="dvForm" class="dvForm bg-lightgray collapse">                         
+                    <div id="dvForm" class="dvForm bg-colour2 collapse">                         
                         <div class="innerBox px-3 pt-2">      
                                 <div class="p-1 mb-2 alert alert-danger text-danger text-center h6 heading-semibold" id="requiredValidationdomestic" style="display:none;"></div>
                                  <div class="row dvLabel r- d-none">
@@ -263,25 +263,25 @@
                                                      <div class="dvQtySelectorAdultDomestic dvQtySelector dropdown-item d-flex align-items-center">
                                                            <div class="col-6 special-text h7">Adult(s) 12+ Yrs</div>
                                                            <div class="col-6 d-flex align-items-center pr-0">
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('AdultDomestic')" class="fa fa-minus decreaseQtyAdultDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('AdultDomestic')" class="fa fa-minus decreaseQtyAdultDomestic border p-1 b-radius"></i></div>
                                                               <div class="col-4 text-center px-0"><input type="text" id="qtyValueAdultDomestic" class="form-control bg-transparent border-0 text-center qtyValueAdultDomestic" value="1" readonly="readonly"></div>
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('AdultDomestic',4)" class="fa fa-plus increaseQtyAdultDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('AdultDomestic',4)" class="fa fa-plus increaseQtyAdultDomestic border p-1 b-radius"></i></div>
                                                           </div>
                                                        </div>
                                                        <div class="dvQtySelectorChildDomestic dvQtySelector dropdown-item d-flex align-items-center">
                                                           <div class="col-6 special-text h7">Child(ren) 2 - 11 Yrs</div>
                                                           <div class="col-6 d-flex align-items-center pr-0">
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('ChildDomestic')" class="fa fa-minus decreaseQtyChildDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('ChildDomestic')" class="fa fa-minus decreaseQtyChildDomestic border p-1 b-radius"></i></div>
                                                               <div class="col-4 text-center px-0"><input type="text" id="qtyValueChildDomestic" class="form-control bg-transparent border-0 text-center qtyValueChildDomestic" value="0" readonly="readonly"></div>
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('ChildDomestic',2)" class="fa fa-plus increaseQtyChildDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('ChildDomestic',2)" class="fa fa-plus increaseQtyChildDomestic border p-1 b-radius"></i></div>
                                                           </div>
                                                       </div> 
                                                        <div class="dvQtySelectorInfantDomestic dvQtySelector dropdown-item d-flex- align-items-center d-none">
                                                           <div class="col-6 special-text h7">Infant(s) Below 2 Yrs</div>
                                                           <div class="col-6 d-flex align-items-center pr-0">
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('InfantDomestic')" class="fa fa-minus decreaseQtyInfantDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('InfantDomestic')" class="fa fa-minus decreaseQtyInfantDomestic border p-1 b-radius"></i></div>
                                                               <div class="col-4 text-center px-0"><input type="text" id="qtyValueInfantDomestic" class="form-control bg-transparent border-0 text-center qtyValueInfantDomestic" value="0" readonly="readonly"></div>
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('InfantDomestic',2)" class="fa fa-plus increaseQtyInfantDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('InfantDomestic',2)" class="fa fa-plus increaseQtyInfantDomestic border p-1 b-radius"></i></div>
                                                           </div>
                                                       </div>
                                                  </div>
@@ -294,7 +294,7 @@
                                         <div class="dvTextBoxFromdomestic input-group">
                                             <input class="input from-icon form-control pr-5" id="textBoxFromdomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
+                                                <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
                                             </div>
                                         </div>
                                         <input type="hidden" id="hdntripdomestic" value="true" />
@@ -308,7 +308,7 @@
                                         <div class="dvTextBoxTodomestic input-group">
                                             <input class="input from-icon form-control pr-5" id="textBoxTodomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
+                                                <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -317,7 +317,7 @@
                                         <div class="input-group">
                                             <input id="txtDepartdomestic" class="input datePicker form-control cal-icon pr-5" onfocus="placeholderOnFocusdomestic(this,'Enter Date');" onblur="placeholderOnFocusdomestic(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -327,7 +327,7 @@
                                                         <input class="input datePicker form-control cal-icon pr-5" id="txtReturndomestic" onfocus="placeholderOnFocusdomestic(this,'Enter Date');"
                                                         onblur="placeholderOnFocusdomestic(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                            <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>                                                                                
@@ -383,7 +383,7 @@
                                         onblur="placeholderOnFocusdomestic(this, 'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                     <input type="hidden" id="hdntripdomestic" value="true" />
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-white"><i class="fa fa-plane" aria-hidden="true"></i></span>
+                                        <span class="input-group-text bg-colour6"><i class="fa fa-plane" aria-hidden="true"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -393,7 +393,7 @@
                                     <input class="input form-control" id="textBoxTodomestic" onfocus="placeholderOnFocusdomestic(this, 'Enter City or Airport');"
                                         onblur="placeholderOnFocusdomestic(this, 'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-white"><i class="fa fa-plane" aria-hidden="true"></i></span>
+                                        <span class="input-group-text bg-colour6"><i class="fa fa-plane" aria-hidden="true"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -403,7 +403,7 @@
                                     <input id="txtDepartdomestic" class="input form-control" onfocus="placeholderOnFocusdomestic(this, 'Enter Date');"
                                         onblur="placeholderOnFocusdomestic(this, 'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-white"><i class="fa fa-calendar-o"></i></span>
+                                        <span class="input-group-text bg-colour6"><i class="fa fa-calendar-o"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -413,7 +413,7 @@
                                     <input class="input form-control" id="txtReturndomestic" onfocus="placeholderOnFocusdomestic(this,'Enter Date');"
                                         onblur="placeholderOnFocusdomestic(this, 'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-white"><i class="fa fa-calendar-o"></i></span>
+                                        <span class="input-group-text bg-colour6"><i class="fa fa-calendar-o"></i></span>
                                     </div>
                                 </div>
                             </div>

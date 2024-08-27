@@ -1,0 +1,173 @@
+/*=========[ ACCOUNT BG ]=========*/
+.dvMember {
+    /*background: url("../images/homepage/earn/bg-image.svg");*/
+    background: var(--bg-colour3);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+/*=========[ ACCOUNT BG ]=========*/
+
+
+
+/*=========[ ACCOUNT MENU ]=========*/
+.dvAccountMenu {
+  border-bottom: 1px solid var(--bg-colour3);
+}
+.dvAccountMenu .nav-link {
+  color: var(--bg-colour7);
+  padding: 0;
+  min-height: 70px;
+}
+.dvAccountMenu .active {
+  color: var(--text-colour2);
+  background: var(--bg-colour1);
+}
+/*=========[ ACCOUNT MENU ]=========*/
+
+
+
+/*=========[ STATEMENT SUMMARY ]=========*/
+
+/*=========[ STATEMENT SUMMARY ]=========*/
+
+
+
+/*=========[ TRANSACTION SUMMARY ]=========*/
+.dvTransactionSummary p.heading-bold span.heading-bold {
+  color: var(--bg-colour1);
+  font-size: 1.25rem;
+}
+.dvTransactionSummary .dvInput.input-group .form-control[readonly],
+.dvTransactionSummary .dvInputGroup.input-group .form-control[readonly] {
+    background-color: var(--colour6);
+    cursor: default;
+}
+.dvTransactionSummary .dvLabel .radiomark{
+    top:5px;
+}
+/*=========[ TRANSACTION SUMMARY ]=========*/
+
+
+
+/*=========[ POINTS EXPIRY ]=========*/
+
+/*=========[ POINTS EXPIRY ]=========*/
+
+
+
+/*=========[ ORDER HISTORY ]=========*/
+
+/*=========[ ORDER HISTORY ]=========*/
+
+
+
+/*=========[ ORDER DETAILS ]=========*/
+.dvOrderDetailsPopup .close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    z-index: 3;
+}
+.dvOrderDetailsPopup .modal-header {
+    padding: 0rem 1rem;
+    border-bottom: unset;
+}
+
+.dvOrderDetailsPopup .modal-dialog {
+    max-width: 92%;
+    margin: 1.75rem auto;
+}
+
+.dvOrderDetailsPopup .modal-header .close {
+    z-index: 999;
+    padding: 8px 1rem;
+    margin: -1rem -1rem -1rem auto;
+    position: relative;
+    right: -9px;
+    top: 7px;
+}
+.dvOrderDetailsPopup .modal-body .barcode-img {
+    width:150px;
+}
+
+
+/*delivery track*/
+.dvOrderDetails .dvDeliveryTrack .w-30{
+    width:30px;
+}
+.dvOrderDetails .dvDeliveryTrack .h-30 {
+    height: 30px;
+}
+.dvOrderDetails .dvDeliveryTrack{
+    position: relative;
+}
+.dvOrderDetails .dvDeliveryTrack .dvLine {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:0;
+    width:95%;
+}
+.dvOrderDetails .dvDeliveryTrack span.rounded-circle{
+    font-weight:bold;
+}
+.dvOrderDetails .dvDeliveryTrack .active > span.rounded-circle:first-child{
+    background-color:var(--colour1);
+    color:var(--colour6);
+    font-weight:bold;
+}
+/*=========[ ORDER DETAILS ]=========*/
+
+
+
+/*=========[ PROFILE PAGE ]=========*/
+.dvProfile .dvCommonAccordion .card .card-body .dvInputGroup.input-group .form-control {height:auto;}
+/*=========[ PROFILE PAGE ]=========*/
+
+
+/*=========[ MANAGE PAGE ]=========*/
+.dvManage .accordion .card {
+  border-radius: 0.25rem;
+}
+
+.dvManage .accordion .card-header {
+  margin-bottom: 0;
+}
+
+.dvManage .accordion .card-body {
+  background: var(--bg-colour3);
+  border-radius: 0.25rem;
+}
+
+.dvManage .accordion span.d-inline-block {
+  min-height: 42px;
+}
+
+.dvManage .wd-br-all {
+    word-break: break-all;
+}
+/*=========[ MANAGE PAGE ]=========*/
+
+
+
+/*=========[ MEDIA QUERIES ]=========*/
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+  .dvOrderDetailsPopup .modal-dialog {
+    max-width: 65%;
+  }
+}
+/*=========[ MEDIA QUERIES ]=========*/

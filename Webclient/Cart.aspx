@@ -30,10 +30,10 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-lightgray p-3 mt-4 mt-sm-0">
+                    <div class="bg-colour2 p-3 mt-4 mt-sm-0">
                         <div class="row">
                             <div class="col-12">
-                                <div class="bg-white p-3">
+                                <div class="bg-colour6 p-3">
                                     <div id="divCartContents" runat="server">
                                     </div>
                                     <div class="row dvBorderBottom mt-3 mb-2">

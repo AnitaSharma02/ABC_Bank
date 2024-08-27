@@ -77,7 +77,7 @@
                                     <div class="dvInput input-group">
                                         <input type="password" class="form-control" id="txtPassword" runat="server" />
                                          <div class="input-group-append">
-                                             <span toggle="#CP_txtPassword" class="input-group-text bg-white fa fa-solid fa-eye-slash toggle-password passwordShow"></span>
+                                             <span toggle="#CP_txtPassword" class="input-group-text bg-colour6 fa fa-solid fa-eye-slash toggle-password passwordShow"></span>
                                          </div>
                                      </div>
                                 </div>
@@ -86,7 +86,7 @@
                                     <div class="dvInput input-group">
                                         <input type="password" class="form-control" id="txtConfirmPassword" runat="server" />
                                         <div class="input-group-append">
-                                            <span toggle="#CP_txtConfirmPassword" class="input-group-text bg-white fa fa-solid fa-eye-slash toggle-password passwordShow"></span>
+                                            <span toggle="#CP_txtConfirmPassword" class="input-group-text bg-colour6 fa fa-solid fa-eye-slash toggle-password passwordShow"></span>
                                         </div> 
                                     </div>
                                 </div>

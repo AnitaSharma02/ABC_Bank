@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Order Details" Language="C#" MasterPageFile="SiteShopMaster.master" AutoEventWireup="true" CodeFile="OrderDetails.aspx.cs" Inherits="OrderDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CPSHOP" runat="Server">
-    <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="Css/account.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/Validation.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
@@ -95,25 +95,25 @@
             <div class="dvDeliveryTrack row justify-content-md-between mx-lg-n4 my-3" runat="server" id="dvDeliveryTrack">
                 <%--<div class="dvLine border d-none d-md-block px-3"></div>--%>
                <%-- <div class="col-6 col-md-auto mb-3 mt-3 my-3">
-                    <div class="d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3" runat="server" id="divOrderConfirmed">
+                    <div class="d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3" runat="server" id="divOrderConfirmed">
                         <span class="d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2">1</span>
                         <span class="h6 heading-regular">Order Confirmed</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-auto mb-3 mt-3 my-3">
-                    <div class="d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3" runat="server" id="divOrderPicked">
+                    <div class="d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3" runat="server" id="divOrderPicked">
                         <span class="d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2">2</span>
                         <span class="h6 heading-regular">Picked by courier</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-auto mb-3 mt-md-3 my-3">
-                    <div class="d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3" runat="server" id="divOtw">
+                    <div class="d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3" runat="server" id="divOtw">
                         <span class="d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2">3</span>
                         <span class="h6 heading-regular">On the way</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-auto mb-3 mt-md-3 my-3">
-                    <div class="d-flex flex-column flex-sm-row align-items-center bg-white px-md-1 px-lg-3" runat="server" id="divDelivered">
+                    <div class="d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3" runat="server" id="divDelivered">
                         <span class="d-flex align-items-center justify-content-center bg-colour3 p-3 rounded-circle w-30 h-30 mr-sm-2">4</span>
                         <span class="h6 heading-regular">Delivered</span>
                     </div>

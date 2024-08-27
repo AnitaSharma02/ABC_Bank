@@ -120,7 +120,7 @@
         <div class="dvInputGroup dvTxtDOBAdult input-group">
             <asp:TextBox ID="txtDOB" class="form-control icnDate" runat="server" AutoComplete="off"></asp:TextBox>
             <div class="input-group-append">
-                <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
             </div>
         </div>
         <asp:RequiredFieldValidator ID="rfvAdultDOB" runat="server" ControlToValidate="txtDOB"
@@ -218,7 +218,7 @@
             <div class="dvTxtEffectiveDateAdult dvInputGroup input-group">
                 <asp:TextBox ID="txtEffectiveDate" class="form-control" runat="server" Text="" AutoComplete="off"></asp:TextBox>
                 <div class="input-group-append">
-                    <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                    <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                 </div>
             </div>
             <%--<div class="invalid-feedback" id="ErrPassportissue" runat="server">--%>
@@ -237,7 +237,7 @@
                 <asp:TextBox ID="txtExpiryDate" class="form-control" runat="server" Text=""
                     AutoComplete="off"></asp:TextBox>
                 <div class="input-group-append">
-                    <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                    <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                 </div>
             </div>
             <%--<div class="invalid-feedback" id="ErrPassportexpiry" runat="server">--%>

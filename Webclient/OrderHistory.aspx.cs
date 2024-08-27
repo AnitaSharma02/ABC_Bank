@@ -87,7 +87,7 @@ public partial class OrderHistory : Page
                     int rownum = (Skip / PageSize) * PageSize;
                     for (int i = 0; i < lobjOrders.CustomerOrders.Count; i++)
                     {
-                        lstrHtmlContent += "<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-white p-3\">"
+                        lstrHtmlContent += "<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-colour6 p-3\">"
                                 + "<div class=\"row align-items-lg-center justify-content-between\">"
                                 + "<div class=\"col-12 col-sm-6 col-lg-2 mb-1\"><p><span class=\"h7 d-block heading-bold text-colour7\">Order No.</span> <span class=\"h6 d-block\">" + lobjOrders.CustomerOrders[i].Number + "</span></p></div>"
                                 + "<div class=\"col-12 col-sm-6 col-lg-3 mb-1\"><p><span class=\"h7 d-block heading-bold text-colour7\">Order Date</span><span class=\"h6 d-block\">" + DateTime.Parse(lobjOrders.CustomerOrders[i].CreatedDate.ToString()).ToLocalTime() + "</span></p></div>"

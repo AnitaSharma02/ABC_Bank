@@ -2,7 +2,7 @@
     CodeFile="TransactionSummary.aspx.cs" Inherits="TransactionSummary" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="\Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="\Css/account.css" rel="stylesheet" type="text/css" />
     <%--<link href="css/jquery.ui.datepicker.css" rel="stylesheet" type="text/css" />--%>
     <script src="Jquery/Validation.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -207,7 +207,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-lightgray rounded px-3">
+                    <div class="bg-colour2 b-radius px-3">
                         <%--   <div id="divCurrency" class="myacc-user" runat="server" visible="false">
                             Select Currency :
                             <asp:DropDownList ID="ddlProgramCurrency" runat="server" AppendDataBoundItems="true"
@@ -253,7 +253,7 @@
                                     <div class="dvCP_FromDate dvInputGroup input-group">
                                         <asp:TextBox ID="FromDate" runat="server" CssClass="FromDate form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" Text="Enter Date" readonly="true"/>
                                         <div class="input-group-append">
-                                            <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                            <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                         </div>
                                     </div>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="FromDate" ErrorMessage="Enter From Date<br/>" Style="color: #ff0000" Display="Dynamic" ValidationGroup="DateSearch"></asp:RequiredFieldValidator>
@@ -263,7 +263,7 @@
                                     <div class="dvCP_Todate dvInputGroup input-group">
                                         <asp:TextBox ID="Todate" runat="server" CssClass="Todate form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" Text="Enter Date" readonly="true"/>
                                         <div class="input-group-append">
-                                            <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                            <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                         </div>
                                     </div>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Todate" ErrorMessage="Enter To Date." Style="color: #ff0000" Display="Dynamic" ValidationGroup="DateSearch"></asp:RequiredFieldValidator>
@@ -280,7 +280,7 @@
                             <%--<asp:Repeater ID="RepSummaryInfo" runat="server">
                                 <ItemTemplate>
                                     <div class="col-12 mb-3">
-                                        <div class="bg-white p-3">
+                                        <div class="bg-colour6 p-3">
                                             <div class="row">
                                                 <div class="col-12 col-sm-6">
                                                     <h2 class="h6 heading-bold text-capitalize text-colour7"><%#Eval("LoyaltyTxnType").ToString()=="Bonus"?"Bonus":Eval("MerchantName")%></h2>

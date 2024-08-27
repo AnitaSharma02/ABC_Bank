@@ -34,7 +34,7 @@
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-8 col-lg-8 mt-3 mt-md-0" id="divMessage" runat="server">
-                    <%--<div class="border dvCongrat bg-white p-5 text-center">
+                    <%--<div class="border dvCongrat bg-colour6 p-5 text-center">
                         <p class="h5 heading-bold">Congratulations!</p>
                         <p class="heading-light pt-2">Your Order is placed successfully, an email confirmation will be sent on your registered email id.</p>
 

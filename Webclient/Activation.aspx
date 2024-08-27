@@ -2,7 +2,7 @@
     CodeFile="Activation.aspx.cs" Inherits="Activation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="Css/account.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/jquery.md5.js" type="text/javascript"></script>
     <script src="Jquery/Validation.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -132,7 +132,7 @@
                                                     <div class="input-group">
                                                         <asp:TextBox ID="txtPassword" autocomplete="off" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                                                         <div class="input-group-append">
-                                                            <span toggle="#CP_txtPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                            <span toggle="#CP_txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -153,7 +153,7 @@
                                                     <div class="input-group">
                                                         <asp:TextBox ID="txtConfirmpassword" autocomplete="off" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                                         <div class="input-group-append">
-                                                            <span toggle="#CP_txtConfirmpassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                            <span toggle="#CP_txtConfirmpassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                                         </div>
                                                     </div>
                                                 </div>

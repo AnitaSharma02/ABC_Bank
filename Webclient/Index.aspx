@@ -10,7 +10,7 @@
     <div class="dvTurnTransaction mb-5">
         <div class="container-lg">
             <div class="row">
-                <div class="col-12 col-lg-10 offset-lg-1">
+                <div class="col-12">
                     <h2 class="heading1 pt-0 text-center" data-i18n="home-turn">Turn Transactions into Rewards</h2>
                     <span class="h4 heading-regular text-center d-block py-3" data-i18n="home-our-diverse">Infinity Rewards - Our Diverse Loyalty Program</span>
                     <p class="text-center " data-i18n="home-discover">
@@ -148,7 +148,7 @@
     <div class="dvShopDeals py-5 d-none">
         <div class="container-lg">
             <div class="row">
-                <div class="col-12 col-lg-10 offset-lg-1 text-center mb-4">
+                <div class="col-12 text-center mb-4">
                     <h2 class="heading1 text-colour1 mb-3" data-i18n="home-shopthebest">Shop the Best Deals</h2>
                     <p data-i18n="home-maximize">
                         Maximize your Points with our handpicked selection of top deals in electronics, fashion, home essentials, and more.
@@ -163,7 +163,7 @@
     <div class="dvVouchers py-5">
         <div class="container-lg">
             <div class="row">
-                <div class="col-12 col-lg-10 offset-lg-1 text-center mb-4">
+                <div class="col-12 text-center mb-4">
                     <h2 class="heading1 text-colour6 mb-3" data-i18n="home-most-featured">Most Featured Vouchers</h2>
                     <p class="text-colour6" data-i18n="home-choose-from">Choose from over 5,000+ gift vouchers in our expansive Loyalty Program selection.</p>
                 </div>

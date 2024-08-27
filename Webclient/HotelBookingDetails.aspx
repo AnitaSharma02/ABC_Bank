@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="bg-lightgray p-3 mb-3">
+                            <div class="bg-colour2 p-3 mb-3">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <%--<label class="label">Title.</label>
@@ -288,7 +288,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="bg-lightgray p-3">
+                            <div class="bg-colour2 p-3">
                                 <div class="row">
                                     <div class="col-12">
                                         <h2 class="h5 heading-regular text-colour7 mb-1"><asp:Label runat="server" class="h6 heading-semibold text-colour7" ID="lblHotelName"></asp:Label></h2>

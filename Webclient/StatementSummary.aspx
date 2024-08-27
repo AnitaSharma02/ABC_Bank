@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Statement Summary" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="StatementSummary.aspx.cs" Inherits="StatementSummary" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="Css/account.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/Validation.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
@@ -163,7 +163,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="dvEarned col-12 mb-4">
-                    <div class="bg-lightgray py-2 rounded">
+                    <div class="bg-colour2 py-2 b-radius">
                         <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/plus.svg" />
                         <h5 id="my_account_poin_summary_earned" data-i18n="ss-earned-points" class="d-inline-block h6 heading-bold">Earned Points</h5>
                     </div>
@@ -194,7 +194,7 @@
                 </div>
 
                 <div class="dvRedeemed col-12 mb-4">
-                    <div class="bg-lightgray py-2 rounded">
+                    <div class="bg-colour2 py-2 b-radius">
                         <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/minus.svg" />
                         <h5 id="my_account_poin_summary_redeemed" data-i18n="ss-redeemed-points" class="d-inline-block h6 heading-bold">Redeemed Points</h5>
                     </div>
@@ -211,7 +211,7 @@
                 </div>
 
                 <div class="dvExpired col-12 mb-4 d-none">
-                    <div class="bg-lightgray py-2 rounded">
+                    <div class="bg-colour2 py-2 b-radius">
                         <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/minus.svg" />
                         <h5 data-i18n="ss-expired-points" class="d-inline-block heading-bold">Expired Points</h5>
                     </div>
@@ -228,7 +228,7 @@
                 </div>
 
                 <div class="dvBalance col-12">
-                    <div class="bg-primary py-2 rounded d-flex flex-wrap justify-content-between align-items-center">
+                    <div class="bg-colour1 py-2 b-radius d-flex flex-wrap justify-content-between align-items-center">
                         <div>
                             <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/equal.svg" />
                             <h5 class="d-inline-block h6 heading-bold text-white" data-i18n="ss-points-balance">Points Balance</h5>

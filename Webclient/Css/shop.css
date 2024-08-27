@@ -1,20 +1,4 @@
 /*=========[ SHOP Page ]=========*/
-/*.dvShopSearchBox .dvSearch {
-    position: relative
-}
-.dvShopSearchBox .btn-search {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    z-index: 2;
-    transform: translate(0, -50%);
-    border: 0;
-    background-color: transparent;
-}*/
-/*.dvShopSearchBox .form-control {
-    border-radius: 0.25rem !important;
-}*/
-
 .dvShopPage .dvBg1 {
     background-color: var(--bg-colour2);
     padding: 1rem 0;
@@ -23,6 +7,9 @@
     padding: 1rem 0;
 }
 /*=========[ SHOP Page ]=========*/
+
+
+
 /*=========[ SHOP Product Details ]=========*/
 .dvThumbSwiperSlider .mySwiper2 { 
     border: 1px solid #ccc;
@@ -37,12 +24,6 @@
     padding: 8px;
     background-color: var(--bg-colour2);
 }
-/*.dvProductInfo .input-group .btn {
-    background-color: var(--bg-colour2);
-}*/
-/*.dvDetails .card-body {
-    padding: 0 1.25rem;
-}*/
 .dvProductDetail .dvThumbSwiperSlider #CP_CPSHOP_divThumbnailImages .img-container {
     padding-bottom: 25%;
     border: 1px solid #ccc; 
@@ -65,7 +46,6 @@
     font-family: var(--heading-semibold);
 }
 
-
 /*Giftcard,lounges, etc. Userdetails Modal Popup*/
 .dvProductDetail .dvVouchersPopup .form-group {
     margin-bottom: 0;
@@ -86,6 +66,9 @@
 }
 /*Giftcard,lounges, etc. Userdetails Modal Popup*/
 /*=========[ SHOP Product Details ]=========*/
+
+
+
 /*=========[ SHOP List ]=========*/
 .dvProductList .dvFilter.modal .accordion .card-header,
 .dvProductList .dvFilter.modal .accordion .card-header button {
@@ -98,11 +81,14 @@
     padding-bottom: 80%;
 }
 /*=========[ SHOP List]=========*/
+
+
+
 /*=========[ SHOP Cart]=========*/
-.dvCartDetails .bg-lightgray {
-    background: var(--bg-colour3);
-}
+
 /*=========[ SHOP Cart]=========*/
+
+
 
 /*=========[ SHOP Checkout]=========*/
 .dvShopCheckout .bg {
@@ -116,13 +102,14 @@
     text-align: center;
     line-height: 15px;
 }
-.dvShopCheckout .bg-lightgray {
-    background-color: var(--bg-colour2);
-}
+
 .dvShopCheckout .dvInput.input-group .form-control:disabled, .dvShopCheckout .dvInputGroup.input-group .form-control:disabled {
     background-color: var(--colour6);
 }
 /*=========[ SHOP Checkout]=========*/
+
+
+
 /*=========[ GiftCard Product Details]=========*/
 .dvVouchersPopup .form-group legend {
     color: var(--text-colour1); 
@@ -151,6 +138,9 @@
     margin-top:3rem;
 }
 /*=========[ GiftCard Product Details]=========*/
+
+
+
 /*=========[ redeem ]=========*/
 .dvRedeem .image {
     border-radius: 50%;
