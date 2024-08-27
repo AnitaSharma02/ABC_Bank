@@ -34,10 +34,10 @@
                                 <h2 class="h5 heading-semibold text-colour7 my-3">Congratulations for your Infinity Rewards Ticket!</h2>
                                 <p>
                                     Reference No:
-                                    <asp:Label ID="lblbookingReferenceNo" runat="server" Text="NIL" CssClass="heading-bold"></asp:Label>
+                                    <asp:Label ID="lblbookingReferenceNo" runat="server" Text="NIL" CssClass="heading-semibold text-colour7"></asp:Label>
                                 </p>
-                                <p>Payment Info: <span id="PaymentInfo" runat="server" class="heading-bold"></span></p>
-                                <p class="my-3 heading-bold">
+                                <p>Payment Info: <span id="PaymentInfo" runat="server" class="heading-semibold text-colour7"></span></p>
+                                <p class="my-3 heading-semibold text-colour7">
                                     Thank you
                                     <asp:Label ID="lblMemberName" runat="server" Text="NIL"></asp:Label>
                                     (Infinity Rewards ID :-&nbsp;<asp:Label ID="lblMembershipReference" runat="server" Text="NIL"></asp:Label>) for
@@ -45,11 +45,11 @@
                                         pertaining to this booking.
                                 </p>
                                 <p>
-                                    Your Current status for Car Booking is  <span class="heading-bold">
+                                    Your Current status for Car Booking is  <span class="heading-semibold text-colour7">
                                         <asp:Label ID="lblBookingStatus" runat="server" Text="NIL"></asp:Label>*.</span>
                                 </p>
                                 <p style="display: none;">
-                                    Supplier ID: <span class="heading-bold">
+                                    Supplier ID: <span class="heading-semibold">
                                         <asp:Label ID="lblbookingId" runat="server" Text="NIL"></asp:Label></span>
                                 </p>
                             </div>

@@ -109,13 +109,13 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-colour2 b-radius p-3">
+                    <div class="border b-radius p-3">
                         <div class="dvCommonAccordion accordion" id="manage-accordion">
                             <div class="card mb-3">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
                                         <button
-                                            class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase"
+                                            class="btn- btn-block text-left p-3 h6 text-uppercase"
                                             type="button"
                                             data-toggle="collapse"
                                             data-target="#collapse1">
@@ -130,42 +130,48 @@
                                 <div id="collapse1" class="collapse show" data-parent="#manage-accordion">
                                     <div class="card-body p-3">
                                         <div class="row">
-                                            <div class="form-group col-sm-3">
-                                                <p class="">
-                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-name">Name</span>
-                                                    <asp:Label runat="server" CssClass="d-block" ID="labelMemberNameValue"></asp:Label>
-                                                </p>
-                                            </div>
-                                            <div class="form-group col-sm-3">
-                                                <p class="">
-                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-mobile-no">Mobile No.</span>
-                                                    <asp:Label CssClass="d-block" ID="labelMobileNo" runat="server"></asp:Label>
-                                                    <asp:HiddenField ID="hfRelationRef" runat="server"></asp:HiddenField>
-                                                </p>
-                                            </div>
-                                            <div class="form-group col-sm-3">
-                                                <p class="">
-                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-email-id">E-mail ID</span>
-                                                    <asp:Label ID="labelEmailValue" CssClass="d-block" runat="server"></asp:Label>
-                                                </p>
-                                            </div>
-                                            <div class="form-group col-sm-3">
-                                                <p class="">
-                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-gender">Gender</span>
-                                                    <asp:Label runat="server" CssClass="d-block" ID="lblGender"></asp:Label>
-                                                </p>
-                                            </div>
-                                            <div class="form-group col-sm-3">
-                                                <p class="">
-                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-nationality">Nationality</span>
-                                                    <asp:Label ID="lblNationality" CssClass="d-block" runat="server"></asp:Label>
-                                                </p>
-                                            </div>
-                                            <div class="form-group col-sm-3">
-                                                <p class="">
-                                                    <span class="h7 d-block heading-bold text-colour7" data-i18n="vp-address">Address</span>
-                                                    <asp:Label ID="labelAddressValue" CssClass="d-block" runat="server"></asp:Label>
-                                                </p>
+                                            <div class="col-12">
+                                                <div class="bg-colour6 p-3">
+                                                    <div class="row">
+                                                        <div class="col-sm-3 mb-3">
+                                                            <p class="">
+                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-name">Name</span>
+                                                                <asp:Label runat="server" CssClass="d-block" ID="labelMemberNameValue"></asp:Label>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-sm-3 mb-3">
+                                                            <p class="">
+                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-mobile-no">Mobile No.</span>
+                                                                <asp:Label CssClass="d-block" ID="labelMobileNo" runat="server"></asp:Label>
+                                                                <asp:HiddenField ID="hfRelationRef" runat="server"></asp:HiddenField>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-sm-3 mb-3">
+                                                            <p class="">
+                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-email-id">E-mail ID</span>
+                                                                <asp:Label ID="labelEmailValue" CssClass="d-block" runat="server"></asp:Label>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-sm-3 mb-3">
+                                                            <p class="">
+                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-gender">Gender</span>
+                                                                <asp:Label runat="server" CssClass="d-block" ID="lblGender"></asp:Label>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <p class="">
+                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-nationality">Nationality</span>
+                                                                <asp:Label ID="lblNationality" CssClass="d-block" runat="server"></asp:Label>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <p class="">
+                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-address">Address</span>
+                                                                <asp:Label ID="labelAddressValue" CssClass="d-block" runat="server"></asp:Label>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -176,7 +182,7 @@
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
                                         <button
-                                            class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed"
+                                            class="btn- btn-block text-left p-3 h6 text-uppercase collapsed"
                                             type="button"
                                             data-toggle="collapse"
                                             data-target="#collapse2">
@@ -189,79 +195,85 @@
                                 </div>
                                 <div id="collapse2" class="collapse" data-parent="#manage-accordion">
                                     <div class="card-body p-3">
-                                        <div class="row mt-4">
-                                            <div class="col-lg-6">
-                                                <div class="row">
-                                                    <div class="col-12 position-relative fontawesome">
-                                                        <label class="label">Current Password</label>
-                                                        <div class="dvInputGroup input-group mb-3">
-                                                            <input
-                                                                autocomplete="off"
-                                                                type="password"
-                                                                class="form-control"
-                                                                placeholder="Enter Your Password"
-                                                                onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;" 
-                                                                id="txtOldPassword"/>
-                                                            <div class="input-group-append">
-                                                                <span toggle="#txtOldPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="bg-colour6 p-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="row">
+                                                                <div class="col-12 position-relative fontawesome">
+                                                                    <label class="label">Current Password</label>
+                                                                    <div class="dvInputGroup input-group mb-3">
+                                                                        <input
+                                                                            autocomplete="off"
+                                                                            type="password"
+                                                                            class="form-control"
+                                                                            placeholder="Enter Your Password"
+                                                                            onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
+                                                                            id="txtOldPassword" />
+                                                                        <div class="input-group-append">
+                                                                            <span toggle="#txtOldPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 position-relative fontawesome">
+                                                                    <label class="label">New Password</label>
+                                                                    <div class="dvInputGroup input-group mb-3">
+                                                                        <input
+                                                                            autocomplete="off"
+                                                                            type="password"
+                                                                            class="form-control"
+                                                                            placeholder="Enter New Password"
+                                                                            onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
+                                                                            id="txtPassword" />
+                                                                        <div class="input-group-append">
+                                                                            <span toggle="#txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 position-relative fontawesome">
+                                                                    <label class="label">Confirm Password</label>
+                                                                    <div class="dvInputGroup input-group mb-3">
+                                                                        <input
+                                                                            autocomplete="off"
+                                                                            type="password"
+                                                                            class="form-control"
+                                                                            placeholder="Enter New Password"
+                                                                            onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
+                                                                            id="txtNewPassword" />
+                                                                        <div class="input-group-append">
+                                                                            <span toggle="#txtNewPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-8 mb-3">
+                                                                    <%--<button style="margin-bottom: 1px" class="btn btn-one" type="button" OnClientClick="var retValue = ChangePassword(); event.returnValue = retValue;return retValue;">Save & Continue</button>--%>
+                                                                    <asp:Button runat="server" ID="Button1" OnClientClick="var retValue = ChangePassword(); event.returnValue = retValue;return retValue;" CssClass="btn btn-one" Text="Save & Continue" />
+                                                                </div>
+                                                                <div id="ChangePasswordValidation" class="pl-3 danger">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="pri-pol">
+                                                                <h2 class="h6 heading-bold text-colour7">Password Policy:</h2>
+                                                                <ul class="p-3">
+                                                                    <li>Minimum 8 characters in length</li>
+                                                                    <li>Should contain at least one capital case character</li>
+                                                                    <li>Should contain at least one small case character</li>
+                                                                    <li>Should contain at least one special character (!@#$%0?)
+                                                                    </li>
+                                                                    <li>Should contain at least one numeric digit</li>
+                                                                </ul>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12 position-relative fontawesome">
-                                                        <label class="label">New Password</label>
-                                                        <div class="dvInputGroup input-group mb-3">
-                                                            <input
-                                                                autocomplete="off"
-                                                               type="password"
-                                                                class="form-control"
-                                                                placeholder="Enter New Password"
-                                                                onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
-                                                                id="txtPassword"/>
-                                                            <div class="input-group-append">
-                                                                <span toggle="#txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12 position-relative fontawesome">
-                                                        <label class="label">Confirm Password</label>
-                                                        <div class="dvInputGroup input-group mb-3">
-                                                            <input
-                                                                autocomplete="off"
-                                                                type="password"
-                                                                class="form-control"
-                                                                placeholder="Enter New Password"
-                                                                onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
-                                                                id="txtNewPassword"/>
-                                                            <div class="input-group-append">
-                                                                <span toggle="#txtNewPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-8 mb-3">
-                                                        <%--<button style="margin-bottom: 1px" class="btn btn-one" type="button" OnClientClick="var retValue = ChangePassword(); event.returnValue = retValue;return retValue;">Save & Continue</button>--%>
-                                                         <asp:Button runat="server" ID="Button1" OnClientClick="var retValue = ChangePassword(); event.returnValue = retValue;return retValue;" CssClass="btn btn-one" Text="Save & Continue" />
-                                                    </div>
-                                                    <div id="ChangePasswordValidation" class="pl-3" style="color: #ff0000; font-size: 13px; float: left;">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="pri-pol">
-                                                    <h2 class="h6 heading-bold">Password Policy:</h2>
-                                                    <ul class="p-3">
-                                                        <li class="heading-regular">Minimum 8 characters in length</li>
-                                                        <li class="heading-regular">Should contain at least one capital case character</li>
-                                                        <li class="heading-regular">Should contain at least one small case character</li>
-                                                        <li class="heading-regular">Should contain at least one special character (!@#$%0?)
-                                                        </li>
-                                                        <li class="heading-regular">Should contain at least one numeric digit</li>
-                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>

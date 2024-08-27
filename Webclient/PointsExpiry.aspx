@@ -78,7 +78,7 @@
                     <div class="bg-colour2 p-3">
                         <div class="row align-items-center">
                             <div class="col-7 col-sm-9 col-lg-10">
-                                <p class="heading-semibold" data-i18n="pe-please-select-the-year">Please select the year to view your Points expiry schedule:</p>
+                                <p class="" data-i18n="pe-please-select-the-year">Please select the year to view your Points expiry schedule:</p>
                             </div>
                             <div class="col-5 col-sm-3 col-lg-2">
                                 <asp:DropDownList ID="dtYear" runat="server" OnSelectedIndexChanged="dtYear_SelectedIndexChanged"
@@ -96,12 +96,12 @@
                     <div class="bg-colour2 pt-0 pb-3">
                         <div class="row">
                             <div class="col-12">
-                                <div class="h6 heading-semibold text-colour7" id="divExpiredon" runat="server">
+                                <p class="heading-bold text-colour7" id="divExpiredon" runat="server">
                                     <span data-i18n="pe-your">Your </span>
                                     <asp:Label ID="lblMiles" runat="server" Text=""></asp:Label>
                                     <span data-i18n="pe-points-going-expire">Points are going to expire on </span>
                                     <asp:Label ID="lblDate" runat="server" Text=""></asp:Label>.
-                                </div>
+                                </p>
                             </div>
                         </div>
                     </div>

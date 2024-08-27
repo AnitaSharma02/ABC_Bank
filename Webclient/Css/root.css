@@ -473,13 +473,13 @@
 
     /*modal-header*/
     --modal-header-padding: 1rem 1rem;
-    --modal-header-bg-colour: var(--colour5);
+    --modal-header-bg-colour: var(--colour1);
     --modal-header-align-items: center;
     --modal-header-border-bottom: none;
 
     /*modal-title*/
     --modal-title-font-family: var(--heading-bold); 
-    --modal-title-text-colour: var(--colour1);
+    --modal-title-text-colour: var(--colour6);
     --modal-title-fontsize: 1rem;
 
     /*modal-footer*/
@@ -490,23 +490,23 @@
     --modal-close-btn-opacity: 1;
     --modal-close-btn-fontsize: 1rem;
     --modal-close-icon-bg: transparent;
-    --modal-close-icon-text-colour: var(--colour1);
+    --modal-close-icon-text-colour: var(--colour6);
     --modal-close-icon-fontsize: 1rem;
 
     /* COMMON ACCORDION */
     --accordion-header-family: var(--font-semibold);
     --accordion-body-family: var(--font-medium);
-    --accordion-border-colour: transparent;
+    --accordion-border-colour:transparent /*var(--border-colour)*/;
     --accordion-card-border: transparent;
-    --accordion-header-bg: var(--colour5);
-    --accordion-header-text: var(--colour1);
+    --accordion-header-bg: var(--colour2);
+    --accordion-header-text: var(--colour7);
     --accordion-header-border: var(--colour5);
     --accordion-header-b-radius: var(--b-radius);
-    --accordion-header-active-bg: var(--colour5);
-    --accordion-header-active-text: var(--colour1);
+    --accordion-header-active-bg: var(--colour2);
+    --accordion-header-active-text: var(--colour7);
     --accordion-header-active-border: var(--colour5);
     --accordion-header-active-b-radius: var(--b-radius) var(--b-radius) 0 0;
-    --accordion-body-bg: var(--colour5);
+    --accordion-body-bg: var(--colour4);
     --accordion-body-text: var(--colour7);
     --accordion-body-border: var(--colour3);
     --accordion-body-b-radius: var(--b-radius);

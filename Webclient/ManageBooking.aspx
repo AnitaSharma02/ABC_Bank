@@ -179,12 +179,12 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <div class="border p-3">
+                    <div class="border b-radius p-3">
                         <div class="dvCommonAccordion accordion" id="manage-accordion">
                             <div class="card mb-3">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0 ">
-                                        <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase" type="button"
+                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase" type="button"
                                             data-toggle="collapse" data-target="#collapse1">
                                             <span data-i18n="mb-flight-booking-details">Flight Booking Details</span>
                                             <span class="arrow-icon">
@@ -275,7 +275,7 @@
                             <div class="card mb-3">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
-                                        <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
+                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
                                             data-toggle="collapse" data-target="#collapse2">
                                             Hotel Booking Details
                                             <span class="arrow-icon">
@@ -374,7 +374,7 @@
                             <div class="card mb-3 d-none">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
-                                        <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
+                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
                                             data-toggle="collapse" data-target="#collapse3">
                                             Experience Booking Details
                                             <span class="arrow-icon">
@@ -392,7 +392,7 @@
                             <div class="card mb-3">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
-                                        <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
+                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
                                             data-toggle="collapse" data-target="#collapse4">
                                             Domestic Flight Booking Details
                                             <span class="arrow-icon">
@@ -410,7 +410,7 @@
                             <div class="card mb-3" style="display: none;">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
-                                        <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
+                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
                                             data-toggle="collapse" data-target="#collapse5">
                                             Insurance Booking Details
                                             <span class="arrow-icon">
@@ -428,7 +428,7 @@
                             <div class="card" style="display: none;">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
-                                        <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
+                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
                                             data-toggle="collapse" data-target="#collapse6">
                                             ISP Booking Details
                                             <span class="arrow-icon">
@@ -446,7 +446,7 @@
                             <div class="card">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0 ">
-                                        <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
+                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
                                             data-toggle="collapse" data-target="#collapse7">
                                             <span data-i18n="mb-car-booking-details">Car Booking Details</span>
                                             <span class="arrow-icon">
@@ -465,24 +465,24 @@
                                                             <div class="row justify-content-between">
                                                                 <div class="col-12 col-sm-6 col-lg-4 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold">Car Name</span>
-                                                                        <span class="d-block h6 heading-regular pt-1">
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Car Name</span>
+                                                                        <span class="d-block h6">
                                                                             <%#Eval("Vehicle_name")%>
                                                                         </span>
                                                                     </p>
                                                                 </div>
                                                                 <div class="col-12 col-sm-6 col-lg-4 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold">Booking Ref Id</span>
-                                                                        <span class="d-block h6 heading-regular pt-1">
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Booking Ref Id</span>
+                                                                        <span class="d-block h6">
                                                                             <%#Eval("Reference_Unique_Id") %>
                                                                         </span>
                                                                     </p>
                                                                 </div>
                                                                 <div class="col-12 col-sm-6 col-lg-4 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold">Pick-Up Details</span>
-                                                                        <span class="d-block h6 heading-regular pt-1">
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Pick-Up Details</span>
+                                                                        <span class="d-block h6">
                                                                             <%--  <%#Eval("pickUpDateTime")%>--%>
                                                                             <%#Eval("pickUpBranchLine")%> 
                                                                         </span>
@@ -490,8 +490,8 @@
                                                                 </div>
                                                                 <div class="col-12 col-sm-6 col-lg-4 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold">Drop-Off Details</span>
-                                                                        <span class="d-block h6 heading-regular pt-1">
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Drop-Off Details</span>
+                                                                        <span class="d-block h6">
                                                                             <%--  <%#Eval("dropOffDateTime")%>--%>
                                                                             <%#Eval("dropOffBranchLine")%> 
                                                                         </span>
@@ -499,16 +499,16 @@
                                                                 </div>
                                                                 <div class="col-12 col-sm-6 col-lg-4 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold">Booking Status</span>
-                                                                        <span class="d-block h6 heading-regular pt-1">
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Booking Status</span>
+                                                                        <span class="d-block h6">
                                                                             <%#Eval("Status")%>
                                                                         </span>
                                                                     </p>
                                                                 </div>
                                                                 <div class="col-12 col-sm-6 col-lg-4 mb-3">
                                                                     <span>
-                                                                        <span class="h7 d-block heading-semibold" data-i18n="managebooking-hotel-points-label">Points</span>
-                                                                        <span class="d-block- h6 heading-regular pt-1">
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-points-label">Points</span>
+                                                                        <span class="d-block- h6">
                                                                             <%#Eval("Payment_Amount")%>
                                                                         </span>
                                                                     </span>
@@ -517,14 +517,14 @@
                                                                 </div>
                                                                 <%-- <div class="col-12 col-md-3 mb-1">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold">Booking Pickup Location</span>
-                                                                        <span class="d-block h6 heading-regular pt-1"> 
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Booking Pickup Location</span>
+                                                                        <span class="d-block h6"> 
                                                                         </span>
                                                                     </p>
                                                                 </div>--%>
                                                                 <%--  <div class="col-12 col-md-3 mb-1 mt-2 mt-lg-0">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold">Booking Drop-Off Location</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Booking Drop-Off Location</span>
                                                                             </p>
                                                                 </div>--%>
                                                             </div>

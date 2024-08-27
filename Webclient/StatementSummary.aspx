@@ -169,7 +169,7 @@
                     </div>
                     <div class="d-flex flex-wrap">
                         <div class="col-6 border-bottom border-right border-left py-3">
-                            <p data-i18n="ss-bonus-points" class="heading-regular">Bonus Points</p>
+                            <p data-i18n="ss-bonus-points" class="">Bonus Points</p>
                         </div>
                         <div class="col-6 border-bottom border-right py-3">
                             <asp:Label ID="lblBonusmile" runat="server" Text="0"></asp:Label>
@@ -177,7 +177,7 @@
                     </div>
                     <div class="d-flex flex-wrap">
                         <div class="col-6 border-bottom border-right border-left py-3">
-                            <p id="my_account_poin_summary_spend" data-i18n="ss-on-spend-points" class="heading-regular">On Spend Points</p>
+                            <p id="my_account_poin_summary_spend" data-i18n="ss-on-spend-points" class="">On Spend Points</p>
                         </div>
                         <div class="col-6 border-bottom border-right py-3">
                             <asp:Label ID="lblSpendmile" runat="server" Text="0"></asp:Label>
@@ -185,7 +185,7 @@
                     </div>
                     <div class="d-none flex-wrap">
                         <div class="col-6 border-bottom border-right border-left py-3">
-                            <p id="my_account_poin_summary_purchase" data-i18n="ss-purchase-points" class="heading-regular">Purchase Points</p>
+                            <p id="my_account_poin_summary_purchase" data-i18n="ss-purchase-points" class="">Purchase Points</p>
                         </div>
                         <div class="col-6 border-bottom border-right py-3">
                             <asp:Label ID="lblPurchasemile" runat="server" Text="0"></asp:Label>

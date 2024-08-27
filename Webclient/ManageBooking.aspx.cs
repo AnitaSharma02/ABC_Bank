@@ -173,36 +173,36 @@ public partial class ManageBooking : Page
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"bg-colour6 p-3\">");
 
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
-                        
+
                         /*
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 mb-1\">");
                         lsbTrExperienceBookingDetailsHtml.Append("<p>");
-                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">No.</span> <span class=\"h6 d-block\">" + i + "</span>");
+                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">No.</span> <span class=\"h6 d-block\">" + i + "</span>");
                         lsbTrExperienceBookingDetailsHtml.Append("</p>");
                         lsbTrExperienceBookingDetailsHtml.Append("</div>");
                         */
 
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-12 col-xl-4 mb-1\">");
                         lsbTrExperienceBookingDetailsHtml.Append("<p>");
-                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Product Title</span> <span class=\"h6 d-block\">" + item.MerchantName.Split('#')[0] + "</span>");
+                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Product Title</span> <span class=\"h6 d-block\">" + item.MerchantName.Split('#')[0] + "</span>");
                         lsbTrExperienceBookingDetailsHtml.Append("</p>");
                         lsbTrExperienceBookingDetailsHtml.Append("</div>");
 
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-2 mb-1\">");
                         lsbTrExperienceBookingDetailsHtml.Append("<p>");
-                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Booking Ref ID</span> <span class=\"h6 d-block\">" + item.MerchantName.Split('#')[2] + "</span>");
+                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Booking Ref ID</span> <span class=\"h6 d-block\">" + item.MerchantName.Split('#')[2] + "</span>");
                         lsbTrExperienceBookingDetailsHtml.Append("</p>");
                         lsbTrExperienceBookingDetailsHtml.Append("</div>");
 
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-2 mb-1\">");
                         lsbTrExperienceBookingDetailsHtml.Append("<p>");
-                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Order Date</span> <span class=\"h6 d-block\">" + item.TransactionDate.ToString("dd/MM/yyyy") + "</span>");
+                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Order Date</span> <span class=\"h6 d-block\">" + item.TransactionDate.ToString("dd/MM/yyyy") + "</span>");
                         lsbTrExperienceBookingDetailsHtml.Append("</p>");
                         lsbTrExperienceBookingDetailsHtml.Append("</div>");
 
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-2 mb-1\">");
                         lsbTrExperienceBookingDetailsHtml.Append("<p>");
-                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span> <span class=\"h6 d-block\">" + lobjModel.StringToThousandSeperated(item.Points.ToString()) + "</span>");
+                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Points</span> <span class=\"h6 d-block\">" + lobjModel.StringToThousandSeperated(item.Points.ToString()) + "</span>");
                         lsbTrExperienceBookingDetailsHtml.Append("</p>");
                         lsbTrExperienceBookingDetailsHtml.Append("</div>");
 
@@ -370,50 +370,50 @@ public partial class ManageBooking : Page
                         /*
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 mb-1\">");
                         lsbTrExperienceBookingDetailsHtml.Append("<p>");
-                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">No.</span> <span class=\"h6 d-block\">" + i + "</span>");
+                        lsbTrExperienceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">No.</span> <span class=\"h6 d-block\">" + i + "</span>");
                         lsbTrExperienceBookingDetailsHtml.Append("</p>");
                         lsbTrExperienceBookingDetailsHtml.Append("</div>");
                         */
 
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<p>");
-                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Flight Date</span> <span class=\"h6 d-block\">" + Convert.ToDateTime(item.FlightDate).ToString("dd/MM/yyyy") + "</span>");
+                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Flight Date</span> <span class=\"h6 d-block\">" + Convert.ToDateTime(item.FlightDate).ToString("dd/MM/yyyy") + "</span>");
                         lsbTrDomesticBookingDetailsHtml.Append("</p>");
                         lsbTrDomesticBookingDetailsHtml.Append("</div>");
 
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<p>");
-                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Return Date</span> <span class=\"h6 d-block\">" + (string.IsNullOrEmpty(item.ReturnDate) ? "NA" : Convert.ToDateTime(item.ReturnDate).ToString("dd/MM/yyyy")) + "</span>");
+                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Return Date</span> <span class=\"h6 d-block\">" + (string.IsNullOrEmpty(item.ReturnDate) ? "NA" : Convert.ToDateTime(item.ReturnDate).ToString("dd/MM/yyyy")) + "</span>");
                         lsbTrDomesticBookingDetailsHtml.Append("</p>");
                         lsbTrDomesticBookingDetailsHtml.Append("</div>");
 
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<p>");
-                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">From</span> <span class=\"h6 d-block\">" + item.SectorFrom.ToString() + "</span>");
+                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">From</span> <span class=\"h6 d-block\">" + item.SectorFrom.ToString() + "</span>");
                         lsbTrDomesticBookingDetailsHtml.Append("</p>");
                         lsbTrDomesticBookingDetailsHtml.Append("</div>");
 
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<p>");
-                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">To</span> <span class=\"h6 d-block\">" + item.SectorTo.ToString() + "</span>");
+                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">To</span> <span class=\"h6 d-block\">" + item.SectorTo.ToString() + "</span>");
                         lsbTrDomesticBookingDetailsHtml.Append("</p>");
                         lsbTrDomesticBookingDetailsHtml.Append("</div>");
 
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<p>");
-                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Outbound Flight PNR</span> <span class=\"h6 d-block\">" + item.OutboundPNR.ToString() + "</span>");
+                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Outbound Flight PNR</span> <span class=\"h6 d-block\">" + item.OutboundPNR.ToString() + "</span>");
                         lsbTrDomesticBookingDetailsHtml.Append("</p>");
                         lsbTrDomesticBookingDetailsHtml.Append("</div>");
 
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<p>");
-                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Inbound Flight PNR</span> <span class=\"h6 d-block\">" + (string.IsNullOrEmpty(item.InboundPNR.ToString()) ? "NA" : item.InboundPNR.ToString()) + "</span>");
+                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Inbound Flight PNR</span> <span class=\"h6 d-block\">" + (string.IsNullOrEmpty(item.InboundPNR.ToString()) ? "NA" : item.InboundPNR.ToString()) + "</span>");
                         lsbTrDomesticBookingDetailsHtml.Append("</p>");
                         lsbTrDomesticBookingDetailsHtml.Append("</div>");
 
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<p>");
-                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span> <span class=\"h6 d-block\">" + lobjModel.StringToThousandSeperated(item.CreditsConsumed.ToString()) + "</span>");
+                        lsbTrDomesticBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Points</span> <span class=\"h6 d-block\">" + lobjModel.StringToThousandSeperated(item.CreditsConsumed.ToString()) + "</span>");
                         lsbTrDomesticBookingDetailsHtml.Append("</p>");
                         lsbTrDomesticBookingDetailsHtml.Append("</div>");
 
@@ -522,33 +522,33 @@ public partial class ManageBooking : Page
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-colour6 p-3\">");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
     //                    //lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-12 col-xl-3 col-lg-4 col-md-6 mb-3\"><p>");
-    //                    //lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">No.</span>");
+    //                    //lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">No.</span>");
     //                    //lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + i + "</span></p>");
     //                    //lsbTrInsuranceBookingDetailsHtml.Append("</div>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Service Name</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Service Name</span>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ServiceName.ToString() + "</span></p>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-2 col-xl-2 mb-1\"><p>");
-    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment Date</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Payment Date</span>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + Convert.ToDateTime(item.PaymentDate).ToString("dd/MM/yyyy") + "</span></p>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-2 col-xl-2 mb-1\"><p>");
-    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Next Due Date</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Next Due Date</span>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + (string.IsNullOrEmpty(item.NextDueDate) ? "NA" :item.NextDueDate) + "</span></p>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-5 col-xl-5 mb-1\"><p>");
-    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Reference Id</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Reference Id</span>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ReferenceId.ToString() + "</span></p>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment Id</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Payment Id</span>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.PaymentId.ToString() + "</span></p>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
     //                    int lintTotalPrice = model.ConvertToPoints(float.Parse(item.Amount.ToString())
     //                            , lstrCurrency, lobjProgramDefinition.ProgramId, "INSURANCE");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Points</span>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + lobjModel.FloatToThousandSeperated(lintTotalPrice) + "</span></p>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-12 offset-md-3 col-md-3 col-lg-3 col-xl-3 mt-2 mt-md-0\"><p>");
@@ -594,35 +594,35 @@ public partial class ManageBooking : Page
     //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-colour6 p-3\">");
     //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
     //                    //lsbTrISPBookingDetailsHtml.Append("<div class=\"col-12 col-xl-3 col-lg-4 col-md-6 mb-3\"><p>");
-    //                    //lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">No.</span>");
+    //                    //lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">No.</span>");
     //                    //lsbTrISPBookingDetailsHtml.Append("<span class=\"d-inline-block heading-regular\">" + i + "</span></p>");
     //                    //lsbTrISPBookingDetailsHtml.Append("</div>");
     //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Customer Name</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Customer Name</span>");
     //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.CustomerName.ToString() + "</span></p>");
     //                    lsbTrISPBookingDetailsHtml.Append("</div>");
     //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Service Name</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Service Name</span>");
     //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ServiceName.ToString() + "</span></p>");
     //                    lsbTrISPBookingDetailsHtml.Append("</div>");
     //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment Date</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Payment Date</span>");
     //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + Convert.ToDateTime(item.PaymentDate).ToString("dd/MM/yyyy") + "</span></p>");
     //                    lsbTrISPBookingDetailsHtml.Append("</div>");
     //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Next Due Date</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Next Due Date</span>");
     //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + (string.IsNullOrEmpty(item.NextDueDate) ? "NA" : Convert.ToDateTime(item.NextDueDate).ToString("dd/MM/yyyy")) + "</span></p>");
     //                    lsbTrISPBookingDetailsHtml.Append("</div>");
     //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-12 col-sm-6 col-md-6 col-xl-6 mb-1\"><p>");
-    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Reference Id</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Reference Id</span>");
     //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.ReferenceId.ToString() + "</span></p>");
     //                    lsbTrISPBookingDetailsHtml.Append("</div>");
     //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\"><p>");
-    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Payment ID</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Payment ID</span>");
     //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + item.PaymentId.ToString() + "</span></p>");
     //                    lsbTrISPBookingDetailsHtml.Append("</div>");
     //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3\"><p>");
-    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">Points</span>");
+    //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold text-colour7\">Points</span>");
     //                    lsbTrISPBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + lobjModel.FloatToThousandSeperated(item.Amount) + "</span></p>");
     //                    lsbTrISPBookingDetailsHtml.Append("</div>");
     //                    lsbTrISPBookingDetailsHtml.Append("</div></div></div></div>");

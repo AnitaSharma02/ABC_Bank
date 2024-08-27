@@ -132,7 +132,7 @@ p {
     font-family: var(--danger-family);
     font-size: var(--danger-fontsize);
     color: var(--danger-colour);
-    display: none;
+    /*display: none;*/
 }
 
 .success {
@@ -1048,9 +1048,9 @@ p {
 
 /*=========[ COMMON ACCORDION ]=========*/
 /* accordion parent border */
-.dvCommonAccordion.accordion {
-    /*border: 1px solid var(--accordion-border-colour);*/
-}
+    .dvCommonAccordion.accordion {
+        border: 1px solid var(--accordion-border-colour);
+    }
     /* accordion card border */
     .dvCommonAccordion.accordion .card {
         border: 1px solid var(--accordion-card-border);
@@ -1060,32 +1060,32 @@ p {
         margin-bottom: 0;
         border-bottom: 1px solid transparent;
     }
-        /* accordion icons */
-        .dvCommonAccordion.accordion .card-header .arrow-icon {
-            position: absolute;
-            right: 15px;
-            transition: transform 0.3s ease-in-out;
-        }
-        /* accordion rotate icons */
-        .dvCommonAccordion.accordion .card-header .collapsed .arrow-icon {
-            transform: rotate(180deg);
-        }
-        /* card-header > all buttons by default */
-        .dvCommonAccordion.accordion .card-header button {
-            background-color: var(--accordion-header-bg);
-            color: var(--accordion-header-text);
-            border: unset;
-            border-radius: var(--accordion-header-b-radius);
-            font-family: var(--accordion-header-family);
-        }
-            /* card-header > button when it is not collapsed. */
-            .dvCommonAccordion.accordion .card-header button:not(.collapsed) {
-                background: var(--accordion-header-active-bg);
-                border: unset;
-                border-radius: var(--accordion-header-active-b-radius);
-                font-family: var(--accordion-header-family);
-                color: var(--accordion-header-active-text);
-            }
+    /* accordion icons */
+    .dvCommonAccordion.accordion .card-header .arrow-icon {
+        position: absolute;
+        right: 15px;
+        transition: transform 0.3s ease-in-out;
+    }
+    /* accordion rotate icons */
+    .dvCommonAccordion.accordion .card-header .collapsed .arrow-icon {
+        transform: rotate(180deg);
+    }
+    /* card-header > all buttons by default */
+    .dvCommonAccordion.accordion .card-header button {
+        background-color: var(--accordion-header-bg);
+        color: var(--accordion-header-text);
+        border: unset;
+        border-radius: var(--accordion-header-b-radius);
+        font-family: var(--accordion-header-family);
+    }
+    /* card-header > button when it is not collapsed. */
+    .dvCommonAccordion.accordion .card-header button:not(.collapsed) {
+        background: var(--accordion-header-active-bg);
+        border: unset;
+        border-radius: var(--accordion-header-active-b-radius);
+        font-family: var(--accordion-header-family);
+        color: var(--accordion-header-active-text);
+    }
     /* card-body by default. */
     .dvCommonAccordion.accordion .card-body {
         background: var(--accordion-body-bg);

@@ -225,7 +225,7 @@
                                             <input type="radio" id="RdlSearchtypeAll" onclick="RdlSearchtypeAll_CheckedChanged()" checked="checked"/>
                                             <span class="radiomark"></span>
                                         </span>
-                                        <span class="d-inline-block ml-3 heading-light" data-i18n="ts-all-transaction">All Transactions</span>
+                                        <span class="d-inline-block ml-3" data-i18n="ts-all-transaction">All Transactions</span>
                                     </label>
                                 </div>
                             </div>
@@ -238,7 +238,7 @@
                                             <input type="radio" id="RdlSearchtypeCust" onclick="RdlSearchtypeCust_CheckedChanged()"/>
                                             <span class="radiomark"></span>
                                         </span>
-                                        <span class="d-inline-block ml-3 heading-light" data-i18n="ts-custom-search">Custom Search</span>
+                                        <span class="d-inline-block ml-3" data-i18n="ts-custom-search">Custom Search</span>
                                     </label>
                                 </div>
                             </div>

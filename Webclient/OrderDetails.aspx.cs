@@ -72,8 +72,8 @@ public partial class OrderDetails : Page
                                     for (int i = 0; i < lobjCustomerOrder.Items.Count; i++)
                                     {
                                         lstrHtmlContent += "<div class=\"row pb-2 border-bottom align-items-sm-center justify-content-between\"><div class=\"col-3 col-sm-2 col-lg-1\"><div class=\"img-container\"><img src=\"" + lobjCustomerOrder.Items[i].ImageUrl + "\"/></div></div>"
-                                            + "<div class=\"col-12 col-sm-5 col-lg-6\"><p><span>Product</span> <span class=\"h6 heading-semibold\">" + lobjCustomerOrder.Items[i].Name + "</span></p></div>"
-                                            + "<div class=\"col-12 col-sm-2 text-sm-right\"><p class=\"h7 heading-bold text-colour7\">Qty: <span class=\"h6 heading-regular\">" + lobjCustomerOrder.Items[i].Quantity + "</span></p></div>"
+                                            + "<div class=\"col-12 col-sm-5 col-lg-6\"><p><span class=\"h6 heading-semibold text-colour7\">" + lobjCustomerOrder.Items[i].Name + "</span></p></div>"
+                                            + "<div class=\"col-12 col-sm-2 text-sm-right\"><p class=\"\">Qty: <span class=\"h6 heading-semibold text-colour7\">" + lobjCustomerOrder.Items[i].Quantity + "</span></p></div>"
                                             + "<div class=\"col-12 col-sm-3 text-sm-right\"><p class=\"h7 heading-bold text-colour7\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Items[i].Price.ListPrice.Amount), "Points") + "</p></div></div>";
                                     }
                                     lstrHtmlContent += "<div class=\"row align-items-lg-center justify-content-between\"><div class=\"col-12 mt-2\"><div class=\"row my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"\">Sub-Total</p></div>"
