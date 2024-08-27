@@ -100,52 +100,13 @@
         //}
     </script>
     <style>
-        #dvHeroSlider {
-            display: none;
-        }
-
-        .dvRedemptionMenu {
-            display: none;
-        }
-
+        #dvHeroSlider,
+        .dvRedemptionMenu,
+        .dvInnerBanner
         #sitemap {
             display: none;
         }
-
-        .dvInnerBanner {
-            display: none
-        }
     </style>
-
-    <%--<div class="dvMember">
-        <div class="d-md-block d-none">
-            <div class="align-items-center bg-acc d-flex justify-content-center">
-                <div class="d-flex justify-content-center align-items-center flex-column">
-                    <ul>
-                        <li class="d-block">
-                            <div class="text-center">
-                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span data-i18n="account-welcome" class="acc-text">Welcome,</span><span class="ml-2 acc-text" id="spnMemberName"></span></h2>
-                            </div>
-                        </li>
-                        <li class="d-block">
-                            <div class="text-center">
-                                <h3 class="h3 heading-semibold text-white" >
-                                    <span id="totAvbPointDiv" data-i18n="account-total-points">Total Points</span>
-                                        <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-white"></span></h3>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="mt-3">
-                        <a
-                            href="Index.aspx"
-                            class="btn btn-two"
-                            id="my_account_point_redeem_now"
-                            data-i18n="btn-redeem-now">Redeem Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>--%>
 
     <div class="dvMember d-md-block d-none py-5">
     <div class="container-lg">
@@ -197,7 +158,7 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered"" role="document">
         <div class="modal-content">
-          <div class="modal-header" style="background: #E5A812;">
+          <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel" >Booking Details</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>

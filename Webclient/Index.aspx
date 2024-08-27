@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="heading1 pt-0 text-center" data-i18n="home-turn">Turn Transactions into Rewards</h2>
-                    <span class="h4 heading-regular text-center d-block py-3" data-i18n="home-our-diverse">Infinity Rewards - Our Diverse Loyalty Program</span>
+                    <span class="h4 heading-regular text-center text-colour7 d-block py-3" data-i18n="home-our-diverse">Infinity Rewards - Our Diverse Loyalty Program</span>
                     <p class="text-center " data-i18n="home-discover">
                         Designed for the discerning customer, it offers diverse redemption options like flight bookings, hotel stays, car rentals, vouchers, online shopping, and point exchanges. Experience the joy of rewards that fit your lifestyle, turning every transaction into a chance for delightful experiences.
                     </p>
@@ -25,7 +25,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12 text-center mb-4">
-                    <h2 class="h4 heading-semibold">Rewards that cater to every desire.</h2>
+                    <h2 class="h4 heading-semibold text-colour7">Rewards that cater to every desire.</h2>
                 </div>
             </div>
             <div class="row">
@@ -177,13 +177,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-center mb-4">
-                    <h2 class="h5 heading-regular text-uppercase mb-3" data-i18n="home-unlocking-rewards">Unlocking Rewards: Your Guide</h2>
+                    <h2 class="h5 heading-semibold text-colour7 text-uppercase mb-3" data-i18n="home-unlocking-rewards">Unlocking Rewards: Your Guide</h2>
                     <h2 class="heading2 mb-3" data-i18n="home-from-earning">From Earning to Redeeming: We've Got Answers</h2>
                     <p class="" data-i18n="home-navigating-our">
-                        Navigating our rewards program is as fun as a rollercoaster ride.
-                    </p>
-                    <p class="" data-i18n="home-here-are">
-                        Here are answers to some common questions to ensure your journey is smooth and rewarding.
+                        Navigating our rewards program is as fun as a rollercoaster ride. Here are answers to some common questions to ensure your journey is smooth and rewarding.
                     </p>
                 </div>
             </div>
@@ -196,7 +193,7 @@
                                     <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
-                                    <h2 class="h5 heading-semibold mb-2">How do I accumulate points?</h2>
+                                    <h2 class="h5 heading-semibold mb-2 text-colour7">How do I accumulate points?</h2>
                                     <p>Earn points with every transaction made through the bank. Start accumulating rewards with every interaction!</p>
                                 </div>
                             </div>
@@ -205,7 +202,7 @@
                                     <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
-                                    <h2 class="h5 heading-semibold mb-2">What can I exchange my points for?</h2>
+                                    <h2 class="h5 heading-semibold mb-2 text-colour7">What can I exchange my points for?</h2>
                                     <p>Your points are your gateway to discounts. Redeem them for exclusive Gift vouchers, shopping, flight & hotel booking and mobile top-up.</p>
                                 </div>
                             </div>
@@ -214,7 +211,7 @@
                                     <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
-                                    <h2 class="h5 heading-semibold mb-2">How long are my points valid for?</h2>
+                                    <h2 class="h5 heading-semibold mb-2 text-colour7">How long are my points valid for?</h2>
                                     <p>Your points will remain active for 2 years from the date you earn them. Make sure to redeem them before they expire!</p>
                                 </div>
                             </div>
@@ -223,7 +220,7 @@
                                     <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
-                                    <h2 class="h5 heading-semibold mb-2">How can I check my points balance?</h2>
+                                    <h2 class="h5 heading-semibold mb-2 text-colour7">How can I check my points balance?</h2>
                                     <p>To keep a tab on your rewards, simply log in and navigate to the 'My Account' dashboard. Your points balance will be available there.</p>
                                 </div>
                             </div>

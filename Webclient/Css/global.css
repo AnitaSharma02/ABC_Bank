@@ -2133,8 +2133,8 @@ select.form-control:focus {
 
 .dvRedemptionMenu a p {
     color: var(--text-colour7);
-    font-size: .75rem;
-    font-family: var(--font-regular);
+    font-size: .875rem;
+    font-family: var(--font-semibold);
     padding: 5px 0;
 }
 /*active menu for flightsearch page*/
