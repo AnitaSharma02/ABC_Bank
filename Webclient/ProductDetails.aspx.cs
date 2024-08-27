@@ -561,17 +561,17 @@ public partial class ProductDetails : Page
                         int ThreshouldValue = lobjRedemptionKeys == null ? -1 : lobjRedemptionKeys.Find(lobj => lobj.RedemptionCode.Equals(RedemptionCodeKeys.GIFTCARD.ToString()) && lobj.Currency.Equals(lstrCurrency)).OTPThreshold;
                         if ((pintAvailablePoints - lintPoints) <= 0)
                         {
-                            //lstrResponse = "INSUFFICIENT_POINTS";
-                            if (lobjProductDetails.ProductType == "Digital")
-                            {
-                                HttpContext.Current.Session["BookingFlag"] = "digitalproduct";
-                                lstrResponse = "/PaymentOptions.aspx";
-                            }
-                            else
-                            {
-                                HttpContext.Current.Session["BookingFlag"] = "physicalproduct";
-                                lstrResponse = "/Checkout.aspx";
-                            }
+                            lstrResponse = "INSUFFICIENT_POINTS";
+                            //if (lobjProductDetails.ProductType == "Digital")
+                            //{
+                            //    HttpContext.Current.Session["BookingFlag"] = "digitalproduct";
+                            //    lstrResponse = "/PaymentOptions.aspx";
+                            //}
+                            //else
+                            //{
+                            //    HttpContext.Current.Session["BookingFlag"] = "physicalproduct";
+                            //    lstrResponse = "/Checkout.aspx";
+                            //}
                         }
                         else
                         {
@@ -586,7 +586,7 @@ public partial class ProductDetails : Page
                                         { "lstrUserInputMetas", lstrUserInputMetas }
                                     };
                                 HttpContext.Current.Session["CheckoutMethodParameter"] = ldictobjParameter;
-                                lstrResponse = "/PaymentOptions.aspx";
+                                //lstrResponse = "/PaymentOptions.aspx";
                                 if (ThreshouldValue <= lintPoints && !ThreshouldValue.Equals(-1) && HttpContext.Current.Session["RelationshipManager"] == null)
                                 {
                                     bool Status = false;
@@ -600,18 +600,18 @@ public partial class ProductDetails : Page
                                     };
                                     HttpContext.Current.Session["OtpDetails"] = lobjOTPDetails as OTPDetails;
                                     //Status = lobjModel.GenerateReviewnConfirmOTP(lobjOTPDetails, lobjMemberDetails);
-                                    //Status = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "redemption_otp", lobjOTPDetails, lobjProductDetails.Properties.ToList().Find(x => x.Name.Equals("Type")).Value);
-                                    //if (Status)
-                                    //{
-                                    //    lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "ShopDigital", lobjOTPDetails.UniquerefID, "Success"), ActivityType.ReviewConfirmOTPSuccess);
-                                    //    lstrResponse = "/ValidateOTP.aspx?flag=ShopDigital&redemptiontype=" + lobjProductDetails.Properties.ToList().Find(x => x.Name.Equals("Type")).Value;
-
-                                    //}
-                                    //else
-                                    //{
-                                    //    lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "ShopDigital", lobjOTPDetails.UniquerefID, "Failed"), ActivityType.ReviewConfirmOTPFailed);
-                                    //    lstrResponse = "/OrderStatus.aspx?Status=false";
-                                    //}
+                                    Status = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "redemption_otp", lobjOTPDetails, lobjProductDetails.Properties.ToList().Find(x => x.Name.Equals("Type")).Value);
+                                    if (Status)
+                                    {
+                                        lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "ShopDigital", lobjOTPDetails.UniquerefID, "Success"), ActivityType.ReviewConfirmOTPSuccess);
+                                        //lstrResponse = "/ValidateOTP.aspx?flag=ShopDigital&redemptiontype=" + lobjProductDetails.Properties.ToList().Find(x => x.Name.Equals("Type")).Value;
+                                        lstrResponse = "/ValidateOTP.aspx?flag=ShopDigital";
+                                    }
+                                    else
+                                    {
+                                        lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "ShopDigital", lobjOTPDetails.UniquerefID, "Failed"), ActivityType.ReviewConfirmOTPFailed);
+                                        lstrResponse = "/OrderStatus.aspx?Status=false";
+                                    }
                                 }
                                 //else
                                 //{
