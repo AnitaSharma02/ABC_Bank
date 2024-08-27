@@ -1,36 +1,8 @@
 /*=========[ HOTELSEARCH PAGE ]=========*/
  
-/*.dvHotelSearch .innerBox {
-    overflow: hidden;
-    background: var(--bg-colour2);
-    border: unset;
-    border-radius: var(--b-radius) !important;
-}*/
-.dvHotelSearch .bg-lightgray {
-    background: var(--bg-colour2);
-}
 .dvHotelSearch .dvForm .searchBtn .custom-width {
     width: 100% !important;
 }
-/*.dvHotelSearch .dvPlace {
-    position: relative;
-}
-.dvHotelSearch .dvPlace .map-icon {
-    border-left: 1px solid #E0E2EA;
-    padding-left: 28px;
-    position: absolute;
-    top: 0;
-    right: 10px;
-    height: 100%;
-}
-.dvHotelSearch .dvPlace .map-icon .fa-location-dot {
-    position: absolute;
-    top: 13px;
-    right: 3px;
-}*/
-/*.dvHotelSearch .form-control {
-    padding-right: 3rem !important;
-}*/
 .dvHotelProductList .img-container {
     padding-bottom: 73%;
 }
@@ -89,10 +61,7 @@
 .dvHotelDetails .dvThumbSwiperSlider .mySwiper .img-container {
     padding-bottom: 15%;
 }
-.dvHotelDetails .dvSelectRoom .bg-lightgray,
-.dvHotelDetails .dvAbout .bg-lightgray {
-    background-color: var(--bg-colour2);
-}
+
 .dvHotelDetails .dvAboutHotel p,
 .dvHotelDetails .dvAboutHotel ul{
     margin-bottom:1rem;
@@ -108,9 +77,7 @@
 .dvHotelBookingDetails .bg {
     background-color: var(--bg-colour1);
 }
-.dvHotelBookingDetails .bg-lightgray {
-  background-color: var(--bg-colour2);
-}
+
 .dvHotelBookingDetails .rounded {
   border-radius: 5px 5px 0 0 !important;
 }

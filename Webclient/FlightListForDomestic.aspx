@@ -177,7 +177,7 @@
             <div class="row">
                 <div class="dvModify col-12 mb-3">
                     <div
-                        class="bg-lightgray d-flex flex-wrap justify-content-between align-items-center py-2 px-2 px-lg-3 mb-1">
+                        class="bg-colour2 d-flex flex-wrap justify-content-between align-items-center py-2 px-2 px-lg-3 mb-1">
                         <%--<button
                       data-toggle="modal"
                       data-target="#dvFilterModal"
@@ -201,7 +201,7 @@
                             </span>
                         </button>
                     </div>
-                    <div id="dvForm" class="dvForm bg-lightgray collapse">                         
+                    <div id="dvForm" class="dvForm bg-colour2 collapse">                         
                         <div class="innerBox px-3 pt-2">      
                                 <div class="p-1 mb-2 alert alert-danger text-danger text-center h6 heading-semibold" id="requiredValidationdomestic" style="display:none;"></div>
                                  <div class="row dvLabel r- d-none">

@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
 
-    <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="Css/account.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/Validation.js" type="text/javascript"></script>
     <script>
         $.fn.digits = function () {
@@ -75,7 +75,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12 mb-3">
-                    <div class="bg-lightgrey p-3">
+                    <div class="bg-colour2 p-3">
                         <div class="row align-items-center">
                             <div class="col-7 col-sm-9 col-lg-10">
                                 <p class="heading-semibold" data-i18n="pe-please-select-the-year">Please select the year to view your Points expiry schedule:</p>
@@ -89,11 +89,11 @@
                         </div>
                     </div>
 
-                     <div class="bg-lightgrey px-3">
+                     <div class="bg-colour2 px-3">
                         <div class="row mx-0" id="rptExpirySchedule" runat="server"></div>
                     </div>
 
-                    <div class="bg-lightgrey pt-0 pb-3">
+                    <div class="bg-colour2 pt-0 pb-3">
                         <div class="row">
                             <div class="col-12">
                                 <div class="h6 heading-semibold text-colour7" id="divExpiredon" runat="server">

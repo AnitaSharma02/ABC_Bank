@@ -1980,9 +1980,9 @@ select.form-control:focus {
 /*==[ -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- FILTER MOBILE -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- ]==*/
 
 /*=========[ BG GRAY STRIPE ]=========*/
-.dvProductList .bg-lightgray {
+/*.dvProductList .bg-lightgray {
     background-color: var(--bg-colour5);
-}
+}*/
 /*=========[ BG GRAY STRIPE ]=========*/
 
 /*=========[ DIFFERENT CLASS NAMES FOR DIFFERENT REDEMPTIONS ]=========*/

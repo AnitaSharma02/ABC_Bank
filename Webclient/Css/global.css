@@ -635,30 +635,26 @@ p {
 /*=========[ HEADER ]=========*/
 
 /*=========[ FOOTER ]=========*/
-.dvBgRedColor {
-    background-color: var(--bg-colour1);
-}
-
 .dvFooter {
     background-color: var(--bg-section);
 }
 
-    .dvFooter .dvLinks a {
-        padding: 0 0.2rem;
-        color: var(--text-colour5);
-        font-size: 1rem;
-        font-family: var(--font-semibold);
-        text-transform: uppercase;
-        vertical-align: middle;
-    }
+.dvFooter .dvLinks a {
+    padding: 0 0.2rem;
+    color: var(--text-colour5);
+    font-size: 1rem;
+    font-family: var(--font-semibold);
+    text-transform: uppercase;
+    vertical-align: middle;
+}
 
-    .dvFooter .footer-logo {
-        width: 150px;
-    }
+.dvFooter .footer-logo {
+    width: 150px;
+}
 
-    .dvFooter .border-thin {
-        border-top: 1px solid #303030;
-    }
+.dvFooter .border-thin {
+    border-top: 1px solid #303030;
+}
 /*=========[ FOOTER ]=========*/
 
 /*=========[ Flight Search ]=========*/
@@ -1124,7 +1120,7 @@ p {
 /*=========[ COMMON ACCORDION ]=========*/
 /* accordion parent border */
 .dvCommonAccordion.accordion {
-    /*border: 1px solid var(--accordion-border);*/
+    /*border: 1px solid var(--accordion-border-colour);*/
 }
     /* accordion card border */
     .dvCommonAccordion.accordion .card {
@@ -1159,6 +1155,7 @@ p {
                 border: unset;
                 border-radius: var(--accordion-header-active-b-radius);
                 font-family: var(--accordion-header-family);
+                color: var(--accordion-header-active-text);
             }
     /* card-body by default. */
     .dvCommonAccordion.accordion .card-body {
@@ -2129,18 +2126,11 @@ select.form-control:focus {
 /*.dvProductList .dvTotalRecords.border {
     border: 1px solid var(--colour2) !important;
 }*/
-/*.dvProductList .dvTotalRecords.bg-lightgray {
-    background-color: var(--colour2);
-    border-radius: 0 0px 0 0;
-}*/
+
 /*=========[ FILTER TOTAL RECORDS MOBILE ]=========*/
 /*==[ -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- FILTER MOBILE -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- ]==*/
 
-/*=========[ BG GRAY STRIPE ]=========*/
-.dvProductList .bg-lightgray {
-    background-color: var(--bg-colour5);
-}
-/*=========[ BG GRAY STRIPE ]=========*/
+
 
 /*=========[ DIFFERENT CLASS NAMES FOR DIFFERENT REDEMPTIONS ]=========*/
 .dvMilesExchangePage .img-container img,

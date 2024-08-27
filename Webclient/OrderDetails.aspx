@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Order Details" Language="C#" MasterPageFile="SiteShopMaster.master" AutoEventWireup="true" CodeFile="OrderDetails.aspx.cs" Inherits="OrderDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CPSHOP" runat="Server">
-    <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="Css/account.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/Validation.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {

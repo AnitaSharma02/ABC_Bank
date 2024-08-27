@@ -2,7 +2,7 @@
     CodeFile="TransactionSummary.aspx.cs" Inherits="TransactionSummary" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="\Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="\Css/account.css" rel="stylesheet" type="text/css" />
     <%--<link href="css/jquery.ui.datepicker.css" rel="stylesheet" type="text/css" />--%>
     <script src="Jquery/Validation.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -207,7 +207,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-lightgray rounded px-3">
+                    <div class="bg-colour2 rounded px-3">
                         <%--   <div id="divCurrency" class="myacc-user" runat="server" visible="false">
                             Select Currency :
                             <asp:DropDownList ID="ddlProgramCurrency" runat="server" AppendDataBoundItems="true"

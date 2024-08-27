@@ -58,7 +58,7 @@
                            <h2 class="h6 heading-bold text-colour6 bg p-3" data-i18n="flightpassenger-passenger">Passenger Details</h2>
                          </div>
                          <div class="col-12">
-                            <div class="bg-lightgray p-3">
+                            <div class="bg-colour2 p-3">
                                 <div class="row">
                                     <div class="col-12 mb-2">
                                         <div id="AdultInfo" runat="server">
@@ -120,7 +120,7 @@
                         </div>
                      </div>
                     <div class="col-12">
-                        <div class="bg-lightgray p-3">
+                        <div class="bg-colour2 p-3">
                             <div class="row">
                                 <div class="col-12">
                                   <h2 class="h6 heading-semibold text-colour7" data-i18n="flightpassenger-departure">Departure Flight</h2>

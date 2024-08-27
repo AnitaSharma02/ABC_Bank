@@ -2,7 +2,7 @@
     CodeFile="Activation.aspx.cs" Inherits="Activation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="Css/account.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/jquery.md5.js" type="text/javascript"></script>
     <script src="Jquery/Validation.js" type="text/javascript"></script>
     <script type="text/javascript">

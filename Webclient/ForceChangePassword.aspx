@@ -152,9 +152,9 @@
 
 
     </script>
-    <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" />
+    <link href="Css/account.css" rel="stylesheet" type="text/css" />
     <%--<input type="hidden" value="<%=isReferralActive %>" id="hdnIsReferralActive" />--%>
-    <!-- <link href="Css/MyAccount.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="Css/account.css" rel="stylesheet" type="text/css" /> -->
     <section class="mt-100 pt-100 pb-100 mb-100 bgimage" style="height: 100vh;">
         <div class="container">
             <div class="page-header text-center pb-4">

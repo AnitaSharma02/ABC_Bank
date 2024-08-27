@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="ExperienceBookingDetails.aspx.cs" Inherits="ExperienceBookingDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="Css/MyAccount.css" rel="stylesheet" />
+    <link href="Css/account.css" rel="stylesheet" />
     <link href="Css/experience.css" rel="stylesheet" />
     <div class="dvBreadcrumbs">
         <div class="container-xl">

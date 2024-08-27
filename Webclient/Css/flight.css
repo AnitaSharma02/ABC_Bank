@@ -37,9 +37,7 @@
     top: 16px;
     right: 3px;
 }
-.dvFlightSearch .bg-lightgray {
-    background-color: var(--bg-section);
-}
+
 .dvFlightSearchProducts .dvProductList .product-text {
     min-height: 120px;
 }
@@ -88,9 +86,7 @@
 .dvFlightPassenger .bg {
     background-color: var(--bg-colour1);
 }
-.dvFlightPassenger .bg-lightgray {
-    background-color: var(--bg-colour2);
-}
+
 .dvFlightPassenger .rounded {
   border-radius: 5px 5px 0 0 !important;
 }
@@ -105,9 +101,7 @@
     background-color: var(--bg-colour1);
 }
 
-.dvFlightAirReview .bg-lightgray {
-    background-color: var(--bg-colour2);
-}
+
 
 .dvFlightAirReview .rounded {
     border-radius: 5px 5px 0 0 !important;
@@ -117,9 +111,7 @@
     color: #fff;
     border-radius: 0.25rem 0.25rem 0 0;
 }
-.dvFlightAirReview .dvDetailsBox .bg-lightgray {
-    background-color: var(--bg-colour2);
-}
+
 /*=========[ AIR REVIEW AND CONFIRM PAGE ]=========*/
 
 

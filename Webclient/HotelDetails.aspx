@@ -193,7 +193,7 @@
                 </div>
 
                 <div class="dvSelectRoom col-12">
-                    <h2 class="h4 heading-semibold text-colour7 bg-lightgray p-3">Select Your Room</h2>
+                    <h2 class="h4 heading-semibold text-colour7 bg-colour2 p-3">Select Your Room</h2>
                     <div id="rptRoomDetails" class="row mt-3"></div>
                 </div>
 
