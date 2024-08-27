@@ -78,7 +78,7 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
 .dvRibbon span {
   display: block;
   text-align: center;
-  color: var(--secondary-colour);
+/*  color: var(--secondary-colour);*/
   background: var(--bg-section);
   font-size: 10px;
   padding: 0.25rem 0.5rem;

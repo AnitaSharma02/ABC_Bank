@@ -138,9 +138,9 @@
     color: #999999;
 }
 
-.rateCont h2 {
+/*.rateCont h2 {
     background-color: var(--secondary-colour) !important
-}
+}*/
 
 .dvBgcolor2 .heading-xs-bold {
     padding: 11px 15px
@@ -163,8 +163,8 @@
 }
 
 .shadow-on-hover:hover .dvBtn .btn-primary {
-    background-color: var(--secondary-colour) !important;
-    border-color: var(--secondary-colour);
+/*    background-color: var(--secondary-colour) !important;
+    border-color: var(--secondary-colour);*/
     transition: 0.3s;
 }
 
@@ -183,7 +183,7 @@
 }
 
 .shadow-on-hover:hover .voucherName p {
-    color: var(--secondary-colour);
+    /*color: var(--secondary-colour);*/
     transition: 0.3s;
 }
 

@@ -11,13 +11,6 @@
             display: none;
         }
     </style>
-    <%--<link href="Css/jquery.ui.datepicker.css" rel="stylesheet" type="text/css" />
-    <link href="Css/jquery.ui.autocomplete.css" rel="stylesheet" type="text/css" />
-    <link href="Css/jquery.ui.slider.css" rel="stylesheet" type="text/css" />
-    <link href="Css/dropDown.css" rel="stylesheet" type="text/css" />
-    <script src="Jquery/jquery.selectric.min.js" type="text/javascript"></script>
-    <link href="Css/FlightList.css" rel="Stylesheet" type="text/css" /> 
-    <link href="Css/DomesticFlightList.css" rel="Stylesheet" type="text/css" /> --%>
     <script src="Jquery/FlightSearchScript_Domestic.js"></script>
     <script src="Jquery/FlightSearch_Domestic.js"></script>
     <script type="text/javascript">
