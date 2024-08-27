@@ -64,34 +64,9 @@
 
 
 /*=========[ ORDER DETAILS ]=========*/
-.dvOrderDetailsPopup .close {
-    position: absolute;
-    top: 0;
-    right: 5px;
-    z-index: 3;
-}
-.dvOrderDetailsPopup .modal-header {
-    padding: 0rem 1rem;
-    border-bottom: unset;
-}
-
-.dvOrderDetailsPopup .modal-dialog {
-    max-width: 92%;
-    margin: 1.75rem auto;
-}
-
-.dvOrderDetailsPopup .modal-header .close {
-    z-index: 999;
-    padding: 8px 1rem;
-    margin: -1rem -1rem -1rem auto;
-    position: relative;
-    right: -9px;
-    top: 7px;
-}
 .dvOrderDetailsPopup .modal-body .barcode-img {
     width:150px;
 }
-
 
 /*delivery track*/
 .dvOrderDetails .dvDeliveryTrack .w-30{
@@ -166,8 +141,6 @@
 }
 
 @media (min-width: 1200px) {
-  .dvOrderDetailsPopup .modal-dialog {
-    max-width: 65%;
-  }
+
 }
 /*=========[ MEDIA QUERIES ]=========*/
