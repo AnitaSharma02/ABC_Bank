@@ -169,7 +169,7 @@
                 <div class="col-md-12 col-12 text-center">
                     <p class="OTPMessage" id="spnOTPMobilenOMessage"></p>
                 </div>
-                <div class="card bg-white p-0 col-md-4 col-10">
+                <div class="card bg-colour6 p-0 col-md-4 col-10">
                     <div class="card-body">
                         <div class="tab-content mt-3">
                             <div class="tab-pane active" id="logintab" role="tabpanel" aria-labelledby="logintab">
@@ -184,10 +184,10 @@
                                         <input type="password"  autocomplete="off" class="form-control" aria-describedby="inputtxtPassword" id="txtOldPassword"
                                             onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;" />
                                         <div class="input-group-append">
-                                            <span toggle="#txtOldPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                            <span toggle="#txtOldPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                         </div>
                                         <%--<div class="input-group-append">
-									<span class="input-group-text bg-white" id="inputtxtMemberName"><i class="fa fa-user fa-2x"></i></span>
+									<span class="input-group-text bg-colour6" id="inputtxtMemberName"><i class="fa fa-user fa-2x"></i></span>
 								</div>--%>
                                     </div>
 
@@ -196,7 +196,7 @@
                                         <input type="password" autocomplete="off" class="form-control" aria-describedby="inputtxtPassword" id="txtPassword"
                                             onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;" />
                                         <div class="input-group-append">
-                                            <span toggle="#txtPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                            <span toggle="#txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                         </div>
                                     </div>
 
@@ -205,7 +205,7 @@
                                         <input type="password" autocomplete="off" class="form-control" aria-describedby="inputtxtPassword"
                                             id="txtNewPassword" onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;" />
                                         <div class="input-group-append">
-                                            <span toggle="#txtNewPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                            <span toggle="#txtNewPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                         </div>
                                     </div>
 

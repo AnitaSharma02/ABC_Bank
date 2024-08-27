@@ -61,7 +61,7 @@ public partial class OrderDetails : Page
                                 if (lobjProduct != null)
                                 {
                                     spanOrderId.InnerText = lobjCustomerOrder.Number;
-                                    lstrHtmlContent += "<div class=\"bg-white p-3\">";
+                                    lstrHtmlContent += "<div class=\"bg-colour6 p-3\">";
                                     for (int i = 0; i < lobjCustomerOrder.Items.Count; i++)
                                     {
                                         lstrHtmlContent += "<div class=\"row pb-2 border-bottom align-items-sm-center justify-content-between\"><div class=\"col-3 col-sm-2 col-lg-1\"><div class=\"img-container\"><img src=\"" + lobjCustomerOrder.Items[i].ImageUrl + "\"/></div></div>"

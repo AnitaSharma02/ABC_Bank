@@ -203,7 +203,7 @@
                                                                 onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;" 
                                                                 id="txtOldPassword"/>
                                                             <div class="input-group-append">
-                                                                <span toggle="#txtOldPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                <span toggle="#txtOldPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -220,7 +220,7 @@
                                                                 onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
                                                                 id="txtPassword"/>
                                                             <div class="input-group-append">
-                                                                <span toggle="#txtPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                <span toggle="#txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -237,7 +237,7 @@
                                                                 onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
                                                                 id="txtNewPassword"/>
                                                             <div class="input-group-append">
-                                                                <span toggle="#txtNewPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                <span toggle="#txtNewPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                                             </div>
                                                         </div>
                                                     </div>

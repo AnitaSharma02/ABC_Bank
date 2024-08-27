@@ -217,7 +217,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="dvHeader shadow-sm sticky-top bg-white">
+        <div class="dvHeader shadow-sm sticky-top bg-colour6">
             <div class="dvStripe">
                 <div class="container-lg">
                     <div class="row">

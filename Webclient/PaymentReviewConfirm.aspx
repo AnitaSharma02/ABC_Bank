@@ -16,7 +16,7 @@
                     <div class="bg-colour3 p-3">
                         <div class="row">
                             <div class="col-12">
-                                <div class="bg-white border p-3">
+                                <div class="bg-colour6 border p-3">
                                     <div class="row">
                                         <%--<div class="col-12 mb-3">
                                                 <p class="mb-2">Product Name</p>

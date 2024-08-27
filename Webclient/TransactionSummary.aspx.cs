@@ -289,7 +289,7 @@ public partial class TransactionSummary : System.Web.UI.Page
                 foreach (TransactionDetails transactionDetails in LobjTransactionDetails)
                 {
                     sb.Append("<div class='col-12 mb-3'>");
-                    sb.Append("<div class='bg-white p-3'>");
+                    sb.Append("<div class='bg-colour6 p-3'>");
                     sb.Append("<div class='row'>");
 
                     sb.Append("<div class='col-12 col-sm-6'>");

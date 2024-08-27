@@ -29,7 +29,7 @@
                                         <input type="text" class="form-control" id="txtpickupLocation" data-i18n="[placeholder]car-enter-pickup-location" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2">
                                         <input type="hidden" id="hndpickupLocationId" value="">
                                         <div class="input-group-append">
-                                            <span class="input-group-text bg-white">
+                                            <span class="input-group-text bg-colour6">
                                                 <i class="fa-solid fa-location-dot"></i>
                                             </span>
                                         </div>
@@ -41,7 +41,7 @@
                                         <input class="input form-control" data-i18n="[placeholder]car-enter-date" placeholder="Enter Date"
                                             type="text" id="txtpickupDate" readonly="readonly" />
                                         <div class="input-group-append">
-                                            <span class="input-group-text bg-white">
+                                            <span class="input-group-text bg-colour6">
                                                 <i class="fa-regular fa-calendar"></i>
                                             </span>
                                         </div>
@@ -156,7 +156,7 @@
                                     <div class="dvInputGroup input-group">
                                         <input class="input datePicker form-control" data-i18n="[placeholder]car-enter-date" placeholder="Enter Date" type="text" id="txtDropoffDate" readonly="readonly" />
                                         <div class="input-group-append">
-                                            <span class="input-group-text bg-white">
+                                            <span class="input-group-text bg-colour6">
                                                 <i class="fa-regular fa-calendar"></i>
                                             </span>
                                         </div>
@@ -286,7 +286,7 @@
                                             <input type="text" class="form-control" id="txtDopoffLocation" data-i18n="[placeholder]car-enter-location" placeholder="Enter Location">
                                             <input type="hidden" id="hndDopoffLocationId" value="">
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white">
+                                                <span class="input-group-text bg-colour6">
                                                     <i class="fa-solid fa-location-dot"></i>
                                                 </span>
                                             </div>

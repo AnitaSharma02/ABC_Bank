@@ -471,7 +471,7 @@
                                                     <input class="form-control" id="textBoxFrom" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                     <input type="hidden" id="hdntrip" value="true" />
                                                     <div class="input-group-append">
-                                                        <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
+                                                        <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
                                                     </div>
                                                 </div>
                                             </div>    
@@ -484,7 +484,7 @@
                                             <div class="dvTextBoxTo dvInputGroup input-group">
                                                 <input class="input form-control" id="textBoxTo" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
+                                                    <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
                                                 </div>
                                             </div>
                                             </div>
@@ -493,7 +493,7 @@
                                             <div class="dvInputGroup input-group">
                                                 <input id="txtDepart" class="input datePicker form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                    <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -503,7 +503,7 @@
                                                 <input class="input datePicker form-control cal-icon" id="txtReturn" onfocus="placeholderOnFocus(this,'Enter Date');"
                                                 onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                    <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                                 </div>
                                             </div>
                                         </div>

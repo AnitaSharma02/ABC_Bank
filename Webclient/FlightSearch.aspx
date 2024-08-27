@@ -436,7 +436,7 @@
                                                             <input class="form-control" id="textBoxFrom" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                             <input type="hidden" id="hdntrip" value="true" />
                                                             <div class="input-group-append">
-                                                                <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
+                                                                <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
                                                             </div>
                                                         </div>
                                                     </div>    
@@ -449,7 +449,7 @@
                                                     <div class="dvTextBoxTo dvInputGroup input-group">
                                                         <input class="input form-control" id="textBoxTo" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
+                                                            <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
                                                         </div>
                                                     </div>
                                                     </div>
@@ -458,7 +458,7 @@
                                                     <div class="dvInputGroup input-group">
                                                         <input id="txtDepart" class="input datePicker form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                            <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -468,7 +468,7 @@
                                                         <input class="input datePicker form-control cal-icon pr-5" id="txtReturn" onfocus="placeholderOnFocus(this,'Enter Date');"
                                                         onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                            <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -642,7 +642,7 @@
                                                     <div class="dvTextBoxFromdomestic input-group">
                                                         <input class="input from-icon form-control pr-5" id="textBoxFromdomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
+                                                            <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
                                                         </div>
                                                     </div>
                                                     <input type="hidden" id="hdntripdomestic" value="true" />
@@ -656,7 +656,7 @@
                                                     <div class="dvTextBoxTodomestic input-group">
                                                         <input class="input from-icon form-control pr-5" id="textBoxTodomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
+                                                            <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -665,7 +665,7 @@
                                                     <div class="input-group">
                                                         <input id="txtDepartdomestic" class="input datePicker form-control cal-icon pr-5" onfocus="placeholderOnFocusdomestic(this,'Enter Date');" onblur="placeholderOnFocusdomestic(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                            <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -675,7 +675,7 @@
                                                         <input class="input datePicker form-control cal-icon pr-5" id="txtReturndomestic" onfocus="placeholderOnFocusdomestic(this,'Enter Date');"
                                                         onblur="placeholderOnFocusdomestic(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                            <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>                                                                              
@@ -735,11 +735,11 @@
                           <div class="row">                                 
                               <div class="col-sm-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('SIN, Changi International, Singapore, SINGAPORE');">
                                   <a href="#flightScrollupAnchor" rel="" id="anchorSIN" class="d-block shadow-sm h-100">
-                                      <div class="bg-white border h-100 d-flex flex-column">
+                                      <div class="bg-colour6 border h-100 d-flex flex-column">
                                           <div class="img-container">                                        
                                                 <img class="w-100" src="Images/flightpage/flight-img1.jpg" style="cursor: pointer;" />
                                           </div>
-                                          <div class="d-flex flex-wrap bg-white p-3 h-100"> 
+                                          <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
                                             <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-sg">Singapore</h2>
                                             <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-sg-desc">
                                                 Singapore, officially the Republic of Singapore, is a sovereign island city-state in maritime Southeast Asia.
@@ -753,11 +753,11 @@
                               </div>
                               <div class="col-sm-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('BKK, Suvarnabhumi International Apt, Bangkok, THAILAND​');">
                                     <a href="#flightScrollupAnchor" rel="" id="anchorBKK" class="d-block shadow-sm h-100">
-                                        <div class="bg-white border h-100 d-flex flex-column">
+                                        <div class="bg-colour6 border h-100 d-flex flex-column">
                                             <div class="img-container">                                        
                                                 <img class="w-100" src="Images/flightpage/flight-img2.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-white p-3 h-100"> 
+                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-th">Thailand</h2>
                                                 <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-th-desc">
                                                     Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces
@@ -771,11 +771,11 @@
                               </div>
                               <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('PAR, All Airports, Paris, FRANCE​');">
                                     <a href="#flightScrollupAnchor" rel="" id="anchorPAR" class="d-block shadow-sm h-100">
-                                        <div class="bg-white border h-100 d-flex flex-column">
+                                        <div class="bg-colour6 border h-100 d-flex flex-column">
                                             <div class="img-container">                                        
                                                     <img class="w-100" src="Images/flightpage/flight-img3.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-white p-3 h-100"> 
+                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-pa">Paris</h2>
                                                 <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-pa-desc">
                                                     Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.
@@ -789,11 +789,11 @@
                               </div>
                               <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('CHC, Christchurch International, Christchurch, NEW ZEALAND');">
                                     <a href="#flightScrollupAnchor" rel="" id="anchorCHC" class="d-block shadow-sm h-100">
-                                        <div class="bg-white border h-100 d-flex flex-column">
+                                        <div class="bg-colour6 border h-100 d-flex flex-column">
                                             <div class="img-container">                                        
                                                     <img class="w-100" src="Images/flightpage/flight-img4.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-white p-3 h-100"> 
+                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-nz">New Zealand</h2>
                                                 <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-nz-desc">
                                                     New Zealand is an island country in the south western Pacific Ocean. It consists of two main landmasses
@@ -807,11 +807,11 @@
                               </div>
                               <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('LHR, Heathrow International, London, UNITED KINGDOM​​');">
                                     <a href="#flightScrollupAnchor" rel="" id="anchorLHR" class="d-block shadow-sm h-100">
-                                        <div class="bg-white border h-100 d-flex flex-column">
+                                        <div class="bg-colour6 border h-100 d-flex flex-column">
                                             <div class="img-container">                                        
                                                     <img class="w-100" src="Images/flightpage/flight-img5.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-white p-3 h-100"> 
+                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-ln">London</h2>
                                                 <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-ln-desc">
                                                    London, the capital of England and the United Kingdom, is a 21st-century city with history stretching
@@ -825,11 +825,11 @@
                               </div>
                               <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('DXB, Dubai International, Dubai, UNITED ARAB EMIRATES​​');">
                                     <a href="#flightScrollupAnchor" rel="" id="anchorDXB" class="d-block shadow-sm h-100">
-                                        <div class="bg-white border h-100 d-flex flex-column">
+                                        <div class="bg-colour6 border h-100 d-flex flex-column">
                                             <div class="img-container">                                        
                                                 <img class="w-100" src="Images/flightpage/flight-img6.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-white p-3 h-100"> 
+                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-db">Dubai</h2>
                                                 <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-db-desc">
                                                     Dubai is the most populous city in the UAE and the capital of the Emirate of Dubai,
@@ -843,11 +843,11 @@
                               </div>
                               <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('ZRH, Zurich Airport, Zurich, SWITZERLAND​​');">
                                     <a href="#flightScrollupAnchor" rel="" id="anchorZRH" class="d-block shadow-sm h-100">
-                                        <div class="bg-white border h-100 d-flex flex-column">
+                                        <div class="bg-colour6 border h-100 d-flex flex-column">
                                             <div class="img-container">                                        
                                                 <img class="w-100" src="Images/flightpage/flight-img7.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-white p-3 h-100"> 
+                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-zu">Zurich</h2>
                                                 <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-zu-desc">
                                                    Zürich is the largest city in Switzerland and the capital of the canton of Zürich.
@@ -861,11 +861,11 @@
                               </div>
                               <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('GOI, Goa Airport, Goa, INDIA​​');">
                                     <a href="#flightScrollupAnchor" rel="" id="anchorGOI" class="d-block shadow-sm h-100">
-                                        <div class="bg-white border h-100 d-flex flex-column">
+                                        <div class="bg-colour6 border h-100 d-flex flex-column">
                                             <div class="img-container">                                        
                                                 <img class="w-100" src="Images/flightpage/flight-img8.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-white p-3 h-100"> 
+                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
                                                 <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-go">Goa</h2>
                                                 <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-go-desc">
                                                     Goa, a state on India's West coast, is a former Portuguese colony with a rich history.

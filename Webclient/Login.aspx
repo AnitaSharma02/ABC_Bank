@@ -50,7 +50,7 @@
                                         <div class="dvInputGroup input-group">
                                             <input type="password" runat="server" autocomplete="off" class="form-control" id="txtPassword" />
                                             <div class="input-group-append">
-                                                <span toggle="#CP_txtPassword" class="input-group-text bg-white toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                <span toggle="#CP_txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
                                             </div>
                                         </div>
                                     </div>

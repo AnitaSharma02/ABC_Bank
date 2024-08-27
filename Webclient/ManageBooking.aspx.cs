@@ -170,7 +170,7 @@ public partial class ManageBooking : Page
                     {
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"row mb-1\">");
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"col-12\">");
-                        lsbTrExperienceBookingDetailsHtml.Append("<div class=\"bg-white p-3\">");
+                        lsbTrExperienceBookingDetailsHtml.Append("<div class=\"bg-colour6 p-3\">");
 
                         lsbTrExperienceBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
                         
@@ -364,7 +364,7 @@ public partial class ManageBooking : Page
 
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"row mb-1\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"col-12\">");
-                        lsbTrDomesticBookingDetailsHtml.Append("<div class=\"bg-white p-3\">");
+                        lsbTrDomesticBookingDetailsHtml.Append("<div class=\"bg-colour6 p-3\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
 
                         /*
@@ -519,7 +519,7 @@ public partial class ManageBooking : Page
     //                int i = 1;
     //                foreach (InsuranceBookingResponse item in lobjListInsuranceDetails)
     //                {
-    //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-white p-3\">");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-colour6 p-3\">");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
     //                    //lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-12 col-xl-3 col-lg-4 col-md-6 mb-3\"><p>");
     //                    //lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">No.</span>");
@@ -591,7 +591,7 @@ public partial class ManageBooking : Page
     //                int i = 1;
     //                foreach (ISPBookingResponse item in lobjListISPDetails)
     //                {
-    //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-white p-3\">");
+    //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"row mb-1\"><div class=\"col-12\"><div class=\"bg-colour6 p-3\">");
     //                    lsbTrISPBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
     //                    //lsbTrISPBookingDetailsHtml.Append("<div class=\"col-12 col-xl-3 col-lg-4 col-md-6 mb-3\"><p>");
     //                    //lsbTrISPBookingDetailsHtml.Append("<span class=\"h7 d-block heading-semibold\">No.</span>");

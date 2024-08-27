@@ -294,7 +294,7 @@
                                         <div class="dvTextBoxFromdomestic input-group">
                                             <input class="input from-icon form-control pr-5" id="textBoxFromdomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
+                                                <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
                                             </div>
                                         </div>
                                         <input type="hidden" id="hdntripdomestic" value="true" />
@@ -308,7 +308,7 @@
                                         <div class="dvTextBoxTodomestic input-group">
                                             <input class="input from-icon form-control pr-5" id="textBoxTodomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white"><i class="fa-solid fa-location-dot"></i></span>
+                                                <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -317,7 +317,7 @@
                                         <div class="input-group">
                                             <input id="txtDepartdomestic" class="input datePicker form-control cal-icon pr-5" onfocus="placeholderOnFocusdomestic(this,'Enter Date');" onblur="placeholderOnFocusdomestic(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -327,7 +327,7 @@
                                                         <input class="input datePicker form-control cal-icon pr-5" id="txtReturndomestic" onfocus="placeholderOnFocusdomestic(this,'Enter Date');"
                                                         onblur="placeholderOnFocusdomestic(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                            <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                                         </div>
                                                     </div>
                                                 </div>                                                                                
@@ -383,7 +383,7 @@
                                         onblur="placeholderOnFocusdomestic(this, 'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                     <input type="hidden" id="hdntripdomestic" value="true" />
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-white"><i class="fa fa-plane" aria-hidden="true"></i></span>
+                                        <span class="input-group-text bg-colour6"><i class="fa fa-plane" aria-hidden="true"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -393,7 +393,7 @@
                                     <input class="input form-control" id="textBoxTodomestic" onfocus="placeholderOnFocusdomestic(this, 'Enter City or Airport');"
                                         onblur="placeholderOnFocusdomestic(this, 'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-white"><i class="fa fa-plane" aria-hidden="true"></i></span>
+                                        <span class="input-group-text bg-colour6"><i class="fa fa-plane" aria-hidden="true"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -403,7 +403,7 @@
                                     <input id="txtDepartdomestic" class="input form-control" onfocus="placeholderOnFocusdomestic(this, 'Enter Date');"
                                         onblur="placeholderOnFocusdomestic(this, 'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-white"><i class="fa fa-calendar-o"></i></span>
+                                        <span class="input-group-text bg-colour6"><i class="fa fa-calendar-o"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -413,7 +413,7 @@
                                     <input class="input form-control" id="txtReturndomestic" onfocus="placeholderOnFocusdomestic(this,'Enter Date');"
                                         onblur="placeholderOnFocusdomestic(this, 'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-white"><i class="fa fa-calendar-o"></i></span>
+                                        <span class="input-group-text bg-colour6"><i class="fa fa-calendar-o"></i></span>
                                     </div>
                                 </div>
                             </div>

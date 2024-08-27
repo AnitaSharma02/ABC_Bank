@@ -448,7 +448,7 @@
                                         <div class="dvCP_txtCity dvInputGroup input-group">
                                             <input id="txtCity" class="form-control" onfocus="placeholderOnFocus(this,'Enter City Name');" onblur="placeholderOnFocus(this,'Enter City Name');" value="Enter City Name" type="text" runat="server" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white">
+                                                <span class="input-group-text bg-colour6">
                                                     <i class="fa-solid fa-location-dot"></i>
                                                 </span>
                                             </div>
@@ -459,7 +459,7 @@
                                         <div class="dvTextBoxCheckin dvInputGroup input-group">
                                             <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="TextBoxCheckin" readonly="readonly"  runat="server"/>
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white">
+                                                <span class="input-group-text bg-colour6">
                                                     <i class="fa-regular fa-calendar"></i>
                                                 </span>
                                             </div>
@@ -470,7 +470,7 @@
                                         <div class="dvTextBoxCheckout dvInputGroup input-group">
                                             <input class="form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" id="TextBoxCheckout" readonly="readonly" runat="server" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -628,7 +628,7 @@
                                             <div class="input-group">
                                                 <input class="input1 ui-autocomplete-input locationIcon form-control from-icon" type="text" autocomplete="off" runat="server" id="txtCity" onfocus="placeholderOnFocus(this,'Enter City Name');" onblur="placeholderOnFocus(this,'Enter City Name');" value="Enter City Name" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white">
+                                                    <span class="input-group-text bg-colour6">
                                                         <i class="fa-solid fa-location-dot"></i>
                                                     </span>
                                                 </div>
@@ -639,7 +639,7 @@
                                             <div class="dvTextBoxCheckin input-group">
                                                 <input id="TextBoxCheckin" runat="server" autocomplete="off" class="input1 ui-autocomplete-input datePicker form-control cal-icon" type="text" onfocus="placeholderOnFocus(this,'dd/mm/yyyy');" onblur="placeholderOnFocus(this,'dd/mm/yyyy');" value="dd/mm/yyyy" readonly="readonly" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white">
+                                                    <span class="input-group-text bg-colour6">
                                                         <i class="fa-regular fa-calendar"></i>
                                                     </span>
                                                 </div>
@@ -650,7 +650,7 @@
                                             <div class="dvTextBoxCheckout input-group">
                                                 <input class="input1 ui-autocomplete-input datePicker form-control cal-icon" autocomplete="off" type="text" onfocus="placeholderOnFocus(this,'dd/mm/yyyy');" onblur="placeholderOnFocus(this,'dd/mm/yyyy');" value="dd/mm/yyyy" id="TextBoxCheckout" runat="server" readonly="readonly" />
                                                 <div class="input-group-append">
-                                                    <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                    <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                                 </div>
                                             </div>
                                         </div>

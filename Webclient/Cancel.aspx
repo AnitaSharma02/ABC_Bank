@@ -12,7 +12,7 @@
  <div id="paymentpage">
     <div class="pay-options">
         <div class="total-amt text-center">
-            <div class="amt bg-white border">
+            <div class="amt bg-colour6 border">
                 <form id="form1">
                     <div>
                         <p class="text mb-2 font-weight-bold"> Your Transaction is Cancelled</p>

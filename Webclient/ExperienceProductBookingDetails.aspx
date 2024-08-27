@@ -36,11 +36,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-5 col-lg-4">
-                    <div class="border bg-white b-radius" id="divPaymentdetails">
+                    <div class="border bg-colour6 b-radius" id="divPaymentdetails">
                     </div>
                 </div>
                 <div class="col-12 col-md-7 col-lg-8 mt-3 mt-md-0" id="divContactdetails">
-                    <div class="border bg-white p-3">
+                    <div class="border bg-colour6 p-3">
                         <p class="heading6">Guest Contact Details</p>
                         <div class="row mt-3">
                             <div class="col-12 col-md-12 col-lg-4 mb-3 mb-lg-0">
@@ -76,7 +76,7 @@
                                         aria-describedby="inputGroupPrepend2"
                                         required="" />
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text bg-white"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                        <span class="input-group-text bg-colour6"><i class="fa fa-user" aria-hidden="true"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                                         aria-describedby="inputGroupPrepend2"
                                         required="" />
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text bg-white"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                        <span class="input-group-text bg-colour6"><i class="fa fa-user" aria-hidden="true"></i></span>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                                         aria-describedby="inputGroupPrepend2"
                                         required="required" />
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text bg-white">
+                                        <span class="input-group-text bg-colour6">
                                             <i class="fa fa-envelope" aria-hidden="true"></i>
                                         </span>
                                     </div>
@@ -134,7 +134,7 @@
                                         aria-describedby="inputGroupPrepend2"
                                         required="required" />
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text bg-white">
+                                        <span class="input-group-text bg-colour6">
                                             <i class="fa fa-phone-square" aria-hidden="true"></i>
                                         </span>
                                     </div>
@@ -146,7 +146,7 @@
                                 <div class="dvInputGroup input-group mb-3">
                                     <input id="txtCVMembershipNo" type="text" class="form-control" placeholder="CV Membership No." onkeyup="ValidateBookingDetailsFields();" maxlength="9" autocomplete="off" required="required" />
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-white"><i class="fa-solid fa-handshake"></i>
+                                        <span class="input-group-text bg-colour6"><i class="fa-solid fa-handshake"></i>
                                         </span>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="dvTxtDOBAdult dvInputGroup input-group">
                                     <asp:TextBox ID="txtDOB" class="form-control icnDate" runat="server" AutoComplete="off" ></asp:TextBox>
                                     <div class="input-group-append">
-                                        <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                        <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                     </div>
                                 </div>
                                 <asp:RequiredFieldValidator ID="rfvAdultDOB" runat="server" ControlToValidate="txtDOB"
@@ -184,16 +184,16 @@
                     </div>
 
                     <div class="mt-3">
-                        <div class="col-12 border bg-white p-3" id="divAdditionalInfo">
+                        <div class="col-12 border bg-colour6 p-3" id="divAdditionalInfo">
                         </div>
                     </div>
 
                     <div class="mt-3">
-                        <div class="col-12 border bg-white p-3" id="divPickupInformation">
+                        <div class="col-12 border bg-colour6 p-3" id="divPickupInformation">
                         </div>
                     </div>
                     <div class="border-bottom"></div>
-                    <div class="col-12 border bg-white p-3 mt-3">
+                    <div class="col-12 border bg-colour6 p-3 mt-3">
                         <div class="row">
                             <div class="cancelBox col-12 col-lg-6">
                                 <p class="heading6">Cancellation Policy:</p>
@@ -588,7 +588,7 @@
                                             html += '<div class="input-group-">';
                                             html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                             html += '<div class="input-group-append">';
-                                            html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
+                                            html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
                                             html += '</div>';
                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                 html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -607,7 +607,7 @@
                                             html += '<div class="input-group-">';
                                             html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                             html += '<div class="input-group-append">';
-                                            html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
+                                            html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
                                             html += '</div>';
                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                 html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -626,7 +626,7 @@
                                             html += '<div class="input-group-">';
                                             html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                             html += '<div class="input-group-append">';
-                                            html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
+                                            html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
                                             html += '</div>';
                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                 html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -786,7 +786,7 @@
                                                 html += '<div class="input-group-">';
                                                 html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                                 html += '<div class="input-group-append">';
-                                                html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
+                                                html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
                                                 html += '</div>';
                                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                     html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -805,7 +805,7 @@
                                                 html += '<div class="input-group-">';
                                                 html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                                 html += '<div class="input-group-append">';
-                                                html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
+                                                html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
                                                 html += '</div>';
                                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                     html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -824,7 +824,7 @@
                                                 html += '<div class="input-group-">';
                                                 html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                                 html += '<div class="input-group-append">';
-                                                html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
+                                                html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
                                                 html += '</div>';
                                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                     html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';

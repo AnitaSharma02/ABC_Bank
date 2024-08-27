@@ -31,7 +31,7 @@
                             <h2 class="heading6 text-colour7 mb-3">Product types</h2>
                         </div>
                         <div class="dvFormBox">
-                            <div class="border leftCont bg-white p-3">
+                            <div class="border leftCont bg-colour6 p-3">
                                 <div class="row" id="expinputdiv">
                                     <div class="col-12 col-md-4 mb-2 mb-md-0">
                                         <label class="label">Date</label>
@@ -44,7 +44,7 @@
                                                 type="text"
                                                 class="form-control" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>
+                                                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <div class="dvTourBox mt-3">
-                            <div class="border shadow-on-hover leftCont bg-white" id="dvProductTypeDetails">
+                            <div class="border shadow-on-hover leftCont bg-colour6" id="dvProductTypeDetails">
                             </div>
                         </div>
                     </div>
