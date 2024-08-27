@@ -54,7 +54,7 @@ public partial class CarVoucher : System.Web.UI.Page
              
                 string lstrCurrency = lobjModel.GetDefaultCurrency();
                 string lstrPaymentDetails = string.Empty;
-                string lstrPaymentDetailsHTML = "{0}<span class='font-weight-bold'>{1}</span>";
+                string lstrPaymentDetailsHTML = "{0}<span class='heading-bold'>{1}</span>";
                  lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, lstrCurrency + " : ", lobjModel.IntToThousandSeperated(RequierdRedeemPoint));
 
                 lstrPaymentDetails = "<p>" + lstrPaymentDetails + "</p>";

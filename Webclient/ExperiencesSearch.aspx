@@ -236,7 +236,7 @@
                     html += "<h3>" + parseData.data[i].city + ',' + parseData.data[i].country + "</h3>";
                     html += "<div class=\"cardPoints d-flex flex-column justify-content-between mb-3\">";
                     html += "<p class=\"points m-0\">" + parseData.data[i].typeName + "</p>";
-                    html += "<p class=\"points m-0\">from <span class=\"font-weight-bold\">" + FormatCurrency(parseData.data[i].basePrice, parseData.data[i].convertedCurrency) + "</span> /pax</p>";
+                    html += "<p class=\"points m-0\">from <span class=\"heading-bold\">" + FormatCurrency(parseData.data[i].basePrice, parseData.data[i].convertedCurrency) + "</span> /pax</p>";
                     html += "</div>";
                     html += "</a>";
                     html += "</div>";

@@ -218,20 +218,11 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-colour2 p-3">
+                    <div class="border p-3">
                         <div class="dvCommonAccordion accordion" id="manage-accordion">
-
-                            <!-- FLIGHT BOOKING DETAILS -->
                             <div class="card mb-3">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0 ">
-                                        <%--<button class="btn btn-block text-left p-3 heading-semibold" type="button" data-toggle="collapse"
-                                            data-target="#collapse1" data-i18n="mb-flight-booking-details">
-                                            Flight Booking Details
-                                            <span class="arrow-icon">
-                                                <i class="fa fa-caret-up"></i>
-                                            </span>
-                                        </button>--%>
                                         <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase" type="button"
                                             data-toggle="collapse" data-target="#collapse1">
                                             <span data-i18n="mb-flight-booking-details">Flight Booking Details</span>
@@ -241,90 +232,85 @@
                                         </button>
                                     </h2>
                                 </div>
-
                                 <div id="collapse1" class="collapse show" data-parent="#manage-accordion">
                                     <div class="card-body scroll-ver p-0">
-                                        <div>
-                                            <asp:Repeater ID="rptBookingDetails" runat="server">
-                                                <ItemTemplate>
-                                                    <div class="row mb-1">
-                                                        <div class="col-12">
-                                                            <div class="bg-colour6 p-3">
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-6 col-md-3 col-xl-2 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-departure-label">Departure Date</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%# Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.DepartureDate")).ToString("dd/MM/yyyy")%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-6 col-md-3 col-xl-2 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-booking-label">Return Date</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%# Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.ArrivalDate")).ToString("dd/MM/yyyy") == "01/01/0001" ? "NA" : Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.ArrivalDate")).ToString("dd/MM/yyyy") %>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-6 col-md-3 col-xl-2 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-details-label">Details</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%# DataBinder.Eval(Container, "DataItem.OriginLocation")%>
+                                        <asp:Repeater ID="rptBookingDetails" runat="server">
+                                            <ItemTemplate>
+                                                <div class="row mb-1">
+                                                    <div class="col-12">
+                                                        <div class="bg-colour6 p-3">
+                                                            <div class="row justify-content-between">
+                                                                <div class="col-6 col-md-3 col-xl-2 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-departure-label">Departure Date</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%# Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.DepartureDate")).ToString("dd/MM/yyyy")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 col-xl-2 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-booking-label">Return Date</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%# Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.ArrivalDate")).ToString("dd/MM/yyyy") == "01/01/0001" ? "NA" : Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.ArrivalDate")).ToString("dd/MM/yyyy") %>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 col-xl-2 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-details-label">Details</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%# DataBinder.Eval(Container, "DataItem.OriginLocation")%>
                                                                                     -
                                                                                     <%# DataBinder.Eval(Container, "DataItem.DestinationLocation")%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-6 col-md-3 col-xl-2 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-ref-label">Ref No.</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%# DataBinder.Eval(Container, "DataItem.ItineraryReference")%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-6 col-md-3 col-xl-1 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-trip-label">Trip Id</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%# DataBinder.Eval(Container, "DataItem.ItineraryTripId")%><asp:HiddenField ID="hdnTripId"
-                                                                                    runat="server" Value='<%# DataBinder.Eval(Container, "DataItem.ItineraryReference")%>' />
-                                                                                <asp:HiddenField ID="hdnReferrerId" runat="server" Value='<%# DataBinder.Eval(Container, "DataItem.RefererDetails.Id")%>' />
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-6 col-md-3 col-xl-1 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-points-label">Points</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%# DataBinder.Eval(Container, "DataItem.FareDetails.TotalPoints")%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-12 col-md-6 col-xl-2 mt-3 mt-md-0">
-                                                                        <p>
-                                                                            <asp:LinkButton ID="BtnViewAir" CssClass="btn btn-one w-100" Text="View Details" runat="server" OnClientClick='<%#String.Format("javascript:return ShowAirReceipt(\"{0}\")",Eval("ItineraryTripId").ToString())%>'></asp:LinkButton>
-                                                                        </p>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 col-xl-2 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-ref-label">Ref No.</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%# DataBinder.Eval(Container, "DataItem.ItineraryReference")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 col-xl-1 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-trip-label">Trip Id</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%# DataBinder.Eval(Container, "DataItem.ItineraryTripId")%><asp:HiddenField ID="hdnTripId"
+                                                                                runat="server" Value='<%# DataBinder.Eval(Container, "DataItem.ItineraryReference")%>' />
+                                                                            <asp:HiddenField ID="hdnReferrerId" runat="server" Value='<%# DataBinder.Eval(Container, "DataItem.RefererDetails.Id")%>' />
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 col-xl-1 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-points-label">Points</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%# DataBinder.Eval(Container, "DataItem.FareDetails.TotalPoints")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-12 col-md-6 col-xl-2 mt-3 mt-md-0">
+                                                                    <p>
+                                                                        <asp:LinkButton ID="BtnViewAir" CssClass="btn btn-one w-100" Text="View Details" runat="server" OnClientClick='<%#String.Format("javascript:return ShowAirReceipt(\"{0}\")",Eval("ItineraryTripId").ToString())%>'></asp:LinkButton>
+                                                                    </p>
 
-                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </ItemTemplate>
-                                            </asp:Repeater>
-                                            <div id="divFlightrecord" class="p-3" runat="server" visible="false">
-                                                <asp:Label runat="server" ID="lblFlightrecord" Visible="false"></asp:Label>
-                                            </div>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                        <div id="divFlightrecord" class="p-3" runat="server" visible="false">
+                                            <asp:Label runat="server" ID="lblFlightrecord" Visible="false"></asp:Label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- FLIGHT BOOKING DETAILS -->
 
-                            <!-- HOTEL BOOKING DETAILS -->
                             <div class="card mb-3">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
@@ -339,95 +325,91 @@
                                 </div>
                                 <div id="collapse2" class="collapse" data-parent="#manage-accordion">
                                     <div class="card-body scroll-ver p-0">
-                                        <div>
-                                            <asp:Repeater ID="rptHotelCancelBookingDetails" runat="server">
-                                                <ItemTemplate>
-                                                    <div class="row mb-1">
-                                                        <div class="col-12">
-                                                            <div class="bg-colour6 p-3">
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-6 col-md-3 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-checkin-label">Check-in Date</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%#Convert.ToDateTime(Eval("searchCriteria.CheckInDate")).ToShortDateString()%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-6 col-md-3 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-checkout-label">Check-out Date</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%#Convert.ToDateTime(Eval("searchCriteria.CheckOutDate")).ToShortDateString()%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-6 col-md-3 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-booking-label">Booking Date</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%#Convert.ToDateTime(Eval("BookinDate")).ToShortDateString()%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-6 col-md-3 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-details-label">Details</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%#Eval("Hotel.basicinfo.hotelname")%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-12 col-md-3 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-ref-label">Ref No.</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%#Eval("TransactionReferenceCode")%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-6 col-md-3 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-points-label">Points</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%#Eval("TotalPoint")%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-6 col-md-3 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-status-label">Status</span>
-                                                                            <span class="h6 d-block">
-                                                                                <%# (Convert.ToInt32(Eval("Status")).Equals(1))? "BOOKED" : "CANCELLED" %>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-12 col-md-3 mb-1 mt-2 mt-lg-0">
-                                                                        <p>
-                                                                            <asp:HiddenField ID="hdnCancelHotelBooking" Value='<%#String.Concat(Eval("ExternalBookingId"), "&bookid=", Eval("BookingId").ToString(),"&transRef=",Eval("TransactionReferenceCode").ToString())%>'
-                                                                                runat="server"></asp:HiddenField>
-                                                                            <asp:HiddenField ID="hdnTransRef" Value='<%#Eval("TransactionReferenceCode").ToString()%>'
-                                                                                runat="server"></asp:HiddenField>
-                                                                            <asp:LinkButton ID="imgBtnHotelVoucher" class="btn btn-one w-100" runat="server" Text="View Details" Enabled='<%# Convert.ToInt32(Eval("Status")).Equals(1) %>'
-                                                                                OnClientClick='<%#String.Format("javascript:return ShowHotelVoucher(\"{0}\")",Eval("TransactionReferenceCode").ToString())%>'></asp:LinkButton>
-                                                                        </p>
-                                                                    </div>
+                                        <asp:Repeater ID="rptHotelCancelBookingDetails" runat="server">
+                                            <ItemTemplate>
+                                                <div class="row mb-1">
+                                                    <div class="col-12">
+                                                        <div class="bg-colour6 p-3">
+                                                            <div class="row justify-content-between">
+                                                                <div class="col-6 col-md-3 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-checkin-label">Check-in Date</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Convert.ToDateTime(Eval("searchCriteria.CheckInDate")).ToShortDateString()%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-checkout-label">Check-out Date</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Convert.ToDateTime(Eval("searchCriteria.CheckOutDate")).ToShortDateString()%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-booking-label">Booking Date</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Convert.ToDateTime(Eval("BookinDate")).ToShortDateString()%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-details-label">Details</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Eval("Hotel.basicinfo.hotelname")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-12 col-md-3 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-ref-label">Ref No.</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Eval("TransactionReferenceCode")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-points-label">Points</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Eval("TotalPoint")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-status-label">Status</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%# (Convert.ToInt32(Eval("Status")).Equals(1))? "BOOKED" : "CANCELLED" %>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-12 col-md-3 mb-1 mt-2 mt-lg-0">
+                                                                    <p>
+                                                                        <asp:HiddenField ID="hdnCancelHotelBooking" Value='<%#String.Concat(Eval("ExternalBookingId"), "&bookid=", Eval("BookingId").ToString(),"&transRef=",Eval("TransactionReferenceCode").ToString())%>'
+                                                                            runat="server"></asp:HiddenField>
+                                                                        <asp:HiddenField ID="hdnTransRef" Value='<%#Eval("TransactionReferenceCode").ToString()%>'
+                                                                            runat="server"></asp:HiddenField>
+                                                                        <asp:LinkButton ID="imgBtnHotelVoucher" class="btn btn-one w-100" runat="server" Text="View Details" Enabled='<%# Convert.ToInt32(Eval("Status")).Equals(1) %>'
+                                                                            OnClientClick='<%#String.Format("javascript:return ShowHotelVoucher(\"{0}\")",Eval("TransactionReferenceCode").ToString())%>'></asp:LinkButton>
+                                                                    </p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </ItemTemplate>
-                                            </asp:Repeater>
-                                            <div id="divHotelrecord" class="p-3" runat="server" visible="false">
-                                                <asp:Label runat="server" ID="lblHotelrecord" Visible="false"></asp:Label>
-                                            </div>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                        <div id="divHotelrecord" class="p-3" runat="server" visible="false">
+                                            <asp:Label runat="server" ID="lblHotelrecord" Visible="false"></asp:Label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- HOTEL BOOKING DETAILS -->
 
-                            <!-- EXPERIENCE BOOKING DETAILS -->
                             <div class="card mb-3 d-none">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
@@ -445,9 +427,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- EXPERIENCE BOOKING DETAILS -->
 
-                            <!-- DOMESTIC FLIGHT BOOKING DETAILS -->
                             <div class="card mb-3">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
@@ -465,10 +445,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- DOMESTIC FLIGHT BOOKING DETAILS -->
 
-                            <!-- INSURANCE BOOKING DETAILS -->
-                            <div class="card mb-3" style="display:none;">
+                            <div class="card mb-3" style="display: none;">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
                                         <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
@@ -485,10 +463,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- INSURANCE BOOKING DETAILS -->
 
-                            <!-- ISP BOOKING DETAILS -->
-                            <div class="card" style="display:none;">
+                            <div class="card" style="display: none;">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
                                         <button class="btn- btn-block text-left p-3 h6 heading-semibold text-uppercase collapsed" type="button"
@@ -505,9 +481,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- ISP BOOKING DETAILS -->
 
-                                                        <!-- CAR BOOKING DETAILS -->
                             <div class="card">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0 ">
@@ -520,94 +494,90 @@
                                         </button>
                                     </h2>
                                 </div>
-
                                 <div id="collapse7" class="collapse" data-parent="#manage-accordion">
                                     <div class="card-body scroll-ver p-3">
-                                        <div>
-                                            <asp:Repeater ID="rptCarBookingDetails" runat="server">
-                                                <ItemTemplate>
-                                                    <div class="row mb-1">
-                                                        <div class="col-12">
-                                                            <div class="bg-colour6 px-3 pt-3">
-                                                                <div class="row justify-content-between">
-                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-semibold">Car Name</span>
-                                                                            <span class="d-block h6 heading-regular pt-1">
-                                                                                <%#Eval("Vehicle_name")%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-semibold">Booking Ref Id</span>
-                                                                            <span class="d-block h6 heading-regular pt-1">
-                                                                                <%#Eval("Reference_Unique_Id") %>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-semibold">Pick-Up Details</span>
-                                                                            <span class="d-block h6 heading-regular pt-1">
-                                                                              <%--  <%#Eval("pickUpDateTime")%>--%>
-                                                                                 <%#Eval("pickUpBranchLine")%> 
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-semibold">Drop-Off Details</span>
-                                                                            <span class="d-block h6 heading-regular pt-1">
-                                                                              <%--  <%#Eval("dropOffDateTime")%>--%>
-                                                                                   <%#Eval("dropOffBranchLine")%> 
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-semibold">Booking Status</span>
-                                                                            <span class="d-block h6 heading-regular pt-1">
-                                                                                <%#Eval("Status")%>
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="col-12 col-sm-6 col-lg-4 mb-1">
-                                                                        <span>
-                                                                            <span class="h7 d-block heading-semibold" data-i18n="managebooking-hotel-points-label">Points</span>
-                                                                            <span class="d-block- h6 heading-regular pt-1">
-                                                                                  <%#Eval("Payment_Amount")%>
-                                                                            </span>
+                                        <asp:Repeater ID="rptCarBookingDetails" runat="server">
+                                            <ItemTemplate>
+                                                <div class="row mb-1">
+                                                    <div class="col-12">
+                                                        <div class="bg-colour6 p-3">
+                                                            <div class="row justify-content-between">
+                                                                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold">Car Name</span>
+                                                                        <span class="d-block h6 heading-regular pt-1">
+                                                                            <%#Eval("Vehicle_name")%>
                                                                         </span>
-                                                                        <asp:HiddenField ID="HiddenField1" Value='<%#Eval("Reference_Unique_Id").ToString()%>' runat="server"></asp:HiddenField>
-                                                                        <asp:LinkButton CssClass="btn btn-one w-50 ml-2" ID="LinkButton1" runat="server" Text="Print" OnClientClick='<%#String.Format("javascript:return ShowCarVoucher(\"{0}\",\"{1}\",\"{2}\")",Eval("Reference_Unique_Id").ToString(),Eval("Access_Token").ToString(),Eval("Reserve_Number").ToString())%>'></asp:LinkButton>
-                                                                    </div>
-                                                                   <%-- <div class="col-12 col-md-3 mb-1">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-semibold">Booking Pickup Location</span>
-                                                                            <span class="d-block h6 heading-regular pt-1"> 
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>--%>
-                                                                  <%--  <div class="col-12 col-md-3 mb-1 mt-2 mt-lg-0">
-                                                                        <p>
-                                                                            <span class="h7 d-block heading-semibold">Booking Drop-Off Location</span>
-                                                                             </p>
-                                                                    </div>--%>
+                                                                    </p>
                                                                 </div>
+                                                                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold">Booking Ref Id</span>
+                                                                        <span class="d-block h6 heading-regular pt-1">
+                                                                            <%#Eval("Reference_Unique_Id") %>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold">Pick-Up Details</span>
+                                                                        <span class="d-block h6 heading-regular pt-1">
+                                                                            <%--  <%#Eval("pickUpDateTime")%>--%>
+                                                                            <%#Eval("pickUpBranchLine")%> 
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold">Drop-Off Details</span>
+                                                                        <span class="d-block h6 heading-regular pt-1">
+                                                                            <%--  <%#Eval("dropOffDateTime")%>--%>
+                                                                            <%#Eval("dropOffBranchLine")%> 
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold">Booking Status</span>
+                                                                        <span class="d-block h6 heading-regular pt-1">
+                                                                            <%#Eval("Status")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                                                    <span>
+                                                                        <span class="h7 d-block heading-semibold" data-i18n="managebooking-hotel-points-label">Points</span>
+                                                                        <span class="d-block- h6 heading-regular pt-1">
+                                                                            <%#Eval("Payment_Amount")%>
+                                                                        </span>
+                                                                    </span>
+                                                                    <asp:HiddenField ID="HiddenField1" Value='<%#Eval("Reference_Unique_Id").ToString()%>' runat="server"></asp:HiddenField>
+                                                                    <asp:LinkButton CssClass="btn btn-one w-50 ml-2" ID="LinkButton1" runat="server" Text="Print" OnClientClick='<%#String.Format("javascript:return ShowCarVoucher(\"{0}\",\"{1}\",\"{2}\")",Eval("Reference_Unique_Id").ToString(),Eval("Access_Token").ToString(),Eval("Reserve_Number").ToString())%>'></asp:LinkButton>
+                                                                </div>
+                                                                <%-- <div class="col-12 col-md-3 mb-1">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold">Booking Pickup Location</span>
+                                                                        <span class="d-block h6 heading-regular pt-1"> 
+                                                                        </span>
+                                                                    </p>
+                                                                </div>--%>
+                                                                <%--  <div class="col-12 col-md-3 mb-1 mt-2 mt-lg-0">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold">Booking Drop-Off Location</span>
+                                                                            </p>
+                                                                </div>--%>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </ItemTemplate>
-                                            </asp:Repeater>
-                                            <div id="divCarrecord" runat="server" visible="false">
-                                                <asp:Label runat="server" ID="lblCarrecord" Visible="false"></asp:Label>
-                                            </div>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                        <div id="divCarrecord" runat="server" visible="false">
+                                            <asp:Label runat="server" ID="lblCarrecord" Visible="false"></asp:Label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-<!-- CAR BOOKING DETAILS -->
                         </div>
                     </div>
                 </div>

@@ -26,19 +26,19 @@
                     <div class="row">
                         <div class="col-12">
                             <h2 class="h5 heading-light text-colour7 my-3">Thank you
-                                <asp:Label CssClass="font-weight-bold" ID="lblPersonName" runat="server" Text="Nil"></asp:Label>, Your booking is now <span class="font-weight-bold">confirmed.</span></h2>
+                                <asp:Label CssClass="heading-bold" ID="lblPersonName" runat="server" Text="Nil"></asp:Label>, Your booking is now <span class="heading-bold">confirmed.</span></h2>
                             <p>
 
-                                <span class="font-weight-bold">Points:</span>
+                                <span class="heading-bold">Points:</span>
                                 <span id="divTotalMiles" runat="server"></span><br />
 
-                                <span class="font-weight-bold">Reference No:</span>
+                                <span class="heading-bold">Reference No:</span>
                                 <asp:Label ID="lblTransactionReference" runat="server"></asp:Label><br />
 
-                                <span class="font-weight-bold">Voucher No:</span>
+                                <span class="heading-bold">Voucher No:</span>
                                 <asp:Label ID="lblExternalRefId" runat="server" Text=""></asp:Label><br />
 
-                                <span class="font-weight-bold">Booking ID:</span>
+                                <span class="heading-bold">Booking ID:</span>
                                 <asp:Label ID="lblBookingID" runat="server" Text="Nil"></asp:Label>
                             </p>
                         </div>

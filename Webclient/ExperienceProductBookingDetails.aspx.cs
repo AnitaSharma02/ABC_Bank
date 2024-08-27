@@ -40,7 +40,7 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                     else
                     {
                         txtImpNote.Attributes.Remove("style");
-                        txtImpNote.InnerHtml = "<span class=\"font-weight-bold\">Please note: </span>All the transactions are subjected to " + PGTranPct + " payment gateway charge. You will now be redirected to Payment gateway for completing your transactions.";
+                        txtImpNote.InnerHtml = "<span class=\"heading-bold\">Please note: </span>All the transactions are subjected to " + PGTranPct + " payment gateway charge. You will now be redirected to Payment gateway for completing your transactions.";
                     }
 
                     BindCountryList();

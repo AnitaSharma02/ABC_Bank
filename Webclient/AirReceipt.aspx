@@ -30,18 +30,18 @@
                             <h2 class="h5 heading-semibold text-colour7 my-3">Congratulations for your Infinity Rewards Ticket!</h2>
                             <p>
                                 This is your E-ticket. Do present it with a valid photo identification at the airport check-in counter.<br />
-                                <span class="font-weight-bold">For international travel:</span><br />
+                                <span class="heading-bold">For international travel:</span><br />
                                 The check-in counters are open 4 hours prior to departure and close strictly 2 hours prior to departure.<br />
 
                                 <span runat="server" id="ItineraryTimeChanged" style="display: none;">Please check the timings, as there may be change in time from Airlines.</span>
 
-                                <span class="font-weight-bold">Reference No.:</span><br />
+                                <span class="heading-bold">Reference No.:</span><br />
                                 <asp:Label ID="lblTransactionRefNo" runat="server" /><br />
 
-                                <span class="font-weight-bold">PNR No.:</span><br />
+                                <span class="heading-bold">PNR No.:</span><br />
                                 <asp:Label ID="lblGDSPNR" runat="server" /><br />
 
-                                <span class="font-weight-bold">Points:</span><br />
+                                <span class="heading-bold">Points:</span><br />
                                 <asp:Label ID="lblTotalMiles" runat="server"></asp:Label><br />
                             </p>
                         </div>

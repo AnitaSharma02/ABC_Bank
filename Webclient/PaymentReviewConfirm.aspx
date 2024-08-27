@@ -20,7 +20,7 @@
                                     <div class="row">
                                         <%--<div class="col-12 mb-3">
                                                 <p class="mb-2">Product Name</p>
-                                                <span class="font-weight-bold" id="spanProductName">Lulu gift Voucher</span>
+                                                <span class="heading-bold" id="spanProductName">Lulu gift Voucher</span>
                                             </div>--%>
                                         <div class="col-lg-6 offset-lg-3 text-center mb-3">
                                             <p>Total Points to be Paid</p>

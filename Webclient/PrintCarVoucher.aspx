@@ -34,10 +34,10 @@
                                 <h2 class="h5 heading-semibold text-colour7 my-3">Congratulations for your Infinity Rewards Ticket!</h2>
                                 <p>
                                     Reference No:
-                                    <asp:Label ID="lblbookingReferenceNo" runat="server" Text="NIL" CssClass="font-weight-bold"></asp:Label>
+                                    <asp:Label ID="lblbookingReferenceNo" runat="server" Text="NIL" CssClass="heading-bold"></asp:Label>
                                 </p>
-                                <p>Payment Info: <span id="PaymentInfo" runat="server" class="font-weight-bold"></span></p>
-                                <p class="my-3 font-weight-bold">
+                                <p>Payment Info: <span id="PaymentInfo" runat="server" class="heading-bold"></span></p>
+                                <p class="my-3 heading-bold">
                                     Thank you
                                     <asp:Label ID="lblMemberName" runat="server" Text="NIL"></asp:Label>
                                     (Infinity Rewards ID :-&nbsp;<asp:Label ID="lblMembershipReference" runat="server" Text="NIL"></asp:Label>) for
@@ -45,11 +45,11 @@
                                         pertaining to this booking.
                                 </p>
                                 <p>
-                                    Your Current status for Car Booking is  <span class="font-weight-bold">
+                                    Your Current status for Car Booking is  <span class="heading-bold">
                                         <asp:Label ID="lblBookingStatus" runat="server" Text="NIL"></asp:Label>*.</span>
                                 </p>
                                 <p style="display: none;">
-                                    Supplier ID: <span class="font-weight-bold">
+                                    Supplier ID: <span class="heading-bold">
                                         <asp:Label ID="lblbookingId" runat="server" Text="NIL"></asp:Label></span>
                                 </p>
                             </div>
@@ -57,7 +57,7 @@
                         <%--<UC:ItineraryDetails ID="ucItinarary" runat="server" />--%>
                         <div class="row dvAdditionalDetails mt-3">
                             <div class="col-12 mb-3">
-                                <h2 class="h7 heading-semibold text-colour7 bg-colour2 py-3 px-2 border">Booking Details</h2>
+                                <h2 class="h7 heading-semibold text-colour6 bg-colour1 py-3 px-2 border">Booking Details</h2>
                                 <div class="px-3 border">
                                     <div class="row">
                                         <div class="col-12 col-sm-4 col-md-4 border-right">
@@ -130,7 +130,7 @@
                             </div>
 
                             <div class="col-12 mb-3">
-                                <h2 class="h7 heading-semibold text-colour7 bg-colour2 py-3 px-2 border">Car Details</h2>
+                                <h2 class="h7 heading-semibold text-colour6 bg-colour1 py-3 px-2 border">Car Details</h2>
                                 <div class="px-3 border">
                                     <div class="row">
                                         <div class="col-5 col-sm-4 col-md-4 border-right">

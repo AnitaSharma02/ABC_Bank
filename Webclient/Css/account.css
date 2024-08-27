@@ -104,27 +104,9 @@
 
 
 /*=========[ MANAGE PAGE ]=========*/
-.dvManage .accordion .card {
-  border-radius: 0.25rem;
-}
 
-.dvManage .accordion .card-header {
-  margin-bottom: 0;
-}
-
-.dvManage .accordion .card-body {
-  background: var(--bg-colour3);
-  border-radius: 0.25rem;
-}
-
-.dvManage .accordion span.d-inline-block {
-  min-height: 42px;
-}
-
-.dvManage .wd-br-all {
-    word-break: break-all;
-}
 /*=========[ MANAGE PAGE ]=========*/
+
 
 
 

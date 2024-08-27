@@ -15,7 +15,7 @@
             <div class="amt bg-colour6 border">
                 <form id="form1">
                     <div>
-                        <p class="text mb-2 font-weight-bold"> Your Transaction is Cancelled</p>
+                        <p class="text mb-2 heading-bold"> Your Transaction is Cancelled</p>
                     </div>
                 </form>
             </div>

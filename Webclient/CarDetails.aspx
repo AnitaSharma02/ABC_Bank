@@ -301,7 +301,7 @@
                                         <p>Remainder to pay for car hire on arrival is made in LOCAL currency:</p>
                                     </div>
                                     <div class="col-6">
-                                        <p class="font-weight-bold"><span id="spnAdditionalChargetotal">0</span> <i class="fa fa-usd" aria-hidden="true"></i></p>
+                                        <p class="heading-bold"><span id="spnAdditionalChargetotal">0</span> <i class="fa fa-usd" aria-hidden="true"></i></p>
                                     </div>
                                 </div>--%>
 

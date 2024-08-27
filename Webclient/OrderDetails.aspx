@@ -126,25 +126,25 @@
                         <div class="dvOrderTrack-step">
                             <span class="step" runat="server" id="divOrderConfirmed">
                                 <span class="step-circle future rounded-circle">1</span>
-                                <span class="d-block d-md-inline font-weight-bold">Order confirmed</span>
+                                <span class="d-block d-md-inline heading-bold">Order confirmed</span>
                             </span>
                         </div>
                         <div class="dvOrderTrack-step">
                             <span class="step" runat="server" id="divOrderPicked">
                                 <span class="step-circle future rounded-circle">2</span>
-                                <span class="d-block d-md-inline font-weight-bold">Picked by courier</span>
+                                <span class="d-block d-md-inline heading-bold">Picked by courier</span>
                             </span>
                         </div>
                         <div class="dvOrderTrack-step">
                             <span class="step" runat="server" id="divOtw">
                                 <span class="step-circle future rounded-circle">3</span>
-                                <span class="d-block d-md-inline font-weight-bold">On the way</span>
+                                <span class="d-block d-md-inline heading-bold">On the way</span>
                             </span>
                         </div>
                         <div class="dvOrderTrack-step">
                             <span class="step" runat="server" id="divDelivered">
                                 <span class="step-circle active rounded-circle">4</span>
-                                <step class="d-block d-md-inline active stepText font-weight-bold">Delivered</step>
+                                <step class="d-block d-md-inline active stepText heading-bold">Delivered</step>
                             </span>
                         </div>
                     </div>

@@ -26,9 +26,9 @@
                             <h2 class="h5 heading-semibold text-colour7 mb-3">Congratulations for your Infinity Rewards Ticket!</h2>
                             <p>
                                 Reference No:
-                                <asp:Label ID="lblbookingReferenceNo" runat="server" Text="NIL" CssClass="font-weight-bold"></asp:Label>
+                                <asp:Label ID="lblbookingReferenceNo" runat="server" Text="NIL" CssClass="heading-bold"></asp:Label>
                             </p>
-                            <p>Payment Info: <span id="PaymentInfo" runat="server" class="font-weight-bold"></span></p>
+                            <p>Payment Info: <span id="PaymentInfo" runat="server" class="heading-bold"></span></p>
                             <p class="my-3">
                                 Thank you
                                 <asp:Label ID="lblMemberName" runat="server" Text="NIL"></asp:Label>
@@ -38,11 +38,11 @@
                                 pertaining to this booking.
                             </p>
                             <p>
-                                Your Current status for Car Booking is <span class="font-weight-bold">
+                                Your Current status for Car Booking is <span class="heading-bold">
                                 <asp:Label ID="lblBookingStatus" runat="server" Text="NIL"></asp:Label>*.</span>
                             </p>
                             <p style="display: none;">
-                                Supplier ID: <span class="font-weight-bold">
+                                Supplier ID: <span class="heading-bold">
                                     <asp:Label ID="lblbookingId" runat="server" Text="NIL"></asp:Label></span>
                             </p>
                         </div>
