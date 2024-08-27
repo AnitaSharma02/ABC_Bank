@@ -145,9 +145,7 @@
     margin-top: -9rem;
   }
 
-  .dvHeader .navbar-nav .nav-item a.border-bottom {
-    border-bottom: none !important;
-  }
+
 }
 
 @media (min-width: 1200px) {

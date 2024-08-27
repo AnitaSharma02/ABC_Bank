@@ -598,20 +598,19 @@ p {
 /*=========[ MAIN LOADER ]=========*/
 
 /*=========[ HEADER ]=========*/
-.dvHeader .logo img {
-    width: 140px;
-}
-
 .dvStripe {
     background-color: var(--bg-colour5);
     padding: 0.2rem 0;
 }
-/*.dvHeader {z-index:1;}*/
+.dvHeader .uName{
+    margin-right: 1rem;
+}
+.dvHeader .logo img {
+    width: 140px;
+}
 .dvHeader .navbar-nav .nav-item.active a {
     color: var(--primary-colour);
-    /*border-top: 1px solid var(--primary-colour);*/
 }
-
 .dvHeader .navbar-nav .nav-item a {
     color: var(--text-colour7);
     padding: 0 1rem;
@@ -619,19 +618,13 @@ p {
     font-family: var(--font-semibold);
     text-transform: uppercase;
 }
-
-    .dvHeader .navbar-nav .nav-item a:hover {
-        color: var(--text-colour1);
-    }
-
+.dvHeader .navbar-nav .nav-item a:hover {
+    color: var(--text-colour1);
+}
 .dvHeader .navbar-nav .nav-item.dropdown .dropdown-menu a:hover {
     background-color: var(--text-colour1);
     color: #fff;
 }
-
-/*.dvHeader .nav-link {
-    padding: .75rem 1rem;
-}*/
 /*=========[ HEADER ]=========*/
 
 /*=========[ FOOTER ]=========*/
