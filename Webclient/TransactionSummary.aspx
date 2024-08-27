@@ -207,7 +207,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-colour2 rounded px-3">
+                    <div class="bg-colour2 b-radius px-3">
                         <%--   <div id="divCurrency" class="myacc-user" runat="server" visible="false">
                             Select Currency :
                             <asp:DropDownList ID="ddlProgramCurrency" runat="server" AppendDataBoundItems="true"

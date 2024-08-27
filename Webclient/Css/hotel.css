@@ -77,10 +77,6 @@
 .dvHotelBookingDetails .bg {
     background-color: var(--bg-colour1);
 }
-
-.dvHotelBookingDetails .rounded {
-  border-radius: 5px 5px 0 0 !important;
-}
 .dvSimilarListing .img-container {
     padding-bottom: 60%;
 }

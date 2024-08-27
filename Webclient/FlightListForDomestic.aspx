@@ -263,25 +263,25 @@
                                                      <div class="dvQtySelectorAdultDomestic dvQtySelector dropdown-item d-flex align-items-center">
                                                            <div class="col-6 special-text h7">Adult(s) 12+ Yrs</div>
                                                            <div class="col-6 d-flex align-items-center pr-0">
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('AdultDomestic')" class="fa fa-minus decreaseQtyAdultDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('AdultDomestic')" class="fa fa-minus decreaseQtyAdultDomestic border p-1 b-radius"></i></div>
                                                               <div class="col-4 text-center px-0"><input type="text" id="qtyValueAdultDomestic" class="form-control bg-transparent border-0 text-center qtyValueAdultDomestic" value="1" readonly="readonly"></div>
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('AdultDomestic',4)" class="fa fa-plus increaseQtyAdultDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('AdultDomestic',4)" class="fa fa-plus increaseQtyAdultDomestic border p-1 b-radius"></i></div>
                                                           </div>
                                                        </div>
                                                        <div class="dvQtySelectorChildDomestic dvQtySelector dropdown-item d-flex align-items-center">
                                                           <div class="col-6 special-text h7">Child(ren) 2 - 11 Yrs</div>
                                                           <div class="col-6 d-flex align-items-center pr-0">
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('ChildDomestic')" class="fa fa-minus decreaseQtyChildDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('ChildDomestic')" class="fa fa-minus decreaseQtyChildDomestic border p-1 b-radius"></i></div>
                                                               <div class="col-4 text-center px-0"><input type="text" id="qtyValueChildDomestic" class="form-control bg-transparent border-0 text-center qtyValueChildDomestic" value="0" readonly="readonly"></div>
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('ChildDomestic',2)" class="fa fa-plus increaseQtyChildDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('ChildDomestic',2)" class="fa fa-plus increaseQtyChildDomestic border p-1 b-radius"></i></div>
                                                           </div>
                                                       </div> 
                                                        <div class="dvQtySelectorInfantDomestic dvQtySelector dropdown-item d-flex- align-items-center d-none">
                                                           <div class="col-6 special-text h7">Infant(s) Below 2 Yrs</div>
                                                           <div class="col-6 d-flex align-items-center pr-0">
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('InfantDomestic')" class="fa fa-minus decreaseQtyInfantDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('InfantDomestic')" class="fa fa-minus decreaseQtyInfantDomestic border p-1 b-radius"></i></div>
                                                               <div class="col-4 text-center px-0"><input type="text" id="qtyValueInfantDomestic" class="form-control bg-transparent border-0 text-center qtyValueInfantDomestic" value="0" readonly="readonly"></div>
-                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('InfantDomestic',2)" class="fa fa-plus increaseQtyInfantDomestic border p-1 rounded"></i></div>
+                                                              <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('InfantDomestic',2)" class="fa fa-plus increaseQtyInfantDomestic border p-1 b-radius"></i></div>
                                                           </div>
                                                       </div>
                                                  </div>

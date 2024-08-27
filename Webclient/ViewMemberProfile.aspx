@@ -109,7 +109,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-colour2 rounded p-3">
+                    <div class="bg-colour2 b-radius p-3">
                         <div class="dvCommonAccordion accordion" id="manage-accordion">
                             <div class="card mb-3">
                                 <div class="card-header p-0">

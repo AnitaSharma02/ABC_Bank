@@ -37,7 +37,6 @@
     top: 16px;
     right: 3px;
 }
-
 .dvFlightSearchProducts .dvProductList .product-text {
     min-height: 120px;
 }
@@ -51,8 +50,8 @@
     color: var(--colour1);
 }
 /*flightsearch international and domestic errors*/
-
 /*=========[ FLIGHTSEARCH ]=========*/
+
 
 
 /*=========[ FLIGHTLIST PAGE ]=========*/
@@ -73,45 +72,23 @@
   border: none;
   padding: 0;
 }
-/* .dvFlightList .dvSeeDetails .dvDeparture .bg-light {
-  background-color: var(--bg-section);
-} */
 .dvFlightList .dvProducts .bg-light2 {
     background-color: var(--bg-colour2);
 }
 /*=========[ FLIGHTLIST PAGE ]=========*/
 
 
-/*=========[ FLIGHTPASSENGER PAGE ]=========*/
-.dvFlightPassenger .bg {
-    background-color: var(--bg-colour1);
-}
 
-.dvFlightPassenger .rounded {
-  border-radius: 5px 5px 0 0 !important;
-}
 /*=========[ FLIGHTPASSENGER PAGE ]=========*/
+
+/*=========[ FLIGHTPASSENGER PAGE ]=========*/
+
 
 
 /*=========[ AIR REVIEW AND CONFIRM PAGE ]=========*/
 .dvFlightAirReview a {
     text-decoration:underline;
 }
-.dvFlightAirReview .bg {
-    background-color: var(--bg-colour1);
-}
-
-
-
-.dvFlightAirReview .rounded {
-    border-radius: 5px 5px 0 0 !important;
-}
-.dvFlightAirReview .bg-black {
-    background: var(--bg-colour7);
-    color: #fff;
-    border-radius: 0.25rem 0.25rem 0 0;
-}
-
 /*=========[ AIR REVIEW AND CONFIRM PAGE ]=========*/
 
 
