@@ -196,16 +196,16 @@ public partial class ShopList : Page
             if (result != null)
             {
                 StringBuilder sb = new StringBuilder();
-                string Template = "<div class=\"col-sm-6 col-md-4 mb-3 dvProductCard\">"
+                string Template = "<div class=\"dvProductCard col-sm-6 col-md-4 mb-3\">"
                     + "<div class=\"dvItem\">"
                     + "<a href = \"{3}\" class=\"anchor\">"
                     + "<div class=\"img-container\">"
                     + "<img src = \"{0}\">"
                     + "</div>"
-                    + "<h2>{1}</h2>"
+                    + "<h2 class=\"px-3 pt-3 pb-2\">{1}</h2>"
                     + "{4}"
                     + "<p class=\"\">{5}</p>"
-                    + "<p class=\"points\">{2}</p>"
+                    + "<p class=\"points px-3 pb-3\">{2}</p>"
                     + "<p class=\"\"></p>"
                     + "<div class=\"cart-button mt-0 px-2 d-flex justify-content-between align-items-center\">"
                     + "</div>"

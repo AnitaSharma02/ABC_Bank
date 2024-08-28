@@ -33,9 +33,9 @@
 .dvVouchers {
     background-color: var(--bg-colour1);
 }
-.dvVouchers .dvVoucherSlider .img-container img{
+/*.dvVouchers .dvVoucherSlider .img-container img{
     object-fit:contain;
-}
+}*/
 .dvShopDeals {
     background-color: var(--bg-colour3);
 }

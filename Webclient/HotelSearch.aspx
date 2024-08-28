@@ -385,7 +385,7 @@
                                 <img class="w-100" src="Images/hotelpage/hotel-img1.jpg" style="cursor: pointer;" />
                             </div>
                         </a>
-                        <h2 class="mt-3 mx-3">leonardo</h2>
+                        <h2 class="mt-3 mb-2 mx-3">leonardo</h2>
                         <p class="px-3 mb-3">Seminyak-Beach-Denpasar, -BA, Indonesia</p>
                         <div class="d-flex justify-content-between align-items-center mt-auto px-3">
                             <p class="points mb-0">
@@ -416,7 +416,7 @@
                                 <img class="w-100" src="Images/hotelpage/hotel-img2.jpg" style="cursor: pointer;" />
                             </div>
                         </a>
-                        <h2 class="mt-3 mx-3">The-Hoxton</h2>
+                        <h2 class="mt-3 mb-2 mx-3">The-Hoxton</h2>
                         <p class="px-3 mb-3">Rome, Italy</p>
                         <div class="d-flex justify-content-between align-items-center mt-auto px-3">
                             <p class="points mb-0">
@@ -447,7 +447,7 @@
                                 <img class="w-100" src="Images/hotelpage/hotel-img3.jpg" style="cursor: pointer;" />
                             </div>
                         </a>
-                        <h2 class="mt-3 mx-3">The-Singular-Patagonia</h2>
+                        <h2 class="mt-3 mb-2 mx-3">The-Singular-Patagonia</h2>
                         <p class="px-3 mb-3">Puerto-Natales</p>
                         <div class="d-flex justify-content-between align-items-center mt-auto px-3">
                             <p class="points mb-0">From 6,000 Points</p>
@@ -476,7 +476,7 @@
                                 <img class="w-100" src="Images/hotelpage/hotel-img4.jpg" style="cursor: pointer;" />
                             </div>
                         </a>
-                        <h2 class="mt-3 mx-3">Taj falaknuma palace</h2>
+                        <h2 class="mt-3 mb-2 mx-3">Taj falaknuma palace</h2>
                         <p class="px-3 mb-3">Hyderabad, India</p>
                         <div class="d-flex justify-content-between align-items-center mt-auto px-3">
                             <p class="points mb-0">From 4,800 Points</p>

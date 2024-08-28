@@ -560,7 +560,7 @@
     --p-card-h3-padding: 0rem 1rem;
 
     /*points*/
-    --p-card-points-family: var(--font-regular);
+    --p-card-points-family: var(--font-semibold);
     --p-card-points-fontsize: .875rem;
     --p-card-points-text-colour: var(--colour7);
 

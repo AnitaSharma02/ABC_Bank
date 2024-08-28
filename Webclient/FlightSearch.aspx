@@ -740,11 +740,11 @@
                                                 <img class="w-100" src="Images/flightpage/flight-img1.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-sg">Singapore</h2>
+                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-sg">Singapore</h2>
                                         <p class="px-3 mb-3" data-i18n="flightsearch-sg-desc">
                                             Singapore, officially the Republic of Singapore, is a sovereign island city-state in maritime Southeast Asia.
                                         </p>
-                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                        <p class="points px-3 mb-3 mt-auto">
                                             <span data-i18n="flightsearch-from">From</span> 1,234 <span data-i18n="flightsearch-points">Points</span>
                                         </p>
 
@@ -759,11 +759,11 @@
                                             </div>
                                         </a>
 
-                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-th">Thailand</h2>
+                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-th">Thailand</h2>
                                         <p class="px-3 mb-3" data-i18n="flightsearch-th-desc">
                                             Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces
                                         </p>
-                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                        <p class="points px-3 mb-3 mt-auto">
                                             <span data-i18n="flightsearch-from">From</span> 4,500 <span data-i18n="flightsearch-points">Points </span>
                                         </p>
 
@@ -778,11 +778,11 @@
                                                 <img class="w-100" src="Images/flightpage/flight-img3.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-pa">Paris</h2>
+                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-pa">Paris</h2>
                                         <p class="px-3 mb-3" data-i18n="flightsearch-pa-desc">
                                             Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.
                                         </p>
-                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                        <p class="points px-3 mb-3 mt-auto">
                                             <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points </span>
                                         </p>
 
@@ -798,11 +798,11 @@
                                             </div>
                                         </a>
 
-                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-nz">New Zealand</h2>
+                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-nz">New Zealand</h2>
                                         <p class="px-3 mb-3" data-i18n="flightsearch-nz-desc">
                                             New Zealand is an island country in the south western Pacific Ocean. It consists of two main landmasses
                                         </p>
-                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                        <p class="points px-3 mb-3 mt-auto">
                                             <span data-i18n="flightsearch-from">From</span> 5,300 <span data-i18n="flightsearch-points">Points </span>
                                         </p>
 
@@ -817,11 +817,11 @@
                                                 <img class="w-100" src="Images/flightpage/flight-img5.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-ln">London</h2>
+                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-ln">London</h2>
                                         <p class="px-3 mb-3" data-i18n="flightsearch-ln-desc">
                                             London, the capital of England and the United Kingdom, is a 21st-century city with history stretching
                                         </p>
-                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                        <p class="points px-3 mb-3 mt-auto">
                                             <span data-i18n="flightsearch-from">From</span> 6,000 <span data-i18n="flightsearch-points">Points </span>
                                         </p>
 
@@ -835,11 +835,11 @@
                                                 <img class="w-100" src="Images/flightpage/flight-img6.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-db">Dubai</h2>
+                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-db">Dubai</h2>
                                         <p class="px-3 mb-3" data-i18n="flightsearch-db-desc">
                                             Dubai is the most populous city in the UAE and the capital of the Emirate of Dubai,
                                         </p>
-                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                        <p class="points px-3 mb-3 mt-auto">
                                             <span data-i18n="flightsearch-from">From</span> 3,000 <span data-i18n="flightsearch-points">Points </span>
                                         </p>
                                     </div>
@@ -851,11 +851,11 @@
                                                 <img class="w-100" src="Images/flightpage/flight-img7.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-zu">Zurich</h2>
+                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-zu">Zurich</h2>
                                         <p class="px-3 mb-3" data-i18n="flightsearch-zu-desc">
                                             Zürich is the largest city in Switzerland and the capital of the canton of Zürich.
                                         </p>
-                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                        <p class="points px-3 mb-3 mt-auto">
                                             <span data-i18n="flightsearch-from">From</span> 4,000 <span data-i18n="flightsearch-points">Points </span>
                                         </p>
                                     </div>
@@ -867,11 +867,11 @@
                                                 <img class="w-100" src="Images/flightpage/flight-img8.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-go">Goa</h2>
+                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-go">Goa</h2>
                                         <p class="px-3 mb-3" data-i18n="flightsearch-go-desc">
                                             Goa, a state on India's West coast, is a former Portuguese colony with a rich history.
                                         </p>
-                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                        <p class="points px-3 mb-3 mt-auto">
                                             <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points </span>
                                         </p>
                                     </div>

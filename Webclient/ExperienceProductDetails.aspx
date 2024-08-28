@@ -3,35 +3,36 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <link rel="stylesheet" href="\Css/experience.css" />
 
+    <div class="dvBreadcrumbs my-3 bg-colour2">
+        <div class="container-fluid">
+            <nav>
+                <ul class="breadcrumb px-0 py-3">
+                    <li class="mr-3">
+                        <a href="hoteldetails.html">
+                            <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="Index.aspx">Home</a></li>
+                    <li class="breadcrumb-item"><a href="ExperienceProductList.aspx">Experiences</a></li>
+                    <li class="breadcrumb-item active">Product Detail</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
     <div class="dvProductDetails pb-2" id="dvProductDetails">
         <div class="container-fluid">
             <div class="row">
-                <div class="dvHighlightsLeft col-lg-4" id="divExpProductName">
+                <div class="dvInformation col-lg-4" id="divExpProductName">
                 </div>
 
-                <div class="dvProdcutTypeRight col-lg-8 dvCardBox">
-                    <div class="scroll-ver- pl-xl-5- pr-xl-5- pl-lg-1- pr-lg-2-">
-                        <div class="dvBreadcrumbs mt-3 mb-3 d-none d-md-block">
-                            <div class="container-lg">
-                                <nav>
-                                    <ul class="breadcrumb px-0 py-3">
-                                        <li class="mr-3">
-                                            <a href="hoteldetails.html">
-                                                <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
-                                        </li>
-                                        <li class="breadcrumb-item"><a href="Index.aspx">Home</a></li>
-                                        <li class="breadcrumb-item"><a href="ExperienceProductList.aspx">Experiences</a></li>
-                                        <li class="breadcrumb-item active">Product Detail</li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
+                <div class="dvForm col-lg-8">
 
-                        <div class="dvHeadBox pt-3">
+                    <div class="row">
+                        <div class="col-12">
                             <h2 class="heading6 text-colour7 mb-3">Product types</h2>
                         </div>
-                        <div class="dvFormBox">
-                            <div class="border leftCont bg-colour6 p-3">
+                        <div class="dvForm col-12">
+                            <div class="border p-3">
                                 <div class="row" id="expinputdiv">
                                     <div class="col-12 col-md-4 mb-2 mb-md-0">
                                         <label class="label">Date</label>
@@ -44,7 +45,7 @@
                                                 type="text"
                                                 class="form-control" />
                                             <div class="input-group-append">
-                                                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
+                                                <span class="input-group-text"><i class="fa-regular fa-calendar"></i></span>
                                             </div>
                                         </div>
                                     </div>
@@ -53,9 +54,8 @@
                                     <div class="col-6 col-md-4" id="divChild"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="dvTourBox mt-3">
-                            <div class="border shadow-on-hover leftCont bg-colour6" id="dvProductTypeDetails">
+                            <div class="border p-3">
+                                <div id="dvProductTypeDetails"></div>
                             </div>
                         </div>
                     </div>
@@ -431,17 +431,17 @@
                     }
                     html = '';
                     $.each(parseData.producttypedetails.item_uuid, function (i) {
-                        html += '<div class="border-bottom p-3">';
+                        html += '<div class="dvTitle pb-3">';
                         html += '<div class="d-flex justify-content-between">';
                         html += '<p class="heading6">' + parseData.producttypedetails.item_uuid[i].typeinfo.title + '</p>';
                         html += '</div>';
-                        html += '<div class="voucherName pt-1">';
+                        html += '<div class="pt-1">';
                         html += '<p>' + parseData.producttypedetails.item_uuid[i].typeinfo.description + '</p>';
                         html += '</div>';
                         html += '</div>';
 
-                        html += '<div class="pointsBox p-3">';
-                        html += '<div class="d-inline-flex d-sm-flex justify-content-between flex-wrap">';
+                        html += '<div class="dvEnterTravelDate">';
+                        html += '<div class="d-inline-flex d-sm-flex justify-content-between flex-wrap bg-colour2 py-2 px-3">';
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.available == true) {
                             html += '<p "class="ptypepricebydate text-colour7"><i class="fa-solid"></i> Valid only on <span>' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></p>';
                         }
@@ -472,7 +472,7 @@
                         html += '</div>';
 
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate == null) {
-                            html += '<div class="dvBtn mt-4 mb-2 text-right clsentertraveldate">';
+                            html += '<div class="mt-4 mb-2 text-right clsentertraveldate">';
                             html += '<button class="btn btn-one" onclick="var retvalue = ShowDatePicker(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button"';
                             html += 'value="Search"> Enter travel date </button>';
                             html += '</div>';
@@ -481,14 +481,14 @@
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.rates != null) {
                             html += '<div class="border-top"></div>';
                             html += '<div class="d-flex flex-wrap dvtypepricingbox">';
-                            html += '<div class="col-12 col-md-9 p-0 br-1 dvPricingBox">';
+                            html += '<div class="col-12 col-md-9 p-0 br-1">';
                             html += '</div>';
                             html += '<div class="dvRateBox col-12 col-md-3 p-0 mt-3 mt-md-0">';
                             html += '<div class="w-100 border">';
                             html += '<div class="dvBgcolor2">';
                             html += '<h2 class="h6 heading-bold p-3 bg-colour1 text-colour3">Price <span class="heading-xs">includes GST</span></h2>';
                             html += '</div>';
-                            html += '<div class="dvBtnBg">';
+                            html += '<div class="">';
                             let isTimeslotsAvailable = 0;
                             var showBookNow = false;
                             if (parseData.producttypedetails.item_uuid[i] != null) {
@@ -524,7 +524,7 @@
                                 }
                             }
                             if (showBookNow) {
-                                html += '<div id="dvBookNow" class="dvBtn mt-4 mb-2">';
+                                html += '<div id="dvBookNow" class="mt-4 mb-2">';
                                 html += '<button id="btnBookNow" class="btn btn-one w-100" onclick="var retvalue = BookNow(\'' + parseData.producttypedetails.item_uuid[i].uuid.toString() + '\',' + isTimeslotsAvailable + '); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button">Book Now</button>';
                                 html += '</div>';
                             }
@@ -648,7 +648,7 @@
                 if (parseData.data != null) {
                     html = '';
                     $.each(parseData.producttypedetails.item_uuid, function (i) {
-                        html += '<div class="border-bottom p-3">';
+                        html += '<div class="dvTitle pb-3">';
                         html += '<div class="d-flex justify-content-between">';
                         html += '<p class="heading6">' + parseData.producttypedetails.item_uuid[i].typeinfo.title + '</p>';
                         html += '</div>';
@@ -657,8 +657,8 @@
                         html += '</div>';
                         html += '</div>';
 
-                        html += '<div class="pointsBox p-3">';
-                        html += '<div class="d-inline-flex d-sm-flex justify-content-between flex-wrap">';
+                        html += '<div class="mb-3">';
+                        html += '<div class="d-inline-flex d-sm-flex justify-content-between flex-wrap bg-colour2 py-2 px-3">';
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.available == true) {
                             html += '<p "class="ptypepricebydate text-colour7"><i class="fa-solid"></i> Valid only on <span>' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></p>';
                         }
@@ -689,23 +689,23 @@
                         html += '</div>';
 
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate == null) {
-                            html += '<div class="dvBtn mt-4 mb-2 text-right clsentertraveldate">';
+                            html += '<div class="mt-4 mb-2 text-right clsentertraveldate">';
                             html += '<button class="btn btn-one" onclick="var retvalue = ShowDatePicker(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button"';
                             html += 'value="Search"> Enter travel date </button>';
                             html += '</div>';
                         }
                         html += '</div>';
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.rates != null) {
-                            html += '<div class="border-top"></div>';
+                            //html += '<div class="border-top"></div>';
                             html += '<div class="d-flex flex-wrap dvtypepricingbox">';
-                            html += '<div class="col-12 col-md-9 p-0 br-1 dvPricingBox">';
+                            html += '<div class="col-12 col-md-9 p-0 br-1">';
                             html += '</div>';
-                            html += '<div class="dvRateBox col-12 col-md-3 p-0 mt-3 mt-md-0">';
-                            html += '<div class="w-100 border">';
-                            html += '<div class="dvBgcolor2">';
-                            html += '<h2 class="h6 heading-bold p-3 bg-colour1 text-colour3">Price <span class="heading-xs">includes GST</span></h2>';
-                            html += '</div>';
-                            html += '<div class="dvBtnBg">';
+                            html += '<div class="dvTotalPrice col-12 col-md-3 p-0 mt-3 mt-md-0">';
+                            html += '<div class="bg-colour2 p-3 text-center">';
+                            //html += '<div class="">';
+                            html += '<h2 class="h6 py-2"><span>Price</span> <span class="">includes GST</span></h2>';
+                            //html += '</div>';
+                            //html += '<div class="">';
                             debugger
                             let isTimeslotsAvailable = 0;
                             var showBookNow = false;
@@ -717,13 +717,13 @@
                                     var recommendedPriceFormat = ratesAarray[n].convertedCurrency + " " + FormatCurrency(recommendedPrice);
                                     if (parseInt($('#selectDrpDownAdult').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "adult") {
                                         showBookNow = true;
-                                        html += '<p>' + $('#selectDrpDownAdult').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p class="dvItem h6 heading-bold">' + $('#selectDrpDownAdult').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                     else if (parseInt($('#selectDrpDownSenior').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "senior" && showBookNow) {
-                                        html += '<p>' + $('#selectDrpDownSenior').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p class="dvItem h6 heading-bold">' + $('#selectDrpDownSenior').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                     else if (parseInt($('#selectDrpDownChildren').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "child" && showBookNow) {
-                                        html += '<p>' + $('#selectDrpDownChildren').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p class="dvItem h6 heading-bold">' + $('#selectDrpDownChildren').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                 });
                                 if (!showBookNow) {
@@ -742,12 +742,12 @@
                                 }
                             }
                             if (showBookNow) {
-                                html += '<div id="dvBookNow" class="dvBtn mt-4 mb-2">';
+                                html += '<div id="dvBookNow" class="mt-4 mb-2">';
                                 /*                                html += '<button id="btnBookNow" class="btn btn-one w-100" onclick="var retvalue = BookNow(' + parseData.producttypedetails.item_uuid[i].uuid.toString() + '); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button">Book Now</button>';*/
                                 html += '<button id="btnBookNow" class="btn btn-one w-100" onclick="var retvalue = BookNow(\'' + parseData.producttypedetails.item_uuid[i].uuid.toString() + '\',' + isTimeslotsAvailable + '); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button">Book Now</button>';
                                 html += '</div>';
                             }
-                            html += '</div>';
+                            //html += '</div>';
                             html += '</div>';
                             html += '</div>';
                             html += '</div>';

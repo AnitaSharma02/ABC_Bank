@@ -680,8 +680,8 @@
                                                         <div class="img-container">
                                                             <img src="<%#Eval("basicinfo.thumbnailimage")%>" alt="Image not Available" />
                                                         </div>
-                                                          <h2><%#Eval("basicinfo.hotelname")%></h2>
-                                                            <div class="d-flex flex-wrap justify-content-between">
+                                                          <h2 class="px-3 pt-3 pb-2"><%#Eval("basicinfo.hotelname")%></h2>
+                                                            <div class="d-flex flex-wrap justify-content-between px-3 pb-3">
                                                                 <p class="points">
                                                                     <asp:Label ID="lblmiles" runat="server"></asp:Label>
                                                                     <asp:Label ID="Label1" runat="server" class="">Points</asp:Label>

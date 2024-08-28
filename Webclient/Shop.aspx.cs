@@ -127,7 +127,7 @@ public partial class Shop : Page
                                 {
                                     pstrProductType = "digital";
                                 }
-                                sb.Append(string.Format("<div class='swiper-slide shadow-sm'><div class=\"dvProductCard\"><div class=\"dvItem\"><a class=\"anchor\" href='ProductDetails.aspx?ProductId={2}&ProductType={5}'> <div class='img-container'><img style='width:100%;' src='{0}' /></div> <h2 class='' >{1}</h2> {4}  <div class=\"d-flex flex-wrap justify-content-between\"><p class='points'>{3}</p><p class='points'>{5}</p></div> </a></div></div></div>"
+                                sb.Append(string.Format("<div class='swiper-slide'><div class=\"dvProductCard\"><div class=\"dvItem\"><a class=\"anchor\" href='ProductDetails.aspx?ProductId={2}&ProductType={5}'> <div class='img-container'><img style='width:100%;' src='{0}' /></div> <h2 class=\"px-3 pt-3 pb-2\" >{1}</h2> {4}  <div class=\"d-flex flex-wrap justify-content-between px-3 pb-3\"><p class='points'>{3}</p><p class='points'>{5}</p></div> </a></div></div></div>"
                                     , product.PrimaryImage.Url, product.Name, product.Id, lobjModel.FormatPoints(Math.Ceiling(product.Price.SalePriceWithTax.Amount), "Points"), string.Format("<div class='starRat'>{0}</div>", starratings), pstrProductType));
                             }
                             sb.Append("</div>");

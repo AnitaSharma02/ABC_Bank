@@ -4,38 +4,27 @@
     <link rel="stylesheet" href="\Css/experience.css" />
 
 
-    <div class="dvExperience mb-5">
-        <div class="container">
+    <div class="dvExperience pb-5">
+        <div class="container-lg">
             <div class="row">
-                <div class="expHead mx-auto col-12 text-center">
-                    <h2 class="heading-semibold mt-5 mb-2 mt-md-2 mt-lg-2">Experiences</h2>
-                    <p class="pb-2">Find activities, attractions, tours & more!</p>
-                    <div class="expSearch">
-                        <div class="dvSearch">
-                            <div class="dvInputGroup input-group">
-                                <input id="txtSearchTerm" autocomplete="off" class="input form-control" type="text" name="searchTerm" placeholder="Search Destination" required />
-                                <div class="input-group-append">
-                                    <span id="btnSearchExperiences" class="input-group-text bg-colour1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                </div>
-                            </div>
+                <div class="col-12 text-center">
+                    <h2 class="heading1 mb-2">Experiences</h2>
+                    <p class="mb-3">Find activities, attractions, tours & more!</p>
+                </div>
+                <div class="dvSearch col-12 offset-lg-3 col-lg-6 mb-5">                    
+                    <div class="dvInputGroup input-group">
+                        <input id="txtSearchTerm" autocomplete="off" class="input form-control" type="text" name="searchTerm" placeholder="Search Destination" required />
+                        <div class="input-group-append">
+                            <span id="btnSearchExperiences" class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="dvCardBox mt-5 mb-4 pt-5 pb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row no-gutters" id="divExperienceProductList">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="dvProductList">
+            <div class="container-lg">
+                <div class="row" id="divExperienceProductList"></div>
             </div>
         </div>
     </div>
@@ -124,13 +113,14 @@
                             html += '<img class="" alt=\"Product Image\" src =\"' + parseData[i].image + '\"/>';
                         }
                         html += '</div >';
-                        html += '<h2>' + parseData[i].title + '</h2>';
-                        html += ' <h3>' + parseData[i].city + ', ' + parseData[i].country + '</h3>';
-                        html += '<div class="cardPoints d-flex flex-column justify-content-between mb-3">';
-                        html += '<p class="points m-0">' + parseData[i].typeName + '</p>';
-                        html += '<p class="points m-0">from <span class="heading-bold">' + FormatCurrency(parseData[i].basePrice, parseData[i].convertedCurrency) + '</span> /pax</p>';
-                        html += '</div >';
                         html += '</a >';
+                        html += '<h2 class="px-3 pt-3 pb-2">' + parseData[i].title + '</h2>';
+                        html += '<p class="px-3 pb-2">' + parseData[i].city + ', ' + parseData[i].country + '</p>';
+                        html += '<div class="d-flex flex-wrap justify-content-between px-3 pb-3 mt-auto">';
+                        html += '<p class="points">' + parseData[i].typeName + '</p>';
+                        html += '<p class="points"><span>from</span> <span>' + FormatCurrency(parseData[i].basePrice, parseData[i].convertedCurrency) + '</span> <span>/pax</span></p>';
+                        html += '</div >';
+                       
                         html += '</div >';
                         html += '</div>';
                     }
