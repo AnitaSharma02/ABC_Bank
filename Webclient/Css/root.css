@@ -585,7 +585,7 @@
     /* DENOMINATION */
     --denomination-btn-active-background: none no-repeat 0 0 var(--bg-colour1);
     --denomination-btn-active-text-colour: var(--bg-colour6);
-    --denomination-btn-padding: 1.25rem 2rem;
+    --denomination-btn-padding: .5rem;
     --denomination-btn-margin: 0 0 1rem 0;
     --denomination-btn-background: url('/Images/shop/btnImg.png') no-repeat top right var(--bg-colour6);
     --denomination-btn-background-size: contain;
@@ -593,6 +593,9 @@
     --denomination-btn-cursor: pointer;
     --denomination-btn-border: 1px solid var(--border-colour);
     --denomination-btn-border-radius: var(--b-radius);
+
+    /*TABS*/
+    --tab-border-radius: var(--b-radius);
 
     /* UPDPROGRESS LOADER */
     --updProgress-position: fixed;

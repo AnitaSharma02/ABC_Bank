@@ -1002,6 +1002,7 @@ p {
 
 .dvTabs .nav-tabs .nav-link {
     border: 1px solid #dee2e6;
+    border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
 }
 /*=========[ TABS 1 ]=========*/
 

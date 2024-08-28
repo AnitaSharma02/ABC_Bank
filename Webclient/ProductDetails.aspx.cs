@@ -271,11 +271,11 @@ public partial class ProductDetails : Page
                         if (lobjProduct.VariationProperties.Find(lobj => lobj.Name.Equals("Color")).Value == color)
                         {
                             hfColor.Value = color;
-                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"denomination-btn col-6 btn btnColorChange btn-success selected\" style=\"margin: 10px\" onclick=\"ColorChange('" + color + "', this)\">" + color + "</button></div>";
+                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"btn-denomination col-6 btn btnColorChange btn-success selected\" style=\"margin: 10px\" onclick=\"ColorChange('" + color + "', this)\">" + color + "</button></div>";
                         }
                         else
                         {
-                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"denomination-btn col-6 btn btnColorChange btn-success\" style=\"margin: 10px\" onclick=\"ColorChange('" + color + "', this)\">" + color + "</button></div>";
+                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"btn-denomination col-6 btn btnColorChange btn-success\" style=\"margin: 10px\" onclick=\"ColorChange('" + color + "', this)\">" + color + "</button></div>";
                         }
                     }
                     lstrHtml += "</div>";
@@ -293,11 +293,11 @@ public partial class ProductDetails : Page
                         if (lobjProduct.VariationProperties.Find(lobj => lobj.Name.Equals("Size")).Value == size)
                         {
                             hfSize.Value = size;
-                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"denomination-btn col-6 btn btnSizeChange btn-success selected\" style=\"margin: 10px\" onclick=\"SizeChange('" + size + "', this)\">" + size + "</button></div>";
+                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"btn-denomination col-6 btn btnSizeChange btn-success selected\" style=\"margin: 10px\" onclick=\"SizeChange('" + size + "', this)\">" + size + "</button></div>";
                         }
                         else
                         {
-                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"denomination-btn col-6 btn btnSizeChange btn-success\" style=\"margin: 10px\" onclick=\"SizeChange('" + size + "', this)\">" + size + "</button></div>";
+                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"btn-denomination col-6 btn btnSizeChange btn-success\" style=\"margin: 10px\" onclick=\"SizeChange('" + size + "', this)\">" + size + "</button></div>";
                         }
                     }
                     lstrHtml += "</div>";
@@ -315,11 +315,11 @@ public partial class ProductDetails : Page
                         if (lobjProduct.VariationProperties.Find(lobj => lobj.Name.Equals("Storage")).Value == storage)
                         {
                             hfStorage.Value = storage;
-                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"denomination-btn col-6 btn btnStorageChange selected\" onclick=\"StorageChange('" + storage + "', this)\">" + storage + "</button></div>";
+                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"btn-denomination col-6 btn btnStorageChange selected\" onclick=\"StorageChange('" + storage + "', this)\">" + storage + "</button></div>";
                         }
                         else
                         {
-                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"denomination-btn col-6 btn btnStorageChange\" onclick=\"StorageChange('" + storage + "', this)\">" + storage + "</button></div>";
+                            lstrHtml += "<div class=\"col-6 col-sm-3\"><button type=\"button\" class=\"btn-denomination col-6 btn btnStorageChange\" onclick=\"StorageChange('" + storage + "', this)\">" + storage + "</button></div>";
                         }
                     }
                     lstrHtml += "</div>";
@@ -337,11 +337,11 @@ public partial class ProductDetails : Page
                         if (lobjProduct.VariationProperties.Find(lobj => lobj.Name.Equals("Value")).Value == denomination)
                         {
                             hfValue.Value = denomination;
-                            lstrHtml += "<div class=\"col-6 col-sm-2 mb-3\"><button type=\"button\" class=\"denomination-btn btn btnDenominationChange w-100 selected\" onclick=\"DenominationChange('" + denomination + "', this)\">" + denomination + "</button></div>";
+                            lstrHtml += "<div class=\"col-6 col-sm-2 mb-3\"><button type=\"button\" class=\"btn-denomination btn btnDenominationChange w-100 selected\" onclick=\"DenominationChange('" + denomination + "', this)\">" + denomination + "</button></div>";
                         }
                         else
                         {
-                            lstrHtml += "<div class=\"col-6 col-sm-2 mb-3\"><button type=\"button\" class=\"denomination-btn btn btnDenominationChange w-100\" onclick=\"DenominationChange('" + denomination + "', this)\">" + denomination + "</button></div>";
+                            lstrHtml += "<div class=\"col-6 col-sm-2 mb-3\"><button type=\"button\" class=\"btn-denomination btn btnDenominationChange w-100\" onclick=\"DenominationChange('" + denomination + "', this)\">" + denomination + "</button></div>";
                         }
                     }
                     lstrHtml += "</div>";
