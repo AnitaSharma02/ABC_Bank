@@ -235,12 +235,15 @@
                                 </div>
                                 <div class="dvPoints col-auto px-0" runat="server" visible="false" id="dvPoints">
                                     <div class="nav-item col-12" id="liPoints" runat="server" visible="false">
-                                        <a class="points h7 heading-regular" href="javascript:void(0);" data-i18n="navigation-points">Points<span>
+                                        <a class="points h7 heading-regular" href="javascript:void(0);" data-i18n="navigation-points">Balance Points<span>
                                             <asp:Label ID="lblAvailablePoints" runat="server" Text="0"></asp:Label></span>
                                         </a>
                                     </div>
-                                    <div id="HeaderTot" class="text-client-name" runat="server" visible="false">
-                                        <asp:Label runat="server" CssClass="h7 heading-regular text-colour7 " ID="Label1" Text="Points" data-i18n="navigation-points"></asp:Label><span class="ml-1 h7 heading-regular text-colour7 " id="totAvbPointDiv" runat="server" visible="false"><asp:Label runat="server" ID="lblCurrentBal" class="loginbtn_personal login_btn" ForeColor="" Text="0"></asp:Label></span>
+                                    <div id="HeaderTot" runat="server" visible="false">
+                                        <asp:Label runat="server" CssClass="h7 heading-regular text-colour7 " ID="Label1" Text="Balance Points" data-i18n="navigation-points"></asp:Label>
+                                        <span class="ml-1 h7 heading-regular text-colour7" id="totAvbPointDiv" runat="server" visible="false">
+                                            <asp:Label runat="server" ID="lblCurrentBal" ForeColor="" Text="0"></asp:Label>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -347,24 +350,39 @@
                             <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-disclaimer">Disclaimer</a>
                         </div>
                         <div class="dvSocialIcons col-lg-2 text-center text-lg-right mb-3 mb-md-0">
-                            <a class="d-inline-block px-1" href="https://www.facebook.com/NicAsiaBank/" target="_blank">
-                                <img src="images/icons/social/facebook.svg" /></a>
-                            <a class="d-inline-block px-1" href="https://www.linkedin.com/company/nic-asia-bank/mycompany/" target="_blank">
-                                <img src="images/icons/social/linkedin.svg" /></a>
-                            <a class="d-inline-block pl-1" href="https://www.instagram.com/nicasiabankofficial/?hl=en" target="_blank">
-                                <img src="images/icons/social/Instagram.svg" /></a>
+                            <a class="d-inline-block px-1" href="https://www.facebook.com/ABCbankingcorporation" target="_blank">
+                                <%--<img src="images/icons/social/facebook.svg" />--%>
+                                <i class="fa-brands fa-facebook text-colour6"></i>
+                                <%--<i class="fa-brands fa-facebook-f text-colour6"></i>--%>
+                                <%--<i class="fa-brands fa-square-facebook text-colour6"></i>--%>
+                            </a>
+                            <a class="d-inline-block px-1" href="https://www.linkedin.com/company/abc-banking-corporation-ltd-mauritius" target="_blank">
+                                <%--<img src="images/icons/social/linkedin.svg" />--%>
+                                <%--<i class="fa-brands fa-linkedin-in text-colour6"></i>--%>
+                                <i class="fa-brands fa-linkedin text-colour6"></i>
+                            </a>
+                            <%--<a class="d-inline-block pl-1" href="" target="_blank">
+                                <%--<img src="images/icons/social/Instagram.svg" />--%
+                                <i class="fa-brands fa-instagram text-colour6"></i>
+                                <%--<i class="fa-brands fa-square-instagram text-colour6"></i>--%
+                            </a>--%>
+                             <%--<a class="d-inline-block pl-1" href="" target="_blank">
+                                <%--<img src="images/icons/social/Instagram.svg" />--%
+                                <%--<i class="fa-brands fa-x-twitter text-colour6"></i>--%
+                                <%--<i class="fa-brands fa-square-x-twitter text-colour6"></i>--%
+                            </a>--%>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="container-lg py-4">
                 <div class="row align-items-lg-center">
-                    <div class="col-sm-12 col-lg-2 text-center text-lg-right mb-3 mb-lg-0">
-                        <a href="Index.aspx">
+                    <div class="col-sm-12 col-lg-2 text-center text-lg-left mb-3 mb-lg-0">
+                        <a class="d-inline-block" href="https://www.abcbanking.mu/" target="_blank">
                             <img class="img-fluid footer-logo" src="images/logos/abc-footer-logo.svg" alt="Infinity Rewards Logo" /></a>
                     </div>
                     <div class="col-sm-12 col-lg-6 text-center text-lg-left mb-3 mb-lg-0">
-                        <p class="heading-semibold">
+                        <p class="heading-semibold text-colour7">
                             &copy;
                           <script>
                               document.write(new Date().getFullYear());
@@ -373,7 +391,7 @@
                         </p>
                     </div>
                     <div class="col-sm-12 col-lg-4 text-center text-lg-right">
-                        <a href="https://www.giift.com/" target="_blank">
+                        <a class="d-inline-block" href="https://www.giift.com/" target="_blank">
                             <img class="img-fluid" src="images/logos/giift-logo.svg" alt="Giift Logo" />
                         </a>
                     </div>

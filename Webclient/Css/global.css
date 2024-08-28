@@ -636,7 +636,7 @@ p {
     padding: 0 0.2rem;
     color: var(--text-colour5);
     font-size: 1rem;
-    font-family: var(--font-semibold);
+    font-family: var(--font-regular);
     text-transform: uppercase;
     vertical-align: middle;
 }
