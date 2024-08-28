@@ -2147,85 +2147,79 @@ select.form-control:focus {
 
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
 
+
 /*=========[ PRODUCT CARD ]=========*/
-.dvProductCard .dvItem {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--p-card-border-colour);
-    border-radius: var(--p-card-border-radius);
-    height: 100%;
-    padding: var(--p-card-padding);
-    background: var(--colour6)
+.dvProductCard {
 }
 
-.dvProductCard .anchor {
-    display: var(--p-card-anchor-display);
-    margin: var(--p-card-anchor-margin);
-}
-
-.dvProductCard .img-container {
-    border-radius: var(--p-card-img-container-border-radius);
-}
-
-    .dvProductCard .img-container img {
+    .dvProductCard .dvItem {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--p-card-border-colour);
+        border-radius: var(--p-card-border-radius);
+        height: 100%;
+        padding: var(--p-card-padding);
     }
 
-.dvProductCard h2 {
-    font-family: var(--p-card-h2-family);
-    font-size: var(--p-card-h2-fontsize);
-    margin-top: 1rem;
-    color: var(--p-card-h2-text-colour);
-    padding: var(--p-card-h2-padding);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.dvProductCard h3 {
-    font-family: var(--p-card-h3-family);
-    font-size: var(--p-card-h3-fontsize);
-    margin: 1rem 0 .5rem;
-    color: var(--p-card-h3-text-colour);
-    padding: var(--p-card-h3-padding);
-}
-.dvProductCard p {
-    font-family: var(--p-card-h3-family);
-    font-size: var(--p-card-h3-fontsize);
-    margin: .5rem 0;
-    color: var(--p-card-h3-text-colour); 
-}
-/*.dvProductCard p{padding:1rem}*/
-.dvProductCard .points
-/*,.dvProductCard .points a */ {
-    font-family: var(--p-card-points-family);
-    color: var(--p-card-points-text-colour);
-    font-size: var(--p-card-points-fontsize);
-    border-radius: var(--b-radius);
-    padding: 0rem 1rem;
-    margin: 0.5rem 0;
-}
-
-.dvProductCard .button {
-    font-family: var(--p-card-button-family);
-    background-color: var(--p-card-button-bg);
-    color: var(--p-card-button-text-colour);
-    border: var(--p-card-button-border-colour);
-    text-transform: var(--p-card-button-text-transform);
-    border-radius: var(--p-card-button-border-radius);
-    padding: var(--p-card-button-padding);
-    margin-top: var(--p-card-button-margin-top);
-}
-
-    .dvProductCard .button:hover {
-        background-color: var(--p-card-button-bg-hover);
-        color: var(--p-card-button-text-colour-hover);
-        border: var(--p-card-button-border-colour-hover);
+    .dvProductCard .anchor {
+        display: var(--p-card-anchor-display);
+        margin: var(--p-card-anchor-margin);
     }
 
-.dvProductCard .paragraph {
-    font-family: var(--paragraph-family);
-    color: var(--paragraph-colour);
-}
+    .dvProductCard .img-container {
+        border-radius: var(--p-card-img-container-border-radius);
+    }
+
+        .dvProductCard .img-container img {
+        }
+
+    .dvProductCard h2 {
+        font-family: var(--p-card-h2-family);
+        font-size: var(--p-card-h2-fontsize);
+        /*margin: 0.5rem 1rem;*/
+        color: var(--p-card-h2-text-colour);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .dvProductCard .points,
+    .dvProductCard .points a {
+        font-family: var(--p-card-points-family);
+        /*background-color: var(--colour2);*/
+        color: var(--p-card-points-text-colour);
+        font-size: var(--p-card-points-fontsize);
+        border-radius: var(--b-radius);
+        /*padding: 0.25rem 1rem;*/
+        /*margin: auto 0 .5rem 0;*/
+    }
+
+    .dvProductCard .button {
+        font-family: var(--p-card-button-family);
+        background-color: var(--p-card-button-bg);
+        color: var(--p-card-button-text-colour);
+        border: var(--p-card-button-border-colour);
+        text-transform: var(--p-card-button-text-transform);
+        border-radius: var(--p-card-button-border-radius);
+        padding: var(--p-card-button-padding);
+        margin-top: var(--p-card-button-margin-top);
+    }
+
+        .dvProductCard .button:hover {
+            background-color: var(--p-card-button-bg-hover);
+            color: var(--p-card-button-text-colour-hover);
+            border: var(--p-card-button-border-colour-hover);
+        }
+
+    .dvProductCard .paragraph {
+        font-family: var(--paragraph-family);
+        color: var(--paragraph-colour);
+    }
+/*.dvProductCard .rating {
+        padding: .5rem;
+    }*/
 /*=========[ PRODUCT CARD ]=========*/
+
 /*=========[ HOTEL PRODUCT CARD ]=========*/
 .dvHotelProductCard .dvItem {
     display: flex;
@@ -2242,11 +2236,11 @@ select.form-control:focus {
     position: relative;
 }
 
-.dvProductCard .img-container {
+.dvHotelProductCard .dvProductCard .img-container {
     border-radius: var(--hp-card-img-container-border-radius);
 }
 
-    .dvProductCard .img-container img {
+    .dvHotelProductCard .dvProductCard .img-container img {
     }
 
 .dvHotelProductCard h2 {
@@ -2293,7 +2287,7 @@ select.form-control:focus {
 }
 
 .dvHotelProductCard .rating {
-    background-color: var(--colour6);
+    background-color: var(--colour7);
     position: absolute;
     z-index: 2;
     bottom: 1rem;
@@ -2301,6 +2295,7 @@ select.form-control:focus {
     border-radius: var(--b-radius);
 }
 /*=========[ HOTEL PRODUCT CARD ]=========*/
+
 
 /*=========[ STATIC CONTENT ]=========*/
 

@@ -732,152 +732,151 @@
                                     <h2 class="h1 heading-semibold text-colour1 pb-4 px-3" data-i18n="flightsearch-top-destination">Top Destinations For Your Next Holiday</h2>
                                 </div>
                             </div>
-                          <div class="row">                                 
-                              <div class="col-sm-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('SIN, Changi International, Singapore, SINGAPORE');">
-                                  <a href="#flightScrollupAnchor" rel="" id="anchorSIN" class="d-block shadow-sm h-100">
-                                      <div class="bg-colour6 border h-100 d-flex flex-column">
-                                          <div class="img-container">                                        
+                            <div class="row">
+                                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('SIN, Changi International, Singapore, SINGAPORE');">
+                                    <div class="dvItem">
+                                        <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorSIN">
+                                            <div class="img-container">
                                                 <img class="w-100" src="Images/flightpage/flight-img1.jpg" style="cursor: pointer;" />
-                                          </div>
-                                          <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
-                                            <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-sg">Singapore</h2>
-                                            <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-sg-desc">
-                                                Singapore, officially the Republic of Singapore, is a sovereign island city-state in maritime Southeast Asia.
-                                            </p>
-                                              <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
-                                                  <span data-i18n="flightsearch-from">From</span> 1,234 <span data-i18n="flightsearch-points">Points</span>
-                                              </h2>
-                                           </div> 
-                                      </div>
-                                  </a>
-                              </div>
-                              <div class="col-sm-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('BKK, Suvarnabhumi International Apt, Bangkok, THAILAND​');">
-                                    <a href="#flightScrollupAnchor" rel="" id="anchorBKK" class="d-block shadow-sm h-100">
-                                        <div class="bg-colour6 border h-100 d-flex flex-column">
-                                            <div class="img-container">                                        
+                                            </div>
+                                        </a>
+                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-sg">Singapore</h2>
+                                        <p class="px-3 mb-3" data-i18n="flightsearch-sg-desc">
+                                            Singapore, officially the Republic of Singapore, is a sovereign island city-state in maritime Southeast Asia.
+                                        </p>
+                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                            <span data-i18n="flightsearch-from">From</span> 1,234 <span data-i18n="flightsearch-points">Points</span>
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('BKK, Suvarnabhumi International Apt, Bangkok, THAILAND​');">
+                                    <div class="dvItem">
+                                        <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorBKK">
+
+                                            <div class="img-container">
                                                 <img class="w-100" src="Images/flightpage/flight-img2.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-th">Thailand</h2>
-                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-th-desc">
-                                                    Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces
-                                                </p>
-                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
-                                                    <span data-i18n="flightsearch-from">From</span> 4,500 <span data-i18n="flightsearch-points">Points</span>
-                                                </h2>
-                                             </div> 
-                                        </div>
-                                    </a>
-                              </div>
-                              <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('PAR, All Airports, Paris, FRANCE​');">
-                                    <a href="#flightScrollupAnchor" rel="" id="anchorPAR" class="d-block shadow-sm h-100">
-                                        <div class="bg-colour6 border h-100 d-flex flex-column">
-                                            <div class="img-container">                                        
-                                                    <img class="w-100" src="Images/flightpage/flight-img3.jpg" style="cursor: pointer;" />
+                                        </a>
+
+                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-th">Thailand</h2>
+                                        <p class="px-3 mb-3" data-i18n="flightsearch-th-desc">
+                                            Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces
+                                        </p>
+                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                            <span data-i18n="flightsearch-from">From</span> 4,500 <span data-i18n="flightsearch-points">Points </span>
+                                        </p>
+
+
+
+                                    </div>
+                                </div>
+                                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('PAR, All Airports, Paris, FRANCE​');">
+                                    <div class="dvItem">
+                                        <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorPAR">
+                                            <div class="img-container">
+                                                <img class="w-100" src="Images/flightpage/flight-img3.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-pa">Paris</h2>
-                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-pa-desc">
-                                                    Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.
-                                                </p>
-                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
-                                                    <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points</span>
-                                                </h2>
-                                             </div> 
-                                        </div>
-                                    </a>
-                              </div>
-                              <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('CHC, Christchurch International, Christchurch, NEW ZEALAND');">
-                                    <a href="#flightScrollupAnchor" rel="" id="anchorCHC" class="d-block shadow-sm h-100">
-                                        <div class="bg-colour6 border h-100 d-flex flex-column">
-                                            <div class="img-container">                                        
-                                                    <img class="w-100" src="Images/flightpage/flight-img4.jpg" style="cursor: pointer;" />
+                                        </a>
+                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-pa">Paris</h2>
+                                        <p class="px-3 mb-3" data-i18n="flightsearch-pa-desc">
+                                            Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.
+                                        </p>
+                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                            <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points </span>
+                                        </p>
+
+
+                                    </div>
+                                </div>
+                                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('CHC, Christchurch International, Christchurch, NEW ZEALAND');">
+                                    <div class="dvItem">
+                                        <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorCHC">
+
+                                            <div class="img-container">
+                                                <img class="w-100" src="Images/flightpage/flight-img4.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-nz">New Zealand</h2>
-                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-nz-desc">
-                                                    New Zealand is an island country in the south western Pacific Ocean. It consists of two main landmasses
-                                                </p>
-                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
-                                                   <span data-i18n="flightsearch-from">From</span> 5,300 <span data-i18n="flightsearch-points">Points</span>
-                                                </h2>
-                                            </div> 
-                                        </div>
-                                    </a>
-                              </div>
-                              <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('LHR, Heathrow International, London, UNITED KINGDOM​​');">
-                                    <a href="#flightScrollupAnchor" rel="" id="anchorLHR" class="d-block shadow-sm h-100">
-                                        <div class="bg-colour6 border h-100 d-flex flex-column">
-                                            <div class="img-container">                                        
-                                                    <img class="w-100" src="Images/flightpage/flight-img5.jpg" style="cursor: pointer;" />
+                                        </a>
+
+                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-nz">New Zealand</h2>
+                                        <p class="px-3 mb-3" data-i18n="flightsearch-nz-desc">
+                                            New Zealand is an island country in the south western Pacific Ocean. It consists of two main landmasses
+                                        </p>
+                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                            <span data-i18n="flightsearch-from">From</span> 5,300 <span data-i18n="flightsearch-points">Points </span>
+                                        </p>
+
+
+
+                                    </div>
+                                </div>
+                                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('LHR, Heathrow International, London, UNITED KINGDOM​​');">
+                                    <div class="dvItem">
+                                        <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorLHR">
+                                            <div class="img-container">
+                                                <img class="w-100" src="Images/flightpage/flight-img5.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-ln">London</h2>
-                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-ln-desc">
-                                                   London, the capital of England and the United Kingdom, is a 21st-century city with history stretching
-                                                </p>
-                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
-                                                     <span data-i18n="flightsearch-from">From</span> 6,000 <span data-i18n="flightsearch-points">Points</span>
-                                                </h2>
-                                            </div> 
-                                        </div>
-                                   </a>
-                              </div>
-                              <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('DXB, Dubai International, Dubai, UNITED ARAB EMIRATES​​');">
-                                    <a href="#flightScrollupAnchor" rel="" id="anchorDXB" class="d-block shadow-sm h-100">
-                                        <div class="bg-colour6 border h-100 d-flex flex-column">
-                                            <div class="img-container">                                        
+                                        </a>
+                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-ln">London</h2>
+                                        <p class="px-3 mb-3" data-i18n="flightsearch-ln-desc">
+                                            London, the capital of England and the United Kingdom, is a 21st-century city with history stretching
+                                        </p>
+                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                            <span data-i18n="flightsearch-from">From</span> 6,000 <span data-i18n="flightsearch-points">Points </span>
+                                        </p>
+
+
+                                    </div>
+                                </div>
+                                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('DXB, Dubai International, Dubai, UNITED ARAB EMIRATES​​');">
+                                    <div class="dvItem">
+                                        <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorDXB">
+                                            <div class="img-container">
                                                 <img class="w-100" src="Images/flightpage/flight-img6.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-db">Dubai</h2>
-                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-db-desc">
-                                                    Dubai is the most populous city in the UAE and the capital of the Emirate of Dubai,
-                                                </p>
-                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
-                                                    <span data-i18n="flightsearch-from">From</span> 3,000 <span data-i18n="flightsearch-points">Points</span>
-                                                </h2>
-                                            </div> 
-                                        </div>
-                                    </a>
-                              </div>
-                              <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('ZRH, Zurich Airport, Zurich, SWITZERLAND​​');">
-                                    <a href="#flightScrollupAnchor" rel="" id="anchorZRH" class="d-block shadow-sm h-100">
-                                        <div class="bg-colour6 border h-100 d-flex flex-column">
-                                            <div class="img-container">                                        
+                                        </a>
+                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-db">Dubai</h2>
+                                        <p class="px-3 mb-3" data-i18n="flightsearch-db-desc">
+                                            Dubai is the most populous city in the UAE and the capital of the Emirate of Dubai,
+                                        </p>
+                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                            <span data-i18n="flightsearch-from">From</span> 3,000 <span data-i18n="flightsearch-points">Points </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('ZRH, Zurich Airport, Zurich, SWITZERLAND​​');">
+                                    <div class="dvItem">
+                                        <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorZRH">
+                                            <div class="img-container">
                                                 <img class="w-100" src="Images/flightpage/flight-img7.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-zu">Zurich</h2>
-                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-zu-desc">
-                                                   Zürich is the largest city in Switzerland and the capital of the canton of Zürich.
-                                                </p>
-                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
-                                                    <span data-i18n="flightsearch-from">From</span> 4,000 <span data-i18n="flightsearch-points">Points</span>
-                                                </h2>
-                                            </div> 
-                                        </div>
-                                    </a>
-                              </div>
-                              <div class="col-sm-6 col-lg-3 mb-3"  onclick="SelectDestinationToInSearchOption('GOI, Goa Airport, Goa, INDIA​​');">
-                                    <a href="#flightScrollupAnchor" rel="" id="anchorGOI" class="d-block shadow-sm h-100">
-                                        <div class="bg-colour6 border h-100 d-flex flex-column">
-                                            <div class="img-container">                                        
+                                        </a>
+                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-zu">Zurich</h2>
+                                        <p class="px-3 mb-3" data-i18n="flightsearch-zu-desc">
+                                            Zürich is the largest city in Switzerland and the capital of the canton of Zürich.
+                                        </p>
+                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                            <span data-i18n="flightsearch-from">From</span> 4,000 <span data-i18n="flightsearch-points">Points </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('GOI, Goa Airport, Goa, INDIA​​');">
+                                    <div class="dvItem">
+                                        <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorGOI">
+                                            <div class="img-container">
                                                 <img class="w-100" src="Images/flightpage/flight-img8.jpg" style="cursor: pointer;" />
                                             </div>
-                                            <div class="d-flex flex-wrap bg-colour6 p-3 h-100"> 
-                                                <h2 class="h6 heading-bold text-colour7 text-truncate mb-2" data-i18n="flightsearch-go">Goa</h2>
-                                                <p class="text-colour7 mb-3 product-text" data-i18n="flightsearch-go-desc">
-                                                    Goa, a state on India's West coast, is a former Portuguese colony with a rich history.
-                                                </p>
-                                                <h2 class="h7 heading-medium text-colour7 text-truncate mt-auto">
-                                                    <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points</span>
-                                                </h2>
-                                            </div> 
-                                        </div>
-                                   </a>
-                              </div>
-                          </div>
+                                        </a>
+                                        <h2 class="mt-3 mx-3" data-i18n="flightsearch-go">Goa</h2>
+                                        <p class="px-3 mb-3" data-i18n="flightsearch-go-desc">
+                                            Goa, a state on India's West coast, is a former Portuguese colony with a rich history.
+                                        </p>
+                                        <p class="pointsRate px-3 mb-3 mt-auto">
+                                            <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div> 
                 </div>

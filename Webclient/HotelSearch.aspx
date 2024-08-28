@@ -378,138 +378,125 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('SG,Singapore,Singapore');">
-                    <a href="#hotelscrollupAnchor" rel="" id="hotelAnchorSG" class="d-block shadow-sm">
-                        <div class="bg-colour6 border d-flex flex-column">
+                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('SG,Singapore,Singapore');">
+                    <div class="dvItem">
+                        <a class="anchor" href="#hotelscrollupAnchor" rel="" id="hotelAnchorSG">
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img1.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-column bg-colour6 p-3 h-100">
-                                 <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">leonardo</h2>
-                                    <p class="h7 heading-regular text-colour7 mb-1 product-text">Seminyak-Beach-Denpasar, -BA, Indonesia
-                                    </p>
-                                    <div class="mb-3">
-                                        <img src="images/icons/other/star-fill.svg" alt="">
-                                        <img src="images/icons/other/star-fill.svg" alt="">
-                                        <img src="images/icons/other/star-fill.svg" alt="">
-                                        <img src="images/icons/other/star-blank.svg" alt="">
-                                        <img src="images/icons/other/star-blank.svg" alt="">
-                                    </div>
-                                
-                                <div class="d-flex justify-content-between align-items-center flex-wrap bg-colour6">
-                                    <h2 class="h7 heading-medium text-colour7 text-truncate">From 4,000 Points
-                                    </h2>
-                                    <div class="dvicon">
-                                        <img src="Images/hotelpage/hotel-icon1.svg" />
-                                        <img src="Images/hotelpage/hotel-icon2.svg" />
-                                        <img src="Images/hotelpage/hotel-icon3.svg" />
-                                        <img src="Images/hotelpage/hotel-icon4.svg" />
-                                        <img src="Images/hotelpage/hotel-icon5.svg" />
-                                    </div>
-                                </div>
+                        </a>
+                        <h2 class="mt-3 mx-3">leonardo</h2>
+                        <p class="px-3 mb-3">Seminyak-Beach-Denpasar, -BA, Indonesia</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto px-3">
+                            <p class="points mb-0">
+                                From 4,000 Points
+                            </p>
+                            <div class="dvicon">
+                                <img src="Images/hotelpage/hotel-icon1.svg" />
+                                <img src="Images/hotelpage/hotel-icon2.svg" />
+                                <img src="Images/hotelpage/hotel-icon3.svg" />
+                                <img src="Images/hotelpage/hotel-icon4.svg" />
+                                <img src="Images/hotelpage/hotel-icon5.svg" />
                             </div>
                         </div>
-                    </a>
+                        <div class="rating px-3 mb-3">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-blank.svg" alt="">
+                            <img src="images/icons/other/star-blank.svg" alt="">
+                        </div>
+
+                    </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('TH,Thailand,Bangkok');">
-                    <a href="#hotelscrollupAnchor" rel="" id="hotelAnchorTH" class="d-block shadow-sm">
-                        <div class="bg-colour6 border d-flex flex-column">
+                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('TH,Thailand,Bangkok');">
+                    <div class="dvItem">
+                        <a class="anchor" href="#hotelscrollupAnchor" rel="" id="hotelAnchorTH">
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img2.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-column bg-colour6 p-3 h-100">
-                                 
-                                    <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">The-Hoxton</h2>
-                                    <p class="h7 heading-regular text-colour7 mb-1 product-text">Rome, Italy
-                                    </p>
-                                    <div class="mb-3">
-                                        <img src="images/icons/other/star-fill.svg" alt="">
-                                        <img src="images/icons/other/star-fill.svg" alt="">
-                                        <img src="images/icons/other/star-fill.svg" alt="">
-                                        <img src="images/icons/other/star-blank.svg" alt="">
-                                        <img src="images/icons/other/star-blank.svg" alt="">
-                                    </div>
-                               
-                                <div class="d-flex justify-content-between align-items-center flex-wrap bg-colour6">
-                                    <h2 class="h7 heading-medium text-colour7 text-truncate">From 5,000 Points
-                                    </h2>
-                                    <div class="dvicon">
-                                        <img src="Images/hotelpage/hotel-icon1.svg" />
-                                        <img src="Images/hotelpage/hotel-icon2.svg" />
-                                        <img src="Images/hotelpage/hotel-icon3.svg" />
-                                        <img src="Images/hotelpage/hotel-icon4.svg" />
-                                        <img src="Images/hotelpage/hotel-icon5.svg" />
-                                    </div>
-                                 </div>
+                        </a>
+                        <h2 class="mt-3 mx-3">The-Hoxton</h2>
+                        <p class="px-3 mb-3">Rome, Italy</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto px-3">
+                            <p class="points mb-0">
+                                From 5,000 Points
+                            </p>
+                            <div class="dvicon">
+                                <img src="Images/hotelpage/hotel-icon1.svg" />
+                                <img src="Images/hotelpage/hotel-icon2.svg" />
+                                <img src="Images/hotelpage/hotel-icon3.svg" />
+                                <img src="Images/hotelpage/hotel-icon4.svg" />
+                                <img src="Images/hotelpage/hotel-icon5.svg" />
                             </div>
                         </div>
-                    </a>
+                        <div class="rating px-3 mb-3">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-blank.svg" alt="">
+                            <img src="images/icons/other/star-blank.svg" alt="">
+                        </div>
+
+                    </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('FR,France,Paris');">
-                    <a href="#hotelscrollupAnchor" rel="" id="hotelAnchorFR" class="d-block shadow-sm">
-                        <div class="bg-colour6 border d-flex flex-column">
+                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('FR,France,Paris');">
+                    <div class="dvItem">
+                        <a class="anchor" href="#hotelscrollupAnchor" rel="" id="hotelAnchorFR">
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img3.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-column bg-colour6 p-3 h-100">
-                                <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">The-Singular-Patagonia</h2>
-                                <p class="h7 heading-regular text-colour7 mb-1 product-text">Puerto-Natales
-                                </p>
-                                <div class="mb-3">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-blank.svg" alt="">
-                                    <img src="images/icons/other/star-blank.svg" alt="">
-                                </div>
-                            
-                            <div class="d-flex justify-content-between align-items-center flex-wrap bg-colour6">
-                                <h2 class="h7 heading-medium text-colour7 text-truncate">From 6,000 Points
-                                </h2>
-                                <div class="dvicon">
-                                    <img src="Images/hotelpage/hotel-icon1.svg" />
-                                    <img src="Images/hotelpage/hotel-icon2.svg" />
-                                    <img src="Images/hotelpage/hotel-icon3.svg" />
-                                    <img src="Images/hotelpage/hotel-icon4.svg" />
-                                    <img src="Images/hotelpage/hotel-icon5.svg" />
-                                </div>
-                            </div>
+                        </a>
+                        <h2 class="mt-3 mx-3">The-Singular-Patagonia</h2>
+                        <p class="px-3 mb-3">Puerto-Natales</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto px-3">
+                            <p class="points mb-0">From 6,000 Points</p>
+                            <div class="dvicon">
+                                <img src="Images/hotelpage/hotel-icon1.svg" />
+                                <img src="Images/hotelpage/hotel-icon2.svg" />
+                                <img src="Images/hotelpage/hotel-icon3.svg" />
+                                <img src="Images/hotelpage/hotel-icon4.svg" />
+                                <img src="Images/hotelpage/hotel-icon5.svg" />
                             </div>
                         </div>
-                    </a>
+                        <div class="rating px-3 mb-3">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-blank.svg" alt="">
+                            <img src="images/icons/other/star-blank.svg" alt="">
+                        </div>
+
+                    </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3" onclick="SelectDestinationToInSearchOption('NZ,New Zealand,Christchurch');">
-                    <a href="#hotelscrollupAnchor" rel="" id="hotelAnchorNZ" class="d-block shadow-sm">
-                        <div class="bg-colour6 border d-flex flex-column">
+                <div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4" onclick="SelectDestinationToInSearchOption('NZ,New Zealand,Christchurch');">
+                    <div class="dvItem">
+                        <a class="anchor" href="#hotelscrollupAnchor" rel="" id="hotelAnchorNZ">
                             <div class="img-container">
                                 <img class="w-100" src="Images/hotelpage/hotel-img4.jpg" style="cursor: pointer;" />
                             </div>
-                            <div class="d-flex flex-column bg-colour6 p-3 h-100">
-                                <h2 class="h6 heading-bold text-truncate text-colour7 mb-2">Taj falaknuma palace</h2>
-                                <p class="h7 heading-regular text-colour7 mb-1 product-text">Hyderabad, India
-                                </p>
-                                <div class="mb-3">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-fill.svg" alt="">
-                                    <img src="images/icons/other/star-blank.svg" alt="">
-                                    <img src="images/icons/other/star-blank.svg" alt="">
-                                </div>
-                            
-                            <div class="d-flex justify-content-between align-items-center flex-wrap bg-colour6">
-                                <h2 class="h7 heading-medium text-colour7 text-truncate">From 4,800 Points
-                                </h2>
-                                <div class="dvicon">
-                                    <img src="Images/hotelpage/hotel-icon1.svg" />
-                                    <img src="Images/hotelpage/hotel-icon2.svg" />
-                                    <img src="Images/hotelpage/hotel-icon3.svg" />
-                                    <img src="Images/hotelpage/hotel-icon4.svg" />
-                                    <img src="Images/hotelpage/hotel-icon5.svg" />
-                                </div>
-                            </div>
+                        </a>
+                        <h2 class="mt-3 mx-3">Taj falaknuma palace</h2>
+                        <p class="px-3 mb-3">Hyderabad, India</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto px-3">
+                            <p class="points mb-0">From 4,800 Points</p>
+                            <div class="dvicon">
+                                <img src="Images/hotelpage/hotel-icon1.svg" />
+                                <img src="Images/hotelpage/hotel-icon2.svg" />
+                                <img src="Images/hotelpage/hotel-icon3.svg" />
+                                <img src="Images/hotelpage/hotel-icon4.svg" />
+                                <img src="Images/hotelpage/hotel-icon5.svg" />
                             </div>
                         </div>
-                    </a>
+                        <div class="rating px-3 mb-3">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-fill.svg" alt="">
+                            <img src="images/icons/other/star-blank.svg" alt="">
+                            <img src="images/icons/other/star-blank.svg" alt="">
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
