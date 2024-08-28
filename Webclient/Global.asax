@@ -34,7 +34,7 @@
             {
                 System.Collections.Generic.List<CB.IBE.Platform.Entities.AirCraftDetails>
                 AirCraftList = new System.Collections.Generic.List<CB.IBE.Platform.Entities.AirCraftDetails>();
-                ABC.Model.ABCModel model = new ABC.Model.ABCModel();
+                IBEAPIGateway.Model.IBEAPIModel model = new IBEAPIGateway.Model.IBEAPIModel();
                 AirCraftList = model.GetAllAirCraftDetails();
                 Application["AllAirCraftsDetails"] = AirCraftList;
             }
@@ -71,7 +71,7 @@
                 System.Collections.Generic.Dictionary<string, CB.IBE.Platform.Entities.AirField> AirfieldsDictionary = new System.Collections.Generic.Dictionary<string, CB.IBE.Platform.Entities.AirField>();
                 System.Collections.Generic.List<CB.IBE.Platform.Entities.AirField>
                 AirfieldList = new System.Collections.Generic.List<CB.IBE.Platform.Entities.AirField>();
-                ABC.Model.ABCModel model = new ABC.Model.ABCModel();
+                IBEAPIGateway.Model.IBEAPIModel model = new IBEAPIGateway.Model.IBEAPIModel();
                 AirfieldList = model.GetAllAirfields();
                 Application["AllAirfields"] = AirfieldList;
                 if (AirfieldList != null && AirfieldList.Count > 0)
@@ -89,6 +89,7 @@
             Framework.EnterpriseLibrary.Adapters.LoggingAdapter.WriteLog("GetAllAirfields : " + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
         }
     }
+
     private void getAllCarriers()
     {
         try
@@ -97,7 +98,7 @@
             {
                 System.Collections.Generic.Dictionary<string, CB.IBE.Platform.Entities.Carrier> CarrierDictionary = new System.Collections.Generic.Dictionary<string, CB.IBE.Platform.Entities.Carrier>();
                 System.Collections.Generic.List<CB.IBE.Platform.Entities.Carrier> carrierList = new System.Collections.Generic.List<CB.IBE.Platform.Entities.Carrier>();
-                ABC.Model.ABCModel model = new ABC.Model.ABCModel();
+                IBEAPIGateway.Model.IBEAPIModel model = new IBEAPIGateway.Model.IBEAPIModel();
                 carrierList = model.GetAllCarriers();
                 for (int carrierCount = 0; carrierCount < carrierList.Count; carrierCount++)
                 {
@@ -115,6 +116,7 @@
             Framework.EnterpriseLibrary.Adapters.LoggingAdapter.WriteLog("getAllCarriers Exception : " + ex.StackTrace + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
         }
     }
+
     private void getSystemConfigurations()
     {
         try
@@ -156,7 +158,7 @@
             if (Application["HotelCities"] == null)
             {
                 System.Collections.Generic.List<string> lobjListOfCity = new System.Collections.Generic.List<string>();
-                ABC.Model.ABCModel model = new ABC.Model.ABCModel();
+                IBEAPIGateway.Model.IBEAPIModel model = new IBEAPIGateway.Model.IBEAPIModel();
                 lobjListOfCity = model.GetAllHotelCities();
                 Application["HotelCities"] = lobjListOfCity;
             }
