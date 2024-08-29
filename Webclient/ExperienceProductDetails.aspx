@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="\Css/experience.css" />
 
     <div class="dvBreadcrumbs my-3 bg-colour2">
-        <div class="container-fluid">
+        <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
                     <li class="mr-3">

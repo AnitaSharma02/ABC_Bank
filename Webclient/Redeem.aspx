@@ -10,7 +10,7 @@
         }
     </style>
     <div class="dvBreadcrumbs">
-        <div class="container-lg">
+        <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
                     <li class="mr-3">
@@ -26,7 +26,7 @@
 
     <div class="dvRedeem mb-5">
         <%--<h2 class="py-5 text-center">Coming Soon</h2>--%>
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-sm-12 mb-4">
                     <div class="row justify-content-center justify-content-sm-start align-items-center">

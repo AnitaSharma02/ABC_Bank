@@ -16,7 +16,7 @@
 </head>
 <body>
 <form id="form1" runat="server">
-    <div class="container-lg my-3">
+    <div class="container-xl my-3">
         <div class="row">
             <div class="col-12">
                 <div class="border p-3">

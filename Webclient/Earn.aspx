@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="flightList">
-            <div class="container">
+            <div class="container-xl">
                 <div class="earnBox">
                     <div class="innerQue" id="innerPageTerms">
                         <div class="innerBx">
@@ -169,7 +169,7 @@
                 </div>
             </div>
             <div class="bg-greenTexture py-5">
-                <div class="container">
+                <div class="container-xl">
                     <h4 class="text-white text-center texture-head">Activate your Verve Rewards Account:</h4>
                     <div class="parent-box d-flex align-items-center justify-content-center flex-wrap">
                         <div class="align-items-center child-box d-flex flex-column p-4">

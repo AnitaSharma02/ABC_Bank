@@ -26,7 +26,7 @@
 
 
     <div class="dvMember d-md-block d-none py-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-12 text-center">
                     <h2 class="h1 heading-semibold text-colour1" id="lblMemberName">
@@ -49,14 +49,14 @@
     </div>
 
     <div class="dvAccountMenu">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row equal-col my-3" id="AccMenu">
             </div>
         </div>
     </div>
 
     <div class="dvBreadcrumbs">
-        <div class="container-lg">
+        <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-4">
                     <li class="mr-3">
@@ -72,7 +72,7 @@
     </div>
 
     <div class="dvExpiry pb-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-12 mb-3">
                     <div class="bg-colour2 p-3">

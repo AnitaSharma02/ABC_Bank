@@ -8,7 +8,7 @@
     </style>
 
     <div class="dvBreadcrumbs">
-        <div class="container-lg">
+        <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
                     <li class="mr-3"><a href="\">
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div id="inner-page-area" class="dvLoginBoxbg my-0 my-md-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-sm-6 offset-sm-3">
                     <div class="innerBox p-4">

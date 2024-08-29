@@ -66,7 +66,7 @@
         }
     </style>
   <div class="dvBreadcrumbs">
-      <div class="container-lg">
+      <div class="container-xl">
           <nav>
               <ul class="breadcrumb px-0 py-3">
                   <li class="mr-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
@@ -80,7 +80,7 @@
   </div>
 
     <div class="dvProductList dvHotelResult pb-5 mt-lg-4">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <!-- <div class="col-12 mb-3 d-lg-none">
               <button

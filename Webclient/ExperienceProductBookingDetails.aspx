@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="\Css/experience.css" />
 
     <div class="dvExperience mb-0 mb-md-2">
-        <div class="container">
+        <div class="container-xl">
             <div class="dvPaymentList-steps d-none d-md-block">
                 <div class="step-line"></div>
                 <div class="steps">
@@ -33,7 +33,7 @@
     </div>
 
     <div class="dvPaymentBox mt-0 mt-md-2 pt-md-0 pt-3 pb-5">
-        <div class="container">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-12 col-md-5 col-lg-4">
                     <div class="border bg-colour6 b-radius" id="divPaymentdetails">

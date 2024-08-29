@@ -26,7 +26,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="dvLogo bg-colour6 shadow-sm">
-            <div class="container-lg">
+            <div class="container-xl">
                 <div class="row">
                     <div class="col-12">
                         <div class="text-center p-3">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="dvPaymentMode container-lg pt-3 pt-lg-5">
+        <div class="dvPaymentMode container-xl pt-3 pt-lg-5">
             <div class="row justify-content-center align-items-center vh100">
                 <div class="col-md-8">
                     <div class="bg-colour3 p-3">
@@ -84,7 +84,7 @@
         </div>
 
         <div class="dvFooter border-top py-3">
-            <div class="container-lg">            
+            <div class="container-xl">            
                 <div class="row align-items-lg-center">
                     <%--<div class="col-sm-12 col-lg-2 text-center text-lg-right mb-3 mb-lg-0">
                         <a href="Index.aspx">

@@ -8,7 +8,7 @@
            #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner  {display:none;}
     </style>
     <div class="dvSessionTimeout mt-5 pt-5">
-    <div class="container">
+    <div class="container-xl">
         <div class="row">
             <div class="col-12 d-flex align-items-center justify-content-center mb-2">
                 <span class="h6 heading-semibold text-colour7 mb-5 pb-5">Your session has expired. Please Log in</span>

@@ -288,7 +288,7 @@
    <div class="dvFlightSearch">
         <a name="flightScrollupAnchor" id="flightScrollupAnchor">
            <section class="innerPages mb-5">
-                <div class="container-lg">
+                <div class="container-xl">
                     <div class="row"> 
                         <div class="col-md-12">
                             <ul class="nav nav-pills d-none" id="pills-tab" role="tablist">
@@ -722,7 +722,7 @@
            </section>
         </a>
    <div class="dvProductList mb-5" id="topdestinations">
-      <div class="container-lg">
+      <div class="container-xl">
             <div class="row"> 
                 <div class="col-12">
                      <div class="row">

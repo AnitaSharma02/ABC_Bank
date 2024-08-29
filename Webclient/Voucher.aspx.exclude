@@ -99,7 +99,7 @@
                 <img src="../images/voucher-bg.jpg" />
             </div>
     <section class="travel prepaidCard">
-        <div class="container">
+        <div class="container-xl">
         <h1 data-i18n="text-voucher">Voucher</h1>
         <p data-i18n="text-voucher-desc">You can use the Verve Rewards Gift Vouchers for any of our esteemed partners from Lifestyle brands to Fine Dine and much more.</p>
     <div class="row genCat">

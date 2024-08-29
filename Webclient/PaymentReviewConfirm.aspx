@@ -10,7 +10,7 @@
     </style>
 
     <div id="paymentpage" class="dvPaymentOptions pay-options py-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="bg-colour3 p-3">

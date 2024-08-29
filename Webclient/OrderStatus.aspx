@@ -8,7 +8,7 @@
     </style>
     
     <div class="dvBreadcrumbs">
-        <div class="container-lg">
+        <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
                     <li class="mr-3">

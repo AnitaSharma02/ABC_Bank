@@ -78,7 +78,7 @@
         #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner  {display:none;}
     </style>
     <div class="dvBreadcrumbs">
-        <div class="container-lg">
+        <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
                     <li class="mr-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
@@ -91,7 +91,7 @@
         </div>
     </div>
     <div class="dvHotelDetails pb-5 mt-lg-4">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="dvThumbSwiperSlider col-md-6 mb-3">
                     <div class="swiper mySwiper2">

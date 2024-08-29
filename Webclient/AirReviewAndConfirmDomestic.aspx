@@ -37,7 +37,7 @@
         }
     </script>
     <div class="dvBreadcrumbs">
-        <div class="container-lg">
+        <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
                     <li class="mr-3"><a href="\">
@@ -52,7 +52,7 @@
     </div>
 
     <div class="dvFlightAirReview py-2 py-md-5 ">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-12">
                     <div class="vouch-main border mb-5">
@@ -62,7 +62,7 @@
                         <div class="airBox" id="innerPageAboutUs">
                             <div class="">
                                 <!--StepsPage-->
-                                <div class="container">
+                                <div class="container-xl">
                                     <div id="divError" runat="server" class="ErrorMsgContainer text-capitalise text-danger">
                                         <asp:Label ID="lblError" CssClass="red-text" runat="server" class="text-danger"></asp:Label>
                                     </div>

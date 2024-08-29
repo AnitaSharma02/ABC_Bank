@@ -14,7 +14,7 @@
         <img class="w-100" src="../Images/carpage/car-banner.jpg" />
     </div>--%>
     <div class="dvCarSearch mb-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="dvForm row">
                 <div class="bg-colour2 p-3">
                     <div class="row">

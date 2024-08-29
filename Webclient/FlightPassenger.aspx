@@ -31,7 +31,7 @@
         }
     </script>
      <div class="dvBreadcrumbs">
-     <div class="container-lg">
+     <div class="container-xl">
          <nav>
              <ul class="breadcrumb px-0 py-3">
                  <li class="mr-3">
@@ -47,7 +47,7 @@
  </div>
      
 <div class="dvFlightPassenger pb-5 mt-lg-4">
-    <div class="container-lg">
+    <div class="container-xl">
         <div class="row">
              <div class="col-12">
                 <div class="h6 heading-semibold text-danger mb-3" id="errorDiv" runat="server"></div>

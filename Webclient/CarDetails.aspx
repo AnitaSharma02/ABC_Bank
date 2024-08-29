@@ -73,7 +73,7 @@
     </script>
 
 <div class="dvCarList">
-  <div class="container-lg">
+  <div class="container-xl">
     <div class="dvCarSteps row py-4 justify-content-between justify-content-sm-center">
       <div class="col-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center">
         <p class="circle mr-lg-2">1</p>
@@ -103,7 +103,7 @@
   </div>
  </div>
     <div class="dvCarDetails pb-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-md-5 col-lg-4">
                     <div class="border b-radius">

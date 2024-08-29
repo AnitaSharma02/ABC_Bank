@@ -19,14 +19,14 @@
         </div>
     </div>
     <div class="dvOrderDetails pb-5" id="OrderDetailsDiv" runat="server">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="dvOrderId row">
                 <div class="col-12">
                     <p class="h6 heading-regular">Booking Code: <span class="h6 heading-semibold" id="bookingCode" runat="server"></span></p>
                 </div>
             </div>
         </div>
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-12 my-4">
                     <div class="bg-colour3 p-3 mt-sm-0">
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="dvPaymentBox mt-0 mt-md-2 mb-4 pt-md-5 pt-3 pb-5">
-            <div class="container">
+            <div class="container-xl">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="border">

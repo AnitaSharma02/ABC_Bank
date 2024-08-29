@@ -6,7 +6,7 @@
         .innerBox{width:100%;}
     </style>
 <div class="innerPages">
-    <div class="container">
+    <div class="container-xl">
             <div class="row">
                 <div class="pageHeading">
                     <h2 data-i18n="bannertext-sitemap">Sitemap</h2>

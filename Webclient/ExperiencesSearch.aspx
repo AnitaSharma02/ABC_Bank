@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="\Css/experience.css" />
 
    <%-- <div class="dvBreadcrumbs mt-3 mb-3">
-        <div class="container-lg">
+        <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
                     <li class="mr-3">
@@ -19,7 +19,7 @@
         </div>
     </div>--%>
     <div class="dvProductList dvSearchProducts pb-5 mt-3" id="dvSearchProducts">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="dvFilter modal fade mb-3 col-lg-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">

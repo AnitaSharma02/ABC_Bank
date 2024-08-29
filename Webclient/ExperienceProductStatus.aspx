@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <link rel="stylesheet" href="\Css/experience.css" />
     <div class="dvExperience mb-0 mb-md-2">
-        <div class="container">
+        <div class="container-xl">
             <div class="dvPaymentList-steps d-none d-md-block">
                 <div class="step-line"></div>
                 <div class="steps">
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="dvPaymentBox dvExperienceMsg mt-0 mt-md-2 pt-md-5 pt-3 pb-5" style="min-height: 350px;">
-        <div class="container">
+        <div class="container-xl">
             <div class="row justify-content-md-center">
                 <div class="col-12 col-md-8 col-lg-8 mt-3 mt-md-0" id="divMessage" runat="server">
                     <%--<div class="border dvCongrat bg-colour6 p-5 text-center">

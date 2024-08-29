@@ -164,7 +164,7 @@
     </script>
 
    <div class="dvHotelSearch pb-5" id="hotelscrollupAnchor">
-            <div class="container-lg">
+            <div class="container-xl">
                 <div class="row">
                     <div class="col-12">
                         <div class="row">
@@ -371,7 +371,7 @@
         </div>
     
     <div class="dvHotelProductList mb-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-12 text-center m-auto my-3">
                     <h2 class="h1 heading-semibold text-colour1 pb-4 px-3">Popular Hotels Around The Globe</h2>

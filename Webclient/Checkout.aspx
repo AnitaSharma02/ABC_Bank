@@ -10,7 +10,7 @@
        #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner, .breadcrumbBox,.dvShopMenu   {display:none;}
     </style>
        <div class="dvBreadcrumbs">
-    <div class="container-lg">
+    <div class="container-xl">
         <nav>
             <ul class="breadcrumb px-0 py-3">
                 <li class="mr-3"><a href="hoteldetails.html"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
@@ -23,7 +23,7 @@
     </div>
 </div>
 <div class="dvShopCheckout pb-5 mt-lg-4" dir="ltr" style="direction: ltr;">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                  <div class="col-lg-7">
                         <div class="row">

@@ -219,7 +219,7 @@
     <form id="form1" runat="server">
         <div class="dvHeader shadow-sm sticky-top bg-colour6">
             <div class="dvStripe">
-                <div class="container-lg">
+                <div class="container-xl">
                     <div class="row">
                         <div class="dvUserInfo col-12 mb-lg-0">
                             <div class="d-flex flex-wrap align-items-center justify-content-lg-end">
@@ -251,7 +251,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-lg">
+            <div class="container-xl">
                 <nav class="navbar navbar-expand-lg navbar-light px-0 py-2 mx-lg-n3">
                     <div class="logo m-0 col col-lg-3 px-0 px-lg-3 order-0">
                         <a href="Index.aspx">
@@ -322,7 +322,7 @@
         <asp:ScriptManager ID="ScriptManager" runat="server" />
         <!--main start here-->
         <div class="dvMain">
-            <div class="container-lg">
+            <div class="container-xl">
                 <div class="row">
                     <div class="dvBreadcrumbs col-12" id="sitemap" runat="server">
                     </div>
@@ -337,7 +337,7 @@
         <!--footer start here-->
         <div class="dvFooter">
             <div class="bg-colour1 py-4">
-                <div class="container-lg">
+                <div class="container-xl">
                     <div class="row align-items-lg-center">
                         <div class="dvLinks col-lg-10 text-center text-lg-left mb-3 mb-lg-0 text-uppercase">
                             <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-earn">Earn</a>
@@ -375,7 +375,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-lg py-4">
+            <div class="container-xl py-4">
                 <div class="row align-items-lg-center">
                     <div class="col-sm-12 col-lg-2 text-center text-lg-left mb-3 mb-lg-0">
                         <a class="d-inline-block" href="https://www.abcbanking.mu/" target="_blank">

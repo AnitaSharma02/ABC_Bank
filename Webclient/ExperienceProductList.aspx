@@ -5,7 +5,7 @@
 
 
     <div class="dvExperience pb-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-12 text-center">
                     <h2 class="heading1 mb-2">Experiences</h2>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="dvProductList">
-            <div class="container-lg">
+            <div class="container-xl">
                 <div class="row" id="divExperienceProductList"></div>
             </div>
         </div>

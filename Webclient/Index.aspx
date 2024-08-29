@@ -8,7 +8,7 @@
         }        
     </style>
     <div class="dvTurnTransaction mb-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-12">
                     <h2 class="heading1 pt-0 text-center" data-i18n="home-turn">Turn Transactions into Rewards</h2>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="dvRedemptionLinks bg-colour4 py-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-12 text-center mb-4">
                     <h2 class="h4 heading-semibold text-colour7">Rewards that cater to every desire.</h2>
@@ -146,7 +146,7 @@
     </div>
 
     <div class="dvShopDeals py-5 d-none">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-12 text-center mb-4">
                     <h2 class="heading1 text-colour1 mb-3" data-i18n="home-shopthebest">Shop the Best Deals</h2>
@@ -161,7 +161,7 @@
     </div>
 
     <div class="dvVouchers py-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="col-12 text-center mb-4">
                     <h2 class="heading1 text-colour6 mb-3" data-i18n="home-most-featured">Most Featured Vouchers</h2>

@@ -18,7 +18,7 @@
     </style>
 
     <div class="dvBreadcrumbs">
-        <div class="container-lg">
+        <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
                     <li class="mr-3">
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <%--<div class="container" dir="ltr" style="direction: ltr;">
+    <%--<div class="container-xl" dir="ltr" style="direction: ltr;">
         <div class="row">
             <div class="col-12">
                 <h6 class="orderD">Order ID: <span></span></h6>
@@ -49,7 +49,7 @@
     </div>--%>
 
     <div class="dvOrderDetails pb-5">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="dvOrderId row">
                 <div class="col-12 mb-3">
                     <p class="h6 heading-regular">Order ID: <span id="spanOrderId" runat="server" class="h6 heading-bold text-colour1"></span></p>

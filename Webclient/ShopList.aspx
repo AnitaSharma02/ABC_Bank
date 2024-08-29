@@ -8,7 +8,7 @@
      }
     </style>
     <div class="dvBreadcrumbs">
-        <div class="container-lg">
+        <div class="container-xl">
             <nav id="divBreadbrums" runat="server">
               <%--  <ul class="breadcrumb px-0 py-3">
                     <li class="mr-3"><a href="hoteldetails.html">
@@ -23,7 +23,7 @@
     </div>
 
     <div class="dvProductList pb-5" dir="ltr" style="direction: ltr;">
-        <div class="container-lg">
+        <div class="container-xl">
             <div class="row">
                 <div class="dvFilter modal fade col-lg-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered">

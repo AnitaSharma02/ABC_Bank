@@ -51,7 +51,7 @@
 
    
 <div class="dvCarList">
-  <div class="container-lg">
+  <div class="container-xl">
     <div class="dvCarSteps row py-4 justify-content-between justify-content-sm-center">
       <div class="col-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center">
         <p class="circle circle-active mr-lg-2 heading-semibold">1</p>
@@ -82,7 +82,7 @@
  </div>
   
     <div class="dvCarList dvProductList">
-        <div class="container">
+        <div class="container-xl">
             <div class="row">
                 <div class="dvSidebar col-lg-3 mb-3 mb-lg-0"">
                     <div class="border b-radius p-3 mb-3">
