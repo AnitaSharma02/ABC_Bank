@@ -18,7 +18,7 @@
             </nav>
         </div>
     </div>--%>
-    <div class="dvProductList dvSearchProducts pb-5 mt-3" id="dvSearchProducts">
+    <div class="dvProductList dvExperienceSearch pb-5 mt-3" id="dvSearchProducts">
         <div class="container-xl">
             <div class="row">
                 <div class="dvFilter modal fade mb-3 col-lg-3" id="dvFilterModal" tabindex="-1">
@@ -232,11 +232,11 @@
                     html += "<div class=\"img-container\">";
                     html += "<img alt = \"Product Image\" src =\"" + parseData.data[i].image + " \" />";
                     html += "</div>"; 
-                    html += "<h2>" + parseData.data[i].title + "</h2>";
-                    html += "<h3>" + parseData.data[i].city + ',' + parseData.data[i].country + "</h3>";
-                    html += "<div class=\"cardPoints d-flex flex-column justify-content-between mb-3\">";
-                    html += "<p class=\"points m-0\">" + parseData.data[i].typeName + "</p>";
-                    html += "<p class=\"points m-0\">from <span class=\"heading-bold\">" + FormatCurrency(parseData.data[i].basePrice, parseData.data[i].convertedCurrency) + "</span> /pax</p>";
+                    html += "<h2 class='px-3 pt-3 pb-2'>" + parseData.data[i].title + "</h2>";
+                    html += "<p class='px-3 pb-2'>" + parseData.data[i].city + ',' + parseData.data[i].country + "</p>";
+                    html += "<div class=\"d-flex flex-wrap justify-content-between px-3 pb-3 mt-auto\">";
+                    html += "<p class=\"points\">" + parseData.data[i].typeName + "</p>";
+                    html += "<p class=\"points\"><span>from</span> <span>" + FormatCurrency(parseData.data[i].basePrice, parseData.data[i].convertedCurrency) + "</span> <span>/pax</span></p>";
                     html += "</div>";
                     html += "</a>";
                     html += "</div>";

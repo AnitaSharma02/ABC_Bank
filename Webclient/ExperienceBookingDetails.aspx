@@ -18,7 +18,7 @@
             </nav>
         </div>
     </div>
-    <div class="dvOrderDetails pb-5" id="OrderDetailsDiv" runat="server">
+    <div class="dvExperienceBookingDetails pb-5" id="OrderDetailsDiv" runat="server">
         <div class="container-xl">
             <div class="dvOrderId row">
                 <div class="col-12">

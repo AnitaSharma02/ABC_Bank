@@ -189,7 +189,7 @@
                     <div class="dvDetails row mb-4">
                       <div class="dvTabs col-12">
                         <nav>
-                         <div class="nav nav-tabs nav nav-tabs flex-nowrap scroll-hoz border-bottom-0" id="nav-tab" role="tablist" >
+                         <div class="nav nav-tabs flex-nowrap scroll-hoz border-bottom-0" id="nav-tab" role="tablist" >
                             <button class="heading-semibold nav-link text-capitalize active mr-2" id="description-tab" data-toggle="tab" data-target="#description" type="button" data-i18n="transaction-description-label"> description </button>
                             <button class="heading-semibold nav-link text-capitalize mr-2" id="terms-conditions-tab" data-toggle="tab" data-target="#terms-conditions" type="button" data-i18n="text-terms-conditions" >Terms And Conditions</button>
                             <button class="heading-semibold nav-link text-capitalize mr-2" id="divSpecificationtab" data-toggle="tab" data-target="#specification" type="button" runat="server" visible="false" > Specifications </button>

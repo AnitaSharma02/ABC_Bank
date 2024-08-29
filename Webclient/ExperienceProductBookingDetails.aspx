@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <link rel="stylesheet" href="\Css/experience.css" />
 
-    <div class="dvExperience mb-0 mb-md-2">
+    <div class="dvExperienceProductBookingDetails mb-0 mb-md-2">
         <div class="container-xl">
             <div class="dvPaymentList-steps d-none d-md-block">
                 <div class="step-line"></div>

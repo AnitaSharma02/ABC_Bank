@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="\Css/experience.css" />
 
 
-    <div class="dvExperience pb-5">
+    <div class="dvExperienceProductList pb-5">
         <div class="container-xl">
             <div class="row">
                 <div class="col-12 text-center">
@@ -112,16 +112,16 @@
                         } else {
                             html += '<img class="" alt=\"Product Image\" src =\"' + parseData[i].image + '\"/>';
                         }
-                        html += '</div >';
-                        html += '</a >';
+                        html += '</div>';
+                        html += '</a>';
                         html += '<h2 class="px-3 pt-3 pb-2">' + parseData[i].title + '</h2>';
                         html += '<p class="px-3 pb-2">' + parseData[i].city + ', ' + parseData[i].country + '</p>';
                         html += '<div class="d-flex flex-wrap justify-content-between px-3 pb-3 mt-auto">';
                         html += '<p class="points">' + parseData[i].typeName + '</p>';
                         html += '<p class="points"><span>from</span> <span>' + FormatCurrency(parseData[i].basePrice, parseData[i].convertedCurrency) + '</span> <span>/pax</span></p>';
-                        html += '</div >';
+                        html += '</div>';
                        
-                        html += '</div >';
+                        html += '</div>';
                         html += '</div>';
                     }
                 }

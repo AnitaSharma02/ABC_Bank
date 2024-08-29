@@ -313,9 +313,12 @@
         <div class="dvInnerBanner">
             <img id="dvInnerBanner" alt="" class="w-100" />
         </div>
-        <div class="dvRedemptionMenu py-0">
+        <div class="dvRedemptionMenu">
             <div class="container-fluid">
-                <div class="row justify-content-center my-5" id="divRedemptionOptions" runat="server">
+                <%--<div id="myloader">
+                    <img src="../Images/loading.gif" alt="loading..." />
+                </div>--%>
+                <div class="row justify-content-md-center flex-nowrap flex-md-wrap scroll-hoz py-4 pt-md-5 pb-md-3" id="divRedemptionOptions" runat="server">
                 </div>
             </div>
         </div>

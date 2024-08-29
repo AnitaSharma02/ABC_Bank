@@ -112,7 +112,7 @@ public partial class Index : Page
                         try
                         {
                             var PageURL = category.Properties.ToList().Find(lobj => lobj.Name.Equals("PageUrl")).Value.Replace("dotaspx", ".aspx");
-                            sb.Append("<div class=\"col-4 col-sm-2 col-lg-2 col-xl-1\"><a class=\"text-center d-flex flex-column align-items-center " + category.Name.Replace(" ", "").Replace("-", "").ToLower() + "redemption redemptionoptions\" href=\"" + PageURL + "\"><div class=\"d-flex flex-column align-items-center justify-content-center p-2 p-lg-2 p-xl-4 rounded-circle imageBox\"><img src=\"" + (category.PrimaryImage != null && category.PrimaryImage.Url != null ? category.PrimaryImage.Url : string.Empty) + "\" /></div><p>" + category.Name + "</p></a></div>");
+                            sb.Append("<div class=\"col-auto mb-md-3\"><a class=\"text-center d-flex flex-column align-items-center " + category.Name.Replace(" ", "").Replace("-", "").ToLower() + "redemption redemptionoptions\" href=\"" + PageURL + "\"><div class=\"d-flex flex-column align-items-center justify-content-center p-2 p-lg-2 p-xl-4 rounded-circle imageBox\"><img src=\"" + (category.PrimaryImage != null && category.PrimaryImage.Url != null ? category.PrimaryImage.Url : string.Empty) + "\" /></div><p class=\"mt-1\">" + category.Name + "</p></a></div>");
                         }
                         catch (Exception)
                         {

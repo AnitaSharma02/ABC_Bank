@@ -2129,7 +2129,6 @@ select.form-control:focus {
     color: var(--text-colour7);
     font-size: .875rem;
     font-family: var(--font-semibold);
-    padding: 5px 0;
 }
 /*active menu for flightsearch page*/
 .dvRedemptionMenu .SelRedemption .imageBox {
