@@ -56,6 +56,7 @@ namespace BeMyGuest.ClientHelper
             return lobjResponse;
         }
 
+      
         public ExperiencesTypesAndCategory GetTypesAndCategory()
         {
             ExperiencesTypesAndCategory lobjResponse = null;

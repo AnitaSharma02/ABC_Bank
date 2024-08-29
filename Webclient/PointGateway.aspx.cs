@@ -1,34 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI.WebControls;
-using Core.Platform.Member.Entites;
-using Framework.Integrations.Hotels.Entities;
-using Core.Platform.MemberActivity.Entities;
-using Core.Platform.MemberActivity.Constants;
+﻿using ABC.Model;
 using CB.IBE.Platform.ClientEntities;
 using CB.IBE.Platform.Entities;
-using Framework.EnterpriseLibrary.Adapters;
 using CB.IBE.Platform.Hotels.ClientEntities;
-using ABC.Model;
-using Core.Platform.Booking.Entities;
 using CB.IBE.Platform.Masters.Entities;
+using Core.Framework.Booking.Model;
+using Core.Platform.Booking.Entities;
+using Core.Platform.Helper.ProgramName;
+using Core.Platform.Member.Entites;
+using Core.Platform.MemberActivity.Constants;
+using Core.Platform.MemberActivity.Entities;
 using Core.Platform.ProgramMaster.Entities;
 using Core.Platform.RedemptionAuditTrail.Entities;
 using Core.Platform.Transactions.Entites;
-using GiiftShopGateway.Model;
+using Framework.EnterpriseLibrary.Adapters;
+using Framework.Integrations.Hotels.Entities;
 using Giift.ShopGateway.Client.Entities;
-using Core.Platform.Helper.ProgramName;
-using Newtonsoft.Json;
-using System.Text;
-using System.Configuration;
-using System.Web.Services;
-using CB.IBE.DomesticFlight.Entities;
-using System.Web.Query.Dynamic;
+using GiiftShopGateway.Model;
 using IBEAPI.ClientEntities;
-using Core.Framework.Booking.Model;
 using IBEAPIGateway.Model;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Web;
+using System.Web.Query.Dynamic;
+using System.Web.UI.WebControls;
 
 public partial class PointGateway : System.Web.UI.Page
 {
@@ -592,7 +591,7 @@ public partial class PointGateway : System.Web.UI.Page
                     }
                     else
                     {
-                        model.UpdateCustomerOrder(lobjorder, "Failed",lobjStripePaymentDetails);
+                        model.UpdateCustomerOrder(lobjorder, "Failed", lobjStripePaymentDetails);
                         LoggingAdapter.WriteLog("PurchaseShopDigital Order Null second call RedeemMilesResponse" + strRedeemMilesResponse + " Cart " + Cart.ToString());
                     }
                 }
@@ -858,96 +857,314 @@ public partial class PointGateway : System.Web.UI.Page
         return lblnResponse;
     }
 
-    //[System.Web.Script.Services.ScriptMethod()]
-    //[System.Web.Services.WebMethod]
-    //public static bool BookPackage()
-    //{
-    //    ABCModel lobjModel = new ABCModel();
-    //    bool lblnResult = false;
-    //    try
-    //    {
-    //        StringBuilder lNICogRequestResponse = new StringBuilder();
-    //        LoggingAdapter.WriteLog("Booking Package");
-    //        MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
-    //        if (lobjMemberDetails != null)
-    //        {
-    //            if (HttpContext.Current.Session["ExperienceBookingDetails"] != null)
-    //            {
-    //                LoggingAdapter.WriteLog("Inside Book Purchase");
-    //                lobjModel.LogActivity(string.Format(ActivityConstants.BookPackage), ActivityType.PackageBooking);
-    //                string lstrCurrency = lobjModel.GetDefaultCurrency();
-    //                OrderStatusResponse lobjOrderStatusResponse = HttpContext.Current.Session["ExperienceBookingDetails"] as OrderStatusResponse;
-    //                HttpContext.Current.Session["ExperienceBookingDetails"] = null;
-    //                HolibobOrderStatus lobjOrderStatus = JsonConvert.DeserializeObject<HolibobOrderStatus>(lobjOrderStatusResponse.data.getOrderStatus);
-    //                LoggingAdapter.WriteLog("Calling RedeemPoints");
-    //                string lstrProductName = string.Empty;
-    //                try
-    //                {
-    //                    lstrProductName = lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault().Length > 150 ?
-    //                        lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault().Substring(0, 150)
-    //                        : lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault();
-    //                }
-    //                catch { }
-    //                string lstrProgramName = ProgramHelper.ProgramName();
-    //                ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramDetails(lstrProgramName);
-    //                float Pointrate = lobjModel.GetProgramRedemptionRate(lstrCurrency, "EXPERIENCE", lobjProgramDefinition.ProgramId);
-    //                //int lintTotalPrice = lobjModel.ConvertToPoints(lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.totalPrice.gross).FirstOrDefault()
-    //                //    , lstrCurrency, lobjProgramDefinition.ProgramId, "EXPERIENCE");
-    //                string lstrRedeemResponse = lobjModel.RedeemPoints((float)lobjModel.CalculateAmount((int)lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.totalPrice.gross).FirstOrDefault(), Pointrate),
-    //                    Convert.ToInt32(lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.totalPrice.gross).FirstOrDefault()),
-    //                    lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference,
-    //                    lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword,
-    //                    string.Format("{0} #{1}#{2}", lstrProductName, lobjOrderStatus.data.id, lobjOrderStatus.data.code), (int)LoyaltyTxnType.Packages, lstrCurrency, "");
-    //                LoggingAdapter.WriteLog("RedeemPointsforPackage success - '" + lstrRedeemResponse + "'");
-    //                LoggingAdapter.WriteLog("RedeemPointsforPackage success - '" + lstrRedeemResponse + "'");
-    //                if (!string.IsNullOrEmpty(lstrRedeemResponse))
-    //                {
-    //                    try
-    //                    {
-    //                        lNICogRequestResponse.Append(string.Format("BookPackage Request: Booking Id - {0}", lobjOrderStatus.data.id));
-    //                        PlaceOrderResponse lobjPlaceOrderResponse = lobjModel.PlaceOrder(lobjOrderStatus.data.id);
-    //                        lNICogRequestResponse.Append(string.Format(" BookPackage Response: {0}", JsonConvert.SerializeObject(lobjPlaceOrderResponse)));
-    //                        if (lobjPlaceOrderResponse != null && lobjPlaceOrderResponse.data != null && !string.IsNullOrEmpty(lobjPlaceOrderResponse.data.placeOrder))
-    //                        {
-    //                            PlaceOrder lobjPlaceOrder = JsonConvert.DeserializeObject<PlaceOrder>(lobjPlaceOrderResponse.data.placeOrder);
-    //                            if (lobjPlaceOrder.status.ToLower() == "success")
-    //                            {
-    //                                lblnResult = true;
-    //                                HttpContext.Current.Session["PackageBookingId"] = lobjOrderStatus.data.id;
-    //                            }
-    //                            else
-    //                            {
-    //                                LoggingAdapter.WriteLog("BookingPurchase Rollback " + lstrRedeemResponse);
-    //                                bool lboolRollBackResponse = lobjModel.RollBackTransaction(lstrRedeemResponse, lobjMemberDetails.MemberRelationsList.Find(lob => lob.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjOrderStatus.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault() + " Experience");
-    //                                LoggingAdapter.WriteLog("BookingPurchase Rollback Success");
-    //                            }
-    //                        }
-    //                        else
-    //                        {
-    //                            LoggingAdapter.WriteLog("BookingPurchase Rollback " + lstrRedeemResponse);
-    //                            bool lboolRollBackResponse = lobjModel.RollBackTransaction(lstrRedeemResponse, lobjMemberDetails.MemberRelationsList.Find(lob => lob.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjOrderStatus.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault() + " Experience");
-    //                            LoggingAdapter.WriteLog("BookingPurchase Rollback Success");
-    //                        }
-    //                    }
-    //                    catch (Exception ex)
-    //                    {
-    //                        LoggingAdapter.WriteLog("BookingPurchase Ex- " + ex.StackTrace + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace);
-    //                        bool lboolRollBackResponse = lobjModel.RollBackTransaction(lstrRedeemResponse, lobjMemberDetails.MemberRelationsList.Find(lob => lob.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjOrderStatus.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault() + " Experience");
-    //                        LoggingAdapter.WriteLog("BookingPurchase Ex Rollback Success");
-    //                    }
-    //                }
-    //                HttpContext.Current.Session["AvailablePoints"] = null;
-    //            }
-    //        }
-    //        lobjModel.LogActivity(string.Format(ActivityConstants.BookPackage) + "Status:" + lblnResult + " - " + lNICogRequestResponse, ActivityType.PackageBooking);
-    //        return lblnResult;
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        LoggingAdapter.WriteLog("PointGateway.aspx- BookPackage Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-    //        return false;
-    //    }
-    //}
+    [System.Web.Script.Services.ScriptMethod()]
+    [System.Web.Services.WebMethod]
+    public static string BookPackage()
+    {
+        ABCModel lobjModel = new ABCModel();
+        string lblnResult = string.Empty;
+        try
+        {
+            StringBuilder lNICogRequestResponse = new StringBuilder();
+            LoggingAdapter.WriteLog("Booking Package");
+            MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+            BeMyGuest.Entities.BookingRequest bookingRequest = HttpContext.Current.Session["ExperienceBookingRequest"] as BeMyGuest.Entities.BookingRequest;
+            List<RedemptionDetails> lobjListOfRedemptionDetails = HttpContext.Current.Session["ExperienceRedemptionDetails"] as List<RedemptionDetails>;
+            BeMyGuest.Entities.ProductInfoResponse productInfoResponse = new BeMyGuest.Entities.ProductInfoResponse();
+            if (HttpContext.Current.Session["ProductInfo"] != null)
+            {
+                productInfoResponse = HttpContext.Current.Session["ProductInfo"] as BeMyGuest.Entities.ProductInfoResponse;
+            }
+            if (lobjMemberDetails != null)
+            {
+                if (HttpContext.Current.Session["ExperienceBookingRequest"] != null)
+                {
+                    LoggingAdapter.WriteLog("Inside Book Purchase");
+                    lobjModel.LogActivity(string.Format(ActivityConstants.BookPackage), ActivityType.PackageBooking);
+                    string lstrCurrency = lobjModel.GetDefaultCurrency();
+                 
+                    string lstrProductName = string.Empty;
+                    //try
+                    //{
+                    //    lstrProductName = lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault().Length > 150 ?
+                    //        lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault().Substring(0, 150)
+                    //        : lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault();
+                    //}
+                    //catch { }
+                    string lstrProgramName = ProgramHelper.ProgramName();
+                    ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramDetails(lstrProgramName);
+                    float Pointrate = lobjModel.GetProgramRedemptionRate(lstrCurrency, "EXPERIENCE", lobjProgramDefinition.ProgramId);
+
+                    string lstrRedeemResponse = lobjModel.RedeemPoints((float)(lobjListOfRedemptionDetails[0].Amount), lobjListOfRedemptionDetails[0].Points, lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword, productInfoResponse.data.title, Convert.ToInt32(LoyaltyTxnType.Hotel), lobjListOfRedemptionDetails[0].Currency, lobjMemberDetails.MemberRelationsList[0].RelationReference);
+                    LoggingAdapter.WriteLog("RedeemPointsforPackage success - '" + lstrRedeemResponse + "'");
+
+                    if (!string.IsNullOrEmpty(lstrRedeemResponse))
+                    {
+                        try
+                        {
+                            BeMyGuest.Entities.BookingResponse bookingResponse = lobjModel.ExperienceBooking(bookingRequest);
+                            if (bookingResponse != null)
+                            {
+                                if (bookingResponse.success == 1)
+                                {
+                                    HttpContext.Current.Session["PackageBookingId"] = bookingResponse.bookingData.uuid;
+                                    SendExperienceEmail(bookingRequest, bookingResponse);
+                                    lblnResult = "ExperienceProductStatus.aspx?Success=true";
+                                }
+                                else
+                                {
+                                    if ((bookingResponse.success != 1) && bookingRequest.totalAmount != 0)
+                                    {
+                                        lobjModel.RollBackTransaction(lstrRedeemResponse, bookingRequest.memberId, bookingRequest.titleName);
+                                    }
+                                    lblnResult = "ExperienceProductStatus.aspx?Success=false";
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            LoggingAdapter.WriteLog("BookingPurchase Ex- " + ex.StackTrace + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace);
+                            lobjModel.RollBackTransaction(lstrRedeemResponse, bookingRequest.memberId, bookingRequest.titleName);
+                            LoggingAdapter.WriteLog("BookingPurchase Ex Rollback Success");
+                        }
+                    }
+                    HttpContext.Current.Session["AvailablePoints"] = null;
+                }
+            }
+            lobjModel.LogActivity(string.Format(ActivityConstants.BookPackage) + "Status:" + lblnResult + " - " + lNICogRequestResponse, ActivityType.PackageBooking);
+            return lblnResult;
+        }
+        catch (Exception ex)
+        {
+            LoggingAdapter.WriteLog("PointGateway.aspx- BookPackage Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+            return null;
+        }
+    }
+    private static void SendExperienceEmail(BeMyGuest.Entities.BookingRequest bookingRequest, BeMyGuest.Entities.BookingResponse bookingResponse)
+    {
+        ABCModel lobjModel = new ABCModel();
+        try
+        {
+            ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+            if (!string.IsNullOrEmpty(bookingRequest.customer.email))
+            {
+                StringBuilder sbAdditionalInfoHtml = new StringBuilder();
+                if (bookingResponse.bookingData.options.Count > 0)
+                {
+                    int optionsItemIndex = 0;
+                    foreach (var optionsItem in bookingResponse.bookingData.options)
+                    {
+                        if (optionsItemIndex % 2 == 0)
+                        {
+                            sbAdditionalInfoHtml.Append("<tr>");
+                            sbAdditionalInfoHtml.Append("<td width='20%' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                            sbAdditionalInfoHtml.Append("<strong>" + optionsItem.label + ":</strong></td>");
+                            sbAdditionalInfoHtml.Append("<td width='30%' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                            if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("datetime"))
+                            {
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("dd/MM/yyyy HH:mm tt"));
+                            }
+                            else if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("time")
+                                && !optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("select")
+                                && !optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("date"))
+                            {
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("HH:mm tt"));
+                            }
+                            else if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("date"))
+                            {
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("dd/MM/yyyy"));
+                            }
+                            else if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Equals("freelunch"))
+                            {
+                                if (Convert.ToInt32(optionsItem.value) == 1)
+                                {
+                                    sbAdditionalInfoHtml.Append("Yes");
+                                }
+                                else
+                                {
+                                    sbAdditionalInfoHtml.Append("No");
+                                }
+                            }
+                            else
+                            {
+                                sbAdditionalInfoHtml.Append(optionsItem.value);
+                            }
+                            sbAdditionalInfoHtml.Append("</td>");
+                        }
+                        else
+                        {
+                            sbAdditionalInfoHtml.Append("<td width='15%' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                            sbAdditionalInfoHtml.Append("<strong>" + optionsItem.label + ":</strong></td>");
+                            sbAdditionalInfoHtml.Append("<td width='30%' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                            if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("datetime"))
+                            {
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("dd/MM/yyyy HH:mm tt"));
+                            }
+                            else if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("time")
+                                && !optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("select")
+                                && !optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("date"))
+                            {
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("HH:mm tt"));
+                            }
+                            else if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("date"))
+                            {
+                                sbAdditionalInfoHtml.Append(Convert.ToDateTime(optionsItem.value).ToString("dd/MM/yyyy"));
+                            }
+                            else
+                            {
+                                sbAdditionalInfoHtml.Append(optionsItem.value);
+                            }
+                            sbAdditionalInfoHtml.Append("</td>");
+                            sbAdditionalInfoHtml.Append("</tr>");
+                        }
+                        if (optionsItemIndex % 2 == 0 && bookingResponse.bookingData.options.Count == (optionsItemIndex + 1))
+                        {
+                            sbAdditionalInfoHtml.Append("<td width='45%' colspan='2' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'></td>");
+                            sbAdditionalInfoHtml.Append("</tr>");
+                        }
+                        optionsItemIndex++;
+                    }
+                }
+                else
+                {
+                    sbAdditionalInfoHtml.Append("<tr>");
+                    sbAdditionalInfoHtml.Append("<td width='100%' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>No additional info available.</td>");
+                    sbAdditionalInfoHtml.Append("</tr>");
+                }
+                StringBuilder sbPickup_MeetingPointInformationHtml = new StringBuilder();
+                if (!string.IsNullOrEmpty(bookingResponse.bookingData.meetingTime)
+                   || !string.IsNullOrEmpty(bookingResponse.bookingData.meetingAddress)
+                   || !string.IsNullOrEmpty(bookingResponse.bookingData.meetingLocation))
+                {
+                    if (!string.IsNullOrEmpty(bookingResponse.bookingData.meetingTime))
+                    {
+                        sbPickup_MeetingPointInformationHtml.Append("<tr>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='115' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                        sbPickup_MeetingPointInformationHtml.Append("<strong>Time:</strong>");
+                        sbPickup_MeetingPointInformationHtml.Append("</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='613' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>" + bookingResponse.bookingData.meetingTime + "</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("</tr>");
+                    }
+                    if (!string.IsNullOrEmpty(bookingResponse.bookingData.meetingAddress))
+                    {
+                        sbPickup_MeetingPointInformationHtml.Append("<tr>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='115' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                        sbPickup_MeetingPointInformationHtml.Append("<strong>Address:</strong>");
+                        sbPickup_MeetingPointInformationHtml.Append("</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='613' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>" + bookingResponse.bookingData.meetingAddress + "</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("</tr>");
+                    }
+                    if (!string.IsNullOrEmpty(bookingResponse.bookingData.meetingLocation))
+                    {
+                        sbPickup_MeetingPointInformationHtml.Append("<tr>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='115' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                        sbPickup_MeetingPointInformationHtml.Append("<strong>Location:</strong>");
+                        sbPickup_MeetingPointInformationHtml.Append("</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("<td width='613' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>" + bookingResponse.bookingData.meetingLocation + "</td>");
+                        sbPickup_MeetingPointInformationHtml.Append("</tr>");
+                    }
+                }
+                else
+                {
+                    sbPickup_MeetingPointInformationHtml.Append("<tr>");
+                    sbPickup_MeetingPointInformationHtml.Append("<td width='115' height='35' valign='middle' bgcolor='#FFFFFF' style='font-family: arial; font-size: 13px'>");
+                    sbPickup_MeetingPointInformationHtml.Append("No pickup/meeting point information available.");
+                    sbPickup_MeetingPointInformationHtml.Append("</td>");
+                    sbPickup_MeetingPointInformationHtml.Append("</tr>");
+                }
+                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+                List<string> emailParameters = new List<string>();
+                string PGTranPct = Convert.ToString(ConfigurationManager.AppSettings["PGTranPct"]);
+                string WebsiteUrl = Convert.ToString(ConfigurationManager.AppSettings["WebsiteUrl"]);
+                emailParameters.Add(string.Format("{0} {1}", bookingRequest.customer.firstName, bookingRequest.customer.lastName));//0
+                emailParameters.Add(bookingResponse.bookingData.code);//1
+                emailParameters.Add(bookingResponse.bookingData.prodtitle);//2
+                emailParameters.Add(bookingResponse.bookingData.productTypeTitle);//3
+                emailParameters.Add(DateTime.Parse(bookingResponse.bookingData.createdAt).ToLocalTime().ToString("dd/MM/yyyy hh:mm tt"));//4
+                emailParameters.Add(DateTime.Parse(bookingResponse.bookingData.updatedAt).ToLocalTime().ToString("dd/MM/yyyy hh:mm tt"));//5
+                emailParameters.Add(DateTime.Parse(bookingResponse.bookingData.arrivalDate).ToString("dd MMM yyyy"));//6
+                emailParameters.Add(string.IsNullOrEmpty(bookingResponse.bookingData.timeSlot) ? "N/A" : string.Format("{0} hrs", bookingResponse.bookingData.timeSlot));//7
+                emailParameters.Add(bookingResponse.bookingData.adults > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.adults,
+                                    FormatCurrency(Math.Ceiling(bookingResponse.bookingData.amountBreakdown.FindAll(x => x.name.ToLower().Equals("adult")).FirstOrDefault().convertedAmount)
+                                    , bookingResponse.bookingData.convertedCurrency)) : "0");//8
+                emailParameters.Add(bookingResponse.bookingData.children > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.children,
+                                    FormatCurrency(Math.Ceiling(bookingResponse.bookingData.amountBreakdown.FindAll(x => x.name.ToLower().Equals("child")).FirstOrDefault().convertedAmount)
+                                    , bookingResponse.bookingData.convertedCurrency)) : "0");//9
+                emailParameters.Add(bookingResponse.bookingData.seniors > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.seniors,
+                                    FormatCurrency(Math.Ceiling(bookingResponse.bookingData.amountBreakdown.FindAll(x => x.name.ToLower().Equals("senior")).FirstOrDefault().convertedAmount)
+                                    , bookingResponse.bookingData.convertedCurrency)) : "0");//10
+                emailParameters.Add(FormatCurrency(Math.Ceiling(bookingResponse.bookingData.grandTotalAmount), bookingResponse.bookingData.convertedCurrency));//11
+                emailParameters.Add(bookingResponse.bookingData.firstName);//12
+                emailParameters.Add(bookingResponse.bookingData.lastName);//13
+                emailParameters.Add(bookingResponse.bookingData.email);//14
+                emailParameters.Add(bookingResponse.bookingData.phone);//15
+                emailParameters.Add("Cancellations are non refundable.");//16
+                emailParameters.Add(DateTime.Now.Year.ToString());//17
+                emailParameters.Add(textInfo.ToTitleCase(bookingResponse.bookingData.status));//18
+                emailParameters.Add(sbAdditionalInfoHtml.ToString());//19
+                emailParameters.Add(bookingResponse.bookingData.prodavailaddress);//20
+                emailParameters.Add(bookingResponse.bookingData.uuid);//21
+                emailParameters.Add(FormatCurrency(bookingResponse.bookingData.grandTotalAmount * (Convert.ToDecimal(PGTranPct) / 100), bookingResponse.bookingData.convertedCurrency, true));//22
+                emailParameters.Add(FormatCurrency(bookingResponse.bookingData.grandTotalAmount + (bookingResponse.bookingData.grandTotalAmount * (Convert.ToDecimal(PGTranPct) / 100)), bookingResponse.bookingData.convertedCurrency, true));//23
+                emailParameters.Add(WebsiteUrl);//24
+                emailParameters.Add(sbPickup_MeetingPointInformationHtml.ToString());//25
+                bool ceresponse = lobjModel.InsertEmailDetails(emailParameters,
+                     bookingRequest.customer.email, "ExperiencesBooked", bookingRequest.memberId, lobjProgramDefinition.ProgramId);
+                if (ceresponse)
+                {
+                    LoggingAdapter.WriteLog("PaymentResponse Page Experience Email Send Successfully");
+                }
+                else
+                {
+                    LoggingAdapter.WriteLog("PaymentResponse Page Experience Email Send Failed");
+                }
+            }
+            else
+            {
+                #region Logging
+                LoggingAdapter.WriteLog(
+                string.Format("PaymentResponse Experiences customerEmailId is null; Date - {0} | BookingCode - {1}" +
+                " | BookingUUID - {2};",
+                DateTime.Now, bookingResponse.bookingData.code, bookingResponse.bookingData.uuid));
+                #endregion
+            }
+        }
+        catch (Exception ex)
+        {
+            #region Logging
+            LoggingAdapter.WriteLog(
+            string.Format("PaymentResponse Experiences InsertEmailDetails Exception; Date - {0} | EX Message - {1} | EX StackTrace - {2} | EX InnerException - {3};",
+            DateTime.Now, ex.Message, ex.StackTrace, ex.InnerException));
+            #endregion
+        }
+    }
+    public static string FormatCurrency(decimal decValue, string currencyCode, bool requiredDecimal = false)
+    {
+        NumberFormatInfo nfo = new CultureInfo("en-US", false).NumberFormat;
+        if (requiredDecimal)
+        {
+            nfo.NumberDecimalDigits = 2;
+            if (!string.IsNullOrEmpty(currencyCode))
+            {
+                return string.Format("{0} {1}", currencyCode, decValue.ToString("N", nfo));
+            }
+            else
+            {
+                return string.Format("{0}", decValue.ToString("N", nfo));
+            }
+        }
+        else
+        {
+            if (!string.IsNullOrEmpty(currencyCode))
+            {
+                return string.Format("{0} {1}", currencyCode, decValue.ToString("N", nfo).Split('.')[0]);
+            }
+            else
+            {
+                return string.Format("{0}", decValue.ToString("N", nfo).Split('.')[0]);
+            }
+        }
+    }
 
     //[WebMethod]
     //public static bool InsurancePaymentRequest()
@@ -1112,17 +1329,17 @@ public partial class PointGateway : System.Web.UI.Page
     //                lobjProgramDefinition = lobjModel.GetProgramDetails(lstrProgramName);
 
     //                float lfltPointRate = 0.0f;
-                   
+
     //                List<ProgramCurrencyDefinition> lobjProgramCurrency = lobjModel.GetProgramCurrencyDefinition(lobjMemberDetails.ProgramId);
     //                lfltPointRate = lobjProgramCurrency[0].RedemptionRate;
     //                float ldblAmount = Convert.ToInt32(Math.Ceiling(float.Parse(lobjBookingDetailsResponse.CreditsConsumed.ToString()))) * lfltPointRate;
 
-    //                 lstrRedeemResponse = lobjModel.RedeemPoints(ldblAmount, Int32.Parse(lobjBookingDetailsResponse.CreditsConsumed.ToString()),
-    //                    lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference,
-    //                    lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword,
-    //                    lobjBookingDetailsResponse.SectorFrom + "-" + lobjBookingDetailsResponse.SectorTo,
-    //                    Convert.ToInt32(LoyaltyTxnType.Air),
-    //                    lstrCurrency, "");
+    //                lstrRedeemResponse = lobjModel.RedeemPoints(ldblAmount, Int32.Parse(lobjBookingDetailsResponse.CreditsConsumed.ToString()),
+    //                   lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference,
+    //                   lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword,
+    //                   lobjBookingDetailsResponse.SectorFrom + "-" + lobjBookingDetailsResponse.SectorTo,
+    //                   Convert.ToInt32(LoyaltyTxnType.Air),
+    //                   lstrCurrency, "");
     //                LoggingAdapter.WriteLog("RedeemPointsforDomesticFlight success - '" + lstrRedeemResponse + "'");
     //                if (!string.IsNullOrEmpty(lstrRedeemResponse))
     //                {
@@ -1276,272 +1493,6 @@ public partial class PointGateway : System.Web.UI.Page
     //    return Result;
     //}
 
-    //[WebMethod]
-    //public static bool BookForKhaltiISP()
-    //{
-    //    ABCModel lobjModel = new ABCModel();
-    //    string lstrResponse = string.Empty;
-    //    bool lblnResult = false;
-    //    ISPPaymentResponse lobjPaymentResponse = new ISPPaymentResponse();
-    //    ShopModel shopModel = new ShopModel();
-    //    try
-    //    {
-    //        LoggingAdapter.WriteLog("Booking Internet Service Provider");
-    //        ISPUserDetailsResponse lobjUserdetails = HttpContext.Current.Session["ISPUserDetails"] as ISPUserDetailsResponse;
-    //        MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
-    //        string serviceCode = Convert.ToString(HttpContext.Current.Session["ISPServiceCode"]);
-    //        decimal FinalAmountPayable = Convert.ToDecimal(HttpContext.Current.Session["FinalAmountPayable"]);
-    //        Packages PackageData = HttpContext.Current.Session["ISPSelectedPackageData"] as Packages;
-    //        KhaltiISP.Entities.Details PackageDetailsData = HttpContext.Current.Session["ISPSelectedPackageDetailsData"] as KhaltiISP.Entities.Details;
-    //        string RequestId = HttpContext.Current.Session["ISPUserName"].ToString();
-    //        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
-    //        string lstrCurrency = lobjModel.GetDefaultCurrency();
-    //        float Pointrate = lobjModel.GetProgramRedemptionRate(lstrCurrency, "ISP", lobjProgramDefinition.ProgramId);
-    //        InsuranceServiceProvidersResponse lobjInsuranceServiceProviders = HttpContext.Current.Application["SearchISPProducts"] as InsuranceServiceProvidersResponse;
-    //        if (lobjMemberDetails != null)
-    //        {
-    //            if (lobjUserdetails != null)
-    //            {
-    //                string MembershipReference = lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(Core.Platform.Member.Entites.RelationType.LBMS)).RelationReference;
-    //                if (lobjUserdetails.results.Key == "BroadLink" && lobjUserdetails.results.Packages.Count > 0)
-    //                {
-    //                    //call GetDiscount and then ISPPaymentRequest API
-    //                    GetDiscountRequest lobjGetDiscountRequest = new GetDiscountRequest();
-    //                    GetDiscountResponse lobjGetDiscountResponse = new GetDiscountResponse();
-    //                    lobjGetDiscountRequest.ServiceCode = serviceCode;
-    //                    lobjGetDiscountRequest.SessionId = lobjUserdetails.results.SessionId;
-    //                    lobjGetDiscountRequest.Package = PackageData;
-    //                    lobjGetDiscountResponse = lobjModel.GetDiscount(lobjGetDiscountRequest);
-    //                    if (lobjGetDiscountResponse != null)
-    //                    {
-    //                        if (lobjGetDiscountResponse.results.Status)
-    //                        {
-    //                            LoggingAdapter.WriteLog("Calling RedeemPoints");
-    //                            string lstrProgramName = ProgramHelper.ProgramName();
-
-    //                            int lintTotalPrice = lobjModel.ConvertToPoints(float.Parse(lobjGetDiscountResponse.results.Amount.ToString())
-    //                                , lstrCurrency, lobjProgramDefinition.ProgramId, "ISP");
-    //                            string lstrRedeemResponse = lobjModel.RedeemPoints(float.Parse(lobjGetDiscountResponse.results.Amount.ToString()),
-    //                                lintTotalPrice,
-    //                                lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference,
-    //                                lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword,
-    //                                lobjInsuranceServiceProviders.results.Find(x => x.ServiceCode == serviceCode.ToString()).ServiceName, (int)LoyaltyTxnType.BillPayment, lstrCurrency, "");
-    //                            LoggingAdapter.WriteLog("RedeemPointsforISP success - '" + lstrRedeemResponse + "'");
-    //                            if (!string.IsNullOrEmpty(lstrRedeemResponse))
-    //                            {
-    //                                try
-    //                                {
-    //                                    //call ISPPaymentRequest API
-    //                                    ISPPaymentRequest lobjPaymentrequest = new ISPPaymentRequest();
-    //                                    lobjPaymentrequest.ServiceCode = serviceCode;
-    //                                    lobjPaymentrequest.Amount = lintTotalPrice;
-    //                                    lobjPaymentrequest.SessionId = lobjGetDiscountResponse.results.SessionId;
-    //                                    lobjPaymentrequest.CustomerName = lobjUserdetails.results.CustomerDetails.CustomerName;
-    //                                    lobjPaymentrequest.MembershipReference = MembershipReference;
-    //                                    lobjPaymentResponse = lobjModel.ISPPaymentRequest(lobjPaymentrequest);
-    //                                    if (lobjPaymentResponse != null)
-    //                                    {
-    //                                        if (lobjPaymentResponse.results.Status && lobjPaymentResponse.results.State == "Success")
-    //                                        {
-    //                                            HttpContext.Current.Session["ISPBookingId"] = lobjPaymentResponse.results.Id;
-    //                                            lstrResponse = JsonConvert.SerializeObject(lobjPaymentResponse.results);
-    //                                            dynamic dynamicCls = new System.Dynamic.ExpandoObject();
-    //                                            dynamicCls.event_name = "ISP_Booked";
-    //                                            dynamicCls.relation_reference = Convert.ToString(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
-    //                                            dynamicCls.program_id = Convert.ToInt32(lobjMemberDetails.ProgramId); ;
-    //                                            dynamicCls.to_email = lobjMemberDetails.Email;
-    //                                            dynamicCls.full_name = lobjMemberDetails.FullName;
-    //                                            dynamicCls.serviceName = lobjUserdetails.results.Key;
-    //                                            dynamicCls.CustomerName = lobjUserdetails.results.CustomerDetails.CustomerName;
-    //                                            dynamicCls.ReferenceId = lobjPaymentResponse.results.ReferenceId;
-    //                                            //dynamicCls.CreditsConsumed = lobjModel.FloatToThousandSeperated(float.Parse(lobjGetDiscountResponse.results.Amount.ToString())) + " NPR";
-    //                                            dynamicCls.Points = lobjModel.FloatToThousandSeperated(lintTotalPrice) + " Points";
-    //                                            dynamicCls.TransactionDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt");
-    //                                            dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
-    //                                            Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
-    //                                            IDictionary<string, object> dict = (IDictionary<string, object>)dynamicCls;
-    //                                            foreach (var key in dict)
-    //                                            {
-    //                                                lobjDictionary.Add(key.Key, key.Value);
-    //                                            }
-    //                                            string jsonParameters = JsonConvert.SerializeObject(lobjDictionary);
-    //                                            lobjModel.SendEmails(jsonParameters, lobjMemberDetails);
-    //                                            lblnResult = true;
-    //                                        }
-    //                                        else
-    //                                        {
-    //                                            LoggingAdapter.WriteLog("ISPPaymentRequest Failed; ErrorCode:-{0}", lobjPaymentResponse.results.ErrorCode);
-    //                                            lstrResponse = lobjPaymentResponse.results.Message;
-    //                                            bool lboolRollBackResponse = lobjModel.RollBackTransaction(lstrRedeemResponse, lobjMemberDetails.MemberRelationsList.Find(lob => lob.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjInsuranceServiceProviders.results.Select(x => x.ServiceName).ToString());
-    //                                            LoggingAdapter.WriteLog("ISPPaymentRequest Ex Rollback Success");
-    //                                            lblnResult = false;
-    //                                        }
-    //                                    }
-    //                                    else
-    //                                    {
-    //                                        bool lboolRollBackResponse = lobjModel.RollBackTransaction(lstrRedeemResponse, lobjMemberDetails.MemberRelationsList.Find(lob => lob.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjInsuranceServiceProviders.results.Select(x => x.ServiceName).ToString());
-    //                                        LoggingAdapter.WriteLog("ISPPaymentRequest Ex Rollback Success");
-    //                                        lblnResult = false;
-    //                                    }
-
-    //                                }
-    //                                catch (Exception ex)
-    //                                {
-    //                                    LoggingAdapter.WriteLog("ISPPaymentRequest Ex- " + ex.StackTrace + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace);
-    //                                    bool lboolRollBackResponse = lobjModel.RollBackTransaction(lstrRedeemResponse, lobjMemberDetails.MemberRelationsList.Find(lob => lob.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjInsuranceServiceProviders.results.Select(x => x.ServiceName).ToString());
-    //                                    LoggingAdapter.WriteLog("ISPPaymentRequest Ex Rollback Success");
-    //                                    lblnResult = false;
-    //                                }
-    //                            }
-
-    //                        }
-    //                        else
-    //                        {
-    //                            LoggingAdapter.WriteLog("GetDiscountforISPBroadLink_Packages Failed");
-    //                            lblnResult = false;
-    //                        }
-    //                    }
-    //                    else
-    //                    {
-    //                        LoggingAdapter.WriteLog("GetDiscountforISPBroadLink_Packages Failed");
-    //                        lblnResult = false;
-    //                    }
-    //                }
-    //                else
-    //                {
-    //                    LoggingAdapter.WriteLog("Calling RedeemPoints");
-    //                    string lstrProgramName = ProgramHelper.ProgramName();
-    //                    string lstrRedeemResponse = lobjModel.RedeemPoints(float.Parse(FinalAmountPayable.ToString()),
-    //                         Convert.ToInt32(FinalAmountPayable),
-    //                        lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference,
-    //                        lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword,
-    //                       lobjInsuranceServiceProviders.results.Find(x => x.ServiceCode == serviceCode.ToString()).ServiceName, (int)LoyaltyTxnType.BillPayment, lstrCurrency, "");
-    //                    LoggingAdapter.WriteLog("RedeemPointsforISP success - '" + lstrRedeemResponse + "'");
-    //                    if (!string.IsNullOrEmpty(lstrRedeemResponse))
-    //                    {
-    //                        try
-    //                        {
-    //                            //call ISPPaymentRequest API
-    //                            ISPPaymentRequest lobjPaymentrequest = new ISPPaymentRequest();
-    //                            switch (lobjUserdetails.results.Key)
-    //                            {
-
-    //                                case "BroadLink":
-    //                                    lobjPaymentrequest = new ISPPaymentRequest();
-    //                                    lobjPaymentrequest.ServiceCode = serviceCode;
-    //                                    lobjPaymentrequest.Amount = FinalAmountPayable;
-    //                                    lobjPaymentrequest.SessionId = lobjUserdetails.results.SessionId;
-    //                                    lobjPaymentrequest.MembershipReference = MembershipReference;
-    //                                    lobjPaymentrequest.CustomerName = lobjUserdetails.results.CustomerDetails.CustomerName;
-    //                                    break;
-    //                                case "Techminds":
-    //                                    lobjPaymentrequest = new ISPPaymentRequest();
-    //                                    lobjPaymentrequest.ServiceCode = serviceCode;
-    //                                    lobjPaymentrequest.Amount = FinalAmountPayable;
-    //                                    lobjPaymentrequest.SessionId = lobjUserdetails.results.SessionId;
-    //                                    lobjPaymentrequest.RequestId = RequestId;
-    //                                    lobjPaymentrequest.MembershipReference = MembershipReference;
-    //                                    lobjPaymentrequest.CustomerName = lobjUserdetails.results.CustomerDetails.CustomerName;
-    //                                    break;
-    //                                case "WorldLink":
-    //                                    lobjPaymentrequest = new ISPPaymentRequest();
-    //                                    lobjPaymentrequest.ServiceCode = serviceCode;
-    //                                    lobjPaymentrequest.Amount = FinalAmountPayable;
-    //                                    lobjPaymentrequest.PackageId = PackageData.PackageId;
-    //                                    lobjPaymentrequest.SessionId = lobjUserdetails.results.SessionId;
-    //                                    lobjPaymentrequest.MembershipReference = MembershipReference;
-    //                                    lobjPaymentrequest.CustomerName = lobjUserdetails.results.CustomerDetails.CustomerName;
-    //                                    break;
-    //                                case "Broadband Solutions":
-    //                                    lobjPaymentrequest = new ISPPaymentRequest();
-    //                                    lobjPaymentrequest.ServiceCode = serviceCode;
-    //                                    lobjPaymentrequest.Amount = FinalAmountPayable;
-    //                                    lobjPaymentrequest.PackageId = PackageData.PackageId;
-    //                                    lobjPaymentrequest.DurationCode = PackageDetailsData.DurationCode;
-    //                                    lobjPaymentrequest.SessionId = lobjUserdetails.results.SessionId;
-    //                                    lobjPaymentrequest.MembershipReference = MembershipReference;
-    //                                    lobjPaymentrequest.CustomerName = lobjUserdetails.results.CustomerDetails.CustomerName;
-    //                                    break;
-    //                                case "Chitrawan Unique Net":
-    //                                    lobjPaymentrequest = new ISPPaymentRequest();
-    //                                    lobjPaymentrequest.ServiceCode = serviceCode;
-    //                                    lobjPaymentrequest.Amount = FinalAmountPayable;
-    //                                    lobjPaymentrequest.PackageId = PackageData.PackageId;
-    //                                    lobjPaymentrequest.SessionId = lobjUserdetails.results.SessionId;
-    //                                    lobjPaymentrequest.MembershipReference = MembershipReference;
-    //                                    lobjPaymentrequest.CustomerName = lobjUserdetails.results.CustomerDetails.CustomerName;
-    //                                    break;
-    //                            }
-    //                            lobjPaymentResponse = new ISPPaymentResponse();
-    //                            lobjPaymentResponse = lobjModel.ISPPaymentRequest(lobjPaymentrequest);
-    //                            if (lobjPaymentResponse != null)
-    //                            {
-    //                                if (lobjPaymentResponse.results.Status && lobjPaymentResponse.results.State == "Success")
-    //                                {
-    //                                    HttpContext.Current.Session["ISPBookingId"] = lobjPaymentResponse.results.Id;
-    //                                    lstrResponse = JsonConvert.SerializeObject(lobjPaymentResponse.results);
-    //                                    dynamic dynamicCls = new System.Dynamic.ExpandoObject();
-    //                                    dynamicCls.event_name = "ISP_Booked";
-    //                                    dynamicCls.relation_reference = Convert.ToString(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
-    //                                    dynamicCls.program_id = Convert.ToInt32(lobjMemberDetails.ProgramId); ;
-    //                                    dynamicCls.to_email = lobjMemberDetails.Email;
-    //                                    dynamicCls.full_name = lobjMemberDetails.FullName;
-    //                                    dynamicCls.serviceName = lobjUserdetails.results.Key;
-    //                                    dynamicCls.CustomerName = lobjUserdetails.results.CustomerDetails.CustomerName;
-    //                                    dynamicCls.ReferenceId = lobjPaymentResponse.results.ReferenceId;
-    //                                    //dynamicCls.CreditsConsumed = lobjModel.FloatToThousandSeperated(lobjModel.CalculatePointstoAmount(decimal.Parse(FinalAmountPayable.ToString()), Pointrate)) + " NPR";
-    //                                    dynamicCls.Points = lobjModel.FloatToThousandSeperated(float.Parse(FinalAmountPayable.ToString())) + " Points";
-    //                                    dynamicCls.TransactionDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt");
-    //                                    dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
-    //                                    Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
-    //                                    IDictionary<string, object> dict = (IDictionary<string, object>)dynamicCls;
-    //                                    foreach (var key in dict)
-    //                                    {
-    //                                        lobjDictionary.Add(key.Key, key.Value);
-    //                                    }
-    //                                    string jsonParameters = JsonConvert.SerializeObject(lobjDictionary);
-    //                                    lobjModel.SendEmails(jsonParameters, lobjMemberDetails);
-    //                                    lblnResult = true;
-    //                                }
-    //                                else
-    //                                {
-    //                                    LoggingAdapter.WriteLog("ISPPaymentRequest Failed; ErrorCode:-{0}", lobjPaymentResponse.results.ErrorCode);
-    //                                    lstrResponse = lobjPaymentResponse.results.Message;
-    //                                    LoggingAdapter.WriteLog("ISPPaymentRequest Rollback " + lstrRedeemResponse);
-    //                                    bool lboolRollBackResponse = lobjModel.RollBackTransaction(lstrRedeemResponse, lobjMemberDetails.MemberRelationsList.Find(lob => lob.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjInsuranceServiceProviders.results.Select(x => x.ServiceName).ToString());
-    //                                    LoggingAdapter.WriteLog("ISPPaymentRequest Rollback Success");
-    //                                    lblnResult = false;
-    //                                }
-    //                            }
-    //                            else
-    //                            {
-    //                                LoggingAdapter.WriteLog("ISPPaymentRequest Rollback " + lstrRedeemResponse);
-    //                                bool lboolRollBackResponse = lobjModel.RollBackTransaction(lstrRedeemResponse, lobjMemberDetails.MemberRelationsList.Find(lob => lob.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjInsuranceServiceProviders.results.Select(x => x.ServiceName).ToString());
-    //                                LoggingAdapter.WriteLog("ISPPaymentRequest Ex Rollback Success");
-    //                                lblnResult = false;
-    //                            }
-    //                        }
-    //                        catch (Exception ex)
-    //                        {
-    //                            LoggingAdapter.WriteLog("ISPPaymentRequest Ex- " + ex.StackTrace + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace);
-    //                            bool lboolRollBackResponse = lobjModel.RollBackTransaction(lstrRedeemResponse, lobjMemberDetails.MemberRelationsList.Find(lob => lob.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjInsuranceServiceProviders.results.Select(x => x.ServiceName).ToString());
-    //                            LoggingAdapter.WriteLog("ISPPaymentRequest Ex Rollback Success");
-    //                            lblnResult = false;
-    //                        }
-    //                    }
-    //                }
-    //                HttpContext.Current.Session["AvailablePoints"] = null;
-    //            }
-    //        }
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        LoggingAdapter.WriteLog("PointGateway.aspx BookForKhaltiISP Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
-    //        return false;
-    //    }
-    //    lobjModel.LogActivity("Booking ISP Status:" + lobjPaymentResponse.results.Status, ActivityType.InternetServiceProvider);
-    //    return lblnResult;
-    //}
     static string UppercaseFirst(string s)
     {
         if (string.IsNullOrEmpty(s))

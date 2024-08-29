@@ -75,7 +75,7 @@ namespace BeMyGuest.Implementor
             BookingResponse lobjResponse = null;
             try
             {
-                lobjResponse = JsonConvert.DeserializeObject<BookingResponse>(DataPostHelper.PostData(BeMyGuestConstants.ExperienceBooking, "POST", "bookings", JsonConvert.SerializeObject(bookingRequest), ExperienceUsername, ExperiencePassword));
+               lobjResponse = JsonConvert.DeserializeObject<BookingResponse>(DataPostHelper.PostData(BeMyGuestConstants.ExperienceBooking, "POST", "bookings", JsonConvert.SerializeObject(bookingRequest), ExperienceUsername, ExperiencePassword));
             }
             catch (Exception ex)
             {
@@ -96,6 +96,22 @@ namespace BeMyGuest.Implementor
                 LoggingAdapter.WriteLog("PostData - GetBookingInfoByUUID - Ex -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace + ex.InnerException);
             }
             return lobjResponse;
+        }
+
+       
+        public string GenerateQuery(string pstrQueryName, string pstrQueryType, string pstrSubSelection)
+        {
+            string query = string.Empty;
+            if (!string.IsNullOrEmpty(pstrSubSelection))
+            {
+                query = "query { " + pstrQueryName + " ( " + pstrQueryType + ":\"";
+                if (pstrSubSelection.Length > 0)
+                {
+                    query += pstrSubSelection.Replace("\"", "\\\"");
+                }
+                query += "\")}";
+            }
+            return query;
         }
 
     }

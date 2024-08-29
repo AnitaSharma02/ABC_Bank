@@ -100,10 +100,14 @@
                     data: "",
                     cache: false,
                     success: function (msg) {
-                        if (msg.d) {
-                            window.location = "ExperienceProductStatus.aspx?Success=true";
-                        } else {
-                            window.location = "ExperienceProductStatus.aspx?Success=false";
+                        //if (msg.d) {
+                        //    window.location = "ExperienceProductStatus.aspx?Success=true";
+                        //} else {
+                        //    window.location = "ExperienceProductStatus.aspx?Success=false";
+                        //}
+                        if (msg.d != null && msg.d != "") {
+
+                            window.location = msg.d;
                         }
                     },
                     error: function (errmsg) {

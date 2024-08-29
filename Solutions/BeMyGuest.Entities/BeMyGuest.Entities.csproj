@@ -72,10 +72,14 @@
     <Compile Include="Location.cs" />
     <Compile Include="Meta.cs" />
     <Compile Include="Options.cs" />
+    <Compile Include="OrderStatusRequest.cs" />
+    <Compile Include="OrderStatusResponse.cs" />
     <Compile Include="Pagination.cs" />
     <Compile Include="Paths.cs" />
     <Compile Include="PaymentDetailsModel.cs" />
     <Compile Include="Photo.cs" />
+    <Compile Include="PlaceOrderRequest.cs" />
+    <Compile Include="PlaceOrderResponse.cs" />
     <Compile Include="ProductInfo.cs" />
     <Compile Include="ProductInfoRequest.cs" />
     <Compile Include="ProductInfoResponse.cs" />

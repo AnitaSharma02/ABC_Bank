@@ -2455,8 +2455,6 @@ namespace ABC.Model
             }
             return lstrResponse;
         }
-
-
         public ProductInfoResponse GetProductInfo(ProductInfoRequest productInfoRequest)
         {
             ProductInfoResponse lstrResponse = null;
@@ -2561,49 +2559,7 @@ namespace ABC.Model
             return lintResponse;
         }
 
-        //public PlaceOrderResponse PlaceOrder(string pstrBookId)
-        //{
-        //    PlaceOrderResponse lobjResponse = null;
-        //    try
-        //    {
-        //        HolibobHelper lobjHelper = new HolibobHelper();
-        //        lobjResponse = lobjHelper.PlaceOrder(pstrBookId);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        LoggingAdapter.WriteLog("Model PlaceOrder Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-        //    }
-        //    return lobjResponse;
-        //}
-        //public ProductSearchResponse GetSearchList(string pstrSearchText)
-        //{
-        //    ProductSearchResponse lobjResponse = null;
-        //    try
-        //    {
-        //        HolibobHelper lobjHelper = new HolibobHelper();
-        //        lobjResponse = lobjHelper.GetSearchList(pstrSearchText);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        LoggingAdapter.WriteLog("Model GetSearchList Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-        //    }
-        //    return lobjResponse;
-        //}
-        //public SearchProductListResponse GetExperienceProductListByPlaceId(string pstrPlaceId, bool pblnIsPrivate, bool pblnIsNew, string pstrIsRecommended,
-        //    string pstrGuidePrice, string pstrSearch, List<string> plstCategoryIds, List<string> plstAttributeIds)
-        //{
-        //    SearchProductListResponse lobjResponse = null;
-        //    try
-        //    {
-        //        HolibobHelper lobjHelper = new HolibobHelper();
-        //        lobjResponse = lobjHelper.GetExperienceProductListByPlaceId(pstrPlaceId, pblnIsPrivate, pblnIsNew, pstrIsRecommended, pstrGuidePrice, pstrSearch, plstCategoryIds, plstAttributeIds);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        LoggingAdapter.WriteLog("Model GetExperienceProductListByPlaceId Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
-        //    }
-        //    return lobjResponse;
-        //}
+        
         public string LongToThousandSeperated(long pfltValue)
         {
             NumberFormatInfo nfo = new CultureInfo("en-US", false).NumberFormat;
