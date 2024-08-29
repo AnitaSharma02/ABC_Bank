@@ -429,86 +429,12 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                 bookingRequest.titleName = titleName;
 
                 ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
-                MemberDetails lobjMemberDetails = new MemberDetails();
-                lobjMemberDetails = lobjModel.GetMemberDetailsbyEmailId(lobjProgramDefinition.ProgramId, bookingRequest.customer.email, Convert.ToInt32(RelationType.LBMS));
-
-                if (lobjMemberDetails != null)
-                {
-                    //lobjItineraryDetails.TravelerInfo[0].Id = Convert.ToInt32(lobjMemberDetails.MemberRelationsList[0].RelationReference);
-                    bookingRequest.memberId = lobjMemberDetails.MemberRelationsList[0].RelationReference;
-                    //Session["MemberDetails"] = lobjMemberDetails;
-                }
-                else
-                {
-                    //insert in member api
-                    bool isSaved = false;
-                    InsertMemberRequest lobjInsertMemberRequest = new InsertMemberRequest();
-                    string relation_reference = GenerateUniqueNumber.Get16DigitNumberRandom();
-                    List<MemberRelationsList> memberlist = new List<MemberRelationsList>();
-                    MemberRelationsList memberdetails = new MemberRelationsList();
-                    memberdetails.RelationType = Convert.ToInt32(RelationType.LBMS);
-                    memberdetails.RelationReference = relation_reference;
-                    memberdetails.IsAccountActivated = true;
-                    memberdetails.Status = 1;
-                    memberlist.Add(memberdetails);
-                    lobjInsertMemberRequest.MemberRelationsList = memberlist;
-
-                    lobjInsertMemberRequest.LastName = bookingRequest.customer.firstName + " " + bookingRequest.customer.lastName;
-                    lobjInsertMemberRequest.Email = bookingRequest.customer.email;
-                    lobjInsertMemberRequest.MobileNumber = bookingRequest.customer.phone;
-                    lobjInsertMemberRequest.Nationality = Address;
-                    lobjInsertMemberRequest.Address1 = Address;
-                    string Membergender = string.Empty;
-                    if (bookingRequest.customer.salutation == "Mr")
-                    {
-                        Membergender = "M";
-                    }
-                    else if (bookingRequest.customer.salutation == "Ms" || bookingRequest.customer.salutation == "Mrs")
-                    {
-                        Membergender = "F";
-                    }
-                    lobjInsertMemberRequest.Gender = Membergender;
-                    lobjInsertMemberRequest.DOB = Convert.ToDateTime(DOB).ToString("yyyy-MM-dd");
-                    lobjInsertMemberRequest.ProgramId = lobjProgramDefinition.ProgramId;
-
-                    lobjInsertMemberRequest.PassportNumber = "";
-                    lobjInsertMemberRequest.MothersMaidenName = "";
-                    lobjInsertMemberRequest.NationalId = "";
-                    lobjInsertMemberRequest.CustomerSegment = "DEFAULT";
-                    lobjInsertMemberRequest.CustomerType = "DEFAULT";
-                    lobjInsertMemberRequest.CreatedBy = "SYSTEM";
-                    lobjInsertMemberRequest.PreferredLanguage = "EN";
-                    lobjInsertMemberRequest.AdditionalDetails = "";
-                    lobjInsertMemberRequest.AdditionalDetails1 = "";
-                    isSaved = lobjModel.CreateProfile(lobjInsertMemberRequest);
-                    if (isSaved)
-                    {
-                        bool lblStatus = false;
-                        //SearchMember lobjSearchMember = new SearchMember();
-                        //lobjSearchMember.UniquerefID = lobjMemberDetails.Email;
-                        //lobjSearchMember.ProgramId = lobjMemberDetails.ProgramId;
-                        //lobjSearchMember.RelationType = Convert.ToInt32(RelationType.LBMS);
-                        //lobjSearchMember.Password = "";
-                        //lblStatus = lobjModel.ActivateAccount(lobjSearchMember);
-                        // lobjMemberDetails = lobjModel.GetMemberDetailsbyEmailId(lobjProgramDefinition.ProgramId, lobjInsertMemberRequest.email_id, Convert.ToInt32(RelationType.LBMS));
-                        lobjMemberDetails = lobjModel.GetMemberDetailsbyEmailId(lobjProgramDefinition.ProgramId, bookingRequest.customer.email, Convert.ToInt32(RelationType.LBMS));
-                        if (lobjMemberDetails != null)
-                        {
-                            bookingRequest.memberId = lobjMemberDetails.MemberRelationsList[0].RelationReference;
-                        }
-                    }
-                    else
-                    {
-                        lobjModel.LogActivity("Create Itinerary : Failed", ActivityType.PackageBooking);
-                        redirectPGUrl = "ErrorPage.aspx";
-                    }
-
-                }
+                MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
                 if (lobjMemberDetails != null)
                 {
                     if (bookingRequest != null)
                     {
-
+                        bookingRequest.memberId = lobjMemberDetails.MemberRelationsList[0].RelationReference;
                         HttpContext.Current.Session["ExperienceBookingRequest"] = bookingRequest;
                         HttpContext.Current.Session["BookingFlag"] = "experience";
                         foreach (var perBookingItem in bookingRequest.options.perBooking)
@@ -566,7 +492,7 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                         lobjRedemptionDetails.Amount = lftAmount;
 
                         lobjListOfRedemptionDetails.Add(lobjRedemptionDetails);
-                        HttpContext.Current.Session["RedemptionDetails"] = lobjListOfRedemptionDetails;
+                        HttpContext.Current.Session["ExperienceRedemptionDetails"] = lobjListOfRedemptionDetails;
                         string lstrResponse = string.Empty;
                         if (ThreshouldValue <= lintTotalPoints && !ThreshouldValue.Equals(-1))
                         {
@@ -580,19 +506,6 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                             double dblProductAmount = 0.0f;
                             HttpContext.Current.Session["BookingFlag"] = "experience";
                             dblProductAmount = Convert.ToInt32(totalAmount);
-
-                            StripePaymentDetails lobjStripePaymentDetails = new StripePaymentDetails();
-                            lobjStripePaymentDetails.ReqRedeemPoint = "0";
-                            lobjStripePaymentDetails.TotalProductAmount = Convert.ToString(dblProductAmount);
-                            lobjStripePaymentDetails.PaymentType = PaymentType.Cash;
-                            int RemainingPoint = Convert.ToInt32(lobjStripePaymentDetails.TotalProductAmount) - Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint);
-
-                            double selectedPointAmount = lobjModel.CalculateAmount(Convert.ToInt32(lobjStripePaymentDetails.ReqRedeemPoint), PointRate);
-
-                            float RemainingAmount = (float)lobjModel.CalculateAmount(Convert.ToInt32(RemainingPoint), PointRate);
-                            lobjStripePaymentDetails.ReqRedeemAmount = RemainingAmount.ToString();
-                            lobjStripePaymentDetails.ReqRedeemPointAmount = selectedPointAmount.ToString();
-                            HttpContext.Current.Session["StripePaymentDetails"] = lobjStripePaymentDetails;
 
                             string FullName = bookingRequest.customer.firstName + " " + bookingRequest.customer.lastName;
                             //  Status = lobjModel.SendOTPEmailAndSMS(bookingRequest.customer.email, bookingRequest.customer.phone, bookingRequest.memberId.ToString(), FullName, "redemption_otp", lobjOTPDetails, "Experiences");
@@ -608,14 +521,13 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                                 lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "Package", lobjRedemptionDetails.RelationReference, "Failed"), ActivityType.ReviewConfirmOTPFailed);
                                 lstrResponse = "BookingFailure.aspx";
                                 redirectPGUrl = "BookingFailure.aspx";
-
                             }
                         }
                         else
                         {
                             lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "Package", lobjRedemptionDetails.RelationReference, "Failed"), ActivityType.ReviewConfirmOTPFailed);
-                            lstrResponse = "BookingFailure.aspx";
-                            redirectPGUrl = "BookingFailure.aspx";
+                            lstrResponse = "PointGateway.aspx";
+                            redirectPGUrl = "PointGateway.aspx?flag=Package";
                         }
                         lobjModel.LogActivity(string.Format("ExperienceProductBookingDetails;  BookNow click; TotalAmount-:{0};Response-:{1};", totalAmount, lstrResponse), ActivityType.PackageBooking);
 
