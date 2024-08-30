@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-    <div class="container mt-3" dir="ltr" style="direction: ltr;">
+    <div class="container mt-3">
         <div class="row">
             <div class="col-12 ">
                 <div class="bg-light" style="margin-bottom: 50px;">

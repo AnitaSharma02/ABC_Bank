@@ -71,8 +71,8 @@ public partial class Shop : Page
                     {
                         var idName = offers[offers.Count - 1] == "Featured Offers" ? "featured_offers" : "top_offerBox";
                         sb.Append("<div class=\"" + idName + " dvBg" + index + "\">");
-                        sb.Append("<div class=\"container- shop-\" dir=\"ltr\" style=\"direction: ltr;\">");
-                        sb.Append("<div class=\"container\">");
+                        sb.Append("<div class=\"\">");
+                        sb.Append("<div class=\"container-xl\">");
                         sb.Append("<div id=\"div_" + idName + "\" class=\"OfferNICk " + idName + "\">");
                         Terms.Add("Tags:" + offers[0]);
                         ProductSearchCriteria searchCriteria = model.BuildProductSearchCriteria("", null, ItemResponseGroup.ItemWithPrices, 0, 0, "", null, 0, 6, Terms);

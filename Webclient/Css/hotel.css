@@ -3,9 +3,6 @@
 .dvHotelSearch .dvForm .searchBtn .custom-width {
     width: 100% !important;
 }
-.dvHotelProductList .img-container {
-    padding-bottom: 73%;
-}
 .dvHotelProductList .dvicon img {
     display: inline;
 }
@@ -70,6 +67,8 @@
     padding-left:1rem;
 }
 /*=========[ HOTELDETAILS PAGE ]=========*/
+
+
 /*=========[ HOTELBOOKINGDETAILS PAGE ]=========*/
 .dvHotelBookingDetails a {
     text-decoration:underline;
@@ -77,9 +76,9 @@
 .dvHotelBookingDetails .bg {
     background-color: var(--bg-colour1);
 }
-.dvSimilarListing .img-container {
-    padding-bottom: 60%;
-}
+/*=========[ HOTELBOOKINGDETAILS PAGE ]=========*/
+
+
 /*=========[ PLUS MINUS HOTEL FORM ]=========*/
 .qtySelector {position:relative}
 .qtySelector .special-text {

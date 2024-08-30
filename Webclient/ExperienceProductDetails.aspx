@@ -27,12 +27,12 @@
     <div class="dvExperienceProductDetails pb-5" id="dvProductDetails">
         <div class="container-xl">
             <div class="row">
-                <div class="dvInformation col-lg-5">
+                <div class="dvInformation col-lg-4">
                     <div id="swiperHtml"></div>
                 </div>
 
-
-                <div class="dvForm col-lg-7">
+                <div class="dvForm col-lg-8">
+                    <div id="swiperHeadingHtml"></div>
                     <div class="row">
                         <div class="col-12">
                             <h2 class="heading6 text-colour7 mb-3">Product types</h2>
@@ -88,7 +88,6 @@
                         </div>
                     </div>
                 </div>
-
                 
                 <div id="Errordiv"></div>
             </div>
@@ -159,6 +158,7 @@
         function fnBindExperienceProductInfo(data) {
             var html = '';
             var swiperHtml = '';
+            var swiperHeadingHtml = '';
             var highlightsHtml = '';
             var descriptionHtml = '';
             var addressHtml = '';
@@ -167,16 +167,17 @@
                 if (parseData.data != null) {
                     $("#Errordiv").show();
                     swiperHtml += '<div class="row">';
-                    swiperHtml += '<div class="scroll-ver col-12">';
-                    swiperHtml += '<div class="row">';
                     swiperHtml += '<div class="col-12">';
-                    swiperHtml += '<p class="heading6">' + parseData.data.locations[0].city + ',' + parseData.data.locations[0].country + '</p>';
-                    swiperHtml += '<p class="heading6">' + parseData.data.title + '</p>';
-                    swiperHtml += '</div>';
-                    swiperHtml += '</div>';
-                    swiperHtml += '<div class="row mt-3">';
+                    swiperHeadingHtml += '<div class="row mt-3">';
+                    swiperHeadingHtml += '<div class="col-12">';
+                    swiperHeadingHtml += '<p class="heading6">' + parseData.data.locations[0].city + ',' + parseData.data.locations[0].country + '</p>';
+                    swiperHeadingHtml += '<p class="heading6">' + parseData.data.title + '</p>';
+                    swiperHeadingHtml += '</div>';
+                    swiperHeadingHtml += '</div>';
+                    $("#swiperHeadingHtml").append(swiperHeadingHtml);
+                    swiperHtml += '<div class="row">';
                     swiperHtml += '<div class="dvThumbSwiperSlider col-lg-12 col-xl-12">';
-                    swiperHtml += '<div class="bg-colour3 p-3">';
+                    swiperHtml += '<div class="border p-3">';
                     swiperHtml += '<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper dvThumbBannerSlide">';
                     swiperHtml += '<div class="swiper-wrapper">';
                     for (var i = 0; i < parseData.data.photos.length; i++) {

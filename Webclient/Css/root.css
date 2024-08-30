@@ -171,7 +171,7 @@
     --heading-extrablack: var(--font-extrablack);
 
     /* BORDER RADIUS */
-    --b-radius: 1rem;
+    --b-radius: 0;
 
     /* BORDERS */
     --border-colour: var(--colour3);
@@ -473,6 +473,10 @@
     --filter-desktop-accordion-padding: 0.75rem 1rem;
 
     /* COMMON MODAL */
+    /*scrollbar style*/
+    --modal-scrollbar-width: 3px;
+    --modal-scrollbar-track-bg: #f1f1f1;
+    --modal-scrollbar-thumb-bg: var(--colour1);
     /*border-radius*/
     --modal-b-radius: var(--b-radius);
 
@@ -483,7 +487,7 @@
     --modal-header-border-bottom: none;
 
     /*modal-title*/
-    --modal-title-font-family: var(--heading-bold); 
+    --modal-title-font-family: var(--heading-semibold); 
     --modal-title-text-colour: var(--colour6);
     --modal-title-fontsize: 1rem;
 
@@ -599,6 +603,11 @@
     --denomination-btn-border: 1px solid var(--border-colour);
     --denomination-btn-border-radius: var(--b-radius);
 
+    /*TABS SCROLLBAR FOR TABS 1 AND TABS 2*/
+    --tab-scrollbar-height: 3px;
+    --tab-scrollbar-track-bg: #f1f1f1;
+    --tab-scrollbar-thumb-bg: var(--colour1);
+
     /*TABS*/
     --tab-bg-colour:transparent;
     --tab-text-colour:var(--body-text-colour);
@@ -607,6 +616,7 @@
     --tab-border-colour: var(--border-colour);
     --tab-active-border-colour:var(--colour1);
     --tab-border-radius: var(--b-radius);
+    --tab-margin: 0 .875rem 0 0;
 
     /*TABS PILLS*/
     --pills-bg-colour:transparent;
@@ -657,6 +667,7 @@
     --img-container-padding-bottom: 100%;
     --img-container-position: relative;
     --img-container-overflow: hidden;
+    --img-container-bg-colour: #ddd;
 
     /*image container img*/
     --img-container-img-width: 100% !important;

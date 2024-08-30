@@ -737,7 +737,7 @@
                                     <div class="dvItem">
                                         <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorSIN">
                                             <div class="img-container">
-                                                <img class="w-100" src="Images/flightpage/flight-img1.jpg" style="cursor: pointer;" />
+                                                <img src="Images/flightpage/flight-img1.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
                                         <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-sg">Singapore</h2>
@@ -755,7 +755,7 @@
                                         <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorBKK">
 
                                             <div class="img-container">
-                                                <img class="w-100" src="Images/flightpage/flight-img2.jpg" style="cursor: pointer;" />
+                                                <img src="Images/flightpage/flight-img2.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
 
@@ -775,7 +775,7 @@
                                     <div class="dvItem">
                                         <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorPAR">
                                             <div class="img-container">
-                                                <img class="w-100" src="Images/flightpage/flight-img3.jpg" style="cursor: pointer;" />
+                                                <img src="Images/flightpage/flight-img3.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
                                         <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-pa">Paris</h2>
@@ -794,7 +794,7 @@
                                         <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorCHC">
 
                                             <div class="img-container">
-                                                <img class="w-100" src="Images/flightpage/flight-img4.jpg" style="cursor: pointer;" />
+                                                <img src="Images/flightpage/flight-img4.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
 
@@ -814,7 +814,7 @@
                                     <div class="dvItem">
                                         <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorLHR">
                                             <div class="img-container">
-                                                <img class="w-100" src="Images/flightpage/flight-img5.jpg" style="cursor: pointer;" />
+                                                <img src="Images/flightpage/flight-img5.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
                                         <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-ln">London</h2>
@@ -832,7 +832,7 @@
                                     <div class="dvItem">
                                         <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorDXB">
                                             <div class="img-container">
-                                                <img class="w-100" src="Images/flightpage/flight-img6.jpg" style="cursor: pointer;" />
+                                                <img src="Images/flightpage/flight-img6.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
                                         <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-db">Dubai</h2>
@@ -848,7 +848,7 @@
                                     <div class="dvItem">
                                         <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorZRH">
                                             <div class="img-container">
-                                                <img class="w-100" src="Images/flightpage/flight-img7.jpg" style="cursor: pointer;" />
+                                                <img src="Images/flightpage/flight-img7.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
                                         <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-zu">Zurich</h2>
@@ -864,7 +864,7 @@
                                     <div class="dvItem">
                                         <a class="anchor" href="#flightScrollupAnchor" rel="" id="anchorGOI">
                                             <div class="img-container">
-                                                <img class="w-100" src="Images/flightpage/flight-img8.jpg" style="cursor: pointer;" />
+                                                <img src="Images/flightpage/flight-img8.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
                                         <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-go">Goa</h2>

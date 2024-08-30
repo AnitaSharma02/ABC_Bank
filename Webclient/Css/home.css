@@ -33,9 +33,7 @@
 .dvVouchers {
     background-color: var(--bg-colour1);
 }
-/*.dvVouchers .dvVoucherSlider .img-container img{
-    object-fit:contain;
-}*/
+
 .dvShopDeals {
     background-color: var(--bg-colour3);
 }
@@ -87,9 +85,6 @@
 .dvTravel {
     background-color: var(--bg-section);
 }
-.dvTravel .img-container {
-  padding-bottom: 60%;
-}
 /*=========[ TRAVEL ON HOMEPAGE ]=========*/
 
 /*=========[ EARN ON HOMEPAGE ]=========*/
@@ -119,6 +114,14 @@
 }
 
 @media (min-width: 768px) {
+    .dvRewards .img-container {
+        display: none;
+    }
+
+    .dvRewards .bg-image {
+        background: url('/Images/homepage/reward-section/rewards.jpg') no-repeat top right;
+        background-size: contain;
+    }
     .dvRedemptionLinks .icon {
         width: 30px;
     }
@@ -131,13 +134,6 @@
 }
 
 @media (min-width: 992px) {
-    .dvRewards .img-container {
-        display:none;
-    }
-    .dvRewards .bg-image {
-        background:url('/Images/homepage/reward-section/rewards.jpg') no-repeat top right;
-        background-size:contain;
-    }
     .dvRedemptionLinks .icon {
         width: auto;
     }

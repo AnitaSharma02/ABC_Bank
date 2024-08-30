@@ -22,7 +22,7 @@
         </nav>
     </div>
 </div>
-<div class="dvShopCheckout pb-5 mt-lg-4" dir="ltr" style="direction: ltr;">
+<div class="dvShopCheckout pb-5 mt-lg-4">
         <div class="container-xl">
             <div class="row">
                  <div class="col-lg-7">

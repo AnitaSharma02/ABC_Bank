@@ -26,7 +26,7 @@ function BindNextHotel() {
             var HotelList = '';
             HotelList += '<div class="row">'
             for (icount = 0; icount < HotelNextList.length; icount++) {
-                HotelList += '<div class="dvProductCard col-6 col-md-4 mb-4"><div class="dvItem"><a class="anchor" onclick="return getHotelDetails(' + HotelNextList[icount].hotelid + ')"><div class="img-container"><img onError="this.onerror=null;this.src=&quot;images/no-image.png&quot;" src="' + HotelNextList[icount].basicinfo.thumbnailimage + '" /></div><h2>' + HotelNextList[icount].basicinfo.hotelname + '</h2><div class="d-flex flex-wrap justify-content-between"><p class="points">' + HotelNextList[icount].roomrates.RoomRate[0].ratebreakdown.rate[0].RatePoint + ' Points </p><p class="points"></p></div><div class="rating mb-3 mx-3">'
+                HotelList += '<div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4"><div class="dvItem"><a class="anchor" onclick="return getHotelDetails(' + HotelNextList[icount].hotelid + ')"><div class="img-container"><img onError="this.onerror=null;this.src=&quot;images/no-image.png&quot;" src="' + HotelNextList[icount].basicinfo.thumbnailimage + '" /></div><h2 class="px-3 pt-3 pb-2">' + HotelNextList[icount].basicinfo.hotelname + '</h2><div class="d-flex flex-wrap justify-content-between px-3 pb-3"><p class="points">' + HotelNextList[icount].roomrates.RoomRate[0].ratebreakdown.rate[0].RatePoint + ' Points </p><p class="points"></p></div><div class="rating px-3 mb-3">'
                     for (irating = 0; irating < parseInt(HotelNextList[icount].basicinfo.starrating); irating++) {
                         HotelList += '<img class="mr-1" src="Images/icons/other/star-fill.svg">';
                     }

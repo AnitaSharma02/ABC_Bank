@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <div class="dvProductList pb-5" dir="ltr" style="direction: ltr;">
+    <div class="dvProductList pb-5">
         <div class="container-xl">
             <div class="row">
                 <div class="dvFilter modal fade col-lg-3" id="dvFilterModal" tabindex="-1">

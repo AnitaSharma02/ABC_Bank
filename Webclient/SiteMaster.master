@@ -175,44 +175,7 @@
             } catch (e) {
             }
         }
-        // check url and apply classnames for different redemptions
-        $(document).ready(function () {
-            function getUrlParam(param) {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(param);
-            }
-            function addClassBasedOnUrl() {
-                const type = getUrlParam('type');
-                const productType = getUrlParam('ProductType');
-                if (type === 'Giftcards') {
-                    $('.dvProductList ').addClass('dvGiftCardsPage');
-                }
-                else if (type === 'Lounges') {
-                    $('.dvProductList ').addClass('dvLoungesPage');
-                }
-                else if (type === 'MilesExchange') {
-                    $('.dvProductList ').addClass('dvMilesExchangePage');
-                }
-                else if (type === 'Offers') {
-                    $('.dvShopPage').addClass('dvOffersPage');
-                }
-                else if (type === 'utility') {
-                    $('.dvProductList ').addClass('dvUtilityPage');
-                }
-                else if (productType === 'Physical' && type === 'Shop') {
-                    $('.dvShopPage ').addClass('dvShopOfferPage');
-                }
-                else if (productType === 'Physical') {
-                    $('.dvProductList ').addClass('dvShopListPage');
-                }
-                else {
-                    return null;
-                }
-            }
-            setTimeout(() => {
-                addClassBasedOnUrl();
-            },1000)
-        });
+        
     </script>
 </head>
 <body>

@@ -662,15 +662,7 @@ p {
 }
 /*=========[ FOOTER ]=========*/
 
-/*=========[ Flight Search ]=========*/
-.dvFlightPassenger .border {
-    border: 1px solid #efeff0 !important;
-}
 
-.dvFlightSearchProducts .img-container {
-    padding-bottom: 73%;
-}
-/*=========[ Flight Search ]=========*/
 
 /*=========[ Login Forms ]=========*/
 .dvLoginBoxbg .innerBox {
@@ -725,17 +717,17 @@ p {
     padding-bottom: var(--img-container-padding-bottom);
     position: var(--img-container-position);
     overflow: var(--img-container-overflow);
+    background-color: var(--img-container-bg-colour);
 }
-
-    .img-container img {
-        width: var(--img-container-img-width);
-        height: var(--img-container-img-height);
-        object-fit: var(--img-container-img-object-fit);
-        object-position: var(--img-container-img-object-position);
-        position: var(--img-container-img-position);
-        top: var(--img-container-img-top);
-        left: var(--img-container-img-left);
-    }
+.img-container img {
+    width: var(--img-container-img-width);
+    height: var(--img-container-img-height);
+    object-fit: var(--img-container-img-object-fit);
+    object-position: var(--img-container-img-object-position);
+    position: var(--img-container-img-position);
+    top: var(--img-container-img-top);
+    left: var(--img-container-img-left);
+}
 /*=========[ IMAGE FIX ]=========*/
 
 /*=========[ RATINGS ]=========*/
@@ -843,15 +835,85 @@ p {
 .dvThumbSwiperSlider .swiper-wrapper {
     height: auto;
 }
-
-.dvThumbSwiperSlider .dvThumbBannerSlide .img-container {
-    padding-bottom: 60%;
-}
-
 .dvThumbSwiperSlider .dvThumbSlide .img-container {
-    padding-bottom: 15%;
+    padding-bottom: 15%;*/
 /*    margin-top:15px;*/
 }
+.dvThumbSwiperSlider .dvThumbBannerSlide{
+    border: 1px solid var(--border-colour);
+}
+/* swiper css*/
+/*.dvThumbSwiperSlider .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.dvThumbSwiperSlider .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.dvThumbSwiperSlider .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dvThumbSwiperSlider .swiper {
+    width: 100%;*/
+    /*height: 300px;*/
+    /*margin-left: auto;
+    margin-right: auto;
+}
+
+.dvThumbSwiperSlider .mySwiper2 {*/
+    /*height: 50%;*/
+    /*height: auto;
+    width: 100%;
+}
+
+.dvThumbSwiperSlider .mySwiper {*/
+    /*height: 12%;*/
+    /*height: auto;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.dvThumbSwiperSlider .mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.dvThumbSwiperSlider .mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}*/
+
+/* adjust arrows right & left */
+/*.dvThumbSwiperSlider .swiper-button-prev,
+.dvThumbSwiperSlider .swiper-rtl .swiper-button-next {
+    left: var(--swiper-navigation-sides-offset, 10px);
+    right: auto;
+}
+
+.dvThumbSwiperSlider .swiper-button-next,
+.dvThumbSwiperSlider .swiper-rtl .swiper-button-prev {
+    right: var(--swiper-navigation-sides-offset, 10px);
+    left: auto;
+}*/
+
+/* adjust arrows width size */
+/*.dvThumbSwiperSlider .swiper-button-prev img,
+.dvThumbSwiperSlider .swiper-button-next img {
+    width: 25px;
+}*/
 /*=========[ SWIPER THUMBSLIDER ]=========*/
 
 /*=========[ BOOTSTRAP PAGINATION ]=========*/
@@ -1005,6 +1067,20 @@ p {
 }
 /*=========[ BUTTONS ]=========*/
 
+
+
+/*=========[ TABS SCROLLBAR FOR TABS 1 & TABS 2 ]=========*/
+.dvTabs ::-webkit-scrollbar {
+    height: var(--tab-scrollbar-height);
+}
+.dvTabs ::-webkit-scrollbar-track {
+    background: var(--tab-scrollbar-track-bg);
+}
+.dvTabs ::-webkit-scrollbar-thumb {
+    background: var(--tab-scrollbar-thumb-bg);
+}
+/*=========[ TABS SCROLLBAR FOR TABS 1 & TABS 2 ]=========*/
+
 /*=========[ TABS 1 ]=========*/
 .dvTabs .nav-tabs .nav-link {
     border: 1px solid var(--tab-border-colour);
@@ -1017,6 +1093,9 @@ p {
     background-color: var(--tab-active-bg-colour);
     color: var(--tab-active-text-colour);
     border: 1px solid var(--tab-active-border-colour);
+}
+.dvTabs .nav-tabs .nav-link {
+    margin: var(--tab-margin);
 }
 /*=========[ TABS 1 ]=========*/
 
@@ -1940,6 +2019,17 @@ select.form-control:focus {
     border-top: var(--modal-footer-border-top);
     padding: var(--modal-footer-padding);
 }
+.dvCommonModal.modal ::-webkit-scrollbar {
+    width: var(--modal-scrollbar-width);
+}
+
+.dvCommonModal.modal ::-webkit-scrollbar-track {
+    background: var(--modal-scrollbar-track-bg);
+}
+
+.dvCommonModal.modal ::-webkit-scrollbar-thumb {
+    background: var(--modal-scrollbar-thumb-bg);
+}
 /*=========[ COMMON MODAL ]=========*/
 
 /*=========[ PRODUCT CARD MODAL ]=========*/
@@ -2067,49 +2157,22 @@ select.form-control:focus {
 
 
 
-/*=========[ DIFFERENT CLASS NAMES FOR DIFFERENT REDEMPTIONS ]=========*/
-.dvMilesExchangePage .img-container img,
-.dvUtilityPage .img-container img {
-    object-fit: contain;
+/*=========[ DIFFERENT CLASS NAMES FOR PRODUCTLIST PAGES & PRODUCTDETAIL PAGES ]=========*/
+.dvListPageGiftCards .img-container img,
+.dvListPageShopOffers .img-container img,
+/*.dvListPageLounges .img-container img,*/
+.dvListPageMilesExchange .img-container img,
+.dvListPageOffers .img-container img,
+.dvListPageUtility .img-container img,
+.dvListPageShopOffers .img-container img,
+.dvListPageShopList .img-container img,
+.dvProductDetailMilesExchange .img-container img,
+/*.dvProductDetailLounges .img-container img,*/
+.dvProductDetailGiftcards .img-container img,
+.dvProductDetailShop .img-container img{
+    object-fit:contain;
 }
-
-.dvMilesExchangeDigital .img-container img, .dvGiftcardsDigital .img-container img {
-    object-fit: contain;
-}
-/*airtime productlist page*/
-.dvAirtimePage .img-container {
-    text-align: center;
-    height: auto;
-    /*padding-bottom: 0 !important;*/
-    padding: 2rem 0 2rem 0 !important;
-}
-
-    .dvAirtimePage .img-container img {
-        height: auto;
-        width: auto !important;
-        position: static;
-    }
-/*airtime productlist page*/
-
-/*airtime productdetail page*/
-/*.dvAirtimeDigital .dvThumbSwiperSlider .swiper-slide img {
-    object-fit: contain;
-}*/
-
-.dvAirtimeDigital .dvThumbSwiperSlider .swiper-slide.img-container {
-    text-align: center;
-    height: auto;
-    /*padding-bottom: 0 !important;*/
-    padding: 5rem 0 5rem 0 !important;
-}
-
-.dvAirtimeDigital .dvThumbSwiperSlider .swiper-slide img {
-    height: auto;
-    width: auto !important;
-    position: static;
-}
-/*airtime productdetail page*/
-/*=========[ DIFFERENT CLASS NAMES FOR DIFFERENT REDEMPTIONS ]=========*/
+/*=========[ DIFFERENT CLASS NAMES FOR PRODUCTLIST PAGES & PRODUCTDETAIL PAGES ]=========*/
 
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
 .dvRedemptionMenu a .imageBox {
@@ -2251,8 +2314,8 @@ select.form-control:focus {
     border-radius: var(--hp-card-img-container-border-radius);
 }
 
-    .dvHotelProductCard .dvProductCard .img-container img {
-    }
+.dvHotelProductCard .dvProductCard .img-container img {
+}
 
 .dvHotelProductCard h2 {
     font-family: var(--hp-card-h2-family);

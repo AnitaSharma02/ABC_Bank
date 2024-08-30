@@ -68,6 +68,11 @@
             //just mention your id and the div className
             //initAutocomplete(".pageParentClass #id", "pageParentClass .className");
             initAutocomplete(".dvShopMenu .dvSearch #txtProductName", ".dvShopMenu .dvSearch .dvTxtProductName");
+
+
+            setTimeout(() => {
+                addClassBasedOnUrl();
+            }, 1000)
         });
         function Confirmsignout() {
             $('.hover_app_info').show();
@@ -132,10 +137,73 @@
                 return false;
             });
         });
+
+
+        // check url and apply classnames for different redemptions
+        
+            function getUrlParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+            function addClassBasedOnUrl() {
+                const type = getUrlParam('type');
+                const productType = getUrlParam('ProductType');
+                const breadcrumbItems = document.querySelectorAll('.dvBreadcrumbs .breadcrumb');
+                let breadcrumbItem = "";
+                breadcrumbItems.forEach(item => {
+                    let anchors = item.querySelectorAll('a');
+                    if (anchors.length > 1) {
+                        //console.log(anchors[2].innerText); // Log the inner text of the second anchor
+                        breadcrumbItem += anchors[2].innerText + " ";
+                    }
+                });
+                breadcrumbItem = breadcrumbItem.trim();
+                if (type === 'Giftcards') {
+                    $('.dvProductList ').addClass('dvListPageGiftCards');
+                }
+                else if (productType === 'Physical') {
+                    $('.dvShopPage ').addClass('dvListPageShopOffers');
+                }
+                else if (type === 'Lounges') {
+                    $('.dvProductList ').addClass('dvListPageLounges');
+                }
+                else if (type === 'MilesExchange') {
+                    $('.dvProductList ').addClass('dvListPageMilesExchange');
+                }
+                else if (type === 'Offers') {
+                    $('.dvShopPage').addClass('dvListPageOffers');
+                }
+                else if (type === 'utility') {
+                    $('.dvProductList ').addClass('dvListPageUtility');
+                }
+                else if (productType === 'Physical' && type === 'Shop') {
+                    $('.dvShopPage ').addClass('dvListPageShopOffers');
+                }
+                else if (productType === 'Physical') {
+                    $('.dvProductList ').addClass('dvListPageShopList');
+                }
+                /*productdetail pages*/
+                else if (productType === 'digital' && breadcrumbItem === 'MilesExchange') {
+                    $('.dvProductDetail').addClass('dvProductDetailMilesExchange');
+                }
+                else if (productType === 'digital' && breadcrumbItem === 'Lounges') {
+                    $('.dvProductDetail').addClass('dvProductDetailLounges');
+                }
+                else if (productType === 'digital' && breadcrumbItem === 'Giftcards') {
+                    $('.dvProductDetail').addClass('dvProductDetailGiftcards');
+                }
+                else if (productType === 'physical' && breadcrumbItem === 'Shop') {
+                    $('.dvProductDetail').addClass('dvProductDetailShop');
+                }
+                else {
+                    return null;
+                }
+            }
+           
         
     </script>
     <div class="dvShopMenu">
-        <div class="container-xl" dir="ltr" style="direction: ltr;" id="divShopMenuBar" runat="server">
+        <div class="container-xl" id="divShopMenuBar" runat="server">
             <nav class="navbar navbar-expand-lg navbar-light px-0 mx-n3">
                 <div class="col-auto d-lg-none order-lg-0">
                     <button class="navbar-toggler px-1" type="button" data-toggle="collapse" data-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -167,7 +235,7 @@
 
     <%--<div class="dvShopMenu">
         <div class="container-xl">
-            <div dir="ltr" style="direction: ltr;" id="divShopMenuBar" runat="server">
+            <div id="divShopMenuBar" runat="server">
                 <nav class="navbar navbar-expand-lg navbar-light px-0 mx-n3">
                     <div class="col-2 d-lg-none order-lg-0">
                         <button class="navbar-toggler px-1" type="button" data-toggle="collapse" data-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>

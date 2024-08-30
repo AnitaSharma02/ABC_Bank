@@ -1,4 +1,4 @@
-/*=========[ SHOP Page ]=========*/
+/*=========[ SHOP.aspx Page ]=========*/
 .dvShopPage .dvBg1 {
     background-color: var(--bg-colour2);
     padding: 1rem 0;
@@ -6,68 +6,87 @@
 .dvShopPage .dvBg0 {
     padding: 1rem 0;
 }
-/*=========[ SHOP Page ]=========*/
+/*=========[ SHOP.aspx Page ]=========*/
 
 
 
-/*=========[ SHOP Product Details ]=========*/
-.dvThumbSwiperSlider .mySwiper2 { 
-    border: 1px solid #ccc;
-    padding: 12px;
-    border-radius: 0px;
-}
-.dvThumbSwiperSlider .swiper-slide img { 
-    border-radius: 0px;
-}
-.dvProductInfo #CP_CPSHOP_divspanpoints {
-    width: 150px;
-    padding: 8px;
-    background-color: var(--bg-colour2);
-}
-.dvProductDetail .dvThumbSwiperSlider #CP_CPSHOP_divThumbnailImages .img-container {
-    padding-bottom: 25%;
-    border: 1px solid #ccc; 
-    border-radius: 0px;
-}
-.dvVouchersPopup #divDynamicContent button.btn {
-    background-color: transparent;
-    border: 1px solid transparent;
-}
+/*=========[ Product Details ]=========*/
 
+/*description tab menu on productdetail page*/
 .dvProductDetail .dvDetails ul {
     padding-left: 1rem;
 }
-
 .dvProductDetail .dvDetails li {
     margin-bottom: .75rem;
 }
-
 .dvProductDetail .dvDetails ul li strong {
     font-family: var(--heading-semibold);
 }
+/*description tab menu on productdetail page*/
 
-/*Giftcard,lounges, etc. Userdetails Modal Popup*/
-.dvProductDetail .dvVouchersPopup .form-group {
-    margin-bottom: 0;
+/* Userdetails Modal Popup for all*/
+.dvVouchersPopup fieldset {
+    max-height: 350px;
+    overflow-x:hidden;
+    margin-top: 3rem;
+    padding-right: 1rem;
+    margin-right: -1rem;
+}
+.dvVouchersPopup label {
+    font-family: var(--label-family);
+    font-size: var(--label-fontsize);
+    color: var(--label-text-colour);
+    margin-bottom: var(--label-margin-bottom);
+}
+.dvVouchersPopup .form-control {
+    color: var(--fc-text-colour);
+    font-size: var(--fc-font-size);
+    border-top: var(--fc-border-top);
+    border-right: var(--fc-border-right);
+    border-bottom: var(--fc-border-bottom);
+    border-left: var(--fc-border-left);
+    border-top-left-radius: var(--fc-radius-top-left) !important;
+    border-bottom-left-radius: var(--fc-radius-bottom-left) !important;
+    border-top-right-radius: var(--fc-radius-top-right) !important;
+    border-bottom-right-radius: var(--fc-radius-bottom-right) !important;
+    background-color: var(--fc-bg-colour);
+}
+.dvVouchersPopup .form-group legend {
+    color: var(--modal-title-text-colour);
+    font-family: var(--modal-title-font-family);
+    position: absolute;
     width: 100%;
+    top: 0%;
+    left: 0%;
+    padding: .65rem 1rem;
+    background-color: var(--modal-header-bg-colour);
+    font-size: 1.25rem;
 }
-
-.dvProductDetail .dvVouchersPopup .form-group .help-block strong {
+.dvVouchersPopup .close {
+    z-index: 99999;
+    position: absolute;
+    right: 1rem;
+    top: .75rem;
+    color: var(--modal-close-icon-text-colour);
+    opacity: var(--modal-close-btn-opacity);
+}
+.dvVouchersPopup .close i {
+    font-size: 1.1rem;
+}
+.dvVouchersPopup .btn.btn-default {
+    display: none;
+}
+.dvVouchersPopup .help-block strong {
     font-size: .875rem;
+    font-weight:normal;
 }
+/* Userdetails Modal Popup for all*/
+/*=========[ Product Details ]=========*/
 
-.dvProductDetail .dvVouchersPopup label {
-    font-size: 0.75rem;
-    font-family: var(--heading-semibold);
-}
-.dvProductDetail .dvProductInfo .dvAddToCart .form-control:disabled, 
+.dvProductDetail .dvProductInfo .dvAddToCart .form-control:disabled,
 .dvProductDetail .dvProductInfo .dvAddToCart .form-control[readonly] {
-    background:var(--colour6)
+    background: var(--colour6)
 }
-/*Giftcard,lounges, etc. Userdetails Modal Popup*/
-/*=========[ SHOP Product Details ]=========*/
-
-
 
 /*=========[ SHOP List ]=========*/
 .dvProductList .dvFilter.modal .accordion .card-header,
@@ -77,9 +96,9 @@
 .dvProductList .dvFilter.modal .accordion .card {
     border-bottom: 1px solid transparent;
 }
-.dvProductList .dvProducts .img-container {
+/*.dvProductList .dvProducts .img-container {
     padding-bottom: 80%;
-}
+}*/
 /*=========[ SHOP List]=========*/
 
 
@@ -91,7 +110,7 @@
 
 
 /*=========[ SHOP Checkout]=========*/
-.dvShopCheckout .bg {
+/*.dvShopCheckout .bg {
     background-color: var(--bg-colour1);
 }
 .dvShopCheckout .badge {
@@ -101,43 +120,15 @@
     height: 30px;
     text-align: center;
     line-height: 15px;
-}
+}*/
 
-.dvShopCheckout .dvInput.input-group .form-control:disabled, .dvShopCheckout .dvInputGroup.input-group .form-control:disabled {
+/*.dvShopCheckout .dvInput.input-group .form-control:disabled, .dvShopCheckout .dvInputGroup.input-group .form-control:disabled {
     background-color: var(--colour6);
-}
+}*/
 /*=========[ SHOP Checkout]=========*/
 
 
 
-/*=========[ GiftCard Product Details]=========*/
-.dvVouchersPopup .form-group legend {
-    color: var(--text-colour1); 
-    font-family: var(--font-semibold);
-    position: absolute;
-    width: 100%;
-    top: 0%;
-    left: 0%;
-    padding: .65rem 1rem;
-    background: var(--text-colour5);
-    font-size: 1.25rem;
-}
-
-.dvVouchersPopup .close {
-    z-index: 99999;
-    position: absolute;
-    right: 1rem;
-    top: .75rem;
-    color: var(--text-colour1);
-    opacity: var(--modal-close-btn-opacity);
-}
-    .dvVouchersPopup .close i {
-        font-size: 1.1rem;
-    }
-.dvProductDetail .dvVouchersPopup fieldset .form-group:nth-child(2){
-    margin-top:3rem;
-}
-/*=========[ GiftCard Product Details]=========*/
 
 
 

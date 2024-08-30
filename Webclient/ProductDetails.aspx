@@ -27,33 +27,35 @@
  </div>
     
     <div class="dvProductDetail my-4">
-        <div class="container-xl prodDetail dvProductDetails" dir="ltr" style="direction: ltr;">
+        <div class="container-xl prodDetail dvProductDetails">
             <div class="row">
                 <!-- Image -->
                 <div class="dvThumbSwiperSlider col-lg-4 col-xl-4">
-                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                        <div class="swiper-wrapper" id="imgProductImageMain" runat="server">
-                            <%--<div class="swiper-slide img-container">
+                    <div class="border p-3">
+                        <div class="swiper dvThumbBannerSlide">
+                            <div class="swiper-wrapper" id="imgProductImageMain" runat="server">
+                                <%--<div class="swiper-slide img-container">
                                 <img id="imgProductImageMain" runat="server" />
                              </div>--%>
+                            </div>
+                            <div class="swiper-button-next mr-3">
+                                <img src="images/icons/arrows/right-yellow-arrow-2.svg" />
+                            </div>
+                            <div class="swiper-button-prev ml-3">
+                                <img src="images/icons/arrows/left-yellow-arrow-2.svg" />
+                            </div>
                         </div>
-                        <div class="swiper-button-next mr-3">
-                         <img src="images/icons/arrows/right-yellow-arrow-2.svg" />
-                       </div>
-                       <div class="swiper-button-prev ml-3">
-                         <img src="images/icons/arrows/left-yellow-arrow-2.svg" />
-                       </div>
-                    </div>
-                    <div class="swiper mySwiper">
-                       <div class="swiper-wrapper" id="divThumbnailImages" runat="server">
-                           
-                       </div>
-                       <div class="swiper-button-next">
-                           <img src="images/icons/arrows/right-yellow-arrow-2.svg" />
-                         </div>
-                         <div class="swiper-button-prev">
-                           <img src="images/icons/arrows/left-yellow-arrow-2.svg" />
-                         </div>
+                        <div class="my-2"></div>
+                        <div class="swiper dvThumbSlide">
+                            <div class="swiper-wrapper" id="divThumbnailImages" runat="server">
+                            </div>
+                            <div class="swiper-button-next">
+                                <img src="images/icons/arrows/right-yellow-arrow-2.svg" />
+                            </div>
+                            <div class="swiper-button-prev">
+                                <img src="images/icons/arrows/left-yellow-arrow-2.svg" />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -191,8 +193,8 @@
                         <nav>
                          <div class="nav nav-tabs flex-nowrap scroll-hoz border-bottom-0" id="nav-tab" role="tablist" >
                             <button class="heading-semibold nav-link text-capitalize active mr-2" id="description-tab" data-toggle="tab" data-target="#description" type="button" data-i18n="transaction-description-label"> description </button>
-                            <button class="heading-semibold nav-link text-capitalize mr-2" id="terms-conditions-tab" data-toggle="tab" data-target="#terms-conditions" type="button" data-i18n="text-terms-conditions" >Terms And Conditions</button>
-                            <button class="heading-semibold nav-link text-capitalize mr-2" id="divSpecificationtab" data-toggle="tab" data-target="#specification" type="button" runat="server" visible="false" > Specifications </button>
+                            <button class="heading-semibold nav-link text-capitalize" id="terms-conditions-tab" data-toggle="tab" data-target="#terms-conditions" type="button" data-i18n="text-terms-conditions" >Terms And Conditions</button>
+                            <button class="heading-semibold nav-link text-capitalize" id="divSpecificationtab" data-toggle="tab" data-target="#specification" type="button" runat="server" visible="false" > Specifications </button>
                           </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
@@ -209,7 +211,6 @@
                         </div>
                       </div>
                     </div>
-
                     <div class="dvDescription row mt-4 d-none">
                         <div class="col-12 col-lg-12 mb-5">
                             <ul class="widgetTab">
@@ -262,13 +263,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    
+                    </div>                    
                 </div>
             </div>
         </div>
-
+    </div>
         <!-- Scrollable modal -->
         <!-- Modal for all vouchers -->
       <div class="modal fade dvVouchersPopup" id="formpopup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -281,7 +280,7 @@
               </div>--%>
               <div class="modal-body">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <i class="fa-solid fa-xmark text-colour1"></i>
+                      <i class="fa-solid fa-xmark"></i>
                   </button>
                   <div id="divDynamicContent">
                   </div>
@@ -311,7 +310,7 @@
                 </div>
             </div>
         </div> --%>
-    </div>
+    
 
     <!-- Modal Quantity plus minus-->
     <div class="dvModal modal fade" id="quantityModal" tabindex="-1">
@@ -384,47 +383,8 @@
                 $('#formpopup').modal('hide');
             });
             IsValidProduct(ProductId);
-
-             setTimeout(() => {
-                 addClassBasedOnUrlProductDetails();
-            }, 1000)
-            
         });
-        // check url and apply classnames for different redemptions
-        function getUrlParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-        function addClassBasedOnUrlProductDetails() {
-            const type = getUrlParam('type');
-            const productType = getUrlParam('ProductType');
-            const breadcrumbItems = document.querySelectorAll('.dvBreadcrumbs .breadcrumb');
-            let breadcrumbItem = "";
-            breadcrumbItems.forEach(item => {
-                let anchors = item.querySelectorAll('a');
-                if (anchors.length > 1) {
-                    //console.log(anchors[2].innerText); // Log the inner text of the second anchor
-                    breadcrumbItem += anchors[2].innerText + " ";
-                }
-            });
-            breadcrumbItem = breadcrumbItem.trim();
-            console.log('breadcrumbItem ' + breadcrumbItem);
-            if (productType === 'digital' && breadcrumbItem === 'MilesExchange') {
-                $('.dvProductDetail').addClass('dvMilesExchangeDigital');
-            }
-            else if (productType === 'digital' && breadcrumbItem === 'Lounges') {
-                $('.dvProductDetail').addClass('dvLoungesDigital');
-            }
-            else if (productType === 'digital' && breadcrumbItem === 'Giftcards') {
-                $('.dvProductDetail').addClass('dvGiftcardsDigital');
-            }
-            else if (productType === 'physical' && breadcrumbItem === 'Shop') {
-                $('.dvProductDetail').addClass('dvShopPhysical');
-            }
-            else {
-                return null;
-            }
-        }
+
         function rate(rating) {
             $("#productRating").val(rating);
             for (var i = 1; i <= 5; i++) {
@@ -934,7 +894,7 @@
   window.innerWidth > 991 ? filterModal.classList.remove("modal", "fade") : null;
 </script> -->
 <script>
-    var swiper = new Swiper(".mySwiper", {
+    var swiper = new Swiper(".dvThumbSlide", {
         spaceBetween: 10,
         slidesPerView: 4,
         freeMode: true,
@@ -944,7 +904,7 @@
             prevEl: ".swiper-button-prev",
         },
     });
-    var swiper2 = new Swiper(".mySwiper2", {
+    var swiper2 = new Swiper(".dvThumbBannerSlide", {
         spaceBetween:20,
         navigation: {
             nextEl: ".swiper-button-next",

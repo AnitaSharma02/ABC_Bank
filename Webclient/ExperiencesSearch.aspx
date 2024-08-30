@@ -101,7 +101,7 @@
                                         </div>
                                         <div id="dvShowLoader" class="dvTotalRecords col-12">
                                             <div class="bg-colour2 b-radius p-3 my-3 ">
-                                                <p class="h6 heading-semibold text-colour7" id="recommendedtxt"></p>
+                                                <p class="h7 heading-semibold text-colour7" id="recommendedtxt"></p>
                                             </div>
                                         </div>
                                     </div>
