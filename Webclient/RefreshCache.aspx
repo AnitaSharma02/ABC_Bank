@@ -10,7 +10,7 @@
     <div class="dvBreadcrumbs">
         <div class="container-xl">
             <nav>
-                <ul class="breadcrumb px-0 py-3">
+                <ul class="breadcrumb px-0 pt-3 pb-0">
                     <li class="mr-3"><a href="\">
                         <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
@@ -20,11 +20,11 @@
             </nav>
         </div>
     </div>
-    <div id="inner-page-area" class="dvLoginBoxbg my-0 my-md-5">
+    <div id="inner-page-area" class="dvRefreshCache py-5">
         <div class="container-xl">
             <div class="row">
-                <div class="col-sm-6 offset-sm-3">
-                    <div class="innerBox p-4">
+                <div class="col-md-6 offset-md-3">
+                    <div class="border bg-colour2 p-4">
                         <div id="siteMap" class="bread-crumb" style="display: none">
                             <asp:SiteMapPath ID="SiteMapPath1" runat="server" Visible="true" CssClass="SiteMap_Root_Stlye"
                                 PathSeparator=">" PathSeparatorStyle-CssClass="PathSeparatorStyle">

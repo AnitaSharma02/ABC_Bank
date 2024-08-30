@@ -25,7 +25,7 @@
 <div class="dvBreadcrumbs">
     <div class="container-xl">
         <nav>
-            <ul class="breadcrumb px-0 py-3">
+            <ul class="breadcrumb px-0 pt-3 pb-0">
                 <li class="mr-3"><a href="\">
                     <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                 </li>
@@ -36,11 +36,11 @@
     </div>
 </div>
 
- <div class="dvLoginBoxbg my-0 my-md-5">
+ <div class="dvForgotPassword py-5">
     <div class="container-xl">
         <div class="row">
-            <div class="col-sm-6 offset-sm-3">
-                <div class="innerBox p-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="border bg-colour2 p-4">
                     <div class="row">
                          <div class="col-12 mb-2">
                              <h2 class="h5 heading-semibold text-colour7 mb-1" data-i18n="text-forgot-password">Forgot Password</h2>
