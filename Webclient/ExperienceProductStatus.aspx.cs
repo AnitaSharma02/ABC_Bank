@@ -20,17 +20,25 @@ public partial class ExperienceProductStatus : System.Web.UI.Page
                     bool lblnStatus = Convert.ToBoolean(Request.QueryString["Success"]);
                     if (lblnStatus)
                     {
-                        divMessage.InnerHtml += "<div class=\"border dvCongrat bg-colour6 p-5 text-center\">"
-                            + "<p class=\"h5 heading-bold\">Congratulations!</p><p class=\"heading-light pt-2\">Your Order is placed successfully, an email confirmation will be sent on your registered email id.</p></div>";
+                        divMessage.InnerHtml += "<div class=\"border bg-colour2 p-5 text-center\">"
+                            + "<p class=\"\">Congratulations!</p>" +
+                            "<p>Your Order is placed successfully, an email confirmation will be sent on your registered email id.</p>" +
+                            "</div>";
                     }
                     else
                     {
-                        divMessage.InnerHtml = "<div class='border dvCongrat bg-colour6 p-5 text-center'>We could not process your request.<p class=\"heading-light pt-2\">Please<a href=\"Index.aspx\" target=\"_self\" class=\"link1\"> click here</a> and try again.<p></div>";
+                        divMessage.InnerHtml = "<div class='border bg-colour2 p-5 text-center'>" +
+                            "<p>We could not process your request.</p>" +
+                            "<p>Please<a href=\"Index.aspx\" target=\"_self\" class='link1'> click here</a> and try again.</p>" +
+                            "</div>";
                     }
                 }
                 else
                 {
-                    divMessage.InnerHtml = "<div class='border dvCongrat bg-colour6 p-5 text-center'>We could not process your request.<p class=\"heading-light pt-2\">Please<a href=\"Index.aspx\" target=\"_self\" class=\"link1\"> click here</a> and try again.</p></div>";
+                    divMessage.InnerHtml = "<div class='border bg-colour2 p-5 text-center'>" +
+                        "<p>We could not process your request.</p>" +
+                        "<p>Please </span><a href=\"Index.aspx\" target=\"_self\" class=\"link1\"> click here</a> <span> and try again.</p>" +
+                        "</div>";
                 }
             }
         }

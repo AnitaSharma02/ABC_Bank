@@ -6,25 +6,30 @@
 }
 /*=========[ REMOVE NOT-ALLOWED ICON ]=========*/
 
-/*=========[ DELIVERY TRACK FOR EXPERIENCEPRODUCTBOOKINGDETAILS PAGE ]=========*/
-.dvExperienceProductBookingDetails .dvDeliveryTrack .w-30 {
+/*=========[ DELIVERY TRACK FOR EXPERIENCEPRODUCTBOOKINGDETAILS & EXPERIENCEPRODUCTSTATUS PAGE ]=========*/
+.dvExperienceProductBookingDetails .dvDeliveryTrack .w-30,
+.dvExperienceProductStatus .dvDeliveryTrack .w-30 {
     width: 30px;
 }
-.dvExperienceProductBookingDetails .dvDeliveryTrack .h-30 {
+.dvExperienceProductBookingDetails .dvDeliveryTrack .h-30,
+.dvExperienceProductStatus .dvDeliveryTrack .h-30 {
     height: 30px;
 }
-.dvExperienceProductBookingDetails .dvDeliveryTrack {
+.dvExperienceProductBookingDetails .dvDeliveryTrack,
+.dvExperienceProductStatus .dvDeliveryTrack {
     position: relative;
 }
-.dvExperienceProductBookingDetails .dvDeliveryTrack span.rounded-circle {
+.dvExperienceProductBookingDetails .dvDeliveryTrack span.rounded-circle,
+.dvExperienceProductStatus .dvDeliveryTrack span.rounded-circle{
     font-weight: bold;
 }
-.dvExperienceProductBookingDetails .dvDeliveryTrack .active > span.rounded-circle:first-child {
+.dvExperienceProductBookingDetails .dvDeliveryTrack .active > span.rounded-circle:first-child,
+.dvExperienceProductStatus .dvDeliveryTrack .active > span.rounded-circle:first-child{
     background-color: var(--colour1);
     color: var(--colour6);
     font-weight: bold;
 }
-/*=========[ DELIVERY TRACK FOR EXPERIENCEPRODUCTBOOKINGDETAILS PAGE ]=========*/
+/*=========[ DELIVERY TRACK FOR EXPERIENCEPRODUCTBOOKINGDETAILS & EXPERIENCEPRODUCTSTATUS PAGE ]=========*/
 
 
 /*=========[ REMOVE NOT-ALLOWED ICON ]=========*/
@@ -43,7 +48,8 @@
 }
 
 @media (min-width: 768px) {
-    .dvExperienceProductBookingDetails .dvDeliveryTrack .dvLine {
+    .dvExperienceProductBookingDetails .dvDeliveryTrack .dvLine,
+    .dvExperienceProductStatus .dvDeliveryTrack .dvLine {
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
@@ -54,7 +60,8 @@
 }
 
 @media (min-width: 992px) {
-    .dvExperienceProductBookingDetails .dvDeliveryTrack .dvLine {
+    .dvExperienceProductBookingDetails .dvDeliveryTrack .dvLine,
+    .dvExperienceProductStatus .dvDeliveryTrack .dvLine {
         left: 30%;
         width: 90%;
     }

@@ -4,42 +4,47 @@
     <link rel="stylesheet" href="\Css/experience.css" />
     <div class="dvExperienceProductStatus mb-0 mb-md-2">
         <div class="container-xl">
-            <div class="dvPaymentList-steps d-none d-md-block">
-                <div class="step-line"></div>
-                <div class="steps">
-                    <div class="payment-step">
-                        <span class="step">
-                            <span class="step-circle future rounded-circle">1</span>
-                            <span class="d-block d-md-inline heading-reqular">Booking Details</span>
-                        </span>
-                    </div>
-
-                    <div class="payment-step">
-                        <span class="step">
-                            <span class="step-circle future rounded-circle">2</span>
-                            <span class="d-block d-md-inline heading-reqular">Payment Details</span>
-                        </span>
-                    </div>
-                    <div class="payment-step">
-                        <span class="step">
-                            <span class="step-circle active future rounded-circle">3</span>
-                            <step class="d-block d-md-inline stepText active heading-reqular ">Thank You!</step>
-                        </span>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row dvDeliveryTrack">
+                        <div class="col-4 mb-lg-3">
+                            <div class="dvLine border d-none d-md-block px-3"></div>
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-auto my-3">
+                                    <div class="d-flex flex-column flex-sm-row align-items-center active">
+                                        <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">1</span>
+                                        <a class="h7 heading-regular bg-colour6 px-3 text-center text-colour7">Booking Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-lg-3">
+                            <div class="dvLine border d-none d-md-block px-3"></div>
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-auto my-3">
+                                    <div class="d-flex flex-column flex-sm-row align-items-center">
+                                        <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">2</span>
+                                        <a class="h7 heading-regular bg-colour6 px-3 text-center text-colour7" id="hrefBookingDetailsId" runat="server">Payment Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-lg-3">
+                            <%--<div class="dvLine border d-none d-md-block px-3"></div>--%>
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-auto my-3">
+                                    <div class="d-flex flex-column flex-sm-row align-items-center">
+                                        <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">3</span>
+                                        <a class="h7 heading-regular bg-colour6 px-3 text-center text-colour7">Thank You</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="dvPaymentBox dvExperienceMsg mt-0 mt-md-2 pt-md-5 pt-3 pb-5" style="min-height: 350px;">
-        <div class="container-xl">
-            <div class="row justify-content-md-center">
-                <div class="col-12 col-md-8 col-lg-8 mt-3 mt-md-0" id="divMessage" runat="server">
-                    <%--<div class="border dvCongrat bg-colour6 p-5 text-center">
-                        <p class="h5 heading-bold">Congratulations!</p>
-                        <p class="heading-light pt-2">Your Order is placed successfully, an email confirmation will be sent on your registered email id.</p>
-
-                    </div>--%>
-                </div>
+            <div class="row">
+                <div class="col-12 text-center" id="divMessage" runat="server"></div>
             </div>
         </div>
     </div>
