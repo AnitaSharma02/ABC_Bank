@@ -110,6 +110,11 @@
     --body-bg-colour: var(--colour6);
     --body-text-colour: var(--colour8);
 
+    /* SCROLLBAR STYLE */
+    --scrollbar-width: 12px;
+    --scrollbar-track-bg: #f1f1f1;
+    --scrollbar-thumb-bg: var(--colour1);
+
     /* PLACEHOLDERS */
     --placeholder-text-colour: var(--colour8);
     --placeholder-font-size: .875rem;
@@ -166,7 +171,7 @@
     --heading-extrablack: var(--font-extrablack);
 
     /* BORDER RADIUS */
-    --b-radius: 0;
+    --b-radius: 1rem;
 
     /* BORDERS */
     --border-colour: var(--colour3);
@@ -436,7 +441,7 @@
     /* style scrollbar */
     --filter-mobile-accordion-scrollbar-width: 3px;
     --filter-mobile-accordion-scrollbar-track-bg: #f1f1f1;
-    --filter-mobile-accordion-scrollbar-thumb-bg: #888888;
+    --filter-mobile-accordion-scrollbar-thumb-bg: var(--colour1);
 
     /******* FILTER MODAL DESKTOP *******/
     /* converted modal to static */
@@ -595,7 +600,22 @@
     --denomination-btn-border-radius: var(--b-radius);
 
     /*TABS*/
+    --tab-bg-colour:transparent;
+    --tab-text-colour:var(--body-text-colour);
+    --tab-active-bg-colour:var(--colour1);
+    --tab-active-text-colour:var(--colour6);
+    --tab-border-colour: var(--border-colour);
+    --tab-active-border-colour:var(--colour1);
     --tab-border-radius: var(--b-radius);
+
+    /*TABS PILLS*/
+    --pills-bg-colour:transparent;
+    --pills-text-colour:var(--body-text-colour);
+    --pills-active-bg-colour:var(--colour1);
+    --pills-active-text-colour:var(--colour6);
+    --pills-border-colour: var(--border-colour);
+    --pills-border-radius: var(--b-radius);
+    --pills-margin: 0 .875rem 0 0;
 
     /* UPDPROGRESS LOADER */
     --updProgress-position: fixed;

@@ -94,7 +94,7 @@
         <div class="container-xl">
             <div class="row">
                 <div class="dvThumbSwiperSlider col-md-6 mb-3">
-                    <div class="swiper mySwiper2">
+                    <div class="swiper mySwiper2 mb-2">
                         <div id="BannerImage" class="swiper-wrapper">
                             
                         </div>

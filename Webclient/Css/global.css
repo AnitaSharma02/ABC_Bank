@@ -8,6 +8,18 @@ body {
 }
 /*=========[ BODY ]=========*/
 
+/*=========[ COMMON SCROLLBAR STYLE ]=========*/
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+}
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-bg);
+}
+/*=========[ COMMON SCROLLBAR STYLE ]=========*/
+
 /*=========[ OVERWRITE BOOTSTRAP TAGS ]=========*/
 a {
     text-decoration: var(--a-text-decoration);
@@ -994,33 +1006,34 @@ p {
 /*=========[ BUTTONS ]=========*/
 
 /*=========[ TABS 1 ]=========*/
+.dvTabs .nav-tabs .nav-link {
+    border: 1px solid var(--tab-border-colour);
+    border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
+    background-color: var(--tab-bg-colour);
+    color:var(--tab-text-colour);
+}
 .dvTabs .nav-tabs .nav-item.show .nav-link,
 .dvTabs .nav-tabs .nav-link.active {
-    background-color: var(--colour1);
-    color: #fff;
-}
-
-.dvTabs .nav-tabs .nav-link {
-    border: 1px solid #dee2e6;
-    border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
+    background-color: var(--tab-active-bg-colour);
+    color: var(--tab-active-text-colour);
+    border: 1px solid var(--tab-active-border-colour);
 }
 /*=========[ TABS 1 ]=========*/
 
 /*=========[ TABS 2 ]=========*/
-.dvTabs .nav-pills .nav-link.active {
-    background-color: var(--colour2);
-    color: var(--colour1);
-    border: 1px solid var(--colour2);
-}
-
 .dvTabs .nav-pills .nav-link {
-    background-color: var(--colour6);
-    border: 1px solid var(--border-colour);
-    border-radius: 50rem;
+    border: 1px solid var(--pills-border-colour);
+    border-radius: var(--pills-border-radius) var(--pills-border-radius) var(--pills-border-radius) var(--pills-border-radius);
+    background-color: var(--pills-bg-colour);
+    color: var(--pills-text-colour);
 }
-
+.dvTabs .nav-pills .nav-link.active {
+    background-color: var(--pills-active-bg-colour);
+    color: var(--pills-active-text-colour);
+    border: 1px solid var(--pills-border-colour);
+}
 .dvTabs .nav-pills .nav-item {
-    margin: 0 0.875rem 0 0;
+    margin: var(--pills-margin);
 }
 /*=========[ TABS 2 ]=========*/
 
@@ -1991,18 +2004,17 @@ select.form-control:focus {
         margin: var(--filter-mobile-accordion-scroll-ver-margin);
         max-height: var(--filter-mobile-accordion-scroll-ver-max-height);
     }
-
-        .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar {
-            width: var(--filter-mobile-accordion-scrollbar-width);
-        }
-        /* Scroll Track */
-        .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-track {
-            background: var(--filter-mobile-accordion-scrollbar-track-bg);
-        }
-        /* Scroll Handle */
-        .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-thumb {
-            background: var(--filter-mobile-accordion-scrollbar-thumb-bg);
-        }
+    /*scrollbar*/
+    .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar {
+        width: var(--filter-mobile-accordion-scrollbar-width);
+    }
+    .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-track {
+        background: var(--filter-mobile-accordion-scrollbar-track-bg);
+    }
+    .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-thumb {
+        background: var(--filter-mobile-accordion-scrollbar-thumb-bg);
+    }
+    /*scrollbar*/
 
 .dvFilter.modal .modal-header .close i {
     background-color: var(--modal-close-icon-bg);

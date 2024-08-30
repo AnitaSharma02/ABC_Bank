@@ -111,6 +111,7 @@
 /*=========[ FLIGHTLIST DOMESTIC ]=========*/
 
 
+/*=========[ REMOVE NOT-ALLOWED ICON ]=========*/
 .dvFlightSearch .dvInput.input-group .form-control[readonly],
 .dvFlightList .dvInput.input-group .form-control[readonly],
 .dvFlightSearch .dvInputGroup.input-group .form-control[readonly],
@@ -118,6 +119,7 @@
     background-color: var(--colour6);
     cursor: default;
 }
+/*=========[ REMOVE NOT-ALLOWED ICON ]=========*/
 
 /*=========[ MEDIA QUERIES ]=========*/
 @media (min-width: 576px) {
