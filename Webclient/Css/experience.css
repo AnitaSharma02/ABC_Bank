@@ -6,3 +6,61 @@
 }
 /*=========[ REMOVE NOT-ALLOWED ICON ]=========*/
 
+/*=========[ DELIVERY TRACK FOR EXPERIENCEPRODUCTBOOKINGDETAILS PAGE ]=========*/
+.dvExperienceProductBookingDetails .dvDeliveryTrack .w-30 {
+    width: 30px;
+}
+.dvExperienceProductBookingDetails .dvDeliveryTrack .h-30 {
+    height: 30px;
+}
+.dvExperienceProductBookingDetails .dvDeliveryTrack {
+    position: relative;
+}
+.dvExperienceProductBookingDetails .dvDeliveryTrack span.rounded-circle {
+    font-weight: bold;
+}
+.dvExperienceProductBookingDetails .dvDeliveryTrack .active > span.rounded-circle:first-child {
+    background-color: var(--colour1);
+    color: var(--colour6);
+    font-weight: bold;
+}
+/*=========[ DELIVERY TRACK FOR EXPERIENCEPRODUCTBOOKINGDETAILS PAGE ]=========*/
+
+
+/*=========[ REMOVE NOT-ALLOWED ICON ]=========*/
+.dvExperienceProductBookingDetails .dvInput.input-group .form-control[readonly],
+.dvExperienceProductBookingDetails .dvInputGroup.input-group .form-control[readonly] {
+    background-color: var(--colour6);
+    cursor: default;
+}
+/*=========[ REMOVE NOT-ALLOWED ICON ]=========*/
+ 
+
+
+/*=========[ MEDIA QUERIES ]=========*/
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+    .dvExperienceProductBookingDetails .dvDeliveryTrack .dvLine {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        z-index: 0;
+        left: 25%;
+        width: 90%;
+    }
+}
+
+@media (min-width: 992px) {
+    .dvExperienceProductBookingDetails .dvDeliveryTrack .dvLine {
+        left: 30%;
+        width: 90%;
+    }
+}
+
+@media (min-width: 1200px) {
+
+}
+/*=========[ MEDIA QUERIES ]=========*/

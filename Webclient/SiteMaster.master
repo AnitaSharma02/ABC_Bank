@@ -138,6 +138,7 @@
                         data: "",
                         success: function (msg) {
                             if (msg.d != '') {
+                                $("#dvRedemptionMenuLoader").hide();
                                 $("#divRedemptionOptions").html(msg.d);
                                 var categoryName = '<%=Convert.ToString(Session["CategoryName"])%>';
                                 if (categoryName != '') {
@@ -145,7 +146,12 @@
                                     $('.' + categoryName + 'redemption').addClass('SelRedemption');
                                 }
                             }
+                        },
+                        beforeSend: function () {
+                            $("#dvRedemptionMenuLoader").show();
                         }
+                        
+
                     });
                 }
             } catch (e) {
@@ -276,11 +282,12 @@
         <div class="dvInnerBanner">
             <img id="dvInnerBanner" alt="" class="w-100" />
         </div>
+        
         <div class="dvRedemptionMenu">
             <div class="container-fluid">
-                <%--<div id="myloader">
+                <div id="dvRedemptionMenuLoader" class="dvLoader" style="display:none;">
                     <img src="../Images/loading.gif" alt="loading..." />
-                </div>--%>
+                </div> 
                 <div class="row justify-content-md-center flex-nowrap flex-md-wrap scroll-hoz py-4 pt-md-5 pb-md-3" id="divRedemptionOptions" runat="server">
                 </div>
             </div>

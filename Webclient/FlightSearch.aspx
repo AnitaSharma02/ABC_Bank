@@ -455,7 +455,7 @@
                                                     </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
                                                     <label class="label" data-i18n="flightsearch-departure-label">Departure</label>
-                                                    <div class="dvInputGroup input-group">
+                                                    <div class="dvTxtDepart dvInputGroup input-group">
                                                         <input id="txtDepart" class="input datePicker form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>

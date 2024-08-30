@@ -598,6 +598,14 @@ p {
         animation: var(--updProgress-loader-animation);
     }
 
+    .dvLoader {
+        margin: 0 auto;
+        text-align:center;
+    }
+    .dvLoader img{
+        width:50px;
+    }
+
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
@@ -608,6 +616,7 @@ p {
     }
 }
 /*=========[ MAIN LOADER ]=========*/
+
 
 /*=========[ HEADER ]=========*/
 .dvStripe {
@@ -2175,6 +2184,15 @@ select.form-control:focus {
 /*=========[ DIFFERENT CLASS NAMES FOR PRODUCTLIST PAGES & PRODUCTDETAIL PAGES ]=========*/
 
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
+.dvRedemptionMenu ::-webkit-scrollbar {
+    height: var(--redemptionmenu-scrollbar-height);
+}
+.dvRedemptionMenu ::-webkit-scrollbar-track {
+    background: var(--redemptionmenu-scrollbar-track-bg);
+}
+.dvRedemptionMenu ::-webkit-scrollbar-thumb {
+    background: var(--redemptionmenu-scrollbar-thumb-bg);
+}
 .dvRedemptionMenu a .imageBox {
     background-color: #fff;
     border-radius: 50%;
@@ -2394,6 +2412,7 @@ select.form-control:focus {
 }
 
 @media (min-width: 768px) {
+
 }
 
 @media (min-width: 992px) {

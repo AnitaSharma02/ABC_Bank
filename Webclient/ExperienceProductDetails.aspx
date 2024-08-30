@@ -168,7 +168,7 @@
                     $("#Errordiv").show();
                     swiperHtml += '<div class="row">';
                     swiperHtml += '<div class="col-12">';
-                    swiperHeadingHtml += '<div class="row mt-3">';
+                    swiperHeadingHtml += '<div class="row mt-3 mt-lg-0">';
                     swiperHeadingHtml += '<div class="col-12">';
                     swiperHeadingHtml += '<p class="heading6">' + parseData.data.locations[0].city + ',' + parseData.data.locations[0].country + '</p>';
                     swiperHeadingHtml += '<p class="heading6">' + parseData.data.title + '</p>';
@@ -567,8 +567,7 @@
                                 html += '<div class="row">';
                                 if (parseData.producttypedetails.item_uuid[i] != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots.length > 0 && showBookNow) {
                                     isTimeslotsAvailable = 1;
-                                    html += '<div class="col-sm-6">';
-                                    
+                                    html += '<div class="col-sm-6 mb-2">';                                    
                                     html += '<select class="select selectBtn selectDropdown form-control">';
                                     html += '<option value="">Select timeslot</option>';
                                     $.each(parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots, function (k) {
@@ -762,7 +761,7 @@
                             //html += '</div>';
                             html += '<div class="dvTotalPrice col-12 px-0 mb-3">';
                             html += '<div class="bg-colour2 p-3 text-center">';
-                            html += '<div class="d-flex flex-wrap justify-content-end align-items-center mb-1">';
+                            html += '<div class="d-flex flex-wrap align-items-center mb-1">';
                             html += '<p class="h7"><span>Price</span> <span class="">includes GST</span></p>';
                             
                             //html += '<div class="">';
@@ -796,8 +795,7 @@
                                 html += '<div class="row">';
                                 if (parseData.producttypedetails.item_uuid[i] != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots.length > 0 && showBookNow) {
                                     isTimeslotsAvailable = 1;
-                                    html += '<div class="col-sm-6">';
-                                    
+                                    html += '<div class="col-sm-6 mb-2">';                                    
                                     html += '<select class="select selectBtn selectDropdown form-control">';
                                     html += '<option value="">Select timeslot</option>';
                                     $.each(parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots, function (k) {

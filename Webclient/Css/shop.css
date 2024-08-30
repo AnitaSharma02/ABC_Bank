@@ -25,9 +25,18 @@
 /*description tab menu on productdetail page*/
 
 /* Userdetails Modal Popup for all*/
+.dvVouchersPopup ::-webkit-scrollbar {
+    width: var(--modal-scrollbar-width);
+}
+.dvVouchersPopup ::-webkit-scrollbar-track {
+    background: var(--modal-scrollbar-track-bg);
+}
+.dvVouchersPopup ::-webkit-scrollbar-thumb {
+    background: var(--modal-scrollbar-thumb-bg);
+}
 .dvVouchersPopup fieldset {
     max-height: 350px;
-    overflow-x:hidden;
+    overflow-x: hidden;
     margin-top: 3rem;
     padding-right: 1rem;
     margin-right: -1rem;

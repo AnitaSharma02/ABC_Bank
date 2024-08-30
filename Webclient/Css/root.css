@@ -115,6 +115,11 @@
     --scrollbar-track-bg: #f1f1f1;
     --scrollbar-thumb-bg: var(--colour1);
 
+    /* REDEMPTIONSMENU SCROLLBAR STYLE */
+    --redemptionmenu-scrollbar-height: 3px;
+    --redemptionmenu-scrollbar-track-bg: #f1f1f1;
+    --redemptionmenu-scrollbar-thumb-bg: var(--colour1);
+
     /* PLACEHOLDERS */
     --placeholder-text-colour: var(--colour8);
     --placeholder-font-size: .875rem;
@@ -487,7 +492,7 @@
     --modal-header-border-bottom: none;
 
     /*modal-title*/
-    --modal-title-font-family: var(--heading-semibold); 
+    --modal-title-font-family: var(--heading-bold); 
     --modal-title-text-colour: var(--colour6);
     --modal-title-fontsize: 1rem;
 
