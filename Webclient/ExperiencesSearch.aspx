@@ -99,7 +99,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="dvTotalRecords col-12 ">
+                                        <div id="dvShowLoader" class="dvTotalRecords col-12">
                                             <div class="bg-colour2 b-radius p-3 my-3 ">
                                                 <p class="h6 heading-semibold text-colour7" id="recommendedtxt"></p>
                                             </div>
@@ -212,7 +212,7 @@
         }
         function fnShowLoader(id) {
             var html = '';
-            html += '<div id="divExperienceLoader" class="spin-loader" style="margin: auto;">';
+            html += '<div id="divExperienceLoader" class="spin-loader text-center" style="margin: auto;">';
             html += '<img class="spin" width="50" src="Images/loading.gif" alt="" />';
             html += '</div>';
             $("#" + id + "").append(html);
@@ -434,7 +434,7 @@
                     window.location.href = 'ErrorPage.aspx';
                 },
                 beforeSend: function () {
-                    fnShowLoader('dvSearchProducts');
+                    fnShowLoader('dvShowLoader');
                     // $("#updProgress").hide();
                 }
             });
