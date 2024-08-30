@@ -94,7 +94,7 @@
                                         <div class="col-md-4 mb-3">
                                             <label class="label" for="country" data-i18n="shopcheckout-country">Country</label>
                                             <div class="dvInput input-group">
-                                                <select class="form-control custom-select d-block w-100" id="country" disabled>
+                                                <select class="form-control custom-select d-block w-100" id="country">
                                                 <option value="">Choose...</option>
                                                 <option value="KE">Kenya</option>
                                                 <option value="QA">Qatar</option>
@@ -253,7 +253,7 @@
                                                 <option value="MM">Myanmar</option>
                                                 <option value="NA">Namibia</option>
                                                 <option value="NR">Nauru</option>
-                                                <option value="NP" selected="selected">Nepal</option>
+                                                <option value="NP" >Nepal</option>
                                                 <option value="NL">Netherlands</option>
                                                 <option value="NC">New Caledonia</option>
                                                 <option value="NZ">New Zealand</option>

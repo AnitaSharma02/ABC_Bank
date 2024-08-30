@@ -162,26 +162,26 @@ public partial class Checkout : Page
                                         Convert.ToDouble(lobjModel.GetAllCurrencyDefinition(lobjProgramDefinition.ProgramId).FindAll(x => x.Currency.ToLower() == lstrCurrency.ToLower())[0].RedemptionRate)))
                         };
                         HttpContext.Current.Session["OtpDetails"] = lobjOTPDetails as OTPDetails;
-                        //Status = lobjModel.GenerateReviewnConfirmOTP(lobjOTPDetails, lobjMemberDetails);                        
-                        //Status = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "redemption_otp", lobjOTPDetails, "Shop");
-                        //if (Status)
-                        //{
-                        //    lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "SHOP", lobjOTPDetails.UniquerefID, "Success"), ActivityType.ReviewConfirmOTPSuccess);
-                        //    lstrStatus = "/ValidateOTP.aspx?flag=Shop";
-                        //}
-                        //else
-                        //{
-                        //    lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "SHOP", lobjOTPDetails.UniquerefID, "Failed"), ActivityType.ReviewConfirmOTPFailed);
-                        //    lstrStatus = "/OrderStatus.aspx?Status=false";
-                        //}
+                        //Status = lobjModel.GenerateReviewnConfirmOTP(lobjOTPDetails, lobjMemberDetails);
+                        Status = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "redemption_otp", lobjOTPDetails, "Shop");
+                        if (Status)
+                        {
+                            lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "SHOP", lobjOTPDetails.UniquerefID, "Success"), ActivityType.ReviewConfirmOTPSuccess);
+                            lstrStatus = "/ValidateOTP.aspx?flag=Shop";
+                        }
+                        else
+                        {
+                            lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "SHOP", lobjOTPDetails.UniquerefID, "Failed"), ActivityType.ReviewConfirmOTPFailed);
+                            lstrStatus = "/OrderStatus.aspx?Status=false";
+                        }
                     }
-                    //else
-                    //{
-                    //    lobjModel.LogActivity(string.Format("Topup Card {0}: Requested", lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference), ActivityType.Voucher);
-                    //    lstrStatus = "/PointGateway.aspx?flag=Shop";
-                    //}
+                    else
+                    {
+                        lobjModel.LogActivity(string.Format("Topup Card {0}: Requested", lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference), ActivityType.Voucher);
+                        lstrStatus = "/PointGateway.aspx?flag=Shop";
+                    }
 
-                    lstrStatus = "/PaymentOptions.aspx";
+                    // lstrStatus = "/PaymentOptions.aspx";
                 }
                 else
                 {

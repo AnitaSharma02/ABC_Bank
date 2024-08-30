@@ -27,6 +27,8 @@ using IBEAPIGateway.Model;
 public partial class ManageBooking : Page
 {
     ABCModel lobjModel = new ABCModel();
+    IBEAPIModel lobjIBEAPIModel = new IBEAPIModel();
+
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -93,7 +95,7 @@ public partial class ManageBooking : Page
         {
             GetHotelInfoDetails lobjGetHotelInfoDetails = new GetHotelInfoDetails();
 
-            lobjGetHotelInfoDetails = lobjModel.GetHotelDetails(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
+            lobjGetHotelInfoDetails = lobjIBEAPIModel.GetMemberBookedHotelInfoList(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
 
             if (lobjGetHotelInfoDetails.HotelDetails != null && lobjGetHotelInfoDetails.HotelDetails.Count > 0)
             {
@@ -104,7 +106,7 @@ public partial class ManageBooking : Page
             {
                 rptHotelCancelBookingDetails.DataSource = null;
                 lblHotelrecord.Visible = true;
-                lblHotelrecord.Text = "<span data-i18n='managebooking-norecords-label'>No Records Found.</span>";
+                lblHotelrecord.Text = "<span data-i18n='managebooking-norecords-label' class=\"heading-regular\">No Records Found.</span>";
                 divHotelrecord.Visible = true;
                 //divrpthotel.Visible = false;
                 //divrpthotel.Attributes.Add("style", "Display:none");
