@@ -2,10 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <input type="hidden" id="hdnResendOTPEnableTime" value="<%=ResendOTPEnableTime%>" />
-   <%-- <link href="Css/account.css" rel="stylesheet" type="text/css" />
-    <script src="Jquery/purify.min.js" type="text/javascript"></script>--%>
-
-    <script src="Jquery/purify.min.js" type="text/javascript"></script>
+    <link href="Css/experience.css" rel="stylesheet" type="text/css" />
+    <%--<script src="Jquery/purify.min.js" type="text/javascript"></script>--%>
      <style>
        #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner, .breadcrumbBox {
         display: none;

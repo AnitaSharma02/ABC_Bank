@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="\Css/shop.css">
     <input type="hidden" id="hdnstrCategoryID" value="<%= pstrCategoryID %>" />
     <style>
-        #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner, .breadcrumbBox {
+        #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner {
             display: none;
         }
         .hide-checkout-button {

@@ -7,7 +7,7 @@
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/checkout-form-validation.js"></script>
     <style>
-       #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner, .breadcrumbBox,.dvShopMenu   {display:none;}
+       #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner,.dvShopMenu   {display:none;}
     </style>
        <div class="dvBreadcrumbs">
     <div class="container-xl">

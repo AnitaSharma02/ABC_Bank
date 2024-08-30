@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <style>
-        .innerHeader {
+        /*.innerHeader {
             height: auto;
             padding: 0 70px;
             background: transparent !important;
@@ -38,12 +38,12 @@
                 padding: 0px;
                 margin: 0px 0;
             }
-        }
+        }*/
     </style>
     <section>
         <div class="bg-banner-earn">
         </div>
-        <div class="breadcrumbBox d-none">
+        <%--<div class="breadcrumbBox d-none">
             <div class="flightPage">
                 <div class="breadcrumbFlight">
                     <ul class="d-flex">
@@ -55,7 +55,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <div class="flightList">
             <div class="container-xl">
                 <div class="earnBox">

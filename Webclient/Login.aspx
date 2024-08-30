@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <script src="Jquery/Validation.js" type="text/javascript"></script>
     <style>
-        #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner, .breadcrumbBox {
+        #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner {
             display: none;
         }
     </style>
