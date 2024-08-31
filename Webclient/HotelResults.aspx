@@ -421,7 +421,7 @@
                                 <p class="heading-regular col-auto col-lg-10 px-0">
                                     <asp:Label CssClass="Content_Style h6 heading-regular text-colour7 col-auto px-0 mb-2 mb-lg-0" runat="server" ID="lblSearchSummary"></asp:Label>
                                     <%--<a href="#modify_search" class="btn btn-yellow" id="btnModify" data-toggle="collapse" data-i18n="flightlist-modify">Modify</a>--%>
-                                    <%--<a class="purple-btn" id="btnfliter" data-i18n="button-filters">Filters</a>--%>
+                                    <%--<a class="btn btn-one" id="btnfliter" data-i18n="button-filters">Filters</a>--%>
                                 </p>
                                 <button
                                     class="btn btn-one arrowBtn col-auto d-flex mt-2 mt-sm-0 collapsed"

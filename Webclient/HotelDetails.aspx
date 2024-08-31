@@ -51,10 +51,10 @@
 
                 <%--<div class="dvThumbSwiperSlider col-md-6 mb-3">
                     <div class="Hotelbanner" id="BannerImage">
-                        <div id="divpre" class="btnPre purple-btn" data-i18n="hotel-details-prev">
+                        <div id="divpre" class="btn btn-one" data-i18n="hotel-details-prev">
                             Prev
                         </div>
-                        <div id="divNext" class="btnNext purple-btn" data-i18n="hotel-details-next">
+                        <div id="divNext" class="btn btn-one" data-i18n="hotel-details-next">
                             Next
                         </div>
                     </div>

@@ -8,6 +8,8 @@ body {
 }
 /*=========[ BODY ]=========*/
 
+
+
 /*=========[ COMMON SCROLLBAR STYLE ]=========*/
 ::-webkit-scrollbar {
     width: var(--scrollbar-width);
@@ -22,30 +24,29 @@ body {
 }
 /*=========[ COMMON SCROLLBAR STYLE ]=========*/
 
+
+
 /*=========[ OVERWRITE BOOTSTRAP TAGS ]=========*/
 a {
     text-decoration: var(--a-text-decoration);
     color: var(--a-text-colour);
 }
-
-    a:hover {
-        text-decoration: var(--a-text-decoration-hover);
-        color: var(--a-text-colour-hover);
-    }
-
+a:hover {
+    text-decoration: var(--a-text-decoration-hover);
+    color: var(--a-text-colour-hover);
+}
 .link1 {
     color: var(--link1-text-colour);
     background-color: var(--link1-bg-colour);
     text-decoration: var(--link1-text-decoration);
     display: var(--link1-display);
 }
-
-    .link1:hover {
-        color: var(--link1-text-colour-hover);
-        background-color: var(--link1-bg-colour-hover);
-        text-decoration: var(--link1-text-decoration-hover);
-        display: var(--link1-display-hover);
-    }
+.link1:hover {
+    color: var(--link1-text-colour-hover);
+    background-color: var(--link1-bg-colour-hover);
+    text-decoration: var(--link1-text-decoration-hover);
+    display: var(--link1-display-hover);
+}
 
 h1,
 h2,
@@ -76,8 +77,9 @@ label {
 ul, ol {
     padding-left: 1rem;
 }
-
 /*=========[ OVERWRITE BOOTSTRAP TAGS ]=========*/
+
+
 
 /*=========[ COMMON PARAGRAPH ]=========*/
 p {
@@ -86,82 +88,82 @@ p {
 }
 /*=========[ COMMON PARAGRAPH ]=========*/
 
+
+
 /*=========[ B-RADIUS ]=========*/
 .b-radius {
     border-radius: var(--b-radius);
 }
 /*=========[ B-RADIUS ]=========*/
 
+
+
 /*=========[ BORDERS ]=========*/
 .border {
     border: 1px solid var(--border-colour) !important;
 }
-
 .border-top {
     border-top: 1px solid var(--border-top-colour) !important;
 }
-
 .border-right {
     border-right: 1px solid var(--border-right-colour) !important;
 }
-
 .border-bottom {
     border-bottom: 1px solid var(--border-bottom-colour) !important;
 }
-
 .border-left {
     border-left: 1px solid var(--border-left-colour) !important;
 }
 /*=========[ BORDERS ]=========*/
 
+
+
 /*=========[ VALIDATION ERRORS ]=========*/
 .text-danger {
     color: var(--text-danger) !important;
 }
-
 .text-success {
     color: var(--text-success) !important;
 }
-
 .text-warning {
     color: var(--text-warning) !important;
 }
-
 .bg-danger {
     background-color: var(--bg-danger) !important;
     font-family: var(--danger-family);
     font-size: var(--danger-fontsize);
     color: var(--danger-colour);
-    display: none;
 }
-
 .bg-success {
     background-color: var(--bg-success) !important;
+    font-family: var(--success-family);
+    font-size: var(--success-fontsize);
+    color: var(--success-colour);
 }
-
 .bg-warning {
     background-color: var(--bg-warning) !important;
+    font-family: var(--warning-family);
+    font-size: var(--warning-fontsize);
+    color: var(--warning-colour);
 }
-
 .danger {
     font-family: var(--danger-family);
     font-size: var(--danger-fontsize);
     color: var(--danger-colour);
-    /*display: none;*/
 }
-
 .success {
     font-family: var(--success-family);
     font-size: var(--success-fontsize);
     color: var(--success-colour);
 }
-
 .warning {
     font-family: var(--warning-family);
     font-size: var(--warning-fontsize);
     color: var(--warning-colour);
 }
 /*=========[ VALIDATION ERRORS ]=========*/
+
+
 
 /*=========[ ALERTS ]=========*/
 /******** bootstrap alerts overwrite ********/
@@ -170,19 +172,16 @@ p {
     background-color: #d1ecf1;
     border-color: #bee5eb;
 }
-
 .alert-danger {
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
 }
-
 .alert-success {
     color: #155724;
     background-color: #d4edda;
     border-color: #c3e6cb;
 }
-
 .alert-warning {
     color: #856404;
     background-color: #fff3cd;
@@ -198,24 +197,26 @@ p {
     color: var(--colour7);
 }
 
-    .alert-info .icon span {
-        font-family: var(--font-bold);
-    }
+.alert-info .icon span {
+    font-family: var(--font-bold);
+}
 
-    .alert-info .icon i {
-        color: var(--colour1);
-    }
+.alert-info .icon i {
+    color: var(--colour1);
+}
 
-    .alert-info ul li {
-        font-size: .875rem;
-    }
+.alert-info ul li {
+    font-size: .875rem;
+}
 
-        .alert-info ul li .link1 {
-            color: var(--colour1);
-            text-decoration: underline;
-        }
+.alert-info ul li .link1 {
+    color: var(--colour1);
+    text-decoration: underline;
+}
 /******** alert important ********/
 /*=========[ ALERTS ]=========*/
+
+
 
 /*=========[ BADGES ]=========*/
 .badge {
@@ -223,13 +224,15 @@ p {
     font-family: var(--font-bold);
     font-weight: normal;
     font-size: .875rem;
+    border-radius: var(--b-radius);
 }
-
 .badge-1 {
-    background-color: var(--colour1);
-    color: var(--colour6);
+    background-color: var(--colour6);
+    color: var(--colour1);
 }
 /*=========[ BADGES ]=========*/
+
+
 
 /*=========[ LABEL ]=========*/
 .label {
@@ -239,6 +242,8 @@ p {
     margin-bottom: var(--label-margin-bottom);
 }
 /*=========[ LABEL ]=========*/
+
+
 
 /*=========[ ADDITIONAL HEADINGS BOOTSTRAP ]=========*/
 .h1 {
@@ -278,6 +283,8 @@ p {
 }
 /*=========[ ADDITIONAL HEADINGS BOOTSTRAP ]=========*/
 
+
+
 /*=========[ DROPDOWN ]=========*/
 .dvDropdown .dropdown-toggle::after {
     color: #777777;
@@ -312,6 +319,8 @@ p {
         background-color: var(--colour1);
     }
 /*=========[ DROPDOWN ]=========*/
+
+
 
 /*=========[ GROUP HEADINGS ]=========*/
 .heading1 {
@@ -350,6 +359,8 @@ p {
     font-size: var(--heading6-font-size-mobile);
 }
 /*=========[ GROUP HEADINGS ]=========*/
+
+
 
 /*=========[ RESPONSIVE HEADINGS ]=========*/
 .heading-thin {
@@ -425,6 +436,8 @@ p {
 }
 /*=========[ RESPONSIVE HEADINGS ]=========*/
 
+
+
 /*=========[ TEXT COLOURS ]=========*/
 .text-colour1 {
     color: var(--colour1);
@@ -475,6 +488,8 @@ p {
 }
 /*=========[ TEXT COLOURS ]=========*/
 
+
+
 /*=========[ BACKGROUND ]=========*/
 .background1 {
     background-color: var(--background1);
@@ -488,6 +503,8 @@ p {
     background-color: var(--background3);
 }
 /*=========[ BACKGROUND ]=========*/
+
+
 
 /*=========[ BACKGROUND COLOURS ]=========*/
 .bg-colour1 {
@@ -539,6 +556,8 @@ p {
 }
 /*=========[ BACKGROUND COLOURS ]=========*/
 
+
+
 /*=========[ STICKY FOOTER ]=========*/
 #form1 {
     display: flex;
@@ -556,11 +575,15 @@ p {
 }
 /*=========[ STICKY FOOTER ]=========*/
 
+
+
 /*=========[ PERFECT CENTER WITHOUT CHANGING STICKY FOOTER CSS ]=========*/
 .vh-center {
     min-height: calc(100vh - 300px);
 }
 /*=========[ PERFECT CENTER WITHOUT CHANGING STICKY FOOTER CSS ]=========*/
+
+
 
 /*=========[ MAIN LOADER ]=========*/
 #updProgress {
@@ -572,43 +595,42 @@ p {
     height: var(--updProgress-height);
     background-color: var(--updProgress-bg);
 }
-    /*loader with img*/
-    #updProgress img {
-        background: var(--updProgress-image-bg);
-        border-radius: var(--updProgress-image-b-radius);
-        width: var(--updProgress-image-width);
-        position: var(--updProgress-image-position);
-        top: var(--updProgress-image-top);
-        left: var(--updProgress-image-left);
-        transform: var(--updProgress-image-transform);
-        z-index: var(--updProgress-image-z-index);
-    }
-    /*loader with css*/
-    #updProgress .dvLoader {
-        display: var(--updProgress-dvLoader-display);
-        justify-content: var(--updProgress-dvLoader-justify-content);
-        align-items: var(--updProgress-dvLoader-align-items);
-        height: var(--updProgress-dvLoader-height);
-    }
+/*loader with img*/
+#updProgress img {
+    background: var(--updProgress-image-bg);
+    border-radius: var(--updProgress-image-b-radius);
+    width: var(--updProgress-image-width);
+    position: var(--updProgress-image-position);
+    top: var(--updProgress-image-top);
+    left: var(--updProgress-image-left);
+    transform: var(--updProgress-image-transform);
+    z-index: var(--updProgress-image-z-index);
+}
+/*loader with css*/
+#updProgress .dvLoader {
+    display: var(--updProgress-dvLoader-display);
+    justify-content: var(--updProgress-dvLoader-justify-content);
+    align-items: var(--updProgress-dvLoader-align-items);
+    height: var(--updProgress-dvLoader-height);
+}
 
-    #updProgress .loader {
-        width: var(--updProgress-loader-width);
-        height: var(--updProgress-loader-height);
-        border: var(--updProgress-loader-border);
-        border-bottom-color: var(--updProgress-loader-border-bottom-colour);
-        border-radius: var(--updProgress-loader-b-radius);
-        display: var(--updProgress-loader-display);
-        animation: var(--updProgress-loader-animation);
-    }
+#updProgress .loader {
+    width: var(--updProgress-loader-width);
+    height: var(--updProgress-loader-height);
+    border: var(--updProgress-loader-border);
+    border-bottom-color: var(--updProgress-loader-border-bottom-colour);
+    border-radius: var(--updProgress-loader-b-radius);
+    display: var(--updProgress-loader-display);
+    animation: var(--updProgress-loader-animation);
+}
 
 .dvLoader {
     margin: 0 auto;
     text-align: center;
 }
-
-    .dvLoader img {
-        width: 50px;
-    }
+.dvLoader img {
+    width: 50px;
+}
 
 @keyframes rotation {
     0% {
@@ -620,6 +642,7 @@ p {
     }
 }
 /*=========[ MAIN LOADER ]=========*/
+
 
 
 /*=========[ HEADER ]=========*/
@@ -648,15 +671,17 @@ p {
     text-transform: uppercase;
 }
 
-    .dvHeader .navbar-nav .nav-item a:hover {
-        color: var(--text-colour1);
-    }
+.dvHeader .navbar-nav .nav-item a:hover {
+    color: var(--text-colour1);
+}
 
 .dvHeader .navbar-nav .nav-item.dropdown .dropdown-menu a:hover {
     background-color: var(--text-colour1);
     color: #fff;
 }
 /*=========[ HEADER ]=========*/
+
+
 
 /*=========[ FOOTER ]=========*/
 .dvFooter {
@@ -701,6 +726,8 @@ p {
 }
 /*=========[ Login Forms ]=========*/
 
+
+
 /*=========[ HORIZONTAL SCROLL ]=========*/
 .scroll-hoz {
     overflow-x: var(--scroll-horizontal-mobile-overflow-x);
@@ -708,11 +735,15 @@ p {
 }
 /*=========[ HORIZONTAL SCROLL ]=========*/
 
+
+
 /*=========[ VERTICAL SCROLL ]=========*/
 .scroll-ver {
     overflow-x: var(--scroll-vertical-mobile-overflow-x);
 }
 /*=========[ VERTICAL SCROLL ]=========*/
+
+
 
 /*=========[ EQUAL COLUMNS ]=========*/
 .equal-col {
@@ -729,6 +760,8 @@ p {
     }
 /*=========[ EQUAL COLUMNS ]=========*/
 
+
+
 /*=========[ IMAGE FIX ]=========*/
 .img-container {
     width: var(--img-container-width);
@@ -738,17 +771,18 @@ p {
     overflow: var(--img-container-overflow);
     background-color: var(--img-container-bg-colour);
 }
-
-    .img-container img {
-        width: var(--img-container-img-width);
-        height: var(--img-container-img-height);
-        object-fit: var(--img-container-img-object-fit);
-        object-position: var(--img-container-img-object-position);
-        position: var(--img-container-img-position);
-        top: var(--img-container-img-top);
-        left: var(--img-container-img-left);
-    }
+.img-container img {
+    width: var(--img-container-img-width);
+    height: var(--img-container-img-height);
+    object-fit: var(--img-container-img-object-fit);
+    object-position: var(--img-container-img-object-position);
+    position: var(--img-container-img-position);
+    top: var(--img-container-img-top);
+    left: var(--img-container-img-left);
+}
 /*=========[ IMAGE FIX ]=========*/
+
+
 
 /*=========[ RATINGS ]=========*/
 .dvRatings img {
@@ -756,12 +790,16 @@ p {
 }
 /*=========[ RATINGS ]=========*/
 
+
+
 /*=========[ SWIPER CARD if swiper-slide contain .dvProductCard html structure & want equal border height ]=========*/
 .dvSwiperCard .swiper-wrapper,
 .dvSwiperCard .swiper-slide {
     height: auto;
 }
 /*=========[ SWIPER CARD if swiper-slide contain .dvProductCard html structure & want equal border height ]=========*/
+
+
 
 /*=========[ SWIPER ARROW BUTTONS ]=========*/
 /* display swiper buttons */
@@ -810,6 +848,8 @@ p {
 /* swiper arrow fontawesome icons end */
 /*=========[ SWIPER ARROW BUTTONS ]=========*/
 
+
+
 /*=========[ SWIPER CUSTOMIZED BUTTONS - use "customizeButtons" class on slider's parent when you want to shift buttons or customize]=========*/
 /* customized swiper buttons */
 .customizedButtons .swiper-button-prev,
@@ -826,6 +866,8 @@ p {
         width: var(--custom-arrow-image-width);
     }
 /*=========[ SWIPER CUSTOMIZED BUTTONS - use "customizeButtons" class on slider's parent when you want to shift buttons or customize]=========*/
+
+
 
 /*=========[ SWIPER PAGINATION ]=========*/
 /* display swiper pagination */
@@ -851,6 +893,8 @@ p {
 }
 /*=========[ SWIPER PAGINATION ]=========*/
 
+
+
 /*=========[ SWIPER THUMBSLIDER ]=========*/
 .dvThumbSwiperSlider .swiper-wrapper {
     height: auto;
@@ -865,79 +909,9 @@ p {
 .dvThumbSwiperSlider .dvThumbBannerSlide {
     border: 1px solid var(--border-colour);
 }
-/* swiper css*/
-/*.dvThumbSwiperSlider .swiper {
-    width: 100%;
-    height: 100%;
-}
-
-.dvThumbSwiperSlider .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-}
-
-.dvThumbSwiperSlider .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.dvThumbSwiperSlider .swiper {
-    width: 100%;*/
-/*height: 300px;*/
-/*margin-left: auto;
-    margin-right: auto;
-}
-
-.dvThumbSwiperSlider .mySwiper2 {*/
-/*height: 50%;*/
-/*height: auto;
-    width: 100%;
-}
-
-.dvThumbSwiperSlider .mySwiper {*/
-/*height: 12%;*/
-/*height: auto;
-    box-sizing: border-box;
-    padding: 10px 0;
-}
-
-.dvThumbSwiperSlider .mySwiper .swiper-slide {
-    width: 25%;
-    height: 100%;
-    opacity: 0.4;
-}
-
-.dvThumbSwiperSlider .mySwiper .swiper-slide-thumb-active {
-    opacity: 1;
-}*/
-
-/* adjust arrows right & left */
-/*.dvThumbSwiperSlider .swiper-button-prev,
-.dvThumbSwiperSlider .swiper-rtl .swiper-button-next {
-    left: var(--swiper-navigation-sides-offset, 10px);
-    right: auto;
-}
-
-.dvThumbSwiperSlider .swiper-button-next,
-.dvThumbSwiperSlider .swiper-rtl .swiper-button-prev {
-    right: var(--swiper-navigation-sides-offset, 10px);
-    left: auto;
-}*/
-
-/* adjust arrows width size */
-/*.dvThumbSwiperSlider .swiper-button-prev img,
-.dvThumbSwiperSlider .swiper-button-next img {
-    width: 25px;
-}*/
 /*=========[ SWIPER THUMBSLIDER ]=========*/
+
+
 
 /*=========[ BOOTSTRAP PAGINATION ]=========*/
 .dvPagination .page-link:focus {
@@ -963,29 +937,27 @@ p {
 }
 /*=========[ BOOTSTRAP PAGINATION ]=========*/
 
+
+
 /*=========[ BUTTONS ]=========*/
 .btn.focus,
 .btn:focus {
     box-shadow: none;
 }
-
 .btn {
     font-family: var(--btn-family);
     background-color: var(--btn-bg);
     color: var(--btn-text);
     border-color: var(--btn-border-colour);
 }
-
-    .btn:hover,
-    .btn.focus,
-    .btn:focus {
-        font-family: var(--btn-family);
-        background-color: var(--btn-bg);
-        color: var(--btn-text);
-        border-color: var(--btn-border-colour);
-    }
-
-
+.btn:hover,
+.btn.focus,
+.btn:focus {
+    font-family: var(--btn-family);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border-color: var(--btn-border-colour);
+}
 
 .btn-one {
     font-family: var(--btn-one-family);
@@ -996,27 +968,25 @@ p {
     border-radius: var(--btn-one-b-radius);
     padding: var(--btn-one-padding);
 }
-
-    .btn-one:hover {
-        font-family: var(--btn-one-family);
-        background-color: var(--btn-one-bg-hover);
-        color: var(--btn-one-text-hover);
-        border-color: var(--btn-one-border-colour-hover);
-        text-transform: var(--btn-one-text-transform);
-        border-radius: var(--btn-one-b-radius);
-        padding: var(--btn-one-padding);
-    }
-
-    .btn-one.focus,
-    .btn-one:focus {
-        font-family: var(--btn-one-family);
-        background-color: var(--btn-one-bg);
-        color: var(--btn-one-text);
-        border-color: var(--btn-one-border-colour);
-        text-transform: var(--btn-one-text-transform);
-        border-radius: var(--btn-one-b-radius);
-        padding: var(--btn-one-padding);
-    }
+.btn-one:hover {
+    font-family: var(--btn-one-family);
+    background-color: var(--btn-one-bg-hover);
+    color: var(--btn-one-text-hover);
+    border-color: var(--btn-one-border-colour-hover);
+    text-transform: var(--btn-one-text-transform);
+    border-radius: var(--btn-one-b-radius);
+    padding: var(--btn-one-padding);
+}
+.btn-one.focus,
+.btn-one:focus {
+    font-family: var(--btn-one-family);
+    background-color: var(--btn-one-bg);
+    color: var(--btn-one-text);
+    border-color: var(--btn-one-border-colour);
+    text-transform: var(--btn-one-text-transform);
+    border-radius: var(--btn-one-b-radius);
+    padding: var(--btn-one-padding);
+}
 
 .btn-two {
     font-family: var(--btn-two-family);
@@ -1027,27 +997,25 @@ p {
     border-radius: var(--btn-two-b-radius);
     padding: var(--btn-two-padding);
 }
-
-    .btn-two:hover {
-        font-family: var(--btn-two-family);
-        background-color: var(--btn-two-bg-hover);
-        color: var(--btn-two-text-hover);
-        border-color: var(--btn-two-border-colour-hover);
-        text-transform: var(--btn-two-text-transform);
-        border-radius: var(--btn-two-b-radius);
-        padding: var(--btn-two-padding);
-    }
-
-    .btn-two.focus,
-    .btn-two:focus {
-        font-family: var(--btn-two-family);
-        background-color: var(--btn-two-bg);
-        color: var(--btn-two-text);
-        border-color: var(--btn-two-border-colour);
-        text-transform: var(--btn-two-text-transform);
-        border-radius: var(--btn-two-b-radius);
-        padding: var(--btn-two-padding);
-    }
+.btn-two:hover {
+    font-family: var(--btn-two-family);
+    background-color: var(--btn-two-bg-hover);
+    color: var(--btn-two-text-hover);
+    border-color: var(--btn-two-border-colour-hover);
+    text-transform: var(--btn-two-text-transform);
+    border-radius: var(--btn-two-b-radius);
+    padding: var(--btn-two-padding);
+}
+.btn-two.focus,
+.btn-two:focus {
+    font-family: var(--btn-two-family);
+    background-color: var(--btn-two-bg);
+    color: var(--btn-two-text);
+    border-color: var(--btn-two-border-colour);
+    text-transform: var(--btn-two-text-transform);
+    border-radius: var(--btn-two-b-radius);
+    padding: var(--btn-two-padding);
+}
 
 .btn-three {
     font-family: var(--btn-three-family);
@@ -1058,28 +1026,25 @@ p {
     border-radius: var(--btn-three-b-radius);
     padding: var(--btn-three-padding);
 }
-
-    .btn-three:hover {
-        font-family: var(--btn-three-family);
-        background-color: var(--btn-three-bg-hover);
-        color: var(--btn-three-text-hover);
-        border-color: var(--btn-three-border-colour-hover);
-        text-transform: var(--btn-three-text-transform);
-        border-radius: var(--btn-three-b-radius);
-        padding: var(--btn-three-padding);
-    }
-
-    .btn-three.focus,
-    .btn-three:focus {
-        font-family: var(--btn-three-family);
-        background-color: var(--btn-three-bg);
-        color: var(--btn-three-text);
-        border-color: var(--btn-three-border-colour);
-        text-transform: var(--btn-three-text-transform);
-        border-radius: var(--btn-three-b-radius);
-        padding: var(--btn-three-padding);
-    }
-
+.btn-three:hover {
+    font-family: var(--btn-three-family);
+    background-color: var(--btn-three-bg-hover);
+    color: var(--btn-three-text-hover);
+    border-color: var(--btn-three-border-colour-hover);
+    text-transform: var(--btn-three-text-transform);
+    border-radius: var(--btn-three-b-radius);
+    padding: var(--btn-three-padding);
+}
+.btn-three.focus,
+.btn-three:focus {
+    font-family: var(--btn-three-family);
+    background-color: var(--btn-three-bg);
+    color: var(--btn-three-text);
+    border-color: var(--btn-three-border-colour);
+    text-transform: var(--btn-three-text-transform);
+    border-radius: var(--btn-three-b-radius);
+    padding: var(--btn-three-padding);
+}
 /*do not change the sequence of disabled button - keep below buttons*/
 .btn.disabled,
 .btn:disabled {
@@ -1106,7 +1071,9 @@ p {
 }
 /*=========[ TABS SCROLLBAR FOR TABS 1 & TABS 2 ]=========*/
 
-/*=========[ TABS 1 ]=========*/
+
+
+/*=========[ TABS REGULAR ]=========*/
 .dvTabs .nav-tabs .nav-link {
     border: 1px solid var(--tab-border-colour);
     border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
@@ -1124,9 +1091,11 @@ p {
 .dvTabs .nav-tabs .nav-link {
     margin: var(--tab-margin);
 }
-/*=========[ TABS 1 ]=========*/
+/*=========[ TABS REGULAR ]=========*/
 
-/*=========[ TABS 2 ]=========*/
+
+
+/*=========[ TABS PILLS ]=========*/
 .dvTabs .nav-pills .nav-link {
     border: 1px solid var(--pills-border-colour);
     border-radius: var(--pills-border-radius) var(--pills-border-radius) var(--pills-border-radius) var(--pills-border-radius);
@@ -1143,7 +1112,9 @@ p {
 .dvTabs .nav-pills .nav-item {
     margin: var(--pills-margin);
 }
-/*=========[ TABS 2 ]=========*/
+/*=========[ TABS PILLS ]=========*/
+
+
 
 /*=========[ ROTATE SINGLE COLLAPSE ARROW ICON ]=========*/
 .arrow-icon {
@@ -1155,76 +1126,82 @@ p {
 }
 /*=========[ ROTATE SINGLE COLLAPSE ARROW ICON ]=========*/
 
+
+
 /*=========[ BORDER SEPARATOR ]=========*/
 .dvBorderBottom .border-bottom {
     border-bottom: 1px solid var(--border-bottom-colour) !important;
 }
 /*=========[ BORDER SEPARATOR ]=========*/
 
+
+
 /*=========[ COMMON ACCORDION ]=========*/
 /* accordion parent border */
 .dvCommonAccordion.accordion {
     border: 1px solid var(--accordion-border-colour);
 }
-    /* accordion card border */
-    .dvCommonAccordion.accordion .card {
-        border: 1px solid var(--accordion-card-border);
-    }
+/* accordion card border */
+.dvCommonAccordion.accordion .card {
+    border: 1px solid var(--accordion-card-border);
+}
 
-    .dvCommonAccordion.accordion .card-header {
-        margin-bottom: 0;
-        border-bottom: 1px solid transparent;
-    }
-        /* accordion icons */
-        .dvCommonAccordion.accordion .card-header .arrow-icon {
-            position: absolute;
-            right: 15px;
-            transition: transform 0.3s ease-in-out;
-        }
-        /* accordion rotate icons */
-        .dvCommonAccordion.accordion .card-header .collapsed .arrow-icon {
-            transform: rotate(180deg);
-        }
-        /* card-header > all buttons by default */
-        .dvCommonAccordion.accordion .card-header button {
-            background-color: var(--accordion-header-bg);
-            color: var(--accordion-header-text);
-            border: unset;
-            border-radius: var(--accordion-header-b-radius);
-            font-family: var(--accordion-header-family);
-        }
-            /* card-header > button when it is not collapsed. */
-            .dvCommonAccordion.accordion .card-header button:not(.collapsed) {
-                background: var(--accordion-header-active-bg);
-                border: unset;
-                border-radius: var(--accordion-header-active-b-radius);
-                font-family: var(--accordion-header-family);
-                color: var(--accordion-header-active-text);
-            }
-    /* card-body by default. */
-    .dvCommonAccordion.accordion .card-body {
-        background: var(--accordion-body-bg);
-        border-radius: var(--accordion-body-b-radius);
-        font-family: var(--accordion-body-family);
-    }
-    /* style the card body when show class applies */
-    .dvCommonAccordion.accordion .collapse.show {
-        background: var(--accordion-body-active-bg);
-        border-radius: var(--accordion-body-active-b-radius);
-    }
-    /* hide the plus icon when the button is not collapsed. */
-    .dvCommonAccordion.accordion .card-header button:not(.collapsed) .fa-plus {
-        display: none;
-    }
-    /* show the minus icon when the button is not collapsed. */
-    .dvCommonAccordion.accordion .card-header button:not(.collapsed) .fa-minus {
-        display: inline-block;
-    }
-    /* hide the minus icon by default. */
-    .dvCommonAccordion.accordion .fa-minus {
-        display: none;
-    }
+.dvCommonAccordion.accordion .card-header {
+    margin-bottom: 0;
+    border-bottom: 1px solid transparent;
+}
+/* accordion icons */
+.dvCommonAccordion.accordion .card-header .arrow-icon {
+    position: absolute;
+    right: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+/* accordion rotate icons */
+.dvCommonAccordion.accordion .card-header .collapsed .arrow-icon {
+    transform: rotate(180deg);
+}
+/* card-header > all buttons by default */
+.dvCommonAccordion.accordion .card-header button {
+    background-color: var(--accordion-header-bg);
+    color: var(--accordion-header-text);
+    border: unset;
+    border-radius: var(--accordion-header-b-radius);
+    font-family: var(--accordion-header-family);
+}
+/* card-header > button when it is not collapsed. */
+.dvCommonAccordion.accordion .card-header button:not(.collapsed) {
+    background: var(--accordion-header-active-bg);
+    border: unset;
+    border-radius: var(--accordion-header-active-b-radius);
+    font-family: var(--accordion-header-family);
+    color: var(--accordion-header-active-text);
+}
+/* card-body by default. */
+.dvCommonAccordion.accordion .card-body {
+    background: var(--accordion-body-bg);
+    border-radius: var(--accordion-body-b-radius);
+    font-family: var(--accordion-body-family);
+}
+/* style the card body when show class applies */
+.dvCommonAccordion.accordion .collapse.show {
+    background: var(--accordion-body-active-bg);
+    border-radius: var(--accordion-body-active-b-radius);
+}
+/* hide the plus icon when the button is not collapsed. */
+.dvCommonAccordion.accordion .card-header button:not(.collapsed) .fa-plus {
+    display: none;
+}
+/* show the minus icon when the button is not collapsed. */
+.dvCommonAccordion.accordion .card-header button:not(.collapsed) .fa-minus {
+    display: inline-block;
+}
+/* hide the minus icon by default. */
+.dvCommonAccordion.accordion .fa-minus {
+    display: none;
+}
 /*=========[ COMMON ACCORDION ]=========*/
+
+
 
 /*=========[ CART ICON ]=========*/
 .dvCartIcon .fa-shopping-cart {
@@ -1232,37 +1209,40 @@ p {
 }
 /*=========[ CART ICON ]=========*/
 
+
+
 /*=========[ SHOP MENU ]=========*/
 .dvShopMenu {
     background-color: var(--bg-colour2);
 }
 
-    .dvShopMenu .bg-light {
-        background-color: var( --bg-colour6) !important;
-    }
+.dvShopMenu .bg-light {
+    background-color: var( --bg-colour6) !important;
+}
 
-    .dvShopMenu .navbar-light .navbar-nav .nav-link {
-        color: var(--text-colour7);
-        font-size: .875rem;
-    }
+.dvShopMenu .navbar-light .navbar-nav .nav-link {
+    color: var(--text-colour7);
+    font-size: .875rem;
+}
 
-    .dvShopMenu .dropdown-item {
-        white-space: normal;
-        font-size: .875rem;
-    }
+.dvShopMenu .dropdown-item {
+    white-space: normal;
+    font-size: .875rem;
+}
+.dvShopMenu .dropdown-item:focus,
+.dvShopMenu .dropdown-item:hover {
+    background-color: var(--colour1) !important;
+    color: #fff;
+}
 
-        .dvShopMenu .dropdown-item:focus,
-        .dvShopMenu .dropdown-item:hover {
-            background-color: var(--colour1) !important;
-            color: #fff;
-        }
-
-        .dvShopMenu .dropdown-item.active,
-        .dvShopMenu .dropdown-item:active {
-            background-color: var(--colour1) !important;
-            color: #fff;
-        }
+.dvShopMenu .dropdown-item.active,
+.dvShopMenu .dropdown-item:active {
+    background-color: var(--colour1) !important;
+    color: #fff;
+}
 /*=========[ SHOP MENU ]=========*/
+
+
 
 /*=========[ BREADCRUMBS ]=========*/
 .dvBreadcrumbs .breadcrumb {
@@ -1281,26 +1261,25 @@ p {
     }
 /*=========[ BREADCRUMBS ]=========*/
 
+
+
 /*=========[ BOOTSTRAP NAVBAR ]=========*/
 /*submenu css*/
 .dropdown-submenu {
     position: relative;
 }
-
-    .dropdown-submenu .dropdown-menu {
-        top: 0;
-        left: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .dropdown-submenu a::after {
-        transform: rotate(-90deg);
-        position: absolute;
-        right: 6px;
-        top: 0.8em;
-    }
-
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+.dropdown-submenu a::after {
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 6px;
+    top: 0.8em;
+}
 .dropdown-item {
     padding: 0.25rem 0.75rem;
 }
@@ -1321,123 +1300,131 @@ li li.show > .dropdown-toggle:after {
 /*rotate icon animation before 992px*/
 /*=========[ BOOTSTRAP NAVBAR ]=========*/
 
+
+
 /*=========[ CHECKBOX ]=========*/
 .dvLabel {
     margin-bottom: 0.25rem;
 }
-    /* The checkbox-container */
-    .dvLabel .checkbox-container {
-        position: relative;
-        padding-left: 15px;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-        /* Hide the browser's default checkbox */
-        .dvLabel .checkbox-container input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            height: 0;
-            width: 0;
-        }
-    /* Create a custom checkbox with an image */
-    .dvLabel .checkmark {
-        position: absolute;
-        top: 4px;
-        left: 0;
-        height: 15px;
-        width: 15px;
-        border: 1px solid var(--colour1);
-        border-radius: 3px;
-    }
-    /* When the checkbox is checked */
-    .dvLabel .checkbox-container input:checked ~ .checkmark {
-        background-color: #2196f3;
-        background: url("/images/icons/arrows/checkmark.png") no-repeat center center var(--colour1);
-        background-size: contain;
-    }
-    /* Create the checkmark/indicator (hidden when not checked) */
-    .dvLabel .checkmark:after {
-        content: "";
-        position: absolute;
-        display: none;
-    }
-    /* Show the checkmark when checked */
-    .dvLabel .checkbox-container input:checked ~ .checkmark:after {
-        display: block;
-    }
-    /*=========[ CHECKBOX ]=========*/
+/* The checkbox-container */
+.dvLabel .checkbox-container {
+    position: relative;
+    padding-left: 15px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* Hide the browser's default checkbox */
+.dvLabel .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+/* Create a custom checkbox with an image */
+.dvLabel .checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border: 1px solid var(--colour1);
+    border-radius: 3px;
+}
+/* When the checkbox is checked */
+.dvLabel .checkbox-container input:checked ~ .checkmark {
+    background-color: #2196f3;
+    background: url("/images/icons/arrows/checkmark.png") no-repeat center center var(--colour1);
+    background-size: contain;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.dvLabel .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+/* Show the checkmark when checked */
+.dvLabel .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+/*=========[ CHECKBOX ]=========*/
 
-    /*=========[ RADIO ]=========*/
-    /* The container */
-    .dvLabel .radio-container {
-        display: block;
-        position: relative;
-        padding-left: 10px;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
 
-        /* Hide the browser's default radio button */
-        .dvLabel .radio-container input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-        }
 
-    /* Create a custom radio button */
-    .dvLabel .radiomark {
-        position: absolute;
-        top: 2px;
-        left: 0;
-        height: 14px;
-        width: 14px;
-        background-color: #eee;
-        border-radius: 50%;
-        box-shadow: 0px 0px 0px 1px #bebebe;
-    }
-
-    /* When the radio button is checked, add a blue background */
-    .dvLabel .radio-container input:checked ~ .radiomark {
-        background-color: var(--colour1);
-    }
-
-    /* Create the indicator (the dot/circle - hidden when not checked) */
-    .dvLabel .radiomark:after {
-        content: "";
-        position: absolute;
-        display: none;
-    }
-
-    /* Show the indicator (dot/circle) when checked */
-    .dvLabel .radio-container input:checked ~ .radiomark:after {
-        display: block;
-    }
-
-    /* Style the indicator (dot/circle) */
-    .dvLabel .radio-container .radiomark:after {
-        top: 50%;
-        left: 50%;
-        width: 8px;
-        height: 8px;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        background: white;
-        box-shadow: 0 0 0 4px var(--colour1);
-    }
 /*=========[ RADIO ]=========*/
+/* The container */
+.dvLabel .radio-container {
+    display: block;
+    position: relative;
+    padding-left: 10px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.dvLabel .radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.dvLabel .radiomark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 14px;
+    width: 14px;
+    background-color: #eee;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 1px #bebebe;
+}
+
+/* When the radio button is checked, add a blue background */
+.dvLabel .radio-container input:checked ~ .radiomark {
+    background-color: var(--colour1);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.dvLabel .radiomark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.dvLabel .radio-container input:checked ~ .radiomark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.dvLabel .radio-container .radiomark:after {
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 0 4px var(--colour1);
+}
+/*=========[ RADIO ]=========*/
+
+
 
 /*=========[ TEXTAREA ]=========*/
 textarea {
     resize: none;
 }
 /*=========[ TEXTAREA ]=========*/
+
+
 
 /*=========[ FORM CONTROL ]=========*/
 /* FORM CONTROL PLACEHOLDER START */
@@ -1563,94 +1550,97 @@ select.form-control:focus {
 /*=========[ FORM CONTROL ]=========*/
 
 
+
 /*=========[ CUSTOM SELECT ]=========*/
 .dvSelectMenu {
     position: relative;
     width: 100%;
 }
 
-    .dvSelectMenu .form-control {
-        color: var(--fc-text-colour);
-        font-size: var(--fc-font-size);
-        border-top: var(--fc-border-top);
-        border-right: var(--fc-border-right);
-        border-bottom: var(--fc-border-bottom);
-        border-left: var(--fc-border-left);
-        border-top-left-radius: var(--fc-radius-top-left) !important;
-        border-bottom-left-radius: var(--fc-radius-bottom-left) !important;
-        border-top-right-radius: var(--fc-radius-top-right) !important;
-        border-bottom-right-radius: var(--fc-radius-bottom-right) !important;
-        background-color: var(--fc-bg-colour);
-    }
+.dvSelectMenu .form-control {
+    color: var(--fc-text-colour);
+    font-size: var(--fc-font-size);
+    border-top: var(--fc-border-top);
+    border-right: var(--fc-border-right);
+    border-bottom: var(--fc-border-bottom);
+    border-left: var(--fc-border-left);
+    border-top-left-radius: var(--fc-radius-top-left) !important;
+    border-bottom-left-radius: var(--fc-radius-bottom-left) !important;
+    border-top-right-radius: var(--fc-radius-top-right) !important;
+    border-bottom-right-radius: var(--fc-radius-bottom-right) !important;
+    background-color: var(--fc-bg-colour);
+}
 
-    .dvSelectMenu .dvSelectedValue {
-        display: flex;
-        align-items: center;
-        /* background: red; */
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        background: #fff;
-    }
+.dvSelectMenu .dvSelectedValue {
+    display: flex;
+    align-items: center;
+    /* background: red; */
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: #fff;
+}
 
-        .dvSelectMenu .dvSelectedValue:after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: 15px;
-            width: 6px;
-            height: 6px;
-            transform: translateY(-50%) rotate(45deg);
-            border-right: 2px solid #666;
-            border-bottom: 2px solid #666;
-            transition: 0.2s ease;
-        }
+.dvSelectMenu .dvSelectedValue:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 6px;
+    height: 6px;
+    transform: translateY(-50%) rotate(45deg);
+    border-right: 2px solid #666;
+    border-bottom: 2px solid #666;
+    transition: 0.2s ease;
+}
 
-        .dvSelectMenu .dvSelectedValue.toggle {
-            border-radius: var(--b-radius) var(--b-radius) 0 0;
-        }
+.dvSelectMenu .dvSelectedValue.toggle {
+    border-radius: var(--b-radius) var(--b-radius) 0 0;
+}
 
-            .dvSelectMenu .dvSelectedValue.toggle:after {
-                transform: translateY(-50%) rotate(-135deg);
-            }
+.dvSelectMenu .dvSelectedValue.toggle:after {
+    transform: translateY(-50%) rotate(-135deg);
+}
 
-    .dvSelectMenu .dvSelectDropdown {
-        position: absolute;
-        top: 100%;
-        width: 100%;
-        border-radius: 0 0 var(--b-radius) var(--b-radius);
-        overflow-x: hidden;
-        max-height: 150px;
-        /* background: green; */
-        z-index: 2 !important;
-        background: #fff;
-        transform: scale(1, 0);
-        transform-origin: top center;
-        visibility: hidden;
-        transition: 0.2s ease;
-        /* box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); */
-        border: 1px solid #ddd;
-        left: 0;
-        font-size: var(--fc-font-size);
-    }
+.dvSelectMenu .dvSelectDropdown {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    border-radius: 0 0 var(--b-radius) var(--b-radius);
+    overflow-x: hidden;
+    max-height: 150px;
+    /* background: green; */
+    z-index: 2 !important;
+    background: #fff;
+    transform: scale(1, 0);
+    transform-origin: top center;
+    visibility: hidden;
+    transition: 0.2s ease;
+    /* box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); */
+    border: 1px solid #ddd;
+    left: 0;
+    font-size: var(--fc-font-size);
+}
 
-        .dvSelectMenu .dvSelectDropdown .option {
-            padding: 7px 10px;
-            box-sizing: border-box;
-            cursor: pointer;
-        }
+.dvSelectMenu .dvSelectDropdown .option {
+    padding: 7px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
 
-            .dvSelectMenu .dvSelectDropdown .option:hover {
-                background: #f8f8f8;
-            }
+.dvSelectMenu .dvSelectDropdown .option:hover {
+    background: #f8f8f8;
+}
 
-        .dvSelectMenu .dvSelectDropdown.toggle {
-            visibility: visible;
-            transform: scale(1, 1);
-        }
+.dvSelectMenu .dvSelectDropdown.toggle {
+    visibility: visible;
+    transform: scale(1, 1);
+}
 /*=========[ CUSTOM SELECT ]=========*/
+
+
 
 /*=========[ PLUS MINUS BUTTONS ]=========*/
 .dvPlusMinus .minusBtn,
@@ -1668,6 +1658,8 @@ select.form-control:focus {
     cursor: pointer;
 }
 /*=========[ PLUS MINUS BUTTONS ]=========*/
+
+
 
 /*=========[ BOOTSTRAP TOOLTIP ]=========*/
 /* Custom CSS for the tooltip */
@@ -1705,6 +1697,8 @@ select.form-control:focus {
     border-left-color: #fff !important;
 }
 /*=========[ BOOTSTRAP TOOLTIP ]=========*/
+
+
 
 /*=========[ JQUERY UI SELECTMENU ]=========*/
 /*button*/
@@ -1757,8 +1751,9 @@ select.form-control:focus {
 }
 /*=========[ JQUERY UI SELECTMENU ]=========*/
 
-/*=========[ JQUERY UI TIMEPICKER ]=========*/
 
+
+/*=========[ JQUERY UI TIMEPICKER ]=========*/
 /* input {
         width: 100px;
       } */
@@ -1841,42 +1836,46 @@ select.form-control:focus {
        */
 /*=========[ JQUERY UI TIMEPICKER ]=========*/
 
+
+
 /*=========[ JQUERY UI RANGE SLIDER ]=========*/
 .dvRangeSlider {
-    margin: 5px 10px 0px 5px;
+    margin: var(--rangeslider-margin);
 }
-    /*wrapper height*/
-    .dvRangeSlider .ui-slider-horizontal {
-        height: 0.25rem;
-    }
-    /*wrapper selected bg*/
-    .dvRangeSlider .ui-slider .ui-slider-range {
-        background-color: var(--colour7);
-    }
-    /* wrapper border */
-    .dvRangeSlider .ui-widget.ui-widget-content {
-        border: 0;
-        background-color: var(--colour3);
-    }
-    /* handle */
-    .dvRangeSlider .ui-state-default,
-    .dvRangeSlider .ui-widget-content .ui-state-default,
-    .dvRangeSlider .ui-widget-header .ui-state-default,
-    .dvRangeSlider .ui-button,
-    .dvRangeSlider html .ui-button.ui-state-disabled:hover,
-    .dvRangeSlider html .ui-button.ui-state-disabled:active {
-        border: 1px solid var(--colour1);
-        background: var(--colour1);
-        border-radius: 50%;
-        width: 12px;
-        height: 12px;
-    }
-
-    .dvRangeSlider .ui-slider-horizontal .ui-slider-handle {
-        top: -4px;
-        margin-left: -5px;
-    }
+/*slide height*/
+.dvRangeSlider .ui-slider-horizontal {
+    height: var(--rangeslider-slide-height);
+}
+/*slide selected bg*/
+.dvRangeSlider .ui-slider .ui-slider-range {
+    background-color: var(--rangeslider-slide-selected-bg-colour);
+}
+/*slide border */
+.dvRangeSlider .ui-widget.ui-widget-content {
+    border: 0;
+    background-color: var(--rangeslider-slide-border-bg-colour);
+}
+/* handle */
+.dvRangeSlider .ui-state-default,
+.dvRangeSlider .ui-widget-content .ui-state-default,
+.dvRangeSlider .ui-widget-header .ui-state-default,
+.dvRangeSlider .ui-button,
+.dvRangeSlider html .ui-button.ui-state-disabled:hover,
+.dvRangeSlider html .ui-button.ui-state-disabled:active {
+    border: var(--rangeslider-handle-border);
+    background: var(--rangeslider-handle-bg-colour);
+    border-radius: var(--rangeslider-handle-border-radius);
+    width: var(--rangeslider-handle-width);
+    height: var(--rangeslider-handle-height);
+}
+/* handle position */
+.dvRangeSlider .ui-slider-horizontal .ui-slider-handle {
+    top: var(--rangeslider-handle-top);
+    margin-left: var(--rangeslider-handle-margin-left);
+}
 /*=========[ JQUERY UI RANGE SLIDER ]=========*/
+
+
 
 /*=========[ JQUERY UI DATEPICKER ]=========*/
 /* header bg and date title */
@@ -1935,6 +1934,8 @@ select.form-control:focus {
 }
 /*=========[ JQUERY UI DATEPICKER ]=========*/
 
+
+
 /*=========[ JQUERY UI AUTOCOMPLETE ]=========*/
 /*.ui-menu{
         display:block !important;
@@ -1942,15 +1943,12 @@ select.form-control:focus {
 .ui-autocomplete::-webkit-scrollbar {
     width: var(--ui-autocomplete-scrollbar-width);
 }
-
 .ui-autocomplete::-webkit-scrollbar-track {
     background: var(--ui-autocomplete-scrollbar-track-bg);
 }
-
 .ui-autocomplete::-webkit-scrollbar-thumb {
     background: var(--ui-autocomplete-scrollbar-thumb-bg);
 }
-
 .ui-autocomplete .ui-menu-item a,
 .ui-autocomplete .ui-menu-item .ui-menu-item-wrapper {
     display: block;
@@ -1962,18 +1960,19 @@ select.form-control:focus {
     font-size: 0.875rem;
     opacity: var(--ui-autocomplete-opacity);
 }
-
-    .ui-autocomplete .ui-menu-item a:hover,
-    .ui-autocomplete .ui-menu-item .ui-menu-item-wrapper:hover {
-        display: block;
-        background: var(--colour1);
-        color: var(--colour6);
-        border: none !important;
-        margin: 1px;
-        padding: 0.5rem 0.5rem;
-        opacity: var(--ui-autocomplete-opacity-hover);
-    }
+.ui-autocomplete .ui-menu-item a:hover,
+.ui-autocomplete .ui-menu-item .ui-menu-item-wrapper:hover {
+    display: block;
+    background: var(--colour1);
+    color: var(--colour6);
+    border: none !important;
+    margin: 1px;
+    padding: 0.5rem 0.5rem;
+    opacity: var(--ui-autocomplete-opacity-hover);
+}
 /*=========[ JQUERY UI AUTOCOMPLETE ]=========*/
+
+
 
 /*=========[ ADD TO CART ]=========*/
 .btn-addtocart .fa-minus,
@@ -1983,26 +1982,25 @@ select.form-control:focus {
     padding: 15px;
     cursor: pointer;
 }
-
 .btn-addtocart {
     font-family: var(--regular);
     /* background-color: var(--colour1); */
     color: var(--colour7);
     border: none;
 }
-
-    .btn-addtocart i {
-        background-color: var(--colour2);
-        color: var(--colour6);
-        border: none;
-    }
-
-    .btn-addtocart:hover i {
-        background-color: var(--colour1);
-        color: var(--colour6);
-        border: none;
-    }
+.btn-addtocart i {
+    background-color: var(--colour2);
+    color: var(--colour6);
+    border: none;
+}
+.btn-addtocart:hover i {
+    background-color: var(--colour1);
+    color: var(--colour6);
+    border: none;
+}
 /*=========[ ADD TO CART ]=========*/
+
+
 
 /*=========[ DENOMIMATION ]=========*/
 .dvDenominations .btn-denomination {
@@ -2015,21 +2013,19 @@ select.form-control:focus {
     border: var(--denomination-btn-border);
     border-radius: var(--denomination-btn-border-radius);
 }
-    /*.dvDenominations .denomination-checkbox {
-  display: none;
-}*/
-    .dvDenominations .btn-denomination.selected {
-        background: var(--denomination-btn-active-background);
-        color: var(--denomination-btn-active-text-colour);
-    }
+.dvDenominations .btn-denomination.selected {
+    background: var(--denomination-btn-active-background);
+    color: var(--denomination-btn-active-text-colour);
+}
 /*=========[ DENOMIMATION ]=========*/
+
+
 
 /*=========[ COMMON MODAL ]=========*/
 .dvCommonModal.modal .modal-content {
     border-top-left-radius: var(--modal-b-radius);
     border-top-right-radius: var(--modal-b-radius);
 }
-
 .dvCommonModal.modal .modal-header {
     padding: var(--modal-header-padding);
     background-color: var(--modal-header-bg-colour);
@@ -2038,119 +2034,86 @@ select.form-control:focus {
     border-top-left-radius: var(--modal-b-radius);
     border-top-right-radius: var(--modal-b-radius);
 }
-
-    .dvCommonModal.modal .modal-header .modal-title {
-        font-family: var(--modal-title-font-family);
-        color: var(--modal-title-text-colour);
-        font-size: var(--modal-title-fontsize);
-    }
-
-    .dvCommonModal.modal .modal-header .close {
-        opacity: var(--modal-close-btn-opacity);
-        color: var(--modal-close-icon-text-colour);
-        font-size: var(--modal-close-btn-fontsize);
-    }
-
-        .dvCommonModal.modal .modal-header .close i {
-            background-color: var(--modal-close-icon-bg);
-            color: var(--modal-close-icon-text-colour);
-            font-size: var(--modal-close-icon-fontsize);
-        }
-
+.dvCommonModal.modal .modal-header .modal-title {
+    font-family: var(--modal-title-font-family);
+    color: var(--modal-title-text-colour);
+    font-size: var(--modal-title-fontsize);
+}
+.dvCommonModal.modal .modal-header .close {
+    opacity: var(--modal-close-btn-opacity);
+    color: var(--modal-close-icon-text-colour);
+    font-size: var(--modal-close-btn-fontsize);
+}
+.dvCommonModal.modal .modal-header .close i {
+    background-color: var(--modal-close-icon-bg);
+    color: var(--modal-close-icon-text-colour);
+    font-size: var(--modal-close-icon-fontsize);
+}
 .dvCommonModal.modal .modal-footer {
     border-top: var(--modal-footer-border-top);
     padding: var(--modal-footer-padding);
 }
-
 .dvCommonModal.modal ::-webkit-scrollbar {
     width: var(--modal-scrollbar-width);
 }
-
 .dvCommonModal.modal ::-webkit-scrollbar-track {
     background: var(--modal-scrollbar-track-bg);
 }
-
 .dvCommonModal.modal ::-webkit-scrollbar-thumb {
     background: var(--modal-scrollbar-thumb-bg);
 }
 /*=========[ COMMON MODAL ]=========*/
 
-/*=========[ PRODUCT CARD MODAL ]=========*/
-.dvCommonModal.dvProductCardModal.modal .modal-body .dvDescription .b-radius {
-    border-radius: var(--b-radius) var(--b-radius) 0 0;
-}
-/*=========[ PRODUCT CARD MODAL ]=========*/
 
-/*=========[ REDEEM MODAL ]=========*/
-
-/*=========[ REDEEM MODAL ]=========*/
-
-/*=========[ SUCCESS MODAL ]=========*/
-
-/*=========[ SUCCESS MODAL ]=========*/
-
-/*=========[ ACCOUNT EDIT MODAL ]=========*/
-
-/*=========[ ACCOUNT EDIT MODAL ]=========*/
 
 /*==[ -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- FILTER MOBILE -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- ]==*/
 /*=========[ FILTER ACCORDION MOBILE ]=========*/
 .dvFilter.modal .accordion {
     border: var(--filter-mobile-accordion-border);
 }
-
-    .dvFilter.modal .accordion .card {
-        border: var(--filter-mobile-accordion-card-border);
-    }
-
-    .dvFilter.modal .accordion .card-header {
-        background-color: var(--filter-mobile-accordion-background);
-        border-bottom: var(--filter-mobile-accordion-card-header-border-bottom);
-        padding: var(--filter-mobile-accordion-card-header-padding);
-    }
-
-        .dvFilter.modal .accordion .card-header .btn {
-            border: var(--filter-mobile-accordion-card-header-btn-border);
-            padding: var(--filter-mobile-accordion-card-header-btn-padding);
-        }
-
-    .dvFilter.modal .accordion .card-body {
-        padding: var(--filter-mobile-accordion-card-body-padding);
-    }
-
-    .dvFilter.modal .accordion .dvBorderBottom:last-child {
-        display: none;
-    }
-    /*rotate icons*/
-    .dvFilter.modal .accordion .card-header .arrow-icon {
-        position: absolute;
-        right: 0;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .dvFilter.modal .accordion .card-header .collapsed .arrow-icon {
-        transform: rotate(180deg);
-    }
-
-    .dvFilter.modal .accordion .scroll-ver {
-        overflow-x: var(--filter-mobile-accordion-scroll-ver-overflow-x);
-        margin: var(--filter-mobile-accordion-scroll-ver-margin);
-        max-height: var(--filter-mobile-accordion-scroll-ver-max-height);
-    }
-        /*scrollbar*/
-        .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar {
-            width: var(--filter-mobile-accordion-scrollbar-width);
-        }
-
-        .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-track {
-            background: var(--filter-mobile-accordion-scrollbar-track-bg);
-        }
-
-        .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-thumb {
-            background: var(--filter-mobile-accordion-scrollbar-thumb-bg);
-        }
+.dvFilter.modal .accordion .card {
+    border: var(--filter-mobile-accordion-card-border);
+}
+.dvFilter.modal .accordion .card-header {
+    background-color: var(--filter-mobile-accordion-background);
+    border-bottom: var(--filter-mobile-accordion-card-header-border-bottom);
+    padding: var(--filter-mobile-accordion-card-header-padding);
+}
+.dvFilter.modal .accordion .card-header .btn {
+    border: var(--filter-mobile-accordion-card-header-btn-border);
+    padding: var(--filter-mobile-accordion-card-header-btn-padding);
+}
+.dvFilter.modal .accordion .card-body {
+    padding: var(--filter-mobile-accordion-card-body-padding);
+}
+.dvFilter.modal .accordion .dvBorderBottom:last-child {
+    display: none;
+}
+/*rotate icons*/
+.dvFilter.modal .accordion .card-header .arrow-icon {
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease-in-out;
+}
+.dvFilter.modal .accordion .card-header .collapsed .arrow-icon {
+    transform: rotate(180deg);
+}
+.dvFilter.modal .accordion .scroll-ver {
+    overflow-x: var(--filter-mobile-accordion-scroll-ver-overflow-x);
+    margin: var(--filter-mobile-accordion-scroll-ver-margin);
+    max-height: var(--filter-mobile-accordion-scroll-ver-max-height);
+}
 /*scrollbar*/
-
+.dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar {
+    width: var(--filter-mobile-accordion-scrollbar-width);
+}
+.dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-track {
+    background: var(--filter-mobile-accordion-scrollbar-track-bg);
+}
+.dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-thumb {
+    background: var(--filter-mobile-accordion-scrollbar-thumb-bg);
+}
+/*scrollbar*/
 .dvFilter.modal .modal-header .close i {
     background-color: var(--modal-close-icon-bg);
     color: var(--modal-close-icon-text-colour);
@@ -2158,46 +2121,36 @@ select.form-control:focus {
 }
 /*=========[ FILTER ACCORDION MOBILE ]=========*/
 
+
+
 /*=========[ FILTER MODAL MOBILE ]=========*/
 .dvFilter.modal .modal-content {
     border: var(--filter-mobile-modal-content-border);
     border-radius: var(--filter-mobile-modal-content-b-radius);
     overflow: var(--filter-mobile-modal-content-overflow);
 }
-
 .dvFilter.modal .modal-body {
     padding: var(--filter-mobile-modal-body-padding);
 }
-
 .dvFilter.modal .modal-header {
     background-color: var(--filter-mobile-modal-header-bg);
     padding: var(--filter-mobile-modal-header-padding);
 }
-
-    .dvFilter.modal .modal-header .modal-title {
-        font-family: var(--filter-mobile-modal-title-family);
-        font-size: var(--filter-mobile-modal-title-fontsize);
-        color: var(--filter-mobile-modal-title-text-colour);
-    }
-
-    .dvFilter.modal .modal-header .close {
-        padding: var(--filter-mobile-modal-close-padding);
-        margin: var(--filter-mobile-modal-close-margin);
-        color: var(--filter-mobile-modal-close-text-colour);
-        opacity: var(--filter-mobile-modal-close-opacity);
-    }
-
-        .dvFilter.modal .modal-header .close i {
-            color: var(--filter-mobile-modal-close-icon-text-colour);
-        }
+.dvFilter.modal .modal-header .modal-title {
+    font-family: var(--filter-mobile-modal-title-family);
+    font-size: var(--filter-mobile-modal-title-fontsize);
+    color: var(--filter-mobile-modal-title-text-colour);
+}
+.dvFilter.modal .modal-header .close {
+    padding: var(--filter-mobile-modal-close-padding);
+    margin: var(--filter-mobile-modal-close-margin);
+    color: var(--filter-mobile-modal-close-text-colour);
+    opacity: var(--filter-mobile-modal-close-opacity);
+}
+.dvFilter.modal .modal-header .close i {
+    color: var(--filter-mobile-modal-close-icon-text-colour);
+}
 /*=========[ FILTER MODAL MOBILE ]=========*/
-
-/*=========[ FILTER TOTAL RECORDS MOBILE ]=========*/
-/*.dvProductList .dvTotalRecords.border {
-    border: 1px solid var(--colour2) !important;
-}*/
-
-/*=========[ FILTER TOTAL RECORDS MOBILE ]=========*/
 /*==[ -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- FILTER MOBILE -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- ]==*/
 
 
@@ -2219,19 +2172,18 @@ select.form-control:focus {
 }
 /*=========[ DIFFERENT CLASS NAMES FOR PRODUCTLIST PAGES & PRODUCTDETAIL PAGES ]=========*/
 
+
+
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
 .dvRedemptionMenu ::-webkit-scrollbar {
     height: var(--redemptionmenu-scrollbar-height);
 }
-
 .dvRedemptionMenu ::-webkit-scrollbar-track {
     background: var(--redemptionmenu-scrollbar-track-bg);
 }
-
 .dvRedemptionMenu ::-webkit-scrollbar-thumb {
     background: var(--redemptionmenu-scrollbar-thumb-bg);
 }
-
 .dvRedemptionMenu a .imageBox {
     background-color: var(--redemptionmenu-imagebox-bg-colour);
     border-radius: var(--redemptionmenu-imagebox-border-radius);
@@ -2239,24 +2191,19 @@ select.form-control:focus {
     height: var(--redemptionmenu-imagebox-height);
     box-shadow: var(--redemptionmenu-imagebox-box-shadow);
 }
-
-    .dvRedemptionMenu a .imageBox img {
-        width: var(--redemptionmenu-imagebox-img-width);
-        height: var(--redemptionmenu-imagebox-img-height);
-    }
-
+.dvRedemptionMenu a .imageBox img {
+    width: var(--redemptionmenu-imagebox-img-width);
+    height: var(--redemptionmenu-imagebox-img-height);
+}
 .dvRedemptionMenu a:hover .imageBox {
     background-color: var(--redemptionmenu-imagebox-bg-colour-hover);
 }
-
-    .dvRedemptionMenu a:hover .imageBox img {
-        filter: var(--redemptionmenu-imagebox-img-filter-hover);
-    }
-
+.dvRedemptionMenu a:hover .imageBox img {
+    filter: var(--redemptionmenu-imagebox-img-filter-hover);
+}
 .dvRedemptionMenu a:hover p {
     font-weight: var(--redemptionmenu-imagebox-text-font-weight-hover);
 }
-
 .dvRedemptionMenu a p {
     color: var(--redemptionmenu-imagebox-text-colour);
     font-size: var(--redemptionmenu-imagebox-text-font-size);
@@ -2266,11 +2213,9 @@ select.form-control:focus {
 .dvRedemptionMenu .SelRedemption .imageBox {
     background-color: var(--redemptionmenu-imagebox-active-bg-colour);
 }
-
-    .dvRedemptionMenu .SelRedemption .imageBox img {
-        filter: var(--redemptionmenu-imagebox-img-filter-active);
-    }
-
+.dvRedemptionMenu .SelRedemption .imageBox img {
+    filter: var(--redemptionmenu-imagebox-img-filter-active);
+}
 .dvRedemptionMenu .SelRedemption p {
     font-weight: var(--redemptionmenu-imagebox-active-text-font-weight);
 }
@@ -2278,77 +2223,70 @@ select.form-control:focus {
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
 
 
+
 /*=========[ PRODUCT CARD ]=========*/
 .dvProductCard {
 }
-
-    .dvProductCard .dvItem {
-        display: flex;
-        flex-direction: column;
-        border: 1px solid var(--p-card-border-colour);
-        border-radius: var(--p-card-border-radius);
-        height: 100%;
-        padding: var(--p-card-padding);
-    }
-
-    .dvProductCard .anchor {
-        display: var(--p-card-anchor-display);
-        margin: var(--p-card-anchor-margin);
-    }
-
-    .dvProductCard .img-container {
-        border-radius: var(--p-card-img-container-border-radius);
-    }
-
-        .dvProductCard .img-container img {
-        }
-
-    .dvProductCard h2 {
-        font-family: var(--p-card-h2-family);
-        font-size: var(--p-card-h2-fontsize);
-        /*margin: 0.5rem 1rem;*/
-        color: var(--p-card-h2-text-colour);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-
-    .dvProductCard .points,
-    .dvProductCard .points a {
-        font-family: var(--p-card-points-family);
-        /*background-color: var(--colour2);*/
-        color: var(--p-card-points-text-colour);
-        font-size: var(--p-card-points-fontsize);
-        border-radius: var(--b-radius);
-        /*padding: 0.25rem 1rem;*/
-        /*margin: auto 0 .5rem 0;*/
-    }
-
-    .dvProductCard .button {
-        font-family: var(--p-card-button-family);
-        background-color: var(--p-card-button-bg);
-        color: var(--p-card-button-text-colour);
-        border: var(--p-card-button-border-colour);
-        text-transform: var(--p-card-button-text-transform);
-        border-radius: var(--p-card-button-border-radius);
-        padding: var(--p-card-button-padding);
-        margin-top: var(--p-card-button-margin-top);
-    }
-
-        .dvProductCard .button:hover {
-            background-color: var(--p-card-button-bg-hover);
-            color: var(--p-card-button-text-colour-hover);
-            border: var(--p-card-button-border-colour-hover);
-        }
-
-    .dvProductCard .paragraph {
-        font-family: var(--paragraph-family);
-        color: var(--paragraph-colour);
-    }
-/*.dvProductCard .rating {
-        padding: .5rem;
-    }*/
+.dvProductCard .dvItem {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--p-card-border-colour);
+    border-radius: var(--p-card-border-radius);
+    height: 100%;
+    padding: var(--p-card-padding);
+}
+.dvProductCard .anchor {
+    display: var(--p-card-anchor-display);
+    margin: var(--p-card-anchor-margin);
+}
+.dvProductCard .img-container {
+    border-radius: var(--p-card-img-container-border-radius);
+}
+.dvProductCard .img-container img {
+}
+.dvProductCard h2 {
+    font-family: var(--p-card-h2-family);
+    font-size: var(--p-card-h2-fontsize);
+    /*margin: 0.5rem 1rem;*/
+    color: var(--p-card-h2-text-colour);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.dvProductCard .points,
+.dvProductCard .points a {
+    font-family: var(--p-card-points-family);
+    /*background-color: var(--colour2);*/
+    color: var(--p-card-points-text-colour);
+    font-size: var(--p-card-points-fontsize);
+    border-radius: var(--b-radius);
+    /*padding: 0.25rem 1rem;*/
+    /*margin: auto 0 .5rem 0;*/
+}
+.dvProductCard .button {
+    font-family: var(--p-card-button-family);
+    background-color: var(--p-card-button-bg);
+    color: var(--p-card-button-text-colour);
+    border: var(--p-card-button-border-colour);
+    text-transform: var(--p-card-button-text-transform);
+    border-radius: var(--p-card-button-border-radius);
+    padding: var(--p-card-button-padding);
+    margin-top: var(--p-card-button-margin-top);
+}
+.dvProductCard .button:hover {
+    background-color: var(--p-card-button-bg-hover);
+    color: var(--p-card-button-text-colour-hover);
+    border: var(--p-card-button-border-colour-hover);
+}
+.dvProductCard .paragraph {
+    font-family: var(--paragraph-family);
+    color: var(--paragraph-colour);
+}
+.dvProductCard .rating {
+}
 /*=========[ PRODUCT CARD ]=========*/
+
+
 
 /*=========[ HOTEL PRODUCT CARD ]=========*/
 .dvHotelProductCard .dvItem {
@@ -2359,20 +2297,16 @@ select.form-control:focus {
     height: 100%;
     padding: var(--hp-card-padding);
 }
-
 .dvHotelProductCard .anchor {
     display: var(--hp-card-anchor-display);
     margin: var(--hp-card-anchor-margin);
     position: relative;
 }
-
 .dvHotelProductCard .dvProductCard .img-container {
     border-radius: var(--hp-card-img-container-border-radius);
 }
-
-    .dvHotelProductCard .dvProductCard .img-container img {
-    }
-
+.dvHotelProductCard .dvProductCard .img-container img {
+}
 .dvHotelProductCard h2 {
     font-family: var(--hp-card-h2-family);
     font-size: var(--hp-card-h2-fontsize);
@@ -2382,7 +2316,6 @@ select.form-control:focus {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 .dvHotelProductCard .points,
 .dvHotelProductCard .points a {
     font-family: var(--hp-card-points-family);
@@ -2393,7 +2326,6 @@ select.form-control:focus {
     /*padding: 0.25rem 0.5rem;*/
     margin: 0.5rem 0;
 }
-
 .dvHotelProductCard .button {
     font-family: var(--hp-card-button-family);
     background-color: var(--hp-card-button-bg);
@@ -2404,18 +2336,15 @@ select.form-control:focus {
     padding: var(--hp-card-button-padding);
     margin-top: var(--hp-card-button-margin-top);
 }
-
-    .dvHotelProductCard .button:hover {
-        background-color: var(--hp-card-button-bg-hover);
-        color: var(--hp-card-button-text-colour-hover);
-        border: var(--hp-card-button-border-colour-hover);
-    }
-
+.dvHotelProductCard .button:hover {
+    background-color: var(--hp-card-button-bg-hover);
+    color: var(--hp-card-button-text-colour-hover);
+    border: var(--hp-card-button-border-colour-hover);
+}
 .dvHotelProductCard .paragraph {
     font-family: var(--paragraph-family);
     color: var(--paragraph-colour);
 }
-
 .dvHotelProductCard .rating {
     background-color: var(--colour7);
     position: absolute;
@@ -2425,20 +2354,6 @@ select.form-control:focus {
     border-radius: var(--b-radius);
 }
 /*=========[ HOTEL PRODUCT CARD ]=========*/
-
-
-/*=========[ STATIC CONTENT ]=========*/
-
-.dvStatic ol, .dvStatic ul {
-    margin: 0.5rem 1rem;
-}
-
-.dvStatic p {
-    margin-bottom: 0.5rem;
-}
-
-/*=========[ STATIC CONTENT ]=========*/
-
 
 
 
@@ -2464,9 +2379,6 @@ select.form-control:focus {
     .scroll-hoz {
         overflow: var(--scroll-horizontal-desktop-overflow);
     }
-    /*.dvHeader .navbar-nav .nav-item a.border-bottom {
-        border-bottom: none !important;
-    }*/
 
     .h1 {
         font-size: 2.5rem;
@@ -2494,30 +2406,28 @@ select.form-control:focus {
         display: block;
         margin-top: 0;
     }
-        /* open first dropdown menu on hover */
+    /* open first dropdown menu on hover */
 
-        /* open submenus on hover after 992px */
-        .dropdown:hover .dropdown-menu .dropdown-submenu .dropdown-menu {
-            display: none;
-            margin-top: 0;
-        }
+    /* open submenus on hover after 992px */
+    .dropdown:hover .dropdown-menu .dropdown-submenu .dropdown-menu {
+        display: none;
+        margin-top: 0;
+    }
+    .dropdown:hover .dropdown-menu .dropdown-submenu:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+    /* open submenus on hover after 992px */
 
-        .dropdown:hover .dropdown-menu .dropdown-submenu:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
-        }
-        /* open submenus on hover after 992px */
-
-        /* open subsubmenus on hover after 992px */
-        .dropdown:hover .dropdown-menu .dropdown-submenu .dropdown-menu .dropdown-submenu .dropdown-menu {
-            display: none;
-            margin-top: 0;
-        }
-
-        .dropdown:hover .dropdown-menu .dropdown-submenu .dropdown-menu .dropdown-submenu:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
-        }
+    /* open subsubmenus on hover after 992px */
+    .dropdown:hover .dropdown-menu .dropdown-submenu .dropdown-menu .dropdown-submenu .dropdown-menu {
+        display: none;
+        margin-top: 0;
+    }
+    .dropdown:hover .dropdown-menu .dropdown-submenu .dropdown-menu .dropdown-submenu:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
     /* open subsubmenus on hover after 992px */
 
     /*remove rotating icon animation after 992px*/
@@ -2543,7 +2453,6 @@ select.form-control:focus {
         overflow: var(--filter-desktop-accordion-overflow);
         padding: var(--filter-desktop-accordion-padding);
     }
-
     .dvFilter.modal {
         position: var(--filter-desktop-modal-position);
         display: var(--filter-desktop-modal-display);
@@ -2553,24 +2462,21 @@ select.form-control:focus {
         opacity: var(--filter-desktop-modal-opacity);
         z-index: var(--filter-desktop-modal-z-index);
     }
-
-        .dvFilter.modal .modal-dialog {
-            margin: var(--filter-desktop-modal-dialog-margin);
-            transform: var(--filter-desktop-modal-dialog-transform);
-            min-height: var(--filter-desktop-modal-dialog-min-height);
-        }
-
-        .dvFilter.modal .modal-dialog-scrollable {
-            /*margin: 0 auto;
-    transform: translate(0, 0);
-    min-height: auto;*/
-            justify-content: var(--filter-desktop-modal-dialog-scrollable-justify-content);
-            max-height: var(--filter-desktop-modal-dialog-scrollable-max-height);
-        }
-
-        .dvFilter.modal .modal-footer {
-            border-top: var(--filter-desktop-modal-footer-border);
-        }
+    .dvFilter.modal .modal-dialog {
+        margin: var(--filter-desktop-modal-dialog-margin);
+        transform: var(--filter-desktop-modal-dialog-transform);
+        min-height: var(--filter-desktop-modal-dialog-min-height);
+    }
+    .dvFilter.modal .modal-dialog-scrollable {
+        /*margin: 0 auto;
+        transform: translate(0, 0);
+        min-height: auto;*/
+        justify-content: var(--filter-desktop-modal-dialog-scrollable-justify-content);
+        max-height: var(--filter-desktop-modal-dialog-scrollable-max-height);
+    }
+    .dvFilter.modal .modal-footer {
+        border-top: var(--filter-desktop-modal-footer-border);
+    }
     /*==[ -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- FILTER DESKTOP -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- ]==*/
 
     .heading1 {

@@ -769,18 +769,26 @@
     --ui-datepicker-selected-date-text-colour: var(--colour6);
     /* text colour for all dates */
     --ui-datepicker-all-date-text-colour: var(--colour1);
+
+    /*==================[ JQUERY UI RANGE SLIDER ]==================*/
+    /*slide margin*/
+    --rangeslider-margin: 5px 10px 0px 5px;
+    /*slide height*/
+    --rangeslider-slide-height: 0.25rem;
+    /*slide selected bg*/
+    --rangeslider-slide-selected-bg-colour: var(--colour7);
+    /*slide border background colour*/
+    --rangeslider-slide-border-bg-colour: var(--colour2);
+    /*round handle*/
+    --rangeslider-handle-bg-colour: var(--colour1);
+    --rangeslider-handle-border:1px solid var(--colour1);
+    --rangeslider-handle-border-radius: 50%;
+    --rangeslider-handle-width: 12px;
+    --rangeslider-handle-height: 12px;
+    /* handle position */
+    --rangeslider-handle-top: -4px;
+    --rangeslider-handle-margin-left: -5px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

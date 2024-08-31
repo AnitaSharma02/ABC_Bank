@@ -532,7 +532,7 @@
                                         <label class="chkbox-txt-redeem-points" data-i18n="flight-redeem-pts-label">Redeem Points</label>
                                     </div>
                                     <div class="col-md-6 col-6 searchBtn">
-                                        <%--<button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="purple-btn Search hvr-sweep-to-right" value=" Search " data-i18n="flight-search-btn">Search Flight</button>--%>
+                                        <%--<button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one" value=" Search " data-i18n="flight-search-btn">Search Flight</button>--%>
                                     </div>
                                 </div>
                             </div>

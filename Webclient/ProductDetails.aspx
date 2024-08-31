@@ -105,9 +105,9 @@
                                           </div>
                                        </div>--%>
                                 </div>
-                                 <div class="form-group col-12 col-sm-6">
-                                     <label id="lbldivPoints" runat="server" class="h6 heading-regular text-colour7 mb-2" data-i18n="text-total-points">Total Points</label>
-                                     <div class="border h6 text-colour7 heading-regular " id="divspanpoints" runat="server">
+                                 <div class="form-group col-12 col-sm-3">
+                                     <h2 id="lbldivPoints" runat="server" class="h6 heading-regular text-colour7 mb-2" data-i18n="text-total-points">Total Points</h2>
+                                     <div class="border h6 text-colour7 heading-semibold p-2" id="divspanpoints" runat="server">
                                      </div>
                                  </div>
                             </div>
@@ -151,21 +151,21 @@
                     <div class="row mb-4">
                         <div class="dvButtons col-12" id="divBuy" runat="server">
                             <div class="row">
-                               <div class="col-12 col-sm-4 col-xl-3 mb-3">
+                               <div class="col-12 col-sm-4 col-xl-3 mb-3 mb-sm-0">
                                     <a href="javascript:void(0);" class="btn btn-two w-100 order-sm-0" id="btnBack" runat="server">
                                         <div class="text-center" data-i18n="btn-back">
                                             Back
                                         </div>
                                     </a>                                   
                                </div>
-                               <div class="col-12 col-sm-4 col-xl-3">
+                               <div class="col-12 col-sm-4 col-xl-3 mb-3 mb-sm-0">
                                    <a href="javascript:void(0);" class="btn btn-one w-100 order-sm-2" id="btnredeem" runat="server"  onclick="Checkout()" >
                                       <div class="text-center" data-i18n="index-redeem">
                                           Redeem
                                       </div>
                                   </a>
                                </div>
-                               <div class="col-6 col-sm-4 col-xl-3" id="addToCartButton">
+                               <div class="col-12 col-sm-4 col-xl-3" id="addToCartButton">
                                     <a href="javascript:void(0);" class="btn btn-two w-100 order-sm-1" onclick="AddItemToCart()">
                                         <div class="text-center" data-i18n="btn-addtocart">
                                             Add To Cart
