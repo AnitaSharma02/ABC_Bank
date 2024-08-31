@@ -12,9 +12,11 @@ body {
 ::-webkit-scrollbar {
     width: var(--scrollbar-width);
 }
+
 ::-webkit-scrollbar-track {
     background: var(--scrollbar-track-bg);
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--scrollbar-thumb-bg);
 }
@@ -37,12 +39,13 @@ a {
     text-decoration: var(--link1-text-decoration);
     display: var(--link1-display);
 }
-.link1:hover {
-    color: var(--link1-text-colour-hover);
-    background-color: var(--link1-bg-colour-hover);
-    text-decoration: var(--link1-text-decoration-hover);
-    display: var(--link1-display-hover);
-}
+
+    .link1:hover {
+        color: var(--link1-text-colour-hover);
+        background-color: var(--link1-bg-colour-hover);
+        text-decoration: var(--link1-text-decoration-hover);
+        display: var(--link1-display-hover);
+    }
 
 h1,
 h2,
@@ -598,12 +601,13 @@ p {
         animation: var(--updProgress-loader-animation);
     }
 
-    .dvLoader {
-        margin: 0 auto;
-        text-align:center;
-    }
-    .dvLoader img{
-        width:50px;
+.dvLoader {
+    margin: 0 auto;
+    text-align: center;
+}
+
+    .dvLoader img {
+        width: 50px;
     }
 
 @keyframes rotation {
@@ -623,15 +627,19 @@ p {
     background-color: var(--bg-colour5);
     padding: 0.2rem 0;
 }
-.dvHeader .uName{
+
+.dvHeader .uName {
     margin-right: 1rem;
 }
+
 .dvHeader .logo img {
     width: 140px;
 }
+
 .dvHeader .navbar-nav .nav-item.active a {
     color: var(--primary-colour);
 }
+
 .dvHeader .navbar-nav .nav-item a {
     color: var(--text-colour7);
     padding: 0 1rem;
@@ -639,9 +647,11 @@ p {
     font-family: var(--font-semibold);
     text-transform: uppercase;
 }
-.dvHeader .navbar-nav .nav-item a:hover {
-    color: var(--text-colour1);
-}
+
+    .dvHeader .navbar-nav .nav-item a:hover {
+        color: var(--text-colour1);
+    }
+
 .dvHeader .navbar-nav .nav-item.dropdown .dropdown-menu a:hover {
     background-color: var(--text-colour1);
     color: #fff;
@@ -653,22 +663,22 @@ p {
     background-color: var(--bg-section);
 }
 
-.dvFooter .dvLinks a {
-    padding: 0 0.2rem;
-    color: var(--text-colour5);
-    font-size: 1rem;
-    font-family: var(--font-regular);
-    text-transform: uppercase;
-    vertical-align: middle;
-}
+    .dvFooter .dvLinks a {
+        padding: 0 0.2rem;
+        color: var(--text-colour5);
+        font-size: 1rem;
+        font-family: var(--font-regular);
+        text-transform: uppercase;
+        vertical-align: middle;
+    }
 
-.dvFooter .footer-logo {
-    width: 150px;
-}
+    .dvFooter .footer-logo {
+        width: 150px;
+    }
 
-.dvFooter .border-thin {
-    border-top: 1px solid #303030;
-}
+    .dvFooter .border-thin {
+        border-top: 1px solid #303030;
+    }
 /*=========[ FOOTER ]=========*/
 
 
@@ -728,15 +738,16 @@ p {
     overflow: var(--img-container-overflow);
     background-color: var(--img-container-bg-colour);
 }
-.img-container img {
-    width: var(--img-container-img-width);
-    height: var(--img-container-img-height);
-    object-fit: var(--img-container-img-object-fit);
-    object-position: var(--img-container-img-object-position);
-    position: var(--img-container-img-position);
-    top: var(--img-container-img-top);
-    left: var(--img-container-img-left);
-}
+
+    .img-container img {
+        width: var(--img-container-img-width);
+        height: var(--img-container-img-height);
+        object-fit: var(--img-container-img-object-fit);
+        object-position: var(--img-container-img-object-position);
+        position: var(--img-container-img-position);
+        top: var(--img-container-img-top);
+        left: var(--img-container-img-left);
+    }
 /*=========[ IMAGE FIX ]=========*/
 
 /*=========[ RATINGS ]=========*/
@@ -844,11 +855,14 @@ p {
 .dvThumbSwiperSlider .swiper-wrapper {
     height: auto;
 }
+
 .dvThumbSwiperSlider .dvThumbSlide .img-container {
-    padding-bottom: 15%;*/
-/*    margin-top:15px;*/
+    padding-bottom: 15%;
+    */
+    /*    margin-top:15px;*/
 }
-.dvThumbSwiperSlider .dvThumbBannerSlide{
+
+.dvThumbSwiperSlider .dvThumbBannerSlide {
     border: 1px solid var(--border-colour);
 }
 /* swiper css*/
@@ -877,20 +891,20 @@ p {
 
 .dvThumbSwiperSlider .swiper {
     width: 100%;*/
-    /*height: 300px;*/
-    /*margin-left: auto;
+/*height: 300px;*/
+/*margin-left: auto;
     margin-right: auto;
 }
 
 .dvThumbSwiperSlider .mySwiper2 {*/
-    /*height: 50%;*/
-    /*height: auto;
+/*height: 50%;*/
+/*height: auto;
     width: 100%;
 }
 
 .dvThumbSwiperSlider .mySwiper {*/
-    /*height: 12%;*/
-    /*height: auto;
+/*height: 12%;*/
+/*height: auto;
     box-sizing: border-box;
     padding: 10px 0;
 }
@@ -1082,9 +1096,11 @@ p {
 .dvTabs ::-webkit-scrollbar {
     height: var(--tab-scrollbar-height);
 }
+
 .dvTabs ::-webkit-scrollbar-track {
     background: var(--tab-scrollbar-track-bg);
 }
+
 .dvTabs ::-webkit-scrollbar-thumb {
     background: var(--tab-scrollbar-thumb-bg);
 }
@@ -1095,14 +1111,16 @@ p {
     border: 1px solid var(--tab-border-colour);
     border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
     background-color: var(--tab-bg-colour);
-    color:var(--tab-text-colour);
+    color: var(--tab-text-colour);
 }
-.dvTabs .nav-tabs .nav-item.show .nav-link,
-.dvTabs .nav-tabs .nav-link.active {
-    background-color: var(--tab-active-bg-colour);
-    color: var(--tab-active-text-colour);
-    border: 1px solid var(--tab-active-border-colour);
-}
+
+    .dvTabs .nav-tabs .nav-item.show .nav-link,
+    .dvTabs .nav-tabs .nav-link.active {
+        background-color: var(--tab-active-bg-colour);
+        color: var(--tab-active-text-colour);
+        border: 1px solid var(--tab-active-border-colour);
+    }
+
 .dvTabs .nav-tabs .nav-link {
     margin: var(--tab-margin);
 }
@@ -1115,11 +1133,13 @@ p {
     background-color: var(--pills-bg-colour);
     color: var(--pills-text-colour);
 }
-.dvTabs .nav-pills .nav-link.active {
-    background-color: var(--pills-active-bg-colour);
-    color: var(--pills-active-text-colour);
-    border: 1px solid var(--pills-border-colour);
-}
+
+    .dvTabs .nav-pills .nav-link.active {
+        background-color: var(--pills-active-bg-colour);
+        color: var(--pills-active-text-colour);
+        border: 1px solid var(--pills-border-colour);
+    }
+
 .dvTabs .nav-pills .nav-item {
     margin: var(--pills-margin);
 }
@@ -1143,9 +1163,9 @@ p {
 
 /*=========[ COMMON ACCORDION ]=========*/
 /* accordion parent border */
-    .dvCommonAccordion.accordion {
-        border: 1px solid var(--accordion-border-colour);
-    }
+.dvCommonAccordion.accordion {
+    border: 1px solid var(--accordion-border-colour);
+}
     /* accordion card border */
     .dvCommonAccordion.accordion .card {
         border: 1px solid var(--accordion-card-border);
@@ -1155,32 +1175,32 @@ p {
         margin-bottom: 0;
         border-bottom: 1px solid transparent;
     }
-    /* accordion icons */
-    .dvCommonAccordion.accordion .card-header .arrow-icon {
-        position: absolute;
-        right: 15px;
-        transition: transform 0.3s ease-in-out;
-    }
-    /* accordion rotate icons */
-    .dvCommonAccordion.accordion .card-header .collapsed .arrow-icon {
-        transform: rotate(180deg);
-    }
-    /* card-header > all buttons by default */
-    .dvCommonAccordion.accordion .card-header button {
-        background-color: var(--accordion-header-bg);
-        color: var(--accordion-header-text);
-        border: unset;
-        border-radius: var(--accordion-header-b-radius);
-        font-family: var(--accordion-header-family);
-    }
-    /* card-header > button when it is not collapsed. */
-    .dvCommonAccordion.accordion .card-header button:not(.collapsed) {
-        background: var(--accordion-header-active-bg);
-        border: unset;
-        border-radius: var(--accordion-header-active-b-radius);
-        font-family: var(--accordion-header-family);
-        color: var(--accordion-header-active-text);
-    }
+        /* accordion icons */
+        .dvCommonAccordion.accordion .card-header .arrow-icon {
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+        /* accordion rotate icons */
+        .dvCommonAccordion.accordion .card-header .collapsed .arrow-icon {
+            transform: rotate(180deg);
+        }
+        /* card-header > all buttons by default */
+        .dvCommonAccordion.accordion .card-header button {
+            background-color: var(--accordion-header-bg);
+            color: var(--accordion-header-text);
+            border: unset;
+            border-radius: var(--accordion-header-b-radius);
+            font-family: var(--accordion-header-family);
+        }
+            /* card-header > button when it is not collapsed. */
+            .dvCommonAccordion.accordion .card-header button:not(.collapsed) {
+                background: var(--accordion-header-active-bg);
+                border: unset;
+                border-radius: var(--accordion-header-active-b-radius);
+                font-family: var(--accordion-header-family);
+                color: var(--accordion-header-active-text);
+            }
     /* card-body by default. */
     .dvCommonAccordion.accordion .card-body {
         background: var(--accordion-body-bg);
@@ -1861,8 +1881,8 @@ select.form-control:focus {
 /*=========[ JQUERY UI DATEPICKER ]=========*/
 /* header bg and date title */
 .ui-datepicker .ui-datepicker-header {
-    background-color: var(--colour1);
-    color: var(--colour2);
+    background-color: var(--ui-datepicker-header-bg-colour);
+    color: var(--ui-datepicker-header-text-colour);
 }
 /* month & year selectbox */
 .ui-datepicker .ui-datepicker-title select {
@@ -1874,9 +1894,9 @@ select.form-control:focus {
 /* prev & next buttons */
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next {
-    background: var(--colour6);
-    border: 1px solid transparent;
-    color: #fff;
+    background: var(--ui-datepicker-prev-next-buttons-bg-colour);
+    border: var(--ui-datepicker-prev-next-buttons-border);
+    color: var(--ui-datepicker-prev-next-buttons-text-colour);
 }
 /* prev & next button position on hover */
 .ui-datepicker .ui-datepicker-prev-hover,
@@ -1888,9 +1908,9 @@ select.form-control:focus {
 .ui-datepicker .ui-state-highlight,
 .ui-datepicker .ui-widget-content .ui-state-highlight,
 .ui-datepicker .ui-widget-header .ui-state-highlight {
-    background-color: var(--colour1);
-    border: 1px solid var(--colour1);
-    color: #fff !important;
+    background-color: var(--ui-datepicker-current-bg-colour);
+    border: 1px solid var(--ui-datepicker-current-border);
+    color: var(--ui-datepicker-current-text-colour) !important;
 }
 /* selected date */
 .ui-datepicker .ui-state-active,
@@ -1899,9 +1919,9 @@ select.form-control:focus {
 .ui-datepicker a.ui-button:active,
 .ui-datepicker .ui-button:active,
 .ui-datepicker .ui-button.ui-state-active:hover {
-    background-color: var(--colour1);
-    border: 1px solid var(--colour1);
-    color: #fff !important;
+    background-color: var(--ui-datepicker-selected-date-bg-colour);
+    border: 1px solid var(--ui-datepicker-selected-date-border);
+    color: var(--ui-datepicker-selected-date-text-colour) !important;
 }
 /* text colour for all dates */
 .ui-datepicker .ui-state-default,
@@ -1911,7 +1931,7 @@ select.form-control:focus {
 .ui-datepicker html .ui-button.ui-state-disabled:hover,
 .ui-datepicker html .ui-button.ui-state-disabled:active {
     text-align: center;
-    color: var(--colour1);
+    color: var(--ui-datepicker-all-date-text-colour);
 }
 /*=========[ JQUERY UI DATEPICKER ]=========*/
 
@@ -1919,15 +1939,28 @@ select.form-control:focus {
 /*.ui-menu{
         display:block !important;
     }*/
+.ui-autocomplete::-webkit-scrollbar {
+    width: var(--ui-autocomplete-scrollbar-width);
+}
+
+.ui-autocomplete::-webkit-scrollbar-track {
+    background: var(--ui-autocomplete-scrollbar-track-bg);
+}
+
+.ui-autocomplete::-webkit-scrollbar-thumb {
+    background: var(--ui-autocomplete-scrollbar-thumb-bg);
+}
+
 .ui-autocomplete .ui-menu-item a,
 .ui-autocomplete .ui-menu-item .ui-menu-item-wrapper {
     display: block;
-    background: var(--colour1);
-    color: var(--colour6);
+    background: var(--ui-autocomplete-bg-colour);
+    color: var(--ui-autocomplete-text-colour);
     border: none !important;
     margin: 1px;
     padding: 0.5rem 0.5rem;
     font-size: 0.875rem;
+    opacity: var(--ui-autocomplete-opacity);
 }
 
     .ui-autocomplete .ui-menu-item a:hover,
@@ -1938,7 +1971,7 @@ select.form-control:focus {
         border: none !important;
         margin: 1px;
         padding: 0.5rem 0.5rem;
-        opacity: 0.7;
+        opacity: var(--ui-autocomplete-opacity-hover);
     }
 /*=========[ JQUERY UI AUTOCOMPLETE ]=========*/
 
@@ -2006,28 +2039,29 @@ select.form-control:focus {
     border-top-right-radius: var(--modal-b-radius);
 }
 
-.dvCommonModal.modal .modal-header .modal-title {
-    font-family: var(--modal-title-font-family);
-    color: var(--modal-title-text-colour);
-    font-size: var(--modal-title-fontsize);
-}
+    .dvCommonModal.modal .modal-header .modal-title {
+        font-family: var(--modal-title-font-family);
+        color: var(--modal-title-text-colour);
+        font-size: var(--modal-title-fontsize);
+    }
 
-.dvCommonModal.modal .modal-header .close {
-    opacity: var(--modal-close-btn-opacity);
-    color: var(--modal-close-icon-text-colour);
-    font-size: var(--modal-close-btn-fontsize);
-}
+    .dvCommonModal.modal .modal-header .close {
+        opacity: var(--modal-close-btn-opacity);
+        color: var(--modal-close-icon-text-colour);
+        font-size: var(--modal-close-btn-fontsize);
+    }
 
-.dvCommonModal.modal .modal-header .close i {
-    background-color: var(--modal-close-icon-bg);
-    color: var(--modal-close-icon-text-colour);
-    font-size: var(--modal-close-icon-fontsize);
-}
+        .dvCommonModal.modal .modal-header .close i {
+            background-color: var(--modal-close-icon-bg);
+            color: var(--modal-close-icon-text-colour);
+            font-size: var(--modal-close-icon-fontsize);
+        }
 
 .dvCommonModal.modal .modal-footer {
     border-top: var(--modal-footer-border-top);
     padding: var(--modal-footer-padding);
 }
+
 .dvCommonModal.modal ::-webkit-scrollbar {
     width: var(--modal-scrollbar-width);
 }
@@ -2103,17 +2137,19 @@ select.form-control:focus {
         margin: var(--filter-mobile-accordion-scroll-ver-margin);
         max-height: var(--filter-mobile-accordion-scroll-ver-max-height);
     }
-    /*scrollbar*/
-    .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar {
-        width: var(--filter-mobile-accordion-scrollbar-width);
-    }
-    .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-track {
-        background: var(--filter-mobile-accordion-scrollbar-track-bg);
-    }
-    .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-thumb {
-        background: var(--filter-mobile-accordion-scrollbar-thumb-bg);
-    }
-    /*scrollbar*/
+        /*scrollbar*/
+        .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar {
+            width: var(--filter-mobile-accordion-scrollbar-width);
+        }
+
+        .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-track {
+            background: var(--filter-mobile-accordion-scrollbar-track-bg);
+        }
+
+        .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-thumb {
+            background: var(--filter-mobile-accordion-scrollbar-thumb-bg);
+        }
+/*scrollbar*/
 
 .dvFilter.modal .modal-header .close i {
     background-color: var(--modal-close-icon-bg);
@@ -2178,8 +2214,8 @@ select.form-control:focus {
 .dvProductDetailMilesExchange .img-container img,
 /*.dvProductDetailLounges .img-container img,*/
 .dvProductDetailGiftcards .img-container img,
-.dvProductDetailShop .img-container img{
-    object-fit:contain;
+.dvProductDetailShop .img-container img {
+    object-fit: contain;
 }
 /*=========[ DIFFERENT CLASS NAMES FOR PRODUCTLIST PAGES & PRODUCTDETAIL PAGES ]=========*/
 
@@ -2187,56 +2223,58 @@ select.form-control:focus {
 .dvRedemptionMenu ::-webkit-scrollbar {
     height: var(--redemptionmenu-scrollbar-height);
 }
+
 .dvRedemptionMenu ::-webkit-scrollbar-track {
     background: var(--redemptionmenu-scrollbar-track-bg);
 }
+
 .dvRedemptionMenu ::-webkit-scrollbar-thumb {
     background: var(--redemptionmenu-scrollbar-thumb-bg);
 }
+
 .dvRedemptionMenu a .imageBox {
-    background-color: #fff;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 4px 5px -2px, rgba(0, 0, 0, 0.3) 0px 0px 13px -2px;
+    background-color: var(--redemptionmenu-imagebox-bg-colour);
+    border-radius: var(--redemptionmenu-imagebox-border-radius);
+    width: var(--redemptionmenu-imagebox-width);
+    height: var(--redemptionmenu-imagebox-height);
+    box-shadow: var(--redemptionmenu-imagebox-box-shadow);
 }
 
     .dvRedemptionMenu a .imageBox img {
-        width: 35px;
-        height: 35px;
+        width: var(--redemptionmenu-imagebox-img-width);
+        height: var(--redemptionmenu-imagebox-img-height);
     }
 
 .dvRedemptionMenu a:hover .imageBox {
-    background-color: var(--bg-colour1);
+    background-color: var(--redemptionmenu-imagebox-bg-colour-hover);
 }
 
     .dvRedemptionMenu a:hover .imageBox img {
-        filter: brightness(0) invert(1);
+        filter: var(--redemptionmenu-imagebox-img-filter-hover);
     }
 
 .dvRedemptionMenu a:hover p {
-    font-weight: bold;
+    font-weight: var(--redemptionmenu-imagebox-text-font-weight-hover);
 }
 
 .dvRedemptionMenu a p {
-    color: var(--text-colour7);
-    font-size: .875rem;
-    font-family: var(--font-semibold);
+    color: var(--redemptionmenu-imagebox-text-colour);
+    font-size: var(--redemptionmenu-imagebox-text-font-size);
+    font-family: var(--redemptionmenu-imagebox-text-font-family);
 }
 /*active menu for flightsearch page*/
 .dvRedemptionMenu .SelRedemption .imageBox {
-    background-color: var(--bg-colour1);
+    background-color: var(--redemptionmenu-imagebox-active-bg-colour);
 }
 
     .dvRedemptionMenu .SelRedemption .imageBox img {
-        filter: brightness(0) invert(1);
+        filter: var(--redemptionmenu-imagebox-img-filter-active);
     }
 
 .dvRedemptionMenu .SelRedemption p {
-    font-weight: bold;
+    font-weight: var(--redemptionmenu-imagebox-active-text-font-weight);
 }
 /*active menu for flightsearch page*/
-
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
 
 
@@ -2332,8 +2370,8 @@ select.form-control:focus {
     border-radius: var(--hp-card-img-container-border-radius);
 }
 
-.dvHotelProductCard .dvProductCard .img-container img {
-}
+    .dvHotelProductCard .dvProductCard .img-container img {
+    }
 
 .dvHotelProductCard h2 {
     font-family: var(--hp-card-h2-family);
@@ -2412,7 +2450,6 @@ select.form-control:focus {
 }
 
 @media (min-width: 768px) {
-
 }
 
 @media (min-width: 992px) {

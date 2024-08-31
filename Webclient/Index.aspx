@@ -7,7 +7,7 @@
             display:none;
         }        
     </style>
-    <div class="dvTurnTransaction mb-5">
+    <div class="dvTurnTransaction py-4 pt-md-0 pb-md-5">
         <div class="container-xl">
             <div class="row">
                 <div class="col-12">

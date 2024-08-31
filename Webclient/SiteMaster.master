@@ -42,6 +42,8 @@
             $('.dvDropdown .prevent-close').on('click', function (event) {
                 event.stopPropagation();
             });
+
+            hideShowNavbarToggler();
         });
         function BindBanner() {
             try {
@@ -179,6 +181,18 @@
                     }
                 });
             } catch (e) {
+            }
+        }
+
+        // this script is for to show navbar-toggler on only shop redemption
+        function hideShowNavbarToggler() {
+            const element = document.querySelector(".dvShopMenu #CP_divMenuContent");
+            if (element) {
+                const totalLength = element.innerHTML.trim().length;
+                if (totalLength < 1) {
+                    $('.dvShopMenu .dvNavbarToggler .navbar-toggler').css('display', 'none');
+                    $('.dvShopMenu .dvShopSearchBox').attr('class', 'dvShopSearchBox px-3 px-lg-0 col-12 col-lg-3 order-lg-2 ml-auto');
+                }
             }
         }
         

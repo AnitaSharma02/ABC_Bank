@@ -104,23 +104,44 @@
     --colour9: #000A09; /*lightblack*/
 
     /*|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- COMPONENTS |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-*/
-    /* BODY */
+
+    /*==================[ BODY ]==================*/
     --body-f-family: var(--font-regular);
     --body-font-size: 1rem;
     --body-bg-colour: var(--colour6);
     --body-text-colour: var(--colour8);
 
-    /* SCROLLBAR STYLE */
+    /*==================[ COMMON SCROLLBAR ]==================*/
     --scrollbar-width: 12px;
     --scrollbar-track-bg: #f1f1f1;
     --scrollbar-thumb-bg: var(--colour1);
 
-    /* REDEMPTIONSMENU SCROLLBAR STYLE */
+    /*==================[ REDEMPTION MENU ]==================*/
     --redemptionmenu-scrollbar-height: 3px;
     --redemptionmenu-scrollbar-track-bg: #f1f1f1;
     --redemptionmenu-scrollbar-thumb-bg: var(--colour1);
+    /*imagebox*/
+    --redemptionmenu-imagebox-bg-colour: var(--colour6);
+    --redemptionmenu-imagebox-border-radius: 50%;
+    --redemptionmenu-imagebox-width: 80px;
+    --redemptionmenu-imagebox-height: 80px;
+    --redemptionmenu-imagebox-img-width: 35px;
+    --redemptionmenu-imagebox-img-height: 35px;
+    --redemptionmenu-imagebox-box-shadow: rgba(50, 50, 93, 0.25) 0px 4px 5px -2px, rgba(0, 0, 0, 0.3) 0px 0px 13px -2px;
+    /*image on hover*/
+    --redemptionmenu-imagebox-bg-colour-hover: var(--colour1);
+    --redemptionmenu-imagebox-img-filter-hover: brightness(0) invert(1);
+    /*active*/
+    --redemptionmenu-imagebox-active-bg-colour: var(--colour1);
+    --redemptionmenu-imagebox-img-filter-active: brightness(0) invert(1);
+    --redemptionmenu-imagebox-active-text-font-weight: bold;
+    /*text*/
+    --redemptionmenu-imagebox-text-colour: var(--colour7);
+    --redemptionmenu-imagebox-text-font-family: var(--font-semibold);
+    --redemptionmenu-imagebox-text-font-size: .875rem;    
+    --redemptionmenu-imagebox-text-font-weight-hover: bold;
 
-    /* PLACEHOLDERS */
+    /*==================[ PLACEHOLDERS ]==================*/
     --placeholder-text-colour: var(--colour8);
     --placeholder-font-size: .875rem;
     --placeholder-disabled-bg-colour: #eee;
@@ -134,18 +155,17 @@
     --placeholder-readonly-opacity: 1;
     --placeholder-readonly-cursor: not-allowed;
 
-    /* PARAGRAPH */
+    /*==================[ PARAGRAPH ]==================*/
     --paragraph-family: var(--body-f-family);
     --paragraph-colour: var(--body-text-colour);
 
-    /* ANCHOR */
-    /*regular anchor*/
+    /*==================[ LINKS ]==================*/
+    /*regular anchor link*/
     --a-text-decoration: none;
     --a-text-decoration-hover: none;
     --a-text-colour: var(--colour1);
     --a-text-colour-hover: var(--colour7);
-
-    /*.link*/
+    /*.links*/
     --link1-text-colour: var(--colour1);
     --link1-bg-colour: none;
     --link1-text-decoration: underline;
@@ -155,7 +175,7 @@
     --link1-text-decoration-hover: underline;
     --link1-display-hover: inline-block;
 
-    /* HEADINGS */
+    /*==================[ HEADINGS ]==================*/
     --heading-thin: var(--font-thin);
     --heading-semithin: var(--font-semithin);
     --heading-extrathin: var(--font-extrathin);
@@ -175,7 +195,7 @@
     --heading-semiblack: var(--font-semiblack);
     --heading-extrablack: var(--font-extrablack);
 
-    /* BORDER RADIUS */
+    /*==================[ BORDER RADIUS ]==================*/
     --b-radius: 0;
 
     /* BORDERS */
@@ -185,13 +205,12 @@
     --border-bottom-colour: var(--colour3);
     --border-left-colour: var(--colour3);
 
-    /* FORM CONTROL */
+    /*==================[ FORM CONTROL ]==================*/
     --fc-border-width: 1px;
     --fc-border-style: solid;
     --fc-border-colour: var(--border-colour);
     --fc-font-size: .875rem;
     --fc-text-colour: var(--colour8);
-
     /* form-control with dvInput.input-group */
     --fc-border-top: 1px solid var(--fc-border-colour);
     --fc-border-right: 1px solid var(--fc-border-colour);
@@ -202,7 +221,6 @@
     --fc-radius-top-right: var(--b-radius);
     --fc-radius-bottom-right: var(--b-radius);
     --fc-bg-colour: #ffffff;
-
     /* form-control with dvInputGroup.input-group */
     --ig-fc-border-top: 1px solid var(--fc-border-colour);
     --ig-fc-border-right: 1px solid transparent;
@@ -213,7 +231,6 @@
     --ig-fc-radius-top-right: 0;
     --ig-fc-radius-bottom-right: 0;
     --ig-fc-bg-colour: #ffffff;
-
     /* input-group-text */
     --input-group-text-border-top: 1px solid var(--fc-border-colour);
     --input-group-text-border-right: 1px solid var(--fc-border-colour);
@@ -225,7 +242,6 @@
     --input-group-text-radius-bottom-right: var(--b-radius);
     --input-group-text-bg-colour: #ffffff;
     --input-group-text-margin-left: 0px; /*chage to -1px if want to remove space*/
-
     /* form-control with select */
     --select-text-colour: var(--colour8);
     --select-border-top: 1px solid var(--fc-border-colour);
@@ -238,7 +254,7 @@
     --select-radius-bottom-right: var(--b-radius);
     --select-bg-colour: #ffffff;
 
-    /* TEXT COLOURS */
+    /*==================[ TEXT COLOURS ]==================*/
     --text-colour1: var(--colour1);
     --text-colour2: var(--colour2);
     --text-colour3: var(--colour3);
@@ -252,11 +268,11 @@
     --text-colour11: var(--colour11);
     --text-colour12: var(--colour12);
 
-    /* BG BLUR */
+    /*==================[ BACKGROUND BLUR ]==================*/
     --bg-blur: rgba(255, 255, 255, 0.3); /* Fallback for browsers that don't support */
     --backdrop-filter: blur(10px);
 
-    /* BACKGROUND COLOURS */
+    /*==================[ BACKGROUND COLOURS ]==================*/
     --bg-colour1: var(--colour1);
     --bg-colour2: var(--colour2);
     --bg-colour3: var(--colour3);
@@ -270,20 +286,18 @@
     --bg-colour11: var(--colour11);
     --bg-colour12: var(--colour12);
 
-    /* BOOTSTRAP DEFAULT BTN */
+    /*==================[ BUTTONS ]==================*/
     --btn-family: var(--font-regular);
     --btn-bg: var(--colour6);
     --btn-bg-hover: var(--colour3);
     --btn-text: var(--colour7);
     --btn-text-hover: var(--colour7);
-
-    /* BUTTON DISABLED */
+    /* button disabled */
     --btn-disabled-bg: var(--colour3);
     --btn-disabled-text-colour: var(--colour6);
     --btn-disabled-border: 1px solid var(--colour3);
     --btn-disabled-cursor: not-allowed;
-
-    /* BUTTON ONE */
+    /* button one */
     --btn-one-family: var(--font-semibold);
     --btn-one-bg: var(--colour1);
     --btn-one-bg-hover: var(--colour6);
@@ -294,8 +308,7 @@
     --btn-one-text-transform: capitalize;
     --btn-one-b-radius: var(--b-radius);
     --btn-one-padding: .375rem .75rem .375rem .75rem;
-
-    /* BUTTON TWO */
+    /* button two */
     --btn-two-family: var(--font-semibold);
     --btn-two-bg: var(--colour6);
     --btn-two-bg-hover: var(--colour1);
@@ -306,8 +319,7 @@
     --btn-two-text-transform: capitalize;
     --btn-two-b-radius: var(--b-radius);
     --btn-two-padding: .375rem .75rem .375rem .75rem;
-
-    /* BUTTON THREE */
+    /* button three */
     --btn-three-family: var(--font-semibold);
     --btn-three-bg: var(--colour1);
     --btn-three-bg-hover: var(--colour6);
@@ -319,59 +331,53 @@
     --btn-three-b-radius: var(--b-radius);
     --btn-three-padding: .375rem .75rem .375rem .75rem;
 
-    /* INDEPENDENT BACKGROUND CLASSES */
+    /*==================[ INDIVIDUAL BACKGROUND CLASSES ]==================*/
     --background1: var(--colour2);
     --background2: var(--colour3);
     --background3: var(--colour4);
 
-    /* LABEL */
+    /*==================[ LABEL ]==================*/
     --label-family: var(--heading-semibold);
     --label-fontsize: 0.875rem;
     --label-text-colour: var(--colour7);
     --label-margin-bottom: .25rem;
 
-    /* GROUP HEADINGS */
+    /*==================[ GROUP HEADINGS ]==================*/
     /* heading1 */
     --heading1-family: var(--heading-bold);
     --heading1-text-colour: var(--colour9);
     --heading1-font-size-mobile: calc(1.375rem + 1.5vw); /*do not change values*/
     --heading1-font-size-desktop: 2.5rem; /*do not change values*/
-
     /* heading2 */
     --heading2-family: var(--heading-bold);
     --heading2-text-colour: var(--colour9);
     --heading2-font-size-mobile: calc(1.325rem + 0.9vw); /*do not change values*/
     --heading2-font-size-desktop: 2rem; /*do not change values*/
-
     /* heading3 */
     --heading3-family: var(--heading-light);
     --heading3-text-colour: var(--colour1);
     --heading3-font-size-mobile: calc(1.3rem + 0.6vw); /*do not change values*/
     --heading3-font-size-desktop: 1.75rem; /*do not change values*/
-
     /* heading4 */
     --heading4-family: var(--heading-bold);
     --heading4-text-colour: var(--colour7);
     --heading4-font-size-mobile: calc(1.275rem + 0.3vw); /*do not change values*/
     --heading4-font-size-desktop: 1.25rem; /*do not change values*/
-
     /* heading5 */
     --heading5-family: var(--heading-semibold);
     --heading5-text-colour: var(--colour7);
     --heading5-font-size-mobile: 1.25rem; /*do not change values*/
     --heading5-font-size-desktop: 1.25rem; /*do not change values*/
-
     /* heading6 */
     --heading6-family: var(--heading-bold);
     --heading6-text-colour: var(--colour7);
     --heading6-font-size-mobile: 1rem; /*do not change values*/
     --heading6-font-size-desktop: 1rem; /*do not change values*/
 
-    /* SWIPER ARROWS */
+    /*==================[ SWIPER ARROWS ]==================*/
     /* Both pagination and arrows cannot be displayed in the vertical center at the same time, so disable one of them. */
     --arrow-disabled-opacity: 0.3;
     --display-swiper-buttons: block;
-
     /*swiper fontawesome icon arrows*/
     --arrow-prev-left-position: 30px;
     --arrow-prev-right-position: auto;
@@ -382,11 +388,10 @@
     --arrow-fa-icon-bg-colour: var(--colour1);
     --arrow-fa-icon-padding: .75rem;
     --arrow-fa-icon-b-radius: var(--b-radius);
-
     /*swiper image arrows*/
     --arrow-image-width: 30px;
 
-    /* SWIPER CUSTOMIZED ARROWS */
+    /*==================[ SWIPER CUSTOMIZED ARROWS ]==================*/
     --display-swiper-arrows: none; /* change only if you want default arrows */
     --custom-arrow-position: static; /* do not change values */
     --custom-arrow-width: auto; /* do not change values */
@@ -394,10 +399,9 @@
     --custom-arrow-height: auto; /* do not change values */
     --custom-arrow-image-width: 40px;
 
-    /* SWIPER PAGINATION */
+    /*==================[ SWIPER PAGINATION ]==================*/
     /* Both pagination and arrows cannot be displayed in the vertical center at the same time, so disable one of them. */
     --display-swiper-pagination: none;
-
     /* swiper pagination */
     --pagination-bg: var(--colour6);
     --pagination-border: var(--colour1);
@@ -406,29 +410,26 @@
     --pagination-active-border: var(--colour6);
     --pagination-active-opacity: 1;
 
-    /******* FILTER MODAL MOBILE *******/
+    /*==================[ FILTER MODAL MOBILE ]==================*/
     --filter-mobile-modal-content-border: 0;
     --filter-mobile-modal-content-b-radius: var(--b-radius);
     --filter-mobile-modal-content-overflow: hidden; /* apply when you need b-radius */
     --filter-mobile-modal-body-padding: 0 1rem 0 1rem;
     --filter-mobile-modal-header-bg: var(--colour5);
     --filter-mobile-modal-header-padding: 0.5rem 1rem;
-
     /* modal title */
     --filter-mobile-modal-title-family: var(--font-bold);
     --filter-mobile-modal-title-fontsize: 1rem;
     --filter-mobile-modal-title-text-colour: var(--colour7);
-
     /* modal close btn */
     --filter-mobile-modal-close-padding: 0.75rem 0 0.75rem 0.75rem;
     --filter-mobile-modal-close-margin: 0;
     --filter-mobile-modal-close-text-colour: var(--colour1);
     --filter-mobile-modal-close-opacity: 1;
-
     /* modal close btn icon */
     --filter-mobile-modal-close-icon-text-colour: var(--colour1);
 
-    /******* FILTER ACCORDION MOBILE *******/
+    /*==================[ FILTER ACCORDION MOBILE ]==================*/
     --filter-mobile-accordion-border: 1px solid transparent;
     --filter-mobile-accordion-card-border: 1px solid transparent;
     --filter-mobile-accordion-card-header-border-bottom: none;
@@ -437,18 +438,16 @@
     --filter-mobile-accordion-card-header-btn-border: 1px solid transparent;
     --filter-mobile-accordion-card-header-btn-padding: 0.5rem 0;
     --filter-mobile-accordion-card-body-padding: 0;
-
     /* show or hide scroll-ver */
     --filter-mobile-accordion-scroll-ver-overflow-x: hidden;
     --filter-mobile-accordion-scroll-ver-margin: 0;
     --filter-mobile-accordion-scroll-ver-max-height: 240px; /* none to hide scroll */
-
     /* style scrollbar */
     --filter-mobile-accordion-scrollbar-width: 3px;
     --filter-mobile-accordion-scrollbar-track-bg: #f1f1f1;
     --filter-mobile-accordion-scrollbar-thumb-bg: var(--colour1);
 
-    /******* FILTER MODAL DESKTOP *******/
+    /*==================[ FILTER MODAL DESKTOP ]==================*/
     /* converted modal to static */
     --filter-desktop-modal-position: static;
     --filter-desktop-modal-display: block;
@@ -457,49 +456,42 @@
     --filter-desktop-modal-overflow: auto;
     --filter-desktop-modal-opacity: 1;
     --filter-desktop-modal-z-index: 0;
-
     /* modal-dialog */
     --filter-desktop-modal-dialog-margin: 0 auto;
     --filter-desktop-modal-dialog-transform: translate(0, 0);
     --filter-desktop-modal-dialog-min-height: auto;
-
     /* modal-scrollable */
     --filter-desktop-modal-dialog-scrollable-justify-content: auto;
     --filter-desktop-modal-dialog-scrollable-max-height: auto;
-
     /* modal-footer */
     --filter-desktop-modal-footer-border: 1px solid transparent;
 
-    /******* FILTER ACCORDION DESKTOP *******/
+    /*==================[ FILTER ACCORDION DESKTOP ]==================*/
     --filter-desktop-accordion-border: 1px solid var(--border-colour);
     --filter-desktop-accordion-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --filter-desktop-accordion-b-radius: var(--b-radius);
     --filter-desktop-accordion-overflow: hidden;
     --filter-desktop-accordion-padding: 0.75rem 1rem;
 
-    /* COMMON MODAL */
+    /*==================[ COMMON MODAL ]==================*/
     /*scrollbar style*/
     --modal-scrollbar-width: 3px;
     --modal-scrollbar-track-bg: #f1f1f1;
     --modal-scrollbar-thumb-bg: var(--colour1);
     /*border-radius*/
     --modal-b-radius: var(--b-radius);
-
     /*modal-header*/
     --modal-header-padding: 1rem 1rem;
     --modal-header-bg-colour: var(--colour1);
     --modal-header-align-items: center;
     --modal-header-border-bottom: none;
-
     /*modal-title*/
     --modal-title-font-family: var(--heading-bold); 
     --modal-title-text-colour: var(--colour6);
     --modal-title-fontsize: 1rem;
-
     /*modal-footer*/
     --modal-footer-border-top: none;
     --modal-footer-padding: 0 1rem 1rem 1rem;
-
     /*modal close button*/
     --modal-close-btn-opacity: 1;
     --modal-close-btn-fontsize: 1rem;
@@ -507,7 +499,7 @@
     --modal-close-icon-text-colour: var(--colour6);
     --modal-close-icon-fontsize: 1rem;
 
-    /* COMMON ACCORDION */
+    /*==================[ COMMON ACCORDION ]==================*/
     --accordion-header-family: var(--font-semibold);
     --accordion-body-family: var(--font-medium);
     --accordion-border-colour:transparent /*var(--border-colour)*/;
@@ -529,7 +521,7 @@
     --accordion-body-active-border: var(--colour4);
     --accordion-body-active-b-radius: var(--b-radius);
 
-    /* BOOTSTRAP DEFAULT VARIABLES */
+    /*==================[ BOOTSTRAP DEFAULT VARIABLES ]==================*/
     --text-danger: #dc3545;
     --text-success: #28a745;
     --text-warning: #ffc107;
@@ -537,7 +529,7 @@
     --bg-success: #28a745;
     --bg-warning: #ffc107;
 
-    /* VALIDATION ERRORS */
+    /*==================[ VALIDATION ERRORS ]==================*/
     --danger-family: var(--heading-medium);
     --danger-fontsize: .75rem;
     --danger-colour: var(--text-danger);
@@ -548,36 +540,30 @@
     --warning-fontsize: .75rem;
     --warning-colour: var(--text-warning);
 
-    /* PRODUCT CARD */
+    /*==================[ PRODUCT CARD ]==================*/
     /*dvItem*/
     --p-card-border-colour: var(--border-colour);
     --p-card-border-radius: var(--b-radius);
     --p-card-padding: 0rem;
-
     /*img-container*/
     --p-card-img-container-border-radius: 0;
-
     /*anchor*/
     --p-card-anchor-display: block;
     --p-card-anchor-margin: 0;
-
     /*h2*/
     --p-card-h2-family: var(--font-bold);
     --p-card-h2-fontsize: 1rem;
     --p-card-h2-text-colour: var(--colour7);
     --p-card-h2-padding: 0rem 1rem;
-
     /*h3*/
     --p-card-h3-family: var(--font-regular);
     --p-card-h3-fontsize: .875rem;
     --p-card-h3-text-colour: var(--colour7);
     --p-card-h3-padding: 0rem 1rem;
-
     /*points*/
     --p-card-points-family: var(--font-semibold);
     --p-card-points-fontsize: .875rem;
     --p-card-points-text-colour: var(--colour7);
-
     /*button*/
     --p-card-button-border-colour: var(--btn-one-border-colour);
     --p-card-button-family: var(--btn-one-family);
@@ -591,12 +577,11 @@
     --p-card-button-bg-hover: var(--btn-one-bg-hover);
     --p-card-button-text-colour-hover: var(--btn-one-text-hover);
     --p-card-button-border-colour-hover: 1px solid var(--btn-one-border-colour-hover);
-
     /*paragraph*/
     --p-card-paragraph-family: var(--paragraph-family);
     --p-card-paragraph-text-colour: var(--paragraph-colour);
 
-    /* DENOMINATION */
+    /*==================[ DENOMINATION ]==================*/
     --denomination-btn-active-background: none no-repeat 0 0 var(--bg-colour1);
     --denomination-btn-active-text-colour: var(--bg-colour6);
     --denomination-btn-padding: .5rem;
@@ -608,12 +593,12 @@
     --denomination-btn-border: 1px solid var(--border-colour);
     --denomination-btn-border-radius: var(--b-radius);
 
-    /*TABS SCROLLBAR FOR TABS 1 AND TABS 2*/
+    /*==================[ TABS SCROLLBAR FOR TAB PILLS & TAB REGULAR ]==================*/
     --tab-scrollbar-height: 3px;
     --tab-scrollbar-track-bg: #f1f1f1;
     --tab-scrollbar-thumb-bg: var(--colour1);
 
-    /*TABS*/
+    /*==================[ TAB REGULAR ]==================*/
     --tab-bg-colour:transparent;
     --tab-text-colour:var(--body-text-colour);
     --tab-active-bg-colour:var(--colour1);
@@ -623,7 +608,7 @@
     --tab-border-radius: var(--b-radius);
     --tab-margin: 0 .875rem 0 0;
 
-    /*TABS PILLS*/
+    /*==================[ TAB PILLS ]==================*/
     --pills-bg-colour:transparent;
     --pills-text-colour:var(--body-text-colour);
     --pills-active-bg-colour:var(--colour1);
@@ -632,7 +617,7 @@
     --pills-border-radius: var(--b-radius);
     --pills-margin: 0 .875rem 0 0;
 
-    /* UPDPROGRESS LOADER */
+    /*==================[ UPDPROGRESS LOADER ]==================*/
     --updProgress-position: fixed;
     --updProgress-width: 100%;
     --updProgress-height: 100%;
@@ -640,13 +625,11 @@
     --updProgress-left: 0;
     --updProgress-z-index: 10000;
     --updProgress-bg: rgba(0, 0, 0, 0.5);
-
     /*dvLoader*/
     --updProgress-dvLoader-display: flex;
     --updProgress-dvLoader-justify-content: center;
     --updProgress-dvLoader-align-items: center;
     --updProgress-dvLoader-height: 100%;
-
     /* updProgress loader */
     --updProgress-loader-width: 48px;
     --updProgress-loader-height: 48px;
@@ -655,7 +638,6 @@
     --updProgress-loader-b-radius: 50%;
     --updProgress-loader-display: inline-block;
     --updProgress-loader-animation: rotation 1s linear infinite;
-
     /* updProgress image */
     --updProgress-image-width: 60px;
     --updProgress-image-bg: #ffffff;
@@ -666,14 +648,13 @@
     --updProgress-image-transform: translate(-50%, -50%);
     --updProgress-image-z-index: 2;
 
-    /*IMAGE CONTAINER*/
+    /*==================[ IMAGE CONTAINER ]==================*/
     --img-container-width: 100%;
     --img-container-height: 0;
     --img-container-padding-bottom: 100%;
     --img-container-position: relative;
     --img-container-overflow: hidden;
     --img-container-bg-colour: #ddd;
-
     /*image container img*/
     --img-container-img-width: 100% !important;
     --img-container-img-height: 100%;
@@ -683,21 +664,21 @@
     --img-container-img-top: 0;
     --img-container-img-left: 0;
 
-    /*SCROLL HORIZONTAL*/
+    /*==================[ SCROLL HORIZONTAL ]==================*/
     --scroll-horizontal-mobile-overflow-x: auto;
     --scroll-horizontal-mobile-overflow-y: hidden;
     --scroll-horizontal-desktop-overflow: hidden;
 
-    /*SCROLL VERTICAL*/
+    /*==================[ SCROLL VERTICAL ]==================*/
     --scroll-vertical-mobile-overflow-x: hidden;
 
-    /*EAUAL COLUMNS*/
+    /*==================[ EAUAL COLUMNS ]==================*/
     --equal-columns-margin-left: 0.469rem;
     --equal-columns-margin-right: 0.469rem;
     --equal-columns-padding-left: .5rem;
     --equal-columns-padding-right: .5rem;
 
-    /*BREADCRUMBS*/
+    /*==================[ BREADCRUMBS ]==================*/
     --breadcrumb-bg: transparent;
     --breadcrumb-margin-bottom: 0;
     --breadcrumb-anchor-bg: transparent;
@@ -705,24 +686,21 @@
     --breadcrumb-anchor-bg-active: transparent;
     --breadcrumb-anchor-text-colour-active: var(--colour1);
 
-    /*BOOTSTRAP PAGINATION*/
+    /*==================[ BOOTSTRAP PAGINATION ]==================*/
     --b-pagination-box-shadow-focus: none;
     --b-pagination-pagelink-bg: transparent;
     --b-pagination-pagelink-text-colour: var(--colour1);
     --b-pagination-pagelink-cursor: pointer;
-
     /*active*/
     --b-pagination-pagelink-bg-active: var(--colour1);
     --b-pagination-pagelink-text-colour-active: var(--colour6);
     --b-pagination-pagelink-border-colour-active: var(--colour1);
-
     /*disabled*/
     --b-pagination-pagelink-bg-disabled: var(--colour6);
     --b-pagination-pagelink-text-colour-disabled: #6c757d;
     --b-pagination-pagelink-border-colour-disabled: #dee2e6;
 
-    /*=========[ HOTEL PRODUCT CARD ]=========*/
- 
+    /*==================[ HOTEL PRODUCT CARD ]==================*/ 
     /* HOTEL PRODUCT CARD */
     /*dvItem*/
     --hp-card-border-colour: var(--border-colour);
@@ -759,6 +737,38 @@
     --hp-card-button-bg-hover: var(--btn-one-bg-hover);
     --hp-card-button-text-colour-hover: var(--btn-one-text-hover);
     --hp-card-button-border-colour-hover: 1px solid var(--btn-one-border-colour-hover); 
+
+    /*==================[ JQUERY UI AUTOCOMPLETE ]==================*/
+    /*scrollbar*/
+    --ui-autocomplete-scrollbar-width: 3px;
+    --ui-autocomplete-scrollbar-track-bg: #f1f1f1;
+    --ui-autocomplete-scrollbar-thumb-bg:var(--colour1);
+    /*bg and hover*/
+    --ui-autocomplete-bg-colour: var(--colour1);
+    --ui-autocomplete-text-colour: var(--colour6);
+    --ui-autocomplete-bg-colour-hover: var(--colour1);
+    --ui-autocomplete-text-colour-hover: var(--colour6);
+    --ui-autocomplete-opacity: 1;
+    --ui-autocomplete-opacity-hover: 0.9;
+
+    /*==================[ JQUERY UI DATEPICKER ]==================*/
+    /* header bg and date title */
+    --ui-datepicker-header-bg-colour: var(--colour1);
+    --ui-datepicker-header-text-colour: var(--colour6);
+    /* prev & next buttons */
+    --ui-datepicker-prev-next-buttons-bg-colour: var(--colour6);
+    --ui-datepicker-prev-next-buttons-border: 1px solid transparent;
+    --ui-datepicker-prev-next-buttons-text-colour: var(--colour6);
+    /* current date */
+    --ui-datepicker-current-bg-colour: var(--colour1);
+    --ui-datepicker-current-border: var(--colour1);
+    --ui-datepicker-current-text-colour: var(--colour6);
+    /* selected date */
+    --ui-datepicker-selected-date-bg-colour: var(--colour1);
+    --ui-datepicker-selected-date-border: var(--colour1);
+    --ui-datepicker-selected-date-text-colour: var(--colour6);
+    /* text colour for all dates */
+    --ui-datepicker-all-date-text-colour: var(--colour1);
 }
 
 

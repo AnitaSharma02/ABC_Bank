@@ -8,6 +8,15 @@
 }
 /*=========[ SHOP.aspx Page ]=========*/
 
+/*=========[ SiteShopMaster Page ]=========*/
+/*this is written likethis because dvInputGroup has a background and can't change, if changed it will apply everywhere*/
+.dvShopSearchBox .dvInputGroup .input-group-text {
+    background-color: var(--colour1);
+    border: transparent;
+}
+/*this is written likethis because dvInputGroup has a background and can't change, if changed it will apply everywhere*/
+/*=========[ SiteShopMaster Page ]=========*/
+
 
 
 /*=========[ Product Details ]=========*/

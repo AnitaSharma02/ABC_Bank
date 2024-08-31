@@ -2,9 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <link rel="stylesheet" href="\Css/experience.css" />
+    <style>
+        .dvInnerBanner{
+            display:none;
+        }
+    </style>
 
-
-    <div class="dvExperienceProductList pb-5">
+    <div class="dvExperienceProductList py-4 pt-lg-0">
         <div class="container-xl">
             <div class="row">
                 <div class="col-12 text-center">

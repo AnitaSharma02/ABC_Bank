@@ -4,10 +4,10 @@
     <link href="Css/car.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/CarResultScript.js" type="text/javascript"></script>
     <style type="text/css">
-        #sitemap {
+        #sitemap,
+        .dvInnerBanner{
             display: none;
-        }
-         
+        }         
     </style>
 
     <%--<div class="banner top_banner">
