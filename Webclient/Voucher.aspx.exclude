@@ -518,7 +518,7 @@ Present your Gift Voucher codes to redeem them at any of our participating partn
     <div class="container d-none">
     <div class="row">
     <div class="col-12">
-    <div class="accordion" id="accordionExample">
+    <div class="dvCommonAccordion accordion" id="accordionExample">
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="fa fa-plus"></i>Voucher Summary</button>

@@ -41,7 +41,7 @@
                     <p class="">NIC Express Reward is the most comprehensive rewards program, tailored to your needs, and gives you additional benefits and a rich experience every time you use the bank's products and services.</p>
                     <p class="">To deliver the best, we designed the Express NIC Express Reward program to suit your lifestyle. Now, you can earn Points for using our banking products. you can then replace NIC Express Rewards Points by:</p>
 
-                    <div class="accordion mt-3" id="static-accordion">
+                    <div class="dvCommonAccordion accordion mt-3" id="static-accordion">
                         <!-- Airlines -->
                         <div class="card mb-3">
                             <div class="card-header p-0">
