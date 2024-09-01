@@ -90,7 +90,7 @@
         //            if (msg.d != null) {
         //                var pop = document.getElementById("bookingDetails");
         //                pop.innerHTML = msg.d;
-        //                $('#exampleModal').modal('show');
+        //                $('#dvExampleModal').modal('show');
         //            }
         //        },
         //        error: function (errmsg) {
@@ -155,24 +155,26 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered"" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" >Booking Details</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-          <div id="bookingDetails"></div>    
-          </div>
-         <%-- <div class="modal-footer">
+    <div class="dvCommonModal dvExampleModal modal fade" id="dvExampleModal">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">
+                        <span>Booking Details</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="bookingDetails"></div>
+                </div>
+                <%-- <div class="modal-footer">
             <button type="button" class="btn btn-two" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-one">Save changes</button>
           </div>--%>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="dvManage pb-5">

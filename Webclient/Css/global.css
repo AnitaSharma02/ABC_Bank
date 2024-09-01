@@ -2022,6 +2022,11 @@ select.form-control:focus {
 
 
 /*=========[ COMMON MODAL ]=========*/
+/* this is only to remove padding-right from the modal-open */
+.modal-open .modal {
+    padding-right: 0 !important;
+}
+/* this is only to remove padding-right from the modal-open */
 .dvCommonModal.modal .modal-content {
     border-top-left-radius: var(--modal-b-radius);
     border-top-right-radius: var(--modal-b-radius);

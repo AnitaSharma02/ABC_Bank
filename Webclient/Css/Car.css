@@ -96,10 +96,10 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
 
 /*=========[ CARLIST PAGE ]=========*/
 /*filter button only for mobile*/
-.dvCarList .dviconBox i {
+/*.dvCarList .dviconBox i {
     color:var(--colour8)
-}
-.dvCarList .dvFilterBtn {
+}*/
+/*.dvCarList .dvFilterBtn {
   position: fixed;
   bottom: 1rem;
   left: 1rem;
@@ -114,10 +114,19 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
   display: flex;
   align-items: center;
   justify-content: center;
-}
+}*/
 /*filter button only for mobile*/
 
 /*car selection section*/
+.dvCarList .dvCarSelection::-webkit-scrollbar {
+    height: var(--car-selection-scrollbar-height);
+}
+.dvCarList .dvCarSelection::-webkit-scrollbar-track {
+    background: var(--car-selection-scrollbar-track-bg);
+}
+.dvCarList .dvCarSelection::-webkit-scrollbar-thumb {
+    background: var(--car-selection-scrollbar-thumb-bg);
+}
 .dvCarList .dvCarSelection .checkbox-container {
   display: block;
   position: relative;
@@ -273,6 +282,27 @@ purposely kept without parent class. Ribbon Section is using in multiple places 
   }
 }
 /*=========[ CAR SEARCH PAGE ]=========*/
+
+
+
+
+
+
+/*=========[ REMOVE NOT-ALLOWED ICON ]=========*/
+.dvCarSearch .dvInput.input-group .form-control[readonly],
+.dvCarSearch .dvInputGroup.input-group .form-control[readonly] {
+    background-color: var(--colour6);
+    cursor: default;
+}
+/*=========[ REMOVE NOT-ALLOWED ICON ]=========*/
+
+
+
+
+
+
+
+
 
 @media (min-width: 576px) {
    

@@ -249,18 +249,21 @@
     </div>
 
     <!--Alert Modal -->
-    <div class="dvModal modal fade" id="alertModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content py-4">
-                <div class="modal-header justify-content-center pt-2 pb-0 border-0">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+    <div class="dvCommonModal dvAlertModal modal fade" id="dvAlertModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">
+                        <span>Alert</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-                <div class="modal-body text-center py-2" id="alertmessage">
-                    <p id="errormessage"></p>
+                <div class="modal-body text-center" id="alertmessage">
+                    <p class="h6 text-colour7 heading-semibold" id="errormessage"></p>
                 </div>
-                <div class="modal-footer justify-content-center border-0 pt-2 pb-0 px-0">
+                <div class="modal-footer justify-content-center border-0 px-0">
                     <button type="button" class="btn btn-one" data-dismiss="modal">Ok</button>
                 </div>
             </div>
@@ -1393,7 +1396,7 @@
                         else if (rtnData.d == "SESSION_TIME_OUT") {
                             var pop = document.getElementById("alertmessage");
                             pop.innerHTML = "Your session time out. Please login again.";
-                            $('#alertModal').modal('show');
+                            $('#dvAlertModal').modal('show');
                         }
                         else {
                             window.location.href = rtnData.d;

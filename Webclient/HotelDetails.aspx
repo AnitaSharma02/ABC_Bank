@@ -154,10 +154,6 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <%--<h5 class="heading-semibold text-colour1" id="DivAmenitiesCategoryName"></h5>
-                    <button type="button" class="close text-colour1 d-flex" data-dismiss="modal">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>--%>
                     <h5 class="modal-title" id="DivAmenitiesCategoryName"></h5>
                      <button type="button" class="close" data-dismiss="modal">
                          <i class="fa-solid fa-xmark"></i>

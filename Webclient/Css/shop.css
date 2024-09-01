@@ -102,8 +102,14 @@
 /*=========[ Product Details ]=========*/
 
 .dvProductDetail .dvProductInfo .dvAddToCart .form-control:disabled,
-.dvProductDetail .dvProductInfo .dvAddToCart .form-control[readonly] {
-    background: var(--colour6)
+.dvProductDetail .dvProductInfo .dvAddToCart .form-control[readonly]{
+    background: var(--colour6);
+}
+.dvProductDetail .dvProductInfo .dvAddToCart .input-group-prepend {
+    margin-right: 0;
+}
+.dvProductDetail .dvProductInfo .dvAddToCart .input-group-append {
+    margin-left: 0;
 }
 
 /*=========[ SHOP List ]=========*/

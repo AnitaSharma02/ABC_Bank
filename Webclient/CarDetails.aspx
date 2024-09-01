@@ -381,7 +381,7 @@
         </div>
     </div>
     <!-- CarLarge modal pop up start-->
-    <div class="dvCommonModal dvMoreInfoModal modal fade pr-lg-0" id="dvMoreInfoModal">
+    <div class="dvCommonModal dvMoreInfoModal modal fade" id="dvMoreInfoModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
             <div class="modal-content">
 
@@ -394,7 +394,7 @@
                     <button type="button" class="close" data-dismiss="modal">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
-                  </div>
+                </div>
 
                 <!-- Modal body -->
                 <div class="modal-body mb-2" id="divmoreInfoDetails">
@@ -577,14 +577,14 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
                 <!-- Modal Header -->
-                 <div class="modal-header border-0">
-                      <h5 class="modal-title">
-                            <i class="fa-solid fa-circle-info"></i>
-                            <span>Info</span>
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Info</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
                
                 <!-- Modal body -->

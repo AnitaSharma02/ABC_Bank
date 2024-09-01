@@ -81,7 +81,7 @@
                                                   </button>
                                               </div>
                                               <span id="qtyRealtime" runat="server" style="display: none;" />
-                                              <input type="text" class="form-control text-center text-colour7" runat="server" id="quantity" name="quantity" strp="1" readonly="readonly" min="1" max="100" value="1" />
+                                              <input type="text" class="form-control text-center text-colour7 border" runat="server" id="quantity" name="quantity" strp="1" readonly="readonly" min="1" max="100" value="1" />
                                               <div class="input-group-append">
                                                   <button type="button" class="btn btn-one" data-type="plus" data-field="" onclick="quantityPlus()">
                                                       <i class="fa fa-plus"></i>
@@ -270,7 +270,7 @@
     </div>
         <!-- Scrollable modal -->
         <!-- Modal for all vouchers -->
-      <div class="modal fade dvVouchersPopup" id="formpopup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="dvCommonModal modal fade dvVouchersPopup" id="formpopup" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <%--<div class="modal-header"> 
@@ -279,7 +279,7 @@
                 </button>
               </div>--%>
               <div class="modal-body">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close" data-dismiss="modal">
                       <i class="fa-solid fa-xmark"></i>
                   </button>
                   <div id="divDynamicContent">
@@ -313,19 +313,19 @@
     
 
     <!-- Modal Quantity plus minus-->
-    <div class="dvModal modal fade" id="quantityModal" tabindex="-1">
-        <div class="modal-dialog">
+    <div class="dvCommonModal modal fade" id="dvQuantityModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
-                <div class="modal-header justify-content-center py-2 pb-0 border-0">
-                    <h5 class="modal-title h5 heading-bold" id="exampleModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><i class="fa-solid fa-xmark text-colour6"></i></span>
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-                <div class="modal-body text-center py-2" id="divmessage">
-                    <p id="popupmessage"></p>
+                <div class="modal-body text-center" id="divmessage">
+                    <p class="h6 heading-semibold text-colour7" id="popupmessage"></p>
                 </div>
-                <div class="modal-footer justify-content-center border-0 py-2 pb-0 px-0">
+                <div class="modal-footer justify-content-center border-0">
                     <button type="button" class="btn btn-one" data-dismiss="modal">Ok</button>
                     <%--<button type="button" class="btn btn-one">Save changes</button>--%>
                 </div>
@@ -334,20 +334,22 @@
     </div>
 
     <!--Alert Modal -->
-    <div class="dvModal modal fade" id="alertModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content py-4">
-                <div class="modal-header justify-content-center pt-2 pb-0 border-0">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+    <div class="dvCommonModal dvAlertModal modal fade" id="dvAlertModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">
+                        <span>Alert</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-                <div class="modal-body text-center py-2" id="alertmessage">
-                    <p id="errormessage"></p>
+                <div class="modal-body text-center" id="alertmessage">
+                    <p class="h6 text-colour7 heading-semibold" id="errormessage"></p>
                 </div>
-                <div class="modal-footer justify-content-center border-0 pt-2 pb-0 px-0">
+                <div class="modal-footer justify-content-center border-0 px-0">
                     <button type="button" class="btn btn-one" data-dismiss="modal">Ok</button>
-                    <%--<button type="button" class="btn btn-one">Save changes</button>--%>
                 </div>
             </div>
         </div>
@@ -420,7 +422,7 @@
                 pop.innerHTML = "You can order only maximum " + maxQuantity + " quantity of this product.";
                 var header = document.getElementById("exampleModalLabel");
                 header.innerHTML = "Maximum " + maxQuantity + " Quantity";
-                $('#quantityModal').modal('show');
+                $('#dvQuantityModal').modal('show');
                 //alert("You can order only maximum " + maxQuantity + " quantity of this product.");
             }
         }
@@ -436,7 +438,7 @@
                 pop.innerHTML = "You can order minimum " + minQuantity + " quantity of this product.";
                 var header = document.getElementById("exampleModalLabel");
                 header.innerHTML = "Minimum " + minQuantity + " Quantity";
-                $('#quantityModal').modal('show');
+                $('#dvQuantityModal').modal('show');
                 //alert("You can order minimum " + minQuantity + " quantity of this product.");
             }
         }
@@ -491,7 +493,7 @@
                             //alert("Item already added, please update the quantity in the cart.")
                             var pop = document.getElementById("alertmessage");
                             pop.innerHTML = "Item already added, please update the quantity in the cart.";
-                            $('#alertModal').modal('show');
+                            $('#dvAlertModal').modal('show');
                             window.location.href = "Cart.aspx";
                         }
                         else if (msg.d == "SUCCESS") {
@@ -531,25 +533,25 @@
                         else if (data == "INSUFFICIENT_POINTS") {
                             var pop = document.getElementById("alertmessage");
                             pop.innerHTML = "Insufficient Points.";
-                            $('#alertModal').modal('show');
+                            $('#dvAlertModal').modal('show');
                             //alert("Insufficient points.");
                         }
                         else if (data == "SESSION_TIME_OUT") {
                             var pop = document.getElementById("alertmessage");
                             pop.innerHTML = "Your session time out. Please login again.";
-                            $('#alertModal').modal('show');
+                            $('#dvAlertModal').modal('show');
                             //alert("Your session time out. Please login again.");
                         }
                         else if (data == "Invalid Product") {
                             //alert("Invalid Product")
                             var pop = document.getElementById("alertmessage");
                             pop.innerHTML = "Invalid Product.";
-                            $('#alertModal').modal('show');
+                            $('#dvAlertModal').modal('show');
                         }
                         else {
                             var pop = document.getElementById("alertmessage");
                             pop.innerHTML = "Purchase failed!!! Please try again later.";
-                            $('#alertModal').modal('show');
+                            $('#dvAlertModal').modal('show');
                             //alert("Purchase failed!!! Please try again later.");
                         }
                         return false;
@@ -701,7 +703,7 @@
                             if (msg.d == "QUANTITYERROR") {
                                 var pop = document.getElementById("alertmessage");
                                 pop.innerHTML = "Item already added, please update the quantity in the cart.";
-                                $('#alertModal').modal('show');
+                                $('#dvAlertModal').modal('show');
                                 // alert("Item already added, please update the quantity in the cart.")
                                 window.location.href = "Cart.aspx";
                             }
@@ -712,7 +714,7 @@
                                 //alert("Invalid Product")
                                 var pop = document.getElementById("alertmessage");
                                 pop.innerHTML = "Invalid Product.";
-                                $('#alertModal').modal('show');
+                                $('#dvAlertModal').modal('show');
                             }
                         }
                     });
@@ -740,7 +742,7 @@
                                     //alert("Invalid Product")
                                     //var pop = document.getElementById("alertmessage");
                                     //pop.innerHTML = "Invalid Product.";
-                                    //$('#alertModal').modal('show');
+                                    //$('#dvAlertModal').modal('show');
                                 }
                                 else {
                                     IDs.forEach(ClearFields);

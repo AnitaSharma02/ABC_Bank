@@ -788,6 +788,11 @@
     /* handle position */
     --rangeslider-handle-top: -4px;
     --rangeslider-handle-margin-left: -5px;
+
+        /*==================[ CAR SELECTION SCROLLBAR ]==================*/
+    --car-selection-scrollbar-height: 3px;
+    --car-selection-scrollbar-track-bg: #f1f1f1;
+    --car-selection-scrollbar-thumb-bg: var(--colour1);
 }
 
 
