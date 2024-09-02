@@ -111,15 +111,16 @@
     --body-bg-colour: var(--colour6);
     --body-text-colour: var(--colour8);
 
-    /*==================[ COMMON SCROLLBAR ]==================*/
+    /*==================[ DEFAULT SCROLLBAR ]==================*/
+    --scrollbar-custom-size: 3px;
     --scrollbar-width: 12px;
     --scrollbar-track-bg: #f1f1f1;
     --scrollbar-thumb-bg: var(--colour1);
 
     /*==================[ REDEMPTION MENU ]==================*/
-    --redemptionmenu-scrollbar-height: 3px;
-    --redemptionmenu-scrollbar-track-bg: #f1f1f1;
-    --redemptionmenu-scrollbar-thumb-bg: var(--colour1);
+    --redemptionmenu-scrollbar-height: var(--scrollbar-custom-size);
+    --redemptionmenu-scrollbar-track-bg: var(--scrollbar-track-bg);
+    --redemptionmenu-scrollbar-thumb-bg: var(--scrollbar-thumb-bg);
     /*imagebox*/
     --redemptionmenu-imagebox-bg-colour: var(--colour6);
     --redemptionmenu-imagebox-border-radius: 50%;
@@ -443,9 +444,9 @@
     --filter-mobile-accordion-scroll-ver-margin: 0;
     --filter-mobile-accordion-scroll-ver-max-height: 240px; /* none to hide scroll */
     /* style scrollbar */
-    --filter-mobile-accordion-scrollbar-width: 3px;
-    --filter-mobile-accordion-scrollbar-track-bg: #f1f1f1;
-    --filter-mobile-accordion-scrollbar-thumb-bg: var(--colour1);
+    --filter-mobile-accordion-scrollbar-width: var(--scrollbar-custom-size);
+    --filter-mobile-accordion-scrollbar-track-bg: var(--scrollbar-track-bg);
+    --filter-mobile-accordion-scrollbar-thumb-bg: var(--scrollbar-thumb-bg);
 
     /*==================[ FILTER MODAL DESKTOP ]==================*/
     /* converted modal to static */
@@ -475,9 +476,9 @@
 
     /*==================[ COMMON MODAL ]==================*/
     /*scrollbar style*/
-    --modal-scrollbar-width: 3px;
-    --modal-scrollbar-track-bg: #f1f1f1;
-    --modal-scrollbar-thumb-bg: var(--colour1);
+    --modal-scrollbar-width: var(--scrollbar-custom-size);
+    --modal-scrollbar-track-bg: var(--scrollbar-track-bg);
+    --modal-scrollbar-thumb-bg: var(--scrollbar-thumb-bg);
     /*border-radius*/
     --modal-b-radius: var(--b-radius);
     /*modal-header*/
@@ -594,9 +595,9 @@
     --denomination-btn-border-radius: var(--b-radius);
 
     /*==================[ TABS SCROLLBAR FOR TAB PILLS & TAB REGULAR ]==================*/
-    --tab-scrollbar-height: 3px;
-    --tab-scrollbar-track-bg: #f1f1f1;
-    --tab-scrollbar-thumb-bg: var(--colour1);
+    --tab-scrollbar-height: var(--scrollbar-custom-size);
+    --tab-scrollbar-track-bg: var(--scrollbar-track-bg);
+    --tab-scrollbar-thumb-bg: var(--scrollbar-thumb-bg);
 
     /*==================[ TAB REGULAR ]==================*/
     --tab-bg-colour:transparent;
@@ -740,9 +741,9 @@
 
     /*==================[ JQUERY UI AUTOCOMPLETE ]==================*/
     /*scrollbar*/
-    --ui-autocomplete-scrollbar-width: 3px;
-    --ui-autocomplete-scrollbar-track-bg: #f1f1f1;
-    --ui-autocomplete-scrollbar-thumb-bg:var(--colour1);
+    --ui-autocomplete-scrollbar-width: var(--scrollbar-custom-size);
+    --ui-autocomplete-scrollbar-track-bg: var(--scrollbar-track-bg);
+    --ui-autocomplete-scrollbar-thumb-bg: var(--scrollbar-thumb-bg);
     /*bg and hover*/
     --ui-autocomplete-bg-colour: var(--colour1);
     --ui-autocomplete-text-colour: var(--colour6);
@@ -790,9 +791,9 @@
     --rangeslider-handle-margin-left: -5px;
 
         /*==================[ CAR SELECTION SCROLLBAR ]==================*/
-    --car-selection-scrollbar-height: 3px;
-    --car-selection-scrollbar-track-bg: #f1f1f1;
-    --car-selection-scrollbar-thumb-bg: var(--colour1);
+    --car-selection-scrollbar-height: var(--scrollbar-custom-size);
+    --car-selection-scrollbar-track-bg: var(--scrollbar-track-bg);
+    --car-selection-scrollbar-thumb-bg: var(--scrollbar-track-bg);
 }
 
 

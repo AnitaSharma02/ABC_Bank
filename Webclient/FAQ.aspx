@@ -130,7 +130,7 @@
                         <div class="card mb-3">
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
-                                    <button class="h6 btn btn-block text-left p-3 heading-semibold" type="button" data-toggle="collapse"
+                                    <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapse2">
                                         Flights
                                         <span class="arrow-icon">
@@ -237,7 +237,7 @@
                         <div class="card mb-3">
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
-                                    <button class="h6 btn btn-block text-left p-3 heading-semibold" type="button" data-toggle="collapse"
+                                    <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapse3">
                                         Flights - cancellation, amendments & refunds
                                         <span class="arrow-icon">
