@@ -24,26 +24,26 @@
         <div class="container-xl">
             <div class="row">
                 <div class="dvThumbSwiperSlider col-md-6 mb-3">
-                    <div class="swiper mySwiper2 mb-2">
-                        <div id="BannerImage" class="swiper-wrapper">
-                            
+                    <div class="border p-3">
+                        <div class="swiper mySwiper2 mb-2">
+                            <div id="BannerImage" class="swiper-wrapper">
+                            </div>
+                            <div class="swiper-button-next">
+                                <img src="images/icons/arrows/right-yellow-arrow-2.svg" />
+                            </div>
+                            <div class="swiper-button-prev">
+                                <img src="images/icons/arrows/left-yellow-arrow-2.svg" />
+                            </div>
                         </div>
-                        <div class="swiper-button-next">
-                            <img src="images/icons/arrows/right-yellow-arrow-2.svg" />
-                        </div>
-                        <div class="swiper-button-prev">
-                            <img src="images/icons/arrows/left-yellow-arrow-2.svg" />
-                        </div>
-                    </div>
-                    <div class="swiper mySwiper">
-                        <div id="ThumbBannerImage" class="swiper-wrapper">
-                            
-                        </div>
-                        <div class="swiper-button-next">
-                            <img src="images/icons/arrows/right-yellow-arrow-2.svg" />
-                        </div>
-                        <div class="swiper-button-prev">
-                            <img src="images/icons/arrows/left-yellow-arrow-2.svg" />
+                        <div class="swiper mySwiper">
+                            <div id="ThumbBannerImage" class="swiper-wrapper">
+                            </div>
+                            <div class="swiper-button-next">
+                                <img src="images/icons/arrows/right-yellow-arrow-2.svg" />
+                            </div>
+                            <div class="swiper-button-prev">
+                                <img src="images/icons/arrows/left-yellow-arrow-2.svg" />
+                            </div>
                         </div>
                     </div>
                 </div>
