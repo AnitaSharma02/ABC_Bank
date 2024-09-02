@@ -793,7 +793,7 @@
         /*==================[ CAR SELECTION SCROLLBAR ]==================*/
     --car-selection-scrollbar-height: var(--scrollbar-custom-size);
     --car-selection-scrollbar-track-bg: var(--scrollbar-track-bg);
-    --car-selection-scrollbar-thumb-bg: var(--scrollbar-track-bg);
+    --car-selection-scrollbar-thumb-bg: var(--scrollbar-thumb-bg);
 }
 
 
@@ -804,42 +804,33 @@
 
 
 /*
-    BRI THEME -
+    ABC THEME -
     - - - - - - - - - - - - - - - -
-    1. common text font ->> fontMedium
-    2. common font size ->> 1rem = 16px
-    3. common text colour ->> #848484
-    4. headings ->> standard bootstrap responsive headings
-       heading1 - big headings
-       heading5 - medium headings
-       heading6 - small headings
-    5. buttons ->> standard bootstrap buttons
+
+    HEADINGS USED - 
+    - - - - - - - - - - - - - - - -
+    1. heading1 - for all big and main headings with font bold
+    2. heading6 - for all common small headings with font bold
+    3. heading5 - for all medium headings with font bold
+
+    RESPONSIVE HEADINGS LOGIC
+    - - - - - - - - - - - - - - - -
+    h1 - font-size: calc(1.375rem + 1.5vw);
+    h2 - font-size: calc(1.325rem + .9vw);
+    h3 - font-size: calc(1.3rem + .6vw);
+    h4 - font-size: calc(1.275rem + .3vw);
+    h5 - font-size: 1.25rem;
+    h6 - font-size: 1rem;
+
+    media queries - 992px and above
+    h1 - font-size: 2.5rem;
+    h2 - font-size: 2rem;
+    h3 - font-size: 1.75rem;
+    h4 - font-size: 1.5rem;
+    h5 - font-size: 1.25rem;
+    h6 - font-size: 1rem;
 */
 
 /* 
-bootstrap 5 heading logic makes responsive headings
 
-h1 - font-size: calc(1.375rem + 1.5vw);
-h2 - font-size: calc(1.325rem + .9vw);
-h3 - font-size: calc(1.3rem + .6vw);
-h4 - font-size: calc(1.275rem + .3vw);
-h5 - font-size: 1.25rem;
-h6 - font-size: 1rem;
-
-media queries - 992px and above
-h1 - font-size: 2.5rem;
-h2 - font-size: 2rem;
-h3 - font-size: 1.75rem;
-h4 - font-size: 1.5rem;
-h5 - font-size: 1.25rem;
-h6 - font-size: 1rem;
-    */
-
-/*
-headings used
-heading1
-heading2
-heading5 - on index
-heading6
-link1
 */

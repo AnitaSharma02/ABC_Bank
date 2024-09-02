@@ -339,14 +339,14 @@ public partial class CarDetails : System.Web.UI.Page
                             {
                                 if (extras.name.Equals("Excess Protection"))
                                 {
-                                    sbextras.Append("<div class=\"border boxShadow b-radius mt-4\">");
+                                    sbextras.Append("<div class=\"border b-radius mt-4\">");
                                     sbextras.Append("<input type=\"hidden\" name=\"ExessProtection\" id=\"hndExessProtection\" value=" + extras.rentalPrice.display.amount + " />");
                                     sbextras.Append("<input type=\"hidden\" name=\"ExessProtectiondata\" id=\"hndExessProtectiondata\" value=" + extras.productId + "|" + extras.rentalPrice.display.amount + " />");
                                     sbextras.Append("<div class=\"row\">");
                                     sbextras.Append("<div class=\"col-12\">");
                                     sbextras.Append("<div class=\"p-3\">");
                                     sbextras.Append("<div class=\"row\">");
-                                    sbextras.Append("<div class=\"ribbonBox\">");
+                                    sbextras.Append("<div class=\"ribbon\">");
                                     sbextras.Append("<span> RECOMMENDED </span>");
                                     sbextras.Append("</div>");
                                     sbextras.Append("<div class=\"col-12 productInfo position-relative\">");
@@ -393,12 +393,12 @@ public partial class CarDetails : System.Web.UI.Page
                                 }
                                 else
                                 {
-                                    sbextras.Append("<div class=\"border boxShadow b-radius mt-4\">");
+                                    sbextras.Append("<div class=\"border b-radius mt-4\">");
                                     sbextras.Append("<div class=\"row\">");
                                     sbextras.Append("<div class=\"col-12\">");
                                     sbextras.Append("<div class=\"p-3\">");
                                     sbextras.Append("<div class=\"row\">");
-                                    //sbextras.Append("<div class=\"ribbonBox dvRibbon\">");
+                                    //sbextras.Append("<div class=\"ribbon\">");
                                     //sbextras.Append("<span> RECOMMENDED </span>");
                                     //sbextras.Append("</div>");
                                     sbextras.Append("<div class=\"col-12 productInfo position-relative\">");
@@ -518,14 +518,14 @@ public partial class CarDetails : System.Web.UI.Page
                 {
                     if (extras.name.Equals("Excess Protection"))
                     {
-                        sbextras.Append("<div class=\"border boxShadow b-radius mt-4\">");
+                        sbextras.Append("<div class=\"border b-radius mt-4\">");
                         sbextras.Append("<input type=\"hidden\" name=\"ExessProtection\" id=\"hndExessProtection\" value=" + extras.rentalPrice.display.amount + " />");
                         sbextras.Append("<input type=\"hidden\" name=\"ExessProtectiondata\" id=\"hndExessProtectiondata\" value=" + extras.productId + "|" + extras.rentalPrice.display.amount + " />");
                         sbextras.Append("<div class=\"row\">");
                         sbextras.Append("<div class=\"col-12\">");
                         sbextras.Append("<div class=\"p-3\">");
                         sbextras.Append("<div class=\"row\">");
-                        sbextras.Append("<div class=\"ribbonBox dvRibbon\">");
+                        sbextras.Append("<div class=\"ribbon\">");
                         sbextras.Append("<span> RECOMMENDED </span>");
                         sbextras.Append("</div>");
                         sbextras.Append("<div class=\"col-12 productInfo position-relative\">");
@@ -571,12 +571,12 @@ public partial class CarDetails : System.Web.UI.Page
                     }
                     else if (extras.name.Equals("Cancellation Protection (Prepay)"))
                     {
-                        sbextras.Append("<div class=\"border boxShadow b-radius mt-4\">");
+                        sbextras.Append("<div class=\"border b-radius mt-4\">");
                         sbextras.Append("<div class=\"row\">");
                         sbextras.Append("<div class=\"col-12\">");
                         sbextras.Append("<div class=\"p-3\">");
                         sbextras.Append("<div class=\"row\">");
-                        //sbextras.Append("<div class=\"ribbonBox dvRibbon\">");
+                        //sbextras.Append("<div class=\"ribbon\">");
                         //sbextras.Append("<span> RECOMMENDED </span>");
                         //sbextras.Append("</div>");
                         sbextras.Append("<div class=\"col-12 productInfo position-relative\">");

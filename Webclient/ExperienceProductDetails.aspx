@@ -35,7 +35,7 @@
                     <div id="swiperHeadingHtml"></div>
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="heading6 text-colour7 mb-3">Product types</h2>
+                            <h2 class="heading6 text-colour7 my-3">Product types</h2>
                         </div>
                         <div class="dvForm col-12">
                             <div class="border b-radius p-3 mb-3">

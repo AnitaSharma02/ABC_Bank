@@ -21,7 +21,7 @@
                         <div class="col-12">
                             <div id="CarValidationError" runat="server" data-i18n="flight-below-fields" class="p-1 mb-2 alert alert-danger text-danger text-center h6 heading-semibold" style="display: none;"></div>
                         </div>
-                        <div class="col-12 col-lg-10 order-xs-1">
+                        <div class="col-12 col-lg-10">
                             <div class="form-row">
                                 <div class="col-lg-4 col-md-12 col-12 mb-3">
                                     <label for="validationDefaultUsername" class="label" data-i18n="car-pickup-location">Pick up location?</label>
@@ -269,7 +269,7 @@
                         </div>
                         <div class="col-12 col-lg-10 order-xl-12 order-md-2 order-sm-2 order-lg-12 order-xs-2">
                             <div class="form-row dvParent">
-                                <div class="col-12 col-lg-4 col-xl-4">
+                                <div class="col-12 col-md-6 col-lg-4">
                                     <div class="dvLabel d-flex justify-content-between">
                                         <label class="checkbox-container d-flex">
                                             <span class="d-inline-block">
@@ -293,7 +293,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-3 col-xl-3">
+                                <div class="col-12 col-md-6 col-lg-4">
                                     <div class="dvLabel d-flex justify-content-between">
                                         <label class="checkbox-container d-flex">
                                             <span class="d-inline-block">
@@ -306,12 +306,12 @@
 
                                     <div class="form-group dvInput2 fade-out">
                                         <label class="label" data-i18n="car-driver-age">Driver age</label>
-                                        <div class="input-group">
+                                        <div class="dvInput input-group">
                                             <input type="text" class="form-control" onkeypress="return validateNumber(event)" id="txtDriverAge" data-i18n="[placeholder]car-enter-driver-age" placeholder="Please enter driver age">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-3 col-xl-3" style="display: none;">
+                                <div class="col-12 col-md-6 col-lg-4" style="display: none;">
                                     <div class="dvLabel d-flex justify-content-between">
                                         <label class="checkbox-container d-flex">
                                             <span class="d-inline-block">
@@ -331,7 +331,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-2 order-xl-2 col-lg-2 order-lg-2 order-md-12 order-sm-12 order-xs-12 mt-4">
+                        <div class="col-xl-2 order-xl-2 col-lg-2 order-lg-2 order-md-12 order-sm-12 mt-4">
                             <button class="btn btn-one w-100" type="submit" onclick="var retvalue = CarValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" data-i18n="car-search-btn">Search Car</button>
                         </div>
                     </div>

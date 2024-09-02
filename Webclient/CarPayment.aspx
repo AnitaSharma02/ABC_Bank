@@ -24,37 +24,43 @@
     </script>
 
 
-    <div class="dvCarList">
+    <div class="dvCarPayment">
         <div class="container-xl">
-            <div class="dvCarSteps row py-4 justify-content-between justify-content-sm-center">
-                <div class="col-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center">
-                    <p class="circle mr-lg-2">1</p>
-                    <p class="d-lg-flex align-items-lg-center">
-                        Choose <span class="d-none d-sm-block ml-lg-1">Your Car</span>
-                    </p>
+            <div class="row dvDeliveryTrack">
+                <div class="col-4 mb-lg-3">
+                    <div class="dvLine border d-none d-md-block px-3"></div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto my-3">
+                            <div class="d-flex flex-column flex-sm-row align-items-center">
+                                <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">1</span>
+                                <a class="h7 bg-colour6 px-3 text-center text-colour7">Your Car</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-1 d-sm-flex align-items-sm-center justify-content-sm-center d-none d-sm-block px-sm-0">
-                    <div class="border w-100"></div>
+                <div class="col-4 mb-lg-3">
+                    <div class="dvLine border d-none d-md-block px-3"></div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto my-3">
+                            <div class="d-flex flex-column flex-sm-row align-items-center">
+                                <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">2</span>
+                                <a class="h7 bg-colour6 px-3 text-center text-colour7" id="hrefBookingDetailsId" runat="server">Deal</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div
-                    class="col-6 col-sm-3 col-lg-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center">
-                    <p class="circle mr-lg-2 heading-semibold">2</p>
-                    <p class="d-lg-flex align-items-lg-center"><span class="d-none d-sm-block mr-lg-1">View</span> Deal</p>
-                </div>
-                <div class="col-sm-1 d-sm-flex align-items-sm-center justify-content-sm-center d-none d-sm-block px-sm-0">
-                    <div class="border w-100"></div>
-                </div>
-                <div class="col-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center">
-                    <p class="circle mr-lg-2 circle-active">3</p>
-                    <p class="d-lg-flex text-active heading-semibold align-items-lg-center">
-                        <span class="d-none d-sm-block mr-lg-1">Booking &amp;</span> Payment
-                    </p>
+                <div class="col-4 mb-lg-3">
+                    <%--<div class="dvLine border d-none d-md-block px-3"></div>--%>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto my-3">
+                            <div class="d-flex flex-column flex-sm-row align-items-center active">
+                                <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">3</span>
+                                <a class="h7 heading-bold bg-colour6 px-3 text-center text-colour1">Payment</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="dvCarPayment dvCarDetails">
-        <div class="container-xl">
             <div class="row">
                 <div class="col-md-5 col-lg-4 mb-3">
                     <div class="border b-radius">
@@ -152,7 +158,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="bg-colour2 p-3">
-                                    <h2 class="heading-bold h6"><i class="fa-regular fa-circle-user text-colour8"></i>  <span data-i18n="car-driver-details">Driver Details</span></h2>
+                                    <h2 class="heading-bold h6"><i class="fa-regular fa-circle-user text-colour8"></i><span data-i18n="car-driver-details">Driver Details</span></h2>
                                 </div>
                                 <div class="p-3">
                                     <div class="row">
@@ -198,11 +204,11 @@
                                                         <span class="checkmark"></span>
                                                     </span>
                                                     <span class="d-inline-block ml-2"><span data-i18n="car-have-read-accept">I have read and accept the</span>
-                                                  <a href="TermsAndConditions.aspx" target="_blank" class="link1" data-i18n="car-terms">Terms & Conditions</a></span>
+                                                        <a href="TermsAndConditions.aspx" target="_blank" class="link1" data-i18n="car-terms">Terms & Conditions</a></span>
                                                 </label>
                                             </div>
                                             <p class="text-danger mb-2" id="errorTnC"></p>
-                                            <asp:Button ID="btnMakePayment" runat="server" data-i18n="[value]btn-make-payment" Value="Make Payment" OnClick="btnMakePayment_Click" OnClientClick="return MakePayment();" CssClass="btn btn-one"> </asp:Button>
+                                            <asp:Button ID="btnMakePayment" runat="server" data-i18n="[value]btn-make-payment" Value="Make Payment" OnClick="btnMakePayment_Click" OnClientClick="return MakePayment();" CssClass="btn btn-one"></asp:Button>
 
                                         </div>
                                     </div>
@@ -213,12 +219,9 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
-    </div>
-    </div>
+
     <!-- CarLarge modal pop up start-->
     <div class="dvCommonModal dvMoreInfoModal modal fade" id="dvMoreInfoModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">

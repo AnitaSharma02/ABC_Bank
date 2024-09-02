@@ -72,38 +72,43 @@
 
     </script>
 
-<div class="dvCarList">
-  <div class="container-xl">
-    <div class="dvCarSteps row py-4 justify-content-between justify-content-sm-center">
-      <div class="col-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center">
-        <p class="circle mr-lg-2">1</p>
-        <p class="d-lg-flex align-items-lg-center">
-          Choose <span class="d-none d-sm-block ml-lg-1">Your Car</span>
-        </p>
-      </div>
-      <div class="col-sm-1 d-sm-flex align-items-sm-center justify-content-sm-center d-none d-sm-block px-sm-0">
-        <div class="border w-100"></div>
-      </div>
-      <div
-        class="col-6 col-sm-3 col-lg-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center"
-      >
-        <p class="circle mr-lg-2 circle-active heading-semibold">2</p>
-        <p class="d-lg-flex text-active heading-semibold align-items-lg-center"><span class="d-none d-sm-block mr-lg-1">View</span> Deal</p>
-      </div>
-      <div class="col-sm-1 d-sm-flex align-items-sm-center justify-content-sm-center d-none d-sm-block px-sm-0">
-        <div class="border w-100"></div>
-      </div>
-      <div class="col-3 d-flex flex-column flex-lg-row text-center align-items-center justify-content-center">
-        <p class="circle mr-lg-2">3</p>
-        <p class="d-lg-flex align-items-lg-center">
-          <span class="d-none d-sm-block mr-lg-1">Booking &amp;</span> Payment
-        </p>
-      </div>
-    </div>
-  </div>
- </div>
-    <div class="dvCarDetails pb-5">
+    <div class="dvCarDetails">
         <div class="container-xl">
+            <div class="row dvDeliveryTrack">
+                <div class="col-4 mb-lg-3">
+                    <div class="dvLine border d-none d-md-block px-3"></div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto my-3">
+                            <div class="d-flex flex-column flex-sm-row align-items-center">
+                                <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">1</span>
+                                <a class="h7 bg-colour6 px-3 text-center text-colour7">Your Car</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-lg-3">
+                    <div class="dvLine border d-none d-md-block px-3"></div>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto my-3">
+                            <div class="d-flex flex-column flex-sm-row align-items-center active">
+                                <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">2</span>
+                                <a class="h7 heading-bold bg-colour6 px-3 text-center text-colour1" id="hrefBookingDetailsId" runat="server">Deal</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mb-lg-3">
+                    <%--<div class="dvLine border d-none d-md-block px-3"></div>--%>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-auto my-3">
+                            <div class="d-flex flex-column flex-sm-row align-items-center">
+                                <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">3</span>
+                                <a class="h7 bg-colour6 px-3 text-center text-colour7">Payment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-5 col-lg-4">
                     <div class="border b-radius">
@@ -126,27 +131,27 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="row">
-                                                    <div class="col-1 pr-0 dvMap">
-                                                        <i class="fa-solid fa-location-dot"></i>
-                                                    </div>
-                                                    <div class="col-11 mb-3 dvAddress">
-                                                        <h2 class="mb-2 heading-semibold h6" data-i18n="car-pickup-from">Pick up from:</h2>
-                                                        <p id="spnpickupDetails" class="h7"></p>
-                                                        <p class="mb-2 heading-medium h8" id="spnpickupDate"></p>
-                                                       
-                                                     </div>   
+                                                        <div class="col-1 pr-0 dvMap">
+                                                            <i class="fa-solid fa-location-dot"></i>
+                                                        </div>
+                                                        <div class="col-11 mb-3 dvAddress">
+                                                            <h2 class="mb-2 heading-semibold h6" data-i18n="car-pickup-from">Pick up from:</h2>
+                                                            <p id="spnpickupDetails" class="h7"></p>
+                                                            <p class="mb-2 heading-medium h8" id="spnpickupDate"></p>
+
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                     <div class="row">
-                                                      <div class="col-1 pr-0 dvMap">
-                                                          <i class="fa-solid fa-location-dot"></i>
-                                                      </div>
-                                                     <div class="col-11 mb-3 dvAddress">
-                                                          <h2 class="mb-2 heading-semibold h7" data-i18n="car-drop-off-at"> Drop off at: </h2>
-                                                          <p id="spndropoffDetails" class="h7">  </p>
-                                                          <p class="mb-2 heading-medium h8" id="spndropoffDate"></p>
-                                                     </div>
+                                                    <div class="row">
+                                                        <div class="col-1 pr-0 dvMap">
+                                                            <i class="fa-solid fa-location-dot"></i>
+                                                        </div>
+                                                        <div class="col-11 mb-3 dvAddress">
+                                                            <h2 class="mb-2 heading-semibold h7" data-i18n="car-drop-off-at">Drop off at: </h2>
+                                                            <p id="spndropoffDetails" class="h7"></p>
+                                                            <p class="mb-2 heading-medium h8" id="spndropoffDate"></p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -154,109 +159,109 @@
                                     </div>
                                 </div>
                                 <div class="card" id="divCarDetailsLeftpannel">
-                                     <%-- <div class="card-header" id="headingTwo">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Volkswagen Polo <span>(Economy)</span> <i class="fa fa-caret-down rotate" aria-hidden="true"></i>
-                                            </button>
-                                        </h2>
+                                    <%-- <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Volkswagen Polo <span>(Economy)</span> <i class="fa fa-caret-down rotate" aria-hidden="true"></i>
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body row">
+                                <div class="col-12 ">
+                                    <div class="moreInfo" data-toggle="modal" data-target="#dvAdditionalEquipmentModal">
+                                        <i class="fa fa-info-circle" aria-hidden="true"></i>More info
                                     </div>
-                                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                        <div class="card-body row">
-                                            <div class="col-12 ">
-                                                <div class="moreInfo" data-toggle="modal" data-target="#dvAdditionalEquipmentModal">
-                                                    <i class="fa fa-info-circle" aria-hidden="true"></i>More info
-                                                </div>
-                                                <div class="carPicBox" data-toggle="modal" data-target="#dvAdditionalEquipmentModal">
-                                                    <img class="img-fluid mt-auto mb-auto" src="https://cdn.enjoytravel.com/img/vehicleimages/volkswagen_polo.jpg" />
-                                                </div>
-                                                <div class="dvProvider">
-                                                    <img class="img-fluid mt-auto mb-auto" src="https://cdn.enjoytravel.com/img/logos/ace-logo.svg" width="100" />
-                                                </div>
-                                            </div>
-                                            <div class="col-12 mt-4">
-                                                <div class="row">
-                                                    <div class="col-6 pb-2">
-                                                        <div class="cardDetails">
-                                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                                            <p>Unlimited Mileage</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 pb-2">
-                                                        <div class="cardDetails">
-                                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                                            <p>Stay Safe Initiative</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 pb-2">
-                                                        <div class="cardDetails">
-                                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                                            <p>Other taxes and service charges</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 pb-2">
-                                                        <div class="cardDetails">
-                                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                                            <p>Collision damage waiver</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 pb-2">
-                                                        <div class="cardDetails">
-                                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                                            <p>Theft protection</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 pb-2">
-                                                        <div class="cardDetails">
-                                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                                            <p>Unlimited Travel</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 mt-2">
-                                                <div class="row dviconBox">
-                                                    <div class="col-6 col-md-6 d-flex mb-1 mt-2 align-items-center">
-                                                        <div class="borderColor">
-                                                            <img src="images/icon/seat-icon.svg" class="img-fluid" />
-                                                        </div>
-                                                        <span class="ml-2">x 5</span>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                                        <div class="borderColor">
-                                                            <img src="images/icon/gear-icon.svg" class="img-fluid" />
-                                                        </div>
-                                                        <span class="ml-2">Automatic</span>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                                        <div class="borderColor">
-                                                            <img src="images/icon/door-icon.svg" class="img-fluid" />
-                                                        </div>
-                                                        <span class="ml-2">2-4</span>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                                        <div class="borderColor">
-                                                            <i class="fa fa-bus" aria-hidden="true"></i>
-                                                        </div>
-                                                        <span class="ml-2">Shuttle </span>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                                        <div class="borderColor">
-                                                            <img src="images/icon/ac-icon.svg" class="img-fluid" />
-                                                        </div>
-                                                        <span class="ml-2">AirCon</span>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                                        <div class="borderColor">
-                                                            <img src="images/icon/fuel-icon.svg" class="img-fluid" />
-                                                        </div>
-                                                        <span class="ml-2">Fair Fuel Policy</span>
-                                                    </div>
-
-                                                </div>
+                                    <div class="carPicBox" data-toggle="modal" data-target="#dvAdditionalEquipmentModal">
+                                        <img class="img-fluid mt-auto mb-auto" src="https://cdn.enjoytravel.com/img/vehicleimages/volkswagen_polo.jpg" />
+                                    </div>
+                                    <div class="dvProvider">
+                                        <img class="img-fluid mt-auto mb-auto" src="https://cdn.enjoytravel.com/img/logos/ace-logo.svg" width="100" />
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <div class="row">
+                                        <div class="col-6 pb-2">
+                                            <div class="cardDetails">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <p>Unlimited Mileage</p>
                                             </div>
                                         </div>
-                                    </div>--%>
+                                        <div class="col-6 pb-2">
+                                            <div class="cardDetails">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <p>Stay Safe Initiative</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 pb-2">
+                                            <div class="cardDetails">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <p>Other taxes and service charges</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 pb-2">
+                                            <div class="cardDetails">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <p>Collision damage waiver</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 pb-2">
+                                            <div class="cardDetails">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <p>Theft protection</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 pb-2">
+                                            <div class="cardDetails">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <p>Unlimited Travel</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="row dviconBox">
+                                        <div class="col-6 col-md-6 d-flex mb-1 mt-2 align-items-center">
+                                            <div class="borderColor">
+                                                <img src="images/icon/seat-icon.svg" class="img-fluid" />
+                                            </div>
+                                            <span class="ml-2">x 5</span>
+                                        </div>
+                                        <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
+                                            <div class="borderColor">
+                                                <img src="images/icon/gear-icon.svg" class="img-fluid" />
+                                            </div>
+                                            <span class="ml-2">Automatic</span>
+                                        </div>
+                                        <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
+                                            <div class="borderColor">
+                                                <img src="images/icon/door-icon.svg" class="img-fluid" />
+                                            </div>
+                                            <span class="ml-2">2-4</span>
+                                        </div>
+                                        <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
+                                            <div class="borderColor">
+                                                <i class="fa fa-bus" aria-hidden="true"></i>
+                                            </div>
+                                            <span class="ml-2">Shuttle </span>
+                                        </div>
+                                        <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
+                                            <div class="borderColor">
+                                                <img src="images/icon/ac-icon.svg" class="img-fluid" />
+                                            </div>
+                                            <span class="ml-2">AirCon</span>
+                                        </div>
+                                        <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
+                                            <div class="borderColor">
+                                                <img src="images/icon/fuel-icon.svg" class="img-fluid" />
+                                            </div>
+                                            <span class="ml-2">Fair Fuel Policy</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>--%>
                                 </div>
 
                             </div>
@@ -296,16 +301,14 @@
                                         </div>
                                     </div>
                                 </div>
-                               <%-- <div id="AdditionalChrgtotal" class="d-flex justify-content-between align-items-center pt-2 pb-3">
-                                    <div class="col-6">
-                                        <p>Remainder to pay for car hire on arrival is made in LOCAL currency:</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p class="heading-bold"><span id="spnAdditionalChargetotal">0</span> <i class="fa fa-usd" aria-hidden="true"></i></p>
-                                    </div>
-                                </div>--%>
-
-
+                                <%-- <div id="AdditionalChrgtotal" class="d-flex justify-content-between align-items-center pt-2 pb-3">
+                        <div class="col-6">
+                            <p>Remainder to pay for car hire on arrival is made in LOCAL currency:</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="heading-bold"><span id="spnAdditionalChargetotal">0</span> <i class="fa fa-usd" aria-hidden="true"></i></p>
+                        </div>
+                    </div>--%>
                             </div>
                         </div>
                     </div>
@@ -313,7 +316,7 @@
                 <div class="col-md-7 col-lg-8">
                     <div class="row">
                         <div class="col-12 mt-3 mt-md-0 dvPayOption">
-                            <h2 class="heading-bold h5"><i class="fa fa-lock" aria-hidden="true"></i> <span data-i18n="car-payment-options">Payment Options</span></h2>
+                            <h2 class="heading-bold h5"><i class="fa fa-lock" aria-hidden="true"></i><span data-i18n="car-payment-options">Payment Options</span></h2>
                         </div>
 
                     </div>
@@ -380,6 +383,7 @@
             </div>
         </div>
     </div>
+
     <!-- CarLarge modal pop up start-->
     <div class="dvCommonModal dvMoreInfoModal modal fade" id="dvMoreInfoModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
