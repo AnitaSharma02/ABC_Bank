@@ -521,7 +521,7 @@ function showModifyFlight() {
                 $("#oneli").prop("checked", false);
                 $("#retli").prop("checked", true);
                 //$("#JourneyType").val("Return");
-                document.getElementById("JourneyType").selectedIndex = "0";
+                document.getElementById("returnSelectMenu").selectedIndex = "0";
                 $("#divrtn").show();
             } else {
                 $("#oneli").addClass("tab-act");
@@ -530,19 +530,19 @@ function showModifyFlight() {
                 $("#oneli").prop("checked", true);
                 $("#retli").prop("checked", false);
                 //$("#JourneyType").val("One Way");
-                document.getElementById("JourneyType").selectedIndex = "1";
+                document.getElementById("returnSelectMenu").selectedIndex = "1";
                 $("#divrtn").hide();
             }
 
             var CabinValue = objModifySerach.SearchDetails.Cabin.toString();
             if (CabinValue == "Economy") {
-                document.getElementById("FlightClass").selectedIndex = "0";
+                document.getElementById("economySelectMenu").selectedIndex = "0";
             }
             else if (CabinValue == "Business") {
-                document.getElementById("FlightClass").selectedIndex = "1";
+                document.getElementById("economySelectMenu").selectedIndex = "1";
             }
             else {
-                document.getElementById("FlightClass").selectedIndex = "2";
+                document.getElementById("economySelectMenu").selectedIndex = "2";
             }
 
             //$("#returnSelectMenu").selectmenu({}).selectmenu("menuWidget").addClass("select-menu-css");
