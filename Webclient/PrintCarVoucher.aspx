@@ -62,7 +62,7 @@
                                     <div class="row">
                                         <div class="col-12 col-sm-4 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Pick-Up</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -75,7 +75,7 @@
 
                                         <div class="col-12 col-sm-8 col-md-2 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Pick-Up Date</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -89,7 +89,7 @@
                                         </div>
                                         <div class="col-12 col-sm-6 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Drop-Off</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -101,7 +101,7 @@
                                         </div>
                                         <div class="col-12 col-sm-6 col-md-2 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-gender">Drop-Off Date</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -115,7 +115,7 @@
                                         </div>
                                         <%--<div class="col-8 col-sm-8 col-md-2">
                  <div class="row">
-                     <div class="col-12 bg-colour3 p-2">
+                     <div class="col-12 bg-colour2 p-2">
                          <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-age">Email</h2>
                      </div>
                      <div class="col-12 p-2">
@@ -135,7 +135,7 @@
                                     <div class="row">
                                         <div class="col-5 col-sm-4 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Car Name</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -147,7 +147,7 @@
                                         </div>
                                         <div class="col-7 col-sm-8 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Transmission type</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -159,7 +159,7 @@
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Air Condition</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -179,7 +179,7 @@
                                     <div class="row">
                                         <div class="col-4 col-sm-4 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Name</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -193,7 +193,7 @@
                                         </div>
                                         <div class="col-8 col-sm-8 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Address</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -205,7 +205,7 @@
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Phone Number</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -225,7 +225,7 @@
                                     <div class="row">
                                         <div class="col-4 col-sm-4 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Pick-Up</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -237,7 +237,7 @@
                                         </div>
                                         <div class="col-8 col-sm-8 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">City</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -249,7 +249,7 @@
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Country</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -269,7 +269,7 @@
                                     <div class="row">
                                         <div class="col-4 col-sm-4 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Drop-Off</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -281,7 +281,7 @@
                                         </div>
                                         <div class="col-8 col-sm-8 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">City</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -293,7 +293,7 @@
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Country</h2>
                                                 </div>
                                                 <div class="col-12 p-2">

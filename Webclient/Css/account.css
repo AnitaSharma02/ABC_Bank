@@ -1,7 +1,7 @@
 /*=========[ ACCOUNT BG ]=========*/
 .dvMember {
     /*background: url("../images/homepage/earn/bg-image.svg");*/
-    background: var(--bg-colour3);
+    background: var(--bg-colour2);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,7 +13,7 @@
 
 /*=========[ ACCOUNT MENU ]=========*/
 .dvAccountMenu {
-  border-bottom: 1px solid var(--bg-colour3);
+  border-bottom: 1px solid var(--border-colour);
 }
 .dvAccountMenu .nav-link {
   color: var(--bg-colour7);

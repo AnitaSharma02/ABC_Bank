@@ -22,26 +22,26 @@
                 <div class="border p-3">
                     <div class="row">
                         <div class="col-12">
-                            <div class="bg-colour3 p-3">
+                            <div class="bg-colour2 p-3">
                                 <img src="Images/logos/infinity-logo.svg" alt="" />
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="h5 heading-light text-colour7 my-3">Thank you <asp:Label CssClass="heading-bold" ID="lblPersonName" runat="server" Text="Nil"></asp:Label>, Your booking is now <span class="heading-bold">confirmed.</span></h2>
+                            <h2 class="h5 heading-light text-colour7 my-3">Thank you <asp:Label CssClass="heading-semibold text-colour7" ID="lblPersonName" runat="server" Text="Nil"></asp:Label>, Your booking is now <span class="heading-semibold text-colour7">confirmed.</span></h2>
                             <p>                                
                                 
-                                <span class="heading-bold">Points:</span>
+                                <span class="h6 heading-semibold text-colour7">Points:</span>
                                 <span id="divTotalMiles" runat="server"></span><br />
 
-                                <span class="heading-bold">Reference No:</span>
+                                <span class="h6 heading-semibold text-colour7">Reference No:</span>
                                 <asp:Label ID="lblTransactionReference" runat="server"></asp:Label><br />                                
 
-                                <span class="heading-bold">Voucher No:</span>
+                                <span class="h6 heading-semibold text-colour7">Voucher No:</span>
                                 <asp:Label ID="lblExternalRefId" runat="server" Text=""></asp:Label><br />
 
-                                <span class="heading-bold">Booking ID:</span>
+                                <span class="h6 heading-semibold text-colour7">Booking ID:</span>
                                 <asp:Label ID="lblBookingID" runat="server" Text="Nil"></asp:Label>
                             </p>
                         </div>
@@ -51,7 +51,7 @@
                             <div class="border p-3 h-100">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="h6 heading-semibold bg-colour3 text-colour7 text-capitalize p-3">Booking Details</h2>
+                                        <h2 class="h6 heading-semibold bg-colour1 text-colour6 text-capitalize p-3">Booking Details</h2>
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -115,7 +115,7 @@
                             <div class="border p-3 h-100">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="h6 heading-semibold bg-colour3 text-colour7 text-capitalize p-3">Hotel Details</h2>
+                                        <h2 class="h6 heading-semibold bg-colour1 text-colour6 text-capitalize p-3">Hotel Details</h2>
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -203,7 +203,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="bg-colour3 p-3">
+                            <div class="bg-colour2 p-3">
                                 <div class="row">
                                     <div class="col-12">
                                     <div class="row">

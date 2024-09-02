@@ -709,12 +709,12 @@ p {
 
 
 /*=========[ Login Forms ]=========*/
-.dvLoginBoxbg .innerBox {
+/*.dvLoginBoxbg .innerBox {*/
     /*overflow: hidden;*/
     /*background: var(--colour2);*/
-    border: 1px solid var(--border-colour);
+    /*border: 1px solid var(--border-colour);
     border-radius: var(--b-radius) !important;
-}
+}*/
 
 /*.dvLogin a {
     border: 1px solid #fff;
@@ -1181,6 +1181,7 @@ p {
     background: var(--accordion-body-bg);
     border-radius: var(--accordion-body-b-radius);
     font-family: var(--accordion-body-family);
+    border: 1px solid var(--accordion-body-border);
 }
 /* style the card body when show class applies */
 .dvCommonAccordion.accordion .collapse.show {
@@ -1198,6 +1199,10 @@ p {
 /* hide the minus icon by default. */
 .dvCommonAccordion.accordion .fa-minus {
     display: none;
+}
+/*remove the last border-bottom*/
+.dvCommonAccordion.accordion .card-body .dvBorderBottom:last-child{
+    display:none;
 }
 /*=========[ COMMON ACCORDION ]=========*/
 

@@ -16,7 +16,7 @@
                 <div class="border p-3">
                    <%-- <div class="row">
                         <div class="col-12">
-                            <div class="bg-colour3 p-3">
+                            <div class="bg-colour2 p-3">
                                 <img class="img-fluid" src="../images/logos/infinity-logo.svg" alt="" />
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                     <%--<UC:ItineraryDetails ID="ucItinarary" runat="server" />--%>
                     <div class="row dvAdditionalDetails mt-3">
                         <div class="col-12 mb-3">
-                            <h2 class="h7 heading-semibold text-colour7 bg-colour3 py-3 px-2 border">Booking Details</h2>
+                            <h2 class="h7 heading-semibold text-colour7 bg-colour2 py-3 px-2 border">Booking Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
                                     <div class="col-12 col-sm-4 col-md-4 border-right">
@@ -123,7 +123,7 @@
                         </div>
 
                         <div class="col-12 mb-3">
-                            <h2 class="h7 heading-semibold text-colour7 bg-colour3 py-3 px-2 border">Car Details</h2>
+                            <h2 class="h7 heading-semibold text-colour7 bg-colour2 py-3 px-2 border">Car Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
                                     <div class="col-5 col-sm-4 col-md-4 border-right">
@@ -167,7 +167,7 @@
                         </div>
 
                         <div class="col-12 mb-3 d-none">
-                            <h2 class="h7 heading-semibold text-colour7 bg-colour3 py-3 px-2 border">Driver Details</h2>
+                            <h2 class="h7 heading-semibold text-colour7 bg-colour2 py-3 px-2 border">Driver Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
                                     <div class="col-4 col-sm-4 col-md-4 border-right">
@@ -213,7 +213,7 @@
                         </div>
 
                         <div class="col-12 mb-3" style="display:none;">>
-                            <h2 class="h7 heading-semibold text-colour7 bg-colour3 p-3 border">Pick-Up Location Details</h2>
+                            <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border">Pick-Up Location Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
                                     <div class="col-4 col-sm-4 col-md-4 border-right">
@@ -257,7 +257,7 @@
                         </div>
 
                         <div class="col-12 mb-3" style="display:none;">>
-                            <h2 class="h7 heading-semibold text-colour7 bg-colour3 p-3 border">Drop-Off Location Details</h2>
+                            <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border">Drop-Off Location Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
                                     <div class="col-4 col-sm-4 col-md-4 border-right">

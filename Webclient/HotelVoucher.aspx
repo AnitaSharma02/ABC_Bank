@@ -18,7 +18,7 @@
                 <div class="border p-3">
                     <div class="row">
                         <div class="col-12">
-                            <div class="bg-colour3 p-3">
+                            <div class="bg-colour2 p-3">
                                 <img src="Images/logos/infinity-logo.svg" alt="" />
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                             <div class="border p-3 h-100">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="h6 heading-semibold bg-colour3 text-colour7 text-capitalize p-3">Booking Details</h2>
+                                        <h2 class="h6 heading-semibold bg-colour1 text-colour6 text-capitalize p-3">Booking Details</h2>
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -112,7 +112,7 @@
                             <div class="border p-3 h-100">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="h6 heading-semibold bg-colour3 text-colour7 text-capitalize p-3">Hotel Details</h2>
+                                        <h2 class="h6 heading-semibold bg-colour1 text-colour6 text-capitalize p-3">Hotel Details</h2>
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -200,7 +200,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="bg-colour3 p-3">
+                            <div class="bg-colour2 p-3">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="row">

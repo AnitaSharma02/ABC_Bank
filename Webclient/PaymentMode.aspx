@@ -39,7 +39,7 @@
         <div class="dvPaymentMode container-xl pt-3 pt-lg-5">
             <div class="row justify-content-center align-items-center vh100">
                 <div class="col-md-8">
-                    <div class="bg-colour3 p-3">
+                    <div class="bg-colour2 p-3">
                         <h2 class="h6 heading-semibold">Select Payment Mode</h2>
                     </div>
                     <div class="bg-colour2 p-3">

@@ -15,12 +15,12 @@
     border-radius: var(--b-radius) !important;
     margin: 0 5px 0 0px;
 }
-.dvFlightSearch .innerBox {
+/*.dvFlightSearch .innerBox {*/
     /*overflow: hidden;*/
-    background: var(--bg-colour2);
+    /*background: var(--bg-colour2);
     border: none;
     border-radius: var(--b-radius) !important;
-}
+}*/
 .dvFlightSearch .dvPlace {
     position: relative;
 }

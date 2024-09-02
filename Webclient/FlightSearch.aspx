@@ -301,7 +301,7 @@
                              </ul>
                             <div class="tab-content" id="pills-tabContent">
                                  <div class="dvInternational tab-pane fade show active" id="pills-international" role="tabpanel" aria-labelledby="pills-international-tab">
-                                     <div class="innerBox px-3 pt-2">                                       
+                                     <div class="bg-colour2 px-3 pt-2">                                       
                                             <div class="p-1 mb-2 alert alert-danger text-center text-danger h6 heading-semibold" id="requiredValidation" style="display:none;"></div>
                                                 <div class="row dvLabel r- d-none">
                                                         <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">
@@ -549,7 +549,7 @@
                                      </div>
                                  </div>
                                  <div class="dvDomestic tab-pane fade" id="tabdomestic" role="tabpanel" aria-labelledby="tabdomesticTab">
-                                    <div class="innerBox px-3 pt-2">
+                                    <div class="bg-colour2 px-3 pt-2">
                                       
                                             <div class="p-1 mb-2 alert alert-danger text-danger text-center h6 heading-semibold" id="requiredValidationdomestic" style="display:none;"></div>
                                              <div class="row dvLabel r- d-none">

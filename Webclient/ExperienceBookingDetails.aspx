@@ -29,7 +29,7 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-12 my-4">
-                    <div class="bg-colour3 p-3 mt-sm-0">
+                    <div class="bg-colour2 p-3 mt-sm-0">
                         <div class="row">
                             <div class="col-12">
                                 <div class="bg-colour6 p-3">

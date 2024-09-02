@@ -336,7 +336,7 @@
                                 </div>
                             </div>
                             <div id="dvForm" class="dvForm collapse bg-colour2 py-3">
-                                <div class="innerBox px-3">  
+                                <div class="bg-colour2 px-3">  
                                     <div class="p-1 mb-2 alert alert-danger text-center text-danger h6 heading-semibold" id="requiredValidation" style="display:none;"></div>
                                         <div class="row dvLabel r- d-none">
                                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">

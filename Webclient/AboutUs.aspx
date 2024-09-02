@@ -2,20 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <style>
-        #dvHeroSlider {
+        .dvHeroSlider,
+        .dvInnerBanner,
+        .dvRedemptionMenu,
+        #sitemap{
             display: none;
-        }
-
-        .dvRedemptionMenu {
-            display: none;
-        }
-
-        #sitemap {
-            display: none;
-        }
-
-        .dvInnerBanner {
-            display: none
         }
     </style>
     <div class="dvBreadcrumbs">

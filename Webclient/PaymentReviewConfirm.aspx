@@ -13,7 +13,7 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
-                    <div class="bg-colour3 p-3">
+                    <div class="bg-colour2 p-3">
                         <div class="row">
                             <div class="col-12">
                                 <div class="bg-colour6 border p-3">

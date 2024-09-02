@@ -199,11 +199,11 @@
                                     <div class="card-body scroll-ver p-0">
                                         <asp:Repeater ID="rptBookingDetails" runat="server">
                                             <ItemTemplate>
-                                                <div class="row mb-1">
+                                                <div class="row">
                                                     <div class="col-12">
                                                         <div class="bg-colour6 p-3">
                                                             <div class="row justify-content-between">
-                                                                <div class="col-6 col-md-3 col-xl-2 mb-1">
+                                                                <div class="col-6 col-md-3 col-xl-2 mb-3 mb-xl-0">
                                                                     <p>
                                                                         <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-departure-label">Departure Date</span>
                                                                         <span class="h6 d-block">
@@ -211,7 +211,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3 col-xl-2 mb-1">
+                                                                <div class="col-6 col-md-3 col-xl-2 mb-3 mb-xl-0">
                                                                     <p>
                                                                         <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-booking-label">Return Date</span>
                                                                         <span class="h6 d-block">
@@ -219,7 +219,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3 col-xl-2 mb-1">
+                                                                <div class="col-6 col-md-3 col-xl-2 mb-3 mb-xl-0">
                                                                     <p>
                                                                         <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-details-label">Details</span>
                                                                         <span class="h6 d-block">
@@ -229,7 +229,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3 col-xl-2 mb-1">
+                                                                <div class="col-6 col-md-3 col-xl-2 mb-3 mb-xl-0">
                                                                     <p>
                                                                         <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-ref-label">Ref No.</span>
                                                                         <span class="h6 d-block">
@@ -237,7 +237,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3 col-xl-1 mb-1">
+                                                                <div class="col-6 col-md-3 col-xl-1">
                                                                     <p>
                                                                         <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-trip-label">Trip Id</span>
                                                                         <span class="h6 d-block">
@@ -247,7 +247,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3 col-xl-1 mb-1">
+                                                                <div class="col-6 col-md-3 col-xl-1">
                                                                     <p>
                                                                         <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-points-label">Points</span>
                                                                         <span class="h6 d-block">
@@ -255,7 +255,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-12 col-md-6 col-xl-2 mt-3 mt-md-0">
+                                                                <div class="col-12 col-md-6 col-xl-2">
                                                                     <p>
                                                                         <asp:LinkButton ID="BtnViewAir" CssClass="btn btn-one w-100" Text="View Details" runat="server" OnClientClick='<%#String.Format("javascript:return ShowAirReceipt(\"{0}\")",Eval("ItineraryTripId").ToString())%>'></asp:LinkButton>
                                                                     </p>
@@ -263,6 +263,11 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dvBorderBottom row">
+                                                    <div class="col-12">
+                                                        <div class="border-bottom"></div>
                                                     </div>
                                                 </div>
                                             </ItemTemplate>
@@ -290,67 +295,67 @@
                                     <div class="card-body scroll-ver p-0">
                                         <asp:Repeater ID="rptHotelCancelBookingDetails" runat="server">
                                             <ItemTemplate>
-                                                <div class="row mb-1">
+                                                <div class="row">
                                                     <div class="col-12">
                                                         <div class="bg-colour6 p-3">
                                                             <div class="row justify-content-between">
-                                                                <div class="col-6 col-md-3 mb-1">
+                                                                <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-checkin-label">Check-in Date</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-checkin-label">Check-in Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Convert.ToDateTime(Eval("searchCriteria.CheckInDate")).ToShortDateString()%>
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3 mb-1">
+                                                                <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-checkout-label">Check-out Date</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-checkout-label">Check-out Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Convert.ToDateTime(Eval("searchCriteria.CheckOutDate")).ToShortDateString()%>
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3 mb-1">
+                                                                <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-booking-label">Booking Date</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-booking-label">Booking Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Convert.ToDateTime(Eval("BookinDate")).ToShortDateString()%>
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3 mb-1">
+                                                                <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-details-label">Details</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-details-label">Details</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("Hotel.basicinfo.hotelname")%>
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-12 col-md-3 mb-1">
+                                                                <div class="col-12 col-md-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-ref-label">Ref No.</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-ref-label">Ref No.</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("TransactionReferenceCode")%>
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3 mb-1">
+                                                                <div class="col-6 col-md-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-points-label">Points</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-points-label">Points</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("TotalPoint")%>
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3 mb-1">
+                                                                <div class="col-6 col-md-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-hotel-status-label">Status</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-status-label">Status</span>
                                                                         <span class="h6 d-block">
                                                                             <%# (Convert.ToInt32(Eval("Status")).Equals(1))? "BOOKED" : "CANCELLED" %>
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-12 col-md-3 mb-1 mt-2 mt-lg-0">
+                                                                <div class="col-12 col-md-3">
                                                                     <p>
                                                                         <asp:HiddenField ID="hdnCancelHotelBooking" Value='<%#String.Concat(Eval("ExternalBookingId"), "&bookid=", Eval("BookingId").ToString(),"&transRef=",Eval("TransactionReferenceCode").ToString())%>'
                                                                             runat="server"></asp:HiddenField>
@@ -362,6 +367,11 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dvBorderBottom row">
+                                                    <div class="col-12">
+                                                        <div class="border-bottom"></div>
                                                     </div>
                                                 </div>
                                             </ItemTemplate>
@@ -404,7 +414,7 @@
                                     </h2>
                                 </div>
                                 <div id="collapse4" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-3" id="divDomesticFlightBookingDetails" runat="server">
+                                    <div class="card-body scroll-ver p-0" id="divDomesticFlightBookingDetails" runat="server">
                                     </div>
                                 </div>
                             </div>
@@ -422,7 +432,7 @@
                                     </h2>
                                 </div>
                                 <div id="collapse5" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-3" id="divInsuranceFlightBookingDetails" runat="server">
+                                    <div class="card-body scroll-ver p-0" id="divInsuranceFlightBookingDetails" runat="server">
                                     </div>
                                 </div>
                             </div>
@@ -440,7 +450,7 @@
                                     </h2>
                                 </div>
                                 <div id="collapse6" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-3" id="divISPFlightBookingDetails" runat="server">
+                                    <div class="card-body scroll-ver p-0" id="divISPFlightBookingDetails" runat="server">
                                     </div>
                                 </div>
                             </div>
@@ -458,10 +468,10 @@
                                     </h2>
                                 </div>
                                 <div id="collapse7" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-3">
+                                    <div class="card-body scroll-ver p-0">
                                         <asp:Repeater ID="rptCarBookingDetails" runat="server">
                                             <ItemTemplate>
-                                                <div class="row mb-1">
+                                                <div class="row">
                                                     <div class="col-12">
                                                         <div class="bg-colour6 p-3">
                                                             <div class="row justify-content-between">
@@ -490,7 +500,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                                                <div class="col-12 col-sm-6 col-lg-4">
                                                                     <p>
                                                                         <span class="h7 d-block heading-semibold text-colour7">Drop-Off Details</span>
                                                                         <span class="d-block h6">
@@ -499,7 +509,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                                                <div class="col-12 col-sm-6 col-lg-4">
                                                                     <p>
                                                                         <span class="h7 d-block heading-semibold text-colour7">Booking Status</span>
                                                                         <span class="d-block h6">
@@ -507,7 +517,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                                                                <div class="col-12 col-sm-6 col-lg-4">
                                                                     <span>
                                                                         <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-points-label">Points</span>
                                                                         <span class="d-block- h6">
@@ -531,6 +541,11 @@
                                                                 </div>--%>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dvBorderBottom row">
+                                                    <div class="col-12">
+                                                        <div class="border-bottom"></div>
                                                     </div>
                                                 </div>
                                             </ItemTemplate>

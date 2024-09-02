@@ -195,7 +195,7 @@
                         </button>
                     </div>
                     <div id="dvForm" class="dvForm bg-colour2 collapse">                         
-                        <div class="innerBox px-3 pt-2">      
+                        <div class="bg-colour2 px-3 pt-2">      
                                 <div class="p-1 mb-2 alert alert-danger text-danger text-center h6 heading-semibold" id="requiredValidationdomestic" style="display:none;"></div>
                                  <div class="row dvLabel r- d-none">
                                     <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">
@@ -458,7 +458,7 @@
                             <a href="#modify_search" class="btn btn-one" id="btnModify" data-toggle="collapse" data-i18n="flightlist-modify">Modify</a>
                         </div>
                     </div>
-                    <div class="innerBox serviceWidget collapse" id="modify_search">
+                    <div class="bg-colour2 serviceWidget collapse" id="modify_search">
                         <div id="divflt">
                             <!--Flight Search Panel Start -->
                             <div class="Searchvalid" id="requiredValidation"></div>

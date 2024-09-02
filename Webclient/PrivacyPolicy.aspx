@@ -2,22 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <style>
-        #dvHeroSlider {
-            display: none;
-        }
-
-        .dvRedemptionMenu {
-            display: none;
-        }
-
-        #sitemap {
-            display: none;
-        }
-
-        .dvInnerBanner {
-            display: none
-        }
-    </style>
+    .dvHeroSlider,
+    .dvInnerBanner,
+    .dvRedemptionMenu,
+    #sitemap{
+        display: none;
+    }
+</style>
     <div class="dvBreadcrumbs">
         <div class="container-xl">
             <nav>

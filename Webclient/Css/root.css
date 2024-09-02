@@ -93,15 +93,15 @@
     --font-extrablack: FontExtraBlack;
 
     /* theme colours */
-    --colour1: #CB4F56; /*red*/
-    --colour2: #F3F4F6; /*lightgray -- used for form bg mostly*/
-    --colour3: #EFEFEF; /*darkgray -- used for background mostly*/
-    --colour4: #F9F9F9; /*more lightgray*/
+    --colour1: #CB4F56; /*primary theme colour*/
+    --colour2: #F3F4F6; /*lightgray - use only for background*/
+    --colour3: #EFEFEF; /*darkgray - used only for borders*/
+    --colour4: #F9F9F9; /*secondary theme colour*/
     --colour5: #FEF2F2; /*lightRed*/
-    --colour6: #ffffff; /*white*/
-    --colour7: #000000; /*black*/
-    --colour8: #777777; /*gray*/
-    --colour9: #000A09; /*lightblack*/
+    --colour6: #ffffff; /*white - dont change this colour, is used commonly everywhere*/
+    --colour7: #000000; /*black - dont change this colour, is used commonly everywhere*/
+    --colour8: #777777; /*gray - use only for common text colours, such as paragraphs*/
+    --colour9: #000A09; /*used for heading1 and heading2*/
 
     /*|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- COMPONENTS |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-*/
 
@@ -512,9 +512,9 @@
     --accordion-header-active-text: var(--colour7);
     --accordion-header-active-border: var(--colour5);
     --accordion-header-active-b-radius: var(--b-radius) var(--b-radius) 0 0;
-    --accordion-body-bg: var(--colour4);
+    --accordion-body-bg: var(--colour6);
     --accordion-body-text: var(--colour7);
-    --accordion-body-border: var(--colour3);
+    --accordion-body-border: var(--border-colour);
     --accordion-body-b-radius: var(--b-radius);
     --accordion-body-active-bg: var(--colour6);
     --accordion-body-active-text: var(--colour4);

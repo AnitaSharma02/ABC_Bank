@@ -25,7 +25,7 @@
                     <div class="border p-3">
                         <div class="row">
                             <div class="col-12">
-                                <div class="bg-colour3 p-3">
+                                <div class="bg-colour2 p-3">
                                     <img src="Images/logos/infinity-logo.svg" alt="" />
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                                 
                                         <div class="col-4 col-sm-4 col-md-2 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Membership No.</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -75,7 +75,7 @@
                                         </div>
                                         <div class="col-8 col-sm-8 col-md-2 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Name</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -87,7 +87,7 @@
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-4 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Mobile</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -99,7 +99,7 @@
                                         </div>
                                         <div class="col-4 col-sm-4 col-md-2 border-right">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-gender">Address</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
@@ -111,7 +111,7 @@
                                         </div>
                                         <div class="col-8 col-sm-8 col-md-2">
                                             <div class="row">
-                                                <div class="col-12 bg-colour3 p-2">
+                                                <div class="col-12 bg-colour2 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-age">Email</h2>
                                                 </div>
                                                 <div class="col-12 p-2">
