@@ -359,7 +359,7 @@
                                             </div>
                                         <div class="row">
                                             <div class="dvReturnSelectMenu col-6 col-md-4 col-sm-4 col-lg-2 mb-3">
-                                                <select id="returnSelectMenu">
+                                                <select id="returnSelectMenu" onchange="JourneyTypeChanged(this);">
                                                     <option>Return</option>
                                                     <option>One Way</option>
                                                     </select>
