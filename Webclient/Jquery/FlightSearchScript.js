@@ -545,8 +545,8 @@ function showModifyFlight() {
                 document.getElementById("economySelectMenu").selectedIndex = "2";
             }
 
-            //$("#returnSelectMenu").selectmenu({}).selectmenu("menuWidget").addClass("select-menu-css");
-            //$("#economySelectMenu").selectmenu({}).selectmenu("menuWidget").addClass("select-menu-css");
+            $("#returnSelectMenu").selectmenu({}).selectmenu("menuWidget").addClass("select-menu-css");
+            $("#economySelectMenu").selectmenu({}).selectmenu("menuWidget").addClass("select-menu-css");
         }
     });
 }
