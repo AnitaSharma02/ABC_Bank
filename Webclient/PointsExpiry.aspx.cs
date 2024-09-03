@@ -12,7 +12,7 @@ public partial class PointsExpiry : System.Web.UI.Page
     {
         if (Session["MemberDetails"] == null)
         {
-            Response.Redirect("Login.aspx", false);
+            Response.Redirect("Index.aspx", false);
         }
         if (!IsPostBack)
         {

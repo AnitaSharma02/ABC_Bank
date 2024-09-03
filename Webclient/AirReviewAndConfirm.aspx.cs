@@ -37,7 +37,7 @@ public partial class AirReviewAndConfirm : System.Web.UI.Page
 
                 if (Session["MemberDetails"].Equals(null))
                 {
-                    Response.Redirect("login.aspx", false);
+                    Response.Redirect("Index.aspx", false);
                 }
                 else
                 {

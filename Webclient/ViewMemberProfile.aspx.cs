@@ -30,7 +30,7 @@ public partial class ViewMemberProfile : System.Web.UI.Page
                 MemberDetails lobjMemberDetails = Session["MemberDetails"] as MemberDetails;
                 if (lobjMemberDetails == null)
                 {
-                    Response.Redirect("Login.aspx", false);
+                    Response.Redirect("Index.aspx", false);
                 }
                 PopulateProfile();
             }

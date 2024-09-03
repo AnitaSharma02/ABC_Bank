@@ -37,7 +37,7 @@ public partial class ProductDetails : Page
                 if (Session["MemberDetails"] == null)
                 {
                     string CallbackUrl = HttpUtility.UrlEncode(Encrypt("ProductDetails.aspx?ProductId=" + lstrProductId + "&ProductType=" + lstrProductType));
-                    Response.Redirect("Login.aspx?CallbackUrl=" + CallbackUrl, false);
+                    Response.Redirect("Index.aspx?CallbackUrl=" + CallbackUrl, false);
                 }
                 else
                 {
@@ -113,7 +113,7 @@ public partial class ProductDetails : Page
             {
                 if (Session["MemberDetails"] == null)
                 {
-                    Response.Redirect("Login.aspx", false);
+                    Response.Redirect("Index.aspx", false);
                 }
                 else
                 {

@@ -24,7 +24,7 @@
         $('#earn').addClass("active");
         return false;
     }
-    else if (pathname == "Login.aspx") {
+    else if (pathname == "Index.aspx") {
         $('#lnkLogin').addClass("active");
         return false;
     }

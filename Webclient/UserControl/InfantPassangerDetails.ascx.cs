@@ -18,8 +18,8 @@ public partial class SourceControl_InfantPassangerDetails : System.Web.UI.UserCo
     {
         if (!IsPostBack)
         {
-            RefererDetails lobjRefererDetails = HttpContext.Current.Application["RefererSupplierDetails"] as RefererDetails;
-            int supplierId = lobjRefererDetails.RefererSupplierProperties.SupplierId;
+            //RefererDetails lobjRefererDetails = HttpContext.Current.Application["RefererSupplierDetails"] as RefererDetails;
+            int supplierId = 0;//lobjRefererDetails.RefererSupplierProperties.SupplierId;
             if (supplierId.Equals(6)) // provisio
             {
                 AdditionalInfo.Style.Add("display", "block");

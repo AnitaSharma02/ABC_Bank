@@ -27,7 +27,7 @@ public partial class ForceChangePassword : System.Web.UI.Page
         {
             //if (Session["MemberDetails"] == null)
             //{
-            //    Response.Redirect("Login.aspx");
+            //    Response.Redirect("Index.aspx");
             //}
             //else
             //{

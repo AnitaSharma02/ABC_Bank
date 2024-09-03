@@ -23,7 +23,7 @@ public partial class OrderHistory : Page
                 if (HttpContext.Current.Session["MemberDetails"] == null)
                 {
                     string CallbackUrl = HttpUtility.UrlEncode(Encrypt("OrderHistory.aspx"));
-                    Response.Redirect("Login.aspx?CallbackUrl=" + CallbackUrl, false);
+                    Response.Redirect("Index.aspx?CallbackUrl=" + CallbackUrl, false);
                 }
             }
         }

@@ -46,7 +46,7 @@ public partial class PaymentReviewConfirm : System.Web.UI.Page
             {
                 string CallbackUrl = HttpUtility.UrlEncode(Encrypt("PaymentReviewConfirm.aspx"));
                 HttpContext.Current.Session["CallbackUrl"] = CallbackUrl;
-                Response.Redirect("Login.aspx?CallbackUrl=" + CallbackUrl, false);
+                Response.Redirect("Index.aspx?CallbackUrl=" + CallbackUrl, false);
             }
         }
     }

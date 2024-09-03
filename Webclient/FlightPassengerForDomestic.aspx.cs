@@ -133,7 +133,7 @@ public partial class FlightPassengerForDomestic : System.Web.UI.Page
                 }
                 else
                 {
-                    Response.Redirect("Login.aspx", false);
+                    Response.Redirect("Index.aspx", false);
                 }
             }
         }

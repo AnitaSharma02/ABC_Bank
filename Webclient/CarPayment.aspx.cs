@@ -32,7 +32,7 @@ public partial class CarPayment : System.Web.UI.Page
         }
         else
         {
-            Response.Redirect("Login.aspx", false);
+            Response.Redirect("Index.aspx", false);
         }
     }
     [ScriptMethod()]

@@ -23,7 +23,7 @@ public partial class StatementSummary : Page
             if (Session["MemberDetails"] == null)
             {
                 HttpContext.Current.Session["MyAccount"] = "MyAccount";
-                Response.Redirect("Login.aspx", false);
+                Response.Redirect("Index.aspx", false);
             }
         }
         catch (Exception ex)

@@ -100,7 +100,7 @@
                                             <div class="d-flex flex-wrap justify-content-between">
                                                 <div>
                                                     <asp:LinkButton ID="FormLinkLogin" CausesValidation="false" runat="server"
-                                                        OnClientClick="var retvalue = redirectLocation('Login.aspx'); event.returnValue= retvalue; return retvalue;"
+                                                        OnClientClick="var retvalue = redirectLocation('Index.aspx'); event.returnValue= retvalue; return retvalue;"
                                                         data-i18n="text-back-to-login" CssClass="heading-semibold link1">Back to Login</asp:LinkButton>
                                                 </div>
                                             </div>

@@ -48,7 +48,7 @@ public partial class ManageBooking : Page
             {
                 string CallbackUrl = HttpUtility.UrlEncode(Encrypt("ManageBooking.aspx"));
                 HttpContext.Current.Session["CallbackUrl"] = CallbackUrl;
-                Response.Redirect("Login.aspx?CallbackUrl=" + CallbackUrl, false);
+                Response.Redirect("Index.aspx?CallbackUrl=" + CallbackUrl, false);
             }
         }
         catch (Exception ex)
@@ -81,7 +81,7 @@ public partial class ManageBooking : Page
             }
             else
             {
-                Response.Redirect("Login.aspx", false);
+                Response.Redirect("Index.aspx", false);
             }
         }
         catch (Exception ex)
@@ -443,7 +443,7 @@ public partial class ManageBooking : Page
             }
             else
             {
-                Response.Redirect("Login.aspx", false);
+                Response.Redirect("Index.aspx", false);
             }
         }
         catch (Exception ex)
@@ -479,7 +479,7 @@ public partial class ManageBooking : Page
         }
         else
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Index.aspx");
         }
     }
 
@@ -569,7 +569,7 @@ public partial class ManageBooking : Page
     //        }
     //        else
     //        {
-    //            Response.Redirect("Login.aspx", false);
+    //            Response.Redirect("Index.aspx", false);
     //        }
     //    }
     //    catch (Exception ex)
@@ -639,7 +639,7 @@ public partial class ManageBooking : Page
     //        }
     //        else
     //        {
-    //            Response.Redirect("Login.aspx", false);
+    //            Response.Redirect("Index.aspx", false);
     //        }
     //    }
     //    catch (Exception ex)

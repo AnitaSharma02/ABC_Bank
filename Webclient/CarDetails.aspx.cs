@@ -33,7 +33,7 @@ public partial class CarDetails : System.Web.UI.Page
         }
         else
         {
-            Response.Redirect("Login.aspx", false);
+            Response.Redirect("Index.aspx", false);
         }
     }
 

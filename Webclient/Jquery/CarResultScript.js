@@ -523,7 +523,7 @@ function gotoBooking(obj) {
                     window.location.href = 'CarDetails.aspx';
                 }
                 else {
-                    window.location.href = 'Login.aspx';
+                    window.location.href = 'Index.aspx';
                 }
             }
             catch (e) {

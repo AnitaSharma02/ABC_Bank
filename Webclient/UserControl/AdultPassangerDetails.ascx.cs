@@ -9,6 +9,8 @@ using System.Text.RegularExpressions;
 using CB.IBE.Platform.Masters.Entities;
 using ABC.Model;
 using CB.IBE.Platform.ClientEntities;
+using Core.Platform.MemberActivity.Entities;
+using Framework.EnterpriseLibrary.Adapters;
 
 public partial class SourceControl_AdultPassangerDetails : System.Web.UI.UserControl
 {
@@ -18,67 +20,75 @@ public partial class SourceControl_AdultPassangerDetails : System.Web.UI.UserCon
     {
         if (!IsPostBack)
         {
-            RefererDetails lobjRefererDetails = HttpContext.Current.Application["RefererSupplierDetails"] as RefererDetails;
-            int supplierId = lobjRefererDetails.RefererSupplierProperties.SupplierId;
-
-            if (supplierId.Equals(6)) // provisio
+            //RefererDetails lobjRefererDetails = HttpContext.Current.Application["RefererSupplierDetails"] as RefererDetails;
+            int supplierId = 0;//lobjRefererDetails.RefererSupplierProperties.SupplierId;
+            LoggingAdapter.WriteLog(string.Format("Flight Adult Details"+ supplierId));
+            try
             {
-                AdditionalInfo.Style.Add("display", "block");
-                rfvAdultTelephone.Enabled = true;
-                rfvAdultLocation.Enabled = true;
-                rfvAdultEffectiveDate.Enabled = true;
-                rfvAdultExpiryDate.Enabled = true;
-                revAdulttelephone.Enabled = true;
-                customIssueDateValidator.Enabled = true;
-                CustomExpiryDate.Enabled = true;
-            }
-            else
-            {
-                AdditionalInfo.Style.Add("display", "none");
-                divNationality.Style.Add("display", "none");
-                divTelephone.Style.Add("display", "none");
-                divPassportPlace.Style.Add("display", "none");
-                divPassportissue.Style.Add("display", "none");
-                divPassportexpiry.Style.Add("display", "none");
-
-                string[] strPassportIssueDateAirlineCode = System.Configuration.ConfigurationManager.AppSettings["PassportIssueDateAirlineCode"].Split(',').Select(s => s.Trim()).ToArray();
-                string[] strPassportExpiryDateAirlineCode = System.Configuration.ConfigurationManager.AppSettings["PassportExpiryDateAirlineCode"].Split(',').Select(s => s.Trim()).ToArray();
-                string[] strPassportIssuingCountryAirlineCode = System.Configuration.ConfigurationManager.AppSettings["PassportIssuingCountryAirlineCode"].Split(',').Select(s => s.Trim()).ToArray();
-                string[] strPassportNoAirlineCode = System.Configuration.ConfigurationManager.AppSettings["PassportNoAirlineCode"].Split(',').Select(s => s.Trim()).ToArray();
-                string[] strDOBAirlineCode = System.Configuration.ConfigurationManager.AppSettings["DOBAirlineCode"].Split(',').Select(s => s.Trim()).ToArray();
-
-                ItineraryDetails lobjItineraryDetails = (ItineraryDetails)Session["SelectedItinerary"];
-                var FlightDetailsIataCode = lobjItineraryDetails.ListOfFlightDetails[0].ListOfFlightSegments[0].AirlinelIATACode;
-                var FlightDetailsIataCode1 = string.Empty;
-                if (lobjItineraryDetails.ListOfFlightDetails.Count > 1)
-                {
-                    FlightDetailsIataCode1 = lobjItineraryDetails.ListOfFlightDetails[1].ListOfFlightSegments[0].AirlinelIATACode;
-                }
-
-
-                if (strPassportIssueDateAirlineCode.Contains(FlightDetailsIataCode) || strPassportIssueDateAirlineCode.Contains(FlightDetailsIataCode1))
+                if (supplierId.Equals(6)) // provisio
                 {
                     AdditionalInfo.Style.Add("display", "block");
-                    divPassportissue.Style.Add("display", "block");
+                    rfvAdultTelephone.Enabled = true;
+                    rfvAdultLocation.Enabled = true;
                     rfvAdultEffectiveDate.Enabled = true;
-                    customIssueDateValidator.Enabled = true;
-                }
-                if (strPassportExpiryDateAirlineCode.Contains(FlightDetailsIataCode) || strPassportExpiryDateAirlineCode.Contains(FlightDetailsIataCode1))
-                {
-                    AdditionalInfo.Style.Add("display", "block");
-                    divPassportexpiry.Style.Add("display", "block");
                     rfvAdultExpiryDate.Enabled = true;
+                    revAdulttelephone.Enabled = true;
+                    customIssueDateValidator.Enabled = true;
                     CustomExpiryDate.Enabled = true;
                 }
-                if (strPassportIssuingCountryAirlineCode.Contains(FlightDetailsIataCode) || strPassportIssuingCountryAirlineCode.Contains(FlightDetailsIataCode1))
+                else
                 {
-                    AdditionalInfo.Style.Add("display", "block");
-                    divPassportPlace.Style.Add("display", "block");
-                    divNationality.Style.Add("display", "block");
-                    rfvAdultLocation.Enabled = true;
+                    AdditionalInfo.Style.Add("display", "none");
+                    divNationality.Style.Add("display", "none");
+                    divTelephone.Style.Add("display", "none");
+                    divPassportPlace.Style.Add("display", "none");
+                    divPassportissue.Style.Add("display", "none");
+                    divPassportexpiry.Style.Add("display", "none");
+
+                    string[] strPassportIssueDateAirlineCode = System.Configuration.ConfigurationManager.AppSettings["PassportIssueDateAirlineCode"].Split(',').Select(s => s.Trim()).ToArray();
+                    string[] strPassportExpiryDateAirlineCode = System.Configuration.ConfigurationManager.AppSettings["PassportExpiryDateAirlineCode"].Split(',').Select(s => s.Trim()).ToArray();
+                    string[] strPassportIssuingCountryAirlineCode = System.Configuration.ConfigurationManager.AppSettings["PassportIssuingCountryAirlineCode"].Split(',').Select(s => s.Trim()).ToArray();
+                    string[] strPassportNoAirlineCode = System.Configuration.ConfigurationManager.AppSettings["PassportNoAirlineCode"].Split(',').Select(s => s.Trim()).ToArray();
+                    string[] strDOBAirlineCode = System.Configuration.ConfigurationManager.AppSettings["DOBAirlineCode"].Split(',').Select(s => s.Trim()).ToArray();
+
+                    ItineraryDetails lobjItineraryDetails = (ItineraryDetails)Session["SelectedItinerary"];
+                    var FlightDetailsIataCode = lobjItineraryDetails.ListOfFlightDetails[0].ListOfFlightSegments[0].AirlinelIATACode;
+                    var FlightDetailsIataCode1 = string.Empty;
+                    if (lobjItineraryDetails.ListOfFlightDetails.Count > 1)
+                    {
+                        FlightDetailsIataCode1 = lobjItineraryDetails.ListOfFlightDetails[1].ListOfFlightSegments[0].AirlinelIATACode;
+                    }
+
+
+                    if (strPassportIssueDateAirlineCode.Contains(FlightDetailsIataCode) || strPassportIssueDateAirlineCode.Contains(FlightDetailsIataCode1))
+                    {
+                        AdditionalInfo.Style.Add("display", "block");
+                        divPassportissue.Style.Add("display", "block");
+                        rfvAdultEffectiveDate.Enabled = true;
+                        customIssueDateValidator.Enabled = true;
+                    }
+                    if (strPassportExpiryDateAirlineCode.Contains(FlightDetailsIataCode) || strPassportExpiryDateAirlineCode.Contains(FlightDetailsIataCode1))
+                    {
+                        AdditionalInfo.Style.Add("display", "block");
+                        divPassportexpiry.Style.Add("display", "block");
+                        rfvAdultExpiryDate.Enabled = true;
+                        CustomExpiryDate.Enabled = true;
+                    }
+                    if (strPassportIssuingCountryAirlineCode.Contains(FlightDetailsIataCode) || strPassportIssuingCountryAirlineCode.Contains(FlightDetailsIataCode1))
+                    {
+                        AdditionalInfo.Style.Add("display", "block");
+                        divPassportPlace.Style.Add("display", "block");
+                        divNationality.Style.Add("display", "block");
+                        rfvAdultLocation.Enabled = true;
+                    }
                 }
+                BindCountryList();
             }
-            BindCountryList();
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog(string.Format("Flight Adult Details" + ex.InnerException));
+
+            }
         }
     }
     protected void IssueDateValidator(object source, ServerValidateEventArgs args)

@@ -72,7 +72,7 @@ public partial class Cart : Page
                 {
                     string CallbackUrl = HttpUtility.UrlEncode(Encrypt(Request.RawUrl));
                     HttpContext.Current.Session["CallbackUrl"] = CallbackUrl;
-                    Response.Redirect("Login.aspx?CallbackUrl=" + CallbackUrl, false);
+                    Response.Redirect("Index.aspx?CallbackUrl=" + CallbackUrl, false);
                 }
                 if (Session["CategoryId"] != null)
                 {

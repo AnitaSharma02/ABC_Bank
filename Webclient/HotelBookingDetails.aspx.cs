@@ -116,7 +116,7 @@ public partial class HotelBookingDetails : Page
                 }
                 else
                 {
-                    Response.Redirect("Login.aspx", false);
+                    Response.Redirect("Index.aspx", false);
                 }
             }
         }

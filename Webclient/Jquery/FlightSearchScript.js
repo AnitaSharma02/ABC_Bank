@@ -116,7 +116,7 @@ function BookDomestic() {
             if (msg.d)
                 window.location = "FlightPassenger.aspx";
             else
-                window.location = "Login.aspx";
+                window.location = "Index.aspx";
         },
         error: function (errmsg) {
 
@@ -137,7 +137,7 @@ function BookDomesticOneWay(pstrSequenceNo) {
             if (msg.d)
                 window.location = "FlightPassenger.aspx";
             else
-                window.location = "Login.aspx";
+                window.location = "Index.aspx";
         },
         error: function (errmsg) {
 
@@ -160,7 +160,7 @@ function BookNowClick(pstrSequenceNo) {
             if (msg.d)
                 window.location = "FlightPassenger.aspx";
             else
-                window.location = "Login.aspx";
+                window.location = "Index.aspx";
         },
         error: function (errmsg) {
 

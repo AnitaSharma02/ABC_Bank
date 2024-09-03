@@ -27,7 +27,7 @@
                         window.open('AirPrintReceipt.aspx', '_blank');
                     }
                     else
-                        window.location = "Login.aspx";
+                        window.location = "Index.aspx";
                 },
                 error: function (errmsg) {
 
@@ -48,7 +48,7 @@
                         window.open('HotelVoucherPrint.aspx', '_blank');
                     }
                     else
-                        window.location = "Login.aspx";
+                        window.location = "Index.aspx";
                 },
                 error: function (errmsg) {
                 }
@@ -68,7 +68,7 @@
                         window.open('PrintCarVoucher.aspx', '_blank');
                     }
                     else
-                        window.location = "Login.aspx";
+                        window.location = "Index.aspx";
                 },
                 error: function (errmsg) {
                 }

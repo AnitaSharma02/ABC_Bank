@@ -400,7 +400,7 @@ function BookNowClick_Domestic() {
             if (msg.d)
                 window.location = "FlightPassengerForDomestic.aspx";
             else
-                window.location = "Login.aspx";
+                window.location = "Index.aspx";
         },
         beforeSend: function () {
             $("#updProgress").show();

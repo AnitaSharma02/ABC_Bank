@@ -28,7 +28,7 @@ public partial class TransactionSummary : System.Web.UI.Page
         Response.Cache.SetNoStore();
         if (Session["MemberDetails"] == null)
         {
-            Response.Redirect("Login.aspx", false);
+            Response.Redirect("Index.aspx", false);
         }
     }
 

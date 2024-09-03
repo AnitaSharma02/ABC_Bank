@@ -405,7 +405,7 @@ public partial class OrderDetails : Page
                     {
                         string CallbackUrl = HttpUtility.UrlEncode(Encrypt("OrderDetails.aspx?OrderNumber=" + lstrOrderNumber));
                         HttpContext.Current.Session["CallbackUrl"] = CallbackUrl;
-                        Response.Redirect("Login.aspx?CallbackUrl=" + CallbackUrl, false);
+                        Response.Redirect("Index.aspx?CallbackUrl=" + CallbackUrl, false);
                     }
                 }
                 else
