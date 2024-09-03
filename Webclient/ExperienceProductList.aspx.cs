@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Web;
 using System.Web.Services;
+using System.Web.UI;
 
 public partial class ExperienceProductList : System.Web.UI.Page
 {
@@ -21,14 +22,20 @@ public partial class ExperienceProductList : System.Web.UI.Page
     {
         string lstrResponse = string.Empty;
         ABCModel lobjModel = new ABCModel();
-     
+       
         StringBuilder lCBCogRequestResponse = new StringBuilder();
         try
         {
             lCBCogRequestResponse.Append(string.Format("GetExperienceProductList Request: pintPage - {0}, pintPageSize - {1}", pintPage, pintPageSize));
-            ExperiencesRequest lobjProductListRequest = new ExperiencesRequest();
-            lobjProductListRequest.page = pintPage;
-            lobjProductListRequest.per_page = pintPageSize;
+            ExperiencesRequest lobjProductListRequest = new ExperiencesRequest
+            {
+                page = pintPage,
+                per_page = pintPageSize,
+                search_term="",
+                type_name= new List<string>(),
+                category= new List<string>()
+            };
+
             ExperiencesResponse lstrProductListResponse = lobjModel.GetExperienceProductList(pintPage, pintPageSize, lobjProductListRequest);
             lCBCogRequestResponse.Append(string.Format(" GetExperienceProductList Response: {0}", JsonConvert.SerializeObject(lstrProductListResponse)));
             if (lstrProductListResponse.data != null /*&& !string.IsNullOrEmpty(lstrProductListResponse.data.getProductList)*/)
