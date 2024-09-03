@@ -72,7 +72,7 @@
 
     </script>
 
-    <div class="dvCarDetails">
+    <div class="dvCarDetails py-3 pb-lg-5">
         <div class="container-xl">
             <div class="row dvDeliveryTrack">
                 <div class="col-4 mb-lg-3">
@@ -111,55 +111,39 @@
             </div>
             <div class="row">
                 <div class="col-md-5 col-lg-4">
-                    <div class="border b-radius">
-                        <div class="dvAccordian">
-                            <div class="dvCommonAccordion accordion" id="accordionExample">
-                                <div class="card">
-                                    <div class="card-header p-0" id="headingOne">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-block text-left p-3" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                <span class="heading-bold h6" data-i18n="car-your-booking-summary">Your booking summary</span>
-                                                <span class="arrow-icon">
-                                                    <i class="fa fa-caret-up" aria-hidden="true"></i>
-                                                </span>
-                                            </button>
-                                        </h2>
-                                    </div>
+                    <div class="border b-radius p-0">
+                        <div class="dvCommonAccordion accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header p-0" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-block text-left p-3" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <span class="heading-bold h6" data-i18n="car-your-booking-summary">Your booking summary</span>
+                                            <span class="arrow-icon">
+                                                <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                            </span>
+                                        </button>
+                                    </h2>
+                                </div>
 
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                        <div class="card-body dvBooking">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="row">
-                                                        <div class="col-1 pr-0 dvMap">
-                                                            <i class="fa-solid fa-location-dot"></i>
-                                                        </div>
-                                                        <div class="col-11 mb-3 dvAddress">
-                                                            <h2 class="mb-2 heading-semibold h6" data-i18n="car-pickup-from">Pick up from:</h2>
-                                                            <p id="spnpickupDetails" class="h7"></p>
-                                                            <p class="mb-2 heading-medium h8" id="spnpickupDate"></p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="row">
-                                                        <div class="col-1 pr-0 dvMap">
-                                                            <i class="fa-solid fa-location-dot"></i>
-                                                        </div>
-                                                        <div class="col-11 mb-3 dvAddress">
-                                                            <h2 class="mb-2 heading-semibold h7" data-i18n="car-drop-off-at">Drop off at: </h2>
-                                                            <p id="spndropoffDetails" class="h7"></p>
-                                                            <p class="mb-2 heading-medium h8" id="spndropoffDate"></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body p-3">
+                                        <div class="row">
+                                            <div class="col-12 mb-3">
+                                                <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span data-i18n="car-pickup-from">Pick up from:</span></h2>
+                                                <p id="spnpickupDetails" class="h7"></p>
+                                                <p class="h7" id="spnpickupDate"></p>
+                                            </div>
+                                            <div class="col-12">
+                                                <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span data-i18n="car-drop-off-at">Drop off at:</span></h2>
+                                                <p id="spndropoffDetails" class="h7"></p>
+                                                <p class="h7" id="spndropoffDate"></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" id="divCarDetailsLeftpannel">
-                                    <%-- <div class="card-header" id="headingTwo">
+                            </div>
+                            <div class="card" id="divCarDetailsLeftpannel">
+                                <%-- <div class="card-header" id="headingTwo">
                             <h2 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     Volkswagen Polo <span>(Economy)</span> <i class="fa fa-caret-down rotate" aria-hidden="true"></i>
@@ -262,46 +246,46 @@
                                 </div>
                             </div>
                         </div>--%>
-                                </div>
-
                             </div>
-                            <div class="dvPricing py-2 px-3">
-                                <p class="heading-semibold" data-i18n="car-pricing-summary">Pricing Summary</p>
+
+                        </div>
+                        <div class="dvPricing py-2 px-3">
+                            <p class="heading6" data-i18n="car-pricing-summary">Pricing Summary</p>
+                        </div>
+                        <div id="divPricingSummary">
+                            <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
+                                <div class="col-6">
+                                    <p class="h7" data-i18n="car-hire">Car Hire:</p>
+                                </div>
+                                <div class="col-6">
+                                    <p class="text-right h7"><span id="spncarhireAmount">0</span> <span data-i18n="car-points">Points</span></p>
+                                </div>
                             </div>
-                            <div id="divPricingSummary">
-                                <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
-                                    <div class="col-6">
-                                        <p class="heading-medium h7" data-i18n="car-hire">Car Hire:</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p class="text-right heading-medium h7"><span id="spncarhireAmount">0</span> <span data-i18n="car-points">Points</span></p>
-                                    </div>
-                                </div>
 
-                                <div id="divAdditionaCharges">
-                                </div>
+                            <div id="divAdditionaCharges">
+                            </div>
 
-                                <div id="AdditionalChrg" class="d-flex justify-content-between align-items-center pt-2 pb-3">
-                                    <div class="col-6">
-                                        <p class="heading-medium h7" data-i18n="car-Total">Total:</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p class="text-right heading-medium h7"><span id="spncarTotalAmount">0</span>  Points</p>
-                                    </div>
+                            <div id="AdditionalChrg" class="d-flex justify-content-between align-items-center pt-2 pb-3">
+                                <div class="col-6">
+                                    <p class="h7" data-i18n="car-Total">Total:</p>
                                 </div>
-                                <div class="dvPayable">
-                                    <div class="border-top p-3">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="col-7 pl-0">
-                                                <p class="heading-bold text-colour1" data-i18n="car-payable-today">Payable today:</p>
-                                            </div>
-                                            <div class="col-5 pr-0">
-                                                <p class="text-right heading-bold text-colour1"><span class="text-right" id="spnPayableAmount">0</span>  <span data-i18n="car-points">Points</span></p>
-                                            </div>
+                                <div class="col-6">
+                                    <p class="text-right h7"><span id="spncarTotalAmount">0</span>  Points</p>
+                                </div>
+                            </div>
+                            <div class="dvPayable">
+                                <div class="border-top p-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="col-7 pl-0">
+                                            <p class="heading6 text-colour1" data-i18n="car-payable-today">Payable today:</p>
+                                        </div>
+                                        <div class="col-5 pr-0">
+                                            <p class="text-right heading6 text-colour1"><span class="text-right" id="spnPayableAmount">0</span>  <span data-i18n="car-points">Points</span></p>
                                         </div>
                                     </div>
                                 </div>
-                                <%-- <div id="AdditionalChrgtotal" class="d-flex justify-content-between align-items-center pt-2 pb-3">
+                            </div>
+                            <%-- <div id="AdditionalChrgtotal" class="d-flex justify-content-between align-items-center pt-2 pb-3">
                         <div class="col-6">
                             <p>Remainder to pay for car hire on arrival is made in LOCAL currency:</p>
                         </div>
@@ -309,74 +293,52 @@
                             <p class="heading-bold"><span id="spnAdditionalChargetotal">0</span> <i class="fa fa-usd" aria-hidden="true"></i></p>
                         </div>
                     </div>--%>
-                            </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-8">
                     <div class="row">
                         <div class="col-12 mt-3 mt-md-0 dvPayOption">
-                            <h2 class="heading-bold h5"><i class="fa fa-lock" aria-hidden="true"></i><span data-i18n="car-payment-options">Payment Options</span></h2>
+                            <h2 class="heading6"><i class="fa fa-lock mr-2" aria-hidden="true"></i><span data-i18n="car-payment-options">Payment Options</span></h2>
                         </div>
 
                     </div>
 
-                    <div>
-                        <div class="row" id="divpaymentOptionContainer">
-                        </div>
+                   
+                    <div class="row" id="divpaymentOptionContainer">
                     </div>
+                    
 
 
                     <div class="row">
-                        <div class="col-12 col-md-12 mt-4 ">
-                            <input type="hidden" name="Ratereference" id="hndRatereference" value="" />
-                            <div class="travelBtn">
-                                <button type="button" class="btn btn-one" onclick="CreateCarPayment();" data-i18n="car-continue-payment">Continue to Payment <i class="fa fa-caret-right" aria-hidden="true"></i></button>
-                            </div>
+                        <div class="col-12 col-md-12 mt-4 d-none">
+                            <input type="hidden" name="Ratereference" id="hndRatereference" value="" />                           
+                                <button type="button" class="btn btn-one" onclick="CreateCarPayment();" data-i18n="car-continue-payment">Continue to Payment <i class="fa fa-caret-right" aria-hidden="true"></i></button>                            
                         </div>
                     </div>
                     <input type="hidden" name="IsExcessprotectionAdded" id="hndIsExcessprotectionAdded" value="" />
-                    <div id="divExtrascontainer">
+                    <div class="row" id="divExtrascontainer">
                     </div>
 
 
-                    <div class="row mt-4">
-                        <div class="col-12 dvAddit">
-                            <p class="heading-bold h6" data-i18n="car-addiotional-equipment">Additional Equipment</p>
-                        </div>
-                    </div>
-                    <div class="mt-1 border boxShadow b-radius">
-                        <div class="row">
+                    
+                    
+                        <div class="row mt-4">
                             <div class="col-12">
-                                <div class="p-3">
-                                    <div class="row">
-                                        <div class="col-12 productInfo position-relative">
-                                            <div class="row">
-                                                <div class="col-12 dvExcess">
-                                                    <div class="row pt-2">
-                                                        <div class="col-12 dvPara pb-3">
-                                                            <p data-i18n="car-addiotional-info">Please note these additional extras are payable locally and do not form part of the rental price shown. Prices are displayed by pressing the title of each extra.</p>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <input type="hidden" name="Totaladitionalchargeamount" id="hndTotaladitionalchargeamount" value="0" />
-                                            <div id="divAdditionalEquipment">
-                                            </div>
-
-                                        </div>
+                                <div class="border b-radius p-3">
+                                    <h2 class="heading6 mb-2" data-i18n="car-addiotional-equipment">Additional Equipment</h2>
+                                    <p data-i18n="car-addiotional-info">Please note these additional extras are payable locally and do not form part of the rental price shown. Prices are displayed by pressing the title of each extra.</p>
+                                    <input type="hidden" name="Totaladitionalchargeamount" id="hndTotaladitionalchargeamount" value="0" />
+                                    <div id="divAdditionalEquipment">
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
-                    </div>
 
                     <div class="row">
-                        <div class="col-12 col-md-12 mt-4 ">
-                            <div class="travelBtn">
-                                <button type="button" class="btn btn-one" onclick="CreateCarPayment();"><span data-i18n="car-continue-payment">Continue to Payment</span> <i class="fa fa-caret-right" aria-hidden="true"></i></button>
-                            </div>
+                        <div class="col-12 mt-4 text-center text-md-left">
+                            <button type="button" class="btn btn-one" onclick="CreateCarPayment();"><span data-i18n="car-continue-payment">Continue to Payment</span> <i class="fa fa-caret-right" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
@@ -386,7 +348,7 @@
 
     <!-- CarLarge modal pop up start-->
     <div class="dvCommonModal dvMoreInfoModal modal fade" id="dvMoreInfoModal">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
 
                 <!-- Modal Header -->

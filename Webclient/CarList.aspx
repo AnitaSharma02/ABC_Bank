@@ -7,36 +7,6 @@
         #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner {
             display: none;
         }
-
-        .fade-in {
-            /*animation: fadeIn 0.5s ease-in-out forwards;*/
-            display: block;
-        }
-
-        .fade-out {
-            /* animation: fadeOut 0.5s ease-in-out forwards;*/
-            display: none;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-
-            to {
-                opacity: 0;
-            }
-        }
     </style>
 
     <script type="text/javascript">
@@ -92,22 +62,22 @@
                     <div class="border b-radius p-3 mb-3">
                         <div class="row">
                             <div class="col-12 leftBoxCont">
-                                <div class="row align-items-lg-center">
-                                    <div class="col-12 col-md-12 col-lg-6 mb-1">
+                                <div class="row">
+                                    <%--<div class="col-12 col-md-12 col-lg-6 mb-1">
                                         <i class="fa-solid fa-car-side"></i>
-                                    </div>
+                                    </div>--%>
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
-                                        <h2 class="heading6" data-i18n="carlist-pickup-location">PICK UP LOCATION</h2>
+                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span data-i18n="carlist-pickup-location">PICK UP LOCATION</span></h2>
                                         <p id="spnpickuplocation" class="h7" ></p>
                                         <p id="spnpickupdate" class="h7"></p>
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
-                                        <h2 class="heading6" data-i18n="carlist-car-dropoff-location">CAR DROP OFF LOCATION</h2>
+                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span data-i18n="carlist-car-dropoff-location">CAR DROP OFF LOCATION</span></h2>
                                         <p id="spndroppoffLocation" class="h7" ></p>
                                         <p id="spndropoffdate" class="h7"></p>
                                     </div>
                                     <div class="col-12 col-md-4 col-lg-12 mb-3">
-                                        <h2 class="heading6" data-i18n="carlist-driver-residence-country">Driver's Residence Country</h2>
+                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span data-i18n="carlist-driver-residence-country">Driver's Residence Country</span></h2>
                                         <p id="spndriverresidenceCountry" class="h7"></p>
                                     </div>
                                     <div class="col-12 col-lg-6">
@@ -685,14 +655,6 @@
             checkboxes.forEach((checkbox, index) => {
                 checkbox.addEventListener("change", function () {
                     dvInput.forEach((div, i) => {
-                        //if (i === 0) {
-                        //    div.classList.toggle("fade-in", !checkboxes[0].checked);
-                        //    div.classList.toggle("fade-out", checkboxes[0].checked);
-                        //}
-                        //else if (i === 1) {
-                        //    div.classList.toggle("fade-in", !checkboxes[1].checked);
-                        //    div.classList.toggle("fade-out", checkboxes[1].checked);
-                        //}
                         if (i === 2) {
 
                             div.classList.toggle("fade-in", !checkboxes[2].checked);

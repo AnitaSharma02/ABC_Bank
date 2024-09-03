@@ -62,9 +62,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-5 col-lg-4 mb-3">
-                    <div class="border b-radius">
-                        <div class="dvAccordian">
+                <div class="col-md-5 col-lg-3 mb-3">
+                    <div class="border b-radius p-0">
+                        
                             <div class="dvCommonAccordion accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-header p-0" id="headingOne">
@@ -149,10 +149,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        
                     </div>
                 </div>
-                <div class="col-md-7 col-lg-8">
+                <div class="col-md-7 col-lg-9">
 
                     <div class="border boxShadow b-radius my-3 mt-md-0">
                         <div class="row">
