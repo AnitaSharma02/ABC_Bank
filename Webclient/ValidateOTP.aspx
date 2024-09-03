@@ -108,6 +108,7 @@
                 return qs[1];
         }
         function BookingValidation() {
+           
             $("#validationResult").hide();
             var msg = "";
             $("#validationResult")[0].innerHTML = '';
@@ -123,51 +124,17 @@
             else {
                 var pstrOTP = $("#CP_txtOTP").val();
                 var strFlag1 = getQuerystring("flag");
-                var strFlag = DOMPurify.sanitize(strFlag1, { SAFE_FOR_TEMPLATES: true });
+                
+                //var strFlag = DOMPurify.sanitize(strFlag1, { SAFE_FOR_TEMPLATES: true });
+                
                 $.ajax({
                     url: 'ValidateOTP.aspx/CheckOTP',
                     type: 'POST',  // or get
                     contentType: 'application/json; charset =utf-8',
-                    data: "{'pstrOTP':'" + pstrOTP.toString() + "'" + "," + "'strFlag':'" + strFlag + "'}",
+                    data: "{'pstrOTP':'" + pstrOTP.toString() + "'" + "," + "'strFlag':'" + strFlag1 + "'}",
                     dataType: 'json',
                     success: function (data) {
-                        //if (data.d == 'Air')
-                        //    window.location = "PointGateway.aspx";
-                        //else if (data.d == 'Hotel')
-                        //    window.location = "PointGateway.aspx?flag=Hotel";
-                        //else if (data.d == 'Car')
-                        //    window.location = "PointGateway.aspx?flag=Car";
-                        //else if (data.d == 'GiftCard')
-                        //    window.location = "PointGateway.aspx?flag=GiftCard&uid=" + struid;
-                        //else if (data.d == 'EventGiftCard')
-                        //    window.location = "PointGateway.aspx?flag=EventGiftCard";
-                        //else if (data.d == 'Donation')
-                        //    window.location = "PointGateway.aspx?flag=Donation";
-                        //else if (data.d == 'Package')
-                        //    window.location = "PointGateway.aspx?flag=Package";
-                        //else if (data.d == 'AirMilesTopUp')
-                        //    window.location = "PointGateway.aspx?flag=AirMilesTopUp&uid=" + struid;
-                        //else if (data.d == 'TopUp')
-                        //    window.location = "PointGateway.aspx?flag=TopUp&uid=" + struid;
-                        //else if (data.d == 'Lounge')
-                        //    window.location = "PointGateway.aspx?flag=Lounge&uid=" + struid;
-                        //else if (data.d == 'Shop')
-                        //    window.location = "PointGateway.aspx?flag=Shop";
-                        //else if (data.d == 'ShopDigital')
-                        //    window.location = "PointGateway.aspx?flag=ShopDigital";
-                        //else if (data.d == 'UtilityGiftCard') {
-                        //    var pstrUnitId = getQuerystring("pstrUnitId");
-                        //    window.location = "PointGateway.aspx?flag=UtilityGiftCard&uid=" + struid + "&pstrUnitId=" + pstrUnitId;
-                        //}
-                        //else if (data.d == 'Insurance') {
-                        //    window.location = "PointGateway.aspx?flag=Insurance";
-                        //}
-                        //else if (data.d == 'KhaltiAir') {
-                        //    window.location = "PointGateway.aspx?flag=KhaltiAir";
-                        //}
-                        //else if (data.d == 'ISP') {
-                        //    window.location = "PointGateway.aspx?flag=ISP";
-                        //}
+                        
                         if (data.d != null && data.d != "") {
 
                             if (data.d == 'Exceed OTP limit') {

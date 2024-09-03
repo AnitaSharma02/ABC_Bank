@@ -130,20 +130,20 @@ public partial class FlightPassenger : System.Web.UI.Page
                     }
                     if (Session["DomesticOnwardFlights"] != null)
                     {
-                        lblTotalPoints.Text = Convert.ToString(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.TotalPoints);
-                        lintTotalPoints = Convert.ToInt32(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.TotalPoints);
+                        lblTotalPoints.Text = Convert.ToString(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.ActualPoints);
+                        lintTotalPoints = Convert.ToInt32(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.ActualPoints);
                         if (Session["DomesticReturnFlights"] != null)
                         {
-                            lblTotalPoints.Text = Convert.ToString(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.TotalPoints + lobjItineraryDetails.ListOfFlightDetails[1].FareDetails.TotalPoints);
-                            lintTotalPoints = Convert.ToInt32(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.TotalPoints + lobjItineraryDetails.ListOfFlightDetails[1].FareDetails.TotalPoints);
+                            lblTotalPoints.Text = Convert.ToString(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.ActualPoints + lobjItineraryDetails.ListOfFlightDetails[1].FareDetails.ActualPoints);
+                            lintTotalPoints = Convert.ToInt32(lobjItineraryDetails.ListOfFlightDetails[0].FareDetails.ActualPoints + lobjItineraryDetails.ListOfFlightDetails[1].FareDetails.ActualPoints);
                         }
                         Session["DomesticOnwardFlights"] = null;
                         Session["DomesticReturnFlights"] = null;
                     }
                     else
                     {
-                        lblTotalPoints.Text = Convert.ToString(lobjItineraryDetails.FareDetails.TotalPoints);
-                        lintTotalPoints = Convert.ToInt32(lobjItineraryDetails.FareDetails.TotalPoints);
+                        lblTotalPoints.Text = Convert.ToString(lobjItineraryDetails.FareDetails.ActualPoints);
+                        lintTotalPoints = Convert.ToInt32(lobjItineraryDetails.FareDetails.ActualPoints);
                     }
                     ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
                     int lintComBankPoints = lobjModel.CheckAvailbility(lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToInt32(RelationType.LBMS), lstrCurrency, lobjProgramDefinition.ProgramId);
