@@ -62,7 +62,7 @@ public partial class ManageBooking : Page
         {
             if (Session["MemberDetails"] != null)
             {
-                List<ItineraryDetails> lobjListItineraryDetails = lobjModel.GetFlightBookingDetails(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
+                List<ItineraryDetails> lobjListItineraryDetails = lobjIBEAPIModel.GetFlightBookingListForMember(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
                 if (lobjListItineraryDetails != null && lobjListItineraryDetails.Count > 0)
                 {
                     rptBookingDetails.DataSource = lobjListItineraryDetails;
@@ -72,7 +72,7 @@ public partial class ManageBooking : Page
                 {
                     rptBookingDetails.DataSource = null;
                     lblFlightrecord.Visible = true;
-                    lblFlightrecord.Text = "<span data-i18n='managebooking-norecords-label'>No Records Found.</span>";
+                    lblFlightrecord.Text = "<span data-i18n='managebooking-norecords-label' class=\"heading-regular\">No Records Found.</span>";
                     // divFlight.Visible = false;
                     divFlightrecord.Visible = true;
                     //divrptflight.Attributes.Add("style", "Display:none");
