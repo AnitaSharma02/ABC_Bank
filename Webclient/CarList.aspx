@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="CarList.aspx.cs" Inherits="CarList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="Css/car.css" rel="stylesheet" type="text/css" />
+    <link href="Css/Car.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/CarResultScript.js" type="text/javascript"></script>
     <style>
         #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner {
@@ -10,16 +10,10 @@
     </style>
 
     <script type="text/javascript">
-
         $(document).ready(function () {
-
             GetCarList();
-
         });
-
-    </script>
-
-   
+    </script>   
     <div class="dvCarList dvProductList">
         <div class="container-xl">
             <div class="row dvDeliveryTrack">
@@ -613,7 +607,7 @@
         </div>
     </div>
 
-    <!-- CarLarge modal pop up start-->
+    
     <div class="dvCommonModal dvMoreInfoModal modal fade pr-lg-0" id="dvMoreInfoModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
@@ -630,8 +624,6 @@
             </div>
         </div>
     </div>
-    <!-- CarLarge modal pop up end-->
-
 
     <script>
         const editBtn = document.querySelector(".editBtn");
@@ -680,7 +672,5 @@
             initAutocomplete(".dvCarList #txtpickupLocation", ".dvCarList .dvPickupLocation");
             initAutocomplete(".dvCarList #txtDopoffLocation", ".dvCarList .dvDopoffLocation");
         });
-
-
     </script>
 </asp:Content>

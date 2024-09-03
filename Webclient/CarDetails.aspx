@@ -4,57 +4,15 @@
       <%--<link href="Css/dropDown.css" type="text/css" rel="stylesheet" />
     <link href="Css/jquery.ui.autocomplete.css" rel="stylesheet" type="text/css" />
     <link href="Css/jquery.ui.datepicker.css" rel="stylesheet" type="text/css" />--%>
-    <link href="Css/car.css" rel="stylesheet" type="text/css" />
+    <link href="Css/Car.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/CarResultScript.js" type="text/javascript"></script>
     <style>
-     /*     .navdiv {
-         background: #00425F;
-     }*/
      #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner {
          display: none;
-     }
-
-     /*.innerHeader {
-         height: auto;
-         padding: 0 70px;
-         background: #00425F !important;
-         box-shadow: rgb(0 0 0 / 25%) 0px 5px 15px;
-         height: auto !important;
-     }*/
-
-     .fade-in {
-         animation: fadeIn 0.5s ease-in-out forwards;
-         display: block;
-     }
-
-     .fade-out {
-         animation: fadeOut 0.5s ease-in-out forwards;
-         display: none;
-     }
-
-     @keyframes fadeIn {
-         from {
-             opacity: 0;
-         }
-
-         to {
-             opacity: 1;
-         }
-     }
-
-     @keyframes fadeOut {
-         from {
-             opacity: 1;
-         }
-
-         to {
-             opacity: 0;
-         }
      }
     </style>
 
     <script type="text/javascript">
-
         $(document).ready(function () {
             var SelectedCarId = getQuerystring("uniqueRefId");
             GetCarDetails(SelectedCarId);
@@ -69,7 +27,6 @@
             else
                 return qs[1];
         }
-
     </script>
 
     <div class="dvCarDetails py-3 pb-lg-5">
@@ -302,40 +259,29 @@
                         <div class="col-12 mt-3 mt-md-0 dvPayOption">
                             <h2 class="heading6"><i class="fa fa-lock mr-2" aria-hidden="true"></i><span data-i18n="car-payment-options">Payment Options</span></h2>
                         </div>
-
                     </div>
-
-                   
                     <div class="row" id="divpaymentOptionContainer">
                     </div>
-                    
-
-
                     <div class="row">
                         <div class="col-12 col-md-12 mt-4 d-none">
-                            <input type="hidden" name="Ratereference" id="hndRatereference" value="" />                           
-                                <button type="button" class="btn btn-one" onclick="CreateCarPayment();" data-i18n="car-continue-payment">Continue to Payment <i class="fa fa-caret-right" aria-hidden="true"></i></button>                            
+                            <input type="hidden" name="Ratereference" id="hndRatereference" value="" />
+                            <button type="button" class="btn btn-one" onclick="CreateCarPayment();" data-i18n="car-continue-payment">Continue to Payment <i class="fa fa-caret-right" aria-hidden="true"></i></button>
                         </div>
                     </div>
                     <input type="hidden" name="IsExcessprotectionAdded" id="hndIsExcessprotectionAdded" value="" />
                     <div class="row" id="divExtrascontainer">
                     </div>
-
-
-                    
-                    
-                        <div class="row mt-4">
-                            <div class="col-12">
-                                <div class="border b-radius p-3">
-                                    <h2 class="heading6 mb-2" data-i18n="car-addiotional-equipment">Additional Equipment</h2>
-                                    <p data-i18n="car-addiotional-info">Please note these additional extras are payable locally and do not form part of the rental price shown. Prices are displayed by pressing the title of each extra.</p>
-                                    <input type="hidden" name="Totaladitionalchargeamount" id="hndTotaladitionalchargeamount" value="0" />
-                                    <div id="divAdditionalEquipment">
-                                    </div>
-                                </div>                                
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="border b-radius p-3">
+                                <h2 class="heading6 mb-2" data-i18n="car-addiotional-equipment">Additional Equipment</h2>
+                                <p data-i18n="car-addiotional-info">Please note these additional extras are payable locally and do not form part of the rental price shown. Prices are displayed by pressing the title of each extra.</p>
+                                <input type="hidden" name="Totaladitionalchargeamount" id="hndTotaladitionalchargeamount" value="0" />
+                                <div id="divAdditionalEquipment">
+                                </div>
                             </div>
                         </div>
-
+                    </div>
                     <div class="row">
                         <div class="col-12 mt-4 text-center text-md-left">
                             <button type="button" class="btn btn-one" onclick="CreateCarPayment();"><span data-i18n="car-continue-payment">Continue to Payment</span> <i class="fa fa-caret-right" aria-hidden="true"></i></button>
@@ -346,12 +292,9 @@
         </div>
     </div>
 
-    <!-- CarLarge modal pop up start-->
     <div class="dvCommonModal dvMoreInfoModal modal fade" id="dvMoreInfoModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
-
-                <!-- Modal Header -->
                 <div class="modal-header border-0">
                     <h5 class="modal-title">
                         <i class="fa-solid fa-circle-info"></i>
@@ -361,139 +304,14 @@
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-
-                <!-- Modal body -->
-                <div class="modal-body mb-2" id="divmoreInfoDetails">
-
-                    <%--<div class="modal-body mb-2">
-                        <div class="row">
-                            <div class="col-12 col-md-6">
-                                <div class="carPicBox">
-                                    <img class="img-fluid mt-auto mb-auto" src="https://cdn.enjoytravel.com/img/vehicleimages/volkswagen_polo.jpg" />
-                                </div>
-
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="carHead">
-                                    <p>Volkswagen Polo</p>
-                                    <span>or similar (Small)</span>
-                                </div>
-                                <div class="row dviconBox">
-                                    <div class="col-6 col-md-6 d-flex mb-1 mt-2 align-items-center">
-                                        <div class="borderColor">
-                                            <img src="images/icon/seat-icon.svg" class="img-fluid" />
-                                        </div>
-                                        <span class="ml-2">x 5</span>
-                                    </div>
-                                    <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                        <div class="borderColor">
-                                            <img src="images/icon/gear-icon.svg" class="img-fluid" />
-                                        </div>
-                                        <span class="ml-2">Automatic</span>
-                                    </div>
-                                    <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                        <div class="borderColor">
-                                            <img src="images/icon/door-icon.svg" class="img-fluid" />
-                                        </div>
-                                        <span class="ml-2">2-4</span>
-                                    </div>
-                                    <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                        <div class="borderColor">
-                                            <i class="fa fa-bus" aria-hidden="true"></i>
-                                        </div>
-                                        <span class="ml-2">Shuttle </span>
-                                    </div>
-                                    <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                        <div class="borderColor">
-                                            <img src="images/icon/ac-icon.svg" class="img-fluid" />
-                                        </div>
-                                        <span class="ml-2">AirCon</span>
-                                    </div>
-                                    <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
-                                        <div class="borderColor">
-                                            <img src="images/icon/fuel-icon.svg" class="img-fluid" />
-                                        </div>
-                                        <span class="ml-2">Fair Fuel Policy</span>
-                                    </div>
-
-                                </div>
-                                <div class="dvDeal mt-3">
-                                    <h1>YOUR DEAL</h1>
-                                    <p>154,93 <i class="fa fa-inr" aria-hidden="true"></i><span>(22,17 € a day)</span></p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-12 border-top pt-3 mt-3 pr-0 pl-0 productDetails">
-                            <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                <div class="col-6 col-md-6 order-md-0">
-                                    <div class="carLogo">
-                                        <img class="img-fluid mt-auto mb-auto" src="\images/giift-logo.svg" alt="Logo">
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-6 mt-2 mt-md-0 order-md-1 text-left">
-                                    <div class="vehicleLocation">
-                                        <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Vehicle location:</a>
-                                        <span>DUBAI INTL AIRPORT TERMINAL 3, 154 AIRPORT ROAD, DUBAI, 21971</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-12 mt-4">
-                                    <div class="row">
-                                        <div class="col-6 col-md-4 pb-2">
-                                            <div class="cardDetails">
-                                                <i class="fa fa-check" aria-hidden="true"></i>
-                                                <p>Unlimited Mileage</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 pb-2">
-                                            <div class="cardDetails">
-                                                <i class="fa fa-check" aria-hidden="true"></i>
-                                                <p>Stay Safe Initiative</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 pb-2">
-                                            <div class="cardDetails">
-                                                <i class="fa fa-check" aria-hidden="true"></i>
-                                                <p>Other taxes and service charges</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 pb-2">
-                                            <div class="cardDetails">
-                                                <i class="fa fa-check" aria-hidden="true"></i>
-                                                <p>Collision damage waiver</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 pb-2">
-                                            <div class="cardDetails">
-                                                <i class="fa fa-check" aria-hidden="true"></i>
-                                                <p>Theft protection</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 col-md-4 pb-2">
-                                            <div class="cardDetails">
-                                                <i class="fa fa-check" aria-hidden="true"></i>
-                                                <p>Unlimited Travel</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>--%>
-                </div>
+                <div class="modal-body mb-2" id="divmoreInfoDetails"></div>
             </div>
         </div>
     </div>
 
-    <!-- child popup modal pop up end-->
     <div class="dvCommonModal modal fade" id="dvAdditionalEquipmentModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
-
-                <!-- Modal Header -->
                  <div class="modal-header border-0">
                       <h5 class="modal-title">
                         <i class="fa-solid fa-circle-info"></i>
@@ -503,46 +321,16 @@
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-             
-                <!-- Modal body -->
                 <div class="modal-body">
-                    <%--<div class="row">
-                        <div class="col-12 col-md-6 ml-3">
-                            <div class="carPicBox">
-                                <img class="img-fluid mt-auto mb-auto" src="" />
-                            </div>
-                        </div>
-                    </div>--%>
-
                     <div id="divMoreinfoAdditionalEquipment"></div>
-                    
-                   <%-- <div class="col-12 pt-3 mt-3 pr-0 pl-0 productDetails">
-                        <div class="d-flex dvpopupBooster flex-wrap justify-content-between align-items-center mt-2">
-                            <div class="col-12 col-md-6 order-md-0 ">
-                                <p><i class="fa fa-clipboard" aria-hidden="true"></i>Infant Seat (0-1 year)</p>
-                            </div>
-                            <div class="col-12 col-md-6 mt-2 mt-md-0 order-md-1 text-left">
-                                <span>44,10 <i class="fa fa-inr" aria-hidden="true"></i></span>
-                            </div>
-                        </div>
-                        <div class="row dvSeat mt-2">
-                            <div class="col-12">
-                                <p class="p-3">Infant Seat (0-1 year)</p>
-                            </div>
-
-                        </div>
-                    </div>--%>
-
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Add popup modal pop up end-->
     <div class="dvCommonModal modal fade" id="dvExcessProtectionModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
-                <!-- Modal Header -->
                 <div class="modal-header border-0">
                     <h5 class="modal-title">
                         <i class="fa-solid fa-circle-info"></i>
@@ -552,8 +340,6 @@
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-               
-                <!-- Modal body -->
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12 col-md-12 dvWarning text-center">
@@ -568,13 +354,11 @@
                         <div class="col-12 col-md-12 ml-3 dvExPoint text-center">
                             <p><i class="fa-solid fa-shield-halved"></i> <span data-i18n="car-excess">Excess:</span><span> <span id="spnExcessAmount1">0</span> <i class="fa fa-usd" aria-hidden="true"></i></span></p>
                         </div>
-
                     </div>
                     <div class="d-flex justify-content-center align-items-center mb-4">
                         <div class="col-6 col-md-6 col-lg-3 mt-4 travelGrayBtn">
                             <button type="button" class="hvr-sweep-to-right w-100" onclick="window.location.href='CarPayment.aspx'" data-dismiss="modal" data-i18n="car-no-thanks">No Thanks</button>
                         </div>
-
                         <div class="col-6 col-md-6 col-lg-3 mt-4 travelBtn">
                             <button type="button" class="hvr-sweep-to-right" onclick="AddExcessprotection();" data-i18n="car-add">ADD</button>
                         </div>
@@ -589,7 +373,6 @@
         document.addEventListener("DOMContentLoaded", function () {
             var radioButtons = document.querySelectorAll('input[type="radio"]');
             var images = document.querySelectorAll(".correctIcon");
-
             radioButtons.forEach(function (radioButton, index) {
                 radioButton.addEventListener("change", function () {
                     images.forEach(function (image, i) {
@@ -597,12 +380,6 @@
                     });
                 });
             });
-            //if (document.getElementById('myRadiobox').checked) {
-            //    document.getElementById('correctIcon').style.display = 'block';
-            //}
-            //else {
-            //    document.getElementById('correctIcon').style.display = 'none';
-            //}
         });
     </script>
 

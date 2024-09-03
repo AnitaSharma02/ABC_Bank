@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Car Search" Language="C#" MasterPageFile="~/SiteMaster.master" AutoEventWireup="true" CodeFile="CarSearch.aspx.cs" Inherits="CarSearch" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
-    <link href="Css/car.css" rel="stylesheet" type="text/css" />
+    <link href="Css/Car.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/CarResultScript.js" type="text/javascript"></script>
     <style type="text/css">
         #sitemap,
@@ -9,10 +9,6 @@
             display: none;
         }         
     </style>
-
-    <%--<div class="banner top_banner">
-        <img class="w-100" src="../Images/carpage/car-banner.jpg" />
-    </div>--%>
     <div class="dvCarSearch mb-5">
         <div class="container-xl">
             <div class="dvForm row">
