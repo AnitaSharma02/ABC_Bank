@@ -80,7 +80,7 @@ public partial class Shop : Page
                         index++;
                         if (searchResult != null && searchResult.Products != null && searchResult.Products.Count > 0)
                         {
-                            sb.Append(string.Format("<h3 class=\"heading2 text-colour7 mb-3 mb-lg-4 text-center\"><span>{0}</span></h3>", offers[offers.Count - 1]));
+                            sb.Append(string.Format("<h2 class=\"heading1 mb-3 mb-lg-4 text-center\"><span>{0}</span></h2>", offers[offers.Count - 1]));
                             sb.Append("<div class='latestArrBlk customizedButtons swiper swiper-initialized swiper-horizontal' id='divshopswiper'>");
                             sb.Append("<div class='swiper-wrapper'>");
                             foreach (var product in searchResult.Products)

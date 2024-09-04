@@ -42,7 +42,7 @@
                                      <div class="card my-3 mb-lg-3 mt-lg-0">
                                          <div class="card-header p-0">
                                              <h2 class="mb-0">
-                                                 <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Types</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                 <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="heading6 mb-2 text-capitalize">Types</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                              </h2>
                                          </div>
                                          <div id="collapse1" class="collapse- show" data-parent="#filter-accordion">
@@ -60,7 +60,7 @@
                                      <div class="card">
                                          <div class="card-header p-0">
                                              <h2 class="mb-0">
-                                                 <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Categories</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                 <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span class="heading6 mb-2 text-capitalize">Categories</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                              </h2>
                                          </div>
                                          <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">

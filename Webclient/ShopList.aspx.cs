@@ -344,12 +344,12 @@ public partial class ShopList : Page
                     {
                         if (i == 0)
                         {
-                            filterHtml.Append(string.Format("<div id='{0}' class=\"card mb-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-left\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapse1\"><span class=\"h6 heading-semibold text-colour7 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
+                            filterHtml.Append(string.Format("<div id='{0}' class=\"card mb-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-left\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapse1\"><span class=\"heading6 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
                             filterHtml.Append("<div id=\"collapse1-\" class=\"collapse-\" data-parent=\"#filter-accordion\"><div class=\"card-body scroll-ver pr-3 pt-1 pb-2\">");
                         }
                         else
                         {
-                            filterHtml.Append(string.Format("<div id='{0}' class=\"card mb-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-left collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapse2\" ><span class=\"h6 heading-semibold text-colour7 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
+                            filterHtml.Append(string.Format("<div id='{0}' class=\"card mb-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-left collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapse2\" ><span class=\"heading6 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
                             filterHtml.Append("<div id=\"collapse2-\" class=\"collapse-\" data-parent=\"#filter-accordion\"><div class=\"card-body scroll-ver pr-3 pt-1 pb-2\">");
                         }
                         i++;

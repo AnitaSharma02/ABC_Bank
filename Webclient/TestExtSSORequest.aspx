@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="\Css/root.css" />
     <link rel="stylesheet" href="\Css/global.css" /> 
     <style>
+        #updProgress{
+            background: rgba(255,255,255,1);
+        }
         #updProgress .image{
             display:flex;
             flex-direction:column;

@@ -106,7 +106,7 @@
 
 /*=========[ CARLIST PAGE ]=========*/
 /*car selection section*/
-.dvCarList .dvCarSelection::-webkit-scrollbar {
+/*.dvCarList .dvCarSelection::-webkit-scrollbar {
     height: var(--car-selection-scrollbar-height);
 }
 .dvCarList .dvCarSelection::-webkit-scrollbar-track {
@@ -114,7 +114,7 @@
 }
 .dvCarList .dvCarSelection::-webkit-scrollbar-thumb {
     background: var(--car-selection-scrollbar-thumb-bg);
-}
+}*/
 .dvCarList .dvCarSelection .checkbox-container {
     display: block;
     position: relative;

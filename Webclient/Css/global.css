@@ -11,7 +11,7 @@ body {
 
 
 /*=========[ COMMON SCROLLBAR STYLE ]=========*/
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
     width: var(--scrollbar-width);
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb-bg);
+    background: var(--scrollbar-thumb-bg);*/
 }
 /*=========[ COMMON SCROLLBAR STYLE ]=========*/
 
@@ -357,6 +357,21 @@ p {
     font-family: var(--heading6-family);
     color: var(--heading6-text-colour);
     font-size: var(--heading6-font-size-mobile);
+}
+.heading7 {
+    font-family: var(--heading7-family);
+    color: var(--heading7-text-colour);
+    font-size: var(--heading7-font-size-mobile);
+}
+.heading8 {
+    font-family: var(--heading8-family);
+    color: var(--heading8-text-colour);
+    font-size: var(--heading8-font-size-mobile);
+}
+.heading9 {
+    font-family: var(--heading9-family);
+    color: var(--heading9-text-colour);
+    font-size: var(--heading9-font-size-mobile);
 }
 /*=========[ GROUP HEADINGS ]=========*/
 
@@ -1062,7 +1077,7 @@ p {
 
 
 /*=========[ TABS SCROLLBAR FOR TABS 1 & TABS 2 ]=========*/
-.dvTabs ::-webkit-scrollbar {
+/*.dvTabs ::-webkit-scrollbar {
     height: var(--tab-scrollbar-height);
 }
 
@@ -1072,7 +1087,7 @@ p {
 
 .dvTabs ::-webkit-scrollbar-thumb {
     background: var(--tab-scrollbar-thumb-bg);
-}
+}*/
 /*=========[ TABS SCROLLBAR FOR TABS 1 & TABS 2 ]=========*/
 
 
@@ -1949,7 +1964,7 @@ select.form-control:focus {
 /*.ui-menu{
         display:block !important;
     }*/
-.ui-autocomplete::-webkit-scrollbar {
+/*.ui-autocomplete::-webkit-scrollbar {
     width: var(--ui-autocomplete-scrollbar-width);
 }
 .ui-autocomplete::-webkit-scrollbar-track {
@@ -1957,7 +1972,7 @@ select.form-control:focus {
 }
 .ui-autocomplete::-webkit-scrollbar-thumb {
     background: var(--ui-autocomplete-scrollbar-thumb-bg);
-}
+}*/
 .ui-autocomplete .ui-menu-item a,
 .ui-autocomplete .ui-menu-item .ui-menu-item-wrapper {
     display: block;
@@ -2031,11 +2046,6 @@ select.form-control:focus {
 
 
 /*=========[ COMMON MODAL ]=========*/
-/* this is only to remove padding-right from the modal-open */
-.modal-open .modal {
-    padding-right: 0 !important;
-}
-/* this is only to remove padding-right from the modal-open */
 .dvCommonModal.modal .modal-content {
     border-top-left-radius: var(--modal-b-radius);
     border-top-right-radius: var(--modal-b-radius);
@@ -2067,7 +2077,7 @@ select.form-control:focus {
     border-top: var(--modal-footer-border-top);
     padding: var(--modal-footer-padding);
 }
-.dvCommonModal.modal ::-webkit-scrollbar {
+/*.dvCommonModal.modal ::-webkit-scrollbar {
     width: var(--modal-scrollbar-width);
 }
 .dvCommonModal.modal ::-webkit-scrollbar-track {
@@ -2075,7 +2085,7 @@ select.form-control:focus {
 }
 .dvCommonModal.modal ::-webkit-scrollbar-thumb {
     background: var(--modal-scrollbar-thumb-bg);
-}
+}*/
 /*=========[ COMMON MODAL ]=========*/
 
 
@@ -2118,7 +2128,7 @@ select.form-control:focus {
     max-height: var(--filter-mobile-accordion-scroll-ver-max-height);
 }
 /*scrollbar*/
-.dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar {
+/*.dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar {
     width: var(--filter-mobile-accordion-scrollbar-width);
 }
 .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-track {
@@ -2126,7 +2136,7 @@ select.form-control:focus {
 }
 .dvFilter.modal .accordion .scroll-ver::-webkit-scrollbar-thumb {
     background: var(--filter-mobile-accordion-scrollbar-thumb-bg);
-}
+}*/
 /*scrollbar*/
 .dvFilter.modal .modal-header .close i {
     background-color: var(--modal-close-icon-bg);
@@ -2164,6 +2174,17 @@ select.form-control:focus {
 .dvFilter.modal .modal-header .close i {
     color: var(--filter-mobile-modal-close-icon-text-colour);
 }
+/*scrollbar for filter modal*/
+/*.dvFilter.modal ::-webkit-scrollbar {
+    width: var(--filter-mobile-modal-scrollbar-width);
+}
+.dvFilter.modal ::-webkit-scrollbar-track {
+    background: var(--filter-mobile-modal-scrollbar-track-bg);
+}
+.dvFilter.modal ::-webkit-scrollbar-thumb {
+    background: var(--filter-mobile-modal-scrollbar-thumb-bg);
+}*/
+/*scrollbar for filter modal*/
 /*=========[ FILTER MODAL MOBILE ]=========*/
 /*==[ -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- FILTER MOBILE -|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|- ]==*/
 
@@ -2189,7 +2210,7 @@ select.form-control:focus {
 
 
 /*=========[ REDEMPTIONMENU ON HOMEPAGE ]=========*/
-.dvRedemptionMenu ::-webkit-scrollbar {
+/*.dvRedemptionMenu ::-webkit-scrollbar {
     height: var(--redemptionmenu-scrollbar-height);
 }
 .dvRedemptionMenu ::-webkit-scrollbar-track {
@@ -2197,7 +2218,7 @@ select.form-control:focus {
 }
 .dvRedemptionMenu ::-webkit-scrollbar-thumb {
     background: var(--redemptionmenu-scrollbar-thumb-bg);
-}
+}*/
 .dvRedemptionMenu a .imageBox {
     background-color: var(--redemptionmenu-imagebox-bg-colour);
     border-radius: var(--redemptionmenu-imagebox-border-radius);

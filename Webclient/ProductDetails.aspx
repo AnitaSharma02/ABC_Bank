@@ -271,7 +271,7 @@
         <!-- Scrollable modal -->
         <!-- Modal for all vouchers -->
       <div class="dvCommonModal modal fade dvVouchersPopup" id="formpopup" tabindex="-1">
-          <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
               <%--<div class="modal-header"> 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

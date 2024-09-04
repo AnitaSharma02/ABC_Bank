@@ -193,7 +193,7 @@
                                     <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
-                                    <h2 class="h5 heading-semibold mb-2 text-colour7">How do I accumulate points?</h2>
+                                    <h2 class="heading5 mb-2">How do I accumulate points?</h2>
                                     <p>Earn points with every transaction made through the bank. Start accumulating rewards with every interaction!</p>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                                     <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
-                                    <h2 class="h5 heading-semibold mb-2 text-colour7">What can I exchange my points for?</h2>
+                                    <h2 class="heading5 mb-2">What can I exchange my points for?</h2>
                                     <p>Your points are your gateway to discounts. Redeem them for exclusive Gift vouchers, shopping, flight & hotel booking and mobile top-up.</p>
                                 </div>
                             </div>
@@ -211,7 +211,7 @@
                                     <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
-                                    <h2 class="h5 heading-semibold mb-2 text-colour7">How long are my points valid for?</h2>
+                                    <h2 class="heading5 mb-2">How long are my points valid for?</h2>
                                     <p>Your points will remain active for 2 years from the date you earn them. Make sure to redeem them before they expire!</p>
                                 </div>
                             </div>
@@ -220,7 +220,7 @@
                                     <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
-                                    <h2 class="h5 heading-semibold mb-2 text-colour7">How can I check my points balance?</h2>
+                                    <h2 class="heading5 mb-2">How can I check my points balance?</h2>
                                     <p>To keep a tab on your rewards, simply log in and navigate to the 'My Account' dashboard. Your points balance will be available there.</p>
                                 </div>
                             </div>

@@ -365,7 +365,7 @@
     --heading4-font-size-mobile: calc(1.275rem + 0.3vw); /*do not change values*/
     --heading4-font-size-desktop: 1.25rem; /*do not change values*/
     /* heading5 */
-    --heading5-family: var(--heading-semibold);
+    --heading5-family: var(--heading-bold);
     --heading5-text-colour: var(--colour7);
     --heading5-font-size-mobile: 1.25rem; /*do not change values*/
     --heading5-font-size-desktop: 1.25rem; /*do not change values*/
@@ -374,6 +374,21 @@
     --heading6-text-colour: var(--colour7);
     --heading6-font-size-mobile: 1rem; /*do not change values*/
     --heading6-font-size-desktop: 1rem; /*do not change values*/
+    /* heading7 */
+    --heading7-family: var(--heading-bold);
+    --heading7-text-colour: var(--colour7);
+    --heading7-font-size-mobile: .875rem; /*do not change values*/
+    --heading7-font-size-desktop: .875rem; /*do not change values*/
+    /* heading8 */
+    --heading8-family: var(--heading-bold);
+    --heading8-text-colour: var(--colour7);
+    --heading8-font-size-mobile: .75rem; /*do not change values*/
+    --heading8-font-size-desktop: .75rem; /*do not change values*/
+    /* heading9 */
+    --heading9-family: var(--heading-bold);
+    --heading9-text-colour: var(--colour7);
+    --heading9-font-size-mobile: .625rem; /*do not change values*/
+    --heading9-font-size-desktop: .625rem; /*do not change values*/
 
     /*==================[ SWIPER ARROWS ]==================*/
     /* Both pagination and arrows cannot be displayed in the vertical center at the same time, so disable one of them. */
@@ -443,10 +458,14 @@
     --filter-mobile-accordion-scroll-ver-overflow-x: hidden;
     --filter-mobile-accordion-scroll-ver-margin: 0;
     --filter-mobile-accordion-scroll-ver-max-height: 240px; /* none to hide scroll */
-    /* style scrollbar */
+    /* scrollbar for filter accordion */
     --filter-mobile-accordion-scrollbar-width: var(--scrollbar-custom-size);
     --filter-mobile-accordion-scrollbar-track-bg: var(--scrollbar-track-bg);
     --filter-mobile-accordion-scrollbar-thumb-bg: var(--scrollbar-thumb-bg);
+    /* scrollbar for filter modal */
+    --filter-mobile-modal-scrollbar-width: var(--scrollbar-custom-size);
+    --filter-mobile-modal-scrollbar-track-bg: var(--scrollbar-track-bg);
+    --filter-mobile-modal-scrollbar-thumb-bg: var(--scrollbar-thumb-bg);
 
     /*==================[ FILTER MODAL DESKTOP ]==================*/
     /* converted modal to static */
@@ -810,8 +829,8 @@
     HEADINGS USED - 
     - - - - - - - - - - - - - - - -
     1. heading1 - for all big and main headings with font bold
-    2. heading6 - for all common small headings with font bold
-    3. heading5 - for all medium headings with font bold
+    2. heading6 - for all common small headings with font bold - used everywhere
+    3. heading5 - for all medium headings with font bold - used in index.aspx
 
     RESPONSIVE HEADINGS LOGIC
     - - - - - - - - - - - - - - - -
