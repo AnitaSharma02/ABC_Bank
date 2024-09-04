@@ -98,7 +98,7 @@ namespace Core.Framework.Booking.Model
                             LoggingAdapter.WriteLog("CreateBooking Failure BookingFacade:" + ex.Message + ex.StackTrace);
                         }
 
-                        if (lobjBookingResponse != null && lobjBookingResponse.PNRDetails.TripId != null && lobjBookingResponse.PNRDetails.TripId != string.Empty && lobjBookingResponse.PNRDetails.Status.Equals(1))
+                        if (lobjBookingResponse != null && lobjBookingResponse.PNRDetails.ItineraryDetails.ItineraryTripId != null && lobjBookingResponse.PNRDetails.ItineraryDetails.ItineraryTripId != string.Empty && lobjBookingResponse.PNRDetails.Status.Equals(1))
                         {
                             IsBookingConfirm = true;
                             LoggingAdapter.WriteLog("Booking called Trip Id  : " + lobjBookingResponse.PNRDetails.TripId + "IsBookingConfirm:" + IsBookingConfirm, "BookingLogCategory");

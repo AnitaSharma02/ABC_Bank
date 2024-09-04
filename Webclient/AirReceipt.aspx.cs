@@ -93,7 +93,7 @@ public partial class AirReceipt : System.Web.UI.Page
 
                     lblTransactionRefNo.Text = lobjItineraryDetails.ItineraryReference;
 
-                    lblGDSPNR.Text = lobjItineraryDetails.ListOfFlightDetails[0].ListOfFlightSegments[0].AirlinePNR;
+                    lblGDSPNR.Text = lobjItineraryDetails.ItineraryTripId;
 
 
                     //  lblGDSPNR.Text = lobjItineraryDetails.ItineraryTripId;

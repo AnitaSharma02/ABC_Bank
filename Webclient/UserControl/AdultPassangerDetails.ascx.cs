@@ -40,7 +40,7 @@ public partial class SourceControl_AdultPassangerDetails : System.Web.UI.UserCon
                 {
                     AdditionalInfo.Style.Add("display", "none");
                     divNationality.Style.Add("display", "none");
-                    divTelephone.Style.Add("display", "none");
+                    //divTelephone.Style.Add("display", "none");
                     divPassportPlace.Style.Add("display", "none");
                     divPassportissue.Style.Add("display", "none");
                     divPassportexpiry.Style.Add("display", "none");

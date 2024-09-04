@@ -72,8 +72,8 @@ public partial class AirPrintReceipt : System.Web.UI.Page
                     lblCustomerAddress.Text = lobjMemberDetails.Address;
                     lblCustomerEmail.Text = lobjMemberDetails.Email;
                     lblTransactionRefNo.Text = lobjItineraryDetails.ItineraryReference;
-                    lblGDSPNR.Text = lobjItineraryDetails.ListOfFlightDetails[0].ListOfFlightSegments[0].AirlinePNR;
-                    //lblGDSPNR.Text = lobjItineraryDetails.ItineraryTripId;
+                    //lblGDSPNR.Text = lobjItineraryDetails.ListOfFlightDetails[0].ListOfFlightSegments[0].AirlinePNR;
+                    lblGDSPNR.Text = lobjItineraryDetails.ItineraryTripId;
                 }
                 else
                 {
