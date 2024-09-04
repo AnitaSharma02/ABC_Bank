@@ -11,48 +11,34 @@
     <link rel="stylesheet" href="\Css/root.css" />
     <link rel="stylesheet" href="\Css/global.css" /> 
     <style>
-        #updProgress {
-          opacity:1;
-          padding: 5px 0;
-          background-color: rgba(255, 255, 255, 1);
+        #updProgress .image{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            width:100px;
+            position:fixed;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+        #updProgress .image img{
+            position:static !important;
+            top:auto !important;
+            left:auto !important;
+            transform:none !important;
+            width:48px;
+            margin-bottom:.75rem;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server"></form>
-   <div id="updProgress" runat="server" visible="true" style="z-index: 0; height: 100%;text-align:center;">
-        <img src="../Images/loading.gif" alt="loading..." />
-       <div class="container-fluid">
-           <div class="row">
-               <div class="col-12">
-                   <h2 class="h6 heading-semibold text-colour7">Please Wait...</h2>
-               </div>
-           </div>
+
+   <div id="updProgress" runat="server" visible="true">
+       <div class="image">
+           <img src="../Images/loading.gif" alt="loading..." />
+            <h2 class="heading6">Please Wait</h2>
        </div>
     </div>
-    <script>
-        //this script is for header onscroll animation
-        const container = document.querySelector('.header .container');
-        //const header = document.querySelector('.header');
-        let isScrolled = false;
-        function handleScroll() {
-            if (window.innerWidth >= 992) {
-                if (window.scrollY >= 100 && !isScrolled) {
-                    container.classList.add('scrolled');
-                    isScrolled = true;
-                } else if (window.scrollY < 100 && isScrolled) {
-                    container.classList.remove('scrolled');
-                    isScrolled = false;
-                }
-            } else {
-                // Remove the 'scrolled' class if the viewport width is less than 992px
-                container.classList.remove('scrolled');
-                isScrolled = false;
-            }
-        }
-        handleScroll();
-        document.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', handleScroll);
-    </script>
 </body>
 </html>
