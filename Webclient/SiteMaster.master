@@ -240,7 +240,7 @@
                         <a href="Index.aspx" class="d-inline-block pr-2 mr-1 border-right">
                             <img src="../Images/logos/infinity-logo.svg" />
                         </a>
-                        <a href="Index.aspx" class="d-inline-block">
+                        <a href="https://www.abcbanking.mu/" target="_blank" class="d-inline-block">
                             <img src="../Images/logos/abc-footer-logo.svg" />
                         </a>
                     </div>
@@ -273,7 +273,7 @@
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="StatementSummary.aspx" id="navbarDropdown" data-i18n="navigation-my-account">My Account</a>
                             </li>
                         </ul>
-                        <div class="dvLoginBtn">
+                        <div class="dvLoginBtn d-none">
                             <div class="nav-item" id="lnkloginlogout" runat="server">
                                 <a href="Login.aspx" class="nav-link btn btn-one btn-sm d-inline-block mt-2 mt-lg-0" id="lnkLogin" runat="server">
                                     <i class="fa-regular fa-user pr-1 d-inline-block"></i>
