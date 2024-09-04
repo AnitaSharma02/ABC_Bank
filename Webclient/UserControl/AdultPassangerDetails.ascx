@@ -171,7 +171,8 @@
                 </asp:DropDownList>
             </div>
 
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic" ControlToValidate="drpNationality"
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic"
+                ControlToValidate="drpNationality"
                 ErrorMessage="Enter Nationality" ValidationGroup="WebValidation" CssClass="rptErrorMassage danger"
                 Enabled="false"></asp:RequiredFieldValidator>
 
@@ -195,19 +196,20 @@
             <%--</div>--%>
         </div>
         <div class="col-md-6 mb-3" id="divTelephone" runat="server">
-            <label class="label" data-i18n="flightpassenger-telephone">Telephone Number</label>
+            <label class="label" data-i18n="flightpassenger-telephone">Mobile Number</label>
             <div class="dvInput input-group">
                 <asp:TextBox ID="txtTelephone" class="form-control" runat="server" Text="" MaxLength="12"
                     AutoComplete="off"></asp:TextBox>
             </div>
             <div class="invalid-feedback" id="ErrTelephone" runat="server">
                 <asp:RequiredFieldValidator ID="rfvAdultTelephone" Display="Dynamic" runat="server"
-                    ControlToValidate="txtTelephone" ErrorMessage="Enter Mobile Number" data-i18n="hotel-booking-errormobile" ValidationGroup="WebValidation"
-                    CssClass="rptErrorMassage danger" Enabled="false"></asp:RequiredFieldValidator>
+                    ControlToValidate="txtTelephone" ErrorMessage="Enter Mobile Number" 
+                    data-i18n="hotel-booking-errormobile" ValidationGroup="WebValidation"
+                    CssClass="rptErrorMassage danger"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="revAdulttelephone" runat="server" Display="Dynamic"
                     ControlToValidate="txtTelephone" ValidationGroup="WebValidation" ValidationExpression="^[0-9]+$"
                     CssClass="rptErrorMassage danger" ErrorMessage="Enter Valid Number.(max 12 digit.)" data-i18n="hotel-booking-erroronlydigit"
-                    Enabled="false">
+                    >
                 </asp:RegularExpressionValidator>
             </div>
 
