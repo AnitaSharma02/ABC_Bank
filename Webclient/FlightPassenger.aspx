@@ -55,7 +55,7 @@
                 <div class="col-lg-7">
                    <div class="row">
                         <div class="col-12">
-                           <h2 class="h6 heading-bold text-colour6 bg-colour1 p-3" data-i18n="flightpassenger-passenger">Passenger Details</h2>
+                           <h2 class="heading6 text-colour6 bg-colour1 p-3" data-i18n="flightpassenger-passenger">Passenger Details</h2>
                          </div>
                          <div class="col-12">
                             <div class="bg-colour2 p-3">
@@ -64,8 +64,8 @@
                                         <div id="AdultInfo" runat="server">
                                             <asp:Repeater ID="rptAdultControl" runat="server">
                                                 <ItemTemplate>
-                                                    <h2 class="h6 heading-semibold text-colour7 mb-2"><span data-i18n="flightpassenger-adult">Adult: <%# (Container.ItemIndex + 1) %></span></h2>
-                                                    <asp:Panel ID="panelAdultControlHolder" CssClass="Flight_Ticket_holder" runat="server">
+                                                    <h2 class="heading6 text-colour7 mb-2"><span data-i18n="flightpassenger-adult">Adult: <%# (Container.ItemIndex + 1) %></span></h2>
+                                                    <asp:Panel ID="panelAdultControlHolder" CssClass="" runat="server">
                                                         <uc:Adult ID="adultdetails" runat="server" />
                                                     </asp:Panel>
                                                 </ItemTemplate>
@@ -78,8 +78,8 @@
                                         <div id="ChildInfo" runat="server" visible="false">
                                         <asp:Repeater ID="rptChildControl" runat="server">
                                             <ItemTemplate>
-                                                <h2 class="h6 heading-semibold text-colour7 mb-2"><span data-i18n="flightpassenger-child">Child: <%# (Container.ItemIndex + 1) %></span></h2>
-                                                <asp:Panel ID="panelChildControlHolder" CssClass="Flight_Ticket_holder" runat="server">
+                                                <h2 class="heading6 mb-2"><span data-i18n="flightpassenger-child">Child: <%# (Container.ItemIndex + 1) %></span></h2>
+                                                <asp:Panel ID="panelChildControlHolder" CssClass="" runat="server">
                                                     <uc:Children ID="childdetails" runat="server" />
                                                 </asp:Panel>
                                             </ItemTemplate>
@@ -92,8 +92,8 @@
                                         <div id="InfantInfo" runat="server" visible="false">
                                         <asp:Repeater ID="rptInfantControl" runat="server">
                                             <ItemTemplate>
-                                                <h2 class="h6 heading-semibold text-colour7 mb-2"><span data-i18n="flightpassenger-infant">Infant: <%# (Container.ItemIndex + 1) %></span></h2>
-                                                <asp:Panel ID="panelInfantControlHolder" CssClass="Flight_Ticket_holder" runat="server">
+                                                <h2 class="heading6 mb-2"><span data-i18n="flightpassenger-infant">Infant: <%# (Container.ItemIndex + 1) %></span></h2>
+                                                <asp:Panel ID="panelInfantControlHolder" CssClass="" runat="server">
                                                     <uc:Infant ID="infantdetails" runat="server" />
                                                 </asp:Panel>
                                             </ItemTemplate>
@@ -115,7 +115,7 @@
                 <div class="row">
                      <div class="col-12">
                         <div class="bg-colour1 d-flex justify-content-between align-items-center">
-                            <h2 class="h6 heading-bold text-colour6 p-3" data-i18n="flightpassenger-itinerary">Itinerary</h2>
+                            <h2 class="heading6 text-colour6 p-3" data-i18n="flightpassenger-itinerary">Itinerary</h2>
                             <a href="FlightList.aspx?edit=1" data-i18n="flightpassenger-edit" class="btn btn-two mr-2">Edit</a>
                         </div>
                      </div>
@@ -123,7 +123,7 @@
                         <div class="bg-colour2 p-3">
                             <div class="row">
                                 <div class="col-12">
-                                  <h2 class="h6 heading-semibold text-colour7" data-i18n="flightpassenger-departure">Departure Flight</h2>
+                                  <h2 class="heading6" data-i18n="flightpassenger-departure">Departure Flight</h2>
                                 </div>
                             </div>
                              <div class="border my-3"></div>
@@ -168,7 +168,7 @@
                              
                                 <div class="row">
                                     <div class="col-12"> 
-                                        <asp:Label ID="lblarrival" class="h6 heading-semibold text-colour7" runat="server" Visible="false" data-i18n="flightpassenger-arrival">Arrival Flight</asp:Label>
+                                        <asp:Label ID="lblarrival" class="heading6" runat="server" Visible="false" data-i18n="flightpassenger-arrival">Arrival Flight</asp:Label>
                                     </div>
                                 </div>
                                 
@@ -218,8 +218,8 @@
                          
                                 <div class="row">
                                   <div class="col-12 d-flex justify-content-between">
-                                    <span data-i18n="flightpassenger-total-points" class="h6 heading-bold text-colour7" >Total Points: </span>
-                                    <asp:Label ID="lblTotalPoints" runat="server" CssClass="h6 heading-bold text-colour7" />
+                                    <span data-i18n="flightpassenger-total-points" class="heading6 text-colour1" >Total Points: </span>
+                                    <asp:Label ID="lblTotalPoints" runat="server" CssClass="heading6 text-colour1" />
                                   </div>
                                 </div>
                             

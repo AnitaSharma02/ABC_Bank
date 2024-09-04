@@ -355,7 +355,7 @@
     --heading2-font-size-mobile: calc(1.325rem + 0.9vw); /*do not change values*/
     --heading2-font-size-desktop: 2rem; /*do not change values*/
     /* heading3 */
-    --heading3-family: var(--heading-light);
+    --heading3-family: var(--heading-bold);
     --heading3-text-colour: var(--colour1);
     --heading3-font-size-mobile: calc(1.3rem + 0.6vw); /*do not change values*/
     --heading3-font-size-desktop: 1.75rem; /*do not change values*/
@@ -829,6 +829,9 @@
     h4 - font-size: 1.5rem;
     h5 - font-size: 1.25rem;
     h6 - font-size: 1rem;
+
+
+
 */
 
 /* 

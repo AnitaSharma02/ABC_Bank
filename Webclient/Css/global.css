@@ -647,7 +647,7 @@ p {
 
 /*=========[ HEADER ]=========*/
 .dvStripe {
-    background-color: var(--bg-colour5);
+    background-color: var(--bg-colour7);
     padding: 0.2rem 0;
 }
 
@@ -656,7 +656,7 @@ p {
 }
 
 .dvHeader .logo img {
-    width: 140px;
+    width: 100px;
 }
 
 .dvHeader .navbar-nav .nav-item.active a {
@@ -684,18 +684,22 @@ p {
 
 
 /*=========[ FOOTER ]=========*/
-.dvFooter {
-    background-color: var(--bg-section);
+.dvFooter .bg-colour1{
+    background: rgb(193,71,71);
+    background: -webkit-radial-gradient(circle, rgba(193,71,71,1) 0%, rgba(95,0,0,1) 100%);
+    background: -moz-radial-gradient(circle, rgba(193,71,71,1) 0%, rgba(95,0,0,1) 100%);
+    background: -o-radial-gradient(circle, rgba(193,71,71,1) 0%, rgba(95,0,0,1) 100%);
+    background: radial-gradient(circle, rgba(193,71,71,1) 0%, rgba(95,0,0,1) 100%);
 }
 
-    .dvFooter .dvLinks a {
-        padding: 0 0.2rem;
-        color: var(--text-colour5);
-        font-size: 1rem;
-        font-family: var(--font-regular);
-        text-transform: uppercase;
-        vertical-align: middle;
-    }
+.dvFooter .dvLinks a {
+    padding: 0 0.2rem;
+    color: var(--text-colour5);
+    font-size: .875rem;
+    font-family: var(--font-regular);
+    text-transform: uppercase;
+    vertical-align: middle;
+}
 
     .dvFooter .footer-logo {
         width: 150px;

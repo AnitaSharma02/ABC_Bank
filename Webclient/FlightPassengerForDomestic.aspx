@@ -71,7 +71,7 @@
                                     <asp:Repeater ID="rptAdultControl" runat="server">
                                         <ItemTemplate>
                                             <h2 data-i18n="flightpassenger-adult" class="h6 heading-semibold py-2">Adult: <%# (Container.ItemIndex + 1) %></h2>
-                                            <asp:Panel ID="panelAdultControlHolder" CssClass="Flight_Ticket_holder" runat="server">
+                                            <asp:Panel ID="panelAdultControlHolder" CssClass="" runat="server">
                                                 <uc:AdultPassangerDetails_Domestic runat="server" ID="AdultPassangerDetails_Domestic" />
                                             </asp:Panel>
                                         </ItemTemplate>
@@ -81,7 +81,7 @@
                                     <asp:Repeater ID="rptChildControl" runat="server">
                                         <ItemTemplate>
                                             <h2 data-i18n="flightpassenger-child" class="h6 heading-semibold py-2">Child: <%# (Container.ItemIndex + 1) %></h2>
-                                            <asp:Panel ID="panelChildControlHolder" CssClass="Flight_Ticket_holder" runat="server">
+                                            <asp:Panel ID="panelChildControlHolder" CssClass="" runat="server">
                                                 <uc:ChildPassangerDetails_Domestic runat="server" ID="ChildPassangerDetails_Domestic" />
                                             </asp:Panel>
                                         </ItemTemplate>

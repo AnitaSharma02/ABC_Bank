@@ -9,7 +9,7 @@
                     </div>
                     <div class="col-6 text-right">
                         <div class="text-right">
-                            <h2 class="h6 heading-bold text-colour1">
+                            <h2 class="heading6 text-colour1">
                                 <span class="points-text" data-i18n="flightlist-points">Points</span>
                                 <span class="CommaSeperated"> {$T.record.FareDetails.ActualPoints} </span>
                             </h2>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="dvSeeDetails row border-top">
                     <div class="col-12 d-flex justify-content-between align-items-center py-2">
-                         <a href="#details_seq_{$T.record.SequenceNo}" id="flight_details" data-toggle="collapse" data-target="#dvDetails{$T.record.SequenceNo}" class="h6 heading-semibold text-colour7 arrowBtn col-auto d-flex collapsed" aria-expanded="false"><span class="d-inline-block" data-i18n="flightlist-see-flight">See Flight Details</span> <span class="arrow-icon ml-2"> <i class="fa fa-caret-up"></i> </span></a>
+                         <a href="#details_seq_{$T.record.SequenceNo}" id="flight_details" data-toggle="collapse" data-target="#dvDetails{$T.record.SequenceNo}" class="heading6 arrowBtn col-auto d-flex collapsed" aria-expanded="false"><span class="d-inline-block" data-i18n="flightlist-see-flight">See Flight Details</span> <span class="arrow-icon ml-2"> <i class="fa fa-caret-up"></i> </span></a>
                         <div class=" searchBtnl"><button class="btn btn-one" onclick="var retvalue = BookNowClick('{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;" style="cursor: pointer;" data-i18n="index-redeem">Redeem</button></div>
                     </div>
                 </div>

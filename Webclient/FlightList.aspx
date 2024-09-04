@@ -191,7 +191,7 @@
                         <div class="modal-content border-0 b-radius">
                             <div class="modal-header border-0 d-lg-block p-0">
                                  <div class="modal-title dvTotalRecords border-0 p-3">
-                                    <p class="heading-semibold text-colour1"><span data-i18n="flightlist-total">Total Flights Found</span> <span class="filter-text" id="lblNoofFlight"></span></p>
+                                    <p class="heading6 text-colour1"><span data-i18n="flightlist-total">Total Flights Found</span> <span class="filter-text" id="lblNoofFlight"></span></p>
                                 </div>
                                 <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
                                      <i class="fa-solid fa-xmark"></i>
@@ -202,7 +202,7 @@
                                     <div class="card my-3">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span data-i18n="flightlist-stops" class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Stops</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span data-i18n="flightlist-stops" class="heading6 mb-2 text-capitalize">Stops</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
                                         <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">
@@ -221,7 +221,7 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span data-i18n="flightlist-total-points" class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Total Points</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span data-i18n="flightlist-total-points" class="heading6 mb-2 text-capitalize">Total Points</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
 
@@ -243,7 +243,7 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse3"><span data-i18n="flightlist-airlines" class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Airlines</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse3"><span data-i18n="flightlist-airlines" class="heading6 mb-2 text-capitalize">Airlines</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
                                         <div id="collapse3" class="collapse-" data-parent="#filter-accordion">
@@ -260,7 +260,7 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse4"><span data-i18n="flightlist-total-duration" class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Total Duration</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse4"><span data-i18n="flightlist-total-duration" class="heading6 mb-2 text-capitalize">Total Duration</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
                                         <div id="collapse4" class="collapse-" data-parent="#filter-accordion">
@@ -280,7 +280,7 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse5"><span data-i18n="flightlist-departure" class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Departure Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse5"><span data-i18n="flightlist-departure" class="heading6 mb-2 text-capitalize">Departure Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
 
@@ -301,7 +301,7 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse6"><span data-i18n="flightlist-arrival-time" class="h6 heading-semibold text-colour7 mb-2 text-capitalize">Arrival Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse6"><span data-i18n="flightlist-arrival-time" class="heading6 mb-2 text-capitalize">Arrival Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
 
