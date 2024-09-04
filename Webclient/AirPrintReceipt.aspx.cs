@@ -38,28 +38,28 @@ public partial class AirPrintReceipt : System.Web.UI.Page
                     this.Title = Convert.ToString(Session["PageTitle"]);
                 }
 
-                if ((Session["RetriveBookingInfo"] != null || Session["FlightBooked"] != null) && Session["MemberDetails"] != null)
+                if ((HttpContext.Current.Session["RetriveBookingInfo"] != null || HttpContext.Current.Session["FlightBooked"] != null) && Session["MemberDetails"] != null)
                 {
                     string lstrSourceCurrency = Convert.ToString(ConfigurationManager.AppSettings["SourceCurrency"]);
                     ItineraryDetails lobjItineraryDetails = new ItineraryDetails();
                     string strPaymentDetails = string.Empty;
-                    if (Session["FlightBooked"] != null)
+                    if (HttpContext.Current.Session["FlightBooked"] != null)
                     {
                         lobjItineraryDetails = Session["FlightBooked"] as ItineraryDetails;
-                        if (lobjItineraryDetails.BookingPaymentDetails.PaymentType.Equals(PaymentType.Points))
-                        {
-                            lblTotalMiles.Text = Convert.ToString(lobjModel.FloatToThousandSeperated(lobjItineraryDetails.BookingPaymentDetails.Points));
-                        }
+                        //if (lobjItineraryDetails.BookingPaymentDetails.PaymentType.Equals(PaymentType.Points))
+                        //{
+                            lblTotalMiles.Text = Convert.ToString(lobjModel.FloatToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints));
+                        //}
                     }
-                    else if (Session["RetriveBookingInfo"] != null)
-                    {
-                        lobjItineraryDetails = Session["RetriveBookingInfo"] as ItineraryDetails;
+                    //if (HttpContext.Current.Session["RetriveBookingInfo"] != null)
+                    //{
+                    //    lobjItineraryDetails = Session["RetriveBookingInfo"] as ItineraryDetails;
 
-                        if (lobjItineraryDetails.BookingPaymentDetails.PaymentType.Equals(PaymentType.Points))
-                        {
-                            lblTotalMiles.Text = Convert.ToString(lobjModel.FloatToThousandSeperated(lobjItineraryDetails.BookingPaymentDetails.Points));
-                        }
-                    }
+                    //    if (lobjItineraryDetails.BookingPaymentDetails.PaymentType.Equals(PaymentType.Points))
+                    //    {
+                    //        lblTotalMiles.Text = Convert.ToString(lobjModel.FloatToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints));
+                    //    }
+                    //}
                     else
                     {
                         lobjItineraryDetails = null;
@@ -67,13 +67,13 @@ public partial class AirPrintReceipt : System.Web.UI.Page
                     MemberDetails lobjMemberDetails = Session["MemberDetails"] as MemberDetails;
                     lblMembershipReferenceNo.Text = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference;
                     lblCustomerName.Text = lobjMemberDetails.FirstName + " " + lobjMemberDetails.FullName;
-                    //lblMemberName.Text = lobjMemberDetails.FirstName + " " + lobjMemberDetails.FullName;
                     lblCustomerMobileNo.Text = lobjMemberDetails.MobileNumber;
                     lblCustomerAddress.Text = lobjMemberDetails.Address;
                     lblCustomerEmail.Text = lobjMemberDetails.Email;
                     lblTransactionRefNo.Text = lobjItineraryDetails.ItineraryReference;
                     //lblGDSPNR.Text = lobjItineraryDetails.ListOfFlightDetails[0].ListOfFlightSegments[0].AirlinePNR;
                     lblGDSPNR.Text = lobjItineraryDetails.ItineraryTripId;
+                    
                 }
                 else
                 {

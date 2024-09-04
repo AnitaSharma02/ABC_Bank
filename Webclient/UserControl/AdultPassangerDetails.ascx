@@ -201,7 +201,6 @@
                 <asp:TextBox ID="txtTelephone" class="form-control" runat="server" Text="" MaxLength="12"
                     AutoComplete="off"></asp:TextBox>
             </div>
-            <div class="invalid-feedback" id="ErrTelephone" runat="server">
                 <asp:RequiredFieldValidator ID="rfvAdultTelephone" Display="Dynamic" runat="server"
                     ControlToValidate="txtTelephone" ErrorMessage="Enter Mobile Number" 
                     data-i18n="hotel-booking-errormobile" ValidationGroup="WebValidation"
@@ -211,7 +210,7 @@
                     CssClass="rptErrorMassage danger" ErrorMessage="Enter Valid Number.(max 12 digit.)" data-i18n="hotel-booking-erroronlydigit"
                     >
                 </asp:RegularExpressionValidator>
-            </div>
+          
 
         </div>
 

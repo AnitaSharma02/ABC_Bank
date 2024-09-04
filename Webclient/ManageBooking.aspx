@@ -257,7 +257,7 @@
                                                                 </div>
                                                                 <div class="col-12 col-md-6 col-xl-2">
                                                                     <p>
-                                                                        <asp:LinkButton ID="BtnViewAir" CssClass="btn btn-one w-100" Text="View Details" runat="server" OnClientClick='<%#String.Format("javascript:return ShowAirReceipt(\"{0}\")",Eval("ItineraryTripId").ToString())%>'></asp:LinkButton>
+                                                                        <asp:LinkButton ID="BtnViewAir" CssClass="btn btn-one w-100" Text="View Details" runat="server" OnClientClick='<%#String.Format("javascript:return ShowAirReceipt(\"{0}\")",Eval("ItineraryReference").ToString())%>'></asp:LinkButton>
                                                                     </p>
 
                                                                 </div>

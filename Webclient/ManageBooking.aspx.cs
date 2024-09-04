@@ -246,10 +246,12 @@ public partial class ManageBooking : Page
         try
         {
             ABCModel lobjModel = new ABCModel();
+            IBEAPIModel lobjIBEAPIModel = new IBEAPIModel();
+
             MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
             HttpContext.Current.Session["RetriveBookingInfo"] = null;
             CB.IBE.Platform.Masters.Entities.RefererDetails lobjRefererDetails = HttpContext.Current.Application["RefererData"] as CB.IBE.Platform.Masters.Entities.RefererDetails;
-            RetriveItineraryDetails lobjRetriveItineraryDetails = lobjModel.RetriveItineraryDetails(TripId, Convert.ToInt32(lobjRefererDetails.Id));
+            RetriveItineraryDetails lobjRetriveItineraryDetails = lobjIBEAPIModel.GetBookedFlightItinerary(TripId);
             if (lobjRetriveItineraryDetails != null)
             {
                 HttpContext.Current.Session["RetriveBookingInfo"] = lobjRetriveItineraryDetails.ItineraryDetails;
