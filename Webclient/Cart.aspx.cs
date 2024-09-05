@@ -112,10 +112,8 @@ public partial class Cart : Page
                         + "<p class=\"btn btn-one bg-transparent p-0 border-0\" onclick=\"var varReturn = RemoveLineItem(\'" + lobjShoppingCart.Items[i].ProductId + "\'); event.returnValue = varReturn; (event.preventDefault) ? event.preventDefault() : event.returnValue = false; return varReturn;\"><i class=\"fa fa-trash text-colour1\"></i></p></div></div>"
                         + "</div>"
                         + "</div>"
-                        + "<div class=\"row dvBorderBottom my-3\">"
-                        + "<div class=\"col-12 border-bottom\">"
-                        + "</div>"
-                        + "</div>";
+                        + "<div class=\"row mt-2\">";
+                        
 
 
                     if (!lobjShoppingCart.Items[i].IsValid)
@@ -139,6 +137,12 @@ public partial class Cart : Page
                             }
                         }
                     }
+
+                    lstrHtmlContent += "</div>"
+                        + "<div class=\"row dvBorderBottom my-3\">"
+                        + "<div class=\"col-12 border-bottom\">"
+                        + "</div>"
+                        + "</div>";
                 }
                 lstrHtmlContent += "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p data-i18n=\"shopcart-subtotal\">Sub-Total</p></div> <div class=\"col-6 col-md-3 text-right\"><p class=\"heading-regular\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.SubTotal.Amount), "Points") + "</p></div></div>"
                          + "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p data-i18n=\"shopcart-shipping\">Shipping</p></div> <div class=\"col-6 col-md-3 text-right\"><p class=\"heading-regular\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.ShippingPrice.Amount), "Points") + "</p></div></div>"
