@@ -269,9 +269,9 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $("#<%=txtDOB.ClientID%>").click(function () {
+   <script>
+       $(document).ready(function () {
+           $("#<%=txtDOB.ClientID%>").click(function () {
                 $("#<%=txtDOB.ClientID%>").datepicker('show');
             });
             $(".dvTxtDOBAdult .input-group-append .input-group-text").on("click", function () {
@@ -360,40 +360,40 @@
             if (result != '') {
                 var data = JSON.parse(result);
                 if (data.ProductInfoResponse != null) {
-                    //html += '<div class="">';
-                    html += '<div class="d-flex flex-wrap justify-content-between align-items-center bg-colour1 px-3 py-2 mx-n3">';
-                    html += '<p class="heading6 text-colour6">Booking Summary</p>';
-                    html += '<p><a id="hrefEditbuttonId" class="btn btn-two" runat="server">Edit</a></p>';
+                    html += '<div class="dvBookingDetails p-3">';
+                    html += '<div class="d-flex justify-content-between">';
+                    html += '<p class="heading-semibold h6">Your booking details</p>';
+                    html += '<p class="heading-semibold h6"><a id="hrefEditbuttonId" runat="server">Edit</a></p>';
                     html += '</div>';
-                    //html += '</div>';
-                    //html += '<div class="dvCityName pl-3 pr-3">';
-                    html += '<h2 class="heading6 mt-3">' + data.ProductInfoResponse.data.title + '</h2>';
-                    html += '<p class="h7 mb-3">Option: ' + data.ProductInfoResponse.producttypedetails.item_uuid.filter(obj => obj.uuid == ptuuid)[0].title + '</p>';
-                    //html += '</div>';
-                    //html += '<div class="dvSelectDate pl-3 pr-3 mt-3">';
-                    html += '<div class="d-flex flex-wrap justify-content-between">';
-                    html += '<p class="h7">Selected Date:</p>';
-                    html += '<p class="h7">' + formatDate(selectedDate) + '</p>';
                     html += '</div>';
-                    //html += '</div>';
+                    html += '<div class="dvCityName pl-3 pr-3">';
+                    html += '<h2 class="h6 heading-semibold text-truncate pt-4">' + data.ProductInfoResponse.data.title + '</h2>';
+                    html += '<p class="heading-light">Option: ' + data.ProductInfoResponse.producttypedetails.item_uuid.filter(obj => obj.uuid == ptuuid)[0].title + '</p>';
+                    html += '</div>';
+                    html += '<div class="dvSelectDate pl-3 pr-3 mt-3">';
+                    html += '<div class="d-flex justify-content-between">';
+                    html += '<p class="heading-regular">Selected Date:</p>';
+                    html += '<p class="heading-regular">' + formatDate(selectedDate) + '</p>';
+                    html += '</div>';
+                    html += '</div>';
 
                     if (timeslotuuid != null && timeslotuuid != '') {
-                        //html += '<div class="dvSelectDate pl-3 pr-3 pt-2">';
-                        html += '<div class="d-flex flex-wrap justify-content-between">';
-                        html += '<p class="h7">Time Slot:</p>';
+                        html += '<div class="dvSelectDate pl-3 pr-3 pt-2">';
+                        html += '<div class="d-flex justify-content-between">';
+                        html += '<p class="heading-regular">Time Slot:</p>';
                         $.each(data.ProductInfoResponse.producttypedetails.item_uuid, function (i) {
                             if (ptuuid == data.ProductInfoResponse.producttypedetails.item_uuid[i].uuid) {
                                 $.each(data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots, function (j) {
                                     if (timeslotuuid == data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots[j].uuid) {
-                                        html += '<p class="h7">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots[j].startTime.slice(0, -3) + ' - ' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots[j].endTime.slice(0, -3) + ' hrs </p>';
+                                        html += '<p class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots[j].startTime.slice(0, -3) + ' - ' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typePriceByDate.timeslots[j].endTime.slice(0, -3) + ' hrs </p>';
                                     }
                                 });
                             }
                         });
                         html += '</div>';
-                        //html += '</div>';
+                        html += '</div>';
                     }
-                    //html += '<div class="dvSelectDate pl-3 pr-3 pt-2">';
+                    html += '<div class="dvSelectDate pl-3 pr-3 pt-2">';
                     var totalAmount = 0.00;
                     var totalPax = 0;
                     $.each(data.ProductInfoResponse.producttypedetails.item_uuid, function (i) {
@@ -407,68 +407,68 @@
                                     totalPax += parseInt(adultCount);
                                     totalAmount += (parseInt(adultCount) * recommendedPrice);
                                     html += '<div class="d-flex justify-content-between">';
-                                    html += '<p class="h7">' + adultCount + ' x ' + categoryName + ':</p>';
-                                    html += '<p class="h7">' + recommendedPriceFormat + '</p>';
+                                    html += '<p class="heading-regular">' + adultCount + ' x ' + categoryName + ':</p>';
+                                    html += '<p class="heading-regular">' + recommendedPriceFormat + '</p>';
                                     html += '</div>';
                                 }
                                 else if (parseInt(seniorsCount) > 0 && ratesAarray[n].category.toLowerCase() == "senior") {
                                     totalPax += parseInt(seniorsCount);
                                     totalAmount += (parseInt(seniorsCount) * recommendedPrice);
                                     html += '<div class="d-flex justify-content-between">';
-                                    html += '<p class="h7">' + seniorsCount + ' x ' + categoryName + ':</p>';
-                                    html += '<p class="h7">' + recommendedPriceFormat + '</p>';
+                                    html += '<p class="heading-regular">' + seniorsCount + ' x ' + categoryName + ':</p>';
+                                    html += '<p class="heading-regular">' + recommendedPriceFormat + '</p>';
                                     html += '</div>';
                                 }
                                 else if (parseInt(childrenCount) > 0 && ratesAarray[n].category.toLowerCase() == "child") {
                                     totalPax += parseInt(childrenCount);
                                     totalAmount += (parseInt(childrenCount) * recommendedPrice);
                                     html += '<div class="d-flex justify-content-between">';
-                                    html += '<p class="h7">' + childrenCount + ' x ' + categoryName + ':</p>';
-                                    html += '<p class="h7">' + recommendedPriceFormat + '</p>';
+                                    html += '<p class="heading-regular">' + childrenCount + ' x ' + categoryName + ':</p>';
+                                    html += '<p class="heading-regular">' + recommendedPriceFormat + '</p>';
                                     html += '</div>';
                                 }
                             });
                         }
                     });
-                    //html += '</div>';
-
-                    html += '<div class="border-top my-2"></div>';
-                    //html += '<div class="dvSelectDate pl-3 pr-3 pt-2 pb-2">';
-                    html += '<div class="d-flex justify-content-between">';
-                    html += '<p class="h7">Service fee</p>';
-                    html += '<p class="h7">' + data.ProductInfoResponse.data.convertedCurrency.code + " " + FormatCurrency(0) + '</p>';
                     html += '</div>';
-                    //html += '</div>';
-                    html += '<div class="border-bottom my-2"></div>';
-                    //html += '<div class="dvSelectDate pl-3 pr-3 pt-2">';
+
+                    html += '<div class="border-top mt-1 mb-1"></div>';
+                    html += '<div class="dvSelectDate pl-3 pr-3 pt-2 pb-2">';
                     html += '<div class="d-flex justify-content-between">';
-                    html += '<p class="heading6">TOTAL:</p>';
+                    html += '<p class="heading-regular">Service fee</p>';
+                    html += '<p class="heading-regular">' + data.ProductInfoResponse.data.convertedCurrency.code + " " + FormatCurrency(0) + '</p>';
+                    html += '</div>';
+                    html += '</div>';
+                    html += '<div class="border-bottom mt-2 mb-1"></div>';
+                    html += '<div class="dvSelectDate pl-3 pr-3 pt-2">';
+                    html += '<div class="d-flex justify-content-between">';
+                    html += '<p class="heading-semibold">TOTAL:</p>';
                     html += '<div>';
-                    html += '<span class="heading6 pr-2" id="currencycode">' + data.ProductInfoResponse.data.convertedCurrency.code + '</span><span class="heading6" id="totalAmount">' + FormatCurrency(totalAmount) + '</span>';
+                    html += '<span class="heading-semibold pr-2" id="currencycode">' + data.ProductInfoResponse.data.convertedCurrency.code + '</span><span class="heading-semibold" id="totalAmount">' + FormatCurrency(totalAmount) + '</span>';
                     html += '</div>';
                     /*                 html += '<p class="heading-semibold" id="totalAmount">' + data.ProductInfoResponse.data.convertedCurrency.code + " " + FormatCurrency(totalAmount) + '</p>';*/
                     html += '</div>';
-                    //html += '</div>';
-                    //html += '<div class="dvSelectDate pl-3 pr-3 pb-3">';
-                    html += '<div class="d-flex justify-content-between">';
-                    html += '<p></p>';
-                    html += '<p class="h8">Price incl. GST</p>';
                     html += '</div>';
-                    //html += '</div>';
+                    html += '<div class="dvSelectDate pl-3 pr-3 pb-3">';
+                    html += '<div class="d-flex justify-content-between">';
+                    html += '<p class="heading-sm-bold"></p>';
+                    html += '<p class="heading-regular">Price incl. GST</p>';
+                    html += '</div>';
+                    html += '</div>';
                     $("#divPaymentdetails").empty().append(html);
 
                     html = '';
                     $.each(data.ProductInfoResponse.producttypedetails.item_uuid, function (i) {
                         if (ptuuid == data.ProductInfoResponse.producttypedetails.item_uuid[i].uuid) {
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.hasOptions == true) {
-                                html += '<p class="heading6">Additional Info</p>';
-                                html += '<div class="row">';
+                                html += '<p class="heading-semibold h6">Additional Info</p>';
+                                html += '<div class="row dvSpecialElements">';
                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking.length > 0) {
                                     let optionsPerBooking = 0;
                                     $.each(data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking, function (j) {
                                         data.BookingRequest.options.perBooking[optionsPerBooking].uuid = data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].uuid;
                                         data.BookingRequest.options.perBooking[optionsPerBooking].inputType = data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].inputType;
-                                        html += '<div class="col-12 col-md-12 col-lg-4 mt-3">';
+                                        html += '<div class="dvParent col-12 col-md-12 col-lg-4 mt-3">';
                                         if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].inputType != 7 && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].inputType != 8) {
                                             html += '<label class="h8 heading-semibold label">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name;
                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].IsRequired) {
@@ -584,7 +584,7 @@
                                             } else {
                                                 inputclassname = "chknonmandatoryadditionalinfo";
                                             }
-                                            html += '<div class="input-group-">';
+                                            html += '<div class="input-group- dvSpecialCheckbox">';
                                             html += '<input type="checkbox" onchange="ValidateBookingDetailsFields();" id="' + inputId + '" class="form-control ' + inputclassname + '"/>';
                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                 html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -602,7 +602,7 @@
                                             html += '<div class="input-group-">';
                                             html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                             html += '<div class="input-group-append">';
-                                            html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
+                                            html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
                                             html += '</div>';
                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                 html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -621,7 +621,7 @@
                                             html += '<div class="input-group-">';
                                             html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                             html += '<div class="input-group-append">';
-                                            html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
+                                            html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
                                             html += '</div>';
                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                 html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -640,7 +640,7 @@
                                             html += '<div class="input-group-">';
                                             html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                             html += '<div class="input-group-append">';
-                                            html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
+                                            html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
                                             html += '</div>';
                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                 html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -800,7 +800,7 @@
                                                 html += '<div class="input-group-">';
                                                 html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                                 html += '<div class="input-group-append">';
-                                                html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
+                                                html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
                                                 html += '</div>';
                                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                     html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -819,7 +819,7 @@
                                                 html += '<div class="input-group-">';
                                                 html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                                 html += '<div class="input-group-append">';
-                                                html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
+                                                html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
                                                 html += '</div>';
                                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                     html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -838,7 +838,7 @@
                                                 html += '<div class="input-group-">';
                                                 html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
                                                 html += '<div class="input-group-append">';
-                                                html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
+                                                html += '<span class="input-group-text bg-white"><i class="fa-regular fa-calendar"></i></span>';
                                                 html += '</div>';
                                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                     html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
@@ -871,20 +871,28 @@
                         if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != null
                             || data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress != null
                             || data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation != null) {
-                            html += '<p class="heading6 pb-2">Pickup/Meeting Point Information</p>';
-                            html += '<p class="heading-semibold text-colour7 h7">Extra Information:</p>';
+                            html += '<p class="h5 heading-bold text-colour1 pb-2">Pickup/Meeting Point Information</p>';
+                            html += '<p class="heading-regular">Extra Information:</p>';
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != '') {
-                                html += '<p class="heading-semibold text-colour7 h7">Time: <span class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime + '</span></p>';
+                                html += '<p class="heading-regular">Time :' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime + '</p>';
                             }
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress != '') {
-                                html += '<p class="heading-semibold text-colour7 h7">Address: <span class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress + '</span></p>';
+                                html += '<p class="heading-regular">Address :' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress + '</p>';
                             }
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation != '') {
-                                html += '<p class="heading-semibold text-colour7 h7">Location: <span class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation + '</span></p>';
+                                html += '<p class="heading-regular">Location :' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation + '</p>';
                             }
                             $("#divPickupInformation").empty().append(html);
                         }
-
+                        html = "";
+                        if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.cancellationPolicySummary != null ||
+                            data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.cancellationPolicySummary != "") {
+                            $("#cancelBox").show();
+                            html += data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.cancellationPolicySummary;
+                            $("#cancellationPolicy").empty().append(html);
+                        } else {
+                            $("#cancelBox").hide();
+                        }
 
                     });
                     html = "";
@@ -1027,46 +1035,46 @@
             // var cvMembershipNo = $.trim($('#txtCVMembershipNo').val());
             if (salutation == '') {
                 isValidated = false;
-                $('#sltitle').closest("div").after('<span class="danger">This field is required</span>');
+                $('#sltitle').closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
             }
             if (firstName.length == 0) {
                 isValidated = false;
-                $('#txtFirstName').closest("div").after('<span class="danger">This field is required</span>');
+                $('#txtFirstName').closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
             } else if (firstName.length > 0) {
                 var filter = /^[a-zA-Z\s]*$/;
                 if (!filter.test(firstName)) {
                     isValidated = false;
-                    $('#txtFirstName').closest("div").after('<span class="danger">Please enter a valid first name</span>');
+                    $('#txtFirstName').closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid first name</span>');
                 }
             }
             if (lastName.length == 0) {
                 isValidated = false;
-                $('#txtLastName').closest("div").after('<span class="danger">This field is required</span>');
+                $('#txtLastName').closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
             } else if (lastName.length > 0) {
                 var filter = /^[a-zA-Z\s]*$/;
                 if (!filter.test(lastName)) {
                     isValidated = false;
-                    $('#txtLastName').closest("div").after('<span class="danger">Please enter a valid last name</span>');
+                    $('#txtLastName').closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid last name</span>');
                 }
             }
             if (emailId.length == 0) {
                 isValidated = false;
-                $('#txtEmailId').closest("div").after('<span class="danger">This field is required</span>');
+                $('#txtEmailId').closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
             } else if (emailId.length > 0) {
                 var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
                 if (!filter.test(emailId)) {
                     isValidated = false;
-                    $('#txtEmailId').closest("div").after('<span class="danger">Please enter a valid email</span>');
+                    $('#txtEmailId').closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid email</span>');
                 }
             }
             if (contactNumber.length == 0) {
                 isValidated = false;
-                $('#txtContactNumber').closest("div").after('<span class="danger">This field is required</span>');
+                $('#txtContactNumber').closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
             } else if (contactNumber.length > 0) {
                 var filter = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
                 if (!filter.test(contactNumber)) {
                     isValidated = false;
-                    $('#txtContactNumber').closest("div").after('<span class="danger">Please enter a valid contact number</span>');
+                    $('#txtContactNumber').closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid contact number</span>');
                 }
             }
             if (!$("#chkTnCPolicy").is(':checked')) {
@@ -1075,100 +1083,100 @@
             }
             if (dob == "") {
                 isValidated = false;
-                $('#CP_txtDOB').closest("div").after('<span class="danger">This field is required</span>');
+                $('#CP_txtDOB').closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
             } 
             //if (cvMembershipNo.length == 0) {
             //    isValidated = false;
-            //    $('#txtCVMembershipNo').closest("div").after('<span class="danger">This field is required</span>');
+            //    $('#txtCVMembershipNo').closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
             //} else {
             //    var filter = /^[0-9]{9}$/;
             //    if (!filter.test(cvMembershipNo)) {
             //        isValidated = false;
-            //        $('#txtCVMembershipNo').closest("div").after('<span class="danger">Please enter a valid CV Membership No.</span>');
+            //        $('#txtCVMembershipNo').closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid CV Membership No.</span>');
             //    }
             //}
             $(".txtalphaadditionalinfo").each(function () {
                 if (this.value.length == 0) {
                     isValidated = false;
-                    $('#' + this.id).closest("div").after('<span class="danger">This field is required</span>');
+                    $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
                 } else if (this.value.length > 0) {
                     var filter = /^[a-zA-Z\s]*$/;
                     if (!filter.test(this.value)) {
                         isValidated = false;
-                        $('#' + this.id).closest("div").after('<span class="danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
+                        $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
                     }
                 }
             });
             $(".txtemailadditionalinfo").each(function () {
                 if (this.value.length == 0) {
                     isValidated = false;
-                    $('#' + this.id).closest("div").after('<span class="danger">This field is required</span>');
+                    $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
                 } else if (this.value.length > 0) {
                     var filter = /^([a-zA-Z0-9_\.\-])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
                     if (!filter.test(this.value)) {
                         isValidated = false;
-                        $('#' + this.id).closest("div").after('<span class="danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
+                        $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
                     }
                 }
             });
             $(".txtalphanumericadditionalinfo").each(function () {
                 if (this.value.length == 0) {
                     isValidated = false;
-                    $('#' + this.id).closest("div").after('<span class="danger">This field is required</span>');
+                    $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
                 } else if (this.value.length > 0) {
                     var filter = /^[a-zA-Z0-9\s]*$/;
                     if (!filter.test(this.value)) {
                         isValidated = false;
-                        $('#' + this.id).closest("div").after('<span class="danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
+                        $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
                     }
                 }
             });
             $(".txtaddressadditionalinfo").each(function () {
                 if (this.value.length == 0) {
                     isValidated = false;
-                    $('#' + this.id).closest("div").after('<span class="danger">This field is required</span>');
+                    $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
                 } else if (this.value.length > 0) {
                     var filter = /^[a-zA-Z0-9,\s]*$/;
                     if (!filter.test(this.value)) {
                         isValidated = false;
-                        $('#' + this.id).closest("div").after('<span class="danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
+                        $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
                     }
                 }
             });
             $(".txtphonenoadditionalinfo").each(function () {
                 if (this.value.length == 0) {
                     isValidated = false;
-                    $('#' + this.id).closest("div").after('<span class="danger">This field is required</span>');
+                    $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
                 } else if (this.value.length > 0) {
                     var filter = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
                     if (!filter.test(this.value)) {
                         isValidated = false;
-                        $('#' + this.id).closest("div").after('<span class="danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
+                        $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
                     }
                 }
             });
             $(".txtflightnoadditionalinfo").each(function () {
                 if (this.value.length == 0) {
                     isValidated = false;
-                    $('#' + this.id).closest("div").after('<span class="danger">This field is required</span>');
+                    $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
                 } else if (this.value.length > 0) {
                     var filter = /^[A-Z0-9][A-Z0-9][0-9]{0,4}$/;
                     if (!filter.test(this.value)) {
                         isValidated = false;
-                        $('#' + this.id).closest("div").after('<span class="danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
+                        $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
                     }
                 }
             });
             $(".txtdatetimeadditionalinfo").each(function () {
                 if (this.value.length == 0) {
                     isValidated = false;
-                    $('#' + this.id).closest("div").after('<span class="danger">This field is required</span>');
+                    $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
                 }
             });
             $(".chkadditionalinfo").each(function () {
                 if (!$('#' + this.id).is(":checked")) {
                     isValidated = false;
-                    $('#' + this.id).closest("div").after('<span class="danger">This field is required</span>');
+                    $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
                 }
             });
             $(".chknonmandatoryadditionalinfo").each(function () {
@@ -1178,38 +1186,38 @@
             $(".txtminnmaxnumericadditionalinfo").each(function () {
                 if (this.value.length == 0) {
                     isValidated = false;
-                    $('#' + this.id).closest("div").after('<span class="danger">This field is required</span>');
+                    $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
                 } else if (this.value.length > 0) {
                     var filter = /^[0-9\s]*$/;
                     if (!filter.test(this.value)) {
                         isValidated = false;
-                        $('#' + this.id).closest("div").after('<span class="danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
+                        $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
                     } else if ($(this).attr("minNumber") != '' && this.value < parseInt($(this).attr("minNumber"))) {
                         isValidated = false;
-                        $('#' + this.id).closest("div").after('<span class="danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
+                        $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
                     }
                     else if ($(this).attr("maxNumber") != '' && this.value > parseInt($(this).attr("maxNumber"))) {
                         isValidated = false;
-                        $('#' + this.id).closest("div").after('<span class="danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
+                        $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
                     }
                 }
             });
             $(".txtnumericadditionalinfo").each(function () {
                 if (this.value.length == 0) {
                     isValidated = false;
-                    $('#' + this.id).closest("div").after('<span class="danger">This field is required</span>');
+                    $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
                 } else if (this.value.length > 0) {
                     var filter = /^[0-9\s]*$/;
                     if (!filter.test(this.value)) {
                         isValidated = false;
-                        $('#' + this.id).closest("div").after('<span class="danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
+                        $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">Please enter a valid ' + $(this).attr("apifieldname").toLowerCase() + '</span>');
                     }
                 }
             });
             $(".sltadditionalinfo").each(function () {
                 if (this.value.length == 0) {
                     isValidated = false;
-                    $('#' + this.id).closest("div").after('<span class="danger">This field is required</span>');
+                    $('#' + this.id).closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
                 }
             });
             return isValidated;
@@ -1381,37 +1389,37 @@
             arrData.titleName = decodeURIComponent(titleName);
             arrData.Address = $("#CP_drpNationality").val();
             arrData.DOB = $("#<%=txtDOB.ClientID%>").val();
-            $.ajax({
-                type: 'POST',
-                url: 'ExperienceProductBookingDetails.aspx/ProcessPayment',
-                contentType: 'application/json;',
-                dataType: 'json',
-                data: JSON.stringify(arrData),
-                cache: false,
-                success: function (rtnData) {
-                    if (rtnData.d != "" && rtnData.d != null) {
-                        if (rtnData.d == "ErrorPage.aspx") {
-                            window.location.href = "ErrorPage.aspx";
-                        }
-                        else if (rtnData.d == "SESSION_TIME_OUT") {
-                            var pop = document.getElementById("alertmessage");
-                            pop.innerHTML = "Your session time out. Please login again.";
-                            $('#dvAlertModal').modal('show');
-                        }
-                        else {
-                            window.location.href = rtnData.d;
-                        }
-                    }
-                },
-                error: function (errmsg) {
-                    console.log(errmsg.text);
-                    window.location.href = "ErrorPage.aspx";
-                },
-                beforeSend: function () {
-                    $("#updProgress").show();
-                }
-            });
-        }
-    </script>
+           $.ajax({
+               type: 'POST',
+               url: 'ExperienceProductBookingDetails.aspx/ProcessPayment',
+               contentType: 'application/json;',
+               dataType: 'json',
+               data: JSON.stringify(arrData),
+               cache: false,
+               success: function (rtnData) {
+                   if (rtnData.d != "" && rtnData.d != null) {
+                       if (rtnData.d == "ErrorPage.aspx") {
+                           window.location.href = "ErrorPage.aspx";
+                       }
+                       else if (rtnData.d == "SESSION_TIME_OUT") {
+                           var pop = document.getElementById("alertmessage");
+                           pop.innerHTML = "Your session time out. Please login again.";
+                           $('#alertModal').modal('show');
+                       }
+                       else {
+                           window.location.href = rtnData.d;
+                       }
+                   }
+               },
+               error: function (errmsg) {
+                   console.log(errmsg.text);
+                   window.location.href = "ErrorPage.aspx";
+               },
+               beforeSend: function () {
+                   $("#updProgress").show();
+               }
+           });
+       }
+   </script>
 </asp:Content>
 
