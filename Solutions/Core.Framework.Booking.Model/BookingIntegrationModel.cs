@@ -1865,19 +1865,7 @@ namespace Core.Framework.Booking.Model
             string lstrTemplateCode = string.Empty;
             if (lobjOTPDetails != null)
             {
-                //if (lobjOTPDetails.OtpEnumTypes.Equals(OTPEnumTypes.AIRREVIEWNCONFIRM))
-                //{
-                //    lstrTemplateCode = "FlightOTP";
-                //}
-                //else if (lobjOTPDetails.OtpEnumTypes.Equals(OTPEnumTypes.HOTELREVIEWNCONFIRM))
-                //{
-                //    lstrTemplateCode = "HotelOTP";
-                //}
-                //else if (lobjOTPDetails.OtpEnumTypes.Equals(OTPEnumTypes.PACKAGEREVIEWNCONFIRM))
-                //{
-                //    lstrTemplateCode = "PackageOTP";
-                //}
-                lstrTemplateCode = "SendOTP";
+                lstrTemplateCode = "Redemption_OTP";
                 SendOTPEmail(EmailId, MemberId, ProgramId, lobjOTPDetails.OTP.ToString(), lobjOTPDetails.ExpiryDateTime, lstrTemplateCode, FullName);
                 SendOTPSMS(EmailId, MemberId, ProgramId, lobjOTPDetails.OTP.ToString(), lobjOTPDetails.ExpiryDateTime, lstrTemplateCode, pobjOTPDetails.AdditionalDetails, Phone);
                 return true;
