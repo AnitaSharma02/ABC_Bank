@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Core.Platform.Transactions.Entites">
+      <HintPath>..\..\References\Core.Platform.Transactions.Entites.dll</HintPath>
+    </Reference>
     <Reference Include="Framework.EnterpriseLibrary.Adapters">
       <HintPath>..\..\References\Framework.EnterpriseLibrary.Adapters.dll</HintPath>
     </Reference>

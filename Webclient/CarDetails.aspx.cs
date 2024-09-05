@@ -795,9 +795,11 @@ public partial class CarDetails : System.Web.UI.Page
                 }
                 else
                 {
+                    lobjCarBookingDetails.PayableAmount = Convert.ToString(Convert.ToDecimal(lobjCarBookingDetails.PayableAmount) - Convert.ToDecimal(pstramount));
+
                     AdditonalCharges lobjAdditonalCharge = lobjCarBookingDetails.AdditonalCharges.Where(note => note.Code == pstrProductId).FirstOrDefault();
                     lobjCarBookingDetails.AdditonalCharges.Remove(lobjAdditonalCharge);
-
+                   
                     if (lobjCarBookingDetails.AdditonalCharges.Count > 0)
                     {
                         double value = lobjCarBookingDetails.AdditonalCharges.FindAll(x => x.IsAdditionalEquipments).Sum(x => Convert.ToDouble(x.TotalChargeamount));

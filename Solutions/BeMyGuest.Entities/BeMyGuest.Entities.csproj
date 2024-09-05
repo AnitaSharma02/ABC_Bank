@@ -49,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AmountBreakdown.cs" />
+    <Compile Include="BookingByUserRequest.cs" />
+    <Compile Include="BookingByUserResponse.cs" />
+    <Compile Include="BookingByUserResponseData.cs" />
     <Compile Include="BookingData.cs" />
     <Compile Include="BookingInfoByUUIDRequest.cs" />
     <Compile Include="BookingInfoByUUIDResponse.cs" />

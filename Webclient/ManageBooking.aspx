@@ -75,29 +75,10 @@
             });
             return false;
         }
-        //function ViewDetails(ReferenceId) {
-        //    //debugger
-        //    $.ajax({
-        //        type: 'POST',
-        //        url: 'ManageBooking.aspx/ShowInsuranceBookingDetails',
-        //        contentType: 'application/json; charset=utf-8',
-        //        dataType: 'json',
-        //        //data: "{'ReferenceId':" + ReferenceId + "}",
-        //        data: "{ReferenceId:'" + ReferenceId + "'}",
-        //        cache: false,
-        //        success: function (msg) {
-        //            //debugger;
-        //            if (msg.d != null) {
-        //                var pop = document.getElementById("bookingDetails");
-        //                pop.innerHTML = msg.d;
-        //                $('#dvExampleModal').modal('show');
-        //            }
-        //        },
-        //        error: function (errmsg) {
-        //        }
-        //    });
-        //    return false;
-        //}
+        function ShowExperienceVoucher(uuid) {
+            window.open('ExperienceBookingDetails.aspx?uuid=' + uuid, '_blank');
+            //window.location.href = "/ExperienceBookingDetails.aspx?uuid="uuid;
+        }
     </script>
     <style>
         #dvHeroSlider,
@@ -109,27 +90,27 @@
     </style>
 
     <div class="dvMember d-md-block d-none py-5">
-    <div class="container-xl">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2 class="h1 heading-semibold text-colour1" id="lblMemberName">
-                    <span data-i18n="account-welcome" class="">Welcome,</span>
-                    <span class="ml-2" id="spnMemberName"></span>
-                </h2>
-                <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
-                    <span id="totAvbPointDiv" >Total Points</span>
-                    <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-colour1">0</span>
-                </h2>
-                <a
-                    href="Index.aspx"
-                    class="btn btn-one"
-                    id="my_account_point_redeem_now"
-                    data-i18n="btn-redeem-now">Redeem Now
-                </a>
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="h1 heading-semibold text-colour1" id="lblMemberName">
+                        <span data-i18n="account-welcome" class="">Welcome,</span>
+                        <span class="ml-2" id="spnMemberName"></span>
+                    </h2>
+                    <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
+                        <span id="totAvbPointDiv">Total Points</span>
+                        <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-colour1">0</span>
+                    </h2>
+                    <a
+                        href="Index.aspx"
+                        class="btn btn-one"
+                        id="my_account_point_redeem_now"
+                        data-i18n="btn-redeem-now">Redeem Now
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <div class="dvAccountMenu">
         <div class="container-xl">
@@ -147,7 +128,7 @@
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                     <li class="breadcrumb-item" ><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
+                    <li class="breadcrumb-item"><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
                     <li class="breadcrumb-item active" data-i18n="bread-manage">Manage Booking</li>
                 </ul>
             </nav>
@@ -383,7 +364,7 @@
                                 </div>
                             </div>
 
-                            <div class="card mb-3">
+                            <div class="card mb-3 ">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
                                         <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
@@ -397,11 +378,103 @@
                                 </div>
                                 <div id="collapse3" class="collapse" data-parent="#manage-accordion">
                                     <div class="card-body scroll-ver p-0" id="divExperienceBookingDetails" runat="server">
+                                        <asp:Repeater ID="rptExperienceBookingDetails" runat="server">
+                                            <ItemTemplate>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="bg-colour6 p-3">
+                                                            <div class="row justify-content-between">
+                                                                <div class="col-6 col-md-3 mb-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-checkin-label">Product Title</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Eval("prodtitle")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 mb-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-checkout-label">Option</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Eval("productTypeTitle")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 mb-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-booking-label">Booking Code</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Eval("code")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3 mb-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-details-label">Booking Uuid</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Eval("uuid")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-12 col-md-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-ref-label">Booking Date</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Eval("bookingDate")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-points-label">Arrival Date</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%#Eval("arrivalDate")%>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-status-label">Price</span>
+                                                                        <span class="h6 d-block">
+                                                                            <%# Convert.ToInt32(Eval("grandTotalAmount")) %>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-6 col-md-3">
+                                                                    <p>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-status-label">Status</span>
+                                                                        <span class="h6 d-block">
+                                                     
+                                                                            <%# Eval("status") %>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="col-12 col-md-3">
+                                                                    <p>
+                                                               <%--       <a target="_blank" href ="/ExperienceBookingDetails.aspx?uuid="<%#Eval("uuid")%>" class="btn btn-one w-100">View Details</a>--%>
+                                                                        <asp:LinkButton ID="imgBtnHotelVoucher" class="btn btn-one w-100" runat="server" Text="View Details"
+                                                                            OnClientClick='<%#String.Format("javascript:return ShowExperienceVoucher(\"{0}\")",Eval("uuid"))%>'></asp:LinkButton>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dvBorderBottom row">
+                                                    <div class="col-12">
+                                                        <div class="border-bottom"></div>
+                                                    </div>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                        <div id="divExperiencerecord" class="p-3" runat="server" visible="false">
+                                            <asp:Label runat="server" ID="lblExperiencerecord" Visible="false"></asp:Label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="card mb-3">
+                            <div class="card mb-3 d-none">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
                                         <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"

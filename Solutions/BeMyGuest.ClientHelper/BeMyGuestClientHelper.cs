@@ -5,6 +5,7 @@ using System.Text;
 using BeMyGuest.Implementor;
 using BeMyGuest.Entities;
 using Framework.EnterpriseLibrary.Adapters;
+using Core.Platform.Transactions.Entites;
 
 namespace BeMyGuest.ClientHelper
 {
@@ -56,7 +57,6 @@ namespace BeMyGuest.ClientHelper
             return lobjResponse;
         }
 
-      
         public ExperiencesTypesAndCategory GetTypesAndCategory()
         {
             ExperiencesTypesAndCategory lobjResponse = null;
@@ -96,6 +96,20 @@ namespace BeMyGuest.ClientHelper
             catch (Exception ex)
             {
                 LoggingAdapter.WriteLog("BeMyGuestClientHelper GetBookingInfoByUUID Ex - " + Environment.NewLine + ex.Message + Environment.NewLine + ex.InnerException +
+                    Environment.NewLine + ex.StackTrace + Environment.NewLine + "DateTime - " + DateTime.Now);
+            }
+            return lobjResponse;
+        }
+        public BookingByUserResponse GetBookingByUser(BookingByUserRequest bookingByUserRequest)
+        {
+            BookingByUserResponse lobjResponse = null;
+            try
+            {
+                lobjResponse = lobjImplementor.GetBookingByUser(bookingByUserRequest);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("BeMyGuestClientHelper GetBookingByUser Ex - " + Environment.NewLine + ex.Message + Environment.NewLine + ex.InnerException +
                     Environment.NewLine + ex.StackTrace + Environment.NewLine + "DateTime - " + DateTime.Now);
             }
             return lobjResponse;

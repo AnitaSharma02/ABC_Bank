@@ -1022,8 +1022,8 @@ function AddRemoveAditionalCharges(Action, name, amount, rateRef, ProductId) {
 
                     $("#divAdditionaCharges")[0].innerHTML = completeHTML;
 
-                    $("#spncarTotalAmount").text(parseFloat(FinalAmount + TotalExcessChargeAmount).toFixed(2));
-                    $("#spnPayableAmount").text(parseFloat(FinalAmount + TotalExcessChargeAmount).toFixed(2));
+                    $("#spncarTotalAmount").text(Math.ceil(parseFloat(FinalAmount + TotalExcessChargeAmount).toFixed(2)));
+                    $("#spnPayableAmount").text(Math.ceil(parseFloat(FinalAmount + TotalExcessChargeAmount).toFixed(2)));
                 }
                 else {
 
@@ -1059,8 +1059,8 @@ function AddRemoveAditionalCharges(Action, name, amount, rateRef, ProductId) {
 
                     $("#divAdditionaCharges")[0].innerHTML = completeHTML;
 
-                    $("#spncarTotalAmount").text(parseFloat(FinalAmount + TotalExcessChargeAmount).toFixed(2));
-                    $("#spnPayableAmount").text(parseFloat(FinalAmount + TotalExcessChargeAmount).toFixed(2));
+                    $("#spncarTotalAmount").text(Math.ceil(parseFloat(FinalAmount + TotalExcessChargeAmount).toFixed(2)));
+                    $("#spnPayableAmount").text(Math.ceil(parseFloat(FinalAmount + TotalExcessChargeAmount).toFixed(2)));
 
                     $("#ADD_" + ProductId).removeClass('d-none');
                     $("#REMOVE_" + ProductId).addClass('d-none');
@@ -1166,9 +1166,9 @@ function MapCarDetails() {
                 }
                 $("#divAdditionaCharges")[0].innerHTML = completeHTML;
 
-                $("#spncarTotalAmount").text(parseFloat(CarBookingDetails.PayableAmount));
-                $("#spncarhireAmount").text(parseFloat(CarBookingDetails.CarHireAmount));
-                $("#spnPayableAmount").text(parseFloat(CarBookingDetails.PayableAmount));
+                $("#spncarTotalAmount").text(Math.ceil(parseFloat(CarBookingDetails.PayableAmount)));
+                $("#spncarhireAmount").text(Math.ceil(parseFloat(CarBookingDetails.CarHireAmount)));
+                $("#spnPayableAmount").text(Math.ceil(parseFloat(CarBookingDetails.PayableAmount)));
           //$("#spnAdditionalChargetotal").text(parseFloat(CarBookingDetails.TotalAdditionalequipmentAmount == null ? 0 : CarBookingDetails.TotalAdditionalequipmentAmount).toFixed(2));
             }
             else {
@@ -1237,8 +1237,8 @@ function AddAdditionalCharges(a) {
 
                 var FinalAmount = parseFloat(CarBookingDetails.TotalAdditionalequipmentAmount == null ? 0 : CarBookingDetails.TotalAdditionalequipmentAmount) + parseFloat(CarBookingDetails.TotalAdditionalchargesAmount == null ? 0 : CarBookingDetails.TotalAdditionalchargesAmount) + parseFloat(CarBookingDetails.CarHireAmount);
 
-                $("#spncarTotalAmount").text(parseFloat(FinalAmount.toFixed(2)));
-                $("#spnPayableAmount").text(parseFloat(FinalAmount.toFixed(2)));
+                $("#spncarTotalAmount").text(Math.ceil(parseFloat(FinalAmount.toFixed(2))));
+                $("#spnPayableAmount").text(Math.ceil(parseFloat(FinalAmount.toFixed(2))));
 
 
             }

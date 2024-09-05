@@ -153,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 col-sm-4 col-md-2">
+                <div class="col-4 col-sm-4 col-md-2" style="display:none">
                     <div class="row">
                         <div class="col-12 bg-colour4 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-aircraft">Aircraft Type</h2>

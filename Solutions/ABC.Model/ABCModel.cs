@@ -47,6 +47,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
+using System.Web.UI;
 using TransactionDetailsAdditionalInfo.Entities;
 using Customer = Framework.Integrations.Hotels.Entities.Customer;
 
@@ -2498,6 +2499,27 @@ namespace ABC.Model
                 LoggingAdapter.WriteLog("Model GetTypesAndCategory Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
             }
             return lstrResponse;
+        }
+        public BookingByUserResponse GetAllExperiences( string pstrRelationReference)
+        {
+            BookingByUserResponse bookingByUserResponse = new BookingByUserResponse();
+            try
+            {
+                BookingByUserRequest bookingByUserRequest = new BookingByUserRequest()
+                {
+                    memberId = pstrRelationReference,
+                    page = 1,
+                    per_page = 10
+
+                };
+                BeMyGuestClientHelper lobjHelper = new BeMyGuestClientHelper();
+                bookingByUserResponse = lobjHelper.GetBookingByUser(bookingByUserRequest);
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("Model ExperienceBooking Ex: " + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.InnerException);
+            }
+            return bookingByUserResponse;
         }
 
         public BeMyGuest.Entities.BookingResponse ExperienceBooking(BeMyGuest.Entities.BookingRequest bookingRequest)

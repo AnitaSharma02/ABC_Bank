@@ -1,5 +1,5 @@
 ﻿using BeMyGuest.Entities;
-
+using Core.Platform.Transactions.Entites;
 using Framework.EnterpriseLibrary.Adapters;
 using Newtonsoft.Json;
 using System;
@@ -98,7 +98,19 @@ namespace BeMyGuest.Implementor
             return lobjResponse;
         }
 
-       
+        public BookingByUserResponse GetBookingByUser(BookingByUserRequest bookingByUserRequest)
+        {
+            BookingByUserResponse lobjResponse = null;
+            try
+            {
+                lobjResponse = JsonConvert.DeserializeObject<BookingByUserResponse>(DataPostHelper.PostData(BeMyGuestConstants.GetAllExperienceBooking, "POST", "bookings", JsonConvert.SerializeObject(bookingByUserRequest), ExperienceUsername, ExperiencePassword));
+            }
+            catch (Exception ex)
+            {
+                LoggingAdapter.WriteLog("PostData - GetBookingByUser - Ex -" + ex.Message + Environment.NewLine + "Stack Trace-" + ex.StackTrace + ex.InnerException);
+            }
+            return lobjResponse;
+        }
         public string GenerateQuery(string pstrQueryName, string pstrQueryType, string pstrSubSelection)
         {
             string query = string.Empty;

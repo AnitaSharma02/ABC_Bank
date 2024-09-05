@@ -54,7 +54,7 @@ public partial class PrintCarVoucher : System.Web.UI.Page
                 string lstrCurrency = lobjModel.GetDefaultCurrency();
                 string lstrPaymentDetails = string.Empty;
                 string lstrPaymentDetailsHTML = "{0}<span class='heading-bold'>{1}</span>";
-                lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, lstrCurrency + " : ", lobjModel.IntToThousandSeperated(RequierdRedeemPoint));
+                lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, lstrCurrency + " : ",Math.Ceiling(RequierdRedeemPoint));
 
                 lstrPaymentDetails = "<p>" + lstrPaymentDetails + "</p>";
                 PaymentInfo.InnerHtml = lstrPaymentDetails;
@@ -80,8 +80,6 @@ public partial class PrintCarVoucher : System.Web.UI.Page
                 lbldropOffDate.Text = (lobjCarBookingdetails.data[0].dropOffDateTime.Date.ToString("MM/dd/yyyy"));
                 lbldropOffTime.Text = Convert.ToString(lobjCarBookingdetails.data[0].dropOffDateTime.TimeOfDay);
 
-                //lblDriverFName.Text = lobjCarBookingdetails.data[0].dr;
-                //lblDriverLName.Text = lobjCarBookingdetails.data[0].
 
                 lblAddress.Text = lobjMemberDetails.Address;
                 lblPhoneNo.Text = lobjMemberDetails.MobileNumber;
@@ -89,7 +87,7 @@ public partial class PrintCarVoucher : System.Web.UI.Page
                 string lstrCurrency = lobjModel.GetDefaultCurrency();
                 string lstrPaymentDetails = string.Empty;
                 string lstrPaymentDetailsHTML = "{0}<span class='heading-bold'>{1}</span>";
-                lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, lstrCurrency + " : ", lobjModel.IntToThousandSeperated(lobjCarBookingdetails.data[0].package.payments.estimatedTotal.total.display.amount));
+                lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, lstrCurrency + " : ",Math.Ceiling(lobjCarBookingdetails.data[0].package.payments.estimatedTotal.total.display.amount));
 
                 lstrPaymentDetails = "<p>" + lstrPaymentDetails + "</p>";
                 PaymentInfo.InnerHtml = lstrPaymentDetails;
