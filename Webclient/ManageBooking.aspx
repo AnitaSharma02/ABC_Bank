@@ -383,7 +383,7 @@
                                 </div>
                             </div>
 
-                            <div class="card mb-3 d-none">
+                            <div class="card mb-3">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
                                         <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
