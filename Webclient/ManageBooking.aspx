@@ -386,7 +386,7 @@
                                                             <div class="row justify-content-between">
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-checkin-label">Product Title</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-product-title-label">Product Title</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("prodtitle")%>
                                                                         </span>
@@ -394,7 +394,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-checkout-label">Option</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-option-label">Option</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("productTypeTitle")%>
                                                                         </span>
@@ -402,7 +402,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-booking-label">Booking Code</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-booking-code-label">Booking Code</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("code")%>
                                                                         </span>
@@ -410,39 +410,39 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-details-label">Booking Uuid</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-booking-uuid-label">Booking Uuid</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("uuid")%>
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-12 col-md-3">
+                                                                <div class="col-12 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-ref-label">Booking Date</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-booking-date-label">Booking Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("bookingDate")%>
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3">
+                                                                <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-points-label">Arrival Date</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-arrival-date-label">Arrival Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("arrivalDate")%>
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3">
+                                                                <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-status-label">Price</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-price-label">Price</span>
                                                                         <span class="h6 d-block">
                                                                             <%# Convert.ToInt32(Eval("grandTotalAmount")) %>
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3">
+                                                                <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-status-label">Status</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-status-label">Status</span>
                                                                         <span class="h6 d-block">
                                                      
                                                                             <%# Eval("status") %>
