@@ -184,12 +184,14 @@ public partial class ManageBooking : Page
         try
         {
             ABCModel lobjModel = new ABCModel();
+            IBEAPIModel lobjIBEAPIModel = new IBEAPIModel();
+
             MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
             HttpContext.Current.Session["HotelBooked"] = null;
             HttpContext.Current.Session["CustomerDetails"] = null;
             HttpContext.Current.Session["BookingResponse"] = null;
 
-            HotelItineraryResponse lobjHotelItineraryResponse = lobjModel.GetBookedHotelInfo(TransactionReferenceCode);
+            HotelItineraryResponse lobjHotelItineraryResponse = lobjIBEAPIModel.GetMemberBookedHotelInfo(TransactionReferenceCode);
             if (lobjHotelItineraryResponse != null)
             {
                 HttpContext.Current.Session["HotelBooked"] = lobjHotelItineraryResponse.HotelSearchResponse;
