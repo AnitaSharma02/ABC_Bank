@@ -430,7 +430,7 @@ public partial class FlightPassenger : System.Web.UI.Page
                     Session["ItineraryRequest"] = lobjCreateItineraryRequest;
 
                     CreateItineraryResponse lobjCreateItineraryResponse = lobjIBEAPIModel.CreateItinerary(lobjCreateItineraryRequest);
-                    if (lobjCreateItineraryResponse != null)
+                    if (lobjCreateItineraryResponse != null && lobjCreateItineraryResponse.ItineraryDetails!=null)
                     {
                         Session["ReviewFlightDetails"] = lobjCreateItineraryResponse.ItineraryDetails;
                         Session["ItineraryResponse"] = lobjCreateItineraryResponse;

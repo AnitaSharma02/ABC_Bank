@@ -30,6 +30,7 @@ public partial class HotelVoucherPrint : System.Web.UI.Page
                 if (Session["HotelBooked"] != null && Session["CustomerDetails"] != null && Session["BookingResponse"] != null)
                 {
                     HotelSearchResponse lobjSearchResponse = Session["HotelBooked"] as HotelSearchResponse;
+                    HotelItineraryResponse lobjHotelItineraryResponse = HttpContext.Current.Session["ItenaryDetailsResponse"] as HotelItineraryResponse;
                     lblHotelName.Text = lobjSearchResponse.SearchResponse.hotels.hotel[0].basicinfo.hotelname.ToString();
                     lblHotelPhone.Text = lobjSearchResponse.SearchResponse.hotels.hotel[0].basicinfo.communicationinfo.phone.ToString();
                     lblHotelFax.Text = lobjSearchResponse.SearchResponse.hotels.hotel[0].basicinfo.communicationinfo.fax.ToString();
@@ -79,18 +80,19 @@ public partial class HotelVoucherPrint : System.Web.UI.Page
                         {
                             if (i.Equals(0))
                             {
-                                lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, " Points: ", lobjModel.FloatToThousandSeperated(lobjBookingResponse.BookingPaymentDetails.BookingPaymentBreakageList[i].Amount));
+                                lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, " Points: ", lobjModel.FloatToThousandSeperated(lobjHotelItineraryResponse.HotelSearchResponse.SearchResponse.hotels.hotel[0].roomrates.RoomRate[0].TotalPoints));
                             }
                             else
                             {
-                                lstrPaymentDetails += string.Format(lstrPaymentDetailsHTML, " Points: ", lobjModel.FloatToThousandSeperated(lobjBookingResponse.BookingPaymentDetails.BookingPaymentBreakageList[i].Amount));
+                             
+                                lstrPaymentDetails += string.Format(lstrPaymentDetailsHTML, " Points: ", lobjModel.FloatToThousandSeperated(lobjHotelItineraryResponse.HotelSearchResponse.SearchResponse.hotels.hotel[0].roomrates.RoomRate[0].TotalPoints));
                             }
                         }
                     }
                     if (lobjBookingResponse.BookingPaymentDetails.BookingPaymentBreakageList.Count == 0)
                     {
                         ABCModel verveModel = new ABCModel();
-                        lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, " Points: ", lobjModel.FloatToThousandSeperated(lobjBookingResponse.BookingPaymentDetails.Points));
+                        lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, " Points: ", lobjModel.FloatToThousandSeperated(lobjHotelItineraryResponse.HotelSearchResponse.SearchResponse.hotels.hotel[0].roomrates.RoomRate[0].TotalPoints));
                     }
                     divPaymentDetails.InnerHtml = lstrPaymentDetails;
                     divTotalMiles.InnerHtml = lstrPaymentDetails;

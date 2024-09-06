@@ -5,8 +5,8 @@
 
     <style>
         .dvRedemptionMenu,
-        .dvInnerBanner{
-            display:none;
+        .dvInnerBanner {
+            display: none;
         }
     </style>
 
@@ -150,31 +150,32 @@
                                         </div>
                                     </div>
 
-                                    <%--<div class="col-12 col-md-12 col-lg-4">
-             <label class="label">CV Membership No.<span class="text-danger">*</span></label>
-             <div class="dvInputGroup input-group mb-3">
-                 <input id="txtCVMembershipNo" type="text" class="form-control" placeholder="CV Membership No." onkeyup="ValidateBookingDetailsFields();" maxlength="9" autocomplete="off" required="required" />
-                 <div class="input-group-append">
-                     <span class="input-group-text bg-colour6"><i class="fa-solid fa-handshake"></i>
-                     </span>
-                 </div>
-             </div>
-         </div>--%>
+
                                     <div class="col-12 col-md-12 col-lg-4 mb-3">
                                         <label class="label">Date of Birth<span class="text-danger">*</span></label>
                                         <div class="dvTxtDOBAdult dvInputGroup input-group">
-                                            <asp:TextBox ID="txtDOB" class="form-control icnDate" runat="server" AutoComplete="off" placeholder="Enter Date" ReadOnly="true"></asp:TextBox>
+                                            <%--<asp:TextBox ID="" class="form-control icnDate" runat="server" AutoComplete="off" placeholder="Enter Date" ReadOnly="true"></asp:TextBox>--%>
+                                            <input
+                                                type="text"
+                                                class="form-control border-right-0"
+                                                id="txtDOB"
+                                                onkeyup="ValidateBookingDetailsFields();"                                                
+                                                autocomplete="off"
+                                                placeholder="Enter Date of Birth"
+                                                aria-describedby="inputGroupPrepend2"
+                                                required="required" />
+
                                             <div class="input-group-append">
                                                 <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                             </div>
                                         </div>
-                                        <asp:RequiredFieldValidator ID="rfvAdultDOB" runat="server" ControlToValidate="txtDOB"
+                                       <%-- <asp:RequiredFieldValidator ID="rfvAdultDOB" runat="server" ControlToValidate="txtDOB"
                                             Display="Dynamic" data-i18n="flightpassenger-error-enter-date" ErrorMessage="Enter Date of Birth" ValidationGroup="WebValidation"
                                             CssClass="rptErrorMassage h7 heading-regular text-danger"></asp:RequiredFieldValidator>
                                         <asp:CustomValidator ID="CustomValidatorAdultDOB" runat="server" ErrorMessage="Adults (12+ yrs)"
                                             Display="Dynamic" ValidationGroup="WebValidation" OnServerValidate="IssueAdultDateValidator"
                                             ControlToValidate="txtDOB" CssClass="rptErrorMassage h7 heading-regular text-danger">
-                                        </asp:CustomValidator>
+                                        </asp:CustomValidator>--%>
 
                                     </div>
                                     <div class="col-12 col-md-12 col-lg-4" id="divNationality" runat="server">
@@ -269,45 +270,45 @@
             </div>
         </div>
     </div>
-   <script>
-       $(document).ready(function () {
-           $("#<%=txtDOB.ClientID%>").click(function () {
-                $("#<%=txtDOB.ClientID%>").datepicker('show');
+    <script>
+        $(document).ready(function () {
+            $("#txtDOB").click(function () {
+               $("#txtDOB").datepicker('show');
+           });
+           $(".dvTxtDOBAdult .input-group-append .input-group-text").on("click", function () {
+               $("#txtDOB").datepicker("show");
             });
-            $(".dvTxtDOBAdult .input-group-append .input-group-text").on("click", function () {
-                $("#<%=txtDOB.ClientID%>").datepicker("show");
-            });
-            $("#<%=txtDOB.ClientID%>").datepicker({
-                numberOfMonths: 1,
-                changeMonth: true,
-                changeYear: true,
-                //showButtonPanel: true,
-                yearRange: "-90:-0",
-                dateFormat: 'dd/mm/yy',
-                maxDate: new Date,
-                onSelect: function (dateText, inst) {
-                    $("#<%=txtDOB.ClientID%>").text("");
-                    $("#<%=txtDOB.ClientID%>").text(dateText);
-                    $("#<%=txtDOB.ClientID%>").val(dateText.toString());
+           $("#txtDOB").datepicker({
+               numberOfMonths: 1,
+               changeMonth: true,
+               changeYear: true,
+               //showButtonPanel: true,
+               yearRange: "-90:-0",
+               dateFormat: 'dd/mm/yy',
+               maxDate: new Date,
+               onSelect: function (dateText, inst) {
+                   $("#txtDOB").text("");
+                    $("#txtDOB").text(dateText);
+                    $("#txtDOB").val(dateText.toString());
                     return false;
                 }
             });
-            var uuid = getQuerystring("uuid");
-            if (uuid != null && uuid != "") {
-                var adultCount = getQuerystring("adultCount");
-                var childrenCount = getQuerystring("childrenCount");
-                var seniorsCount = getQuerystring("seniorsCount");
-                var ptuuid = getQuerystring("ptuuid");
-                var puuid = getQuerystring("puuid");
-                var date = getQuerystring("selectedDate");
-                var selectedDate = decodeURIComponent(date);
-                var timeslotuuid = getQuerystring("timeslotuuid");
-                GetPaymentDetails(adultCount, childrenCount, seniorsCount, ptuuid, puuid, selectedDate, timeslotuuid);
-            }
-            else {
-                window.location = "ExperienceProductList.aspx";
-            }
-        });
+           var uuid = getQuerystring("uuid");
+           if (uuid != null && uuid != "") {
+               var adultCount = getQuerystring("adultCount");
+               var childrenCount = getQuerystring("childrenCount");
+               var seniorsCount = getQuerystring("seniorsCount");
+               var ptuuid = getQuerystring("ptuuid");
+               var puuid = getQuerystring("puuid");
+               var date = getQuerystring("selectedDate");
+               var selectedDate = decodeURIComponent(date);
+               var timeslotuuid = getQuerystring("timeslotuuid");
+               GetPaymentDetails(adultCount, childrenCount, seniorsCount, ptuuid, puuid, selectedDate, timeslotuuid);
+           }
+           else {
+               window.location = "ExperienceProductList.aspx";
+           }
+       });
 
         function getQuerystring(key, default_) {
             if (default_ == null) default_ = "";
@@ -1031,7 +1032,7 @@
             var lastName = $.trim($('#txtLastName').val());
             var emailId = $.trim($('#txtEmailId').val());
             var contactNumber = $.trim($('#txtContactNumber').val());
-            var dob = $.trim($("#CP_txtDOB").val());
+            var dob = $.trim($("#txtDOB").val());
             // var cvMembershipNo = $.trim($('#txtCVMembershipNo').val());
             if (salutation == '') {
                 isValidated = false;
@@ -1083,8 +1084,8 @@
             }
             if (dob == "") {
                 isValidated = false;
-                $('#CP_txtDOB').closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
-            } 
+                $('#txtDOB').closest("div").after('<span class="error h8 heading-regular text-danger">Enter Date of Birth</span>');
+            }
             //if (cvMembershipNo.length == 0) {
             //    isValidated = false;
             //    $('#txtCVMembershipNo').closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
@@ -1388,38 +1389,38 @@
             arrData.pobjbookingRequest = lobjbookingrequest;
             arrData.titleName = decodeURIComponent(titleName);
             arrData.Address = $("#CP_drpNationality").val();
-            arrData.DOB = $("#<%=txtDOB.ClientID%>").val();
-           $.ajax({
-               type: 'POST',
-               url: 'ExperienceProductBookingDetails.aspx/ProcessPayment',
-               contentType: 'application/json;',
-               dataType: 'json',
-               data: JSON.stringify(arrData),
-               cache: false,
-               success: function (rtnData) {
-                   if (rtnData.d != "" && rtnData.d != null) {
-                       if (rtnData.d == "ErrorPage.aspx") {
-                           window.location.href = "ErrorPage.aspx";
-                       }
-                       else if (rtnData.d == "SESSION_TIME_OUT") {
-                           var pop = document.getElementById("alertmessage");
-                           pop.innerHTML = "Your session time out. Please login again.";
-                           $('#alertModal').modal('show');
-                       }
-                       else {
-                           window.location.href = rtnData.d;
-                       }
-                   }
-               },
-               error: function (errmsg) {
-                   console.log(errmsg.text);
-                   window.location.href = "ErrorPage.aspx";
-               },
-               beforeSend: function () {
-                   $("#updProgress").show();
-               }
-           });
-       }
-   </script>
+            arrData.DOB = $("#txtDOB").val();
+            $.ajax({
+                type: 'POST',
+                url: 'ExperienceProductBookingDetails.aspx/ProcessPayment',
+                contentType: 'application/json;',
+                dataType: 'json',
+                data: JSON.stringify(arrData),
+                cache: false,
+                success: function (rtnData) {
+                    if (rtnData.d != "" && rtnData.d != null) {
+                        if (rtnData.d == "ErrorPage.aspx") {
+                            window.location.href = "ErrorPage.aspx";
+                        }
+                        else if (rtnData.d == "SESSION_TIME_OUT") {
+                            var pop = document.getElementById("alertmessage");
+                            pop.innerHTML = "Your session time out. Please login again.";
+                            $('#alertModal').modal('show');
+                        }
+                        else {
+                            window.location.href = rtnData.d;
+                        }
+                    }
+                },
+                error: function (errmsg) {
+                    console.log(errmsg.text);
+                    window.location.href = "ErrorPage.aspx";
+                },
+                beforeSend: function () {
+                    $("#updProgress").show();
+                }
+            });
+        }
+    </script>
 </asp:Content>
 

@@ -197,6 +197,7 @@ public partial class ManageBooking : Page
                 HttpContext.Current.Session["HotelBooked"] = lobjHotelItineraryResponse.HotelSearchResponse;
                 HttpContext.Current.Session["CustomerDetails"] = lobjHotelItineraryResponse.Customer;
                 HttpContext.Current.Session["BookingResponse"] = lobjHotelItineraryResponse.HotelBookingResponse;
+                HttpContext.Current.Session["ItenaryDetailsResponse"] = lobjHotelItineraryResponse;
 
             }
             lobjModel.LogActivity(string.Format("ShowHotelVoucher; MemberId-:{0} TransactionReferenceCode-:{1}", lobjMemberDetails.MemberRelationsList[0].RelationReference, TransactionReferenceCode), ActivityType.HotelSearch);
