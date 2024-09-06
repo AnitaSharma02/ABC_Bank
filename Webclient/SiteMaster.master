@@ -263,16 +263,16 @@
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="StatementSummary.aspx" id="navbarDropdown" data-i18n="navigation-my-account">My Account</a>
                             </li>
                             <li class="nav-item d-flex align-items-center name-border ml-lg-auto pt-2 pt-lg-0">
-                                <div class="d-flex d-lg-block">
+                                <div class="d-flex">
                                     <div class="dvUserIcon text-colour7 text-center">
                                         <i class="d-none d-lg-inline-block fa-xl fa-regular fa-user"></i>
                                         <i class="d-inline d-lg-none fa-regular fa-user"></i>
                                     </div>
-                                    <div class="dvName col-auto px-lg-0">
+                                    <div class="dvName col-auto">
                                         <div id="liwelcome" runat="server" visible="true">
-                                            <div class="dvNameDiv d-flex align-items-center justify-content-center heading-semibold text-colour7 text-uppercase">
+                                            <div class="dvNameDiv d-flex align-items-center justify-content-center h7 heading-semibold text-colour7 text-uppercase">
                                                 <asp:Label runat="server" CssClass="" ID="lblMemberName">
-                                                    <span id="txtWelcome" class="" runat="server"></span>
+                                                    <span id="txtWelcome" runat="server"></span>
                                                     <span data-i18n="text-guest">Guest</span>
                                                 </asp:Label>
                                             </div>
