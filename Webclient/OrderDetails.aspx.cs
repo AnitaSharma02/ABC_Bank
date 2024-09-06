@@ -16,6 +16,9 @@ using System.Web.UI.WebControls;
 using ABC.Model;
 using Zen.Barcode;
 using GiftCardDetails = Giift.ShopGateway.Client.Entities.GiftCardDetails;
+using QRCoder;
+using CB.IBE.Platform.Car.Entities;
+using System.Drawing.Imaging;
 //using GiiftOfferDetails = Giift.ShopGateway.Client.Entities.Offerdetails;
 //using GiiftboxOffers = GiiftShopGateway.Model.Root;
 public partial class OrderDetails : Page
@@ -48,7 +51,7 @@ public partial class OrderDetails : Page
                                 {
                                     sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");
                                     sb.Append("<div class=\"col-6 col-md-auto mb-3 mt-md-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3\"><span class=\"d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30 mr-sm-2\">2</span><span class=\"h6 heading-regular\">Delivered</span></div></div>");
-                                    dvDeliveryTrack.InnerHtml=sb.ToString();
+                                    dvDeliveryTrack.InnerHtml = sb.ToString();
                                     //divOrderConfirmed.Attributes.Add("class", "d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active");
                                     //divOrderPicked.Visible = false;
                                     //divOtw.Visible = false;
@@ -82,11 +85,11 @@ public partial class OrderDetails : Page
                                      + "<div class=\"col-6 col-md-3 text-right\"><p class=\"\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.ShippingPrice.Amount), "Points") + "</p></div></div></div>"
                                      + "<div class=\"col-12\"><div class=\"row my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"h6 heading-bold text-colour7\">Total</p></div>"
                                      + "<div class=\"col-6 col-md-3 text-right\"><p class=\"h6 heading-bold text-colour7\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.Total.Amount), "Points") + "</p></div></div></div></div>";
-                                     if (lobjCustomerOrder.Status != "Cancelled")
+                                    if (lobjCustomerOrder.Status != "Cancelled")
                                     {
                                         lstrHtmlContent += "<div class=\"row align-items-lg-center justify-content-end\"><div class=\"col-12 mt-2 mt-lg-3 mt-lg-0 col-lg-auto text-left text-sm-right\"><button type=\"button\" class=\"btn btn-one\" data-toggle=\"modal\" data-target=\"#dvOrderDetailsModal\" onclick=\"ViewDetails();\">View Details</button></div></div>";
                                     }
-                                    
+
                                     lstrHtmlContent += "</div>";
                                     divOrderDetails.InnerHtml = lstrHtmlContent;
                                     string lstrDigitalProductType = lobjProduct.Properties.ToList().Find(lobj => lobj.Name.Equals("Type")).Value;
@@ -101,7 +104,7 @@ public partial class OrderDetails : Page
                                                 List<string> lstrEmailParameters = new List<string>();
                                                 lstrEmailParameters.Add(lobjProduct.PrimaryImage.Url);
                                                 string lstrHtml = string.Empty;
-                                                
+
                                                 for (int i = 0; i < giftCardDetails.GiftCardInfo.Count; i++)
                                                 {
                                                     string ImageUrl = string.Empty;
@@ -207,7 +210,6 @@ public partial class OrderDetails : Page
                                                 List<string> lstrEmailParameters = new List<string>();
                                                 lstrEmailParameters.Add(lobjProduct.PrimaryImage.Url);
 
-
                                                 string lstrHtml = string.Empty;
                                                 lstrHtml += "<div class=\"row\">";
 
@@ -230,9 +232,47 @@ public partial class OrderDetails : Page
                                                     lstrHtml += "</div></div>";
                                                     //lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><strong style=\"color:#fff;\">Expiry Date</strong></p></td>";
                                                 }
-
+                                                lstrHtml += "<div class=\"col-12 col-sm-6 pr-sm-0\">";
+                                                lstrHtml += "<div class=\"bg-colour6 p-3\">";
+                                                lstrHtml += "<h2 class=\"h6 heading-semibold text-colour7\">Lounge Name</h2>";
+                                                lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + lobjProduct.Name + "</h2>";
+                                                lstrHtml += "</div></div>";
                                                 lstrHtml += "</div>";
-
+                                                if (!string.IsNullOrEmpty(giftCardDetails.LoungeInfo.Code))
+                                                {
+                                                    QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                                                    QRCodeData qrCodeData = qrGenerator.CreateQrCode(giftCardDetails.LoungeInfo.Code, QRCodeGenerator.ECCLevel.Q);
+                                                    QRCode qrCode = new QRCode(qrCodeData);
+                                                    Bitmap qrCodeImage = qrCode.GetGraphic(20);
+                                                    //HttpContext.Current.Server.MapPath("~/Barcodes/")
+                                                    string folderPath = AppDomain.CurrentDomain.BaseDirectory+ "QRCode";
+                                                    // Create the folder if it doesn't exist
+                                                    if (!Directory.Exists(folderPath))
+                                                    {
+                                                        Directory.CreateDirectory(folderPath);
+                                                    }
+                                                    string fileName = Path.Combine(folderPath, giftCardDetails.LoungeInfo.Code + ".png");
+                                                    //qrCodeImage.Save(fileName, ImageFormat.Png);
+                                                   
+                                                    if (!File.Exists(fileName))
+                                                    {
+                                                        try
+                                                        {
+                                                            qrCodeImage.Save(fileName, System.Drawing.Imaging.ImageFormat.Png);
+                                                        }
+                                                        catch (Exception ex)
+                                                        {
+                                                            LoggingAdapter.WriteLog("Error GiftCards Barcode" + ex.Message + Environment.NewLine + ex.StackTrace);
+                                                        }
+                                                    }
+                                                    // string ImageUrl = Convert.ToString(ConfigurationManager.AppSettings["GCBarcodeUrl"]) + giftCardDetails.LoungeInfo.Code + ".png";
+                                                    lstrHtml += "<div class=\"col-12 col-sm-6 pr-sm-0\">";
+                                                    lstrHtml += "<div class=\"bg-colour6 p-3\">";
+                                                    lstrHtml += "<h2 class=\"h6 heading-semibold text-colour7\">QR Code</h2>";
+                                                    lstrHtml += "<p class=\"h6 heading-regular text-colour7\"><img class=\"img-fluid barcode-img\" src=\"" + fileName + "\"/></p>";
+                                                    lstrHtml += "</div></div>";
+                                                    lstrHtml += "</div>";
+                                                }
                                                 LoggingAdapter.WriteLog("View Details html -:" + lstrHtml);
 
                                                 hdfViewdetailsInfo.Value = lstrHtml;
@@ -403,7 +443,7 @@ public partial class OrderDetails : Page
                                 + "<div class=\"row align-items-lg-center justify-content-between\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"h6 heading-semibold\">Total</p></div><div class=\"col-6 col-md-3 text-right\"><p class=\"h6 heading-semibold\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Price.Total.Amount), "Points") + "</p></div></div>";
                                 lstrHtmlContent += "</div>";
                                 divOrderDetails.InnerHtml = lstrHtmlContent;
-                                StringBuilder sb=new StringBuilder();
+                                StringBuilder sb = new StringBuilder();
                                 if (lobjCustomerOrder.Shipments[0].Status == "ReadyToSend")
                                 {
                                     sb.Append("<div class=\"dvLine border d-none d-md-block px-3\"></div><div class=\"col-6 col-md-auto mb-3 mt-3 my-3\"><div class=\"d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3 active\"><span class=\"d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30 mr-sm-2\">1</span><span class=\"h6 heading-regular\">Order Confirmed</span></div></div>");

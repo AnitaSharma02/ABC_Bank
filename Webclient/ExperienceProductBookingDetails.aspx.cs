@@ -509,7 +509,10 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
 
                             string FullName = bookingRequest.customer.firstName + " " + bookingRequest.customer.lastName;
                             //  Status = lobjModel.SendOTPEmailAndSMS(bookingRequest.customer.email, bookingRequest.customer.phone, bookingRequest.memberId.ToString(), FullName, "redemption_otp", lobjOTPDetails, "Experiences");
-                            Status = lobjModel.GenerateReviewnConfirmOTP(lobjOTPDetails, bookingRequest.customer.email, bookingRequest.memberId.ToString(), lobjProgramDefinition.ProgramId, FullName, bookingRequest.customer.phone);
+                            
+                            Status = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "redemption_otp", lobjOTPDetails, "Experience");
+
+                            //Status = lobjModel.GenerateReviewnConfirmOTP(lobjOTPDetails, bookingRequest.customer.email, bookingRequest.memberId.ToString(), lobjProgramDefinition.ProgramId, FullName, bookingRequest.customer.phone);
                             if (Status)
                             {
                                 lobjModel.LogActivity(string.Format(ActivityConstants.ReviewConfirmOTP, "Package", lobjRedemptionDetails.RelationReference, "Success"), ActivityType.ReviewConfirmOTPSuccess);
