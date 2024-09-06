@@ -2390,7 +2390,12 @@ select.form-control:focus {
 }
 /*=========[ HOTEL PRODUCT CARD ]=========*/
 
+/*=========[ NAV USERNAME ]=========*/
 
+.name-border {
+    border-top: 1px solid var(--border-top-colour);
+}
+/*=========[ NAV USERNAME ]=========*/
 
 /*=========[ MEDIA QUERIES ]=========*/
 @media (min-width: 576px) {
@@ -2528,6 +2533,10 @@ select.form-control:focus {
 
     .heading4 {
         font-size: var(--heading4-font-size-desktop);
+    }
+
+    .name-border {
+        border-top: none;
     }
 }
 

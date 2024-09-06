@@ -20,7 +20,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
                 dvPoints.Visible = true;
                 HeaderTot.Visible = true;              
                 totAvbPointDiv.Visible = true;
-                lblMemberName.Text = "<span data-i18n='navigation-welcome'>" + "Welcome, " + "</span>" + "<span class='uName'>" + lobjMemberDetails.FullName + "</span>";
+                lblMemberName.Text = "<span>" + lobjMemberDetails.FullName + "</span>";
                 if (!string.IsNullOrEmpty(Convert.ToString(HttpContext.Current.Session["FromSSOLogin"]))
                     && Convert.ToString(HttpContext.Current.Session["FromSSOLogin"]) == "1")
                 {
