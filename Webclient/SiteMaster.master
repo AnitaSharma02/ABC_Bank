@@ -268,7 +268,7 @@
                                         <i class="d-none d-lg-inline-block fa-xl fa-regular fa-user"></i>
                                         <i class="d-inline d-lg-none fa-regular fa-user"></i>
                                     </div>
-                                    <div class="dvName col-auto">
+                                    <div class="dvName align-content-around col-auto pl-1">
                                         <div id="liwelcome" runat="server" visible="true">
                                             <div class="dvNameDiv d-flex align-items-center justify-content-center h7 heading-semibold text-colour7 text-uppercase">
                                                 <asp:Label runat="server" CssClass="" ID="lblMemberName">

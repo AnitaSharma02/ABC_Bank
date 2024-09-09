@@ -29,6 +29,11 @@
     color: var(--colour6);
     font-weight: bold;
 }
+
+.dvExperienceProductStatus .dvDeliveryTrack {
+    display: none;
+}
+
 /*=========[ DELIVERY TRACK FOR EXPERIENCEPRODUCTBOOKINGDETAILS & EXPERIENCEPRODUCTSTATUS PAGE ]=========*/
 
 

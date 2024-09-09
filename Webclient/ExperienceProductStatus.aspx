@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="\Css/experience.css" />
     <div class="dvExperienceProductStatus mb-0 mb-md-2">
         <div class="container-xl">
-            <div class="row">
+            <div class="row dvDeliveryTrack">
                 <div class="col-12">
-                    <div class="row dvDeliveryTrack">
+                    <div class="row">
                         <div class="col-4 mb-lg-3">
                             <div class="dvLine border d-none d-md-block px-3"></div>
                             <div class="row justify-content-md-center">
