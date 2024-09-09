@@ -36,6 +36,17 @@
 
 /*=========[ DELIVERY TRACK FOR EXPERIENCEPRODUCTBOOKINGDETAILS & EXPERIENCEPRODUCTSTATUS PAGE ]=========*/
 
+/*=========[ EXPERIENCEBOOKINGDETAILS PAGE ]=========*/
+
+.dvExperienceBookingDetails .dvBookingDetails {
+    background-color: var(--colour5);
+    padding: 12px;
+}
+.dvExperienceBookingDetails .dvBookingDetails p {
+    color: var(--colour1);
+}
+
+/*=========[ EXPERIENCEBOOKINGDETAILS PAGE ]=========*/
 
 /*=========[ REMOVE NOT-ALLOWED ICON ]=========*/
 .dvExperienceProductBookingDetails .dvInput.input-group .form-control[readonly],
