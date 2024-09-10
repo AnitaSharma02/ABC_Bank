@@ -1,7 +1,9 @@
-﻿using Framework.EnterpriseLibrary.Adapters;
+﻿using ABC.Model;
+using Framework.EnterpriseLibrary.Adapters;
 using Giift.ShopGateway.Client.Entities;
 using GiiftShopGateway.Model;
 using Newtonsoft.Json;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,12 +15,8 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ABC.Model;
 using Zen.Barcode;
 using GiftCardDetails = Giift.ShopGateway.Client.Entities.GiftCardDetails;
-using QRCoder;
-using CB.IBE.Platform.Car.Entities;
-using System.Drawing.Imaging;
 //using GiiftOfferDetails = Giift.ShopGateway.Client.Entities.Offerdetails;
 //using GiiftboxOffers = GiiftShopGateway.Model.Root;
 public partial class OrderDetails : Page
@@ -244,9 +242,9 @@ public partial class OrderDetails : Page
                                                     QRCodeData qrCodeData = qrGenerator.CreateQrCode(giftCardDetails.LoungeInfo.Code, QRCodeGenerator.ECCLevel.Q);
                                                     QRCode qrCode = new QRCode(qrCodeData);
                                                     Bitmap qrCodeImage = qrCode.GetGraphic(20);
-                                                    //HttpContext.Current.Server.MapPath("~/Barcodes/")
-                                                    string folderPath = AppDomain.CurrentDomain.BaseDirectory+ "QRCode";
-                                                    // Create the folder if it doesn't exist
+                                                    //HttpContext.Current.Server.MapPath("~/Barcodes/")Application.StartupPath + @"\container.JPG"
+                                                    string folderPath = AppDomain.CurrentDomain.BaseDirectory + "QRCode";// HttpContext.Current.Server.MapPath("~/QRCode/") ;
+                                                    
                                                     if (!Directory.Exists(folderPath))
                                                     {
                                                         Directory.CreateDirectory(folderPath);
@@ -265,11 +263,11 @@ public partial class OrderDetails : Page
                                                             LoggingAdapter.WriteLog("Error GiftCards Barcode" + ex.Message + Environment.NewLine + ex.StackTrace);
                                                         }
                                                     }
-                                                    // string ImageUrl = Convert.ToString(ConfigurationManager.AppSettings["GCBarcodeUrl"]) + giftCardDetails.LoungeInfo.Code + ".png";
+                                                    string ImageUrl = "QRCode//" + giftCardDetails.LoungeInfo.Code + ".png";
                                                     lstrHtml += "<div class=\"col-12 col-sm-6 pr-sm-0\">";
                                                     lstrHtml += "<div class=\"bg-colour6 p-3\">";
                                                     lstrHtml += "<h2 class=\"h6 heading-semibold text-colour7\">QR Code</h2>";
-                                                    lstrHtml += "<p class=\"h6 heading-regular text-colour7\"><img class=\"img-fluid barcode-img\" src=\"" + fileName + "\"/></p>";
+                                                    lstrHtml += "<p class=\"h6 heading-regular text-colour7\"><img class=\"img-fluid barcode-img\" src=\"" + ImageUrl + "\"/></p>";
                                                     lstrHtml += "</div></div>";
                                                     lstrHtml += "</div>";
                                                 }

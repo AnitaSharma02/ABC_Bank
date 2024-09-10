@@ -159,7 +159,7 @@
                                                 type="text"
                                                 class="form-control border-right-0"
                                                 id="txtDOB"
-                                                onkeyup="ValidateBookingDetailsFields();"                                                
+                                                onkeyup="ValidateBookingDetailsFields();"
                                                 autocomplete="off"
                                                 placeholder="Enter Date of Birth"
                                                 aria-describedby="inputGroupPrepend2"
@@ -169,14 +169,13 @@
                                                 <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
                                             </div>
                                         </div>
-                                       <%-- <asp:RequiredFieldValidator ID="rfvAdultDOB" runat="server" ControlToValidate="txtDOB"
+                                        <%-- <asp:RequiredFieldValidator ID="rfvAdultDOB" runat="server" ControlToValidate="txtDOB"
                                             Display="Dynamic" data-i18n="flightpassenger-error-enter-date" ErrorMessage="Enter Date of Birth" ValidationGroup="WebValidation"
                                             CssClass="rptErrorMassage h7 heading-regular text-danger"></asp:RequiredFieldValidator>
                                         <asp:CustomValidator ID="CustomValidatorAdultDOB" runat="server" ErrorMessage="Adults (12+ yrs)"
                                             Display="Dynamic" ValidationGroup="WebValidation" OnServerValidate="IssueAdultDateValidator"
                                             ControlToValidate="txtDOB" CssClass="rptErrorMassage h7 heading-regular text-danger">
                                         </asp:CustomValidator>--%>
-
                                     </div>
                                     <div class="col-12 col-md-12 col-lg-4" id="divNationality" runat="server">
                                         <label class="label">Nationality<span class="text-danger">*</span></label>
@@ -205,9 +204,9 @@
                             <div class="border-bottom"></div>
                             <div class="col-12 border bg-colour6 p-3 mt-3">
                                 <div class="row">
-                                    <div class="cancelBox col-12 col-lg-6">
-                                        <p class="heading6">Cancellation Policy:</p>
-                                        <p class="h7">Cancellations are non refundable.</p>
+                                    <div class="cancelBox col-12 col-lg-6" id="cancelBox">
+                                        <p class="heading-semibold h6 pb-2"  id="CancellationBox">Cancellation Policy:</p>
+                                        <p class="heading-light" id="cancellationPolicy"></p>
                                     </div>
                                     <div class="col-12 col-lg-6 mt-lg-0 mt-3">
                                         <div class="dvLabel mb-3">
@@ -273,42 +272,42 @@
     <script>
         $(document).ready(function () {
             $("#txtDOB").click(function () {
-               $("#txtDOB").datepicker('show');
-           });
-           $(".dvTxtDOBAdult .input-group-append .input-group-text").on("click", function () {
-               $("#txtDOB").datepicker("show");
+                $("#txtDOB").datepicker('show');
             });
-           $("#txtDOB").datepicker({
-               numberOfMonths: 1,
-               changeMonth: true,
-               changeYear: true,
-               //showButtonPanel: true,
-               yearRange: "-90:-0",
-               dateFormat: 'dd/mm/yy',
-               maxDate: new Date,
-               onSelect: function (dateText, inst) {
-                   $("#txtDOB").text("");
+            $(".dvTxtDOBAdult .input-group-append .input-group-text").on("click", function () {
+                $("#txtDOB").datepicker("show");
+            });
+            $("#txtDOB").datepicker({
+                numberOfMonths: 1,
+                changeMonth: true,
+                changeYear: true,
+                //showButtonPanel: true,
+                yearRange: "-90:-0",
+                dateFormat: 'dd/mm/yy',
+                maxDate: new Date,
+                onSelect: function (dateText, inst) {
+                    $("#txtDOB").text("");
                     $("#txtDOB").text(dateText);
                     $("#txtDOB").val(dateText.toString());
                     return false;
                 }
             });
-           var uuid = getQuerystring("uuid");
-           if (uuid != null && uuid != "") {
-               var adultCount = getQuerystring("adultCount");
-               var childrenCount = getQuerystring("childrenCount");
-               var seniorsCount = getQuerystring("seniorsCount");
-               var ptuuid = getQuerystring("ptuuid");
-               var puuid = getQuerystring("puuid");
-               var date = getQuerystring("selectedDate");
-               var selectedDate = decodeURIComponent(date);
-               var timeslotuuid = getQuerystring("timeslotuuid");
-               GetPaymentDetails(adultCount, childrenCount, seniorsCount, ptuuid, puuid, selectedDate, timeslotuuid);
-           }
-           else {
-               window.location = "ExperienceProductList.aspx";
-           }
-       });
+            var uuid = getQuerystring("uuid");
+            if (uuid != null && uuid != "") {
+                var adultCount = getQuerystring("adultCount");
+                var childrenCount = getQuerystring("childrenCount");
+                var seniorsCount = getQuerystring("seniorsCount");
+                var ptuuid = getQuerystring("ptuuid");
+                var puuid = getQuerystring("puuid");
+                var date = getQuerystring("selectedDate");
+                var selectedDate = decodeURIComponent(date);
+                var timeslotuuid = getQuerystring("timeslotuuid");
+                GetPaymentDetails(adultCount, childrenCount, seniorsCount, ptuuid, puuid, selectedDate, timeslotuuid);
+            }
+            else {
+                window.location = "ExperienceProductList.aspx";
+            }
+        });
 
         function getQuerystring(key, default_) {
             if (default_ == null) default_ = "";
@@ -886,7 +885,7 @@
                             $("#divPickupInformation").empty().append(html);
                         }
                         html = "";
-                        if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.cancellationPolicySummary != null ||
+                        if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.cancellationPolicySummary != null &&
                             data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.cancellationPolicySummary != "") {
                             $("#cancelBox").show();
                             html += data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.cancellationPolicySummary;
