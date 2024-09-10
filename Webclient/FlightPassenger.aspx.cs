@@ -258,7 +258,7 @@ public partial class FlightPassenger : System.Web.UI.Page
                         }
 
                         lobjADTPassengerDetails.EmailId = txtEmailID.Text;
-                        lobjADTPassengerDetails.MobileNo = txtTelephone.Text;
+                        lobjADTPassengerDetails.TelephoneNo = txtTelephone.Text;
                         lobjADTPassengerDetails.DOB = Convert.ToDateTime(lobjIBEAPIModel.StringToDateTime(txtDOB.Text));
                         lobjADTPassengerDetails.PaxType = "ADT";
                         lobjADTPassengerDetails.Age = CalculateAge(lobjIBEAPIModel.StringToDateTime(txtDOB.Text));
@@ -266,7 +266,7 @@ public partial class FlightPassenger : System.Web.UI.Page
                         lobjADTPassengerDetails.Gender = ddlTitle.SelectedItem.Value.ToString();
                         lobjADTPassengerDetails.Country = ddlNationality.SelectedItem.Text.ToString();
                         lobjADTPassengerDetails.CountryCode = ddlNationality.SelectedValue;
-
+                        lobjADTPassengerDetails.MobileNo = txtTelephone.Text;
                         lobjADTPassengerDetails.Address = ddlNationality.SelectedValue;
                         lobjADTPassengerDetails.CityName = ddlNationality.SelectedValue;
 
