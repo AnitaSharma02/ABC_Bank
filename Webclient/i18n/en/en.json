@@ -149,6 +149,7 @@
   "flightpassenger-enter-validemail": "Please enter Valid Email ID",
   "flightpassenger-error-correct-passport": "Please enter correct passport no. (no blank space and spacial character).",
   "flightpassenger-error-emailid": "Enter E-mail Id",
+  "flightpassenger-error-correct-passportLength": "Minimum 6 characters required for Passport Number",
   "flightpassenger-error-enter-adults": "Adults (12+ yrs)",
   "flightpassenger-error-enter-correctfirstname": "Please enter correct first name (no @, dot, - ,#, $, %, &, * and +)",
   "flightpassenger-error-enter-correctlastname": "Please enter correct last name (no @, dot, - ,#, $, %, &, * and +)",

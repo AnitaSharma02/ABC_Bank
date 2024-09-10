@@ -135,13 +135,18 @@
     <div class="col-md-6 mb-3">
         <label class="label" data-i18n="flightpassenger-passport">Passport Number</label>
         <div class="dvInput input-group">
-            <asp:TextBox ID="txtPassportNo" class="form-control" runat="server" AutoComplete="off"></asp:TextBox>
+            <asp:TextBox ID="txtPassportNo" MaxLength="15" class="form-control" runat="server" AutoComplete="off"></asp:TextBox>
         </div>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtPassportNo" Display="Dynamic"
             data-i18n="flightpassenger-error-passport" ErrorMessage="Enter Passport Number" ValidationGroup="WebValidation" CssClass="rptErrorMassage danger"></asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPassportNo"
             Display="Dynamic" ValidationGroup="WebValidation" CssClass="rptErrorMassage danger"
             ValidationExpression="^[a-zA-Z0-9]*$" ErrorMessage="Please Enter correct passport no. (no blank space)." data-i18n="flightpassenger-error-correct-passport"></asp:RegularExpressionValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
+    runat="server"  ControlToValidate="txtPassportNo"  Display="Dynamic"
+    ValidationExpression="^.{6,}$" ValidationGroup="WebValidation" CssClass="rptErrorMassage danger"
+    ErrorMessage="Minimum 6 characters required." 
+    ForeColor="Red" data-i18n="flightpassenger-error-correct-passportLength"></asp:RegularExpressionValidator>
 
     </div>
     <div class="col-md-6 mb-3">

@@ -147,7 +147,11 @@
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPassportNo"
             Display="Dynamic" ValidationGroup="WebValidation" CssClass="rptErrorMassage danger"
             ValidationExpression="^[a-zA-Z0-9]*$" data-i18n="flightpassenger-error-correct-passport" ErrorMessage="Please Enter correct passport no. (no blank space)."></asp:RegularExpressionValidator>
-
+               <asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
+runat="server"  ControlToValidate="txtPassportNo"  Display="Dynamic" 
+ValidationExpression="^.{6,}$" ValidationGroup="WebValidation" CssClass="rptErrorMassage danger"
+ErrorMessage="Minimum 6 characters required." 
+ForeColor="Red" data-i18n="flightpassenger-error-correct-passportLength"></asp:RegularExpressionValidator>
     </div>
     <div class="col-md-6 mb-3">
         <label class="label" data-i18n="flightpassenger-email">E-Mail ID</label>
