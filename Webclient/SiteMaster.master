@@ -251,13 +251,13 @@
                     <div class="collapse navbar-collapse order-2 order-lg-1 col-lg-8 px-0 px-lg-3 mb-1 mb-lg-0 justify-content-between ml-lg-auto" id="navbarSupportedContent">
                         <ul class="navbar-nav align-items-lg-center w-100">
                             <li class="nav-item">
-                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" data-i18n="navigation-about-us" id="about" href="ComingSoon.aspx">About Us</a>
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" data-i18n="navigation-about-us" id="about" href="AboutUs.aspx">About Us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" data-i18n="navigation-earn" id="earn" href="ComingSoon.aspx">Earn</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="ComingSoon.aspx" id="redeem" data-i18n="navigation-redeem">Redeem</a>
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="Redeem.aspx" id="redeem" data-i18n="navigation-redeem">Redeem</a>
                             </li>
                             <li class="nav-item dropdown" runat="server" visible="true" id="limyaccount">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="StatementSummary.aspx" id="navbarDropdown" data-i18n="navigation-my-account">My Account</a>
@@ -339,13 +339,13 @@
                     <div class="row align-items-lg-center">
                         <div class="dvLinks col-lg-10 text-center text-lg-left mb-3 mb-lg-0 text-uppercase">
                             <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-earn">Earn</a>
-                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-redeem">Redeem</a>
-                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-about-us">About Us</a>
-                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-faqs">FAQs</a>
-                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-tnc">Terms &amp; Conditions</a>
-                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="bannertext-privacy">Privacy Policy</a>
-                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-booking-policy">Booking Policy</a>
-                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-disclaimer">Disclaimer</a>
+                            <a class="d-block d-md-inline-block py-1" href="Redeem.aspx" data-i18n="navigation-redeem">Redeem</a>
+                            <a class="d-block d-md-inline-block py-1" href="AboutUs.aspx" data-i18n="navigation-about-us">About Us</a>
+                            <a class="d-block d-md-inline-block py-1" href="FAQ.aspx" data-i18n="navigation-faqs">FAQs</a>
+                            <a class="d-block d-md-inline-block py-1" href="TermsAndConditions.aspx" data-i18n="navigation-tnc">Terms &amp; Conditions</a>
+                            <a class="d-block d-md-inline-block py-1" href="PrivacyPolicy.aspx" data-i18n="bannertext-privacy">Privacy Policy</a>
+                            <a class="d-block d-md-inline-block py-1" href="BookingPolicy.aspx" data-i18n="navigation-booking-policy">Booking Policy</a>
+                            <%--<a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-disclaimer">Disclaimer</a>--%>
                         </div>
                         <div class="dvSocialIcons col-lg-2 text-center text-lg-right mb-3 mb-md-0">
                             <a class="d-inline-block px-1" href="https://www.facebook.com/ABCbankingcorporation" target="_blank">

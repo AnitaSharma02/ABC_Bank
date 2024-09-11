@@ -146,8 +146,7 @@
        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
 runat="server"  ControlToValidate="txtPassportNo"  Display="Dynamic"
 ValidationExpression="^.{6,}$" ValidationGroup="WebValidation" CssClass="rptErrorMassage danger"
-ErrorMessage="Minimum 6 characters required." 
-ForeColor="Red" data-i18n="flightpassenger-error-correct-passportLength"></asp:RegularExpressionValidator>
+ErrorMessage="Minimum 6 characters required." data-i18n="flightpassenger-error-correct-passportLength"></asp:RegularExpressionValidator>
         </div>
     <div class="col-md-6 mb-3">
         <label class="label" data-i18n="flightpassenger-email">E-Mail ID</label>

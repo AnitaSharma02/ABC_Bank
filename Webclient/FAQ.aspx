@@ -2,13 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <style>
-    .dvHeroSlider,
-    .dvInnerBanner,
-    .dvRedemptionMenu,
-    #sitemap{
-        display: none;
-    }
-</style>
+        .dvHeroSlider,
+        .dvInnerBanner,
+        .dvRedemptionMenu,
+        #sitemap {
+            display: none;
+        }
+    </style>
     <div class="dvBreadcrumbs">
         <div class="container-xl">
             <nav>
@@ -29,13 +29,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="dvCommonAccordion accordion" id="static-accordion">
-                        <!-- GENERAL -->
+                        <!-- FLIGHTS -->
                         <div class="card mb-3">
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
                                     <button class="h6 btn btn-block text-left p-3 heading-semibold" type="button" data-toggle="collapse"
                                         data-target="#collapse1">
-                                        General FAQs
+                                        Flights
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
@@ -45,94 +45,39 @@
 
                             <div id="collapse1" class="collapse show" data-parent="#static-accordion">
                                 <div class="card-body">
-                                    <p class="heading-semibold text-colour7">What is NIC Express Reward?</p>
-                                    <p class="mb-3">NIC Express Reward is a comprehensive Loyalty Program from NIC Express Reward, that caters to all your travel & lifestyle needs. You can redeem your NPoints over 900 airlines, 450,000 hotels worldwide, car rentals in over 150 countries and a variety of products from leading brands available on NIC Express Reward Shop.</p>
+                                    <p class="heading-semibold text-colour7">How do I cancel a flight reservation?</p>
+                                    <p class="mb-3">For bookings made through Infinity Rewards, cancellations are allowed if the booking qualifies under refund policy, then points will be refunded back into your account. For any reasons not initiated by you, i.e. flights being grounded/canceled/or any other unforeseen circumstances wherein you are denied travel, applicable reward points will be refunded back into your rewards account within 45 working days.</p>
 
-                                    <p class="heading-semibold text-colour7">Who is NIC Express Reward offered to?</p>
-                                    <p class="mb-3">The NIC Express Reward Program is offered to (add type of customers). </p>
+                                    <p class="heading-semibold text-colour7">Can I book a multi-city trip?</p>
+                                    <p class="mb-3">Multi-city booking is not available. In order to book a multi-city travel, you will have to book individual sectors separately.</p>
 
-                                    <p class="heading-semibold text-colour7">How can I access and activate my membership on the NIC Express Reward website?</p>
-                                    <p class="mb-3">If you are a NIC Express Reward customer, you are automatically entitled to access the NIC Express Reward program. Simply, log on to (add website url) to activate your membership by using the following information.</p>
-                                    <ul>
-                                        <li class="mb-3 mx-3">NIC Express Reward Customer Identification number </li>
-                                        <li class="mb-3 mx-3">Your Email Address</li>
-                                        <li class="mb-3 mx-3">Your Mobile Number </li>
-                                    </ul>
-                                    <p class="mb-3">The above information should be identical to the bank records, as provided by you while opening your bank account. If your details do not match, NIC Express Reward will not allow you to access your account. To update your information with us call +977-1-5970101 or visit our nearest branch.</p>
-                                    <p class="mb-3">Upon registration a SMS & Email will be sent to you with your access password, which you can use to log into your account. </p>
+                                    <p class="heading-semibold text-colour7">Can I do an online check-in?</p>
+                                    <p class="mb-3">Online check-in is not always offered by every airline on its website. If the website does permit online check-in, you may do so by using your Airline Booking Reference number.</p>
 
-                                    <p class="heading-semibold text-colour7">How do I earn NIC Express Reward NPoints?</p>
-                                    <p class="mb-3">You can earn NIC Express Reward NPoints by (add program earning NPoints details). </p>
+                                    <p class="heading-semibold text-colour7">Can I enter my Frequent Flyer number at the time of booking?</p>
+                                    <p class="mb-3">Currently, we do not accept the Frequent Flyer number. You can provide your Frequent Flyer number at the airline counter at the time of check-in.</p>
 
-                                    <p class="heading-semibold text-colour7">How can I get Bonus or Accelerated NPoints?</p>
-                                    <p class="mb-3">You can get bonus or accelerated NIC Express Reward NPoints by (add program bonus NPoints details).</p>
+                                    <p class="heading-semibold text-colour7">I’ve booked my tickets but now need to add my child’s tickets to my booking. How do I proceed for this?</p>
+                                    <p class="mb-3">You would need to contact your airline directly to book tickets for your child.</p>
 
-                                    <p class="heading-semibold text-colour7">Is this a cash back program?</p>
-                                    <p class="mb-3">NIC Express Reward is not a cash back program. It rewards you for using (bank products / program specifics). </p>
+                                    <p class="heading-semibold text-colour7">I did not receive an e-mail confirmation. What do I do?</p>
+                                    <p class="mb-3">If you do not receive a confirmation e-mail from us, there is a possibility that an improper e-mail address was registered in our records, or your Internet Service Provider blocked the e-mail as a ‘spam’. In this case, we suggest you check your email and spam folder. You can also contact the bank’s Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>.</p>
 
-                                    <p class="heading-semibold text-colour7">How do I redeem NIC Express Reward NPoints?</p>
-                                    <p class="mb-3">By logging in to NIC Express Reward portal (add website url), you can redeem your NPoints for Free Flights, Free Hotel Stays, Free Car Rentals, Utility, Gift Cards and NPoints Exchange. </p>
-
-                                    <p class="heading-semibold text-colour7">How is NIC Express Reward different from any other 'airline NPoints' program?</p>
-                                    <p class="mb-3">NIC Express Reward is a Bank Rewards Program that caters to all your travel needs. You earn NPoints for transactions performed on participating NIC Express Reward products and you can then redeem your NPoints on more than 900 airlines and 450,000 major hotels worldwide. You can redeem rewards on booking your flight tickets online directly from more than 900 airlines around the world.</p>
-
-                                    <p class="heading-semibold text-colour7">How long is my NIC Express Reward Membership valid?</p>
-                                    <p class="mb-3">You can access the NIC Express Reward portal, as long as you (add the required qualification for the program). </p>
-
-                                    <p class="heading-semibold text-colour7">What is the validity of my NIC Express Reward NPoints?</p>
-                                    <p class="mb-3">Your NIC Express Reward NPoints are valid for (period). </p>
-
-                                    <p class="heading-semibold text-colour7">Can I use my NIC Express Reward online username and password to transact with NIC Express Reward Portal?</p>
-                                    <p class="mb-3">No, the NIC Express Reward portal (add website url) does not contain any information that you may have provided to NIC Express Reward online portal and NIC Express Reward portal (add website url) is an independent property managed by 3rd party Giift (entity name to be entered based on contract). </p>
-
-                                    <p class="heading-semibold text-colour7">What can I do with my accrued NPoints?</p>
-                                    <p class="mb-3">You can redeem your NPoints for Flights, Hotels, Car rentals, Utility, Gift Cards and NPoints Exchange on NIC Express Reward Portal (add website url). </p>
-
-                                    <p class="heading-semibold text-colour7">Do I need to register/log-in separately on NIC Express Reward website?</p>
-                                    <p class="mb-3">Yes, the registration/log-in process on NIC Express Reward website is independent of your access to NIC Express Reward 's online banking. Registration / log-in on NIC Express Reward Website is a simple process where you just need to have your NIC Express Reward membership number to be able to transact on (add website url). Registration with NIC Express Reward Website allows you to redeem your NIC Express Reward NPoints. </p>
-
-                                    <p class="heading-semibold text-colour7">Do I have to register online on (add website url) in order to use NIC Express Reward Portal for NPoints accrual, redemption, and cash transactions? </p>
-                                    <p class="mb-3">Registration is optional; you can access all the features and functionalities of the website without registration.  </p>
-
-                                    <p class="heading-semibold text-colour7">Is my e-mail address required for my NIC Express Reward account?</p>
-                                    <p class="mb-3">It is mandatory to provide your email address and mobile number during the booking process. This helps us to send you the itinerary/ receipts of your booking to your e-mail address. We also communicate the same to the airline, hotels or the respective service provider, in case of unforeseen circumstances like rescheduling of flight or cancellation. </p>
-
-                                    <p class="heading-semibold text-colour7">On what airlines, hotels and products can I redeem NIC Express Reward NPoints?</p>
-                                    <p class="mb-3">You can redeem your NPoints for booking with more than 900 airlines, 450,000 hotels worldwide and car rental in over 150 countries, and shopping online from a range of products through NIC Express Reward website. </p>
-
-                                    <p class="heading-semibold text-colour7">When can I start redeeming my NIC Express Reward?</p>
-                                    <p class="mb-3">You can start redeeming your NPoints as soon as you have (add method) and have accumulated enough NIC Express Reward NPoints for redemption. </p>
-
-                                    <p class="heading-semibold text-colour7">Where can I find my NIC Express Reward Summary?</p>
-                                    <p class="mb-3">You can view your NIC Express Reward account summary in the My Account section on the NIC Express Reward website or you may call NIC Express Reward's 24 hour Call Centre on +977-1-5970101. </p>
-
-                                    <p class="heading-semibold text-colour7">What is Redemption Booking?</p>
-                                    <p class="mb-3">When you book Flights, Hotels, Cars using your NIC Express Reward NPoints, the booking is termed as a Redemption Booking. </p>
-
-                                    <p class="heading-semibold text-colour7">Do I have to pay anything for booking the redemption tickets and hotel bookings?</p>
-                                    <p class="mb-3">There are no separate redemption charges on (add website url). </p>
-
-                                    <p class="heading-semibold text-colour7">Can I redeem my NIC Express Reward NPoints for ticket and hotel bookings for my family or friends?</p>
-                                    <p class="mb-3">Yes, you can redeem your NIC Express Reward NPoints for family members and friends. </p>
-
-                                    <p class="heading-semibold text-colour7">How do I know my airline or hotel booking or product purchase was confirmed?</p>
-                                    <p class="mb-3">(Add confirmation notification process) </p>
-
-                                    <p class="heading-semibold text-colour7">What if I don't get a confirmation at the time of booking?</p>
-                                    <p class="mb-3">If you do not receive a confirmation through (Add confirmation notification process) call us on Call Centre +977-1-5970101 and we'll send you your confirmation details.</p>
-
+                                    <p class="heading-semibold text-colour7">What are the payment options when booking flights?</p>
+                                    <p class="mb-3">You can pay with Infinity Rewards Points.</p>
                                 </div>
+
                             </div>
                         </div>
-                        <!-- GENERAL -->
-
                         <!-- FLIGHTS -->
+
+                        <!-- HOTELS -->
                         <div class="card mb-3">
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
                                     <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapse2">
-                                        Flights
+                                        Hotels
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
@@ -142,104 +87,95 @@
 
                             <div id="collapse2" class="collapse" data-parent="#static-accordion">
                                 <div class="card-body">
-                                    <p class="heading-semibold text-colour7">What's an e–ticket?</p>
-                                    <p class="mb-3">An e–ticket (electronic ticket) is a paperless electronic document with a unique confirmation number that neatly replaces the hassles of a paper ticket. When you purchase an e–ticket, we email it to you within (duration) of your booking. Simply print it out and bring it with you – along with a valid photo ID – to the airline counter while checking in for your flight. </p>
-
-                                    <p class="heading-semibold text-colour7">Can Infant tickets be booked on (add website url)?</p>
-                                    <p class="mb-3">Yes, Infants under 2 years of age can travel through NIC Express Reward. Make sure that the infant must be 24 months or below throughout the booked travel. If the infant is above 24 months during the return journey, the infant ticket will be cancelled which may cause booking of a separate ticket as per the child fare. Remember to carry valid age proof or birth proof documents of the infant. You can book no more than one infant per adult. </p>
-
-                                    <p class="heading-semibold text-colour7">What is the maximum number of seats I can book?</p>
-                                    <p class="mb-3">A maximum of 9 seats can be booked at one time. If you need to book for more than 9 travellers, you will have to re–start the booking process for the additional travellers. Some airlines don't allow booking more than 4 passengers (adult + children) at one time, and thus please try to search for fewer passengers. </p>
-
-                                    <p class="heading-semibold text-colour7">I did a search for flight tickets and selected my flight. However, after providing the passenger details, I see that the fares have increased. Why?</p>
-                                    <p class="mb-3">The airline fares are dynamic in nature and are based on availability of the seats on the particular flight. Often, there are instances that the seats selected by you may get sold by the time you complete your booking. Therefore, to minimize the chances of booking failures, please check the availability of the seats before you proceed with the payment. If you find that the fare has increased at this step, you have the option of going ahead with the booking or refresh the search. </p>
-
-                                    <p class="heading-semibold text-colour7">Can I get my seats assigned post my booking confirmation?</p>
-                                    <p class="mb-3">NIC Express Reward doesn't do pre–seating. Some airlines will confirm your seat assignments, their rules for doing so vary. You need to call your airline directly to check whether you get to choose your seat. </p>
-
-                                    <p class="heading-semibold text-colour7">How do I get a boarding pass for an e–ticket?</p>
-                                    <p class="mb-3">You can check-in in three ways.</p>
-                                    <ol>
-                                        <li class="mb-3 mx-3">Some of the airlines provide a web check-in facility, where you can select your seat and print your boarding pass online. If you use this facility, you will have to approach the check-in counter to drop your baggage.</li>
-                                        <li class="mb-3 mx-3">You can also check-in using Tele check-in service provided by some of the airlines. In such cases, you will have to present your ticket and ID proof at Airline check-in counter for issuance of boarding card and for baggage drop.</li>
-                                        <li class="mb-3 mx-3">Alternatively, you can check-in physically at the airport counters of the airline by presenting your ticket and ID proof. </li>
-                                    </ol>
-
-                                    <p class="heading-semibold text-colour7">How do I find out my baggage limit? </p>
-                                    <p class="mb-3">Cabin and checked-in baggage limits vary from airline to airline. Some airlines have baggage weight restrictions and others have a specific number of pieces permitted. Please note that airline restrictions on baggage apply to both checked–in bags as well as cabin baggage. Kindly contact the airline directly or visit their website for accurate details regarding baggage limit. </p>
-
-                                    <p class="heading-semibold text-colour7">I've booked my tickets but need to add my child's tickets to my booking. How do I do it?</p>
-                                    <p class="mb-3">You can call us on +977-1-5970101 and we will request the airline on behalf of you to change the name. However, if the airline doesn't allow it, you'll have to cancel and re–book the ticket. </p>
-
-                                    <p class="heading-semibold text-colour7">How do I print my ticket?</p>
-                                    <p class="mb-3">You can view all your upcoming and completed trips by selecting the ‘Manage Bookings’ section on the website. You can view/print your ticket by clicking on the Booking Reference number. </p>
-
-                                    <p class="heading-semibold text-colour7">Can I book a specials like meal, wheelchairs through NIC Express Reward?</p>
-                                    <p class="mb-3">Sorry, NIC Express Reward website currently does not support this feature. Please contact the airline directly. </p>
-
                                     <p class="heading-semibold text-colour7">How do I cancel a flight reservation?</p>
-                                    <p class="mb-3">(add cancellation process) </p>
+                                    <p class="mb-3">For bookings made through Infinity Rewards, cancellations are allowed if the booking qualifies under refund policy, then points will be refunded back into your account. For any reasons not initiated by you, i.e. flights being grounded/canceled/or any other unforeseen circumstances wherein you are denied travel, applicable reward points will be refunded back into your rewards account within 45 working days.</p>
 
-                                    <p class="heading-semibold text-colour7">What should I do in cases like - No Flight Results Shown / No Air Search results found / Your Request cannot be processed, please try again later?</p>
-                                    <p class="mb-3">To eliminate the error, clear your browser cache and temporary files (CLTR + H) and try the search again. If the error persists, it could be due to either of the two situations: we can't find flights for the specified route or the flights are not available on your specified date. You could call us on +977-1-5970101. </p>
-
-                                    <p class="heading-semibold text-colour7">How can I enter my Frequent Flyer Program (FFP) number while booking the flight?</p>
-                                    <p class="mb-3">We do not have an option of entering the frequent flyer number at the time of booking flights. You can mention your frequent flyer number with the airline directly at the time of check-in. </p>
-
-                                    <p class="heading-semibold text-colour7">I got a blank screen when I submitted the booking form, I got charged but never received e-ticket confirmation. What should I do?</p>
-                                    <p class="mb-3">We're really sorry for the inconvenience. Please don't worry. We'll call you within four hours and complete this booking offline. We suggest you do not attempt booking again as you may end up getting charged twice. If you are really in a hurry, call us on +977-1-5970101 and we'll help you to resolve this immediately. </p>
-
-                                    <p class="heading-semibold text-colour7">How do I get the booking confirmation?</p>
-                                    <p class="mb-3">We will send you an email on your registered email address to confirm your flight booking. </p>
-
-                                    <p class="heading-semibold text-colour7">Do I need to confirm my booking before I fly?</p>
-                                    <p class="mb-3">No, you don't. If you really want to, you can contact the airline directly. </p>
-
-                                    <p class="heading-semibold text-colour7">I did not get the e-ticket no. in the confirmation received from NIC Express Reward?</p>
-                                    <p class="mb-3">We'll send your e-ticket/confirmation details to your registered email address. </p>
-
-                                    <p class="heading-semibold text-colour7">Do I have to show my e-ticket confirmation voucher at the check-in counter?</p>
-                                    <p class="mb-3">Yes, you have to show e-ticket confirmation voucher. Please carry a print copy of the e-ticket as it is important. </p>
-
-                                    <p class="heading-semibold text-colour7">Do I have to pay anything extra at the airport?</p>
-                                    <p class="mb-3">Every airport has their set of charges and rules, therefore, the charges depend on the airport you're flying from. </p>
-
-                                    <p class="heading-semibold text-colour7">Do I have to show an ID proof at time of check-in?</p>
-                                    <p class="mb-3">Yes, your Photo ID proof may be checked by airline authorities. It is strongly recommended that you carry a government-issued Photo ID with you during your journey. </p>
-
-                                    <p class="heading-semibold text-colour7">I misspelled my name while booking, how can I correct it? </p>
-                                    <p class="mb-3">Allowing change of name requests entirely depends on the airline you're booked with. You can call us if your airline allows change of name requests. We can pass on your request. However, if the airline doesn't allow it, you'll have to cancel and re-book the ticket.</p>
-
-                                    <p class="heading-semibold text-colour7">Can I book flights for friends and family using my account by NPoints or cash?</p>
-                                    <p class="mb-3">Yes, you can do the booking provided you have all the details belonging to the passengers you want to book for. Provide the details when you're asked to enter traveller details at the time of booking. </p>
+                                    <p class="heading-semibold text-colour7">Can I book a multi-city trip?</p>
+                                    <p class="mb-3">Multi-city booking is not available. In order to book a multi-city travel, you will have to book individual sectors separately.</p>
 
                                     <p class="heading-semibold text-colour7">Can I do an online check-in?</p>
-                                    <p class="mb-3">You may use your PNR or Airline Booking Reference Number to do an online check-in on the website.</p>
+                                    <p class="mb-3">Online check-in is not always offered by every airline on its website. If the website does permit online check-in, you may do so by using your Airline Booking Reference number.</p>
 
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
+                                    <p class="heading-semibold text-colour7">Can I enter my Frequent Flyer number at the time of booking?</p>
+                                    <p class="mb-3">Currently, we do not accept the Frequent Flyer number. You can provide your Frequent Flyer number at the airline counter at the time of check-in.</p>
 
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
+                                    <p class="heading-semibold text-colour7">I’ve booked my tickets but now need to add my child’s tickets to my booking. How do I proceed for this?</p>
+                                    <p class="mb-3">You would need to contact your airline directly to book tickets for your child.</p>
 
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
+                                    <p class="heading-semibold text-colour7">I did not receive an e-mail confirmation. What do I do?</p>
+                                    <p class="mb-3">If you do not receive a confirmation e-mail from us, there is a possibility that an improper e-mail address was registered in our records, or your Internet Service Provider blocked the e-mail as a ‘spam’. In this case, we suggest you check your email and spam folder. You can also contact the bank’s Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>.</p>
 
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
+                                    <p class="heading-semibold text-colour7">What are the payment options when booking flights?</p>
+                                    <p class="mb-3">You can pay with Infinity Rewards Points.</p>
 
+                                    <p class="heading-semibold text-colour7">How do I cancel my hotel booking?</p>
+                                    <p class="mb-3">Customers can cancel their hotel reservations up to 24-48 hours before check-in. Customers can cancel their hotel reservations by emailing Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a> prior to the 24–48-hour check-in period. Once a hotel reservation has been made, no changes will be accepted.</p>
+
+                                    <p class="heading-semibold text-colour7">Can I change the dates of my hotel booking?</p>
+                                    <p class="mb-3">Once the hotel is booked, the booking cannot be amended. For amendments, the current booking has to be canceled, and a new booking will have to be made.</p>
+
+                                    <p class="heading-semibold text-colour7">Can I book a room which more than two adults will occupy?</p>
+                                    <p class="mb-3">Most hotels allow additional guests in a room for an extra charge, but the number of occupants should not exceed the maximum number of guests allowed per room by the hotel. You would need to directly check with the hotel for such bookings, as it varies according to the terms and conditions of the hotel.</p>
+
+                                    <p class="heading-semibold text-colour7">Our children will be traveling with us; will there be any hotel charge for them as well?</p>
+                                    <p class="mb-3">When making your booking, select the number of children traveling with you from the 'Children' drop-down box. If you select one child, our search will give you the price of a Double Room with a child, not including an extra bed. If you want an extra bed in the room, you need to increase the number of passengers in your search.</p>
+
+                                    <p class="heading-semibold text-colour7">Can I request a room preference such as smoking/wheelchair friendly etc.?</p>
+                                    <p class="mb-3">Yes, you can. Although, you will have to check with the hotel directly for such requests and book online.</p>
+
+                                    <p class="heading-semibold text-colour7">I did not get an email confirmation. What do I do?</p>
+                                    <p class="mb-3">
+                                        If you do not receive a confirmation e-mail from us, there is a possibility that an improper e-mail address was registered in our records, or your Internet Service Provider blocked the e-mail as a ‘spam’ in which case we suggest you check the address and your spam folder. You can also contact us by sending an e-mail at infinity@abcbanking.mu or calling ABC Banking Corporation’s Customer Support. It is important at the time of contacting us that you convey information on:
+                                    </p>
+                                    <ul>
+                                        <li>Name against which reservation was made</li>
+                                        <li>Location (city) and name of the hotel</li>
+                                        <li>Dates of check-in / check-out</li>
+                                        <li>CIF Number</li>
+                                    </ul>
+
+                                    <p class="heading-semibold text-colour7">I am arriving late; will the hotel hold my room until I arrive?</p>
+                                    <p class="mb-3">Yes, the hotel will hold your room booking until 7 am the day after your planned arrival date, as your reservation is a confirmed booking. However, please check with the hotel for details.</p>
+
+                                    <p class="heading-semibold text-colour7">I am arriving earlier than planned; will the hotel accommodate me?</p>
+                                    <p class="mb-3">In such cases, we suggest you contact the hotel in advance to check for accommodation, as terms and conditions vary with different hotels.</p>
+
+                                    <p class="heading-semibold text-colour7">How can I get a receipt or invoice for my hotel booking?</p>
+                                    <p class="mb-3">You can view all your upcoming and completed trips by selecting the ‘Manage Bookings’ section. Further, you can view/print your receipt by selecting the Booking Reference number.</p>
+
+                                    <p class="heading-semibold text-colour7">What is the difference between a Double and a Twin Room?</p>
+                                    <p class="mb-3">A Double Room has 1 King-sized bed, whereas a Twin Room has 2 Single or Queen-sized beds.</p>
+
+                                    <p class="heading-semibold text-colour7">Do I need to reconfirm my hotel booking?</p>
+                                    <p class="mb-3">No, this is not necessary. However, if you wish, you may contact the hotel directly.</p>
+
+                                    <p class="heading-semibold text-colour7">I need to avail an early check-in/late check-out. Can this be done?</p>
+                                    <p class="mb-3">This depends completely on the hotel’s room availability on that particular date. Infinity Rewards cannot guarantee anything in this regard.</p>
+
+                                    <p class="heading-semibold text-colour7">Are meals/breakfast included in the hotels booked?</p>
+                                    <p class="mb-3">Not all hotels include complimentary breakfast. Please ensure this is checked on the program website under the respective hotel’s ‘View Detail’ section, before redeeming the hotel.</p>
+
+                                    <p class="heading-semibold text-colour7">Can I make a hotel booking for today’s check-in?</p>
+                                    <p class="mb-3">Sorry, this is not possible. Hotel reservations have to be booked a minimum of 3 days in advance.</p>
+
+                                    <p class="heading-semibold text-colour7">Can I request connected rooms if I am booking 2 rooms, or a smoking-room preference etc.?</p>
+                                    <p class="mb-3">Most of the hotels are booked directly through international suppliers. We can add these requests as a comment to the hotel; however, Infinity Rewards does not guarantee the confirmation of the same. These requests would have to be made directly at the hotel at the time of check-in.</p>
+
+                                    <p class="heading-semibold text-colour7">What are the payment options when booking hotels?</p>
+                                    <p class="mb-3">You can use reward points to book hotels.</p>
                                 </div>
+
                             </div>
                         </div>
-                        <!-- FLIGHTS -->
+                        <!-- HOTELS -->
 
-                        <!-- FLIGHT CANCELLATION -->
+                        <!-- CAR RENTAL -->
                         <div class="card mb-3">
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
                                     <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapse3">
-                                        Flights - cancellation, amendments & refunds
+                                        Car Rental
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
@@ -249,43 +185,38 @@
 
                             <div id="collapse3" class="collapse" data-parent="#static-accordion">
                                 <div class="card-body">
-                                    <p class="heading-semibold text-colour7">How do I cancel my Flight Reservation? </p>
-                                    <p class="mb-3">Please call our NIC Express Reward’s customer services at +977-1-5970101 to do the cancellation. </p>
+                                    <p class="heading-semibold text-colour7">Do I get an immediate booking confirmation?</p>
+                                    <p class="mb-3">Once car redemption is made, the confirmation is not immediate. It takes a minimum of 24 - 48 hours for confirmation. For any queries regarding confirmation, you can contact us via e-mail at Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>. In case the booking does not get confirmed, the points/cash will be refunded back into your account and you can repeat your attempt to book online.</p>
 
-                                    <p class="heading-semibold text-colour7">The flight I booked was cancelled by the airline, how do I get my NPoints or money back?</p>
-                                    <p class="mb-3">You are entitled to a full refund if airline cancels the flight. First, we request you to cancel your booking online. Once you have done this, please send an email to support@giift.com along with your Trip ID. Please mention about your flight cancellation. After verification, we will make sure that you get a full refund. </p>
+                                    <p class="heading-semibold text-colour7">Can I make an amendment to my booking?</p>
+                                    <p class="mb-3">Amendments are possible for most bookings; however, the request needs to be received at least 48 hours prior to the date of booking. Confirmation would depend on the service provider's availability. In some cases, amendments may not be possible, as per the car rental policy.</p>
 
-                                    <p class="heading-semibold text-colour7">What are cancellation and amendment charges?</p>
-                                    <p class="mb-3">Cancellation charges totally depend on the airline, sector, class of booking, and time of cancellation. You can check fare rules online, mentioned on the booking page for further details. You can always login to NIC Express Reward and check the details on trip pages.</p>
-                                    <p class="mb-3">Note: Along with charges levied by airlines, NIC Express Reward additionally charges (add charges) per passenger, per sector. </p>
+                                    <p class="heading-semibold text-colour7">Will there be any extra charges if I wish to make an amendment to my booking?</p>
+                                    <p class="mb-3">Extra amendment surcharges would be incurred if there is a change in the duration, location, or the type of car.</p>
 
-                                    <p class="heading-semibold text-colour7">Latest by when can I modify my flight tickets? </p>
-                                    <p class="mb-3">You can modify your flight tickets up to 48 hours before your flight's departure time. If it is later than that, you need to contact the airline directly for cancellation. </p>
+                                    <p class="heading-semibold text-colour7">Can I cancel my booking?</p>
+                                    <p class="mb-3">For bookings made through Infinity Rewards, no cancellations are allowed if initiated voluntarily by you. Hence, no points/cash will be refunded back to your account. However, if the reason for cancellation is from the service provider/supplier’s end, the points will be duly credited into your account within 7 business days.</p>
 
-                                    <p class="heading-semibold text-colour7">On cancellation, how do I receive my money back? </p>
-                                    <p class="mb-3">Your money will be directly credited to your bank account (same account through which booking was held). For example, if you used your credit card, we will make an appropriate charge reversal. If you used your debit card, we will credit the money back to the debit card. For NPoints Redemption booking there will be NO refunds of NPoints. </p>
+                                    <p class="heading-semibold text-colour7">How old do I have to be to rent a car?</p>
+                                    <p class="mb-3">For most car hire companies, the age requirement is between 21 and 70 years. If the driver is under 25 or over 70 years of age, you might have to pay an additional fee. (Charges may vary depending on city/country and type of car.)</p>
 
-                                    <p class="heading-semibold text-colour7">How long does it take to process a refund? </p>
-                                    <p class="mb-3">We usually process the refund within 4 working days of cancellation. However, it may take slightly longer to reflect in your account statement, depending on the bank's regulations. Normally, it takes about 14 days for most refunds to hit their respective accounts. </p>
+                                    <p class="heading-semibold text-colour7">Is it possible to rent a car for another person through my account?</p>
+                                    <p class="mb-3">Yes, as long as they meet the stipulated requirements. You would need to fill in their details while making the reservation.</p>
 
-                                    <p class="heading-semibold text-colour7">It has been more than 15 days and I have not got my refund yet, what do I do?  </p>
-                                    <p class="mb-3">We're extremely sorry for the delay. Do register your complaint with us at support@giift.com and we will get back to you very soon. </p>
-
-                                    <p class="heading-semibold text-colour7">I made a booking on NIC Express Reward and cancelled the booking directly with the airline. How can I claim my refund? </p>
-                                    <p class="mb-3">You can claim refund only if you intimate us immediately after cancellation. Depending on your bank, the refund process generally takes 4 to 15 days (from the day we find out about the cancellation). In cases such as no show or flight cancellation, the refund process can take more than three weeks. </p>
-
+                                    <p class="heading-semibold text-colour7">Does my car redemption include all charges or is there anything extra I have to pay?</p>
+                                    <p class="mb-3">Most of the car rental services include in their price - Theft Protection, Collision Damage Waiver (CDW), local taxes, airport surcharges, and any road fees. Although, you would be responsible for any ‘extra’ charges at the time of car pick-up, fees for a young/additional driver, one-way fees. The same will be explained to you, in addition to ways to reduce costs like carrying child seats, GPS, before you make your car booking. You may read more about this in the Terms and Conditions section of the car rental service you are booking with.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- FLIGHT CANCELLATION -->
+                        <!-- CAR RENTAL -->
 
-                        <!-- HOTELS -->
+                        <!-- SHOP -->
                         <div class="card mb-3">
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
                                     <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapse4">
-                                        Hotels
+                                        Shop
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
@@ -295,60 +226,57 @@
 
                             <div id="collapse4" class="collapse" data-parent="#static-accordion">
                                 <div class="card-body">
-                                    <p class="heading-semibold text-colour7">Can more than 2 adults stay in one room?</p>
-                                    <p class="mb-3">Most hotels allow additional guests to stay in a room for an extra charge as long as the room doesn't exceed the maximum number of guests allowed per room. If you book a room that cannot accommodate your group, the hotel may cancel your reservation or require that you book additional rooms. If you have any doubts, please check directly with your hotel for their extra guest charges and the maximum number of people allowed in the room you've booked. </p>
+                                    <p class="heading-semibold text-colour7">How can I dispute my Infinity Rewards transactions/purchases?</p>
+                                    <p class="mb-3">You can dispute the transaction by emailing Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>, which will log the complaint.</p>
 
-                                    <p class="heading-semibold text-colour7">Will our Children get free stay?</p>
-                                    <p class="mb-3">Please specify the number of children accompanying you by selecting the number from the drop-down box. If any charges apply for the stay of children, you will be notified of the same during the search. </p>
+                                    <p class="heading-semibold text-colour7">How many days will it take to get my merchandise delivered?</p>
+                                    <p class="mb-3">Your merchandise will be delivered within 6-10 working days (subject to stock availability).</p>
 
-                                    <p class="heading-semibold text-colour7">What if I need a specific type of hotel room (non-smoking, wheelchair friendly etc)?</p>
-                                    <p class="mb-3">The request is subject to the Hotel's terms and conditions. </p>
+                                    <p class="heading-semibold text-colour7">What should I do if the merchandise doesn’t reach me within 7 working days?</p>
+                                    <p class="mb-3">Please email Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a> to check on the status of your order.</p>
 
-                                    <p class="heading-semibold text-colour7">How do I know if my Booking with the Hotel was successful?</p>
-                                    <p class="mb-3">We will send you an Email confirmation along with the Hotel Confirmation Voucher. </p>
+                                    <p class="heading-semibold text-colour7">What if I want to exchange/upgrade my order?</p>
+                                    <p class="mb-3">Once an order has been placed, it cannot be exchanged or upgraded.</p>
 
-                                    <p class="heading-semibold text-colour7">Do I need to confirm my Booking with the Hotel?</p>
-                                    <p class="mb-3">No, you don't. You can also contact the hotel directly if you prefer. However, it may take up to 12 hours for the booking to reflect at the hotel. </p>
+                                    <p class="heading-semibold text-colour7">What should I do if the delivered item is wrong or damaged?</p>
+                                    <p class="mb-3">In the unfortunate event that the order is incorrect or the item(s) is damaged, please email Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a> within 24 hours of delivery. Replacements or refunds cannot be processed if we receive the request after 24 hours of delivery.</p>
 
-                                    <p class="heading-semibold text-colour7">What if I do not get the confirmation while booking or get a blank page on submission of the Booking form? </p>
-                                    <p class="mb-3">If a confirmation page doesn't display once you complete your booking, check your email for a confirmation. If you don't get an email confirmation within ten minutes, send an email to support@giift.com and you will receive your confirmation details. </p>
+                                    <p class="heading-semibold text-colour7">How do I look for a product on the Infinity Rewards platform?</p>
+                                    <p class="mb-3">Navigation is easy. Select the category or use the search engine to find the product you are looking for.</p>
 
-                                    <p class="heading-semibold text-colour7">How long will it take for the hotel to get my booking information?</p>
-                                    <p class="mb-3">The time it takes for a hotel to get your booking information varies by specific hotel and arrival date. In most cases the hotel should receive the reservation information within 12 hours of the time you made your booking (except for nights and weekends when the hotel's reservation department is closed). Please note that this does not apply to bookings made for the same day. </p>
+                                    <p class="heading-semibold text-colour7">What are my options for paying for an order?</p>
+                                    <p class="mb-3">You may redeem your reward points.</p>
 
-                                    <p class="heading-semibold text-colour7">What is my hotel's check–in time?</p>
-                                    <p class="mb-3">Typically, the hotel check–in time is after 2:00 pm (local time). Check with your specific hotel for its exact check–in time. </p>
+                                    <p class="heading-semibold text-colour7">I have a missing item in my order</p>
+                                    <p class="mb-3">For any missing items in your order, please email Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a> with your order number and the missing item's name and number. Our team will look into your request and will get back to you in 2-3 business days.</p>
 
-                                    <p class="heading-semibold text-colour7">Will the Hotel hold my booking as I am arriving late?</p>
-                                    <p class="mb-3">Since your reservation is guaranteed with Prepaid Voucher, the hotel is obliged to hold your room until 7 AM, the day after your planned arrival date. But please check the same with your hotel. </p>
+                                    <p class="heading-semibold text-colour7">How can I undo an order cancellation?</p>
+                                    <p class="mb-3">Cancellation requests are final. To receive the items, simply make a new order.</p>
 
-                                    <p class="heading-semibold text-colour7">What if I'm going to arrive early?</p>
-                                    <p class="mb-3">If you know you're going to arrive early at your hotel, call them in advance and check with the hotel if they will be able to accommodate you as it's subject to the terms and conditions of the hotel. </p>
+                                    <p class="heading-semibold text-colour7">How will I know if an item is out of stock?</p>
+                                    <p class="mb-3">Any item that is sold out will be mentioned "Out of Stock" on the product page. In rare cases, a product in your cart may become out of stock as you're in the check-out process and a notification will pop-up during the process.</p>
 
-                                    <p class="heading-semibold text-colour7">How do I get a receipt or invoice for my hotel booking?</p>
-                                    <p class="mb-3">Log in to your NIC Express Reward Account with your registered email address and password. Once you successfully login, go to "Manage Bookings" to view all your upcoming and completed trips. You can view/print your receipt by clicking on Booking Reference Number. </p>
+                                    <p class="heading-semibold text-colour7">Can I change or amend the items in my order once it has been placed?</p>
+                                    <p class="mb-3">Currently, this service is not available. To change or add an item, the order has to be canceled and a new order has to be made.</p>
 
-                                    <p class="heading-semibold text-colour7">How do I cancel my hotel booking?</p>
-                                    <p class="mb-3">NIC Express Reward doesn't support cancellations to hotel bookings.</p>
+                                    <p class="heading-semibold text-colour7">Can I ship an order to multiple addresses?</p>
+                                    <p class="mb-3">No, we can currently only ship to one address per order.</p>
 
-                                    <p class="heading-semibold text-colour7">How will I get my NPoints back after cancelling a hotel booking? </p>
-                                    <p class="mb-3">NIC Express Reward NPoints for cancelled bookings are not refunded or credited back into the account. </p>
-
-                                    <p class="heading-semibold text-colour7">How do I modify the Hotel Booking?</p>
-                                    <p class="mb-3">NIC Express Reward doesn't support modifications to hotel bookings. You'll have to cancel your existing booking and make a new one.</p>
-
+                                    <p class="heading-semibold text-colour7">My payments (Points) are debited; however, the order was not processed?</p>
+                                    <p class="mb-3">In case the payments are debited and the order was not processed, you can email Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>.</p>
                                 </div>
+
                             </div>
                         </div>
-                        <!-- HOTELS -->
+                        <!-- SHOP -->
 
-                        <!-- CARS -->
+                        <!-- GIFT VOUCHERS -->
                         <div class="card mb-3">
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
                                     <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapse5">
-                                        Cars
+                                        Gift Vouchers
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
@@ -358,42 +286,32 @@
 
                             <div id="collapse5" class="collapse" data-parent="#static-accordion">
                                 <div class="card-body">
-                                    <p class="heading-semibold text-colour7">Do I get an immediate booking confirmation?</p>
-                                    <p class="mb-3">Once car redemption is made, the confirmation is not immediate. It takes a minimum of 24-72 hours for a confirmation. At times when your booking is not confirmed, the NPoints will be refunded back into your account and you can repeat your attempt to book online. </p>
+                                    <p class="heading-semibold text-colour7">How many days will it take to get my Gift Voucher delivered?</p>
+                                    <p class="mb-3">Your Gift Voucher details will be emailed within 24 hours to your registered email address (subject to the availability of stock). More details can be found on the brand's terms and conditions in the Infinity Rewards App.</p>
 
-                                    <p class="heading-semibold text-colour7">Can I change my booking?</p>
-                                    <p class="mb-3">Once the car booking is done, the existing booking cannot be amended. </p>
+                                    <p class="heading-semibold text-colour7">What if I want to exchange my Gift Voucher?</p>
+                                    <p class="mb-3">Once an order has been placed, it cannot be exchanged.</p>
 
-                                    <p class="heading-semibold text-colour7">Can I cancel my booking?</p>
-                                    <p class="mb-3">For bookings made through NIC Express Reward, no cancelations are allowed if initiated voluntarily by you. Hence no NPoints will be refunded back into your account. However, if the reason for cancelation is from the service provider/supplier's end, the points will be duly credited into your account within 7-10 business days. </p>
+                                    <p class="heading-semibold text-colour7">What do I do if I have not received the Gift Voucher within 24 hours?</p>
+                                    <p class="mb-3">You can email Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a> mentioning the details and your order ID.</p>
 
-                                    <p class="heading-semibold text-colour7">How old do I have to be to rent a car?</p>
-                                    <p class="mb-3">For most car hire companies, the age requirement is between 25 and 70 years. If the driver is under 25 or over 70 years of age, you may have to pay an additional fee (charges may vary depending on city/country and type of car). </p>
+                                    <p class="heading-semibold text-colour7">What if my Gift Voucher is lost, stolen, damaged, or destroyed?</p>
+                                    <p class="mb-3">Infinity Rewards will not be responsible if a Gift Voucher is lost, stolen, damaged, or destroyed, and no replacement or refund of points will be provided in any circumstance.</p>
 
-                                    <p class="heading-semibold text-colour7">Is it possible to rent a car for another person through my account? </p>
-                                    <p class="mb-3">Yes, as long as they meet the stipulated requirements. You would need to mention their details while making the reservation. </p>
-
-                                    <p class="heading-semibold text-colour7">Does my car redemption include all charges or is there anything extra I have to pay?</p>
-                                    <p class="mb-3">Most car rental services include in their price - Theft Protection, Collision Damage Waiver (CDW), local taxes, airport surcharges and any road fees. However, you would be responsible for any 'extra' charges at the time of car pick-up, fees for a young/additional driver, one-way fees, cross border driving. The same will be explained to you, in addition to ways to reduce costs like carrying child seats and GPS before you make your car booking. You may read more about this in the 'Terms and Conditions' section of the car rental service you are booking with. </p>
-
-                                    <p class="heading-semibold text-colour7">Do I have to pay any deposit?</p>
-                                    <p class="mb-3">Yes, the time you pick your car for rental, you will be required to leave a security deposit against possible damage to the car during the rental period. The deposit will be charged directly by the car hire company. Quite often, a credit card in the name of the main driver is required. If the condition of the car and extras is the same on return as at the time of rental, and is in accordance with the fuel policy, the security deposit will be refunded upon returning the car (refund period depends on car rental company). </p>
-
-                                    <p class="heading-semibold text-colour7">Does the car insurance provided cover all claims?</p>
-                                    <p class="mb-3">No. The car insurance provided by the rental company is limited and in case of any misfortunate event, an excess amount will have to be paid by the customer. However, full insurance can be purchased directly through the supplier at the time of collecting the car.</p>
-
+                                    <p class="heading-semibold text-colour7">Is there a way I can cancel my order?</p>
+                                    <p class="mb-3">Once the Gift Voucher is purchased, voluntary cancellation is not permitted. Hence, reward points will not be refunded for the cancellation.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- CARS -->
+                        <!-- GIFT VOUCHERS  -->
 
-                        <!-- NIC EXPRESS REWARD SHOP -->
+                        <!-- LOUNGES -->
                         <div class="card mb-3">
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
                                     <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapse6">
-                                        NIC Express Reward Shop
+                                        Lounges
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
@@ -403,94 +321,30 @@
 
                             <div id="collapse6" class="collapse" data-parent="#static-accordion">
                                 <div class="card-body">
-                                    <p class="heading-semibold text-colour7">How many days will it take to get my reward merchandise delivered?</p>
-                                    <p class="mb-3">It normally takes about 2 – 3 working weeks for reward merchandise to be delivered. However, this may vary depending on availability of stock. </p>
+                                    <p class="heading-semibold text-colour7">What is an Airport Lounge?</p>
+                                    <p class="mb-3">An airport lounge is a facility operated at many airports for selected passengers, offering comforts beyond those afforded in the airport terminal itself, such as more comfortable seating, quieter environments, and often better access to customer service representatives. Other accommodations may include private meeting rooms, telephones, wireless internet access, and other business services, along with provisions to enhance passenger comfort, such as free beverages, snacks/food, magazines, and showers.</p>
 
-                                    <p class="heading-semibold text-colour7">What should I do if the reward merchandise doesn't reach me within 21 working days?</p>
-                                    <p class="mb-3">Please call our NIC Express Reward’s customer services at +977-1-5970101 to check on the status of your order. </p>
+                                    <p class="heading-semibold text-colour7">Can I cancel my Lounge purchase?</p>
+                                    <p class="mb-3">Once purchased, the lounge voucher is non-refundable.</p>
 
-                                    <p class="heading-semibold text-colour7">What if the product reaches my mentioned delivery address when I was away or not available?</p>
-                                    <p class="mb-3">Should this occur, the delivery service would reattempt to deliver the product thrice, so kindly ensure your availability. Post that, the following options are available to receive the product;</p>
-                                    <ol type="a">
-                                        <li class="mb-3 mx-3">Collect the product at the courier company.</li>
-                                        <li class="mb-3 mx-3">Arrange a delivery according to your convenient date & time. In this case, delivery charges will be levied, which can be either paid directly to the delivery service or if you have enough NPoints, those will be debited from your reward account. </li>
-                                    </ol>
+                                    <p class="heading-semibold text-colour7">How do I access the airport lounge?</p>
+                                    <p class="mb-3">You will receive a voucher code in your registered email address. Present this voucher code at the lounge reception to access the lounge.</p>
 
-                                    <p class="heading-semibold text-colour7">What should I do if the reward merchandise delivered to me is wrong or damaged?</p>
-                                    <p class="mb-3">In the unfortunate event that this happens, please call us on +977-1-5970101 within one business day from the delivery of the product in order to report the same. In case we do not receive the request within 24 hours, no replacement will be permitted. Reward NPoints will not be refunded to you. </p>
-
-                                    <p class="heading-semibold text-colour7">What should I do if I ordered the wrong item?</p>
-                                    <p class="mb-3">Please call us on +977-1-5970101 to cancel your order. Your NPoints will be refunded to you and this process may take 2 – 3 working days. </p>
-
-                                    <p class="heading-semibold text-colour7">Is the Delivery free of charge?</p>
-                                    <p class="mb-3">The cost of shipping would be included in the NPoints utilized for redemption. However, it would vary according to the merchandise/product selected. You should not pay any more to the delivery person upon delivery of the goods. </p>
-
-                                    <p class="heading-semibold text-colour7">Do you deliver items outside (region)?</p>
-                                    <p class="mb-3">No, all items are delivered only within (region). </p>
-
-                                    <p class="heading-semibold text-colour7">What if I want to cancel my order?</p>
-                                    <p class="mb-3">To cancel your order please call us on +977-1-5970101. Upon cancelation, your NIC Express Reward NPoints will not be refunded back to you.</p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
-                                    <p class="heading-semibold text-colour7"></p>
-                                    <p class="mb-3"></p>
-
+                                    <p class="heading-semibold text-colour7">What facilities can I expect to find in a lounge?</p>
+                                    <p class="mb-3">You will be entitled to facilities like refreshments, television, complimentary internet access, shower, and flight status updates, etc. Please note that the availability of facilities varies between different lounges and refer to the terms and conditions available in the email communication.</p>
                                 </div>
+
                             </div>
                         </div>
-                        <!-- NIC EXPRESS REWARD SHOP -->
+                        <!-- LOUNGES -->
 
-                        <!-- UTILITY -->
+                        <!-- EXPERIENCES -->
                         <div class="card mb-3">
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
                                     <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapse7">
-                                        Utility
+                                        Experiences
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
@@ -500,12 +354,22 @@
 
                             <div id="collapse7" class="collapse" data-parent="#static-accordion">
                                 <div class="card-body">
-                                    <p class="heading-semibold text-colour7">How many days to process the payment?</p>
-                                    <p class="mb-3">Processing of payment is done within 2-3 working days.</p>
+                                    <p class="heading-semibold text-colour7">Is there a way I can cancel my order or get a refund?</p>
+                                    <p class="mb-3">Please refer to the terms and conditions mentioned under each experience as this may vary accordingly. In case of bookings eligible for cancellation, please email Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>.</p>
+
+                                    <p class="heading-semibold text-colour7">Can I amend my booking?</p>
+                                    <p class="mb-3">Please refer to the terms and conditions mentioned under each experience as this may vary accordingly. In case of bookings eligible for amendments, email Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>.</p>
+
+                                    <p class="heading-semibold text-colour7">Is taking insurance mandatory for this category?</p>
+                                    <p class="mb-3">Many experiences, as stated in the booking terms and conditions, may require you to take out travel insurance as a condition of booking with them. In any event, we strongly advise that you take out a policy of insurance to cover you and your party against the cost of assistance (including repatriation) in the event of an accident or illness, loss of baggage and money, and other expenses.</p>
+
+                                    <p class="heading-semibold text-colour7">Are there any restrictions or eligibility criteria for booking Experiences?</p>
+                                    <p class="mb-3">Some experiences may have specific requirements or restrictions, such as age limits, physical fitness levels, or group sizes. Please review the details of each experience to ensure it aligns with your requirements.</p>
                                 </div>
+
                             </div>
                         </div>
-                        <!-- UTILITY -->
+                        <!-- EXPERIENCES -->
                     </div>
                 </div>
             </div>
