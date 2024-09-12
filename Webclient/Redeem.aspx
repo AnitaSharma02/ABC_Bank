@@ -214,60 +214,48 @@
                     var json = $.parseJSON(redemptionOptions);
                     $.each(json, function (key, value) {
                         var PageURL = value.Properties.find(x => x.Name == "PageUrl").Value.replace("dotaspx", ".aspx");
-                        if (value.Name.toLowerCase() == "flight") {
+                      
+                        if (value.Name.toLowerCase() == "flights") {
                             $("#aTravelLink").attr("href", PageURL);
-                            $("#imgTravel").attr("src", value.PrimaryImage.Url);
+                            $("#imgFlight").attr("src", value.PrimaryImage.Url);
                         }
-                        else if (value.Name.toLowerCase() == "hotel") {
+                        else if (value.Name.toLowerCase() == "hotels") {
                             $("#aHotelLink").attr("href", PageURL);
                             $("#imgHotel").attr("src", value.PrimaryImage.Url);
-                        }
-                        else if (value.Name.toLowerCase() == "car rental") {
-                            $("#aCarLink").attr("href", PageURL);
-                            $("#imgCar").attr("src", value.PrimaryImage.Url);
-                        }
-                        else if (value.Name.toLowerCase() == "shop") {
-                            $("#aShopLink").attr("href", PageURL);
-                            $("#imgShop").attr("src", value.PrimaryImage.Url);
-                        }
-                        else if (value.Name.toLowerCase() == "gift vouchers") {
-                            $("#aVouchersLink").attr("href", PageURL);
-                            $("#imgVouchers").attr("src", value.PrimaryImage.Url);
-                        }
-                        else if (value.Name.toLowerCase() == "point exchange") {
-                            $("#aExchangeLink").attr("href", PageURL);
-                            $("#imgExchange").attr("src", value.PrimaryImage.Url);
                         }
                         else if (value.Name.toLowerCase() == "lounges") {
                             $("#aLoungesLink").attr("href", PageURL);
                             $("#imgLounges").attr("src", value.PrimaryImage.Url);
+                        } else if (value.Name.toLowerCase() == "shop") {
+                            $("#aShopLink").attr("href", PageURL);
+                            $("#imgShop").attr("src", value.PrimaryImage.Url);
                         }
-                        else if (value.Name.toLowerCase() == "experiences") {
+                        else if (value.Name.toLowerCase() == "giftcards") {
+                            $("#aVouchersLink").attr("href", PageURL);
+                            $("#imgVouchers").attr("src", value.PrimaryImage.Url);
+                        }
+                        else if (value.Name.toLowerCase() == "utility") {
+                            $("#aUtilityLink").attr("href", PageURL);
+                            $("#imgUtility").attr("src", value.PrimaryImage.Url);
+                        } else if (value.Name.toLowerCase() == "experiences") {
                             $("#aExperiencesLink").attr("href", PageURL);
                             $("#imgExperiences").attr("src", value.PrimaryImage.Url);
+                        } else if (value.Name.toLowerCase() == "car rental") {
+                            $("#aCarLink").attr("href", PageURL);
+                            $("#imgCar").attr("src", value.PrimaryImage.Url);
                         }
-                        
-                        
-                        //else if (value.Name.toLowerCase() == "utility") {
-                        //    $("#aUtilityLink").attr("href", PageURL);
-                        //    $("#imgUtility").attr("src", value.PrimaryImage.Url);
-                        //}
-                        //else if (value.Name.toLowerCase() == "insurance") {
-                        //    $("#aInsuranceLink").attr("href", PageURL);
-                        //    $("#imgInsurance").attr("src", value.PrimaryImage.Url);
-                        //}
-                        //else if (value.Name.toLowerCase() == "internet service providers") {
-                        //    $("#aISPLink").attr("href", PageURL);
-                        //    $("#imgISP").attr("src", value.PrimaryImage.Url);
-                        //}
-                        //else if (value.Name.toLowerCase() == "miles exchange") {
-                        //    $("#aMilesLink").attr("href", PageURL);
-                        //    $("#imgMiles").attr("src", value.PrimaryImage.Url);
-                        //}
-                        //else if (value.Name.toLowerCase() == "offers") {
-                        //    $("#aOfferLink").attr("href", PageURL);
-                        //    $("#imgOffer").attr("src", value.PrimaryImage.Url);
-                        //}
+                        else if (value.Name.toLowerCase() == "internet service providers") {
+                            $("#aISPLink").attr("href", PageURL);
+                            $("#imgISP").attr("src", value.PrimaryImage.Url);
+                        }
+                        else if (value.Name.toLowerCase() == "milesexchange") {
+                            $("#aExchangeLink").attr("href", PageURL);
+                            $("#imgExchange").attr("src", value.PrimaryImage.Url);
+                        }
+                        else if (value.Name.toLowerCase() == "offers") {
+                            $("#aOfferLink").attr("href", PageURL);
+                            $("#imgOffer").attr("src", value.PrimaryImage.Url);
+                        }
                     });
                 }
                 else {
@@ -280,13 +268,15 @@
                         success: function (msg) {
                             if (msg.d != '') {
                                 var json = $.parseJSON(msg.d);
+                                
                                 $.each(json, function (key, value) {
                                     var PageURL = value.Properties.find(x => x.Name == "PageUrl").Value.replace("dotaspx", ".aspx");
-                                    if (value.Name.toLowerCase() == "flight") {
+                                   
+                                    if (value.Name.toLowerCase() == "flights") {
                                         $("#aTravelLink").attr("href", PageURL);
-                                        $("#imgTravel").attr("src", value.PrimaryImage.Url);
+                                        $("#imgFlight").attr("src", value.PrimaryImage.Url);
                                     }
-                                    else if (value.Name.toLowerCase() == "hotel") {
+                                    else if (value.Name.toLowerCase() == "hotels") {
                                         $("#aHotelLink").attr("href", PageURL);
                                         $("#imgHotel").attr("src", value.PrimaryImage.Url);
                                     }
@@ -297,7 +287,7 @@
                                         $("#aShopLink").attr("href", PageURL);
                                         $("#imgShop").attr("src", value.PrimaryImage.Url);
                                     }
-                                    else if (value.Name.toLowerCase() == "gift cards") {
+                                    else if (value.Name.toLowerCase() == "giftcards") {
                                         $("#aVouchersLink").attr("href", PageURL);
                                         $("#imgVouchers").attr("src", value.PrimaryImage.Url);
                                     }
@@ -307,17 +297,17 @@
                                     } else if (value.Name.toLowerCase() == "experiences") {
                                         $("#aExperiencesLink").attr("href", PageURL);
                                         $("#imgExperiences").attr("src", value.PrimaryImage.Url);
-                                    } else if (value.Name.toLowerCase() == "insurance") {
-                                        $("#aInsuranceLink").attr("href", PageURL);
-                                        $("#imgInsurance").attr("src", value.PrimaryImage.Url);
+                                    } else if (value.Name.toLowerCase() == "car rental") {
+                                        $("#aCarLink").attr("href", PageURL);
+                                        $("#imgCar").attr("src", value.PrimaryImage.Url);
                                     }
                                     else if (value.Name.toLowerCase() == "internet service providers") {
                                         $("#aISPLink").attr("href", PageURL);
                                         $("#imgISP").attr("src", value.PrimaryImage.Url);
                                     }
-                                    else if (value.Name.toLowerCase() == "miles exchange") {
-                                        $("#aMilesLink").attr("href", PageURL);
-                                        $("#imgMiles").attr("src", value.PrimaryImage.Url);
+                                    else if (value.Name.toLowerCase() == "milesexchange") {
+                                        $("#aExchangeLink").attr("href", PageURL);
+                                        $("#imgExchange").attr("src", value.PrimaryImage.Url);
                                     }
                                     else if (value.Name.toLowerCase() == "offers") {
                                         $("#aOfferLink").attr("href", PageURL);
