@@ -14,6 +14,7 @@ using Framework.EnterpriseLibrary.Adapters;
 using IBEAPI.ClientEntities;
 using System.Configuration;
 using IBEAPIGateway.Model;
+using System.Net;
 public partial class SearchPage : Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -107,7 +108,7 @@ public partial class SearchPage : Page
                     lobjSearchRequest.SearchDetails.DepCode.City = lobjDepartureAirField.City;
                     lobjSearchRequest.SearchDetails.ArrCode.City = lobjArrivalAirField.City;
                     lobjSearchRequest.SearchDetails.FlightType = airline;
-                    lobjSearchRequest.IPAddress = HttpContext.Current.Request.UserHostAddress;
+                    lobjSearchRequest.IPAddress = "1";//HttpContext.Current.Request.UserHostAddress;
 
                     lobjSearchRequest.SearchDetails.SessionId = Convert.ToString(HttpContext.Current.Session["SessionId"]);
 
@@ -145,9 +146,9 @@ public partial class SearchPage : Page
                         lobjAirSearchRequest.ReturnDate = lobjAirSearchRequest.DepartureDate.AddDays(-1);
                     }
 
-                    lobjAirSearchRequest.IPAddress = HttpContext.Current.Request.UserHostAddress;
+                    lobjAirSearchRequest.IPAddress ="1";// HttpContext.Current.Request.UserHostAddress;
                     HttpContext.Current.Session["FlightSearchPaymode"] = PaymentType.Points;
-
+                    
                     lobjModel.LogActivity(string.Format("FlightSearch Request; OriginLocation-:{0};DestinationLocation-:{1};ArrivalDate-:{2};DepartureDate-:{3};" +
                                      "IsReturn-:{4};Adults-:{5};Childrens-:{6};Infants-:{7};Cabin-:{8};AirlinePrefCode-:{9};FlightType-:{10};",
                                      lobjSearchRequest.SearchDetails.OriginLocation, lobjSearchRequest.SearchDetails.DestinationLocation, lobjSearchRequest.SearchDetails.ArrivalDate,
