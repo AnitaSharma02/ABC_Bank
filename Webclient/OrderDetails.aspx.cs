@@ -73,8 +73,8 @@ public partial class OrderDetails : Page
                                     for (int i = 0; i < lobjCustomerOrder.Items.Count; i++)
                                     {
                                         lstrHtmlContent += "<div class=\"row pb-2 border-bottom align-items-sm-center justify-content-between\"><div class=\"col-3 col-sm-2 col-lg-1\"><div class=\"img-container\"><img src=\"" + lobjCustomerOrder.Items[i].ImageUrl + "\"/></div></div>"
-                                            + "<div class=\"col-12 col-sm-5 col-lg-6\"><p><span class=\"h6 heading-semibold text-colour7\">" + lobjCustomerOrder.Items[i].Name + "</span></p></div>"
-                                            + "<div class=\"col-12 col-sm-2 text-sm-right\"><p class=\"\">Qty: <span class=\"h6 heading-semibold text-colour7\">" + lobjCustomerOrder.Items[i].Quantity + "</span></p></div>"
+                                            + "<div class=\"col-12 col-sm-5 col-lg-6\"><p><span class=\"heading6 mb-2\">" + lobjCustomerOrder.Items[i].Name + "</span></p></div>"
+                                            + "<div class=\"col-12 col-sm-2 text-sm-right\"><p class=\"\">Qty: <span class=\"heading6 mb-2\">" + lobjCustomerOrder.Items[i].Quantity + "</span></p></div>"
                                             + "<div class=\"col-12 col-sm-3 text-sm-right\"><p class=\"h7 heading-bold text-colour7\">" + lobjVerveModel.FormatPoints(Math.Ceiling(lobjCustomerOrder.Items[i].Price.ListPrice.Amount), "Points") + "</p></div></div>";
                                     }
                                     lstrHtmlContent += "<div class=\"row align-items-lg-center justify-content-between\"><div class=\"col-12 mt-2\"><div class=\"row my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"\">Sub-Total</p></div>"
@@ -130,7 +130,7 @@ public partial class OrderDetails : Page
                                                     lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h7 heading-bold text-colour7\">GiftCard No:</span> <span class=\"heading-semibold text-break\">" + giftCardDetails.GiftCardInfo[i].Code + "</span></p>";
                                                     if (!string.IsNullOrEmpty(giftCardDetails.GiftCardInfo[i].RedirectionUrl))
                                                     {
-                                                        lstrHtml += "for detail please click : <a class=\"text-break\" href=\"" + giftCardDetails.GiftCardInfo[i].RedirectionUrl + "\" target=\"_blank\" style=\"font-family: Helvetica, Arial, sans-serif;font-size: 13px; color: #000000;display: inline-block;margin-left\">" + giftCardDetails.GiftCardInfo[i].RedirectionUrl + "</a>";
+                                                        lstrHtml += "<span class=\"h7 heading-semibold\">For details please click :</span> <a class=\"h7 link1 text-break\" href=\"" + giftCardDetails.GiftCardInfo[i].RedirectionUrl + "\" target=\"_blank\">" + giftCardDetails.GiftCardInfo[i].RedirectionUrl + "</a>";
                                                     }
                                                     lstrHtml += "</div>";
                                                     lstrHtml += "<div class=\"col-12 col-sm-6 mb-2\"><p class=\"\"><span class=\"d-block d-md-inline-block h7 heading-bold text-colour7\">GiftCard Value:</span> <span class=\"heading-semibold\">" + giftCardDetails.GiftCardInfo[i].Value + "</span></p></div>";
@@ -178,7 +178,7 @@ public partial class OrderDetails : Page
                                                 {
                                                     lstrHtml += "<div class=\"col-12\">";
                                                     lstrHtml += "<div class=\"bg-colour6 p-3\">";
-                                                    lstrHtml += "<h2 class=\"h6 heading-semibold text-colour7\">TopUp Purchased</h2>";
+                                                    lstrHtml += "<h2 class=\"heading6 mb-2\">TopUp Purchased</h2>";
                                                     lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + topUpDetails.ExternalReference + "</h2>";
                                                     lstrHtml += "</div></div>";
                                                     //lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><strong>TopUp Purchased</strong></p></td>";
@@ -211,31 +211,22 @@ public partial class OrderDetails : Page
                                                 string lstrHtml = string.Empty;
                                                 lstrHtml += "<div class=\"row\">";
 
+                                                lstrHtml += "<div class=\"col-12 col-sm-6 pr-sm-0\">";
+                                                lstrHtml += "<div class=\"bg-colour6 p-3\">";
+                                                lstrHtml += "<h2 class=\"heading6 mb-2\">Lounge Name</h2>";
+                                                lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + lobjProduct.Name + "</h2>";
+                                                lstrHtml += "</div></div>";
+
                                                 if (giftCardDetails.ExternalReference != null)
                                                 {
-                                                    lstrHtml += "<div class=\"col-12 col-sm-6 pr-sm-0\">";
+                                                    lstrHtml += "<div class=\"col-12 col-sm-6 pl-sm-0\">";
                                                     lstrHtml += "<div class=\"bg-colour6 p-3\">";
-                                                    lstrHtml += "<h2 class=\"h6 heading-semibold text-colour7\">Lounge Code</h2>";
+                                                    lstrHtml += "<h2 class=\"heading6 mb-2\">Lounge Code</h2>";
                                                     lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + giftCardDetails.ExternalReference + "</h2>";
                                                     lstrHtml += "</div></div>";
                                                     //lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><strong style=\"color:#fff;\">Lounge Code</strong></p></td>";
                                                 }
-                                                if (giftCardDetails.LoungeInfo.ExpiryDate != null)
-                                                {
-
-                                                    lstrHtml += "<div class=\"col-12 col-sm-6 pl-sm-0\">";
-                                                    lstrHtml += "<div class=\"bg-colour6 p-3\">";
-                                                    lstrHtml += "<h2 class=\"h6 heading-semibold text-colour7\">Expiry Date</h2>";
-                                                    lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + giftCardDetails.LoungeInfo.ExpiryDate.ToString("dd-MM-yyyy") + "</h2>";
-                                                    lstrHtml += "</div></div>";
-                                                    //lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><strong style=\"color:#fff;\">Expiry Date</strong></p></td>";
-                                                }
-                                                lstrHtml += "<div class=\"col-12 col-sm-6 pr-sm-0\">";
-                                                lstrHtml += "<div class=\"bg-colour6 p-3\">";
-                                                lstrHtml += "<h2 class=\"h6 heading-semibold text-colour7\">Lounge Name</h2>";
-                                                lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + lobjProduct.Name + "</h2>";
-                                                lstrHtml += "</div></div>";
-                                                lstrHtml += "</div>";
+                                                
                                                 if (!string.IsNullOrEmpty(giftCardDetails.LoungeInfo.Code))
                                                 {
                                                     QRCodeGenerator qrGenerator = new QRCodeGenerator();
@@ -266,11 +257,24 @@ public partial class OrderDetails : Page
                                                     string ImageUrl = "QRCode//" + giftCardDetails.LoungeInfo.Code + ".png";
                                                     lstrHtml += "<div class=\"col-12 col-sm-6 pr-sm-0\">";
                                                     lstrHtml += "<div class=\"bg-colour6 p-3\">";
-                                                    lstrHtml += "<h2 class=\"h6 heading-semibold text-colour7\">QR Code</h2>";
+                                                    lstrHtml += "<h2 class=\"heading6 mb-2\">QR Code</h2>";
                                                     lstrHtml += "<p class=\"h6 heading-regular text-colour7\"><img class=\"img-fluid barcode-img\" src=\"" + ImageUrl + "\"/></p>";
                                                     lstrHtml += "</div></div>";
-                                                    lstrHtml += "</div>";
+                                                    
                                                 }
+
+                                                if (giftCardDetails.LoungeInfo.ExpiryDate != null)
+                                                {
+
+                                                    lstrHtml += "<div class=\"col-12 col-sm-6 pl-sm-0\">";
+                                                    lstrHtml += "<div class=\"bg-colour6 p-3\">";
+                                                    lstrHtml += "<h2 class=\"heading6 mb-2\">Expiry Date</h2>";
+                                                    lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + giftCardDetails.LoungeInfo.ExpiryDate.ToString("dd-MM-yyyy") + "</h2>";
+                                                    lstrHtml += "</div></div>";
+                                                    //lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><strong style=\"color:#fff;\">Expiry Date</strong></p></td>";
+                                                }
+                                                lstrHtml += "</div>";
+
                                                 LoggingAdapter.WriteLog("View Details html -:" + lstrHtml);
 
                                                 hdfViewdetailsInfo.Value = lstrHtml;
@@ -302,7 +306,7 @@ public partial class OrderDetails : Page
                                                 {
                                                     lstrHtml += "<div class=\"col-12 col-sm-6 pr-sm-0\">";
                                                     lstrHtml += "<div class=\"bg-colour6 p-3\">";
-                                                    lstrHtml += "<h2 class=\"h6 heading-semibold text-colour7\">Receipt No</h2>";
+                                                    lstrHtml += "<h2 class=\"heading6 mb-2\">Receipt No</h2>";
                                                     lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + giftCardDetails.ExternalReference + "</h2>";
                                                     lstrHtml += "</div></div>";
                                                     //lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><strong style=\"color:#fff;\">Receipt No</strong></p></td>";
@@ -311,7 +315,7 @@ public partial class OrderDetails : Page
                                                 {
                                                     lstrHtml += "<div class=\"col-12 col-sm-6 pr-sm-0\">";
                                                     lstrHtml += "<div class=\"bg-colour6 p-3\">";
-                                                    lstrHtml += "<h2 class=\"h6 heading-semibold text-colour7\">Processed Date</h2>";
+                                                    lstrHtml += "<h2 class=\"heading6 mb-2\">Processed Date</h2>";
                                                     lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + giftCardDetails.TimeStamp.ToString("dd-MM-yyyy") + "</h2>";
                                                     lstrHtml += "</div></div>";
                                                     //lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><strong style=\"color:#fff;\">Processed Date</strong></p></td>";
