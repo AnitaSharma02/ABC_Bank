@@ -233,7 +233,7 @@ public partial class OrderDetails : Page
                                                     QRCodeData qrCodeData = qrGenerator.CreateQrCode(giftCardDetails.LoungeInfo.Code, QRCodeGenerator.ECCLevel.Q);
                                                     QRCode qrCode = new QRCode(qrCodeData);
                                                     Bitmap qrCodeImage = qrCode.GetGraphic(20);
-                                                    //HttpContext.Current.Server.MapPath("~/Barcodes/")Application.StartupPath + @"\container.JPG"
+
                                                     string folderPath = AppDomain.CurrentDomain.BaseDirectory + "QRCode";// HttpContext.Current.Server.MapPath("~/QRCode/") ;
                                                     
                                                     if (!Directory.Exists(folderPath))
@@ -241,7 +241,6 @@ public partial class OrderDetails : Page
                                                         Directory.CreateDirectory(folderPath);
                                                     }
                                                     string fileName = Path.Combine(folderPath, giftCardDetails.LoungeInfo.Code + ".png");
-                                                    //qrCodeImage.Save(fileName, ImageFormat.Png);
                                                    
                                                     if (!File.Exists(fileName))
                                                     {
@@ -273,6 +272,12 @@ public partial class OrderDetails : Page
                                                     lstrHtml += "</div></div>";
                                                     //lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><strong style=\"color:#fff;\">Expiry Date</strong></p></td>";
                                                 }
+                                                string vendorlogo =  "Images//Dragopass_vendor_logo.jpg";
+                                                lstrHtml += "<div class=\"col-12 col-sm-6 pl-sm-0\">";
+                                                lstrHtml += "<div class=\"bg-colour6 p-3\">";
+                                                lstrHtml += "<h2 class=\"heading6 mb-2\">Vendor Logo</h2>";
+                                                lstrHtml += "<p class=\"h6 heading-regular text-colour7\"><img class=\"img-fluid barcode-img\" src=\"" + vendorlogo + "\"/></p>";
+                                                lstrHtml += "</div></div>";
                                                 lstrHtml += "</div>";
 
                                                 LoggingAdapter.WriteLog("View Details html -:" + lstrHtml);
