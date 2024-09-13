@@ -100,9 +100,17 @@
 }
 /* Userdetails Modal Popup for all*/
 
-.dvProductDetailShop #terms-conditions-tab, 
-.dvProductDetailMilesExchange #terms-conditions-tab {
+
+/* Hiding the tnc tabs from shop products */
+.dvProductDetailShop #terms-conditions-tab {
     display: none;
+}
+
+.dvProductDetail #terms h2 {
+    font-family: var(--body-f-family);
+    color: var(--body-text-colour);
+    font-size: var(--body-font-size);
+    font-weight: bold;
 }
 
 /*=========[ Product Details ]=========*/
