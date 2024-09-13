@@ -99,6 +99,12 @@
     font-weight:normal;
 }
 /* Userdetails Modal Popup for all*/
+
+.dvProductDetailShop #terms-conditions-tab, 
+.dvProductDetailMilesExchange #terms-conditions-tab {
+    display: none;
+}
+
 /*=========[ Product Details ]=========*/
 
 .dvProductDetail .dvProductInfo .dvAddToCart .form-control:disabled,
