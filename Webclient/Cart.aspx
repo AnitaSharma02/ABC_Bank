@@ -30,7 +30,7 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-12">
-                    <div class="bg-colour2 p-3 mt-4 mt-sm-0">
+                    <div class="b-radius bg-colour2 p-3 mt-4 mt-sm-0">
                         <div class="row">
                             <div class="col-12">
                                 <div class="bg-colour6 p-3">

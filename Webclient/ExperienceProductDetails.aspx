@@ -177,7 +177,7 @@
                     $("#swiperHeadingHtml").append(swiperHeadingHtml);
                     swiperHtml += '<div class="row">';
                     swiperHtml += '<div class="dvThumbSwiperSlider col-lg-12 col-xl-12">';
-                    swiperHtml += '<div class="border p-3">';
+                    swiperHtml += '<div class="border b-radius p-3">';
                     swiperHtml += '<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper dvThumbBannerSlide">';
                     swiperHtml += '<div class="swiper-wrapper">';
                     for (var i = 0; i < parseData.data.photos.length; i++) {

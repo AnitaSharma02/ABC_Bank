@@ -681,7 +681,7 @@ p {
 .dvHeader .navbar-nav .nav-item a {
     color: var(--text-colour7);
     padding: 0 1rem;
-    font-size: .875rem;
+    font-size: 1rem;
     font-family: var(--font-semibold);
     text-transform: uppercase;
 }
@@ -2390,13 +2390,6 @@ select.form-control:focus {
 }
 /*=========[ HOTEL PRODUCT CARD ]=========*/
 
-/*=========[ NAV USERNAME ]=========*/
-
-.name-border {
-    border-top: 1px solid var(--border-top-colour);
-}
-/*=========[ NAV USERNAME ]=========*/
-
 /*=========[ MEDIA QUERIES ]=========*/
 @media (min-width: 576px) {
     .dvHeader .logo img {
@@ -2410,6 +2403,9 @@ select.form-control:focus {
 @media (min-width: 992px) {
     .dvHeader .navbar-nav .nav-item a.border-bottom {
         border-bottom: none !important;
+    }
+    .dvHeader .navbar-nav li.border-top {
+        border-top: none !important;
     }
 
     .dvTabs .scroll-hoz {
@@ -2533,10 +2529,6 @@ select.form-control:focus {
 
     .heading4 {
         font-size: var(--heading4-font-size-desktop);
-    }
-
-    .name-border {
-        border-top: none;
     }
 }
 

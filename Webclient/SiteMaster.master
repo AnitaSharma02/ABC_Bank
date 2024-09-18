@@ -248,7 +248,7 @@
                             <i class="fa-solid fa-bars-staggered text-colour1"></i>
                         </button>
                     </div>
-                    <div class="collapse navbar-collapse order-2 order-lg-1 col-lg-8 px-0 px-lg-3 mb-1 mb-lg-0 justify-content-between ml-lg-auto" id="navbarSupportedContent">
+                    <div class="navbar-collapse collapse order-2 order-lg-1 col-lg-8 px-0 px-lg-3 mb-1 mb-lg-0 justify-content-lg-end" id="navbarSupportedContent">
                         <ul class="navbar-nav align-items-lg-center w-100">
                             <li class="nav-item">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" data-i18n="navigation-about-us" id="about" href="AboutUs.aspx">About Us</a>
@@ -262,21 +262,16 @@
                             <li class="nav-item dropdown" runat="server" visible="true" id="limyaccount">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="StatementSummary.aspx" id="navbarDropdown" data-i18n="navigation-my-account">My Account</a>
                             </li>
-                            <li class="nav-item d-flex align-items-center name-border ml-lg-auto pt-2 pt-lg-0">
-                                <div class="d-flex">
-                                    <div class="dvUserIcon text-colour7 text-center">
-                                        <i class="d-none d-lg-inline-block fa-xl fa-regular fa-user"></i>
-                                        <i class="d-inline d-lg-none fa-regular fa-user"></i>
+                            <li class="nav-item d-flex align-items-center border-top ml-lg-auto pt-2 pt-lg-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="dvUserIcon mr-2">
+                                        <i class="fa-regular fa-user text-colour7"></i>
                                     </div>
-                                    <div class="dvName align-content-around col-auto px-2 px-g-3">
-                                        <div id="liwelcome" runat="server" visible="true">
-                                            <div class="dvNameDiv d-flex align-items-center justify-content-center h7 heading-semibold text-colour7 text-uppercase">
-                                                <asp:Label runat="server" CssClass="" ID="lblMemberName">
-                                                    <span id="txtWelcome" runat="server"></span>
-                                                    <span data-i18n="text-guest">Guest</span>
-                                                </asp:Label>
-                                            </div>
-                                        </div>
+                                    <div class="dvName" id="liwelcome" runat="server" visible="true">
+                                        <asp:Label runat="server" CssClass="text-colour7 heading-semibold" ID="lblMemberName">
+                                            <span id="txtWelcome" runat="server"></span>
+                                            <span data-i18n="text-guest">Guest</span>
+                                        </asp:Label>
                                     </div>
                                 </div>
                             </li>

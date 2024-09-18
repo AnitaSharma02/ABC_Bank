@@ -107,7 +107,7 @@
                                 </div>
                                  <div class="form-group col-12 col-sm-3">
                                      <h2 id="lbldivPoints" runat="server" class="h6 heading-regular text-colour7 mb-2" data-i18n="text-total-points">Total Points</h2>
-                                     <div class="border h6 text-colour7 heading-semibold p-2" id="divspanpoints" runat="server">
+                                     <div class="border b-radius h6 text-colour7 heading-semibold p-2" id="divspanpoints" runat="server">
                                      </div>
                                  </div>
                             </div>

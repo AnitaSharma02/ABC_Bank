@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-7 col-lg-8 mt-3 mt-md-0" id="divContactdetails">
-                            <div class="border bg-colour2 p-3">
+                            <div class="border b-radius bg-colour2 p-3">
                                 <p class="heading6">Guest Contact Details</p>
                                 <div class="row mt-3">
                                     <div class="col-12 col-md-12 col-lg-4 mb-3">
@@ -198,11 +198,11 @@
                             </div>
 
                             <div class="mt-3">
-                                <div class="col-12 border bg-colour6 p-3" id="divPickupInformation">
+                                <div class="col-12 border b-radius bg-colour6 p-3" id="divPickupInformation">
                                 </div>
                             </div>
                             <div class="border-bottom"></div>
-                            <div class="col-12 border bg-colour6 p-3 mt-3">
+                            <div class="col-12 border b-radius bg-colour6 p-3 mt-3">
                                 <div class="row">
                                     <div class="cancelBox col-12 col-lg-6" id="cancelBox">
                                         <p class="heading-semibold h6 pb-2"  id="CancellationBox">Cancellation Policy:</p>

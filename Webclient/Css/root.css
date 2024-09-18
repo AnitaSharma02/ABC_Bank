@@ -197,7 +197,7 @@
     --heading-extrablack: var(--font-extrablack);
 
     /*==================[ BORDER RADIUS ]==================*/
-    --b-radius: 0;
+    --b-radius: .5rem;
 
     /* BORDERS */
     --border-colour: var(--colour3);

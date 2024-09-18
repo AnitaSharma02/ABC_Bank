@@ -190,7 +190,7 @@
                         <div class="col-lg-6 offset-xl-1 col-xl-6 py-lg-5">
                             <div class="row mb-3">
                                 <div class="col-2 col-sm-1">
-                                    <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
+                                    <i class="fa-solid fa-check bg-colour1 b-radius p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
                                     <h2 class="heading5 mb-2">How do I accumulate points?</h2>
@@ -199,7 +199,7 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-2 col-sm-1">
-                                    <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
+                                    <i class="fa-solid fa-check bg-colour1 b-radius p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
                                     <h2 class="heading5 mb-2">What can I exchange my points for?</h2>
@@ -208,7 +208,7 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-2 col-sm-1">
-                                    <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
+                                    <i class="fa-solid fa-check bg-colour1 b-radius p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
                                     <h2 class="heading5 mb-2">How long are my points valid for?</h2>
@@ -217,7 +217,7 @@
                             </div>
                             <div class="row mb-3 mb-lg-0">
                                 <div class="col-2 col-sm-1">
-                                    <i class="fa-solid fa-check bg-colour1 p-2 text-colour6"></i>
+                                    <i class="fa-solid fa-check bg-colour1 b-radius p-2 text-colour6"></i>
                                 </div>
                                 <div class="col-10 col-sm-11">
                                     <h2 class="heading5 mb-2">How can I check my points balance?</h2>
