@@ -96,33 +96,33 @@ p {
 }
 
 .b-radius-top {
-    border-radius: var(--b-radius) 0 0 0;
+    border-radius: var(--b-radius-top);
 }
 .b-radius-right {
-    border-radius: 0 var(--b-radius) 0 0;
+    border-radius: var(--b-radius-right);
 }
 .b-radius-bottom {
-    border-radius: 0 0 var(--b-radius) 0;
+    border-radius: var(--b-radius-bottom);
 }
 .b-radius-left {
-    border-radius: 0 0 0 var(--b-radius);
+    border-radius: var(--b-radius-left);
 }
 
 .b-radius-top-right {
-    border-radius: var(--b-radius) var(--b-radius) 0 0;
+    border-radius: var(--b-radius-top-right);
 }
 .b-radius-bottom-right {
-    border-radius: 0 var(--b-radius) var(--b-radius) 0;
+    border-radius: var(--b-radius-bottom-right);
 }
 .b-radius-bottom-left {
-    border-radius: 0 0 var(--b-radius) var(--b-radius);
+    border-radius: var(--b-radius-bottom-left);
 }
 .b-radius-top-left {
-    border-radius: var(--b-radius) 0 0 var(--b-radius);
+    border-radius: var(--b-radius-top-left);
 }
 
 .b-radius-none {
-    border-radius: 0;
+    border-radius: var(--b-radius-none);
 }
 /*=========[ B-RADIUS ]=========*/
 

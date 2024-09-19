@@ -198,6 +198,18 @@
 
     /*==================[ BORDER RADIUS ]==================*/
     --b-radius: 1rem;
+    /*individual radius*/
+    --b-radius-top: var(--b-radius) 0 0 0;
+    --b-radius-right: 0 var(--b-radius) 0 0;
+    --b-radius-bottom: 0 0 var(--b-radius) 0;
+    --b-radius-left: 0 0 0 var(--b-radius);
+    /*group radius*/
+    --b-radius-top-right: var(--b-radius) var(--b-radius) 0 0;
+    --b-radius-bottom-right: 0 var(--b-radius) var(--b-radius) 0;
+    --b-radius-bottom-left: 0 0 var(--b-radius) var(--b-radius);
+    --b-radius-top-left: var(--b-radius) 0 0 var(--b-radius);
+    /*remove radius*/
+    --b-radius-none: 0;
 
     /* BORDERS */
     --border-colour: var(--colour3);
