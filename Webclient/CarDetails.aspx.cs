@@ -231,7 +231,7 @@ public partial class CarDetails : System.Web.UI.Page
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<div class=\"row\">");
                     sbmoreInfo.Append("<div class=\"dvLocation col-12 mt-3\">");
-                    sbmoreInfo.Append("<div class=\"d-flex flex-wrap justify-content-between align-items-center border p-2\">");
+                    sbmoreInfo.Append("<div class=\"d-flex flex-wrap justify-content-between align-items-center border b-radius p-2\">");
                     sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-3 order-md-0\">");
                     sbmoreInfo.Append("<div class=\"\">");
                     sbmoreInfo.Append("<img width=\"50\" class=\"img-fluid mt-auto mb-auto\" src=\"images/logos/giift-logo-blue.svg\" alt=\"Logo\">");
@@ -347,7 +347,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     sbextras.Append("<input type=\"hidden\" name=\"ExessProtectiondata\" id=\"hndExessProtectiondata\" value=" + extras.productId + "|" + extras.rentalPrice.display.amount + " />");
                                     sbextras.Append("<div class=\"row\">");
                                     sbextras.Append("<div class=\"col-12\">");
-                                    sbextras.Append("<div class=\"border p-3\">");
+                                    sbextras.Append("<div class=\"border b-radius p-3\">");
                                     sbextras.Append("<div class=\"row\">");
                                     sbextras.Append("<div class=\"ribbon\">");
                                     sbextras.Append("<span> RECOMMENDED </span>");
@@ -399,7 +399,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     sbextras.Append("<div class=\"col-12 b-radius mt-4\">");
                                     sbextras.Append("<div class=\"row\">");
                                     sbextras.Append("<div class=\"col-12\">");
-                                    sbextras.Append("<div class=\"border p-3\">");
+                                    sbextras.Append("<div class=\"border b-radius p-3\">");
                                     sbextras.Append("<div class=\"row\">");
                                     //sbextras.Append("<div class=\"ribbon\">");
                                     //sbextras.Append("<span> RECOMMENDED </span>");
@@ -526,7 +526,7 @@ public partial class CarDetails : System.Web.UI.Page
                         sbextras.Append("<input type=\"hidden\" name=\"ExessProtectiondata\" id=\"hndExessProtectiondata\" value=" + extras.productId + "|" + extras.rentalPrice.display.amount + " />");
                         sbextras.Append("<div class=\"row\">");
                         sbextras.Append("<div class=\"col-12\">");
-                        sbextras.Append("<div class=\"border p-3\">");
+                        sbextras.Append("<div class=\"border b-radius p-3\">");
                         sbextras.Append("<div class=\"row\">");
                         sbextras.Append("<div class=\"ribbon\">");
                         sbextras.Append("<span> RECOMMENDED </span>");
@@ -577,7 +577,7 @@ public partial class CarDetails : System.Web.UI.Page
                         sbextras.Append("<div class=\"col-12 b-radius mt-4\">");
                         sbextras.Append("<div class=\"row\">");
                         sbextras.Append("<div class=\"col-12\">");
-                        sbextras.Append("<div class=\"border p-3\">");
+                        sbextras.Append("<div class=\"border b-radius p-3\">");
                         sbextras.Append("<div class=\"row\">");
                         //sbextras.Append("<div class=\"ribbon\">");
                         //sbextras.Append("<span> RECOMMENDED </span>");

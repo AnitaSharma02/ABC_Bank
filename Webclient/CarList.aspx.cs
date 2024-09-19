@@ -230,10 +230,10 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append("<div class=\"col -12 border-top pt-3 mt-3 pr-0 pl-0\">");
                 sb.Append("<div class=\"d-flex flex-wrap justify-content-between align-items-lg-center\">");
                 sb.Append("<div class=\"col-lg-4 order-1\">");
-                sb.Append("<button data-toggle =\"collapse\" type=\"button\" class=\"btn border w-100 d-flex justify-content-center collapsed\" href=\"#" + item.vehicle.uniqueRef + "\" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseExample\"><span class=\"d-inline-block\" data-i18n=\"carlist-included-in-the-price\">Included in the price</span> <span class=\"arrow-icon ml-2\"><i class=\"fa fa-caret-up\"></i></span></button>");
+                sb.Append("<button data-toggle =\"collapse\" type=\"button\" class=\"btn b-radius border w-100 d-flex justify-content-center collapsed\" href=\"#" + item.vehicle.uniqueRef + "\" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseExample\"><span class=\"d-inline-block\" data-i18n=\"carlist-included-in-the-price\">Included in the price</span> <span class=\"arrow-icon ml-2\"><i class=\"fa fa-caret-up\"></i></span></button>");
                 sb.Append("</div>");
                 sb.Append("<div class=\"col-lg-8 order-0 mb-3 mb-lg-0\">");
-                sb.Append("<div class=\"p-2 border\">");
+                sb.Append("<div class=\"p-2 border b-radius\">");
 
                 Branch lobjBranch = lobjCarAvailabilityResponse.data.branches.Find(x => x.id == item.pickUpBranchId);
 
@@ -480,7 +480,7 @@ public partial class CarList : System.Web.UI.Page
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<div class=\"row\">");
                     sbmoreInfo.Append("<div class=\"dvLocation col-12 mt-3\">");
-                    sbmoreInfo.Append("<div class=\"d-flex flex-wrap justify-content-between align-items-center border p-2\">");
+                    sbmoreInfo.Append("<div class=\"d-flex flex-wrap justify-content-between align-items-center border b-radius p-2\">");
                     sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-3 order-md-0\">");
                     sbmoreInfo.Append("<div class=\"\">");
                     sbmoreInfo.Append("<img width=\"50\" class=\"img-fluid mt-auto mb-auto\" src=\"images/logos/giift-logo-blue.svg\" alt=\"Logo\">");
@@ -639,10 +639,10 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append("<div class=\"dvLocation col-12 mt-3\">");
                 sb.Append("<div class=\"row justify-content-between align-items-lg-center\">");
                 sb.Append("<div class=\"col-lg-4 order-1\">");
-                sb.Append("<button data-toggle=\"collapse\" type=\"button\" class=\"btn border w-100 d-flex justify-content-center collapsed\" href=\"#" + item.vehicle.uniqueRef + "\" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseExample\"><span class=\"d-inline-block\" data-i18n=\"carlist-included-in-the-price\">Included in the price</span> <span class=\"arrow-icon ml-2\"><i class=\"fa fa-caret-up\"></i></span></button>");
+                sb.Append("<button data-toggle=\"collapse\" type=\"button\" class=\"btn b-radius border w-100 d-flex justify-content-center collapsed\" href=\"#" + item.vehicle.uniqueRef + "\" role=\"button\" aria-expanded=\"false\" aria-controls=\"collapseExample\"><span class=\"d-inline-block\" data-i18n=\"carlist-included-in-the-price\">Included in the price</span> <span class=\"arrow-icon ml-2\"><i class=\"fa fa-caret-up\"></i></span></button>");
                 sb.Append("</div>");
                 sb.Append("<div class=\"col-lg-8 order-0 mb-3 mb-lg-0\">");
-                sb.Append("<div class=\"p-2 border\">");
+                sb.Append("<div class=\"p-2 border b-radius\">");
 
                 Branch lobjBranch = lobjCarAvailabilityResponse.data.branches.Find(x => x.id == item.pickUpBranchId);
                 if (lobjBranch != null)

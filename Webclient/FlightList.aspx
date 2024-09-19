@@ -335,7 +335,7 @@
                                     <button class="btn btn-one arrowBtn col-auto d-flex collapsed" type="button" data-toggle="collapse" onclick="showModifyFlight()" data-target="#dvForm"><span class="d-inline-block" data-i18n="flightlist-modify">Modify</span> <span class="arrow-icon ml-2"><i class="fa fa-caret-up"></i></span></button>
                                 </div>
                             </div>
-                            <div id="dvForm" class="dvForm collapse bg-colour2 py-3">
+                            <div id="dvForm" class="dvForm collapse bg-colour2 b-radius py-3">
                                 <div class="bg-colour2 px-3">  
                                     <div class="p-1 mb-2 alert alert-danger text-center text-danger h6 heading-semibold" id="requiredValidation" style="display:none;"></div>
                                         <div class="row dvLabel r- d-none">

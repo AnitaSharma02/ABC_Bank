@@ -538,7 +538,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="modal-footer justify-content-center border-left border-right border-bottom p-lg-2">
+                                <div class="modal-footer justify-content-center p-lg-2">
                                     <button type="button" class="btn btn-one w-100" onclick="FilterCarList('All');" data-i18n="carlist-reset">Reset</button>
                                 </div>
                             </div>

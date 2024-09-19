@@ -342,7 +342,7 @@ p {
 .dvDropdown .dropdown-item {
     color: var(--colour7);
     font-family: var(--font-regular);
-    padding: 0.5rem 0.75rem;
+    padding: 0rem 0.75rem;
 }
 
     .dvDropdown .dropdown-item:hover {
