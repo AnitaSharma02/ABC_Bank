@@ -1168,6 +1168,7 @@ p {
 .dvCommonAccordion.accordion .card-header {
     margin-bottom: 0;
     border-bottom: 1px solid transparent;
+    border-radius: var(--accordion-header-b-radius);
 }
 /* accordion icons */
 .dvCommonAccordion.accordion .card-header .arrow-icon {
