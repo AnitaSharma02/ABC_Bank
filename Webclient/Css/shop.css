@@ -100,19 +100,13 @@
 }
 /* Userdetails Modal Popup for all*/
 
-
-/* Hiding the tnc tabs from shop products */
-.dvProductDetailShop #terms-conditions-tab {
-    display: none;
-}
-
+/* specific only for Terms and conditions tab section h2 tag */
 .dvProductDetail #terms h2 {
-    font-family: var(--body-f-family);
-    color: var(--body-text-colour);
+    font-family: var(--heading-bold);
+    color: var(--text-colour7);
     font-size: var(--body-font-size);
-    font-weight: bold;
 }
-
+/* specific only for Terms and conditions tab section h2 tag */
 /*=========[ Product Details ]=========*/
 
 .dvProductDetail .dvProductInfo .dvAddToCart .form-control:disabled,

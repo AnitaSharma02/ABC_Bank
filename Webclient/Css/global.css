@@ -94,6 +94,36 @@ p {
 .b-radius {
     border-radius: var(--b-radius);
 }
+
+.b-radius-top {
+    border-radius: var(--b-radius) 0 0 0;
+}
+.b-radius-right {
+    border-radius: 0 var(--b-radius) 0 0;
+}
+.b-radius-bottom {
+    border-radius: 0 0 var(--b-radius) 0;
+}
+.b-radius-left {
+    border-radius: 0 0 0 var(--b-radius);
+}
+
+.b-radius-top-right {
+    border-radius: var(--b-radius) var(--b-radius) 0 0;
+}
+.b-radius-bottom-right {
+    border-radius: 0 var(--b-radius) var(--b-radius) 0;
+}
+.b-radius-bottom-left {
+    border-radius: 0 0 var(--b-radius) var(--b-radius);
+}
+.b-radius-top-left {
+    border-radius: var(--b-radius) 0 0 var(--b-radius);
+}
+
+.b-radius-none {
+    border-radius: 0;
+}
 /*=========[ B-RADIUS ]=========*/
 
 
@@ -2206,6 +2236,12 @@ select.form-control:focus {
 .dvProductDetailShop .img-container img {
     object-fit: contain;
 }
+
+/* Hiding the terms & conditions tab for shop products only */
+.dvProductDetailShop #terms-conditions-tab {
+    display: none;
+}
+/* Hiding the terms & conditions tab for shop products only */
 /*=========[ DIFFERENT CLASS NAMES FOR PRODUCTLIST PAGES & PRODUCTDETAIL PAGES ]=========*/
 
 

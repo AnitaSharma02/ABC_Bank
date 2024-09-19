@@ -214,7 +214,7 @@ public partial class OrderDetails : Page
                                                 lstrHtml += "<div class=\"row\">";
 
                                                 lstrHtml += "<div class=\"col-12 col-sm-6 pr-sm-0\">";
-                                                lstrHtml += "<div class=\"bg-colour6 p-3\">";
+                                                lstrHtml += "<div class=\"bg-colour6 p-3 h-100\">";
                                                 lstrHtml += "<h2 class=\"heading6 mb-2\">Lounge Name</h2>";
                                                 lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + lobjProduct.Name + "</h2>";
                                                 lstrHtml += "</div></div>";
@@ -222,7 +222,7 @@ public partial class OrderDetails : Page
                                                 if (giftCardDetails.ExternalReference != null)
                                                 {
                                                     lstrHtml += "<div class=\"col-12 col-sm-6 pl-sm-0\">";
-                                                    lstrHtml += "<div class=\"bg-colour6 p-3\">";
+                                                    lstrHtml += "<div class=\"bg-colour6 p-3 h-100\">";
                                                     lstrHtml += "<h2 class=\"heading6 mb-2\">Lounge Code</h2>";
                                                     lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + giftCardDetails.ExternalReference + "</h2>";
                                                     lstrHtml += "</div></div>";
@@ -231,9 +231,9 @@ public partial class OrderDetails : Page
 
                                                 string vendorlogo = "Images//Dragopass_vendor_logo.jpg";
                                                 lstrHtml += "<div class=\"col-12 col-sm-6 pr-sm-0\">";
-                                                lstrHtml += "<div class=\"bg-colour6 p-3\">";
+                                                lstrHtml += "<div class=\"bg-colour6 p-3 h-100\">";
                                                 lstrHtml += "<h2 class=\"heading6 mb-2\">Vendor Logo</h2>";
-                                                lstrHtml += "<p class=\"h6 heading-regular text-colour7\"><img class=\"img-fluid barcode-img\" src=\"" + vendorlogo + "\"/></p>";
+                                                lstrHtml += "<p class=\"h6 heading-regular text-colour7 border\"><img class=\"img-fluid barcode-img\" src=\"" + vendorlogo + "\"/></p>";
                                                 lstrHtml += "</div></div>";
 
                                                 if (!string.IsNullOrEmpty(giftCardDetails.LoungeInfo.Code))
@@ -264,9 +264,9 @@ public partial class OrderDetails : Page
                                                     }
                                                     string ImageUrl = "QRCode//" + giftCardDetails.LoungeInfo.Code + ".png";
                                                     lstrHtml += "<div class=\"col-12 col-sm-6 pl-sm-0\">";
-                                                    lstrHtml += "<div class=\"bg-colour6 p-3\">";
+                                                    lstrHtml += "<div class=\"bg-colour6 p-3 h-100\">";
                                                     lstrHtml += "<h2 class=\"heading6 mb-2\">QR Code</h2>";
-                                                    lstrHtml += "<p class=\"h6 heading-regular text-colour7\"><img class=\"img-fluid barcode-img\" src=\"" + ImageUrl + "\"/></p>";
+                                                    lstrHtml += "<p class=\"h6 heading-regular text-colour7 border\"><img class=\"img-fluid barcode-img\" src=\"" + ImageUrl + "\"/></p>";
                                                     lstrHtml += "</div></div>";
                                                     
                                                 }
@@ -275,7 +275,7 @@ public partial class OrderDetails : Page
                                                 {
 
                                                     lstrHtml += "<div class=\"col-12 col-sm pr-sm-0\">";
-                                                    lstrHtml += "<div class=\"bg-colour6 p-3\">";
+                                                    lstrHtml += "<div class=\"bg-colour6 p-3 h-100\">";
                                                     lstrHtml += "<h2 class=\"heading6 mb-2\">Expiry Date</h2>";
                                                     lstrHtml += "<h2 class=\"h6 heading-regular text-colour7\">" + giftCardDetails.LoungeInfo.ExpiryDate.ToString("dd-MM-yyyy") + "</h2>";
                                                     lstrHtml += "</div></div>";
