@@ -82,7 +82,7 @@
                     </div>
                     <uc1:UCCTItinerayDetails_Domestic runat="server" ID="UCCTItinerayDetails_Domestic" />
                     <div class="addi-info">
-                        <h3 style="background-color: #202020 !important; color: White;">Additional Details</h3>
+                        <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3 border">Additional Details</h2>
                         <table width="100%" style="text-align: left;" cellpadding="0" cellspacing="0">
                             <tr>
                                 <th>Membership No.

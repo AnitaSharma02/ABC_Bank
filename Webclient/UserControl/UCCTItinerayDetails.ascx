@@ -2,7 +2,7 @@
     Inherits="UserControl_UCItinerayDetails" %>
 <div class="row mt-3 dvPassengerDetails">
     <div class="col-12">
-        <h2 class="h7 heading-bold text-colour7 bg-colour2 py-3 px-2 border" data-i18n="flightpassenger-passenger">Passenger Details</h2>
+        <h2 class="h7 heading-bold text-colour6 bg-colour1 py-3 px-2 border" data-i18n="flightpassenger-passenger">Passenger Details</h2>
         <asp:Repeater ID="rptPassanger" runat="server">
             <HeaderTemplate>
                 <div class="px-3 border">
@@ -72,10 +72,10 @@
     <div class="col-12">
         <div class="row">
             <div class="col-8 pr-0">
-                <h2 class="h7 heading-bold text-colour7 bg-colour2 py-3 px-2 border" data-i18n="flightpassenger-departure">Departure Flight <i class="fa-solid fa-plane"></i></h2>
+                <h2 class="h7 heading-bold text-colour6 bg-colour1 py-3 px-2 border" data-i18n="flightpassenger-departure">Departure Flight <i class="fa-solid fa-plane"></i></h2>
             </div>
             <div class="col-4 pl-0">
-                <h2 class="h7 heading-bold text-colour7 bg-colour2 py-3 px-2 border border-left-0 text-right">
+                <h2 class="h7 heading-bold text-colour6 bg-colour1 py-3 px-2 border border-left-0 text-right">
                     <asp:Label ID="LabelClass" runat="server" data-i18n="flightsearch-travel-class-economy"></asp:Label></h2>
             </div>
         </div>

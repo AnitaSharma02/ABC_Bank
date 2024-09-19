@@ -4,7 +4,7 @@
 <div class="row mt-3 dvPassengerDetails">
     <div class="col-12">
 
-        <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3" data-i18n="flightpassenger-passenger">Passenger Details</h2>
+        <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3" data-i18n="flightpassenger-passenger">Passenger Details</h2>
         <asp:Repeater ID="rptPassanger" runat="server">
             <HeaderTemplate>
                 <div class="px-3">
@@ -75,12 +75,12 @@
         <div class="row">
             <div class="col-8 pr-0">
                 <h2 class="h7 bg-colour2 p-3 border border-right-0">
-                    <span class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-departure">Departure Flight</span>
+                    <span class="h7 heading-semibold text-colour6 bg-colour1" data-i18n="flightpassenger-departure">Departure Flight</span>
                     <i class="h7 fa fa-plane" aria-hidden="true"></i>
                 </h2>
             </div>
             <div class="col-4 pl-0">
-                <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border border-left-0 text-right">
+                <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3 border border-left-0 text-right">
                     <asp:Label ID="LabelClass" runat="server" data-i18n="flightsearch-travel-class-economy"></asp:Label>
                 </h2>
             </div>
