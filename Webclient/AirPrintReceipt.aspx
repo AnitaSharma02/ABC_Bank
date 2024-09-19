@@ -55,7 +55,7 @@
 
                         <div class="row dvAdditionalDetails mt-3">
                             <div class="col-12">
-                                <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border">Additional Details</h2>
+                                <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3 border">Additional Details</h2>
                               
                                  
                                         <div class="px-3 border">
