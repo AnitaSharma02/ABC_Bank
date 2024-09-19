@@ -193,20 +193,20 @@
                             </div>
 
                             <div class="mt-3">
-                                <div class="col-12 border bg-colour6 p-3" id="divAdditionalInfo">
+                                <div class="h7 col-12 border b-radius bg-colour2 text-colour7 p-3" id="divAdditionalInfo">
                                 </div>
                             </div>
 
                             <div class="mt-3">
-                                <div class="col-12 border b-radius bg-colour6 p-3" id="divPickupInformation">
+                                <div class="col-12 border b-radius bg-colour2 p-3" id="divPickupInformation">
                                 </div>
                             </div>
                             <div class="border-bottom"></div>
-                            <div class="col-12 border b-radius bg-colour6 p-3 mt-3">
+                            <div class="col-12 border b-radius bg-colour2 p-3 mt-3">
                                 <div class="row">
-                                    <div class="cancelBox col-12 col-lg-6" id="cancelBox">
-                                        <p class="heading-semibold h6 pb-2" id="CancellationBox">Cancellation Policy:</p>
-                                        <p class="heading-light" id="cancellationPolicy"></p>
+                                    <div class="cancelBox col-12 col-lg-6">
+                                        <p class="heading6">Cancellation Policy:</p>
+                                        <p class="h7 text-colour7" id="cancellationPolicy"></p>
                                     </div>
                                     <div class="col-12 col-lg-6 mt-lg-0 mt-3">
                                         <div class="dvLabel mb-3">

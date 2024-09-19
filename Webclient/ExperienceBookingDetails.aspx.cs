@@ -127,10 +127,10 @@ public partial class ExperienceBookingDetails : System.Web.UI.Page
                     foreach (var optionsItem in bookingInfoByUUIDResponse.data.options)
                     {
                         sb.Append("<div class=\"row\">");
-                        sb.Append("<div class=\"dvSelectDate col-6 col-md-6 col-lg-5 my-2\">");
+                        sb.Append("<div class=\"col-6 col-md-6 col-lg-5 my-2\">");
                         sb.Append("<p class=\"h6 heading-bold\">" + optionsItem.label + ":</p>");
                         sb.Append("</div>");
-                        sb.Append("<div class=\"dvSelectDate col-6 col-md-6 col-lg-7 my-2 text-left\">");
+                        sb.Append("<div class=\"col-6 col-md-6 col-lg-7 my-2 text-left\">");
                         sb.Append("<p class=\"h6 heading-regular\">");
                         if (optionsItem.label.Replace(" ", "").Replace("/", "").ToLower().Contains("datetime"))
                         {
@@ -169,7 +169,7 @@ public partial class ExperienceBookingDetails : System.Web.UI.Page
                 else
                 {
                     sb.Append("<div class=\"row\">");
-                    sb.Append("<div class=\"dvSelectDate col-6 col-md-6 col-lg-5 my-2\">");
+                    sb.Append("<div class=\"col-12 my-2\">");
                     sb.Append("<p class=\"h6 heading-regular\">No additional info available.</p>");
                     sb.Append("</div>");
                     sb.Append("</div>");

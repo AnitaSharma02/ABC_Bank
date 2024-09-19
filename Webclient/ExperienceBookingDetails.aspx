@@ -54,10 +54,8 @@
                             <div class="row">
                                 <div class="col-12 col-lg-5">
                                     <div class="border">
-                                        <div class="dvBookingDetails bg-colour1 p-3">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="heading6 text-colour6">Booking Details</p>
-                                            </div>
+                                        <div class="bg-colour1 p-3">
+                                            <p class="heading6 text-colour6">Booking Details</p>
                                         </div>
                                         <div class="bg-colour6 px-3">
                                             <div class="row">
@@ -162,10 +160,8 @@
                                         </div>
                                     </div>
                                     <div class="border mt-3">
-                                        <div class="dvBookingDetails bg-colour1 p-3">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="heading6 text-colour6">Guest Info</p>
-                                            </div>
+                                        <div class="bg-colour1 p-3">
+                                            <p class="heading6 text-colour6">Guest Info</p>
                                         </div>
                                         <div class="bg-colour6 px-3">
                                             <div class="row">
@@ -208,36 +204,30 @@
                                 </div>
                                 <div class="col-12 col-lg-7 mt-3 mt-md-0">
                                     <div class="border bg-colour6 mb-3">
-                                        <div class="dvBookingDetails bg-colour1 p-3">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="heading6 text-colour6">Cancellation Policy</p>
-                                            </div>
+                                        <div class="bg-colour1 p-3">
+                                            <p class="heading6 text-colour6">Cancellation Policy</p>
                                         </div>
                                         <div class="my-2">
-                                            <div class="dvHighligts col-12">
+                                            <div class="col-12">
                                                 <p class="">Cancellations are non refundable.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="border bg-colour6 mb-3">
-                                        <div class="dvBookingDetails bg-colour1 p-3">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="heading6 text-colour6">Additional Info</p>
-                                            </div>
+                                        <div class="bg-colour1 p-3">
+                                            <p class="heading6 text-colour6">Additional Info</p>
                                         </div>
                                         <div class="my-2">
-                                            <div class="dvHighligts col-12" id="AdditionalInfo" runat="server">
+                                            <div class="col-12" id="AdditionalInfo" runat="server">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="border bg-colour6 mb-3">
-                                        <div class="dvBookingDetails bg-colour1 p-3">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="heading6 text-colour6">Pickup/Meeting Point Information</p>
-                                            </div>
+                                        <div class="bg-colour1 p-3">
+                                            <p class="heading6 text-colour6">Pickup/Meeting Point Information</p>
                                         </div>
                                         <div class="my-2">
-                                            <div class="dvHighligts col-12">
+                                            <div class="col-12">
                                                 <div class="row" id="MeetingTimeDiv" runat="server">
                                                     <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
                                                         <p class="heading6">Time :</p>
@@ -273,7 +263,7 @@
 
 
                                                 <div class="row" id="PickUpMeetingErrorDiv" runat="server">
-                                                    <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
+                                                    <div class="col-12 my-2">
                                                         <p class="">No pickup/meeting point information available.</p>
                                                     </div>
                                                 </div>

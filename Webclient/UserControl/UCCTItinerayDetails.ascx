@@ -75,7 +75,7 @@
                 <h2 class="h7 heading-bold text-colour6 bg-colour1 py-3 px-2 border" data-i18n="flightpassenger-departure">Departure Flight <i class="fa-solid fa-plane"></i></h2>
             </div>
             <div class="col-4 pl-0">
-                <h2 class="h7 heading-bold text-colour6 bg-colour1 py-3 px-2 border border-left-0 text-right">
+                <h2 class="h7 heading-bold text-colour6 bg-colour1 py-3 px-2 h-100 border border-left-0 text-right">
                     <asp:Label ID="LabelClass" runat="server" data-i18n="flightsearch-travel-class-economy"></asp:Label></h2>
             </div>
         </div>
