@@ -100,13 +100,13 @@
 }
 /* Userdetails Modal Popup for all*/
 
-/* specific only for Terms and conditions tab section h2 tag */
+/* specific only for Terms and conditions tab section for all redemptions h2 tag */
 .dvProductDetail #terms h2 {
     font-family: var(--heading-bold);
     color: var(--text-colour7);
     font-size: var(--body-font-size);
 }
-/* specific only for Terms and conditions tab section h2 tag */
+/* specific only for Terms and conditions tab section for all redemptions h2 tag */
 /*=========[ Product Details ]=========*/
 
 .dvProductDetail .dvProductInfo .dvAddToCart .form-control:disabled,
