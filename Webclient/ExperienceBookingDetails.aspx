@@ -40,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="dvExperienceBookingDetails pb-5" id="OrderDetailsDiv" runat="server">
+                    <div class="dvExperienceBookingDetails" id="OrderDetailsDiv" runat="server">
                         <div class="dvOrderId my-3 row">
                             <div class="col-12">
                                 <p class="h6 heading-regular">Booking Code: <span class="heading6" id="bookingCode" runat="server"></span></p>
@@ -52,19 +52,20 @@
 
                         <div class="dvPaymentBox">
                             <div class="row">
-                                <div class="col-12 col-md-6 col-lg-4">
+                                <div class="col-12 col-lg-5">
                                     <div class="border">
-                                        <div class="dvBookingDetails">
+                                        <div class="dvBookingDetails bg-colour1 p-3">
                                             <div class="d-flex justify-content-between">
-                                                <p class="heading6">Booking Details</p>
+                                                <p class="heading6 text-colour6">Booking Details</p>
                                             </div>
                                         </div>
                                         <div class="bg-colour6 px-3">
                                             <div class="row">
-                                                <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
-                                                    <p class="heading6">Booked Date:</p>
+                                                <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
+                                                    <span class="heading6">Booked Date</span>
+                                                    <span>:</span>
                                                 </div>
-                                                <div class="dvSelectDate col-6 col-md-6 col-lg-7 my-2 text-right">
+                                                <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
                                                     <p class="" id="bookingdate" runat="server">
                                                     </p>
                                                 </div>
@@ -73,10 +74,11 @@
                                                 <div class="col-12 border-top mt-1 mb-1"></div>
                                             </div>
                                             <div class="row">
-                                                <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
-                                                    <p class="heading6">Arrival Date:</p>
+                                                <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
+                                                    <span class="heading6">Arrival Date</span>
+                                                    <span>:</span>
                                                 </div>
-                                                <div class="dvSelectDate col-6 col-md-6 col-lg-7 my-2 text-right">
+                                                <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
                                                     <p class="" id="arrivaldate" runat="server">
                                                     </p>
                                                 </div>
@@ -87,10 +89,11 @@
                                                     <div class="col-12 border-top mt-1 mb-1"></div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
-                                                        <p class="heading6">Timeslot:</p>
+                                                    <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
+                                                        <span class="heading6">Timeslot</span>
+                                                        <span>:</span>
                                                     </div>
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-7 my-2 text-right">
+                                                    <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
                                                         <p class="" id="timeslot" runat="server">
                                                         </p>
                                                     </div>
@@ -101,10 +104,11 @@
                                                 <div class="col-12 border-top mt-1 mb-1"></div>
                                             </div>
                                             <div class="row">
-                                                <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
-                                                    <p class="heading6">Adults:</p>
+                                                <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
+                                                    <span class="heading6">Adults</span>
+                                                    <span>:</span>
                                                 </div>
-                                                <div class="dvSelectDate col-6 col-md-6 col-lg-7 my-2 text-right">
+                                                <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
                                                     <p class="" id="adultCount" runat="server">
                                                     </p>
                                                 </div>
@@ -115,10 +119,11 @@
                                                     <div class="col-12 border-top mt-1 mb-1"></div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
-                                                        <p class="heading6">Children:</p>
+                                                    <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
+                                                        <span class="heading6">Children</span>
+                                                        <span>:</span>
                                                     </div>
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-7 my-2 text-right">
+                                                    <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
                                                         <p class="" id="childCount" runat="server">
                                                         </p>
                                                     </div>
@@ -130,10 +135,11 @@
                                                     <div class="col-12 border-top mt-1 mb-1"></div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
-                                                        <p class="heading6">Seniors:</p>
+                                                    <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
+                                                        <span class="heading6">Seniors</span>
+                                                        <span>:</span>
                                                     </div>
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-7 my-2 text-right">
+                                                    <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
                                                         <p class="" id="seniorCount" runat="server">
                                                         </p>
                                                     </div>
@@ -144,10 +150,11 @@
                                                 <div class="col-12 border-top mt-1 mb-1"></div>
                                             </div>
                                             <div class="row">
-                                                <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
-                                                    <p class="heading6">Total Price:</p>
+                                                <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
+                                                    <span class="heading6">Total Price</span>
+                                                    <span>:</span>
                                                 </div>
-                                                <div class="dvSelectDate col-6 col-md-6 col-lg-7 my-2 text-right">
+                                                <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
                                                     <p class="" id="totalPrice" runat="server">
                                                     </p>
                                                 </div>
@@ -155,17 +162,18 @@
                                         </div>
                                     </div>
                                     <div class="border mt-3">
-                                        <div class="dvBookingDetails">
+                                        <div class="dvBookingDetails bg-colour1 p-3">
                                             <div class="d-flex justify-content-between">
-                                                <p class="heading6">Guest Info</p>
+                                                <p class="heading6 text-colour6">Guest Info</p>
                                             </div>
                                         </div>
                                         <div class="bg-colour6 px-3">
                                             <div class="row">
-                                                <div class="dvSelectDate col-4 my-2">
-                                                    <p class="heading6">Name:</p>
+                                                <div class="col-lg-5 col-6 d-flex justify-content-between my-2">
+                                                    <span class="heading6">Name</span>
+                                                    <span>:</span>
                                                 </div>
-                                                <div class="dvSelectDate col-8 my-2 text-right">
+                                                <div class="col-lg-7 col-6 d-flex justify-content-between my-2">
                                                     <p class="" id="Name" runat="server"></p>
                                                 </div>
                                             </div>
@@ -173,10 +181,11 @@
                                                 <div class="col-12 border-top mt-1 mb-1"></div>
                                             </div>
                                             <div class="row">
-                                                <div class="dvSelectDate col-4 my-2">
-                                                    <p class="heading6">E-mail:</p>
+                                                <div class="col-lg-5 col-6 d-flex justify-content-between my-2">
+                                                    <span class="heading6">E-mail</span>
+                                                    <span>:</span>
                                                 </div>
-                                                <div class="dvSelectDate col-8 my-2 text-right">
+                                                <div class="col-lg-7 col-6 d-flex justify-content-between my-2">
                                                     <p class="text-break" id="EmailId" runat="server">
                                                     </p>
                                                 </div>
@@ -185,10 +194,11 @@
                                                 <div class="col-12 border-top mt-1 mb-1"></div>
                                             </div>
                                             <div class="row">
-                                                <div class="dvSelectDate col-4 my-2">
-                                                    <p class="heading6">Phone:</p>
+                                                <div class="col-lg-5 col-6 d-flex justify-content-between my-2">
+                                                    <span class="heading6">Phone</span>
+                                                    <span>:</span>
                                                 </div>
-                                                <div class="dvSelectDate col-8 my-2 text-right">
+                                                <div class="col-lg-7 col-6 d-flex justify-content-between my-2">
                                                     <p class="" id="Phone" runat="server">
                                                     </p>
                                                 </div>
@@ -196,62 +206,66 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-8 mt-3 mt-md-0">
+                                <div class="col-12 col-lg-7 mt-3 mt-md-0">
                                     <div class="border bg-colour6 mb-3">
-                                        <div class="dvBookingDetails">
+                                        <div class="dvBookingDetails bg-colour1 p-3">
                                             <div class="d-flex justify-content-between">
-                                                <p class="heading6">Cancellation Policy</p>
+                                                <p class="heading6 text-colour6">Cancellation Policy</p>
                                             </div>
                                         </div>
-                                        <div class="dvSelectDate my-2">
+                                        <div class="my-2">
                                             <div class="dvHighligts col-12">
                                                 <p class="">Cancellations are non refundable.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="border bg-colour6 mb-3">
-                                        <div class="dvBookingDetails">
+                                        <div class="dvBookingDetails bg-colour1 p-3">
                                             <div class="d-flex justify-content-between">
-                                                <p class="heading6">Additional Info</p>
+                                                <p class="heading6 text-colour6">Additional Info</p>
                                             </div>
                                         </div>
-                                        <div class="dvSelectDate my-2">
+                                        <div class="my-2">
                                             <div class="dvHighligts col-12" id="AdditionalInfo" runat="server">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="border bg-colour6 mb-3">
-                                        <div class="dvBookingDetails">
+                                        <div class="dvBookingDetails bg-colour1 p-3">
                                             <div class="d-flex justify-content-between">
-                                                <p class="heading6">Pickup/Meeting Point Information</p>
+                                                <p class="heading6 text-colour6">Pickup/Meeting Point Information</p>
                                             </div>
                                         </div>
-                                        <div class="dvSelectDate my-2">
+                                        <div class="my-2">
                                             <div class="dvHighligts col-12">
                                                 <div class="row" id="MeetingTimeDiv" runat="server">
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
+                                                    <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
                                                         <p class="heading6">Time :</p>
                                                     </div>
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-7 my-2 text-left">
+                                                    <div class="col-6 col-md-6 col-lg-7 my-2 text-left">
                                                         <p class="" id="MeetingTime" runat="server">
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="row" id="MeetingAddressDiv" runat="server">
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
-                                                        <p class="heading6">Address :</p>
+                                                    <div class="col-6 col-md-5 col-lg-4 d-flex justify-content-between my-2">
+                                                        <span class="heading6">Address</span>
+                                                        <span>:</span>
                                                     </div>
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-7 my-2 text-left">
+                                                    <div class="col-6 col-md-6 col-lg-8 my-2 text-left">
                                                         <p class="" id="MeetingAddress" runat="server">
                                                         </p>
                                                     </div>
                                                 </div>
-
+                                                <div class="row">
+                                                    <div class="col-12 border-top mt-1 mb-1"></div>
+                                                </div>
                                                 <div class="row" id="MeetingLocationDiv" runat="server">
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
-                                                        <p class="heading6">Location :</p>
+                                                    <div class="col-6 col-md-5 col-lg-4 d-flex justify-content-between my-2">
+                                                        <p class="heading6">Location</p>
+                                                        <span>:</span>
                                                     </div>
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-7 my-2 text-left">
+                                                    <div class="col-6 col-md-6 col-lg-8 my-2 text-left">
                                                         <p class="" id="MeetingLocation" runat="server">
                                                         </p>
                                                     </div>
@@ -259,7 +273,7 @@
 
 
                                                 <div class="row" id="PickUpMeetingErrorDiv" runat="server">
-                                                    <div class="dvSelectDate col-6 col-md-6 col-lg-5 my-2">
+                                                    <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
                                                         <p class="">No pickup/meeting point information available.</p>
                                                     </div>
                                                 </div>
