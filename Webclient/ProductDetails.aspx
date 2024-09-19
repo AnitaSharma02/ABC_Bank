@@ -31,7 +31,7 @@
             <div class="row">
                 <!-- Image -->
                 <div class="dvThumbSwiperSlider col-lg-4 col-xl-4">
-                    <div class="border p-3">
+                    <div class="border b-radius p-3">
                         <div class="swiper dvThumbBannerSlide">
                             <div class="swiper-wrapper" id="imgProductImageMain" runat="server">
                                 <%--<div class="swiper-slide img-container">

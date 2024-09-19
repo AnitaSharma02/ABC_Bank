@@ -25,7 +25,7 @@
     <div class="dvProductList pb-5">
         <div class="container-xl">
             <div class="row">
-                <div class="dvFilter modal fade col-lg-3 px-0 px-lg-3" id="dvFilterModal" tabindex="-1">
+                <div class="dvFilter modal fade col-lg-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content border-0">
                             <div class="modal-header border-0 d-lg-block p-0">
@@ -54,7 +54,7 @@
                 <div class="col-lg-9">
                     <div class="row">
                         <div class="dvSortBy col-12 mb-3">
-                            <div class="bg-colour2 d-flex flex-wrap justify-content-between align-items-center py-1 px-2 px-lg-2 mb-1">
+                            <div class="bg-colour2 b-radius d-flex flex-wrap justify-content-between align-items-center p-2 mb-1">
                                 <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none mb-2">Filter </button>
                                 <p class="col-8 px-0"></p>
                                 <div class="dropdown heading-regular col-lg-3 px-0">

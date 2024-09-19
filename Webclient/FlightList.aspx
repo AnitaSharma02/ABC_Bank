@@ -328,8 +328,8 @@
                 <div class="col-lg-9">
                     <div class="row">
                         <div class="dvModify col-12 mb-3">
-                            <div class="bg-colour2">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center py-2 py-lg-1 px-2 px-lg-3 mb-1">
+                            <div class="bg-colour2 b-radius px-3 py-2 mb-1">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center">
                                     <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none mb-2" data-i18n="flightlist-button-filters">Filter </button>
                                     <asp:Label ID="LabelYourSearchDetails" runat="server" CssClass="Content_Style h6 heading-regular text-colour7 col-auto px-0 mb-2 mb-lg-0" Text=""></asp:Label>
                                     <button class="btn btn-one arrowBtn col-auto d-flex collapsed" type="button" data-toggle="collapse" onclick="showModifyFlight()" data-target="#dvForm"><span class="d-inline-block" data-i18n="flightlist-modify">Modify</span> <span class="arrow-icon ml-2"><i class="fa fa-caret-up"></i></span></button>
@@ -643,7 +643,7 @@
                                 <input type="hidden" id="hdnReturnSelectedFlight" />
                                 <div id="LoadTemplate" runat="server"></div>
                                 <div class="clr"></div>
-                                <div class="bgHeader col-12 text-center" id="LoadNext" onclick="return LoadNext();">
+                                <div class="col-12 text-center" id="LoadNext" onclick="return LoadNext();">
                                     <label class="btn btn-one">
                                         <asp:Label ID="Label2" runat="server" CLASS="" Text="SHOW MORE FLIGHTS" data-i18n="button-more-flights"> </asp:Label>
                                     </label>

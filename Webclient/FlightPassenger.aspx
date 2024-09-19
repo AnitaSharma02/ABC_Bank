@@ -55,7 +55,7 @@
                 <div class="col-lg-7">
                    <div class="row">
                         <div class="col-12">
-                           <h2 class="heading6 text-colour6 bg-colour1 p-3" data-i18n="flightpassenger-passenger">Passenger Details</h2>
+                           <h2 class="heading6 text-colour6 bg-colour1 b-radius-top-right p-3" data-i18n="flightpassenger-passenger">Passenger Details</h2>
                          </div>
                          <div class="col-12">
                             <div class="bg-colour2 p-3">
@@ -114,7 +114,7 @@
              <div class="col-lg-5 mt-3 mt-lg-0">
                 <div class="row">
                      <div class="col-12">
-                        <div class="bg-colour1 d-flex justify-content-between align-items-center">
+                        <div class="bg-colour1 b-radius-top-right d-flex justify-content-between align-items-center">
                             <h2 class="heading6 text-colour6 p-3" data-i18n="flightpassenger-itinerary">Itinerary</h2>
                             <a href="FlightList.aspx?edit=1" data-i18n="flightpassenger-edit" class="btn btn-two mr-2">Edit</a>
                         </div>

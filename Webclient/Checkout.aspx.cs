@@ -87,7 +87,7 @@ public partial class Checkout : Page
         {
             ABCModel lobjModel = new ABCModel();
             ShoppingCart Cart = HttpContext.Current.Session["ShoppingCart"] as ShoppingCart;
-            string HeaderTemplate = "<div class=\"row\"><div class=\"col-12 dvYourCart\"><div class=\"bg-colour1 d-flex justify-content-between align-items-center\"><h2 class=\"h6 heading-bold text-colour6 p-3\" data-i18n=\"shopcheckout-yourcart\">Your Cart</h2><span class=\"badge badge-1 mr-3\">{0}</span></div></div> <div class=\"col-12 dvCartDetails mb-3\"><div class=\"bg-colour2 px-3\"><div class=\"row\">";
+            string HeaderTemplate = "<div class=\"row\"><div class=\"col-12 dvYourCart\"><div class=\"bg-colour1 b-radius-top-right d-flex justify-content-between align-items-center\"><h2 class=\"h6 heading-bold text-colour6 p-3\" data-i18n=\"shopcheckout-yourcart\">Your Cart</h2><span class=\"badge badge-1 mr-3\">{0}</span></div></div> <div class=\"col-12 dvCartDetails mb-3\"><div class=\"bg-colour2 px-3\"><div class=\"row\">";
             string BodyTemplate = "<div class=\"col-12 my-2\"><div class=\"row align-items-center mt-md-1\"><div class=\"col-5\"><h6 class=\"my-0 text-mute text-colour7 h7\">{0}</h6> <small style=\"display:none;\" class=\"text-mute\">{1}</small> </div><span class=\"col-3 text-center text-colour7 h7\">Qty: {3}</span> <span class=\"col-4 text-right text-colour7 h7\">{2}</span></div> </div>";
             string TotalTemplate = "<div class=\"col-12 my-2\"><div class=\"border-top py-2 d-flex justify-content-between\"><span class=\"h6 heading-bold text-colour7\" data-i18n=\"shopcheckout-total\">Total</span><strong class=\"h6 heading-bold text-colour7\">{0}</strong></div> </div>";
             StringBuilder sb = new StringBuilder();

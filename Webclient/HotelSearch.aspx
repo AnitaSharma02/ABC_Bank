@@ -169,7 +169,7 @@
                     <div class="col-12">
                         <div class="row">
                             <div id="dvForm" class="dvForm col-12">
-                                <div class="bg-colour2 p-3">
+                                <div class="bg-colour2 b-radius p-3">
                                      <div class="row">
                                         <div class="col-12 order-0">
                                             <div id="HotelModifyValidation" class="p-1 mb-2 alert alert-danger text-danger text-center h6 heading-semibold" style="display: none;"></div>

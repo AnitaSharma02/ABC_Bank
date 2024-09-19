@@ -2242,6 +2242,14 @@ select.form-control:focus {
     display: none;
 }
 /* Hiding the terms & conditions tab for shop products only */
+
+/* Hide AddToCart section */
+.dvProductDetailMilesExchange .dvAdd,
+.dvProductDetailLounges .dvAdd,
+.dvProductDetailGiftcards .dvAdd{
+    display: none;
+}
+/* Hide AddToCart section */
 /*=========[ DIFFERENT CLASS NAMES FOR PRODUCTLIST PAGES & PRODUCTDETAIL PAGES ]=========*/
 
 
@@ -2306,6 +2314,7 @@ select.form-control:focus {
     border-radius: var(--p-card-border-radius);
     height: 100%;
     padding: var(--p-card-padding);
+    overflow:hidden;/*added to apply border-radius border effect*/
 }
 .dvProductCard .anchor {
     display: var(--p-card-anchor-display);
@@ -2368,6 +2377,7 @@ select.form-control:focus {
     border-radius: var(--hp-card-border-radius);
     height: 100%;
     padding: var(--hp-card-padding);
+    overflow:hidden;/*added to apply border-radius border effect*/
 }
 .dvHotelProductCard .anchor {
     display: var(--hp-card-anchor-display);
