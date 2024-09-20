@@ -23,13 +23,16 @@
                     </div>--%>
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="h5 heading-semibold text-colour7 mb-3">Congratulations for your Infinity Rewards Ticket!</h2>
+                            <p class="heading-semibold mt-2 mb-3">Congratulations for your <span class="text-colour7">Infinity Rewards Ticket!</span></p>
                             <p>
-                                Reference No:
-                                <asp:Label ID="lblbookingReferenceNo" runat="server" Text="NIL" CssClass="heading-bold"></asp:Label>
+                                <span class="h6 heading-semibold text-colour7">Reference No : </span>
+                                <asp:Label ID="lblbookingReferenceNo" runat="server" Text="NIL"></asp:Label>
                             </p>
-                            <p>Payment Info: <span id="PaymentInfo" runat="server" class="heading-bold"></span></p>
-                            <p class="my-3">
+                            <p>
+                                <span class="h6 heading-semibold text-colour7">Payment Info : </span>
+                                <span id="PaymentInfo" runat="server"></span>
+                            </p>
+                            <p class="my-3 heading-semibold text-colour7">
                                 Thank you
                                 <asp:Label ID="lblMemberName" runat="server" Text="NIL"></asp:Label>
                                 (Infinity Rewards ID-:
@@ -38,19 +41,19 @@
                                 pertaining to this booking.
                             </p>
                             <p>
-                                Your Current status for Car Booking is <span class="heading-bold">
+                                Your Current status for Car Booking is <span class="heading-semibold text-colour7">
                                 <asp:Label ID="lblBookingStatus" runat="server" Text="NIL"></asp:Label>*.</span>
                             </p>
                             <p style="display: none;">
-                                Supplier ID: <span class="heading-bold">
-                                    <asp:Label ID="lblbookingId" runat="server" Text="NIL"></asp:Label></span>
+                                <span class="h6 heading-semibold text-colour7">Supplier ID : </span> 
+                                <span><asp:Label ID="lblbookingId" runat="server" Text="NIL"></asp:Label></span>
                             </p>
                         </div>
                     </div>
                     <%--<UC:ItineraryDetails ID="ucItinarary" runat="server" />--%>
                     <div class="row dvAdditionalDetails mt-3">
                         <div class="col-12 mb-3">
-                            <h2 class="h7 heading-semibold text-colour7 bg-colour2 py-3 px-2 border">Booking Details</h2>
+                            <h2 class="h7 heading-semibold text-colour6 bg-colour1 py-3 px-2 border">Booking Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
                                     <div class="col-12 col-sm-4 col-md-4 border-right">
@@ -123,7 +126,7 @@
                         </div>
 
                         <div class="col-12 mb-3">
-                            <h2 class="h7 heading-semibold text-colour7 bg-colour2 py-3 px-2 border">Car Details</h2>
+                            <h2 class="h7 heading-semibold text-colour6 bg-colour1 py-3 px-2 border">Car Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
                                     <div class="col-5 col-sm-4 col-md-4 border-right">
@@ -167,7 +170,7 @@
                         </div>
 
                         <div class="col-12 mb-3 d-none">
-                            <h2 class="h7 heading-semibold text-colour7 bg-colour2 py-3 px-2 border">Driver Details</h2>
+                            <h2 class="h7 heading-semibold text-colour6 bg-colour1 py-3 px-2 border">Driver Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
                                     <div class="col-4 col-sm-4 col-md-4 border-right">
@@ -213,7 +216,7 @@
                         </div>
 
                         <div class="col-12 mb-3" style="display:none;">>
-                            <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border">Pick-Up Location Details</h2>
+                            <h2 class="h7 heading-semibold text-colour6 bg-colour1 py-3 px-2 border">Pick-Up Location Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
                                     <div class="col-4 col-sm-4 col-md-4 border-right">
@@ -257,7 +260,7 @@
                         </div>
 
                         <div class="col-12 mb-3" style="display:none;">>
-                            <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border">Drop-Off Location Details</h2>
+                            <h2 class="h7 heading-semibold text-colour6 bg-colour1 py-3 px-2 border">Drop-Off Location Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
                                     <div class="col-4 col-sm-4 col-md-4 border-right">
@@ -311,8 +314,7 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-12 mt-3 text-right">
-                                     <a onclick="window.open('PrintCarVoucher.aspx')" class="btn btn-one">PRINT
- </a>
+                                     <a onclick="window.open('PrintCarVoucher.aspx')" class="btn btn-one">PRINT</a>
                                 </div>
                             </div>
                         </div>

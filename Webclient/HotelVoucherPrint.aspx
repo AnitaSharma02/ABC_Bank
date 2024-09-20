@@ -29,7 +29,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="h5 heading-light text-colour7 my-3">Thank you <asp:Label CssClass="heading-semibold text-colour7" ID="lblPersonName" runat="server" Text="Nil"></asp:Label>, Your booking is now <span class="heading-semibold text-colour7">confirmed.</span></h2>
+                            <p class="heading-semibold my-3">Thank you <asp:Label CssClass="heading-semibold text-colour7" ID="lblPersonName" runat="server" Text="Nil"></asp:Label>, Your booking is now <span class="heading-semibold text-colour7">confirmed.</span></p>
                             <p>                                
                                 
                                 <span class="h6 heading-semibold text-colour7">Points:</span>

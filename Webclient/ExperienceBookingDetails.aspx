@@ -41,248 +41,217 @@
                         </div>
                     </div>
                     <div class="dvExperienceBookingDetails" id="OrderDetailsDiv" runat="server">
-                        <div class="dvOrderId my-3 row">
+                        <div class="row my-3">
                             <div class="col-12">
-                                <p class="h6 heading-regular">Booking Code: <span class="heading6" id="bookingCode" runat="server"></span></p>
-                                <p class="">Product Name: <span class="heading6" id="productName" runat="server"></span></p>
-                                <p class="">Option: <span class="heading6" id="productTypeTitle" runat="server"></span></p>
-                                <p class="">Address: <span class="heading6" id="Address" runat="server"></span></p>
+                                <p><span class="h6 heading-semibold text-colour7">Booking Code : </span><span id="bookingCode" runat="server"></span></p>
+                                <p><span class="h6 heading-semibold text-colour7">Product Name : </span><span id="productName" runat="server"></span></p>
+                                <p><span class="h6 heading-semibold text-colour7">Option : </span><span id="productTypeTitle" runat="server"></span></p>
+                                <p><span class="h6 heading-semibold text-colour7">Address : </span><span id="Address" runat="server"></span></p>
                             </div>
                         </div>
 
-                        <div class="dvPaymentBox">
-                            <div class="row">
-                                <div class="col-12 col-lg-5">
-                                    <div class="border">
-                                        <div class="bg-colour1 p-3">
-                                            <p class="heading6 text-colour6">Booking Details</p>
-                                        </div>
-                                        <div class="bg-colour6 px-3">
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3 border">Booking Details</h2>
+                                <div class="px-3 border">
+                                    <div class="row">
+                                        <div class="col-6 col-md border-right">
                                             <div class="row">
-                                                <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
-                                                    <span class="heading6">Booked Date</span>
-                                                    <span>:</span>
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Booked Date</h2>
                                                 </div>
-                                                <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
-                                                    <p class="" id="bookingdate" runat="server">
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-12 border-top mt-1 mb-1"></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
-                                                    <span class="heading6">Arrival Date</span>
-                                                    <span>:</span>
-                                                </div>
-                                                <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
-                                                    <p class="" id="arrivaldate" runat="server">
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div id="timeslotdiv" runat="server">
-                                                <div class="row">
-                                                    <div class="col-12 border-top mt-1 mb-1"></div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
-                                                        <span class="heading6">Timeslot</span>
-                                                        <span>:</span>
-                                                    </div>
-                                                    <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
-                                                        <p class="" id="timeslot" runat="server">
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-12 border-top mt-1 mb-1"></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
-                                                    <span class="heading6">Adults</span>
-                                                    <span>:</span>
-                                                </div>
-                                                <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
-                                                    <p class="" id="adultCount" runat="server">
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div id="ChildCountDiv" runat="server">
-                                                <div class="row">
-                                                    <div class="col-12 border-top mt-1 mb-1"></div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
-                                                        <span class="heading6">Children</span>
-                                                        <span>:</span>
-                                                    </div>
-                                                    <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
-                                                        <p class="" id="childCount" runat="server">
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div id="SeniorCountDiv" runat="server">
-                                                <div class="row">
-                                                    <div class="col-12 border-top mt-1 mb-1"></div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
-                                                        <span class="heading6">Seniors</span>
-                                                        <span>:</span>
-                                                    </div>
-                                                    <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
-                                                        <p class="" id="seniorCount" runat="server">
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-12 border-top mt-1 mb-1"></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
-                                                    <span class="heading6">Total Price</span>
-                                                    <span>:</span>
-                                                </div>
-                                                <div class="col-6 col-lg-7 d-flex justify-content-between my-2">
-                                                    <p class="" id="totalPrice" runat="server">
-                                                    </p>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="bookingdate" runat="server"></p>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="border mt-3">
-                                        <div class="bg-colour1 p-3">
-                                            <p class="heading6 text-colour6">Guest Info</p>
-                                        </div>
-                                        <div class="bg-colour6 px-3">
+                                        <div class="col-6 col-md border-right">
                                             <div class="row">
-                                                <div class="col-lg-5 col-6 d-flex justify-content-between my-2">
-                                                    <span class="heading6">Name</span>
-                                                    <span>:</span>
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Arrival Date</h2>
                                                 </div>
-                                                <div class="col-lg-7 col-6 d-flex justify-content-between my-2">
-                                                    <p class="" id="Name" runat="server"></p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-12 border-top mt-1 mb-1"></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-5 col-6 d-flex justify-content-between my-2">
-                                                    <span class="heading6">E-mail</span>
-                                                    <span>:</span>
-                                                </div>
-                                                <div class="col-lg-7 col-6 d-flex justify-content-between my-2">
-                                                    <p class="text-break" id="EmailId" runat="server">
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-12 border-top mt-1 mb-1"></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-5 col-6 d-flex justify-content-between my-2">
-                                                    <span class="heading6">Phone</span>
-                                                    <span>:</span>
-                                                </div>
-                                                <div class="col-lg-7 col-6 d-flex justify-content-between my-2">
-                                                    <p class="" id="Phone" runat="server">
-                                                    </p>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="arrivaldate" runat="server"></p>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-6 col-md border-right" id="timeslotdiv" runat="server">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Timeslot</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="timeslot" runat="server"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md border-right">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Adults</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="adultCount" runat="server"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md border-right" id="ChildCountDiv" runat="server">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Children</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="childCount" runat="server"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md border-right" id="SeniorCountDiv" runat="server">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Seniors</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="seniorCount" runat="server"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Total Price</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="totalPrice" runat="server"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-7 mt-3 mt-md-0">
-                                    <div class="border bg-colour6 mb-3">
-                                        <div class="bg-colour1 p-3">
-                                            <p class="heading6 text-colour6">Cancellation Policy</p>
-                                        </div>
-                                        <div class="my-2">
-                                            <div class="col-12">
-                                                <p class="">Cancellations are non refundable.</p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3 border">Guest Info</h2>
+                                <div class="px-3 border">
+                                    <div class="row">
+                                        <div class="col-6 col-md border-right">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Name</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="Name" runat="server"></p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="border bg-colour6 mb-3">
-                                        <div class="bg-colour1 p-3">
-                                            <p class="heading6 text-colour6">Additional Info</p>
-                                        </div>
-                                        <div class="my-2">
-                                            <div class="col-12" id="AdditionalInfo" runat="server">
+                                        <div class="col-6 col-md border-right">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">E-mail</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7 text-break" id="EmailId" runat="server"></p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="border bg-colour6 mb-3">
-                                        <div class="bg-colour1 p-3">
-                                            <p class="heading6 text-colour6">Pickup/Meeting Point Information</p>
-                                        </div>
-                                        <div class="my-2">
-                                            <div class="col-12">
-                                                <div class="row" id="MeetingTimeDiv" runat="server">
-                                                    <div class="col-6 col-lg-5 d-flex justify-content-between my-2">
-                                                        <p class="heading6">Time :</p>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 col-lg-7 my-2 text-left">
-                                                        <p class="" id="MeetingTime" runat="server">
-                                                        </p>
-                                                    </div>
+                                        <div class="col-6 col-md border-right">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Phone</h2>
                                                 </div>
-                                                <div class="row" id="MeetingAddressDiv" runat="server">
-                                                    <div class="col-6 col-md-5 col-lg-4 d-flex justify-content-between my-2">
-                                                        <span class="heading6">Address</span>
-                                                        <span>:</span>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 col-lg-8 my-2 text-left">
-                                                        <p class="" id="MeetingAddress" runat="server">
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12 border-top mt-1 mb-1"></div>
-                                                </div>
-                                                <div class="row" id="MeetingLocationDiv" runat="server">
-                                                    <div class="col-6 col-md-5 col-lg-4 d-flex justify-content-between my-2">
-                                                        <p class="heading6">Location</p>
-                                                        <span>:</span>
-                                                    </div>
-                                                    <div class="col-6 col-md-6 col-lg-8 my-2 text-left">
-                                                        <p class="" id="MeetingLocation" runat="server">
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="row" id="PickUpMeetingErrorDiv" runat="server">
-                                                    <div class="col-12 my-2">
-                                                        <p class="">No pickup/meeting point information available.</p>
-                                                    </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="Phone" runat="server"></p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3 border">Pickup/Meeting Point Information</h2>
+                                <div class="px-3 border">
+                                    <div class="row">
+                                        <div class="col-6 col-md border-right" id="MeetingTimeDiv" runat="server">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Time</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="MeetingTime" runat="server"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md border-right" id="MeetingAddressDiv" runat="server">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Address</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="MeetingAddress" runat="server"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md" id="MeetingLocationDiv" runat="server">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <h2 class="h7 heading-semibold text-colour7">Location</h2>
+                                                </div>
+                                                <div class="col-12 p-2">
+                                                    <p class="h7" id="MeetingLocation" runat="server"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="PickUpMeetingErrorDiv" runat="server">
+                                        <div class="col-12 my-2">
+                                            <p class="">No pickup/meeting point information available.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3 border">Cancellation Policy</h2>
+                                <div class="px-3 border">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-12 p-2">
+                                                    <p class="h7">Cancellations are non refundable.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3 border">Additional Info</h2>
+                                <div class="px-3 border">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-12" id="AdditionalInfo" runat="server"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
 
     <div class="dvError d-flex justify-content-center align-items-center vh-center" id="ErrorDiv" runat="server">
         <div class="col text-center">
