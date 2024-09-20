@@ -92,7 +92,7 @@ public partial class HotelVoucherPrint : System.Web.UI.Page
                     if (lobjBookingResponse.BookingPaymentDetails.BookingPaymentBreakageList.Count == 0)
                     {
                         ABCModel verveModel = new ABCModel();
-                        lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, " Points: ", lobjModel.FloatToThousandSeperated(lobjHotelItineraryResponse.HotelSearchResponse.SearchResponse.hotels.hotel[0].roomrates.RoomRate[0].TotalPoints));
+                        lstrPaymentDetails = string.Format(lstrPaymentDetailsHTML, " ", lobjModel.FloatToThousandSeperated(lobjHotelItineraryResponse.HotelSearchResponse.SearchResponse.hotels.hotel[0].roomrates.RoomRate[0].TotalPoints));
                     }
                     divPaymentDetails.InnerHtml = lstrPaymentDetails;
                     divTotalMiles.InnerHtml = lstrPaymentDetails;

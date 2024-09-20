@@ -25,21 +25,25 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <p class="heading-semibold my-3">Thank you
+                            <p class="heading-semibold my-3">
+                                Thank you
                                 <asp:Label CssClass="text-colour7" ID="lblPersonName" runat="server" Text="Nil"></asp:Label>, Your booking is now <span class="text-colour7">confirmed.</span>
                             </p>
-                            
+
                             <p>
-                                <span class="h6 heading-semibold text-colour7">Points:</span>
-                                <span id="divTotalMiles" runat="server"></span><br />
-
-                                <span class="h6 heading-semibold text-colour7">Reference No:</span>
-                                <asp:Label ID="lblTransactionReference" runat="server"></asp:Label><br />
-
-                                <span class="h6 heading-semibold text-colour7">Voucher No:</span>
-                                <asp:Label ID="lblExternalRefId" runat="server" Text=""></asp:Label><br />
-
-                                <span class="h6 heading-semibold text-colour7">Booking ID:</span>
+                                <span class="h6 heading-semibold text-colour7">Points : </span>
+                                <span id="divTotalMiles" runat="server"></span>
+                            </p>
+                            <p>
+                                <span class="h6 heading-semibold text-colour7">Reference No : </span>
+                                <asp:Label ID="lblTransactionReference" runat="server"></asp:Label>
+                            </p>
+                            <p>
+                                <span class="h6 heading-semibold text-colour7">Voucher No : </span>
+                                <asp:Label ID="lblExternalRefId" runat="server" Text=""></asp:Label>
+                            </p>
+                            <p>
+                                <span class="h6 heading-semibold text-colour7">Booking ID : </span>
                                 <asp:Label ID="lblBookingID" runat="server" Text="Nil"></asp:Label>
                             </p>
                         </div>
@@ -209,7 +213,7 @@
                                                 <span class="h6 heading-semibold text-colour7">Room Details</span> <span>:</span>
                                             </div>
                                             <div class="col-6">
-                                                <asp:Label ID="lblRoomtype" runat="server" Text="Nil"></asp:Label>
+                                                <asp:Label ID="lblRoomtype" runat="server" Text="Nil" CssClass="text-break"></asp:Label>
                                                 <%--<span>1 room(s),</span>--%>
                                             </div>
                                         </div>

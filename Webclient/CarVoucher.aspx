@@ -56,7 +56,7 @@
                             <h2 class="h7 heading-semibold text-colour6 bg-colour1 py-3 px-2 border">Booking Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
-                                    <div class="col-12 col-sm-4 col-md-4 border-right">
+                                    <div class="col-12 col-sm-6 col-md-4 border-right">
                                         <div class="row">
                                             <div class="col-12 bg-colour4 p-2">
                                                 <h2 class="h7 heading-semibold text-colour7">Pick-Up</h2>
@@ -69,7 +69,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-sm-8 col-md-2 border-right">
+                                    <div class="col-12 col-sm-6 col-md-2 border-right">
                                         <div class="row">
                                             <div class="col-12 bg-colour4 p-2">
                                                 <h2 class="h7 heading-semibold text-colour7">Pick-Up Date</h2>
@@ -129,7 +129,7 @@
                             <h2 class="h7 heading-semibold text-colour6 bg-colour1 py-3 px-2 border">Car Details</h2>
                             <div class="px-3 border">
                                 <div class="row">
-                                    <div class="col-5 col-sm-4 col-md-4 border-right">
+                                    <div class="col-12 col-sm-4 col-md-4 border-right">
                                         <div class="row">
                                             <div class="col-12 bg-colour4 p-2">
                                                 <h2 class="h7 heading-semibold text-colour7">Car Name</h2>
@@ -141,7 +141,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-7 col-sm-8 col-md-4 border-right">
+                                    <div class="col-12 col-sm-8 col-md-4 border-right">
                                         <div class="row">
                                             <div class="col-12 bg-colour4 p-2">
                                                 <h2 class="h7 heading-semibold text-colour7">Transmission type</h2>

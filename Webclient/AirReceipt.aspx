@@ -28,21 +28,28 @@
                     <div class="row">
                         <div class="col-12">
                             <h2 class="h5 heading-semibold text-colour7 my-3">Congratulations for your Infinity Rewards Ticket!</h2>
+                            <h2 class="h6 heading-semibold my-3">Congratulations for your Infinity Rewards Ticket!</h2>
                             <p>
-                                This is your E-ticket. Do present it with a valid photo identification at the airport check-in counter.<br />
-                                <span class="h6 heading-semibold text-colour7">For international travel:</span><br />
-                                The check-in counters are open 4 hours prior to departure and close strictly 2 hours prior to departure.<br />
-
+                                This is your E-ticket. Do present it with a valid photo identification at the airport check-in counter.
+                            </p>
+                            <p>
+                                <span class="h6 heading-semibold text-colour7">For international travel : </span>
+                                The check-in counters are open 4 hours prior to departure and close strictly 2 hours prior to departure.
+                            </p>
+                            <p>
                                 <span runat="server" id="ItineraryTimeChanged" style="display: none;">Please check the timings, as there may be change in time from Airlines.</span>
-
-                                <span class="h6 heading-semibold text-colour7">Reference No.:</span><br />
-                                <asp:Label ID="lblTransactionRefNo" runat="server" /><br />
-
-                                <span class="h6 heading-semibold text-colour7">PNR No.:</span><br />
-                                <asp:Label ID="lblGDSPNR" runat="server" /><br />
-
-                                <span class="h6 heading-semibold text-colour7">Points:</span><br />
-                                <asp:Label ID="lblTotalMiles" runat="server"></asp:Label><br />
+                            </p>
+                            <p>
+                                <span class="h6 heading-semibold text-colour7">Reference No. : </span>
+                                <asp:Label ID="lblTransactionRefNo" runat="server" />
+                            </p>
+                            <p>
+                                <span class="h6 heading-semibold text-colour7">PNR No. : </span>
+                                <asp:Label ID="lblGDSPNR" runat="server" />
+                            </p>
+                            <p>
+                                <span class="h6 heading-semibold text-colour7">Points : </span>
+                                <asp:Label ID="lblTotalMiles" runat="server"></asp:Label>
                             </p>
                         </div>
                     </div>

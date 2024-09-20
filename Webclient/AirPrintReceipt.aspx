@@ -32,20 +32,25 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <h2 class="h5 heading-semibold text-colour7 my-3">Congratulations for your Infinity Rewards Ticket!</h2>
+                                <h2 class="h6 heading-semibold my-3">Congratulations for your Infinity Rewards Ticket!</h2>
                                 <p>
-                                    This is your E-ticket. Do present it with a valid photo identification at the airport check-in counter.<br />
-                                    <span class="h6 heading-semibold text-colour7">For international travel:</span><br />
-                                    The check-in counters are open 4 hours prior to departure and close strictly 2 hours prior to departure.<br />
-
-                                    <span class="h6 heading-semibold text-colour7">Reference No.:</span><br />
-                                    <asp:Label ID="lblTransactionRefNo" runat="server" /><br />
-
-                                    <span class="h6 heading-semibold text-colour7">PNR No.:</span><br />
-                                    <asp:Label ID="lblGDSPNR" runat="server" /><br />
-
-                                    <span class="h6 heading-semibold text-colour7">Points:</span><br />
-                                    <asp:Label ID="lblTotalMiles" runat="server"></asp:Label><br />
+                                    This is your E-ticket. Do present it with a valid photo identification at the airport check-in counter.
+                                </p>
+                                <p>
+                                    <span class="h6 heading-semibold text-colour7">For international travel : </span>
+                                    The check-in counters are open 4 hours prior to departure and close strictly 2 hours prior to departure.
+                                </p>
+                                <p>
+                                    <span class="h6 heading-semibold text-colour7">Reference No. : </span>
+                                    <asp:Label ID="lblTransactionRefNo" runat="server" />
+                                </p>
+                                <p>
+                                    <span class="h6 heading-semibold text-colour7">PNR No. : </span>
+                                    <asp:Label ID="lblGDSPNR" runat="server" />
+                                </p>
+                                <p>
+                                    <span class="h6 heading-semibold text-colour7">Points : </span>
+                                    <asp:Label ID="lblTotalMiles" runat="server"></asp:Label>
                                 </p>
                             </div>
                         </div>
@@ -61,7 +66,7 @@
                                         <div class="px-3 border">
                                             <div class="row">
                                 
-                                        <div class="col-4 col-sm-4 col-md-2 border-right">
+                                        <div class="col-12 col-sm-4 col-md-2 border-right">
                                             <div class="row">
                                                 <div class="col-12 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Membership No.</h2>
@@ -73,7 +78,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-8 col-sm-8 col-md-2 border-right">
+                                        <div class="col-12 col-sm-8 col-md-2 border-right">
                                             <div class="row">
                                                 <div class="col-12 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7">Name</h2>
@@ -97,7 +102,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-4 col-sm-4 col-md-2 border-right">
+                                        <div class="col-12 col-sm-4 col-md-2 border-right">
                                             <div class="row">
                                                 <div class="col-12 p-2">
                                                     <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-gender">Address</h2>
