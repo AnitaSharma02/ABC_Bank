@@ -21,7 +21,7 @@
     <div class="dvProductList dvExperienceSearch pb-5 mt-3" id="dvSearchProducts">
         <div class="container-xl">
             <div class="row">
-                <div class="dvFilter modal fade mb-3 col-lg-3" id="dvFilterModal" tabindex="-1">
+                <div class="dvFilter modal fade col-lg-3 px-0 px-lg-3 mb-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content border-0 b-radius">
                             <div class="modal-header border-0 p-0">
@@ -75,7 +75,7 @@
                                      </div>
                                  </div>
                             </div>                                    
-                             <div class="modal-footer justify-content-center border-left border-right border-bottom p-lg-2">
+                             <div class="modal-footer justify-content-center p-lg-2">
                      <button type="button" class="btn btn-one w-100" onclick="ClearFilters();" data-i18n="carlist-reset">Reset</button>
                  </div>                                   
                         </div>

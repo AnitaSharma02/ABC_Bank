@@ -186,7 +186,7 @@
     <div class="dvFlightList dvProductList pb-4">
         <div class="container-xl">
             <div class="row">
-                <div class="dvFilter modal fade col-lg-3" id="dvFilterModal" tabindex="-1">
+                <div class="dvFilter modal fade col-lg-3 px-0 px-lg-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content border-0 b-radius">
                             <div class="modal-header border-0 d-lg-block p-0">
