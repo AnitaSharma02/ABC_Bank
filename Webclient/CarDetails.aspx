@@ -111,7 +111,7 @@
                             <div class="card-body row">
                                 <div class="col-12 ">
                                     <div class="moreInfo" data-toggle="modal" data-target="#dvAdditionalEquipmentModal">
-                                        <i class="fa fa-info-circle" aria-hidden="true"></i>More info
+                                        More info
                                     </div>
                                     <div class="carPicBox" data-toggle="modal" data-target="#dvAdditionalEquipmentModal">
                                         <img class="img-fluid mt-auto mb-auto" src="https://cdn.enjoytravel.com/img/vehicleimages/volkswagen_polo.jpg" />
@@ -265,7 +265,7 @@
                     <div class="row">
                         <div class="col-12 col-md-12 mt-4 d-none">
                             <input type="hidden" name="Ratereference" id="hndRatereference" value="" />
-                            <button type="button" class="btn btn-one" onclick="CreateCarPayment();" data-i18n="car-continue-payment">Continue to Payment <i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-one" onclick="CreateCarPayment();" data-i18n="car-continue-payment">Continue to Payment</button>
                         </div>
                     </div>
                     <input type="hidden" name="IsExcessprotectionAdded" id="hndIsExcessprotectionAdded" value="" />
@@ -284,7 +284,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 mt-4 text-center text-md-left">
-                            <button type="button" class="btn btn-one" onclick="CreateCarPayment();"><span data-i18n="car-continue-payment">Continue to Payment</span> <i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-one" onclick="CreateCarPayment();"><span data-i18n="car-continue-payment">Continue to Payment</span></button>
                         </div>
                     </div>
                 </div>
@@ -297,7 +297,6 @@
             <div class="modal-content">
                 <div class="modal-header border-0">
                     <h5 class="modal-title">
-                        <i class="fa-solid fa-circle-info"></i>
                         <span data-i18n="carlist-important-information">Important information</span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal">
@@ -314,7 +313,6 @@
             <div class="modal-content">
                  <div class="modal-header border-0">
                       <h5 class="modal-title">
-                        <i class="fa-solid fa-circle-info"></i>
                         <span>Info</span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal">
@@ -333,7 +331,6 @@
             <div class="modal-content">
                 <div class="modal-header border-0">
                     <h5 class="modal-title">
-                        <i class="fa-solid fa-circle-info"></i>
                         <span>Info</span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal">

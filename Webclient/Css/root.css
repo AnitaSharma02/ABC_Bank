@@ -838,11 +838,16 @@
     ABC THEME -
     - - - - - - - - - - - - - - - -
 
+    FONT FAMILY USED -
+    - - - - - - - - - - - - - - - -
+    Open Sans
+
     HEADINGS USED - 
     - - - - - - - - - - - - - - - -
-    1. heading1 - for all big and main headings with font bold
-    2. heading6 - for all common small headings with font bold - used everywhere
-    3. heading5 - for all medium headings with font bold - used in index.aspx
+    1. heading1 - big main headings
+    2. heading2
+    3. heading5
+    4. heading6 - common small headings
 
     RESPONSIVE HEADINGS LOGIC
     - - - - - - - - - - - - - - - -
@@ -851,7 +856,10 @@
     h3 - font-size: calc(1.3rem + .6vw);
     h4 - font-size: calc(1.275rem + .3vw);
     h5 - font-size: 1.25rem;
-    h6 - font-size: 1rem;
+    h6 - font-size: 1rem;    - 16px
+    h7 - font-size: .875rem; - 14px
+    h8 - font-size: .75rem;  - 12px
+    h9 - font-size: .625rem; - 10px
 
     media queries - 992px and above
     h1 - font-size: 2.5rem;
@@ -860,11 +868,121 @@
     h4 - font-size: 1.5rem;
     h5 - font-size: 1.25rem;
     h6 - font-size: 1rem;
-
-
-
 */
 
-/* 
 
+
+
+/* 
+########----- COMPONENT INFO -----########
+
+.heading1
+------------------------------------
+AboutUs.aspx
+BookingPolicy.aspx
+Disclaimer.aspx
+ExperienceProductList.aspx
+FlightSearch.aspx
+HotelSearch.aspx
+Index.aspx
+PrivacyPolicy.aspx
+Redeem.aspx
+Shop.aspx.cs
+TermsandConditions.aspx
+
+.heading2
+------------------------------------
+HotelDetails.aspx
+Index.aspx
+
+.heading5
+------------------------------------
+Index.aspx
+
+.heading6
+------------------------------------
+BookingPolicy.aspx
+CarDetails.aspx
+CarDetails.aspx.cs
+CarList.aspx
+CarList.aspx.cs
+CarPayment.aspx
+CarPayment.aspx.cs
+ExperienceProductBookingDetails.aspx
+ExperienceProductDetails.aspx
+ExperienceSearach.aspx
+FlightList.aspx
+FlightPassenger.aspx
+OrderDetails.aspx.cs
+Redeem.aspx
+ShopList.aspx
+ShopList.aspx.cs
+Templates/DomesticOneWayOutbound.htm
+InternationalTwoWay.htm
+TermsandConditions.aspx
+TestExtSSORequest.aspx
+
+
+
+.dvFilter modal fade - DONE
+------------------------------------
+CarList.aspx
+ExperienceSearch.aspx
+FlightList.aspx
+HotelResults.aspx
+ShopList.aspx
+
+
+
+.dvCommonModal - DONE
+------------------------------------
+CarDetails.aspx
+CarList.aspx
+CarPayment.aspx
+HotelDetails.aspx
+OrderDetails.aspx
+SiteMaster.master
+ExperienceProductBookingDetails.aspx
+ManageBooking.aspx
+ProductDetails.aspx
+Templates/DomesticFinalTemplate.htm
+
+
+
+.dvCommonAccordion - DONE
+------------------------------------
+NOTE - ignore data-parent="#filter-accordion" sections, these accordions are in .dvFilter modal fade sections
+Aboutus.aspx
+BookingPolicy.aspx
+CarDetails.aspx
+CarPayment.aspx
+FAQ.aspx
+ManageBooking.aspx
+ViewMemberProfile.aspx
+Voucher.aspx.exclude
+
+
+
+.dvDeliveryTrack - DONE
+------------------------------------
+NOTE - .dvDeliveryTrack css is different for Car.css experience.css and OrderDetails.css
+CarList.aspx
+CarDetails.aspx
+ExperienceProductBookingDetails.aspx
+ExperienceProductStatus.aspx
+OrderDetails.aspx
+OrderDetails.aspx.cs
+
+
+
+STATIC PAGES
+------------------------------------
+aboutus.aspx - DONE
+faq.aspx - DONE
+earn.aspx - PENDING
+redeem.aspx - DONE
+termsandconditions.aspx - DONE
+privacypolicy.aspx - DONE
+bookingpolicy.aspx - DONE
+disclaimer.aspx - PENDING - Gopal told to hide this page
 */

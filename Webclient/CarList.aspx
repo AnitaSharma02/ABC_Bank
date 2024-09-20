@@ -613,7 +613,6 @@
             <div class="modal-content">
                  <div class="modal-header border-0">         
                     <h5 class="modal-title">
-                        <i class="fa-solid fa-circle-info"></i>
                         <span data-i18n="carlist-important-information">Important information</span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal">

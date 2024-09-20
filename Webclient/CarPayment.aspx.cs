@@ -91,7 +91,7 @@ public partial class CarPayment : System.Web.UI.Page
                 sbcardetails.Append("<img class=\"img-fluid mt-auto mb-auto\" src=" + lobjVehicle.vehicle.images[0].url + " />");
                 sbcardetails.Append("</div>");
                 sbcardetails.Append("<div class=\"btn btn-two w-100 my-3\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
-                sbcardetails.Append("<i class=\"fa fa-info-circle text-colour1\" aria-hidden=\"true\"></i> More info");
+                sbcardetails.Append("More info");
                 sbcardetails.Append("</div>");
                 sbcardetails.Append("<div class=\"dvProvider text-center\">");
                 sbcardetails.Append("<img class=\"img-fluid mt-auto mb-auto\" src=\"images/logos/giift-logo-blue.svg\" width=\"50\" />");

@@ -218,7 +218,7 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append("</div>");
                 sb.Append("<div class=\"col-sm-6 col-lg-12\">");
                 sb.Append("<div class=\"btn btn-two w-100\" onclick=\"ViewMoreInfo('" + item.vehicle.uniqueRef + "');\">");
-                sb.Append("<i class=\"fa-solid fa-circle-info text-colour1\"></i> <span data-i18n=\"more-info\">More info</span>");
+                sb.Append("<span data-i18n=\"more-info\">More info</span>");
                 sb.Append("</div>");
                 sb.Append("</div>");
                 sb.Append("</div>");
@@ -626,7 +626,7 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append("</div>");
                 sb.Append("<div class=\"col-sm-6 col-lg-12\">");
                 sb.Append("<div class=\"btn btn-two w-100\" onclick=\"ViewMoreInfo('" + item.vehicle.uniqueRef + "');\">");
-                sb.Append("<i class=\"fa-solid fa-circle-info text-colour1\"></i> <span data-i18n=\"more-info\">More info</span>");
+                sb.Append("<span data-i18n=\"more-info\">More info</span>");
                 sb.Append("</div>");
                 sb.Append("</div>");
                 sb.Append("</div>");
