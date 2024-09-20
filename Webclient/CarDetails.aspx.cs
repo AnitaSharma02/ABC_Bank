@@ -283,8 +283,8 @@ public partial class CarDetails : System.Web.UI.Page
                                 {
                                     if ((extras.name != "Excess Protection") && (extras.name != "Cancellation Protection (Prepay)"))
                                     {
-                                        sbAdditionalEquipment.Append("<div class=\"row mb-3\">");
-                                        sbAdditionalEquipment.Append("<div class=\"col-sm-3 col-md-3\">");
+                                        sbAdditionalEquipment.Append("<div class=\"row my-3 align-items-md-center\">");
+                                        sbAdditionalEquipment.Append("<div class=\"col-sm-2\">");
                                         sbAdditionalEquipment.Append("<select class=\"form-control\" name= \"cars\" class=\"\" id = \"" + extras.code + "\" onchange=\"AddAdditionalCharges('" + extras.code + "');\">");
                                         sbAdditionalEquipment.Append("<option value=\"0\"> 0 </option>");
                                         sbAdditionalEquipment.Append("<option value=\"1\"> 1 </option>");
@@ -293,18 +293,21 @@ public partial class CarDetails : System.Web.UI.Page
                                         sbAdditionalEquipment.Append("<option value=\"4\"> 4 </option>");
                                         sbAdditionalEquipment.Append("</select>");
                                         sbAdditionalEquipment.Append("</div>");
-                                        sbAdditionalEquipment.Append("<div class=\"col-sm-6 col-md-6 my-2 my-sm-0\">");
-                                        sbAdditionalEquipment.Append("<p id = \"spnaditionalchargename_" + extras.code + "\"> " + extras.name + "</p>");
-                                        sbAdditionalEquipment.Append("<div class=\"btn btn-two\" onclick=\"ViewMoreInfoAdditionalCharges('" + extras.code + "');\">");
-                                        sbAdditionalEquipment.Append("More info");
+                                        sbAdditionalEquipment.Append("<div class=\"col-sm-6 col-md-4 mt-2 mt-sm-0\">");
+                                        sbAdditionalEquipment.Append("<p class=\"heading-semibold text-colour7\" id=\"spnaditionalchargename_" + extras.code + "\"> " + extras.name + "</p>");
+                                        
                                         sbAdditionalEquipment.Append("</div>");
-                                        sbAdditionalEquipment.Append("</div>");
-                                        sbAdditionalEquipment.Append("<div class=\"col-sm-3 col-md-3\">");
-                                        sbAdditionalEquipment.Append("<p> <span id = \"spnaditionalchargeamount_" + extras.code + "\">" + extras.rentalPrice.display.amount + "</span> Points</p>");
+                                        sbAdditionalEquipment.Append("<div class=\"col-sm-4 col-md-3\">");
+                                        sbAdditionalEquipment.Append("<p class=\"heading-semibold text-colour7\"> <span id = \"spnaditionalchargeamount_" + extras.code + "\">" + extras.rentalPrice.display.amount + "</span> Points <span class=\"h8 heading-semibold text-colour7\"> (per rental)</span></p>");
 
                                         //sbAdditionalEquipment.Append("<p><span id = \"spnaditionalchargeamount_" + extras.code + "\">  100 </span> <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
                                         sbAdditionalEquipment.Append("<input type=\"hidden\" name=\"aditionalcharge\" id=\"hndTotaladitionalchargeamount_" + extras.code + "\" value=\"0\" />");
-                                        sbAdditionalEquipment.Append("<span> (per rental)</span>");
+                                        //sbAdditionalEquipment.Append("");
+                                        sbAdditionalEquipment.Append("</div>");
+                                        sbAdditionalEquipment.Append("<div class=\"col-sm-12 col-md-3 mt-2\">");
+                                        sbAdditionalEquipment.Append("<button type=\"button\" class=\"btn btn-two w-100\" onclick=\"ViewMoreInfoAdditionalCharges('" + extras.code + "');\">");
+                                        sbAdditionalEquipment.Append("More info");
+                                        sbAdditionalEquipment.Append("</button>");
                                         sbAdditionalEquipment.Append("</div>");
                                         sbAdditionalEquipment.Append("</div>");
                                     }
@@ -644,7 +647,7 @@ public partial class CarDetails : System.Web.UI.Page
                         sbAdditionalEquipment.Append("<div class=\"col-4 col-md-5 col-lg-4 dvPrice\">");
                         //sbAdditionalEquipment.Append("<p> " + extras.rentalPrice.display.amount + " <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
                         sbAdditionalEquipment.Append("<p><span id = \"spnaditionalchargeamount_" + extras.code + "\">  100 </span> <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
-                        sbAdditionalEquipment.Append("<span> (per rental)</span>");
+                        sbAdditionalEquipment.Append("<span class=\"heading-semibold text-colour7\"> (per rental)</span>");
                         sbAdditionalEquipment.Append("</div>");
                         sbAdditionalEquipment.Append("</div>");
                     }

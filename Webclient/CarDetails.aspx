@@ -67,7 +67,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-5 col-lg-4">
+                <div class="col-lg-4">
                     <div class="border b-radius p-0">
                         <div class="dvCommonAccordion accordion" id="accordionExample">
                             <div class="card">
@@ -254,7 +254,7 @@
 
                     </div>
                 </div>
-                <div class="col-md-7 col-lg-8">
+                <div class="col-lg-8">
                     <div class="row">
                         <div class="col-12 mt-3 mt-md-0 dvPayOption">
                             <h2 class="heading6"><i class="fa fa-lock mr-2" aria-hidden="true"></i><span data-i18n="car-payment-options">Payment Options</span></h2>
