@@ -11,7 +11,7 @@
             <ItemTemplate>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-title">Title</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-12 col-sm-8 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-passengertype">Passenger Type</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-12 col-sm-12 col-md-4 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-passengername">Passenger Name</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-gender">Gender</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-12 col-sm-8 col-md-2">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-age">Age</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -71,11 +71,11 @@
 <div class="row mt-3 dvFlightInformation">
     <div class="col-12">
         <div class="row">
-            <div class="col-8 pr-0">
+            <div class="col-7 pr-0">
                 <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 border" data-i18n="flightpassenger-departure">Departure Flight <i class="fa-solid fa-plane"></i></h2>
             </div>
-            <div class="col-4 pl-0">
-                <h2 class="h7 heading-bold text-colour6 bg-colour1 py-3 px-2 h-100 border border-left-0 text-right">
+            <div class="col-5 pl-0">
+                <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 h-100 border border-left-0 text-sm-right">
                     <asp:Label ID="LabelClass" runat="server" data-i18n="flightsearch-travel-class-economy"></asp:Label></h2>
             </div>
         </div>
@@ -87,7 +87,7 @@
             <ItemTemplate>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-flight">Flight</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -100,7 +100,7 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-depart">Depart</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-arrive">Arrive</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -130,7 +130,7 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-departtime">Depart Time</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -145,7 +145,7 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-arrivetime">Arrive Time</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -160,7 +160,7 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-2" style="display:none">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-aircraft">Aircraft Type</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -199,7 +199,7 @@
             <ItemTemplate>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-flight">Flight</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -212,7 +212,7 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-depart">Depart</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -227,7 +227,7 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-arrive">Arrive</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -242,7 +242,7 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-departtime">Depart Time</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -257,7 +257,7 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-arrivetime">Arrive Time</h2>
                         </div>
                         <div class="col-12 p-2">
@@ -272,7 +272,7 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-2">
                     <div class="row">
-                        <div class="col-12 bg-colour4 p-2">
+                        <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-aircraft">Aircraft Type</h2>
                         </div>
                         <div class="col-12 p-2">
