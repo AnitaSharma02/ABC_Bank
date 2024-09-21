@@ -85,7 +85,7 @@
                     <div class="row">
             </HeaderTemplate>
             <ItemTemplate>
-                <div class="col-12 col-sm-4 col-md-2 border-right">
+                <div class="col-12 col-sm-6 col-md-3 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-flight">Flight</h2>
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-4 col-md-2 border-right">
+                <div class="col-12 col-sm-6 col-md-3 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
                             <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-depart">Depart</h2>

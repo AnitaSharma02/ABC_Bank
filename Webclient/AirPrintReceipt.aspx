@@ -52,11 +52,9 @@
                         <UC:ItineraryDetails ID="ucItinarary" runat="server" />
 
 
-                        <div class="row dvAdditionalDetails mt-3">
+                        <div class="row dvAdditionalDetails">
                             <div class="col-12">
-                                <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3 border">Additional Details</h2>
-                              
-                                 
+                                <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 border">Additional Details</h2>
                                         <div class="px-3 border">
                                             <div class="row">
                                 
@@ -137,7 +135,7 @@
                                 <li>4. Kindly carry a valid photo identification along with your E-Ticket.</li>
                                 <li>5. No Cancellation and modification is allowed on a Ticket.</li>
                             </ul>
-                            <h2 class="h5 heading-light text-colour7 mt-3 text-center">Infinity Rewards wishes you a pleasant journey and hopes to serve you again in the future.</h2>
+                            <h2 class="h5 heading-semibold text-colour7 mt-3">Infinity Rewards wishes you a pleasant journey and hopes to serve you again in the future.</h2>
                         </div>
                     </div>
                 </div>
