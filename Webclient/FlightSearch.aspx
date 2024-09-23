@@ -301,7 +301,7 @@
                              </ul>
                             <div class="tab-content" id="pills-tabContent">
                                  <div class="dvInternational tab-pane fade show active" id="pills-international" role="tabpanel" aria-labelledby="pills-international-tab">
-                                     <div class="bg-colour2 b-radius px-3 pt-2">                                       
+                                     <div class="bg-colour2 b-radius p-3">                                       
                                             <div class="p-1 mb-2 alert alert-danger text-center h6 heading-semibold" id="requiredValidation" style="display:none;"></div>
                                                 <div class="row dvLabel r- d-none">
                                                         <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">
@@ -535,7 +535,7 @@
                                                                         </span>
                                                                    </label>
                                                                 </div>
-                                                                <div class="col-12 col-md-12 col-lg-3 offset-lg-9 col-xl-2 offset-xl-10 mb-3">
+                                                                <div class="col-12 col-md-12 col-lg-3 offset-lg-9 col-xl-2 offset-xl-10">
                                                                     <button onclick="var retvalue = FlightValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one w-100" value="Search" data-i18n="flightsearch-search-btn">Search Flight</button>
                                                                 </div>
                                                             </div>
@@ -706,7 +706,7 @@
                                                                     </select>
                                                                 </div>
                                                             </div>                                                
-                                                            <div class="col-12 col-md-12 col-lg-3 offset-lg-9 col-xl-2 offset-xl-10 mb-3">
+                                                            <div class="col-12 col-md-12 col-lg-3 offset-lg-9 col-xl-2 offset-xl-10">
                                                                <button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one w-100" value="Search" data-i18n="flightsearch-search-btn">Search Flight</button>
                                                             </div>
                                                         </div>

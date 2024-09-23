@@ -152,17 +152,17 @@ p {
 .text-danger {
     font-family: var(--danger-family);
     font-size: var(--danger-fontsize);
-    color: var(--danger-text-colour);
+    color: var(--danger-text-colour) !important;
 }
 .text-success {
     font-family: var(--success-family);
     font-size: var(--success-fontsize);
-    color: var(--success-text-colour);
+    color: var(--success-text-colour) !important;
 }
 .text-warning {
     font-family: var(--warning-family);
     font-size: var(--warning-fontsize);
-    color: var(--warning-text-colour);
+    color: var(--warning-text-colour) !important;
 }
 /*=========[ VALIDATION ERRORS only for text type errors ]=========*/
 

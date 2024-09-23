@@ -75,11 +75,18 @@
     animation: fadeIn 0.5s ease-in-out forwards;
     display: block;
 }
-
 .dvCarSearch .dvForm .fade-out {
     animation: fadeOut 0.5s ease-in-out forwards;
     display: none;
 }
+
+/*carSearch errors*/
+.dvCarSearch .dvForm .error{
+    border: 1px solid var(--danger-text-colour);
+    /*color: var(--danger-text-colour);*/
+}
+/*carSearch errors*/
+/*=========[ CAR SEARCH PAGE ]=========*/
 
 @keyframes fadeIn {
     from {

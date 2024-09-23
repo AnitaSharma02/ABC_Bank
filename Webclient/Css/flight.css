@@ -46,8 +46,8 @@
 .dvFlightSearch .dvInternational .error,
 .dvFlightSearch .dvDomestic .error,
 .dvFlightList .dvModify .dvForm .error {
-    border: 1px solid var(--colour1);
-    color: var(--colour1);
+    border: 1px solid var(--danger-text-colour);
+    color: var(--danger-text-colour);
 }
 /*flightsearch international and domestic errors*/
 /*=========[ FLIGHTSEARCH ]=========*/

@@ -425,7 +425,7 @@ function CarValidation() {
     if (msg.length > 0) {
 
         $("#CP_CarValidationError").show();
-        $("#CP_CarValidationError")[0].innerHTML = "Below fields are mandatory.";
+        $("#CP_CarValidationError")[0].innerHTML = "<span class='heading-semibold text-danger d-block' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
         return false;
     }
     else {
@@ -615,7 +615,7 @@ function LocationSearchCarSearch() {
 
     if (msg.length > 0) {
         $("#CP_CarValidationError").show();
-        $("#CP_CarValidationError")[0].innerHTML = "Below fields are mandatory.";
+        $("#CP_CarValidationError")[0].innerHTML = "<span class='heading-semibold text-danger d-block' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
         return !(msg.length > 0);
     }
     else {

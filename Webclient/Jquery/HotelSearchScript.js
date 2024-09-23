@@ -212,7 +212,7 @@ function ModifyvalidateHotelFields() {
     }
     if (msg.length > 0) {
         $("#HotelModifyValidation").show();
-        $("#HotelModifyValidation")[0].innerHTML = "<span class='heading-semibold text-danger' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
+        $("#HotelModifyValidation")[0].innerHTML = "<span class='heading-semibold text-danger d-block' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
         return false;
     }
     else
@@ -235,7 +235,7 @@ function validateHotelFields() {
     }
     if (msg.length > 0) {
         $("#HotelModifyValidation").show();
-        $("#HotelModifyValidation")[0].innerHTML = "<span class='heading-semibold text-danger' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
+        $("#HotelModifyValidation")[0].innerHTML = "<span class='heading-semibold text-danger d-block' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
         return false;
     }
     else
