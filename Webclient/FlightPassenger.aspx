@@ -116,7 +116,7 @@
                      <div class="col-12">
                         <div class="bg-colour1 b-radius-top-right d-flex justify-content-between align-items-center">
                             <h2 class="heading6 text-colour6 p-3" data-i18n="flightpassenger-itinerary">Itinerary</h2>
-                            <a href="FlightList.aspx?edit=1" data-i18n="flightpassenger-edit" class="btn btn-two mr-2">Edit</a>
+                            <a href="FlightList.aspx?edit=1" data-i18n="flightpassenger-edit" class="btn btn-two mr-2 text-decoration-none">Edit</a>
                         </div>
                      </div>
                     <div class="col-12">

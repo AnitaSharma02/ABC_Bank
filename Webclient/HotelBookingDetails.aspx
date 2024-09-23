@@ -284,7 +284,7 @@
                         <div class="col-12">
                             <div class="bg d-flex justify-content-between align-items-center">
                                 <h2 class="h6 heading-bold text-colour6 bg p-3">Hotel Details</h2>
-                                <a href="HotelResults.aspx?edit=1" class="btn btn-two mr-2">Edit</a>
+                                <a href="HotelResults.aspx?edit=1" class="btn btn-two mr-2 text-decoration-none">Edit</a>
                             </div>
                         </div>
                         <div class="col-12">

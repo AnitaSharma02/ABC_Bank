@@ -112,10 +112,10 @@
     --body-text-colour: var(--colour8);
 
     /*==================[ DEFAULT SCROLLBAR ]==================*/
-    --scrollbar-custom-size: 3px;
-    --scrollbar-width: 12px;
-    --scrollbar-track-bg: #f1f1f1;
-    --scrollbar-thumb-bg: var(--colour1);
+    --scrollbar-custom-size: 3px;/*3px*/
+    --scrollbar-width: 16px;/*16px*/
+    --scrollbar-track-bg: #f1f1f1;/*#f1f1f1*/
+    --scrollbar-thumb-bg: #c1c1c1;/*var(--colour1)*/
 
     /*==================[ REDEMPTION MENU ]==================*/
     --redemptionmenu-scrollbar-height: var(--scrollbar-custom-size);
