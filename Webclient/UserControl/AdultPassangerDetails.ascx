@@ -87,7 +87,7 @@
         </div>
         <asp:RequiredFieldValidator ID="rfvTitle" runat="server" ControlToValidate="ddlTitle"
             Display="Dynamic" ErrorMessage="Enter Title" ValidationGroup="WebValidation"
-            CssClass="rptErrorMassage danger" InitialValue="1"></asp:RequiredFieldValidator>
+            CssClass="rptErrorMassage text-danger" InitialValue="1"></asp:RequiredFieldValidator>
     </div>
     <div class="col-md-6 mb-3">
         <label class="label" data-i18n="flightpassenger-first">First Name</label>
@@ -96,10 +96,10 @@
         </div>
         <asp:RequiredFieldValidator ID="rfvAdultFirstName" runat="server" ControlToValidate="txtFirstName"
             Display="Dynamic" ErrorMessage="Enter First Name" data-i18n="flightpassenger-error-enter-firstname" ValidationGroup="WebValidation"
-            CssClass="rptErrorMassage danger"></asp:RequiredFieldValidator>
+            CssClass="rptErrorMassage text-danger"></asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="revAdultFirstName" Display="Dynamic" runat="server"
             ControlToValidate="txtFirstName" ValidationGroup="WebValidation" ValidationExpression="^[a-zA-Z.\s]{1,50}"
-            CssClass="rptErrorMassage danger" ErrorMessage="Please Enter valid First Name." data-i18n="hotel-booking-errorvalidfname"></asp:RegularExpressionValidator>
+            CssClass="rptErrorMassage text-danger" ErrorMessage="Please Enter valid First Name." data-i18n="hotel-booking-errorvalidfname"></asp:RegularExpressionValidator>
 
     </div>
     <div class="col-md-6 mb-3">
@@ -109,10 +109,10 @@
         </div>
         <asp:RequiredFieldValidator ID="rfvAdultLastName" runat="server" ControlToValidate="txtLastName"
             Display="Dynamic" data-i18n="flightpassenger-error-enter-lastname" ErrorMessage="Enter Last Name" ValidationGroup="WebValidation"
-            CssClass="rptErrorMassage danger"></asp:RequiredFieldValidator>
+            CssClass="rptErrorMassage text-danger"></asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="revAdultLastName" Display="Dynamic" runat="server"
             ControlToValidate="txtLastName" ValidationGroup="WebValidation" ValidationExpression="^[a-zA-Z.\s]{1,50}"
-            CssClass="rptErrorMassage danger" ErrorMessage="Please Enter valid Last Name." data-i18n="hotel-booking-errorvalidlname"></asp:RegularExpressionValidator>
+            CssClass="rptErrorMassage text-danger" ErrorMessage="Please Enter valid Last Name." data-i18n="hotel-booking-errorvalidlname"></asp:RegularExpressionValidator>
 
     </div>
     <div class="col-md-6 mb-3">
@@ -125,10 +125,10 @@
         </div>
         <asp:RequiredFieldValidator ID="rfvAdultDOB" runat="server" ControlToValidate="txtDOB"
             Display="Dynamic" data-i18n="flightpassenger-error-enter-date" ErrorMessage="Enter Date of Birth" ValidationGroup="WebValidation"
-            CssClass="rptErrorMassage danger"></asp:RequiredFieldValidator>
+            CssClass="rptErrorMassage text-danger"></asp:RequiredFieldValidator>
         <asp:CustomValidator ID="CustomValidatorAdultDOB" runat="server" ErrorMessage="Adults (12+ yrs)"
             Display="Dynamic" ValidationGroup="WebValidation" OnServerValidate="IssueAdultDateValidator"
-            ControlToValidate="txtDOB" CssClass="rptErrorMassage danger">
+            ControlToValidate="txtDOB" CssClass="rptErrorMassage text-danger">
         </asp:CustomValidator>
 
     </div>
@@ -138,13 +138,13 @@
             <asp:TextBox ID="txtPassportNo" MaxLength="15" class="form-control" runat="server" AutoComplete="off"></asp:TextBox>
         </div>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtPassportNo" Display="Dynamic"
-            data-i18n="flightpassenger-error-passport" ErrorMessage="Enter Passport Number" ValidationGroup="WebValidation" CssClass="rptErrorMassage danger"></asp:RequiredFieldValidator>
+            data-i18n="flightpassenger-error-passport" ErrorMessage="Enter Passport Number" ValidationGroup="WebValidation" CssClass="rptErrorMassage text-danger"></asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPassportNo"
-            Display="Dynamic" ValidationGroup="WebValidation" CssClass="rptErrorMassage danger"
+            Display="Dynamic" ValidationGroup="WebValidation" CssClass="rptErrorMassage text-danger"
             ValidationExpression="^[a-zA-Z0-9]*$" ErrorMessage="Please Enter correct passport no. (no blank space)." data-i18n="flightpassenger-error-correct-passport"></asp:RegularExpressionValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
     runat="server"  ControlToValidate="txtPassportNo"  Display="Dynamic"
-    ValidationExpression="^.{6,}$" ValidationGroup="WebValidation" CssClass="rptErrorMassage danger"
+    ValidationExpression="^.{6,}$" ValidationGroup="WebValidation" CssClass="rptErrorMassage text-danger"
     ErrorMessage="Minimum 6 characters required." data-i18n="flightpassenger-error-correct-passportLength"></asp:RegularExpressionValidator>
 
     </div>
@@ -155,10 +155,10 @@
         </div>
         <asp:RequiredFieldValidator ValidationGroup="WebValidation" ID="RequiredFieldValidator2"
             runat="server" ControlToValidate="txtEmailID" Display="Dynamic" data-i18n="flightpassenger-error-emailid" ErrorMessage="Enter E-mail Id"
-            CssClass="rptErrorMassage danger"></asp:RequiredFieldValidator>
+            CssClass="rptErrorMassage text-danger"></asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="revAdultEmail" Display="Dynamic" runat="server"
             ControlToValidate="txtEmailID" ValidationGroup="WebValidation" ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
-            CssClass="rptErrorMassage danger" data-i18n="flightpassenger-error-valid-emailid" ErrorMessage="Enter Valid E-mail Id">
+            CssClass="rptErrorMassage text-danger" data-i18n="flightpassenger-error-valid-emailid" ErrorMessage="Enter Valid E-mail Id">
         </asp:RegularExpressionValidator>
 
     </div>
@@ -177,7 +177,7 @@
 
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic"
                 ControlToValidate="drpNationality"
-                ErrorMessage="Enter Nationality" ValidationGroup="WebValidation" CssClass="rptErrorMassage danger"
+                ErrorMessage="Enter Nationality" ValidationGroup="WebValidation" CssClass="rptErrorMassage text-danger"
                 Enabled="false"></asp:RequiredFieldValidator>
 
         </div>
@@ -190,11 +190,11 @@
             <%--<div class="invalid-feedback" id="ErrPassportPlace" runat="server">--%>
             <asp:RequiredFieldValidator ID="rfvAdultLocation" runat="server" ControlToValidate="txtPassportIssueLocation" Display="Dynamic"
                 ErrorMessage="Enter Passsport Issue Location" data-i18n="flightpassenger-enter-place" ValidationGroup="WebValidation"
-                CssClass="rptErrorMassage danger" Enabled="false"></asp:RequiredFieldValidator>
+                CssClass="rptErrorMassage text-danger" Enabled="false"></asp:RequiredFieldValidator>
 
             <asp:RegularExpressionValidator ID="REVtxtPassportIssueLocation" Display="Dynamic" runat="server"
                 ControlToValidate="txtPassportIssueLocation" ValidationGroup="WebValidation" ValidationExpression="^[a-zA-Z]+$"
-                CssClass="rptErrorMassage danger" ErrorMessage="Please Enter valid Place." data-i18n="hotel-booking-errorvalidpassportLocation"></asp:RegularExpressionValidator>
+                CssClass="rptErrorMassage text-danger" ErrorMessage="Please Enter valid Place." data-i18n="hotel-booking-errorvalidpassportLocation"></asp:RegularExpressionValidator>
 
 
             <%--</div>--%>
@@ -208,10 +208,10 @@
                 <asp:RequiredFieldValidator ID="rfvAdultTelephone" Display="Dynamic" runat="server"
                     ControlToValidate="txtTelephone" ErrorMessage="Enter Mobile Number" 
                     data-i18n="hotel-booking-errormobile" ValidationGroup="WebValidation"
-                    CssClass="rptErrorMassage danger"></asp:RequiredFieldValidator>
+                    CssClass="rptErrorMassage text-danger"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="revAdulttelephone" runat="server" Display="Dynamic"
                     ControlToValidate="txtTelephone" ValidationGroup="WebValidation" ValidationExpression="^[0-9]+$"
-                    CssClass="rptErrorMassage danger" ErrorMessage="Enter Valid Number.(max 12 digit.)" data-i18n="hotel-booking-erroronlydigit"
+                    CssClass="rptErrorMassage text-danger" ErrorMessage="Enter Valid Number.(max 12 digit.)" data-i18n="hotel-booking-erroronlydigit"
                     >
                 </asp:RegularExpressionValidator>
           
@@ -229,9 +229,9 @@
             <%--<div class="invalid-feedback" id="ErrPassportissue" runat="server">--%>
             <asp:RequiredFieldValidator ID="rfvAdultEffectiveDate" runat="server" ControlToValidate="txtEffectiveDate"
                 Display="Dynamic" ErrorMessage="Enter Date of Issuance" data-i18n="flightpassenger-date-issuance" ValidationGroup="WebValidation"
-                CssClass="rptErrorMassage danger" Enabled="false"></asp:RequiredFieldValidator>
+                CssClass="rptErrorMassage text-danger" Enabled="false"></asp:RequiredFieldValidator>
             <asp:CustomValidator ID="customIssueDateValidator" ValidationGroup="WebValidation"
-                runat="server" ErrorMessage="Issue date must be greater than DOB" data-i18n="flightpassenger-issue-date-greater" CssClass="rptErrorMassage danger"
+                runat="server" ErrorMessage="Issue date must be greater than DOB" data-i18n="flightpassenger-issue-date-greater" CssClass="rptErrorMassage text-danger"
                 OnServerValidate="IssueDateValidator" ControlToValidate="txtEffectiveDate" Display="Dynamic"
                 Enabled="false"></asp:CustomValidator>
             <%--</div>--%>
@@ -248,9 +248,9 @@
             <%--<div class="invalid-feedback" id="ErrPassportexpiry" runat="server">--%>
             <asp:RequiredFieldValidator ID="rfvAdultExpiryDate" ValidationGroup="WebValidation"
                 runat="server" ControlToValidate="txtExpiryDate" ErrorMessage="Enter Expiry Date" data-i18n="flightpassenger-enter-expirty"
-                CssClass="rptErrorMassage danger" Display="Dynamic" Enabled="false"></asp:RequiredFieldValidator>
+                CssClass="rptErrorMassage text-danger" Display="Dynamic" Enabled="false"></asp:RequiredFieldValidator>
             <asp:CustomValidator ID="CustomExpiryDate" ValidationGroup="WebValidation" runat="server"
-                ErrorMessage="Expiry date must be greater than issue date" data-i18n="flightpassenger-expirty-date-greater" CssClass="rptErrorMassage danger"
+                ErrorMessage="Expiry date must be greater than issue date" data-i18n="flightpassenger-expirty-date-greater" CssClass="rptErrorMassage text-danger"
                 OnServerValidate="IssueExpiryValidator" ControlToValidate="txtExpiryDate" Display="Dynamic"
                 Enabled="false"></asp:CustomValidator>
             <%--</div>--%>

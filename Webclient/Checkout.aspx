@@ -414,90 +414,90 @@
             var country = $("#country option:selected").text();
 
             // Clear previous error messages
-            $(".danger").remove();
+            $(".text-danger").remove();
 
             if (firstName == "") {
-                msg += "<span class='danger' data-i18n='text-enter-first'>Please enter First Name</span>";
+                msg += "<span class='text-danger' data-i18n='text-enter-first'>Please enter First Name</span>";
                 $("#firstName").closest(".dvInput").after(msg);
                 msg = "";
             } else if (!firstName.match(/^[a-zA-Z]+$/)) {
-                msg += "<span class='danger' data-i18n='hotel-booking-errorvalidfname'>Please enter valid First Name</span>";
+                msg += "<span class='text-danger' data-i18n='hotel-booking-errorvalidfname'>Please enter valid First Name</span>";
                 $("#firstName").closest(".dvInput").after(msg);
                 msg = "";
             }
 
             if (lastName == "") {
-                msg += "<span class='danger' data-i18n='text-enter-last'>Please enter Last Name</span>";
+                msg += "<span class='text-danger' data-i18n='text-enter-last'>Please enter Last Name</span>";
                 $("#lastName").closest(".dvInput").after(msg);
                 msg = "";
             } else if (!lastName.match(/^[a-zA-Z]+$/)) {
-                msg += "<span class='danger' data-i18n='hotel-booking-errorvalidlname'>Please enter valid Last Name</span>";
+                msg += "<span class='text-danger' data-i18n='hotel-booking-errorvalidlname'>Please enter valid Last Name</span>";
                 $("#lastName").closest(".dvInput").after(msg);
                 msg = "";
             }
 
             if (email == "") {
-                msg += "<span class='danger' data-i18n='text-please-enter-Email'>Please enter Email Id</span>";
+                msg += "<span class='text-danger' data-i18n='text-please-enter-Email'>Please enter Email Id</span>";
                 $("#email").closest(".dvInput").after(msg);
                 msg = "";
             } else if (!isEmail(email)) {
-                msg += "<span class='danger' data-i18n='text-please-enter-valid-nationalid'>Please enter valid Email Id</span>";
+                msg += "<span class='text-danger' data-i18n='text-please-enter-valid-nationalid'>Please enter valid Email Id</span>";
                 $("#email").closest(".dvInput").after(msg);
                 msg = "";
             }
 
             if (phone == "") {
-                msg += "<span class='danger' data-i18n='text-please-enter-phoneno'>Please enter Phone Number</span>";
+                msg += "<span class='text-danger' data-i18n='text-please-enter-phoneno'>Please enter Phone Number</span>";
                 $("#phone").closest(".dvInput").after(msg);
                 msg = "";
             } else {
                 var numbers = /^[0-9]+$/;
                 if (!numbers.test(phone)) {
-                    msg += "<span class='danger' data-i18n='text-please-enter-numeric'>Phone should be Numeric</span>";
+                    msg += "<span class='text-danger' data-i18n='text-please-enter-numeric'>Phone should be Numeric</span>";
                     $("#phone").closest(".dvInput").after(msg);
                     msg = "";
                 }
             }
 
             if (address == "") {
-                msg += "<span class='danger' data-i18n='text-please-enter-address'>Please enter Address</span>";
+                msg += "<span class='text-danger' data-i18n='text-please-enter-address'>Please enter Address</span>";
                 $("#address").closest(".dvInput").after(msg);
                 msg = "";
             }
 
             if (countrycode == "") {
-                msg += "<span class='danger' data-i18n='text-please-enter-selectcountry'>Please select Country</span>";
+                msg += "<span class='text-danger' data-i18n='text-please-enter-selectcountry'>Please select Country</span>";
                 $("#country").closest(".dvInput").after(msg);
                 msg = "";
             }
 
             if (city == "") {
-                msg += "<span class='danger' data-i18n='text-please-enter-city'>Please enter City</span>";
+                msg += "<span class='text-danger' data-i18n='text-please-enter-city'>Please enter City</span>";
                 $("#city").closest(".dvInput").after(msg);
                 msg = "";
             } else {
                 var regex = new RegExp("^[a-zA-Z ]+$");
                 if (!regex.test(city)) {
-                    msg += "<span class='danger' data-i18n='text-please-enter-validcity'>Please enter valid City</span>";
+                    msg += "<span class='text-danger' data-i18n='text-please-enter-validcity'>Please enter valid City</span>";
                     $("#city").closest(".dvInput").after(msg);
                     msg = "";
                 }
             }
 
             if (zip == "") {
-                msg += "<span class='danger' data-i18n='text-please-enter-zip'>Please enter ZIP</span>";
+                msg += "<span class='text-danger' data-i18n='text-please-enter-zip'>Please enter ZIP</span>";
                 $("#zip").closest(".dvInput").after(msg);
                 msg = "";
             } else {
                 var numbers = /^[0-9]+$/;
                 if (!numbers.test(zip)) {
-                    msg += "<span class='danger' data-i18n='text-please-enter-zipnumeric'>Zip should be Numeric</span>";
+                    msg += "<span class='text-danger' data-i18n='text-please-enter-zipnumeric'>Zip should be Numeric</span>";
                     $("#zip").closest(".dvInput").after(msg);
                     msg = "";
                 }
             }
 
-            if ($(".danger").length > 0) {
+            if ($(".text-danger").length > 0) {
                 $('#CP_ErrorMsgContainer').show();
                 return false;
             } else {

@@ -146,28 +146,28 @@
                                             <div class="dvInput input-group">
                                                 <asp:TextBox runat="server" ID="txtFirstName" CssClass="form-control"></asp:TextBox>
                                             </div>
-                                            <p class="danger" id="errorFirtsname"></p>
+                                            <p class="text-danger" id="errorFirtsname"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
                                             <label for="#" class="label" data-i18n="car-surname">Surname*</label>
                                             <div class="dvInput input-group">
                                                 <asp:TextBox runat="server" ID="txtSurName" CssClass="form-control"></asp:TextBox>
                                             </div>
-                                            <p class="danger" id="errorSurName"></p>
+                                            <p class="text-danger" id="errorSurName"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
                                             <label for="#" class="label" data-i18n="car-email-address">E-mail Address*</label>
                                             <div class="dvInput input-group">
                                                 <asp:TextBox runat="server" ID="txtEmailId" CssClass="form-control"></asp:TextBox>
                                             </div>
-                                            <p class="danger" id="errorEmailId"></p>
+                                            <p class="text-danger" id="errorEmailId"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
                                             <label for="#" class="label" data-i18n="car-phone-number">Phone number*</label>
                                             <div class="dvInput input-group">
                                                 <asp:TextBox runat="server" ID="txtMobileNo" CssClass="form-control"></asp:TextBox>
                                             </div>
-                                            <p class="danger" id="errorMobileNo"></p>
+                                            <p class="text-danger" id="errorMobileNo"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
                                             <label for="#" class="label" data-i18n="car-flight-number">Flight number*</label>
@@ -186,7 +186,7 @@
                                                         <a href="TermsAndConditions.aspx" target="_blank" class="link1" data-i18n="car-terms">Terms & Conditions</a></span>
                                                 </label>
                                             </div>
-                                            <p class="danger mb-2" id="errorTnC"></p>
+                                            <p class="text-danger mb-2" id="errorTnC"></p>
                                             <asp:Button ID="btnMakePayment" runat="server" data-i18n="[value]btn-make-payment" Value="Make Payment" OnClick="btnMakePayment_Click" OnClientClick="return MakePayment();" CssClass="btn btn-one"></asp:Button>
 
                                         </div>

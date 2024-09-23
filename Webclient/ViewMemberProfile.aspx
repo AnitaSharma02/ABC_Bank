@@ -256,7 +256,7 @@
                                                                     <%--<button style="margin-bottom: 1px" class="btn btn-one" type="button" OnClientClick="var retValue = ChangePassword(); event.returnValue = retValue;return retValue;">Save & Continue</button>--%>
                                                                     <asp:Button runat="server" ID="Button1" OnClientClick="var retValue = ChangePassword(); event.returnValue = retValue;return retValue;" CssClass="btn btn-one" Text="Save & Continue" />
                                                                 </div>
-                                                                <div id="ChangePasswordValidation" class="pl-3 danger">
+                                                                <div id="ChangePasswordValidation" class="pl-3 text-danger">
                                                                 </div>
                                                             </div>
                                                         </div>

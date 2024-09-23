@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <div id="CarValidationError" runat="server" data-i18n="carlist-below-fields" class="p-1 mb-2 alert alert-danger text-danger text-center h6 heading-semibold" style="display: none;"></div>
+                                        <div id="CarValidationError" runat="server" data-i18n="carlist-below-fields" class="p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-row dvParent">

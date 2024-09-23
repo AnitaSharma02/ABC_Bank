@@ -846,13 +846,13 @@
             // $('#updProgress').show();
             var uuid = getQuerystring("uuid");
             if (parseInt(IsTimeslotsAvailable) == 1) {
-                $('#sltTimeSlot').removeClass('danger');
+                $('#sltTimeSlot').removeClass('text-danger');
                 var timeSlot = $.trim($('#sltTimeSlot option:selected').val());
                 if (timeSlot == '') {
-                    $('#sltTimeSlot').closest("div").after('<p class="danger text-left">This field is required</p>');
+                    $('#sltTimeSlot').closest("div").after('<p class="text-danger text-left">This field is required</p>');
                     // $('#updProgress').hide();
                     $('#btnBookNow').prop('disabled', false);
-                    $('#sltTimeSlot').addClass('danger');
+                    $('#sltTimeSlot').addClass('text-danger');
                 }
                 else {
                     window.location.href = "ExperienceProductBookingDetails.aspx?uuid=" + ptuuid + "&adultCount=" + parseInt($('#selectDrpDownAdult').children("option:selected").val()) + "&childrenCount=" + parseInt($('#selectDrpDownChildren').children("option:selected").val() == undefined ? 0 : $('#selectDrpDownChildren').children("option:selected").val()) + "&seniorsCount=" + parseInt($('#selectDrpDownSenior').children("option:selected").val() == undefined ? 0 : $('#selectDrpDownSenior').children("option:selected").val()) + "&ptuuid=" + ptuuid + "&puuid=" + uuid + '&selectedDate=' + encodeURIComponent($('#txtBookingDate').val()) + '&timeslotuuid=' + ($('#sltTimeSlot').children("option:selected").val() == undefined ? "" : $('#sltTimeSlot').children("option:selected").val());

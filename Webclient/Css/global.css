@@ -148,103 +148,56 @@ p {
 
 
 
-/*=========[ VALIDATION ERRORS ]=========*/
+/*=========[ VALIDATION ERRORS only for text type errors ]=========*/
 .text-danger {
-    color: var(--text-danger) !important;
+    font-family: var(--danger-family);
+    font-size: var(--danger-fontsize);
+    color: var(--danger-text-colour);
 }
 .text-success {
-    color: var(--text-success) !important;
+    font-family: var(--success-family);
+    font-size: var(--success-fontsize);
+    color: var(--success-text-colour);
 }
 .text-warning {
-    color: var(--text-warning) !important;
-}
-.bg-danger {
-    background-color: var(--bg-danger) !important;
-    font-family: var(--danger-family);
-    font-size: var(--danger-fontsize);
-    color: var(--danger-colour);
-}
-.bg-success {
-    background-color: var(--bg-success) !important;
-    font-family: var(--success-family);
-    font-size: var(--success-fontsize);
-    color: var(--success-colour);
-}
-.bg-warning {
-    background-color: var(--bg-warning) !important;
     font-family: var(--warning-family);
     font-size: var(--warning-fontsize);
-    color: var(--warning-colour);
+    color: var(--warning-text-colour);
 }
-.danger {
-    font-family: var(--danger-family);
-    font-size: var(--danger-fontsize);
-    color: var(--danger-colour);
-}
-.success {
-    font-family: var(--success-family);
-    font-size: var(--success-fontsize);
-    color: var(--success-colour);
-}
-.warning {
-    font-family: var(--warning-family);
-    font-size: var(--warning-fontsize);
-    color: var(--warning-colour);
-}
-/*=========[ VALIDATION ERRORS ]=========*/
+/*=========[ VALIDATION ERRORS only for text type errors ]=========*/
 
 
 
-/*=========[ ALERTS ]=========*/
-/******** bootstrap alerts overwrite ********/
-.alert-info {
-    color: #0c5460;
-    background-color: #d1ecf1;
-    border-color: #bee5eb;
+/*=========[ VALIDATION ERRORS only for Alerts type errors ]=========*/
+.alert{
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
 }
 .alert-danger {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
+    color: var(--alert-danger-text-colour);
+    background-color: var(--alert-danger-bg-colour);
+    border-color: var(--alert-danger-border-colour);
+    font-family: var(--alert-danger-family);
+    font-size: var(--alert-danger-fontsize);
 }
 .alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+    color: var(--alert-success-text-colour);
+    background-color: var(--alert-success-bg-colour);
+    border-color: var(--alert-success-border-colour);
+    font-family: var(--alert-success-family);
+    font-size: var(--alert-success-fontsize);
 }
 .alert-warning {
-    color: #856404;
-    background-color: #fff3cd;
-    border-color: #ffeeba;
+    color: var(--alert-warning-text-colour);
+    background-color: var(--alert-warning-bg-colour);
+    border-color: var(--alert-warning-border-colour);
+    font-family: var(--alert-warning-family);
+    font-size: var(--alert-warning-fontsize);
 }
-/******** bootstrap alerts overwrite ********/
-
-/******** alert important ********/
-.alert-info {
-    background-color: var(--colour2);
-    padding: 1rem;
-    border-radius: var(--b-radius);
-    color: var(--colour7);
-}
-
-.alert-info .icon span {
-    font-family: var(--font-bold);
-}
-
-.alert-info .icon i {
-    color: var(--colour1);
-}
-
-.alert-info ul li {
-    font-size: .875rem;
-}
-
-.alert-info ul li .link1 {
-    color: var(--colour1);
-    text-decoration: underline;
-}
-/******** alert important ********/
-/*=========[ ALERTS ]=========*/
+/*=========[ VALIDATION ERRORS only for Alerts type errors ]=========*/
 
 
 

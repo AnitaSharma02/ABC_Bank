@@ -553,24 +553,37 @@
     --accordion-body-active-border: var(--colour4);
     --accordion-body-active-b-radius: var(--b-radius);
 
-    /*==================[ BOOTSTRAP DEFAULT VARIABLES ]==================*/
-    --text-danger: #dc3545;
-    --text-success: #28a745;
-    --text-warning: #ffc107;
-    --bg-danger: #dc3545;
-    --bg-success: #28a745;
-    --bg-warning: #ffc107;
-
-    /*==================[ VALIDATION ERRORS ]==================*/
+    /*==================[ VALIDATION ERRORS for text type ]==================*/
     --danger-family: var(--heading-medium);
     --danger-fontsize: .75rem;
-    --danger-colour: var(--text-danger);
+    --danger-text-colour: #dc3545;
+
     --success-family: var(--heading-medium);
     --success-fontsize: .75rem;
-    --success-colour: var(--text-success);
+    --success-text-colour: #28a745;
+
     --warning-family: var(--heading-medium);
     --warning-fontsize: .75rem;
-    --warning-colour: var(--text-warning);
+    --warning-text-colour: #ffc107;
+
+    /*==================[ VALIDATION ERRORS for Alerts type ]==================*/
+    --alert-danger-family: var(--heading-medium);
+    --alert-danger-fontsize: 1rem;
+    --alert-danger-bg-colour: #f8d7da;
+    --alert-danger-text-colour: #721c24;
+    --alert-danger-border-colour: #f5c6cb;
+
+    --alert-success-family: var(--heading-medium);
+    --alert-success-fontsize: 1rem;
+    --alert-success-bg-colour: #d4edda;
+    --alert-success-text-colour: #155724;
+    --alert-success-border-colour: #c3e6cb;
+
+    --alert-warning-family: var(--heading-medium);
+    --alert-warning-fontsize: 1rem;
+    --alert-warning-bg-colour: #fff3cd;
+    --alert-warning-text-colour: #856404;
+    --alert-warning-border-colour: #ffeeba;
 
     /*==================[ PRODUCT CARD ]==================*/
     /*dvItem*/
