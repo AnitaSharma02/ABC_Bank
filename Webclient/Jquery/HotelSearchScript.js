@@ -212,7 +212,7 @@ function ModifyvalidateHotelFields() {
     }
     if (msg.length > 0) {
         $("#HotelModifyValidation").show();
-        $("#HotelModifyValidation")[0].innerHTML = "<span class='heading-semibold text-danger d-block' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
+        $("#HotelModifyValidation")[0].innerHTML = "<span class='heading-semibold text-danger d-block'>Below fields are mandatory.</span>";
         return false;
     }
     else
@@ -235,7 +235,7 @@ function validateHotelFields() {
     }
     if (msg.length > 0) {
         $("#HotelModifyValidation").show();
-        $("#HotelModifyValidation")[0].innerHTML = "<span class='heading-semibold text-danger d-block' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
+        $("#HotelModifyValidation")[0].innerHTML = "<span class='heading-semibold text-danger d-block'>Below fields are mandatory.</span>";
         return false;
     }
     else
@@ -288,7 +288,7 @@ function loadRoomsOnPage(noofRooms) {
     strTemplate += '</label>';
     strTemplate += '</div>';
     strTemplate += '</div>';
-    strTemplate += '<button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100" data-i18n="">Search Hotel</button>';
+    strTemplate += '<button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100">Search Hotel</button>';
     strTemplate += '</div>';
     //strTemplate = "<div class='addRoom'>" + strTemplate + "</div>";
     //BindSelectSelectric();
@@ -299,11 +299,11 @@ function GenrateAdultScript(adult, count) {
     var htmlString = "";
     if (count % 2 == 0) {
         count = count + 1;
-        htmlString += "<div class='col-md-6 col-sm-12 room-" + 2 + "'><label class='rooms-cont'><span class='h8 heading-semibold' data-i18n='hotel-rooms1-label'> Room </span> <span class='h8 heading-semibold'>" + count + "</span></label>";
+        htmlString += "<div class='col-md-6 col-sm-12 room-" + 2 + "'><label class='rooms-cont'><span class='h8 heading-semibold'> Room </span> <span class='h8 heading-semibold'>" + count + "</span></label>";
     }
     else {
         count = count + 1;
-        htmlString += "<div class='col-md-6 col-sm-12 rooms" + 1 + "'><label class='rooms-cont'><span class='h8 heading-semibold' data-i18n='hotel-rooms1-label'> Room </span> <span class='h8 heading-semibold'>" + count + "</span></label>";
+        htmlString += "<div class='col-md-6 col-sm-12 rooms" + 1 + "'><label class='rooms-cont'><span class='h8 heading-semibold'> Room </span> <span class='h8 heading-semibold'>" + count + "</span></label>";
     }
     htmlString += "<div class='row'><div class='col-md-6 col-6'>";
     htmlString += "<label class='h8 heading-semibold'>Adult(s) 12+ Yrs</label>";
@@ -450,17 +450,17 @@ function BindRoomsDynamic(Count) {
             } */
             RoomCount = i + 1;
             htmlString += "<div class='col-md-6 mb-3'>";
-            htmlString += "<label><span class='h8 heading-semibold' data-i18n='hotel-rooms1-label'> Room </span> <span class='h8 heading-semibold'>" + RoomCount + "</span></label>";
+            htmlString += "<label><span class='h8 heading-semibold'> Room </span> <span class='h8 heading-semibold'>" + RoomCount + "</span></label>";
             htmlString += "<div class='row'>";
             htmlString += "<div class='col-6 col-md-6'>";
-            htmlString += "<label class='h8 heading-semibold' data-i18n='hotel-adults-label'>Adults(12+ Yrs)</label><div class=''><select class='form-control' id='ddlAdult" + i + "'>";
+            htmlString += "<label class='h8 heading-semibold'>Adults(12+ Yrs)</label><div class=''><select class='form-control' id='ddlAdult" + i + "'>";
             htmlString += "<option value='1'>1</option>";
             htmlString += "<option value='2'>2</option>";
             htmlString += "<option value='3'>3</option>";
             htmlString += "<option value='4'>4</option>";
             htmlString += "</select></i></div>";
             htmlString += "</div><div class='col-6 col-md-6'>";
-            htmlString += "<label class='h8 heading-semibold' data-i18n='hotel-children-label'>Children(2 - 11Yrs)</label><div class=''><select class='form-control' id='ddlChild" + i + "'>";
+            htmlString += "<label class='h8 heading-semibold'>Children(2 - 11Yrs)</label><div class=''><select class='form-control' id='ddlChild" + i + "'>";
             htmlString += "<option value='0'>0</option>"
             htmlString += "<option value='1'>1</option>"
             htmlString += "<option value='2'>2</option>"
@@ -499,7 +499,7 @@ function BindRoomsDynamic(Count) {
         htmlString += '</label>';
         htmlString += '</div>';
         htmlString += '</div>';
-        htmlString += '<button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one custom-width" data-i18n="">Search Hotel</button>';
+        htmlString += '<button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one custom-width">Search Hotel</button>';
         htmlString += '</div>';*/
 
         //htmlString += '<div class="col-md-6 mt-3 mt-md-0 d-flex flex-column align-items-end justify-content-end mb-3">';
@@ -514,7 +514,7 @@ function BindRoomsDynamic(Count) {
         //htmlString += '</label>';
         //htmlString += '</div>';
         //htmlString += '</div>';
-        //htmlString += '<button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100" data-i18n="">Search Hotel</button>';
+        //htmlString += '<button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100">Search Hotel</button>';
         //htmlString += '</div>';
         $('#tblDynamic').empty().append(htmlString);
         //$('#tblDynamic select').selectric("refresh");

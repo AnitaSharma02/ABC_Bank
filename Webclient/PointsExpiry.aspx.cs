@@ -77,7 +77,7 @@ public partial class PointsExpiry : System.Web.UI.Page
 
     private void BindTable(List<ExpiryPeriod> ExpiryPeriod)
     {
-        string strExpiryPeriod = "<div class='col-12 mb-3'><div class='row'><div class='col-6 pr-0 text-center py-3 border-right bg-colour1'><p class='heading-bold text-white' data-i18n='pe-period'>Period</p></div><div class='col-6 pl-0 text-center bg-colour1 py-3'><p class='heading-bold text-white' data-i18n='pe-total-points'>Total Points</p></div></div><div class='row'>";
+        string strExpiryPeriod = "<div class='col-12 mb-3'><div class='row'><div class='col-6 pr-0 text-center py-3 border-right bg-colour1'><p class='heading-bold text-white'>Period</p></div><div class='col-6 pl-0 text-center bg-colour1 py-3'><p class='heading-bold text-white'>Total Points</p></div></div><div class='row'>";
         string strExpiryPoints = string.Empty;
         ABCModel lobjModel = new ABCModel();
         for (int icount = 0; icount < ExpiryPeriod.Count; icount++)

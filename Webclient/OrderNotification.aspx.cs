@@ -569,15 +569,15 @@ public partial class OrderNotification : Page
                                                     lstrHtml += "<td width=\"40%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><strong>Game Link</strong></p></td>";
                                                     if (gameDetails.GameInfo.Pin != null)
                                                     {
-                                                        lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span data-i18n='text-expritydate'>Pin</span></p></td>";
+                                                        lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span>Pin</span></p></td>";
                                                     }
                                                     if (gameDetails.GameInfo.ExpiryDate != null && !gameDetails.GameInfo.ExpiryDate.Equals(DateTime.MinValue))
                                                     {
-                                                        lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span data-i18n='text-expritydate'>Expiry Date</span></p></td>";
+                                                        lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span>Expiry Date</span></p></td>";
                                                     }
                                                     if (gameDetails.GameInfo.Message != null)
                                                     {
-                                                        lstrHtml += "<td width=\"25%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span data-i18n='text-expritydate'>Message</span></p></td>";
+                                                        lstrHtml += "<td width=\"25%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span>Message</span></p></td>";
                                                     }
                                                     lstrHtml += "</tr>";
                                                     string ImageUrl = string.Empty;
@@ -659,14 +659,14 @@ public partial class OrderNotification : Page
                                                     lstrEmailParameters.Add(lobjProduct.PrimaryImage.Url);//0
                                                     string lstrHtml = string.Empty;
                                                     lstrHtml += "<tr>";
-                                                    lstrHtml += "<td width=\"40%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span data-i18n='text-giftcard-link'>Lounge Code</span></p></td>";
+                                                    lstrHtml += "<td width=\"40%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span>Lounge Code</span></p></td>";
                                                     if (!string.IsNullOrEmpty(loungeDetails.LoungeInfo.Value))
                                                     {
-                                                        lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span data-i18n='text-giftcard-value'>Lounge Value</span></p></td>";
+                                                        lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span>Lounge Value</span></p></td>";
                                                     }
                                                     if (loungeDetails.LoungeInfo.ExpiryDate != null && !loungeDetails.LoungeInfo.ExpiryDate.Equals(DateTime.MinValue))
                                                     {
-                                                        lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span data-i18n='text-expritydate'>Expiry Date</span></p></td>";
+                                                        lstrHtml += "<td width=\"15%\" height=\"35\" bgcolor=\"#006677\"><p style=\"color:#fff;\"><span>Expiry Date</span></p></td>";
                                                     }
                                                     lstrHtml += "</tr>";
                                                     string ImageUrl = string.Empty;

@@ -36,13 +36,13 @@
                     <ul>
                         <li class="d-block">
                             <div class="text-center">
-                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span data-i18n="account-welcome" class="acc-text">Welcome,</span><span class="ml-2 acc-text" id="spnMemberName"></span></h2>
+                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span class="acc-text">Welcome,</span><span class="ml-2 acc-text" id="spnMemberName"></span></h2>
                             </div>
                         </li>
                         <li class="d-block">
                             <div class="text-center">
                                 <h3 class="h3 heading-semibold text-white">
-                                    <span id="totAvbPointDiv" data-i18n="account-total-points">Total Points</span>
+                                    <span id="totAvbPointDiv">Total Points</span>
                                     <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-white"></span></h3>
                             </div>
                         </li>
@@ -51,8 +51,7 @@
                         <a
                             href="Index.aspx"
                             class="btn btn-two"
-                            id="my_account_point_redeem_now"
-                            data-i18n="btn-redeem-now">Redeem Now</a>
+                            id="my_account_point_redeem_now">Redeem Now</a>
                     </div>
                 </div>
             </div>
@@ -64,7 +63,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h2 class="h1 heading-semibold text-colour1" id="lblMemberName">
-                    <span data-i18n="account-welcome" class="">Welcome,</span>
+                    <span class="">Welcome,</span>
                     <span class="ml-2" id="spnMemberName"></span>
                 </h2>
                 <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
@@ -74,8 +73,7 @@
                 <a
                     href="Index.aspx"
                     class="btn btn-one"
-                    id="my_account_point_redeem_now"
-                    data-i18n="btn-redeem-now">Redeem Now
+                    id="my_account_point_redeem_now">Redeem Now
                 </a>
             </div>
         </div>
@@ -97,9 +95,9 @@
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
-                    <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                     <li class="breadcrumb-item" ><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
-                    <li class="breadcrumb-item active" data-i18n="bread-profile">Profile</li>
+                    <li class="breadcrumb-item"><a href="\">Home</a></li>
+                     <li class="breadcrumb-item" ><a href="StatementSummary.aspx">My Account</a></li>
+                    <li class="breadcrumb-item active">Profile</li>
                 </ul>
             </nav>
         </div>
@@ -119,7 +117,7 @@
                                             type="button"
                                             data-toggle="collapse"
                                             data-target="#collapse1">
-                                            <span data-i18n="vp-contact-details">Contact Details</span>
+                                            <span>Contact Details</span>
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
@@ -135,38 +133,38 @@
                                                     <div class="row">
                                                         <div class="col-sm-3 mb-3">
                                                             <p class="">
-                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-name">Name</span>
+                                                                <span class="h7 d-block heading-semibold text-colour7">Name</span>
                                                                 <asp:Label runat="server" CssClass="d-block" ID="labelMemberNameValue"></asp:Label>
                                                             </p>
                                                         </div>
                                                         <div class="col-sm-3 mb-3">
                                                             <p class="">
-                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-mobile-no">Mobile No.</span>
+                                                                <span class="h7 d-block heading-semibold text-colour7">Mobile No.</span>
                                                                 <asp:Label CssClass="d-block" ID="labelMobileNo" runat="server"></asp:Label>
                                                                 <asp:HiddenField ID="hfRelationRef" runat="server"></asp:HiddenField>
                                                             </p>
                                                         </div>
                                                         <div class="col-sm-3 mb-3">
                                                             <p class="">
-                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-email-id">E-mail ID</span>
+                                                                <span class="h7 d-block heading-semibold text-colour7">E-mail ID</span>
                                                                 <asp:Label ID="labelEmailValue" CssClass="d-block" runat="server"></asp:Label>
                                                             </p>
                                                         </div>
                                                         <div class="col-sm-3 mb-3">
                                                             <p class="">
-                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-gender">Gender</span>
+                                                                <span class="h7 d-block heading-semibold text-colour7">Gender</span>
                                                                 <asp:Label runat="server" CssClass="d-block" ID="lblGender"></asp:Label>
                                                             </p>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <p class="">
-                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-nationality">Nationality</span>
+                                                                <span class="h7 d-block heading-semibold text-colour7">Nationality</span>
                                                                 <asp:Label ID="lblNationality" CssClass="d-block" runat="server"></asp:Label>
                                                             </p>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <p class="">
-                                                                <span class="h7 d-block heading-semibold text-colour7" data-i18n="vp-address">Address</span>
+                                                                <span class="h7 d-block heading-semibold text-colour7">Address</span>
                                                                 <asp:Label ID="labelAddressValue" CssClass="d-block" runat="server"></asp:Label>
                                                             </p>
                                                         </div>
@@ -186,7 +184,7 @@
                                             type="button"
                                             data-toggle="collapse"
                                             data-target="#collapse2">
-                                            <span data-i18n="vp-change-password">Change Password</span>
+                                            <span>Change Password</span>
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>

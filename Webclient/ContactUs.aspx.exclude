@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" Runat="Server">
     <div class="wrap insidepgs">
         <h1>Contact Us </h1>
-        <p data-i18n="text-coming-soon" style="font-size: 24px;">Coming Soon</p>
+        <p style="font-size: 24px;">Coming Soon</p>
         </div>
 </asp:Content>
 

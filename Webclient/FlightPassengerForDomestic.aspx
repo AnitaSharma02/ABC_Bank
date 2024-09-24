@@ -60,7 +60,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="bg-colour1 d-flex justify-content-between align-items-center">
-                                <h1 data-i18n="flightpassenger-passenger" class="h6 heading-semibold text-colour6 p-3">Passenger Details</h1>
+                                <h1 class="h6 heading-semibold text-colour6 p-3">Passenger Details</h1>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                                 <div class="col-12" id="AdultInfo" runat="server">
                                     <asp:Repeater ID="rptAdultControl" runat="server">
                                         <ItemTemplate>
-                                            <h2 data-i18n="flightpassenger-adult" class="h6 heading-semibold py-2">Adult: <%# (Container.ItemIndex + 1) %></h2>
+                                            <h2 class="h6 heading-semibold py-2">Adult: <%# (Container.ItemIndex + 1) %></h2>
                                             <asp:Panel ID="panelAdultControlHolder" CssClass="" runat="server">
                                                 <uc:AdultPassangerDetails_Domestic runat="server" ID="AdultPassangerDetails_Domestic" />
                                             </asp:Panel>
@@ -80,7 +80,7 @@
                                 <div class="col-12" id="ChildInfo" runat="server" visible="false">
                                     <asp:Repeater ID="rptChildControl" runat="server">
                                         <ItemTemplate>
-                                            <h2 data-i18n="flightpassenger-child" class="h6 heading-semibold py-2">Child: <%# (Container.ItemIndex + 1) %></h2>
+                                            <h2 class="h6 heading-semibold py-2">Child: <%# (Container.ItemIndex + 1) %></h2>
                                             <asp:Panel ID="panelChildControlHolder" CssClass="" runat="server">
                                                 <uc:ChildPassangerDetails_Domestic runat="server" ID="ChildPassangerDetails_Domestic" />
                                             </asp:Panel>
@@ -88,7 +88,7 @@
                                     </asp:Repeater>
                                 </div>
                                 <div class="col-12 text-center text-lg-left pb-3" id="btnBookFlightDomestic">
-                                    <asp:Button ValidationGroup="WebValidation" ID="btnSubmit" runat="server" OnClientClick="fnShowLoaderOnSubmitClick();" OnClick="btnBookFlightDomestic_Click" Text="Proceed to Pay" class="btn btn-one" data-i18n="flightpassenger-proceed-topay"></asp:Button>
+                                    <asp:Button ValidationGroup="WebValidation" ID="btnSubmit" runat="server" OnClientClick="fnShowLoaderOnSubmitClick();" OnClick="btnBookFlightDomestic_Click" Text="Proceed to Pay" class="btn btn-one"></asp:Button>
                                 </div>
                             </div>
                         </div>
@@ -98,15 +98,15 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="bg-colour1 d-flex justify-content-between align-items-center">
-                                <h2 data-i18n="flightpassenger-itinerary" class="h6 heading-semibold bg-colour1 text-colour6 p-3">Itinerary</h2>
-                                <a href="FlightListForDomestic.aspx?edit=1" data-i18n="flightpassenger-edit" class="btn btn-two mr-1">Edit</a>
+                                <h2 class="h6 heading-semibold bg-colour1 text-colour6 p-3">Itinerary</h2>
+                                <a href="FlightListForDomestic.aspx?edit=1" class="btn btn-two mr-1">Edit</a>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="bg-colour2 p-3">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="h6 heading-semibold text-colour7" data-i18n="flightpassenger-departure">Departure Flight</h2>
+                                        <h2 class="h6 heading-semibold text-colour7">Departure Flight</h2>
                                     </div>
                                 </div>
                                 <div class="border my-3"></div>
@@ -139,7 +139,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h2 class="h6 heading-semibold text-colour7">
-                                            <asp:Label ID="lblarrival" class="d-block heading-semibold border-bottom border-top py-3 my-3" runat="server" Visible="false" data-i18n="flightpassenger-arrival">Arrival Flight</asp:Label>
+                                            <asp:Label ID="lblarrival" class="d-block heading-semibold border-bottom border-top py-3 my-3" runat="server" Visible="false">Arrival Flight</asp:Label>
                                         </h2>                                        
                                     </div>
                                 </div>
@@ -171,7 +171,7 @@
                                     </asp:Repeater>
                                 <div class="border my-3"></div>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <span class="heading-bold" data-i18n="flightpassenger-total-points">Total Points: </span>
+                                    <span class="heading-bold">Total Points: </span>
                                     <asp:Label CssClass="heading-bold" ID="lblTotalPoints" runat="server" />
                                 </div>
                             </div>

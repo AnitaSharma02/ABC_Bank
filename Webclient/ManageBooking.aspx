@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <h2 class="h1 heading-semibold text-colour1" id="lblMemberName">
-                        <span data-i18n="account-welcome" class="">Welcome,</span>
+                        <span class="">Welcome,</span>
                         <span class="ml-2" id="spnMemberName"></span>
                     </h2>
                     <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
@@ -104,8 +104,7 @@
                     <a
                         href="Index.aspx"
                         class="btn btn-one"
-                        id="my_account_point_redeem_now"
-                        data-i18n="btn-redeem-now">Redeem Now
+                        id="my_account_point_redeem_now">Redeem Now
                     </a>
                 </div>
             </div>
@@ -127,9 +126,9 @@
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
-                    <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                    <li class="breadcrumb-item"><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
-                    <li class="breadcrumb-item active" data-i18n="bread-manage">Manage Booking</li>
+                    <li class="breadcrumb-item"><a href="\">Home</a></li>
+                    <li class="breadcrumb-item"><a href="StatementSummary.aspx">My Account</a></li>
+                    <li class="breadcrumb-item active">Manage Booking</li>
                 </ul>
             </nav>
         </div>
@@ -169,7 +168,7 @@
                                     <h2 class="mb-0 ">
                                         <button class="btn- btn-block text-left p-3 h6 text-uppercase" type="button"
                                             data-toggle="collapse" data-target="#collapse1">
-                                            <span data-i18n="mb-flight-booking-details">Flight Booking Details</span>
+                                            <span>Flight Booking Details</span>
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
@@ -186,7 +185,7 @@
                                                             <div class="row justify-content-between">
                                                                 <div class="col-6 col-md-3 col-xl-2 mb-3 mb-xl-0">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-departure-label">Departure Date</span>
+                                                                        <span class="h7 d-block heading-bold text-colour7">Departure Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%# Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.DepartureDate")).ToString("dd/MM/yyyy")%>
                                                                         </span>
@@ -194,7 +193,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 col-xl-2 mb-3 mb-xl-0">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-booking-label">Return Date</span>
+                                                                        <span class="h7 d-block heading-bold text-colour7">Return Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%# Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.ArrivalDate")).ToString("dd/MM/yyyy") == "01/01/0001" ? "NA" : Convert.ToDateTime(DataBinder.Eval(Container, "DataItem.ArrivalDate")).ToString("dd/MM/yyyy") %>
                                                                         </span>
@@ -202,7 +201,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 col-xl-2 mb-3 mb-xl-0">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-details-label">Details</span>
+                                                                        <span class="h7 d-block heading-bold text-colour7">Details</span>
                                                                         <span class="h6 d-block">
                                                                             <%# DataBinder.Eval(Container, "DataItem.OriginLocation")%>
                                                                                     -
@@ -212,7 +211,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 col-xl-2 mb-3 mb-xl-0">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-ref-label">Ref No.</span>
+                                                                        <span class="h7 d-block heading-bold text-colour7">Ref No.</span>
                                                                         <span class="h6 d-block">
                                                                             <%# DataBinder.Eval(Container, "DataItem.ItineraryReference")%>
                                                                         </span>
@@ -220,7 +219,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 col-xl-1">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-trip-label">Trip Id</span>
+                                                                        <span class="h7 d-block heading-bold text-colour7">Trip Id</span>
                                                                         <span class="h6 d-block">
                                                                             <%# DataBinder.Eval(Container, "DataItem.ItineraryTripId")%><asp:HiddenField ID="hdnTripId"
                                                                                 runat="server" Value='<%# DataBinder.Eval(Container, "DataItem.ItineraryReference")%>' />
@@ -230,7 +229,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 col-xl-1">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-bold text-colour7" data-i18n="managebooking-flight-points-label">Points</span>
+                                                                        <span class="h7 d-block heading-bold text-colour7">Points</span>
                                                                         <span class="h6 d-block">
                                                                             <%# DataBinder.Eval(Container, "DataItem.FareDetails.TotalPoints")%>
                                                                         </span>
@@ -282,7 +281,7 @@
                                                             <div class="row justify-content-between">
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-checkin-label">Check-in Date</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Check-in Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Convert.ToDateTime(Eval("searchCriteria.CheckInDate")).ToShortDateString()%>
                                                                         </span>
@@ -290,7 +289,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-checkout-label">Check-out Date</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Check-out Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Convert.ToDateTime(Eval("searchCriteria.CheckOutDate")).ToShortDateString()%>
                                                                         </span>
@@ -298,7 +297,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-booking-label">Booking Date</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Booking Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Convert.ToDateTime(Eval("BookinDate")).ToShortDateString()%>
                                                                         </span>
@@ -306,7 +305,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-details-label">Details</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Details</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("Hotel.basicinfo.hotelname")%>
                                                                         </span>
@@ -314,7 +313,7 @@
                                                                 </div>
                                                                 <div class="col-12 col-md-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-ref-label">Ref No.</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Ref No.</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("TransactionReferenceCode")%>
                                                                         </span>
@@ -322,7 +321,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-points-label">Points</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Points</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("TotalPoint")%>
                                                                         </span>
@@ -330,7 +329,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-status-label">Status</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Status</span>
                                                                         <span class="h6 d-block">
                                                                             <%# (Convert.ToInt32(Eval("Status")).Equals(1))? "BOOKED" : "CANCELLED" %>
                                                                         </span>
@@ -386,7 +385,7 @@
                                                             <div class="row justify-content-between">
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-product-title-label">Product Title</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Product Title</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("prodtitle")%>
                                                                         </span>
@@ -394,7 +393,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-option-label">Option</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Option</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("productTypeTitle")%>
                                                                         </span>
@@ -402,7 +401,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-booking-code-label">Booking Code</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Booking Code</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("code")%>
                                                                         </span>
@@ -410,7 +409,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-booking-uuid-label">Booking Uuid</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Booking Uuid</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("uuid")%>
                                                                         </span>
@@ -418,7 +417,7 @@
                                                                 </div>
                                                                 <div class="col-12 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-booking-date-label">Booking Date</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Booking Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("bookingDate")%>
                                                                         </span>
@@ -426,7 +425,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-arrival-date-label">Arrival Date</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Arrival Date</span>
                                                                         <span class="h6 d-block">
                                                                             <%#Eval("arrivalDate")%>
                                                                         </span>
@@ -434,7 +433,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-price-label">Price</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Price</span>
                                                                         <span class="h6 d-block">
                                                                             <%# Convert.ToInt32(Eval("grandTotalAmount")) %>
                                                                         </span>
@@ -442,7 +441,7 @@
                                                                 </div>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-experience-status-label">Status</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Status</span>
                                                                         <span class="h6 d-block">
                                                      
                                                                             <%# Eval("status") %>
@@ -533,7 +532,7 @@
                                     <h2 class="mb-0 ">
                                         <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
                                             data-toggle="collapse" data-target="#collapse7">
-                                            <span data-i18n="mb-car-booking-details">Car Booking Details</span>
+                                            <span>Car Booking Details</span>
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
@@ -592,7 +591,7 @@
                                                                 </div>
                                                                 <div class="col-12 col-sm-6 col-lg-4">
                                                                     <span>
-                                                                        <span class="h7 d-block heading-semibold text-colour7" data-i18n="managebooking-hotel-points-label">Points</span>
+                                                                        <span class="h7 d-block heading-semibold text-colour7">Points</span>
                                                                         <span class="d-block- h6">
                                                                             <%#Eval("Payment_Amount")%>
                                                                         </span>

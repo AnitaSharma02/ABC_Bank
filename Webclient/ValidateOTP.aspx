@@ -29,18 +29,18 @@
                     <div class="border bg-colour2 p-4">
                         <div class="row">
                             <div class="col-12 mb-2">
-                                <h2 class="h5 heading-semibold text-colour7 mb-1" data-i18n="text-validate">Validate OTP</h2>
+                                <h2 class="h5 heading-semibold text-colour7 mb-1">Validate OTP</h2>
                             </div>
                             <div class="col-12 mb-3">
                                 <h2 class="h7 text-colour7">
-                                    <p class="mb-3" data-i18n="text-onetime-password">One Time Password (OTP) has been sent to your registered mobile number and Email.</p>
-                                    <p class="mb-3" data-i18n="text-once-recevied">Once received please enter the OTP below to complete your request.</p>
+                                    <p class="mb-3">One Time Password (OTP) has been sent to your registered mobile number and Email.</p>
+                                    <p class="mb-3">Once received please enter the OTP below to complete your request.</p>
                                 </h2>
                             </div>
                             <div class="col-12">
                                 <div id="divActivationDetails" class="row">
                                     <div class="col-12">
-                                        <label class="label" data-i18n="text-one-time">One Time Password</label>
+                                        <label class="label">One Time Password</label>
                                         <div class="input-group">
                                             <input type="password" class="robot form-control" maxlength="4" id="txtOTP" runat="server" />
                                         </div>
@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="col-12 mb-2">
                                         <asp:Button ID="btnContinue" runat="server" CssClass="btn btn-one w-100" OnClientClick="var retvalue = BookingValidation();event.returnValue= retvalue;if(event.preventDefault)event.preventDefault();  return retvalue;"
-                                            Text="Continue" data-i18n="[value]btn-continue" />
+                                            Text="Continue" />
                                     </div>
                                 </div>
                             </div>

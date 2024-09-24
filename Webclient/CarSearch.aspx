@@ -15,14 +15,14 @@
                 <div class="bg-colour2 p-3">
                     <div class="row">
                         <div class="col-12">
-                            <div id="CarValidationError" runat="server" data-i18n="flight-below-fields" class="p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
+                            <div id="CarValidationError" runat="server" class="p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
                         </div>
                         <div class="col-12 col-lg-10">
                             <div class="form-row">
                                 <div class="col-lg-4 col-md-12 col-12 mb-3">
-                                    <label for="validationDefaultUsername" class="label" data-i18n="car-pickup-location">Pick up location?</label>
+                                    <label for="validationDefaultUsername" class="label">Pick up location?</label>
                                     <div class="dvInputGroup input-group">
-                                        <input type="text" class="form-control" id="txtpickupLocation" data-i18n="[placeholder]car-enter-pickup-location" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2">
+                                        <input type="text" class="form-control" id="txtpickupLocation" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2">
                                         <input type="hidden" id="hndpickupLocationId" value="">
                                         <div class="input-group-append">
                                             <span class="input-group-text bg-colour6">
@@ -32,9 +32,9 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-2 mb-3">
-                                    <label class="label" data-i18n="car-pickup-date">Pick-Up Date</label>
+                                    <label class="label">Pick-Up Date</label>
                                     <div class="dvInputGroup input-group">
-                                        <input class="input form-control" data-i18n="[placeholder]car-enter-date" placeholder="Enter Date"
+                                        <input class="input form-control" placeholder="Enter Date"
                                             type="text" id="txtpickupDate" readonly="readonly" />
                                         <div class="input-group-append">
                                             <span class="input-group-text bg-colour6">
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-2 mb-3">
-                                    <label for="exampleFormControlSelect1" class="label" data-i18n="car-time">Time</label>
+                                    <label for="exampleFormControlSelect1" class="label">Time</label>
                                     <div class="dvInput input-group">
                                         <select class="form-control " id="ddlPickupTime">
                                             <option>00:00</option>
@@ -148,9 +148,9 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-2 mb-3">
-                                    <label class="label" data-i18n="car-drop-off-date">Drop off date</label>
+                                    <label class="label">Drop off date</label>
                                     <div class="dvInputGroup input-group">
-                                        <input class="input datePicker form-control" data-i18n="[placeholder]car-enter-date" placeholder="Enter Date" type="text" id="txtDropoffDate" readonly="readonly" />
+                                        <input class="input datePicker form-control" placeholder="Enter Date" type="text" id="txtDropoffDate" readonly="readonly" />
                                         <div class="input-group-append">
                                             <span class="input-group-text bg-colour6">
                                                 <i class="fa-regular fa-calendar"></i>
@@ -159,7 +159,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-2 mb-3">
-                                    <label for="exampleFormControlSelect2" class="label" data-i18n="car-time">Time</label>
+                                    <label for="exampleFormControlSelect2" class="label">Time</label>
                                     <div class="dvInput input-group">
                                         <select class="form-control" id="ddlDropoffTime">
                                             <option>00:00</option>
@@ -272,14 +272,14 @@
                                                 <input type="checkbox" id="chkDropoffLocation" checked>
                                                 <span class="checkmark"></span>
                                             </span>
-                                            <span class="h7 d-inline-block ml-2" data-i18n="car-return-same-location">Return to same location?</span>
+                                            <span class="h7 d-inline-block ml-2">Return to same location?</span>
                                         </label>
                                     </div>
 
                                     <div class="form-group dvInput1 fade-out ">
-                                        <label class="label" data-i18n="car-dropoff-location">Drop off location?</label>
+                                        <label class="label">Drop off location?</label>
                                         <div class="dvInputGroup dvDopoffLocation input-group">
-                                            <input type="text" class="form-control" id="txtDopoffLocation" data-i18n="[placeholder]car-enter-location" placeholder="Enter Location">
+                                            <input type="text" class="form-control" id="txtDopoffLocation" placeholder="Enter Location">
                                             <input type="hidden" id="hndDopoffLocationId" value="">
                                             <div class="input-group-append">
                                                 <span class="input-group-text bg-colour6">
@@ -296,14 +296,14 @@
                                                 <input type="checkbox" id="chkDriverAge" checked>
                                                 <span class="checkmark"></span>
                                             </span>
-                                            <span class="h7 d-inline-block ml-2" data-i18n="car-driver-age-years">Driver aged 30-65 years?</span>
+                                            <span class="h7 d-inline-block ml-2">Driver aged 30-65 years?</span>
                                         </label>
                                     </div>
 
                                     <div class="form-group dvInput2 fade-out">
-                                        <label class="label" data-i18n="car-driver-age">Driver age</label>
+                                        <label class="label">Driver age</label>
                                         <div class="dvInput input-group">
-                                            <input type="text" class="form-control" onkeypress="return validateNumber(event)" id="txtDriverAge" data-i18n="[placeholder]car-enter-driver-age" placeholder="Please enter driver age">
+                                            <input type="text" class="form-control" onkeypress="return validateNumber(event)" id="txtDriverAge" placeholder="Please enter driver age">
                                         </div>
                                     </div>
                                 </div>
@@ -314,12 +314,12 @@
                                                 <input type="checkbox" id="chkDiscountCode">
                                                 <span class="checkmark"></span>
                                             </span>
-                                            <span class="h7 d-inline-block ml-2" data-i18n="car-discount-code1">Discount code?</span>
+                                            <span class="h7 d-inline-block ml-2">Discount code?</span>
                                         </label>
                                     </div>
 
                                     <div class="form-group dvInput3 fade-out">
-                                        <label class="label" data-i18n="car-discount-code">Discount code</label>
+                                        <label class="label">Discount code</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="txtDiscountCode" placeholder="Please enter Discount code">
                                         </div>
@@ -328,7 +328,7 @@
                             </div>
                         </div>
                         <div class="col-xl-2 order-xl-2 col-lg-2 order-lg-2 order-md-12 order-sm-12 mt-4">
-                            <button class="btn btn-one w-100" type="submit" onclick="var retvalue = CarValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" data-i18n="car-search-btn">Search Car</button>
+                            <button class="btn btn-one w-100" type="submit" onclick="var retvalue = CarValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;">Search Car</button>
                         </div>
                     </div>
                 </div>

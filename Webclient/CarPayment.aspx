@@ -65,7 +65,7 @@
                                     <div class="card-header p-0" id="headingOne">
                                         <h2 class="mb-0">
                                             <button class="btn btn-block text-left p-3" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                <span class="heading-bold h6" data-i18n="car-your-booking-summary">Your booking summary</span>
+                                                <span class="heading-bold h6">Your booking summary</span>
                                                 <span class="arrow-icon">
                                                     <i class="fa fa-caret-up" aria-hidden="true"></i>
                                                 </span>
@@ -77,12 +77,12 @@
                                         <div class="card-body p-3">
                                             <div class="row">
                                                 <div class="col-12 mb-3">
-                                                    <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span data-i18n="car-pickup-from">Pick up from:</span></h2>
+                                                    <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span>Pick up from:</span></h2>
                                                     <p id="spnpickupDetails" class="h7"></p>
                                                     <p class="h7" id="spnpickupDate"></p>
                                                 </div>
                                                 <div class="col-12">
-                                                    <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span data-i18n="car-drop-off-at">Drop off at:</span></h2>
+                                                    <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span>Drop off at:</span></h2>
                                                     <p id="spndropoffDetails" class="h7"></p>
                                                     <p class="h7" id="spndropoffDate"></p>
                                                 </div>
@@ -95,11 +95,11 @@
 
                             </div>
                             <div class="dvPricing py-2 px-3">
-                                <p class="heading6" data-i18n="car-pricing-summary">Pricing Summary</p>
+                                <p class="heading6">Pricing Summary</p>
                             </div>
                             <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
                                 <div class="col-6">
-                                    <p class="h7" data-i18n="car-hire">Car Hire:</p>
+                                    <p class="h7">Car Hire:</p>
                                 </div>
                                 <div class="col-6">
                                     <p class="text-right h7"><span id="spncarhireAmount">0</span> Points</p>
@@ -111,7 +111,7 @@
 
                         <div id="AdditionalChrg" class="d-flex justify-content-between align-items-center pt-2 pb-3">
                             <div class="col-6">
-                                <p class="h7" data-i18n="car-Total">Total:</p>
+                                <p class="h7">Total:</p>
                             </div>
                             <div class="col-6">
                                 <p class="text-right h7"><span id="spncarTotalAmount">0</span>  Points</p>
@@ -121,10 +121,10 @@
                             <div class="border-top p-3">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="col-7 pl-0">
-                                        <p class="heading6 text-colour1" data-i18n="car-payable-today">Payable today:</p>
+                                        <p class="heading6 text-colour1">Payable today:</p>
                                     </div>
                                     <div class="col-5 pr-0">
-                                        <p class="text-right heading6 text-colour1"><span class="text-right" id="spnPayableAmount">0</span>  <span data-i18n="car-points">Points</span></p>
+                                        <p class="text-right heading6 text-colour1"><span class="text-right" id="spnPayableAmount">0</span>  <span>Points</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -137,40 +137,40 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="bg-colour1 b-radius-top-right p-3">
-                                    <h2 class="heading6 text-colour6"><i class="fa-regular fa-circle-user mr-2"></i><span data-i18n="car-driver-details">Driver Details</span></h2>
+                                    <h2 class="heading6 text-colour6"><i class="fa-regular fa-circle-user mr-2"></i><span>Driver Details</span></h2>
                                 </div>
                                 <div class="p-3">
                                     <div class="row">
                                         <div class="col-12 col-sm-6 mb-3">
-                                            <label for="#" class="label" data-i18n="car-first-name">First name*</label>
+                                            <label for="#" class="label">First name*</label>
                                             <div class="dvInput input-group">
                                                 <asp:TextBox runat="server" ID="txtFirstName" CssClass="form-control"></asp:TextBox>
                                             </div>
                                             <p class="text-danger" id="errorFirtsname"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
-                                            <label for="#" class="label" data-i18n="car-surname">Surname*</label>
+                                            <label for="#" class="label">Surname*</label>
                                             <div class="dvInput input-group">
                                                 <asp:TextBox runat="server" ID="txtSurName" CssClass="form-control"></asp:TextBox>
                                             </div>
                                             <p class="text-danger" id="errorSurName"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
-                                            <label for="#" class="label" data-i18n="car-email-address">E-mail Address*</label>
+                                            <label for="#" class="label">E-mail Address*</label>
                                             <div class="dvInput input-group">
                                                 <asp:TextBox runat="server" ID="txtEmailId" CssClass="form-control"></asp:TextBox>
                                             </div>
                                             <p class="text-danger" id="errorEmailId"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
-                                            <label for="#" class="label" data-i18n="car-phone-number">Phone number*</label>
+                                            <label for="#" class="label">Phone number*</label>
                                             <div class="dvInput input-group">
                                                 <asp:TextBox runat="server" ID="txtMobileNo" CssClass="form-control"></asp:TextBox>
                                             </div>
                                             <p class="text-danger" id="errorMobileNo"></p>
                                         </div>
                                         <div class="col-12 col-sm-6 mb-3">
-                                            <label for="#" class="label" data-i18n="car-flight-number">Flight number*</label>
+                                            <label for="#" class="label">Flight number*</label>
                                             <div class="dvInput input-group">
                                                 <asp:TextBox runat="server" ID="txtFlightNo" CssClass="form-control"></asp:TextBox>
                                             </div>
@@ -182,12 +182,12 @@
                                                         <input type="checkbox" id="chkTnC" />
                                                         <span class="checkmark"></span>
                                                     </span>
-                                                    <span class="d-inline-block ml-2"><span data-i18n="car-have-read-accept">I have read and accept the</span>
-                                                        <a href="TermsAndConditions.aspx" target="_blank" class="link1" data-i18n="car-terms">Terms & Conditions</a></span>
+                                                    <span class="d-inline-block ml-2"><span>I have read and accept the</span>
+                                                        <a href="TermsAndConditions.aspx" target="_blank" class="link1">Terms & Conditions</a></span>
                                                 </label>
                                             </div>
                                             <p class="text-danger mb-2" id="errorTnC"></p>
-                                            <asp:Button ID="btnMakePayment" runat="server" data-i18n="[value]btn-make-payment" Value="Make Payment" OnClick="btnMakePayment_Click" OnClientClick="return MakePayment();" CssClass="btn btn-one"></asp:Button>
+                                            <asp:Button ID="btnMakePayment" runat="server" Value="Make Payment" OnClick="btnMakePayment_Click" OnClientClick="return MakePayment();" CssClass="btn btn-one"></asp:Button>
 
                                         </div>
                                     </div>

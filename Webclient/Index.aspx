@@ -11,9 +11,9 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="heading1 pt-0 text-center" data-i18n="home-turn">Turn Transactions into Rewards</h2>
-                    <span class="h4 heading-regular text-center text-colour7 d-block py-3" data-i18n="home-our-diverse">Infinity Rewards - Our Diverse Loyalty Program</span>
-                    <p class="text-center " data-i18n="home-discover">
+                    <h2 class="heading1 pt-0 text-center">Turn Transactions into Rewards</h2>
+                    <span class="h4 heading-regular text-center text-colour7 d-block py-3">Infinity Rewards - Our Diverse Loyalty Program</span>
+                    <p class="text-center">
                         Designed for the discerning customer, it offers diverse redemption options like flight bookings, hotel stays, car rentals, vouchers, online shopping, and point exchanges. Experience the joy of rewards that fit your lifestyle, turning every transaction into a chance for delightful experiences.
                     </p>
                 </div>
@@ -149,8 +149,8 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-12 text-center mb-4">
-                    <h2 class="heading1 text-colour1 mb-3" data-i18n="home-shopthebest">Shop the Best Deals</h2>
-                    <p data-i18n="home-maximize">
+                    <h2 class="heading1 text-colour1 mb-3">Shop the Best Deals</h2>
+                    <p>
                         Maximize your Points with our handpicked selection of top deals in electronics, fashion, home essentials, and more.
                     </p>
                 </div>
@@ -164,11 +164,11 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-12 text-center mb-4">
-                    <h2 class="heading1 text-colour6 mb-3" data-i18n="home-most-featured">Most Featured Vouchers</h2>
-                    <p class="text-colour6" data-i18n="home-choose-from">Choose from over 5,000+ gift vouchers in our expansive Loyalty Program selection.</p>
+                    <h2 class="heading1 text-colour6 mb-3">Most Featured Vouchers</h2>
+                    <p class="text-colour6">Choose from over 5,000+ gift vouchers in our expansive Loyalty Program selection.</p>
                 </div>
             </div>
-            <div class="dvVoucherSlider " id="dvVoucherSlider">
+            <div class="dvVoucherSlider" id="dvVoucherSlider">
             </div>
         </div>
     </div>
@@ -177,9 +177,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-center mb-4">
-                    <h2 class="h5 heading-semibold text-colour7 text-uppercase mb-3" data-i18n="home-unlocking-rewards">Unlocking Rewards: Your Guide</h2>
-                    <h2 class="heading2 mb-3" data-i18n="home-from-earning">From Earning to Redeeming: We've Got Answers</h2>
-                    <p class="" data-i18n="home-navigating-our">
+                    <h2 class="h5 heading-semibold text-colour7 text-uppercase mb-3">Unlocking Rewards: Your Guide</h2>
+                    <h2 class="heading2 mb-3">From Earning to Redeeming: We've Got Answers</h2>
+                    <p class="" >
                         Navigating our rewards program is as fun as a rollercoaster ride. Here are answers to some common questions to ensure your journey is smooth and rewarding.
                     </p>
                 </div>

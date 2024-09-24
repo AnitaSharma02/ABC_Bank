@@ -191,7 +191,7 @@
                         <div class="modal-content border-0 b-radius">
                             <div class="modal-header border-0 d-lg-block p-0">
                                  <div class="modal-title dvTotalRecords border-0 p-3">
-                                    <p class="heading6 text-colour1"><span data-i18n="flightlist-total">Total Flights Found</span> <span class="filter-text" id="lblNoofFlight"></span></p>
+                                    <p class="heading6 text-colour1"><span>Total Flights Found</span> <span class="filter-text" id="lblNoofFlight"></span></p>
                                 </div>
                                 <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
                                      <i class="fa-solid fa-xmark"></i>
@@ -202,7 +202,7 @@
                                     <div class="card my-3">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span data-i18n="flightlist-stops" class="heading6 mb-2 text-capitalize">Stops</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span class="heading6 mb-2 text-capitalize">Stops</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
                                         <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">
@@ -221,7 +221,7 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span data-i18n="flightlist-total-points" class="heading6 mb-2 text-capitalize">Total Points</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="heading6 mb-2 text-capitalize">Total Points</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
 
@@ -243,7 +243,7 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse3"><span data-i18n="flightlist-airlines" class="heading6 mb-2 text-capitalize">Airlines</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse3"><span class="heading6 mb-2 text-capitalize">Airlines</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
                                         <div id="collapse3" class="collapse-" data-parent="#filter-accordion">
@@ -260,7 +260,7 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse4"><span data-i18n="flightlist-total-duration" class="heading6 mb-2 text-capitalize">Total Duration</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse4"><span class="heading6 mb-2 text-capitalize">Total Duration</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
                                         <div id="collapse4" class="collapse-" data-parent="#filter-accordion">
@@ -280,7 +280,7 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse5"><span data-i18n="flightlist-departure" class="heading6 mb-2 text-capitalize">Departure Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse5"><span class="heading6 mb-2 text-capitalize">Departure Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
 
@@ -301,7 +301,7 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse6"><span data-i18n="flightlist-arrival-time" class="heading6 mb-2 text-capitalize">Arrival Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse6"><span class="heading6 mb-2 text-capitalize">Arrival Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
 
@@ -330,9 +330,9 @@
                         <div class="dvModify col-12 mb-3">
                             <div class="bg-colour2 b-radius px-3 py-2 mb-1">
                                 <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                    <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none mb-2" data-i18n="flightlist-button-filters">Filter </button>
+                                    <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none mb-2">Filter </button>
                                     <asp:Label ID="LabelYourSearchDetails" runat="server" CssClass="Content_Style h6 heading-regular text-colour7 col-auto px-0 mb-2 mb-lg-0" Text=""></asp:Label>
-                                    <button class="btn btn-one arrowBtn col-auto d-flex collapsed" type="button" data-toggle="collapse" onclick="showModifyFlight()" data-target="#dvForm"><span class="d-inline-block" data-i18n="flightlist-modify">Modify</span> <span class="arrow-icon ml-2"><i class="fa fa-caret-up"></i></span></button>
+                                    <button class="btn btn-one arrowBtn col-auto d-flex collapsed" type="button" data-toggle="collapse" onclick="showModifyFlight()" data-target="#dvForm"><span class="d-inline-block">Modify</span> <span class="arrow-icon ml-2"><i class="fa fa-caret-up"></i></span></button>
                                 </div>
                             </div>
                             <div id="dvForm" class="dvForm collapse bg-colour2 b-radius py-3">
@@ -342,7 +342,7 @@
                                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">
                                                     <label class="radio-container d-flex">
                                                         <span class="d-inline-block ml-1">
-                                                        <input id="oneli" class="radio " name="iternary" onchange="return onwayShow();" type="radio"><span data-i18n="flightsearch-one-way" class="pr-3 pl-2 h6 heading-regular text-colour7">One-Way</span>
+                                                        <input id="oneli" class="radio " name="iternary" onchange="return onwayShow();" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7">One-Way</span>
                                                         <span class="radiomark"></span>
                                                         </span>
                                                     </label>
@@ -351,7 +351,7 @@
                                                 <div class="col-6 col-sm-4 col-md-9 col-lg-10 selTravel mb-3">
                                                     <label class="radio-container d-flex">
                                                         <span class="d-inline-block ml-1">
-                                                        <input  id="retli" class="radio" name="iternary" onchange="return RoundTripShow();" type="radio" checked="checked"><span class="pr-3 pl-2 h6 heading-regular text-colour7" data-i18n="flightsearch-return">Return</span>
+                                                        <input  id="retli" class="radio" name="iternary" onchange="return RoundTripShow();" type="radio" checked="checked"><span class="pr-3 pl-2 h6 heading-regular text-colour7">Return</span>
                                                         <span class="radiomark"></span>
                                                         </span>
                                                     </label>
@@ -466,7 +466,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3">
-                                                <label class="label" data-i18n="flightsearch-from-label">From</label>
+                                                <label class="label">From</label>
                                                 <div class="dvTextBoxFrom dvInputGroup input-group">
                                                     <input class="form-control" id="textBoxFrom" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                     <input type="hidden" id="hdntrip" value="true" />
@@ -480,7 +480,7 @@
                                                         <img src="images/flightpage/flight-arrow.png" />
                                                     </div>
                                         <div class="col-12 col-md-6 col-lg mb-3">
-                                            <label class="label" data-i18n="flightsearch-to-label">To</label>
+                                            <label class="label">To</label>
                                             <div class="dvTextBoxTo dvInputGroup input-group">
                                                 <input class="input form-control" id="textBoxTo" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                 <div class="input-group-append">
@@ -489,7 +489,7 @@
                                             </div>
                                             </div>
                                         <div class="col-12 col-md-6 col-lg mb-3">
-                                            <label class="label" data-i18n="flightsearch-departure-label">Departure</label>
+                                            <label class="label">Departure</label>
                                             <div class="dvInputGroup input-group">
                                                 <input id="txtDepart" class="input datePicker form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                                 <div class="input-group-append">
@@ -498,7 +498,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3" id="divrtn">
-                                            <label class="label" data-i18n="flightsearch-return-label">Return</label>
+                                            <label class="label">Return</label>
                                             <div class="dvInputGroup input-group">
                                                 <input class="input datePicker form-control cal-icon" id="txtReturn" onfocus="placeholderOnFocus(this,'Enter Date');"
                                                 onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
@@ -508,27 +508,27 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-lg-4 selTravel mb-3 r- d-none">
-                                            <label class="label" data-i18n="flightsearch-travel-class-label">Travel Class</label>
+                                            <label class="label">Travel Class</label>
                                             <div class="dvInput input-group">
                                                 <select class="form-control" id="dropDownListEconomy">
-                                                    <option value="Economy" selected="selected" data-i18n="flightsearch-travel-class-economy">Economy</option>
-                                                    <option value="Business" data-i18n="flightsearch-travel-class-business">Business</option>
-                                                    <option value="First" data-i18n="flightsearch-travel-class-first">First</option>
+                                                    <option value="Economy" selected="selected">Economy</option>
+                                                    <option value="Business">Business</option>
+                                                    <option value="First">First</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3">
-                                                <label class="label" data-i18n="flightsearch-airline-preference-label">Airline Preference</label>
+                                                <label class="label">Airline Preference</label>
                                                 <div class="dvInput input-group">
                                                     <input type="hidden" id="hdnCarrier" />
                                                     <input class="input air-icon form-control" id="txtAirline" onfocus="placeholderOnFocus(this, 'All Airlines');"
-                                                onblur="placeholderOnFocus(this, 'All Airlines');" data-i18n="[value]flight-airline-preference-all" value="All Airlines" type="text" />
+                                                onblur="placeholderOnFocus(this, 'All Airlines');" value="All Airlines" type="text" />
                                                 </div>
                                             </div>
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                    <label class="label" data-i18n="flightsearch-adult-label">Adult(s) 12+ Yrs</label>
+                                                    <label class="label">Adult(s) 12+ Yrs</label>
                                                         <select id="DropDownListAdult" class="dropdown-select form-control">
                                                             <option value="1" selected="selected">1</option>
                                                             <option value="2">2</option>
@@ -538,7 +538,7 @@
                                                         </select>
                                                 </div>
                                                 <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                    <label class="label" data-i18n="flightsearch-child-label">Child(ren) 2 - 11 Yrs</label>
+                                                    <label class="label">Child(ren) 2 - 11 Yrs</label>
                                                         <select id="DropDownListChild" class="dropdown-select form-control">
                                                             <option value="0" selected="selected">0</option>
                                                             <option value="1">1</option>
@@ -549,7 +549,7 @@
                                                         </select>
                                                 </div>
                                                 <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 r- d-none">
-                                                    <label class="label" data-i18n="flightsearch-infant-label">Infant(s) Below 2 Yrs</label>
+                                                    <label class="label">Infant(s) Below 2 Yrs</label>
                                                     <select id="DropDownListInfant" class="dropdown-select form-control">
                                                         <option value="0" selected="selected">0</option>
                                                         <option value="1">1</option>
@@ -565,13 +565,13 @@
                                                             <label class="label checkbox-container d-flex">
                                                                 <span class="d-inline-block ml-1">
                                                                     <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
-                                                                    <span data-i18n="flight-redeem-pts-label">Redeem Points</span>
+                                                                    <span>Redeem Points</span>
                                                                     <span class="checkmark" style="top:2px;"></span>
                                                                 </span>
                                                             </label>
                                                         </div>
                                                         <div class="col-12 col-md-12 col-lg-3 offset-lg-9">
-                                                            <button onclick="var retvalue = FlightValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one w-100" value="Search" data-i18n="flightsearch-search-btn">Search Flight</button>
+                                                            <button onclick="var retvalue = FlightValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one w-100" value="Search">Search Flight</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -584,8 +584,8 @@
                         </div>
 
                         <div class="dvNote col-12 mb-3">
-                            <span data-i18n="flightlist-all-timigs-local" class="h7 heading-regular text-colour7 ">All timings are local. Fare not guaranteed until ticketed.</span>
-                            <span data-i18n="flightlist-brandname-points" class="h7 heading-regular text-colour7 ">Infinity Rewards Points displayed for redemption include Surcharges and Taxes.</span>
+                            <span class="h7 heading-regular text-colour7">All timings are local. Fare not guaranteed until ticketed.</span>
+                            <span class="h7 heading-regular text-colour7">Infinity Rewards Points displayed for redemption include Surcharges and Taxes.</span>
 
                         </div>
                         <div class="dvProducts col-12">
@@ -614,7 +614,7 @@
                                         <div class="trpsum-flthdr-Miles">
                                             <div id="divTotal" style="width: 100%; float: left;"></div>
                                             <br />
-                                            <div id="ViewDetails" style="text-decoration: underline; cursor: pointer; color: #fff; font-size: 12px;" onclick="return toggleInfo();" data-i18n="btn-view-details">
+                                            <div id="ViewDetails" style="text-decoration: underline; cursor: pointer; color: #fff; font-size: 12px;" onclick="return toggleInfo();">
                                                 View Details
                                             </div>
                                         </div>
@@ -645,7 +645,7 @@
                                 <div class="clr"></div>
                                 <div class="col-12 text-center" id="LoadNext" onclick="return LoadNext();">
                                     <label class="btn btn-one">
-                                        <asp:Label ID="Label2" runat="server" CLASS="" Text="SHOW MORE FLIGHTS" data-i18n="button-more-flights"> </asp:Label>
+                                        <asp:Label ID="Label2" runat="server" CLASS="" Text="SHOW MORE FLIGHTS"> </asp:Label>
                                     </label>
                                 </div>
                             </div>

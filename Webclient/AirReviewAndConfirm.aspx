@@ -76,7 +76,7 @@
                 <div class="col-12">
                     <div class="vouch-main border mb-5">
                         <div class="">
-                            <h2 class="h6 heading-bold text-colour6 bg-colour1 p-3" data-i18n="flightpassenger-airreview-review">Review & Confirm</h2>
+                            <h2 class="h6 heading-bold text-colour6 bg-colour1 p-3">Review & Confirm</h2>
                         </div>
 
                         <div class="airBox" id="innerPageAboutUs">
@@ -93,8 +93,8 @@
                                             <label class="checkbox-container d-flex">
                                                 <span class="d-inline-block ml-1">
                                                     <input id="chkAcceptAgreements" type="checkbox" value="rewards Points" runat="server" />
-                                                    <span data-i18n="flightpassenger-ihave">I have read and agree to Infinity Rewards</span> <a class="link1" href="TermsandConditions.aspx" target="_blank" data-i18n="footer-terms-conditions">Terms & Conditions </a><span data-i18n="flightpassenger-andthe">and the </span><a href="BookingPolicy.aspx" target="_blank" data-i18n="flightpassenger-booking-cancel">Booking & Cancellation policy</a>
-                                                    <span data-i18n="flightpassenger-ofthe">of the respective service provider.</span>
+                                                    <span>I have read and agree to Infinity Rewards</span> <a class="link1" href="TermsandConditions.aspx" target="_blank">Terms & Conditions </a><span>and the </span><a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation policy</a>
+                                                    <span>of the respective service provider.</span>
                                                     <span class="checkmark"></span>
                                                 </span>
                                             </label>
@@ -103,9 +103,9 @@
                                             <label class="checkbox-container d-flex">
                                                 <span class="d-inline-block ml-1">
                                                     <input id="chkAcceptPayMiles" type="checkbox" value="rewards Points" runat="server" />
-                                                    <span data-i18n="flightpassenger-iagree">I agree to redeem</span>
+                                                    <span>I agree to redeem</span>
                                                     <asp:Label ID="lblTotalPoints" runat="server" />
-                                                    <span data-i18n="flightpassenger-ialso">Points. I also understand and accept that the redeemed Infinity Rewards Points cannot be refunded or credited upon Cancellation of a flight booking.</span>
+                                                    <span>Points. I also understand and accept that the redeemed Infinity Rewards Points cannot be refunded or credited upon Cancellation of a flight booking.</span>
                                                     <span class="checkmark"></span>
                                                 </span>
                                             </label>
@@ -117,11 +117,11 @@
                                     <br />
                                     <div class="d-flex flex-row justify-content-end mb-2 text-right">
                                         <div class="mr-2">
-                                            <asp:Button ID="btnBack" data-i18n="btn-back" CssClass="btn btn-two" runat="server" OnClientClick="var retvalue = redirectLocation('FlightList.aspx'); event.returnValue= retvalue;event.preventDefault(); return retvalue;"
+                                            <asp:Button ID="btnBack" CssClass="btn btn-two" runat="server" OnClientClick="var retvalue = redirectLocation('FlightList.aspx'); event.returnValue= retvalue;event.preventDefault(); return retvalue;"
                                                 Text="Back" />
                                         </div>
                                         <div id="lblBookNow">
-                                            <asp:Button ID="btnBookNow" data-i18n="flightpassenger-proceed-topay" CssClass="btn btn-one" runat="server" OnClientClick="return onAcceptArgument();"
+                                            <asp:Button ID="btnBookNow" CssClass="btn btn-one" runat="server" OnClientClick="return onAcceptArgument();"
                                                 OnClick="btnBookNow_Click" Text="Proceed to Pay" />
                                         </div>
                                     </div>

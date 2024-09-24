@@ -252,7 +252,7 @@
             </div>
             <div class="Search_lbl" >
                 <div class="SearchImg_Container">
-                    <span data-i18n="flight-search-page" class="spclpadd">Please wait while we search for best available flights...</span>
+                    <span class="spclpadd">Please wait while we search for best available flights...</span>
                 </div>
                 <asp:Label ID="LabelYourSearchDetailsforDomestic"  Font-Size="16px" Font-Bold="true" runat="server" Text="" CssClass="spclpadd"></asp:Label>
 

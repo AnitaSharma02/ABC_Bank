@@ -201,7 +201,7 @@
                                     <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">
                                         <label class="h8 heading-semibold text-colour7 radio-container d-flex">
                                             <span class="d-inline-block ml-1">
-                                                <input id="onelidomestic" class="radio " name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span data-i18n="flightsearch-one-way" class="pr-3 pl-2 h6 heading-regular text-colour7">One-Way</span>
+                                                <input id="onelidomestic" class="radio " name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7">One-Way</span>
                                                 <span class="radiomark"></span>
                                             </span>
                                         </label>
@@ -209,7 +209,7 @@
                                     <div class="col-6 col-sm-4 col-md-9 col-lg-10 selTravel mb-3">
                                         <label class="h8 heading-semibold text-colour7 radio-container d-flex">
                                             <span class="d-inline-block ml-1">
-                                                <input class="radio" name="iternarydomestic" checked="checked" onchange="return RoundTripShowDomestic();" id="retlidomestic" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7" data-i18n="flightsearch-return">Return</span>
+                                                <input class="radio" name="iternarydomestic" checked="checked" onchange="return RoundTripShowDomestic();" id="retlidomestic" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7">Return</span>
                                                 <span class="radiomark"></span>
                                             </span>
                                          </label>
@@ -283,7 +283,7 @@
                                       </div>
                                      <div class="row equal-col form_box">
                                     <div class="col-12 col-md-6 col-lg mb-3">
-                                       <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-from-label">From</label>
+                                       <label class="h8 heading-semibold text-colour7">From</label>
                                         <div class="dvTextBoxFromdomestic input-group">
                                             <input class="input from-icon form-control pr-5" id="textBoxFromdomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                             <div class="input-group-append">
@@ -297,7 +297,7 @@
                                             <img src="images/flightpage/flight-arrow.png" />
                                         </div>
                                     <div class="col-12 col-md-6 col-lg mb-3">
-                                        <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-to-label">To</label>
+                                        <label class="h8 heading-semibold text-colour7">To</label>
                                         <div class="dvTextBoxTodomestic input-group">
                                             <input class="input from-icon form-control pr-5" id="textBoxTodomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                             <div class="input-group-append">
@@ -306,7 +306,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3">
-                                        <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-departure-label">Departure</label>
+                                        <label class="h8 heading-semibold text-colour7">Departure</label>
                                         <div class="input-group">
                                             <input id="txtDepartdomestic" class="input datePicker form-control cal-icon pr-5" onfocus="placeholderOnFocusdomestic(this,'Enter Date');" onblur="placeholderOnFocusdomestic(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                             <div class="input-group-append">
@@ -315,7 +315,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3" id="divrtndomestic">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-return-label">Return</label>
+                                                    <label class="h8 heading-semibold text-colour7">Return</label>
                                                     <div class="input-group"> 
                                                         <input class="input datePicker form-control cal-icon pr-5" id="txtReturndomestic" onfocus="placeholderOnFocusdomestic(this,'Enter Date');"
                                                         onblur="placeholderOnFocusdomestic(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
@@ -327,7 +327,7 @@
                                     <div class="col-12">
                                             <div class="row">
                                                 <div class="col-6 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-adult-label">Adult(12+Yrs)</label>
+                                                    <label class="h8 heading-semibold text-colour7">Adult(12+Yrs)</label>
                                                     <div class="input-bg">
                                                         <select id="DropDownListAdultdomestic" class="dropdown-select form-control">
                                                             <option value="1" selected="selected">1</option>
@@ -339,7 +339,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                    <label class="h8 heading-semibold text-colour7" data-i18n="flightsearch-child-label">Children(2-11Yrs)</label>
+                                                    <label class="h8 heading-semibold text-colour7">Children(2-11Yrs)</label>
                                                     <div class="input-bg">
                                                         <select id="DropDownListChilddomestic" class="dropdown-select form-control">
                                                             <option value="0" selected="selected">0</option>
@@ -352,7 +352,7 @@
                                                     </div>
                                                 </div>                                                
                                                 <div class="col-12 col-md-12 col-lg-3 offset-lg-9 col-xl-2 offset-xl-10 mb-3">
-                                                   <button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one w-100" value="Search" data-i18n="flightsearch-search-btn">Search Flight</button>
+                                                   <button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one w-100" value="Search">Search Flight</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -365,8 +365,8 @@
                             <div class="d-flex flex-wrap py-3">
                             <div class="col-12">
                                 <div class="mb-3 selWay">
-                                    <input id="onelidomestic" class="radio" name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span data-i18n="flight-one-way" class="heading-semibold heading-bold">One-Way</span>
-                                    <input class="radio" name="iternarydomestic" checked="checked" onchange="return RoundTripShowDomestic();" id="retlidomestic" type="radio"><span data-i18n="flight-return heading-bold" class="heading-semibold">Return</span>
+                                    <input id="onelidomestic" class="radio" name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span class="heading-semibold heading-bold">One-Way</span>
+                                    <input class="radio" name="iternarydomestic" checked="checked" onchange="return RoundTripShowDomestic();" id="retlidomestic" type="radio"><span class="heading-semibold">Return</span>
                                 </div>
                             </div>
                             <div class="col-sm-6 mb-3">
@@ -440,10 +440,10 @@
                                         <div class="d-none">
                                             <label class="h8 heading-semibold d-flex align-items-center">
                                                 <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
-                                                <span class="ml-2 h8 heading-semibold" data-i18n="flight-redeem-pts-label">Redeem Points</span>
+                                                <span class="ml-2 h8 heading-semibold">Redeem Points</span>
                                             </label>
                                         </div>
-                                        <button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="purple-btn Search hvr-sweep-to-right" value=" Search " data-i18n="flight-search-btn">Search Flight</button>
+                                        <button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="purple-btn Search hvr-sweep-to-right" value=" Search ">Search Flight</button>
 
                                     </div>
                                 </div>
@@ -455,7 +455,7 @@
                     <div class="row">
                         <div class="SearchDetail SearchBorder col-12 d-none">
                             <%-- <asp:Label ID="LabelYourSearchDetails" runat="server" CssClass="Content_Style" Text=""></asp:Label>--%>
-                            <a href="#modify_search" class="btn btn-one" id="btnModify" data-toggle="collapse" data-i18n="flightlist-modify">Modify</a>
+                            <a href="#modify_search" class="btn btn-one" id="btnModify" data-toggle="collapse">Modify</a>
                         </div>
                     </div>
                     <div class="bg-colour2 serviceWidget collapse" id="modify_search">
@@ -464,33 +464,29 @@
                             <div class="Searchvalid" id="requiredValidation"></div>
                             <div class="form_box mt-4">
                                 <%-- <div class="mb-3 selWay">
-                                <input id="onelidomestic" class="radio" name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span data-i18n="flight-one-way">One-Way</span>
-                                <input class="radio" name="iternarydomestic" checked="checked" onchange="return RoundTripShowDomestic();" id="retlidomestic" type="radio"><span data-i18n="flight-return">Return</span>
+                                <input id="onelidomestic" class="radio" name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span>One-Way</span>
+                                <input class="radio" name="iternarydomestic" checked="checked" onchange="return RoundTripShowDomestic();" id="retlidomestic" type="radio"><span>Return</span>
                             </div>--%>
                                 <div class="row mb-3">
                                     <div class="col-md-6">
-                                        <label data-i18n="flight-from-label">From</label>
-                                        <%-- <input class="input dep-icon form-control" id="textBoxFromdomestic" onfocus="placeholderOnFocus(this, $.i18n('flight-from-input'));"
-                                        onblur="placeholderOnFocus(this, $.i18n('flight-from-label'));" value="Enter City or Airport" type="text" />
+                                        <label>From</label>
+                                        <%-- <input class="input dep-icon form-control" id="textBoxFromdomestic" value="Enter City or Airport" type="text" />
                                     <input type="hidden" id="hdntripdomestic" value="true" />--%>
                                     </div>
                                     <div class="col-md-6">
-                                        <label data-i18n="flight-to-label">To</label>
-                                        <%--<input class="input arv-icon form-control" id="textBoxTodomestic" onfocus="placeholderOnFocus(this, $.i18n('flight-to-input'));"
-                                        onblur="placeholderOnFocus(this, $.i18n('flight-to-label'));" value="Enter City or Airport" type="text" />--%>
+                                        <label>To</label>
+                                        <%--<input class="input arv-icon form-control" id="textBoxTodomestic" value="Enter City or Airport" type="text" />--%>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-md-6 col-6">
-                                        <label data-i18n="flight-departure-label">Departure</label>
-                                        <%--<input id="txtDepartdomestic" class="input datePicker form-control" onfocus="placeholderOnFocus(this, $.i18n('flight-departure-input'));"
-                                        onblur="placeholderOnFocus(this, $.i18n('flight-departure-input'));" value="Enter Date" type="text" readonly="readonly" />
+                                        <label>Departure</label>
+                                        <%--<input id="txtDepartdomestic" class="input datePicker form-control" value="Enter Date" type="text" readonly="readonly" />
                                         --%>
                                     </div>
                                     <div class="col-md-6 col-6">
-                                        <label data-i18n="flight-return-label">Return</label>
-                                        <%--<input class="input datePicker form-control" id="txtReturndomestic" onfocus="placeholderOnFocus(this, $.i18n('flight-return-input'));"
-                                        onblur="placeholderOnFocus(this, $.i18n('flight-return-input'));" value="Enter Date" type="text" readonly="readonly" />--%>
+                                        <label>Return</label>
+                                        <%--<input class="input datePicker form-control" id="txtReturndomestic" value="Enter Date" type="text" readonly="readonly" />--%>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -498,7 +494,7 @@
                                         <div class="row">
                                             <div class="col-md-4 col-6">
                                                 <div class="input-bg">
-                                                    <label data-i18n="flight-adult-label">Adult(s) 12+ Yrs</label>
+                                                    <label>Adult(s) 12+ Yrs</label>
                                                     <%-- <select id="DropDownListAdultdomestic" class="dropdown-select form-control">
                                                     <option value="1" selected="selected">1</option>
                                                     <option value="2">2</option>
@@ -511,7 +507,7 @@
                                             </div>
                                             <div class="col-md-4 col-6">
                                                 <div class="input-bg">
-                                                    <label data-i18n="flight-child-label">Child(ren) 2 - 11 Yrs</label>
+                                                    <label>Child(ren) 2 - 11 Yrs</label>
                                                     <%--<select id="DropDownListChilddomestic" class="dropdown-select form-control">
                                                     <option value="0" selected="selected">0</option>
                                                     <option value="1">1</option>
@@ -529,10 +525,10 @@
                                 <div class="row">
                                     <div class="col-md-6 col-6 valignM">
                                         <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
-                                        <label class="chkbox-txt-redeem-points" data-i18n="flight-redeem-pts-label">Redeem Points</label>
+                                        <label class="chkbox-txt-redeem-points">Redeem Points</label>
                                     </div>
                                     <div class="col-md-6 col-6 searchBtn">
-                                        <%--<button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one" value=" Search " data-i18n="flight-search-btn">Search Flight</button>--%>
+                                        <%--<button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one" value=" Search ">Search Flight</button>--%>
                                     </div>
                                 </div>
                             </div>
@@ -554,7 +550,7 @@
                             <div id="finalresult" style="display: none;"></div>
                         </div>
                     </div>
-                    <%--<p class="note"><span data-i18n="note-all-timigs-local">All timings are local. Fare not guaranteed until ticketed.</span> <span data-i18n="note-qib-absher-points">Infinity Rewards Points displayed for redemption include Surcharges and Taxes.</span></p>--%>
+                    <%--<p class="note"><span>All timings are local. Fare not guaranteed until ticketed.</span> <span>Infinity Rewards Points displayed for redemption include Surcharges and Taxes.</span></p>--%>
                     <div class="row flightBlk">
                         <div class="resultContent col-12">
                             <div class="row dvShowAndReturn">
@@ -589,7 +585,7 @@
                                     <div class="trpsum-flthdr-Miles">
                                         <div id="divTotal" style="width: 100%; float: left;"></div>
                                         <br />
-                                        <div id="ViewDetails" style="text-decoration: underline; cursor: pointer; color: #fff; font-size: 12px;" onclick="return toggleInfo();" data-i18n="btn-view-details">
+                                        <div id="ViewDetails" style="text-decoration: underline; cursor: pointer; color: #fff; font-size: 12px;" onclick="return toggleInfo();">
                                             View Details
                                         </div>
                                     </div>
@@ -621,7 +617,7 @@
                             <div class="clr"></div>
                             <%--<div class="bgHeader my-5" id="LoadNext" onclick="return LoadNext();">
                                 <label class="btn btn-one">
-                                    <asp:Label ID="Label2" runat="server" CLASS="" Text="SHOW MORE FLIGHTS" data-i18n="button-more-flights"> </asp:Label>
+                                    <asp:Label ID="Label2" runat="server" CLASS="" Text="SHOW MORE FLIGHTS"> </asp:Label>
                                 </label>
                             </div>--%>
                         </div>

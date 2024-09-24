@@ -2,7 +2,7 @@
     Inherits="UserControl_UCItinerayDetails" %>
 <div class="row mt-3 dvPassengerDetails">
     <div class="col-12">
-        <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 border" data-i18n="flightpassenger-passenger">Passenger Details</h2>
+        <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 border">Passenger Details</h2>
         <asp:Repeater ID="rptPassanger" runat="server">
             <HeaderTemplate>
                 <div class="px-3 border">
@@ -12,7 +12,7 @@
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-title">Title</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Title</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7"><%#Eval("Prefix")%></p>
@@ -22,7 +22,7 @@
                 <div class="col-12 col-sm-8 col-md-2 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-passengertype">Passenger Type</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Passenger Type</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7"><%#Eval("PaxType").ToString() == "ADT" ? "Adult":""%><%#Eval("PaxType").ToString() == "CHD" ? "Child":""%><%#Eval("PaxType").ToString() == "INF" ? "Infant":""%></p>
@@ -32,7 +32,7 @@
                 <div class="col-12 col-sm-12 col-md-4 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-passengername">Passenger Name</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Passenger Name</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7"><%#Eval("LastName")%>,&nbsp;<%#Eval("FirstName")%></p>
@@ -42,7 +42,7 @@
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-gender">Gender</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Gender</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7"><%#Eval("Gender")%></p>
@@ -52,7 +52,7 @@
                 <div class="col-12 col-sm-8 col-md-2">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-age">Age</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Age</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7"><%#Eval("Age")%></p>
@@ -72,11 +72,11 @@
     <div class="col-12">
         <div class="row">
             <div class="col-7 pr-0">
-                <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 border" data-i18n="flightpassenger-departure">Departure Flight <i class="fa-solid fa-plane"></i></h2>
+                <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 border">Departure Flight <i class="fa-solid fa-plane"></i></h2>
             </div>
             <div class="col-5 pl-0">
                 <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 h-100 border border-left-0 text-sm-right">
-                    <asp:Label ID="LabelClass" runat="server" data-i18n="flightsearch-travel-class-economy"></asp:Label></h2>
+                    <asp:Label ID="LabelClass" runat="server"></asp:Label></h2>
             </div>
         </div>
         <asp:Repeater ID="rptDeparture" runat="server">
@@ -88,7 +88,7 @@
                 <div class="col-12 col-sm-6 col-md-3 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-flight">Flight</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Flight</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7">
@@ -101,7 +101,7 @@
                 <div class="col-12 col-sm-6 col-md-3 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-depart">Depart</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Depart</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="text-break h7">
@@ -116,7 +116,7 @@
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-arrive">Arrive</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Arrive</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="text-break h7">
@@ -131,7 +131,7 @@
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-departtime">Depart Time</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Depart Time</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7">
@@ -146,7 +146,7 @@
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-arrivetime">Arrive Time</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Arrive Time</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7">
@@ -161,7 +161,7 @@
                 <div class="col-12 col-sm-4 col-md-2" style="display:none">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-aircraft">Aircraft Type</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Aircraft Type</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7"><%#Eval("Carrier.EquipmentType")%></p>
@@ -186,7 +186,7 @@
             <HeaderTemplate>
                 <div class="row">
                     <div class="col-8 pr-0">
-                        <h2 class="h7 heading-bold text-colour7 bg-colour2 py-3 px-2 border" runat="server" visible="true" id="dvReturnFlight" data-i18n="flightpassenger-flightreturn">Return Flights <i class="fa fa-plane" aria-hidden="true" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);"></i></h2>
+                        <h2 class="h7 heading-bold text-colour7 bg-colour2 py-3 px-2 border" runat="server" visible="true" id="dvReturnFlight">Return Flights <i class="fa fa-plane" aria-hidden="true" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);"></i></h2>
                     </div>
                     <div class="col-4 pl-0">
                         <h2 class="h7 heading-bold text-colour7 bg-colour2 py-3 px-2 border border-left-0 text-right">
@@ -200,7 +200,7 @@
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-flight">Flight</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Flight</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7">
@@ -213,7 +213,7 @@
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-depart">Depart</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Depart</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="text-break h7">
@@ -228,7 +228,7 @@
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-arrive">Arrive</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Arrive</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="text-break h7">
@@ -243,7 +243,7 @@
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-departtime">Depart Time</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Depart Time</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7">
@@ -258,7 +258,7 @@
                 <div class="col-12 col-sm-4 col-md-2 border-right">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-arrivetime">Arrive Time</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Arrive Time</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7">
@@ -273,7 +273,7 @@
                 <div class="col-12 col-sm-4 col-md-2">
                     <div class="row">
                         <div class="col-12 bg-colour2 p-2">
-                            <h2 class="h7 heading-semibold text-colour7" data-i18n="flightpassenger-aircraft">Aircraft Type</h2>
+                            <h2 class="h7 heading-semibold text-colour7">Aircraft Type</h2>
                         </div>
                         <div class="col-12 p-2">
                             <p class="h7"><%#Eval("Carrier.EquipmentType")%></p>

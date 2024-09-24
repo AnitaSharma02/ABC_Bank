@@ -188,7 +188,7 @@ $(document).ready(function () {
         }
     }
 
-    $("#totalHotel").html("<span data-i18n='hotel-list-hotel-found'> Total Hotel(s) Found: </span>");
+    $("#totalHotel").html("<span> Total Hotel(s) Found: </span>");
     //var HotelChain = "<li class='listHotel'><input type='checkbox' display='None' checked onclick='filtersData.ShowHideRows()' /> None</li>";
     var HotelChain = '<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" display="None" checked onclick="filtersData.ShowHideRows()" /><span class="checkmark"></span></span><div></div><span class="d-inline-block">None</span></label></div>';
     for (var count = 0; count < FilterHotelRange.ListOfHotelChain.length; count++) {
@@ -306,8 +306,8 @@ var filtersData =
 
                 //$("#totalHotel").html('');
                 $("#DivTotalHotel").html('');
-                //$("#totalHotel").html("<span data-i18n='hotel-list-hotel-found'> " + TotalHotel + "");
-                //$("#totalHotel").html("<span data-i18n='hotel-list-hotel-found' class='totalHotelfound'> Total Hotel(s) Found: </span>" + " <p class='totalHotel'>" + TotalHotel + "</p >");
+                //$("#totalHotel").html("<span> " + TotalHotel + "");
+                //$("#totalHotel").html("<span class='totalHotelfound'> Total Hotel(s) Found: </span>" + " <p class='totalHotel'>" + TotalHotel + "</p >");
                 $("#totalHotel").html("<span> Total <span>Hotels</span> found <span>" + TotalHotel + "</span></span>");
             }
         }

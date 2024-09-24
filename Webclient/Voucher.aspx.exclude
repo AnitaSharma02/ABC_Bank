@@ -100,8 +100,8 @@
             </div>
     <section class="travel prepaidCard">
         <div class="container-xl">
-        <h1 data-i18n="text-voucher">Voucher</h1>
-        <p data-i18n="text-voucher-desc">You can use the Verve Rewards Gift Vouchers for any of our esteemed partners from Lifestyle brands to Fine Dine and much more.</p>
+        <h1>Voucher</h1>
+        <p>You can use the Verve Rewards Gift Vouchers for any of our esteemed partners from Lifestyle brands to Fine Dine and much more.</p>
     <div class="row genCat">
  <div id="inner-page-statement" class="col-md-12">
     <div class="gift-voucher">
@@ -155,7 +155,7 @@
                             <div class="profile-form col-lg-12 col-md-12">
                                 
                                 <div class="width100" id="DivSubmitContent" runat="server">
-                                    <p class="text-select-quantity" data-i18n="text-select-quantity">Please select the quantity of gift vouchers you require:</p>
+                                    <p class="text-select-quantity">Please select the quantity of gift vouchers you require:</p>
                                     <div class="width100 RightInnerContent ">
                                         <div class="form-group row custom-row">  
                                        
@@ -166,7 +166,7 @@
                                                 
                                                 <div class="form-group row custom-row">
                                             <div class="col-md-4 col-form-label">
-                                               <span data-i18n="gift-voucher-qar100"> QAR100 Gift Voucher </span><span class="x">x</span>
+                                               <span> QAR100 Gift Voucher </span><span class="x">x</span>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                         <asp:DropDownList ID="ddlQAR100" runat="server" class="form-control">
@@ -181,7 +181,7 @@
                                         </div>
                                             <div class="col-md-2 col-12" id="divQAR100Add">
                                                 <button class="add" id="btn100" onclick="var retvalue = selectQty(100,'#CP_ddlQAR100','#divQAR100Add'); event.returnValue= retvalue; return retvalue;">
-                                                    <span data-i18n="add">
+                                                    <span>
                         <span class="mm">+</span>
                                   
                         <span class="ww">ADD</span></span>
@@ -189,7 +189,7 @@
                                             </div>
                                             </div>
                                                 <div class="form-group row custom-row">
-                                                    <label class="col-md-4 col-form-label"><span data-i18n="gift-voucher-qar500">QAR500 Gift Voucher</span><span class="x">x</span></label>
+                                                    <label class="col-md-4 col-form-label"><span>QAR500 Gift Voucher</span><span class="x">x</span></label>
                                                     <div class="col-md-6 col-12">
                                                                 <asp:DropDownList ID="ddlQAR500" runat="server" class="form-control">
                                                                     <asp:ListItem Value="0">Quantity</asp:ListItem>
@@ -201,11 +201,11 @@
                                                                 </asp:DropDownList>
                                                     </div>
                                                     <div class="col-md-2 col-12" id="divQAR500Add">
-                                                        <button class="add" id="btn500" onclick="var retvalue = selectQty(500,'#CP_ddlQAR500','#divQAR500Add'); event.returnValue= retvalue; return retvalue;"> <span data-i18n="add"><span class="mm">+</span><span class="ww">ADD</span></span></button>
+                                                        <button class="add" id="btn500" onclick="var retvalue = selectQty(500,'#CP_ddlQAR500','#divQAR500Add'); event.returnValue= retvalue; return retvalue;"> <span><span class="mm">+</span><span class="ww">ADD</span></span></button>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row custom-row">
-                                                    <div class="col-md-4 col-form-label"><span data-i18n="gift-voucher-qar1000">QAR1000 Gift Voucher</span><span class="x">x</span></div>
+                                                    <div class="col-md-4 col-form-label"><span>QAR1000 Gift Voucher</span><span class="x">x</span></div>
                                                     <div class="col-md-6 col-12">
                                                                 <asp:DropDownList ID="ddlQAR1000" runat="server" class="form-control">
                                                                     <asp:ListItem Value="0">Quantity</asp:ListItem>
@@ -217,11 +217,11 @@
                                                                 </asp:DropDownList>
                                                     </div>
                                                     <div class="col-md-2 col-12" id="divQAR1000Add">
-                                                        <button class="add" id="btn1000" onclick="var retvalue = selectQty(1000,'#CP_ddlQAR1000','#divQAR1000Add'); event.returnValue= retvalue; return retvalue;"> <span data-i18n="add"><span class="mm">+</span><span class="ww">ADD</span></span></button>
+                                                        <button class="add" id="btn1000" onclick="var retvalue = selectQty(1000,'#CP_ddlQAR1000','#divQAR1000Add'); event.returnValue= retvalue; return retvalue;"> <span><span class="mm">+</span><span class="ww">ADD</span></span></button>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row custom-row">
-                                                    <div class="col-md-4 col-form-label"><span data-i18n="gift-voucher-qar3000">QAR3000 Gift Voucher</span><span class="x">x</span></div>
+                                                    <div class="col-md-4 col-form-label"><span>QAR3000 Gift Voucher</span><span class="x">x</span></div>
                                                         <div class="col-md-6 col-12">
                                                                 <asp:DropDownList ID="ddlQAR3000" runat="server" class="form-control">
                                                                     <asp:ListItem Value="0">Quantity</asp:ListItem>
@@ -233,13 +233,13 @@
                                                                 </asp:DropDownList>
                                                     </div>
                                                     <div class="col-md-2 col-12" id="divQAR3000Add">
-                                                        <button class="add" id="btn3000" onclick="var retvalue = selectQty(3000,'#CP_ddlQAR3000','#divQAR3000Add'); event.returnValue= retvalue; return retvalue;"> <span data-i18n="add"><span class="mm">+</span><span class="ww">ADD</span></span></button>
+                                                        <button class="add" id="btn3000" onclick="var retvalue = selectQty(3000,'#CP_ddlQAR3000','#divQAR3000Add'); event.returnValue= retvalue; return retvalue;"> <span><span class="mm">+</span><span class="ww">ADD</span></span></button>
                                                     </div
                                                 </div>
                                                     
                                     </div>
                                                 <div class="form-group row custom-row">
-                                                    <div class="col-md-4 col-form-label"><span data-i18n="gift-voucher-qar5000">QAR5000 Gift Voucher</span><span class="x">x</span></div>
+                                                    <div class="col-md-4 col-form-label"><span>QAR5000 Gift Voucher</span><span class="x">x</span></div>
                                                             <div class="col-md-6 col-12">
                                                                 <asp:DropDownList ID="ddlQAR5000" runat="server" class="form-control">
                                                                     <asp:ListItem Value="0">Quantity</asp:ListItem>
@@ -251,7 +251,7 @@
                                                                 </asp:DropDownList>
                                                     </div>
                                                     <div class="col-md-2 col-12" id="divQAR5000Add">
-                                                        <button class="add" id="btn5000" onclick="var retvalue = selectQty(5000,'#CP_ddlQAR5000','#divQAR5000Add'); event.returnValue= retvalue; return retvalue;"> <span data-i18n="add"><span class="mm">+</span><span class="ww">ADD</span></span></button>
+                                                        <button class="add" id="btn5000" onclick="var retvalue = selectQty(5000,'#CP_ddlQAR5000','#divQAR5000Add'); event.returnValue= retvalue; return retvalue;"> <span><span class="mm">+</span><span class="ww">ADD</span></span></button>
                                                     </div>
                                                 </div>
                                                     
@@ -259,7 +259,7 @@
                                         <br />        
                                         <div class="form-group row custom-row">
                                             <div class="col-md-4 col-form-label">
-                                                <span data-i18n="totalvouchervalueinqar">
+                                                <span>
                                                 Total Voucher Value in QAR 
                                                     </span>
                                             </div>
@@ -269,7 +269,7 @@
                                         </div>
                                         <div class="form-group row custom-row">
                                             <div class="col-md-4 col-form-label">
-                                                  <span data-i18n="noofpointsrequiredtoredeem">
+                                                  <span>
                                                 Number of Points required to redeem 
                                                       </span>
                                             </div>
@@ -281,8 +281,8 @@
                                                     <div class="col-md-4 col-form-label"> &nbsp;</div>
                                                     <div class="col-md-6 col-12">
                                                         <div class="txt-center-btn">
-                                                        <div id="divClearAll" ><asp:Button ID="Button1" CssClass="submit" data-i18n="[value]clearall" Text="Clear All" OnClientClick="return ClearFields()"  runat="server" /></div>
-                                                        <div id="DivVoucherSubmit"><asp:Button CssClass="submit" runat="server" ID="btnSubmit" data-i18n="[value]submit" Text="Submit" OnClientClick="var retvalue = ConfirmVoucher(); event.returnValue= retvalue; return retvalue;" />
+                                                        <div id="divClearAll" ><asp:Button ID="Button1" CssClass="submit" Text="Clear All" OnClientClick="return ClearFields()"  runat="server" /></div>
+                                                        <div id="DivVoucherSubmit"><asp:Button CssClass="submit" runat="server" ID="btnSubmit" Text="Submit" OnClientClick="var retvalue = ConfirmVoucher(); event.returnValue= retvalue; return retvalue;" />
                                                             </div>
                                                             </div>
                                                         </div>
@@ -293,7 +293,7 @@
                                 </div>
                                 <div class="width100 display_hide " id="DivGlobalRewardsConfirm" runat="server">
                                     <%----%>
-                                   <p><span data-i18n="pleasefindbelowBOKvouchersummary">Please find below your Verve Rewards Voucher Summary:</span></p>
+                                   <p><span>Please find below your Verve Rewards Voucher Summary:</span></p>
                                     <div class="width100 RightInnerContent">
                                         <div id="divCurrencyDropDown" runat="server" class="Width100 display_hide pb10">
                                             <span style="font-size:20px;">Please select your currency: &nbsp</span>
@@ -305,29 +305,29 @@
                                             <table cellspacing="0" class="tblMatrix">
                                                 <tr class="stylegridheader">
                                                     <th class="alignCenter">
-                                                        <span data-i18n="voucher-type">
+                                                        <span>
                                                         Voucher Type
                                                             </span>
                                                     </th>
                                                     <th class="alignCenter">
-                                                         <span data-i18n="quantity">
+                                                         <span>
                                                         Quantity
                                                              </span>
                                                     </th>
                                                     <th class="alignCenter">
-                                                           <span data-i18n="vouchervalue">
+                                                           <span>
                                                         Voucher Value
                                                                 </span>
                                                     </th>
                                                     <th class="alignCenter">
-                                                         <span data-i18n="points-required">
+                                                         <span>
                                                         Points Required
                                                               </span>
                                                     </th>
                                                 </tr>
                                                 <tr id="trQAR100" runat="server" class="Statment_td_Voucher">
                                                     <td>
-                                                        <span data-i18n="gift-voucher-qar100">
+                                                        <span>
                                                         QAR100 Gift Voucher
                                                             </span>
                                                     </td>
@@ -343,7 +343,7 @@
                                                 </tr>
                                                 <tr id="trQAR500" runat="server" class="Statment_td_Voucher">
                                                     <td>
-                                                         <span data-i18n="gift-voucher-qar500">
+                                                         <span>
                                                         QAR500 Gift Voucher
                                                              </span>
                                                     </td>
@@ -359,7 +359,7 @@
                                                 </tr>
                                                 <tr id="trQAR1000" runat="server" class="Statment_td_Voucher">
                                                     <td>
-                                                         <span data-i18n="gift-voucher-qar1000">
+                                                         <span>
                                                         QAR1000 Gift Voucher
                                                              </span>
                                                     </td>
@@ -375,7 +375,7 @@
                                                 </tr>
                                                 <tr id="trQAR3000" runat="server" class="Statment_td_Voucher">
                                                     <td>
-                                                         <span data-i18n="gift-voucher-qar3000">
+                                                         <span>
                                                         QAR3000 Gift Voucher
                                                              </span>
                                                     </td>
@@ -391,7 +391,7 @@
                                                 </tr>
                                                 <tr id="trQAR5000" runat="server" class="Statment_td_Voucher">
                                                     <td>
-                                                         <span data-i18n="gift-voucher-qar5000">
+                                                         <span>
                                                         QAR5000 Gift Voucher
                                                              </span>
                                                     </td>
@@ -407,13 +407,13 @@
                                                 </tr>
                                             </table>
                                         </div>
-                                        <div class="width100 pTop10 totalFont"><span data-i18n="pleaseclickonconfirmtoredeem">
+                                        <div class="width100 pTop10 totalFont"><span>
                                            Please click on Confirm below to redeem 
                                             </span>
                                             <asp:Label runat="server" ID="lblRequirPointToRedeem"></asp:Label>
                                             <asp:Label runat="server" ID="lblComercialbankreward"></asp:Label>
                                         <%--    points for a Gift Voucher of QAR --%>
-                                            <span data-i18n="PointsforaGiftVoucherofQAR">
+                                            <span>
                                              Points for a Gift Voucher of QAR
                                                 </span>
                                              <asp:Label runat="server" ID="lblTotalVoucherValue" ></asp:Label>
@@ -421,10 +421,10 @@
                                         </div>
                                         <div class="txt-center-btn">
                                             <div>
-                                            <asp:Button CssClass="submit" runat="server" ID="Button2" data-i18n="[value]btn-back" Text="Back" OnClientClick="var retvalue = BackToDenomination(); event.returnValue= retvalue; return retvalue;" CausesValidation="false" />
+                                            <asp:Button CssClass="submit" runat="server" ID="Button2" Text="Back" OnClientClick="var retvalue = BackToDenomination(); event.returnValue= retvalue; return retvalue;" CausesValidation="false" />
                                             </div>               
                                             <div id="divBtnConfirm" runat="server">
-                                                <asp:Button CssClass="submit" runat="server" data-i18n="[value]btn-confirm" ID="btnConfirm" Text="Confirm"  CausesValidation="false" OnClick="btnConfirm_Click" />
+                                                <asp:Button CssClass="submit" runat="server" ID="btnConfirm" Text="Confirm"  CausesValidation="false" OnClick="btnConfirm_Click" />
                                             </div>
                                                 
                                         </div>

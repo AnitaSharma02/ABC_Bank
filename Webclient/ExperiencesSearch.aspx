@@ -28,14 +28,14 @@
                                  <div class="modal-title border-0 p-3">
                                      <h5 class="h6 heading-semibold text-colour1">
                                          <i class="fa fa-filter mx-0"></i>
-                                         <span data-i18n="carlist-filter-results">Filters</span>
+                                         <span>Filters</span>
                                      </h5>
                                  </div>
                                 <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
                                     <i class="fa-solid fa-xmark"></i>
                                 </button>
                                 <%--<i class="fa fa-filter mx-0"></i>
-                                 <span class="h7 heading-semibold" data-i18n="carlist-filter-results">Filters Results</span>--%>
+                                 <span class="h7 heading-semibold">Filters Results</span>--%>
                              </div>
                              <div class="modal-body p-lg-0">
                                  <div class="accordion" id="filter-accordion">
@@ -76,7 +76,7 @@
                                  </div>
                             </div>                                    
                              <div class="modal-footer justify-content-center p-lg-2">
-                     <button type="button" class="btn btn-one w-100" onclick="ClearFilters();" data-i18n="carlist-reset">Reset</button>
+                     <button type="button" class="btn btn-one w-100" onclick="ClearFilters();">Reset</button>
                  </div>                                   
                         </div>
                     </div>

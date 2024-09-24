@@ -34,7 +34,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <h2 class="h5 heading-semibold text-colour7 mb-1" data-i18n="refresh-cache">Refresh Cache </h2>
+                                <h2 class="h5 heading-semibold text-colour7 mb-1">Refresh Cache </h2>
                             </div>
                             <div class="col-12">
                                 <asp:Label runat="server" ID="lblLoginError" Text="" CssClass="mt-3 h7 heading-regular text-colour7"></asp:Label>

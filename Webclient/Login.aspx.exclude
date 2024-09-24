@@ -28,10 +28,10 @@
                     <div class="border bg-colour2 p-4">
                         <div class="row">
                             <div class="col-12 mb-2">
-                                <h2 class="h5 heading-semibold text-colour7 mb-1" data-i18n="navigation-login">Login</h2>
+                                <h2 class="h5 heading-semibold text-colour7 mb-1">Login</h2>
                             </div>
                             <div class="col-12 mb-3">
-                                <h5 class="h6 heading-regular" id="loginHeader" data-i18n="text-all-fields-mandatory">All fields are mandatory.</h5>
+                                <h5 class="h6 heading-regular" id="loginHeader">All fields are mandatory.</h5>
                             </div>
                             <div id="ErrorMsgContainer" class="col-12" runat="server">
                                 <asp:Label runat="server" ID="lblLoginError" Text="" CssClass="mt-3 h7 heading-regular text-danger" ForeColor="Red"></asp:Label>
@@ -40,13 +40,13 @@
                             <div class="col-12 mb-3" id="divLogin">
                                 <div class="row">
                                     <div class="col-12 mb-3">
-                                        <label class="label" data-i18n="text-member-id">ID</label>
+                                        <label class="label">ID</label>
                                         <div class="dvInput input-group">
                                             <input type="text" class="form-control" autocomplete="off" id="txtMemberID" runat="server" value="" />
                                         </div>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <label class="label" data-i18n="text-password">Password:</label>
+                                        <label class="label">Password:</label>
                                         <div class="dvInputGroup input-group">
                                             <input type="password" runat="server" autocomplete="off" class="form-control" id="txtPassword" />
                                             <div class="input-group-append">
@@ -60,25 +60,24 @@
                                         <label class="checkbox-container d-flex">
                                             <span class="d-inline-block ml-1">
                                                 <input id="chkRememberMe" runat="server" type="checkbox" />
-                                                <span data-i18n="text-remember-this-computer" class="h6 heading-regular text-colour7">Remember me on this computer.</span>
+                                                <span class="h6 heading-regular text-colour7">Remember me on this computer.</span>
                                                 <span class="checkmark"></span>
                                             </span>
                                         </label>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <asp:Button ID="BtnLoginValidation" data-i18n="[value]btn-continue" runat="server" CssClass="btn btn-one w-100" OnClick="BtnLoginValidation_Click"
+                                        <asp:Button ID="BtnLoginValidation" runat="server" CssClass="btn btn-one w-100" OnClick="BtnLoginValidation_Click"
                                             Text="Continue" OnClientClick="if(!LoginValidationCodeBehind()) { return false;};" />
                                     </div>
                                     <div class="col-12">
                                         <div class="d-flex flex-wrap justify-content-between">
                                             <div class="mb-2 mb-sm-0">
                                                 <asp:LinkButton ID="FormLinkPassword" CausesValidation="false" CssClass="heading-semibold link1"
-                                                    runat="server" OnClientClick="var retvalue = redirectLocation('ForgotPassword.aspx'); event.returnValue= retvalue; return retvalue;" data-i18n="text-forgot-password">Forgot Password</asp:LinkButton>
+                                                    runat="server" OnClientClick="var retvalue = redirectLocation('ForgotPassword.aspx'); event.returnValue= retvalue; return retvalue;">Forgot Password</asp:LinkButton>
                                             </div>
                                             <div>
                                                 <asp:LinkButton ID="FormLinkActiveMembership" CssClass="heading-semibold link1" CausesValidation="false" runat="server"
-                                                    OnClientClick="var retvalue = redirectLocation('Activation.aspx'); event.returnValue= retvalue; return retvalue;"
-                                                    data-i18n="text-activate-membership">Activate Membership</asp:LinkButton>
+                                                    OnClientClick="var retvalue = redirectLocation('Activation.aspx'); event.returnValue= retvalue; return retvalue;">Activate Membership</asp:LinkButton>
                                             </div>
                                         </div>
                                     </div>

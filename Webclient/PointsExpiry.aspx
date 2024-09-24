@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <h2 class="h1 heading-semibold text-colour1" id="lblMemberName">
-                        <span data-i18n="account-welcome" class="">Welcome,</span>
+                        <span class="">Welcome,</span>
                         <span class="ml-2" id="spnMemberName"></span>
                     </h2>
                     <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
@@ -40,8 +40,7 @@
                     <a
                         href="Index.aspx"
                         class="btn btn-one"
-                        id="my_account_point_redeem_now"
-                        data-i18n="btn-redeem-now">Redeem Now
+                        id="my_account_point_redeem_now">Redeem Now
                     </a>
                 </div>
             </div>
@@ -63,9 +62,9 @@
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
-                    <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                    <li class="breadcrumb-item" ><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
-                    <li class="breadcrumb-item active" data-i18n="bread-expiry">Points Expiry</li>
+                    <li class="breadcrumb-item"><a href="\">Home</a></li>
+                    <li class="breadcrumb-item" ><a href="StatementSummary.aspx">My Account</a></li>
+                    <li class="breadcrumb-item active">Points Expiry</li>
                 </ul>
             </nav>
         </div>
@@ -78,7 +77,7 @@
                     <div class="bg-colour2 p-3">
                         <div class="row align-items-center">
                             <div class="col-7 col-sm-9 col-lg-10">
-                                <p class="" data-i18n="pe-please-select-the-year">Please select the year to view your Points expiry schedule:</p>
+                                <p class="">Please select the year to view your Points expiry schedule:</p>
                             </div>
                             <div class="col-5 col-sm-3 col-lg-2">
                                 <asp:DropDownList ID="dtYear" runat="server" OnSelectedIndexChanged="dtYear_SelectedIndexChanged"
@@ -97,9 +96,9 @@
                         <div class="row">
                             <div class="col-12">
                                 <p class="heading-bold text-colour7" id="divExpiredon" runat="server">
-                                    <span data-i18n="pe-your">Your </span>
+                                    <span>Your </span>
                                     <asp:Label ID="lblMiles" runat="server" Text=""></asp:Label>
-                                    <span data-i18n="pe-points-going-expire">Points are going to expire on </span>
+                                    <span>Points are going to expire on </span>
                                     <asp:Label ID="lblDate" runat="server" Text=""></asp:Label>.
                                 </p>
                             </div>

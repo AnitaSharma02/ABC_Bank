@@ -208,12 +208,12 @@
                             <div class="d-flex flex-wrap align-items-center justify-content-lg-end">
                                 <div class="dvPoints col-auto px-0" runat="server" visible="false" id="dvPoints">
                                     <div class="nav-item col-12" id="liPoints" runat="server" visible="false">
-                                        <a class="points h7" href="javascript:void(0);" data-i18n="navigation-points">Balance Points<span>
+                                        <a class="points h7" href="javascript:void(0);">Balance Points<span>
                                             <asp:Label ID="lblAvailablePoints" runat="server" Text="0"></asp:Label></span>
                                         </a>
                                     </div>
                                     <div id="HeaderTot" runat="server" visible="false">
-                                        <asp:Label runat="server" CssClass="h7 text-colour6 " ID="Label1" Text="Balance Points" data-i18n="navigation-points"></asp:Label>
+                                        <asp:Label runat="server" CssClass="h7 text-colour6 " ID="Label1" Text="Balance Points"></asp:Label>
                                         <span class="ml-1 h7 text-colour6" id="totAvbPointDiv" runat="server" visible="false">
                                             <asp:Label runat="server" ID="lblCurrentBal" ForeColor="" Text="0"></asp:Label>
                                         </span>
@@ -251,16 +251,16 @@
                     <div class="navbar-collapse collapse order-2 order-lg-1 col-lg-8 px-0 px-lg-3 mb-1 mb-lg-0 justify-content-lg-end" id="navbarSupportedContent">
                         <ul class="navbar-nav align-items-lg-center w-100">
                             <li class="nav-item">
-                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" data-i18n="navigation-about-us" id="about" href="AboutUs.aspx">About Us</a>
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" id="about" href="AboutUs.aspx">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" data-i18n="navigation-earn" id="earn" href="ComingSoon.aspx">Earn</a>
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" id="earn" href="ComingSoon.aspx">Earn</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="Redeem.aspx" id="redeem" data-i18n="navigation-redeem">Redeem</a>
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="Redeem.aspx" id="redeem">Redeem</a>
                             </li>
                             <li class="nav-item dropdown" runat="server" visible="true" id="limyaccount">
-                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="StatementSummary.aspx" id="navbarDropdown" data-i18n="navigation-my-account">My Account</a>
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="StatementSummary.aspx" id="navbarDropdown">My Account</a>
                             </li>
                             <li class="nav-item d-flex align-items-center border-top ml-lg-auto pt-2 pt-lg-0">
                                 <div class="d-flex align-items-center">
@@ -270,7 +270,7 @@
                                     <div class="dvName" id="liwelcome" runat="server" visible="true">
                                         <asp:Label runat="server" CssClass="text-colour7 heading-semibold" ID="lblMemberName">
                                             <span id="txtWelcome" runat="server"></span>
-                                            <span data-i18n="text-guest">Guest</span>
+                                            <span>Guest</span>
                                         </asp:Label>
                                     </div>
                                 </div>
@@ -280,12 +280,12 @@
                             <div class="nav-item" id="lnkloginlogout" runat="server">
                                 <a href="Login.aspx" class="nav-link btn btn-one btn-sm d-inline-block mt-2 mt-lg-0" id="lnkLogin" runat="server">
                                     <i class="fa-regular fa-user pr-1 d-inline-block"></i>
-                                    <span class="nav-link p-0 d-inline-block text-uppercase" data-i18n="navigation-login">Login</span>
+                                    <span class="nav-link p-0 d-inline-block text-uppercase">Login</span>
                                 </a>
                                 <a id="liLogout" runat="server" visible="false">
                                     <asp:LinkButton runat="server" CausesValidation="false" ID="logout" data-toggle="modal" data-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link header-text ml-lg-3 nav-link btn btn-one btn-sm d-inline-block mt-2 mt-lg-0">
                                     <i class="fa-regular fa-user pr-1 d-inline-block"></i>
-                                     <span class="nav-link p-0 d-inline-block text-uppercase" data-i18n="navigation-logout">Logout</span>
+                                     <span class="nav-link p-0 d-inline-block text-uppercase">Logout</span>
                                     </asp:LinkButton>
                                 </a>
                             </div>
@@ -333,14 +333,14 @@
                 <div class="container-xl">
                     <div class="row align-items-lg-center">
                         <div class="dvLinks col-lg-10 text-center text-lg-left mb-3 mb-lg-0 text-uppercase">
-                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-earn">Earn</a>
-                            <a class="d-block d-md-inline-block py-1" href="Redeem.aspx" data-i18n="navigation-redeem">Redeem</a>
-                            <a class="d-block d-md-inline-block py-1" href="AboutUs.aspx" data-i18n="navigation-about-us">About Us</a>
-                            <a class="d-block d-md-inline-block py-1" href="FAQ.aspx" data-i18n="navigation-faqs">FAQs</a>
-                            <a class="d-block d-md-inline-block py-1" href="TermsAndConditions.aspx" data-i18n="navigation-tnc">Terms &amp; Conditions</a>
-                            <a class="d-block d-md-inline-block py-1" href="PrivacyPolicy.aspx" data-i18n="bannertext-privacy">Privacy Policy</a>
-                            <a class="d-block d-md-inline-block py-1" href="BookingPolicy.aspx" data-i18n="navigation-booking-policy">Booking Policy</a>
-                            <%--<a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx" data-i18n="navigation-disclaimer">Disclaimer</a>--%>
+                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx">Earn</a>
+                            <a class="d-block d-md-inline-block py-1" href="Redeem.aspx">Redeem</a>
+                            <a class="d-block d-md-inline-block py-1" href="AboutUs.aspx">About Us</a>
+                            <a class="d-block d-md-inline-block py-1" href="FAQ.aspx">FAQs</a>
+                            <a class="d-block d-md-inline-block py-1" href="TermsAndConditions.aspx">Terms &amp; Conditions</a>
+                            <a class="d-block d-md-inline-block py-1" href="PrivacyPolicy.aspx">Privacy Policy</a>
+                            <a class="d-block d-md-inline-block py-1" href="BookingPolicy.aspx">Booking Policy</a>
+                            <%--<a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx">Disclaimer</a>--%>
                         </div>
                         <div class="dvSocialIcons col-lg-2 text-center text-lg-right mb-3 mb-md-0">
                             <a class="d-inline-block px-1" href="https://www.facebook.com/ABCbankingcorporation" target="_blank">

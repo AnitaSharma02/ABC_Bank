@@ -181,7 +181,7 @@ public partial class Index : Page
     //                        sb.Append("</div>");
     //                        sb.Append("</div>");
     //                        sb.Append("<div class=\"d-flex justify-content-between align-items-center mt-4\">");
-    //                        sb.Append(string.Format("<a href=\"Shop.aspx?CategoryId={0}&ProductType=Physical\" class=\"btn btn-one\" data-i18n=\"index-view-all\">View All</a>", categoryId));
+    //                        sb.Append(string.Format("<a href=\"Shop.aspx?CategoryId={0}&ProductType=Physical\" class=\"btn btn-one\">View All</a>", categoryId));
     //                        sb.Append("</div>");                         
     //                    }
     //                    result += sb.ToString();
@@ -283,7 +283,7 @@ public partial class Index : Page
                                         sb.Append("</div>");//swiper buttons close
                                         sb.Append("</div>");//swiper row close
                                         sb.Append("<div class=\"d-flex justify-content-start align-items-center mt-4\">");
-                                        sb.Append(string.Format("<a href=\"ShopList.aspx?CategoryId={0}&ProductType=digital\" class=\"btn btn-two\" data-i18n=\"index-view-all\">View All</a>", categoryId));
+                                        sb.Append(string.Format("<a href=\"ShopList.aspx?CategoryId={0}&ProductType=digital\" class=\"btn btn-two\">View All</a>", categoryId));
                                         sb.Append("</div>");
                                     }
 

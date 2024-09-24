@@ -204,7 +204,7 @@
                 </div>
                 <div class="SearchImg_Container spclpadd">
                     <asp:Label ID="Label1" runat="server" CssClass="spclpadd h6" Text="Please wait while  we search for best available rates..."></asp:Label>
-                    <%--<span data-i18n="flight-search-page" class="spclpadd">Please wait while we search for best available flights...</span>--%>
+                    <%--<span class="spclpadd">Please wait while we search for best available flights...</span>--%>
                 </div>
                 <asp:Label ID="LabelYourSearchDetails" Font-Bold="true" runat="server" Text="" CssClass="spclpadd h6"></asp:Label>
                 <div class="cssload-wrapper">

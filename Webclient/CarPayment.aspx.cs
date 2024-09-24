@@ -222,7 +222,7 @@ public partial class CarPayment : System.Web.UI.Page
                 sbmoreInfo.Append("</div>");
                 sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-9 mt-2 mt-md-0 order-md-1 text-left\">");
                 sbmoreInfo.Append("<div class=\"\">");
-                sbmoreInfo.Append("<a class=\"link1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i><span data-i18n=\"text-vehical-location\"> Vehicle location:</span></a>");
+                sbmoreInfo.Append("<a class=\"link1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i><span> Vehicle location:</span></a>");
 
                 Branch lobjBranch = lobjRateResponse.data.branches.Find(x => x.id == lobjRateResponse.data.pickUpBranchId);
                 if (lobjBranch != null)

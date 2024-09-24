@@ -425,7 +425,7 @@ function CarValidation() {
     if (msg.length > 0) {
 
         $("#CP_CarValidationError").show();
-        $("#CP_CarValidationError")[0].innerHTML = "<span class='heading-semibold text-danger d-block' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
+        $("#CP_CarValidationError")[0].innerHTML = "<span class='heading-semibold text-danger d-block'>Below fields are mandatory.</span>";
         return false;
     }
     else {
@@ -615,7 +615,7 @@ function LocationSearchCarSearch() {
 
     if (msg.length > 0) {
         $("#CP_CarValidationError").show();
-        $("#CP_CarValidationError")[0].innerHTML = "<span class='heading-semibold text-danger d-block' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
+        $("#CP_CarValidationError")[0].innerHTML = "<span class='heading-semibold text-danger d-block'>Below fields are mandatory.</span>";
         return !(msg.length > 0);
     }
     else {
@@ -1264,7 +1264,7 @@ function MakePayment() {
 
     if ($("#CP_txtFirstName").val().length == 0) {
         msg += "Please enter First Name. <br/>";
-        $("#errorFirtsname").html("<span data-i18n='car-error-first-name'>Please enter First name.</span>");
+        $("#errorFirtsname").html("<span>Please enter First name.</span>");
     }
     else {
         if (AcceptAlphasonly($("#CP_txtFirstName").val().trim())) {

@@ -420,8 +420,8 @@
                                 </button>
                                 <p class="heading-regular col-auto col-lg-10 px-0">
                                     <asp:Label CssClass="Content_Style h6 heading-regular text-colour7 col-auto px-0 mb-2 mb-lg-0" runat="server" ID="lblSearchSummary"></asp:Label>
-                                    <%--<a href="#modify_search" class="btn btn-yellow" id="btnModify" data-toggle="collapse" data-i18n="flightlist-modify">Modify</a>--%>
-                                    <%--<a class="btn btn-one" id="btnfliter" data-i18n="button-filters">Filters</a>--%>
+                                    <%--<a href="#modify_search" class="btn btn-yellow" id="btnModify" data-toggle="collapse">Modify</a>--%>
+                                    <%--<a class="btn btn-one" id="btnfliter">Filters</a>--%>
                                 </p>
                                 <button
                                     class="btn btn-one arrowBtn col-auto d-flex mt-2 mt-sm-0 collapsed"
@@ -489,7 +489,7 @@
                                     </div>
                                     <div class="col-12 col-md-12 col-lg-3 offset-lg-9 order-6 order-lg-5">
                                          
-                                        <button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100" data-i18n="">Search Hotel</button>
+                                        <button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100">Search Hotel</button>
                                     </div>
                                     <div class="col-12 order-5 order-lg-6">
                                         <div class="row">
@@ -624,7 +624,7 @@
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <input type="hidden" id="hdnRoomString" />
-                                            <label class="label" data-i18n="hotel-city-destination">Destination</label>
+                                            <label class="label">Destination</label>
                                             <div class="input-group">
                                                 <input class="input1 ui-autocomplete-input locationIcon form-control from-icon" type="text" autocomplete="off" runat="server" id="txtCity" onfocus="placeholderOnFocus(this,'Enter City Name');" onblur="placeholderOnFocus(this,'Enter City Name');" value="Enter City Name" />
                                                 <div class="input-group-append">
@@ -635,7 +635,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12 mb-3">
-                                            <label class="label" data-i18n="hotel-check-in-label">Check-In</label>
+                                            <label class="label">Check-In</label>
                                             <div class="dvTextBoxCheckin input-group">
                                                 <input id="TextBoxCheckin" runat="server" autocomplete="off" class="input1 ui-autocomplete-input datePicker form-control cal-icon" type="text" onfocus="placeholderOnFocus(this,'dd/mm/yyyy');" onblur="placeholderOnFocus(this,'dd/mm/yyyy');" value="dd/mm/yyyy" readonly="readonly" />
                                                 <div class="input-group-append">
@@ -646,7 +646,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-12 mb-3">
-                                            <label class="label" data-i18n="hotel-check-out-label">Check-Out</label>
+                                            <label class="label">Check-Out</label>
                                             <div class="dvTextBoxCheckout input-group">
                                                 <input class="input1 ui-autocomplete-input datePicker form-control cal-icon" autocomplete="off" type="text" onfocus="placeholderOnFocus(this,'dd/mm/yyyy');" onblur="placeholderOnFocus(this,'dd/mm/yyyy');" value="dd/mm/yyyy" id="TextBoxCheckout" runat="server" readonly="readonly" />
                                                 <div class="input-group-append">
@@ -655,7 +655,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="label" data-i18n="hotel-rooms-label">Room(s)</label>
+                                            <label class="label">Room(s)</label>
                                             <select class="form-control" id="ddlnoofroom">
                                                     <option value="1" selected="selected">1</option>
                                                     <option value="2">2</option>

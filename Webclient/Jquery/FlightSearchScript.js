@@ -206,7 +206,7 @@ function FlightValidation() {
             $("#requiredValidation")[0].innerHTML = "*Infants is more than Adults.";
         }
         else {
-            $("#requiredValidation")[0].innerHTML = "<span class='heading-semibold text-danger d-block' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
+            $("#requiredValidation")[0].innerHTML = "<span class='heading-semibold text-danger d-block'>Below fields are mandatory.</span>";
         }
         return false;
     }
@@ -272,7 +272,7 @@ function ModifyFlightValidation() {
             $("#requiredValidation")[0].innerHTML = "*Infants is more than Adults.";
         }
         else {
-            $("#requiredValidation")[0].innerHTML = "<span class='heading-semibold text-danger d-block' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
+            $("#requiredValidation")[0].innerHTML = "<span class='heading-semibold text-danger d-block'>Below fields are mandatory.</span>";
         }
         return false;
     }

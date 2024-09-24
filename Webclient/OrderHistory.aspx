@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <h2 class="h1 heading-semibold text-colour1" id="lblMemberName">
-                        <span data-i18n="account-welcome" class="">Welcome,</span>
+                        <span class="">Welcome,</span>
                         <span class="ml-2" id="spnMemberName"></span>
                     </h2>
                     <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
@@ -51,8 +51,7 @@
                     <a
                         href="Index.aspx"
                         class="btn btn-one"
-                        id="my_account_point_redeem_now"
-                        data-i18n="btn-redeem-now">Redeem Now
+                        id="my_account_point_redeem_now">Redeem Now
                     </a>
                 </div>
             </div>
@@ -72,9 +71,9 @@
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
-                    <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                     <li class="breadcrumb-item" ><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
-                    <li class="breadcrumb-item active" data-i18n="bread-order">Order History</li>
+                    <li class="breadcrumb-item"><a href="\">Home</a></li>
+                     <li class="breadcrumb-item" ><a href="StatementSummary.aspx">My Account</a></li>
+                    <li class="breadcrumb-item active">Order History</li>
                 </ul>
             </nav>
         </div>

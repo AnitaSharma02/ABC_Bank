@@ -72,7 +72,7 @@
                         <div class="dvAddToCart col-12">
                             <div class="row">
                                 <div class="form-group col-12 col-sm-3" id="divQuantity" runat="server">
-                                     <h2 class="h6 heading-regular text-colour7 mb-2" data-i18n="quantity">Quantity</h2>
+                                     <h2 class="h6 heading-regular text-colour7 mb-2">Quantity</h2>
                                       <div class="dvPlusMinusButtons">                                            
                                           <div class="input-group">
                                               <div class="input-group-prepend">
@@ -106,7 +106,7 @@
                                        </div>--%>
                                 </div>
                                  <div class="form-group col-12 col-sm-3">
-                                     <h2 id="lbldivPoints" runat="server" class="h6 heading-regular text-colour7 mb-2" data-i18n="text-total-points">Total Points</h2>
+                                     <h2 id="lbldivPoints" runat="server" class="h6 heading-regular text-colour7 mb-2">Total Points</h2>
                                      <div class="border b-radius h6 text-colour7 heading-semibold p-2" id="divspanpoints" runat="server">
                                      </div>
                                  </div>
@@ -141,7 +141,7 @@
                         <div class="col-12 mb-3" id="divDenomination" runat="server">
                             <div class="row">  
                             <div class="col-12">
-                                <label id="lblDenomination" runat="server" class="h6 heading-regular text-colour7 mb-2" data-i18n="shopproddetails-denominations">Denominations :</label>
+                                <label id="lblDenomination" runat="server" class="h6 heading-regular text-colour7 mb-2">Denominations :</label>
                             </div>
                             <div id="spanDenomination" runat="server" class="col-12"></div>
                             </div>
@@ -153,21 +153,21 @@
                             <div class="row">
                                <div class="col-12 col-sm-4 col-xl-3 mb-3 mb-sm-0">
                                     <a href="javascript:void(0);" class="btn btn-two w-100 order-sm-0" id="btnBack" runat="server">
-                                        <div class="text-center" data-i18n="btn-back">
+                                        <div class="text-center">
                                             Back
                                         </div>
                                     </a>                                   
                                </div>
                                <div class="col-12 col-sm-4 col-xl-3 mb-3 mb-sm-0">
                                    <a href="javascript:void(0);" class="btn btn-one w-100 order-sm-2" id="btnredeem" runat="server"  onclick="Checkout()" >
-                                      <div class="text-center" data-i18n="index-redeem">
+                                      <div class="text-center">
                                           Redeem
                                       </div>
                                   </a>
                                </div>
                                <div class="col-12 col-sm-4 col-xl-3" id="addToCartButton">
                                     <a href="javascript:void(0);" class="btn btn-two w-100 order-sm-1" onclick="AddItemToCart()">
-                                        <div class="text-center" data-i18n="btn-addtocart">
+                                        <div class="text-center">
                                             Add To Cart
                                         </div>
                                     </a>
@@ -178,10 +178,10 @@
                     <div class="row">  
                         <div class="col-12">
                             <div class="form-group" id="divOutOfStock" runat="server" style="display: none;">
-                                <h2 class="h6 heading-semibold text-danger" data-i18n="shopproddetails-total">Out Of Stock</h2>
+                                <h2 class="h6 heading-semibold text-danger">Out Of Stock</h2>
                             </div>
                             <div class="form-group" id="divInsufficient" runat="server" style="display: none;">
-                                <h2 class="h6 heading-semibold text-danger" data-i18n="text-insufficient">Insufficient Points</h2>
+                                <h2 class="h6 heading-semibold text-danger">Insufficient Points</h2>
                             </div>
                              <div class="form-group" id="divEmailErrorMsg" runat="server">
                                 <h2 class="h6 heading-semibold text-danger">You cannot proceed for redemption since there is no email address updated , kindly contact bank to update the email address.</h2>
@@ -192,8 +192,8 @@
                       <div class="dvTabs col-12">
                         <nav>
                          <div class="nav nav-tabs flex-nowrap scroll-hoz border-bottom-0" id="nav-tab" role="tablist" >
-                            <button class="heading-semibold nav-link text-capitalize active mr-2" id="description-tab" data-toggle="tab" data-target="#description" type="button" data-i18n="transaction-description-label"> description </button>
-                            <button class="heading-semibold nav-link text-capitalize" id="terms-conditions-tab" data-toggle="tab" data-target="#terms-conditions" type="button" data-i18n="text-terms-conditions" >Terms And Conditions</button>
+                            <button class="heading-semibold nav-link text-capitalize active mr-2" id="description-tab" data-toggle="tab" data-target="#description" type="button"> description </button>
+                            <button class="heading-semibold nav-link text-capitalize" id="terms-conditions-tab" data-toggle="tab" data-target="#terms-conditions" type="button">Terms And Conditions</button>
                             <button class="heading-semibold nav-link text-capitalize" id="divSpecificationtab" data-toggle="tab" data-target="#specification" type="button" runat="server" visible="false" > Specifications </button>
                           </div>
                         </nav>

@@ -60,7 +60,7 @@ public partial class HotelBookingDetails : Page
                             lobjSelectedSearchResponse.SearchResponse.hotels.hotel = hotels.ToArray();
                             Session["SelectedHotel"] = lobjSelectedSearchResponse;
 
-                            lblTotalCharge.Text = lobjModel.FloatToThousandSeperated(lobjHotel.roomrates.RoomRate[0].TotalPoints) + " <span data-i18n='car-points-label'>points </span>";
+                            lblTotalCharge.Text = lobjModel.FloatToThousandSeperated(lobjHotel.roomrates.RoomRate[0].TotalPoints) + " <span>points </span>";
                             lblHotelName.Text = lobjHotel.basicinfo.hotelname;
                             lblAddress.Text = lobjHotel.basicinfo.address + " - " + lobjHotel.basicinfo.city + ", " + lobjHotel.basicinfo.state + ", " + lobjHotel.basicinfo.country + " " + lobjHotel.basicinfo.countrycode + ".";
                             string strbaseurl = lobjSearchResponse.SearchResponse.baseurl;

@@ -28,20 +28,20 @@
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="h6 heading-bold bg-colour1 text-colour6 bg p-3 b-radius-top-right" data-i18n="shopcheckout-billing">Delivery Address</h2>
+                            <h2 class="h6 heading-bold bg-colour1 text-colour6 bg p-3 b-radius-top-right">Delivery Address</h2>
                         </div>
                         <div class="col-12">
                             <div id="divCheckoutPhysical" runat="server" class="bg-colour2 p-3">
                                 <form class="needs-validation" novalidate>
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
-                                            <label class="label" for="firstName" data-i18n="flightpassenger-first">First name</label>
+                                            <label class="label" for="firstName">First name</label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="firstName" placeholder="" value="" />
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label class="label" for="lastName" data-i18n="flightpassenger-last">Last name</label>
+                                            <label class="label" for="lastName">Last name</label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="lastName" placeholder="" value="" />
                                             </div>
@@ -49,13 +49,13 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
-                                            <label class="label" for="email" data-i18n="flightpassenger-email">Email </label>
+                                            <label class="label" for="email">Email </label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="email" placeholder="you@example.com" />
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label class="label" for="email" data-i18n="shopcheckout-validphone">Phone</label>
+                                            <label class="label" for="email">Phone</label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="phone" placeholder="9876543210" maxlength="15" />
                                             </div>
@@ -63,13 +63,13 @@
                                     </div>
                                     <div class="row">
                                         <div class=" col-md-6 mb-3">
-                                            <label class="label" for="address" data-i18n="shopcheckout-address">Address</label>
+                                            <label class="label" for="address">Address</label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="address" placeholder="1234 Main St" />
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label class="label" for="address2" data-i18n="shopcheckout-addressoptional">Address 2 (Optional)</label>
+                                            <label class="label" for="address2">Address 2 (Optional)</label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" />
                                             </div>
@@ -77,7 +77,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4 mb-3">
-                                            <label class="label" for="country" data-i18n="shopcheckout-country">Country</label>
+                                            <label class="label" for="country">Country</label>
                                             <div class="dvInput input-group">
                                                 <select class="form-control custom-select d-block w-100" id="country">
                                                     <option value="">Choose...</option>
@@ -334,13 +334,13 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <label class="label" for="state" data-i18n="shopcheckout-city">City</label>
+                                            <label class="label" for="state">City</label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="city" placeholder="" />
                                             </div>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <label class="label" for="zip" data-i18n="shopcheckout-zip">Zip</label>
+                                            <label class="label" for="zip">Zip</label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="zip" placeholder="" />
                                             </div>
@@ -417,81 +417,81 @@
             $(".text-danger").remove();
 
             if (firstName == "") {
-                msg += "<span class='text-danger' data-i18n='text-enter-first'>Please enter First Name</span>";
+                msg += "<span class='text-danger'>Please enter First Name</span>";
                 $("#firstName").closest(".dvInput").after(msg);
                 msg = "";
             } else if (!firstName.match(/^[a-zA-Z]+$/)) {
-                msg += "<span class='text-danger' data-i18n='hotel-booking-errorvalidfname'>Please enter valid First Name</span>";
+                msg += "<span class='text-danger'>Please enter valid First Name</span>";
                 $("#firstName").closest(".dvInput").after(msg);
                 msg = "";
             }
 
             if (lastName == "") {
-                msg += "<span class='text-danger' data-i18n='text-enter-last'>Please enter Last Name</span>";
+                msg += "<span class='text-danger'>Please enter Last Name</span>";
                 $("#lastName").closest(".dvInput").after(msg);
                 msg = "";
             } else if (!lastName.match(/^[a-zA-Z]+$/)) {
-                msg += "<span class='text-danger' data-i18n='hotel-booking-errorvalidlname'>Please enter valid Last Name</span>";
+                msg += "<span class='text-danger'>Please enter valid Last Name</span>";
                 $("#lastName").closest(".dvInput").after(msg);
                 msg = "";
             }
 
             if (email == "") {
-                msg += "<span class='text-danger' data-i18n='text-please-enter-Email'>Please enter Email Id</span>";
+                msg += "<span class='text-danger'>Please enter Email Id</span>";
                 $("#email").closest(".dvInput").after(msg);
                 msg = "";
             } else if (!isEmail(email)) {
-                msg += "<span class='text-danger' data-i18n='text-please-enter-valid-nationalid'>Please enter valid Email Id</span>";
+                msg += "<span class='text-danger'>Please enter valid Email Id</span>";
                 $("#email").closest(".dvInput").after(msg);
                 msg = "";
             }
 
             if (phone == "") {
-                msg += "<span class='text-danger' data-i18n='text-please-enter-phoneno'>Please enter Phone Number</span>";
+                msg += "<span class='text-danger'>Please enter Phone Number</span>";
                 $("#phone").closest(".dvInput").after(msg);
                 msg = "";
             } else {
                 var numbers = /^[0-9]+$/;
                 if (!numbers.test(phone)) {
-                    msg += "<span class='text-danger' data-i18n='text-please-enter-numeric'>Phone should be Numeric</span>";
+                    msg += "<span class='text-danger'>Phone should be Numeric</span>";
                     $("#phone").closest(".dvInput").after(msg);
                     msg = "";
                 }
             }
 
             if (address == "") {
-                msg += "<span class='text-danger' data-i18n='text-please-enter-address'>Please enter Address</span>";
+                msg += "<span class='text-danger'>Please enter Address</span>";
                 $("#address").closest(".dvInput").after(msg);
                 msg = "";
             }
 
             if (countrycode == "") {
-                msg += "<span class='text-danger' data-i18n='text-please-enter-selectcountry'>Please select Country</span>";
+                msg += "<span class='text-danger'>Please select Country</span>";
                 $("#country").closest(".dvInput").after(msg);
                 msg = "";
             }
 
             if (city == "") {
-                msg += "<span class='text-danger' data-i18n='text-please-enter-city'>Please enter City</span>";
+                msg += "<span class='text-danger'>Please enter City</span>";
                 $("#city").closest(".dvInput").after(msg);
                 msg = "";
             } else {
                 var regex = new RegExp("^[a-zA-Z ]+$");
                 if (!regex.test(city)) {
-                    msg += "<span class='text-danger' data-i18n='text-please-enter-validcity'>Please enter valid City</span>";
+                    msg += "<span class='text-danger'>Please enter valid City</span>";
                     $("#city").closest(".dvInput").after(msg);
                     msg = "";
                 }
             }
 
             if (zip == "") {
-                msg += "<span class='text-danger' data-i18n='text-please-enter-zip'>Please enter ZIP</span>";
+                msg += "<span class='text-danger'>Please enter ZIP</span>";
                 $("#zip").closest(".dvInput").after(msg);
                 msg = "";
             } else {
                 var numbers = /^[0-9]+$/;
                 if (!numbers.test(zip)) {
-                    msg += "<span class='text-danger' data-i18n='text-please-enter-zipnumeric'>Zip should be Numeric</span>";
+                    msg += "<span class='text-danger'>Zip should be Numeric</span>";
                     $("#zip").closest(".dvInput").after(msg);
                     msg = "";
                 }
@@ -549,52 +549,52 @@
             var countrycode = $("#country option:selected").val();
             var country = $("#country option:selected").text();
             if (firstName == "") {
-                msg += ("<span data-i18n='text-enter-first'>Please enter First Name</span><br />");
+                msg += ("<span>Please enter First Name</span><br />");
             } else if (!firstName.match(/^[a-zA-Z]+$/)) {
-                msg += ("<span data-i18n='hotel-booking-errorvalidfname'>Please enter valid First Name</span><br />");
+                msg += ("<span>Please enter valid First Name</span><br />");
             }
             if (lastName == "") {
-                msg += ("<span data-i18n='text-enter-last'>Please enter Last Name</span><br />");
+                msg += ("<span>Please enter Last Name</span><br />");
             } else if (!lastName.match(/^[a-zA-Z]+$/)) {
-                msg += ("<span data-i18n='hotel-booking-errorvalidlname'>Please enter valid Last Name</span><br />");
+                msg += ("<span>Please enter valid Last Name</span><br />");
             }
             if ($('#email').val() == "") {
-                msg += ("<span data-i18n='text-please-enter-Email'>Please enter Email Id</span><br />");
+                msg += ("<span>Please enter Email Id</span><br />");
             }
             else if (!isEmail($('#email').val())) {
-                msg += ("<span data-i18n='text-please-enter-valid-nationalid'>Please enter valid Email Id</span><br />");
+                msg += ("<span>Please enter valid Email Id</span><br />");
             }
             if ($('#phone').val() == "") {
-                msg += ("<span data-i18n='text-please-enter-phoneno'>Please enter Phone Number</span><br />");
+                msg += ("<span>Please enter Phone Number</span><br />");
             }
             else {
                 var numbers = /^[0-9]+$/;
                 if (!numbers.test($('#phone').val())) {
-                    msg += ("<span data-i18n='text-please-enter-numeric'>Phone should be Numeric</span><br />");
+                    msg += ("<span>Phone should be Numeric</span><br />");
                 }
             }
             if ($('#address').val() == "") {
-                msg += ("<span data-i18n='text-please-enter-address'>Please enter Address</span><br />");
+                msg += ("<span>Please enter Address</span><br />");
             }
             if (countrycode == "") {
-                msg += ("<span data-i18n='text-please-enter-selectcountry'>Please select Country</span><br />");
+                msg += ("<span>Please select Country</span><br />");
             }
             if (city == "") {
-                msg += ("<span data-i18n='text-please-enter-city'>Please enter City</span><br />");
+                msg += ("<span>Please enter City</span><br />");
             }
             else {
                 var regex = new RegExp("^[a-zA-Z ]+$");
                 if (!regex.test(city)) {
-                    msg += ("<span data-i18n='text-please-enter-validcity'>Please enter valid City</span><br />");
+                    msg += ("<span>Please enter valid City</span><br />");
                 }
             }
             if (zip == "") {
-                msg += ("<span data-i18n='text-please-enter-zip'>Please enter ZIP</span><br />");
+                msg += ("<span>Please enter ZIP</span><br />");
             }
             else {
                 var numbers = /^[0-9]+$/;
                 if (!numbers.test(zip)) {
-                    msg += ("<span data-i18n='text-please-enter-zipnumeric'>Zip should be Numeric</span><br />");
+                    msg += ("<span>Zip should be Numeric</span><br />");
                 }
             }
             if (msg.length > 0) {

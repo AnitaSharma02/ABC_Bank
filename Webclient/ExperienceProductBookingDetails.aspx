@@ -170,7 +170,7 @@
                                             </div>
                                         </div>
                                         <%-- <asp:RequiredFieldValidator ID="rfvAdultDOB" runat="server" ControlToValidate="txtDOB"
-                                            Display="Dynamic" data-i18n="flightpassenger-error-enter-date" ErrorMessage="Enter Date of Birth" ValidationGroup="WebValidation"
+                                            Display="Dynamic" ErrorMessage="Enter Date of Birth" ValidationGroup="WebValidation"
                                             CssClass="rptErrorMassage h7 heading-regular text-danger"></asp:RequiredFieldValidator>
                                         <asp:CustomValidator ID="CustomValidatorAdultDOB" runat="server" ErrorMessage="Adults (12+ yrs)"
                                             Display="Dynamic" ValidationGroup="WebValidation" OnServerValidate="IssueAdultDateValidator"

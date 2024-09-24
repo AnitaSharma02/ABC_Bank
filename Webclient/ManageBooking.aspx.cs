@@ -72,7 +72,7 @@ public partial class ManageBooking : Page
                 {
                     rptBookingDetails.DataSource = null;
                     lblFlightrecord.Visible = true;
-                    lblFlightrecord.Text = "<span data-i18n='managebooking-norecords-label' class=\"heading-regular\">No Records Found.</span>";
+                    lblFlightrecord.Text = "<span class=\"heading-regular\">No Records Found.</span>";
                     // divFlight.Visible = false;
                     divFlightrecord.Visible = true;
                     //divrptflight.Attributes.Add("style", "Display:none");
@@ -106,7 +106,7 @@ public partial class ManageBooking : Page
             {
                 rptHotelCancelBookingDetails.DataSource = null;
                 lblHotelrecord.Visible = true;
-                lblHotelrecord.Text = "<span data-i18n='managebooking-norecords-label' class=\"heading-regular\">No Records Found.</span>";
+                lblHotelrecord.Text = "<span class=\"heading-regular\">No Records Found.</span>";
                 divHotelrecord.Visible = true;
                 //divrpthotel.Visible = false;
                 //divrpthotel.Attributes.Add("style", "Display:none");
@@ -135,7 +135,7 @@ public partial class ManageBooking : Page
                 {
                     rptExperienceBookingDetails.DataSource = null;
                     lblExperiencerecord.Visible = true;
-                    lblExperiencerecord.Text = "<span data-i18n='managebooking-norecords-label' class=\"heading-regular\">No Records Found.</span>";
+                    lblExperiencerecord.Text = "<span class=\"heading-regular\">No Records Found.</span>";
                     divExperiencerecord.Visible = true;
                 }
                 rptExperienceBookingDetails.DataBind();
@@ -339,7 +339,7 @@ public partial class ManageBooking : Page
             {
                 rptCarBookingDetails.DataSource = null;
                 lblCarrecord.Visible = true;
-                lblCarrecord.Text = "<span data-i18n='managebooking-norecords-label'>No Records Found.</span>";
+                lblCarrecord.Text = "<span>No Records Found.</span>";
                 divCarrecord.Visible = true;
 
             }
@@ -422,7 +422,7 @@ public partial class ManageBooking : Page
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + lobjModel.FloatToThousandSeperated(lintTotalPrice) + "</span></p>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-12 offset-md-3 col-md-3 col-lg-3 col-xl-3 mt-2 mt-md-0\"><p>");
-    //                    lsbTrInsuranceBookingDetailsHtml.Append("<a id=\"ViewDetails\" class=\"btn btn-one w-100\" onclick=\"return ViewDetails('" + item.ReferenceId.ToString()+"');\" data-i18n=\"btn-view-details\" data-toggle=\"modal\">View Details</a>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<a id=\"ViewDetails\" class=\"btn btn-one w-100\" onclick=\"return ViewDetails('" + item.ReferenceId.ToString()+"');\" data-toggle=\"modal\">View Details</a>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</p>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div></div></div></div>");

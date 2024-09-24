@@ -293,10 +293,10 @@
                         <div class="col-md-12">
                             <ul class="nav nav-pills d-none" id="pills-tab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active tab" id="pills-international-tab" data-toggle="pill" href="#pills-international" role="tab" aria-controls="pills-international" aria-selected="true" data-i18n="flightsearch-international">International Flight</a>
+                                    <a class="nav-link active tab" id="pills-international-tab" data-toggle="pill" href="#pills-international" role="tab" aria-controls="pills-international" aria-selected="true">International Flight</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link domesticBtn tab" id="tabdomesticTab" data-toggle="pill" href="#tabdomestic" role="tab" aria-controls="tabdomestic"  aria-selected="false" data-i18n="flightsearch-domestic" visible="false" runat="server">Domestic Flight</a>
+                                    <a class="nav-link domesticBtn tab" id="tabdomesticTab" data-toggle="pill" href="#tabdomestic" role="tab" aria-controls="tabdomestic"  aria-selected="false" visible="false" runat="server">Domestic Flight</a>
                                 </li>
                              </ul>
                             <div class="tab-content" id="pills-tabContent">
@@ -307,7 +307,7 @@
                                                         <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">
                                                             <label class="radio-container d-flex">
                                                                 <span class="d-inline-block ml-1">
-                                                                <input id="oneli" class="radio " name="iternary" onchange="return onwayShow();" type="radio"><span data-i18n="flightsearch-one-way" class="pr-3 pl-2 h6 heading-regular text-colour7">One-Way</span>
+                                                                <input id="oneli" class="radio " name="iternary" onchange="return onwayShow();" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7">One-Way</span>
                                                                 <span class="radiomark"></span>
                                                                 </span>
                                                             </label>
@@ -316,7 +316,7 @@
                                                         <div class="col-6 col-sm-4 col-md-9 col-lg-10 selTravel mb-3">
                                                             <label class="radio-container d-flex">
                                                                 <span class="d-inline-block ml-1">
-                                                                <input  id="retli" class="radio" name="iternary" onchange="return RoundTripShow();" type="radio" checked="checked"><span class="pr-3 pl-2 h6 heading-regular text-colour7" data-i18n="flightsearch-return">Return</span>
+                                                                <input  id="retli" class="radio" name="iternary" onchange="return RoundTripShow();" type="radio" checked="checked"><span class="pr-3 pl-2 h6 heading-regular text-colour7">Return</span>
                                                                 <span class="radiomark"></span>
                                                                 </span>
                                                             </label>
@@ -431,7 +431,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                        <label class="label" data-i18n="flightsearch-from-label">From</label>
+                                                        <label class="label">From</label>
                                                         <div class="dvTextBoxFrom dvInputGroup input-group">
                                                             <input class="form-control" id="textBoxFrom" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                             <input type="hidden" id="hdntrip" value="true" />
@@ -445,7 +445,7 @@
                                                               <img src="images/flightpage/flight-arrow.png" />
                                                           </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                    <label class="label" data-i18n="flightsearch-to-label">To</label>
+                                                    <label class="label">To</label>
                                                     <div class="dvTextBoxTo dvInputGroup input-group">
                                                         <input class="input form-control" id="textBoxTo" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                         <div class="input-group-append">
@@ -454,7 +454,7 @@
                                                     </div>
                                                     </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                    <label class="label" data-i18n="flightsearch-departure-label">Departure</label>
+                                                    <label class="label">Departure</label>
                                                     <div class="dvTxtDepart dvInputGroup input-group">
                                                         <input id="txtDepart" class="input datePicker form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
@@ -463,7 +463,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3" id="divrtn">
-                                                    <label class="label" data-i18n="flightsearch-return-label">Return</label>
+                                                    <label class="label">Return</label>
                                                     <div class="dvInputGroup input-group">
                                                         <input class="input datePicker form-control cal-icon pr-5" id="txtReturn" onfocus="placeholderOnFocus(this,'Enter Date');"
                                                         onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
@@ -473,27 +473,27 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6 col-lg-4 selTravel mb-3 r- d-none">
-                                                    <label class="label" data-i18n="flightsearch-travel-class-label">Travel Class</label>
+                                                    <label class="label">Travel Class</label>
                                                          <div class="dvInput input-group">
                                                             <select class="form-control" id="dropDownListEconomy">
-                                                                <option value="Economy" selected="selected" data-i18n="flightsearch-travel-class-economy">Economy</option>
-                                                                <option value="Business" data-i18n="flightsearch-travel-class-business">Business</option>
-                                                                <option value="First" data-i18n="flightsearch-travel-class-first">First</option>
+                                                                <option value="Economy" selected="selected">Economy</option>
+                                                                <option value="Business">Business</option>
+                                                                <option value="First">First</option>
                                                             </select>
                                                         </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                        <label class="label" data-i18n="flightsearch-airline-preference-label">Airline Preference</label>
+                                                        <label class="label">Airline Preference</label>
                                                          <div class="dvInput input-group">
                                                             <input type="hidden" id="hdnCarrier" />
                                                             <input class="input air-icon form-control" id="txtAirline" onfocus="placeholderOnFocus(this, 'All Airlines');"
-                                                        onblur="placeholderOnFocus(this, 'All Airlines');" data-i18n="[value]flight-airline-preference-all" value="All Airlines" type="text" />
+                                                        onblur="placeholderOnFocus(this, 'All Airlines');" value="All Airlines" type="text" />
                                                        </div> 
                                                     </div>
                                                 <div class="col-12">
                                                     <div class="row">
                                                         <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                            <label class="label" data-i18n="flightsearch-adult-label">Adult(s) 12+ Yrs</label>
+                                                            <label class="label">Adult(s) 12+ Yrs</label>
                                                                 <select id="DropDownListAdult" class="dropdown-select form-control">
                                                                     <option value="1" selected="selected">1</option>
                                                                     <option value="2">2</option>
@@ -503,7 +503,7 @@
                                                                 </select>
                                                         </div>
                                                         <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                            <label class="label" data-i18n="flightsearch-child-label">Child(ren) 2 - 11 Yrs</label>
+                                                            <label class="label">Child(ren) 2 - 11 Yrs</label>
                                                                 <select id="DropDownListChild" class="dropdown-select form-control">
                                                                     <option value="0" selected="selected">0</option>
                                                                     <option value="1">1</option>
@@ -514,7 +514,7 @@
                                                                 </select>
                                                         </div>
                                                         <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 r- d-none">
-                                                            <label class="label" data-i18n="flightsearch-infant-label">Infant(s) Below 2 Yrs</label>
+                                                            <label class="label">Infant(s) Below 2 Yrs</label>
                                                             <select id="DropDownListInfant" class="dropdown-select form-control">
                                                                 <option value="0" selected="selected">0</option>
                                                                 <option value="1">1</option>
@@ -530,13 +530,13 @@
                                                                     <label class="label checkbox-container d-flex">
                                                                         <span class="d-inline-block ml-1">
                                                                             <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
-                                                                            <span data-i18n="flight-redeem-pts-label">Redeem Points</span>
+                                                                            <span>Redeem Points</span>
                                                                             <span class="checkmark" style="top:2px;"></span>
                                                                         </span>
                                                                    </label>
                                                                 </div>
                                                                 <div class="col-12 col-md-12 col-lg-3 offset-lg-9 col-xl-2 offset-xl-10">
-                                                                    <button onclick="var retvalue = FlightValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one w-100" value="Search" data-i18n="flightsearch-search-btn">Search Flight</button>
+                                                                    <button onclick="var retvalue = FlightValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one w-100" value="Search">Search Flight</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -556,7 +556,7 @@
                                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">
                                                     <label class="label radio-container d-flex">
                                                         <span class="d-inline-block ml-1">
-                                                            <input id="onelidomestic" class="radio " name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span data-i18n="flightsearch-one-way" class="pr-3 pl-2 h6 heading-regular text-colour7">One-Way</span>
+                                                            <input id="onelidomestic" class="radio " name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7">One-Way</span>
                                                             <span class="radiomark"></span>
                                                         </span>
                                                     </label>
@@ -564,7 +564,7 @@
                                                 <div class="col-6 col-sm-4 col-md-9 col-lg-10 selTravel mb-3">
                                                     <label class="label radio-container d-flex">
                                                         <span class="d-inline-block ml-1">
-                                                            <input class="radio" name="iternarydomestic" checked="checked" onchange="return RoundTripShowDomestic();" id="retlidomestic" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7" data-i18n="flightsearch-return">Return</span>
+                                                            <input class="radio" name="iternarydomestic" checked="checked" onchange="return RoundTripShowDomestic();" id="retlidomestic" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7">Return</span>
                                                             <span class="radiomark"></span>
                                                         </span>
                                                      </label>
@@ -638,7 +638,7 @@
                                                   </div>
                                                  <div class="row equal-col form_box">
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                   <label class="label" data-i18n="flightsearch-from-label">From</label>
+                                                   <label class="label">From</label>
                                                     <div class="dvTextBoxFromdomestic input-group">
                                                         <input class="input from-icon form-control pr-5" id="textBoxFromdomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                         <div class="input-group-append">
@@ -652,7 +652,7 @@
                                                         <img src="images/flightpage/flight-arrow.png" />
                                                     </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                    <label class="label" data-i18n="flightsearch-to-label">To</label>
+                                                    <label class="label">To</label>
                                                     <div class="dvTextBoxTodomestic input-group">
                                                         <input class="input from-icon form-control pr-5" id="textBoxTodomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                         <div class="input-group-append">
@@ -661,7 +661,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3">
-                                                    <label class="label" data-i18n="flightsearch-departure-label">Departure</label>
+                                                    <label class="label">Departure</label>
                                                     <div class="input-group">
                                                         <input id="txtDepartdomestic" class="input datePicker form-control cal-icon pr-5" onfocus="placeholderOnFocusdomestic(this,'Enter Date');" onblur="placeholderOnFocusdomestic(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
                                                         <div class="input-group-append">
@@ -670,7 +670,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-md-6 col-lg mb-3" id="divrtndomestic">
-                                                    <label class="label" data-i18n="flightsearch-return-label">Return</label>
+                                                    <label class="label">Return</label>
                                                     <div class="input-group"> 
                                                         <input class="input datePicker form-control cal-icon pr-5" id="txtReturndomestic" onfocus="placeholderOnFocusdomestic(this,'Enter Date');"
                                                         onblur="placeholderOnFocusdomestic(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
@@ -682,7 +682,7 @@
                                                 <div class="col-12">
                                                         <div class="row">
                                                             <div class="col-6 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                                <label class="label" data-i18n="flightsearch-adult-label">Adult(12+Yrs)</label>
+                                                                <label class="label">Adult(12+Yrs)</label>
                                                                 <div class="input-bg">
                                                                     <select id="DropDownListAdultdomestic" class="dropdown-select form-control">
                                                                         <option value="1" selected="selected">1</option>
@@ -694,7 +694,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-6 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
-                                                                <label class="label" data-i18n="flightsearch-child-label">Children(2-11Yrs)</label>
+                                                                <label class="label">Children(2-11Yrs)</label>
                                                                 <div class="input-bg">
                                                                     <select id="DropDownListChilddomestic" class="dropdown-select form-control">
                                                                         <option value="0" selected="selected">0</option>
@@ -707,7 +707,7 @@
                                                                 </div>
                                                             </div>                                                
                                                             <div class="col-12 col-md-12 col-lg-3 offset-lg-9 col-xl-2 offset-xl-10">
-                                                               <button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one w-100" value="Search" data-i18n="flightsearch-search-btn">Search Flight</button>
+                                                               <button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="btn btn-one w-100" value="Search">Search Flight</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -729,7 +729,7 @@
                         <div class="dvFlightSearchProducts col-12">
                             <div class="row">
                                 <div class="text-center m-auto my-3">
-                                    <h2 class="heading1 pb-4 px-3 pb-4 px-3" data-i18n="flightsearch-top-destination">Top Destinations For Your Next Holiday</h2>
+                                    <h2 class="heading1 pb-4 px-3 pb-4 px-3">Top Destinations For Your Next Holiday</h2>
                                 </div>
                             </div>
                             <div class="row">
@@ -740,12 +740,12 @@
                                                 <img src="Images/flightpage/flight-img1.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-sg">Singapore</h2>
-                                        <p class="px-3 mb-3" data-i18n="flightsearch-sg-desc">
+                                        <h2 class="mt-3 mb-2 mx-3">Singapore</h2>
+                                        <p class="px-3 mb-3">
                                             Singapore, officially the Republic of Singapore, is a sovereign island city-state in maritime Southeast Asia.
                                         </p>
                                         <p class="points px-3 mb-3 mt-auto">
-                                            <span data-i18n="flightsearch-from">From</span> 1,234 <span data-i18n="flightsearch-points">Points</span>
+                                            <span>From</span> 1,234 <span>Points</span>
                                         </p>
 
                                     </div>
@@ -759,12 +759,12 @@
                                             </div>
                                         </a>
 
-                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-th">Thailand</h2>
-                                        <p class="px-3 mb-3" data-i18n="flightsearch-th-desc">
+                                        <h2 class="mt-3 mb-2 mx-3">Thailand</h2>
+                                        <p class="px-3 mb-3">
                                             Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces
                                         </p>
                                         <p class="points px-3 mb-3 mt-auto">
-                                            <span data-i18n="flightsearch-from">From</span> 4,500 <span data-i18n="flightsearch-points">Points </span>
+                                            <span>From</span> 4,500 <span>Points </span>
                                         </p>
 
 
@@ -778,12 +778,12 @@
                                                 <img src="Images/flightpage/flight-img3.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-pa">Paris</h2>
-                                        <p class="px-3 mb-3" data-i18n="flightsearch-pa-desc">
+                                        <h2 class="mt-3 mb-2 mx-3">Paris</h2>
+                                        <p class="px-3 mb-3">
                                             Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.
                                         </p>
                                         <p class="points px-3 mb-3 mt-auto">
-                                            <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points </span>
+                                            <span>From</span> 5,000 <span>Points </span>
                                         </p>
 
 
@@ -798,12 +798,12 @@
                                             </div>
                                         </a>
 
-                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-nz">New Zealand</h2>
-                                        <p class="px-3 mb-3" data-i18n="flightsearch-nz-desc">
+                                        <h2 class="mt-3 mb-2 mx-3">New Zealand</h2>
+                                        <p class="px-3 mb-3">
                                             New Zealand is an island country in the south western Pacific Ocean. It consists of two main landmasses
                                         </p>
                                         <p class="points px-3 mb-3 mt-auto">
-                                            <span data-i18n="flightsearch-from">From</span> 5,300 <span data-i18n="flightsearch-points">Points </span>
+                                            <span>From</span> 5,300 <span>Points </span>
                                         </p>
 
 
@@ -817,12 +817,12 @@
                                                 <img src="Images/flightpage/flight-img5.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-ln">London</h2>
-                                        <p class="px-3 mb-3" data-i18n="flightsearch-ln-desc">
+                                        <h2 class="mt-3 mb-2 mx-3">London</h2>
+                                        <p class="px-3 mb-3">
                                             London, the capital of England and the United Kingdom, is a 21st-century city with history stretching
                                         </p>
                                         <p class="points px-3 mb-3 mt-auto">
-                                            <span data-i18n="flightsearch-from">From</span> 6,000 <span data-i18n="flightsearch-points">Points </span>
+                                            <span>From</span> 6,000 <span>Points </span>
                                         </p>
 
 
@@ -835,12 +835,12 @@
                                                 <img src="Images/flightpage/flight-img6.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-db">Dubai</h2>
-                                        <p class="px-3 mb-3" data-i18n="flightsearch-db-desc">
+                                        <h2 class="mt-3 mb-2 mx-3">Dubai</h2>
+                                        <p class="px-3 mb-3">
                                             Dubai is the most populous city in the UAE and the capital of the Emirate of Dubai,
                                         </p>
                                         <p class="points px-3 mb-3 mt-auto">
-                                            <span data-i18n="flightsearch-from">From</span> 3,000 <span data-i18n="flightsearch-points">Points </span>
+                                            <span>From</span> 3,000 <span>Points </span>
                                         </p>
                                     </div>
                                 </div>
@@ -851,12 +851,12 @@
                                                 <img src="Images/flightpage/flight-img7.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-zu">Zurich</h2>
-                                        <p class="px-3 mb-3" data-i18n="flightsearch-zu-desc">
+                                        <h2 class="mt-3 mb-2 mx-3">Zurich</h2>
+                                        <p class="px-3 mb-3">
                                             Zürich is the largest city in Switzerland and the capital of the canton of Zürich.
                                         </p>
                                         <p class="points px-3 mb-3 mt-auto">
-                                            <span data-i18n="flightsearch-from">From</span> 4,000 <span data-i18n="flightsearch-points">Points </span>
+                                            <span>From</span> 4,000 <span>Points </span>
                                         </p>
                                     </div>
                                 </div>
@@ -867,12 +867,12 @@
                                                 <img src="Images/flightpage/flight-img8.jpg" style="cursor: pointer;" />
                                             </div>
                                         </a>
-                                        <h2 class="mt-3 mb-2 mx-3" data-i18n="flightsearch-go">Goa</h2>
-                                        <p class="px-3 mb-3" data-i18n="flightsearch-go-desc">
+                                        <h2 class="mt-3 mb-2 mx-3">Goa</h2>
+                                        <p class="px-3 mb-3">
                                             Goa, a state on India's West coast, is a former Portuguese colony with a rich history.
                                         </p>
                                         <p class="points px-3 mb-3 mt-auto">
-                                            <span data-i18n="flightsearch-from">From</span> 5,000 <span data-i18n="flightsearch-points">Points </span>
+                                            <span>From</span> 5,000 <span>Points </span>
                                         </p>
                                     </div>
                                 </div>

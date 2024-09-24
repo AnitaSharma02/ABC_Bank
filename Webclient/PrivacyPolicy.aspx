@@ -17,8 +17,8 @@
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
-                    <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                    <li class="breadcrumb-item active" data-i18n="bannertext-privacy">Privacy Policy</li>
+                    <li class="breadcrumb-item"><a href="\">Home</a></li>
+                    <li class="breadcrumb-item active">Privacy Policy</li>
                 </ul>
             </nav>
         </div>

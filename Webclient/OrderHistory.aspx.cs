@@ -153,13 +153,13 @@ public partial class OrderHistory : Page
                 }
                 else
                 {
-                    lstrHtmlContent += "<span data-i18n='managebooking-norecords-label' >No Records Found.</span>";
+                    lstrHtmlContent += "<span>No Records Found.</span>";
                 }
             }
             else
             {
 
-                lstrHtmlContent += "<span data-i18n='managebooking-norecords-label'>No Records Found.</span>";
+                lstrHtmlContent += "<span>No Records Found.</span>";
             }
         }
         catch (Exception ex)

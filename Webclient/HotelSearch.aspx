@@ -228,7 +228,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 col-lg-3 order-6 order-lg-5">
                                             <label class="invisible d-none d-lg-block">i</label>
-                                            <button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100" data-i18n="">Search Hotel</button>
+                                            <button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100">Search Hotel</button>
                                         </div>
                                         <div class="col-12 r- d-none order-7">
                                             <div class="row">

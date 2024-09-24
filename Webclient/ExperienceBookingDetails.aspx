@@ -21,8 +21,8 @@
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
-                    <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                    <li class="breadcrumb-item"><a href="ManageBooking.aspx" data-i18n="bread-manage">Manage Booking</a></li>
+                    <li class="breadcrumb-item"><a href="\">Home</a></li>
+                    <li class="breadcrumb-item"><a href="ManageBooking.aspx">Manage Booking</a></li>
                     <li class="breadcrumb-item active">Experience Booking Details</li>
                 </ul>
             </nav>

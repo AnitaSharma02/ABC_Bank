@@ -133,13 +133,13 @@
                     <ul>
                         <li class="d-block">
                             <div class="text-center">
-                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span data-i18n="account-welcome" class="acc-text">Welcome,</span><span class="ml-2 acc-text" id="spnMemberName"></span></h2>
+                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span class="acc-text">Welcome,</span><span class="ml-2 acc-text" id="spnMemberName"></span></h2>
                             </div>
                         </li>
                         <li class="d-block">
                             <div class="text-center">
                                 <h3 class="h3 heading-semibold text-white">
-                                    <span id="totAvbPointDiv" data-i18n="account-total-points">Total Points</span>
+                                    <span id="totAvbPointDiv">Total Points</span>
                                     <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-white"></span>
                                 </h3>
                             </div>
@@ -149,8 +149,7 @@
                         <a
                             href="Index.aspx"
                             class="btn btn-two"
-                            id="my_account_point_redeem_now"
-                            data-i18n="btn-redeem-now">Redeem Now</a>
+                            id="my_account_point_redeem_now">Redeem Now</a>
                     </div>
                 </div>
             </div>
@@ -162,7 +161,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <h2 class="h1 heading-semibold text-colour1" id="lblMemberName">
-                        <span data-i18n="account-welcome" class="">Welcome,</span>
+                        <span class="">Welcome,</span>
                         <span class="ml-2" id="spnMemberName"></span>
                     </h2>
                     <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
@@ -172,8 +171,7 @@
                     <a
                         href="Index.aspx"
                         class="btn btn-one"
-                        id="my_account_point_redeem_now"
-                        data-i18n="btn-redeem-now">Redeem Now
+                        id="my_account_point_redeem_now">Redeem Now
                     </a>
                 </div>
             </div>
@@ -195,9 +193,9 @@
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
-                    <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                     <li class="breadcrumb-item" ><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
-                    <li class="breadcrumb-item active" data-i18n="bread-transaction">Transaction Summary</li>
+                    <li class="breadcrumb-item"><a href="\">Home</a></li>
+                     <li class="breadcrumb-item" ><a href="StatementSummary.aspx">My Account</a></li>
+                    <li class="breadcrumb-item active">Transaction Summary</li>
                 </ul>
             </nav>
         </div>
@@ -225,7 +223,7 @@
                                             <input type="radio" id="RdlSearchtypeAll" onclick="RdlSearchtypeAll_CheckedChanged()" checked="checked"/>
                                             <span class="radiomark"></span>
                                         </span>
-                                        <span class="d-inline-block ml-3" data-i18n="ts-all-transaction">All Transactions</span>
+                                        <span class="d-inline-block ml-3">All Transactions</span>
                                     </label>
                                 </div>
                             </div>
@@ -238,18 +236,18 @@
                                             <input type="radio" id="RdlSearchtypeCust" onclick="RdlSearchtypeCust_CheckedChanged()"/>
                                             <span class="radiomark"></span>
                                         </span>
-                                        <span class="d-inline-block ml-3" data-i18n="ts-custom-search">Custom Search</span>
+                                        <span class="d-inline-block ml-3">Custom Search</span>
                                     </label>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4 offset-md-3 col-md-3 offset-xl-5 mt-3 mt-sm-0 d-sm-flex">
-                                <asp:Button ID="btnExport" runat="server" Text="Download" data-i18n="[value]ts-download" OnClick="btnExport_Click" class="btn btn-one w-100 m-sm-auto" />
+                                <asp:Button ID="btnExport" runat="server" Text="Download" OnClick="btnExport_Click" class="btn btn-one w-100 m-sm-auto" />
                             </div>
                         </div>
                         <div id="tblsearchinfo" runat="server" class="dvCustomSearch" style="display: none">
                             <div class="row">
                                 <div class="col-12 col-sm-6 col-md-4 mb-3">
-                                    <label class="label" data-i18n="ts-label-from">From</label>
+                                    <label class="label">From</label>
                                     <div class="dvCP_FromDate dvInputGroup input-group">
                                         <asp:TextBox ID="FromDate" runat="server" CssClass="FromDate form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" Text="Enter Date" readonly="true"/>
                                         <div class="input-group-append">
@@ -259,7 +257,7 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="FromDate" ErrorMessage="Enter From Date<br/>" Style="color: #ff0000" Display="Dynamic" ValidationGroup="DateSearch"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-4 mb-3">
-                                    <label class="label" data-i18n="ts-label-to">To</label>
+                                    <label class="label">To</label>
                                     <div class="dvCP_Todate dvInputGroup input-group">
                                         <asp:TextBox ID="Todate" runat="server" CssClass="Todate form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" Text="Enter Date" readonly="true"/>
                                         <div class="input-group-append">
@@ -269,7 +267,7 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Todate" ErrorMessage="Enter To Date." Style="color: #ff0000" Display="Dynamic" ValidationGroup="DateSearch"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="col-12 col-md-4 mb-3">
-                                    <label class="heading-regular d-none d-md-block invisible" data-i18n="ts-label-to">button</label>
+                                    <label class="heading-regular d-none d-md-block invisible">button</label>
                                     <%-- <asp:Button ID="btnSearch" runat="server" ValidationGroup="DateSearch" Text="Search" CssClass="btn btn-one w-100" OnClientClick="BindTransactionDetails(0)"/>--%>
                                     <%--<button id="btnSearch" class="btn btn-one w-100 m-sm-auto" onclick="return BindTransactionDetails(0)">Search</button>--%>
                                     <input type="button" id="btnSearch" class="btn btn-one w-100 m-sm-auto" onclick="return btnCustomSearch()" value="Search" />

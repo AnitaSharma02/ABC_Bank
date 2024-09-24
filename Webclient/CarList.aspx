@@ -61,21 +61,21 @@
                                         <i class="fa-solid fa-car-side"></i>
                                     </div>--%>
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
-                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span data-i18n="carlist-pickup-location">PICK UP LOCATION</span></h2>
+                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span>PICK UP LOCATION</span></h2>
                                         <p id="spnpickuplocation" class="h7" ></p>
                                         <p id="spnpickupdate" class="h7"></p>
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
-                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span data-i18n="carlist-car-dropoff-location">CAR DROP OFF LOCATION</span></h2>
+                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span>CAR DROP OFF LOCATION</span></h2>
                                         <p id="spndroppoffLocation" class="h7" ></p>
                                         <p id="spndropoffdate" class="h7"></p>
                                     </div>
                                     <div class="col-12 col-md-4 col-lg-12 mb-3">
-                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span data-i18n="carlist-driver-residence-country">Driver's Residence Country</span></h2>
+                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span>Driver's Residence Country</span></h2>
                                         <p id="spndriverresidenceCountry" class="h7"></p>
                                     </div>
                                     <div class="col-12 col-lg-6">
-                                        <button type="button" class="btn btn-one w-100 editBtn" data-i18n="carlist-edit" onclick="bindcountry()">Edit</button>
+                                        <button type="button" class="btn btn-one w-100 editBtn" onclick="bindcountry()">Edit</button>
                                     </div>
                                 </div>
                             </div>
@@ -88,14 +88,14 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <div id="CarValidationError" runat="server" data-i18n="carlist-below-fields" class="p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
+                                        <div id="CarValidationError" runat="server" class="p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-row dvParent">
                                             <div class="col-lg-12 col-md-12 col-12 mb-2 mt-2">
-                                                <label for="validationDefaultUsername" class="label" data-i18n="carlist-pickup-location">Pick up location?</label>
+                                                <label for="validationDefaultUsername" class="label">Pick up location?</label>
                                                 <div class="dvInputGroup input-group dvPickupLocation">
-                                                    <input type="text" class="form-control" id="txtpickupLocation" data-i18n="[placeholder]carlist-please-enter-pickup-location" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2" required>
+                                                    <input type="text" class="form-control" id="txtpickupLocation" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2" required>
                                                     <input type="hidden" id="hndpickupLocationId" value="">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text bg-colour6">
@@ -105,9 +105,9 @@
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
-                                                <label class="label" data-i18n="carlist-pickup-date">Pick-Up Date</label>
+                                                <label class="label">Pick-Up Date</label>
                                                 <div class="dvInputGroup input-group">
-                                                    <input class="input form-control" data-i18n="[value]carlist-enter-date" value="Enter Date" onfocus="placeholderOnFocus(this);"
+                                                    <input class="input form-control" value="Enter Date" onfocus="placeholderOnFocus(this);"
                                                         type="text" id="txtpickupDate" readonly="readonly" />
                                                     <div class="input-group-append">
                                                         <span class="input-group-text bg-colour6">
@@ -117,7 +117,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
-                                                    <label for="exampleFormControlSelect1" class="label" data-i18n="carlist-pickup-time">Pick-Up Time</label>
+                                                    <label for="exampleFormControlSelect1" class="label">Pick-Up Time</label>
                                                     <div class="dvInput input-group">
                                                     <select class="form-control" id="ddlPickupTime">
                                                         <option>00:00</option>
@@ -227,14 +227,14 @@
                                                         <input type="checkbox" id="chkDropoffLocation"  />
                                                         <span class="checkmark"></span>
                                                     </span>
-                                                    <span class="d-inline-block ml-2 heading-medium h8 pt-1" data-i18n="carlist-return-car-to-same-location"> Return car to same location?</span
+                                                    <span class="d-inline-block ml-2 heading-medium h8 pt-1"> Return car to same location?</span
                                                     >
                                                     </label>
                                                 </div>
                                                 </div>
                                             <div class="col-12 col-lg-12 col-xl-12">
                                                 <div class="form-group dvInput1 fade-out">
-                                                    <label class="label"  data-i18n="carlist-car-dropoff-location">Car Drop off location?</label>
+                                                    <label class="label">Car Drop off location?</label>
                                                     <div class="dvInputGroup input-group dvDopoffLocation">
                                                         <input type="text" class="form-control" id="txtDopoffLocation">
                                                         <input type="hidden" id="hndDopoffLocationId" value="">
@@ -248,10 +248,10 @@
                                             </div>
 
                                             <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
-                                                <label class="label" data-i18n="carlist-drop-off-date">Drop off date</label>
+                                                <label class="label">Drop off date</label>
                                                 <div class="dvInputGroup input-group">
                                                     <input class="input form-control" value="Enter Date" onfocus="placeholderOnFocus(this);"
-                                                        onblur="placeholderOnFocus(this);" data-i18n="[value]carlist-check-out-input" type="text" id="txtDropoffDate" readonly="readonly" />
+                                                        onblur="placeholderOnFocus(this);" type="text" id="txtDropoffDate" readonly="readonly" />
                                                     <div class="input-group-append">
                                                         <span class="input-group-text bg-colour6">
                                                             <i class="fa-regular fa-calendar"></i>
@@ -260,7 +260,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
-                                                    <label for="exampleFormControlSelect2" class="label" data-i18n="carlist-pickup-time">Pick-Up Time</label>
+                                                    <label for="exampleFormControlSelect2" class="label">Pick-Up Time</label>
                                                 <div class="dvInput input-group">
                                                         <select class="form-control" id="ddlDropoffTime">
                                                         <option>00:00</option>
@@ -368,14 +368,14 @@
                                                         <input type="checkbox" id="chkDriverAge" />
                                                         <span class="checkmark"></span>
                                                     </span>
-                                                    <span class="d-inline-block ml-2 heading-medium h8 pt-1" data-i18n="carlist-driver-aged"> Driver aged 30-65 years?</span
+                                                    <span class="d-inline-block ml-2 heading-medium h8 pt-1"> Driver aged 30-65 years?</span
                                                     >
                                                     </label>
                                                 </div>
                                                 </div>
                                             <div class="col-12 col-lg-12 col-xl-12">
                                                     <div class="form-group dvInput2">
-                                                    <label class="label" id="lbldriverage" data-i18n="carlist-driver-age">Driver age</label>
+                                                    <label class="label" id="lbldriverage">Driver age</label>
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="txtDriverAge" onkeypress="return validateNumber(event)">
                                                     </div>
@@ -383,7 +383,7 @@
                                             </div>
 
                                             <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2" style="display:none;">
-                                                <label class="label" data-i18n="carlist-discount">Discount</label>
+                                                <label class="label">Discount</label>
                                                 <div class="dvInputGroup input-group">
                                                     <input class="input form-control" value="Discount" onfocus="placeholderOnFocus(this);"
                                                         type="text" id="Text1" runat="server" readonly="readonly" />
@@ -401,14 +401,14 @@
                                                         <input type="checkbox" id="gridCheck3" checked/>
                                                         <span class="checkmark"></span>
                                                     </span>
-                                                    <span class="d-inline-block ml-2 heading-medium h8 pt-1" data-i18n="carlist-driver-residenc-country">Driver's Residence Country: </span ><span id="spndriverCountry" class="ml-1 heading-medium h8 pt-1"> </span>
+                                                    <span class="d-inline-block ml-2 heading-medium h8 pt-1">Driver's Residence Country: </span ><span id="spndriverCountry" class="ml-1 heading-medium h8 pt-1"> </span>
                                                     </label>
                                                 </div>
                                                 </div>
                                             <div class="col-12 col-lg-12 col-xl-12">
                             
                                                 <div class="form-group dvInput3 fade-out">
-                                                    <label class="label" data-i18n="carlist-driver-residenc-country">Driver's Residence Country</label>
+                                                    <label class="label">Driver's Residence Country</label>
                                                     <div class="">
                                                             <div class="dvPickupLocation w-100 input-group">
                                                             <%--   <input type="text" class="form-control" id="txtDriverResidence">--%>
@@ -423,7 +423,7 @@
                                                 </div>
                                             </div>
                                                 <div class="col-12 col-lg-12 col-xl-12">
-                                                    <button class="btn btn-one" type="submit" onclick="var retvalue = CarValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" data-i18n="carlist-search">Search</button>
+                                                    <button class="btn btn-one" type="submit" onclick="var retvalue = CarValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;">Search</button>
                                                 </div>
                                         </div>
                                     </div>
@@ -435,7 +435,7 @@
                         </div>
                     </div>
 
-                    <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one w-100 d-lg-none" data-i18n="flightlist-button-filters">Filter </button>
+                    <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one w-100 d-lg-none">Filter </button>
 
                     <div class="dvFilter modal fade mb-3" id="dvFilterModal" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -444,7 +444,7 @@
                                     <div class="modal-title border-0 p-3">
                                         <h5 class="h6 heading-semibold text-colour1">
                                             <i class="fa fa-filter mx-0"></i>
-                                            <span data-i18n="carlist-filter-results">Filters</span>
+                                            <span>Filters</span>
                                         </h5>
                                     </div>
                                     <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
@@ -452,14 +452,14 @@
                                     </button>
 
                                     <%--<i class="fa fa-filter mx-0"></i>
-                                    <span class="h7 heading-semibold" data-i18n="carlist-filter-results">Filters Results</span>--%>
+                                    <span class="h7 heading-semibold">Filters Results</span>--%>
                                 </div>
                                 <div class="modal-body p-lg-0">
                                     <div class="accordion" id="filter-accordion">
                                         <div class="card my-3 mb-lg-3 mt-lg-0">
                                             <div class="card-header p-0">
                                                 <h2 class="mb-0">
-                                                    <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="heading6" data-i18n="carlist-passengers">Passengers</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                    <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="heading6">Passengers</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                                 </h2>
                                             </div>
                                             <div id="collapse1" class="collapse- show" data-parent="#filter-accordion">
@@ -507,7 +507,7 @@
                                         <div class="card">
                                             <div class="card-header p-0">
                                                 <h2 class="mb-0">
-                                                    <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span class="heading6" data-i18n="carlist-transmission">Transmission</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                    <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span class="heading6">Transmission</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                                 </h2>
                                             </div>
                                             <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">
@@ -515,17 +515,17 @@
                                                     <div class="dvLabel">
                                                         <label class="checkbox-container d-flex">
                                                             <span class="d-inline-block">
-                                                                <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" data-i18n="[value]carlist-manual" value="Manual" id="gridCheckManual">
+                                                                <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" value="Manual" id="gridCheckManual">
                                                                 <span class="checkmark"></span>
                                                             </span>
-                                                            <span class="d-inline-block ml-2" data-i18n="carlist-manual">Manual</span>
+                                                            <span class="d-inline-block ml-2">Manual</span>
                                                         </label>
                                                         <label class="checkbox-container d-flex">
                                                             <span class="d-inline-block">
-                                                                <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" data-i18n="[value]carlist-automatic" value="Automatic" id="gridCheckAutomatic">
+                                                                <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" value="Automatic" id="gridCheckAutomatic">
                                                                 <span class="checkmark"></span>
                                                             </span>
-                                                            <span class="d-inline-block ml-2" data-i18n="carlist-automatic">Automatic</span>
+                                                            <span class="d-inline-block ml-2">Automatic</span>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -539,7 +539,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer justify-content-center p-lg-2">
-                                    <button type="button" class="btn btn-one w-100" onclick="FilterCarList('All');" data-i18n="carlist-reset">Reset</button>
+                                    <button type="button" class="btn btn-one w-100" onclick="FilterCarList('All');">Reset</button>
                                 </div>
                             </div>
                         </div>
@@ -552,7 +552,7 @@
                     <input type="checkbox" checked name="VehicleType" value="small" onchange="FilterCarList('');" />
                     <div class="checkmark d-block p-2 text-center b-radius">
                         <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                        <p class="h7 heading-bold text-colour7" data-i18n="carlist-small">Small</p>
+                        <p class="h7 heading-bold text-colour7">Small</p>
                         <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
                     </div>
                 </label>
@@ -562,7 +562,7 @@
                     <input type="checkbox" name="VehicleType" value="medium" onchange="FilterCarList('');" />
                     <div class="checkmark d-block p-2 text-center b-radius">
                         <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                        <p class="h7 heading-bold text-colour7" data-i18n="carlist-medium">Medium</p>
+                        <p class="h7 heading-bold text-colour7">Medium</p>
                         <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
                     </div>
                 </label>
@@ -572,7 +572,7 @@
                     <input type="checkbox" name="VehicleType" value="large" onchange="FilterCarList('');" />
                     <div class="checkmark d-block p-2 text-center b-radius">
                         <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                        <p class="h7 heading-bold text-colour7" data-i18n="carlist-large">Large</p>
+                        <p class="h7 heading-bold text-colour7">Large</p>
                         <%--  <span class="d-none d-lg-block">from 119,39C</span>--%>
                     </div>
                 </label>
@@ -582,7 +582,7 @@
                     <input type="checkbox" name="VehicleType" value="luxury" onchange="FilterCarList('');" />
                     <div class="checkmark d-block p-2 text-center b-radius">
                         <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                        <p class="h7 heading-bold text-colour7" data-i18n="carlist-luxury">Luxury</p>
+                        <p class="h7 heading-bold text-colour7">Luxury</p>
                         <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
                     </div>
                 </label>
@@ -591,10 +591,10 @@
         <div class="dvTotalRecords my-3">
             <div class="b-radius bg-colour5 p-3">
                 <span id="spancarcount" class="heading6 text-colour1">0</span>
-                <span class="heading6 text-colour1" data-i18n="carlist-cars-found">cars found</span>
+                <span class="heading6 text-colour1">cars found</span>
                 <a href="#" class="link1 ml-3">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span class="" data-i18n="carlist-view-locations-on-map">View locations on a map</span>
+                    <span class="">View locations on a map</span>
                 </a>
             </div>
         </div>
@@ -613,7 +613,7 @@
             <div class="modal-content">
                  <div class="modal-header border-0">         
                     <h5 class="modal-title">
-                        <span data-i18n="carlist-important-information">Important information</span>
+                        <span>Important information</span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal">
                         <i class="fa-solid fa-xmark"></i>

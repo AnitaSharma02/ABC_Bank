@@ -17,7 +17,7 @@
                                       <div class="miles-car">
                                           <h2 class="robot carName">{$T.record.Vehicle[0].Name}</h2>
                                           <div class="tPoints">
-                                              <span class="miles">{$T.record.Price[0].TotalPoints}</span> <span class="txtPoints" data-i18n="car-points-label">Points</span>
+                                              <span class="miles">{$T.record.Price[0].TotalPoints}</span> <span class="txtPoints">Points</span>
                                           </div>
                                       </div>
 
@@ -36,10 +36,10 @@
                                       </ul>
                                   </div>
                                   <div class="btnBlk">
-                                      <a href="javascript:void(0);" onclick='return ViewCarInfo(&quot;{$T.record.Route[0].PickUp[0].id}&quot;)' data-i18n='footer-terms-conditions'>Terms and Conditions</a>
+                                      <a href="javascript:void(0);" onclick='return ViewCarInfo(&quot;{$T.record.Route[0].PickUp[0].id}&quot;)'>Terms and Conditions</a>
                                       <div class="btn">
                                           <input type="hidden" id="hdnReferenceId" value='{$T.record.Vehicle[0].id}' />
-                                          <button class="blue_button" onclick="var varReturn=gotoBooking(this);event.returnValue=varReturn; (event.preventDefault) ? event.preventDefault() : event.returnValue = false ;return varReturn;" data-i18n="hotel-book-now">Book Now</button>
+                                          <button class="blue_button" onclick="var varReturn=gotoBooking(this);event.returnValue=varReturn; (event.preventDefault) ? event.preventDefault() : event.returnValue = false ;return varReturn;">Book Now</button>
                                       </div>
                                       <div class="clr"></div>
                                   </div>

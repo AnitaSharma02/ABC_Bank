@@ -30,7 +30,7 @@
                         <div class="modal-content border-0">
                             <div class="modal-header border-0 d-lg-block p-0">
                                 <div class="modal-title dvTotalRecords border-0 p-3">
-                                    <p class="heading6 text-colour1"><span data-i18n="shopproddetails-totalrecord">Total Records found</span> <span id="spnTotalCount"></span></p>
+                                    <p class="heading6 text-colour1"><span>Total Records found</span> <span id="spnTotalCount"></span></p>
                                 </div>
                                 <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
                                    <i class="fa-solid fa-xmark"></i>

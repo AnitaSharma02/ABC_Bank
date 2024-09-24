@@ -191,7 +191,7 @@ function GetHotelInfo() {
                 $("#OverView").append('<h2 class="h4 heading-semibold text-colour7 bg-colour2 p-3 mb-3">About This Hotel</h2><p>' + value.basicinfo[0].overview + "</p><p>" + value.otherinfo.Description + "</p>");
             }
             else {
-                $("#OverView").append('<h2 class="Header" data-i18n="hotel-detail-aboutthis">About This Hotel</h2><p> Not Available</p>');
+                $("#OverView").append('<h2 class="Header">About This Hotel</h2><p> Not Available</p>');
             }
             $("#imgMap").attr("src", "http://maps.googleapis.com/maps/api/staticmap?&size=300x200&markers=" + value.otherinfo.locationinfo.latitude + "," + value.otherinfo.locationinfo.longitude + "&maptype=roadmap&zoom=14&sensor=false");
 
@@ -312,7 +312,7 @@ function BindBasicAmenities(AllAmenities) {
             }
         }
     }
-    //BasicAmenities += "</div><div onclick='return showAmenities()' class='linkAmenities' data-i18n='hotel-view-more'>View More</div>";
+    //BasicAmenities += "</div><div onclick='return showAmenities()' class='linkAmenities'>View More</div>";
     //BasicAmenities += '</div><button data-toggle="modal" data-target="#dvAmenitiesModal" class="btn btn-one mb-3">View Amenities</button >';
     //$("#BasicAmenities").append(BasicAmenities);
     return false;

@@ -74,7 +74,7 @@
                                 <div class="card-header p-0" id="headingOne">
                                     <h2 class="mb-0">
                                         <button class="btn btn-block text-left p-3" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            <span class="heading-bold h6" data-i18n="car-your-booking-summary">Your booking summary</span>
+                                            <span class="heading-bold h6">Your booking summary</span>
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up" aria-hidden="true"></i>
                                             </span>
@@ -86,12 +86,12 @@
                                     <div class="card-body p-3">
                                         <div class="row">
                                             <div class="col-12 mb-3">
-                                                <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span data-i18n="car-pickup-from">Pick up from:</span></h2>
+                                                <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span>Pick up from:</span></h2>
                                                 <p id="spnpickupDetails" class="h7"></p>
                                                 <p class="h7" id="spnpickupDate"></p>
                                             </div>
                                             <div class="col-12">
-                                                <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span data-i18n="car-drop-off-at">Drop off at:</span></h2>
+                                                <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span>Drop off at:</span></h2>
                                                 <p id="spndropoffDetails" class="h7"></p>
                                                 <p class="h7" id="spndropoffDate"></p>
                                             </div>
@@ -207,15 +207,15 @@
 
                         </div>
                         <div class="dvPricing py-2 px-3">
-                            <p class="heading6" data-i18n="car-pricing-summary">Pricing Summary</p>
+                            <p class="heading6">Pricing Summary</p>
                         </div>
                         <div id="divPricingSummary">
                             <div class="d-flex justify-content-between align-items-center pt-2 pb-2">
                                 <div class="col-6">
-                                    <p class="h7" data-i18n="car-hire">Car Hire:</p>
+                                    <p class="h7">Car Hire:</p>
                                 </div>
                                 <div class="col-6">
-                                    <p class="text-right h7"><span id="spncarhireAmount">0</span> <span data-i18n="car-points">Points</span></p>
+                                    <p class="text-right h7"><span id="spncarhireAmount">0</span> <span>Points</span></p>
                                 </div>
                             </div>
 
@@ -224,7 +224,7 @@
 
                             <div id="AdditionalChrg" class="d-flex justify-content-between align-items-center pt-2 pb-3">
                                 <div class="col-6">
-                                    <p class="h7" data-i18n="car-Total">Total:</p>
+                                    <p class="h7">Total:</p>
                                 </div>
                                 <div class="col-6">
                                     <p class="text-right h7"><span id="spncarTotalAmount">0</span>  Points</p>
@@ -234,10 +234,10 @@
                                 <div class="border-top p-3">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="col-7 pl-0">
-                                            <p class="heading6 text-colour1" data-i18n="car-payable-today">Payable today:</p>
+                                            <p class="heading6 text-colour1">Payable today:</p>
                                         </div>
                                         <div class="col-5 pr-0">
-                                            <p class="text-right heading6 text-colour1"><span class="text-right" id="spnPayableAmount">0</span>  <span data-i18n="car-points">Points</span></p>
+                                            <p class="text-right heading6 text-colour1"><span class="text-right" id="spnPayableAmount">0</span>  <span>Points</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -257,7 +257,7 @@
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="col-12 mt-3 mt-md-0 dvPayOption">
-                            <h2 class="heading6"><i class="fa fa-lock mr-2" aria-hidden="true"></i><span data-i18n="car-payment-options">Payment Options</span></h2>
+                            <h2 class="heading6"><i class="fa fa-lock mr-2" aria-hidden="true"></i><span>Payment Options</span></h2>
                         </div>
                     </div>
                     <div class="row" id="divpaymentOptionContainer">
@@ -265,7 +265,7 @@
                     <div class="row">
                         <div class="col-12 col-md-12 mt-4 d-none">
                             <input type="hidden" name="Ratereference" id="hndRatereference" value="" />
-                            <button type="button" class="btn btn-one" onclick="CreateCarPayment();" data-i18n="car-continue-payment">Continue to Payment</button>
+                            <button type="button" class="btn btn-one" onclick="CreateCarPayment();">Continue to Payment</button>
                         </div>
                     </div>
                     <input type="hidden" name="IsExcessprotectionAdded" id="hndIsExcessprotectionAdded" value="" />
@@ -274,8 +274,8 @@
                     <div class="row mt-4">
                         <div class="col-12">
                             <div class="border b-radius p-3">
-                                <h2 class="heading6 mb-2" data-i18n="car-addiotional-equipment">Additional Equipment</h2>
-                                <p data-i18n="car-addiotional-info">Please note these additional extras are payable locally and do not form part of the rental price shown. Prices are displayed by pressing the title of each extra.</p>
+                                <h2 class="heading6 mb-2">Additional Equipment</h2>
+                                <p>Please note these additional extras are payable locally and do not form part of the rental price shown. Prices are displayed by pressing the title of each extra.</p>
                                 <input type="hidden" name="Totaladitionalchargeamount" id="hndTotaladitionalchargeamount" value="0" />
                                 <div id="divAdditionalEquipment">
                                 </div>
@@ -284,7 +284,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 mt-4 text-center text-md-left">
-                            <button type="button" class="btn btn-one" onclick="CreateCarPayment();"><span data-i18n="car-continue-payment">Continue to Payment</span></button>
+                            <button type="button" class="btn btn-one" onclick="CreateCarPayment();"><span>Continue to Payment</span></button>
                         </div>
                     </div>
                 </div>
@@ -297,7 +297,7 @@
             <div class="modal-content">
                 <div class="modal-header border-0">
                     <h5 class="modal-title">
-                        <span data-i18n="carlist-important-information">Important information</span>
+                        <span>Important information</span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal">
                         <i class="fa-solid fa-xmark"></i>
@@ -341,23 +341,23 @@
                     <div class="row">
                         <div class="col-12 col-md-12 dvWarning text-center">
                             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                            <h1 data-i18n="car-data-warning">Warning! You do not have Excess Protection</h1>
+                            <h1>Warning! You do not have Excess Protection</h1>
                             <p>
-                                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span data-i18n="car-excess">Excess:</span>
+                                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span>Excess:</span>
                                 <p id="spnExcessAmount">0</p>
                             </p>
-                            <span data-i18n="car-policy-text">Have peace of mind and protect yourself against any charges that maybe applied if you damage the vehicle by taking Enjoy's excess protection.</span>
+                            <span>Have peace of mind and protect yourself against any charges that maybe applied if you damage the vehicle by taking Enjoy's excess protection.</span>
                         </div>
                         <div class="col-12 col-md-12 ml-3 dvExPoint text-center">
-                            <p><i class="fa-solid fa-shield-halved"></i> <span data-i18n="car-excess">Excess:</span><span> <span id="spnExcessAmount1">0</span> <i class="fa fa-usd" aria-hidden="true"></i></span></p>
+                            <p><i class="fa-solid fa-shield-halved"></i> <span>Excess:</span><span> <span id="spnExcessAmount1">0</span> <i class="fa fa-usd" aria-hidden="true"></i></span></p>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center align-items-center mb-4">
                         <div class="col-6 col-md-6 col-lg-3 mt-4 travelGrayBtn">
-                            <button type="button" class="hvr-sweep-to-right w-100" onclick="window.location.href='CarPayment.aspx'" data-dismiss="modal" data-i18n="car-no-thanks">No Thanks</button>
+                            <button type="button" class="hvr-sweep-to-right w-100" onclick="window.location.href='CarPayment.aspx'" data-dismiss="modal">No Thanks</button>
                         </div>
                         <div class="col-6 col-md-6 col-lg-3 mt-4 travelBtn">
-                            <button type="button" class="hvr-sweep-to-right" onclick="AddExcessprotection();" data-i18n="car-add">ADD</button>
+                            <button type="button" class="hvr-sweep-to-right" onclick="AddExcessprotection();">ADD</button>
                         </div>
                     </div>
                 </div>

@@ -89,13 +89,13 @@
                     <ul>
                         <li class="d-block">
                             <div class="text-center">
-                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span data-i18n="account-welcome" class="acc-text">Welcome,</span><span class="ml-2 acc-text" id="spnMemberName"></span></h2>
+                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span class="acc-text">Welcome,</span><span class="ml-2 acc-text" id="spnMemberName"></span></h2>
                             </div>
                         </li>
                         <li class="d-block">
                             <div class="text-center">
                                 <h3 class="h3 heading-semibold text-white">
-                                    <span id="totAvbPointDiv" data-i18n="account-total-points"></span>
+                                    <span id="totAvbPointDiv"></span>
                                     <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-white"></span>
                                 </h3>
                             </div>
@@ -105,8 +105,7 @@
                         <a
                             href="Index.aspx"
                             class="btn btn-two"
-                            id="my_account_point_redeem_now"
-                            data-i18n="btn-redeem-now">Redeem Now</a>
+                            id="my_account_point_redeem_now">Redeem Now</a>
                     </div>
                 </div>
             </div>
@@ -118,7 +117,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h2 class="h1 heading-semibold text-colour1" id="lblMemberName">
-                    <span data-i18n="account-welcome" class="">Welcome,</span>
+                    <span class="">Welcome,</span>
                     <span class="ml-2" id="spnMemberName"></span>
                 </h2>
                 <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
@@ -128,8 +127,7 @@
                 <a
                     href="Index.aspx"
                     class="btn btn-one"
-                    id="my_account_point_redeem_now"
-                    data-i18n="btn-redeem-now">Redeem Now
+                    id="my_account_point_redeem_now">Redeem Now
                 </a>
             </div>
         </div>
@@ -151,9 +149,9 @@
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
-                    <li class="breadcrumb-item"><a href="\" data-i18n="bread-home">Home</a></li>
-                    <li class="breadcrumb-item" ><a href="StatementSummary.aspx" data-i18n="bread-my-account">My Account</a></li>
-                    <li class="breadcrumb-item" data-i18n="bread-statement">Statement Summary</li>
+                    <li class="breadcrumb-item"><a href="\">Home</a></li>
+                    <li class="breadcrumb-item" ><a href="StatementSummary.aspx">My Account</a></li>
+                    <li class="breadcrumb-item">Statement Summary</li>
                 </ul>
             </nav>
         </div>
@@ -165,11 +163,11 @@
                 <div class="dvEarned col-12 mb-4">
                     <div class="bg-colour2 py-2 b-radius">
                         <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/plus.svg" />
-                        <h5 id="my_account_poin_summary_earned" data-i18n="ss-earned-points" class="d-inline-block h6 heading-bold">Earned Points</h5>
+                        <h5 id="my_account_poin_summary_earned" class="d-inline-block h6 heading-bold">Earned Points</h5>
                     </div>
                     <div class="d-flex flex-wrap">
                         <div class="col-6 border-bottom border-right border-left py-3">
-                            <p data-i18n="ss-bonus-points" class="">Bonus Points</p>
+                            <p class="">Bonus Points</p>
                         </div>
                         <div class="col-6 border-bottom border-right py-3">
                             <asp:Label ID="lblBonusmile" runat="server" Text="0"></asp:Label>
@@ -177,7 +175,7 @@
                     </div>
                     <div class="d-flex flex-wrap">
                         <div class="col-6 border-bottom border-right border-left py-3">
-                            <p id="my_account_poin_summary_spend" data-i18n="ss-on-spend-points" class="">On Spend Points</p>
+                            <p id="my_account_poin_summary_spend" class="">On Spend Points</p>
                         </div>
                         <div class="col-6 border-bottom border-right py-3">
                             <asp:Label ID="lblSpendmile" runat="server" Text="0"></asp:Label>
@@ -185,7 +183,7 @@
                     </div>
                     <div class="d-none flex-wrap">
                         <div class="col-6 border-bottom border-right border-left py-3">
-                            <p id="my_account_poin_summary_purchase" data-i18n="ss-purchase-points" class="">Purchase Points</p>
+                            <p id="my_account_poin_summary_purchase" class="">Purchase Points</p>
                         </div>
                         <div class="col-6 border-bottom border-right py-3">
                             <asp:Label ID="lblPurchasemile" runat="server" Text="0"></asp:Label>
@@ -196,11 +194,11 @@
                 <div class="dvRedeemed col-12 mb-4">
                     <div class="bg-colour2 py-2 b-radius">
                         <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/minus.svg" />
-                        <h5 id="my_account_poin_summary_redeemed" data-i18n="ss-redeemed-points" class="d-inline-block h6 heading-bold">Redeemed Points</h5>
+                        <h5 id="my_account_poin_summary_redeemed" class="d-inline-block h6 heading-bold">Redeemed Points</h5>
                     </div>
                     <div class="d-flex flex-wrap">
                         <div class="col-6 border-bottom border-right border-left py-3">
-                            <p data-i18n="ss-points">Points</p>
+                            <p>Points</p>
                         </div>
                         <div class="col-6 border-bottom border-right py-3">
                             <p>
@@ -213,11 +211,11 @@
                 <div class="dvExpired col-12 mb-4 d-none">
                     <div class="bg-colour2 py-2 b-radius">
                         <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/minus.svg" />
-                        <h5 data-i18n="ss-expired-points" class="d-inline-block heading-bold">Expired Points</h5>
+                        <h5 class="d-inline-block heading-bold">Expired Points</h5>
                     </div>
                     <div class="d-flex flex-wrap">
                         <div class="col-6 border-bottom border-right border-left py-3">
-                            <p data-i18n="ss-points">Points</p>
+                            <p>Points</p>
                         </div>
                         <div class="col-6 border-bottom border-right py-3">
                             <p>
@@ -231,7 +229,7 @@
                     <div class="bg-colour1 py-2 b-radius d-flex flex-wrap justify-content-between align-items-center">
                         <div>
                             <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/equal.svg" />
-                            <h5 class="d-inline-block h6 heading-bold text-white" data-i18n="ss-points-balance">Points Balance</h5>
+                            <h5 class="d-inline-block h6 heading-bold text-white">Points Balance</h5>
                         </div>
                         <span id="my_account_poin_summary_balance" class="d-inline-block text-white heading-bold px-3">
                             <asp:Label ID="lblPoints" runat="server" Text="0"></asp:Label>
@@ -240,11 +238,11 @@
                     <div class="d-flex">
                         <div class="col-12 border py-3">
                             <ul class="pl-3">
-                                <li data-i18n="ss-bonus-points-desc">Bonus Points: are the extra points given by the Bank as Bonus.</li>
-                                <li data-i18n="ss-spend-points-desc">Spend Points: are the points earned/accumulated by using various products & services of Bank.
+                                <li>Bonus Points: are the extra points given by the Bank as Bonus.</li>
+                                <li>Spend Points: are the points earned/accumulated by using various products & services of Bank.
                                 </li>
-                                <li data-i18n="ss-redeem-points-desc">Redeemed Points: are the points utilized by the user.</li>
-                                <li data-i18n="ss-close-points-desc">Closing Points: are the points available in loyalty account.</li>
+                                <li>Redeemed Points: are the points utilized by the user.</li>
+                                <li>Closing Points: are the points available in loyalty account.</li>
                             </ul>
                         </div>
                     </div>

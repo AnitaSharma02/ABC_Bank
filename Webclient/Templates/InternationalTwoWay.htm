@@ -10,14 +10,14 @@
                     <div class="col-6 text-right">
                         <div class="text-right">
                             <h2 class="heading6 text-colour1">
-                                <span class="points-text" data-i18n="flightlist-points">Points</span>
+                                <span class="points-text">Points</span>
                                 <span class="CommaSeperated"> {$T.record.FareDetails.ActualPoints} </span>
                             </h2>
                             <h2 class="h6 heading-regular text-colour7 mt-1">
                                 {#if $T.record.Type=="Return"}
-                                <span class="trip-text" data-i18n="flightlist-round-trip">Round Trip</span>
+                                <span class="trip-text">Round Trip</span>
                                 {#else}
-                                <span class="trip-text" data-i18n="flightsearch-one-way">One Way</span>
+                                <span class="trip-text">One Way</span>
                                 {#/if}
                             </h2>
                         </div>
@@ -65,8 +65,8 @@
                 </div>
                 <div class="dvSeeDetails row border-top">
                     <div class="col-12 d-flex justify-content-between align-items-center py-2">
-                        <a href="#details_seq_{$T.record.SequenceNo}" id="flight_details" data-toggle="collapse" data-target="#dvDetails{$T.record.SequenceNo}" class="heading6 arrowBtn col-auto d-flex collapsed" aria-expanded="false"><span class="d-inline-block" data-i18n="flightlist-see-flight">See Flight Details</span> <span class="arrow-icon ml-2"> <i class="fa fa-caret-up"></i> </span></a>
-                        <div class=" searchBtnl"><button class="btn btn-one" onclick="var retvalue = BookNowClick('{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;" style="cursor: pointer;" data-i18n="index-redeem">Redeem</button></div>
+                        <a href="#details_seq_{$T.record.SequenceNo}" id="flight_details" data-toggle="collapse" data-target="#dvDetails{$T.record.SequenceNo}" class="heading6 arrowBtn col-auto d-flex collapsed" aria-expanded="false"><span class="d-inline-block">See Flight Details</span> <span class="arrow-icon ml-2"> <i class="fa fa-caret-up"></i> </span></a>
+                        <div class=" searchBtnl"><button class="btn btn-one" onclick="var retvalue = BookNowClick('{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;" style="cursor: pointer;">Redeem</button></div>
                     </div>
                 </div>
                 <div id="dvDetails{$T.record.SequenceNo}" class="col-12 collapse bg-light2 border mb-3">
@@ -76,24 +76,24 @@
                             {#if $T.ListOfFlightDetails$iteration==0}
                             <div class="row align-items-center">
                                 <div class="col-auto col-sm-6">
-                                    <span class=" h6 heading-regular text-colour7" data-i18n="flightsearch-departure-label">Departure <i class="fa fa-arrow-right"></i></span>
+                                    <span class=" h6 heading-regular text-colour7">Departure <i class="fa fa-arrow-right"></i></span>
                                 </div>
                                 <div class="col-auto col-sm-6 text-sm-right">
                                     <span class="h6 heading-regular text-colour7">
                                         <i class="fa-regular fa-clock"></i>
-                                        <span data-i18n="flightlist-total-duration">Total Duration</span>: {$T.ListOfFlightDetails.TotalDurationDisplay}
+                                        <span>Total Duration</span>: {$T.ListOfFlightDetails.TotalDurationDisplay}
                                     </span>
                                 </div>
                             </div>
                             {#else}
                             <div class="row align-items-center">
                                 <div class="col-auto col-sm-6">
-                                    <span class=" h6 heading-regular text-colour7" data-i18n="flightsearch-return">Return <i class="fa fa-arrow-right"></i></span>
+                                    <span class=" h6 heading-regular text-colour7">Return <i class="fa fa-arrow-right"></i></span>
                                 </div>
                                 <div class="col-auto col-sm-6 text-sm-right">
                                     <span class="h6 heading-regular text-colour7">
                                         <i class="fa-regular fa-clock"></i>
-                                        <span data-i18n="flightlist-total-duration">Total Duration</span>: {$T.ListOfFlightDetails.TotalDurationDisplay}
+                                        <span>Total Duration</span>: {$T.ListOfFlightDetails.TotalDurationDisplay}
                                     </span>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@
                                         <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DisplayArrivalDate}</span>
                                         <span class="d-block h7 heading-regular text-colour7"> <strong>Arrival Time:</strong>  </span>
                                         <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DisplayArrivalTime}</span>
-                                        <span class="fOption h7 heading-regular text-colour7"><span class="baggage "><i class="fa fa-suitcase"></i> <span data-i18n="flightlist-baggage-allowance">Baggage Allowance</span> - {$T.ListOfFlightSegments.BaggageAllowance} </span></span>
+                                        <span class="fOption h7 heading-regular text-colour7"><span class="baggage "><i class="fa fa-suitcase"></i> <span>Baggage Allowance</span> - {$T.ListOfFlightSegments.BaggageAllowance} </span></span>
                                     </p>
                                 </div>
                             </div>

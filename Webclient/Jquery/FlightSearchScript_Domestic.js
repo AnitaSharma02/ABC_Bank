@@ -305,7 +305,7 @@ function FlightValidationDomestic() {
     }
     if (msg.length > 0) {
         $("#requiredValidationdomestic").show();
-        $("#requiredValidationdomestic")[0].innerHTML = "<span class='heading-semibold text-danger d-block' data-i18n='flight-below-fields'>Below fields are mandatory.</span>";
+        $("#requiredValidationdomestic")[0].innerHTML = "<span class='heading-semibold text-danger d-block'>Below fields are mandatory.</span>";
         return false;
     }
     else {

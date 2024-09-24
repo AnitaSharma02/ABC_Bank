@@ -239,7 +239,7 @@ public partial class CarDetails : System.Web.UI.Page
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-9 mt-2 mt-md-0 order-md-1 text-left\">");
                     sbmoreInfo.Append("<div class=\"\">");
-                    sbmoreInfo.Append("<a class=\"link1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i><span data-i18n=\"text-vehical-location\"> Vehicle location:</span></a>");
+                    sbmoreInfo.Append("<a class=\"link1\" href =\"#\" ><i class=\"fa-solid fa-location-dot\"></i><span> Vehicle location:</span></a>");
 
                     Branch lobjBranch = lobjCarAvailabilityResponse.data.branches.Find(x => x.id == lobjVehicle.pickUpBranchId);
                     if (lobjBranch != null)
@@ -383,7 +383,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     sbextras.Append("</div>");
                                     sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-right\">");
                                     /*sbextras.Append("<div class=\"travelBtn\">");*/
-                                    sbextras.Append("<button type =\"button\" id=ADD_" + extras.productId + " onclick=\"AddRemoveAditionalCharges('ADD','" + extras.name + "','" + extras.rentalPrice.display.amount + "','" + PaymentOption.rateReference + "','" + extras.productId + "');\" class=\"btn btn-one dvAdd\"><span data-i18n=\"text-add1\">+ ADD</span></button>");
+                                    sbextras.Append("<button type =\"button\" id=ADD_" + extras.productId + " onclick=\"AddRemoveAditionalCharges('ADD','" + extras.name + "','" + extras.rentalPrice.display.amount + "','" + PaymentOption.rateReference + "','" + extras.productId + "');\" class=\"btn btn-one dvAdd\"><span>+ ADD</span></button>");
                                     sbextras.Append("<button type =\"button\" id=REMOVE_" + extras.productId + " onclick=\"AddRemoveAditionalCharges('REMOVE','" + extras.name + "','" + extras.rentalPrice.display.amount + "','" + PaymentOption.rateReference + "','" + extras.productId + "');\" class=\"d-none btn btn-one dvRemove\">- REMOVE</button>");
                                     /*sbextras.Append("</div>");*/
                                     sbextras.Append("</div>");

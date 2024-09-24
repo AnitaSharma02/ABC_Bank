@@ -42,10 +42,10 @@
                                     </div>
                                     <div class="row align-items-lg-center justify-content-end">
                                         <div class="col-12 col-md-6 mt-2 col-lg-auto">
-                                            <a class="btn btn-one w-100" href="Shop.aspx" id="btnContinueShopping" data-i18n="shopcart-continue">Continue Shopping</a>
+                                            <a class="btn btn-one w-100" href="Shop.aspx" id="btnContinueShopping">Continue Shopping</a>
                                         </div>
                                         <div class="col-12 col-md-6 mt-2 col-lg-auto">
-                                            <a class="btn btn-two w-100" id="btnCheckout" runat="server" href="Checkout.aspx" data-i18n="shopcart-checkout">Checkout</a>
+                                            <a class="btn btn-two w-100" id="btnCheckout" runat="server" href="Checkout.aspx">Checkout</a>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@
                 cache: false,
                 success: function (msg) {
                     if (msg.d != "") {
-                        if (msg.d == "<div class='heading-regular h6 text-colour7' data-i18n=\'shopcart-cartempty\'>Cart Empty</div>") {
+                        if (msg.d == "<div class='heading-regular h6 text-colour7'>Cart Empty</div>") {
                             $("#CP_btnCheckout").addClass("not-active");
                             $("#CP_btnCheckout").addClass("hide-checkout-button");
                         } else {
