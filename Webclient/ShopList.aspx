@@ -37,7 +37,7 @@
                                 </button>
                               </div>
                             <div class="modal-body p-lg-0">
-                                <div class="accordion" id="filter-accordion">
+                                <div class="accordion dvVcData" id="filter-accordion">
                                     <div id="divFilters" runat="server">
                                        <%-- <div class="card"></div>
                                         <div class="dvBorderBottom">
@@ -211,6 +211,7 @@
                 success: function (msg) {
                     if (msg.d != '') {
                         $("#CP_CPSHOP_divFilters").html(msg.d);
+                        updateVcDataSections();
                     }
                     return false;
                 }

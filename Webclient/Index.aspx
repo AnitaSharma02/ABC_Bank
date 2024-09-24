@@ -155,7 +155,7 @@
                     </p>
                 </div>
             </div>
-            <div class="dvShopDealsSlider swiper row my-2" id="dvShopDealsSlider">
+            <div class="dvShopDealsSlider dvVcData swiper row my-2" id="dvShopDealsSlider">
             </div>
         </div>
     </div>
@@ -168,7 +168,7 @@
                     <p class="text-colour6">Choose from over 5,000+ gift vouchers in our expansive Loyalty Program selection.</p>
                 </div>
             </div>
-            <div class="dvVoucherSlider" id="dvVoucherSlider">
+            <div class="dvVoucherSlider dvVcData" id="dvVoucherSlider">
             </div>
         </div>
     </div>
@@ -381,6 +381,7 @@
                             enabled: true,
                         },
                     });
+                    updateVcDataSections();
                 }
                 else {
                     $.ajax({
@@ -428,6 +429,7 @@
                                         enabled: true,
                                     },
                                 });
+                                updateVcDataSections();
                             }
                             else {
                                 $("#dvVoucherSlider").hide();

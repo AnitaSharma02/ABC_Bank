@@ -130,6 +130,10 @@
                     if (categoryName != '') {
                         $('.redemptionoptions').removeClass('SelRedemption');
                         $('.' + categoryName + 'redemption').addClass('SelRedemption');
+
+                        // this is for loading only after vc data is available
+                        updateVcDataSections();
+
                     }
                 } else {
                     $.ajax({
@@ -146,6 +150,10 @@
                                 if (categoryName != '') {
                                     $('.redemptionoptions').removeClass('SelRedemption');
                                     $('.' + categoryName + 'redemption').addClass('SelRedemption');
+
+                                    // this is for loading only after vc data is available
+                                    updateVcDataSections();
+
                                 }
                             }
                         },
@@ -303,7 +311,7 @@
             <img id="dvInnerBanner" alt="" class="w-100" />
         </div>
         
-        <div class="dvRedemptionMenu">
+        <div class="dvRedemptionMenu dvVcData">
             <div class="container-fluid">
                 <div id="dvRedemptionMenuLoader" class="dvLoader" style="display:none;">
                     <img src="../Images/loading.gif" alt="loading..." />
