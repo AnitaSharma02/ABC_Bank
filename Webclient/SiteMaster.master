@@ -21,9 +21,9 @@
     <script src="\Jquery/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
     <script src="\Jquery/swiper.min.js"></script>
     <!--Language Libs -->
-    <script src="\Jquery/i18n/jquery.i18n.min.js" type="text/javascript"></script>
+    <%--<script src="\Jquery/i18n/jquery.i18n.min.js" type="text/javascript"></script>
     <script src="\Jquery/i18n/jquery.i18n.emitter.bidi.js" type="text/javascript"></script>
-    <script src="\Jquery/i18n/i18n.custom.js" type="text/javascript"></script>
+    <script src="\Jquery/i18n/i18n.custom.js" type="text/javascript"></script>--%>
     <script type="text/javascript">
         $(document).ready(function () {
             $(document).ajaxStart(function () {
@@ -45,7 +45,93 @@
 
             hideShowNavbarToggler();
         });
+
         function BindBanner() {
+            //var languageSelector = $("#languageSelector").val();
+            try {
+                var bannerHTML = "";
+                var path = "";
+                switch ($("#languageSelector").val()) {
+                    case "en":
+                        bannerHTML = '<%=HttpContext.Current.Application[string.Format("{0}banner",Convert.ToString(Session["CategoryName"]))]%>';
+                        break;
+                    case "np":
+                        bannerHTML = '<%=HttpContext.Current.Application[string.Format("{0}bannernp",Convert.ToString(Session["CategoryName"]))]%>';
+                        break;
+                    case "ar":
+                        bannerHTML = '<%=HttpContext.Current.Application[string.Format("{0}bannerar",Convert.ToString(Session["CategoryName"]))]%>';
+                        break;
+                }
+                if (bannerHTML != '') {
+                    appendBanner(bannerHTML);
+                }
+                else {
+                    switch ($("#languageSelector").val()) {
+                        case "en":
+                            path = '<%=string.Format("{0}banner",Convert.ToString(Session["CategoryName"]))%>';
+                            break;
+                        case "np":
+                            path = '<%=string.Format("{0}bannernp",Convert.ToString(Session["CategoryName"]))%>';
+                            break;
+                        case "ar":
+                            path = '<%=string.Format("{0}bannerar",Convert.ToString(Session["CategoryName"]))%>';
+                            break;
+                    }
+                    $.ajax({
+                        type: 'POST',
+                        url: 'Index.aspx/GetHomeBanner',
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        data: "{path:'" + path + "'}",
+                        success: function (msg) {
+                            if (msg.d != '') {
+                                $("#dvHeroSlider").append(msg.d);
+                                appendBanner(msg.d); // Assuming 'en' is the default
+                            }
+                        }
+                    });
+                }
+            }
+            catch (e) {
+                console.error(e);
+            }
+        }
+
+        // Function to append the banner based on the language
+        function appendBanner(data) {
+            $("#dvHeroSlider").empty();
+            $("#dvHeroSlider").append(data);
+
+            // Initialize the Swiper
+            const heroSlider = new Swiper(".dvHeroSlider.swiper", {
+                direction: "horizontal",
+                loop: false,
+                speed: 500,
+                slidesPerView: 1,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                spaceBetween: 0,
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                    },
+                },
+                mousewheel: {
+                    enabled: false,
+                },
+                keyboard: {
+                    enabled: true,
+                },
+            });
+        }
+
+        <%--function BindBanner() {
             try {
                 var bannerHTML = '<%=HttpContext.Current.Application[string.Format("{0}banner",Convert.ToString(Session["CategoryName"]))]%>';
                 if (bannerHTML != '') {
@@ -120,7 +206,7 @@
 
             } catch (e) {
             }
-        }
+        }--%>
         function GetRedemptionOptions() {
             try {
                 var redemptionOptionsHTML = '<%=HttpContext.Current.Application["HomeRedemptionOptions"]%>';
@@ -207,6 +293,7 @@
     </script>
 </head>
 <body>
+    <button id="downloadTranslations" class="d-none-">Download JSON</button>
     <form id="form1" runat="server">
         <div class="dvHeader shadow-sm sticky-top bg-colour6">
             <div class="dvStripe">
@@ -243,13 +330,18 @@
                         </a>
                     </div>
                     <%-- remove d-lg-none and style="display:none !important;" from below to display language selectmenu --%>
-                    <div class="order-1 order-lg-2 col d-flex col-lg-auto align-items-center justify-content-end pr-0 pr-lg-0 d-lg-none">
-                        <div class="dvLanguage pr-3 pr-lg-0 mb-1 mb-lg-0 d-flex- align-items-center" style="display: none !important;">
+                    <div class="order-1 order-lg-2 col d-flex col-lg-auto align-items-center justify-content-end pr-0 pr-lg-0 d-lg-none-">
+                        <%--<div class="dvLanguage pr-3 pr-lg-0 mb-1 mb-lg-0 d-flex- align-items-center" style="display: none !important;">
                             <div class="form-group select-dropdown selectUl selLanguage m-0">
                                 <select class="form-control px-1 py-0 mt-1 mt-lg-0 py-2" id="languageSelector">
                                 </select>
                             </div>
-                        </div>
+                        </div>--%>
+                         <select class="dvLang" id="languageSelector">
+                            <option value="en">english</option>
+                            <option value="np">nepal</option>
+                            <option value="ar">arabic</option>
+                        </select>
                         <button class="navbar-toggler d-lg-none px-0 py-2 border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                             <%--<span class="navbar-toggler-icon"></span>--%>
                             <%--<img src="/Images/icons/other/menu.png" alt="?" />--%>
@@ -423,5 +515,6 @@
             </div>
         </div>
     </div>
+    <script src="\Jquery/i18n/i18n.custom.js" type="text/javascript" defer></script>
 </body>
 </html>

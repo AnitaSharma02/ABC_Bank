@@ -16,6 +16,7 @@ using Core.Platform.MemberActivity.Entities;
 using Core.Platform.MemberActivity.Constants;
 using CB.IBE.Platform.Car.Entities;
 using System.Web.Services.Description;
+using Newtonsoft.Json;
 
 public partial class ShopList : Page
 {
@@ -147,6 +148,7 @@ public partial class ShopList : Page
                     criteria = model.BuildProductSearchCriteria(catagory, null, ItemResponseGroup.ItemWithPrices, 0, 0, productName, sort, (PageNo - 1) * PageSize, PageSize, terms);
                 }
             }
+            string json = JsonConvert.SerializeObject(criteria);
             ProductSearchResult result = model.SearchProducts(criteria);
             lobjmodel.LogActivity(string.Format(ActivityConstants.SearchProducts, CategoryId, productName, sort, Terms, PageNo), ActivityType.SearchProduct);
             List<Product> orderedproducts = null;
