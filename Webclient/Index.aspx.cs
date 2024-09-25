@@ -220,7 +220,7 @@ public partial class Index : Page
                 List<Category> listOfCategories = model.SearchCategories();
                 if (listOfCategories != null && listOfCategories.Count > 0)
                 {
-                    listOfCategories = listOfCategories.FindAll(lobj => lobj.Name == "Giftcards");
+                    listOfCategories = listOfCategories.FindAll(lobj => lobj.Name == "Global Gift Vouchers");
                     //listOfCategories = listOfCategories.FindAll(lobj => lobj.ParentId.IsNullOrEmpty() && lobj.IsActive && lobj.Name.ToLower() == "vouchers");
                     try
                     {

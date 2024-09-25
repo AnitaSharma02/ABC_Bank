@@ -230,7 +230,7 @@
                             $("#aShopLink").attr("href", PageURL);
                             $("#imgShop").attr("src", value.PrimaryImage.Url);
                         }
-                        else if (value.Name.toLowerCase() == "giftcards") {
+                        else if (value.Name.toLowerCase() == "global gift vouchers") {
                             $("#aVouchersLink").attr("href", PageURL);
                             $("#imgVouchers").attr("src", value.PrimaryImage.Url);
                         }
@@ -287,7 +287,7 @@
                                         $("#aShopLink").attr("href", PageURL);
                                         $("#imgShop").attr("src", value.PrimaryImage.Url);
                                     }
-                                    else if (value.Name.toLowerCase() == "giftcards") {
+                                    else if (value.Name.toLowerCase() == "global gift vouchers") {
                                         $("#aVouchersLink").attr("href", PageURL);
                                         $("#imgVouchers").attr("src", value.PrimaryImage.Url);
                                     }
