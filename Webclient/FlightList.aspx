@@ -601,7 +601,7 @@
                                     <div id="result1" class="flt-res1" style="display: none;"></div>
                                     <div id="result2" class="flt-res2" style="display: none;"></div>
                                 </div>
-                                <div class="col-12" id="resultInterNational" style="display: none;">
+                                <div class="col-12 dvVcData" id="resultInterNational" style="display: none;">
                                 </div>
                                 <div id="Trip_Summary_Main" style="display: none" class="fixedBot-tripSumm">
                                     <div class="trpsum-flthdr robot">
