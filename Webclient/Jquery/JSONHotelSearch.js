@@ -308,7 +308,7 @@ var filtersData =
                 $("#DivTotalHotel").html('');
                 //$("#totalHotel").html("<span> " + TotalHotel + "");
                 //$("#totalHotel").html("<span class='totalHotelfound'> Total Hotel(s) Found: </span>" + " <p class='totalHotel'>" + TotalHotel + "</p >");
-                $("#totalHotel").html("<span> Total <span>Hotels</span> found <span>" + TotalHotel + "</span></span>");
+                $("#totalHotel").html("<span> Total Hotels found </span><span>" + TotalHotel + "</span>");
             }
         }
     }

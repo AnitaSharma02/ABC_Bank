@@ -28,7 +28,7 @@
 
         <div class="dvProductList">
             <div class="container-xl">
-                <div class="row" id="divExperienceProductList"></div>
+                <div class="dvVcData row" id="divExperienceProductList"></div>
             </div>
         </div>
     </div>
@@ -77,6 +77,7 @@
                         success: function (rtnData) {
                             IsGetExperienceProductListAjaxCalled = false;
                             fnBindExperienceProductList(rtnData.d);
+                            updateVcDataSections();
                         },
                         error: function (errmsg) {
                             IsGetExperienceProductListAjaxCalled = false;

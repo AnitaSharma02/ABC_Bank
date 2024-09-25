@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>--%>
-                <div class="dvHotelInfo col-md-6 mb-3">
+                <div class="dvHotelInfo dvVcData col-md-6 mb-3">
                     <div class="row mb-3">
                         <div class="col-12">
                             <h2 id="HotelName" class="heading2 text-colour1"></h2>
@@ -124,10 +124,10 @@
 
                 <div class="dvSelectRoom col-12">
                     <h2 class="h4 heading-semibold text-colour7 bg-colour2 p-3">Select Your Room</h2>
-                    <div id="rptRoomDetails" class="row mt-3"></div>
+                    <div id="rptRoomDetails" class="dvVcData row mt-3"></div>
                 </div>
 
-                <div id="OverView" class="dvAboutHotel col-12 mt-3"></div>
+                <div id="OverView" class="dvAboutHotel dvVcData col-12 mt-3"></div>
 
             </div>
 
@@ -144,7 +144,7 @@
                 <div class="col-12 mb-3 text-center">
                     <h2 class="h2 heading-semibold text-colour1">Similar Listing</h2>
                 </div>
-                <div id="NextHotelList" class="col-12">
+                <div id="NextHotelList" class="dvVcData col-12">
                 </div>
             </div>
         </div>
@@ -153,14 +153,14 @@
     <div class="dvCommonModal modal fade" id="dvAmenitiesModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
-                <div class="modal-header border-0">
+                <div class="dvVcData modal-header border-0">
                     <h5 class="modal-title" id="DivAmenitiesCategoryName"></h5>
                      <button type="button" class="close" data-dismiss="modal">
                          <i class="fa-solid fa-xmark"></i>
                      </button>
                 </div>
                 <div class="modal-body pt-0">
-                    <div id="DivAmenities" class="row"></div>
+                    <div id="DivAmenities" class="dvVcData row"></div>
                 </div>
                 <!-- <div class="modal-footer">
               <button type="button" class="btn btn-two" data-dismiss="modal">Close</button>

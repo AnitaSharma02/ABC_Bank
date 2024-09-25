@@ -99,7 +99,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card" id="divCarDetailsLeftpannel">
+                            <div class="dvVcData card" id="divCarDetailsLeftpannel">
                                 <%-- <div class="card-header" id="headingTwo">
                             <h2 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -260,7 +260,7 @@
                             <h2 class="heading6"><i class="fa fa-lock mr-2" aria-hidden="true"></i><span>Payment Options</span></h2>
                         </div>
                     </div>
-                    <div class="row" id="divpaymentOptionContainer">
+                    <div class="dvVcData row" id="divpaymentOptionContainer">
                     </div>
                     <div class="row">
                         <div class="col-12 col-md-12 mt-4 d-none">
@@ -269,7 +269,7 @@
                         </div>
                     </div>
                     <input type="hidden" name="IsExcessprotectionAdded" id="hndIsExcessprotectionAdded" value="" />
-                    <div class="row" id="divExtrascontainer">
+                    <div class="dvVcData row" id="divExtrascontainer">
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
@@ -277,7 +277,7 @@
                                 <h2 class="heading6 mb-2">Additional Equipment</h2>
                                 <p>Please note these additional extras are payable locally and do not form part of the rental price shown. Prices are displayed by pressing the title of each extra.</p>
                                 <input type="hidden" name="Totaladitionalchargeamount" id="hndTotaladitionalchargeamount" value="0" />
-                                <div id="divAdditionalEquipment">
+                                <div class="dvVcData" id="divAdditionalEquipment">
                                 </div>
                             </div>
                         </div>
@@ -303,7 +303,7 @@
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-                <div class="modal-body mb-2" id="divmoreInfoDetails"></div>
+                <div class="dvVcData modal-body mb-2" id="divmoreInfoDetails"></div>
             </div>
         </div>
     </div>
@@ -320,7 +320,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div id="divMoreinfoAdditionalEquipment"></div>
+                    <div class="dvVcData" id="divMoreinfoAdditionalEquipment"></div>
                 </div>
             </div>
         </div>

@@ -246,7 +246,7 @@
                                                     <asp:CheckBox ID="chkAcceptAgreements" runat="server" />
                                                     <span class="checkmark"></span>
                                                 </span>
-                                                <span class="d-inline-block ml-2 text-colour7 ">I have read and agree to Infinity Rewards <a href="TermsandConditions.aspx" target="_blank">Terms & Conditions</a> and the <a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation Policy</a> of the respective service provider.</span>
+                                                <span class="d-inline-block ml-2 text-colour7"><span>I have read and agree to Infinity Rewards </span> <a href="TermsandConditions.aspx" target="_blank">Terms & Conditions</a> <span>and the</span> <a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation Policy</a> <span>of the respective service provider.</span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -257,8 +257,8 @@
                                                <asp:CheckBox ID="chkCancellationPolicy" runat="server" />
                                                <span class="checkmark"></span>
                                            </span>
-                                           <span class="d-inline-block ml-2 text-colour7 ">I agree to redeem
-                                               <asp:Label ID="lblTotalCharge" runat="server" Text=""></asp:Label>. I also understand and accept that.the redeemed Points cannot be refunded or credited upon cancellation of a hotel booking.</span>
+                                           <span class="d-inline-block ml-2 text-colour7"><span>I agree to redeem</span>
+                                               <asp:Label ID="lblTotalCharge" runat="server" Text=""></asp:Label><span>. I also understand and accept that.the redeemed Points cannot be refunded or credited upon cancellation of a hotel booking.</span></span>
                                        </label>
                                         </div>
                                     </div>

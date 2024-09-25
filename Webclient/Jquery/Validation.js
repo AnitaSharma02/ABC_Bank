@@ -271,7 +271,7 @@ function ForgotPassword() {
         msg += + "<br/>";
     } else {
         if (!AcceptAlphanumericOnly($('#CP_txtMemberId').val())) {
-            msg += "Please enter valid Email Id. <br/>";
+            msg += "<span>Please enter valid Email Id. </span><br/>";
         }
     }
     if (msg.length > 0) {

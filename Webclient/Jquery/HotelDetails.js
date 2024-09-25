@@ -42,6 +42,8 @@ function BindNextHotel() {
 
             $("#NextHotelList").append(HotelList);
             $(".AmtStylePoint").digits();
+
+            updateVcDataSections();
         },
         beforeSend: function () {
             $("#updProgress").show();
@@ -63,7 +65,7 @@ function BindHotelDetails() {
             for (icount = 0; icount < HotelResponse[0].roomrates.RoomRate.length; icount++) {
                 rptRoom += "<div class='col-12'> ";
                 rptRoom += "<div class='row justify-content-between'><div class='col-12 col-md-6 col-lg-5 col-xl-6 mb-2 mb-md-0'><h2 class='h6 heading-regular text-colour7'>" + HotelResponse[0].roomrates.RoomRate[icount].roomtype.roomdescription + " (inclusive of all taxes)</h2></div><div class='col-6 col-sm-4 col-md-2 col-lg-3 col-xl-2 mb-3 mb-sm-0'><span class='d-inline-block h6 heading-semibold text-colour7 totalPointValue'>" + HotelResponse[0].roomrates.RoomRate[icount].ratebreakdown.rate[0].RatePoint + " <span class='d-inline-block h7 heading-semibold text-colour7'>Points</span></span><span class='d-inline-block h7 heading-regular text-colour7'>  (per room per night)</span></div>";
-                rptRoom += "<div class='col-6 col-sm-4 col-md-2 mb-3 mb-sm-0'><span class='d-inline-block h6 heading-semibold text-colour7 totalPointValue'>" + HotelResponse[0].roomrates.RoomRate[icount].TotalPoints + " <span class='d-inline-block h7 heading-semibold text-colour7'>Points</span></span><span class='d-inline-block h7 heading-regular text-colour7'> for " + msg.d[1] + " night(s)</span></div>";
+                rptRoom += "<div class='col-6 col-sm-4 col-md-2 mb-3 mb-sm-0'><span class='d-inline-block h6 heading-semibold text-colour7 totalPointValue'>" + HotelResponse[0].roomrates.RoomRate[icount].TotalPoints + "<span class='d-inline-block h7 heading-semibold text-colour7'>Points</span></span>&nbsp;<span class='d-inline-block h7 heading-regular text-colour7'> for " + msg.d[1] + " night(s)</span></div>";
                 rptRoom += "<div class='col-12 col-sm-4 col-md-2 text-md-right'><button class='btn btn-one w-100 totalPointValue' onclick='return Bookroom(&quot;" + HotelResponse[0].roomrates.RoomRate[icount].roomtype.roomtypecode + "&quot;);'>Book Now</button></div></div></div>";
                 rptRoom += "<div class='col-12 my-3'><div class='border-bottom'></div></div>"
             }
@@ -74,6 +76,8 @@ function BindHotelDetails() {
             }
             $("#divrating").append(HotelRating);
             $(".totalPointValue").digits();
+
+            updateVcDataSections();
 
         },
         beforeSend: function () {
@@ -251,6 +255,7 @@ function GetHotelInfo() {
             //Code for Binding Basic Amenities
             BindBasicAmenities(AllAmenities);
 
+            updateVcDataSections();
 
         },
         error: function (response) {
@@ -341,6 +346,8 @@ function getHotelDetails(hotelId) {
         success: function (msg) {
             var linkurl = "HotelDetails.aspx";
             window.location.href = linkurl;
+
+            updateVcDataSections();
         },
         beforeSend: function () {
             $("#updProgress").show();

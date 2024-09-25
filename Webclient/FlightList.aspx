@@ -208,7 +208,7 @@
                                         <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">
                                             <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="">
-                                                    <div class="dvLabel divStops airList"></div>
+                                                    <div class="dvLabel divStops dvVcData airList"></div>
                                                 </div>
                                             </div>
                                         </div>

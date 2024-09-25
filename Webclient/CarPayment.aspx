@@ -90,7 +90,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" id="divCarDetailsLeftpannel">
+                                <div class="dvVcData card" id="divCarDetailsLeftpannel">
                                 </div>
 
                             </div>

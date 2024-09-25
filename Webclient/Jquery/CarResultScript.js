@@ -857,6 +857,8 @@ function ViewMoreInfo(uniqueRef) {
                 $("#divmoreInfoDetails")[0].innerHTML = msg.d[0].toString(); //Car more Info popup
 
                 $("#dvMoreInfoModal").modal("show");
+
+                updateVcDataSections();
             }
             else {
                 window.location.href = "ErrorPage.aspx";
@@ -916,6 +918,8 @@ function GetCarDetails(SelectedCarId) {
                 $("#divmoreInfoDetails")[0].innerHTML = msg.d[7].toString(); //car More Info Popup html
                 $("#spncarTotalAmount").text(msg.d[5].toString());
                 $("#spnPayableAmount").text(msg.d[5].toString());
+
+                updateVcDataSections();
             }
             else {
                 window.location.href = "ErrorPage.aspx";
@@ -948,6 +952,7 @@ function GetRateDetails(RateReference) {
                 $("#divExtrascontainer")[0].innerHTML = msg.d[0].toString(); //extras details i.e. Excess Protection
                 $("#divAdditionalEquipment")[0].innerHTML = msg.d[1].toString(); // Additional Equipment
                 $("#spnPayableAmount").text(msg.d[2].toString());
+                updateVcDataSections();
             }
             else {
                 window.location.href = "ErrorPage.aspx";
@@ -1170,6 +1175,8 @@ function MapCarDetails() {
                 $("#spncarhireAmount").text(Math.ceil(parseFloat(CarBookingDetails.CarHireAmount)));
                 $("#spnPayableAmount").text(Math.ceil(parseFloat(CarBookingDetails.PayableAmount)));
           //$("#spnAdditionalChargetotal").text(parseFloat(CarBookingDetails.TotalAdditionalequipmentAmount == null ? 0 : CarBookingDetails.TotalAdditionalequipmentAmount).toFixed(2));
+
+                updateVcDataSections();
             }
             else {
                 window.location.href = "ErrorPage.aspx";
@@ -1461,6 +1468,8 @@ function ViewMoreInfoAdditionalCharges(CodeId) {
                 $("#divMoreinfoAdditionalEquipment")[0].innerHTML = completeHTML;
 
                 $("#dvAdditionalEquipmentModal").modal("show");
+
+                updateVcDataSections();
             }
             else {
 

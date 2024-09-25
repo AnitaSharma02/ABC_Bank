@@ -619,7 +619,7 @@
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                   </div>                
-                <div class="modal-body" id="divmoreInfoDetails"></div>
+                <div class="dvVcData modal-body" id="divmoreInfoDetails"></div>
             </div>
         </div>
     </div>

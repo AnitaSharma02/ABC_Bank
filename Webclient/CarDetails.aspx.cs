@@ -332,7 +332,7 @@ public partial class CarDetails : System.Web.UI.Page
                             sb.Append("</div>");
                             sb.Append("<div class=\"col-12 border-top pl-0 py-3\">");
                             //sb.Append("<div class=\"\">");
-                            sb.Append("<p> Select this option to pay your car hire balance in full..Inc. <strong class=\"heading-bold\">free cancellation</strong> up to 48 hours before pick up!</p>");
+                            sb.Append("<p><span>Select this option to pay your car hire balance in full..Inc.</span> <strong class=\"heading-bold\">free cancellation</strong> <span>up to 48 hours before pick up!</span></p>");
                             //sb.Append("</div>");
                             sb.Append("</div>");
                             sb.Append("</label>");
@@ -363,7 +363,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     sbextras.Append("<div class=\"col-12\">");
                                     /*sbextras.Append("<div class=\"row\">");
                                     sbextras.Append("<div class=\"col-12\">");*/
-                                    sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i> " + extras.name + " </h2>");
+                                    sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i><span> " + extras.name + " </span></h2>");
                                     //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
                                     //sbextras.Append("More info");
                                     //sbextras.Append("</div>");
@@ -415,7 +415,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     sbextras.Append("<div class=\"col-12\">");
                                     /*sbextras.Append("<div class=\"row\">");
                                     sbextras.Append("<div class=\"col-12\">");*/
-                                    sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i> " + extras.name + " </h2>");
+                                    sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i><span> " + extras.name + " </span></h2>");
                                     //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
                                     //sbextras.Append("More info");
                                     //sbextras.Append("</div>");
@@ -542,7 +542,7 @@ public partial class CarDetails : System.Web.UI.Page
                         sbextras.Append("<div class=\"col-12\">");
                         /*sbextras.Append("<div class=\"row\">");
                         sbextras.Append("<div class=\"col-12\">");*/
-                        sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i> " + extras.name + " </h2>");
+                        sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i><span> " + extras.name + " </span></h2>");
                         //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
                         //sbextras.Append("More info");
                         //sbextras.Append("</div>");
@@ -593,7 +593,7 @@ public partial class CarDetails : System.Web.UI.Page
                         sbextras.Append("<div class=\"col-12\">");
                         /*sbextras.Append("<div class=\"row\">");
                         sbextras.Append("<div class=\"col-12\">");*/
-                        sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i> " + extras.name + " </h2>");
+                        sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i><span> " + extras.name + " </span></h2>");
                         //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
                         //sbextras.Append("More info");
                         //sbextras.Append("</div>");
