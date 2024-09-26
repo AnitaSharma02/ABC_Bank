@@ -26,6 +26,7 @@ public partial class ExtSSO : Page
             bool lblStatus = false;
             string strMD5password = string.Empty;
             string strActivationPoints= ConfigurationManager.AppSettings["ActivationPoints"];
+            int strExpiryPoints =Convert.ToInt32(ConfigurationManager.AppSettings["ExpiryPoints"]);
             try
             {
                 string lstrHostUrl = string.Empty;
@@ -130,7 +131,7 @@ public partial class ExtSSO : Page
                                         {
                                             TransactionType = (TransactionType)1,
                                             RelationReference = lobjMemberRelation.RelationReference,
-                                            Amounts = 1000,
+                                            Amounts = 0,
                                             Points =Convert.ToInt32(strActivationPoints),
                                             LoyaltyTxnType = (LoyaltyTxnType)2,
                                             ProgramId = lobjProgramDefinition.ProgramId,
@@ -138,7 +139,7 @@ public partial class ExtSSO : Page
                                             RelationType = RelationType.LBMS,
                                             TransactionDate = DateTime.Now,
                                             ProcessingDate = DateTime.Now,
-                                            ExpiryDate = DateTime.Now,
+                                            ExpiryDate = DateTime.Now.AddMonths(strExpiryPoints),
                                             ReconciledPoints = 0,
                                             ReconciledType = 1,
                                             Narration = "Bonus Points",
