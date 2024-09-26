@@ -69,14 +69,14 @@
                         <div class=" searchBtnl"><button class="btn btn-one" onclick="var retvalue = BookNowClick('{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;" style="cursor: pointer;">Redeem</button></div>
                     </div>
                 </div>
-                <div id="dvDetails{$T.record.SequenceNo}" class="col-12 collapse bg-light2 border mb-3">
+                <div id="dvDetails{$T.record.SequenceNo}" class="dvVcData col-12 collapse bg-light2 border mb-3">
                     <div class="dvDeparture row" id="details_seq_{$T.record.SequenceNo}" style="">
                         {#foreach $T.record.ListOfFlightDetails as ListOfFlightDetails}
                         <div class="col-12 bg-colour6 py-2 mb-2">
                             {#if $T.ListOfFlightDetails$iteration==0}
                             <div class="row align-items-center">
                                 <div class="col-auto col-sm-6">
-                                    <span class=" h6 heading-regular text-colour7">Departure <i class="fa fa-arrow-right"></i></span>
+                                    <span class=" h6 heading-regular text-colour7"><span>Departure</span> <i class="fa fa-arrow-right"></i></span>
                                 </div>
                                 <div class="col-auto col-sm-6 text-sm-right">
                                     <span class="h6 heading-regular text-colour7">
@@ -88,7 +88,7 @@
                             {#else}
                             <div class="row align-items-center">
                                 <div class="col-auto col-sm-6">
-                                    <span class=" h6 heading-regular text-colour7">Return <i class="fa fa-arrow-right"></i></span>
+                                    <span class=" h6 heading-regular text-colour7"><span>Return</span> <i class="fa fa-arrow-right"></i></span>
                                 </div>
                                 <div class="col-auto col-sm-6 text-sm-right">
                                     <span class="h6 heading-regular text-colour7">

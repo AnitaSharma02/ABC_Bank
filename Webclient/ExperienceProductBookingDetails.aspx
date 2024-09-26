@@ -53,7 +53,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 col-md-5 col-lg-4">
-                            <div class="dvBookingDetails border b-radius bg-colour2 px-3 pb-3" id="divPaymentdetails">
+                            <div class="dvBookingDetails dvVcData border b-radius bg-colour2 px-3 pb-3" id="divPaymentdetails">
                             </div>
                         </div>
                         <div class="col-12 col-md-7 col-lg-8 mt-3 mt-md-0" id="divContactdetails">
@@ -61,7 +61,7 @@
                                 <p class="heading6">Guest Contact Details</p>
                                 <div class="row mt-3">
                                     <div class="col-12 col-md-12 col-lg-4 mb-3">
-                                        <label class="label">Title<span class="text-danger">*</span></label>
+                                        <label class="label"><span>Title</span><span class="text-danger">*</span></label>
                                         <div class="dvInput input-group">
                                             <select class="select selectBtn selectDropdown form-control" id="sltitle">
                                                 <option selected="selected" value="">Select Title</option>
@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12 col-lg-4 mb-3">
-                                        <label class="label">First Name<span class="text-danger">*</span></label>
+                                        <label class="label"><span>First Name</span><span class="text-danger">*</span></label>
                                         <div class="dvInputGroup input-group">
                                             <input
                                                 type="text"
@@ -90,7 +90,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12 col-lg-4 mb-3">
-                                        <label class="label">Last Name<span class="text-danger">*</span></label>
+                                        <label class="label"><span>Last Name</span><span class="text-danger">*</span></label>
                                         <div class="dvInputGroup input-group">
                                             <input
                                                 type="text"
@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="row mt-1">
                                     <div class="col-12 col-md-12 col-lg-4 mb-3">
-                                        <label class="label">Email<span class="text-danger">*</span></label>
+                                        <label class="label"><span>Email</span><span class="text-danger">*</span></label>
                                         <div class="dvInputGroup input-group">
                                             <input
                                                 type="text"
@@ -130,7 +130,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12 col-lg-4 mb-3">
-                                        <label class="label">Contact Number<span class="text-danger">*</span></label>
+                                        <label class="label"><span>Contact Number</span><span class="text-danger">*</span></label>
                                         <div class="dvInputGroup input-group">
                                             <input
                                                 type="text"
@@ -152,7 +152,7 @@
 
 
                                     <div class="col-12 col-md-12 col-lg-4 mb-3">
-                                        <label class="label">Date of Birth<span class="text-danger">*</span></label>
+                                        <label class="label"><span>Date of Birth</span><span class="text-danger">*</span></label>
                                         <div class="dvTxtDOBAdult dvInputGroup input-group">
                                             <%--<asp:TextBox ID="" class="form-control icnDate" runat="server" AutoComplete="off" placeholder="Enter Date" ReadOnly="true"></asp:TextBox>--%>
                                             <input
@@ -178,7 +178,7 @@
                                         </asp:CustomValidator>--%>
                                     </div>
                                     <div class="col-12 col-md-12 col-lg-4" id="divNationality" runat="server">
-                                        <label class="label">Nationality<span class="text-danger">*</span></label>
+                                        <label class="label"><span>Nationality</span><span class="text-danger">*</span></label>
                                         <div class="dvInput input-group" id="divNationalityData" runat="server">
                                             <asp:DropDownList ID="drpNationality" class="form-control" runat="server">
                                             </asp:DropDownList>
@@ -193,12 +193,13 @@
                             </div>
 
                             <div class="mt-3">
-                                <div class="h7 col-12 border b-radius bg-colour2 text-colour7 p-3" id="divAdditionalInfo">
+                                <div class="dvVcData h7 col-12 border b-radius bg-colour2 text-colour7 p-3" >
+                                    <span id="divAdditionalInfo"></span>
                                 </div>
                             </div>
 
                             <div class="mt-3">
-                                <div class="col-12 border b-radius bg-colour2 p-3" id="divPickupInformation">
+                                <div class="col-12 dvVcData border b-radius bg-colour2 p-3" id="divPickupInformation">
                                 </div>
                             </div>
                             <div class="border-bottom"></div>
@@ -456,6 +457,7 @@
                     html += '</div>';
                     //html += '</div>';
                     $("#divPaymentdetails").empty().append(html);
+                    updateVcDataSections();
 
                     html = '';
                     $.each(data.ProductInfoResponse.producttypedetails.item_uuid, function (i) {
@@ -866,6 +868,7 @@
                         } else {
                             $("#divAdditionalInfo").show();
                             $("#divAdditionalInfo").empty().append(html);
+                            updateVcDataSections();
                         }
                         html = "";
                         if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != null
@@ -874,15 +877,16 @@
                             html += '<p class="heading6 pb-2">Pickup/Meeting Point Information</p>';
                             html += '<p class="heading-semibold text-colour7 h7">Extra Information:</p>';
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != '') {
-                                html += '<p class="heading-semibold text-colour7 h7">Time: <span class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime + '</span></p>';
+                                html += '<p class="heading-semibold text-colour7 h7"><span>Time: </span><span class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime + '</span></p>';
                             }
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress != '') {
-                                html += '<p class="heading-semibold text-colour7 h7">Address: <span class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress + '</span></p>';
+                                html += '<p class="heading-semibold text-colour7 h7"><span>Address: </span><span class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingAddress + '</span></p>';
                             }
                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation != '') {
-                                html += '<p class="heading-semibold text-colour7 h7">Location: <span class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation + '</span></p>';
+                                html += '<p class="heading-semibold text-colour7 h7"><span>Location: </span><span class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation + '</span></p>';
                             }
                             $("#divPickupInformation").empty().append(html);
+                            updateVcDataSections();
                         }
                         html = "";
                         if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.cancellationPolicySummary != null &&

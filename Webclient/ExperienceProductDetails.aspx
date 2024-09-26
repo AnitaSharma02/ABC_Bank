@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="border b-radius p-3 mb-3">
-                                <div id="dvProductTypeDetails"></div>
+                                <div class="dvVcData" id="dvProductTypeDetails"></div>
                             </div>
                         </div>
                     </div>
@@ -594,6 +594,7 @@
                         }
                     });
                     $("#dvProductTypeDetails").append(html);
+                    updateVcDataSections();
                 }
                 else {
                     $("#Errordiv").show();
@@ -822,6 +823,7 @@
                         }
                     });
                     $("#dvProductTypeDetails").empty().html(html);
+                    updateVcDataSections();
                 }
             }
         }
