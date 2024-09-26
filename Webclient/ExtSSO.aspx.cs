@@ -4,16 +4,16 @@ using Core.Platform.Member.Entites;
 using Core.Platform.MemberActivity.Constants;
 using Core.Platform.MemberActivity.Entities;
 using Core.Platform.ProgramMaster.Entities;
+using Core.Platform.Transactions.Entites;
 using Framework.EnterpriseLibrary.Adapters;
 using Newtonsoft.Json;
 using System;
-using System.Web;
-using System.Web.UI;
 using System.Configuration;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using Core.Platform.Transactions.Entites;
+using System.Web;
+using System.Web.UI;
 
 public partial class ExtSSO : Page
 {
@@ -25,8 +25,10 @@ public partial class ExtSSO : Page
             string lstrMessage = string.Empty;
             bool lblStatus = false;
             string strMD5password = string.Empty;
-            string strActivationPoints= ConfigurationManager.AppSettings["ActivationPoints"];
-            int strExpiryPoints =Convert.ToInt32(ConfigurationManager.AppSettings["ExpiryPoints"]);
+            string strActivationPoints = ConfigurationManager.AppSettings["ActivationPoints"];
+            int strActivationPointsExpiry = Convert.ToInt32(ConfigurationManager.AppSettings["ActivationPointsExpiry"]);
+            string strActivationPointsAwarding = ConfigurationManager.AppSettings["ActivationPointsAwarding"];
+
             try
             {
                 string lstrHostUrl = string.Empty;
@@ -53,21 +55,21 @@ public partial class ExtSSO : Page
                 ABCModel lobjModel = new ABCModel();
                 try
                 {
-                   if (!string.IsNullOrEmpty(lstrToken))
+                    if (!string.IsNullOrEmpty(lstrToken))
                     {
                         MemberLogin lobjMemberLogin = new MemberLogin();
                         lobjModel.LogActivity(string.Format("ExtSSO_oAuth; AccessToken Data:  {0}: DateTime {1}", lstrToken, DateTime.Now), ActivityType.Login);
                         ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
-                     
+
                         var lobjDynamic = JsonConvert.DeserializeObject<Root>(Convert.ToString(lobjMemberLogin.GetMemberProfile(lobjProgramDefinition.ProgramId.ToString(), (int)RelationType.LBMS, lstrToken)));
-                       
+
                         Results lobjResults = JsonConvert.DeserializeObject<Results>(lobjDynamic.results.ToString());
-                       
+
                         if (lobjResults.IsSucessful)
                         {
                             MemberDetails lobjMemberDetails = JsonConvert.DeserializeObject<MemberDetails>(lobjResults.ReturnObject.ToString());
                             MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS));
-     
+
                             if (lobjMemberDetails != null && !string.IsNullOrEmpty(lobjMemberDetails.FullName))
                             {
                                 LoggingAdapter.WriteLog("ExtSSO_oAuth - Member Validation: TRUE Member Status: " + lobjMemberRelation.Status.ToString());
@@ -112,6 +114,14 @@ public partial class ExtSSO : Page
                                     divErrorMsg.Style.Add("Display", "Block");
                                     lblMessage.Text = lstrMessage;
                                 }
+                                else if (lobjMemberRelation.Status == Status.Blocked)
+                                {
+                                    lstrMessage = "Your account is blocked. Please contact to admin.";
+                                    LoggingAdapter.WriteLog("ExtSSO_oAuth; " + lstrMessage);
+                                    lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
+                                    divErrorMsg.Style.Add("Display", "Block");
+                                    lblMessage.Text = lstrMessage;
+                                }
                                 else
                                 {
                                     SearchMember lobjSearchMember = new SearchMember();
@@ -127,41 +137,44 @@ public partial class ExtSSO : Page
                                         Session["MemberDetails"] = lobjMemberDetails;
                                         Session["FromSSOLogin"] = "1";
 
-                                        TransactionDetails transactionDetails = new TransactionDetails()
+                                        if (!string.IsNullOrEmpty(strActivationPointsAwarding) && strActivationPointsAwarding.ToUpper().ToString() == "YES")
                                         {
-                                            TransactionType = (TransactionType)1,
-                                            RelationReference = lobjMemberRelation.RelationReference,
-                                            Amounts = 0,
-                                            Points =Convert.ToInt32(strActivationPoints),
-                                            LoyaltyTxnType = (LoyaltyTxnType)2,
-                                            ProgramId = lobjProgramDefinition.ProgramId,
-                                            TransactionCurrency = "DEFAULT",
-                                            RelationType = RelationType.LBMS,
-                                            TransactionDate = DateTime.Now,
-                                            ProcessingDate = DateTime.Now,
-                                            ExpiryDate = DateTime.Now.AddMonths(strExpiryPoints),
-                                            ReconciledPoints = 0,
-                                            ReconciledType = 1,
-                                            Narration = "Bonus Points",
-                                            MerchantName = "",
-                                            ExternalReference = "",
-                                            AdditionalDetail = "",
-                                            AdditionalDetails1 = ""
-                                        };
-                                        TransactionDetailsBreakage transactionDetailsBreakage = new TransactionDetailsBreakage()
-                                        {
-                                            IsBillable = true,
-                                            SourceAmount = 0,
-                                            SourceCurrency = "",
-                                            TxnCurrency = "",
-                                            TransactionSource = ""
-                                        };
-                                        transactionDetails.TransactionDetailBreakage = transactionDetailsBreakage;
-                                        bool response = lobjModel.InsertManualTransactionDetails(transactionDetails, lstrToken);
-                                        if (response == true)
-                                        {
-                                            Response.Redirect(LoginRedirectionUrl, false);
+                                            TransactionDetails transactionDetails = new TransactionDetails()
+                                            {
+                                                TransactionType = (TransactionType)1,
+                                                RelationReference = lobjMemberRelation.RelationReference,
+                                                Amounts = 0,
+                                                Points = Convert.ToInt32(strActivationPoints),
+                                                LoyaltyTxnType = (LoyaltyTxnType)2,
+                                                ProgramId = lobjProgramDefinition.ProgramId,
+                                                TransactionCurrency = "DEFAULT",
+                                                RelationType = RelationType.LBMS,
+                                                TransactionDate = DateTime.Now,
+                                                ProcessingDate = DateTime.Now,
+                                                ExpiryDate = DateTime.Now.AddMonths(strActivationPointsExpiry),
+                                                ReconciledPoints = 0,
+                                                ReconciledType = 1,
+                                                Narration = "Bonus Points",
+                                                MerchantName = "Activation Bonus Points",
+                                                ExternalReference = "",
+                                                AdditionalDetail = "",
+                                                AdditionalDetails1 = ""
+                                            };
+                                            TransactionDetailsBreakage transactionDetailsBreakage = new TransactionDetailsBreakage()
+                                            {
+                                                IsBillable = true,
+                                                SourceAmount = 0,
+                                                SourceCurrency = "",
+                                                TxnCurrency = "",
+                                                TransactionSource = ""
+                                            };
+                                            transactionDetails.TransactionDetailBreakage = transactionDetailsBreakage;
+                                            bool response = lobjModel.InsertManualTransactionDetails(transactionDetails, lstrToken);
+
+                                            LoggingAdapter.WriteLog("ExtSSO_oAuth - Activation Bonus Awarded : " + response);
                                         }
+
+                                        Response.Redirect(LoginRedirectionUrl, false);
                                     }
                                 }
                             }
