@@ -101,7 +101,7 @@ public partial class HotelBookingDetails : Page
                                     lblNoOfAdult.Text = Convert.ToString(TotalAdult) + " Adult(s)";
                                 else
                                     lblNoOfAdult.Text = Convert.ToString(TotalAdult) + " Adult(s)<br/>" + Convert.ToString(TotalChild) + " Child(ren)";
-                                lobjModel.LogActivity(string.Format("HotelBookingDetails page load; HotelName-:{0}; TotalCharge-:{1} NPR;", lobjHotel.basicinfo.hotelname, lobjHotel.roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
+                                lobjModel.LogActivity(string.Format("HotelBookingDetails page load; HotelName-:{0}; TotalCharge-:{1} MUR;", lobjHotel.basicinfo.hotelname, lobjHotel.roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
                             }
                         }
                         else
@@ -270,7 +270,7 @@ public partial class HotelBookingDetails : Page
                         Response.Redirect("PointGateway.aspx?flag=Hotel", false);
                     }
 
-                    lobjModel.LogActivity(string.Format("HotelBookingDetails page load; HotelName-:{0}; TotalCharge-:{1} NPR;", lobjHotel.basicinfo.hotelname, lobjHotel.roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
+                    lobjModel.LogActivity(string.Format("HotelBookingDetails page load; HotelName-:{0}; TotalCharge-:{1} MUR;", lobjHotel.basicinfo.hotelname, lobjHotel.roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
                 }
                 else
                 {

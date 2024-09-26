@@ -115,7 +115,7 @@
                         $("#spanProductAmount").empty().html("Points " + msg.d[0]);//ProductAmount
                         $("#spanredeemPoint").empty().html("Points " + msg.d[1]);//Selectedpoints
                         // $("#CP_hndSelectedAbsherpoints").val(msg.d[2]);//hndSelectedAbsherpoints
-                        $("#spanredeemAmount").empty().html("NPR " + msg.d[3]);//RemainingAmount
+                        $("#spanredeemAmount").empty().html("MUR " + msg.d[3]);//RemainingAmount
 
                     }
                     $("#updProgress").hide();

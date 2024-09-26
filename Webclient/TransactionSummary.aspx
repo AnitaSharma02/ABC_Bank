@@ -287,14 +287,14 @@
                                                         <span class="h6 heading-bold text-colour7"><%#Eval("Points")%></span>
                                                     </h2>
                                                     <h2 class="h6 heading-regular text-capitalize">Amount Paid
-                                                        <span class="heading-bold text-colour1">NPR </span><span class="h6 heading-bold text-colour7"><%#Eval("TransactionDetailBreakage.SourceAmount ")%></span>
+                                                        <span class="heading-bold text-colour1">MUR </span><span class="h6 heading-bold text-colour7"><%#Eval("TransactionDetailBreakage.SourceAmount ")%></span>
                                                     </h2>
                                                     <h2 class="h6 heading-bold text-success"><%#Eval("TransactionType").ToString() =="Debit" ?"Redeemed":"Spend"%></h2>
                                                 </div>
                                                 <div
                                                     class="col-12 col-sm-6 text-sm-right d-sm-flex align-items-sm-end justify-content-sm-center flex-sm-column">
                                                     <h2 class="h6 heading-bold d-flex align-items-center">
-                                                        <span class="heading-bold text-colour1">NPR</span> <span class="heading-bold text-colour7 pl-1"><%#Eval("Amounts")%></span>
+                                                        <span class="heading-bold text-colour1">MUR</span> <span class="heading-bold text-colour7 pl-1"><%#Eval("Amounts")%></span>
                                                     </h2>
                                                     <h2 class="h7 heading-regular text-capitalize"><%#Eval("ProcessingDate", "{0:dd MMM yyyy}")%></h2>
                                                     <h2 class="h7 heading-regular text-capitalize"><%#Eval("TransactionDate", "{0:dd MMM yyyy}")%></h2>

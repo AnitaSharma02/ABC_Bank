@@ -1241,7 +1241,7 @@ public partial class PointGateway : System.Web.UI.Page
     //                                    dynamicCls.CustomerName = lobjUserdetails.results.CustomerName;
     //                                    dynamicCls.PolicyNo = HttpContext.Current.Session["InsurancePolicyNo"].ToString();
     //                                    dynamicCls.ReferenceId = lobjPaymentResponse.results.ReferenceId;
-    //                                    //dynamicCls.CreditsConsumed = lobjModel.FloatToThousandSeperated(float.Parse(lobjUserdetails.results.Amount.ToString())) + " NPR";
+    //                                    //dynamicCls.CreditsConsumed = lobjModel.FloatToThousandSeperated(float.Parse(lobjUserdetails.results.Amount.ToString())) + " MUR";
     //                                    dynamicCls.Points = lobjModel.FloatToThousandSeperated(lintTotalPrice) + " Points";
     //                                    dynamicCls.TransactionDate = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt");
     //                                    dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
