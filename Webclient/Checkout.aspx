@@ -353,7 +353,7 @@
                                     </div>
                                 </form>
                                 <div id="ChangePasswordValidation" class="h7 heading-semibold text-colour1 py-2"></div>
-                                <div id="CP_ErrorMsgContainer">
+                                <div class="dvErrors" id="CP_ErrorMsgContainer">
                                     <asp:Label runat="server" ID="lblSuccessOrFailure" />
                                 </div>
                             </div>

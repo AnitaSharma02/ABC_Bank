@@ -68,7 +68,7 @@
                             <div class="col-12 mb-3">
                                 <h5 class="h6 heading-regular text-colour7" id="InfoHeader">All fields are mandatory.</h5>
                             </div>
-                            <div id="ErrorMsgContainer" class="col-12" runat="server">
+                            <div id="ErrorMsgContainer" class="dvErrors col-12" runat="server">
                                 <asp:Label runat="server" ID="lblMessagesDetails" CssClass="h6 heading-semibold text-colour1" Text=""></asp:Label>
                             </div>
                             <div class="col-12">

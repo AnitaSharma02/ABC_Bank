@@ -45,7 +45,7 @@
                          <div class="col-12 mb-2">
                              <h2 class="h5 heading-semibold text-colour7 mb-1">Forgot Password</h2>
                          </div>
-                         <div id="ErrorMsgContainer" class="col-12" runat="server">
+                         <div id="ErrorMsgContainer" class="dvErrors col-12" runat="server">
                             <asp:Label runat="server" ID="lblMessagesDetails" CssClass="h6 heading-semibold text-colour1" Text=""></asp:Label>
                         </div>
                          <div id="divForgotOTP" class="col-12 mb-3">

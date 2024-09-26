@@ -58,7 +58,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="ErrorMsgContainer" class="col-12" runat="server">
+                            <div id="ErrorMsgContainer" class="dvErrors col-12" runat="server">
                                 <div id="validationResult"></div>
                             </div>
 

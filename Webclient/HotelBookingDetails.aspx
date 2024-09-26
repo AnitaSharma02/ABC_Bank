@@ -24,7 +24,7 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-12">
-                    <div id="divError" class="ErrorMsgContainer" runat="server">
+                    <div id="divError" class="dvErrors ErrorMsgContainer" runat="server">
                         <asp:Label ID="lblError" CssClass="errorMsg" runat="server"></asp:Label>
                     </div>
                 </div>
@@ -263,7 +263,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 mb-2">
-                                        <div id="ErrorMsgContainer" class="h8 heading-regular text-danger" runat="server">
+                                        <div id="ErrorMsgContainer" class="dvErrors h8 heading-regular text-danger" runat="server">
                                             <div id="LoginValidation"></div>
                                         </div>
                                     </div>

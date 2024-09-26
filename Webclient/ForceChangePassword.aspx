@@ -173,7 +173,7 @@
                     <div class="card-body">
                         <div class="tab-content mt-3">
                             <div class="tab-pane active" id="logintab" role="tabpanel" aria-labelledby="logintab">
-                                <div id="ErrorMsgContainer" class=" ErrorMsgContainer mtop_10" runat="server">
+                                <div id="ErrorMsgContainer" class="dvErrors ErrorMsgContainer mtop_10" runat="server">
                                     <asp:Label runat="server" ID="lblLoginError" Text="" ForeColor="Red"></asp:Label>
                                     <div id="ForceChangeValidation" style="text-align: center;"></div>
                                 </div>

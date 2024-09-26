@@ -1276,38 +1276,38 @@ function MakePayment() {
     else {
         if (AcceptAlphasonly($("#CP_txtFirstName").val().trim())) {
             msg += "FirstName Accept Alphabets Only.<br/>";
-            $("#errorFirtsname").html("Firstname Accept Alphabets Only.");
+            $("#errorFirtsname").html("<span>Firstname Accept Alphabets Only.</span>");
         }
     }
     if ($("#CP_txtSurName").val().length == 0) {
-        $("#errorSurName").html("Please enter Surname.");
+        $("#errorSurName").html("<span>Please enter Surname.</span>");
         msg += "Please enter SurName. <br/>";
     }
     else {
         if (AcceptAlphasonly($("#CP_txtSurName").val().trim())) {
-            $("#errorSurName").html("Surname Accept Alphabets Only.");
+            $("#errorSurName").html("<span>Surname Accept Alphabets Only.</span>");
             msg += "SurName Accept Alphabets Only.<br/>";
         }
     }
     if ($('#CP_txtEmailId').val() == '') {
-        $("#errorEmailId").html("Please enter Email.");
+        $("#errorEmailId").html("<span>Please enter Email.</span>");
         msg += "Please enter Email. <br/>";
     }
     else {
 
         if (!isValidEmailAddress($('#CP_txtEmailId').val().trim())) {
-            $("#errorEmailId").html("Please enter Valid Email-ID.");
+            $("#errorEmailId").html("<span>Please enter Valid Email-ID.</span>");
             msg += "Please enter Valid Email-ID.<br/>";
         }
     }
     if ($("#CP_txtMobileNo").val().length == 0) {
-        $("#errorMobileNo").html("Please enter Mobile no.");
+        $("#errorMobileNo").html("<span>Please enter Mobile no.</span>");
         msg += "Please enter Mobile no. <br/>";
     }
     else {
         if (!AcceptNumbersonly($("#CP_txtMobileNo").val().trim())) {
             {
-                $("#errorMobileNo").html("Mobile no Accept numbers Only.");
+                $("#errorMobileNo").html("<span>Mobile no Accept numbers Only.</span>");
                 msg += "Mobile no Accept numbers Only.<br/>";
             }
         }
@@ -1317,7 +1317,7 @@ function MakePayment() {
     var $Checkbox = $('#chkTnC');
     if ($Checkbox.is(':checked') === false) {
 
-        $("#errorTnC").html("Please Accept Terms & Condition.");
+        $("#errorTnC").html("<span>Please Accept Terms & Condition.</span>");
         msg += "Please Accept Terms & Condition.<br/>";
     }
 

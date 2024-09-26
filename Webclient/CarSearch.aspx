@@ -15,7 +15,7 @@
                 <div class="bg-colour2 p-3">
                     <div class="row">
                         <div class="col-12">
-                            <div id="CarValidationError" runat="server" class="p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
+                            <div id="CarValidationError" runat="server" class="dvErrors p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
                         </div>
                         <div class="col-12 col-lg-10">
                             <div class="form-row">

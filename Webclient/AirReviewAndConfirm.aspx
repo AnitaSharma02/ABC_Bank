@@ -83,7 +83,7 @@
                             <div class="">
                                 <!--StepsPage-->
                                 <div class="container-xl">
-                                    <div id="divError" runat="server" class="ErrorMsgContainer text-capitalise">
+                                    <div id="divError" runat="server" class="dvErrors ErrorMsgContainer text-capitalise">
                                         <asp:Label ID="lblError" CssClass="red-text" runat="server"></asp:Label>
                                     </div>
                                     <uc:ItineraryDetails ID="ucItinarary" runat="server" />

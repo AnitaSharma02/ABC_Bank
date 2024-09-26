@@ -55,7 +55,7 @@
     <div class="dvFlightPassengerForDomestic">
         <div class="container-xl">
             <div class="row">
-                <div class="ErrorMsgContainer" id="errorDiv" runat="server"></div>
+                <div class="dvErrors ErrorMsgContainer" id="errorDiv" runat="server"></div>
                 <div class="col-lg-7 col-md-12">
                     <div class="row">
                         <div class="col-12">

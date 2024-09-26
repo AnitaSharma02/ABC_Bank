@@ -63,7 +63,7 @@
                             <div class="">
                                 <!--StepsPage-->
                                 <div class="container-xl">
-                                    <div id="divError" runat="server" class="ErrorMsgContainer text-capitalise text-danger">
+                                    <div id="divError" runat="server" class="dvErrors ErrorMsgContainer text-capitalise text-danger">
                                         <asp:Label ID="lblError" CssClass="red-text" runat="server" class="text-danger"></asp:Label>
                                     </div>
                                     <uc:UCCTItinerayDetails_Domestic runat="server" ID="UCCTItinerayDetails_Domestic" />
@@ -92,7 +92,7 @@
                                         </div>
                                     </div>
                                     <br />
-                                    <div class="ErrorMsgContainer text-danger" CssClass="red-text" id="errorDiv">
+                                    <div class="dvErrors ErrorMsgContainer text-danger" CssClass="red-text" id="errorDiv">
                                     </div>
                                     <br />
                                     <div class="d-flex flex-row justify-content-end mb-2 text-right px-3">

@@ -42,7 +42,7 @@
             <br />
             <div>
                 <br />
-                <div id="ErrorMsgContainer" class=" ErrorMsgContainer mtop_10 Width50" runat="server">
+                <div id="ErrorMsgContainer" class="dvErrors ErrorMsgContainer mtop_10 Width50" runat="server">
                     <asp:Label Style="float: left;" runat="server" ID="lblMessagesDetails"
                         Text=""></asp:Label>
                 </div>

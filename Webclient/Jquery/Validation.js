@@ -159,13 +159,13 @@ function LoginValidation() {
     $("#LoginValidation")[0].innerHTML = "";
     $("#CP_lblLoginError").html('');
     if ($("#slcCountry option:selected").val() == '') {
-        msg += $.i18n("text-please-enter-country") + "<br/>";
+        msg += "<span>Please enter Country.</span>" + "<br/>";
     }
     if ($("#CP_txtMemberName").val().length == 0) {
-        msg += "Please Enter Email ID" + "<br/>";
+        msg += "<span>Please Enter Email ID</span>" + "<br/>";
     }
     if ($("#CP_txtPassword").val().length == 0) {
-        msg += "Please Enter Password" + "<br/>";
+        msg += "<span>Please Enter Password</span>" + "<br/>";
     }
     if (msg.length > 0) {
         $("#LoginValidation").css('color', 'red');
@@ -194,7 +194,7 @@ function LoginValidation() {
                     var Status = Statustxt.split(":");
                     var Statustext = Status[1];
                     var newData = data.d;
-                    if (Statustext == "Blocked") { AuthFail = "Please check the login details you have entered and try again."; }
+                    if (Statustext == "Blocked") { AuthFail = "<span>Please check the login details you have entered and try again.</span>"; }
                     else {
                         AuthFail = "Account Block";
                     }
@@ -202,36 +202,36 @@ function LoginValidation() {
                         if (data.d == "AccountLock") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
-                            $("#CP_lblLoginError").html('Your Account is Locked.Please <a class="ErrorMessageLink" onclick="showOTPDiv();">click here</a> to unlock the same.');
+                            $("#CP_lblLoginError").html('<span>Your Account is Locked.Please </span><a class="ErrorMessageLink" onclick="showOTPDiv();">click here</a><span> to unlock the same.</span>');
                         }
                         else if (data.d == "AuthenticationFailed") {
                             $("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
-                            $("#CP_lblLoginError").html('Please check the login details you have entered and try again.');
+                            $("#CP_lblLoginError").html('<span>Please check the login details you have entered and try again.</span>');
                         }
                         else if (data.d == "Suspended") {
                             $("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
-                            $("#CP_lblLoginError").html('Your Account is Suspended');
+                            $("#CP_lblLoginError").html('<span>Your Account is Suspended</span>');
                         }
                         else if (data.d == "Cancelled") {
                             $("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
-                            $("#CP_lblLoginError").html('Your Account is Cancelled');
+                            $("#CP_lblLoginError").html('<span>Your Account is Cancelled</span>');
                         }
                         else if (data.d == "InActive") {
                             $("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
-                            $("#CP_lblLoginError").html('Your Account is InActive. Please use activate tab to activate your account.');
+                            $("#CP_lblLoginError").html('<span>Your Account is InActive. Please use activate tab to activate your account.</span>');
                         }
                         else if (data.d == "IncorrectFormat") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
-                            $("#CP_lblLoginError").html('Password must contain one non-alpha character,one upper case character,one lower case character and minimum 8 characters in length.');
+                            $("#CP_lblLoginError").html('<span>Password must contain one non-alpha character,one upper case character,one lower case character and minimum 8 characters in length.</span>');
                         }
                         else {
                             showLoginOTPDiv();
@@ -245,7 +245,7 @@ function LoginValidation() {
                     else {
                         $("#LoginValidation")[0].innerHTML = "";
                         $("#CP_ErrorMsgContainer").show();
-                        $("#CP_lblLoginError").html('Please check the login details you have entered and try again.');
+                        $("#CP_lblLoginError").html('<span>Please check the login details you have entered and try again.</span>');
                     }
                 }
                 catch (e) {
@@ -300,43 +300,43 @@ function ForgotPassword() {
                     if (data.d == "Success") {
                         $("#PasswordValidation").html();
                         $("#CP_ErrorMsgContainer").show();
-                        $("#ForgotPasswordValidation")[0].innerHTML = 'Your new Password reset link has been sent to your registered email id.';
+                        $("#ForgotPasswordValidation")[0].innerHTML = '<span>Your new Password reset link has been sent to your registered email id.</span>';
                         $("#ForgetPasswordDiv").hide();
                         $("#ForgetButtonDiv").hide();
                     }
                     else if (data.d == "Blocked") {
                         $("#PasswordValidation").html();
                         $("#CP_ErrorMsgContainer").show();
-                        $("#ForgotPasswordValidation")[0].innerHTML = 'Your Account is Blocked. Please contact BOK.';
+                        $("#ForgotPasswordValidation")[0].innerHTML = '<span>Your Account is Blocked. Please contact BOK. </span>'
 
                     }
                     else if (data.d == "InActive") {
                         $("#PasswordValidation").html();
                         $("#CP_ErrorMsgContainer").show();
-                        $("#ForgotPasswordValidation")[0].innerHTML = 'Your Account is InActive. Please Activate Your Account.';
+                        $("#ForgotPasswordValidation")[0].innerHTML = '<span>Your Account is InActive. Please Activate Your Account.</span>';
 
                     }
                     else if (data.d == "Suspended") {
                         $("#PasswordValidation").html();
                         $("#CP_ErrorMsgContainer").show();
-                        $("#ForgotPasswordValidation")[0].innerHTML = 'Your Account is Suspended. Please contact BOK.';
+                        $("#ForgotPasswordValidation")[0].innerHTML = '</span>Your Account is Suspended. Please contact BOK.</span>';
                     }
                     else if (data.d == "Cancelled") {
                         $("#PasswordValidation").html();
                         $("#CP_ErrorMsgContainer").show();
-                        $("#ForgotPasswordValidation")[0].innerHTML = 'Your Account is Cancelled. Please contact BOK.';
+                        $("#ForgotPasswordValidation")[0].innerHTML = '<span>Your Account is Cancelled. Please contact BOK.</span>';
 
                     }
                     else if (data.d == "NoRecord") {
                         $("#PasswordValidation").html();
                         $("#CP_ErrorMsgContainer").show();
-                        $("#ForgotPasswordValidation")[0].innerHTML = 'No Record Found. Please contact BOK.';
+                        $("#ForgotPasswordValidation")[0].innerHTML = '</span>No Record Found. Please contact BOK.</span>';
 
                     }
                     else if (data.d == "Failure") {
                         $("#PasswordValidation").html();
                         $("#CP_ErrorMsgContainer").show();
-                        $("#ForgotPasswordValidation")[0].innerHTML = 'Please try again.';
+                        $("#ForgotPasswordValidation")[0].innerHTML = '</span>Please try again.</span>';
                     }
                 }
                 catch (e) {
@@ -365,35 +365,35 @@ function ChangePassword() {
     $('#CP_ErrorMsgContainer').hide();
     $("#ChangePasswordValidation")[0].innerHTML = "";
     if ($('#txtOldPassword').val() == "") {
-        msg += "Please provide a valid Current password." + "<br/>";
+        msg += "<span>Please provide a valid Current password.</span>" + "<br/>";
     }
     if ($('#txtOldPassword ').val() != "") {
         if (($('#txtOldPassword').val().length < 8) && ($('#txtOldPassword').val().length > 1)) {
-            msg += "Current password field has to be minimum eight characters." + "<br/>";
+            msg += "<span>Current password field has to be minimum eight characters.</span>" + "<br/>";
         }
         if (($('#txtOldPassword').val() == $('#txtPassword').val()) && ($('#txtOldPassword').val().length > 1)) {
-            msg += "New Password should not be same as Current password." + "<br/>";
+            msg += "<span>New Password should not be same as Current password.</span>" + "<br/>";
         }
     }
     if ($('#txtNewPassword').val() != $('#txtPassword').val()) {
-        msg += "New Password and confirm password should be same." + "<br/>";
+        msg += "<span>New Password and confirm password should be same.</span>" + "<br/>";
     }
     if ($('#txtPassword').val() == "") {
-        msg += "Please enter your new password." + "<br/>";
+        msg += "<span>Please enter your new password.</span>" + "<br/>";
     }
     if (($('#txtPassword').val().length < 8) && ($('#txtPassword').val().length > 1)) {
-        msg += "New password field has to be minimum eight characters." + "<br/>";
+        msg += "<span>New password field has to be minimum eight characters.</span>" + "<br/>";
     }
 
     if ($('#txtNewPassword').val() == "") {
-        msg += "Please confirm your new password." + "<br/>";
+        msg += "<span>Please confirm your new password.</span>" + "<br/>";
     }
 
     if (($('#txtNewPassword').val().length < 8) && ($('#txtNewPassword').val().length > 1)) {
-        msg += "Confirm password field has to be minimum eight characters." + "<br/>";
+        msg += "<span>Confirm password field has to be minimum eight characters.</span>" + "<br/>";
     }
     if (!CheckPasswordPolicy($('#txtPassword').val())) {
-        msg += "Password must contain one numeric digit,one upper case character,one lower case character,one special character (!@#$%*()?)and minimum 8 characters in length." + "<br/>";
+        msg += "<span>Password must contain one numeric digit,one upper case character,one lower case character,one special character (!@#$%*()?)and minimum 8 characters in length.</span>" + "<br/>";
     }
     if (msg.length > 0) {
         $("#ChangePasswordValidation")[0].innerHTML = msg;
@@ -419,15 +419,15 @@ function ChangePassword() {
                         $("#txtOldPassword").val('');
                         $("#txtPassword").val('');
                         $("#txtNewPassword").val('');
-                        $("#ChangePasswordValidation").html('Your password has been changed.');
+                        $("#ChangePasswordValidation").html('<span>Your password has been changed.</span>');
                     }
                     else if (data.d == "Failure") {
-                        $("#ChangePasswordValidation").html('Password Changed Failure.');
+                        $("#ChangePasswordValidation").html('<span>Password Changed Failure.</span>');
                     }
                     else if (data.d == "IncorrectFormat") {
-                        $("#ChangePasswordValidation").html('Password must contain one non-alpha character,one upper case character,one lower case character and minimum 8 characters in length.');
+                        $("#ChangePasswordValidation").html('<span>Password must contain one non-alpha character,one upper case character,one lower case character and minimum 8 characters in length.</span>');
                     } else {
-                        $("#ChangePasswordValidation").html('Please enter correct password.');
+                        $("#ChangePasswordValidation").html('<span>Please enter correct password.</span>');
                     }
 
                 }
@@ -532,29 +532,29 @@ function ValidateLoginOTP() {
                         if (data.d == "InvalidOTP") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
-                            $("#CP_lblLoginError").html('Invalid OTP.');
+                            $("#CP_lblLoginError").html('<span>Invalid OTP.</span>');
                         }
                         else if (data.d == "Invalid Credentials") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
-                            $("#CP_lblLoginError").html('Invalid Credentials.');
+                            $("#CP_lblLoginError").html('<span>Invalid Credentials.</span>');
                         }
                         else if (data.d == "InvalidToken") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
-                            $("#CP_lblLoginError").html('Please check the Authentication Token.');
+                            $("#CP_lblLoginError").html('<span>Please check the Authentication Token.</span>');
                         }
                         else if (data.d == "InvalidExtLogin") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
-                            $("#CP_lblLoginError").html('Invalid External Login Credentials.');
+                            $("#CP_lblLoginError").html('<span>Invalid External Login Credentials.</span>');
                         } else if (data.d == "AccountLock") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
                             $("#divOTP").hide();
 
                             //  $("#CP_lblLoginError").html('Your Account is Locked.Please <a class="ErrorMessageLink" onclick="showOTPDivNew();">click here</a> to unlock the same.');
-                            $("#CP_lblLoginError").html('Your Account is Locked.Please kindly contact Infinity Rewards customer care to unlock the same.');
+                            $("#CP_lblLoginError").html('<span>Your Account is Locked.Please kindly contact Infinity Rewards customer care to unlock the same.</span>');
 
 
                         }
@@ -566,7 +566,7 @@ function ValidateLoginOTP() {
                     else {
                         $("#LoginValidation")[0].innerHTML = "";
                         $("#CP_ErrorMsgContainer").show();
-                        $("#CP_lblLoginError").html('Please check the details you have entered and try again.');
+                        $("#CP_lblLoginError").html('<span>Please check the details you have entered and try again.</span>');
                     }
                 }
                 catch (e) {
@@ -603,28 +603,28 @@ function LoginMsgCodeBehind(data) {
             $("#CP_txtMemberID").val(MemberId);
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Invalid OTP.');
+            $("#CP_lblLoginError").html('<span>Invalid OTP.</span>');
         }
         else if (data == "AccountLock") {
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#divOTP").hide();
-            $("#CP_lblLoginError").html('Your Account is Locked.Please kindly contact Infinity Rewards customer care to unlock the same.');
+            $("#CP_lblLoginError").html('<span>Your Account is Locked.Please kindly contact Infinity Rewards customer care to unlock the same.</span>');
         }
         else if (data.d == "SomethingWentWrong") {
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Something Went Wrong please try again.');
+            $("#CP_lblLoginError").html('<span>Something Went Wrong please try again.</span>');
         }
         else if (data.d == "InvalidToken") {
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Please check the Authentication Token.');
+            $("#CP_lblLoginError").html('<span>Please check the Authentication Token.</span>');
         }
         else if (data.d == "InvalidExtLogin") {
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Invalid External Login Credentials.');
+            $("#CP_lblLoginError").html('<span>Invalid External Login Credentials.</span>');
         }
         else if (data != "") {
             $("#LoginValidation")[0].innerHTML = "";
@@ -637,7 +637,7 @@ function LoginMsgCodeBehind(data) {
 
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Please check the details you have entered and try again.');
+            $("#CP_lblLoginError").html('<span>Please check the details you have entered and try again.</span>');
         }
     }
     else {
@@ -646,7 +646,7 @@ function LoginMsgCodeBehind(data) {
         $("#CP_txtMemberID").val(MemberId);
         $("#LoginValidation")[0].innerHTML = "";
         $("#CP_ErrorMsgContainer").show();
-        $("#CP_lblLoginError").html('Please check the details you have entered and try again.');
+        $("#CP_lblLoginError").html('<span>Please check the details you have entered and try again.</span>');
     }
 }
 
@@ -672,7 +672,7 @@ function UnLockMemberByOTP() {
         msg += $.i18n("text-please-enter-rim") + "<br/>";
     }
     if ($('#CP_txtUnblockOTP').val() == '') {
-        msg += " Please enter OTP <br/>";
+        msg += "<span>Please enter OTP</span><br/>";
     }
 
     if (msg.length > 0) {
@@ -1128,7 +1128,7 @@ function ExtLoginValidation() {
         msg += $.i18n("text-please-enter-rim") + "<br/>";
     }
     if ($("#txtPassword").val().length == 0) {
-        msg += " Please enter Password <br/>";
+        msg += "<span>Please enter Password</span><br/>";
     }
 
     //if (($('#txtPassword').val().length < 8) && ($('#txtPassword').val().length > 1)) {
@@ -1162,36 +1162,36 @@ function ExtLoginValidation() {
                         if (data.d == "AccountLock") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
-                            $("#lblLoginError").html('Your Account is Locked.Please <a class="ErrorMessageLink" onclick="showOTPDiv();">click here</a> to unlock the same.');
+                            $("#lblLoginError").html('<span>Your Account is Locked.Please </span><a class="ErrorMessageLink" onclick="showOTPDiv();">click here</a><span> to unlock the same.</span>');
                         }
                         else if (data.d == "AuthenticationFailed") {
                             $("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
-                            $("#lblLoginError").html('Please check the login details you have entered and try again.');
+                            $("#lblLoginError").html('<span>Please check the login details you have entered and try again.</span>');
                         }
                         else if (data.d == "Suspended") {
                             $("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
-                            $("#lblLoginError").html('Your Account is Suspended');
+                            $("#lblLoginError").html('<span>Your Account is Suspended</span>');
                         }
                         else if (data.d == "Cancelled") {
                             $("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
-                            $("#lblLoginError").html('Your Account is Cancelled');
+                            $("#lblLoginError").html('<span>Your Account is Cancelled</span>');
                         }
                         else if (data.d == "InActive") {
                             $("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
-                            $("#lblLoginError").html('Your Account is InActive. Please use activate tab to activate your account.');
+                            $("#lblLoginError").html('<span>Your Account is InActive. Please use activate tab to activate your account.</span>');
                         }
                         else if (data.d == "IncorrectFormat") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
-                            $("#lblLoginError").html('Password must contain one non-alpha character,one upper case character,one lower case character and minimum 8 characters in length.');
+                            $("#lblLoginError").html('<span>Password must contain one non-alpha character,one upper case character,one lower case character and minimum 8 characters in length.</span>');
                         }
                         else {
                             showLoginOTPDiv();
@@ -1203,7 +1203,7 @@ function ExtLoginValidation() {
                     else {
                         $("#LoginValidation")[0].innerHTML = "";
                         $("#ErrorMsgContainer").show();
-                        $("#lblLoginError").html('Please check the login details you have entered and try again.');
+                        $("#lblLoginError").html('<span>Please check the login details you have entered and try again.</span>');
                     }
                 }
                 catch (e) {
@@ -1250,22 +1250,22 @@ function ExtValidateLoginOTP() {
                         if (data.d == "InvalidOTP") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
-                            $("#lblLoginError").html('Invalid OTP.');
+                            $("#lblLoginError").html('<span>Invalid OTP.</span>');
                         }
                         else if (data.d == "Invalid Credentials") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
-                            $("#lblLoginError").html('Invalid Credentials.');
+                            $("#lblLoginError").html('<span>Invalid Credentials.</span>');
                         }
                         else if (data.d == "InvalidToken") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
-                            $("#lblLoginError").html('Please check the Authentication Token.');
+                            $("#lblLoginError").html('<span>Please check the Authentication Token.</span>');
                         }
                         else if (data.d == "InvalidExtLogin") {
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
-                            $("#lblLoginError").html('Invalid External Login Credentials.');
+                            $("#lblLoginError").html('<span>Invalid External Login Credentials.</span>');
                         }
                         else {
                             $("#LoginValidation")[0].innerHTML = "";
@@ -1275,7 +1275,7 @@ function ExtValidateLoginOTP() {
                     else {
                         $("#LoginValidation")[0].innerHTML = "";
                         $("#ErrorMsgContainer").show();
-                        $("#lblLoginError").html('Please check the details you have entered and try again.');
+                        $("#lblLoginError").html('<span>Please check the details you have entered and try again.</span>');
                     }
                 }
                 catch (e) {
@@ -1308,7 +1308,7 @@ function ExtUnLockMemberByOTP() {
         msg += $.i18n("text-please-enter-rim") + "<br/>";
     }
     if ($('#txtUnblockOTP').val() == '') {
-        msg += " Please enter OTP <br/>";
+        msg += "<span>Please enter OTP</span><br/>";
     }
 
     if (msg.length > 0) {
@@ -1405,10 +1405,10 @@ function SendForgotPasswordOTP() {
     $('#CP_ErrorMsgContainer').hide();
     $("#CP_lblMessagesDetails")[0].innerHTML = "";
     if ($('#CP_txtMemberId').val() == '') {
-        msg += " Please enter Member ID.<br/>";
+        msg += "<span>Please enter Member ID.</span><br/>";
     } else {
         if (!AcceptAlphanumericOnly($('#CP_txtMemberId').val())) {
-            msg += " Please enter valid Member ID.<br/>";
+            msg += "<span>Please enter valid Member ID.</span><br/>";
         }
     }
     if (msg.length > 0) {
@@ -1434,19 +1434,19 @@ function SendForgotPasswordOTP() {
                             $("#divMsg").show();
                         }
                         else if (newData == "Invalid_Member") {
-                            $("#CP_lblMessagesDetails")[0].innerHTML = "Your account has not been activated. please <a class='ErrorMessageLink text-underline' href='Activation.aspx'>activate</a> to continue.";
+                            $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Your account has not been activated. please </span><a class='ErrorMessageLink text-underline' href='Activation.aspx'>activate</a><span> to continue.</span>";
                             $("#CP_ErrorMsgContainer").show();
                         }
                         else if (newData == "Failure") {
-                            $("#CP_lblMessagesDetails")[0].innerHTML = "We could not generate your OTP - please try again.";
+                            $("#CP_lblMessagesDetails")[0].innerHTML = "<span>We could not generate your OTP - please try again.</span>";
                             $("#CP_ErrorMsgContainer").show();
                         }
                         else if (newData == "Not_Activated") {
-                            $("#CP_lblMessagesDetails")[0].innerHTML = "Your account has not been activated. please <a class='ErrorMessageLink text-underline' href='Activation.aspx'>activate</a> to continue.";
+                            $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Your account has not been activated. please <a class='ErrorMessageLink text-underline' href='Activation.aspx'>activate</a> to continue.</span>";
                             $("#CP_ErrorMsgContainer").show();
                         }
                         else if (newData == "CaseSensitive_MemberId") {
-                            $("#CP_lblMessagesDetails")[0].innerHTML = "Member ID is case sensitive. Please check the Member ID you have entered and try again.";
+                            $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Member ID is case sensitive. Please check the Member ID you have entered and try again.</span>";
                             $("#CP_ErrorMsgContainer").show();
                         }
                         else {
@@ -1477,20 +1477,20 @@ function ValidateForgotPasswordOTP() {
     $("#CP_lblMessagesDetails")[0].innerHTML = "";
 
     if ($("#CP_txtOTP").val().length == 0) {
-        msg += "Please Enter OTP.<br/>";
+        msg += "<span>Please Enter OTP.</span><br/>";
     }
     if ($("#CP_txtPassword").val().length == 0) {
-        msg += "Please Enter Password.<br/>";
+        msg += "<span>Please Enter Password.</span><br/>";
     }
     if ($("#CP_txtConfirmPassword").val().length == 0) {
-        msg += "Please Enter Confirm Password.<br/>";
+        msg += "<span>Please Enter Confirm Password.</span><br/>";
     }
     if (($('#CP_txtPassword').val() != $('#CP_txtConfirmPassword').val()) && ($('#CP_txtPassword').val().length > 1)) {
-        msg += "The password and the confirmed password you enter must be the same." + "<br/>";
+        msg += "<span>The password and the confirmed password you enter must be the same.</span>" + "<br/>";
     }
 
     if (!CheckPasswordPolicy($('#CP_txtPassword').val())) {
-        msg += "Password must contain one numeric digit,one upper case character,one lower case character,one special character (!@#$%*()?) and minimum 8 characters in length." + "<br/>";
+        msg += "<span>Password must contain one numeric digit,one upper case character,one lower case character,one special character (!@#$%*()?) and minimum 8 characters in length.</span>" + "<br/>";
     }
 
     //var isvalid = IsValidationPd($('#CP_txtPassword').val());
@@ -1519,7 +1519,7 @@ function ValidateForgotPasswordOTP() {
                 try {
                     var newData = data.d;
                     if (data.d == "Success") {
-                        $("#CP_lblMessagesDetails")[0].innerHTML = 'Your password has been reset successfully. Please <a href="Login.aspx">login</a>';
+                        $("#CP_lblMessagesDetails")[0].innerHTML = '<span>Your password has been reset successfully. Please </span><a href="Login.aspx">login</a>';
                         $("#CP_ErrorMsgContainer").show();
                         $("#CP_txtOTP")[0].value = "";
                         $("#CP_txtPassword")[0].value = "";
@@ -1529,19 +1529,19 @@ function ValidateForgotPasswordOTP() {
                         $("#divMsg").hide();
                     }
                     else if (data.d == "Invalid_OTP") {
-                        $("#CP_lblMessagesDetails")[0].innerHTML = "Your OTP is invalid. Please enter a valid OTP.";
+                        $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Your OTP is invalid. Please enter a valid OTP.</span>";
                         $("#CP_ErrorMsgContainer").show();
                     }
                     else if (data.d == "Password_NotMatched") {
-                        $("#CP_lblMessagesDetails")[0].innerHTML = "Your passwords do not match - please enter the same password.";
+                        $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Your passwords do not match - please enter the same password.</span>";
                         $("#CP_ErrorMsgContainer").show();
                     }
                     else if (data.d == "PasswordPolicy_NotMatched") {
-                        $("#CP_lblMessagesDetails")[0].innerHTML = "Incorrect password. Please try again.";
+                        $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Incorrect password. Please try again.</span>";
                         $("#CP_ErrorMsgContainer").show();
                     }
                     else if (data.d == "Failure") {
-                        $("#CP_lblMessagesDetails")[0].innerHTML = "Failed to reset password.";
+                        $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Failed to reset password.</span>";
                         $("#CP_ErrorMsgContainer").show();
                     }
                     else {
@@ -1587,37 +1587,37 @@ function ActivationValidationCodeBehind() {
     $("#CP_lblMessagesDetails")[0].innerHTML = "";
     var msg = "";
     if ($('#CP_txtOTP').val() == '') {
-        msg += "Please enter received One Time Password (OTP).<br/>";
+        msg += "<span>Please enter received One Time Password (OTP).</span><br/>";
     }
     else if (!AcceptNumbersonly($('#CP_txtOTP').val())) {
-        msg += "Enter Valid One Time Password (OTP).<br/>";
+        msg += "<span>Enter Valid One Time Password (OTP).</span><br/>";
     }
     if ($('#CP_txtPassword').val() == '') {
-        msg += "Please enter New Password.<br/>";
+        msg += "<span>Please enter New Password.</span><br/>";
     }
     if (($('#CP_txtPassword').val().length < 8) && ($('#CP_txtPassword').val().length > 1)) {
-        msg += "New password field has to be minimum eight characters." + "<br/>";
+        msg += "<span>New password field has to be minimum eight characters.</span>" + "<br/>";
     }
     if ($('#CP_txtConfirmpassword').val() == '') {
-        msg += "Please enter confirm New Password.<br/>";
+        msg += "<span>Please enter confirm New Password.</span><br/>";
     }
     if (($('#CP_txtConfirmpassword').val().length < 8) && ($('#CP_txtConfirmpassword').val().length > 1)) {
-        msg += "Confirm new password field has to be minimum eight characters." + "<br/>";
+        msg += "<span>Confirm new password field has to be minimum eight characters.</span>" + "<br/>";
     }
     if (($('#CP_txtPassword').val() != $('#CP_txtConfirmpassword').val()) && ($('#CP_txtPassword').val().length > 1)) {
-        msg += "The new password and the confirmed new password must be same." + "<br/>";
+        msg += "<span>The new password and the confirmed new password must be same.</span>" + "<br/>";
     }
     if ($('#CP_txtSecurityCode').val() == '') {
-        msg += "Please enter Security Code.<br/>";
+        msg += "<span>Please enter Security Code.</span><br/>";
     }
     if (!CheckPasswordPolicy($('#CP_txtPassword').val())) {
-        msg += "Password must contain one numeric digit, one upper case character, one lower case character, one special character (!@#$%*()?) and minimum 8 characters in length." + "<br/>";
+        msg += "<span>Password must contain one numeric digit, one upper case character, one lower case character, one special character (!@#$%*()?) and minimum 8 characters in length.</span>" + "<br/>";
     }
     var Tnc = new Boolean();
     Tnc = $("#CP_chkTnC")[0].checked;
 
     if (Tnc == false) {
-        msg += "Please accept Terms and Conditions. <br/>";
+        msg += "<span>Please accept Terms and Conditions. </span><br/>";
     }
     if (msg.length > 0) {
         $("#CP_lblMessagesDetails")[0].innerHTML = msg;
@@ -1641,14 +1641,14 @@ function MemberActivationCodeBehind(data) {
             $("#CP_lblMessagesDetails")[0].innerHTML = "";
             if (newData == "Success") {
                 $("#CP_lblMessagesDetails").css("color", "#2915c4");
-                $("#CP_lblMessagesDetails")[0].innerHTML = "Thank you for activating your account. Please <a class='ErrorMessageLink' href='Login.aspx'>click here</a> to continue.";
+                $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Thank you for activating your account. Please <a class='ErrorMessageLink' href='Login.aspx'>click here</a> to continue.</span>";
                 $("#CP_ErrorMsgContainer").show();
                 $("#divActivationOTP").hide();
                 $("#divActivationDetails").hide();
                 $("#InfoHeader").hide();
             }
             else if (newData == "Invalid_OTP") {
-                $("#CP_lblMessagesDetails")[0].innerHTML = "Enter Valid OTP.";
+                $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Enter Valid OTP.</span>";
                 $("#CP_ErrorMsgContainer").show();
                 $("#divActivationOTP").show();
                 $("#divActivationDetails").hide();
@@ -1662,7 +1662,7 @@ function MemberActivationCodeBehind(data) {
 
             }
             else if (newData == "Invalid_Credentials") {
-                $("#CP_lblMessagesDetails")[0].innerHTML = "Invalid Credentials.";
+                $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Invalid Credentials.</span>";
                 $("#CP_ErrorMsgContainer").show();
 
                 $("#divActivationOTP").show();
@@ -1676,7 +1676,7 @@ function MemberActivationCodeBehind(data) {
                 $("#CP_txtotpMemberId").prop('disabled', true); //disable
             }
             else if (newData == "Invalid_MemberId") {
-                $("#CP_lblMessagesDetails")[0].innerHTML = "Invalid Member ID.";
+                $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Invalid Member ID.</span>";
                 $("#CP_ErrorMsgContainer").show();
 
                 $("#divActivationOTP").show();
@@ -1690,7 +1690,7 @@ function MemberActivationCodeBehind(data) {
                 $("#CP_txtotpMemberId").prop('disabled', true); //disable
             }
             else if (newData == "Invalid_SecurityCode") {
-                $("#CP_lblMessagesDetails")[0].innerHTML = "Invalid Security Code.";
+                $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Invalid Security Code.</span>";
                 $("#CP_ErrorMsgContainer").show();
                 $("#divActivationOTP").show();
                 $("#divActivationDetails").hide();
@@ -1703,7 +1703,7 @@ function MemberActivationCodeBehind(data) {
                 $("#CP_txtotpMemberId").prop('disabled', true); //disable
             }
             else if (newData == "Account_Activated") {
-                $("#CP_lblMessagesDetails")[0].innerHTML = "Account Already Activated.";
+                $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Account Already Activated.</span>";
                 $("#CP_ErrorMsgContainer").show();
 
                 $("#divActivationOTP").show();
@@ -1717,7 +1717,7 @@ function MemberActivationCodeBehind(data) {
                 $("#CP_txtotpMemberId").prop('disabled', true); //disable
             }
             else if (newData == "Invalid_RIM") {
-                $("#CP_lblMessagesDetails")[0].innerHTML = "Invalid RIM.";
+                $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Invalid RIM.</span>";
                 $("#CP_ErrorMsgContainer").show();
 
                 $("#divActivationOTP").show();
@@ -1731,7 +1731,7 @@ function MemberActivationCodeBehind(data) {
                 $("#CP_txtotpMemberId").prop('disabled', true); //disable
             }
             else if (newData == "Invalid_Program") {
-                $("#CP_lblMessagesDetails")[0].innerHTML = "Invalid Program.";
+                $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Invalid Program.</span>";
                 $("#CP_ErrorMsgContainer").show();
 
                 $("#divActivationOTP").show();
@@ -1745,7 +1745,7 @@ function MemberActivationCodeBehind(data) {
                 $("#CP_txtotpMemberId").prop('disabled', true); //disable
             }
             else if (newData == "Incorrect_Format") {
-                $("#CP_lblMessagesDetails")[0].innerHTML = "Password must contain one numeric digit,one upper case character,one lower case character,one special character (!@#$%*()?) and minimum 8 characters in length.";
+                $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Password must contain one numeric digit,one upper case character,one lower case character,one special character (!@#$%*()?) and minimum 8 characters in length.</span>";
                 $("#CP_ErrorMsgContainer").show();
 
                 $("#divActivationOTP").show();
@@ -1759,7 +1759,7 @@ function MemberActivationCodeBehind(data) {
                 $("#CP_txtotpMemberId").prop('disabled', true); //disable
             }
             else if (newData =="CaseSensitive_MemberId") {
-                $("#CP_lblMessagesDetails")[0].innerHTML = "Member ID is case sensitive. Please check the Member ID you have entered and try again.";
+                $("#CP_lblMessagesDetails")[0].innerHTML = "<span>Member ID is case sensitive. Please check the Member ID you have entered and try again.</span>";
                 $("#CP_ErrorMsgContainer").show();
 
                 $("#divActivationOTP").show();
@@ -1773,7 +1773,7 @@ function MemberActivationCodeBehind(data) {
                 $("#CP_txtotpMemberId").prop('disabled', true); //disable
             }
             else {
-                $("#CP_lblMessagesDetails")[0].innerHTML = 'One or more of the credentials you have entered is incorrect and does not match with our records. Please reenter your details so that we can activate your Account.';
+                $("#CP_lblMessagesDetails")[0].innerHTML = '<span>One or more of the credentials you have entered is incorrect and does not match with our records. Please reenter your details so that we can activate your Account.</span>';
                 $("#CP_ErrorMsgContainer").show();
 
                 $("#divActivationOTP").show();
@@ -1822,15 +1822,15 @@ function LoginValidationCodeBehind() {
     $("#LoginValidation")[0].innerHTML = "";
     $("#CP_lblLoginError").html('');
     if ($("#CP_txtMemberID").val().length == 0) {
-        msg += " Please enter Member ID.<br/>";
+        msg += "<span>Please enter Member ID.</span><br/>";
     }
     else {
         if (!isValidEmailAddress($('#CP_txtMemberID').val())) {
-            msg += " Please enter valid Member ID. <br/>";
+            msg += "<span>Please enter valid Member ID.</span> <br/>";
         }
     }
     if ($("#CP_txtPassword").val().length == 0) {
-        msg += " Please enter Password <br/>";
+        msg += "<span>Please enter Password </span><br/>";
     }
     if (msg.length > 0) {
         $("#LoginValidation").css('color', 'red');
@@ -1856,7 +1856,7 @@ function MemberLoginCodeBehind(data) {
     var Status = Statustxt.split(":");
     var Statustext = Status[1];
     var newData = data;
-    if (Statustext == "Blocked") { AuthFail = "Please check the login details you have entered and try again."; }
+    if (Statustext == "Blocked") { AuthFail = "<span>Please check the login details you have entered and try again.</span>"; }
     else {
         AuthFail = "Account Block";
     }
@@ -1864,48 +1864,48 @@ function MemberLoginCodeBehind(data) {
         if (data == "AccountLock") {
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Your Account is Locked.Please <a class="ErrorMessageLink" onclick="showOTPDiv();">click here</a> to unlock the same.');
+            $("#CP_lblLoginError").html('<span>Your Account is Locked.Please </span><a class="ErrorMessageLink" onclick="showOTPDiv();">click here</a><span> to unlock the same.</span>');
         }
         else if (data == "AuthenticationFailed") {
             $("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Please check the login details you have entered and try again.');
+            $("#CP_lblLoginError").html('<span>Please check the login details you have entered and try again.</span>');
         }
         else if (data == "Suspended") {
             $("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Your Account is Suspended');
+            $("#CP_lblLoginError").html('<span>Your Account is Suspended</span>');
         }
         else if (data == "Cancelled") {
             $("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Your Account is Cancelled');
+            $("#CP_lblLoginError").html('<span>Your Account is Cancelled</span>');
         }
         else if (data == "InActive") {
             $("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Your Account is InActive. Please use activate tab to activate your account.');
+            $("#CP_lblLoginError").html('<span>Your Account is InActive. Please use activate tab to activate your account.</span>');
         }
         else if (data == "IncorrectFormat") {
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Password must contain one non-alpha character,one upper case character,one lower case character and minimum 8 characters in length.');
+            $("#CP_lblLoginError").html('<span>Password must contain one non-alpha character,one upper case character,one lower case character and minimum 8 characters in length.</span>');
         }
         else if (data == "Invalid_MemberId") {
             $("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Please check the login details you have entered and try again. ' + (typeof (Statustext) == 'undefined' ? '' : 'your Status is ' + Statustext));
+            $("#CP_lblLoginError").html('<span>Please check the login details you have entered and try again. </span>' + (typeof (Statustext) == 'undefined' ? '' : 'your Status is ' + Statustext));
         }
         else if (newData == "CaseSensitive_MemberId") {
             $("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Member ID is case sensitive. Please check the login details you have entered and try again.');
+            $("#CP_lblLoginError").html('<span>Member ID is case sensitive. Please check the login details you have entered and try again.</span>');
         }
         else {
             showLoginOTPDiv();
@@ -1918,7 +1918,7 @@ function MemberLoginCodeBehind(data) {
     else {
         $("#LoginValidation")[0].innerHTML = "";
         $("#CP_ErrorMsgContainer").show();
-        $("#CP_lblLoginError").html('Please check the login details you have entered and try again.');
+        $("#CP_lblLoginError").html('<span>Please check the login details you have entered and try again.</span>');
     }
     $('#CP_BtnLoginValidation').prop('disabled', false);
     return false;
@@ -1943,7 +1943,7 @@ function LoginMsgCodeBehind(data) {
 
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Invalid OTP.');
+            $("#CP_lblLoginError").html('<span>Invalid OTP.</span>');
         }
         else if (data == "AccountLock") {
             showLoginOTPDiv();
@@ -1957,7 +1957,7 @@ function LoginMsgCodeBehind(data) {
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#divOTP").hide();
-            $("#CP_lblLoginError").html('Your Account is Locked.Please kindly contact Infinity Rewards customer care to unlock the same.');
+            $("#CP_lblLoginError").html('<span>Your Account is Locked.Please kindly contact Infinity Rewards customer care to unlock the same.</span>');
         }
         else if (data == "SomethingWentWrong") {
             showLoginOTPDiv();
@@ -1969,7 +1969,7 @@ function LoginMsgCodeBehind(data) {
 
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Something Went Wrong please try again.');
+            $("#CP_lblLoginError").html('<span>Something Went Wrong please try again.</span>');
         }
         else if (data == "InvalidToken") {
             showLoginOTPDiv();
@@ -1981,7 +1981,7 @@ function LoginMsgCodeBehind(data) {
 
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Please check the Authentication Token.');
+            $("#CP_lblLoginError").html('<span>Please check the Authentication Token.</span>');
         }
         else if (data == "InvalidExtLogin") {
             showLoginOTPDiv();
@@ -1993,7 +1993,7 @@ function LoginMsgCodeBehind(data) {
 
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Invalid External Login Credentials.');
+            $("#CP_lblLoginError").html('<span>Invalid External Login Credentials.</span>');
         }
         else {
             showLoginOTPDiv();
@@ -2005,7 +2005,7 @@ function LoginMsgCodeBehind(data) {
 
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
-            $("#CP_lblLoginError").html('Please check the details you have entered and try again.');
+            $("#CP_lblLoginError").html('<span>Please check the details you have entered and try again.</span>');
         }
     }
     else {
@@ -2014,7 +2014,7 @@ function LoginMsgCodeBehind(data) {
         $("#CP_txtMemberID").val(MemberId);
         $("#LoginValidation")[0].innerHTML = "";
         $("#CP_ErrorMsgContainer").show();
-        $("#CP_lblLoginError").html('Please check the details you have entered and try again.');
+        $("#CP_lblLoginError").html('<span>Please check the details you have entered and try again.</span>');
     }
 }
 

@@ -851,7 +851,7 @@
                 $('#sltTimeSlot').removeClass('text-danger');
                 var timeSlot = $.trim($('#sltTimeSlot option:selected').val());
                 if (timeSlot == '') {
-                    $('#sltTimeSlot').closest("div").after('<p class="text-danger text-left">This field is required</p>');
+                    $('#sltTimeSlot').closest("div").after('<p class="dvErrors text-danger text-left"><span>This field is required</span></p>');
                     // $('#updProgress').hide();
                     $('#btnBookNow').prop('disabled', false);
                     $('#sltTimeSlot').addClass('text-danger');

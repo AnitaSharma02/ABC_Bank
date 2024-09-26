@@ -84,7 +84,7 @@
                             </div>
                             <div class="myacc-login">
                                 <div class="clr"></div>
-                                <%--<div id="ErrorMsgContainer" class=" ErrorMsgContainer mtop_10" runat="server">
+                                <%--<div id="ErrorMsgContainer" class="dvErrors ErrorMsgContainer mtop_10" runat="server">
                                     <asp:Label runat="server" ID="lblLoginError" Text="" ForeColor="Red"></asp:Label>
                                     <div id="LoginValidation" style="float: left; margin-bottom: 5px;">
                                     </div>
@@ -93,7 +93,7 @@
                                     <input type="hidden" id="hdfContext" runat="server" />
                                     <ul class="Login">
                                         <li>
-                                            <div id="ErrorMsgContainer" class=" ErrorMsgContainer mtop_10" runat="server">
+                                            <div id="ErrorMsgContainer" class="dvErrors ErrorMsgContainer mtop_10" runat="server">
                                                 <asp:Label runat="server" ID="lblLoginError" Text="" ForeColor="Red"></asp:Label>
                                                 <div id="LoginValidation" style="float: left; margin-bottom: 5px;">
                                                 </div>
