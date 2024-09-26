@@ -443,7 +443,7 @@ public partial class FlightList : System.Web.UI.Page
             lstrAirLineList += "<label class=\"checkbox-container d-flex heading-regular\" id='Airstop'>";
             lstrAirLineList += "<span class=\"d-inline-block ml-1 heading-regular\"><input type='checkbox' onclick='return FilterAirlines(&quot;SelectAll&quot;)' checked='checked'  ID='chkSelectAll' class='checkbox_pading ArialNarrow' /></div>";
             lstrAirLineList += "<span class=\"checkmark\"></span>";
-            lstrAirLineList += "Select All";
+            lstrAirLineList += "<span>Select All</span>";
             lstrAirLineList += "</span>";
             lstrAirLineList += "</label>";
             for (int count = 0; count < lobjFilterCriteria.Airlines.Count; count++)
@@ -452,9 +452,9 @@ public partial class FlightList : System.Web.UI.Page
                 {
                     lstrAirLineList += "<label class=\"checkbox-container d-flex heading-regular\" id='Airstop'>";
                     lstrAirLineList += "<span class=\"d-inline-block heading-regular ml-1\"><input type='checkbox' onclick='return FilterAirlines(&quot;" + lobjFilterCriteria.Airlines[count] + "&quot;);' checked='checked' ID='chk" + lobjFilterCriteria.Airlines[count].ToString().Replace(" ", "").Replace("(", "").Replace(")", "") + "' class='checkbox_pading ArialNarrow' /></div>";
-                    lstrAirLineList += "<span class=\"checkmark\"></span>";
+                    lstrAirLineList += "<span class=\"checkmark\"></span><span>";
                     lstrAirLineList += lobjFilterCriteria.Airlines[count].ToString();
-                    lstrAirLineList += "</span>";
+                    lstrAirLineList += "</span></span>";
                     lstrAirLineList += "</label>";
                 }
 
@@ -482,7 +482,7 @@ public partial class FlightList : System.Web.UI.Page
                 {
                     lstrStop += "<label class=\"checkbox-container d-flex heading-regular\" id='Airstop'>";
                     lstrStop += "<span class=\"d-inline-block\">";
-                    lstrStop += "<input type='checkbox' id='chkStops" + countStops + "' checked onclick='return FilterNoOfStops(" + countStops + ");'>&nbsp;" + 0 + " Stop";
+                    lstrStop += "<input type='checkbox' id='chkStops" + countStops + "' checked onclick='return FilterNoOfStops(" + countStops + ");'>&nbsp;" + 0 + "<span>Stop</span>";
                     lstrStop += "<span class=\"checkmark\"></span>";
                     lstrStop += "</span>";
                     lstrStop += "</label>";
@@ -491,7 +491,7 @@ public partial class FlightList : System.Web.UI.Page
                 {
                     lstrStop += "<label class=\"checkbox-container d-flex heading-regular\" id='Airstop'>";
                     lstrStop += "<span class=\"d-inline-block\">";
-                    lstrStop += "<input type='checkbox' id='chkStops" + countStops + "' checked onclick='return FilterNoOfStops(" + countStops + ");'>&nbsp;" + countStops + " Stop";
+                    lstrStop += "<input type='checkbox' id='chkStops" + countStops + "' checked onclick='return FilterNoOfStops(" + countStops + ");'>&nbsp;" + countStops + "<span>Stop</span>";
                     lstrStop += "<span class=\"checkmark\"></span>";
                     lstrStop += "</span>";
                     lstrStop += "</label>";
