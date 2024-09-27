@@ -196,7 +196,7 @@
                     </div>
                     <div id="dvForm" class="dvForm bg-colour2 collapse">                         
                         <div class="bg-colour2 px-3 pt-2">      
-                                <div class="p-1 mb-2 alert alert-danger text-danger text-center h6 heading-semibold" id="requiredValidationdomestic" style="display:none;"></div>
+                                <div class="dvErrors p-1 mb-2 alert alert-danger text-danger text-center h6 heading-semibold" id="requiredValidationdomestic" style="display:none;"></div>
                                  <div class="row dvLabel r- d-none">
                                     <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">
                                         <label class="h8 heading-semibold text-colour7 radio-container d-flex">
@@ -461,7 +461,7 @@
                     <div class="bg-colour2 serviceWidget collapse" id="modify_search">
                         <div id="divflt">
                             <!--Flight Search Panel Start -->
-                            <div class="Searchvalid" id="requiredValidation"></div>
+                            <div class="dvErrors Searchvalid" id="requiredValidation"></div>
                             <div class="form_box mt-4">
                                 <%-- <div class="mb-3 selWay">
                                 <input id="onelidomestic" class="radio" name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span>One-Way</span>

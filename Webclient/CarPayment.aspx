@@ -187,7 +187,10 @@
                                                 </label>
                                             </div>
                                             <p class="dvErrors text-danger mb-2" id="errorTnC"></p>
-                                            <asp:Button ID="btnMakePayment" runat="server" Value="Make Payment" OnClick="btnMakePayment_Click" OnClientClick="return MakePayment();" CssClass="btn btn-one"></asp:Button>
+                                            <%--<asp:Button ID="btnMakePayment" runat="server" Value="Make Payment" OnClick="btnMakePayment_Click" OnClientClick="return MakePayment();" CssClass="btn btn-one"></asp:Button>--%>
+                                            <button id="btnMakePayment" class="btn btn-one" onclick="return MakePayment();">
+                                                Make Payment
+                                            </button>
 
                                         </div>
                                     </div>

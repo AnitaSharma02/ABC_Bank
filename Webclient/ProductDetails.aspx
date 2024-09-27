@@ -284,7 +284,7 @@
                   </button>
                   <div id="divDynamicContent">
                   </div>
-                   <div id="divErrorMsg" style="color: red;"></div>
+                   <div id="divErrorMsg" class="dvErrors text-danger"></div>
               </div>
              <div class="modal-footer justify-content-center border-0"  id="divsubmit"> 
                       <span id="Span1" runat="server">
@@ -302,7 +302,7 @@
                   <div class="popupCloseButton">&times;</div>
                     <div id="divDynamicContent">
                    </div>
-                <div id="divErrorMsg" style="color: red;"></div>
+                <div id="divErrorMsg" class="dvErrors text-danger"></div>
                 <div class="text-center" id="divsubmit">
                     <span id="Span5" runat="server">
                         <a id="abtnContinue" href="javascript:void(0);" class="btn btn-one" onclick="submitUserInputMetas();">Continue</a>
@@ -599,20 +599,20 @@
                 if (data.length == 0) {
                     $label = $("label[for='" + item + "']");
                     if ($label.length > 0) {
-                        msg += "Please enter " + $label[0].innerHTML + ".<br/>";
+                        msg += "<span>Please enter " + $label[0].innerHTML + ".</span><br/>";
                     }
                 }
                 else {
                     if (item.toLowerCase().includes("email")) {
                         var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
                         if (!filter.test(data)) {
-                            msg += "Please enter a valid email address <br/>";
+                            msg += "<span>Please enter a valid email address </span><br/>";
                         }
                     }
                     else if (item.toLowerCase().includes("phonenum") || item.toLowerCase().includes("mobile")) {
                         var filter = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
                         if (!filter.test(data)) {
-                            msg += "Please enter a valid Phone Number<br/>";
+                            msg += "<span>Please enter a valid Phone Number</span><br/>";
                         }
                     }
                     else if (item.toLowerCase().includes("name")) {
@@ -620,7 +620,7 @@
                         if (!filter.test(data)) {
                             $label = $("label[for='" + item + "']");
                             if ($label.length > 0) {
-                                msg += "Please enter a valid " + $label[0].innerHTML + ".<br/>";
+                                msg += "<span>Please enter a valid " + $label[0].innerHTML + ".</span><br/>";
                             }
                         }
                     }
@@ -629,49 +629,49 @@
                         if (!filter.test(data)) {
                             $label = $("label[for='" + item + "']");
                             if ($label.length > 0) {
-                                msg += "Please enter a valid " + $label[0].innerHTML + ".<br/>";
+                                msg += "<span>Please enter a valid " + $label[0].innerHTML + ".</span><br/>";
                             }
                         }
                     }
                     else if (item.toLowerCase().includes("msisdn")) {
                         var filter = /^[0-9]+$/;
                         if (data.length < 12) {
-                            msg += "Please enter a valid msisdn with country code.<br/>";
+                            msg += "<span>Please enter a valid msisdn with country code.</span><br/>";
                         }
                         if (!filter.test(data)) {
-                            msg += "Please enter a valid msisdn.<br/>";
+                            msg += "<span>Please enter a valid msisdn.</span><br/>";
                         }
                     }
                     else if (item.toLowerCase().includes("jpnumber")) {
                         var filter = /^[0-9]+$/;
                         if (data.length > 30) {
-                            msg += "JP Number should be less then 30<br/>";
+                            msg += "<span>JP Number should be less then 30</span><br/>";
                         }
                         if (!filter.test(data)) {
-                            msg += "Please enter a valid JP Number<br/>";
+                            msg += "<span>Please enter a valid JP Number</span><br/>";
                         }
                     }
                     else if (item.toLowerCase().includes("member_id")) {
                         var filter = /^[0-9]+$/;
                         if (data.length > 30) {
-                            msg += "Membership Number should be less then 30<br/>";
+                            msg += "<span>Membership Number should be less then 30</span><br/>";
                         }
                         if (!filter.test(data)) {
-                            msg += "Please enter a valid Membership Number<br/>";
+                            msg += "<span>Please enter a valid Membership Number</span><br/>";
                         }
                     }
                     else if (item.toLowerCase().includes("activecardno")) {
                         var filter = /^UL+\d{9}$/;
                         if (!filter.test(data)) {
                             $label = $("label[for='" + item + "']");
-                            msg += "Please enter a valid "+$label[0].innerHTML +".<br/>";
+                            msg += "<span>Please enter a valid " + $label[0].innerHTML +".</span><br/>";
                         }
                     }
                     else if (item.toLowerCase().includes("id")) {
                         var filter = /^[0-9]+$/;
                         if (!filter.test(data)) {
                             $label = $("label[for='" + item + "']");
-                            msg += "Please enter a valid "+$label[0].innerHTML +".<br/>";
+                            msg += "<span>Please enter a valid " + $label[0].innerHTML +".</span><br/>";
                         }
                     }
                 }
@@ -735,10 +735,10 @@
                             }
                             else {
                                 if (data == "INSUFFICIENT_POINTS") {
-                                    $('#divErrorMsg').empty().html("Insufficient Points.");
+                                    $('#divErrorMsg').empty().html("<span>Insufficient Points.</span>");
                                 }
                                 else if (data == "Invalid Product") {
-                                    $('#divErrorMsg').empty().html("Invalid Product.");
+                                    $('#divErrorMsg').empty().html("<span>Invalid Product.</span>");
                                     //alert("Invalid Product")
                                     //var pop = document.getElementById("alertmessage");
                                     //pop.innerHTML = "Invalid Product.";
@@ -746,7 +746,7 @@
                                 }
                                 else {
                                     IDs.forEach(ClearFields);
-                                    $('#divErrorMsg').empty().html("Purchase failed!!! Please try again later.");
+                                    $('#divErrorMsg').empty().html("<span>Purchase failed!!! Please try again later.</span>");
                                 }
                             }
                         }

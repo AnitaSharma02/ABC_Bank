@@ -22,6 +22,9 @@
                             <span id="btnSearchExperiences" class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
                         </div>
                     </div>
+
+                    <%-- (al) --%>
+                    <%--<div class="dvErrors h8 heading-regular text-danger" id="expSearchErr"></div>--%>
                 </div>
             </div>
         </div>
@@ -172,6 +175,9 @@
             if (searchTerm.length == 0) {
                 isValidated = false;
                 $('#txtSearchTerm').closest("div").after('<span class="error h8 heading-regular text-danger">This field is required</span>');
+
+                // (al)
+                //$('#expSearchErr').html('<span class="error h8 heading-regular text-danger">This field is required</span>');
             } else if (searchTerm.length > 0) {
                 if (searchTerm.length >= 3) {
                     var filter = /^[a-zA-Z0-9\s]*$/;

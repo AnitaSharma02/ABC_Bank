@@ -358,10 +358,10 @@
                 return true;
             }
             if ($("#CP_chkCancellationPolicy").prop("checked") == false) {
-                msg += "Accept cancellation policy<br/>";
+                msg += "<span class='d-flex'>Accept cancellation policy</span>";
             }
             if ($("#CP_chkAcceptAgreements").prop("checked") == false) {
-                msg += "Accept Terms And Conditions<br/>";
+                msg += "<span class='d-flex'>Accept Terms And Conditions</span>";
             }
             if (msg.length > 0) {
                 $("#LoginValidation")[0].innerHTML = msg;

@@ -172,7 +172,7 @@
                                 <div class="bg-colour2 b-radius p-3">
                                      <div class="row">
                                         <div class="col-12 order-0">
-                                            <div id="HotelModifyValidation" class="p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
+                                            <div id="HotelModifyValidation" class="dvErrors p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3 order-1">
                                             <input type="hidden" id="hdnRoomString" />
