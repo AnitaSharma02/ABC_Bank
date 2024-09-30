@@ -293,54 +293,87 @@
     </script>
 </head>
 <body>
-    <button id="downloadTranslations" class="d-none-">Download JSON</button>
+    <button id="downloadTranslations" class="d-none">Download JSON</button>
     <form id="form1" runat="server">
         <div class="dvHeader shadow-sm sticky-top bg-colour6">
-            <div class="dvStripe">
+            <div class="dvStripe py-1">
                 <div class="container-xl">
                     <div class="row">
-                        <div class="dvUserInfo col-12 mb-lg-0">
-                            <div class="d-flex flex-wrap align-items-center justify-content-lg-end">
-                                <div class="dvPoints col-auto px-0" runat="server" visible="false" id="dvPoints">
-                                    <div class="nav-item col-12" id="liPoints" runat="server" visible="false">
-                                        <a class="points h7" href="javascript:void(0);">Balance Points<span>
+                        <div class="dvUserInfo col-12 col-lg-4 d-flex align-items-center">
+                            <div class="mr-2">
+                                <i class="fa-regular fa-user text-colour6"></i>
+                            </div>
+                            <div class="" id="liwelcome" runat="server" visible="true">
+                                <asp:Label runat="server" CssClass="text-colour6" ID="lblMemberName">
+                                    <span id="txtWelcome" runat="server"></span>
+                                    <span>Guest</span>
+                                </asp:Label>
+                            </div>
+                        </div>
+                        <div class="dvActivationInfo col-6 col-lg-auto ml-lg-auto">
+                            <a href="\Activation.aspx" id="activation" class="nav-link p-0 text-colour6">
+                                <i class="fa fa-power-off"></i> 
+                                <span>Activation</span>
+                            </a>
+                        </div>
+                        <div class="dvBalanceInfo col-6 col-lg-auto" runat="server" visible="false" id="dvPoints">
+                            <div class="text-right">
+                                <div class="dvPoints">
+                                    <div class="nav-item" id="liPoints" runat="server" visible="false">
+                                        <a class="points" href="javascript:void(0);">Points<span>
                                             <asp:Label ID="lblAvailablePoints" runat="server" Text="0"></asp:Label></span>
                                         </a>
                                     </div>
                                     <div id="HeaderTot" runat="server" visible="false">
-                                        <asp:Label runat="server" CssClass="h7 text-colour6 " ID="Label1" Text="Balance Points"></asp:Label>
-                                        <span class="ml-1 h7 text-colour6" id="totAvbPointDiv" runat="server" visible="false">
+                                        <asp:Label runat="server" CssClass="text-colour6 " ID="Label1" Text="Points"></asp:Label>
+                                        <span class="ml-1 text-colour6" id="totAvbPointDiv" runat="server" visible="false">
                                             <asp:Label runat="server" ID="lblCurrentBal" ForeColor="" Text="0"></asp:Label>
                                         </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="dvLoginInfo col-6 col-lg-auto text-right" id="lnkloginlogout" runat="server">
+                        <div class="nav-item">
+                            <a href="Login.aspx" class="nav-link d-inline-block p-0 text-colour6" id="lnkLogin" runat="server">
+                                <i class="fa-regular fa-user pr-1 d-inline-block"></i>
+                                <span class="nav-link p-0 d-inline-block">Login</span>
+                            </a>
+                            <a id="liLogout" runat="server" visible="false">
+                                <asp:LinkButton runat="server" CausesValidation="false" ID="logout" data-toggle="modal" data-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link ml-lg-3 nav-link btn btn-one btn-sm d-inline-block mt-2 mt-lg-0 text-colour6">
+                                <i class="fa-regular fa-user pr-1 d-inline-block"></i>
+                                    <span class="nav-link p-0 d-inline-block">Logout</span>
+                                </asp:LinkButton>
+                            </a>
+                        </div>
+                    </div>                        
                     </div>
                 </div>
             </div>
             <div class="container-xl py-lg-3">
                 <nav class="navbar navbar-expand-lg navbar-light px-0 py-2 mx-lg-n3">
-                    <div class="logo m-0 col-10 col-lg-4 px-0 px-lg-3 order-0">
+                    <div class="logo m-0 col-auto col-lg-2 px-0 px-lg-3 order-0 order-lg-0">
                         <a href="Index.aspx" class="d-inline-block pr-2 mr-1 border-right">
                             <img src="../Images/logos/infinity-logo.svg" />
                         </a>
+                    </div>
+                    <div class="logo m-0 col-5 col-lg-2 px-0 px-lg-3 order-1 order-lg-2 text-lg-right">
                         <a href="https://www.abcbanking.mu/" target="_blank" class="d-inline-block">
                             <img src="../Images/logos/abc-footer-logo.svg" />
                         </a>
                     </div>
                     <%-- remove d-lg-none and style="display:none !important;" from below to display language selectmenu --%>
-                    <div class="order-1 order-lg-2 col d-flex col-lg-auto align-items-center justify-content-end pr-0 pr-lg-0 d-lg-none-">
+                    <div class="order-2 col d-flex col-lg-auto align-items-center justify-content-end pr-0 pr-lg-0 d-lg-none">
                         <%--<div class="dvLanguage pr-3 pr-lg-0 mb-1 mb-lg-0 d-flex- align-items-center" style="display: none !important;">
                             <div class="form-group select-dropdown selectUl selLanguage m-0">
                                 <select class="form-control px-1 py-0 mt-1 mt-lg-0 py-2" id="languageSelector">
                                 </select>
                             </div>
                         </div>--%>
-                         <select class="dvLang" id="languageSelector">
-                            <option value="en">english</option>
-                            <option value="np">nepal</option>
-                            <option value="ar">arabic</option>
+                         <select class="dvLang d-none" id="languageSelector">
+                            <option value="en">en</option>
+                            <option value="np">np</option>
+                            <option value="ar">ar</option>
                         </select>
                         <button class="navbar-toggler d-lg-none px-0 py-2 border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                             <%--<span class="navbar-toggler-icon"></span>--%>
@@ -348,7 +381,7 @@
                             <i class="fa-solid fa-bars-staggered text-colour1"></i>
                         </button>
                     </div>
-                    <div class="navbar-collapse collapse order-2 order-lg-1 col-lg-8 px-0 px-lg-3 mb-1 mb-lg-0 justify-content-lg-end" id="navbarSupportedContent">
+                    <div class="navbar-collapse collapse order-3 order-lg-1 col-lg-8 px-0 px-lg-3 mb-1 mb-lg-0 justify-content-lg-end" id="navbarSupportedContent">
                         <ul class="navbar-nav align-items-lg-center w-100">
                             <li class="nav-item">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" id="about" href="AboutUs.aspx">About Us</a>
@@ -362,34 +395,34 @@
                             <li class="nav-item dropdown" runat="server" visible="true" id="limyaccount">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="StatementSummary.aspx" id="navbarDropdown">My Account</a>
                             </li>
-                            <li class="nav-item d-flex align-items-center border-top ml-lg-auto pt-2 pt-lg-0">
+                            <%--<li class="dvUserInfo nav-item d-flex align-items-center border-top ml-lg-auto pt-2 pt-lg-0">
                                 <div class="d-flex align-items-center">
-                                    <div class="dvUserIcon mr-2">
+                                    <div class="mr-2">
                                         <i class="fa-regular fa-user text-colour7"></i>
                                     </div>
-                                    <div class="dvName" id="liwelcome" runat="server" visible="true">
+                                    <div class="" id="liwelcome" runat="server" visible="true">
                                         <asp:Label runat="server" CssClass="text-colour7 heading-semibold" ID="lblMemberName">
                                             <span id="txtWelcome" runat="server"></span>
                                             <span>Guest</span>
                                         </asp:Label>
                                     </div>
                                 </div>
-                            </li>
+                            </li>--%>
                         </ul>
-                        <div class="dvLoginBtn d-none">
+                        <%--<div class="dvLoginBtn d-none">
                             <div class="nav-item" id="lnkloginlogout" runat="server">
                                 <a href="Login.aspx" class="nav-link btn btn-one btn-sm d-inline-block mt-2 mt-lg-0" id="lnkLogin" runat="server">
                                     <i class="fa-regular fa-user pr-1 d-inline-block"></i>
                                     <span class="nav-link p-0 d-inline-block text-uppercase">Login</span>
                                 </a>
                                 <a id="liLogout" runat="server" visible="false">
-                                    <asp:LinkButton runat="server" CausesValidation="false" ID="logout" data-toggle="modal" data-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link header-text ml-lg-3 nav-link btn btn-one btn-sm d-inline-block mt-2 mt-lg-0">
+                                    <asp:LinkButton runat="server" CausesValidation="false" ID="logout" data-toggle="modal" data-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link ml-lg-3 nav-link btn btn-one btn-sm d-inline-block mt-2 mt-lg-0">
                                     <i class="fa-regular fa-user pr-1 d-inline-block"></i>
                                      <span class="nav-link p-0 d-inline-block text-uppercase">Logout</span>
                                     </asp:LinkButton>
                                 </a>
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
                 </nav>
             </div>

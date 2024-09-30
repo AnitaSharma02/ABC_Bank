@@ -646,21 +646,16 @@ p {
 /*=========[ HEADER ]=========*/
 .dvStripe {
     background-color: var(--bg-colour7);
-    padding: 0.2rem 0;
 }
-
-.dvHeader .uName {
-    margin-right: 1rem;
+.dvHeader .dvActivationInfo a:hover {
+    color: var(--text-colour6);
 }
-
 .dvHeader .logo img {
     width: 100px;
 }
-
 .dvHeader .navbar-nav .nav-item.active a {
     color: var(--primary-colour);
 }
-
 .dvHeader .navbar-nav .nav-item a {
     color: var(--text-colour7);
     padding: 0 1rem;
@@ -668,11 +663,9 @@ p {
     font-family: var(--font-semibold);
     text-transform: uppercase;
 }
-
 .dvHeader .navbar-nav .nav-item a:hover {
     color: var(--text-colour1);
 }
-
 .dvHeader .navbar-nav .nav-item.dropdown .dropdown-menu a:hover {
     background-color: var(--text-colour1);
     color: #fff;
