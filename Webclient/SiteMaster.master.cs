@@ -15,6 +15,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
             {
                 MemberDetails lobjMemberDetails = Session["MemberDetails"] as MemberDetails;               
                 lnkLogin.Visible = false;
+                lnkRegister.Visible = false;
                 txtWelcome.Visible = false;
                 limyaccount.Visible = true;
                 dvPoints.Visible = true;
@@ -24,8 +25,8 @@ public partial class SiteMaster : System.Web.UI.MasterPage
                 if (!string.IsNullOrEmpty(Convert.ToString(HttpContext.Current.Session["FromSSOLogin"]))
                     && Convert.ToString(HttpContext.Current.Session["FromSSOLogin"]) == "1")
                 {
-                    lnkloginlogout.Attributes.Add("style", "display:none");
-                    liLogout.Visible = false;
+                    //lnkloginlogout.Attributes.Add("style", "display:none");
+                    liLogout.Visible = true;
                 }
                 else
                 {

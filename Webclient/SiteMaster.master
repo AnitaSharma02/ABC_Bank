@@ -311,7 +311,7 @@
                             </div>
                         </div>
                         <div class="dvActivationInfo col-6 col-lg-auto ml-lg-auto">
-                            <a href="\Activation.aspx" id="activation" class="nav-link p-0 text-colour6">
+                            <a href="\Activation.aspx" class="nav-link p-0 text-colour6" id="lnkRegister" runat="server">
                                 <i class="fa fa-power-off"></i> 
                                 <span>Activation</span>
                             </a>
