@@ -15,16 +15,13 @@
                     <h2 class="heading1 mb-2">Experiences</h2>
                     <p class="mb-3">Find activities, attractions, tours & more!</p>
                 </div>
-                <div class="dvSearch col-12 offset-lg-3 col-lg-6 mb-5">                    
+                <div class="dvSearch dvErrors col-12 offset-lg-3 col-lg-6 mb-5">                    
                     <div class="dvInputGroup input-group">
                         <input id="txtSearchTerm" autocomplete="off" class="input form-control" type="text" name="searchTerm" placeholder="Search Destination" required />
                         <div class="input-group-append">
-                            <span id="btnSearchExperiences" class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <button type="button" id="btnSearchExperiences" class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
                     </div>
-
-                    <%-- (al) --%>
-                    <%--<div class="dvErrors h8 heading-regular text-danger" id="expSearchErr"></div>--%>
                 </div>
             </div>
         </div>

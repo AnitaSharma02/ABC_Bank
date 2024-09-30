@@ -89,12 +89,12 @@
                                 <div class="col-lg-12">
                                     <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none mb-2">Filter </button>
                                     <div class="row justify-content-end align-items-center">
-                                        <div class="dvSearch col-12 col-lg-12">
+                                        <div class="dvSearch dvErrors col-12 col-lg-12">
                                             <div>
                                                 <div class="dvInputGroup input-group">
                                                     <input id="txtSearchTerm" autocomplete="off" class="input form-control" type="text" name="searchTerm" value="" placeholder="Search Destination" />
                                                     <div class="input-group-append">
-                                                        <span id="btnSearchExperiences" class="input-group-text bg-colour1"> <i class="fa-solid fa-magnifying-glass"></i> </span>
+                                                        <button type="button" id="btnSearchExperiences" class="input-group-text bg-colour1"> <i class="fa-solid fa-magnifying-glass"></i> </button>
                                                     </div>
                                                 </div>
                                             </div>
