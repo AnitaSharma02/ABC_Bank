@@ -647,7 +647,8 @@ p {
 .dvStripe {
     background-color: var(--bg-colour7);
 }
-.dvHeader .dvActivationInfo a:hover {
+.dvHeader .dvActivationInfo a:hover,
+.dvHeader .dvLoginInfo a:hover {
     color: var(--text-colour6);
 }
 .dvHeader .logo img {
