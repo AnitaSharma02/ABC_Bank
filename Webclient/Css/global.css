@@ -958,7 +958,7 @@ p {
 .btn-one {
     font-family: var(--btn-one-family);
     background-color: var(--btn-one-bg);
-    color: var(--btn-one-text);
+    color: var(--btn-one-text) !important;
     border-color: var(--btn-one-border-colour);
     text-transform: var(--btn-one-text-transform);
     border-radius: var(--btn-one-b-radius);
@@ -967,7 +967,7 @@ p {
 .btn-one:hover {
     font-family: var(--btn-one-family);
     background-color: var(--btn-one-bg-hover);
-    color: var(--btn-one-text-hover);
+    color: var(--btn-one-text-hover) !important;
     border-color: var(--btn-one-border-colour-hover);
     text-transform: var(--btn-one-text-transform);
     border-radius: var(--btn-one-b-radius);
@@ -2394,7 +2394,7 @@ select.form-control:focus {
 @media (min-width: 768px) {
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992px) {    
     .dvHeader .navbar-nav .nav-item a.border-bottom {
         border-bottom: none !important;
     }

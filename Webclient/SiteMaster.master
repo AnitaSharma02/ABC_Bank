@@ -299,7 +299,7 @@
             <div class="dvStripe py-1">
                 <div class="container-xl">
                     <div class="row">
-                        <div class="dvUserInfo col-12 col-lg-4 d-flex align-items-center">
+                        <div class="dvUserInfo col-6 col-lg-4 d-flex align-items-center">
                             <div class="mr-2">
                                 <i class="fa-regular fa-user text-colour6"></i>
                             </div>
@@ -310,7 +310,7 @@
                                 </asp:Label>
                             </div>
                         </div>
-                        <div class="dvActivationInfo col-6 col-lg-auto ml-lg-auto" id="lnkRegister" runat="server">
+                        <div class="dvActivationInfo col-6 text-right col-lg-auto ml-lg-auto" id="lnkRegister" runat="server">
                             <a href="\Activation.aspx" class="nav-link p-0 text-colour6">
                                 <i class="fa fa-power-off"></i> 
                                 <span>Activation</span>
@@ -331,7 +331,7 @@
                                 </div>
                             </div>
                         </div>
-                        <%--<div class="dvLoginInfo col-6 col-lg-auto text-right" id="lnkloginlogout" runat="server">
+                         <div class="dvLoginInfo col-6 col-lg-auto d-none d-lg-block text-right" id="lnkloginlogout" runat="server">
                             <div class="nav-item">
                                 <a href="Login.aspx" class="nav-link d-inline-block p-0 text-colour6" id="lnkLogin" runat="server">
                                     <i class="fa-regular fa-user pr-1 d-inline-block"></i>
@@ -344,7 +344,7 @@
                                     </asp:LinkButton>
                                 </a>
                             </div>
-                        </div>--%>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -399,21 +399,21 @@
                                     </div>
                                 </div>
                             </li>--%>
-                            <li>
-                                <a href="Login.aspx" class="nav-link btn btn-one" id="A1" runat="server">
-                                    <i class="fa-regular fa-user pr-1 d-inline-block text-colour6"></i>
-                                    <span class="nav-link p-0 d-inline-block text-colour6">Login</span>
+                            <li class="nav-item d-block d-lg-none" id="mob_lnkloginlogout" runat="server">
+                                <a href="Login.aspx" class="nav-link p-2 btn btn-one" id="mob_lnkLogin" runat="server">
+                                    <i class="fa-regular fa-user pr-1 d-inline-block"></i>
+                                    <span class="d-inline-block">Login</span>
                                 </a>
-                                <a id="A2" runat="server" visible="false">
-                                    <asp:LinkButton runat="server" CausesValidation="false" ID="LinkButton1" data-toggle="modal" data-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link btn btn-one">
-                                        <i class="fa-regular fa-user pr-1 d-inline-block text-colour6"></i>
-                                        <span class="nav-link p-0 d-inline-block text-colour6">Logout</span>
+                                <a id="mob_liLogout" class="nav-link p-2 btn btn-one" runat="server" visible="false">
+                                    <asp:LinkButton runat="server" CausesValidation="false" ID="mob_logout" data-toggle="modal" data-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link btn btn-one">
+                                        <i class="fa-regular fa-user pr-1 d-inline-block"></i>
+                                        <span class="d-inline-block">Logout</span>
                                     </asp:LinkButton>
                                 </a>
                             </li>
                         </ul>
                         <div class="dvLoginBtn d-none">
-                            <div class="nav-item" id="lnkloginlogout" runat="server">
+                           <%-- <div class="nav-item" id="lnkloginlogout" runat="server">
                                 <a href="Login.aspx" class="nav-link d-inline-block p-0 text-colour6" id="lnkLogin" runat="server">
                                     <i class="fa-regular fa-user pr-1 d-inline-block"></i>
                                     <span class="nav-link p-0 d-inline-block">Login</span>
@@ -424,7 +424,7 @@
                                         <span class="nav-link p-0 d-inline-block">Logout</span>
                                     </asp:LinkButton>
                                 </a>
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
                 </nav>
