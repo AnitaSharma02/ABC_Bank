@@ -44,7 +44,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
             {
                 dvPoints.Visible = false;
                 HeaderTot.Visible = false;
-                lnkloginlogout.Attributes.Add("style", "display:block");
+                //lnkloginlogout.Attributes.Add("style", "display:block");
                 liwelcome.Visible = true;
             }
         }
