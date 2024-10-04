@@ -40,8 +40,8 @@
             });
 
             GetRedemptionOptions();
-            $("#dvHeroSlider").hide();
-            $("#dvInnerBanner").attr("src", "images/hotelpage/hotel-banner.jpg");
+            //$("#dvHeroSlider").hide();
+            //$("#dvInnerBanner").attr("src", "images/hotelpage/hotel-banner.jpg");
 
             //scrollTop
             $('html, body').animate({

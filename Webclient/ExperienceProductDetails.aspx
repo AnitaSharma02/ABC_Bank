@@ -140,7 +140,6 @@
                         else {
                             fnBindExperienceProductInfo(rtnData.d);
                         }
-
                     }
                     $("#divExperienceLoader").hide();
                     $('#updProgress').hide();
@@ -594,7 +593,6 @@
                         }
                     });
                     $("#dvProductTypeDetails").append(html);
-                    updateVcDataSections();
                 }
                 else {
                     $("#Errordiv").show();
@@ -694,6 +692,7 @@
                         else {
                             fnBindProductTypePriceByDate(rtnData.d);
                         }
+                        
                     }
                 },
                 error: function (errmsg) {
@@ -823,7 +822,6 @@
                         }
                     });
                     $("#dvProductTypeDetails").empty().html(html);
-                    updateVcDataSections();
                 }
             }
         }

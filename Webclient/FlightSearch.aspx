@@ -25,8 +25,8 @@
             }
             BindBanner();
             GetRedemptionOptions();
-            $("#dvHeroSlider").hide();
-            $("#dvInnerBanner").attr("src", "images/flightpage/flight-banner.jpg");
+            //$("#dvHeroSlider").hide();
+            //$("#dvInnerBanner").attr("src", "images/flightpage/flight-banner.jpg");
             var ActiveTab = $("ul.nav-pills li a.active");
             if (ActiveTab[0].innerHTML.includes("International")) {
                 $("#topdestinations").removeClass("d-none");

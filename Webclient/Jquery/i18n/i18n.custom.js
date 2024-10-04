@@ -17,7 +17,7 @@ const CONFIG = {
         input: 'INPUT',
         textarea: 'TEXTAREA'
     },
-    maxKeyLength: 15,
+    maxKeyLength: 25,
     defaultLanguage: "en",
     triggerElementTypes: ['button', 'input[type="submit"]'],
     prefix: "ABC-",
