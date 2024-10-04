@@ -493,8 +493,48 @@
                                     </div>
                                     <div class="col-12 order-5 order-lg-6">
                                         <div class="row">
-                                            <div class="col-6 col-sm-6 col-lg-3 mb-3" id="Room1" >
+                                            <div class="col-12 col-sm-auto mb-3" id="Room1">
                                                 <div class="dvDropdown dropdown">
+                                                    <button type="button" class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" data-toggle="dropdown" data-display="static" aria-expanded="false">
+                                                        Passenger
+                                                    </button>
+                                                    <div class="dropdown-menu prevent-close p-0">
+                                                        <div class="dropdown-item p-2">
+                                                            <div class="dvQtySelectorAdult1 dvQtySelector row align-items-center">
+                                                                <div class="col-12">
+                                                                    <h2 class="h7 special-text" data-i18n="Adult(s)">Adult(s) 12+ Yrs</h2>
+                                                                </div>
+                                                                <div class="col-6 col-sm-12">
+                                                                    <div class="row align-items-center mt-1">
+                                                                        <div class="col-4 text-left"><i role="button" onclick="DecreaseAdultCount(1)" class="fa fa-minus decreaseQtyAdult1 border p-1 b-radius"></i></div>
+                                                                        <div class="col-4 text-center">
+                                                                            <input type="text" id="qtyValueAdult1" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult1" value="1" readonly="readonly">
+                                                                        </div>
+                                                                        <div class="col-4 text-right"><i role="button" onclick="IncreaseAdultCount(1)" class="fa fa-plus increaseQtyAdult1 border p-1 b-radius"></i></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="border-top"></div>
+                                                        <div class="dropdown-item p-2">
+                                                            <div class="dvQtySelectorChild1 dvQtySelector row align-items-center">
+                                                                <div class="col-12">
+                                                                    <h2 class="h7 special-text" data-i18n="Child(ren)">Child(ren) 2 - 11 Yrs</h2>
+                                                                </div>
+                                                                <div class="col-6 col-sm-12">
+                                                                    <div class="row align-items-center mt-1">
+                                                                        <div class="col-4 text-left"><i role="button" onclick="DecreaseChildCount(1)" class="fa fa-minus decreaseQtyChild1 border p-1 b-radius"></i></div>
+                                                                        <div class="col-4 text-center">
+                                                                            <input type="text" id="qtyValueChild1" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild1" value="0" readonly="readonly">
+                                                                        </div>
+                                                                        <div class="col-4 text-right"><i role="button" onclick="IncreaseChildCount(1)" class="fa fa-plus increaseQtyChild1 border p-1 b-radius"></i></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%--<div class="dvDropdown dropdown">
                                                     <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-toggle="dropdown" aria-expanded="false">
                                                         <span class="d-inline-block mr-3 heading-semibold">Room1:</span> 
                                                         <span class="d-none d-sm-inline-block">Passenger</span>
@@ -521,10 +561,50 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>--%>
                                             </div>
-                                            <div class="col-6 col-sm-6 col-lg-3 mb-3" id="Room2" style="display: none;" >
-                                                <div class="dvDropdown dropdown text-right text-sm-left">
+                                            <div class="col-12 col-sm-auto3 mb-3" id="Room2" style="display: none;">
+                                                <div class="dvDropdown dropdown">
+                                                    <button type="button" class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" data-toggle="dropdown" data-display="static" aria-expanded="false">
+                                                        Passenger
+                                                    </button>
+                                                    <div class="dropdown-menu prevent-close p-0">
+                                                        <div class="dropdown-item p-2">
+                                                            <div class="dvQtySelectorAdult2 dvQtySelector row align-items-center">
+                                                                <div class="col-12">
+                                                                    <h2 class="h7 special-text" data-i18n="Adult(s)">Adult(s) 12+ Yrs</h2>
+                                                                </div>
+                                                                <div class="col-6 col-sm-12">
+                                                                    <div class="row align-items-center mt-1">
+                                                                        <div class="col-4 text-left"><i role="button" onclick="DecreaseAdultCount(2)" class="fa fa-minus decreaseQtyAdult2 border p-1 b-radius"></i></div>
+                                                                        <div class="col-4 text-center">
+                                                                            <input type="text" id="qtyValueAdult2" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult2" value="1" readonly="readonly">
+                                                                        </div>
+                                                                        <div class="col-4 text-right"><i role="button" onclick="IncreaseAdultCount(2)" class="fa fa-plus increaseQtyAdult2 border p-1 b-radius"></i></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="border-top"></div>
+                                                        <div class="dropdown-item p-2">
+                                                            <div class="dvQtySelectorChild2 dvQtySelector row align-items-center">
+                                                                <div class="col-12">
+                                                                    <h2 class="h7 special-text" data-i18n="Child(ren)">Child(ren) 2 - 11 Yrs</h2>
+                                                                </div>
+                                                                <div class="col-6 col-sm-12">
+                                                                    <div class="row align-items-center mt-1">
+                                                                        <div class="col-4 text-left"><i role="button" onclick="DecreaseChildCount(2)" class="fa fa-minus decreaseQtyChild2 border p-1 b-radius"></i></div>
+                                                                        <div class="col-4 text-center">
+                                                                            <input type="text" id="qtyValueChild2" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild2" value="1" readonly="readonly">
+                                                                        </div>
+                                                                        <div class="col-4 text-right"><i role="button" onclick="IncreaseChildCount(2)" class="fa fa-plus increaseQtyChild2 border p-1 b-radius"></i></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%--<div class="dvDropdown dropdown text-right text-sm-left">
                                                     <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-toggle="dropdown" aria-expanded="false">
                                                         <span class="d-inline-block mr-3 heading-semibold">Room2:</span> 
                                                         <span class="d-none d-sm-inline-block">Passenger</span>
@@ -551,10 +631,50 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>--%>
                                             </div>
-                                            <div class="col-6 col-sm-6 col-lg-3 mb-3" id="Room3" style="display: none;" >
+                                            <div class="col-12 col-sm-auto mb-3" id="Room3" style="display: none;">
                                                 <div class="dvDropdown dropdown">
+                                                    <button type="button" class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" data-toggle="dropdown" data-display="static" aria-expanded="false">
+                                                        Passenger
+                                                    </button>
+                                                    <div class="dropdown-menu prevent-close p-0">
+                                                        <div class="dropdown-item p-2">
+                                                            <div class="dvQtySelectorAdult3 dvQtySelector row align-items-center">
+                                                                <div class="col-12">
+                                                                    <h2 class="h7 special-text" data-i18n="Adult(s)">Adult(s) 12+ Yrs</h2>
+                                                                </div>
+                                                                <div class="col-6 col-sm-12">
+                                                                    <div class="row align-items-center mt-1">
+                                                                        <div class="col-4 text-left"><i role="button" onclick="DecreaseAdultCount(3)" class="fa fa-minus decreaseQtyAdult3 border p-1 b-radius"></i></div>
+                                                                        <div class="col-4 text-center">
+                                                                            <input type="text" id="qtyValueAdult3" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult3" value="1" readonly="readonly">
+                                                                        </div>
+                                                                        <div class="col-4 text-right"><i role="button" onclick="IncreaseAdultCount(3)" class="fa fa-plus increaseQtyAdult3 border p-1 b-radius"></i></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="border-top"></div>
+                                                        <div class="dropdown-item p-2">
+                                                            <div class="dvQtySelectorChild3 dvQtySelector row align-items-center">
+                                                                <div class="col-12">
+                                                                    <h2 class="h7 special-text" data-i18n="Child(ren)">Child(ren) 2 - 11 Yrs</h2>
+                                                                </div>
+                                                                <div class="col-6 col-sm-12">
+                                                                    <div class="row align-items-center mt-1">
+                                                                        <div class="col-4 text-left"><i role="button" onclick="DecreaseChildCount(3)" class="fa fa-minus decreaseQtyChild3 border p-1 b-radius"></i></div>
+                                                                        <div class="col-4 text-center">
+                                                                            <input type="text" id="qtyValueChild3" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild3" value="1" readonly="readonly">
+                                                                        </div>
+                                                                        <div class="col-4 text-right"><i role="button" onclick="IncreaseChildCount(3)" class="fa fa-plus increaseQtyChild3 border p-1 b-radius"></i></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%--<div class="dvDropdown dropdown">
                                                     <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-toggle="dropdown" aria-expanded="false">
                                                         <span class="d-inline-block mr-3 heading-semibold">Room3:</span> 
                                                         <span class="d-none d-sm-inline-block">Passenger</span>
@@ -581,10 +701,50 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>--%>
                                             </div>
-                                            <div class="col-6 col-sm-6 col-lg-3 mb-3" id="Room4" style="display: none;" >
-                                                <div class="dvDropdown dropdown text-right text-sm-left">
+                                            <div class="col-12 col-sm-auto mb-3" id="Room4" style="display: none;">
+                                                <div class="dvDropdown dropdown">
+                                                    <button type="button" class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" data-toggle="dropdown" data-display="static" aria-expanded="false">
+                                                        Passenger
+                                                    </button>
+                                                    <div class="dropdown-menu prevent-close dropdown-menu-sm-right dropdown-menu-lg-left p-0">
+                                                        <div class="dropdown-item p-2">
+                                                            <div class="dvQtySelectorAdult4 dvQtySelector row align-items-center">
+                                                                <div class="col-12">
+                                                                    <h2 class="h7 special-text" data-i18n="Adult(s)">Adult(s) 12+ Yrs</h2>
+                                                                </div>
+                                                                <div class="col-6 col-sm-12">
+                                                                    <div class="row align-items-center mt-1">
+                                                                        <div class="col-4 text-left"><i role="button" onclick="DecreaseAdultCount(4)" class="fa fa-minus decreaseQtyAdult4 border p-1 b-radius"></i></div>
+                                                                        <div class="col-4 text-center">
+                                                                            <input type="text" id="qtyValueAdult4" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult4" value="1" readonly="readonly">
+                                                                        </div>
+                                                                        <div class="col-4 text-right"><i role="button" onclick="IncreaseAdultCount(4)" class="fa fa-plus increaseQtyAdult4 border p-1 b-radius"></i></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="border-top"></div>
+                                                        <div class="dropdown-item p-2">
+                                                            <div class="dvQtySelectorChild4 dvQtySelector row align-items-center">
+                                                                <div class="col-12">
+                                                                    <h2 class="h7 special-text" data-i18n="Child(ren)">Child(ren) 2 - 11 Yrs</h2>
+                                                                </div>
+                                                                <div class="col-6 col-sm-12">
+                                                                    <div class="row align-items-center mt-1">
+                                                                        <div class="col-4 text-left"><i role="button" onclick="DecreaseChildCount(4)" class="fa fa-minus decreaseQtyChild4 border p-1 b-radius"></i></div>
+                                                                        <div class="col-4 text-center">
+                                                                            <input type="text" id="qtyValueChild4" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild4" value="1" readonly="readonly">
+                                                                        </div>
+                                                                        <div class="col-4 text-right"><i role="button" onclick="IncreaseChildCount(4)" class="fa fa-plus increaseQtyChild4 border p-1 b-radius"></i></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%--<div class="dvDropdown dropdown text-right text-sm-left">
                                                     <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-toggle="dropdown" aria-expanded="false">
                                                         <span class="d-inline-block mr-3 heading-semibold">Room4:</span> 
                                                         <span class="d-none d-sm-inline-block">Passenger</span>
@@ -611,7 +771,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>--%>
                                             </div>
                                         </div>
                                     </div>

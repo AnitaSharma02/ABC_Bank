@@ -127,7 +127,7 @@
     .dvFlightSearch .nav-pills .nav-link{
         padding:15px;
     }
-    .dvFlightSearch .dvDropdown .dropdown-menu-sm-left,
+    /*.dvFlightSearch .dvDropdown .dropdown-menu-sm-left,
     .dvFlightList .dvDropdown .dropdown-menu-sm-left,
     .dvFlightListDomestic .dvDropdown .dropdown-menu-sm-left {
         right: auto !important;
@@ -147,7 +147,7 @@
     .dvFlightList .dvDropdown .w-250,
     .dvFlightListDomestic .dvDropdown .w-250 {
         width: 300px
-    }
+    }*/
 }
 
 @media (min-width: 768px) {
@@ -175,12 +175,12 @@
     .dvFlightList .dvFlightInfo .dvInfo .border-bottom-lg {
         border-bottom: 1px solid var(--border-bottom-colour) !important;
     }
-    .dvFlightSearch .dvDropdown .dropdown-menu-sm-right,
+    /*.dvFlightSearch .dvDropdown .dropdown-menu-sm-right,
     .dvFlightList .dvDropdown .dropdown-menu-sm-right,
     .dvFlightListDomestic .dvDropdown .dropdown-menu-sm-right {
         right: auto !important;
         left: 0 !important;
-    }
+    }*/
 
     .dvFlightListDomestic .dvFlightInfo .dvInfo .border-right-lg {
         border-right: 1px solid var(--border-bottom-colour) !important;

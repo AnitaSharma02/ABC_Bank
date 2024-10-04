@@ -11,21 +11,21 @@
 }
 
 /*hotelsearch room dropdown*/
-.dvHotelSearch .dvDropdown .dropdown-menu,
+/*.dvHotelSearch .dvDropdown .dropdown-menu,
 .dvHotelResult .dvDropdown .dropdown-menu {
     padding: 0;
     width: 250px;
-}
+}*/
 .dvHotelSearch .dvQty .w-120,
 .dvHotelResult .dvQty .w-120 {
     width: 120px;
 }
-.dvHotelSearch .dvDropdown .dropdown-menu-right {
+/*.dvHotelSearch .dvDropdown .dropdown-menu-right {
     right: 0 !important;
     left: auto !important;
     top: 21px !important;
     transform: none !important;
-}
+}*/
 /*hotelsearch room dropdown*/
 
 /*hotelsearch international and domestic errors*/
@@ -124,13 +124,13 @@
 
 /*=========[ MEDIA QUERIES ]=========*/
 @media (min-width: 576px) {
-    .dvHotelSearch .dvDropdown .dropdown-menu-right,
+    /*.dvHotelSearch .dvDropdown .dropdown-menu-right,
     .dvHotelResult .dvDropdown .dropdown-menu-right {
         right: auto !important;
         left: 0 !important;
         top: 21px !important;
         transform: none !important;
-    }
+    }*/
 }
 @media (min-width: 768px) {
     .dvHotelSearch .dvForm .searchBtn .custom-width {
@@ -145,21 +145,21 @@
     .dvHotelResult .dvQty .w-120 {
         width: 80px;
     }
-    .dvHotelSearch .dvDropdown .dropdown-menu-right,
+    /*.dvHotelSearch .dvDropdown .dropdown-menu-right,
     .dvHotelResult .dvDropdown .dropdown-menu-right {
         right: 0 !important;
         left: auto !important;
         top: 21px !important;
         transform: none !important;
-    }
+    }*/
 }
 @media (min-width: 1200px) {
-    .dvHotelSearch .dvDropdown .dropdown-menu-right {
+    /*.dvHotelSearch .dvDropdown .dropdown-menu-right {
         right: auto !important;
         left: 0 !important;
         top: 21px !important;
         transform: none !important;
-    }
+    }*/
 
 }
 /*=========[ MEDIA QUERIES ]=========*/
