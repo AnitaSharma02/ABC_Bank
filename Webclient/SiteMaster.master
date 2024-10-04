@@ -34,9 +34,9 @@
                 $("#updProgress").hide();
             });
             CheckPointsAvailability();
-            $('.popupclose').click(function () {
+/*            $('.popupclose').click(function () {
                 $('.hover_app_info').hide();
-            });
+            });*/
 
             // this script is to Prevent dropdown menu from closing when clicking inside the dropdown all over the website
             $('.dvDropdown .prevent-close').on('click', function (event) {
@@ -96,8 +96,6 @@
                 console.error(e);
             }
         }
-
-        // Function to append the banner based on the language
         function appendBanner(data) {
             $("#dvHeroSlider").empty();
             $("#dvHeroSlider").append(data);
@@ -131,82 +129,6 @@
             });
         }
 
-        <%--function BindBanner() {
-            try {
-                var bannerHTML = '<%=HttpContext.Current.Application[string.Format("{0}banner",Convert.ToString(Session["CategoryName"]))]%>';
-                if (bannerHTML != '') {
-                    $("#dvHeroSlider").append(bannerHTML);
-                    const heroSlider = new Swiper(".dvHeroSlider.swiper", {
-                        direction: "horizontal",
-                        loop: false,
-                        speed: 500,
-                        slidesPerView: 1,
-                        navigation: {
-                            nextEl: ".swiper-button-next",
-                            prevEl: ".swiper-button-prev",
-                        },
-                        pagination: {
-                            el: ".swiper-pagination",
-                            clickable: true,
-                        },
-                        spaceBetween: 0,
-                        breakpoints: {
-                            0: {
-                                slidesPerView: 1,
-                            },
-                        },
-                        mousewheel: {
-                            enabled: false,
-                        },
-                        keyboard: {
-                            enabled: true,
-                        },
-                    });
-                }
-                else {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'Index.aspx/GetHomeBanner',
-                        contentType: 'application/json; charset=utf-8',
-                        dataType: 'json',
-                        data: "{path:'" + '<%=string.Format("{0}banner",Convert.ToString(Session["CategoryName"]))%>' + "'}",
-                        success: function (msg) {
-                            if (msg.d != '') {
-                                $("#dvHeroSlider").append(msg.d);
-                                const heroSlider = new Swiper(".dvHeroSlider.swiper", {
-                                    direction: "horizontal",
-                                    loop: false,
-                                    speed: 500,
-                                    slidesPerView: 1,
-                                    navigation: {
-                                        nextEl: ".swiper-button-next",
-                                        prevEl: ".swiper-button-prev",
-                                    },
-                                    pagination: {
-                                        el: ".swiper-pagination",
-                                        clickable: true,
-                                    },
-                                    spaceBetween: 0,
-                                    breakpoints: {
-                                        0: {
-                                            slidesPerView: 1,
-                                        },
-                                    },
-                                    mousewheel: {
-                                        enabled: false,
-                                    },
-                                    keyboard: {
-                                        enabled: true,
-                                    },
-                                });
-                            }
-                        }
-                    });
-                }
-
-            } catch (e) {
-            }
-        }--%>
         function GetRedemptionOptions() {
             try {
                 var redemptionOptionsHTML = '<%=HttpContext.Current.Application["HomeRedemptionOptions"]%>';
