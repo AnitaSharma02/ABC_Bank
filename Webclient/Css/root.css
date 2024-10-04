@@ -197,21 +197,30 @@
     --heading-extrablack: var(--font-extrablack);
 
     /*==================[ BORDER RADIUS ]==================*/
-    --b-radius: 0rem;
-    /*individual radius*/
-    --b-radius-top: var(--b-radius) 0 0 0;
-    --b-radius-right: 0 var(--b-radius) 0 0;
-    --b-radius-bottom: 0 0 var(--b-radius) 0;
-    --b-radius-left: 0 0 0 var(--b-radius);
-    /*group radius*/
-    --b-radius-top-right: var(--b-radius) var(--b-radius) 0 0;
-    --b-radius-bottom-right: 0 var(--b-radius) var(--b-radius) 0;
-    --b-radius-bottom-left: 0 0 var(--b-radius) var(--b-radius);
-    --b-radius-top-left: var(--b-radius) 0 0 var(--b-radius);
-    /*remove radius*/
-    --b-radius-none: 0;
+    --b-radius: 0;
+    /*two sides*/
+    --b-radius-top: var(--b-radius);
+    --b-radius-right: var(--b-radius);
+    --b-radius-bottom: var(--b-radius);
+    --b-radius-left: var(--b-radius);
+    /*single side*/
+    --b-radius-top-right: var(--b-radius);
+    --b-radius-bottom-right: var(--b-radius);
+    --b-radius-bottom-left: var(--b-radius);
+    --b-radius-top-left: var(--b-radius);
+    /*two sides*/
+    --b-radius-0: 0;
+    --b-radius-top-0: 0;
+    --b-radius-right-0: 0;
+    --b-radius-bottom-0: 0;
+    --b-radius-left-0: 0;
+    /*single side*/
+    --b-radius-top-right-0: 0;
+    --b-radius-bottom-right-0: 0;
+    --b-radius-bottom-left-0: 0;
+    --b-radius-top-left-0: 0;
 
-    /* BORDERS */
+    /*==================[ BORDER ]==================*/
     --border-colour: var(--colour3);
     --border-top-colour: var(--colour3);
     --border-right-colour: var(--colour3);
