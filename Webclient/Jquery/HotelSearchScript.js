@@ -163,7 +163,75 @@ function SearchRooms() {
         return false;
     }
 }
+function HotelSearch_Rooms() {
+    //var room = [];
+    //room = $(".Modifyloadrooms .Modifyroom");
+    var room = $("#CP_qtyValue").val();
+    var strRoomAdult = "";
+    var strRoomChild = "";
+    var strRoom = "";
+    for (var count = 0; count < room; count++) {
+        var selectTag = [];
+        selectTag = count;
+        strRoomAdult += $("#CP_qtyValueAdult" + (count + 1)).val() + ",";
+        strRoomChild += $("#CP_qtyValueChild" + (count + 1)).val() + ",";
+    }
+    strRoom = strRoomAdult + ":" + strRoomChild;
+    $("#hdnRoomString").val(strRoom);
+    if (validateHotelFields()) {
+        //var strCity = "city=" + $("#CP_txtCity").val() + "&";
+        //var strCheckIn = "checkin=" + $("#CP_TextBoxCheckin").val() + "&";
+        //var strCheckout = "checkout=" + $("#CP_TextBoxCheckout").val() + "&";
+        //var strRoomstring = "roomstring=" + $("#hdnRoomString").val() + "&";
+        //var isRedeemMiles = "isRedeemMiles=" + $("#ChkRedeemHotel").is(":checked").toString();
+        //var queryString = strCity + strCheckIn + strCheckout + strRoomstring + isRedeemMiles;
 
+        var strCity = $("#CP_txtCity").val();
+        var strCheckIn = $("#CP_TextBoxCheckin").val();
+        var strCheckOut = $("#CP_TextBoxCheckout").val();
+        var strRoomString = $("#hdnRoomString").val();
+        var strisRedeemMiles = $("#ChkRedeemHotel").is(":checked").toString();
+        var SearchDetails = strCity + "," + strCheckIn + " to " + strCheckOut + ".";
+        SearchDetails = SearchDetails.replace(/\%20/g, ' ');
+
+        var arrData = {};
+        arrData.pstrCity = strCity;
+        arrData.pCheckIn = strCheckIn;
+        arrData.pCheckOut = strCheckOut;
+        arrData.pRoomString = strRoomString;
+        arrData.pisRedeemMiles = strisRedeemMiles;
+        arrData.strRating = "All";
+        $.ajax({
+            type: 'POST',
+            url: "../HotelsSearchWait.aspx/GetHotelSearchResponse",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            timeout: 100000,
+            data: JSON.stringify(arrData),
+            // data: "{'pstrCity':'" + strCity + "','pCheckIn':'" + strCheckIn + "','pCheckOut':'" + strCheckOut + "','pRoomString':'" + strRoomString + "','pisRedeemMiles':'" + strisRedeemMiles + "'}",
+            success: function (msg) {
+                if (msg.d)
+                    window.location = "HotelResults.aspx";
+                else
+                    window.location = "NoResultFound.aspx?ERR=RESULTNOTFOUND";
+
+                $("#updProgress").hide();
+            },
+            error: function (jqXHR, status, errorThrown) {
+                window.location = "ErrorPage.aspx";
+
+            },
+            beforeSend: function () {
+                $("#updProgress").show();
+            }
+        });
+        //window.location = "HotelsSearchWait.aspx?" + queryString + "&Rating=All";
+        return false;
+    }
+    else {
+        return false;
+    }
+}
 function ModifySearchRooms() {
     var room = [];
     room = $("#ddlnoofroom").val();

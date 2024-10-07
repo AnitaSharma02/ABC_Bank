@@ -489,7 +489,7 @@
                                     </div>
                                     <div class="col-12 col-md-12 col-lg-3 offset-lg-9 order-6 order-lg-5">
                                          
-                                        <button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100">Search Hotel</button>
+                                        <button onclick="var retvalue = HotelSearch_Rooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100">Search Hotel</button>
                                     </div>
                                     <div class="col-12 order-5 order-lg-6">
                                         <div class="row">
