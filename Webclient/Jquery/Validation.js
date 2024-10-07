@@ -773,11 +773,12 @@ function ActivationOTPValidation() {
 
     if ($('#CP_txtMemberId').val() == '') {
         msg += "Please enter Member ID.<br/>";
-    } else {
-        if (!AcceptAlphanumericOnly($('#CP_txtMemberId').val())) {
-            msg += "Please enter Valid Member ID.<br/>";
-        }
     }
+    //else {
+    //    if (!AcceptAlphanumericOnly($('#CP_txtMemberId').val())) {
+    //        msg += "Please enter Valid Member ID.<br/>";
+    //    }
+    //}
 
     //var Tnc = new Boolean();
     //Tnc = $("#CP_chkTnC")[0].checked;
