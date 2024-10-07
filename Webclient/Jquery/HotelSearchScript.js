@@ -104,10 +104,10 @@ function SearchRooms() {
     for (var count = 0; count < room; count++) {
         var selectTag = [];
         selectTag = count;
-        strRoomAdult += $("#CP_qtyValueAdult" + (count+1)).val() + ",";
-        strRoomChild += $("#CP_qtyValueChild" + (count+1)).val() + ",";
+        strRoomAdult += $("#qtyValueAdult" + (count+1)).val() + ",";
+        strRoomChild += $("#qtyValueChild" + (count + 1)).val() + ",";      
     }
-    strRoom = strRoomAdult + ":" + strRoomChild;
+    strRoom = strRoomAdult + ":" + strRoomChild;  
     $("#hdnRoomString").val(strRoom);
     if (validateHotelFields()) {
         //var strCity = "city=" + $("#CP_txtCity").val() + "&";
