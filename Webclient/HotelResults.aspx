@@ -563,7 +563,7 @@
                                                     </div>
                                                 </div>--%>
                                             </div>
-                                            <div class="col-12 col-sm-auto3 mb-3" id="Room2" style="display: none;">
+                                            <div class="col-12 col-sm-auto mb-3" id="Room2" style="display: none;">
                                                 <div class="dvDropdown dropdown">
                                                     <button type="button" class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" data-toggle="dropdown" data-display="static" aria-expanded="false">
                                                         Passenger

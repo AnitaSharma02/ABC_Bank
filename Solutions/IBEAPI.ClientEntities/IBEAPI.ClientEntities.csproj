@@ -34,6 +34,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CB.IBE.Platform.Entities">
+      <HintPath>..\..\References\CB.IBE.Platform.Entities.dll</HintPath>
+    </Reference>
     <Reference Include="Framework.Integrations.Hotels.Entities">
       <HintPath>..\..\References\Framework.Integrations.Hotels.Entities.dll</HintPath>
     </Reference>

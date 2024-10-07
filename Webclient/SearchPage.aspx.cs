@@ -146,7 +146,8 @@ public partial class SearchPage : Page
                         lobjAirSearchRequest.ReturnDate = lobjAirSearchRequest.DepartureDate.AddDays(-1);
                     }
 
-                    lobjAirSearchRequest.IPAddress = HttpContext.Current.Request.UserHostAddress;
+                    //lobjAirSearchRequest.IPAddress = HttpContext.Current.Request.UserHostAddress;
+                    lobjAirSearchRequest.IPAddress = HttpContext.Current.Request.UserHostAddress.Replace(":", string.Empty);
                     HttpContext.Current.Session["FlightSearchPaymode"] = PaymentType.Points;
                     
                     lobjModel.LogActivity(string.Format("FlightSearch Request; OriginLocation-:{0};DestinationLocation-:{1};ArrivalDate-:{2};DepartureDate-:{3};" +

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CB.IBE.Platform.Entities;
+using System;
+using System.Runtime.Serialization;
 
 namespace IBEAPI.ClientEntities
 {
@@ -18,5 +20,23 @@ namespace IBEAPI.ClientEntities
         public string MemberId { get; set; }
         public string ResultCount { get; set; }
         public double PointRate { get; set; }
+        public string DepCountryName { get; set; }
+        public string ArrCountryName { get; set; }
+        private AirField mobjDepCode = new AirField();
+        private AirField mobjArrCode = new AirField();
+
+        [DataMember]
+        public AirField DepCode
+        {
+            get { return mobjDepCode; }
+            set { mobjDepCode = value; }
+        }
+
+        [DataMember]
+        public AirField ArrCode
+        {
+            get { return mobjArrCode; }
+            set { mobjArrCode = value; }
+        }
     }
 }
