@@ -54,13 +54,13 @@ public partial class Index : Page
                         if (count == 0)
                         {
                             sb.Append("<div class=\"swiper-slide active\">");
-                            sb.Append("<img src=\"" + asset.Url + "\" alt=\"\" width=\"100%\" style=\"object-fit:contain;\"  class=\"w-100\"/>");
+                            sb.Append("<img src=\"" + asset.Url + "\" alt=\"\" width=\"100%\" class=\"w-100\"/>");
                             sb.Append("</div>");
                         }
                         else
                         {
                             sb.Append("<div class=\"swiper-slide\">");
-                            sb.Append("<img src=\"" + asset.Url + "\" alt=\"\" width=\"100%\" style=\"object-fit:contain;\" class=\"w-100\"/>");
+                            sb.Append("<img src=\"" + asset.Url + "\" alt=\"\" width=\"100%\" class=\"w-100\"/>");
                             sb.Append("</div>");
                         }
                         count += 1;

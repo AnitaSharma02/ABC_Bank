@@ -508,7 +508,7 @@
                                                                     <div class="row align-items-center mt-1">
                                                                         <div class="col-4 text-left"><i role="button" onclick="DecreaseAdultCount(1)" class="fa fa-minus decreaseQtyAdult1 border p-1 b-radius"></i></div>
                                                                         <div class="col-4 text-center">
-                                                                            <input type="text" id="qtyValueAdult1" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult1" value="1" readonly="readonly">
+                                                                            <input type="text" id="qtyValueAdult1" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult1" runat="server">
                                                                         </div>
                                                                         <div class="col-4 text-right"><i role="button" onclick="IncreaseAdultCount(1)" class="fa fa-plus increaseQtyAdult1 border p-1 b-radius"></i></div>
                                                                     </div>
@@ -525,7 +525,7 @@
                                                                     <div class="row align-items-center mt-1">
                                                                         <div class="col-4 text-left"><i role="button" onclick="DecreaseChildCount(1)" class="fa fa-minus decreaseQtyChild1 border p-1 b-radius"></i></div>
                                                                         <div class="col-4 text-center">
-                                                                            <input type="text" id="qtyValueChild1" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild1" value="0" readonly="readonly">
+                                                                            <input type="text" id="qtyValueChild1" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild1" value="0"  readonly="readonly" runat="server">
                                                                         </div>
                                                                         <div class="col-4 text-right"><i role="button" onclick="IncreaseChildCount(1)" class="fa fa-plus increaseQtyChild1 border p-1 b-radius"></i></div>
                                                                     </div>
@@ -578,7 +578,7 @@
                                                                     <div class="row align-items-center mt-1">
                                                                         <div class="col-4 text-left"><i role="button" onclick="DecreaseAdultCount(2)" class="fa fa-minus decreaseQtyAdult2 border p-1 b-radius"></i></div>
                                                                         <div class="col-4 text-center">
-                                                                            <input type="text" id="qtyValueAdult2" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult2" value="1" readonly="readonly">
+                                                                            <input type="text" id="qtyValueAdult2" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult2" value="1"  readonly="readonly" runat="server">
                                                                         </div>
                                                                         <div class="col-4 text-right"><i role="button" onclick="IncreaseAdultCount(2)" class="fa fa-plus increaseQtyAdult2 border p-1 b-radius"></i></div>
                                                                     </div>
@@ -595,7 +595,7 @@
                                                                     <div class="row align-items-center mt-1">
                                                                         <div class="col-4 text-left"><i role="button" onclick="DecreaseChildCount(2)" class="fa fa-minus decreaseQtyChild2 border p-1 b-radius"></i></div>
                                                                         <div class="col-4 text-center">
-                                                                            <input type="text" id="qtyValueChild2" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild2" value="1" readonly="readonly">
+                                                                            <input type="text" id="qtyValueChild2" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild2" value="1"  readonly="readonly" runat="server">
                                                                         </div>
                                                                         <div class="col-4 text-right"><i role="button" onclick="IncreaseChildCount(2)" class="fa fa-plus increaseQtyChild2 border p-1 b-radius"></i></div>
                                                                     </div>
@@ -648,7 +648,7 @@
                                                                     <div class="row align-items-center mt-1">
                                                                         <div class="col-4 text-left"><i role="button" onclick="DecreaseAdultCount(3)" class="fa fa-minus decreaseQtyAdult3 border p-1 b-radius"></i></div>
                                                                         <div class="col-4 text-center">
-                                                                            <input type="text" id="qtyValueAdult3" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult3" value="1" readonly="readonly">
+                                                                            <input type="text" id="qtyValueAdult3" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult3" value="1" readonly="readonly" runat="server">
                                                                         </div>
                                                                         <div class="col-4 text-right"><i role="button" onclick="IncreaseAdultCount(3)" class="fa fa-plus increaseQtyAdult3 border p-1 b-radius"></i></div>
                                                                     </div>
@@ -665,7 +665,7 @@
                                                                     <div class="row align-items-center mt-1">
                                                                         <div class="col-4 text-left"><i role="button" onclick="DecreaseChildCount(3)" class="fa fa-minus decreaseQtyChild3 border p-1 b-radius"></i></div>
                                                                         <div class="col-4 text-center">
-                                                                            <input type="text" id="qtyValueChild3" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild3" value="1" readonly="readonly">
+                                                                            <input type="text" id="qtyValueChild3" class="form-control bg-transparent border-0 text-center qtyValueChild3" value="1"  readonly="readonly" runat="server">
                                                                         </div>
                                                                         <div class="col-4 text-right"><i role="button" onclick="IncreaseChildCount(3)" class="fa fa-plus increaseQtyChild3 border p-1 b-radius"></i></div>
                                                                     </div>
@@ -718,7 +718,7 @@
                                                                     <div class="row align-items-center mt-1">
                                                                         <div class="col-4 text-left"><i role="button" onclick="DecreaseAdultCount(4)" class="fa fa-minus decreaseQtyAdult4 border p-1 b-radius"></i></div>
                                                                         <div class="col-4 text-center">
-                                                                            <input type="text" id="qtyValueAdult4" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult4" value="1" readonly="readonly">
+                                                                            <input type="text" id="qtyValueAdult4" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult4" value="1" readonly="readonly" runat="server">
                                                                         </div>
                                                                         <div class="col-4 text-right"><i role="button" onclick="IncreaseAdultCount(4)" class="fa fa-plus increaseQtyAdult4 border p-1 b-radius"></i></div>
                                                                     </div>
@@ -735,7 +735,7 @@
                                                                     <div class="row align-items-center mt-1">
                                                                         <div class="col-4 text-left"><i role="button" onclick="DecreaseChildCount(4)" class="fa fa-minus decreaseQtyChild4 border p-1 b-radius"></i></div>
                                                                         <div class="col-4 text-center">
-                                                                            <input type="text" id="qtyValueChild4" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild4" value="1" readonly="readonly">
+                                                                            <input type="text" id="qtyValueChild4" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild4" value="1"  readonly="readonly" runat="server">
                                                                         </div>
                                                                         <div class="col-4 text-right"><i role="button" onclick="IncreaseChildCount(4)" class="fa fa-plus increaseQtyChild4 border p-1 b-radius"></i></div>
                                                                     </div>

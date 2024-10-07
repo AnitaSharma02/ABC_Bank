@@ -287,6 +287,7 @@
                             <option value="en">en</option>
                             <option value="np">np</option>
                             <option value="ar">ar</option>
+                             <option value="fr">fr</option>
                         </select>
                         <button class="navbar-toggler d-lg-none px-0 py-2 border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                             <%--<span class="navbar-toggler-icon"></span>--%>
