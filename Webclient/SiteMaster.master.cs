@@ -39,6 +39,14 @@ public partial class SiteMaster : System.Web.UI.MasterPage
                         }
                     }
                 }
+                if (HttpContext.Current.Session["MobIndex"] != null)
+                {
+                    lnkRegister.Visible = false;
+                    //mob_lnkRegister.Visible = false;
+                    mob_lnkLogin.Visible=false;
+                    lnkloginlogout.Visible = false;
+                    mob_lnkloginlogout.Visible = false;
+                }
             }
             else
             {

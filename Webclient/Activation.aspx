@@ -5,14 +5,14 @@
     <link href="Css/account.css" rel="stylesheet" type="text/css" />
     <script src="Jquery/jquery.md5.js" type="text/javascript"></script>
     <script src="Jquery/Validation.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
         $("#CP_txtOTP").bind('keypress', function (e) {
             return (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) ? false : true;
         });
         $(document).ready(function () {
             var Username = getQuerystring("user_name");
-            if (Username != null && Username != "")
-            {
+            if (Username != null && Username != "") {
                 $("#CP_txtMemberId").val(Username);
                 $('#CP_txtMemberId').attr('readonly', true);
             }
@@ -36,10 +36,48 @@
             else
                 return qs[1];
         }
+        $(document).ready(function () {
+            function generateCaptcha() {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                let captcha = '';
+                for (let i = 0; i < 6; i++) {
+                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return captcha;
+            }
+
+            function refreshCaptcha() {
+                const captcha = generateCaptcha();
+                $('#captcha-container').text(captcha);
+                return captcha;
+            }
+
+            let currentCaptcha = refreshCaptcha();
+
+            $('#captcha-form').on('submit', function (event) {
+                event.preventDefault();
+                const userInput = $('#captcha-input').val();
+                if (userInput === currentCaptcha) {
+                    alert('CAPTCHA validated successfully!');
+                    currentCaptcha = refreshCaptcha();
+                    $('#captcha-input').val('');
+                    $('#captcha-error').hide();
+                } else {
+                    $('#captcha-error').show();
+                }
+            });
+        });
     </script>
     <style>
         #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner {
             display: none;
+        }
+
+        #captcha-container {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
         }
     </style>
     <div class="dvBreadcrumbs">
@@ -160,12 +198,12 @@
                                                 <div class="col-12 mb-3">
                                                     <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server" ChildrenAsTriggers="false">
                                                         <ContentTemplate>
-                                                                <div class="d-inline-block">
-                                                                    <asp:Image ID="ImgCaptcha" runat="server" ImageUrl="~/captcha.ashx" CssClass="" />
-                                                                </div>
-                                                                <div class="d-inline-block mt-3 mt-md-0">
-                                                                    <asp:LinkButton ID="lnkBtnRefresh" runat="server" OnClick="lnkBtnRefresh_Click" CssClass="btn btn-one">Refresh</asp:LinkButton>
-                                                                </div>
+                                                            <div class="d-inline-block">
+                                                                <asp:Image ID="ImgCaptcha" runat="server" ImageUrl="~/captcha.ashx" CssClass="" />
+                                                            </div>
+                                                            <div class="d-inline-block mt-3 mt-md-0">
+                                                                <asp:LinkButton ID="lnkBtnRefresh" runat="server" OnClick="lnkBtnRefresh_Click" CssClass="btn btn-one">Refresh</asp:LinkButton>
+                                                            </div>
                                                         </ContentTemplate>
                                                         <Triggers>
                                                             <asp:AsyncPostBackTrigger ControlID="lnkBtnRefresh" />
@@ -173,9 +211,12 @@
                                                     </asp:UpdatePanel>
                                                 </div>
                                                 <div class="col-12 mb-3">
-                                                    <label class="label">Security Code:</label>
+                                                    <label class="label">Captcha:</label>
                                                     <div class="input-group">
+                                          <%--              <div id="captcha-container"></div>
+                                                        <input type="text" id="captcha-input" required>--%>
                                                         <asp:TextBox ID="txtSecurityCode" autocomplete="off" runat="server" CssClass="form-control"></asp:TextBox>
+                                                        <%--<p id="captcha-error" style="color: red; display: none;">Incorrect CAPTCHA. Please try again.</p>--%>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 mb-3 valignM dvLabel">

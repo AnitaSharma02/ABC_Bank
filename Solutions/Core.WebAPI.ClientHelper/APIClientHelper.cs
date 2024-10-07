@@ -1635,7 +1635,7 @@ namespace Core.WebAPI.ClientHelper
             try
             {
                 APIResponseResults lobjAPIResponseResults = new APIResponseResults();
-                string pstrUniqueAttributeKey = Convert.ToString(ConfigurationManager.AppSettings["UniqueUserAttributeKey"]);
+                string pstrUniqueAttributeKey = Convert.ToString(ConfigurationManager.AppSettings["UniqueMemberAttributeKey"]);
                 lobjAPIResponseResults = JsonConvert.DeserializeObject<APIResponseResults>(WebAPIHelper.PostData(string.Format("{0}?pintProgramId={1}&pstrUniqueAttributeKey={2}&pstrUniqueAttributeValue={3}", APIConstant.GetMemberDetailsByUniqueAttribute, pintProgramId, pstrUniqueAttributeKey, pstrUniqueAttributeValue), "GET", "GetMemberDetailsByUniqueAttribute", string.Empty, pstrToken));
                 if (lobjAPIResponseResults.results.IsSucessful)
                 {

@@ -41,77 +41,52 @@ public partial class Activation : Page
                 MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
                 if (lobjMemberDetails != null && lobjMemberDetails.MemberRelationsList.Count > 0)
                 {
-                    List<MemberLocalAttrDetails> objMemberLocalAttrDetails = new List<MemberLocalAttrDetails>();
-                    if (HttpContext.Current.Session["MemberLocalAttrDetails"] == null)
+                    if (!lobjMemberRelation.IsAccountActivated)
                     {
-                        Token lobjToken = lobjMemberLogin.GenerateToken("['LOGIN','" + lobjMemberDetails.MemberRelationsList[0].RelationReference + "']");
-                        var lobjlocalattrDynamic = JsonConvert.DeserializeObject<Root>(Convert.ToString(lobjMemberLogin.GetMemberLocalAttrDetails(lobjMemberDetails.MemberRelationsList[0].RelationReference.ToString(), lobjProgramDefinition.ProgramId.ToString(), (int)RelationType.LBMS, lobjToken.AccessToken)));
-                        Results lobjlocalAttrResults = JsonConvert.DeserializeObject<Results>(lobjlocalattrDynamic.results.ToString());
-                        if (lobjlocalAttrResults.IsSucessful)
+                        if (lobjMemberRelation.Status.Equals(Status.InActive))
                         {
-                            List<MemberLocalAttrDetails> lobjMemberLocalAttrDetails = JsonConvert.DeserializeObject<List<MemberLocalAttrDetails>>(lobjlocalAttrResults.ReturnObject.ToString());
-                            HttpContext.Current.Session["MemberLocalAttrDetails"] = lobjMemberLocalAttrDetails;
-                            objMemberLocalAttrDetails = HttpContext.Current.Session["MemberLocalAttrDetails"] as List<MemberLocalAttrDetails>;
-                        }
-                    }
-                    else
-                    {
-                        objMemberLocalAttrDetails = HttpContext.Current.Session["MemberLocalAttrDetails"] as List<MemberLocalAttrDetails>;
-                    }
-                    string User_name = objMemberLocalAttrDetails[0].UserName;
-                    if (User_name.EndsWith(pstrMemberId))
-                    {
-                        if (!lobjMemberRelation.IsAccountActivated)
-                        {
-                            if (lobjMemberRelation.Status.Equals(Status.InActive))
-                            {
-                                string lstrSourceIpAddress = HttpContext.Current.Request.UserHostAddress;
-                                // lblstatus = lobjModel.GenerateOTPByMemberId(lobjMemberRelation.RelationReference, lstrSourceIpAddress);
+                            string lstrSourceIpAddress = HttpContext.Current.Request.UserHostAddress;
 
-                                SystemParameter lobjSystemParameter = lobjModel.GetSystemParametres(lobjProgramDefinition.ProgramId);
-                                if (lobjProgramDefinition != null)
+                            SystemParameter lobjSystemParameter = lobjModel.GetSystemParametres(lobjProgramDefinition.ProgramId);
+                            if (lobjProgramDefinition != null)
+                            {
+                                OTPDetails lobjOTPDetails = new OTPDetails
                                 {
-                                    OTPDetails lobjOTPDetails = new OTPDetails
-                                    {
-                                        UniquerefID = lobjMemberRelation.RelationReference,
-                                        SourceAddress = lstrSourceIpAddress,
-                                        SourceCode = Core.Platform.OTP.ConfigurationConstants.SourceCode.Web,
-                                        ProgramId = lobjProgramDefinition.ProgramId,
-                                        RelationType = Convert.ToInt32(RelationType.LBMS),
-                                        OtpType = OTPEnumTypes.ACTIVATION.ToString(),
-                                        OtpEnumTypes = OTPEnumTypes.ACTIVATION,
-                                        AddExpirationTimeInMinutes = Convert.ToString(lobjSystemParameter.OTPExpirationTime)
-                                    };
-                                    lblstatus = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "activation_otp", lobjOTPDetails, "");
-                                }
-                                if (lblstatus)
-                                {
-                                    mstrRedirectEmptyURL = "Success";
-                                    HttpContext.Current.Session["ActivationMemberDetails"] = lobjMemberDetails;
-                                    lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, "Activation OTP Success"), ActivityType.ActivationOTPSuccess);
-                                }
-                                else
-                                {
-                                    mstrRedirectEmptyURL = "OTPFAILED";
-                                    lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, "Activation OTP Failed"), ActivityType.ActivationOTPFailed);
-                                }
+                                    UniquerefID = lobjMemberRelation.RelationReference,
+                                    SourceAddress = lstrSourceIpAddress,
+                                    SourceCode = Core.Platform.OTP.ConfigurationConstants.SourceCode.Web,
+                                    ProgramId = lobjProgramDefinition.ProgramId,
+                                    RelationType = Convert.ToInt32(RelationType.LBMS),
+                                    OtpType = OTPEnumTypes.ACTIVATION.ToString(),
+                                    OtpEnumTypes = OTPEnumTypes.ACTIVATION,
+                                    AddExpirationTimeInMinutes = Convert.ToString(lobjSystemParameter.OTPExpirationTime)
+                                };
+                                lblstatus = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "activation_otp", lobjOTPDetails, "");
+                            }
+                            if (lblstatus)
+                            {
+                                mstrRedirectEmptyURL = "Success";
+
+                                lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, "Activation OTP Success"), ActivityType.ActivationOTPSuccess);
                             }
                             else
                             {
-                                mstrRedirectEmptyURL = "Your Account is " + Convert.ToString(lobjMemberRelation.Status);
-                                lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, mstrRedirectEmptyURL), ActivityType.ActivationOTPFailed);
+                                mstrRedirectEmptyURL = "OTPFAILED";
+                                lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, "Activation OTP Failed"), ActivityType.ActivationOTPFailed);
                             }
                         }
                         else
                         {
-                            mstrRedirectEmptyURL = "Already Activated";
+                            mstrRedirectEmptyURL = "Your Account is " + Convert.ToString(lobjMemberRelation.Status);
                             lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, mstrRedirectEmptyURL), ActivityType.ActivationOTPFailed);
                         }
                     }
                     else
                     {
-                        mstrRedirectEmptyURL = "CaseSensitive_MemberId";
-                    }                 
+                        mstrRedirectEmptyURL = "Already Activated";
+                        lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, mstrRedirectEmptyURL), ActivityType.ActivationOTPFailed);
+                    }
+
                 }
                 else
                 {
@@ -210,47 +185,29 @@ public partial class Activation : Page
                     if (lobjPasswordPolicy != null)
                     {
                         lobjMemberDetails = lobjModel.GetMemberDetailsByUniqueAttribute(lobjProgramDefinition.ProgramId, pstrMemberId.Trim());
+                        LoggingAdapter.WriteLog(string.Format("Activation OtpValidation {0}", lobjMemberDetails.MemberRelationsList[0].RelationReference));
+
                         if (lobjMemberDetails != null && lobjMemberDetails.MemberRelationsList.Count > 0)
                         {
-                            List<MemberLocalAttrDetails> objMemberLocalAttrDetails = new List<MemberLocalAttrDetails>();
-                            if (Session["MemberLocalAttrDetails"] == null)
+                            MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
+                            LoggingAdapter.WriteLog(string.Format("Activation {0}", lobjMemberRelation));
+
+                            if (lobjMemberRelation.IsAccountActivated)
                             {
-                                MemberLogin lobjMemberLogin = new MemberLogin();
-                                Token lobjToken = lobjMemberLogin.GenerateToken("['LOGIN','" + lobjMemberDetails.MemberRelationsList[0].RelationReference + "']");
-                                var lobjlocalattrDynamic = JsonConvert.DeserializeObject<Root>(Convert.ToString(lobjMemberLogin.GetMemberLocalAttrDetails(lobjMemberDetails.MemberRelationsList[0].RelationReference.ToString(), lobjProgramDefinition.ProgramId.ToString(), (int)RelationType.LBMS, lobjToken.AccessToken)));
-                                Results lobjlocalAttrResults = JsonConvert.DeserializeObject<Results>(lobjlocalattrDynamic.results.ToString());
-                                if (lobjlocalAttrResults.IsSucessful)
-                                {
-                                    List<MemberLocalAttrDetails> lobjMemberLocalAttrDetails = JsonConvert.DeserializeObject<List<MemberLocalAttrDetails>>(lobjlocalAttrResults.ReturnObject.ToString());
-                                    Session["MemberLocalAttrDetails"] = lobjMemberLocalAttrDetails;
-                                    objMemberLocalAttrDetails = Session["MemberLocalAttrDetails"] as List<MemberLocalAttrDetails>;
-                                }
-                            }
-                            else
-                            {
-                                objMemberLocalAttrDetails = Session["MemberLocalAttrDetails"] as List<MemberLocalAttrDetails>;
-                            }
-                            string User_name = objMemberLocalAttrDetails[0].UserName;
-                            if (User_name.EndsWith(pstrMemberId))
-                            {
-                                strMD5password = lobjModel.GenerateMD5(pstrMemberId.Trim() + pstrPwd);
-                                MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
-                                if (lobjMemberRelation.IsAccountActivated)
-                                {
-                                    mstrRedirectEmptyURL = "Account_Activated";
-                                }
-                            }
-                            else
-                            {
-                                mstrRedirectEmptyURL = "CaseSensitive_MemberId";
+                                mstrRedirectEmptyURL = "Account_Activated";
                             }
                         }
                         else
                         {
                             mstrRedirectEmptyURL = "Invalid_MemberId";
                         }
+                        LoggingAdapter.WriteLog(string.Format("Activation {0}", mstrRedirectEmptyURL));
+
                         if (mstrRedirectEmptyURL.Equals(string.Empty))
                         {
+                            strMD5password = lobjModel.GenerateMD5(lobjMemberDetails.MemberRelationsList[0].RelationReference.Trim() + pstrPwd);
+                            LoggingAdapter.WriteLog(string.Format("Activation {0}", strMD5password));
+
                             lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).WebPassword = strMD5password.Trim().ToUpper();
                             if (CheckOTP(lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).RelationReference, pstrOTP))
                             {
@@ -260,11 +217,13 @@ public partial class Activation : Page
                                 lobjSearchMember.RelationType = Convert.ToInt32(RelationType.LBMS);
                                 lobjSearchMember.Password = strMD5password.Trim().ToUpper();
                                 lblStatus = lobjModel.ActivateAccount(lobjSearchMember);
+                                LoggingAdapter.WriteLog(string.Format("Activation CheckOTP{0}", lblStatus));
+
                                 if (lblStatus)
                                 {
                                     mstrRedirectEmptyURL = "Success";
                                     HttpContext.Current.Session["loginMsg"] = "1";
-                                    HttpContext.Current.Session["ActivationMemberDetails"] = null;
+                                    // HttpContext.Current.Session["ActivationMemberDetails"] = null;
                                 }
                                 else
                                 {
