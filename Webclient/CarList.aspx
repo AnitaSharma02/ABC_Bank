@@ -592,10 +592,10 @@
             <div class="b-radius bg-colour5 p-3">
                 <span id="spancarcount" class="heading6 text-colour1">0</span>
                 <span class="heading6 text-colour1">cars found</span>
-                <a href="#" class="link1 ml-3">
+<%--                <a class="link1 text-decoration-none text-colour7 ml-3">
                     <i class="fa-solid fa-location-dot"></i>
                     <span class="">View locations on a map</span>
-                </a>
+                </a>--%>
             </div>
         </div>
 

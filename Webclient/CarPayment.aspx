@@ -289,7 +289,7 @@
                                 </div>
                                 <div class="col-6 col-md-6 mt-2 mt-md-0 order-md-1 text-left">
                                     <div class="vehicleLocation">
-                                        <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>Vehicle location:</a>
+                                        <a class="link1 text-decoration-none text-colour7"><i class="fa fa-map-marker" aria-hidden="true"></i>Vehicle location:</a>
                                         <span>DUBAI INTL AIRPORT TERMINAL 3, 154 AIRPORT ROAD, DUBAI, 21971</span>
                                     </div>
                                 </div>
