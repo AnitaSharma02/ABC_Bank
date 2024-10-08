@@ -1588,28 +1588,28 @@ function ActivationValidationCodeBehind() {
     $("#CP_lblMessagesDetails")[0].innerHTML = "";
     var msg = "";
     if ($('#CP_txtOTP').val() == '') {
-        msg += "<span>Please enter received One Time Password (OTP).</span><br/>";
+        msg += "<span>Please enter received One Time Password (OTP)</span><br/>";
     }
     else if (!AcceptNumbersonly($('#CP_txtOTP').val())) {
         msg += "<span>Enter Valid One Time Password (OTP).</span><br/>";
     }
     if ($('#CP_txtPassword').val() == '') {
-        msg += "<span>Please enter New Password.</span><br/>";
+        msg += "<span>Please enter New Password</span><br/>";
     }
     if (($('#CP_txtPassword').val().length < 8) && ($('#CP_txtPassword').val().length > 1)) {
-        msg += "<span>New password field has to be minimum eight characters.</span>" + "<br/>";
+        msg += "<span>New password field has to be minimum eight characters</span>" + "<br/>";
     }
     if ($('#CP_txtConfirmpassword').val() == '') {
-        msg += "<span>Please enter confirm New Password.</span><br/>";
+        msg += "<span>Please enter confirm New Password</span><br/>";
     }
     if (($('#CP_txtConfirmpassword').val().length < 8) && ($('#CP_txtConfirmpassword').val().length > 1)) {
-        msg += "<span>Confirm new password field has to be minimum eight characters.</span>" + "<br/>";
+        msg += "<span>Confirm new password field has to be minimum eight characters</span>" + "<br/>";
     }
     if (($('#CP_txtPassword').val() != $('#CP_txtConfirmpassword').val()) && ($('#CP_txtPassword').val().length > 1)) {
-        msg += "<span>The new password and the confirmed new password must be same.</span>" + "<br/>";
+        msg += "<span>The new password and the confirmed new password must be same</span>" + "<br/>";
     }
     if ($('#CP_txtSecurityCode').val() == '') {
-        msg += "<span>Please enter Security Code.</span><br/>";
+        msg += "<span>Please enter Security Code</span><br/>";
     }
     if (!CheckPasswordPolicy($('#CP_txtPassword').val())) {
         msg += "<span>Password must contain one numeric digit, one upper case character, one lower case character, one special character (!@#$%*()?) and minimum 8 characters in length.</span>" + "<br/>";
@@ -1618,7 +1618,7 @@ function ActivationValidationCodeBehind() {
     Tnc = $("#CP_chkTnC")[0].checked;
 
     if (Tnc == false) {
-        msg += "<span>Please accept Terms and Conditions. </span><br/>";
+        msg += "<span>Please accept Terms and Conditions </span><br/>";
     }
     if (msg.length > 0) {
         $("#CP_lblMessagesDetails")[0].innerHTML = msg;
@@ -1823,12 +1823,10 @@ function LoginValidationCodeBehind() {
     $("#LoginValidation")[0].innerHTML = "";
     $("#CP_lblLoginError").html('');
     if ($("#CP_txtMemberID").val().length == 0) {
-        msg += "<span>Please enter Member ID.</span><br/>";
+        msg += "<span>Please enter Member ID</span><br/>";
     }
-    else {
-        if (!isValidEmailAddress($('#CP_txtMemberID').val())) {
-            msg += "<span>Please enter valid Member ID.</span> <br/>";
-        }
+    if ($('#CP_txtSecurityCode').val() == '') {
+        msg += "<span>Please enter Security Code</span><br/>";
     }
     if ($("#CP_txtPassword").val().length == 0) {
         msg += "<span>Please enter Password </span><br/>";
@@ -1907,6 +1905,12 @@ function MemberLoginCodeBehind(data) {
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#CP_lblLoginError").html('<span>Member ID is case sensitive. Please check the login details you have entered and try again.</span>');
+        }
+        else if (data == "Invalid_SecurityCode") {
+            $("#LoginValidation").css('color', 'red');
+            $("#LoginValidation")[0].innerHTML = "";
+            $("#CP_ErrorMsgContainer").show();
+            $("#CP_lblLoginError").html('<span>Please check the Security Code and try again </span>');
         }
         else {
             showLoginOTPDiv();

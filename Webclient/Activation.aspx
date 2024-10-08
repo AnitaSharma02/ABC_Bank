@@ -216,7 +216,7 @@
                                           <%--              <div id="captcha-container"></div>
                                                         <input type="text" id="captcha-input" required>--%>
                                                         <asp:TextBox ID="txtSecurityCode" autocomplete="off" runat="server" CssClass="form-control"></asp:TextBox>
-                                                        <%--<p id="captcha-error" style="color: red; display: none;">Incorrect CAPTCHA. Please try again.</p>--%>
+                                                        <p id="captcha-error" style="color: red; display: none;">Incorrect CAPTCHA. Please try again.</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 mb-3 valignM dvLabel">

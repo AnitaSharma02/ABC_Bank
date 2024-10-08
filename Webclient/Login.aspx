@@ -3,11 +3,52 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <script src="Jquery/Validation.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner {
             display: none;
         }
+
+        #captcha-container {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
     </style>
+    <script>
+        $(document).ready(function () {
+            function generateCaptcha() {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                let captcha = '';
+                for (let i = 0; i < 6; i++) {
+                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return captcha;
+            }
+
+            function refreshCaptcha() {
+                const captcha = generateCaptcha();
+                $('#captcha-container').text(captcha);
+                return captcha;
+            }
+
+            let currentCaptcha = refreshCaptcha();
+
+            $('#captcha-form').on('submit', function (event) {
+                event.preventDefault();
+                const userInput = $('#captcha-input').val();
+                if (userInput === currentCaptcha) {
+                    alert('CAPTCHA validated successfully!');
+                    currentCaptcha = refreshCaptcha();
+                    $('#captcha-input').val('');
+                    $('#captcha-error').hide();
+                } else {
+                    $('#captcha-error').show();
+                }
+            });
+        });
+    </script>
     <div class="dvBreadcrumbs">
         <div class="container-xl">
             <nav>
@@ -54,6 +95,29 @@
                                                     <i class="fa-regular fa-eye-slash"></i>
                                                 </span>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server" ChildrenAsTriggers="false">
+                                            <ContentTemplate>
+                                                <div class="d-inline-block">
+                                                    <asp:Image ID="ImgCaptcha" runat="server" ImageUrl="~/captcha.ashx" CssClass="" />
+                                                </div>
+                                                <div class="d-inline-block mt-3 mt-md-0">
+                                                    <asp:LinkButton ID="lnkBtnRefresh" runat="server" OnClick="lnkBtnRefresh_Click" CssClass="btn btn-one">Refresh</asp:LinkButton>
+                                                </div>
+                                            </ContentTemplate>
+                                            <Triggers>
+                                                <asp:AsyncPostBackTrigger ControlID="lnkBtnRefresh" />
+                                            </Triggers>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="label">Captcha:</label>
+                                        <div class="input-group">
+                                            <asp:TextBox ID="txtSecurityCode" autocomplete="off" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <p id="captcha-error" style="color: red; display: none;">Incorrect CAPTCHA. Please try again.</p>
+
                                         </div>
                                     </div>
                                     <div class="col-12 mb-3 valignM dvLabel">
