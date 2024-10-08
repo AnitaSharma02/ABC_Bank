@@ -174,8 +174,8 @@
                         <div class="tab-content mt-3">
                             <div class="tab-pane active" id="logintab" role="tabpanel" aria-labelledby="logintab">
                                 <div id="ErrorMsgContainer" class="dvErrors ErrorMsgContainer mtop_10" runat="server">
-                                    <asp:Label runat="server" ID="lblLoginError" Text="" ForeColor="Red"></asp:Label>
-                                    <div id="ForceChangeValidation" style="text-align: center;"></div>
+                                    <asp:Label runat="server" ID="lblLoginError" Text=""></asp:Label>
+                                    <div id="ForceChangeValidation" class="h7 text-danger"></div>
                                 </div>
                                 <div id="divLogin">
                                     <label for="CP_txtOldPassword" class="txt-username oldpass">Old Password:</label>

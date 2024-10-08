@@ -75,8 +75,8 @@
                                 <h5 class="h6 heading-regular" id="loginHeader">All fields are mandatory.</h5>
                             </div>
                             <div id="ErrorMsgContainer" class="dvErrors col-12" runat="server">
-                                <asp:Label runat="server" ID="lblLoginError" Text="" CssClass="mt-3 h7 heading-regular text-danger" ForeColor="Red"></asp:Label>
-                                <div id="LoginValidation" class="h6 heading-semibold text-colour1"></div>
+                                <asp:Label runat="server" ID="lblLoginError" Text="" CssClass="mt-3 h7 text-danger"></asp:Label>
+                                <div id="LoginValidation" class="h7 text-danger"></div>
                             </div>
                             <div class="col-12 mb-3" id="divLogin">
                                 <div class="row">

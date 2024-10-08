@@ -168,7 +168,7 @@ function LoginValidation() {
         msg += "<span>Please Enter Password</span>" + "<br/>";
     }
     if (msg.length > 0) {
-        $("#LoginValidation").css('color', 'red');
+        //$("#LoginValidation").css('color', 'red');
         $("#CP_ErrorMsgContainer").show();
         $("#LoginValidation")[0].innerHTML = msg;
     }
@@ -205,25 +205,25 @@ function LoginValidation() {
                             $("#CP_lblLoginError").html('<span>Your Account is Locked.Please </span><a class="ErrorMessageLink" onclick="showOTPDiv();">click here</a><span> to unlock the same.</span>');
                         }
                         else if (data.d == "AuthenticationFailed") {
-                            $("#LoginValidation").css('color', 'red');
+                            //$("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
                             $("#CP_lblLoginError").html('<span>Please check the login details you have entered and try again.</span>');
                         }
                         else if (data.d == "Suspended") {
-                            $("#LoginValidation").css('color', 'red');
+                            //$("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
                             $("#CP_lblLoginError").html('<span>Your Account is Suspended</span>');
                         }
                         else if (data.d == "Cancelled") {
-                            $("#LoginValidation").css('color', 'red');
+                            //$("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
                             $("#CP_lblLoginError").html('<span>Your Account is Cancelled</span>');
                         }
                         else if (data.d == "InActive") {
-                            $("#LoginValidation").css('color', 'red');
+                            //$("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
                             $("#CP_lblLoginError").html('<span>Your Account is InActive. Please use activate tab to activate your account.</span>');
@@ -509,7 +509,7 @@ function ValidateLoginOTP() {
     }
     if (msg.length > 0) {
         $("#CP_ErrorMsgContainer").show();
-        $("#LoginValidation").css('color', 'red');
+        //$("#LoginValidation").css('color', 'red');
         $("#LoginValidation")[0].innerHTML = msg;
     }
     else {
@@ -676,7 +676,7 @@ function UnLockMemberByOTP() {
     }
 
     if (msg.length > 0) {
-        $("#LoginValidation").css('color', 'red');
+        //$("#LoginValidation").css('color', 'red');
         $("#LoginValidation").css('display', 'block');
         $("#LoginValidation")[0].innerHTML = msg;
         $("#CP_ErrorMsgContainer").show();
@@ -1137,7 +1137,7 @@ function ExtLoginValidation() {
     //}
 
     if (msg.length > 0) {
-        $("#LoginValidation").css('color', 'red');
+        //$("#LoginValidation").css('color', 'red');
         $("#ErrorMsgContainer").show();
         $("#LoginValidation")[0].innerHTML = msg;
     }
@@ -1166,25 +1166,25 @@ function ExtLoginValidation() {
                             $("#lblLoginError").html('<span>Your Account is Locked.Please </span><a class="ErrorMessageLink" onclick="showOTPDiv();">click here</a><span> to unlock the same.</span>');
                         }
                         else if (data.d == "AuthenticationFailed") {
-                            $("#LoginValidation").css('color', 'red');
+                            //$("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
                             $("#lblLoginError").html('<span>Please check the login details you have entered and try again.</span>');
                         }
                         else if (data.d == "Suspended") {
-                            $("#LoginValidation").css('color', 'red');
+                            //$("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
                             $("#lblLoginError").html('<span>Your Account is Suspended</span>');
                         }
                         else if (data.d == "Cancelled") {
-                            $("#LoginValidation").css('color', 'red');
+                            //$("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
                             $("#lblLoginError").html('<span>Your Account is Cancelled</span>');
                         }
                         else if (data.d == "InActive") {
-                            $("#LoginValidation").css('color', 'red');
+                            //$("#LoginValidation").css('color', 'red');
                             $("#LoginValidation")[0].innerHTML = "";
                             $("#ErrorMsgContainer").show();
                             $("#lblLoginError").html('<span>Your Account is InActive. Please use activate tab to activate your account.</span>');
@@ -1228,7 +1228,7 @@ function ExtValidateLoginOTP() {
 
     if (msg.length > 0) {
         $("#ErrorMsgContainer").show();
-        $("#LoginValidation").css('color', 'red');
+        //$("#LoginValidation").css('color', 'red');
         $("#LoginValidation")[0].innerHTML = msg;
     }
     else {
@@ -1313,7 +1313,7 @@ function ExtUnLockMemberByOTP() {
     }
 
     if (msg.length > 0) {
-        $("#LoginValidation").css('color', 'red');
+        //$("#LoginValidation").css('color', 'red');
         $("#LoginValidation").css('display', 'block');
         $("#LoginValidation")[0].innerHTML = msg;
         $("#ErrorMsgContainer").show();
@@ -1832,7 +1832,7 @@ function LoginValidationCodeBehind() {
         msg += "<span>Please enter Password </span><br/>";
     }
     if (msg.length > 0) {
-        $("#LoginValidation").css('color', 'red');
+        //$("#LoginValidation").css('color', 'red');
         $("#CP_ErrorMsgContainer").show();
         $("#LoginValidation")[0].innerHTML = msg;
         $('#CP_BtnLoginValidation').prop('disabled', false);
@@ -1866,25 +1866,25 @@ function MemberLoginCodeBehind(data) {
             $("#CP_lblLoginError").html('<span>Your Account is Locked.Please </span><a class="ErrorMessageLink" onclick="showOTPDiv();">click here</a><span> to unlock the same.</span>');
         }
         else if (data == "AuthenticationFailed") {
-            $("#LoginValidation").css('color', 'red');
+            //$("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#CP_lblLoginError").html('<span>Please check the login details you have entered and try again.</span>');
         }
         else if (data == "Suspended") {
-            $("#LoginValidation").css('color', 'red');
+            //$("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#CP_lblLoginError").html('<span>Your Account is Suspended</span>');
         }
         else if (data == "Cancelled") {
-            $("#LoginValidation").css('color', 'red');
+            //$("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#CP_lblLoginError").html('<span>Your Account is Cancelled</span>');
         }
         else if (data == "InActive") {
-            $("#LoginValidation").css('color', 'red');
+            //$("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#CP_lblLoginError").html('<span>Your Account is InActive. Please use activate tab to activate your account.</span>');
@@ -1895,19 +1895,19 @@ function MemberLoginCodeBehind(data) {
             $("#CP_lblLoginError").html('<span>Password must contain one non-alpha character,one upper case character,one lower case character and minimum 8 characters in length.</span>');
         }
         else if (data == "Invalid_MemberId") {
-            $("#LoginValidation").css('color', 'red');
+            //$("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#CP_lblLoginError").html('<span>Please check the login details you have entered and try again. </span>' + (typeof (Statustext) == 'undefined' ? '' : 'your Status is ' + Statustext));
         }
         else if (newData == "CaseSensitive_MemberId") {
-            $("#LoginValidation").css('color', 'red');
+            //$("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#CP_lblLoginError").html('<span>Member ID is case sensitive. Please check the login details you have entered and try again.</span>');
         }
         else if (data == "Invalid_SecurityCode") {
-            $("#LoginValidation").css('color', 'red');
+            //$("#LoginValidation").css('color', 'red');
             $("#LoginValidation")[0].innerHTML = "";
             $("#CP_ErrorMsgContainer").show();
             $("#CP_lblLoginError").html('<span>Please check the Security Code and try again </span>');
@@ -2101,7 +2101,7 @@ function ForceChangePasswordValidation() {
     }
 
     if (msg.length > 0) {
-        $("#ForceChangeValidation").css('color', 'red');
+        //$("#ForceChangeValidation").css('color', 'red');
         $("#CP_ErrorMsgContainer").show();
         $("#ForceChangeValidation")[0].innerHTML = msg;
     }
@@ -2131,7 +2131,7 @@ function ForceChangePasswordValidation() {
                             $("#CP_lblLoginError").html(msg);
                         }
                         else if (data.d == "Failed") {
-                            $("#ForceChangeValidation").css('color', 'red');
+                            //$("#ForceChangeValidation").css('color', 'red');
                             $("#ForceChangeValidation")[0].innerHTML = "";
                             $("#CP_ErrorMsgContainer").show();
                             msg = (DefaultlangSelected ? 'Change Password Failure, please try again.' : 'Ubah Kata Sandi Gagal, silakan coba lagi.')
