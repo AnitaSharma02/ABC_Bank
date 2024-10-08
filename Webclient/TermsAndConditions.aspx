@@ -36,7 +36,7 @@
                         <li class="mb-3">
                             <span class="heading6">1. Definitions</span>
                             <ul class="mt-3" type="a">
-                                <li class="mb-3">“<strong>ABC BANKING CORPORATION LTD</strong>”, “<strong>Us</strong>”, “<stong>We</stong>” or “<strong>Our</strong>” means BANK FULL NAME;</li>
+                                <li class="mb-3">“<strong>ABC</strong>”, “<strong>Us</strong>”, “<stong>We</stong>” or “<strong>Our</strong>” means ABC BANKING CORPORATION LTD;</li>
                                 <li class="mb-3">“<strong>Reward</strong>” means physical or other items or services offered against redemption of the required REWARDS NAME as will be notified by ABC BANKING CORPORATION LTD from time to time;</li>
                                 <li class="mb-3">“<strong>Reward Points</strong>” or “<strong>REWARDS NAME</strong>” means points earned and accumulated as provided in item 3 below;</li>
                                 <li class="mb-3">“<strong>USSD</strong>” means Unstructured Supplementary Service Data, a protocol used by GSM mobile phones to communicate with their service provider's computers via text messages;</li>
