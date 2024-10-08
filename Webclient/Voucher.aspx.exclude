@@ -101,7 +101,7 @@
     <section class="travel prepaidCard">
         <div class="container-xl">
         <h1>Voucher</h1>
-        <p>You can use the Verve Rewards Gift Vouchers for any of our esteemed partners from Lifestyle brands to Fine Dine and much more.</p>
+        <p>You can use the Infinity Rewards Gift Vouchers for any of our esteemed partners from Lifestyle brands to Fine Dine and much more.</p>
     <div class="row genCat">
  <div id="inner-page-statement" class="col-md-12">
     <div class="gift-voucher">
@@ -293,7 +293,7 @@
                                 </div>
                                 <div class="width100 display_hide " id="DivGlobalRewardsConfirm" runat="server">
                                     <%----%>
-                                   <p><span>Please find below your Verve Rewards Voucher Summary:</span></p>
+                                   <p><span>Please find below your Infinity Rewards Voucher Summary:</span></p>
                                     <div class="width100 RightInnerContent">
                                         <div id="divCurrencyDropDown" runat="server" class="Width100 display_hide pb10">
                                             <span style="font-size:20px;">Please select your currency: &nbsp</span>

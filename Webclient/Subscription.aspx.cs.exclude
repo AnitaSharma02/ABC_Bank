@@ -40,7 +40,7 @@ public partial class Subscription : System.Web.UI.Page
                             if (lobjModel.ActivteUserAfterLink(lobjMemberDetails))
                             {
                                 lblMessagesDetails.ForeColor = Color.Blue;
-                                lblMessagesDetails.Text = "Your account has been activated. Now you can access your Verve Rewards account by logging to <em>https://absher.qib.com.qa</em>";
+                                lblMessagesDetails.Text = "Your account has been activated. Now you can access your Infinity Rewards account by logging to <em>https://absher.qib.com.qa</em>";
                             }
                             else
                             {

@@ -117,7 +117,7 @@ public partial class Voucher : System.Web.UI.Page
                 else
                 {
 
-                    lblComercialbankreward.Text = "Verve Rewards Points";
+                    lblComercialbankreward.Text = "Infinity Rewards Points";
                 }
             }
             else
@@ -448,7 +448,7 @@ public partial class Voucher : System.Web.UI.Page
         else
         {
             Session["VoucherProgramCurrency"] = lobjListProgramCurrencyDefinition.Find(lobj => lobj.Currency.Equals("Accolades"));
-            lblComercialbankreward.Text = "Verve Rewards Points";
+            lblComercialbankreward.Text = "Infinity Rewards Points";
         }
 
         ProgramCurrencyDefinition lobjProgramCurrencyDefinition = new ProgramCurrencyDefinition();

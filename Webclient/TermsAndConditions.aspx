@@ -41,7 +41,7 @@
                                 <li class="mb-3">“<strong>Reward Points</strong>” or “<strong>REWARDS NAME</strong>” means points earned and accumulated as provided in item 3 below;</li>
                                 <li class="mb-3">“<strong>USSD</strong>” means Unstructured Supplementary Service Data, a protocol used by GSM mobile phones to communicate with their service provider's computers via text messages;</li>
                                 <li class="mb-3">“<strong>Website</strong>” means the portal www.abcbanking.mu or such web address as may be designated by ABC BANKING CORPORATION LTD from time to time</li>
-                                <li class="mb-3">“<strong>You</strong>” or “<strong>Participant</strong>” means a ABC BANKING CORPORATION LTD Customer who has enrolled to participate in the Program as provided in item 2.2 below;</li>
+                                <li class="mb-3">“<strong>You</strong>” or “<strong>Participant</strong>” means ABC BANKING CORPORATION LTD Customer who has enrolled to participate in the Program as provided in item 2.2 below;</li>
                             </ul>
                         </li>
 
@@ -64,7 +64,7 @@
                                     <ul class="mt-3" style="list-style: none;">
                                         <li class="mb-3">2.2.1 In order to become a Participant, you will be required to apply for a credit card with ABC Banking. Once your card activated, you will be automatically enrolled on the Program.</li>
                                         <li class="mb-3">2.2.2 Enrolment to the Program will be free and you will only be deemed to have been enrolled and become a Participant in the Program once you receive a confirmation SMS to that effect from ABC BANKING CORPORATION LTD.</li>
-                                        <li class="mb-3">2.2.3 Only one Program account may be associated with a ABC BANKING CORPORATION LTD customer and a single mobile phone number. In the event of a dispute over ownership of the Program membership account, the participant will be deemed to be the authorised account holder of the ABC BANKING CORPORATION LTD account submitted at the time of enrollment. For purposes of these Program Terms, the "authorized account holder" is the natural person who is assigned to the submitted Bank account.</li>
+                                        <li class="mb-3">2.2.3 Only one Program account may be associated with ABC BANKING CORPORATION LTD customer and a single mobile phone number. In the event of a dispute over ownership of the Program membership account, the participant will be deemed to be the authorised account holder of the ABC BANKING CORPORATION LTD account submitted at the time of enrollment. For purposes of these Program Terms, the "authorized account holder" is the natural person who is assigned to the submitted Bank account.</li>
                                         <li class="mb-3">
                                             <span class="heading6">2.2.4 Warranties Given by the Participant</span>
                                             <p class="h6 my-3 heading-regular">In addition to complying with the provisions of these Terms and Conditions, you warrant to ABC BANKING CORPORATION LTD that:</p>

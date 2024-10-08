@@ -63,8 +63,8 @@
                         <div class="innerBx">
                             <div class="privacyContent">
                                 <div class="priText" id="innerPageearn" dir="ltr">
-                                    <h4 class="blue">Earning Infinity Rewards NPoints</h4>
-                                    <p class="pt-4 px-md-5 d-none">Experience the good life while effortlessly earning Verve Rewards! It's as easy as using your Verve Card for online and offline payments, at POS terminals, on the web, and even at ATMs. The more transactions you do, the more rewards you'll earn. Embrace a lifestyle of convenience and reap the benefits of Verve Rewards along the way!</p>
+                                    <h4 class="blue">Earning Infinity Rewards Points</h4>
+                                    <p class="pt-4 px-md-5 d-none">Experience the good life while effortlessly earning Infinity Rewards! It's as easy as using your ABC Card for online and offline payments, at POS terminals, on the web, and even at ATMs. The more transactions you do, the more rewards you'll earn. Embrace a lifestyle of convenience and reap the benefits of Infinity Rewards along the way!</p>
                                     <div class="py-5">
                                         <h4><span>
                                             <img class="mr-3" style="width: 50px; aspect-ratio: 1/1;"
@@ -82,7 +82,7 @@
                                                 <tbody>
 
                                                     <tr>
-                                                        <td>Verve Debit Card</td>
+                                                        <td>ABC Debit Card</td>
                                                         <td>Every 2 Transactions on ATM = 1 point </td>
                                                         <td>Every 2 Transactions on POS = 1 point </td>
                                                         <td>Every 2 Transactions on Web = 1 point </td>
@@ -91,7 +91,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <p class="text-left p-0">Your minimum monthly spend on verve cards must be a minimum of NGN 500 to start earning NPoints.</p>
+                                        <p class="text-left p-0">Your minimum monthly spend on ABC cards must be a minimum of NGN 500 to start earning Points.</p>
 
                                         <h4 class="d-none"><span>
                                             <img class="mr-3" style="width: 50px; aspect-ratio: 1/1;"
@@ -129,14 +129,12 @@
 
 
                                         <div class="bg-green p-5 mt-5">
-                                            <h4 class="blue text-white p-0">Track Your Infinity Rewards NPoints Effortlessly!</h4>
+                                            <h4 class="blue text-white p-0">Track Your Infinity Rewards Points Effortlessly!</h4>
                                             <div class="py-3">
                                                 <p class="text-white p-0">
                                                     Your monthly e-statement will be useful, and<br />
-                                                    you can also stay up-to-date on your earned NPoints by visiting the Infinity Rewards website.
+                                                    you can also stay up-to-date on your earned Points by visiting the Infinity Rewards website.
                                                 </p>
-                                                <%--  <p class="text-white p-0">  Use the <a class="website-text" href="https://www.myverveworld.com/">Infinity Rewards website</a>, Online/Mobile banking, Contact Centre, or <br/> monthly e-statement to stay updated
-                                on your earned points.</p>--%>
                                             </div>
                                             <div class="d-flex justify-content-center travelBtn">
                                                 <a href="StatementSummary.aspx" class="hvr-sweep-to-right">Learn More</a>
@@ -145,7 +143,7 @@
                                     </div>
 
                                     <div style="display: none">
-                                        <h4>Activation and Viewing Infinity Rewards NPoints through XXXX Mobile Banking App</h4>
+                                        <h4>Activation and Viewing Infinity Rewards Points through XXXX Mobile Banking App</h4>
                                         <p>Customers can Activate their Infinity Rewards account by logging in XXXX Mobile App as per below:</p>
                                         <ul class="innerText">
                                             <li>Customer logs into XXXX Mobile App.</li>
@@ -170,15 +168,15 @@
             </div>
             <div class="bg-greenTexture py-5">
                 <div class="container-xl">
-                    <h4 class="text-white text-center texture-head">Activate your Verve Rewards Account:</h4>
+                    <h4 class="text-white text-center texture-head">Activate your Infinity Rewards Account:</h4>
                     <div class="parent-box d-flex align-items-center justify-content-center flex-wrap">
                         <div class="align-items-center child-box d-flex flex-column p-4">
                             <div class="align-items-center d-flex justify-content-center red-circle">1</div>
-                            <p class="align-items-center box-txt d-flex justify-content-center pt-4">Launch the Verve Rewards Portal on your browser</p>
+                            <p class="align-items-center box-txt d-flex justify-content-center pt-4">Launch the Infinity Rewards Portal on your browser</p>
                         </div>
                         <div class="align-items-center child-box d-flex flex-column p-4">
                             <div class="align-items-center d-flex justify-content-center red-circle">2</div>
-                            <p class="align-items-center box-txt d-flex justify-content-center pt-4">Log in to the Verve Rewards Portal</p>
+                            <p class="align-items-center box-txt d-flex justify-content-center pt-4">Log in to the Infinity Rewards Portal</p>
                         </div>
                         <div class="align-items-center child-box d-flex flex-column p-4">
                             <div class="align-items-center d-flex justify-content-center red-circle">3</div>
@@ -186,7 +184,7 @@
                         </div>
                         <div class="align-items-center child-box d-flex flex-column p-4">
                             <div class="align-items-center d-flex justify-content-center red-circle">4</div>
-                            <p class="align-items-center box-txt d-flex justify-content-center pt-4">Enter your Verve ID</p>
+                            <p class="align-items-center box-txt d-flex justify-content-center pt-4">Enter your ABC ID</p>
                         </div>
                         <div class="align-items-center child-box d-flex flex-column p-4">
                             <div class="align-items-center d-flex justify-content-center red-circle">5</div>
@@ -213,15 +211,15 @@
                     <div class="py-5">
                         <h3 class="align-items-center cong-text d-flex justify-content-center text-center pt-5">
                             <img class="mr-3" style="width: 40px;" src="Images/Tick-Mark.png">Congratulations!</h3>
-                        <h5 class="cong-para text-center pb-2">Your Verve Rewards Account is Active now!</h5>
+                        <h5 class="cong-para text-center pb-2">Your Infinity Rewards Account is Active now!</h5>
                     </div>
 
 
 
                     <p class="text-white text-center last-text pb-5">
-                        <strong class="pr-2" style="font-weight: 800;">Note:</strong>In case your email address is not registered with Verve Rewards, Verve Rewards activation will not be possible.<br />
+                        <strong class="pr-2" style="font-weight: 800;">Note:</strong>In case your email address is not registered with Infinity Rewards, Infinity Rewards activation will not be possible.<br />
 
-                        You should update your email ID by visiting nearest partner bank before proceeding to Verve Rewards activation.
+                        You should update your email ID by visiting nearest partner bank before proceeding to Infinity Rewards activation.
                     </p>
                 </div>
 
