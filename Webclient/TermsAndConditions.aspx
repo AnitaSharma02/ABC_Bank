@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="heading1 mb-3">TERMS AND CONDITIONS</h2>
-                    <h2 class="heading6 mb-3">NIC ASIA REWARD PROGRAM (NIC EXPRESS REWARD)</h2>
+                    <h2 class="heading6 mb-3">ABC REWARD PROGRAM (Infinity Rewards)</h2>
                     <p class="mb-3">The following terms and conditions apply to the ABC BANKING CORPORATION LTD Rewards Program (<strong>the “Infinity Rewards”</strong>) and will continue on an ongoing basis unless terminated in accordance with item 9 below.</p>
                     <p class="mb-3">By participating in the Program you will be deemed to have read, understood and accepted these Terms and Conditions.</p>
                     <ul>

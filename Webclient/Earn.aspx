@@ -63,7 +63,7 @@
                         <div class="innerBx">
                             <div class="privacyContent">
                                 <div class="priText" id="innerPageearn" dir="ltr">
-                                    <h4 class="blue">Earning NIC Express Reward NPoints</h4>
+                                    <h4 class="blue">Earning Infinity Rewards NPoints</h4>
                                     <p class="pt-4 px-md-5 d-none">Experience the good life while effortlessly earning Verve Rewards! It's as easy as using your Verve Card for online and offline payments, at POS terminals, on the web, and even at ATMs. The more transactions you do, the more rewards you'll earn. Embrace a lifestyle of convenience and reap the benefits of Verve Rewards along the way!</p>
                                     <div class="py-5">
                                         <h4><span>
@@ -129,13 +129,13 @@
 
 
                                         <div class="bg-green p-5 mt-5">
-                                            <h4 class="blue text-white p-0">Track Your NIC Express Reward NPoints Effortlessly!</h4>
+                                            <h4 class="blue text-white p-0">Track Your Infinity Rewards NPoints Effortlessly!</h4>
                                             <div class="py-3">
                                                 <p class="text-white p-0">
                                                     Your monthly e-statement will be useful, and<br />
-                                                    you can also stay up-to-date on your earned NPoints by visiting the NIC Express Reward website.
+                                                    you can also stay up-to-date on your earned NPoints by visiting the Infinity Rewards website.
                                                 </p>
-                                                <%--  <p class="text-white p-0">  Use the <a class="website-text" href="https://www.myverveworld.com/">NIC Express Reward website</a>, Online/Mobile banking, Contact Centre, or <br/> monthly e-statement to stay updated
+                                                <%--  <p class="text-white p-0">  Use the <a class="website-text" href="https://www.myverveworld.com/">Infinity Rewards website</a>, Online/Mobile banking, Contact Centre, or <br/> monthly e-statement to stay updated
                                 on your earned points.</p>--%>
                                             </div>
                                             <div class="d-flex justify-content-center travelBtn">
@@ -145,12 +145,12 @@
                                     </div>
 
                                     <div style="display: none">
-                                        <h4>Activation and Viewing NIC Express Reward NPoints through XXXX Mobile Banking App</h4>
-                                        <p>Customers can Activate their NIC Express Reward account by logging in XXXX Mobile App as per below:</p>
+                                        <h4>Activation and Viewing Infinity Rewards NPoints through XXXX Mobile Banking App</h4>
+                                        <p>Customers can Activate their Infinity Rewards account by logging in XXXX Mobile App as per below:</p>
                                         <ul class="innerText">
                                             <li>Customer logs into XXXX Mobile App.</li>
-                                            <li>The NIC Express Reward point balance will be seen on the first page.</li>
-                                            <li>If the customer did not yet activate the NIC Express Reward account, an option to “Activate” will be available</li>
+                                            <li>The Infinity Rewards point balance will be seen on the first page.</li>
+                                            <li>If the customer did not yet activate the Infinity Rewards account, an option to “Activate” will be available</li>
                                             <li>On clicking “Activate” a new screen opens which shows
                                         <ul class="innerText">
                                             <li>The customer’s registered mobile number and email ID with XXXX (non-editable field)</li>
@@ -158,7 +158,7 @@
                                         </ul>
                                             </li>
                                             <li>An OTP is generated</li>
-                                            <li>Customer has to key in the OTP and the NIC Express Reward account immediately gets activated.</li>
+                                            <li>Customer has to key in the OTP and the Infinity Rewards account immediately gets activated.</li>
                                         </ul>
                                     </div>
                                 </div>
