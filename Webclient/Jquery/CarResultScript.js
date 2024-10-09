@@ -1172,7 +1172,7 @@ function MapCarDetails() {
                 $("#divAdditionaCharges")[0].innerHTML = completeHTML;
 
                 $("#spncarTotalAmount").text(Math.ceil(parseFloat(CarBookingDetails.PayableAmount)));
-                $("#spncarhireAmount").text(Math.ceil(parseFloat(CarBookingDetails.CarHireAmount)));
+                $("#spncarhireAmount").text((parseFloat(CarBookingDetails.CarHireAmount)));
                 $("#spnPayableAmount").text(Math.ceil(parseFloat(CarBookingDetails.PayableAmount)));
           //$("#spnAdditionalChargetotal").text(parseFloat(CarBookingDetails.TotalAdditionalequipmentAmount == null ? 0 : CarBookingDetails.TotalAdditionalequipmentAmount).toFixed(2));
 
