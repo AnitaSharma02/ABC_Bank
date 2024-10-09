@@ -659,7 +659,7 @@ p {
   color: var(--text-colour6);
 }
 .dvHeader .logo img {
-  width: 100px;
+  width: 90px;
 }
 .dvHeader .navbar-nav .nav-item.active a {
   color: var(--primary-colour);

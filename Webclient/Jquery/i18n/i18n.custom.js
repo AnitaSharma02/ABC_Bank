@@ -4,7 +4,7 @@ const CONFIG = {
     ignoredTags: ["SCRIPT", "HTML", "IFRAME", "HEAD", "META", "STYLE", "IMG", "LINK"],
     languageStyles: {
         np: { cssFile: "Css/nepal.css", direction: "ltr" },
-        fr: { cssFile: "Css/french.css", direction: "ltr" },
+        /*fr: { cssFile: "Css/french.css", direction: "ltr" },*/
         ar: { cssFile: "Css/arabic.css", direction: "ltr" },
         en: { cssFile: "Css/global.css", direction: "ltr" }
     },

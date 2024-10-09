@@ -271,31 +271,31 @@
                 </div>
             </div>
             <div class="container-xl py-lg-3">
-                <nav class="navbar navbar-expand-lg navbar-light px-0 py-2 mx-lg-n3">
+                <nav class="navbar navbar-expand-lg navbar-light px-0 py-2 mx-lg-n3 justify-content-start">
                     <div class="logo m-0 col-auto col-lg-2 px-0 px-lg-3 order-0 order-lg-0">
                         <a href="Index.aspx" class="d-inline-block pr-2 mr-1 border-right">
                             <img src="../Images/logos/infinity-logo.svg" />
                         </a>
                     </div>
-                    <div class="logo m-0 col-5 col-lg-2 px-0 px-lg-3 order-1 order-lg-2 text-lg-right">
+                    <div class="logo m-0 col-auto col-lg-2 px-0 px-lg-3 order-1 order-lg-2 text-lg-right">
                         <a href="https://www.abcbanking.mu/" target="_blank" class="d-inline-block">
                             <img src="../Images/logos/abc-footer-logo.svg" />
                         </a>
                     </div>
-                    <div class="order-2 col d-flex col-lg-auto align-items-center justify-content-end pr-0 pr-lg-0">
+                    <div class="order-2 col d-flex- d-none col-lg-auto align-items-center justify-content-end pr-0 pr-lg-3">
                          <select class="dvLang d-none" id="languageSelector">
                             <option value="en">en</option>
                             <option value="np">np</option>
                             <option value="ar">ar</option>
-                             <option value="fr">fr</option>
+                             <%--<option value="fr">fr</option>--%>
                         </select>
-                        <button class="navbar-toggler d-lg-none px-0 py-2 border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                        <button class="navbar-toggler d-lg-none px-0 py-2 border-0 ml-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                             <%--<span class="navbar-toggler-icon"></span>--%>
                             <%--<img src="/Images/icons/other/menu.png" alt="?" />--%>
                             <i class="fa-solid fa-bars-staggered text-colour1"></i>
                         </button>
                     </div>
-                    <div class="navbar-collapse collapse order-3 order-lg-1 col-lg-8 px-0 px-lg-3 mb-1 mb-lg-0 justify-content-lg-end" id="navbarSupportedContent">
+                    <div class="navbar-collapse collapse order-3 order-lg-1 col-lg-auto px-0 px-lg-3 mb-1 mb-lg-0 justify-content-lg-end ml-auto" id="navbarSupportedContent">
                         <ul class="navbar-nav align-items-lg-center w-100">
                             <li class="nav-item">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" id="about" href="AboutUs.aspx">About Us</a>
