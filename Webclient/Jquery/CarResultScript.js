@@ -916,8 +916,8 @@ function GetCarDetails(SelectedCarId) {
                 $("#divAdditionalEquipment")[0].innerHTML = msg.d[4].toString(); // Additional Equipment
                 $("#spncarhireAmount").text(msg.d[5].toString());//Total car hire Amount
                 $("#divmoreInfoDetails")[0].innerHTML = msg.d[7].toString(); //car More Info Popup html
-                $("#spncarTotalAmount").text(msg.d[5].toString());
-                $("#spnPayableAmount").text(msg.d[5].toString());
+                $("#spncarTotalAmount").text(Math.ceil(msg.d[5].toString()));
+                $("#spnPayableAmount").text(Math.ceil(msg.d[5].toString()));
 
                 updateVcDataSections();
             }
