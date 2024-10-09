@@ -940,7 +940,7 @@ public partial class PointGateway : System.Web.UI.Page
             return null;
         }
     }
-    private static void SendExperienceEmail(BeMyGuest.Entities.BookingRequest bookingRequest, BeMyGuest.Entities.BookingResponse bookingResponse)
+    private static void  SendExperienceEmail(BeMyGuest.Entities.BookingRequest bookingRequest, BeMyGuest.Entities.BookingResponse bookingResponse)
     {
         ABCModel lobjModel = new ABCModel();
         try

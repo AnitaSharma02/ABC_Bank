@@ -3,7 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <script src="Jquery/Validation.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <%-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--%>
     <style>
         #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner {
             display: none;
@@ -97,7 +97,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 mb-3">
+                                    <%--    <div class="col-12 mb-3">
                                         <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server" ChildrenAsTriggers="false">
                                             <ContentTemplate>
                                                 <div class="d-inline-block">
@@ -112,14 +112,14 @@
                                             </Triggers>
                                         </asp:UpdatePanel>
                                     </div>
-                                    <div class="col-12 mb-3">
+                                <div class="col-12 mb-3">
                                         <label class="label">Captcha:</label>
                                         <div class="input-group">
                                             <asp:TextBox ID="txtSecurityCode" autocomplete="off" runat="server" CssClass="form-control"></asp:TextBox>
                                             <p id="captcha-error" style="color: red; display: none;">Incorrect CAPTCHA. Please try again.</p>
 
                                         </div>
-                                    </div>
+                                    </div>--%>
                                     <div class="col-12 mb-3 valignM dvLabel">
                                         <label class="checkbox-container d-flex">
                                             <span class="d-inline-block ml-1">

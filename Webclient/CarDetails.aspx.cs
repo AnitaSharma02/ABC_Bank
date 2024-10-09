@@ -775,8 +775,7 @@ public partial class CarDetails : System.Web.UI.Page
 
                         lobjCarBookingDetails.AdditonalCharges.Remove(lobjAdditonalCharge);
                     }
-                    lobjCarBookingDetails.PayableAmount = Convert.ToString(Convert.ToDecimal(lobjCarBookingDetails.PayableAmount) + Convert.ToDecimal(pstramount));
-
+                   
                     lobjAdditonalCharges.Name = pstrname;
                     lobjAdditonalCharges.Code = pstrProductId;
                     lobjAdditonalCharges.amount = pstramount;
@@ -790,6 +789,8 @@ public partial class CarDetails : System.Web.UI.Page
                     {
                         double value = lobjCarBookingDetails.AdditonalCharges.FindAll(x => x.IsAdditionalEquipments).Sum(x => Convert.ToDouble(x.TotalChargeamount));
                         lobjCarBookingDetails.TotalAdditionalequipmentAmount = Convert.ToString(value);
+                        lobjCarBookingDetails.PayableAmount = Convert.ToString(Convert.ToDecimal(lobjCarBookingDetails.PayableAmount) + Convert.ToDecimal(lobjAdditonalCharges.TotalChargeamount));
+
                     }
                     else
                     {
@@ -798,7 +799,7 @@ public partial class CarDetails : System.Web.UI.Page
                 }
                 else
                 {
-                    lobjCarBookingDetails.PayableAmount = Convert.ToString(Convert.ToDecimal(lobjCarBookingDetails.PayableAmount) - Convert.ToDecimal(pstramount));
+                    //lobjCarBookingDetails.PayableAmount = Convert.ToString(Convert.ToDecimal(lobjCarBookingDetails.PayableAmount) - Convert.ToDecimal(pstramount));
 
                     AdditonalCharges lobjAdditonalCharge = lobjCarBookingDetails.AdditonalCharges.Where(note => note.Code == pstrProductId).FirstOrDefault();
                     lobjCarBookingDetails.AdditonalCharges.Remove(lobjAdditonalCharge);
@@ -807,6 +808,8 @@ public partial class CarDetails : System.Web.UI.Page
                     {
                         double value = lobjCarBookingDetails.AdditonalCharges.FindAll(x => x.IsAdditionalEquipments).Sum(x => Convert.ToDouble(x.TotalChargeamount));
                         lobjCarBookingDetails.TotalAdditionalequipmentAmount = Convert.ToString(value);
+                        lobjCarBookingDetails.PayableAmount = Convert.ToString(Convert.ToDecimal(lobjCarBookingDetails.PayableAmount) - Convert.ToDecimal(lobjAdditonalCharges.TotalChargeamount));
+
                     }
                     else
                     {

@@ -193,7 +193,7 @@
                 CssClass="rptErrorMassage text-danger" Enabled="false"></asp:RequiredFieldValidator>
 
             <asp:RegularExpressionValidator ID="REVtxtPassportIssueLocation" Display="Dynamic" runat="server"
-                ControlToValidate="txtPassportIssueLocation" ValidationGroup="WebValidation" ValidationExpression="^[a-zA-Z]+$"
+                ControlToValidate="txtPassportIssueLocation" ValidationGroup="WebValidation" ValidationExpression="^[a-zA-Z ]+$"
                 CssClass="rptErrorMassage text-danger" ErrorMessage="Please Enter valid Place."></asp:RegularExpressionValidator>
 
 

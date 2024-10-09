@@ -156,7 +156,7 @@ public partial class Activation : Page
     {
         try
         {
-            ImgCaptcha.ImageUrl = string.Format("~/captcha.ashx?refresh={0}", Guid.NewGuid());
+          //  ImgCaptcha.ImageUrl = string.Format("~/captcha.ashx?refresh={0}", Guid.NewGuid());
         }
         catch (Exception ex)
         {
@@ -174,77 +174,71 @@ public partial class Activation : Page
             string pstrOTP = txtOTP.Text;
             string pstrPwd = txtPassword.Text;
             string pstrMemberId = txtMemberId.Text;
-            string pstrSecurityCode = txtSecurityCode.Text;
+            // string pstrSecurityCode = txtSecurityCode.Text;
             string strMD5password = string.Empty;
             try
             {
-                if (HttpContext.Current.Session["CAPTCHA"].ToString().Equals(pstrSecurityCode))
+                ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+                SystemParameter lobjPasswordPolicy = lobjModel.GetSystemParametres(lobjProgramDefinition.ProgramId);
+                if (lobjPasswordPolicy != null)
                 {
-                    ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
-                    SystemParameter lobjPasswordPolicy = lobjModel.GetSystemParametres(lobjProgramDefinition.ProgramId);
-                    if (lobjPasswordPolicy != null)
+                    lobjMemberDetails = lobjModel.GetMemberDetailsByUniqueAttribute(lobjProgramDefinition.ProgramId, pstrMemberId.Trim());
+                    LoggingAdapter.WriteLog(string.Format("Activation OtpValidation {0}", lobjMemberDetails.MemberRelationsList[0].RelationReference));
+
+                    if (lobjMemberDetails != null && lobjMemberDetails.MemberRelationsList.Count > 0)
                     {
-                        lobjMemberDetails = lobjModel.GetMemberDetailsByUniqueAttribute(lobjProgramDefinition.ProgramId, pstrMemberId.Trim());
-                        LoggingAdapter.WriteLog(string.Format("Activation OtpValidation {0}", lobjMemberDetails.MemberRelationsList[0].RelationReference));
+                        MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
+                        LoggingAdapter.WriteLog(string.Format("Activation {0}", lobjMemberRelation));
 
-                        if (lobjMemberDetails != null && lobjMemberDetails.MemberRelationsList.Count > 0)
+                        if (lobjMemberRelation.IsAccountActivated)
                         {
-                            MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
-                            LoggingAdapter.WriteLog(string.Format("Activation {0}", lobjMemberRelation));
-
-                            if (lobjMemberRelation.IsAccountActivated)
-                            {
-                                mstrRedirectEmptyURL = "Account_Activated";
-                            }
-                        }
-                        else
-                        {
-                            mstrRedirectEmptyURL = "Invalid_MemberId";
-                        }
-                        LoggingAdapter.WriteLog(string.Format("Activation {0}", mstrRedirectEmptyURL));
-
-                        if (mstrRedirectEmptyURL.Equals(string.Empty))
-                        {
-                            strMD5password = lobjModel.GenerateMD5(lobjMemberDetails.MemberRelationsList[0].RelationReference.Trim() + pstrPwd);
-                            LoggingAdapter.WriteLog(string.Format("Activation {0}", strMD5password));
-
-                            lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).WebPassword = strMD5password.Trim().ToUpper();
-                            if (CheckOTP(lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).RelationReference, pstrOTP))
-                            {
-                                SearchMember lobjSearchMember = new SearchMember();
-                                lobjSearchMember.UniquerefID = lobjMemberDetails.Email;
-                                lobjSearchMember.ProgramId = lobjMemberDetails.ProgramId;
-                                lobjSearchMember.RelationType = Convert.ToInt32(RelationType.LBMS);
-                                lobjSearchMember.Password = strMD5password.Trim().ToUpper();
-                                lblStatus = lobjModel.ActivateAccount(lobjSearchMember);
-                                LoggingAdapter.WriteLog(string.Format("Activation CheckOTP{0}", lblStatus));
-
-                                if (lblStatus)
-                                {
-                                    mstrRedirectEmptyURL = "Success";
-                                    HttpContext.Current.Session["loginMsg"] = "1";
-                                    // HttpContext.Current.Session["ActivationMemberDetails"] = null;
-                                }
-                                else
-                                {
-                                    mstrRedirectEmptyURL = "Invalid_Credentials";
-                                }
-                            }
-                            else
-                            {
-                                mstrRedirectEmptyURL = "Invalid_OTP";
-                            }
+                            mstrRedirectEmptyURL = "Account_Activated";
                         }
                     }
                     else
                     {
-                        mstrRedirectEmptyURL = "Invalid_Program";
+                        mstrRedirectEmptyURL = "Invalid_MemberId";
+                    }
+                    LoggingAdapter.WriteLog(string.Format("Activation {0}", mstrRedirectEmptyURL));
+
+                    if (mstrRedirectEmptyURL.Equals(string.Empty))
+                    {
+                        strMD5password = lobjModel.GenerateMD5(lobjMemberDetails.MemberRelationsList[0].RelationReference.Trim() + pstrPwd);
+                        LoggingAdapter.WriteLog(string.Format("Activation {0}", strMD5password));
+
+                        lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).WebPassword = strMD5password.Trim().ToUpper();
+                        if (CheckOTP(lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).RelationReference, pstrOTP))
+                        {
+                            SearchMember lobjSearchMember = new SearchMember();
+                            lobjSearchMember.UniquerefID = lobjMemberDetails.Email;
+                            lobjSearchMember.ProgramId = lobjMemberDetails.ProgramId;
+                            lobjSearchMember.RelationType = Convert.ToInt32(RelationType.LBMS);
+                            lobjSearchMember.Password = strMD5password.Trim().ToUpper();
+                            lblStatus = lobjModel.ActivateAccount(lobjSearchMember);
+                            LoggingAdapter.WriteLog(string.Format("Activation CheckOTP{0}", lblStatus));
+
+                            if (lblStatus)
+                            {
+                                mstrRedirectEmptyURL = "Success";
+                                HttpContext.Current.Session["loginMsg"] = "1";
+                                // HttpContext.Current.Session["ActivationMemberDetails"] = null;
+                            }
+                            else
+                            {
+                                mstrRedirectEmptyURL = "Invalid_Credentials";
+                            }
+                        }
+                        else
+                        {
+                            mstrRedirectEmptyURL = "Invalid_OTP";
+                        }
                     }
                 }
                 else
                 {
-                    mstrRedirectEmptyURL = "Invalid_SecurityCode";
+                    mstrRedirectEmptyURL = "Invalid_Program";
                 }
+
                 lobjModel.LogActivity(string.Format("Member Activation {0}: {1}", pstrMemberId, mstrRedirectEmptyURL), ActivityType.Activation);
             }
             catch (Exception ex)

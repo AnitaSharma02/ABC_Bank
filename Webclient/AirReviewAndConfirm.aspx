@@ -38,14 +38,19 @@
                 $("#lblBookNow").hide();
                 return true;
             }
-            if ((document.getElementById('CP_chkAcceptAgreements').checked == false) && (document.getElementById('CP_chkAcceptPayMiles').checked == false)) {
-                msg = "Accept Terms And Conditions and agree to pay Points";
-            }
+            //if (document.getElementById('CP_chkAcceptAgreements').checked == false) {
+            //    if (document.getElementById('CP_chkAcceptPayMiles').checked == false) {
+            //        msg = "Accept Terms And Conditions and agree to pay Points";
+            //    }
+            //}
+            //else {
+
+            //}
             if (document.getElementById('CP_chkAcceptAgreements').checked == false) {
-                msg = "Accept Terms And Conditions";
+                msg += "Accept Terms And Conditions" + "<br/>";
             }
             if (document.getElementById('CP_chkAcceptPayMiles').checked == false) {
-                msg = "Accept & agree to pay Points";
+                msg += "Accept & agree to pay Points" + "<br/>";
             }
             if (msg.length > 0) {
                 $("#errorDiv")[0].innerHTML = msg;
