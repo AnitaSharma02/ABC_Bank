@@ -232,7 +232,7 @@
                                 </asp:Label>
                             </div>
                         </div>
-                        <div class="dvActivationInfo col-6 text-right col-lg-auto ml-lg-auto" id="lnkRegister" runat="server">
+                        <div class="dvActivationInfo col-6 text-right col-lg-auto ml-lg-auto d-none d-lg-block " id="lnkRegister" runat="server">
                             <a href="\Activation.aspx" class="nav-link p-0 text-colour6">
                                 <i class="fa fa-power-off"></i> 
                                 <span>Activation</span>
@@ -282,7 +282,7 @@
                             <img src="../Images/logos/abc-footer-logo.svg" />
                         </a>
                     </div>
-                    <div class="order-2 col d-flex- d-none col-lg-auto align-items-center justify-content-end pr-0 pr-lg-3">
+                    <div class="order-2 col d-flex d-none- col-lg-auto align-items-center justify-content-end pr-0 pr-lg-3">
                          <select class="dvLang d-none" id="languageSelector">
                             <option value="en">en</option>
                             <option value="np">np</option>
@@ -334,6 +334,9 @@
                                     </asp:LinkButton>
                                 </a>
                             </li>
+                             <li class="nav-item" id="mob_lnkRegister" runat="server">
+                        <a href="\Activation.aspx" id="mob_activation" class="nav-link"><i class="fa fa-power-off colWhite"></i><span data-i18n="navigation-activation">Activation</span></a>
+                    </li>
                         </ul>
                         <div class="dvLoginBtn d-none">
                            <%-- <div class="nav-item" id="lnkloginlogout" runat="server">

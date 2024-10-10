@@ -21,6 +21,9 @@ public partial class SiteMaster : System.Web.UI.MasterPage
                 dvPoints.Visible = true;
                 HeaderTot.Visible = true;              
                 totAvbPointDiv.Visible = true;
+                mob_liLogout.Visible = true;
+                mob_lnkLogin.Visible = false;
+                mob_lnkRegister.Visible = false;
                 lblMemberName.Text = "<span>" + lobjMemberDetails.FullName + "</span>";
                 if (!string.IsNullOrEmpty(Convert.ToString(HttpContext.Current.Session["FromSSOLogin"]))
                     && Convert.ToString(HttpContext.Current.Session["FromSSOLogin"]) == "1")
@@ -42,7 +45,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
                 if (HttpContext.Current.Session["MobIndex"] != null)
                 {
                     lnkRegister.Visible = false;
-                    //mob_lnkRegister.Visible = false;
+                    mob_lnkRegister.Visible = false;
                     mob_lnkLogin.Visible=false;
                     lnkloginlogout.Visible = false;
                     mob_lnkloginlogout.Visible = false;
@@ -54,6 +57,11 @@ public partial class SiteMaster : System.Web.UI.MasterPage
                 HeaderTot.Visible = false;
                 //lnkloginlogout.Attributes.Add("style", "display:block");
                 liwelcome.Visible = true;
+            }
+            if (HttpContext.Current.Session["MobIndex"] != null)
+            {
+                lnkRegister.Visible = false;
+                
             }
         }
         catch (Exception ex)
