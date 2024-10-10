@@ -230,14 +230,14 @@
                                             <label class="invisible d-none d-lg-block">i</label>
                                             <button onclick="var retvalue = SearchRooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100">Search Hotel</button>
                                         </div>
-                                        <div class="col-12 d-none order-7">
+                                        <div class="col-12 d-none order-6">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="row" id="tblDynamic"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12 order-5 order-lg-6">
+                                        <div class="col-12 order-0 mb-lg-3">
                                             <div class="row">
                                                 <div class="col-12 col-sm-auto mb-3 mb-lg-0" id="Room1" >
                                                     <div class="dvDropdown dropdown">

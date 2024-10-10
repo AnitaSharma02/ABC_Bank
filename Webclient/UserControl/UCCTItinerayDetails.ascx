@@ -186,10 +186,10 @@
             <HeaderTemplate>
                 <div class="row">
                     <div class="col-8 pr-0">
-                        <h2 class="h7 heading-bold text-colour7 bg-colour2 py-3 px-2 border" runat="server" visible="true" id="dvReturnFlight">Return Flights <i class="fa fa-plane" aria-hidden="true" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);"></i></h2>
+                        <h2 class="h7 heading-bold text-colour6 bg-colour1 py-3 px-2 border" runat="server" visible="true" id="dvReturnFlight">Return Flights <i class="fa fa-plane" aria-hidden="true" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);"></i></h2>
                     </div>
                     <div class="col-4 pl-0">
-                        <h2 class="h7 heading-bold text-colour7 bg-colour2 py-3 px-2 border border-left-0 text-right">
+                        <h2 class="h7 heading-bold text-colour6 bg-colour1 py-3 px-2 border border-left-0 text-right">
                             <asp:Label ID="lblReturnClass" runat="server"></asp:Label></h2>
                     </div>
                 </div>
