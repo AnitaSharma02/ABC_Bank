@@ -232,13 +232,13 @@
                                 </asp:Label>
                             </div>
                         </div>
-                        <div class="dvActivationInfo col-6 text-right col-lg-auto ml-lg-auto d-none d-lg-block" id="lnkRegister" runat="server">
+                        <div class="dvActivationInfo col-6 text-right col-lg-auto ml-lg-auto d-none d-lg-block  border-lg-right border-right-0" id="lnkRegister" runat="server">
                             <a href="\Activation.aspx" class="nav-link p-0 text-colour6">
                                 <i class="fa fa-power-off"></i> 
                                 <span>Activation</span>
                             </a>
                         </div>
-                        <div class="dvBalanceInfo col-6 col-lg-auto ml-lg-auto text-right" runat="server" visible="false" id="dvPoints">
+                        <div class="dvBalanceInfo col-6 col-lg-auto ml-lg-auto text-right  border-lg-right border-right-0" runat="server" visible="false" id="dvPoints">
                             <div class="dvPoints">
                                 <div class="nav-item" id="liPoints" runat="server" visible="false">
                                     <a class="points" href="javascript:void(0);">Points<span>
