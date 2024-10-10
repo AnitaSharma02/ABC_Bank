@@ -23,6 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Globalization;
+using System.IdentityModel.Protocols.WSTrust;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -882,7 +883,7 @@ public partial class PointGateway : System.Web.UI.Page
                     LoggingAdapter.WriteLog("Inside Book Purchase");
                     lobjModel.LogActivity(string.Format(ActivityConstants.BookPackage), ActivityType.PackageBooking);
                     string lstrCurrency = lobjModel.GetDefaultCurrency();
-                 
+
                     string lstrProductName = string.Empty;
                     //try
                     //{
@@ -940,11 +941,12 @@ public partial class PointGateway : System.Web.UI.Page
             return null;
         }
     }
-    private static void  SendExperienceEmail(BeMyGuest.Entities.BookingRequest bookingRequest, BeMyGuest.Entities.BookingResponse bookingResponse)
+    private static void SendExperienceEmail(BeMyGuest.Entities.BookingRequest bookingRequest, BeMyGuest.Entities.BookingResponse bookingResponse)
     {
         ABCModel lobjModel = new ABCModel();
         try
         {
+            MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
             ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
             if (!string.IsNullOrEmpty(bookingRequest.customer.email))
             {
@@ -1073,44 +1075,80 @@ public partial class PointGateway : System.Web.UI.Page
                     sbPickup_MeetingPointInformationHtml.Append("</tr>");
                 }
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-                List<string> emailParameters = new List<string>();
                 string PGTranPct = Convert.ToString(ConfigurationManager.AppSettings["PGTranPct"]);
                 string WebsiteUrl = Convert.ToString(ConfigurationManager.AppSettings["WebsiteUrl"]);
-                emailParameters.Add(string.Format("{0} {1}", bookingRequest.customer.firstName, bookingRequest.customer.lastName));//0
-                emailParameters.Add(bookingResponse.bookingData.code);//1
-                emailParameters.Add(bookingResponse.bookingData.prodtitle);//2
-                emailParameters.Add(bookingResponse.bookingData.productTypeTitle);//3
-                emailParameters.Add(DateTime.Parse(bookingResponse.bookingData.createdAt).ToLocalTime().ToString("dd/MM/yyyy hh:mm tt"));//4
-                emailParameters.Add(DateTime.Parse(bookingResponse.bookingData.updatedAt).ToLocalTime().ToString("dd/MM/yyyy hh:mm tt"));//5
-                emailParameters.Add(DateTime.Parse(bookingResponse.bookingData.arrivalDate).ToString("dd MMM yyyy"));//6
-                emailParameters.Add(string.IsNullOrEmpty(bookingResponse.bookingData.timeSlot) ? "N/A" : string.Format("{0} hrs", bookingResponse.bookingData.timeSlot));//7
-                emailParameters.Add(bookingResponse.bookingData.adults > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.adults,
+               
+                dynamic dynamicCls = new System.Dynamic.ExpandoObject();
+                string lsrtTemplateLangCode = "";
+
+                dynamicCls.relation_reference = Convert.ToString(lobjMemberDetails.MemberRelationsList[0].RelationReference);
+                dynamicCls.LastName = lobjMemberDetails.LastName;
+                dynamicCls.program_id = lobjMemberDetails.ProgramId;
+                dynamicCls.to_email = lobjMemberDetails.Email;
+                dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
+                dynamicCls.program_id = lobjMemberDetails.ProgramId;
+                dynamicCls.BookingUUId = bookingResponse.bookingData.uuid;
+                dynamicCls.BookingCode = bookingResponse.bookingData.code;
+                dynamicCls.ProductName = bookingResponse.bookingData.prodtitle;
+                dynamicCls.Option = bookingResponse.bookingData.productTypeTitle;
+                dynamicCls.Address = bookingResponse.bookingData.prodavailaddress;
+                dynamicCls.status = bookingResponse.bookingData.status;
+                dynamicCls.BookingDate = DateTime.Parse(bookingResponse.bookingData.createdAt).ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
+                dynamicCls.ArrivalDate = (DateTime.Parse(bookingResponse.bookingData.arrivalDate).ToString("dd MMM yyyy"));
+                dynamicCls.Timeslot = (string.IsNullOrEmpty(bookingResponse.bookingData.timeSlot) ? "N/A" : string.Format("{0} hrs", bookingResponse.bookingData.timeSlot));
+                dynamicCls.Adult = (bookingResponse.bookingData.adults > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.adults,
                                     FormatCurrency(Math.Ceiling(bookingResponse.bookingData.amountBreakdown.FindAll(x => x.name.ToLower().Equals("adult")).FirstOrDefault().convertedAmount)
-                                    , bookingResponse.bookingData.convertedCurrency)) : "0");//8
-                emailParameters.Add(bookingResponse.bookingData.children > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.children,
+                                    , bookingResponse.bookingData.convertedCurrency)) : "0");
+                dynamicCls.Children = (bookingResponse.bookingData.children > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.children,
                                     FormatCurrency(Math.Ceiling(bookingResponse.bookingData.amountBreakdown.FindAll(x => x.name.ToLower().Equals("child")).FirstOrDefault().convertedAmount)
-                                    , bookingResponse.bookingData.convertedCurrency)) : "0");//9
-                emailParameters.Add(bookingResponse.bookingData.seniors > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.seniors,
+                                    , bookingResponse.bookingData.convertedCurrency)) : "0");
+                dynamicCls.Seniors = (bookingResponse.bookingData.seniors > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.seniors,
                                     FormatCurrency(Math.Ceiling(bookingResponse.bookingData.amountBreakdown.FindAll(x => x.name.ToLower().Equals("senior")).FirstOrDefault().convertedAmount)
-                                    , bookingResponse.bookingData.convertedCurrency)) : "0");//10
-                emailParameters.Add(FormatCurrency(Math.Ceiling(bookingResponse.bookingData.grandTotalAmount), bookingResponse.bookingData.convertedCurrency));//11
-                emailParameters.Add(bookingResponse.bookingData.firstName);//12
-                emailParameters.Add(bookingResponse.bookingData.lastName);//13
-                emailParameters.Add(bookingResponse.bookingData.email);//14
-                emailParameters.Add(bookingResponse.bookingData.phone);//15
-                emailParameters.Add("Cancellations are non refundable.");//16
-                emailParameters.Add(DateTime.Now.Year.ToString());//17
-                emailParameters.Add(textInfo.ToTitleCase(bookingResponse.bookingData.status));//18
-                emailParameters.Add(sbAdditionalInfoHtml.ToString());//19
-                emailParameters.Add(bookingResponse.bookingData.prodavailaddress);//20
-                emailParameters.Add(bookingResponse.bookingData.uuid);//21
-                emailParameters.Add(FormatCurrency(bookingResponse.bookingData.grandTotalAmount * (Convert.ToDecimal(PGTranPct) / 100), bookingResponse.bookingData.convertedCurrency, true));//22
-                emailParameters.Add(FormatCurrency(bookingResponse.bookingData.grandTotalAmount + (bookingResponse.bookingData.grandTotalAmount * (Convert.ToDecimal(PGTranPct) / 100)), bookingResponse.bookingData.convertedCurrency, true));//23
-                emailParameters.Add(WebsiteUrl);//24
-                emailParameters.Add(sbPickup_MeetingPointInformationHtml.ToString());//25
-                bool ceresponse = lobjModel.InsertEmailDetails(emailParameters,
-                     bookingRequest.customer.email, "ExperiencesBooked", bookingRequest.memberId, lobjProgramDefinition.ProgramId);
-                if (ceresponse)
+                                    , bookingResponse.bookingData.convertedCurrency)) : "0");
+                dynamicCls.TotalPrice = (FormatCurrency(Math.Ceiling(bookingResponse.bookingData.grandTotalAmount), bookingResponse.bookingData.convertedCurrency));
+                dynamicCls.PGCharge = (FormatCurrency(bookingResponse.bookingData.grandTotalAmount * (Convert.ToDecimal(PGTranPct) / 100), bookingResponse.bookingData.convertedCurrency, true));
+                dynamicCls.TotalPaid = (FormatCurrency(bookingResponse.bookingData.grandTotalAmount + (bookingResponse.bookingData.grandTotalAmount * (Convert.ToDecimal(PGTranPct) / 100)), bookingResponse.bookingData.convertedCurrency, true));
+                dynamicCls.AdditionalInfo = (sbPickup_MeetingPointInformationHtml.ToString());
+                dynamicCls.CancellationPolicy = bookingResponse.bookingData.cancellationPolicySummary;
+                dynamicCls.MeetingPoint = sbPickup_MeetingPointInformationHtml.ToString();
+                if (bookingResponse.bookingData.status.ToLower().Equals("success"))
+                {
+                    if (lobjMemberDetails.PreferredLanguage == "EN")
+                    {
+                        dynamicCls.event_name = "package_booking";
+                    }
+                    if (lobjMemberDetails.PreferredLanguage.ToUpper() != "EN")
+                    {
+                        lsrtTemplateLangCode = lobjMemberDetails.PreferredLanguage.ToUpper();
+                        dynamicCls.event_name = "package_booking";
+                    }
+                }
+                else
+                {
+                    if (lobjMemberDetails.PreferredLanguage == "EN")
+                    {
+                        dynamicCls.event_name = "package_booking";
+                    }
+                    if (lobjMemberDetails.PreferredLanguage.ToUpper() != "EN")
+                    {
+                        lsrtTemplateLangCode = lobjMemberDetails.PreferredLanguage.ToUpper();
+                        dynamicCls.event_name = "package_booking";
+                    }
+                    // dynamicCls.Status = "Failed";
+                }
+                Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
+                IDictionary<string, object> dict = (IDictionary<string, object>)dynamicCls;
+                foreach (var key in dict)
+                {
+                    lobjDictionary.Add(key.Key, key.Value);
+                }
+                string jsonParameters = JsonConvert.SerializeObject(lobjDictionary);
+               bool Email= lobjModel.SendEmails(jsonParameters, lobjMemberDetails);
+
+
+
+
+                if (Email)
                 {
                     LoggingAdapter.WriteLog("PaymentResponse Page Experience Email Send Successfully");
                 }
