@@ -654,10 +654,6 @@ p {
 .dvStripe {
   background-color: var(--bg-colour7);
 }
-.dvHeader .dvActivationInfo a:hover,
-.dvHeader .dvLoginInfo a:hover {
-  color: var(--text-colour6);
-}
 .dvHeader .logo img {
   width: 90px;
 }
@@ -673,6 +669,14 @@ p {
 }
 .dvHeader .navbar-nav .nav-item a:hover {
   color: var(--text-colour1);
+}
+.dvHeader .navbar-nav .dvActivationInfo a,
+.dvHeader .navbar-nav .dvLoginInfo a {
+    color: var(--text-colour6);
+}
+.dvHeader .dvActivationInfo a:hover,
+.dvHeader .dvLoginInfo a:hover {
+    color: var(--text-colour6);
 }
 .dvHeader .navbar-nav .nav-item.dropdown .dropdown-menu a:hover {
   background-color: var(--text-colour1);
