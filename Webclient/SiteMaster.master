@@ -232,7 +232,7 @@
                                 </asp:Label>
                             </div>
                         </div>
-                        <div class="dvActivationInfo col-6 text-right col-lg-auto ml-lg-auto" id="lnkRegister" runat="server">
+                        <div class="dvActivationInfo col-6 text-right col-lg-auto ml-lg-auto d-none d-lg-block " id="lnkRegister" runat="server">
                             <a href="\Activation.aspx" class="nav-link p-0 text-colour6">
                                 <i class="fa fa-power-off"></i> 
                                 <span>Activation</span>
