@@ -11,6 +11,8 @@ using Core.Platform.OTP.Entities;
 using Core.Framework.PostHelper;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using Core.Platform.Transactions.Entites;
+using System.Configuration;
 
 public partial class Activation : Page
 {
@@ -144,6 +146,8 @@ public partial class Activation : Page
             if (lobjPasswordPolicy != null)
             {
                 lstrPwdPolicy = lobjPasswordPolicy.PasswordPolicy;
+                LoggingAdapter.WriteLog("Activation.aspx GetPasswordPolicy: " + lstrPwdPolicy);
+
             }
         }
         catch (Exception ex)
@@ -156,7 +160,7 @@ public partial class Activation : Page
     {
         try
         {
-          //  ImgCaptcha.ImageUrl = string.Format("~/captcha.ashx?refresh={0}", Guid.NewGuid());
+            //  ImgCaptcha.ImageUrl = string.Format("~/captcha.ashx?refresh={0}", Guid.NewGuid());
         }
         catch (Exception ex)
         {
@@ -176,6 +180,10 @@ public partial class Activation : Page
             string pstrMemberId = txtMemberId.Text;
             // string pstrSecurityCode = txtSecurityCode.Text;
             string strMD5password = string.Empty;
+            string lstrToken = string.Empty;
+            string strActivationPoints = ConfigurationManager.AppSettings["ActivationPoints"];
+            int strActivationPointsExpiry = Convert.ToInt32(ConfigurationManager.AppSettings["ActivationPointsExpiry"]);
+            string strActivationPointsAwarding = ConfigurationManager.AppSettings["ActivationPointsAwarding"];
             try
             {
                 ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
@@ -219,6 +227,43 @@ public partial class Activation : Page
 
                             if (lblStatus)
                             {
+                                if (!string.IsNullOrEmpty(strActivationPointsAwarding) && strActivationPointsAwarding.ToUpper().ToString() == "YES")
+                                {
+                                    TransactionDetails transactionDetails = new TransactionDetails()
+                                    {
+                                        TransactionType = (TransactionType)1,
+                                        RelationReference = lobjMemberDetails.MemberRelationsList[0].RelationReference,
+                                        Amounts = 0,
+                                        Points = Convert.ToInt32(strActivationPoints),
+                                        LoyaltyTxnType = (LoyaltyTxnType)2,
+                                        ProgramId = lobjProgramDefinition.ProgramId,
+                                        TransactionCurrency = "DEFAULT",
+                                        RelationType = RelationType.LBMS,
+                                        TransactionDate = DateTime.Now,
+                                        ProcessingDate = DateTime.Now,
+                                        ExpiryDate = DateTime.Now.AddMonths(strActivationPointsExpiry),
+                                        ReconciledPoints = 0,
+                                        ReconciledType = 1,
+                                        Narration = "Bonus Points",
+                                        MerchantName = "Activation Bonus Points",
+                                        ExternalReference = "",
+                                        AdditionalDetail = "",
+                                        AdditionalDetails1 = ""
+                                    };
+                                    TransactionDetailsBreakage transactionDetailsBreakage = new TransactionDetailsBreakage()
+                                    {
+                                        IsBillable = true,
+                                        SourceAmount = 0,
+                                        SourceCurrency = "",
+                                        TxnCurrency = "",
+                                        TransactionSource = ""
+                                    };
+                                    transactionDetails.TransactionDetailBreakage = transactionDetailsBreakage;
+                                    bool response = lobjModel.InsertManualTransactionDetails(transactionDetails, lstrToken);
+
+                                    LoggingAdapter.WriteLog("ExtSSO_oAuth - Activation Bonus Awarded : " + response);
+                                }
+
                                 mstrRedirectEmptyURL = "Success";
                                 HttpContext.Current.Session["loginMsg"] = "1";
                                 // HttpContext.Current.Session["ActivationMemberDetails"] = null;

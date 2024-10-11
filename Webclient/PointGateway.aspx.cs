@@ -1082,7 +1082,7 @@ public partial class PointGateway : System.Web.UI.Page
                 string lsrtTemplateLangCode = "";
 
                 dynamicCls.relation_reference = Convert.ToString(lobjMemberDetails.MemberRelationsList[0].RelationReference);
-                dynamicCls.LastName = lobjMemberDetails.LastName;
+                dynamicCls.LastName = lobjMemberDetails.FullName;
                 dynamicCls.program_id = lobjMemberDetails.ProgramId;
                 dynamicCls.to_email = lobjMemberDetails.Email;
                 dynamicCls.to_mobile = lobjMemberDetails.MobileNumber;
@@ -1093,7 +1093,7 @@ public partial class PointGateway : System.Web.UI.Page
                 dynamicCls.Option = bookingResponse.bookingData.productTypeTitle;
                 dynamicCls.Address = bookingResponse.bookingData.prodavailaddress;
                 dynamicCls.status = bookingResponse.bookingData.status;
-                dynamicCls.BookingDate = DateTime.Parse(bookingResponse.bookingData.createdAt).ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
+                dynamicCls.BookingDate = (DateTime.Parse(bookingResponse.bookingData.createdAt).ToString("dd MMM yyyy"));//.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
                 dynamicCls.ArrivalDate = (DateTime.Parse(bookingResponse.bookingData.arrivalDate).ToString("dd MMM yyyy"));
                 dynamicCls.Timeslot = (string.IsNullOrEmpty(bookingResponse.bookingData.timeSlot) ? "N/A" : string.Format("{0} hrs", bookingResponse.bookingData.timeSlot));
                 dynamicCls.Adult = (bookingResponse.bookingData.adults > 0 ? string.Format("{0} x {1}", bookingResponse.bookingData.adults,

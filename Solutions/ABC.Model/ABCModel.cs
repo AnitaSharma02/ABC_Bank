@@ -2317,7 +2317,7 @@ namespace ABC.Model
             if (lobjMemberDetails.PreferredLanguage.ToUpper() != "EN")
             {
                 lsrtTemplateLangCode = lobjMemberDetails.PreferredLanguage.ToUpper();
-                dynamicCls.event_name = lsrtTemplateLangCode + EventName;
+                dynamicCls.event_name =  EventName;
             }
             dynamicCls.relation_reference = Convert.ToString(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
             dynamicCls.program_id = Convert.ToInt32(lobjMemberDetails.ProgramId); ;
