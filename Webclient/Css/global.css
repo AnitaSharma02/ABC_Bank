@@ -2125,8 +2125,12 @@ select.form-control:focus {
 .dvProductDetailMilesExchange .img-container img,
 /*.dvProductDetailLounges .img-container img,*/
 .dvProductDetailGiftcards .img-container img,
-.dvProductDetailShop .img-container img {
+.dvProductDetailShop .img-container img{
   object-fit: contain;
+}
+
+.dvExperienceProductListPage .img-container{
+    padding-bottom:82%;
 }
 
 /* Hiding the terms & conditions tab for shop products only */
