@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <link rel="stylesheet" href="\Css/experience.css" />
     <style>
-        .dvInnerBanner{
-            display:none;
+        .dvInnerBanner {
+            display: none;
         }
     </style>
 
@@ -88,13 +88,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div id="Errordiv"></div>
             </div>
         </div>
     </div>
     <script>
-        $(document).ready(function () {           
+        $(document).ready(function () {
             BindBanner();
             GetRedemptionOptions();
         });
@@ -333,10 +333,10 @@
                     }
                     //html += '</ul>';
                     /*dvAdditionalDetails*/
-                    
+
                     highlightsHtml += '</div>';
                     highlightsHtml += '</div>';
-                    
+
                     if (parseData.data != null && parseData.data.itinerary != null && parseData.data.itinerary != '') {
                         //highlightsHtml += '<div class="border-bottom my-4"></div>';
                         highlightsHtml += '<div class="row">';
@@ -376,7 +376,7 @@
                     //html += '</div>';
                     if (parseData.data != null && parseData.data.title != null && parseData.data.title != '' && parseData.data.address != null && parseData.data.address != '') {
                         addressHtml += '<p><span class="heading6">Address:</span> <a class="link1" target="_blank" href="http://maps.google.com/maps?q=' + parseData.data.title + ',' + parseData.data.address + '">' + parseData.data.title + ',' + parseData.data.address + '</a></p>';
-                    }                    
+                    }
                     $("#addressHtml").append(addressHtml);
 
                     var swiper = new Swiper(".dvThumbSlide", {
@@ -562,11 +562,12 @@
                                 }
                                 html += '<div class="d-flex flex-wrap justify-content-between">';
                                 html += '<div class="col-12">';
-                                html += '<div id="sltTimeSlot">';
-                                html += '<div class="row">';
+
                                 if (parseData.producttypedetails.item_uuid[i] != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots.length > 0 && showBookNow) {
                                     isTimeslotsAvailable = 1;
-                                    html += '<div class="col-sm-6 mb-2">';                                    
+                                    html += '<div id="' + parseData.producttypedetails.item_uuid[i].uuid + '">';
+                                    html += '<div class="row">';
+                                    html += '<div class="col-sm-6 mb-2">';
                                     html += '<select class="select selectBtn selectDropdown form-control">';
                                     html += '<option value="">Select timeslot</option>';
                                     $.each(parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots, function (k) {
@@ -579,7 +580,7 @@
                             }
                             if (showBookNow) {
                                 html += '<div id="dvBookNow" class="col-sm-6">';
-                                html += '<button id="btnBookNow" class="btn btn-one w-100" onclick="var retvalue = BookNow(\'' + parseData.producttypedetails.item_uuid[i].uuid.toString() + '\',' + isTimeslotsAvailable + '); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button">Book Now</button>';
+                                html += '<button id="' + parseData.producttypedetails.item_uuid[i].uuid + 'btnBookNow" class="btn btn-one w-100" onclick="var retvalue = BookNow(\'' + parseData.producttypedetails.item_uuid[i].uuid.toString() + '\',' + isTimeslotsAvailable + '); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button">Book Now</button>';
                                 html += '</div>';
                             }
                             html += '</div>';//row
@@ -692,7 +693,7 @@
                         else {
                             fnBindProductTypePriceByDate(rtnData.d);
                         }
-                        
+
                     }
                 },
                 error: function (errmsg) {
@@ -763,7 +764,7 @@
                             html += '<div class="bg-colour2 p-3 text-center">';
                             html += '<div class="d-flex flex-wrap align-items-center mb-1">';
                             html += '<p class="h7"><span>Price</span> <span class="">includes GST</span></p>';
-                            
+
                             //html += '<div class="">';
                             debugger
                             let isTimeslotsAvailable = 0;
@@ -791,11 +792,13 @@
                                 html += '</div>';
                                 html += '<div class="d-flex flex-wrap justify-content-between align-items-center mx-n3">';
                                 html += '<div class="col-12">';
-                                html += '<div id="sltTimeSlot">';
-                                html += '<div class="row">';
+                                //html += '<div id="sltTimeSlot">';
+                                //html += '<div class="row">';
                                 if (parseData.producttypedetails.item_uuid[i] != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots.length > 0 && showBookNow) {
                                     isTimeslotsAvailable = 1;
-                                    html += '<div class="col-sm-6 mb-2">';                                    
+                                    html += '<div id="' + parseData.producttypedetails.item_uuid[i].uuid + '">';
+                                    html += '<div class="row">';
+                                    html += '<div class="col-sm-6 mb-2">';
                                     html += '<select class="select selectBtn selectDropdown form-control">';
                                     html += '<option value="">Select timeslot</option>';
                                     $.each(parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots, function (k) {
@@ -803,13 +806,13 @@
                                     });
                                     html += '</select>';
                                     html += '</div>';
-                                    
+
                                 }
                             }
                             if (showBookNow) {
                                 html += '<div id="dvBookNow" class="col-sm-6">';
                                 /* html += '<button id="btnBookNow" class="btn btn-one w-100" onclick="var retvalue = BookNow(' + parseData.producttypedetails.item_uuid[i].uuid.toString() + '); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button">Book Now</button>';*/
-                                html += '<button id="btnBookNow" class="btn btn-one w-100" onclick="var retvalue = BookNow(\'' + parseData.producttypedetails.item_uuid[i].uuid.toString() + '\',' + isTimeslotsAvailable + '); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button">Book Now</button>';
+                                html += '<button id="' + parseData.producttypedetails.item_uuid[i].uuid + 'btnBookNow" class="btn btn-one w-100" onclick="var retvalue = BookNow(\'' + parseData.producttypedetails.item_uuid[i].uuid.toString() + '\',' + isTimeslotsAvailable + '); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button">Book Now</button>';
                                 html += '</div>';
                             }
                             html += '</div>';//row
@@ -841,18 +844,27 @@
         }
         function BookNow(ptuuid, IsTimeslotsAvailable) {
             //debugger
-            $('#btnBookNow').prop('disabled', true);
-            fnShowLoader('dvProductDetails');
+           // $('#' + ptuuid + 'btnBookNow').prop('disabled', true);
+           // fnShowLoader('dvProductDetails');
             // $('#updProgress').show();
             var uuid = getQuerystring("uuid");
             if (parseInt(IsTimeslotsAvailable) == 1) {
-                $('#sltTimeSlot').removeClass('text-danger');
-                var timeSlot = $.trim($('#sltTimeSlot option:selected').val());
-                if (timeSlot == '') {
-                    $('#sltTimeSlot').closest("div").after('<p class="dvErrors text-danger text-left"><span>This field is required</span></p>');
-                    // $('#updProgress').hide();
-                    $('#btnBookNow').prop('disabled', false);
-                    $('#sltTimeSlot').addClass('text-danger');
+                $("#" + ptuuid).removeClass('text-danger');
+                var timeSlot = $.trim($('#' + ptuuid + ' option:selected').text());
+               
+                //$.trim($('# option:selected').val());
+                if (timeSlot == 'Select timeslot') {
+                 
+                    if ($('#'+ptuuid + 'danger').text() == "This field is required") {
+
+                    }
+                    else {
+
+                        $("#" + ptuuid).closest("div").after('<p class="dvErrors text-danger text-left"><span id="' + ptuuid + 'danger">This field is required</span></p>');
+                        // $('#updProgress').hide();
+                        //$('#' + ptuuid + 'btnBookNow').prop('disabled', false);
+                        $("#" + ptuuid).addClass('text-danger');
+                    }
                 }
                 else {
                     window.location.href = "ExperienceProductBookingDetails.aspx?uuid=" + ptuuid + "&adultCount=" + parseInt($('#selectDrpDownAdult').children("option:selected").val()) + "&childrenCount=" + parseInt($('#selectDrpDownChildren').children("option:selected").val() == undefined ? 0 : $('#selectDrpDownChildren').children("option:selected").val()) + "&seniorsCount=" + parseInt($('#selectDrpDownSenior').children("option:selected").val() == undefined ? 0 : $('#selectDrpDownSenior').children("option:selected").val()) + "&ptuuid=" + ptuuid + "&puuid=" + uuid + '&selectedDate=' + encodeURIComponent($('#txtBookingDate').val()) + '&timeslotuuid=' + ($('#sltTimeSlot').children("option:selected").val() == undefined ? "" : $('#sltTimeSlot').children("option:selected").val());
