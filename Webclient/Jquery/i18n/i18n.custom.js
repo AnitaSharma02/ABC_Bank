@@ -424,7 +424,7 @@ function downloadTranslations() {
 
 // Initialize the script on window load
 window.onload = function () {
-    //manageLocaleOnLoad(); // if we dont want to include language script then comment this function.
+    manageLocaleOnLoad(); // if we dont want to include language script then comment this function.
 
     const select = document.querySelector(CONFIG.dvLanguage);
     const bodyElements = document.querySelectorAll("body *");

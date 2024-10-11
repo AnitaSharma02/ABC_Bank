@@ -56,7 +56,7 @@
                             <div class="dvBookingDetails dvVcData border b-radius bg-colour2 px-3 pb-3" id="divPaymentdetails">
                             </div>
                         </div>
-                        <div class="col-12 col-md-7 col-lg-8 mt-3 mt-md-0" id="divContactdetails">
+                        <div class="dvErrors col-12 col-md-7 col-lg-8 mt-3 mt-md-0" id="divContactdetails">
                             <div class="border b-radius bg-colour2 p-3">
                                 <p class="heading6">Guest Contact Details</p>
                                 <div class="row mt-3">
@@ -344,6 +344,7 @@
                         else {
                             fnBindPaymentDetails(rtnData.d, adultCount, childrenCount, seniorsCount, ptuuid, puuid, selectedDate, timeslotuuid);
                         }
+                        updateVcDataSections();
                     }
                 },
                 error: function (errmsg) {
@@ -456,7 +457,7 @@
                     html += '</div>';
                     //html += '</div>';
                     $("#divPaymentdetails").empty().append(html);
-                    updateVcDataSections();
+                    //updateVcDataSections();
 
                     html = '';
                     $.each(data.ProductInfoResponse.producttypedetails.item_uuid, function (i) {
@@ -867,7 +868,7 @@
                         } else {
                             $("#divAdditionalInfo").show();
                             $("#divAdditionalInfo").empty().append(html);
-                            updateVcDataSections();
+                            //updateVcDataSections();
                         }
                         html = "";
                         if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingTime != null
@@ -885,7 +886,7 @@
                                 html += '<p class="heading-semibold text-colour7 h7"><span>Location: </span><span class="heading-regular">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.meetingLocation + '</span></p>';
                             }
                             $("#divPickupInformation").empty().append(html);
-                            updateVcDataSections();
+                            //updateVcDataSections();
                         }
                         html = "";
                         if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.cancellationPolicySummary != null &&

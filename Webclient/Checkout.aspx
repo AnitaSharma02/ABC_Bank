@@ -39,12 +39,14 @@
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="firstName" placeholder="" value="" />
                                             </div>
+                                            <p class="dvErrors"></p>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label class="label" for="lastName">Last name</label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="lastName" placeholder="" value="" />
                                             </div>
+                                            <p class="dvErrors"></p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -53,12 +55,14 @@
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="email" placeholder="you@example.com" />
                                             </div>
+                                            <p class="dvErrors"></p>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label class="label" for="email">Phone</label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="phone" placeholder="9876543210" maxlength="15" />
                                             </div>
+                                            <p class="dvErrors"></p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -67,6 +71,7 @@
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="address" placeholder="1234 Main St" />
                                             </div>
+                                            <p class="dvErrors"></p>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label class="label" for="address2">Address 2 (Optional)</label>
@@ -332,18 +337,21 @@
                                                     <option value="ZW">Zimbabwe</option>
                                                 </select>
                                             </div>
+                                            <p class="dvErrors"></p>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label class="label" for="state">City</label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="city" placeholder="" />
                                             </div>
+                                            <p class="dvErrors"></p>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label class="label" for="zip">Zip</label>
                                             <div class="dvInput input-group">
                                                 <input type="text" class="form-control" id="zip" placeholder="" />
                                             </div>
+                                            <p class="dvErrors"></p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -364,7 +372,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 mt-3 mt-lg-0">
-                    <div id="divCartContents">
+                    <div id="divCartContents" class="dvVcData">
                     </div>
                 </div>
             </div>
@@ -390,6 +398,7 @@
                     if (msg.d != "") {
                         $('#divCartContents').html("");
                         $('#divCartContents').html(msg.d);
+                        updateVcDataSections();
                     } else {
                         window.location.href = "Shop.aspx";
                     }
@@ -418,81 +427,82 @@
 
             if (firstName == "") {
                 msg += "<span class='text-danger'>Please enter First Name</span>";
-                $("#firstName").closest(".dvInput").after(msg);
+                $("#firstName").closest(".dvInput").next(".dvErrors").append(msg);
                 msg = "";
             } else if (!firstName.match(/^[a-zA-Z]+$/)) {
                 msg += "<span class='text-danger'>Please enter valid First Name</span>";
-                $("#firstName").closest(".dvInput").after(msg);
+                $("#firstName").closest(".dvInput").next(".dvErrors").append(msg);
                 msg = "";
             }
 
             if (lastName == "") {
                 msg += "<span class='text-danger'>Please enter Last Name</span>";
-                $("#lastName").closest(".dvInput").after(msg);
+                $("#lastName").closest(".dvInput").next(".dvErrors").append(msg);
                 msg = "";
             } else if (!lastName.match(/^[a-zA-Z]+$/)) {
                 msg += "<span class='text-danger'>Please enter valid Last Name</span>";
-                $("#lastName").closest(".dvInput").after(msg);
+                $("#lastName").closest(".dvInput").next(".dvErrors").append(msg);
                 msg = "";
             }
 
             if (email == "") {
                 msg += "<span class='text-danger'>Please enter Email Id</span>";
-                $("#email").closest(".dvInput").after(msg);
+                $("#email").closest(".dvInput").next(".dvErrors").append(msg);
                 msg = "";
             } else if (!isEmail(email)) {
                 msg += "<span class='text-danger'>Please enter valid Email Id</span>";
-                $("#email").closest(".dvInput").after(msg);
+                $("#email").closest(".dvInput").next(".dvErrors").append(msg);
                 msg = "";
             }
 
             if (phone == "") {
                 msg += "<span class='text-danger'>Please enter Phone Number</span>";
-                $("#phone").closest(".dvInput").after(msg);
+                $("#phone").closest(".dvInput").next(".dvErrors").append(msg);
                 msg = "";
             } else {
                 var numbers = /^[0-9]+$/;
                 if (!numbers.test(phone)) {
                     msg += "<span class='text-danger'>Phone should be Numeric</span>";
-                    $("#phone").closest(".dvInput").after(msg);
+                    $("#phone").closest(".dvInput").next(".dvErrors").append(msg);
                     msg = "";
                 }
             }
 
             if (address == "") {
                 msg += "<span class='text-danger'>Please enter Address</span>";
-                $("#address").closest(".dvInput").after(msg);
+                //$("#address").closest(".dvInput").next(".dvErrors").append(msg);
+                $("#address").closest(".dvInput").next(".dvErrors").append(msg);
                 msg = "";
             }
 
             if (countrycode == "") {
                 msg += "<span class='text-danger'>Please select Country</span>";
-                $("#country").closest(".dvInput").after(msg);
+                $("#country").closest(".dvInput").next(".dvErrors").append(msg);
                 msg = "";
             }
 
             if (city == "") {
                 msg += "<span class='text-danger'>Please enter City</span>";
-                $("#city").closest(".dvInput").after(msg);
+                $("#city").closest(".dvInput").next(".dvErrors").append(msg);
                 msg = "";
             } else {
                 var regex = new RegExp("^[a-zA-Z ]+$");
                 if (!regex.test(city)) {
                     msg += "<span class='text-danger'>Please enter valid City</span>";
-                    $("#city").closest(".dvInput").after(msg);
+                    $("#city").closest(".dvInput").next(".dvErrors").append(msg);
                     msg = "";
                 }
             }
 
             if (zip == "") {
                 msg += "<span class='text-danger'>Please enter ZIP</span>";
-                $("#zip").closest(".dvInput").after(msg);
+                $("#zip").closest(".dvInput").next(".dvErrors").append(msg);
                 msg = "";
             } else {
                 var numbers = /^[0-9]+$/;
                 if (!numbers.test(zip)) {
                     msg += "<span class='text-danger'>Zip should be Numeric</span>";
-                    $("#zip").closest(".dvInput").after(msg);
+                    $("#zip").closest(".dvInput").next(".dvErrors").append(msg);
                     msg = "";
                 }
             }
@@ -524,6 +534,7 @@
                         var data = msg.d;
                         if (data.includes(".aspx")) {
                             window.location.href = data;
+                            updateVcDataSections();
                         } else if (data == "INSUFFICIENT_POINTS") {
                             $('#divCartContents').empty().html("Insufficient Points.");
                         } else {

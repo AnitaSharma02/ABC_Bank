@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="col-12 mt-2">
                                         <asp:Button ID="btnResendOTP" runat="server" Text="Resend OTP" CssClass="btn btn-two" OnClick="btnResendOTP_Click" Style="display: none" />
-                                        <div id="divCountdownTimer" class="h7 heading-semibold text-colour7"></div>
+                                        <div id="divCountdownTimer" class="h7 heading-semibold text-colour7" data-i18n="resendTest"></div>
                                     </div>
                                     <div class="col-12 mb-2">
                                         <asp:Label ID="lblResendOTPMsg" runat="server" Text=""></asp:Label>
