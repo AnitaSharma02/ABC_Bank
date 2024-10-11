@@ -439,7 +439,7 @@
                                 
                                     <%--NEW DESIGN--%>
                                     <div class="row">
-                                    <div class="col-12 order-0">
+                                    <div class="col-12">
                                         <div id="HotelModifyValidation" class="dvErrors p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3 order-1">
@@ -487,11 +487,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-12 col-lg-3 offset-lg-9 order-6 order-lg-5">
+                                    <div class="col-12 col-md-12 col-lg-3 offset-lg-9 order-5 order-lg-5">
                                          
                                         <button onclick="var retvalue = HotelSearch_Rooms(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" value="Search" class="btn btn-one w-100">Search Hotel</button>
                                     </div>
-                                    <div class="col-12 order-5 order-lg-6">
+                                    <div class="col-12 order-0">
                                         <div class="row">
                                             <div class="col-12 col-sm-auto mb-3" id="Room1">
                                                 <div class="dvDropdown dropdown">

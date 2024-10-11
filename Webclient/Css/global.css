@@ -181,6 +181,26 @@ p {
 .border-left {
   border-left: 1px solid var(--border-left-colour) !important;
 }
+
+.border-0 {
+    border: var(--border-none) !important;
+}
+
+.border-top-0 {
+    border-top: var(--border-none) !important;
+}
+
+.border-right-0 {
+    border-right: var(--border-none) !important;
+}
+
+.border-bottom-0 {
+    border-bottom: var(--border-none) !important;
+}
+
+.border-left-0 {
+    border-left: var(--border-none) !important;
+}
 /*=========[ BORDERS ]=========*/
 
 /*=========[ VALIDATION ERRORS only for text type errors ]=========*/
@@ -654,10 +674,6 @@ p {
 .dvStripe {
   background-color: var(--bg-colour7);
 }
-.dvHeader .dvActivationInfo a:hover,
-.dvHeader .dvLoginInfo a:hover {
-  color: var(--text-colour6);
-}
 .dvHeader .logo img {
   width: 90px;
 }
@@ -673,6 +689,14 @@ p {
 }
 .dvHeader .navbar-nav .nav-item a:hover {
   color: var(--text-colour1);
+}
+.dvHeader .navbar-nav .dvActivationInfo a,
+.dvHeader .navbar-nav .dvLoginInfo a {
+    color: var(--text-colour6);
+}
+.dvHeader .dvActivationInfo a:hover,
+.dvHeader .dvLoginInfo a:hover {
+    color: var(--text-colour6);
 }
 .dvHeader .navbar-nav .nav-item.dropdown .dropdown-menu a:hover {
   background-color: var(--text-colour1);
@@ -2301,15 +2325,134 @@ select.form-control:focus {
 
 /*=========[ MEDIA QUERIES ]=========*/
 @media (min-width: 576px) {
+    .border-sm {
+        border: 1px solid var(--border-colour) !important;
+    }
+
+    .border-sm-top {
+        border-top: 1px solid var(--border-top-colour) !important;
+    }
+
+    .border-sm-right {
+        border-right: 1px solid var(--border-right-colour) !important;
+    }
+
+    .border-sm-bottom {
+        border-bottom: 1px solid var(--border-bottom-colour) !important;
+    }
+
+    .border-sm-left {
+        border-left: 1px solid var(--border-left-colour) !important;
+    }
+
+    .border-sm-0 {
+        border: var(--border-none) !important;
+    }
+
+    .border-sm-top-0 {
+        border-top: var(--border-none) !important;
+    }
+
+    .border-sm-right-0 {
+        border-right: var(--border-none) !important;
+    }
+
+    .border-sm-bottom-0 {
+        border-bottom: var(--border-none) !important;
+    }
+
+    .border-sm-left-0 {
+        border-left: var(--border-none) !important;
+    }
+
   .dvHeader .logo img {
     width: 140px;
   }
 }
 
 @media (min-width: 768px) {
+    .border-md {
+        border: 1px solid var(--border-colour) !important;
+    }
+
+    .border-md-top {
+        border-top: 1px solid var(--border-top-colour) !important;
+    }
+
+    .border-md-right {
+        border-right: 1px solid var(--border-right-colour) !important;
+    }
+
+    .border-md-bottom {
+        border-bottom: 1px solid var(--border-bottom-colour) !important;
+    }
+
+    .border-md-left {
+        border-left: 1px solid var(--border-left-colour) !important;
+    }
+
+    .border-md-0 {
+        border: var(--border-none) !important;
+    }
+
+    .border-md-top-0 {
+        border-top: var(--border-none) !important;
+    }
+
+    .border-md-right-0 {
+        border-right: var(--border-none) !important;
+    }
+
+    .border-md-bottom-0 {
+        border-bottom: var(--border-none) !important;
+    }
+
+    .border-md-left-0 {
+        border-left: var(--border-none) !important;
+    }
 }
 
 @media (min-width: 992px) {
+    .border-lg {
+        border: 1px solid var(--border-colour) !important;
+    }
+
+    .border-lg-top {
+        border-top: 1px solid var(--border-top-colour) !important;
+    }
+
+    .border-lg-right {
+        border-right: 1px solid var(--border-right-colour) !important;
+    }
+
+    .border-lg-bottom {
+        border-bottom: 1px solid var(--border-bottom-colour) !important;
+    }
+
+    .border-lg-left {
+        border-left: 1px solid var(--border-left-colour) !important;
+    }
+
+    .border-lg-0 {
+        border: var(--border-none) !important;
+    }
+
+    .border-lg-top-0 {
+        border-top: var(--border-none) !important;
+    }
+
+    .border-lg-right-0 {
+        border-right: var(--border-none) !important;
+    }
+
+    .border-lg-bottom-0 {
+        border-bottom: var(--border-none) !important;
+    }
+
+    .border-lg-left-0 {
+        border-left: var(--border-none) !important;
+    }
+
     .dvHeader .navbar-nav .nav-item a.border-bottom {
         border-bottom: none !important;
     }
@@ -2442,6 +2585,46 @@ select.form-control:focus {
 }
 
 @media (min-width: 1200px) {
+    .border-xl {
+        border: 1px solid var(--border-colour) !important;
+    }
+
+    .border-xl-top {
+        border-top: 1px solid var(--border-top-colour) !important;
+    }
+
+    .border-xl-right {
+        border-right: 1px solid var(--border-right-colour) !important;
+    }
+
+    .border-xl-bottom {
+        border-bottom: 1px solid var(--border-bottom-colour) !important;
+    }
+
+    .border-xl-left {
+        border-left: 1px solid var(--border-left-colour) !important;
+    }
+
+    .border-xl-0 {
+        border: var(--border-none) !important;
+    }
+
+    .border-xl-top-0 {
+        border-top: var(--border-none) !important;
+    }
+
+    .border-xl-right-0 {
+        border-right: var(--border-none) !important;
+    }
+
+    .border-xl-bottom-0 {
+        border-bottom: var(--border-none) !important;
+    }
+
+    .border-xl-left-0 {
+        border-left: var(--border-none) !important;
+    }
+
   .dvTabs .scroll-hoz {
     overflow: hidden;
   }

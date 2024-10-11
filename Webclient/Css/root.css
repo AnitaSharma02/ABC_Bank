@@ -227,6 +227,37 @@
     --border-bottom-colour: var(--colour3);
     --border-left-colour: var(--colour3);
 
+     /* Small screen border colours */
+    --border-sm-colour: var(--colour3);
+    --border-sm-top-colour: var(--colour3);
+    --border-sm-right-colour: var(--colour3);
+    --border-sm-bottom-colour: var(--colour3);
+    --border-sm-left-colour: var(--colour3);
+
+    /* Medium screen border colours */
+    --border-md-colour: var(--colour3);
+    --border-md-top-colour: var(--colour3);
+    --border-md-right-colour: var(--colour3);
+    --border-md-bottom-colour: var(--colour3);
+    --border-md-left-colour: var(--colour3);
+
+    /* Large screen border colours */
+    --border-lg-colour: var(--colour3);
+    --border-lg-top-colour: var(--colour3);
+    --border-lg-right-colour: var(--colour3);
+    --border-lg-bottom-colour: var(--colour3);
+    --border-lg-left-colour: var(--colour3);
+
+    /* Extra-large screen border colours */
+    --border-xl-colour: var(--colour3);
+    --border-xl-top-colour: var(--colour3);
+    --border-xl-right-colour: var(--colour3);
+    --border-xl-bottom-colour: var(--colour3);
+    --border-xl-left-colour: var(--colour3);
+
+    /* Variables for border-0 (no border) */
+    --border-none: 0 !important;
+
     /*==================[ FORM CONTROL ]==================*/
     --fc-border-width: 1px;
     --fc-border-style: solid;
