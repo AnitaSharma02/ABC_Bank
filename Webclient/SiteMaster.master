@@ -226,9 +226,6 @@
             const type = getUrlParam('type');
             const productType = getUrlParam('ProductType');
             const breadcrumbItems = document.querySelectorAll('.dvBreadcrumbs .breadcrumb');
-
-            const pageName = window.location.pathname.split('/').pop(); // This will give you current pageName
-
             let breadcrumbItem = "";
             breadcrumbItems.forEach(item => {
                 let anchors = item.querySelectorAll('a');
@@ -238,6 +235,7 @@
                 }
             });
             breadcrumbItem = breadcrumbItem.trim();
+            const pageName = window.location.pathname.split('/').pop(); // This will give you current pageName
             if (type === 'Giftcards') {
                 $('.dvProductList ').addClass('dvListPageGiftCards');
             }
@@ -276,7 +274,7 @@
                 $('.dvProductDetail').addClass('dvProductDetailShop');
             }
             // get pageName
-            if (pageName === 'ExperienceProductList.aspx') {
+            else if (pageName === 'ExperienceProductList.aspx') {
                 $('.dvExperienceProductList').addClass('dvExperienceProductListPage');
             }
             else {
