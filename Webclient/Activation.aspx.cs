@@ -142,7 +142,9 @@ public partial class Activation : Page
         {
             ABCModel lobjModel = new ABCModel();
             ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+            LoggingAdapter.WriteLog("Activation.aspx lobjPasswordPolicy: ID" + lobjProgramDefinition.ProgramName);
             SystemParameter lobjPasswordPolicy = lobjModel.GetSystemParametres(lobjProgramDefinition.ProgramId);
+            LoggingAdapter.WriteLog("Activation.aspx lobjPasswordPolicy: ID" + lobjPasswordPolicy.Id);
             if (lobjPasswordPolicy != null)
             {
                 lstrPwdPolicy = lobjPasswordPolicy.PasswordPolicy;
@@ -160,7 +162,7 @@ public partial class Activation : Page
     {
         try
         {
-            //  ImgCaptcha.ImageUrl = string.Format("~/captcha.ashx?refresh={0}", Guid.NewGuid());
+          //  ImgCaptcha.ImageUrl = string.Format("~/captcha.ashx?refresh={0}", Guid.NewGuid());
         }
         catch (Exception ex)
         {
