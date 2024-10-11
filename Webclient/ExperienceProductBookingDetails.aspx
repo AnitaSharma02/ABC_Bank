@@ -193,8 +193,7 @@
                             </div>
 
                             <div class="mt-3">
-                                <div class="dvVcData h7 col-12 border b-radius bg-colour2 text-colour7 p-3" >
-                                    <span id="divAdditionalInfo"></span>
+                                <div id="divAdditionalInfo" class="dvVcData h7 col-12 border b-radius bg-colour2 text-colour7 p-3">
                                 </div>
                             </div>
 
