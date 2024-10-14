@@ -14,7 +14,7 @@
                     <h2 class="heading1 pt-0 text-center">Turn Transactions into Rewards</h2>
                     <span class="h4 heading-regular text-center text-colour7 d-block py-3">Infinity Rewards - Our Diverse Loyalty Program</span>
                     <p class="text-center">
-                        Designed for the discerning customer, it offers diverse redemption options like flight bookings, hotel stays, car rentals, vouchers, online shopping, and point exchanges. Experience the joy of rewards that fit your lifestyle, turning every transaction into a chance for delightful experiences.
+                        Designed for the discerning customer, it offers diverse redemption options such as flight bookings, hotel stays, car rentals, vouchers, online shopping, and point exchanges. Experience the joy of rewards that fit your lifestyle, turning every transaction into a chance for delightful experiences.
                     </p>
                 </div>
             </div>
