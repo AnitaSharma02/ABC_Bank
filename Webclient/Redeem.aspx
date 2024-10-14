@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="heading1 mb-3">Choose how you want to be rewarded! </h2>
-                    <p class="mb-3">Redeem your loyalty points for flights, hotel stays, , lifestyle products and lots more! </p>
+                    <p class="mb-3">Redeem your loyalty points for flights, hotel stays, lifestyle products and lots more! </p>
                 </div>
                 <div class="col-sm-12 mb-4">
                     <div class="row justify-content-center justify-content-sm-start align-items-center">
