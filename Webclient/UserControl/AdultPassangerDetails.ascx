@@ -77,7 +77,7 @@
 
 <div class="row">
     <div class="col-md-6 mb-3">
-        <label class="label">Title123</label>
+        <label class="label">Title</label>
         <div class="dvInput select_box">
             <asp:DropDownList ID="ddlTitle" class="form-control" runat="server">
                 <asp:ListItem Value="Male" Selected="True">Mr</asp:ListItem>
