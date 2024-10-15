@@ -142,7 +142,7 @@
 
             <div class="row pt-5 dvSimilarListing">
                 <div class="col-12 mb-3 text-center">
-                    <h2 class="h2 heading-semibold text-colour1">Similar Listing</h2>
+                    <h2 class="heading1">Similar Listing</h2>
                 </div>
                 <div id="NextHotelList" class="dvVcData col-12">
                 </div>

@@ -64,7 +64,7 @@
                                         <div id="AdultInfo" runat="server">
                                             <asp:Repeater ID="rptAdultControl" runat="server">
                                                 <ItemTemplate>
-                                                    <h2 class="heading6 text-colour7 mb-2"><span>Adult: <%# (Container.ItemIndex + 1) %></span></h2>
+                                                    <h2 class="heading6 mb-2"><span>Adult: <%# (Container.ItemIndex + 1) %></span></h2>
                                                     <asp:Panel ID="panelAdultControlHolder" CssClass="" runat="server">
                                                         <uc:Adult ID="adultdetails" runat="server" />
                                                     </asp:Panel>
