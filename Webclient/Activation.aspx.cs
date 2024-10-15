@@ -137,18 +137,18 @@ public partial class Activation : Page
     [System.Web.Services.WebMethod]
     public static string GetPasswordPolicy()
     {
+        LoggingAdapter.WriteLog("GetPasswordPolicy Program", "test");
         string lstrPwdPolicy = string.Empty;
         try
         {
             ABCModel lobjModel = new ABCModel();
             ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
-            LoggingAdapter.WriteLog("Activation.aspx lobjPasswordPolicy: ID" + lobjProgramDefinition.ProgramName);
+            LoggingAdapter.WriteLog("GetPasswordPolicy Program", lobjProgramDefinition.ProgramName);
             SystemParameter lobjPasswordPolicy = lobjModel.GetSystemParametres(lobjProgramDefinition.ProgramId);
-            LoggingAdapter.WriteLog("Activation.aspx lobjPasswordPolicy: ID" + lobjPasswordPolicy.Id);
             if (lobjPasswordPolicy != null)
             {
                 lstrPwdPolicy = lobjPasswordPolicy.PasswordPolicy;
-                LoggingAdapter.WriteLog("Activation.aspx GetPasswordPolicy: " + lstrPwdPolicy);
+                LoggingAdapter.WriteLog(string.Format("GetPasswordPolicy {0}", lstrPwdPolicy));
 
             }
         }
@@ -213,6 +213,8 @@ public partial class Activation : Page
 
                     if (mstrRedirectEmptyURL.Equals(string.Empty))
                     {
+                        LoggingAdapter.WriteLog(string.Format("Password {0}", pstrPwd));
+                        LoggingAdapter.WriteLog(string.Format("RelationRef {0}", lobjMemberDetails.MemberRelationsList[0].RelationReference.Trim()));
                         strMD5password = lobjModel.GenerateMD5(lobjMemberDetails.MemberRelationsList[0].RelationReference.Trim() + pstrPwd);
                         LoggingAdapter.WriteLog(string.Format("Activation {0}", strMD5password));
 

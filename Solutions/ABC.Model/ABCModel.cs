@@ -908,12 +908,20 @@ namespace ABC.Model
         public string GenerateMD5(string source)
         {
             string lstrMD5string = string.Empty;
-            using (var md5Hash = MD5.Create())
+            try
             {
-                var sourceBytes = Encoding.UTF8.GetBytes(source);
-                var hashBytes = md5Hash.ComputeHash(sourceBytes);
-                var hash = BitConverter.ToString(hashBytes).Replace("-", string.Empty);
-                lstrMD5string = hash;
+                using (var md5Hash = MD5.Create())
+                {
+                    var sourceBytes = Encoding.UTF8.GetBytes(source);
+                    var hashBytes = md5Hash.ComputeHash(sourceBytes);
+                    var hash = BitConverter.ToString(hashBytes).Replace("-", string.Empty);
+                    lstrMD5string = hash;
+                    LoggingAdapter.WriteLog("GenerateMD5" + lstrMD5string);
+                }
+            }
+            catch(Exception ex)
+            {
+                LoggingAdapter.WriteLog("GenerateMD5 :" + ex.Message + Environment.NewLine + "Stack Trace :" + ex.StackTrace);
 
             }
             return lstrMD5string;

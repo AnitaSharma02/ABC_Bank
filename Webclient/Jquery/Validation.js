@@ -1094,8 +1094,6 @@ function CheckPasswordPolicy(pwd) {
         success: function (data) {
             try {
                 var pattern = new RegExp(data.d.toString());
-                //  Isvalid = pattern.test(pwd);
-
                 if (pwd.match(pattern)) {
                     Isvalid = true;
                 }

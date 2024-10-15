@@ -431,14 +431,14 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3 mb-3">
+                                                              <%--  <div class="col-6 col-md-3 mb-3">
                                                                     <p>
                                                                         <span class="h7 d-block heading-semibold text-colour7">Price</span>
                                                                         <span class="h6 d-block">
                                                                             <%# Convert.ToInt32(Eval("grandTotalAmount")) %>
                                                                         </span>
                                                                     </p>
-                                                                </div>
+                                                                </div>--%>
                                                                 <div class="col-6 col-md-3 mb-3">
                                                                     <p>
                                                                         <span class="h7 d-block heading-semibold text-colour7">Status</span>
