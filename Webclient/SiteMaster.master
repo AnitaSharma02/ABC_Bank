@@ -229,7 +229,7 @@
             let breadcrumbItem = "";
             breadcrumbItems.forEach(item => {
                 let anchors = item.querySelectorAll('a');
-                if (anchors.length > 1) {
+                if (anchors.length > 2) {
                     //console.log(anchors[2].innerText); // Log the inner text of the second anchor
                     breadcrumbItem += anchors[2].innerText + " ";
                 }

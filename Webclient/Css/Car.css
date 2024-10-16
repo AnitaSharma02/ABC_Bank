@@ -70,6 +70,10 @@
 
 
 /*=========[ CAR SEARCH PAGE ]=========*/
+.dvCarSearch .dvForm{
+    position:relative;
+    z-index: 2;
+}
 /*open drop off location & driver age inputs smoothly*/
 .dvCarSearch .dvForm .fade-in {
     animation: fadeIn 0.5s ease-in-out forwards;

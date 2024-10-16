@@ -18,10 +18,10 @@
                             <div id="CarValidationError" runat="server" class="dvErrors p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
                         </div>
                         <div class="col-12 col-lg-10">
-                            <div class="form-row">
+                            <div class="row">
                                 <div class="col-lg-4 col-md-12 col-12 mb-3">
                                     <label for="validationDefaultUsername" class="label">Pick up location?</label>
-                                    <div class="dvInputGroup input-group">
+                                    <div class="dvPickupLocation dvInputGroup input-group">
                                         <input type="text" class="form-control" id="txtpickupLocation" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2">
                                         <input type="hidden" id="hndpickupLocationId" value="">
                                         <div class="input-group-append">
@@ -264,8 +264,8 @@
                             </div>
                         </div>
                         <div class="col-12 col-lg-10 order-xl-12 order-md-2 order-sm-2 order-lg-12 order-xs-2">
-                            <div class="form-row dvParent">
-                                <div class="col-12 col-md-6 col-lg-4">
+                            <div class="dvParent row">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3 mb-lg-0 z-1">
                                     <div class="dvLabel d-flex justify-content-between">
                                         <label class="checkbox-container d-flex">
                                             <span class="d-inline-block">
@@ -276,9 +276,9 @@
                                         </label>
                                     </div>
 
-                                    <div class="form-group dvInput1 fade-out ">
+                                    <div class="dvInput1 fade-out">
                                         <label class="label">Drop off location?</label>
-                                        <div class="dvInputGroup dvDopoffLocation input-group">
+                                        <div class="dvDopoffLocation dvInputGroup input-group">
                                             <input type="text" class="form-control" id="txtDopoffLocation" placeholder="Enter Location">
                                             <input type="hidden" id="hndDopoffLocationId" value="">
                                             <div class="input-group-append">
@@ -289,7 +289,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-4">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3 mb-lg-0">
                                     <div class="dvLabel d-flex justify-content-between">
                                         <label class="checkbox-container d-flex">
                                             <span class="d-inline-block">
@@ -300,7 +300,7 @@
                                         </label>
                                     </div>
 
-                                    <div class="form-group dvInput2 fade-out">
+                                    <div class="dvInput2 fade-out">
                                         <label class="label">Driver age</label>
                                         <div class="dvInput input-group">
                                             <input type="text" class="form-control" onkeypress="return validateNumber(event)" id="txtDriverAge" placeholder="Please enter driver age">
@@ -318,7 +318,7 @@
                                         </label>
                                     </div>
 
-                                    <div class="form-group dvInput3 fade-out">
+                                    <div class="dvInput3 fade-out">
                                         <label class="label">Discount code</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="txtDiscountCode" placeholder="Please enter Discount code">
@@ -327,7 +327,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-2 order-xl-2 col-lg-2 order-lg-2 order-md-12 order-sm-12 mt-4">
+                        <div class="col-xl-2 order-xl-2 col-lg-2 order-lg-2 order-md-12 order-sm-12">
+                            <label class="label d-none d-lg-inline-block"></label>
                             <button class="btn btn-one w-100" type="submit" onclick="var retvalue = CarValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;">Search Car</button>
                         </div>
                     </div>
@@ -335,6 +336,16 @@
 
             </div>
         </div>
+
+
+        <%-- this div is temporary because we dont have content. Remove this div if you get some content on this page --%>
+        <%--<div class="d-none d-lg-block">
+            <div style="padding:15rem 0">
+                
+            </div>
+        </div>--%>
+        <%-- this div is temporary because we dont have content. Remove this div if you get some content on this page --%>
+
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
