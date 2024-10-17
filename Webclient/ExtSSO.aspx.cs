@@ -23,12 +23,8 @@ public partial class ExtSSO : Page
         {
             Session["AvailablePoints"] = null;
             string lstrMessage = string.Empty;
-            bool lblStatus = false;
             string strMD5password = string.Empty;
-            string strActivationPoints = ConfigurationManager.AppSettings["ActivationPoints"];
-            int strActivationPointsExpiry = Convert.ToInt32(ConfigurationManager.AppSettings["ActivationPointsExpiry"]);
-            string strActivationPointsAwarding = ConfigurationManager.AppSettings["ActivationPointsAwarding"];
-
+           
             try
             {
                 string lstrHostUrl = string.Empty;
@@ -122,61 +118,7 @@ public partial class ExtSSO : Page
                                     divErrorMsg.Style.Add("Display", "Block");
                                     lblMessage.Text = lstrMessage;
                                 }
-                                else
-                                {
-                                    SearchMember lobjSearchMember = new SearchMember();
-                                    lobjSearchMember.UniquerefID = lobjMemberDetails.Email;
-                                    lobjSearchMember.ProgramId = lobjMemberDetails.ProgramId;
-                                    lobjSearchMember.RelationType = Convert.ToInt32(RelationType.LBMS);
-                                    lobjSearchMember.Password = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).WebPassword.Trim().ToUpper();
-                                    lblStatus = lobjModel.ActivateAccount(lobjSearchMember);
-                                    LoggingAdapter.WriteLog(string.Format("Activation Activation{0}", lblStatus));
-
-                                    if (lblStatus)
-                                    {
-                                        Session["MemberDetails"] = lobjMemberDetails;
-                                        Session["FromSSOLogin"] = "1";
-
-                                        if (!string.IsNullOrEmpty(strActivationPointsAwarding) && strActivationPointsAwarding.ToUpper().ToString() == "YES")
-                                        {
-                                            TransactionDetails transactionDetails = new TransactionDetails()
-                                            {
-                                                TransactionType = (TransactionType)1,
-                                                RelationReference = lobjMemberRelation.RelationReference,
-                                                Amounts = 0,
-                                                Points = Convert.ToInt32(strActivationPoints),
-                                                LoyaltyTxnType = (LoyaltyTxnType)2,
-                                                ProgramId = lobjProgramDefinition.ProgramId,
-                                                TransactionCurrency = "DEFAULT",
-                                                RelationType = RelationType.LBMS,
-                                                TransactionDate = DateTime.Now,
-                                                ProcessingDate = DateTime.Now,
-                                                ExpiryDate = DateTime.Now.AddMonths(strActivationPointsExpiry),
-                                                ReconciledPoints = 0,
-                                                ReconciledType = 1,
-                                                Narration = "Bonus Points",
-                                                MerchantName = "Activation Bonus Points",
-                                                ExternalReference = "",
-                                                AdditionalDetail = "",
-                                                AdditionalDetails1 = ""
-                                            };
-                                            TransactionDetailsBreakage transactionDetailsBreakage = new TransactionDetailsBreakage()
-                                            {
-                                                IsBillable = true,
-                                                SourceAmount = 0,
-                                                SourceCurrency = "",
-                                                TxnCurrency = "",
-                                                TransactionSource = ""
-                                            };
-                                            transactionDetails.TransactionDetailBreakage = transactionDetailsBreakage;
-                                            bool response = lobjModel.InsertManualTransactionDetails(transactionDetails, lstrToken);
-
-                                            LoggingAdapter.WriteLog("ExtSSO_oAuth - Activation Bonus Awarded : " + response);
-                                        }
-
-                                        Response.Redirect(LoginRedirectionUrl, false);
-                                    }
-                                }
+                                
                             }
                             else
                             {
