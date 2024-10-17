@@ -309,7 +309,7 @@ public partial class TransactionSummary : System.Web.UI.Page
                     {
                         sb.Append("<h2 class='h6 heading-regular text-capitalize'>" + "Earned Points " + "<span class='h6 heading-bold text-colour7'>" + transactionDetails.Points + "</span></h2>");
                     }
-                    sb.Append("<h2 class='h6 heading-regular text-capitalize'>Amount Paid<span class='h6 heading-bold text-colour1'> MUR</span><span class='h6 heading-bold text-colour7'> "+ transactionDetails.TransactionDetailBreakage.SourceAmount + "</span></h2>");
+                    //sb.Append("<h2 class='h6 heading-regular text-capitalize'>Amount Paid<span class='h6 heading-bold text-colour1'> MUR</span><span class='h6 heading-bold text-colour7'> "+ transactionDetails.TransactionDetailBreakage.SourceAmount + "</span></h2>");
                     if (transactionDetails.TransactionType.ToString() == "Debit")
                     {
                         sb.Append("<h2 class='h6 heading-bold text-success py-2 py-lg-0'>" +  "Redeemed"+ "</h2>");
@@ -322,7 +322,7 @@ public partial class TransactionSummary : System.Web.UI.Page
                     sb.Append("</div>");
 
                     sb.Append("<div class='col-12 col-sm-6 text-sm-right d-sm-flex align-items-sm-end justify-content-sm-center flex-sm-column'>");
-                    sb.Append("<h2 class='h6 heading-bold d-flex align-items-center'><span class='heading-bold text-colour1'>MUR</span><span class='heading-bold text-colour7 pl-1'>"+ transactionDetails.Amounts + "</span></h2>");
+                    //sb.Append("<h2 class='h6 heading-bold d-flex align-items-center'><span class='heading-bold text-colour1'>MUR</span><span class='heading-bold text-colour7 pl-1'>"+ transactionDetails.Amounts + "</span></h2>");
                     sb.Append("<h2 class='h7 heading-regular text-capitalize'>"+ string.Format("{0:dd MMM yyyy}",transactionDetails.ProcessingDate)+"</h2>");
                     sb.Append("<h2 class='h7 heading-regular text-capitalize'>"+ string.Format("{0:dd MMM yyyy}",transactionDetails.TransactionDate)+ "</h2>");
                     sb.Append("</div>");
