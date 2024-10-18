@@ -6,8 +6,8 @@
      .dvShopMenu .navbar-toggler{
          display:none;
      }
-    .dvShopMenu .navbar{
-        padding:0 !important; /*temporary removed, ABC client want searchBar down on gray stripe*/
+    .dvShopMenu{
+        display:none; /*temporary removed, ABC client want searchBar down on gray stripe*/
     }
     </style>
     <div class="dvBreadcrumbs">
@@ -62,7 +62,7 @@
                                 <div class="dvShopSearchBox col col-lg-3 px-0">
                                     <div class="dvSearch">
                                         <div class="dvTxtProductName dvInputGroup input-group">
-                                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductName">
+                                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductNameShopList">
                                             <div class="input-group-append">
                                                 <span id="btnSearchExperiences" type="button" class="input-group-text" onclick="SearchProduct()">
                                                     <%--<img src="../images/icons/other/search-icon1.svg" />--%>

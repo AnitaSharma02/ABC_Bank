@@ -52,6 +52,49 @@
                 return $("<li style='width:100%'></li>").data("item.autocomplete", item).append("<a onclick=\"SearchProduct('" + strResult + "')\" style='line-height: 14px;height: auto;width:auto'>" + strResult + "</a>").appendTo(ul);
             };
 
+            $("#txtProductNameShopList").autocomplete({
+                source: function (request, response) {
+                    var list = [];
+                    if (request.term.toString() != "" && request.term.toString().length > 3) {
+                        var productType = getQuerystring("ProductType");
+                        var terms = getQuerystring("terms");
+                        if (productType == '') {
+                            productType = 'Digital';
+                        }
+                        $.ajax({
+                            type: 'POST',
+                            url: 'ShopList.aspx/GetAutocompleteProductName',
+                            contentType: 'application/json; charset=utf-8',
+                            dataType: 'json',
+                            data: "{'prefixText':'" + request.term.toString() + "','productType':'" + productType + "','terms':'" + terms + "'}",
+                            cache: false,
+                            success: function (msg) {
+                                response(msg.d);
+                            },
+                            error: function (errmsg) {
+                                list.push({ label: 'No product found.', val: '' });
+                                response(list);
+                            }
+                        });
+                        response(list);
+                    }
+                },
+                select: function (event, ui) {
+                    if (ui.item.label.toLowerCase().replaceAll(/\s/g, '') != 'noproductfound.') {
+                        $("#txtProductNameShopList").val(ui.item.label);
+                        $("#txtProductNameShopList").val(ui.item.value);
+                    }
+                    return false;
+                },
+                minLength: 3,
+                scroll: true,
+                scrollHeight: 300
+            });
+            $.ui.autocomplete.prototype._renderItem = function (ul, item) {
+                var strResult = item.label.toString();
+                return $("<li style='width:100%'></li>").data("item.autocomplete", item).append("<a onclick=\"SearchProduct('" + strResult + "')\" style='line-height: 14px;height: auto;width:auto'>" + strResult + "</a>").appendTo(ul);
+            };
+
             // this script is to keep multiple autocomplete inside their respective input's fields div section
             function initAutocomplete(inputSelector, containerSelector) {
                 $(inputSelector).autocomplete({
@@ -142,7 +185,7 @@
                 <div class="dvNavbarToggler col-auto d-lg-none order-lg-0 pr-0">
                     <button class="navbar-toggler px-1" type="button" data-toggle="collapse" data-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 </div>
-                <div class="dvShopSearchBox col col-lg-3 order-lg-2 ml-auto d-none">
+                <div class="dvShopSearchBox col col-lg-3 order-lg-2 ml-auto d-none-">
                     <div class="dvSearch">
                         <div class="dvTxtProductName dvInputGroup input-group">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductName">
