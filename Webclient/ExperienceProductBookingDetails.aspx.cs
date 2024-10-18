@@ -494,6 +494,12 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                         lobjListOfRedemptionDetails.Add(lobjRedemptionDetails);
                         HttpContext.Current.Session["ExperienceRedemptionDetails"] = lobjListOfRedemptionDetails;
                         string lstrResponse = string.Empty;
+                        double dblProductAmount = 0.0f;
+                        HttpContext.Current.Session["BookingFlag"] = "experience";
+                        dblProductAmount = Convert.ToInt32(totalAmount);
+
+                        string FullName = bookingRequest.customer.firstName + " " + bookingRequest.customer.lastName;
+
                         if (ThreshouldValue <= lintTotalPoints && !ThreshouldValue.Equals(-1))
                         {
                             bool Status = false;
@@ -503,12 +509,7 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                             lobjOTPDetails.OtpType = Convert.ToString(OTPEnumTypes.PACKAGEREVIEWNCONFIRM);
                             HttpContext.Current.Session["OtpDetails"] = lobjOTPDetails as OTPDetails;
 
-                            double dblProductAmount = 0.0f;
-                            HttpContext.Current.Session["BookingFlag"] = "experience";
-                            dblProductAmount = Convert.ToInt32(totalAmount);
-
-                            string FullName = bookingRequest.customer.firstName + " " + bookingRequest.customer.lastName;
-                            //  Status = lobjModel.SendOTPEmailAndSMS(bookingRequest.customer.email, bookingRequest.customer.phone, bookingRequest.memberId.ToString(), FullName, "redemption_otp", lobjOTPDetails, "Experiences");
+                          //  Status = lobjModel.SendOTPEmailAndSMS(bookingRequest.customer.email, bookingRequest.customer.phone, bookingRequest.memberId.ToString(), FullName, "redemption_otp", lobjOTPDetails, "Experiences");
                             
                             Status = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "redemption_otp", lobjOTPDetails, "Experience");
 
