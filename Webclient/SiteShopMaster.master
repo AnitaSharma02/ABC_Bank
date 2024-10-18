@@ -142,7 +142,7 @@
                 <div class="dvNavbarToggler col-auto d-lg-none order-lg-0 pr-0">
                     <button class="navbar-toggler px-1" type="button" data-toggle="collapse" data-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 </div>
-                <div class="dvShopSearchBox col col-lg-3 order-lg-2 ml-auto">
+                <div class="dvShopSearchBox col col-lg-3 order-lg-2 ml-auto d-none">
                     <div class="dvSearch">
                         <div class="dvTxtProductName dvInputGroup input-group">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductName">
@@ -155,7 +155,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="Cart.aspx" id="aCartBtn" runat="server" class="order-lg-3 pl-0 col-auto d-flex align-items-center justify-content-end">
+                <a href="Cart.aspx" id="aCartBtn" runat="server" class="order-lg-3 pl-0 col-auto d-flex align-items-center justify-content-end ml-auto">
                     <span>
                         <img src="images/shoppage/icon-cart.svg" class="icon-cart" />
                     </span>

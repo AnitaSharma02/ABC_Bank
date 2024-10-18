@@ -6,6 +6,9 @@
      .dvShopMenu .navbar-toggler{
          display:none;
      }
+    .dvShopMenu .navbar{
+        padding:0 !important; /*temporary removed, ABC client want searchBar down on gray stripe*/
+    }
     </style>
     <div class="dvBreadcrumbs">
         <div class="container-xl">
@@ -55,8 +58,21 @@
                     <div class="row">
                         <div class="dvSortBy col-12 mb-3">
                             <div class="bg-colour2 b-radius d-flex flex-wrap justify-content-between align-items-center p-2 mb-1">
-                                <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none mb-2">Filter </button>
-                                <p class="col-8 px-0"></p>
+                                <%--<p class="col-12 px-0 mb-2"></p>--%>
+                                <div class="dvShopSearchBox col col-lg-3 px-0">
+                                    <div class="dvSearch">
+                                        <div class="dvTxtProductName dvInputGroup input-group">
+                                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductName">
+                                            <div class="input-group-append">
+                                                <span id="btnSearchExperiences" type="button" class="input-group-text" onclick="SearchProduct()">
+                                                    <%--<img src="../images/icons/other/search-icon1.svg" />--%>
+                                                    <i class="fa-solid fa-magnifying-glass text-colour6"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none my-2">Filter </button>
                                 <div class="dropdown heading-regular col-lg-3 px-0">
                                     <select name="sortBy" id="sortBy" onchange="SortProducts(); return false;" class="form-control">
                                         <%--<option value=""></option>--%>
