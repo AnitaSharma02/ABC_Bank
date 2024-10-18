@@ -613,10 +613,10 @@ public partial class ProductDetails : Page
                                         lstrResponse = "/OrderStatus.aspx?Status=false";
                                     }
                                 }
-                                //else
-                                //{
-                                //    lstrResponse = "/PointGateway.aspx?flag=ShopDigital";
-                                //}
+                                else
+                                {
+                                    lstrResponse = "/PointGateway.aspx?flag=ShopDigital";
+                                }
                             }
                             else
                             {

@@ -379,8 +379,8 @@ public partial class CarPayment : System.Web.UI.Page
             else
             {
                 lobjModel.LogActivity(string.Format("Flight Booking {0}: Requested", lobjRedemptionDetails.RelationReference), ActivityType.FlightBooking);
-                lstrResponse = "PointGateway.aspx";
-                Response.Redirect("PointGateway.aspx", false);
+                lstrResponse = "PointGateway.aspx?flag=Car";
+                Response.Redirect("PointGateway.aspx?flag=Car", false);
             }
 
             // lobjModel.LogActivity(string.Format("AirReviewAndConfirm; Flight BookNow click; TotalFare-:{0}; Destination-:{1} Response-:{2};", lobjCreateItineraryResponse.ItineraryDetails.FareDetails.TotalBaseFare, lobjCreateItineraryRequest.ItineraryDetails.OriginLocation + "-" + lobjCreateItineraryRequest.ItineraryDetails.DestinationLocation, lstrResponse), ActivityType.FlightBooking);

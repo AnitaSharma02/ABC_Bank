@@ -29,7 +29,7 @@ public partial class ExperienceProductStatus : System.Web.UI.Page
                     {
                         divMessage.InnerHtml = "<div class='border bg-colour2 p-5 text-center'>" +
                             "<p>We could not process your request.</p>" +
-                            "<p>Please<a href=\"Index.aspx\" target=\"_self\" class='link1'> click here</a> and try again.</p>" +
+                            "<p>Please <a href=\"Index.aspx\" target=\"_self\" class='link1'> click here</a> and try again.</p>" +
                             "</div>";
                     }
                 }

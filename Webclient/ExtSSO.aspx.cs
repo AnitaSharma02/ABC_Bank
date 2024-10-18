@@ -118,7 +118,15 @@ public partial class ExtSSO : Page
                                     divErrorMsg.Style.Add("Display", "Block");
                                     lblMessage.Text = lstrMessage;
                                 }
-                                
+                                else if (lobjMemberRelation.Status == Status.InActive)
+                                {
+                                    lstrMessage = "Your account is InActive. Please contact to admin.";
+                                    LoggingAdapter.WriteLog("ExtSSO_oAuth; " + lstrMessage);
+                                    lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
+                                    divErrorMsg.Style.Add("Display", "Block");
+                                    lblMessage.Text = lstrMessage;
+                                }
+
                             }
                             else
                             {
