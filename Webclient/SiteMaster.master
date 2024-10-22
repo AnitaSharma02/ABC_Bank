@@ -374,7 +374,7 @@
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" id="about" href="AboutUs.aspx">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" id="earn" href="ComingSoon.aspx">Earn</a>
+                                <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" id="earn" href="Earn.aspx">Earn</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="Redeem.aspx" id="redeem">Redeem</a>
@@ -468,7 +468,7 @@
                 <div class="container-xl">
                     <div class="row align-items-lg-center">
                         <div class="dvLinks col-lg-10 text-center text-lg-left mb-3 mb-lg-0 text-uppercase">
-                            <a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx">Earn</a>
+                            <a class="d-block d-md-inline-block py-1" href="Earn.aspx">Earn</a>
                             <a class="d-block d-md-inline-block py-1" href="Redeem.aspx">Redeem</a>
                             <a class="d-block d-md-inline-block py-1" href="AboutUs.aspx">About Us</a>
                             <a class="d-block d-md-inline-block py-1" href="FAQ.aspx">FAQs</a>
