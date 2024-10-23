@@ -42,7 +42,8 @@
                 
                 <p class="heading-semibold text-colour7 mb-3">Credit Card</p> 
                 
-                <table class="table table-bordered">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col" class="bg-colour1">Product Name</th>
@@ -59,6 +60,7 @@
                     
                   </tbody>
                 </table>
+                </div>
 
                 <p class="heading-semibold text-colour7">Tracking Infinity Points</p>
                 <p class="mb-3">You can easily track the number of Infinity Points you have earned through the Infinity Rewards website, online and mobile banking, and monthly e-statements.</p>
