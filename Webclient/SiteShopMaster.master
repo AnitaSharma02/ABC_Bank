@@ -111,6 +111,7 @@
             //just mention your id and the div className
             //initAutocomplete(".pageParentClass #id", "pageParentClass .className");
             initAutocomplete(".dvShopMenu .dvSearch #txtProductName", ".dvShopMenu .dvSearch .dvTxtProductName");
+            initAutocomplete(".dvShopSearchBox .dvSearch #txtProductNameShopList", ".dvShopSearchBox .dvSearch .dvTxtProductNameShopList");
         });
         function Confirmsignout() {
             $('.hover_app_info').show();

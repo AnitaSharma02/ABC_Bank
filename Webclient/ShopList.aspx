@@ -61,7 +61,7 @@
                                 <%--<p class="col-12 px-0 mb-2"></p>--%>
                                 <div class="dvShopSearchBox col col-lg-3 px-0">
                                     <div class="dvSearch">
-                                        <div class="dvTxtProductName dvInputGroup input-group">
+                                        <div class="dvTxtProductNameShopList dvInputGroup input-group">
                                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductNameShopList">
                                             <div class="input-group-append">
                                                 <span id="btnSearchExperiences" type="button" class="input-group-text" onclick="SearchProduct()">
