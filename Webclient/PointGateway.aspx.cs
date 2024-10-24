@@ -208,7 +208,7 @@ public partial class PointGateway : System.Web.UI.Page
                 if (!string.IsNullOrEmpty(strRedeemMilesResponse))
                 {
                     lobjCarBookingRequest.brokerReference = strRedeemMilesResponse;
-
+                    lobjCarBookingRequest.pointrate = Convert.ToString(PointRate);
                     lobjCarBookingResponse = lobjModel.CreateCarBooking(lobjCarBookingRequest);
                     LoggingAdapter.WriteLog("PointGateway.aspx bookcar lobjCarBookingResponse : " + lobjCarBookingResponse);
 

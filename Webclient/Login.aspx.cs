@@ -126,7 +126,7 @@ public partial class Login : Page
 
             if (lobjMemberDetails != null)
             {
-                strMD5Password = lobjModel.GenerateMD5(lobjMemberDetails.MemberRelationsList[0].RelationReference.Trim() + lstrPassword);
+                strMD5Password = lobjModel.GenerateSHA256(lobjMemberDetails.MemberRelationsList[0].RelationReference.Trim() + lstrPassword);
                 MemberRelation lobjMemberRelations = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
                 if (lobjMemberRelations.WebPassword != strMD5Password.Trim().ToUpper())
                 {

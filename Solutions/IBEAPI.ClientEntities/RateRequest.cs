@@ -13,5 +13,6 @@ namespace IBEAPI.ClientEntities
         public bool getTerms { get; set; }
         public string displayCurrency { get; set; }
         public bool debugMode { get; set; }
+        public string pointrate { get; set; }
     }
 }

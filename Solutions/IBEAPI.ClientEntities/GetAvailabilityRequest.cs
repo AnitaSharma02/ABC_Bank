@@ -49,6 +49,7 @@ namespace IBEAPI.ClientEntities
         public string vehicleType { get; set; }
         public int vehicleAtId { get; set; }
         public int supplierId { get; set; }
+        public string pointrate { get; set; }
     }
     public class AvailabilityResponse
     {

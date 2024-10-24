@@ -905,26 +905,26 @@ namespace ABC.Model
             }
             return lboolResponse;
         }
-        public string GenerateMD5(string source)
+        public string GenerateSHA256(string source)
         {
-            string lstrMD5string = string.Empty;
+            string lstrSHA256string = string.Empty;
             try
             {
-                using (var md5Hash = MD5.Create())
+                using (var md5Hash = SHA256.Create())
                 {
                     var sourceBytes = Encoding.UTF8.GetBytes(source);
                     var hashBytes = md5Hash.ComputeHash(sourceBytes);
                     var hash = BitConverter.ToString(hashBytes).Replace("-", string.Empty);
-                    lstrMD5string = hash;
-                    LoggingAdapter.WriteLog("GenerateMD5" + lstrMD5string);
+                    lstrSHA256string = hash;
+                    LoggingAdapter.WriteLog("GenerateSHA256" + lstrSHA256string);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                LoggingAdapter.WriteLog("GenerateMD5 :" + ex.Message + Environment.NewLine + "Stack Trace :" + ex.StackTrace);
+                LoggingAdapter.WriteLog("GenerateSHA256 :" + ex.Message + Environment.NewLine + "Stack Trace :" + ex.StackTrace);
 
             }
-            return lstrMD5string;
+            return lstrSHA256string;
         }
         #region Core WebAPI Call
         public string GetAuthTokenforWebAPI()

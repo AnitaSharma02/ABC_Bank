@@ -28,57 +28,34 @@ public partial class ForgotPassword : Page
         MemberRelation lobjMemberRelation = null;
         try
         {
-            lobjModel.LogActivity(string.Format("Send ForgotPassword; OTP Request: #{0}", pstrMemberId), ActivityType.Activation);           
+            lobjModel.LogActivity(string.Format("Send ForgotPassword; OTP Request: #{0}", pstrMemberId), ActivityType.Activation);
             ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
-            //lobjMemberDetails = lobjModel.GetMemberDetails(pstrMemberId);
-            lobjMemberDetails = lobjModel.GetMemberDetailsByUniqueAttribute(lobjProgramDefinition.ProgramId, pstrMemberId);
+            lobjMemberDetails = lobjModel.GetMemberDetailsByUniqueAttribute(lobjProgramDefinition.ProgramId, pstrMemberId );
             if (lobjMemberDetails != null)
             {
-                MemberLogin lobjMemberLogin = new MemberLogin();
-                List<MemberLocalAttrDetails> objMemberLocalAttrDetails = new List<MemberLocalAttrDetails>();
-                if (HttpContext.Current.Session["MemberLocalAttrDetails"] == null)
+                lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS));
+                if (lobjMemberRelation != null && lobjMemberRelation.Status.Equals(Status.Active) && lobjMemberRelation.IsAccountActivated.Equals(true))
                 {
-                    Token lobjToken = lobjMemberLogin.GenerateToken("['LOGIN','" + lobjMemberDetails.MemberRelationsList[0].RelationReference + "']");
-                    var lobjlocalattrDynamic = JsonConvert.DeserializeObject<Root>(Convert.ToString(lobjMemberLogin.GetMemberLocalAttrDetails(lobjMemberDetails.MemberRelationsList[0].RelationReference.ToString(), lobjProgramDefinition.ProgramId.ToString(), (int)RelationType.LBMS, lobjToken.AccessToken)));
-                    Results lobjlocalAttrResults = JsonConvert.DeserializeObject<Results>(lobjlocalattrDynamic.results.ToString());
-                    if (lobjlocalAttrResults.IsSucessful)
+                    string lstrSourceIpAddress = HttpContext.Current.Request.UserHostAddress;
+                    OTPDetails lobjOTPDetails = new OTPDetails();
+                    lobjOTPDetails.UniquerefID = lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference;
+                    lobjOTPDetails.OtpType = OTPEnumTypes.FORGOTPWD.ToString();
+                    lobjOTPDetails.OtpEnumTypes = OTPEnumTypes.FORGOTPWD;
+
+                    lblnStatus = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "ForgetPassword_otp", lobjOTPDetails, "ForgotPassword");
+                    if (lblnStatus.Equals(true))
                     {
-                        List<MemberLocalAttrDetails> lobjMemberLocalAttrDetails = JsonConvert.DeserializeObject<List<MemberLocalAttrDetails>>(lobjlocalAttrResults.ReturnObject.ToString());
-                        HttpContext.Current.Session["MemberLocalAttrDetails"] = lobjMemberLocalAttrDetails;
-                        objMemberLocalAttrDetails = HttpContext.Current.Session["MemberLocalAttrDetails"] as List<MemberLocalAttrDetails>;
-                    }
-                }
-                else
-                {
-                    objMemberLocalAttrDetails = HttpContext.Current.Session["MemberLocalAttrDetails"] as List<MemberLocalAttrDetails>;
-                }
-                string User_name = objMemberLocalAttrDetails[0].UserName;
-                if (User_name.EndsWith(pstrMemberId))
-                {
-                    lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS));
-                    if (lobjMemberRelation != null && lobjMemberRelation.Status.Equals(Status.Active) && lobjMemberRelation.IsAccountActivated.Equals(true))
-                    {
-                        string lstrSourceIpAddress = HttpContext.Current.Request.UserHostAddress;
-                        lblnStatus = lobjModel.GenerateOTPForgotPassword(lobjMemberRelation.RelationReference, lstrSourceIpAddress);
-                        if (lblnStatus.Equals(true))
-                        {
-                            lstrResponse = "Success";
-                        }
-                        else
-                        {
-                            lstrResponse = "Failure";
-                        }
+                        lstrResponse = "Success";
                     }
                     else
                     {
-                        lstrResponse = "Not_Activated";
+                        lstrResponse = "Failure";
                     }
                 }
                 else
                 {
-                    lstrResponse = "CaseSensitive_MemberId";
+                    lstrResponse = "Not_Activated";
                 }
-                    
             }
             else
             {
@@ -110,11 +87,12 @@ public partial class ForgotPassword : Page
         {
             ABCModel lobjModel = new ABCModel();
             lobjModel.LogActivity(string.Format("Validate ForgotPassword; OTP Request: #{0}", pstrMemberId), ActivityType.ForgotPassword);
-            //MemberDetails lobjMemberDetails = lobjModel.GetMemberDetails(pstrMemberId);
             MemberDetails lobjMemberDetails = new MemberDetails();
             ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
-            lobjMemberDetails  = lobjModel.GetMemberDetailsByUniqueAttribute(lobjProgramDefinition.ProgramId, pstrMemberId);
+            lobjMemberDetails = lobjModel.GetMemberDetailsByUniqueAttribute(lobjProgramDefinition.ProgramId, pstrMemberId);
             lstrRelationReference = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference;
+            pstrPassword = lobjModel.GenerateSHA256(lobjMemberDetails.MemberRelationsList[0].RelationReference + pstrPassword);
+
             if (lstrRelationReference != string.Empty)
             {
                 if (CheckOTP(lstrRelationReference, pstrOTP))

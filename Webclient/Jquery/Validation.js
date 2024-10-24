@@ -403,8 +403,8 @@ function ChangePassword() {
         var salt = $("#CP_hfRelationRef").val();
         var OldPassword = $("#txtOldPassword").val();
         var NewPassword = $("#txtPassword").val();
-        var OldPwd = $.md5(salt + OldPassword);
-        var NewPwd = $.md5(salt + NewPassword);
+        var OldPwd = OldPassword;
+        var NewPwd =  NewPassword;
         $.ajax({
             url: 'ViewMemberProfile.aspx/ChangePassword',
             type: 'POST',
@@ -1500,7 +1500,8 @@ function ValidateForgotPasswordOTP() {
         var MId = MemberId;
         var otp = $("#CP_txtOTP").val();
         var password = $("#CP_txtPassword").val();
-        var Pwd = $.md5(MId + password);
+        var Pwd = password;
+      
         $.ajax({
             url: 'ForgotPassword.aspx/ValidateForgotPasswordOTP',
             type: 'POST',  // or get

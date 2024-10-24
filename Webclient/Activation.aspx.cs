@@ -215,7 +215,7 @@ public partial class Activation : Page
                     {
                         LoggingAdapter.WriteLog(string.Format("Password {0}", pstrPwd));
                         LoggingAdapter.WriteLog(string.Format("RelationRef {0}", lobjMemberDetails.MemberRelationsList[0].RelationReference.Trim()));
-                        strMD5password = lobjModel.GenerateMD5(lobjMemberDetails.MemberRelationsList[0].RelationReference.Trim() + pstrPwd);
+                        strMD5password = lobjModel.GenerateSHA256(lobjMemberDetails.MemberRelationsList[0].RelationReference.Trim() + pstrPwd);
                         LoggingAdapter.WriteLog(string.Format("Activation {0}", strMD5password));
 
                         lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).WebPassword = strMD5password.Trim().ToUpper();

@@ -30,5 +30,6 @@ namespace IBEAPI.ClientEntities
         public string flightNumber { get; set; }
         public List<object> extras { get; set; }
         public string brokerReference { get; set; }
+        public string pointrate { get; set; }
     }
 }

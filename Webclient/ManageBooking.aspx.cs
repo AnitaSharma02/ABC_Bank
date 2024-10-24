@@ -327,7 +327,9 @@ public partial class ManageBooking : Page
         {
             UserBookingRequest lobjUserBookingRequest = new UserBookingRequest();
             lobjUserBookingRequest.member_id = pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference;
-
+            ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+            List<ProgramCurrencyDefinition> lobjProgramCurrencyDefinition = lobjModel.GetProgramCurrencyDefinition(lobjProgramDefinition.ProgramId);
+            var PointRate = lobjProgramCurrencyDefinition[0].RedemptionRate;
             UserBookingResponse lobjUserBookingResponse = lobjApimodel.GetUserBookings(lobjUserBookingRequest);
 
             if (lobjUserBookingResponse != null && lobjUserBookingResponse.data.Count > 0)

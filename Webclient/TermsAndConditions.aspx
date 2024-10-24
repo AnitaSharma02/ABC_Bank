@@ -56,7 +56,7 @@
                                         <li class="mb-3">2.1.3 Employees of ABC BANKING CORPORATION LTD and individuals employed by our business partners or vendors are eligible for membership for personal use only but may be excluded from certain benefits of the Program at the discretion of ABC BANKING CORPORATION LTD.</li>
                                         <li class="mb-3">2.1.4 By joining the Program and becoming a Participant, you agree that you have read, understood, and agree to be bound by these Program Terms and Conditions of Participation (“Program Terms”) and by any changes or modifications we may make. You should review these Program Terms frequently to understand the terms and conditions that apply to the Program as they may change from time to time. These Program Terms do not alter in any way the terms or conditions of any other agreement you may have with us, including any agreement for banking products or services.</li>
                                         <li class="mb-3">2.1.5 By enrolling in the Program, you also agree to be bound by our website Privacy Policy and our website Terms and Conditions, which are incorporated herein by reference. If you do not agree to these Program Terms, our website Privacy Policy, and our website Terms and Conditions, you cannot participate in the Program.</li>
-                                        <li class="mb-3">2.1.6 The Program is valid in Mauritius only.</li>
+                                      <%--  <li class="mb-3">2.1.6 The Program is valid in Mauritius only.</li>--%>
                                     </ul>
                                 </li>
                                 <li class="mb-3">

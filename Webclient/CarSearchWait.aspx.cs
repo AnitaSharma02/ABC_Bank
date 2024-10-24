@@ -27,10 +27,11 @@ public partial class CarSearchWait : System.Web.UI.Page
     public static bool CarSearch()
     {
         IBEAPIModel lobjModel = new IBEAPIModel();
-        ABCModel lobjGIMModel = new ABCModel();
-        ProgramDefinition lobjProgramDefinition = lobjGIMModel.GetProgramMaster();
+        ABCModel lobjAbcModel = new ABCModel();
+        ProgramDefinition lobjProgramDefinition = lobjAbcModel.GetProgramMaster();
         MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
-
+        List<ProgramCurrencyDefinition> lobjProgramCurrencyDefinition = lobjAbcModel.GetProgramCurrencyDefinition(lobjProgramDefinition.ProgramId);
+        var PointRate = lobjProgramCurrencyDefinition[0].RedemptionRate;
         string EnjoyTravelsource = Convert.ToString(ConfigurationManager.AppSettings["EnjoyTravelsource"]);
         string EnjoyTraveldisplayCurrency = Convert.ToString(ConfigurationManager.AppSettings["EnjoyTraveldisplayCurrency"]);
         string EnjoyTravelresidenceCountry = Convert.ToString(ConfigurationManager.AppSettings["EnjoyTravelresidenceCountry"]);
@@ -120,7 +121,7 @@ public partial class CarSearchWait : System.Web.UI.Page
                 {
                     lobjCarSearchRequest.driverAge = Convert.ToInt32(strDriverAge);
                 }
-
+                lobjCarSearchRequest.pointrate = Convert.ToString(PointRate);
                 lobjCarSearchRequest.displayCurrency = EnjoyTraveldisplayCurrency;
                 lobjCarSearchRequest.residenceCountry = lobjResidenceCountry;
                 lobjCarSearchRequest.vehicleType = "";

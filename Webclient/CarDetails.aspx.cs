@@ -17,6 +17,7 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Rate = IBEAPI.ClientEntities.Rate;
+using Core.Platform.ProgramMaster.Entities;
 
 public partial class CarDetails : System.Web.UI.Page
 {
@@ -58,8 +59,9 @@ public partial class CarDetails : System.Web.UI.Page
         StringBuilder sbAdditionalEquipment = new StringBuilder();
         StringBuilder sbmoreInfo = new StringBuilder();
         double TotalAmount = 0.0f;
-
-
+        ProgramDefinition lobjProgramDefinition = lobjmodel.GetProgramMaster();
+        List<ProgramCurrencyDefinition> lobjProgramCurrencyDefinition = lobjmodel.GetProgramCurrencyDefinition(lobjProgramDefinition.ProgramId);
+        var PointRate = lobjProgramCurrencyDefinition[0].RedemptionRate;
 
         try
         {
@@ -274,6 +276,7 @@ public partial class CarDetails : System.Web.UI.Page
                             lobjRateRequest.lang = "en-gb";
                             lobjRateRequest.getTerms = false;
                             lobjRateRequest.debugMode = false;
+                            lobjRateRequest.pointrate = Convert.ToString(PointRate);
 
                             lobjRateResponse = lobjAPImodel.GetRates(lobjRateRequest);
                             if (lobjRateResponse != null)

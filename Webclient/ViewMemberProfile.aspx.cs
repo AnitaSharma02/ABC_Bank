@@ -97,8 +97,8 @@ public partial class ViewMemberProfile : System.Web.UI.Page
         MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
         try
         {
-           
-           
+            pstrNewPassword = lobjModel.GenerateSHA256(lobjMemberDetails.MemberRelationsList[0].RelationReference + pstrNewPassword);
+            pstrOldPassword = lobjModel.GenerateSHA256(lobjMemberDetails.MemberRelationsList[0].RelationReference + pstrOldPassword);
             bool lobjchangepwd = false;
             if (pstrOldPassword.ToUpper().Equals(lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword))
             {
@@ -106,7 +106,6 @@ public partial class ViewMemberProfile : System.Web.UI.Page
                 if (lobjchangepwd)
                 {
                     lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword = pstrNewPassword.ToUpper();
-                    lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).ForceChangePassword = false;
                     HttpContext.Current.Session["MemberDetails"] = lobjMemberDetails;
                     mstrRedirectEmptyURL = "Success";
                 }
