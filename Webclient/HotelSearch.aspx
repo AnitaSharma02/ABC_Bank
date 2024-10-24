@@ -547,25 +547,26 @@
                         </a>
                         <h2 class="mt-3 mb-2 mx-3">leonardo</h2>
                         <p class="px-3 mb-3">Seminyak-Beach-Denpasar, -BA, Indonesia</p>
-                        <div class="d-flex justify-content-between align-items-center mt-auto px-3">
-                            <p class="points mb-0 d-none">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto mb-3">
+                            <p class="points mb-0 d-none col-6">
                                 From 4,000 Points
                             </p>
-                            <div class="dvicon">
+                            <div class="dvicon col-6">
                                 <img src="Images/hotelpage/hotel-icon1.svg" />
                                 <img src="Images/hotelpage/hotel-icon2.svg" />
                                 <img src="Images/hotelpage/hotel-icon3.svg" />
                                 <img src="Images/hotelpage/hotel-icon4.svg" />
                                 <img src="Images/hotelpage/hotel-icon5.svg" />
                             </div>
+                             <div class="rating px-3 col-6">
+                             <img src="images/icons/other/star-fill.svg" alt="">
+                             <img src="images/icons/other/star-fill.svg" alt="">
+                             <img src="images/icons/other/star-fill.svg" alt="">
+                             <img src="images/icons/other/star-blank.svg" alt="">
+                             <img src="images/icons/other/star-blank.svg" alt="">
+                              </div>
                         </div>
-                        <div class="rating px-3 mb-3">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-blank.svg" alt="">
-                            <img src="images/icons/other/star-blank.svg" alt="">
-                        </div>
+                       
 
                     </div>
                 </div>
@@ -578,25 +579,25 @@
                         </a>
                         <h2 class="mt-3 mb-2 mx-3">The-Hoxton</h2>
                         <p class="px-3 mb-3">Rome, Italy</p>
-                        <div class="d-flex justify-content-between align-items-center mt-auto px-3">
-                            <p class="points mb-0 d-none">
-                                From 5,000 Points
-                            </p>
-                            <div class="dvicon">
-                                <img src="Images/hotelpage/hotel-icon1.svg" />
-                                <img src="Images/hotelpage/hotel-icon2.svg" />
-                                <img src="Images/hotelpage/hotel-icon3.svg" />
-                                <img src="Images/hotelpage/hotel-icon4.svg" />
-                                <img src="Images/hotelpage/hotel-icon5.svg" />
-                            </div>
-                        </div>
-                        <div class="rating px-3 mb-3">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-blank.svg" alt="">
-                            <img src="images/icons/other/star-blank.svg" alt="">
-                        </div>
+                       <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto mb-3">
+    <p class="points mb-0 d-none col-6">
+        From 4,000 Points
+    </p>
+    <div class="dvicon col-6">
+        <img src="Images/hotelpage/hotel-icon1.svg" />
+        <img src="Images/hotelpage/hotel-icon2.svg" />
+        <img src="Images/hotelpage/hotel-icon3.svg" />
+        <img src="Images/hotelpage/hotel-icon4.svg" />
+        <img src="Images/hotelpage/hotel-icon5.svg" />
+    </div>
+     <div class="rating px-3 col-6">
+     <img src="images/icons/other/star-fill.svg" alt="">
+     <img src="images/icons/other/star-fill.svg" alt="">
+     <img src="images/icons/other/star-fill.svg" alt="">
+     <img src="images/icons/other/star-blank.svg" alt="">
+     <img src="images/icons/other/star-blank.svg" alt="">
+      </div>
+</div>
 
                     </div>
                 </div>
@@ -609,23 +610,25 @@
                         </a>
                         <h2 class="mt-3 mb-2 mx-3">The-Singular-Patagonia</h2>
                         <p class="px-3 mb-3">Puerto-Natales</p>
-                        <div class="d-flex justify-content-between align-items-center mt-auto px-3">
-                            <p class="points mb-0 d-none">From 6,000 Points</p>
-                            <div class="dvicon">
-                                <img src="Images/hotelpage/hotel-icon1.svg" />
-                                <img src="Images/hotelpage/hotel-icon2.svg" />
-                                <img src="Images/hotelpage/hotel-icon3.svg" />
-                                <img src="Images/hotelpage/hotel-icon4.svg" />
-                                <img src="Images/hotelpage/hotel-icon5.svg" />
-                            </div>
-                        </div>
-                        <div class="rating px-3 mb-3">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-blank.svg" alt="">
-                            <img src="images/icons/other/star-blank.svg" alt="">
-                        </div>
+                       <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto mb-3">
+    <p class="points mb-0 d-none col-6">
+        From 4,000 Points
+    </p>
+    <div class="dvicon col-6">
+        <img src="Images/hotelpage/hotel-icon1.svg" />
+        <img src="Images/hotelpage/hotel-icon2.svg" />
+        <img src="Images/hotelpage/hotel-icon3.svg" />
+        <img src="Images/hotelpage/hotel-icon4.svg" />
+        <img src="Images/hotelpage/hotel-icon5.svg" />
+    </div>
+     <div class="rating px-3 col-6">
+     <img src="images/icons/other/star-fill.svg" alt="">
+     <img src="images/icons/other/star-fill.svg" alt="">
+     <img src="images/icons/other/star-fill.svg" alt="">
+     <img src="images/icons/other/star-blank.svg" alt="">
+     <img src="images/icons/other/star-blank.svg" alt="">
+      </div>
+</div>
 
                     </div>
                 </div>
@@ -638,23 +641,25 @@
                         </a>
                         <h2 class="mt-3 mb-2 mx-3">Taj falaknuma palace</h2>
                         <p class="px-3 mb-3">Hyderabad, India</p>
-                        <div class="d-flex justify-content-between align-items-center mt-auto px-3">
-                            <p class="points mb-0 d-none">From 4,800 Points</p>
-                            <div class="dvicon">
-                                <img src="Images/hotelpage/hotel-icon1.svg" />
-                                <img src="Images/hotelpage/hotel-icon2.svg" />
-                                <img src="Images/hotelpage/hotel-icon3.svg" />
-                                <img src="Images/hotelpage/hotel-icon4.svg" />
-                                <img src="Images/hotelpage/hotel-icon5.svg" />
-                            </div>
-                        </div>
-                        <div class="rating px-3 mb-3">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-fill.svg" alt="">
-                            <img src="images/icons/other/star-blank.svg" alt="">
-                            <img src="images/icons/other/star-blank.svg" alt="">
-                        </div>
+                       <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto mb-3">
+    <p class="points mb-0 d-none col-6">
+        From 4,000 Points
+    </p>
+    <div class="dvicon col-6">
+        <img src="Images/hotelpage/hotel-icon1.svg" />
+        <img src="Images/hotelpage/hotel-icon2.svg" />
+        <img src="Images/hotelpage/hotel-icon3.svg" />
+        <img src="Images/hotelpage/hotel-icon4.svg" />
+        <img src="Images/hotelpage/hotel-icon5.svg" />
+    </div>
+     <div class="rating px-3 col-6">
+     <img src="images/icons/other/star-fill.svg" alt="">
+     <img src="images/icons/other/star-fill.svg" alt="">
+     <img src="images/icons/other/star-fill.svg" alt="">
+     <img src="images/icons/other/star-blank.svg" alt="">
+     <img src="images/icons/other/star-blank.svg" alt="">
+      </div>
+</div>
 
                     </div>
                 </div>
