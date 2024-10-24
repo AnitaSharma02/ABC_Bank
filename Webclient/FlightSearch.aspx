@@ -858,8 +858,8 @@
                                         <p class="px-3 mb-3">
                                             Singapore, officially the Republic of Singapore, is a sovereign island city-state in maritime Southeast Asia.
                                         </p>
-                                        <p class="points px-3 mb-3 mt-auto">
-                                            <span>From</span> 1,234 <span>Points</span>
+                                        <p class="points px-3 mb-3 mt-auto d-none">
+                                            <span>From</span> 1,234
                                         </p>
 
                                     </div>
@@ -877,8 +877,8 @@
                                         <p class="px-3 mb-3">
                                             Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces
                                         </p>
-                                        <p class="points px-3 mb-3 mt-auto">
-                                            <span>From</span> 4,500 <span>Points </span>
+                                        <p class="points px-3 mb-3 mt-auto d-none">
+                                            <span>From</span> 4,500 
                                         </p>
 
 
@@ -896,8 +896,8 @@
                                         <p class="px-3 mb-3">
                                             Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.
                                         </p>
-                                        <p class="points px-3 mb-3 mt-auto">
-                                            <span>From</span> 5,000 <span>Points </span>
+                                        <p class="points px-3 mb-3 mt-auto d-none">
+                                            <span>From</span> 5,000 
                                         </p>
 
 
@@ -916,8 +916,8 @@
                                         <p class="px-3 mb-3">
                                             New Zealand is an island country in the south western Pacific Ocean. It consists of two main landmasses
                                         </p>
-                                        <p class="points px-3 mb-3 mt-auto">
-                                            <span>From</span> 5,300 <span>Points </span>
+                                        <p class="points px-3 mb-3 mt-auto d-none">
+                                            <span>From</span> 5,300 
                                         </p>
 
 
@@ -935,8 +935,8 @@
                                         <p class="px-3 mb-3">
                                             London, the capital of England and the United Kingdom, is a 21st-century city with history stretching
                                         </p>
-                                        <p class="points px-3 mb-3 mt-auto">
-                                            <span>From</span> 6,000 <span>Points </span>
+                                        <p class="points px-3 mb-3 mt-auto d-none">
+                                            <span>From</span> 6,000 
                                         </p>
 
 
@@ -953,8 +953,8 @@
                                         <p class="px-3 mb-3">
                                             Dubai is the most populous city in the UAE and the capital of the Emirate of Dubai,
                                         </p>
-                                        <p class="points px-3 mb-3 mt-auto">
-                                            <span>From</span> 3,000 <span>Points </span>
+                                        <p class="points px-3 mb-3 mt-auto d-none">
+                                            <span>From</span> 3,000 
                                         </p>
                                     </div>
                                 </div>
@@ -969,8 +969,8 @@
                                         <p class="px-3 mb-3">
                                             Zürich is the largest city in Switzerland and the capital of the canton of Zürich.
                                         </p>
-                                        <p class="points px-3 mb-3 mt-auto">
-                                            <span>From</span> 4,000 <span>Points </span>
+                                        <p class="points px-3 mb-3 mt-auto d-none">
+                                            <span>From</span> 4,000 
                                         </p>
                                     </div>
                                 </div>
@@ -985,8 +985,8 @@
                                         <p class="px-3 mb-3">
                                             Goa, a state on India's West coast, is a former Portuguese colony with a rich history.
                                         </p>
-                                        <p class="points px-3 mb-3 mt-auto">
-                                            <span>From</span> 5,000 <span>Points </span>
+                                        <p class="points px-3 mb-3 mt-auto d-none">
+                                            <span>From</span> 5,000 
                                         </p>
                                     </div>
                                 </div>
