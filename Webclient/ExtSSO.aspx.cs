@@ -120,7 +120,7 @@ public partial class ExtSSO : Page
                                 }
                                 else if (lobjMemberRelation.Status == Status.InActive)
                                 {
-                                    lstrMessage = "Your account is InActive. Please contact to admin.";
+                                    lstrMessage = "<span>Your account is InActive.Please <a class=\"link1 text-decoration-none text-colour7\" href=\"Activation.aspx\"> click here </a> to activate your account.</span>";
                                     LoggingAdapter.WriteLog("ExtSSO_oAuth; " + lstrMessage);
                                     lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
                                     divErrorMsg.Style.Add("Display", "Block");
