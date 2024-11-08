@@ -115,7 +115,7 @@
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-12 mb-3">
-                                                    <label class="label">ID</label>
+                                                    <label class="label">CIF</label>
                                                     <div class="dvInput input-group">
                                                         <asp:TextBox ID="txtMemberId" autocomplete="off" runat="server" CssClass="form-control" onkeypress="var retValue = ActivationOTPOnEnter(event); event.returnValue = retValue; return retValue;"></asp:TextBox>
                                                     </div>
@@ -223,7 +223,7 @@
                                                     <label class="checkbox-container d-flex">
                                                         <span class="d-inline-block ml-1">
                                                             <input id="chkTnC" runat="server" type="checkbox" />
-                                                            <span>Please accept </span><a class="link1" href="\TermsAndConditions.aspx">Terms and Conditions</a>
+                                                            <span>Please accept </span><a class="link1" href="\TermsAndConditions.aspx" target="_blank">Terms and Conditions</a>
                                                             <span class="checkmark"></span>
                                                         </span>
                                                     </label>

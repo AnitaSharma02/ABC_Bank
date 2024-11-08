@@ -2,6 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <link rel="stylesheet" href="\Css/experience.css" />
+     <link rel="stylesheet" href="/Css/swiper.min.css" />
+ <link href="Css/jquery.ui.datepicker.css" rel="stylesheet" type="text/css" />
+ <script src="/Jquery/swiper.min.js"></script>
     <style>
         .dvInnerBanner {
             display: none;
@@ -9,6 +12,7 @@
     </style>
 
     <div class="dvBreadcrumbs my-3 bg-colour2">
+        nhi to kal
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
@@ -141,14 +145,9 @@
                             fnBindExperienceProductInfo(rtnData.d);
                         }
                     }
-                    $("#divExperienceLoader").hide();
-                    $('#updProgress').hide();
-                },
-                error: function (errmsg) {
 
                 },
-                beforeSend: function () {
-                    fnShowLoader('dvProductDetails');
+                error: function (errmsg) {
 
                 }
             });
@@ -629,13 +628,24 @@
                 dateFormat: "dd-mm-yy",
                 minDate: firstAvailabilityDate,
                 maxDate: lastAvailabilityDate,
-                onSelect: function (dateText) {
-                    GetProductTypesPriceByDate();
+                onSelect: function () {
+                   
+                    $("#updProgress").css("display", "block");
+                    setTimeout(function () {
+                        $("#updProgress").css("display", "none");
+                        GetProductTypesPriceByDate();
+                    }, 2000);
                 }
             });
         }
         function SelectDrpDownChangeFunction() {
-            GetProductTypesPriceByDate();
+       
+            
+            $("#updProgress").css("display", "block");
+            setTimeout(function () {
+                $("#updProgress").css("display", "none");
+                GetProductTypesPriceByDate();
+            }, 2000);
 
         }
         function ShowDatePicker() {
@@ -695,6 +705,7 @@
                         }
 
                     }
+                    $("#divExperienceLoader").remove();
                 },
                 error: function (errmsg) {
                 }
@@ -775,6 +786,7 @@
                                     categoryName = toTitleCase(ratesAarray[n].category);
                                     let recommendedPrice = Math.ceil(ratesAarray[n].amount);
                                     var recommendedPriceFormat = ratesAarray[n].convertedCurrency + " " + FormatCurrency(recommendedPrice);
+                                   
                                     if (parseInt($('#selectDrpDownAdult').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "adult") {
                                         showBookNow = true;
                                         html += '<p class="dvItem text-colour7 heading-bold h7 ml-2">' + $('#selectDrpDownAdult').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
@@ -843,19 +855,16 @@
             $("#" + id + "").show();
         }
         function BookNow(ptuuid, IsTimeslotsAvailable) {
-            //debugger
-           // $('#' + ptuuid + 'btnBookNow').prop('disabled', true);
-           // fnShowLoader('dvProductDetails');
-            // $('#updProgress').show();
+          
             var uuid = getQuerystring("uuid");
             if (parseInt(IsTimeslotsAvailable) == 1) {
                 $("#" + ptuuid).removeClass('text-danger');
                 var timeSlot = $.trim($('#' + ptuuid + ' option:selected').text());
-               
+
                 //$.trim($('# option:selected').val());
                 if (timeSlot == 'Select timeslot') {
-                 
-                    if ($('#'+ptuuid + 'danger').text() == "This field is required") {
+
+                    if ($('#' + ptuuid + 'danger').text() == "This field is required") {
 
                     }
                     else {
