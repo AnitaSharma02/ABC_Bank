@@ -285,7 +285,20 @@
             Framework.EnterpriseLibrary.Adapters.LoggingAdapter.WriteLog("GetCountriesList Exception : " + ex.StackTrace + Environment.NewLine + "Stack Trace-" + ex.StackTrace);
         }
     }
-
+      protected void Application_BeginRequest(object sender, EventArgs e)
+    {
+        HttpApplication app = sender as HttpApplication;
+        if (!app.Request.RawUrl.Contains(".axd"))
+        {
+            // Check if the request accepts gzip encoding
+            string acceptEncoding = HttpContext.Current.Request.Headers["Accept-Encoding"];
+            if (!string.IsNullOrEmpty(acceptEncoding) && acceptEncoding.Contains("gzip"))
+            {
+                HttpContext.Current.Response.Filter = new System.IO.Compression.GZipStream(HttpContext.Current.Response.Filter, System.IO.Compression.CompressionMode.Compress);
+                HttpContext.Current.Response.AddHeader("Content-Encoding", "gzip");
+            }
+        }
+    }
     void Application_End(object sender, EventArgs e)
     {
         //  Code that runs on application shutdown
