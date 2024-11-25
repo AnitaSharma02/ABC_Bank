@@ -234,7 +234,7 @@
                         <li class="mb-3"><span class="heading6">10. Deregistration and Termination</span>
                             <ul>
                                 <li class="mb-3">
-                                    <span class="heading6">10.1</span> You will be able to deregister yourself from the Program by contacting ABC Banking customer service at 230 2068000 or by writing to infinity@abcbanking.mu. If you deregister, you will immediately lose all accrued points and benefits, and your participation in the Program will be terminated from the date of deregistration.
+                                    <span class="heading6">10.1</span> You will be able to deregister yourself from the Program by contacting ABC Banking customer service at 230 2068000 or by writing to <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>. If you deregister, you will immediately lose all accrued points and benefits, and your participation in the Program will be terminated from the date of deregistration.
                                 </li>
                                 <li class="mb-3">
                                     <span class="heading6">10.2</span> ABC Banking reserves the right to terminate the Program at any time, without justifying and without liability to you. Notice will be published in a local newspaper and on the Website and will be effective immediately upon publication of the notice. In such an event, Participants will be required to redeem their Infinity Rewards points within the period set out in item 5.2 above.
