@@ -36,7 +36,7 @@
                     <p class="mb-3">By accessing and/or using any page of the Website and its services, the participant declares having read, understood and accepted the following terms, conditions, and disclaimers in full and hereby agrees to comply with and be bound by them.</p>
                     <p class="mb-3">These Terms and Conditions may be changed or updated occasionally as such the participants are encouraged to frequently visit these sections to be updated about the changes made.</p>
                     <p class="mb-3">For the purposes of these Terms and Conditions, the following terms shall have the following meaning:</p>
-                    <ul>
+                    <ul style="list-style-type: none;">
                         <li class="mb-3">
                             <span class="heading6">1. Definitions</span>
                             <ul class="mt-3" type="a">

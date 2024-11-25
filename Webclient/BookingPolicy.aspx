@@ -257,28 +257,8 @@
                                     <ul>
                                         <li class="mb-3">Once the order is placed, cancellation is not permitted. Hence, no reward points/cash will be refunded for the same.</li>
                                     </ul>
-                                </div>
 
-                            </div>
-                        </div>
-                        <!-- LOUNGE -->
-
-                        <!-- MISC -->
-                        <div class="card mb-3">
-                            <div class="card-header p-0">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-block text-left p-3 collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapse8">
-                                        Miscellaneous provisions regarding the booking policy
-                                         <span class="arrow-icon">
-                                             <i class="fa fa-caret-up"></i>
-                                         </span>
-                                    </button>
-                                </h2>
-                            </div>
-
-                            <div id="collapse8" class="collapse" data-parent="#static-accordion">
-                                <div class="card-body">
+                                    <p class="heading6 mb-2">Miscellaneous provisions regarding the booking policy:</p>
                                     <ul>
                                         <li class="mb-3"><strong>Availability:</strong> Rewards are subject to availability and may vary based on demand, location, and other factors beyond our control. We cannot guarantee availability for specific dates or services.</li>
                                         <li class="mb-3"><strong>Changes to Terms:</strong> The terms and conditions of the rewards program, including the booking policy, are subject to change at any time without prior notice. Please refer to our website for the latest updates.</li>
@@ -301,7 +281,7 @@
 
                             </div>
                         </div>
-                        <!-- MISC -->
+                        <!-- LOUNGE -->
 
                     </div>
                 </div>
