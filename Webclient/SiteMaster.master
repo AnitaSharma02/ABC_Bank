@@ -558,6 +558,6 @@
 
 
 
-    <script src="\Jquery/i18n/i18n.custom.js" type="text/javascript" defer></script>
+    <%--<script src="\Jquery/i18n/i18n.custom.js" type="text/javascript" defer></script>--%>
 </body>
 </html>

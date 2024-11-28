@@ -18,7 +18,7 @@ Normal selectmenu - DONE
 jquery ui selectmenu - DONE
 ASPX selectmenu - need to test
 jquery ui autocomplete - in TBO not working
-add dynamic banner - work in progress
+add dynamic banner - DONE
 
 
 
@@ -34,34 +34,27 @@ HOW TO USE -
 
 2. VALIDATIONS -
 - add .dvErrors class as a parent to get applied data-i18n attributes
-
 - add span tags to validations error messages
 
 3. VC DATA -
 - add .dvVcData class as a parent to get applied data-i18n attributes
-
-- updateVcDataSections(); //add our function call in every ajax wherever needed
+- updateVcDataSections(); //add our function call in ajax wherever needed
 
 4. JSON -
 - if found just remove [value] from the string from .json files  "[value]ABC-enter-city-or-a": "",
 
-5. DIRECTION-LTR -
-- add .direction-left or .direction-right on elements in ARABIC case as per requirement
 
 
 
 6. DOWNLOAD -
-
-- before download select other language and come back to english language and then click download to get all data in json format including vcData
-
-- if you have forms on page, then before downloading first visible all the validations and then click download
+- if you have forms on page, then before downloading first make visible all the validations and then click download
 
 
 
 
 INSTALLATION -
 ----------------------------------------------------------------------------
-1. First disable or remove these scripts if available, these are old scripts and language setup was used with Jquery.i18 library.
+1. First remove these scripts if available, these are old scripts and language setup was used with Jquery.i18 library.
 <script src="\Jquery/i18n/jquery.i18n.min.js" type="text/javascript"></script>
 <script src="\Jquery/i18n/jquery.i18n.emitter.bidi.js" type="text/javascript"></script>
 <script src="\Jquery/i18n/i18n.custom.js" type="text/javascript"></script>
@@ -74,42 +67,48 @@ INSTALLATION -
 4. add download button after starting <body> tag to download data-i18n attributes which are applied on elements in a json format.
 <button id="downloadTranslations" class="d-none-">Download JSON</button>
 
-5. add selectmenu to switch languages
+5. add selectmenu to switch languages.
+- Also change language option from here also as required.
 <select class="dvLang">
     <option value="en">english</option>
     <option value="np">nepal</option>
     <option value="ar">arabic</option>
 </select>
 
-6. Add required language css files in their respective folders. No need to add English.css because global.css and root.css are handling it.
-arabic.css or nepal.css or french.css
+6. Add en.json, np.json and ar.json in Webclient/i18n/_ _ _.json as per requirement of languages.
 
-7. Remove download button if json format work is done.
+7. Add required language css files in Webclient/Css/_ _ _.css folder.
+- No need to add english.css because global.css and root.css are handling it.
+- example: arabic.css or nepal.css or french.css
+
+8. Add path as per requirement.
+- languageStyles: {
+    ar: { cssFile: "Css/arabic.css", direction: "rtl" },
+    en: { cssFile: "Css/global.css", direction: "ltr" }
+}
+NOTE: there should be same css files and json files, which you want to use in the project. Please remove unnecessary files from Webclient/i18n/....json and from Webclient/Css/_ _ _.css folders related to language script.
+
+9. Don't change anything inside the language script file except languageStyles:{} object.
+
+10. Remove download button from SiteMaster.master if everything is done.
 
 
 
 
 
 BANNER SETUP -
-
 ----------------------------------------------------------------------------
 
-1. NOTE: Remember always need to change these below names as per folder name in vc. Can check folder names with Fausia
-
+1. NOTE: Remember always need to change these below names in SiteMaster.master as per folder named in VC. Can check folder names with Fausia.
 "{0}banner" - for english
-
 "{0}bannernp" - for nepal
-
 "{0}bannerar" - for arabic
-
 
 
 2. NOTE: On FlightSearch & HotelSearch hide this line //$("#dvHeroSlider").hide(); to display banners
 
 
-
 3. add below code in document.ready function 
-
 
 
 // this script is to get selected value from language selector selectmenu
@@ -122,9 +121,7 @@ languageSelector.addEventListener('change', function () {
 });
 
 
-
-4. add below functions in SiteMaster.master page
-
+4. add below functions in SiteMaster.master to setup dynamic BANNERS.
 
 
 function BindBanner() {
