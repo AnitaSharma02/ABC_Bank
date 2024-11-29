@@ -398,7 +398,7 @@
                     if (msg.d != "") {
                         $('#divCartContents').html("");
                         $('#divCartContents').html(msg.d);
-                        updateVcDataSections();
+                        //updateVcDataSections();
                     } else {
                         window.location.href = "Shop.aspx";
                     }
@@ -534,7 +534,7 @@
                         var data = msg.d;
                         if (data.includes(".aspx")) {
                             window.location.href = data;
-                            updateVcDataSections();
+                            //updateVcDataSections();
                         } else if (data == "INSUFFICIENT_POINTS") {
                             $('#divCartContents').empty().html("Insufficient Points.");
                         } else {

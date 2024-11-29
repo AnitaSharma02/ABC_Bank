@@ -149,7 +149,7 @@
                         $('.' + categoryName + 'redemption').addClass('SelRedemption');
 
                         // this is for loading only after vc data is available
-                        updateVcDataSections();
+                        //updateVcDataSections();
 
                     }
                 } else {
@@ -169,7 +169,7 @@
                                     $('.' + categoryName + 'redemption').addClass('SelRedemption');
 
                                     // this is for loading only after vc data is available
-                                    updateVcDataSections();
+                                    //updateVcDataSections();
 
                                 }
                             }

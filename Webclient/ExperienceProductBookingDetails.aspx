@@ -344,7 +344,7 @@
                         else {
                             fnBindPaymentDetails(rtnData.d, adultCount, childrenCount, seniorsCount, ptuuid, puuid, selectedDate, timeslotuuid);
                         }
-                        updateVcDataSections();
+                        //updateVcDataSections();
                     }
                 },
                 error: function (errmsg) {

@@ -162,7 +162,7 @@ function PaintAirlines() {
         data: "",
         success: function (msg) {
             $("#DivAirLinesList").html(msg.d);
-            updateVcDataSections();
+            //updateVcDataSections();
         },
         beforeSend: function () {
             $("#updProgress").show();
@@ -319,7 +319,7 @@ function FilterNoOfStops(id) {
         data: "{'pstrid':'" + id.toString() + "','pstrischecked':'" + ischecked.toString() + "'}",
         success: function (msg) {
             GetFlightData(0);
-            updateVcDataSections();
+            //updateVcDataSections();
         },
         beforeSend: function () {
             $("#updProgress").show();

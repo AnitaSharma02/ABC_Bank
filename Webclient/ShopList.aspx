@@ -227,7 +227,7 @@
                 success: function (msg) {
                     if (msg.d != '') {
                         $("#CP_CPSHOP_divFilters").html(msg.d);
-                        updateVcDataSections();
+                        //updateVcDataSections();
                     }
                     return false;
                 }

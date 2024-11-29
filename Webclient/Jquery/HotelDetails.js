@@ -43,7 +43,7 @@ function BindNextHotel() {
             $("#NextHotelList").append(HotelList);
             $(".AmtStylePoint").digits();
 
-            updateVcDataSections();
+            //updateVcDataSections();
         },
         beforeSend: function () {
             $("#updProgress").show();
@@ -77,7 +77,7 @@ function BindHotelDetails() {
             $("#divrating").append(HotelRating);
             $(".totalPointValue").digits();
 
-            updateVcDataSections();
+            //updateVcDataSections();
 
         },
         beforeSend: function () {
@@ -255,7 +255,7 @@ function GetHotelInfo() {
             //Code for Binding Basic Amenities
             BindBasicAmenities(AllAmenities);
 
-            updateVcDataSections();
+            //updateVcDataSections();
 
         },
         error: function (response) {
@@ -347,7 +347,7 @@ function getHotelDetails(hotelId) {
             var linkurl = "HotelDetails.aspx";
             window.location.href = linkurl;
 
-            updateVcDataSections();
+            //updateVcDataSections();
         },
         beforeSend: function () {
             $("#updProgress").show();

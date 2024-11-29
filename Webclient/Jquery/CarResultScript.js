@@ -858,7 +858,7 @@ function ViewMoreInfo(uniqueRef) {
 
                 $("#dvMoreInfoModal").modal("show");
 
-                updateVcDataSections();
+                //updateVcDataSections();
             }
             else {
                 window.location.href = "ErrorPage.aspx";
@@ -919,7 +919,7 @@ function GetCarDetails(SelectedCarId) {
                 $("#spncarTotalAmount").text(Math.ceil(msg.d[5].toString()));
                 $("#spnPayableAmount").text(Math.ceil(msg.d[5].toString()));
 
-                updateVcDataSections();
+                //updateVcDataSections();
             }
             else {
                 window.location.href = "ErrorPage.aspx";
@@ -952,7 +952,7 @@ function GetRateDetails(RateReference) {
                 $("#divExtrascontainer")[0].innerHTML = msg.d[0].toString(); //extras details i.e. Excess Protection
                 $("#divAdditionalEquipment")[0].innerHTML = msg.d[1].toString(); // Additional Equipment
                 $("#spnPayableAmount").text(msg.d[2].toString());
-                updateVcDataSections();
+                //updateVcDataSections();
             }
             else {
                 window.location.href = "ErrorPage.aspx";
@@ -1176,7 +1176,7 @@ function MapCarDetails() {
                 $("#spnPayableAmount").text(Math.ceil(parseFloat(CarBookingDetails.PayableAmount)));
           //$("#spnAdditionalChargetotal").text(parseFloat(CarBookingDetails.TotalAdditionalequipmentAmount == null ? 0 : CarBookingDetails.TotalAdditionalequipmentAmount).toFixed(2));
 
-                updateVcDataSections();
+                //updateVcDataSections();
             }
             else {
                 window.location.href = "ErrorPage.aspx";
@@ -1469,7 +1469,7 @@ function ViewMoreInfoAdditionalCharges(CodeId) {
 
                 $("#dvAdditionalEquipmentModal").modal("show");
 
-                updateVcDataSections();
+                //updateVcDataSections();
             }
             else {
 

@@ -77,7 +77,7 @@
                         success: function (rtnData) {
                             IsGetExperienceProductListAjaxCalled = false;
                             fnBindExperienceProductList(rtnData.d);
-                            updateVcDataSections();
+                            //updateVcDataSections();
                         },
                         error: function (errmsg) {
                             IsGetExperienceProductListAjaxCalled = false;

@@ -381,7 +381,7 @@
                             enabled: true,
                         },
                     });
-                    updateVcDataSections();
+                    //updateVcDataSections();
                 }
                 else {
                     $.ajax({
@@ -429,7 +429,7 @@
                                         enabled: true,
                                     },
                                 });
-                                updateVcDataSections();
+                                //updateVcDataSections();
                             }
                             else {
                                 $("#dvVoucherSlider").hide();
