@@ -107,7 +107,7 @@ public partial class Index : Page
                 {
                     StringBuilder sb = new StringBuilder();
                     //sb.Append("<div class=\"col-6 col-sm-4 col-lg-2 text-center d-flex flex-column align-items-center mb-3\">");
-                    foreach (var category in listOfCategories.FindAll(lobj => lobj.ParentId.IsNullOrEmpty() && lobj.IsActive).OrderBy(o => o.Priorty).ToList())
+                    /*foreach (var category in listOfCategories.FindAll(lobj => lobj.ParentId.IsNullOrEmpty() && lobj.IsActive).OrderBy(o => o.Priorty).ToList())
                     {
                         try
                         {
@@ -118,7 +118,46 @@ public partial class Index : Page
                         {
                             LoggingAdapter.WriteLog("category :" + category.Name);
                         }
+                    }*/
+                    foreach (var category in listOfCategories.FindAll(lobj => lobj.ParentId.IsNullOrEmpty() && lobj.IsActive).OrderBy(o => o.Priorty).ToList())
+                    {
+                        try
+                        {
+                            // Extract the PageURL
+                            var PageURL = category.Properties.ToList().Find(lobj => lobj.Name.Equals("PageUrl")).Value.Replace("dotaspx", ".aspx");
+
+                            // Check if category.Name has words separated by spaces and split them into an array
+                            var words = category.Name.Split(' ');
+
+                            // Initialize formattedName with original category name
+                            string formattedName = category.Name;
+
+                            // If there are 3 or more words, you can also add <br/> after the second word (or customize logic as needed)
+                            if (words.Length > 2)
+                            {
+                                // Add <br/> after the second word
+                                formattedName = string.Join(" ", words.Take(2)) + " <br/> " + string.Join(" ", words.Skip(2));
+                            }
+
+                            sb.Append("<div class=\"col-auto mb-md-3\">");
+                            sb.Append("<a class=\"text-center d-flex flex-column align-items-center "
+                                      + category.Name.Replace(" ", "").Replace("-", "").ToLower()
+                                      + "redemption redemptionoptions\" href=\"" + PageURL + "\">");
+                            sb.Append("<div class=\"d-flex flex-column align-items-center justify-content-center p-2 p-lg-2 p-xl-4 rounded-circle imageBox\">");
+                            sb.Append("<img src=\"" + (category.PrimaryImage != null && category.PrimaryImage.Url != null ? category.PrimaryImage.Url : string.Empty) + "\" />");
+                            sb.Append("</div>");
+                            sb.Append("<p class=\"mt-3\">" + formattedName + "</p>");
+                            sb.Append("</a>");
+                            sb.Append("</div>");
+                        }
+                        catch (Exception ex)
+                        {
+                            // Logging any errors
+                            LoggingAdapter.WriteLog("Error processing category: " + category.Name + " - " + ex.Message);
+                        }
                     }
+
+
                     //sb.Append("</div>");
                     strResponse = sb.ToString();
                     HttpContext.Current.Application["HomeRedemptionOptions"] = strResponse;
