@@ -229,7 +229,9 @@
         }
         function addClassBasedOnUrl() {
             const type = getUrlParam('type');
-            const productType = getUrlParam('ProductType');
+            let productTypeCapital = getUrlParam('ProductType');
+            let productTypeSmall = getUrlParam('productType');
+            let productType = productTypeCapital || productTypeSmall;
             const breadcrumbItems = document.querySelectorAll('.dvBreadcrumbs .breadcrumb');
             let breadcrumbItem = "";
             breadcrumbItems.forEach(item => {
@@ -241,12 +243,9 @@
             });
             breadcrumbItem = breadcrumbItem.trim();
             const pageName = window.location.pathname.split('/').pop(); // This will give you current pageName
-            if (type === 'Giftcards') {
-                $('.dvProductList ').addClass('dvListPageGiftCards');
-            }
-             else if (productType === 'Giftcards') {
-                 $('.dvProductList ').addClass('dvListPageGiftCards');
-             }
+             if (productType === 'Giftcards') {
+    		    $('.dvProductList ').addClass('dvListPageGiftCards');
+	        } 
             else if (productType === 'Physical') {
                 $('.dvShopPage ').addClass('dvListPageShopOffers');
             }
