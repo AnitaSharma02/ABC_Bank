@@ -61,10 +61,27 @@
 
                 }
             })
-            //scrollTop
+            
+            // for scrollTop
+            let offsetTop;
+            // Adjust offset based on screen width breakpoints
+            if (window.innerWidth < 576) {
+                offsetTop = 150; // Offset for screens below 576px
+            } else if (window.innerWidth < 768) {
+                offsetTop = 450; // Offset for screens between 576px and 767px
+            } else if (window.innerWidth < 992) {
+                offsetTop = 550; // Offset for screens between 768px and 991px
+            } else if (window.innerWidth < 1200) {
+                offsetTop = 550; // Offset for screens between 992px and 1199px
+            } else {
+                offsetTop = 550; // Offset for screens 1200px and above
+            }
+
+            // Smooth scroll to the top with the calculated offset
             $('html, body').animate({
-                scrollTop: $('.dvFlightSearch').offset().top
-            }, 'slow');
+                scrollTop: offsetTop
+            }, 600); // Smooth scroll duration
+            
 
             //show datepicker onclick of icon
             $(".dvTxtDepart .input-group-append .input-group-text").on("click", function () {
