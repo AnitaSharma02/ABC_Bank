@@ -94,7 +94,7 @@
                 }
             }
         }
-
+        BindBanner();
         var minAdultVal = 1, maxAdultVal = 4; // Set Max and Min values for Adult
         var minChildVal = 0, maxChildVal = 2; // Set Max and Min values for Child
 

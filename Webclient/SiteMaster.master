@@ -244,6 +244,9 @@
             if (type === 'Giftcards') {
                 $('.dvProductList ').addClass('dvListPageGiftCards');
             }
+             else if (productType === 'Giftcards') {
+                 $('.dvProductList ').addClass('dvListPageGiftCards');
+             }
             else if (productType === 'Physical') {
                 $('.dvShopPage ').addClass('dvListPageShopOffers');
             }
