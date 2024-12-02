@@ -1,24 +1,22 @@
-﻿using System;
-using System.Web;
-using System.Web.UI;
-using ABC.Model;
+﻿using ABC.Model;
 using Core.Platform.Member.Entites;
-using Core.Platform.ProgramMaster.Entities;
-using Core.Platform.MemberActivity.Entities;
 using Core.Platform.MemberActivity.Constants;
-using System.Web.SessionState;
-using System.Reflection;
+using Core.Platform.MemberActivity.Entities;
+using Core.Platform.ProgramMaster.Entities;
 using Framework.EnterpriseLibrary.Adapters;
+using System;
 using System.IO;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
-using Core.Framework.PostHelper;
-using Newtonsoft.Json;
-using System.Collections.Generic;
+using System.Web;
+using System.Web.SessionState;
+using System.Web.UI;
 
 public partial class Login : Page
 {
     public string pstrMembershipRef { get; set; }
+
     protected void Page_Load(object sender, EventArgs e)
     {
         try
@@ -53,6 +51,7 @@ public partial class Login : Page
             LoggingAdapter.WriteLog("Index.aspx Page_Load Ex-" + ex.Message + ex.InnerException + ex.StackTrace);
         }
     }
+
     private string Decrypt(string cipherText)
     {
         string EncryptionKey = "MAKV2SPNIC99212";
@@ -75,6 +74,7 @@ public partial class Login : Page
         }
         return cipherText;
     }
+
     private static void updateSessionId(HttpContext Context)
     {
         try
@@ -107,6 +107,7 @@ public partial class Login : Page
             LoggingAdapter.WriteLog("Index.aspx- updateSessionId Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
+
     protected void BtnLoginValidation_Click(object sender, EventArgs e)
     {
         ABCModel lobjModel = new ABCModel();
@@ -114,7 +115,7 @@ public partial class Login : Page
         string Attempt = string.Empty;
         string strMD5Password = string.Empty;
         string lstrMemberID = txtMemberID.Value;
-        //string pstrSecurityCode = txtSecurityCode.Text;
+
         string lstrPassword = txtPassword.Value;
         bool pboolRememberMe = chkRememberMe.Checked;
         string errormsg = string.Empty;
@@ -255,7 +256,7 @@ public partial class Login : Page
                 mstrRedirectEmptyURL = "Invalid_MemberId";
             }
 
-            lobjModel.LogActivity(string.Format("Member Activation {0}: {1}", lstrMemberID, mstrRedirectEmptyURL), ActivityType.Activation);
+            lobjModel.LogActivity(string.Format("Member Login {0}: {1}", lstrMemberID, mstrRedirectEmptyURL), ActivityType.Login);
 
         }
         catch (ApplicationException ex)
@@ -294,6 +295,7 @@ public partial class Login : Page
         string response = mstrRedirectEmptyURL + "+" + Attempt;
         ScriptManager.RegisterStartupScript(Page, Page.GetType(), Guid.NewGuid().ToString(), "javascript:MemberLoginCodeBehind('" + response + "')", true);
     }
+
     protected void lnkBtnRefresh_Click(object sender, EventArgs e)
     {
         try
@@ -302,7 +304,7 @@ public partial class Login : Page
         }
         catch (Exception ex)
         {
-            LoggingAdapter.WriteLog("Activation.aspx lnkBtnRefresh_Click Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
+            LoggingAdapter.WriteLog("Login.aspx lnkBtnRefresh_Click Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
 }

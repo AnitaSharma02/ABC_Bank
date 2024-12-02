@@ -1,24 +1,23 @@
-﻿using System;
+﻿using ABC.Model;
+using Core.Framework.PostHelper;
+using Core.Platform.Member.Entites;
+using Core.Platform.MemberActivity.Constants;
+using Core.Platform.MemberActivity.Entities;
+using Core.Platform.OTP.Entities;
+using Core.Platform.ProgramMaster.Entities;
+using Core.Platform.Transactions.Entites;
+using Framework.EnterpriseLibrary.Adapters;
+using System;
+using System.Configuration;
 using System.Web;
 using System.Web.UI;
-using ABC.Model;
-using Core.Platform.Member.Entites;
-using Core.Platform.ProgramMaster.Entities;
-using Core.Platform.MemberActivity.Entities;
-using Framework.EnterpriseLibrary.Adapters;
-using Core.Platform.MemberActivity.Constants;
-using Core.Platform.OTP.Entities;
-using Core.Framework.PostHelper;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using Core.Platform.Transactions.Entites;
-using System.Configuration;
 
 public partial class Activation : Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
     }
+
     [System.Web.Script.Services.ScriptMethod()]
     [System.Web.Services.WebMethod]
     public static string GenerateOTP(string pstrMemberId)
@@ -33,7 +32,7 @@ public partial class Activation : Page
             MemberLogin lobjMemberLogin = new MemberLogin();
             ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
             lobjMemberDetails = lobjModel.GetMemberDetailsByUniqueAttribute(lobjProgramDefinition.ProgramId, pstrMemberId.Trim());
-            //lobjMemberDetails = lobjModel.GetMemberDetails(pstrMemberId.Trim());
+
             if (lobjMemberDetails == null)
             {
                 mstrRedirectEmptyURL = "Invalid Email";
@@ -100,11 +99,12 @@ public partial class Activation : Page
         }
         catch (Exception ex)
         {
-            lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, "Invalid Security Code"), ActivityType.ActivationOTPFailed);
+            lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, "Exception Occurred"), ActivityType.ActivationOTPFailed);
             LoggingAdapter.WriteLog("Activation.aspx GenerateOTP Exception:" + ex.Message + Environment.NewLine + "InnerException:" + ex.InnerException + Environment.NewLine + "StackTrace:" + ex.StackTrace);
         }
         return mstrRedirectEmptyURL;
     }
+
     public static bool CheckOTP(string pstrmemberid, string pstrotp)
     {
         bool mblnstatus = false;
@@ -133,6 +133,7 @@ public partial class Activation : Page
         }
         return mblnstatus;
     }
+
     [System.Web.Script.Services.ScriptMethod()]
     [System.Web.Services.WebMethod]
     public static string GetPasswordPolicy()
@@ -158,17 +159,19 @@ public partial class Activation : Page
         }
         return lstrPwdPolicy;
     }
+
     protected void lnkBtnRefresh_Click(object sender, EventArgs e)
     {
         try
         {
-          //  ImgCaptcha.ImageUrl = string.Format("~/captcha.ashx?refresh={0}", Guid.NewGuid());
+            //  ImgCaptcha.ImageUrl = string.Format("~/captcha.ashx?refresh={0}", Guid.NewGuid());
         }
         catch (Exception ex)
         {
             LoggingAdapter.WriteLog("Activation.aspx lnkBtnRefresh_Click Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
+
     protected void BtnActivationValidation_Click(object sender, EventArgs e)
     {
         try
