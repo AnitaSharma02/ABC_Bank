@@ -132,10 +132,15 @@
             if (name != '') {
                 productName = name;
             }
-            else {
-                productName = jQuery('#txtProductName').val();
+            else if (jQuery('#txtProductNameShopList').val() != '' ) {
+                productName = jQuery('#txtProductNameShopList').val();
+
             }
-            productName = jQuery('#txtProductName').val();
+            else if (jQuery('#txtProductName').val() != '') {
+                productName = jQuery('#txtProductName').val();
+
+            }
+            //productName = jQuery('#txtProductNameShopList').val();
 
             if (productName != "" && productName.length > 3) {
                 var CategoryId = getQuerystring("CategoryId");
