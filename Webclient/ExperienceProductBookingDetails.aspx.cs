@@ -540,7 +540,7 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                 else
                 {
                     lobjModel.LogActivity("MemberDetails Null : Failed", ActivityType.PackageBooking);
-                    redirectPGUrl = "ErrorPage.aspx";
+                    redirectPGUrl = "Login.aspx";
                 }
             }
 

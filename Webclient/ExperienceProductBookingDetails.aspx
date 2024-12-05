@@ -1402,8 +1402,8 @@
                 cache: false,
                 success: function (rtnData) {
                     if (rtnData.d != "" && rtnData.d != null) {
-                        if (rtnData.d == "ErrorPage.aspx") {
-                            window.location.href = "ErrorPage.aspx";
+                        if (rtnData.d == "Login.aspx") {
+                            window.location.href = "Login.aspx";
                         }
                         else if (rtnData.d == "SESSION_TIME_OUT") {
                             var pop = document.getElementById("alertmessage");

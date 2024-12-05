@@ -172,7 +172,7 @@ public partial class FlightPassenger : System.Web.UI.Page
                 }
                 else
                 {
-                    Response.Redirect("Index.aspx", false);
+                    Response.Redirect("Login.aspx", false);
                 }
             }
         }
