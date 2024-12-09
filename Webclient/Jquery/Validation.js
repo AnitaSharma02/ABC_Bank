@@ -234,7 +234,7 @@ function LoginValidation() {
                             $("#CP_lblLoginError").html('<span>Password must contain one non-alpha character,one upper case character,one lower case character and minimum 8 characters in length.</span>');
                         }
                         else {
-                            showLoginOTPDiv();
+                           // showLoginOTPDiv();
                             $("#CP_txtMemberID").val(MemberId);
                             $("#CP_hfMemberId").val(MemberId);
                             $("#CP_ErrorMsgContainer").show();
@@ -598,7 +598,7 @@ function LoginMsgCodeBehind(data) {
     if (data != null || (data != "") || data != 'undefined') {
 
         if (data == "InvalidOTP") {
-            showLoginOTPDiv();
+           // showLoginOTPDiv();
             var MemberId = $("#CP_hfMemberId").val()
             $("#CP_txtMemberID").val(MemberId);
             $("#LoginValidation")[0].innerHTML = "";
@@ -631,7 +631,7 @@ function LoginMsgCodeBehind(data) {
             window.location.href = data;
         }
         else {
-            showLoginOTPDiv();
+         //   showLoginOTPDiv();
             var MemberId = $("#CP_hfMemberId").val()
             $("#CP_txtMemberID").val(MemberId);
 
@@ -641,7 +641,7 @@ function LoginMsgCodeBehind(data) {
         }
     }
     else {
-        showLoginOTPDiv();
+      //  showLoginOTPDiv();
         var MemberId = $("#CP_hfMemberId").val()
         $("#CP_txtMemberID").val(MemberId);
         $("#LoginValidation")[0].innerHTML = "";
@@ -1186,7 +1186,7 @@ function ExtLoginValidation() {
                             $("#lblLoginError").html('<span>Password must contain one non-alpha character,one upper case character,one lower case character and minimum 8 characters in length.</span>');
                         }
                         else {
-                            showLoginOTPDiv();
+                          //  showLoginOTPDiv();
                             $("#txtMemberID").val(MemberId);
                             $("#ErrorMsgContainer").show();
                             $("#lblLoginError").html(data.d);
@@ -1905,7 +1905,7 @@ function MemberLoginCodeBehind(data) {
             $("#CP_lblLoginError").html('<span>Please check the Security Code and try again </span>');
         }
         else {
-            showLoginOTPDiv();
+           // showLoginOTPDiv();
             $("#CP_txtMemberID").val(MemberId);
             $("#CP_hfMemberId").val(MemberId);
             $("#CP_ErrorMsgContainer").show();
@@ -1931,7 +1931,7 @@ function LoginMsgCodeBehind(data) {
     if (data != null || (data != "") || data != 'undefined') {
 
         if (data == "InvalidOTP") {
-            showLoginOTPDiv();
+           // showLoginOTPDiv();
 
             $("#CP_hfMemberId").val(responsdata[1]);
             $("#CP_txtMemberID").prop('disabled', false); //enable
@@ -1943,7 +1943,7 @@ function LoginMsgCodeBehind(data) {
             $("#CP_lblLoginError").html('<span>Invalid OTP.</span>');
         }
         else if (data == "AccountLock") {
-            showLoginOTPDiv();
+           // showLoginOTPDiv();
 
             $("#CP_hfMemberId").val(responsdata[1]);
             $("#CP_txtMemberID").prop('disabled', false); //enable
@@ -1957,7 +1957,7 @@ function LoginMsgCodeBehind(data) {
             $("#CP_lblLoginError").html('<span>Your Account is Locked.Please kindly contact Infinity Rewards customer care to unlock the same.</span>');
         }
         else if (data == "SomethingWentWrong") {
-            showLoginOTPDiv();
+           // showLoginOTPDiv();
 
             $("#CP_hfMemberId").val(responsdata[1]);
             $("#CP_txtMemberID").prop('disabled', false); //enable
@@ -1969,7 +1969,7 @@ function LoginMsgCodeBehind(data) {
             $("#CP_lblLoginError").html('<span>Something Went Wrong please try again.</span>');
         }
         else if (data == "InvalidToken") {
-            showLoginOTPDiv();
+           // showLoginOTPDiv();
 
             $("#CP_hfMemberId").val(responsdata[1]);
             $("#CP_txtMemberID").prop('disabled', false); //enable
@@ -1981,7 +1981,7 @@ function LoginMsgCodeBehind(data) {
             $("#CP_lblLoginError").html('<span>Please check the Authentication Token.</span>');
         }
         else if (data == "InvalidExtLogin") {
-            showLoginOTPDiv();
+           // showLoginOTPDiv();
 
             $("#CP_hfMemberId").val(responsdata[1]);
             $("#CP_txtMemberID").prop('disabled', false); //enable
@@ -1993,7 +1993,7 @@ function LoginMsgCodeBehind(data) {
             $("#CP_lblLoginError").html('<span>Invalid External Login Credentials.</span>');
         }
         else {
-            showLoginOTPDiv();
+           // showLoginOTPDiv();
 
             $("#CP_hfMemberId").val(responsdata[1]);
             $("#CP_txtMemberID").prop('disabled', false); //enable
@@ -2006,7 +2006,7 @@ function LoginMsgCodeBehind(data) {
         }
     }
     else {
-        showLoginOTPDiv();
+       // showLoginOTPDiv();
         var MemberId = $("#CP_hfMemberId").val()
         $("#CP_txtMemberID").val(MemberId);
         $("#LoginValidation")[0].innerHTML = "";
