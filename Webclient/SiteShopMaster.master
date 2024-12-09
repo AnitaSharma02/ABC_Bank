@@ -6,7 +6,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             //$('.dvMain').insertBefore('.dvRedemptionMenu');
-            $('.dvShopMenu').insertBefore('.dvHeroSlider');
+            //$('.dvShopMenu').insertBefore('.dvHeroSlider');
+            $('.dvShopMenu').appendTo('.dvHeader');
             GetRedemptionOptions()            
             $('.hover_app_info').hide();
             $("#txtProductName").autocomplete({
@@ -187,7 +188,7 @@
     </script>
     <div class="dvShopMenu">
         <div class="container-xl" id="divShopMenuBar" runat="server">
-            <nav class="navbar navbar-expand-lg navbar-light px-0 mx-n3">
+            <nav class="navbar navbar-expand-lg navbar-light p-0 mx-n3">
                 <div class="dvNavbarToggler col-auto d-lg-none order-lg-0 pr-0">
                     <button class="navbar-toggler px-1" type="button" data-toggle="collapse" data-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 </div>
