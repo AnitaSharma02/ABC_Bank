@@ -25,6 +25,9 @@
         $(".dvTxtEffectiveDateChild .input-group-append .input-group-text").on("click", function () {
             $("#<%=txtEffectiveDate.ClientID%>").datepicker("show");
         });
+        const currentDate = new Date();
+        var newdate = currentDate.setFullYear(currentDate.getFullYear() - 2);
+
         $("#<%=txtDOB.ClientID%>").datepicker({
             numberOfMonths: 1,
             changeMonth: true,
@@ -32,7 +35,7 @@
             yearRange: "-12:+0",
             //  showButtonPanel: true,
             dateFormat: 'dd/mm/yy',
-            maxDate: new Date,
+            maxDate: new Date(newdate),
             minDate: '-12Y',
             onSelect: function (dateText, inst) {
                 $("#<%=txtDOB.ClientID%>").text("");
