@@ -311,6 +311,7 @@ function JourneyTypeChanged(JourneyType) {
     } else {
         $("#divrtn").hide();
         $("#hdntrip").val('false');
+      //  $("#txtReturn").datepicker("show");
     }
 }
 
@@ -509,7 +510,8 @@ function showModifyFlight() {
             $("#qtyValueAdult").val(objModifySerach.SearchDetails.Adults.toString());
             $("#qtyValueChild").val(objModifySerach.SearchDetails.Childrens.toString());
             $("#qtyValueInfant").val(objModifySerach.SearchDetails.Infants.toString());
-            $("#txtDepart").val(DepartDate);
+            $("#txtDepart").val(DepartDate); $("#txtReturn").val(DepartDate+1);
+            
             $("#chkboxRedeem").prop("checked", true);
 
             if (objModifySerach.SearchDetails.IsReturn.toString() == 'true') {
@@ -608,6 +610,7 @@ $(document).ready(function () {
             bindMobDatepicker();
         }
         $("#CP_DepDate").click(function () {
+            $("#txtDepart").datepicker('show');
             $("#txtDepart").datepicker('show');
         });
 

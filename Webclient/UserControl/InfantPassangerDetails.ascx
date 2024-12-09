@@ -32,7 +32,7 @@
             yearRange: "-90:-0",
             dateFormat: 'dd/mm/yy',
             maxDate: new Date,
-            minDate: '-3Y',
+            minDate: '-2Y',
             onSelect: function (dateText, inst) {
                 $("#<%=txtDOB.ClientID%>").text("");
                 $("#<%=txtDOB.ClientID%>").text(dateText);

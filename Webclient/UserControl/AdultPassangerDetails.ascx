@@ -23,6 +23,9 @@
         $(".dvTxtEffectiveDateAdult .input-group-append .input-group-text").on("click", function () {
             $("#<%=txtEffectiveDate.ClientID%>").datepicker("show");
         });
+        const currentDate = new Date();
+        var newdate = currentDate.setFullYear(currentDate.getFullYear() - 12);
+       
         $("#<%=txtDOB.ClientID%>").datepicker({
             numberOfMonths: 1,
             changeMonth: true,
@@ -30,7 +33,7 @@
             //showButtonPanel: true,
             yearRange: "-90:-0",
             dateFormat: 'dd/mm/yy',
-            maxDate: new Date,
+            maxDate: new Date(newdate),
             onSelect: function (dateText, inst) {
                 $("#<%=txtDOB.ClientID%>").text("");
                 $("#<%=txtDOB.ClientID%>").text(dateText);
@@ -142,10 +145,10 @@
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPassportNo"
             Display="Dynamic" ValidationGroup="WebValidation" CssClass="rptErrorMassage text-danger"
             ValidationExpression="^[a-zA-Z0-9]*$" ErrorMessage="Please Enter correct passport no. (no blank space)."></asp:RegularExpressionValidator>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" 
-    runat="server"  ControlToValidate="txtPassportNo"  Display="Dynamic"
-    ValidationExpression="^.{6,}$" ValidationGroup="WebValidation" CssClass="rptErrorMassage text-danger"
-    ErrorMessage="Minimum 6 characters required."></asp:RegularExpressionValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator2"
+            runat="server" ControlToValidate="txtPassportNo" Display="Dynamic"
+            ValidationExpression="^.{6,}$" ValidationGroup="WebValidation" CssClass="rptErrorMassage text-danger"
+            ErrorMessage="Minimum 6 characters required."></asp:RegularExpressionValidator>
 
     </div>
     <div class="col-md-6 mb-3">
@@ -205,16 +208,15 @@
                 <asp:TextBox ID="txtTelephone" class="form-control" runat="server" Text="" MaxLength="12"
                     AutoComplete="off"></asp:TextBox>
             </div>
-                <asp:RequiredFieldValidator ID="rfvAdultTelephone" Display="Dynamic" runat="server"
-                    ControlToValidate="txtTelephone" ErrorMessage="Enter Mobile Number" 
-                    ValidationGroup="WebValidation"
-                    CssClass="rptErrorMassage text-danger"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="revAdulttelephone" runat="server" Display="Dynamic"
-                    ControlToValidate="txtTelephone" ValidationGroup="WebValidation" ValidationExpression="^[0-9]+$"
-                    CssClass="rptErrorMassage text-danger" ErrorMessage="Enter Valid Number.(max 12 digit.)"
-                    >
-                </asp:RegularExpressionValidator>
-          
+            <asp:RequiredFieldValidator ID="rfvAdultTelephone" Display="Dynamic" runat="server"
+                ControlToValidate="txtTelephone" ErrorMessage="Enter Mobile Number"
+                ValidationGroup="WebValidation"
+                CssClass="rptErrorMassage text-danger"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="revAdulttelephone" runat="server" Display="Dynamic"
+                ControlToValidate="txtTelephone" ValidationGroup="WebValidation" ValidationExpression="^[0-9]+$"
+                CssClass="rptErrorMassage text-danger" ErrorMessage="Enter Valid Number.(max 12 digit.)">
+            </asp:RegularExpressionValidator>
+
 
         </div>
 
