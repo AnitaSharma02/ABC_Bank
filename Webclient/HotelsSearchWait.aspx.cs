@@ -19,6 +19,7 @@ using Core.Platform.ProgramMaster.Entities;
 using IBEAPI.ClientEntities;
 using IBEAPIGateway.Model;
 using System.Configuration;
+using Newtonsoft.Json;
 
 
 public partial class HotelsSearchWait : System.Web.UI.Page
@@ -63,8 +64,9 @@ public partial class HotelsSearchWait : System.Web.UI.Page
             lobjSearchRequest.OrderBy = "PriceAsc";
 
             lobjSearchRequest.ResultCount = string.IsNullOrEmpty(Convert.ToString(ConfigurationManager.AppSettings["HotelResultCount"])) ? 500 : Convert.ToInt32(Convert.ToString(ConfigurationManager.AppSettings["HotelResultCount"]));
-
+            LoggingAdapter.WriteLog("GetHotelSearchResponse " + JsonConvert.SerializeObject(lobjSearchRequest));
             HotelSearchResponse lobjHotelSearchResponse = lobjIBEAPIModel.GetHotelSearchResponse(lobjSearchRequest);
+            LoggingAdapter.WriteLog("GetHotelSearchResponse " + JsonConvert.SerializeObject(lobjHotelSearchResponse));
 
             lobjSearchRequest.SearchId = lobjHotelSearchResponse.SearchId;
             HttpContext.Current.Session["SearchDetails"] = lobjSearchRequest;
