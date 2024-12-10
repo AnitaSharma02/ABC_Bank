@@ -514,8 +514,10 @@ function showModifyFlight() {
 
             $("#DepartDate").val(DepartDate);
             var parts = DepartDate.split(/[^\d]/);
-
-            var joinFormattedDate = parts[0] + '/' + parts[1] + '/' + parts[2];
+            var a = parts[0];
+            var value = parseInt(a) + 1;
+            
+            var joinFormattedDate = value + '/' + parts[1] + '/' + parts[2];
             $("#txtDepart").val(DepartDate);
             $("#txtReturn").val(joinFormattedDate);
 
@@ -528,7 +530,7 @@ function showModifyFlight() {
             days = (start - end) / (1000 * 60 * 60 * 24);
           
             $("#txtReturn").datepicker({
-                minDate: days+1,
+                minDate: days+2,
                 numberOfMonths: 1,
                 buttonImageOnly: true,
                 dateFormat: 'dd/mm/yy'
