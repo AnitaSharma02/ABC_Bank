@@ -545,6 +545,7 @@
                                                 </div>
                                             </div>
                                             </div>
+                                            <input type ="hidden" id="DepartDate" />
                                         <div class="col-12 col-md-6 col-lg mb-3">
                                             <label class="label">Departure</label>
                                             <div class="dvInputGroup input-group">
@@ -557,7 +558,7 @@
                                         <div class="col-12 col-md-6 col-lg mb-3" id="divrtn">
                                             <label class="label">Return</label>
                                             <div class="dvInputGroup input-group">
-                                                <input class="input datePicker form-control cal-icon" id="txtReturn" onfocus="placeholderOnFocus(this,'Enter Date');"
+                                                <input id="txtReturn" class="input datePicker form-control cal-icon"  onfocus="placeholderOnFocus(this,'Enter Date');"
                                                 onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
                                                 <div class="input-group-append">
                                                     <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>

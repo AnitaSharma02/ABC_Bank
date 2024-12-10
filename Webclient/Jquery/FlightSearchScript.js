@@ -308,10 +308,11 @@ function JourneyTypeChanged(JourneyType) {
         $("#hdntrip").val('true');
         $("#txtDepart").val('Enter Date');
         $("#txtReturn").val('Enter Date');
+        // $("#txtReturn").datepicker("show");
     } else {
         $("#divrtn").hide();
         $("#hdntrip").val('false');
-      //  $("#txtReturn").datepicker("show");
+        //  
     }
 }
 
@@ -510,10 +511,28 @@ function showModifyFlight() {
             $("#qtyValueAdult").val(objModifySerach.SearchDetails.Adults.toString());
             $("#qtyValueChild").val(objModifySerach.SearchDetails.Childrens.toString());
             $("#qtyValueInfant").val(objModifySerach.SearchDetails.Infants.toString());
-            $("#txtDepart").val(DepartDate); $("#txtReturn").val(DepartDate+1);
-            
+
+            $("#DepartDate").val(DepartDate);
+            var parts = DepartDate.split(/[^\d]/);
+
+            var joinFormattedDate = parts[0] + '/' + parts[1] + '/' + parts[2];
+            $("#txtDepart").val(DepartDate);
+            $("#txtReturn").val(joinFormattedDate);
+
             $("#chkboxRedeem").prop("checked", true);
 
+            var Depart_Date = ($("#txtDepart").val());
+            var parms = Depart_Date.split("/");
+            var start = $("#txtDepart").datepicker("getDate");
+            var end = new Date();
+            days = (start - end) / (1000 * 60 * 60 * 24);
+          
+            $("#txtReturn").datepicker({
+                minDate: days+1,
+                numberOfMonths: 1,
+                buttonImageOnly: true,
+                dateFormat: 'dd/mm/yy'
+            });
             if (objModifySerach.SearchDetails.IsReturn.toString() == 'true') {
                 $("#txtReturn").val(ArrivalDate);
                 $("#hdnreturnDate").val(DepartDate);
@@ -611,7 +630,7 @@ $(document).ready(function () {
         }
         $("#CP_DepDate").click(function () {
             $("#txtDepart").datepicker('show');
-            $("#txtDepart").datepicker('show');
+            $("#txtReturn").datepicker('show');
         });
 
     }
@@ -645,12 +664,6 @@ function bindDatepicker() {
 
     });
 
-    //$("#txtReturn").datepicker({
-    //    minDate: 4,
-    //    numberOfMonths: 1,
-    //    buttonImageOnly: true,
-    //    dateFormat: 'dd/mm/yy'
-    //});
 }
 function bindMobDatepicker() {
     $("#txtDepart").datepicker({
