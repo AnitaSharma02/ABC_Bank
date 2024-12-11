@@ -13,6 +13,7 @@
     <div class="dvExperienceProductBookingDetails py-3">
         <div class="container-xl">
             <div class="row">
+
                 <div class="col-12">
                     <div class="row dvDeliveryTrack">
                         <div class="col-4 mb-lg-3">
@@ -233,7 +234,7 @@
                                 </div>
                             </div>
 
-                            <div class="mt-3 text-center text-lg-right" id="divbtnProceedPayment">
+                            <div class="mt-3 text-center text-lg-right" id="divbtnProceedPayment" runat="server">
                                 <%--<button
                                         class="btn btn-one"
                                         type="button" id="btnProceedToPayment"
@@ -302,6 +303,7 @@
                 var date = getQuerystring("selectedDate");
                 var selectedDate = decodeURIComponent(date);
                 var timeslotuuid = getQuerystring("timeslotuuid");
+                //var totalamount = $("#totalAmount").text();
                 GetPaymentDetails(adultCount, childrenCount, seniorsCount, ptuuid, puuid, selectedDate, timeslotuuid);
             }
             else {
@@ -322,6 +324,7 @@
 
         function GetPaymentDetails(adultCount, childrenCount, seniorsCount, ptuuid, puuid, selectedDate, timeslotuuid) {
             var arrData = {};
+
             arrData.adultCount = adultCount;
             arrData.childrenCount = childrenCount;
             arrData.seniorsCount = seniorsCount;
@@ -337,10 +340,19 @@
                 data: JSON.stringify(arrData),
                 cache: false,
                 success: function (rtnData) {
+                    //var responsedata = rtnData.d.split("|");
+                    //var Alldata = responsedata[0];
+                    //var balance = responsedata[1];
+                    //alert(Alldata); alert(balance);
                     if (rtnData.d != "" && rtnData.d != null) {
                         if (rtnData.d == "ErrorPage.aspx") {
                             window.location.href = "ErrorPage.aspx";
                         }
+                        //else if (balance == "Insufficient_balance") {
+                        //    document.getElementById("CP_errorDiv").style.display = "block";
+                        //    document.getElementById("CP_errorDiv").innerText = "Insufficient balance";                           
+                        //    document.getElementById("btnProceedToPayment").style.display = "none";
+                        //}
                         else {
                             fnBindPaymentDetails(rtnData.d, adultCount, childrenCount, seniorsCount, ptuuid, puuid, selectedDate, timeslotuuid);
                         }
@@ -900,10 +912,18 @@
 
                     });
                     html = "";
-                    html += '<button class="btn btn-one" type="button" id="btnProceedToPayment" value="ProceedToPayment" onclick="var retvalue = ProceedToPaymentOnclickEvent(\'' + encodeURIComponent(data.ProductInfoResponse.data.title) + '\'' + ',\'' + ptuuid + '\'' + ',\'' + encodeURIComponent(JSON.stringify(data.BookingRequest)) + '\'' + ',\'' + totalPax + '\',\'' + encodeURIComponent(JSON.stringify(data.ProductInfoResponse.producttypedetails)) + '\'); event.returnValue= retvalue;event.preventDefault(); return retvalue;" >Proceed to payment';
-                    html += '</button>';
-                    $("#divbtnProceedPayment").empty().append(html);
 
+                    if (parseInt(data.BookingRequest.message) > parseInt(totalAmount)) {
+                        html += '<button class="btn btn-one" type="button" id="btnProceedToPayment" value="ProceedToPayment" onclick="var retvalue = ProceedToPaymentOnclickEvent(\'' + encodeURIComponent(data.ProductInfoResponse.data.title) + '\'' + ',\'' + ptuuid + '\'' + ',\'' + encodeURIComponent(JSON.stringify(data.BookingRequest)) + '\'' + ',\'' + totalPax + '\',\'' + encodeURIComponent(JSON.stringify(data.ProductInfoResponse.producttypedetails)) + '\'); event.returnValue= retvalue;event.preventDefault(); return retvalue;" >Proceed to payment';
+                        html += '</button>';
+                    }
+                    else {
+                        html += '<div class="h6 heading-semibold text-danger mb-3" id="errorDiv">Insufficient Balance'
+                        html += '</div>';
+
+                    }
+                    
+                    $("#CP_divbtnProceedPayment").empty().append(html);
                 }
             }
         }
@@ -1410,6 +1430,7 @@
                             pop.innerHTML = "Your session time out. Please login again.";
                             $('#alertModal').modal('show');
                         }
+
                         else {
                             window.location.href = rtnData.d;
                         }

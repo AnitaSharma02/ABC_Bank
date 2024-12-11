@@ -312,12 +312,17 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
     }
 
     [WebMethod]
-    public static string GetPaymentDetails(string adultCount, string childrenCount, string seniorsCount, string ptuuid, string puuid, string selectedDate, string timeslotuuid)
+    public static string GetPaymentDetails( string adultCount, string childrenCount, string seniorsCount, string ptuuid, string puuid, string selectedDate, string timeslotuuid)
     {
         string lstrProductPaymentDetails = string.Empty;
+        string lstrbalanceDetails = string.Empty;
         ABCModel lobjModel = new ABCModel();
         try
         {
+            ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+            MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+            string lstrCurrency = lobjModel.GetDefaultCurrency();
+            int lintABCBankPoints = lobjModel.CheckAvailbility(lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToInt32(RelationType.LBMS), lstrCurrency, lobjProgramDefinition.ProgramId);
             if (!string.IsNullOrEmpty(puuid))
             {
                 ProductInfoResponse productInfoResponse = new ProductInfoResponse();
@@ -373,8 +378,10 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                             {
                                 perBooking = productInfoResponse.producttypedetails.item_uuid.Find(x => x.uuid == ptuuid).typeinfo.options.perBooking,
                                 perPax = experiencesPerPaxListOfList
-                            }
+                            },
+                            message=Convert.ToString(lintABCBankPoints)
                         }
+                        
                     };
                     lstrProductPaymentDetails = JsonConvert.SerializeObject(paymentDetailsModel);
                 }
@@ -383,12 +390,13 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                     lstrProductPaymentDetails = "ErrorPage.aspx";
                 }
             }
+
         }
         catch (Exception ex)
         {
             LoggingAdapter.WriteLog("ExperienceProductBookingDetails.aspx GetPaymentDetails Exception: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
-        return lstrProductPaymentDetails;
+        return lstrProductPaymentDetails ;
     }
 
     [WebMethod]
@@ -430,6 +438,7 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
 
                 ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
                 MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+
                 if (lobjMemberDetails != null)
                 {
                     if (bookingRequest != null)
@@ -509,8 +518,8 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                             lobjOTPDetails.OtpType = Convert.ToString(OTPEnumTypes.PACKAGEREVIEWNCONFIRM);
                             HttpContext.Current.Session["OtpDetails"] = lobjOTPDetails as OTPDetails;
 
-                          //  Status = lobjModel.SendOTPEmailAndSMS(bookingRequest.customer.email, bookingRequest.customer.phone, bookingRequest.memberId.ToString(), FullName, "redemption_otp", lobjOTPDetails, "Experiences");
-                            
+                            //  Status = lobjModel.SendOTPEmailAndSMS(bookingRequest.customer.email, bookingRequest.customer.phone, bookingRequest.memberId.ToString(), FullName, "redemption_otp", lobjOTPDetails, "Experiences");
+
                             Status = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "redemption_otp", lobjOTPDetails, "Experience");
 
                             //Status = lobjModel.GenerateReviewnConfirmOTP(lobjOTPDetails, bookingRequest.customer.email, bookingRequest.memberId.ToString(), lobjProgramDefinition.ProgramId, FullName, bookingRequest.customer.phone);

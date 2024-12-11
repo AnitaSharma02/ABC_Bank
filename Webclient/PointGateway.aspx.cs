@@ -929,6 +929,7 @@ public partial class PointGateway : System.Web.UI.Page
                             LoggingAdapter.WriteLog("BookingPurchase Ex Rollback Success");
                         }
                     }
+
                     HttpContext.Current.Session["AvailablePoints"] = null;
                 }
             }
