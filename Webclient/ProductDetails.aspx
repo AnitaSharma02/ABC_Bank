@@ -806,7 +806,7 @@
                         $('#CP_CPSHOP_spanPoints').text(ConvertThousandSeparator(data[0].Price.SalePrice.Amount * quantity) + " " + "Points");
                         $('#CP_CPSHOP_divspanpoints').text(ConvertThousandSeparator(data[0].Price.SalePrice.Amount * quantity));
                         for (var i = 0; i < data[0].Images.length; i++) {
-                            $('#CP_CPSHOP_divThumbnailImages').html('<img src="' + data[0].Images[i].Url + '" class="img-thumbnail"  width="100" height="100" onclick="changeImage(this)">');
+                            $('#CP_CPSHOP_divThumbnailImages').html('<div class="swiper-slide "><img src="' + data[0].Images[i].Url + '"   width="100" onclick="changeImage(this)"></div>');
                         }
                         CheckAvailability(data[0].Price.SalePrice.Amount, quantity);
                     }
