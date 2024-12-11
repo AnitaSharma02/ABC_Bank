@@ -27,7 +27,25 @@ public partial class CarPayment : System.Web.UI.Page
         {
             if (!Page.IsPostBack)
             {
-
+                ABCModel lobjModel = new ABCModel();
+                string lstrbalance = string.Empty;
+                ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+                CarBookingData lobjCarBookingDetails = null;
+                lobjCarBookingDetails = HttpContext.Current.Session["CarBookingDetails"] as CarBookingData;
+                MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
+                string lstrCurrency = lobjModel.GetDefaultCurrency();
+                int lintABCBankPoints = lobjModel.CheckAvailbility(lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToInt32(RelationType.LBMS), lstrCurrency, lobjProgramDefinition.ProgramId);
+                decimal TotalPoints = Math.Ceiling(Convert.ToDecimal((lobjCarBookingDetails.PayableAmount)));
+                if (lintABCBankPoints < TotalPoints)
+                {
+                    btnMakePayment.Visible=false;
+                    errorDiv.InnerHtml = "Insufficient balance";
+                }
+                else
+                {
+                    btnMakePayment.Visible = true;
+                    errorDiv.Visible = false;
+                }
             }
         }
         else
@@ -47,6 +65,7 @@ public partial class CarPayment : System.Web.UI.Page
         string lstrAircon = string.Empty;
         StringBuilder sbcardetails = new StringBuilder();
         StringBuilder sbmoreInfo = new StringBuilder();
+       
         try
         {
             if (HttpContext.Current.Session["CarSearchRequest"] != null)
@@ -251,11 +270,11 @@ public partial class CarPayment : System.Web.UI.Page
             {
                 lobjListOfData[0] = "Failed";
             }
-
             lobjListOfData[0] = sbcardetails.ToString();
             lobjListOfData[1] = JsonConvert.SerializeObject(lobjCarSearchRequest);
             lobjListOfData[2] = JsonConvert.SerializeObject(lobjCarBookingDetails);
             lobjListOfData[3] = sbmoreInfo.ToString();
+            //lobjListOfData[4] = lstrbalance;
         }
         catch (Exception ex)
         {
@@ -304,7 +323,7 @@ public partial class CarPayment : System.Web.UI.Page
                     Extra lobjExtra = new Extra();
                     if (item.IsAdditionalEquipments)
                     {
-                        lobjExtra.quantity =Convert.ToInt32(item.Quantity);
+                        lobjExtra.quantity = Convert.ToInt32(item.Quantity);
                         lobjExtra.code = lobjRateResponse.data.package.extras.FindAll(x => x.code == item.Code).FirstOrDefault().code;
                     }
                     else
@@ -312,7 +331,7 @@ public partial class CarPayment : System.Web.UI.Page
                         lobjExtra.quantity = Convert.ToInt32(item.Quantity);
                         lobjExtra.code = lobjRateResponse.data.package.extras.FindAll(x => x.productId == Convert.ToInt32(item.Code)).FirstOrDefault().code;
                     }
-                    lobjCarBookingRequest.extras.Add(lobjExtra); 
+                    lobjCarBookingRequest.extras.Add(lobjExtra);
                 }
             }
             int ThreshouldValue = 0;

@@ -94,7 +94,7 @@ public partial class HotelDetails : Page
             {
                 string CallbackUrl = HttpUtility.UrlEncode(Encrypt(Request.RawUrl));
                 HttpContext.Current.Session["CallbackUrl"] = CallbackUrl;
-                Response.Redirect("Index.aspx?CallbackUrl=" + CallbackUrl, false);
+                Response.Redirect("Login.aspx", false);
             }
         }
         catch (Exception ex)

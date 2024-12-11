@@ -340,10 +340,7 @@
                 data: JSON.stringify(arrData),
                 cache: false,
                 success: function (rtnData) {
-                    //var responsedata = rtnData.d.split("|");
-                    //var Alldata = responsedata[0];
-                    //var balance = responsedata[1];
-                    //alert(Alldata); alert(balance);
+                   
                     if (rtnData.d != "" && rtnData.d != null) {
                         if (rtnData.d == "ErrorPage.aspx") {
                             window.location.href = "ErrorPage.aspx";

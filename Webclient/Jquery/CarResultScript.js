@@ -1125,7 +1125,7 @@ function MapCarDetails() {
         data: '',
         cache: false,
         success: function (msg) {
-
+            
             if (msg.d[0] != "Failed") {
 
                 var CarSearchRequest = $.parseJSON(msg.d[1]);
@@ -1178,6 +1178,7 @@ function MapCarDetails() {
 
                 //updateVcDataSections();
             }
+            
             else {
                 window.location.href = "ErrorPage.aspx";
             }

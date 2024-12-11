@@ -102,6 +102,14 @@ public partial class HotelBookingDetails : Page
                                 else
                                     lblNoOfAdult.Text = Convert.ToString(TotalAdult) + " Adult(s)<br/>" + Convert.ToString(TotalChild) + " Child(ren)";
                                 lobjModel.LogActivity(string.Format("HotelBookingDetails page load; HotelName-:{0}; TotalCharge-:{1} MUR;", lobjHotel.basicinfo.hotelname, lobjHotel.roomrates.RoomRate[0].TotalBaseAmount), ActivityType.HotelBooking);
+                                int lintABCBankPoints = lobjModel.CheckAvailbility(lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToInt32(RelationType.LBMS), lstrCurrency, lobjProgramDefinition.ProgramId);
+                                decimal TotalPoints = Math.Ceiling(Convert.ToDecimal(lobjHotel.roomrates.RoomRate[0].TotalPoints));
+                                if (lintABCBankPoints < TotalPoints)
+                                {
+                                    Bookbtn.Visible = false;
+                                    ErrorMsgContainer.InnerHtml = "Insufficient balance";
+                                }
+                                else { Bookbtn.Visible = true; }
                             }
                         }
                         else

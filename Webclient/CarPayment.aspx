@@ -191,7 +191,7 @@
                                            <%-- <button id="btnMakePayment" class="btn btn-one"  onclick="return MakePayment();">
                                                 Make Payment
                                             </button>--%>
-
+                                             <div class="h6 heading-semibold text-danger mb-3" id="errorDiv" runat="server"></div>
                                         </div>
                                     </div>
                                 </div>
