@@ -1224,7 +1224,7 @@ function AddAdditionalCharges(a) {
                         completeHTML += "<p>" + CarBookingDetails.AdditonalCharges[count].Quantity + "x " + CarBookingDetails.AdditonalCharges[count].Name + "</p>";
                         completeHTML += "</div>";
                         completeHTML += "<div class=\"col-6\">";
-                        completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].TotalChargeamount) + " Points</p>";
+                        completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].TotalChargeamount).toFixed(2) + " Points</p>";
                         completeHTML += "</div>";
                         completeHTML += "</div>";
                     }
@@ -1234,7 +1234,7 @@ function AddAdditionalCharges(a) {
                         completeHTML += "<p>" + CarBookingDetails.AdditonalCharges[count].Name + "</p>";
                         completeHTML += " </div>";
                         completeHTML += "<div class=\"col-6\">";
-                        completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].amount) + " Points</p>";
+                        completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].amount).toFixed(2) + " Points</p>";
                         completeHTML += " </div>";
                         completeHTML += " </div>";
                     }

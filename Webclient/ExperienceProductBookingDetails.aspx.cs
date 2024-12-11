@@ -480,7 +480,7 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                         int ThreshouldValue = 0;
 
                         ThreshouldValue = lobjRedemptionKeys.Find(lobj => lobj.RedemptionCode.Equals("EXPERIENCE") && lobj.Currency.Equals(lstrCurrency)).OTPThreshold;
-                        int lintTotalPoints = Convert.ToInt32(0);
+                        int lintTotalPoints = Convert.ToInt32(totalAmount);
                         float lftAmount = Convert.ToSingle(totalAmount);
 
                         List<RedemptionDetails> lobjListOfRedemptionDetails = new List<RedemptionDetails>();

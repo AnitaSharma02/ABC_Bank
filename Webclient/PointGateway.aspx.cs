@@ -885,18 +885,18 @@ public partial class PointGateway : System.Web.UI.Page
                     string lstrCurrency = lobjModel.GetDefaultCurrency();
 
                     string lstrProductName = string.Empty;
-                    //try
-                    //{
-                    //    lstrProductName = lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault().Length > 150 ?
-                    //        lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault().Substring(0, 150)
-                    //        : lobjOrderStatus.data.rawData.data.booking.availabilityList.nodes.Select(x => x.product.name).FirstOrDefault();
-                    //}
-                    //catch { }
+
                     string lstrProgramName = ProgramHelper.ProgramName();
                     ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramDetails(lstrProgramName);
                     float Pointrate = lobjModel.GetProgramRedemptionRate(lstrCurrency, "EXPERIENCE", lobjProgramDefinition.ProgramId);
 
-                    string lstrRedeemResponse = lobjModel.RedeemPoints((float)(lobjListOfRedemptionDetails[0].Amount), lobjListOfRedemptionDetails[0].Points, lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference, lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword, productInfoResponse.data.title, Convert.ToInt32(LoyaltyTxnType.Hotel), lobjListOfRedemptionDetails[0].Currency, lobjMemberDetails.MemberRelationsList[0].RelationReference);
+                    string lstrRedeemResponse = lobjModel.RedeemPoints((float)(lobjListOfRedemptionDetails[0].Amount),
+                     lobjListOfRedemptionDetails[0].Points,
+                     lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference,
+                     lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).WebPassword,
+                     productInfoResponse.data.title, Convert.ToInt32(LoyaltyTxnType.Packages), lobjListOfRedemptionDetails[0].Currency,
+                     lobjMemberDetails.MemberRelationsList[0].RelationReference);
+                    
                     LoggingAdapter.WriteLog("RedeemPointsforPackage success - '" + lstrRedeemResponse + "'");
 
                     if (!string.IsNullOrEmpty(lstrRedeemResponse))
@@ -1077,7 +1077,7 @@ public partial class PointGateway : System.Web.UI.Page
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                 string PGTranPct = Convert.ToString(ConfigurationManager.AppSettings["PGTranPct"]);
                 string WebsiteUrl = Convert.ToString(ConfigurationManager.AppSettings["WebsiteUrl"]);
-               
+
                 dynamic dynamicCls = new System.Dynamic.ExpandoObject();
                 string lsrtTemplateLangCode = "";
 
@@ -1143,7 +1143,7 @@ public partial class PointGateway : System.Web.UI.Page
                     lobjDictionary.Add(key.Key, key.Value);
                 }
                 string jsonParameters = JsonConvert.SerializeObject(lobjDictionary);
-               bool Email= lobjModel.SendEmails(jsonParameters, lobjMemberDetails);
+                bool Email = lobjModel.SendEmails(jsonParameters, lobjMemberDetails);
 
 
 

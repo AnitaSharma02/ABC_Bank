@@ -301,7 +301,7 @@ public partial class CarDetails : System.Web.UI.Page
                                         
                                         sbAdditionalEquipment.Append("</div>");
                                         sbAdditionalEquipment.Append("<div class=\"col-sm-4 col-md-3\">");
-                                        sbAdditionalEquipment.Append("<p class=\"heading-semibold text-colour7\"> <span id = \"spnaditionalchargeamount_" + extras.code + "\">" + extras.rentalPrice.display.amount + "</span> Points <span class=\"h8 heading-semibold text-colour7\"> (per rental)</span></p>");
+                                        sbAdditionalEquipment.Append("<p class=\"heading-semibold text-colour7\"> <span id = \"spnaditionalchargeamount_" + extras.code + "\">" +Math.Round(extras.rentalPrice.display.amount,2) + "</span> Points <span class=\"h8 heading-semibold text-colour7\"> (per rental)</span></p>");
 
                                         //sbAdditionalEquipment.Append("<p><span id = \"spnaditionalchargeamount_" + extras.code + "\">  100 </span> <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
                                         sbAdditionalEquipment.Append("<input type=\"hidden\" name=\"aditionalcharge\" id=\"hndTotaladitionalchargeamount_" + extras.code + "\" value=\"0\" />");
@@ -330,7 +330,7 @@ public partial class CarDetails : System.Web.UI.Page
                             sb.Append("</span>");
                             sb.Append("</span>");
                             //sb.Append("<span class=\"PayCont\">PAY NOW:</span> <span>" + PaymentOption.payments.payNow.vehicle.display.amount + "<i class=\"fa fa-usd\" aria-hidden=\"true\"></i></span>");
-                            sb.Append("<span class=\"PayCont heading-bold text-colour1 text-uppercase ml-2\">PAY NOW:</span> <span class=\"heading-bold text-colour1 mx-2\">" + PaymentOption.payments.estimatedTotal.total.display.amount + " Points</span>");
+                            sb.Append("<span class=\"PayCont heading-bold text-colour1 text-uppercase ml-2\">PAY NOW:</span> <span class=\"heading-bold text-colour1 mx-2\">" + Math.Round(PaymentOption.payments.estimatedTotal.total.display.amount,2) + " Points</span>");
                             sb.Append("<span class=\"tickmark\"><i class=\"fa fa-check correctIcon\" id=\"correctIcon\"></i></span>");
                             sb.Append("</div>");
                             sb.Append("<div class=\"col-12 border-top pl-0 py-3\">");
@@ -381,7 +381,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     sbextras.Append("<div class=\"col-6 col-md-7 col-lg-8\">");
                                     /*sbextras.Append("<div class=\"dvPrice\">");*/
                                     //sbextras.Append("<p> " + extras.rentalPrice.display.amount + "<i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
-                                    sbextras.Append("<p class=\"heading6 text-colour1\"> " + extras.rentalPrice.display.amount + " Points</p>");
+                                    sbextras.Append("<p class=\"heading6 text-colour1\"> " + Math.Round(extras.rentalPrice.display.amount,2) + " Points</p>");
                                     /*sbextras.Append("</div>");*/
                                     sbextras.Append("</div>");
                                     sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-right\">");
@@ -433,7 +433,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     sbextras.Append("<div class=\"col-6 col-md-7 col-lg-8\">");
                                     /*sbextras.Append("<div class=\"dvPrice\">");*/
                                     //sbextras.Append("<p> " + extras.rentalPrice.display.amount + "<i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
-                                    sbextras.Append("<p class=\"heading6 text-colour1\"> " + extras.rentalPrice.display.amount + " Points</p>");
+                                    sbextras.Append("<p class=\"heading6 text-colour1\"> " +Math.Round(extras.rentalPrice.display.amount,2) + " Points</p>");
                                     /*sbextras.Append("</div>");*/
                                     sbextras.Append("</div>");
                                     sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-right\">");
@@ -559,7 +559,7 @@ public partial class CarDetails : System.Web.UI.Page
                         sbextras.Append("<div class=\"row align-items-center mt-3\">");
                         sbextras.Append("<div class=\"col-6 col-md-7 col-lg-8\">");
                         /*sbextras.Append("<div class=\"dvPrice\">");*/
-                        sbextras.Append("<p class=\"heading6 text-colour1\"> " + extras.rentalPrice.display.amount + "<i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
+                        sbextras.Append("<p class=\"heading6 text-colour1\"> " + Math.Round(extras.rentalPrice.display.amount,2) + "<i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
                         /*sbextras.Append("</div>");*/
                         sbextras.Append("</div>");
                         sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-right\">");
@@ -610,7 +610,7 @@ public partial class CarDetails : System.Web.UI.Page
                         sbextras.Append("<div class=\"row align-items-center mt-3\">");
                         sbextras.Append("<div class=\"col-6 col-md-7 col-lg-8\">");
                         /*sbextras.Append("<div class=\"dvPrice\">");*/
-                        sbextras.Append("<p class=\"heading6 text-colour1\"> " + extras.rentalPrice.display.amount + "<i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
+                        sbextras.Append("<p class=\"heading6 text-colour1\"> " +Math.Round(extras.rentalPrice.display.amount,2) + "<i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
                         /*sbextras.Append("</div>");*/
                         sbextras.Append("</div>");
                         sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-right\">");
