@@ -37,7 +37,7 @@ public partial class Cart : Page
                     {
                         divEmailErrorMsg.Visible = true;
                         btnCheckout.Attributes.Remove("class");
-                        btnCheckout.Attributes.Add("class", "blue_button btn-lg");
+                        btnCheckout.Attributes.Add("class", "btn btn-two");
                         btnCheckout.Attributes.Add("style", "display:none");
                     }
                     else
@@ -63,7 +63,7 @@ public partial class Cart : Page
                         else
                         {
                             btnCheckout.Attributes.Remove("class");
-                            btnCheckout.Attributes.Add("class", "blue_button btn-lg");
+                            btnCheckout.Attributes.Add("class", "btn btn-two");
                             btnCheckout.Attributes.Add("style", "display:none");
                         }
                     }

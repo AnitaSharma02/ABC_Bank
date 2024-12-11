@@ -44,8 +44,8 @@
                                         <div class="col-12 col-md-6 mt-2 col-lg-auto">
                                             <a class="btn btn-one w-100" href="Shop.aspx" id="btnContinueShopping">Continue Shopping</a>
                                         </div>
-                                        <div class="col-12 col-md-6 mt-2 col-lg-auto">
-                                            <a class="btn btn-two w-100" id="btnCheckout" runat="server" href="Checkout.aspx">Checkout</a>
+                                        <div class="col-12 col-md-6 mt-2 col-lg-auto" id="btnCheckout" runat="server">
+                                            <a class="btn btn-two w-100" href="Checkout.aspx">Checkout</a>
                                         </div>
                                     </div>
                                 </div>
