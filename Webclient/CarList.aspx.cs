@@ -208,7 +208,7 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append("<div class=\"row align-items-sm-center flex-lg-column align-items-lg-start\">");
                 sb.Append("<div class=\"col-lg-12 mb-3 mb-lg-3\">");
                 sb.Append("<div class=\"dvPrice\">");
-                sb.Append("<p class=\"heading6 text-colour1\"> " +Math.Round(item.packages[0].payments.estimatedTotal.vehicle.display.amount,2) + " <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
+                sb.Append("<p class=\"heading6 text-colour1\"> " + String.Format("{0:0.00}", item.packages[0].payments.estimatedTotal.vehicle.display.amount) + " <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
                 sb.Append("<p class=\"h7\"><span>(mandatory fees included)</span></cite>");
                 sb.Append("</div>");
                 sb.Append("</div>");
@@ -616,7 +616,7 @@ public partial class CarList : System.Web.UI.Page
                 sb.Append("<div class=\"col-lg-12 mb-3 mb-lg-3\">");
                 sb.Append("<div class=\"dvPrice\">");
                 //sb.Append("<p> " + item.packages[0].payments.estimatedTotal.vehicle.display.amount + " <i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
-                sb.Append("<p class=\"heading6 text-colour1\"> " +Math.Round(item.packages[0].payments.estimatedTotal.total.display.amount,2) + " Points </p>");
+                sb.Append("<p class=\"heading6 text-colour1\"> " + String.Format("{0:0.00}", item.packages[0].payments.estimatedTotal.total.display.amount) + " Points </p>");
                 sb.Append("<p class=\"h7\"><span>(mandatory fees included)</span></cite>");
                 sb.Append("</div>");
                 sb.Append("</div>");
