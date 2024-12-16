@@ -35,6 +35,9 @@ HOW TO USE -
 2. VALIDATIONS -
 - add .dvErrors class as a parent to get applied data-i18n attributes
 - add span tags to validations error messages
+- there should not be nested span tags - <span><span>validation text</span></span> in some cases like RefreshCache page.
+- try to keep normal label tags for validation error divs. 
+- if there is label like this - <asp:Label runat="server" ID="lblLoginError" Text="" CssClass="mt-3 h7 text-danger"></asp:Label> then change it to normal label tags like this - <label id="lblLoginError" class="mt-3 h7 text-danger"></label> only if not working.
 
 3. VC DATA -
 - add .dvVcData class as a parent to get applied data-i18n attributes
