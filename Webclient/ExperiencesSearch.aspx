@@ -127,25 +127,26 @@
     </div>
 
     <script>
-        var pageSize = 16;
+        var pageSize = 20;
         var pageTotal = 0;
         var pageIndex = 1;
         var searchTerm = getQuerystring("searchterm");
         var typesArray = [];
         var categoriesArray = [];
         $(window).scroll(function () {
-            if (pageIndex == 2 || pageIndex <= pageTotal) {
-                if (!IsGetExperienceProductListAjaxCalled) {
+            if (pageIndex == 2 || pageIndex <= pageTotal) { ;
+              //  if (!IsGetExperienceProductListAjaxCalled) {
                     if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
                         GetRecords();
                     }
-                }
+               // }
             }
         });
         function GetRecords() {
+           
             pageIndex++;
             fnGetTypesAndCategory();
-            /*fnGetSearchItem(searchTerm, pageIndex, pageSize, typesArray, categoriesArray);*/
+            fnGetSearchItem(searchTerm, pageIndex, pageSize, typesArray, categoriesArray);
         }
         //$(document).ready(function () {
         $(function () {
@@ -155,7 +156,7 @@
         });
         if (searchTerm != null && searchTerm != "") {
             fnGetTypesAndCategory();
-            /*fnGetSearchItem(searchTerm, pageIndex, pageSize, typesArray, categoriesArray);*/
+            fnGetSearchItem(searchTerm, pageIndex, pageSize, typesArray, categoriesArray);
         }
         else {
             window.location = "ExperienceProductList.aspx";
@@ -224,7 +225,8 @@
                 var parseData = JSON.parse(data);
                 $("#txtSearchTerm").val(parseData.ExperiencesCriteria.searchTerm);
                 $("#recommendedtxt").empty().append("Showing " + parseData.data.length + " recommended things to do in results <span>with keyword '" + parseData.ExperiencesCriteria.searchTerm + "'</span>");
-
+                pageTotal = parseData.data.length;
+             
                 $.each(parseData.data, function (i) {
                     html += "<div class=\"dvProductCard col-sm-6 col-lg-4 mb-4\">";
                     html += '<div class="dvItem">';
