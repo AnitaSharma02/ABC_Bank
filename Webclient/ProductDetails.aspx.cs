@@ -212,7 +212,7 @@ public partial class ProductDetails : Page
                 string lstrHtmlContent = string.Empty;
                 for (int i = 0; i < lobjProduct.Images.Count; i++)
                 {
-                    lstrHtmlContent += " <img class=\"img-thumbnail\" onclick=\"changeImage(this)\"  src =\"" + lobjProduct.Images[i].Url + "\" width=\"100\" height=\"100\">";
+                    lstrHtmlContent += "<div class=\"swiper-slide\"><img src=\"" + lobjProduct.Images[i].Url + "\"></div>";
                 }
                 List<string> lobjColorVariations = new List<string>();
                 List<string> lobjSizeVariations = new List<string>();

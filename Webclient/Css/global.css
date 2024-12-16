@@ -911,16 +911,30 @@ p {
 
 /*=========[ SWIPER THUMBSLIDER ]=========*/
 .dvThumbSwiperSlider .swiper-wrapper {
-  height: auto;
+    height: auto;
 }
-
-.dvThumbSwiperSlider .dvThumbSlide .img-container {
-  padding-bottom: 15%;
-  /*    margin-top:15px;*/
+.dvThumbSwiperSlider .img-container img {
+    object-fit: contain;
 }
-
+.dvThumbSwiperSlider .dvThumbSlide .swiper-slide {
+    flex: 0 0 25%;
+    margin-right: .5rem;
+    opacity: .5;
+}
+.dvThumbSwiperSlider .dvThumbSlide .swiper-slide img {
+    border: 1px solid var(--border-colour);
+    width: 100px;
+    max-width: 100%;
+    height: 50px;
+    display: block;
+    object-fit: contain;
+}
 .dvThumbSwiperSlider .dvThumbBannerSlide {
-  border: 1px solid var(--border-colour);
+    border: 1px solid var(--border-colour);
+}
+.dvThumbSwiperSlider .dvThumbSlide .swiper-slide-thumb-active {
+    border: 1px solid var(--border-colour);
+    opacity: 1;
 }
 /*=========[ SWIPER THUMBSLIDER ]=========*/
 

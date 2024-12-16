@@ -798,6 +798,8 @@
                 async: true,
                 cache: false,
                 success: function (msg) {
+                    var thumbnailimg = "";
+                    var mainImage = "";
                     var data = JSON.parse(msg.d[0]);
                     if (data != '') {
                         $('#CP_CPSHOP_hfProductId').val(data[0].Id);
@@ -806,8 +808,13 @@
                         $('#CP_CPSHOP_spanPoints').text(ConvertThousandSeparator(data[0].Price.SalePrice.Amount * quantity) + " " + "Points");
                         $('#CP_CPSHOP_divspanpoints').text(ConvertThousandSeparator(data[0].Price.SalePrice.Amount * quantity));
                         for (var i = 0; i < data[0].Images.length; i++) {
-                            $('#CP_CPSHOP_divThumbnailImages').html('<img src="' + data[0].Images[i].Url + '" class="img-thumbnail" height="100" width="100" onclick="changeImage(this)"/>');
+                            //$('#CP_CPSHOP_divThumbnailImages').html('<img src="' + data[0].Images[i].Url + '" class="img-thumbnail" height="100" width="100" onclick="changeImage(this)"/>');
+                            thumbnailimg += '<div class="swiper-slide"><img src="' + data[0].Images[i].Url + '" onclick="changeImage(this)"></div>';
+                            mainImage += '<div class="swiper-slide img-container"><img src="' + data[0].Images[i].Url + '\"></div>';
                         }
+                        $('#CP_CPSHOP_imgProductImageMain').html(mainImage);
+                        $('#CP_CPSHOP_divThumbnailImages').html(thumbnailimg);
+                        ReInitializeSwiper();
                         CheckAvailability(data[0].Price.SalePrice.Amount, quantity);
                     }
                     else {
@@ -888,6 +895,30 @@
                 }
             });
             return false;
+        }
+
+        function ReInitializeSwiper() {
+
+            var swiper = new Swiper(".dvThumbSlide", {
+                spaceBetween: 10,
+                slidesPerView: 4,
+                freeMode: true,
+                watchSlidesProgress: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+            var swiper2 = new Swiper(".dvThumbBannerSlide", {
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                thumbs: {
+                    swiper: swiper,
+                },
+            });
         }
     </script>
 <!-- <script>
