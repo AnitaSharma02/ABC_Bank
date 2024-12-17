@@ -11,5 +11,7 @@ namespace BeMyGuest.Entities
         public string uuid { get; set; }
         [DataMember]
         public string date { get; set; }
+        [DataMember]
+        public string pointConvrtRate { get; set; }
     }
 }

@@ -17,5 +17,7 @@ namespace BeMyGuest.Entities
         public ProductMeta meta { get; set; }
         [DataMember]
         public ExperiencesCriteria ExperiencesCriteria { get; set; }
+
+
     }
 }

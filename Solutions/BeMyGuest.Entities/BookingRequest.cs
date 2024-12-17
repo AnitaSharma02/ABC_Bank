@@ -36,5 +36,7 @@ namespace BeMyGuest.Entities
 
         [DataMember]
         public string titleName { get; set; }=string.Empty;
+        [DataMember]
+        public string pointConvrtRate { get; set; }
     }
 }

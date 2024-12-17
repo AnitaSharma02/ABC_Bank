@@ -11,6 +11,7 @@ using Framework.EnterpriseLibrary.Adapters;
 using Framework.EnterpriseLibrary.UniqueNumberGenerator;
 using Newtonsoft.Json;
 using System;
+using Core.Platform.ProgramMaster.Entities;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Web;
@@ -322,6 +323,10 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
             ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
             MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
             string lstrCurrency = lobjModel.GetDefaultCurrency();
+          
+            float pfltPointrate = 0.0f;
+            pfltPointrate = lobjModel.GetProgramRedemptionRate(lobjModel.GetDefaultCurrency(), "EXPERIENCE", lobjProgramDefinition.ProgramId);
+
             int lintABCBankPoints = lobjModel.CheckAvailbility(lobjMemberDetails.MemberRelationsList.Find(l => l.RelationType.Equals(RelationType.LBMS)).RelationReference, Convert.ToInt32(RelationType.LBMS), lstrCurrency, lobjProgramDefinition.ProgramId);
             if (!string.IsNullOrEmpty(puuid))
             {
@@ -334,6 +339,7 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                 {
                     ProductInfoRequest productInfoRequest = new ProductInfoRequest();
                     productInfoRequest.uuid = puuid;
+                    productInfoRequest.pointConvrtRate = pfltPointrate.ToString();
                     productInfoResponse = lobjModel.GetProductInfo(productInfoRequest);
                 }
                 if (productInfoResponse != null)
@@ -342,6 +348,7 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                     {
                         ProductTypesPriceByDateRequest productTypesPriceByDateRequest = new ProductTypesPriceByDateRequest();
                         productTypesPriceByDateRequest.uuid = productTypeItem.uuid;
+                        productTypesPriceByDateRequest.pointConvrtRate = pfltPointrate.ToString();
                         DateTime enteredDate = DateTime.ParseExact(selectedDate, "dd-MM-yyyy", null);
                         productTypesPriceByDateRequest.date = enteredDate.ToString("yyyy-MM-dd");
                         ProductTypesPriceByDateResponse productTypesPriceByDateResponse = new ProductTypesPriceByDateResponse();
@@ -405,6 +412,9 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
         ABCModel lobjModel = new ABCModel();
         string redirectPGUrl = string.Empty;
         BookingRequest bookingRequest = new BeMyGuest.Entities.BookingRequest();
+        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+        float pfltPointrate = 0.0f;
+        pfltPointrate = lobjModel.GetProgramRedemptionRate(lobjModel.GetDefaultCurrency(), "EXPERIENCE", lobjProgramDefinition.ProgramId);
 
         try
         {
@@ -435,8 +445,7 @@ public partial class ExperienceProductBookingDetails : System.Web.UI.Page
                 bookingRequest.options.perBooking = pobjbookingRequest.options.perBooking;
                 bookingRequest.options.perPax = pobjbookingRequest.options.perPax;
                 bookingRequest.titleName = titleName;
-
-                ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+                bookingRequest.pointConvrtRate = pfltPointrate.ToString();
                 MemberDetails lobjMemberDetails = HttpContext.Current.Session["MemberDetails"] as MemberDetails;
 
                 if (lobjMemberDetails != null)

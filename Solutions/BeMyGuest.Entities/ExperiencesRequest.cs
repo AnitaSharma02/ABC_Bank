@@ -19,5 +19,8 @@ namespace BeMyGuest.Entities
         public int page { get; set; }
         [DataMember]
         public int per_page { get; set; }
+
+        [DataMember]
+        public string pointConvrtRate { get; set; }
     }
 }

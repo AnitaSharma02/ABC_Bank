@@ -12,6 +12,7 @@ using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Core.Platform.ProgramMaster.Entities;
 
 public partial class ExperienceProductDetails : System.Web.UI.Page
 {
@@ -25,12 +26,17 @@ public partial class ExperienceProductDetails : System.Web.UI.Page
     {
         string lstrProductInfo = string.Empty;
         ABCModel lobjModel = new ABCModel();
+        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+        float pfltPointrate = 0.0f;
+        pfltPointrate = lobjModel.GetProgramRedemptionRate(lobjModel.GetDefaultCurrency(), "EXPERIENCE", lobjProgramDefinition.ProgramId);
+
         try
         {
             if (!string.IsNullOrEmpty(uuid))
             {
                 ProductInfoRequest productInfoRequest = new ProductInfoRequest();
                 productInfoRequest.uuid = uuid;
+                productInfoRequest.pointConvrtRate = pfltPointrate.ToString();
                 ProductInfoResponse productInfoResponse = lobjModel.GetProductInfo(productInfoRequest);
                 if (productInfoResponse != null && productInfoResponse.success == 1)
                 {
@@ -61,6 +67,9 @@ public partial class ExperienceProductDetails : System.Web.UI.Page
         {
             if (date != null && !string.IsNullOrEmpty(uuid))
             {
+                ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+                float pfltPointrate = 0.0f;
+                pfltPointrate = lobjModel.GetProgramRedemptionRate(lobjModel.GetDefaultCurrency(), "EXPERIENCE", lobjProgramDefinition.ProgramId);
                 ProductInfoResponse productInfoResponse = new ProductInfoResponse();
                 if (HttpContext.Current.Session["ProductInfo"] != null)
                 {
@@ -70,6 +79,7 @@ public partial class ExperienceProductDetails : System.Web.UI.Page
                 {
                     ProductInfoRequest productInfoRequest = new ProductInfoRequest();
                     productInfoRequest.uuid = uuid;
+                    productInfoRequest.pointConvrtRate = pfltPointrate.ToString();
                     productInfoResponse = lobjModel.GetProductInfo(productInfoRequest);
                 }
                 if (productInfoResponse != null)
@@ -80,6 +90,7 @@ public partial class ExperienceProductDetails : System.Web.UI.Page
                         productTypesPriceByDateRequest.uuid = productTypeItem.uuid;
                         DateTime enteredDate = DateTime.ParseExact(date, "dd-MM-yyyy", null);
                         productTypesPriceByDateRequest.date = enteredDate.ToString("yyyy-MM-dd");
+                        productTypesPriceByDateRequest.pointConvrtRate = pfltPointrate.ToString();
                         ProductTypesPriceByDateResponse productTypesPriceByDateResponse = new ProductTypesPriceByDateResponse();
                         productTypesPriceByDateResponse = lobjModel.GetProductTypesPriceByDate(productTypesPriceByDateRequest);
                         if (productTypesPriceByDateResponse != null && productTypesPriceByDateResponse.success == 1 && productTypesPriceByDateResponse.data != null)

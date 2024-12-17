@@ -9,5 +9,7 @@ namespace BeMyGuest.Entities
     {
         [DataMember]
         public string uuid { get; set; }
+        [DataMember]
+        public string pointConvrtRate { get; set; }
     }
 }

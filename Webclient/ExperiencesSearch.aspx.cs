@@ -1,17 +1,12 @@
-﻿using BeMyGuest.Entities;
-using ABC.Model;
+﻿using ABC.Model;
+using BeMyGuest.Entities;
+using Core.Platform.ProgramMaster.Entities;
 using Framework.EnterpriseLibrary.Adapters;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web;
-using System.Web.Services;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Core.Platform.MemberActivity.Entities;
 using System.Text.RegularExpressions;
+using System.Web.Services;
 
 public partial class ExperiencesSearch : System.Web.UI.Page
 {
@@ -24,32 +19,11 @@ public partial class ExperiencesSearch : System.Web.UI.Page
     {
         string lstrResponse = string.Empty;
         ABCModel lobjModel = new ABCModel();
+        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+        float pfltPointrate = 0.0f;
+        pfltPointrate = lobjModel.GetProgramRedemptionRate(lobjModel.GetDefaultCurrency(), "EXPERIENCE", lobjProgramDefinition.ProgramId);
         try
         {
-            //SearchExperiencesModel searchExperiencesModel = new SearchExperiencesModel()
-            //{
-            //    TypesAndCategory = lobjModel.GetTypesAndCategory(),
-            //    searchTerm = pstrsearchTerm
-            //};
-            //List<string> TypesArray = new List<string>();
-            //List<string> CategoriesArray = new List<string>();
-            //if (types.Count > 0)
-            //{
-            //    TypesArray = types;
-            //}
-            //else
-            //{
-            //    TypesArray = searchExperiencesModel.TypesAndCategory.types;
-            //}
-            //if (categories.Count > 0)
-            //{
-            //    CategoriesArray = categories;
-            //}
-            //else
-            //{
-            //    CategoriesArray = searchExperiencesModel.TypesAndCategory.categories;
-            //}
-            
             ExperiencesRequest lobjProductListRequest = new ExperiencesRequest
             {
                 page = pintPage,
@@ -57,6 +31,7 @@ public partial class ExperiencesSearch : System.Web.UI.Page
                 category = categories,
                 search_term = Regex.Replace(Regex.Replace(pstrsearchTerm, @"[^0-9a-zA-Z]+", " ").Replace("20"," "), @"\s\s+", " "),
                 type_name = types,
+                pointConvrtRate = Convert.ToString(pfltPointrate)
             };
             ExperiencesResponse lstrProductListResponse = lobjModel.GetExperienceProductList(pintPage, pintPageSize, lobjProductListRequest);
             if (lstrProductListResponse.data != null)

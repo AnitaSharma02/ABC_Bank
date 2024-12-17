@@ -1,6 +1,7 @@
 ﻿using ABC.Model;
 using BeMyGuest.Entities;
 using Core.Platform.MemberActivity.Entities;
+using Core.Platform.ProgramMaster.Entities;
 using Framework.EnterpriseLibrary.Adapters;
 using Newtonsoft.Json;
 using System;
@@ -22,7 +23,9 @@ public partial class ExperienceProductList : System.Web.UI.Page
     {
         string lstrResponse = string.Empty;
         ABCModel lobjModel = new ABCModel();
-       
+        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+        float pfltPointrate = 0.0f;
+        pfltPointrate = lobjModel.GetProgramRedemptionRate(lobjModel.GetDefaultCurrency(), "EXPERIENCE", lobjProgramDefinition.ProgramId);
         StringBuilder lCBCogRequestResponse = new StringBuilder();
         try
         {
@@ -33,7 +36,8 @@ public partial class ExperienceProductList : System.Web.UI.Page
                 per_page = pintPageSize,
                 search_term="",
                 type_name= new List<string>(),
-                category= new List<string>()
+                category= new List<string>(),
+                pointConvrtRate= Convert.ToString(pfltPointrate)
             };
 
             ExperiencesResponse lstrProductListResponse = lobjModel.GetExperienceProductList(pintPage, pintPageSize, lobjProductListRequest);
