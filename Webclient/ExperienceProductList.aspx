@@ -123,7 +123,7 @@
                         html += '<p class="px-3 pb-2">' + parseData[i].city + ', ' + parseData[i].country + '</p>';
                         html += '<div class="d-flex flex-wrap justify-content-between px-3 pb-3 mt-auto">';
                         html += '<p class="points">' + parseData[i].typeName + '</p>';
-                        html += '<p class="points"><span>from</span> <span>' + FormatCurrency(parseFloat(parseData[i].convertedAmount).toFixed(2), parseData[i].convertedCurrency) + '</span> <span></span></p>';
+                        html += '<p class="points"><span>from</span> <span>' + FormatCurrency(parseFloat(parseData[i].convertedAmount).toFixed(2), parseData[i].convertedCurrency) + '</span>/pax<span></span></p>';
                         html += '</div>';
                        
                         html += '</div>';
