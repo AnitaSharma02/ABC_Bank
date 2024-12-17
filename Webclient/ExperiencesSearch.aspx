@@ -251,7 +251,7 @@
                         html += "<p class='px-3 pb-2'>" + parseData.data[i].city + ',' + parseData.data[i].country + "</p>";
                         html += "<div class=\"d-flex flex-wrap justify-content-between px-3 pb-3 mt-auto\">";
                         html += "<p class=\"points\">" + parseData.data[i].typeName + "</p>";
-                        html += "<p class=\"points\"><span>from</span> <span>" + FormatCurrency(parseFloat(parseData.data[i].convertedAmount).toFixed(2), parseData.data[i].convertedCurrency) + "</span> <span>/pax</span></p>";
+                        html += "<p class=\"points\"><span>from</span> <span>" + FormatCurrency(parseFloat(parseData.data[i].convertedAmount).toFixed(2), parseData.data[i].convertedCurrency) + "</span> <span></span></p>";
                         html += "</div>";
                         html += "</a>";
                         html += "</div>";
