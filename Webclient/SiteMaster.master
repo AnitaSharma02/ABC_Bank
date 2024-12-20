@@ -308,7 +308,7 @@
                                 </asp:Label>
                             </div>
                         </div>
-                        <div class="dvActivationInfo col-6 text-right col-lg-auto ml-lg-auto d-none d-lg-block  border-lg-right border-right-0" id="lnkRegister" runat="server">
+                        <div class="dvActivationInfo col-6 text-right col-lg-auto ml-lg-auto d-none- d-lg-block- invisible border-lg-right border-right-0" id="lnkRegister" runat="server">
                             <a href="\Activation.aspx" class="nav-link p-0 text-colour6">
                                 <i class="fa fa-power-off"></i>
                                 <span>Activation</span>
@@ -414,7 +414,7 @@
                                     </asp:LinkButton>
                                 </a>
                             </li>
-                            <li class="dvActivationInfo nav-item d-lg-none" id="mob_lnkRegister" runat="server">
+                            <li class="dvActivationInfo nav-item d-none" id="mob_lnkRegister" runat="server">
                                 <a href="\Activation.aspx" id="mob_activation" class="nav-link p-2 btn btn-one mt-2"><i class="fa fa-power-off pr-1"></i><span>Activation</span></a>
                             </li>
                         </ul>
