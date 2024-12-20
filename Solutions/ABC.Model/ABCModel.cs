@@ -2352,7 +2352,7 @@ namespace ABC.Model
 
             BookingIntegrationModel lobjBookingIntegrationFacade = new BookingIntegrationModel();
             dynamicCls.otp = lobjBookingIntegrationFacade.GenerateOTPDetails(lobjOTPDetails).OTP;
-
+            HttpContext.Current.Session["ForgotPwdOTP"] = dynamicCls.otp;
             Dictionary<string, dynamic> lobjDictionary = new Dictionary<string, dynamic>();
             IDictionary<string, object> dict = (IDictionary<string, object>)dynamicCls;
             foreach (var key in dict)

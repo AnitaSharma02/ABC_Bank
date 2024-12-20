@@ -601,7 +601,6 @@ public partial class PointGateway : System.Web.UI.Page
             {
                 LoggingAdapter.WriteLog("PurchaseShopDigital Order Null rolback call RedeemMilesResponse" + strRedeemMilesResponse + " Cart " + Cart.ToString());
             }
-            HttpContext.Current.Session["AvailablePoints"] = null;
         }
         catch (Exception ex)
         {
@@ -849,7 +848,6 @@ public partial class PointGateway : System.Web.UI.Page
             {
                 LoggingAdapter.WriteLog("PointGateway.aspx CheckoutShop - ShoppingCart is null");
             }
-            HttpContext.Current.Session["AvailablePoints"] = null;
         }
         catch (Exception ex)
         {
@@ -930,7 +928,6 @@ public partial class PointGateway : System.Web.UI.Page
                         }
                     }
 
-                    HttpContext.Current.Session["AvailablePoints"] = null;
                 }
             }
             lobjModel.LogActivity(string.Format(ActivityConstants.BookPackage) + "Status:" + lblnResult + " - " + lNICogRequestResponse, ActivityType.PackageBooking);

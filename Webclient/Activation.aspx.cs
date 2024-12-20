@@ -42,52 +42,35 @@ public partial class Activation : Page
                 MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
                 if (lobjMemberDetails != null && lobjMemberDetails.MemberRelationsList.Count > 0)
                 {
-                    if (!lobjMemberRelation.IsAccountActivated)
+                    string lstrSourceIpAddress = HttpContext.Current.Request.UserHostAddress;
+
+                    SystemParameter lobjSystemParameter = lobjModel.GetSystemParametres(lobjProgramDefinition.ProgramId);
+                    if (lobjProgramDefinition != null)
                     {
-                        if (lobjMemberRelation.Status.Equals(Status.InActive))
+                        OTPDetails lobjOTPDetails = new OTPDetails
                         {
-                            string lstrSourceIpAddress = HttpContext.Current.Request.UserHostAddress;
+                            UniquerefID = lobjMemberRelation.RelationReference,
+                            SourceAddress = lstrSourceIpAddress,
+                            SourceCode = Core.Platform.OTP.ConfigurationConstants.SourceCode.Web,
+                            ProgramId = lobjProgramDefinition.ProgramId,
+                            RelationType = Convert.ToInt32(RelationType.LBMS),
+                            OtpType = OTPEnumTypes.ACTIVATION.ToString(),
+                            OtpEnumTypes = OTPEnumTypes.ACTIVATION,
+                            AddExpirationTimeInMinutes = Convert.ToString(lobjSystemParameter.OTPExpirationTime)
+                        };
+                        lblstatus = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "activation_otp", lobjOTPDetails, "");
+                    }
+                    if (lblstatus)
+                    {
+                        mstrRedirectEmptyURL = "Success";
 
-                            SystemParameter lobjSystemParameter = lobjModel.GetSystemParametres(lobjProgramDefinition.ProgramId);
-                            if (lobjProgramDefinition != null)
-                            {
-                                OTPDetails lobjOTPDetails = new OTPDetails
-                                {
-                                    UniquerefID = lobjMemberRelation.RelationReference,
-                                    SourceAddress = lstrSourceIpAddress,
-                                    SourceCode = Core.Platform.OTP.ConfigurationConstants.SourceCode.Web,
-                                    ProgramId = lobjProgramDefinition.ProgramId,
-                                    RelationType = Convert.ToInt32(RelationType.LBMS),
-                                    OtpType = OTPEnumTypes.ACTIVATION.ToString(),
-                                    OtpEnumTypes = OTPEnumTypes.ACTIVATION,
-                                    AddExpirationTimeInMinutes = Convert.ToString(lobjSystemParameter.OTPExpirationTime)
-                                };
-                                lblstatus = lobjModel.SendOTPEmailAndSMS(lobjMemberDetails, "activation_otp", lobjOTPDetails, "");
-                            }
-                            if (lblstatus)
-                            {
-                                mstrRedirectEmptyURL = "Success";
-
-                                lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, "Activation OTP Success"), ActivityType.ActivationOTPSuccess);
-                            }
-                            else
-                            {
-                                mstrRedirectEmptyURL = "OTPFAILED";
-                                lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, "Activation OTP Failed"), ActivityType.ActivationOTPFailed);
-                            }
-                        }
-                        else
-                        {
-                            mstrRedirectEmptyURL = "Your Account is " + Convert.ToString(lobjMemberRelation.Status);
-                            lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, mstrRedirectEmptyURL), ActivityType.ActivationOTPFailed);
-                        }
+                        lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, "Activation OTP Success"), ActivityType.ActivationOTPSuccess);
                     }
                     else
                     {
-                        mstrRedirectEmptyURL = "Already Activated";
-                        lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, mstrRedirectEmptyURL), ActivityType.ActivationOTPFailed);
+                        mstrRedirectEmptyURL = "OTPFAILED";
+                        lobjModel.LogActivity(string.Format(ActivityConstants.ActivationOTP, pstrMemberId, "Activation OTP Failed"), ActivityType.ActivationOTPFailed);
                     }
-
                 }
                 else
                 {
@@ -183,9 +166,9 @@ public partial class Activation : Page
             string pstrOTP = txtOTP.Text;
             string pstrPwd = txtPassword.Text;
             string pstrMemberId = txtMemberId.Text;
-            // string pstrSecurityCode = txtSecurityCode.Text;
             string strMD5password = string.Empty;
             string lstrToken = string.Empty;
+            string LoginRedirectionUrl = ConfigurationManager.AppSettings["LoginRedirectionUrl"];
             string strActivationPoints = ConfigurationManager.AppSettings["ActivationPoints"];
             int strActivationPointsExpiry = Convert.ToInt32(ConfigurationManager.AppSettings["ActivationPointsExpiry"]);
             string strActivationPointsAwarding = ConfigurationManager.AppSettings["ActivationPointsAwarding"];
@@ -203,10 +186,6 @@ public partial class Activation : Page
                         MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS));
                         LoggingAdapter.WriteLog(string.Format("Activation {0}", lobjMemberRelation));
 
-                        if (lobjMemberRelation.IsAccountActivated)
-                        {
-                            mstrRedirectEmptyURL = "Account_Activated";
-                        }
                     }
                     else
                     {
@@ -224,60 +203,63 @@ public partial class Activation : Page
                         lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).WebPassword = strMD5password.Trim().ToUpper();
                         if (CheckOTP(lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).RelationReference, pstrOTP))
                         {
-                            SearchMember lobjSearchMember = new SearchMember();
-                            lobjSearchMember.UniquerefID = lobjMemberDetails.Email;
-                            lobjSearchMember.ProgramId = lobjMemberDetails.ProgramId;
-                            lobjSearchMember.RelationType = Convert.ToInt32(RelationType.LBMS);
-                            lobjSearchMember.Password = strMD5password.Trim().ToUpper();
-                            lblStatus = lobjModel.ActivateAccount(lobjSearchMember);
-                            LoggingAdapter.WriteLog(string.Format("Activation CheckOTP{0}", lblStatus));
-
-                            if (lblStatus)
+                            mstrRedirectEmptyURL = "Success";
+                            HttpContext.Current.Session["loginMsg"] = "1";
+                            if (!lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).IsAccountActivated)
                             {
-                                if (!string.IsNullOrEmpty(strActivationPointsAwarding) && strActivationPointsAwarding.ToUpper().ToString() == "YES")
+                                if (lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).Status.Equals(Status.InActive))
                                 {
-                                    TransactionDetails transactionDetails = new TransactionDetails()
+                                    SearchMember lobjSearchMember = new SearchMember();
+                                    lobjSearchMember.UniquerefID = lobjMemberDetails.Email;
+                                    lobjSearchMember.ProgramId = lobjMemberDetails.ProgramId;
+                                    lobjSearchMember.RelationType = Convert.ToInt32(RelationType.LBMS);
+                                    lobjSearchMember.Password = strMD5password.Trim().ToUpper();
+                                    lblStatus = lobjModel.ActivateAccount(lobjSearchMember);
+                                    LoggingAdapter.WriteLog(string.Format("Activation CheckOTP{0}", lblStatus));
+                                    if (lblStatus)
                                     {
-                                        TransactionType = (TransactionType)1,
-                                        RelationReference = lobjMemberDetails.MemberRelationsList[0].RelationReference,
-                                        Amounts = 0,
-                                        Points = Convert.ToInt32(strActivationPoints),
-                                        LoyaltyTxnType = (LoyaltyTxnType)2,
-                                        ProgramId = lobjProgramDefinition.ProgramId,
-                                        TransactionCurrency = "DEFAULT",
-                                        RelationType = RelationType.LBMS,
-                                        TransactionDate = DateTime.Now,
-                                        ProcessingDate = DateTime.Now,
-                                        ExpiryDate = DateTime.Now.AddMonths(strActivationPointsExpiry),
-                                        ReconciledPoints = 0,
-                                        ReconciledType = 1,
-                                        Narration = "Bonus Points",
-                                        MerchantName = "Activation Bonus Points",
-                                        ExternalReference = "",
-                                        AdditionalDetail = "",
-                                        AdditionalDetails1 = ""
-                                    };
-                                    TransactionDetailsBreakage transactionDetailsBreakage = new TransactionDetailsBreakage()
-                                    {
-                                        IsBillable = true,
-                                        SourceAmount = 0,
-                                        SourceCurrency = "",
-                                        TxnCurrency = "",
-                                        TransactionSource = ""
-                                    };
-                                    transactionDetails.TransactionDetailBreakage = transactionDetailsBreakage;
-                                    bool response = lobjModel.InsertManualTransactionDetails(transactionDetails, lstrToken);
+                                        if (!string.IsNullOrEmpty(strActivationPointsAwarding) && strActivationPointsAwarding.ToUpper().ToString() == "YES")
+                                        {
+                                            TransactionDetails transactionDetails = new TransactionDetails()
+                                            {
+                                                TransactionType = (TransactionType)1,
+                                                RelationReference = lobjMemberDetails.MemberRelationsList[0].RelationReference,
+                                                Amounts = 0,
+                                                Points = Convert.ToInt32(strActivationPoints),
+                                                LoyaltyTxnType = (LoyaltyTxnType)2,
+                                                ProgramId = lobjProgramDefinition.ProgramId,
+                                                TransactionCurrency = "DEFAULT",
+                                                RelationType = RelationType.LBMS,
+                                                TransactionDate = DateTime.Now,
+                                                ProcessingDate = DateTime.Now,
+                                                ExpiryDate = DateTime.Now.AddMonths(strActivationPointsExpiry),
+                                                ReconciledPoints = 0,
+                                                ReconciledType = 1,
+                                                Narration = "Bonus Points",
+                                                MerchantName = "Activation Bonus Points",
+                                                ExternalReference = "",
+                                                AdditionalDetail = "",
+                                                AdditionalDetails1 = ""
+                                            };
+                                            TransactionDetailsBreakage transactionDetailsBreakage = new TransactionDetailsBreakage()
+                                            {
+                                                IsBillable = true,
+                                                SourceAmount = 0,
+                                                SourceCurrency = "",
+                                                TxnCurrency = "",
+                                                TransactionSource = ""
+                                            };
+                                            transactionDetails.TransactionDetailBreakage = transactionDetailsBreakage;
+                                            bool response = lobjModel.InsertManualTransactionDetails(transactionDetails, lstrToken);
 
-                                    LoggingAdapter.WriteLog("ExtSSO_oAuth - Activation Bonus Awarded : " + response);
+                                            LoggingAdapter.WriteLog("ExtSSO_oAuth - Activation Bonus Awarded : " + response);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        mstrRedirectEmptyURL = "Invalid_Credentials";
+                                    }
                                 }
-
-                                mstrRedirectEmptyURL = "Success";
-                                HttpContext.Current.Session["loginMsg"] = "1";
-                                // HttpContext.Current.Session["ActivationMemberDetails"] = null;
-                            }
-                            else
-                            {
-                                mstrRedirectEmptyURL = "Invalid_Credentials";
                             }
                         }
                         else
@@ -297,7 +279,7 @@ public partial class Activation : Page
             {
                 LoggingAdapter.WriteLog("Activation.aspx BtnActivationValidation_Click Exception:" + ex.Message + Environment.NewLine + "InnerException:" + ex.InnerException + Environment.NewLine + "StackTrace:" + ex.StackTrace);
             }
-            mstrRedirectEmptyURL = mstrRedirectEmptyURL + "|" + pstrMemberId;
+            mstrRedirectEmptyURL = mstrRedirectEmptyURL + "|" + pstrMemberId + "|" + LoginRedirectionUrl;
 
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), Guid.NewGuid().ToString(), "javascript:MemberActivationCodeBehind('" + mstrRedirectEmptyURL + "')", true);
         }

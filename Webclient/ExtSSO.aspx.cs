@@ -21,10 +21,10 @@ public partial class ExtSSO : Page
     {
         if (!IsPostBack)
         {
-            Session["AvailablePoints"] = null;
             string lstrMessage = string.Empty;
-            string strMD5password = string.Empty;
-           
+            string strActivationPoints = ConfigurationManager.AppSettings["ActivationPoints"];
+            int strActivationPointsExpiry = Convert.ToInt32(ConfigurationManager.AppSettings["ActivationPointsExpiry"]);
+            string strActivationPointsAwarding = ConfigurationManager.AppSettings["ActivationPointsAwarding"];
             try
             {
                 string lstrHostUrl = string.Empty;
@@ -51,90 +51,122 @@ public partial class ExtSSO : Page
                 ABCModel lobjModel = new ABCModel();
                 try
                 {
-                    if (!string.IsNullOrEmpty(lstrToken))
+                    MemberLogin lobjMemberLogin = new MemberLogin();
+                    lobjModel.LogActivity(string.Format("ExtSSO_oAuth; AccessToken Data:  {0}: DateTime {1}", lstrToken, DateTime.Now), ActivityType.Login);
+                    ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+
+                    var lobjDynamic = JsonConvert.DeserializeObject<Root>(Convert.ToString(lobjMemberLogin.GetMemberProfile(lobjProgramDefinition.ProgramId.ToString(), (int)RelationType.LBMS, lstrToken)));
+
+                    Results lobjResults = JsonConvert.DeserializeObject<Results>(lobjDynamic.results.ToString());
+
+                    if (lobjResults.IsSucessful)
                     {
-                        MemberLogin lobjMemberLogin = new MemberLogin();
-                        lobjModel.LogActivity(string.Format("ExtSSO_oAuth; AccessToken Data:  {0}: DateTime {1}", lstrToken, DateTime.Now), ActivityType.Login);
-                        ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+                        MemberDetails lobjMemberDetails = JsonConvert.DeserializeObject<MemberDetails>(lobjResults.ReturnObject.ToString());
+                        MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS));
 
-                        var lobjDynamic = JsonConvert.DeserializeObject<Root>(Convert.ToString(lobjMemberLogin.GetMemberProfile(lobjProgramDefinition.ProgramId.ToString(), (int)RelationType.LBMS, lstrToken)));
-
-                        Results lobjResults = JsonConvert.DeserializeObject<Results>(lobjDynamic.results.ToString());
-
-                        if (lobjResults.IsSucessful)
+                        if (lobjMemberDetails != null && !string.IsNullOrEmpty(lobjMemberDetails.FullName))
                         {
-                            MemberDetails lobjMemberDetails = JsonConvert.DeserializeObject<MemberDetails>(lobjResults.ReturnObject.ToString());
-                            MemberRelation lobjMemberRelation = lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS));
-
-                            if (lobjMemberDetails != null && !string.IsNullOrEmpty(lobjMemberDetails.FullName))
+                            LoggingAdapter.WriteLog("ExtSSO_oAuth - Member Validation: TRUE Member Status: " + lobjMemberRelation.Status.ToString());
+                            MemberActivitySession lobjMemberActivitySession = HttpContext.Current.Session["MemberActivitySession"] as MemberActivitySession;
+                            lobjMemberActivitySession.ReferenceNumber = lobjMemberRelation.RelationReference;
+                            lobjMemberActivitySession.ActivityType = ActivityType.loginsuccessful;
+                            lobjMemberActivitySession.ProgramId = lobjProgramDefinition.ProgramId;
+                            lobjModel.UpdateMemberShipActivitySession(lobjMemberActivitySession);
+                            string LoginRedirectionUrl = ConfigurationManager.AppSettings["SSOLoginRedirectionUrl"];
+                            if (lobjMemberRelation.Status == Status.Active && lobjMemberRelation.IsAccountActivated)
                             {
-                                LoggingAdapter.WriteLog("ExtSSO_oAuth - Member Validation: TRUE Member Status: " + lobjMemberRelation.Status.ToString());
-                                MemberActivitySession lobjMemberActivitySession = HttpContext.Current.Session["MemberActivitySession"] as MemberActivitySession;
-                                lobjMemberActivitySession.ReferenceNumber = lobjMemberRelation.RelationReference;
-                                lobjMemberActivitySession.ActivityType = ActivityType.loginsuccessful;
-                                lobjMemberActivitySession.ProgramId = lobjProgramDefinition.ProgramId;
-                                lobjModel.UpdateMemberShipActivitySession(lobjMemberActivitySession);
-                                string LoginRedirectionUrl = ConfigurationManager.AppSettings["LoginRedirectionUrl"];
-                                if (lobjMemberRelation.Status == Status.Active && lobjMemberRelation.IsAccountActivated)
-                                {
-                                    lobjMemberRelation.Id = lobjMemberDetails.Id;
-                                    lobjModel.ResetLoginAttempt(lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)));
-                                    lobjModel.LogActivity(string.Format(ActivityConstants.Login, lobjMemberRelation.RelationReference, "ExtSSO_oAuth login successful"), ActivityType.loginsuccessful);
-                                    HttpContext.Current.Session.Add("MemberDetails", lobjMemberDetails);
-                                    Session["FromSSOLogin"] = "1";
-                                    LoggingAdapter.WriteLog("ExtSSO_oAuth - Member Account Activated: TRUE");
-                                    divErrorMsg.Style.Add("Display", "None");
-                                    if (lobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).ForceChangePassword)
-                                    {
-                                        HttpContext.Current.Session["MemberDetails"] = lobjMemberDetails;
-                                        Response.Redirect("ForceChangePassword.aspx", false);
-                                    }
-                                    else
-                                    {
-                                        Response.Redirect(LoginRedirectionUrl, false);
-                                    }
-                                }
-                                else if (lobjMemberRelation.Status == Status.Cancelled)
-                                {
-                                    lstrMessage = "Your account status is cancelled. Please contact to admin.";
-                                    LoggingAdapter.WriteLog("ExtSSO_oAuth; " + lstrMessage);
-                                    lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
-                                    divErrorMsg.Style.Add("Display", "Block");
-                                    lblMessage.Text = lstrMessage;
-                                }
-                                else if (lobjMemberRelation.Status == Status.Suspended)
-                                {
-                                    lstrMessage = "Your account status is suspended. Please contact to admin.";
-                                    LoggingAdapter.WriteLog("ExtSSO_oAuth; " + lstrMessage);
-                                    lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
-                                    divErrorMsg.Style.Add("Display", "Block");
-                                    lblMessage.Text = lstrMessage;
-                                }
-                                else if (lobjMemberRelation.Status == Status.Blocked)
-                                {
-                                    lstrMessage = "Your account is blocked. Please contact to admin.";
-                                    LoggingAdapter.WriteLog("ExtSSO_oAuth; " + lstrMessage);
-                                    lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
-                                    divErrorMsg.Style.Add("Display", "Block");
-                                    lblMessage.Text = lstrMessage;
-                                }
-                                else if (lobjMemberRelation.Status == Status.InActive)
-                                {
-                                    lstrMessage = "<span>Your account is InActive.Please <a class=\"link1 text-decoration-none text-colour7\" href=\"Activation.aspx\"> click here </a> to activate your account.</span>";
-                                    LoggingAdapter.WriteLog("ExtSSO_oAuth; " + lstrMessage);
-                                    lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
-                                    divErrorMsg.Style.Add("Display", "Block");
-                                    lblMessage.Text = lstrMessage;
-                                }
+                                lobjMemberRelation.Id = lobjMemberDetails.Id;
+                                lobjModel.ResetLoginAttempt(lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)));
+                                lobjModel.LogActivity(string.Format(ActivityConstants.Login, lobjMemberRelation.RelationReference, "ExtSSO_oAuth login successful"), ActivityType.loginsuccessful);
+                                HttpContext.Current.Session.Add("MemberDetails", lobjMemberDetails);
+                                LoggingAdapter.WriteLog("ExtSSO_oAuth - Member Account Activated: TRUE");
+                                divErrorMsg.Style.Add("Display", "None");
 
+                                Response.Redirect(LoginRedirectionUrl, false);
                             }
-                            else
+                            else if (lobjMemberRelation.Status == Status.Cancelled)
                             {
-                                lstrMessage = "Incorrect member details.";
+                                lstrMessage = "Your account status is cancelled. Please contact to admin.";
+                                LoggingAdapter.WriteLog("ExtSSO_oAuth; " + lstrMessage);
                                 lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
-                                LoggingAdapter.WriteLog("ExtSSO_oAuth - Member Validation: FALSE");
                                 divErrorMsg.Style.Add("Display", "Block");
                                 lblMessage.Text = lstrMessage;
+                            }
+                            else if (lobjMemberRelation.Status == Status.Suspended)
+                            {
+                                lstrMessage = "Your account status is suspended. Please contact to admin.";
+                                LoggingAdapter.WriteLog("ExtSSO_oAuth; " + lstrMessage);
+                                lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
+                                divErrorMsg.Style.Add("Display", "Block");
+                                lblMessage.Text = lstrMessage;
+                            }
+                            else if (lobjMemberRelation.Status == Status.Blocked)
+                            {
+                                lstrMessage = "Your account is blocked. Please contact to admin.";
+                                LoggingAdapter.WriteLog("ExtSSO_oAuth; " + lstrMessage);
+                                lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
+                                divErrorMsg.Style.Add("Display", "Block");
+                                lblMessage.Text = lstrMessage;
+                            }
+                            else if (lobjMemberRelation.Status == Status.InActive)
+                            {
+                                LoggingAdapter.WriteLog(string.Format("Activation {0}", Status.InActive));
+                                SearchMember lobjSearchMember = new SearchMember();
+                                lobjSearchMember.UniquerefID = lobjMemberDetails.Email;
+                                lobjSearchMember.ProgramId = lobjMemberDetails.ProgramId;
+                                lobjSearchMember.RelationType = Convert.ToInt32(RelationType.LBMS);
+                                lobjSearchMember.Password = lobjMemberDetails.MemberRelationsList.Find(x => x.RelationType.Equals(RelationType.LBMS)).WebPassword.Trim().ToUpper();
+                                bool lblStatus = lobjModel.ActivateAccount(lobjSearchMember);
+                                LoggingAdapter.WriteLog(string.Format("ExtSSO Activation{0}", lblStatus));
+                                if (lblStatus)
+                                {
+                                    Session["MemberDetails"] = lobjMemberDetails;
+                                    if (!string.IsNullOrEmpty(strActivationPointsAwarding) && strActivationPointsAwarding.ToUpper().ToString() == "YES")
+                                    {
+                                        TransactionDetails transactionDetails = new TransactionDetails()
+                                        {
+                                            TransactionType = (TransactionType)1,
+                                            RelationReference = lobjMemberDetails.MemberRelationsList[0].RelationReference,
+                                            Amounts = 0,
+                                            Points = Convert.ToInt32(strActivationPoints),
+                                            LoyaltyTxnType = (LoyaltyTxnType)2,
+                                            ProgramId = lobjProgramDefinition.ProgramId,
+                                            TransactionCurrency = "DEFAULT",
+                                            RelationType = RelationType.LBMS,
+                                            TransactionDate = DateTime.Now,
+                                            ProcessingDate = DateTime.Now,
+                                            ExpiryDate = DateTime.Now.AddMonths(strActivationPointsExpiry),
+                                            ReconciledPoints = 0,
+                                            ReconciledType = 1,
+                                            Narration = "Bonus Points",
+                                            MerchantName = "Activation Bonus Points",
+                                            ExternalReference = "",
+                                            AdditionalDetail = "",
+                                            AdditionalDetails1 = ""
+                                        };
+                                        TransactionDetailsBreakage transactionDetailsBreakage = new TransactionDetailsBreakage()
+                                        {
+                                            IsBillable = true,
+                                            SourceAmount = 0,
+                                            SourceCurrency = "",
+                                            TxnCurrency = "",
+                                            TransactionSource = ""
+                                        };
+                                        transactionDetails.TransactionDetailBreakage = transactionDetailsBreakage;
+                                        bool response = lobjModel.InsertManualTransactionDetails(transactionDetails, lstrToken);
+
+                                        LoggingAdapter.WriteLog("ExtSSO_oAuth - Activation Bonus Awarded : " + response);
+                                    }
+                                    Response.Redirect(LoginRedirectionUrl, false);
+                                }
+                                else
+                                {
+                                    lstrMessage = "Invalid Request.";
+                                    lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
+                                    LoggingAdapter.WriteLog("ExtSSO_oAuth - Member Validation: FALSE");
+                                    divErrorMsg.Style.Add("Display", "Block");
+                                    lblMessage.Text = lstrMessage;
+                                }
                             }
                         }
                         else
@@ -148,11 +180,11 @@ public partial class ExtSSO : Page
                     }
                     else
                     {
-                        lstrMessage = "Invalid Request.";
+                        lstrMessage = "Incorrect member details.";
                         lobjModel.LogActivity(string.Format("ExtSSO_oAuth; ErrorMsg {0}", lstrMessage), ActivityType.loginFail);
+                        LoggingAdapter.WriteLog("ExtSSO_oAuth - Member Validation: FALSE");
                         divErrorMsg.Style.Add("Display", "Block");
                         lblMessage.Text = lstrMessage;
-                        LoggingAdapter.WriteLog("ExtSSO_oAuth - Decrypte Data: NULL");
                     }
                 }
                 catch (Exception ex)

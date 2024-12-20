@@ -3,7 +3,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <script src="Jquery/Validation.js" type="text/javascript"></script>
-   <%-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--%>
+    <%-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--%>
+    <script type="text/javascript">
+        $("#CP_txtOTP").bind('keypress', function (e) {
+            return (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) ? false : true;
+        });
+    </script>
     <style>
         #dvHeroSlider, .dvRedemptionMenu, #sitemap, .dvInnerBanner {
             display: none;
@@ -16,39 +21,7 @@
             margin-bottom: 10px;
         }
     </style>
-    <script>
-        $(document).ready(function () {
-            function generateCaptcha() {
-                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-                let captcha = '';
-                for (let i = 0; i < 6; i++) {
-                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
-                }
-                return captcha;
-            }
 
-            function refreshCaptcha() {
-                const captcha = generateCaptcha();
-                $('#captcha-container').text(captcha);
-                return captcha;
-            }
-
-            let currentCaptcha = refreshCaptcha();
-
-            $('#captcha-form').on('submit', function (event) {
-                event.preventDefault();
-                const userInput = $('#captcha-input').val();
-                if (userInput === currentCaptcha) {
-                    alert('CAPTCHA validated successfully!');
-                    currentCaptcha = refreshCaptcha();
-                    $('#captcha-input').val('');
-                    $('#captcha-error').hide();
-                } else {
-                    $('#captcha-error').show();
-                }
-            });
-        });
-    </script>
     <div class="dvBreadcrumbs">
         <div class="container-xl">
             <nav>
@@ -78,7 +51,7 @@
                                 <asp:Label runat="server" ID="lblLoginError" Text="" CssClass="mt-3 h7 text-danger"></asp:Label>
                                 <div id="LoginValidation" class="h7 text-danger"></div>
                             </div>
-                            <div class="col-12 mb-3" id="divLogin">
+                            <%--<div class="col-12 mb-3" id="divLogin">
                                 <div class="row">
                                     <div class="col-12 mb-3">
                                         <label class="label">ID</label>
@@ -97,29 +70,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <%--    <div class="col-12 mb-3">
-                                        <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server" ChildrenAsTriggers="false">
-                                            <ContentTemplate>
-                                                <div class="d-inline-block">
-                                                    <asp:Image ID="ImgCaptcha" runat="server" ImageUrl="~/captcha.ashx" CssClass="" />
-                                                </div>
-                                                <div class="d-inline-block mt-3 mt-md-0">
-                                                    <asp:LinkButton ID="lnkBtnRefresh" runat="server" OnClick="lnkBtnRefresh_Click" CssClass="btn btn-one">Refresh</asp:LinkButton>
-                                                </div>
-                                            </ContentTemplate>
-                                            <Triggers>
-                                                <asp:AsyncPostBackTrigger ControlID="lnkBtnRefresh" />
-                                            </Triggers>
-                                        </asp:UpdatePanel>
-                                    </div>
-                                <div class="col-12 mb-3">
-                                        <label class="label">Captcha:</label>
-                                        <div class="input-group">
-                                            <asp:TextBox ID="txtSecurityCode" autocomplete="off" runat="server" CssClass="form-control"></asp:TextBox>
-                                            <p id="captcha-error" style="color: red; display: none;">Incorrect CAPTCHA. Please try again.</p>
-
-                                        </div>
-                                    </div>--%>
+                                    
                                     <div class="col-12 mb-3 valignM dvLabel">
                                         <label class="checkbox-container d-flex">
                                             <span class="d-inline-block ml-1">
@@ -142,6 +93,93 @@
                                             <div>
                                                 <asp:LinkButton ID="FormLinkActiveMembership" CssClass="heading-semibold link1" CausesValidation="false" runat="server"
                                                     OnClientClick="var retvalue = redirectLocation('Activation.aspx'); event.returnValue= retvalue; return retvalue;">Activate Membership</asp:LinkButton>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>--%>
+                            <div class="col-12">
+                                <div id="divActivationDetails">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <label class="label">CIF</label>
+                                                    <div class="dvInput input-group">
+                                                        <asp:TextBox ID="txtMemberId" autocomplete="off" runat="server" CssClass="form-control" onkeypress="var retValue = ActivationOTPOnEnter(event); event.returnValue = retValue; return retValue;"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <input type="button" class="btn btn-one w-100" value="Continue" onclick="var varReturn = ActivationOTPValidation(); event.returnValue = varReturn; (event.preventDefault) ? event.preventDefault() : event.returnValue = false; return varReturn;" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="divActivationOTP" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <div class="row">
+                                                <div class="col-12 mb-3">
+                                                    <label class="label">OTP:</label>
+                                                    <div class="input-group">
+                                                        <asp:TextBox ID="txtOTP" runat="server" autocomplete="off" CssClass="form-control" TextMode="Password" MaxLength="4"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 mb-3 valignM dvLabel">
+                                                    <label class="checkbox-container d-flex">
+                                                        <span class="d-inline-block ml-1">
+                                                            <input id="chkRememberMe" runat="server" type="checkbox" />
+                                                            <span class="h6 heading-regular text-colour7">Remember me on this computer.</span>
+                                                            <span class="checkmark"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>                                               
+                                              <%--  <div class="col-12">
+                                                    <div class="d-flex flex-wrap justify-content-between">
+                                                        <div class="mb-2 mb-sm-0">
+                                                            <asp:LinkButton ID="FormLinkPassword" CausesValidation="false" CssClass="heading-semibold link1"
+                                                                runat="server" OnClientClick="var retvalue = redirectLocation('ForgotPassword.aspx'); event.returnValue= retvalue; return retvalue;">Forgot Password</asp:LinkButton>
+                                                        </div>
+                                                    </div>
+                                                </div>--%>
+
+                                                <div class="col-12 mb-3 valignM dvLabel">
+                                                    <label class="checkbox-container d-flex">
+                                                        <span class="d-inline-block ml-1">
+                                                            <input id="chkTnC" runat="server" type="checkbox" />
+                                                            <span>Please accept </span><a class="link1" href="\TermsAndConditions.aspx" target="_blank">Terms and Conditions</a>
+                                                            <span class="checkmark"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="col-12">
+                                                    <asp:Button ID="BtnActivationValidation" runat="server" CssClass="btn btn-one w-100" OnClick="BtnLoginValidation_Click" Text="Continue" OnClientClick="if (!ActivationValidationCodeBehind()) { return false;};" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="divMsg" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <div>
+                                                <p class="h7 text-colour7">
+                                                    1. Please enter One Time Password (OTP) that has been sent to your registered email and mobile number.
+                                                </p>
+                                                <p class="h7 text-colour7">
+                                                    2. Create a new permanent password of your choice to access your account in the future.
+                                                </p>
+                                                <p class="h7 text-colour7">Your Password Should be:</p>
+                                                <ul class="mx-3">
+                                                    <li class="h7 text-colour7">Minimum 8 characters in length</li>
+                                                    <li class="h7 text-colour7">Should contain at least one capital case character</li>
+                                                    <li class="h7 text-colour7">Should contain at least one small character</li>
+                                                    <li class="h7 text-colour7">Should contain at least one special character (@#$%&*) </li>
+                                                    <li class="h7 text-colour7">Should contain at least one numeric digit.</li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>

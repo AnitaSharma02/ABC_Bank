@@ -176,7 +176,7 @@
                                 </div>
                             </div>
 
-                            <div class="card mb-3">
+                            <%--<div class="card mb-3">
                                 <div class="card-header p-0">
                                     <h2 class="mb-0">
                                         <button
@@ -251,8 +251,7 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-sm-8 mb-3">
-                                                                    <%--<button style="margin-bottom: 1px" class="btn btn-one" type="button" OnClientClick="var retValue = ChangePassword(); event.returnValue = retValue;return retValue;">Save & Continue</button>--%>
-                                                                    <asp:Button runat="server" ID="Button1" OnClientClick="var retValue = ChangePassword(); event.returnValue = retValue;return retValue;" CssClass="btn btn-one" Text="Save & Continue" />
+                                                                   <asp:Button runat="server" ID="Button1" OnClientClick="var retValue = ChangePassword(); event.returnValue = retValue;return retValue;" CssClass="btn btn-one" Text="Save & Continue" />
                                                                 </div>
                                                                 <div id="ChangePasswordValidation" class="pl-3 text-danger">
                                                                 </div>
@@ -277,7 +276,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
 
                         </div>
                     </div>
