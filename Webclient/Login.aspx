@@ -108,6 +108,7 @@
                                                     <div class="dvInput input-group">
                                                         <asp:TextBox ID="txtMemberId" autocomplete="off" runat="server" CssClass="form-control" onkeypress="var retValue = ActivationOTPOnEnter(event); event.returnValue = retValue; return retValue;"></asp:TextBox>
                                                     </div>
+                                                    <p class="h7">Your CIF is a seven-digit code and is part of your account number <span style="letter-spacing: 1px;">009999<u class="text-danger h7 text-decoration-underline">9999999</u>99</span></p>
                                                 </div>
                                             </div>
                                         </div>
