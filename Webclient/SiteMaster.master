@@ -559,7 +559,8 @@
     </div>
 
 
-
+    <script src="\Jquery/DomPurify.js" type="text/javascript"></script>
+    <script src="\Jquery/Sanitization.js" type="text/javascript" defer></script>
     <%--<script src="\Jquery/i18n/i18n.custom.js" type="text/javascript" defer></script>--%>
 </body>
 </html>
