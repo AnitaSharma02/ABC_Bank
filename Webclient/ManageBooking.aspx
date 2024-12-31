@@ -95,11 +95,11 @@
                 <div class="col-12 text-center">
                     <h2 class="h1 heading-semibold text-colour1" id="lblMemberName">
                         <span class="">Welcome,</span>
-                        <span class="ml-2" id="spnMemberName"></span>
+                        <span id="spnMemberName"></span>
                     </h2>
                     <h2 class="h5 heading-bold text-colour1 mt-2 mb-3">
                         <span id="totAvbPointDiv">Total Points</span>
-                        <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-colour1">0</span>
+                        <span id="spnMemberCurrentBal" class="heading-bold text-colour1">0</span>
                     </h2>
                     <a
                         href="Index.aspx"

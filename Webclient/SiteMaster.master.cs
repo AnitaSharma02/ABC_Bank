@@ -24,7 +24,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
                 mob_liLogout.Visible = true;
                 mob_lnkLogin.Visible = false;
                 mob_lnkRegister.Visible = false;
-                lblMemberName.Text = "<span>" + lobjMemberDetails.FullName + "</span>";
+                lblMemberName.Text = "<span class='uName'>" + lobjMemberDetails.FullName + "</span>";
                 if (!string.IsNullOrEmpty(Convert.ToString(HttpContext.Current.Session["FromSSOLogin"]))
                     && Convert.ToString(HttpContext.Current.Session["FromSSOLogin"]) == "1")
                 {
