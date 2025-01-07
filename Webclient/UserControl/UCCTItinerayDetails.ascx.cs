@@ -52,6 +52,10 @@ public partial class UserControl_UCItinerayDetails : System.Web.UI.UserControl
                 rptPassanger.DataBind();
             }
         }
+        Session.Remove("FlightBooked");
+        Session.Remove("ReviewFlightDetails");
+        Session.Remove("RetriveBookingInfo");
+
     }
 
     protected void rptArrival_ItemDataBound(object sender, RepeaterItemEventArgs e)
