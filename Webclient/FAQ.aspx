@@ -124,15 +124,15 @@
                                     <p class="mb-3">Yes, you can. Although, you will have to check with the hotel directly for such requests and book online.</p>
 
                                     <p class="heading-semibold text-colour7">I did not get an email confirmation. What do I do?</p>
-                                    <p class="mb-3">
+                                    <p class="">
                                         If you do not receive a confirmation e-mail from us, there is a possibility that an improper e-mail address was registered in our records, or your Internet Service Provider blocked the e-mail as a ‘spam’ in which case we suggest you check the address and your spam folder. You can also contact us by sending an e-mail at infinity@abcbanking.mu or calling ABC Banking Corporation’s Customer Support. It is important at the time of contacting us that you convey information on:
                                     </p>
-                                    <ul>
-                                        <li>Name against which reservation was made</li>
-                                        <li>Location (city) and name of the hotel</li>
-                                        <li>Dates of check-in / check-out</li>
-                                        <li>CIF Number</li>
-                                    </ul>
+                                    <ul class="mb-3">
+     <li><p>Name against which reservation was made</p></li>
+     <li><p>Location (city) and name of the hotel</p></li>
+     <li><p>Dates of check-in / check-out</p></li>
+     <li><p>CIF Number</p></li>
+ </ul>
 
                                     <p class="heading-semibold text-colour7">I am arriving late; will the hotel hold my room until I arrive?</p>
                                     <p class="mb-3">Yes, the hotel will hold your room booking until 7 am the day after your planned arrival date, as your reservation is a confirmed booking. However, please check with the hotel for details.</p>
