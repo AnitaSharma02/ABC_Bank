@@ -194,7 +194,7 @@
                                 </div>
                                 <div class="col-10 col-sm-11">
                                     <h2 class="heading5 mb-2">How do I accumulate points?</h2>
-                                    <p>Earn points with every transaction made through the bank. Start accumulating rewards with every interaction!</p>
+                                    <p>Earn points with every transaction made with your credit card. Start accumulating rewards with every interaction!</p>
                                 </div>
                             </div>
                             <div class="row mb-3">
