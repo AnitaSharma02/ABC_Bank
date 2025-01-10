@@ -8,6 +8,14 @@
         #sitemap {
             display: none;
         }
+               .dvPrivacyPolicy .dvBgHeader {
+       background-color: var(--colour1);
+       color:var(--colour6);
+       }
+
+        .dvPrivacyPolicy ul li {
+    color: var(--paragraph-colour);
+}
     </style>
     <div class="dvBreadcrumbs">
         <div class="container-xl">
@@ -35,11 +43,11 @@
                     <p class="mb-3">
                         Definitions of the technical terms we have used in this document are set out below:
                     </p>
-                    <ul class="mb-3">
-                        <li><strong>Data Subject (Individual)</strong> means an identified or identifiable individual, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that individual.</li>
-                        <li><strong>Personal Data</strong> means any information relating to a data subject.</li>
-                        <li><strong>Processing</strong> means an operation or set of operations performed on personal data or sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction.</li>
-                    </ul>
+                    <ul class="mb-3 px-0" style="list-style:none">
+     <li><p class="heading-semibold text-colour7">Data Subject (Individual)</p> <p> means an identified or identifiable individual, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that individual.</p></li>
+     <li><p class="heading-semibold text-colour7">Personal Data</p> <p>means any information relating to a data subject.</p></li>
+     <li><p class="heading-semibold text-colour7">Processing</p> <p>means an operation or set of operations performed on personal data or sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction.</p></li>
+ </ul>
 
                     <p class="mb-3">
                         ABC Banking Corporation Ltd is a registered controller and processes personal data in accordance with the Data Protection Act 2017.
@@ -85,19 +93,18 @@
                     <p class="mb-3">
                         In accordance to the Data Protection Act 2017, you have certain rights relating to the personal data being processed by the bank. These rights are set out below.
                     </p>
-                    <ul class="mb-3">
+                     <ul class="mb-3 px-0" style="list-style:none">
+     <li>
+         <p class="heading-semibold text-colour7">Right to withdraw consent at any time</p> 
+         <p class="mb-3">Where personal data is processed on the basis of express consent, such consent may be withdrawn at any time. The withdrawal of consent will not affect the lawfulness of any processing done by the bank prior to such withdrawal.</p>
+         <p class="mb-3">Please note that withdrawal of consent may result in the bank not being able to provide certain services or enter into a contractual relationship with you.</p>
+     </li>
                         <li>
-                            <strong>Right to withdraw consent at any time</strong> 
-                            <p class="mb-3">Where personal data is processed on the basis of express consent, such consent may be withdrawn at any time. The withdrawal of consent will not affect the lawfulness of any processing done by the bank prior to such withdrawal.</p>
-                            <p class="mb-3">Please note that withdrawal of consent may result in the bank not being able to provide certain services or enter into a contractual relationship with you.</p>
+                                                        <p class="heading-semibold text-colour7">Right of access</p>
+
                         </li>
                         <li>
-                            <strong>Right of access</strong>
-                            <p class="mb-3"></p>
-                            <p class="mb-3"></p>
-                        </li>
-                        <li>
-                            <strong></strong>
+                           
                             <p class="mb-3">
                                 You may request a copy of the personal data held. Such request to be made in writing to the bank’s Data Protection Officer.
                             </p>
@@ -106,7 +113,8 @@
                             </p>
                         </li>
                         <li>
-                            <strong>Rectification, erasure or restriction of processing</strong>
+                                                        <p class="heading-semibold text-colour7">Rectification, erasure or restriction of processing</p>
+
                             <p class="mb-3">
                                 You may also, at any time, request:
                             </p>
@@ -124,13 +132,14 @@
                             </p>
                         </li>
                         <li>
-                            <strong>Right to object</strong>
+                                                     <p class="heading-semibold text-colour7">Right to object</p>
+
                             <p class="mb-3">
                                 You have the right to object to the processing of his/her personal data at any time. Upon receiving such objection, the bank shall stop processing the personal data, except where there are compelling legitimate grounds to continue such processing;
                             </p>
                         </li>
                         <li>
-                            <strong>Right to lodge a complaint</strong>
+                            <p class="heading-semibold text-colour7">Right to lodge a complaint</p>
                             <p class="mb-3">
                                 If you feel that the bank has not processed your personal data lawfully, the Data Protection Officer of the bank shall be contacted for lodging of a complaint.
                             </p>
@@ -155,258 +164,170 @@
                         The bank is bound by law to notify the Data Protection Office of any breach within 72 hours after becoming aware. Further, where a breach is likely to put your rights and freedoms at risk, the Bank has the obligation to notify you directly.
                     </p>
 
-                    <h2 class="heading6 mb-2">Information Table</h2>
-                    <div class="row mb-3">
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border bg-colour1 h-100 w-100 p-3">
-                                <p class="heading6 text-colour6">Controller</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border bg-colour1 h-100 w-100 p-3">
-                                <p class="heading6 text-colour6">ABC Banking Corporation Ltd</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Contact details</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p><strong>Address: </strong>WEAL House, Duke of Edinburgh Avenue, Place d’Armes, 11328, Port Louis, Mauritius.</p>
-                                <p><strong>Telephone number: </strong>(230) 206 8020</p>
-                                <p><strong>Fax number: </strong>(230) 208 0088</p>
-                                <p><strong>Email address: </strong><a class="text-break" href="mailto:mahesh.ittoo@abcbanking.mu">mahesh.ittoo@abcbanking.mu</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Data Protection Officer</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Mr Mahesh Ittoo</p>
-                                <p>Contact details are the same as above.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>The categories of personal data collected (including the special categories of personal data)</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Please refer to Appendix A below.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Services</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>The bank is involved in the following businesses:</p>
-                                <ul>
-                                    <li>Banking Business; and </li>
-                                    <li>Leasing;</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Transfer of personal data to another country</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Whenever personal data is transferred to other countries, the recipients of such personal data shall comply with all applicable data protection laws and principles.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <h2 class="heading6 mb-2">Appendix A – Categories of personal data held</h2>
-                    <div class="row mb-3">
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border bg-colour1 h-100 w-100 p-3">
-                                <p class="heading6 text-colour6">Categories of personal data</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border bg-colour1 h-100 w-100 p-3">
-                                <p class="heading6 text-colour6">Examples</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Identity</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <ul>
-                                    <li>First name</li>
-                                    <li>Maiden name</li>
-                                    <li>Last name</li>
-                                    <li>Username or similar identifier</li>
-                                    <li>Marital status</li>
-                                    <li>Job title</li>
-                                    <li>Date of birth</li>
-                                    <li>Gender</li>
-                                    <li>Signature (handwritten or electronic)</li>
-                                    <li>National Identity Card information</li>
-                                    <li>Passport Information</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Contact details</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <ul>
-                                    <li>Email Address</li>
-                                    <li>Telephone numbers</li>
-                                    <li>Fax numbers</li>
-                                    <li>Address</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Financial</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <ul>
-                                    <li>Tax Identification Number</li>
-                                    <li>Transactional information on accounts/dealings/activities, inter- alia, incomer, assets & liabilities.</li>
-                                    <li>Source of wealth information</li>
-                                    <li>Banking details</li>
-                                    <li>Telephone conversations confirming transactions</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Transactional</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <ul>
-                                    <li>Inward and Outward Payments</li>
-                                    <li>Services/goods purchase history</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Mandatory info</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <ul>
-                                    <li>Information about beneficial owners, /ultimate beneficial owners, intermediaries and other parties, which is required by law</li>
-                                    <li>Information about third-parties such as spouse, with respect to certain products & services, where this information is required by law</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Technical</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <ul>
-                                    <li>Internet Protocol (IP) address</li>
-                                    <li>Login data</li>
-                                    <li>Browser type and version</li>
-                                    <li>Time zone setting and location</li>
-                                    <li>Browser plug-in types and versions</li>
-                                    <li>Operating system and platform</li>
-                                    <li>Traffic data</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Usage</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <ul>
-                                    <li>Information about usage of website and service.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Additional information collected if relationship with the Bank is an HR-related one (solicitation, recruitment or employment)</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <ul>
-                                    <li>Qualifications</li>
-                                    <li>CVs</li>
-                                    <li>Records of past employment</li>
-                                    <li>Employment records, including remuneration details, attendance records, performance-related information</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Special categories of personal data</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <ul>
-                                    <li>Biometric data, if a face recognition-based access systems is operated</li>
-                                    <li>Criminal records, including certificate of character (for HR purposes and to meet obligations towards the Bank of Mauritius)</li>
-                                    <li>Trade union membership records (if an employee)</li>
-                                    <li>Health records with respect to Employee Medical Insurance</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 col-sm-3 col-6 pr-0">
-                            <div class="border h-100 w-100 p-3">
-                                <p>Others</p>
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-sm-9 col-6 pl-0">
-                            <div class="border h-100 w-100 p-3">
-                                <ul>
-                                    <li>Photographs</li>
-                                    <li>Videos, including where CCTV surveillance systems are operated</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                                       <h2 class="heading6 mb-2">Information Table</h2>
+                    <div class="table-responsive">
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th  class="dvBgHeader p-3 heading6">Controller</th>
+      <td  class="dvBgHeader p-3 heading6">ABC Banking Corporation Ltd</td>
+    </tr>
+    <tr>
+      <th><p class="heading-semibold text-colour7">Contact Details</p></th>
+      <td>
+        <p class="heading-semibold text-colour7">Address:</p> <p>WEAL House, Duke of Edinburgh Avenue, Place d’Armes, 11328, Port Louis, Mauritius.</p>
+        <p class="heading-semibold text-colour7">Telephone Number:</p><p> (230) 206 8020</p>
+        <p class="heading-semibold text-colour7">Fax Number:</p><p> (230) 208 0088</p>
+        <p class="heading-semibold text-colour7">Email Address:</p> <a href="mailto:mahesh.ittoo@abcbanking.mu">mahesh.ittoo@abcbanking.mu</a>
+      </td>
+    </tr>
+    <tr>
+      <th><p class="heading-semibold text-colour7">Data Protection Officer</p></th>
+      <td><p>Mr Mahesh Ittoo<br>Contact details are the same as above.</p></td>
+    </tr>
+    <tr>
+      <th><p class="heading-semibold text-colour7">The categories of personal data collected (including the special categories of personal data)</p></th>
+      <td><p>Please refer to Appendix A below.</p></td>
+    </tr>
+    <tr>
+      <th><p class="heading-semibold text-colour7">Services</p></th>
+      <td>
+        <p>The bank is involved in the following businesses:</p>
+        <ul>
+          <li><p>Banking Business</p></li>
+          <li><p>Leasing</p></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th><p class="heading-semibold text-colour7">Transfer of personal data to another country</p></th>
+      <td>
+       <p> Whenever personal data is transferred to other countries, the recipients of such personal data shall comply with all applicable data protection laws and principles.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h2 class="heading6 mb-2">Appendix A – Categories of personal data held</h2>
+                    <div class="table-responsive">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class="p-3 dvBgHeader heading6">Categories of Personal Data</th>
+      <th  class="p-3 dvBgHeader heading6">Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="heading-semibold text-colour7">Identity</td>
+      <td>
+        <ul>
+          <li>First name</li>
+          <li>Maiden name</li>
+          <li>Last name</li>
+          <li>Username or similar identifier</li>
+          <li>Marital status</li>
+          <li>Job title</li>
+          <li>Date of birth</li>
+          <li>Gender</li>
+          <li>Signature (handwritten or electronic)</li>
+          <li>National Identity Card information</li>
+          <li>Passport Information</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="heading-semibold text-colour7">Contact Details</td>
+      <td>
+        <ul>
+          <li>Email Address</li>
+          <li>Telephone numbers</li>
+          <li>Fax numbers</li>
+          <li>Address</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="heading-semibold text-colour7">Financial</td>
+      <td>
+        <ul>
+          <li>Tax Identification Number</li>
+          <li>Transactional information on accounts/dealings/activities</li>
+          <li>Source of wealth information</li>
+          <li>Banking details</li>
+          <li>Telephone conversations confirming transactions</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="heading-semibold text-colour7">Transactional</td>
+      <td>
+        <ul>
+          <li>Inward and Outward Payments</li>
+          <li>Services/goods purchase history</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="heading-semibold text-colour7">Mandatory Info</td>
+      <td>
+        <ul>
+          <li>Information about beneficial owners or intermediaries</li>
+          <li>Information about third parties such as spouse, where required by law</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="heading-semibold text-colour7">Technical</td>
+      <td>
+        <ul>
+          <li>Internet Protocol (IP) address</li>
+          <li>Login data</li>
+          <li>Browser type and version</li>
+          <li>Time zone setting and location</li>
+          <li>Browser plug-in types and versions</li>
+          <li>Operating system and platform</li>
+          <li>Traffic data</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="heading-semibold text-colour7">Usage</td>
+      <td><p>Information about usage of website and service.</p></td>
+    </tr>
+    <tr>
+      <td class="heading-semibold text-colour7">HR-Related Information</td>
+      <td>
+        <ul>
+          <li>Qualifications</li>
+          <li>CVs</li>
+          <li>Records of past employment</li>
+          <li>Employment records, including remuneration details, attendance records, performance-related information</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="heading-semibold text-colour7">Special Categories of Personal Data</td>
+      <td>
+        <ul>
+          <li>Biometric data</li>
+          <li>Criminal records</li>
+          <li>Trade union membership records</li>
+          <li>Health records with respect to Employee Medical Insurance</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="heading-semibold text-colour7">Others</td>
+      <td>
+        <ul>
+          <li>Photographs</li>
+          <li>Videos, including where CCTV surveillance systems are operated</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
                 </div>
             </div>
         </div>
