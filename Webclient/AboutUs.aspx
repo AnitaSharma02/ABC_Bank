@@ -57,39 +57,39 @@
 
                             <div id="collapse1" class="collapse show" data-parent="#static-accordion">
                                 <div class="card-body">
-                                    <ul>
-                                        <li class="mx-3">
-                                            <strong>No Limitations:</strong> With Infinity Rewards, you won't be 
-                                            restricted to one airline or one departure point. Redeem your tickets online and directly 
-                                            from more than 900 airlines around the world, including low-cost carriers such 
-                                            as flydubai, Air Arabia, Ryanair, and more.</li>
-                                        <li class="mx-3">
-                                            <strong>No Blocked Dates:</strong> There are no dates where reservations 
-                                            are not allowed. You can book and travel on any date you choose.
-                                        </li>
-                                        <li class="mx-3">
-                                            <strong>No Restrictions:</strong> Whether you're in any city, you can redeem your bank 
-                                            reward points for a flight ticket, such as from London to Paris, for yourself, your family,
-                                            or friends. The flexibility allows you to book tickets without limitations, making
-                                            travel more convenient and rewarding.
-                                        </li>
-                                        <li class="mx-3">
-                                            <strong>Convenience:</strong> Easily register and book from the comfort of your home 
-                                            or office.
-                                        </li>
-                                        <li class="mx-3">
-                                            <strong>Double Benefits:</strong> Earn extra miles through airline programs while using
-                                            your Infinity Rewards points to book tickets, maximizing your rewards.
-                                        </li>
-                                        <li class="mx-3">
-                                            <strong>Global Hotel Options:</strong> Choose from over 450,000 hotels worldwide for 
-                                            your stay.
-                                        </li>
-                                        <li class="mx-3">
-                                            <strong>Instant Booking:</strong> Secure your travel plans immediately with just the 
-                                            touch of a button.
-                                        </li>
-                                    </ul>
+                                   <ul class="px-0" style="list-style:none">
+     <li class="mb-3">
+         <p class="heading-semibold text-colour7">No Limitations:</p><p> With Infinity Rewards, you won't be 
+         restricted to one airline or one departure point. Redeem your tickets online and directly 
+         from more than 900 airlines around the world, including low-cost carriers such 
+         as flydubai, Air Arabia, Ryanair, and more.</p></li>
+     <li class="mb-3">
+         <p class="heading-semibold text-colour7">No Blocked Dates:</p><p> There are no dates where reservations 
+         are not allowed. You can book and travel on any date you choose.</p>
+     </li>
+     <li class="mb-3">
+         <p class="heading-semibold text-colour7">No Restrictions:</p><p> Whether you're in any city, you can redeem your bank 
+         reward points for a flight ticket, such as from London to Paris, for yourself, your family,
+         or friends. The flexibility allows you to book tickets without limitations, making
+         travel more convenient and rewarding.</p>
+     </li>
+     <li class="mb-3">
+         <p class="heading-semibold text-colour7">Convenience:</p> <p>Easily register and book from the comfort of your home 
+         or office.</p>
+     </li>
+     <li class="mb-3">
+         <p class="heading-semibold text-colour7">Double Benefits:</p><p> Earn extra miles through airline programs while using
+         your Infinity Rewards points to book tickets, maximizing your rewards.</p>
+     </li>
+     <li class="mb-3">
+         <p class="heading-semibold text-colour7">Global Hotel Options:</p> <p>Choose from over 450,000 hotels worldwide for 
+         your stay.</p>
+     </li>
+     <li class="mb-3">
+         <p class="heading-semibold text-colour7">Instant Booking:</p> <p>Secure your travel plans immediately with just the 
+         touch of a button.</p>
+     </li>
+ </ul>
                                 </div>
                             </div>
 
@@ -112,16 +112,16 @@
 
                             <div id="collapse2" class="collapse" data-parent="#static-accordion">
                                 <div class="card-body">
-                                    <ul>
-                                        <li class="mx-3">
-                                            <strong>Global Car Rental Access:</strong> Choose from over 150,000 car rental 
-                                            partners worldwide for your convenience.
-                                        </li>
-                                        <li class="mx-3">
-                                            <strong>Instant Booking & Confirmation:</strong> Secure your rental car with 
-                                            immediate booking and confirmation for a hassle-free experience.
-                                        </li>
-                                    </ul>
+                                   <ul class="px-0" style="list-style:none">
+    <li class="mb-3">
+        <p class="heading-semibold text-colour7">Global Car Rental Access:</p> <p>Choose from over 150,000 car rental 
+        partners worldwide for your convenience.</p>
+    </li>
+    <li class="mb-3">
+        <p class="heading-semibold text-colour7">Instant Booking & Confirmation:</p><p> Secure your rental car with 
+        immediate booking and confirmation for a hassle-free experience.</p>
+    </li>
+</ul>
                                 </div>
                             </div>
                         </div>
@@ -143,23 +143,23 @@
 
                             <div id="collapse3" class="collapse" data-parent="#static-accordion">
                                 <div class="card-body">
-                                    <ul>
-                                        <li class="mx-3">
-                                            <strong>Wide Product Selection:</strong> Access thousands of products and appliances through the online store, including electronics, books, sports equipment, and household items.
-                                        </li>
-                                        <li class="mx-3">
-                                            <strong>Instant Booking & Confirmation:</strong> Enjoy immediate booking and confirmation for a seamless shopping experience.
-                                        </li>
-                                        <li class="mx-3">
-                                            <strong>24/7 Online Shopping:</strong> Browse and purchase products at any time, from anywhere.
-                                        </li>
-                                        <li class="mx-3">
-                                            <strong>Top International Brands:</strong> Choose from renowned global brands such as Apple, Sony, Samsung, Toshiba, and more.
-                                        </li>
-                                        <li class="mx-3">
-                                            <strong>Home Delivery:</strong> Have your purchases delivered directly to your home, anywhere in Mauritius.
-                                        </li>
-                                    </ul>
+                                     <ul class="px-0" style="list-style:none">
+      <li class="mb-3">
+          <p class="heading-semibold text-colour7">Wide Product Selection:</p><p> Access thousands of products and appliances through the online store, including electronics, books, sports equipment, and household items.</p>
+      </li>
+      <li class="mb-3">
+          <p class="heading-semibold text-colour7">Instant Booking & Confirmation:</p><p> Enjoy immediate booking and confirmation for a seamless shopping experience.</p>
+      </li>
+      <li class="mb-3">
+          <p class="heading-semibold text-colour7">24/7 Online Shopping:</p><p> Browse and purchase products at any time, from anywhere.</p>
+      </li>
+      <li class="mb-3">
+          <p class="heading-semibold text-colour7">Top International Brands:</p><p> Choose from renowned global brands such as Apple, Sony, Samsung, Toshiba, and more.</p>
+      </li>
+      <li class="mb-3">
+          <p class="heading-semibold text-colour7">Home Delivery:</p> <p>Have your purchases delivered directly to your home, anywhere in Mauritius.</p>
+      </li>
+  </ul>
                                 </div>
                             </div>
                         </div>
