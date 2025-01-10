@@ -49,31 +49,31 @@
 
                             <div id="collapse1" class="collapse show" data-parent="#static-accordion">
                                 <div class="card-body">
-                                    <ul>
-                                        <li class="mb-3">The displayed total price includes taxes and any applicable airfare. It does not include any applicable baggage fees, airport taxes, or other costs that might need to be paid to the airline or at particular airports. Baggage is not always included in the booked tickets by all airlines or by all fare rules. Additionally, rules might change at any time without warning. To find out more about baggage restrictions, it is best to get in touch with the airline directly or visit its website.</li>
-                                        <li class="mb-3">Before your reservation is confirmed, you must pay the full cost of the ticket in points.</li>
-                                        <li class="mb-3">There will be no refund of points for 'no-shows' (i.e. flights missed for any reason whatsoever) or any partially unused flights.</li>
-                                        <li class="mb-3">For any information regarding your Frequent Flyer miles, please contact the airline directly.</li>
-                                        <li class="mb-3">Please make sure you have a passport that is valid for at least six months, a valid visa, and immigration clearance.</li>
-                                        <li class="mb-3">An infant must be under 24 months old for the duration of the entire itinerary you are booking to qualify for infant fares. This covers both outbound and incoming trips. For the return trip, a separate reservation using a kid fee is required if the infant is 24 months or older.</li>
-                                        <li class="mb-3">Infants must be accompanied by an adult at least 18 years of age. All bookings for flights are powered by GIIFT Management DMCC. However, Gift Management DMCC is not responsible for any schedule change by the airline after issuance of the ticket but will inform you of the same if informed by the airline. It is advisable to reconfirm your flight timings 24 hours before your flight departure.</li>
-                                        <li class="mb-3">Infinity Rewards and GIIFT reserve the right to alter any and all fees from time to time, without any prior notice.</li>
-                                    </ul>
+                                    <ul style="list-style:none" class="px-0">
+     <li class="mb-3"><p>The displayed total price includes taxes and any applicable airfare. It does not include any applicable baggage fees, airport taxes, or other costs that might need to be paid to the airline or at particular airports. Baggage is not always included in the booked tickets by all airlines or by all fare rules. Additionally, rules might change at any time without warning. To find out more about baggage restrictions, it is best to get in touch with the airline directly or visit its website.</p></li>
+     <li class="mb-3"><p>Before your reservation is confirmed, you must pay the full cost of the ticket in points.</p></li>
+     <li class="mb-3"><p>There will be no refund of points for 'no-shows' (i.e. flights missed for any reason whatsoever) or any partially unused flights.</p></li>
+     <li class="mb-3"><p>For any information regarding your Frequent Flyer miles, please contact the airline directly.</p></li>
+     <li class="mb-3"><p>Please make sure you have a passport that is valid for at least six months, a valid visa, and immigration clearance.</p></li>
+     <li class="mb-3"><p>An infant must be under 24 months old for the duration of the entire itinerary you are booking to qualify for infant fares. This covers both outbound and incoming trips. For the return trip, a separate reservation using a kid fee is required if the infant is 24 months or older.</p></li>
+     <li class="mb-3"><p>Infants must be accompanied by an adult at least 18 years of age. All bookings for flights are powered by GIIFT Management DMCC. However, Gift Management DMCC is not responsible for any schedule change by the airline after issuance of the ticket but will inform you of the same if informed by the airline. It is advisable to reconfirm your flight timings 24 hours before your flight departure.</p></li>
+     <li class="mb-3"><p>Infinity Rewards and GIIFT reserve the right to alter any and all fees from time to time, without any prior notice.</p></li>
+ </ul>
 
-                                    <p class="heading6 mb-2">Flight Amendments:</p>
-                                    <ul>
-                                        <li class="mb-3">For any amendments or queries you may email <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>. In some cases, though, you will need to contact the airline directly.</li>
-                                        <li class="mb-3">Every booking made on the Infinity Rewards platform is subject to amendment charges levied by the airline, which may vary by flight and booking class.</li>
-                                        <li class="mb-3">If you amend your booking, you will be charged the difference in fare, if any, and applicable when the amendment is made. However, if the new fare is lower than the original fare, the difference in the fare amount will not be refunded. The rebooking charges as applicable will be collected and charged to your Credit/Debit Card or reward points.</li>
-                                        <li class="mb-3">In addition to the airline's amendment charges, Infinity Rewards charges an amendment handling fee of USD 10 equivalent points per passenger. We will collect these charges from you when we make the changes to your travel plans. We will also collect the difference in fare, if any is applicable when the amendment is made.</li>
-                                        <li class="mb-3">Depending on the airline policy, some booked fares may not be amended.</li>
-                                    </ul>
+ <p class="heading-semibold text-colour7 mb-2">Flight Amendments:</p>
+ <ul style="list-style:none" class="px-0">
+     <li class="mb-3"><p>For any amendments or queries you may email <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>. In some cases, though, you will need to contact the airline directly.</p></li>
+     <li class="mb-3"><p>Every booking made on the Infinity Rewards platform is subject to amendment charges levied by the airline, which may vary by flight and booking class.</p></li>
+     <li class="mb-3"><p>If you amend your booking, you will be charged the difference in fare, if any, and applicable when the amendment is made. However, if the new fare is lower than the original fare, the difference in the fare amount will not be refunded. The rebooking charges as applicable will be collected and charged to your Credit/Debit Card or reward points.</p></li>
+     <li class="mb-3"><p>In addition to the airline's amendment charges, Infinity Rewards charges an amendment handling fee of USD 10 equivalent points per passenger. We will collect these charges from you when we make the changes to your travel plans. We will also collect the difference in fare, if any is applicable when the amendment is made.</p></li>
+     <li class="mb-3"><p>Depending on the airline policy, some booked fares may not be amended.</li>
+ </ul>
 
-                                    <p class="heading6 mb-2">Flight Cancellation and Refund Policy:</p>
-                                    <ul>
-                                        <li class="mb-3">For bookings made through the Infinity Rewards platform, cancellations are allowed if the booking qualifies under the refund policy, and then points will be refunded back into your account. For any reasons not initiated by you, i.e. flights being grounded/cancelled/or any other unforeseen circumstances wherein you are denied travel, applicable reward points will be refunded back into your account within 45 working days. This again would be at the discretion of Infinity Rewards.</li>
-                                        <li class="mb-3">For bookings made through the Infinity Rewards platform, no cancellations are allowed. Hence no points will be refunded back into your account.</li>
-                                    </ul>
+ <p class="heading-semibold text-colour7 mb-2">Flight Cancellation and Refund Policy:</p>
+ <ul style="list-style:none" class="px-0">
+     <li class="mb-3"><p>For bookings made through the Infinity Rewards platform, cancellations are allowed if the booking qualifies under the refund policy, and then points will be refunded back into your account. For any reasons not initiated by you, i.e. flights being grounded/cancelled/or any other unforeseen circumstances wherein you are denied travel, applicable reward points will be refunded back into your account within 45 working days. This again would be at the discretion of Infinity Rewards.</p></li>
+     <li class="mb-3"><p>For bookings made through the Infinity Rewards platform, no cancellations are allowed. Hence no points will be refunded back into your account.</p></li>
+ </ul>
                                 </div>
 
                             </div>
