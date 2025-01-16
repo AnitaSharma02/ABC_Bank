@@ -445,7 +445,7 @@
         function GetPointsonQuantityChange(quantity) {
             $.ajax({
                 type: "POST",
-                url: "ProductDetails.aspx/GetPointsonQuantityChange",
+                url: "ProductDetailsEmailer.aspx/GetPointsonQuantityChange",
                 data: "{lintQty:" + quantity + "}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -482,7 +482,7 @@
                 var lintQty = parseInt($('#CP_CPSHOP_quantity').val());
                 $.ajax({
                     type: "POST",
-                    url: "ProductDetails.aspx/AddItemToCart",
+                    url: "ProductDetailsEmailer.aspx/AddItemToCart",
                     data: "{lstrProductId:'" + lstrProductId + "',lintQty:" + lintQty + ",lstrUserInputMetas:''}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
@@ -519,7 +519,7 @@
                 var lintQty = parseInt($('#CP_CPSHOP_quantity').val());
                 $.ajax({
                     type: "POST",
-                    url: "ProductDetails.aspx/CheckoutGenerateOTP",
+                    url: "ProductDetailsEmailer.aspx/CheckoutGenerateOTP",
                     data: "{lstrProductId:'" + lstrProductId + "',lintQty:" + lintQty + ",lstrUserInputMetas:''}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
@@ -693,7 +693,7 @@
                 if (lstrCheckoutType == "normal") {
                     $.ajax({
                         type: "POST",
-                        url: "ProductDetails.aspx/AddItemToCart",
+                        url: "ProductDetailsEmailer.aspx/AddItemToCart",
                         data: "{lstrProductId:'" + lstrProductId + "',lintQty:" + lintQty + ",lstrUserInputMetas:'" + customerData + "'}",
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
@@ -722,7 +722,7 @@
                 else if (lstrCheckoutType == "exp") {
                     $.ajax({
                         type: "POST",
-                        url: "ProductDetails.aspx/CheckoutGenerateOTP",
+                        url: "ProductDetailsEmailer.aspx/CheckoutGenerateOTP",
                         data: "{lstrProductId:'" + lstrProductId + "',lintQty:" + lintQty + ",lstrUserInputMetas:'" + customerData + "'}",
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
@@ -791,7 +791,7 @@
             var quantity = $('#CP_CPSHOP_quantity').val();
             $.ajax({
                 type: "POST",
-                url: "ProductDetails.aspx/BindProductByVariation",
+                url: "ProductDetailsEmailer.aspx/BindProductByVariation",
                 data: "{pstrProductId:'" + lstrProductId + "',pstrCOlor:'" + color + "',pstrSize:'" + size + "',pstrStorage:'" + storage + "',pstrDenomination:'" + denomination + "'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -836,7 +836,7 @@
         function CheckAvailability(amount, quantity) {
             $.ajax({
                 type: "POST",
-                url: "ProductDetails.aspx/CheckAvailability",
+                url: "ProductDetailsEmailer.aspx/CheckAvailability",
                 data: "{pntamount:" + amount + ", pntQuantity:" + quantity + "}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -865,7 +865,7 @@
             var quantity = $('#CP_CPSHOP_quantity').val();
             $.ajax({
                 type: "POST",
-                url: "ProductDetails.aspx/ProductValiditydetails",
+                url: "ProductDetailsEmailer.aspx/ProductValiditydetails",
                 data: "{pstrProductId:'" + ProductId + "'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",

@@ -129,7 +129,7 @@
         function GetProductInfo(uuid) {
             $.ajax({
                 type: 'POST',
-                url: 'ExperienceProductDetails.aspx/GetProductInfo',
+                url: 'ExperienceProductDetailsEmailer.aspx/GetProductInfo',
                 contentType: 'application/json;',
                 dataType: 'json',
                 data: "{uuid:'" + uuid + "'}",
@@ -689,7 +689,7 @@
         function GetProductPriceByDate(uuid) {
             $.ajax({
                 type: 'POST',
-                url: 'ExperienceProductDetails.aspx/GetProductTypesPriceByDate',
+                url: 'ExperienceProductDetailsEmailer.aspx/GetProductTypesPriceByDate',
                 contentType: 'application/json;',
                 dataType: 'json',
                 data: "{date:'" + $('#txtBookingDate').val() + "',uuid:'" + uuid + "'}",
