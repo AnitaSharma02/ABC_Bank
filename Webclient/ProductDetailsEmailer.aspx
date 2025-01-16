@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Product Details" Language="C#" MasterPageFile="SiteShopMaster.master" AutoEventWireup="true" CodeFile="ProductDetailsEmailer.aspx.cs" Inherits="ProductDetails" %>
+﻿<%@ Page Title="Product Details" Language="C#" MasterPageFile="SiteShopMaster.master" AutoEventWireup="true" CodeFile="ProductDetailsEmailer.aspx.cs" Inherits="ProductDetailsEmailer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CPSHOP" runat="Server">
     <link rel="stylesheet" href="\Css/shop.css" />
