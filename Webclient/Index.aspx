@@ -194,7 +194,7 @@
                                 </div>
                                 <div class="col-10 col-sm-11">
                                     <h2 class="heading5 mb-2">How do I accumulate points?</h2>
-                                    <p>Earn points with every transaction made with your credit card. Start accumulating rewards with every interaction!</p>
+                                    <p>Earn points with every transaction made with your credit card.</p>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -212,7 +212,7 @@
                                 </div>
                                 <div class="col-10 col-sm-11">
                                     <h2 class="heading5 mb-2">How long are my points valid for?</h2>
-                                    <p>Your points will remain active for 2 years from the date you earn them. Make sure to redeem them before they expire!</p>
+                                    <p>Your points will remain active for 3 years from the date you earn them. Make sure to redeem them before they expire!</p>
                                 </div>
                             </div>
                             <div class="row mb-3 mb-lg-0">
