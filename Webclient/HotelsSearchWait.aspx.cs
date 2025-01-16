@@ -20,6 +20,7 @@ using IBEAPI.ClientEntities;
 using IBEAPIGateway.Model;
 using System.Configuration;
 using Newtonsoft.Json;
+using RBAC.Platform.Entities;
 
 
 public partial class HotelsSearchWait : System.Web.UI.Page
@@ -62,7 +63,7 @@ public partial class HotelsSearchWait : System.Web.UI.Page
             lobjSearchRequest.Country = HttpUtility.UrlDecode(pstrCity.Split(',')[1].ToString());
             lobjSearchRequest.StarRating = "All";
             lobjSearchRequest.OrderBy = "PriceAsc";
-
+        
             lobjSearchRequest.ResultCount = string.IsNullOrEmpty(Convert.ToString(ConfigurationManager.AppSettings["HotelResultCount"])) ? 500 : Convert.ToInt32(Convert.ToString(ConfigurationManager.AppSettings["HotelResultCount"]));
             LoggingAdapter.WriteLog("GetHotelSearchResponse " + JsonConvert.SerializeObject(lobjSearchRequest));
             HotelSearchResponse lobjHotelSearchResponse = lobjIBEAPIModel.GetHotelSearchResponse(lobjSearchRequest);

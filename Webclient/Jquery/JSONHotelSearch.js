@@ -56,7 +56,7 @@ function uniqueArrayElemets(arrayName) {
     }
     return newArray;
 }
-
+var filterflag = false;
 Array.max = function (array) {
     return Math.max.apply(Math, array);
 };
@@ -86,6 +86,7 @@ $(document).ready(function () {
             $("#priceRange").text(textValue);
         },
         stop: function (event, ui) {
+            filterflag = true;
             filtersData.ShowHideRows();
         }
     });
@@ -138,13 +139,13 @@ $(document).ready(function () {
     var strHtml = "";
     /*Code for */
     if (flag5star == true) {
-        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" value="5" display="5" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
+        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" value="5" display="5" onclick="showImage()" checked="checked"  /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
         strHtml += "5,";
         $("#Chk5").prop('checked', true);
         $("#ChkAll").prop('checked', false);
     }
     if (flag4star == true) {
-        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" value="4" display="4" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
+        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" value="4" display="4" onclick="showImage()" checked="checked"/><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
         strHtml += "4,";
         $("#Chk4").prop('checked', true);
         $("#ChkAll").prop('checked', false);
@@ -179,6 +180,7 @@ $(document).ready(function () {
         $("#Chk5").prop('checked', false);
         $("#hdnRating").val('All');
     }
+   
     $("#hdnRating").val(strHtml);
     $("#priceRange").text(CommaSep(FilterHotelRange.MinPrice.toString()) + "-" + CommaSep(FilterHotelRange.MaxPrice.toString()));
 
@@ -201,6 +203,7 @@ $(document).ready(function () {
     filtersData.ShowHideRows()
 });
 
+
 var filtersData =
 {
     ShowHideRows: function () {
@@ -214,7 +217,7 @@ var filtersData =
                 Location.push(ListOfLocation.eq(count).attr('display'));
             }
         }
-        Location.push("");
+        // Location.push("");
 
         var ListOfChain = [];
         ListOfChain = $("#divHotelChain").find("input[type='checkbox']");
@@ -242,6 +245,7 @@ var filtersData =
                 Ratings.push(ListOfRating.eq(count).attr('display'));
             }
         }
+
         var notAvailableChecked = $("#chkRatingNotAvailble").is(":checked");
         var hotels = $(".hotels").find(".hotelrow");
         var counter = 0;
@@ -264,19 +268,26 @@ var filtersData =
                 if (hotel.basicinfo.hotelratings.HotelRating != null && hotel.basicinfo.hotelratings.HotelRating.length >= 1) {
                     if (hotel.basicinfo.hotelratings.HotelRating[0].rating <= 5) {
                         hasRating = Ratings.contains(parseInt(hotel.basicinfo.hotelratings.HotelRating[0].rating));
+
                     }
                     if (notAvailableChecked && hotel.basicinfo.hotelratings.HotelRating[0].rating > 5) {
                         hasRating = true;
                     }
                 }
                 var hasLocation = false;
-                hasLocation = Location.contains(hotel.basicinfo.locality);
+                if (hotel.basicinfo.locality != "") {
+                    hasLocation = Location.contains(hotel.basicinfo.locality);
+                }
+                else {
+                    hasLocation = true;
+                }
                 var hasChain = false;
                 hasChain = Chains.contains(hotel.basicinfo.chain);
                 if (Chains.contains('None')) {
                     if (hotel.basicinfo.chain == '')
                         hasChain = true;
                 }
+
                 var AmenitiesCategory = hotel.basicinfo.hotelamenities.Amenities;
                 var hasAmenities = false;
 
@@ -294,17 +305,25 @@ var filtersData =
                 }
 
 
-                var result = hasMiles && hasLocation && hasChain && hasRating && hasAmenities;
-                if (result) {
-                    hotels.eq(count).show(); counter++;
+                if (filterflag) {
 
+                    if (hasMiles && hasLocation && hasChain && hasRating && hasAmenities) {
+                        hotels.eq(count).show();
+                        counter++;
+                        TotalHotel = TotalHotel + 1;
+
+                    }
+                    else {
+                        hotels.eq(count).hide(); counter++;
+                    }
+                }
+                else {
+                    // if (hasAmenities) {
+                    hotels.eq(count).show();
                     TotalHotel = TotalHotel + 1;
-                } else {
-                    hotels.eq(count).hide();
-
+                    // }
                 }
 
-                //$("#totalHotel").html('');
                 $("#DivTotalHotel").html('');
                 //$("#totalHotel").html("<span> " + TotalHotel + "");
                 //$("#totalHotel").html("<span class='totalHotelfound'> Total Hotel(s) Found: </span>" + " <p class='totalHotel'>" + TotalHotel + "</p >");
@@ -315,7 +334,10 @@ var filtersData =
 }
 
 function showImage() {
+
+    filterflag = true;
     filtersData.ShowHideRows()
+
 }
 
 function hideImage() {

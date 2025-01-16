@@ -49,6 +49,7 @@ public partial class HotelResults : System.Web.UI.Page
             {
                 if (Session["SearchDetails"] != null)
                 {
+                  
                     HotelsSearchRequest lobjSearchRequest = Session["SearchDetails"] as HotelsSearchRequest;
                     if (lobjSearchRequest != null)
                     {
@@ -103,6 +104,7 @@ public partial class HotelResults : System.Web.UI.Page
                     }
                     hdnPaymentType.Value = "Points";
                 }
+               
                 SetHotelTemplate();
             }
         }
@@ -135,6 +137,7 @@ public partial class HotelResults : System.Web.UI.Page
                     lobjSearchResponse.SearchResponse.hotels.hotel = lobjSearchResponse.SearchResponse.hotels.hotel.OrderBy(lobj => lobj.roomrates.RoomRate[0].TotalPoints).ToArray<Hotel>();
                     rptHotelList.DataSource = lobjSearchResponse.SearchResponse.hotels.hotel;
                     rptHotelList.DataBind();
+                    LoggingAdapter.WriteLog("HotelResults.aspx- Hotels Count" + lobjSearchResponse.SearchResponse.hotels.hotel.Count());
                 }
                 lblSearchSummary.Text += "<b class=\"heading-medium d-none\">Your Hotel Search: </b>" + lobjSearchResponse.SearchResponse.searchcriteria.city.ToString();
                 lblSearchSummary.Text += " " + lobjSearchResponse.SearchResponse.searchcriteria.country.ToString() + ", ";
@@ -148,6 +151,7 @@ public partial class HotelResults : System.Web.UI.Page
                 hdnNoChild.Value = lobjSearchRequest.ChildrenPerRoom.ToString();
                 for (int i = 0; i < lobjSearchResponse.SearchResponse.hotels.hotel.Count(); i++)
                 {
+                  
                     lobjListOfChain.Add(lobjSearchResponse.SearchResponse.hotels.hotel[i].basicinfo.chain);
                     lobjListOfLocations.Add(lobjSearchResponse.SearchResponse.hotels.hotel[i].basicinfo.locality);
                     if (lobjSearchResponse.SearchResponse.hotels.hotel[i].basicinfo.hotelamenities.Amenities != null)
@@ -168,20 +172,8 @@ public partial class HotelResults : System.Web.UI.Page
                         }
                     }
                     lobjhotelinforequest.hotelid = Convert.ToInt32(lobjSearchResponse.SearchResponse.hotels.hotel[i].hotelid);
-                    //if (lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate != null && lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate.Count() >= 0)
-                    //{
-                    //    lobjSearchRequest.PaymentType = PaymentType.Points;
-                    //    if (lobjSearchRequest.PaymentType.Equals(PaymentType.Points))
-                    //        if (hdnPaymentType.Value.Equals(Convert.ToString(PaymentType.Points)))
-                    //        {
-                    //            lobjListOfPrice.Add(Convert.ToInt32(Convert.ToSingle(lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate[0].TotalPoints)));
-                    //        }
-                    //        else
-                    //        {
-                    //            lobjListOfPrice.Add(Convert.ToInt32(Convert.ToSingle(lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate[0].TotalBaseAmount)));
-                    //        }
-                    //}
-                    lobjListOfPrice.Add(Convert.ToInt32(Convert.ToSingle(lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate[0].TotalBaseAmount)));
+
+                    lobjListOfPrice.Add(Convert.ToInt32(Convert.ToSingle(lobjSearchResponse.SearchResponse.hotels.hotel[i].roomrates.RoomRate[0].TotalPoints.ToString("N0"))));
                     lobjFilterRange.MaxPrice = lobjListOfPrice.Max();
                     lobjFilterRange.MinPrice = lobjListOfPrice.Min();
                     lobjListOfLocations = lobjListOfLocations.Distinct().ToList();
@@ -193,6 +185,7 @@ public partial class HotelResults : System.Web.UI.Page
                     lobjFilterRange.ListOfHotelAmenities = lobjListOfHotelAmenities.Distinct().ToList();
                     lobjFilterRange.ListOfRoomAmenities = lobjListOfRoomAmenities.Distinct().ToList();
                     hdnHotelFilterRange.Value = JSONSerialization.Serialize(lobjFilterRange);
+                    LoggingAdapter.WriteLog("max Price" + lobjFilterRange.MaxPrice + ",min Price" + lobjFilterRange.MinPrice);
                 }
             }
             else
@@ -210,6 +203,7 @@ public partial class HotelResults : System.Web.UI.Page
     {
         try
         {
+
             if (Session["hotels"] != null)
             {
                 HotelSearchResponse lobjSearchResponse = Session["hotels"] as HotelSearchResponse;
@@ -220,7 +214,7 @@ public partial class HotelResults : System.Web.UI.Page
                     {
                         if (hdnPaymentType.Value.Equals(Convert.ToString(PaymentType.Points)))
                         {
-                            (e.Item.FindControl("lblmiles") as Label).Text = lobjSearchResponse.SearchResponse.hotels.hotel[e.Item.ItemIndex].roomrates.RoomRate[0].ratebreakdown.rate[0].RatePoint.ToString("N0");
+                            (e.Item.FindControl("lblmiles") as Label).Text = lobjSearchResponse.SearchResponse.hotels.hotel[e.Item.ItemIndex].roomrates.RoomRate[0].TotalPoints.ToString("N0");
                         }
                     }
                 }
