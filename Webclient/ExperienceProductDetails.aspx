@@ -93,7 +93,7 @@
                     </div>
                 </div>
 
-                <div id="Errordiv"></div>
+                <div id="Errordiv" runat="server"></div>
             </div>
         </div>
     </div>
@@ -127,6 +127,7 @@
         }
 
         function GetProductInfo(uuid) {
+            var html = '';
             $.ajax({
                 type: 'POST',
                 url: 'ExperienceProductDetails.aspx/GetProductInfo',
@@ -136,12 +137,26 @@
                 cache: false,
                 async: false,
                 success: function (rtnData) {
-
+                    
                     if (rtnData.d != "" && rtnData.d != null) {
                         if (rtnData.d == "ErrorPage.aspx") {
-                            window.location.href = "ErrorPage.aspx";
+                            //window.location.href = "ErrorPage.aspx";
+                            $("#CP_Errordiv").show();
+                            $(".dvForm").hide();
+                            html += '<div class="dvError d-flex justify-content-center align-items-center vh-center">';
+                            html += '<div class="col text-center">';
+                            html += '<div class="bg-colour4 p-5">';
+                            html += '<i class="fa-solid fa-circle-exclamation"></i>';
+                            html += '<h2 class="h2 heading-semibold text-colour1 mb-3">OOPS...!</h2>';
+                            html += '<p class="alert alert-danger">No Product Details available for this Experience</p>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += ' </div>';
+                            $("#CP_Errordiv").append(html);
+                           
                         }
                         else {
+                      
                             fnBindExperienceProductInfo(rtnData.d);
                         }
                     }

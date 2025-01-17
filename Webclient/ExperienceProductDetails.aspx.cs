@@ -13,6 +13,7 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Core.Platform.ProgramMaster.Entities;
+using System.Text;
 
 public partial class ExperienceProductDetails : System.Web.UI.Page
 {
@@ -45,7 +46,7 @@ public partial class ExperienceProductDetails : System.Web.UI.Page
                 }
                 else
                 {
-                    lstrProductInfo = "ErrorPage.aspx";
+                     lstrProductInfo = "ErrorPage.aspx";
                 }
             }
 
