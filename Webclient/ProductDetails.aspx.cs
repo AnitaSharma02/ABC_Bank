@@ -1,6 +1,12 @@
 ﻿using ABC.Model;
 using Core.Platform.Member.Entites;
+using Core.Platform.MemberActivity.Constants;
+using Core.Platform.MemberActivity.Entities;
+using Core.Platform.OTP.Entities;
+using Core.Platform.ProgramMaster.Entities;
+using Framework.EnterpriseLibrary.Adapters;
 using Giift.ShopGateway.Client.Entities;
+using GiiftShopGateway.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,12 +19,6 @@ using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Framework.EnterpriseLibrary.Adapters;
-using Core.Platform.ProgramMaster.Entities;
-using Core.Platform.OTP.Entities;
-using Core.Platform.MemberActivity.Constants;
-using Core.Platform.MemberActivity.Entities;
-using GiiftShopGateway.Model;
 
 public partial class ProductDetails : Page
 {
@@ -140,7 +140,7 @@ public partial class ProductDetails : Page
             {
                 lobjModel.LogActivity(string.Format("BindProductDetails; ProductId-:{0}; ProductName-:{1};", pstrProductId, lobjProduct.Name), ActivityType.Merchant);
                 HttpContext.Current.Session["Product"] = lobjProduct;
-                lobjProductVariants = SystemExtension.Clone(lobjProduct);
+                lobjProductVariants = ProductDetailsSystemExtension.SystemExtension.Clone(lobjProduct);
                 lobjProductVariants.Variations.Clear();
                 lobjProduct.Variations.Add(lobjProductVariants);
                 HttpContext.Current.Session["Product"] = lobjProduct;
@@ -922,11 +922,14 @@ public partial class ProductDetails : Page
         return productdetails;
     }
 }
-public static class SystemExtension
+namespace ProductDetailsSystemExtension
 {
-    public static t Clone<t>(this t original)
+    public static class SystemExtension
     {
-        var serialized = JsonConvert.SerializeObject(original);
-        return JsonConvert.DeserializeObject<t>(serialized);
+        public static t Clone<t>(this t original)
+        {
+            var serialized = JsonConvert.SerializeObject(original);
+            return JsonConvert.DeserializeObject<t>(serialized);
+        }
     }
 }

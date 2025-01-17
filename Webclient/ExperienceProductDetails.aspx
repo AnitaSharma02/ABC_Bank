@@ -146,9 +146,9 @@
                             html += '<div class="dvError d-flex justify-content-center align-items-center vh-center">';
                             html += '<div class="col text-center">';
                             html += '<div class="bg-colour4 p-5">';
-                            html += '<i class="fa-solid fa-circle-exclamation"></i>';
-                            html += '<h2 class="h2 heading-semibold text-colour1 mb-3">OOPS...!</h2>';
-                            html += '<p class="alert alert-danger">No Product Details available for this Experience</p>';
+                           // html += '<i class="fa-solid fa-circle-exclamation"></i>';
+                            html += '<h2 class="h2 heading-semibold text-colour1 mb-3">SORRY...!</h2>';
+                            html += '<p class="alert alert-danger">Currently this experience is not available.</p>';
                             html += '</div>';
                             html += '</div>';
                             html += ' </div>';
