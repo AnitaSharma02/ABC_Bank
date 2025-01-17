@@ -34,15 +34,18 @@ public partial class ExperiencesSearch : System.Web.UI.Page
                 pointConvrtRate = Convert.ToString(pfltPointrate)
             };
             ExperiencesResponse lstrProductListResponse = lobjModel.GetExperienceProductList(pintPage, pintPageSize, lobjProductListRequest);
-            if (lstrProductListResponse.data != null)
+            if (lstrProductListResponse != null)
             {
-                lstrProductListResponse.ExperiencesCriteria = new ExperiencesCriteria()
+                if (lstrProductListResponse.data != null)
                 {
-                    searchTerm = pstrsearchTerm.Replace("%20", " "),
-                    categoryNames = categories,
-                    typeNames = types
-                };
-                lstrResponse = JsonConvert.SerializeObject(lstrProductListResponse);
+                    lstrProductListResponse.ExperiencesCriteria = new ExperiencesCriteria()
+                    {
+                        searchTerm = pstrsearchTerm.Replace("%20", " "),
+                        categoryNames = categories,
+                        typeNames = types
+                    };
+                    lstrResponse = JsonConvert.SerializeObject(lstrProductListResponse);
+                }
             }
         }
         catch (Exception ex)

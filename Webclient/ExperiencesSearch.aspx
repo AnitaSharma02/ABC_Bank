@@ -120,8 +120,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="Errordiv" runat="server" class="text-center w-100"></div>
                     </div>
                 </div>
+                 
             </div>
         </div>
     </div>
@@ -182,6 +184,7 @@
             }
             var IsGetExperienceProductListAjaxCalled = false;
             function fnGetSearchItem(searchTerm, pageIndex, pageSize, types, categories) {
+                var html = '';
                 try {
                     if (!IsGetExperienceProductListAjaxCalled) {
                         IsGetExperienceProductListAjaxCalled = true;
@@ -200,13 +203,27 @@
                                 data: JSON.stringify(arrData),
                                 cache: false,
                                 success: function (rtnData) {
-                                    if (rtnData.d != null) {
+                                   
+                                    if (rtnData.d != null && rtnData.d != "") {
                                         fnBindSearchItem(rtnData.d);
 
                                         IsGetExperienceProductListAjaxCalled = false;
                                     }
                                     else {
-                                        window.location.href = 'ErrorPage.aspx';
+                                       
+                                        //window.location.href = 'ErrorPage.aspx';
+                                        $("#CP_Errordiv").show();
+                                        $(".dvProducts").hide();
+                                        html += '<div class="dvError d-flex justify-content-center align-items-center">';
+                                        html += '<div class="col-8 text-center">';
+                                        html += '<div class="bg-colour4 p-5">';
+                                        // html += '<i class="fa-solid fa-circle-exclamation"></i>';
+                                        html += '<h2 class="h2 heading-semibold text-colour1 mb-3">SORRY...!</h2>';
+                                        html += '<p class="alert alert-danger">Currently this experience is not available.</p>';
+                                        html += '</div>';
+                                        html += '</div>';
+                                        html += ' </div>';
+                                        $("#CP_Errordiv").append(html);
                                     }
                                 },
                                 error: function (errmsg) {
