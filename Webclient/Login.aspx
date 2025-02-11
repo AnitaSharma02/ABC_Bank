@@ -20,6 +20,36 @@
             letter-spacing: 3px;
             margin-bottom: 10px;
         }
+
+        .tooltip-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip-container .tooltip {
+            visibility: hidden;
+            width: 150px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -75px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        #divActivationDetails .dvInput.input-group .form-control {
+        width:100%;
+        }
     </style>
 
     <div class="dvBreadcrumbs">
@@ -105,10 +135,12 @@
                                             <div class="row">
                                                 <div class="col-12 mb-3">
                                                     <label class="label">CIF</label>
-                                                    <div class="dvInput input-group">
+                                                   <div class="dvInput input-group tooltip-container">
                                                         <asp:TextBox ID="txtMemberId" autocomplete="off" runat="server" CssClass="form-control" onkeypress="var retValue = ActivationOTPOnEnter(event); event.returnValue = retValue; return retValue;"></asp:TextBox>
+                                                       <div class="tooltip">Your CIF is a seven-digit code and is part of your account number <span style="letter-spacing: 1px;">009999<u class="text-danger h7 text-decoration-underline">9999999</u>99</span></div>
                                                     </div>
-                                                    <p class="h7">Your CIF is a seven-digit code and is part of your account number <span style="letter-spacing: 1px;">009999<u class="text-danger h7 text-decoration-underline">9999999</u>99</span></p>
+                                                   
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -136,8 +168,8 @@
                                                             <span class="checkmark"></span>
                                                         </span>
                                                     </label>
-                                                </div>                                               
-                                              <%--  <div class="col-12">
+                                                </div>
+                                                <%--  <div class="col-12">
                                                     <div class="d-flex flex-wrap justify-content-between">
                                                         <div class="mb-2 mb-sm-0">
                                                             <asp:LinkButton ID="FormLinkPassword" CausesValidation="false" CssClass="heading-semibold link1"
