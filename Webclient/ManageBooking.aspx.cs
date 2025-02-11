@@ -127,7 +127,7 @@ public partial class ManageBooking : Page
             {
                 ABCModel lobjModel = new ABCModel();
                 BookingByUserResponse lobjlstBookingDetails = lobjModel.GetAllExperiences(pobjMemberDetails.MemberRelationsList[0].RelationReference);
-                if (lobjlstBookingDetails != null && lobjlstBookingDetails.data.Count>0 )
+                if (lobjlstBookingDetails != null && lobjlstBookingDetails.data.Count > 0)
                 {
                     rptExperienceBookingDetails.DataSource = lobjlstBookingDetails.data;
                 }
@@ -234,16 +234,17 @@ public partial class ManageBooking : Page
                 List<DomesticItineraryDetails> lobjListItineraryDetails = lobjModel.GetDomesticFlightBookingDetails(pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference);
                 lobjListItineraryDetails = lobjListItineraryDetails.OrderByDescending(x => x.LogIds[0]).ToList();
                 if (lobjListItineraryDetails != null && lobjListItineraryDetails.Count > 0)
-                { int i = 1;
+                {
+                    int i = 1;
                     foreach (DomesticItineraryDetails item in lobjListItineraryDetails)
                     {
-                       
+
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"row mb-1\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"col-12\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"bg-colour6 p-3\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"row justify-content-between\">");
 
-                        
+
 
                         lsbTrDomesticBookingDetailsHtml.Append("<div class=\"col-6 col-md-3 col-lg-3 col-xl-3 mb-1\">");
                         lsbTrDomesticBookingDetailsHtml.Append("<p>");
@@ -323,33 +324,40 @@ public partial class ManageBooking : Page
     public void BindCarBooking(MemberDetails pobjMemberDetails)
     {
         IBEAPIModel lobjApimodel = new IBEAPIModel();
-        if (Session["MemberDetails"] != null)
+        try
         {
-            UserBookingRequest lobjUserBookingRequest = new UserBookingRequest();
-            lobjUserBookingRequest.member_id = pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference;
-            ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
-            List<ProgramCurrencyDefinition> lobjProgramCurrencyDefinition = lobjModel.GetProgramCurrencyDefinition(lobjProgramDefinition.ProgramId);
-            var PointRate = lobjProgramCurrencyDefinition[0].RedemptionRate;
-            UserBookingResponse lobjUserBookingResponse = lobjApimodel.GetUserBookings(lobjUserBookingRequest);
-
-            if (lobjUserBookingResponse != null && lobjUserBookingResponse.data.Count > 0)
+            if (Session["MemberDetails"] != null)
             {
-                rptCarBookingDetails.DataSource = lobjUserBookingResponse.data;
+                UserBookingRequest lobjUserBookingRequest = new UserBookingRequest();
+                lobjUserBookingRequest.member_id = pobjMemberDetails.MemberRelationsList.Find(lobj => lobj.RelationType.Equals(RelationType.LBMS)).RelationReference;
+                ProgramDefinition lobjProgramDefinition = lobjModel.GetProgramMaster();
+                List<ProgramCurrencyDefinition> lobjProgramCurrencyDefinition = lobjModel.GetProgramCurrencyDefinition(lobjProgramDefinition.ProgramId);
+                var PointRate = lobjProgramCurrencyDefinition[0].RedemptionRate;
+                UserBookingResponse lobjUserBookingResponse = lobjApimodel.GetUserBookings(lobjUserBookingRequest);
 
+                if (lobjUserBookingResponse != null && lobjUserBookingResponse.data.Count > 0)
+                {
+                    rptCarBookingDetails.DataSource = lobjUserBookingResponse.data;
+
+                }
+                else
+                {
+                    rptCarBookingDetails.DataSource = null;
+                    lblCarrecord.Visible = true;
+                    lblCarrecord.Text = "<span>No Records Found.</span>";
+                    divCarrecord.Visible = true;
+
+                }
+                rptCarBookingDetails.DataBind();
             }
             else
             {
-                rptCarBookingDetails.DataSource = null;
-                lblCarrecord.Visible = true;
-                lblCarrecord.Text = "<span>No Records Found.</span>";
-                divCarrecord.Visible = true;
-
+                Response.Redirect("Index.aspx");
             }
-            rptCarBookingDetails.DataBind();
         }
-        else
+        catch (Exception ex)
         {
-            Response.Redirect("Index.aspx");
+            LoggingAdapter.WriteLog("ManageBooking.aspx- BindFlightBooking Ex: " + ex.Message + Environment.NewLine + ex.InnerException + Environment.NewLine + ex.StackTrace);
         }
     }
 
