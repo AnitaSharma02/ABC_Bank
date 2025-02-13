@@ -56,11 +56,11 @@
                 }
             });
             //show datepicker onclick of icon
-            $(".dvCP_FromDate .input-group-append .input-group-text").on("click", function () {
+            $(".dvCP_FromDate .input-group-text").on("click", function () {
                 $("#CP_FromDate").datepicker("show");
             });
             //show datepicker onclick of icon
-            $(".dvCP_Todate .input-group-append .input-group-text").on("click", function () {
+            $(".dvCP_Todate .input-group-text").on("click", function () {
                 $("#CP_Todate").datepicker("show");
             });
 
@@ -133,14 +133,14 @@
                     <ul>
                         <li class="d-block">
                             <div class="text-center">
-                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span class="acc-text">Welcome,</span><span class="ml-2 acc-text" id="spnMemberName"></span></h2>
+                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span class="acc-text">Welcome,</span><span class="ms-2 acc-text" id="spnMemberName"></span></h2>
                             </div>
                         </li>
                         <li class="d-block">
                             <div class="text-center">
                                 <h3 class="h3 heading-semibold text-white">
                                     <span id="totAvbPointDiv">Total Points</span>
-                                    <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-white"></span>
+                                    <span id="spnMemberCurrentBal" class="ms-2 heading-bold text-white"></span>
                                 </h3>
                             </div>
                         </li>
@@ -189,7 +189,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-4">
-                    <li class="mr-3">
+                    <li class="me-3">
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
@@ -214,7 +214,7 @@
                             </asp:DropDownList>
                         </div>--%>
                         <div class="dvRadios row mb-3 pt-3">
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-2 pr-1 pr-sm-3 d-sm-flex">
+                            <div class="col-6 col-sm-4 col-md-3 col-xl-2 pe-1 pe-sm-3 d-sm-flex">
                                 <div class="dvLabel d-flex justify-content-between my-sm-auto">
                                     <label class="radio-container d-flex">
                                         <span class="d-inline-block">
@@ -223,11 +223,11 @@
                                             <input type="radio" id="RdlSearchtypeAll" onclick="RdlSearchtypeAll_CheckedChanged()" checked="checked"/>
                                             <span class="radiomark"></span>
                                         </span>
-                                        <span class="d-inline-block ml-3">All Transactions</span>
+                                        <span class="d-inline-block ms-3">All Transactions</span>
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-xl-2 pl-1 pl-sm-3 d-sm-flex">
+                            <div class="col-6 col-sm-4 col-md-3 col-xl-2 ps-1 ps-sm-3 d-sm-flex">
                                 <div class="dvLabel d-flex justify-content-between my-sm-auto">
                                     <label class="radio-container d-flex">
                                         <span class="d-inline-block">
@@ -236,7 +236,7 @@
                                             <input type="radio" id="RdlSearchtypeCust" onclick="RdlSearchtypeCust_CheckedChanged()"/>
                                             <span class="radiomark"></span>
                                         </span>
-                                        <span class="d-inline-block ml-3">Custom Search</span>
+                                        <span class="d-inline-block ms-3">Custom Search</span>
                                     </label>
                                 </div>
                             </div>
@@ -250,20 +250,16 @@
                                     <label class="label">From</label>
                                     <div class="dvCP_FromDate dvInputGroup input-group">
                                         <asp:TextBox ID="FromDate" runat="server" CssClass="FromDate form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" Text="Enter Date" readonly="true"/>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
-                                        </div>
-                                    </div>
+                                         <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
+                                     </div>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="FromDate" ErrorMessage="Enter From Date<br/>" Style="color: #ff0000" Display="Dynamic" ValidationGroup="DateSearch"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-4 mb-3">
                                     <label class="label">To</label>
                                     <div class="dvCP_Todate dvInputGroup input-group">
                                         <asp:TextBox ID="Todate" runat="server" CssClass="Todate form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" Text="Enter Date" readonly="true"/>
-                                        <div class="input-group-append">
-                                            <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
-                                        </div>
-                                    </div>
+                                         <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
+                                     </div>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Todate" ErrorMessage="Enter To Date." Style="color: #ff0000" Display="Dynamic" ValidationGroup="DateSearch"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="col-12 col-md-4 mb-3">
@@ -292,9 +288,9 @@
                                                     <h2 class="h6 heading-bold text-success"><%#Eval("TransactionType").ToString() =="Debit" ?"Redeemed":"Spend"%></h2>
                                                 </div>
                                                 <div
-                                                    class="col-12 col-sm-6 text-sm-right d-sm-flex align-items-sm-end justify-content-sm-center flex-sm-column">
+                                                    class="col-12 col-sm-6 text-sm-end d-sm-flex align-items-sm-end justify-content-sm-center flex-sm-column">
                                                     <h2 class="h6 heading-bold d-flex align-items-center">
-                                                        <span class="heading-bold text-colour1">MUR</span> <span class="heading-bold text-colour7 pl-1"><%#Eval("Amounts")%></span>
+                                                        <span class="heading-bold text-colour1">MUR</span> <span class="heading-bold text-colour7 ps-1"><%#Eval("Amounts")%></span>
                                                     </h2>
                                                     <h2 class="h7 heading-regular text-capitalize"><%#Eval("ProcessingDate", "{0:dd MMM yyyy}")%></h2>
                                                     <h2 class="h7 heading-regular text-capitalize"><%#Eval("TransactionDate", "{0:dd MMM yyyy}")%></h2>

@@ -14,7 +14,7 @@
         <div class="container-xl">
             <nav id="divBreadbrums" runat="server">
               <%--  <ul class="breadcrumb px-0 py-3">
-                    <li class="mr-3"><a href="hoteldetails.html">
+                    <li class="me-3"><a href="hoteldetails.html">
                         <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
@@ -31,12 +31,13 @@
                 <div class="dvFilter modal fade col-lg-3 px-0 px-lg-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content border-0">
-                            <div class="modal-header border-0 d-lg-block p-0">
-                                <div class="modal-title dvTotalRecords border-0 p-3">
-                                    <p class="heading6 text-colour1"><span>Total Records found</span> <span id="spnTotalCount"></span></p>
-                                </div>
-                                <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
-                                   <i class="fa-solid fa-xmark"></i>
+                            <div class="modal-header border-0 d-lg-block">
+                                <h5 class="modal-title dvTotalRecords border-0">
+                                    <span class="heading6 text-colour1">Total Records found</span> 
+                                    <span class="heading6 text-colour1" id="spnTotalCount"></span>
+                                </h5>
+                                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="modal">
+                                   <%--<i class="fa-solid fa-xmark"></i>--%>
                                 </button>
                               </div>
                             <div class="modal-body p-lg-0">
@@ -63,18 +64,16 @@
                                     <div class="dvSearch">
                                         <div class="dvTxtProductNameShopList dvInputGroup input-group">
                                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductNameShopList">
-                                            <div class="input-group-append">
-                                                <span id="btnSearchExperiences" type="button" class="input-group-text" onclick="SearchProduct()">
+                                             <span id="btnSearchExperiences" type="button" class="input-group-text" onclick="SearchProduct()">
                                                     <%--<img src="../images/icons/other/search-icon1.svg" />--%>
                                                     <i class="fa-solid fa-magnifying-glass text-colour6"></i>
                                                 </span>
-                                            </div>
-                                        </div>
+                                         </div>
                                     </div>
                                 </div>
-                                <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none my-2">Filter </button>
+                                <button data-bs-toggle="modal" data-bs-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none my-2">Filter </button>
                                 <div class="dropdown heading-regular col-lg-3 px-0">
-                                    <select name="sortBy" id="sortBy" onchange="SortProducts(); return false;" class="form-control">
+                                    <select name="sortBy" id="sortBy" onchange="SortProducts(); return false;" class="form-select">
                                         <%--<option value=""></option>--%>
                                         <option value="priority-descending;name-ascending" selected>Featured</option>
                                         <option value="best-selling">Best Selling</option>

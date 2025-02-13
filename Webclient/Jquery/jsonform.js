@@ -656,7 +656,7 @@ jsonform.elementTypes = {
     'template': '<div>' +
       '<input type="hidden" name="<%= node.name %>" id="<%= node.id %>" value="<%= value %>" />' +
       '<div class="dropdown">' +
-      '<a class="btn<% if (buttonClass && node.value) { %> <%= buttonClass %><% } else { %> btn-default<% } %>" data-toggle="dropdown" href="#"<% if (node.value) { %> style="max-width:<%= width %>px;max-height:<%= height %>px"<% } %>>' +
+      '<a class="btn<% if (buttonClass && node.value) { %> <%= buttonClass %><% } else { %> btn-default<% } %>" data-bs-toggle="dropdown" href="#"<% if (node.value) { %> style="max-width:<%= width %>px;max-height:<%= height %>px"<% } %>>' +
         '<% if (node.value) { %><img src="<% if (!node.value.match(/^https?:/)) { %><%= prefix %><% } %><%= node.value %><%= suffix %>" alt="" /><% } else { %><%= buttonTitle %><% } %>' +
       '</a>' +
       '<div class="dropdown-menu navbar" id="<%= node.id %>_dropdown">' +
@@ -709,14 +709,14 @@ jsonform.elementTypes = {
           }
           value = value.substring(0, value.length - suffix.length);
           $(node.el).find('input').attr('value', value);
-          $(node.el).find('a[data-toggle="dropdown"]')
+          $(node.el).find('a[data-bs-toggle="dropdown"]')
             .addClass(elt.imageButtonClass)
             .attr('style', 'max-width:' + width + 'px;max-height:' + height + 'px')
             .html('<img src="' + (!value.match(/^https?:/) ? prefix : '') + value + suffix + '" alt="" />');
         }
         else {
           $(node.el).find('input').attr('value', '');
-          $(node.el).find('a[data-toggle="dropdown"]')
+          $(node.el).find('a[data-bs-toggle="dropdown"]')
             .removeClass(elt.imageButtonClass)
             .removeAttr('style')
             .html(elt.imageSelectorTitle || 'Select...');
@@ -728,7 +728,7 @@ jsonform.elementTypes = {
     'template': '<div>' +
       '<input type="hidden" name="<%= node.name %>" id="<%= node.id %>" value="<%= value %>" />' +
       '<div class="dropdown">' +
-      '<a class="btn<% if (buttonClass && node.value) { %> <%= buttonClass %><% } %>" data-toggle="dropdown" href="#"<% if (node.value) { %> style="max-width:<%= width %>px;max-height:<%= height %>px"<% } %>>' +
+      '<a class="btn<% if (buttonClass && node.value) { %> <%= buttonClass %><% } %>" data-bs-toggle="dropdown" href="#"<% if (node.value) { %> style="max-width:<%= width %>px;max-height:<%= height %>px"<% } %>>' +
         '<% if (node.value) { %><i class="icon-<%= node.value %>" /><% } else { %><%= buttonTitle %><% } %>' +
       '</a>' +
       '<div class="dropdown-menu navbar" id="<%= node.id %>_dropdown">' +
@@ -770,13 +770,13 @@ jsonform.elementTypes = {
         if (value) {
           value = value;
           $(node.el).find('input').attr('value', value);
-          $(node.el).find('a[data-toggle="dropdown"]')
+          $(node.el).find('a[data-bs-toggle="dropdown"]')
             .addClass(elt.imageButtonClass)
             .html('<i class="'+ value +'" alt="" />');
         }
         else {
           $(node.el).find('input').attr('value', '');
-          $(node.el).find('a[data-toggle="dropdown"]')
+          $(node.el).find('a[data-bs-toggle="dropdown"]')
             .removeClass(elt.imageButtonClass)
             .html(elt.imageSelectorTitle || 'Select...');
         }
@@ -1015,7 +1015,7 @@ jsonform.elementTypes = {
           ('Item ' + (idx+1));
         tabs += '<li data-idx="' + idx + '"' +
           ((idx === 0) ? ' class="active"' : '') +
-          '><a class="draggable tab" data-toggle="tab">' +
+          '><a class="draggable tab" data-bs-toggle="tab">' +
           escapeHTML(title) +
           '</a></li>';
       });
@@ -1065,7 +1065,7 @@ jsonform.elementTypes = {
           $('> .tabbable > .tab-content > [data-idx="' + idx + '"] > fieldset > legend', $nodeid).html(child.legend);
           var title = child.legend || child.title || ('Item ' + (idx+1));
           tabs += '<li data-idx="' + idx + '">' +
-                  '<a class="draggable tab" data-toggle="tab">' +
+                  '<a class="draggable tab" data-bs-toggle="tab">' +
                   escapeHTML(title) +
                   '</a></li>';
         });
@@ -1073,7 +1073,7 @@ jsonform.elementTypes = {
         if (activateFirstTab) {
           $('> .tabbable > .nav-tabs [data-idx="0"]', $nodeid).addClass('active');
         }
-        $('> .tabbable > .nav-tabs [data-toggle="tab"]', $nodeid).eq(selIdx).click();
+        $('> .tabbable > .nav-tabs [data-bs-toggle="tab"]', $nodeid).eq(selIdx).click();
       };
 
       $('> a._jsonform-array-deleteitem', $nodeid).click(function (evt) {

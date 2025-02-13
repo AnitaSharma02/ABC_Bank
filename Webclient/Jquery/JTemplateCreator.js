@@ -3,7 +3,7 @@
 * Copyright (c) 2007-2013 Tomasz Gloc (http://www.tpython.com)
 * 
 * Dual licensed under the MIT (MIT-LICENSE.txt)
-* and/or GPL (GPL-LICENSE.txt) licenses.
+* and/or GPL (Gps-LICENSE.txt) licenses.
 *
 * Id: $Id: jquery-jtemplates_uncompressed.js 203 2013-02-03 13:28:34Z tom $
 */

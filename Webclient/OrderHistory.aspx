@@ -67,7 +67,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-4">
-                    <li class="mr-3">
+                    <li class="me-3">
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>

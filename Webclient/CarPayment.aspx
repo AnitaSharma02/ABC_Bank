@@ -21,36 +21,34 @@
 
     <div class="dvCarPayment py-3 pb-lg-5">
         <div class="container-xl">
-            <div class="row dvDeliveryTrack">
-                <div class="col-4 mb-lg-3">
-                    <div class="dvLine border d-none d-md-block px-3"></div>
+            <div class="row dvDeliveryTrack mt-3 my-md-4">
+                <div class="dvLine border d-none d-md-block"></div>
+                <div class="col-4">
                     <div class="row justify-content-md-center">
-                        <div class="col-md-auto my-3">
+                        <div class="col-md-auto mb-3 mb-md-0 bg-colour6">
                             <div class="d-flex flex-column flex-sm-row align-items-center">
                                 <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">1</span>
-                                <a class="h7 bg-colour6 px-3 text-center text-colour7">Your Car</a>
+                                <a class="h7 heading-regular ps-sm-3 text-center text-colour7">Your Car</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-lg-3">
-                    <div class="dvLine border d-none d-md-block px-3"></div>
+                <div class="col-4">
                     <div class="row justify-content-md-center">
-                        <div class="col-md-auto my-3">
+                        <div class="col-md-auto mb-3 mb-md-0 bg-colour6">
                             <div class="d-flex flex-column flex-sm-row align-items-center">
                                 <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">2</span>
-                                <a class="h7 bg-colour6 px-3 text-center text-colour7" id="hrefBookingDetailsId" runat="server">Deal</a>
+                                <a class="h7 heading-regular ps-sm-3 text-center text-colour7" id="hrefBookingDetailsId" runat="server">Deal</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-lg-3">
-                    <%--<div class="dvLine border d-none d-md-block px-3"></div>--%>
+                <div class="col-4">
                     <div class="row justify-content-md-center">
-                        <div class="col-md-auto my-3">
+                        <div class="col-md-auto mb-3 mb-md-0 bg-colour6">
                             <div class="d-flex flex-column flex-sm-row align-items-center active">
                                 <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">3</span>
-                                <a class="h7 heading-bold bg-colour6 px-3 text-center text-colour1">Payment</a>
+                                <a class="h7 heading-bold ps-sm-3 text-center text-colour1">Payment</a>
                             </div>
                         </div>
                     </div>
@@ -61,28 +59,26 @@
                     <div class="border b-radius p-0">
                         
                             <div class="dvCommonAccordion accordion" id="accordionExample">
-                                <div class="card">
-                                    <div class="card-header p-0" id="headingOne">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-block text-left p-3" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <div class="accordion-item">
+                                        <h2 class="accordion-header mb-0" id="headingOne">
+                                            <button class="accordion-button btn btn-block text-start p-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <span class="heading-bold h6">Your booking summary</span>
                                                 <span class="arrow-icon">
                                                     <i class="fa fa-caret-up" aria-hidden="true"></i>
                                                 </span>
                                             </button>
                                         </h2>
-                                    </div>
 
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                        <div class="card-body p-3">
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body p-3">
                                             <div class="row">
                                                 <div class="col-12 mb-3">
-                                                    <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span>Pick up from:</span></h2>
+                                                    <h2 class="heading6"><i class="fa-solid fa-location-dot me-2"></i><span>Pick up from:</span></h2>
                                                     <p id="spnpickupDetails" class="h7"></p>
                                                     <p class="h7" id="spnpickupDate"></p>
                                                 </div>
                                                 <div class="col-12">
-                                                    <h2 class="heading6"><i class="fa-solid fa-location-dot mr-2"></i><span>Drop off at:</span></h2>
+                                                    <h2 class="heading6"><i class="fa-solid fa-location-dot me-2"></i><span>Drop off at:</span></h2>
                                                     <p id="spndropoffDetails" class="h7"></p>
                                                     <p class="h7" id="spndropoffDate"></p>
                                                 </div>
@@ -90,7 +86,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="dvVcData card" id="divCarDetailsLeftpannel">
+                                <div class="dvVcData accordion-item" id="divCarDetailsLeftpannel">
                                 </div>
 
                             </div>
@@ -102,7 +98,7 @@
                                     <p class="h7">Car Hire:</p>
                                 </div>
                                 <div class="col-6">
-                                    <p class="text-right h7"><span id="spncarhireAmount">0</span> Points</p>
+                                    <p class="text-end h7"><span id="spncarhireAmount">0</span> Points</p>
                                 </div>
                             </div>
 
@@ -114,17 +110,17 @@
                                 <p class="h7">Total:</p>
                             </div>
                             <div class="col-6">
-                                <p class="text-right h7"><span id="spncarTotalAmount">0</span>  Points</p>
+                                <p class="text-end h7"><span id="spncarTotalAmount">0</span>  Points</p>
                             </div>
                         </div>
                         <div class="dvPayable">
                             <div class="border-top p-3">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="col-7 pl-0">
+                                    <div class="col-7 ps-0">
                                         <p class="heading6 text-colour1">Payable today:</p>
                                     </div>
-                                    <div class="col-5 pr-0">
-                                        <p class="text-right heading6 text-colour1"><span class="text-right" id="spnPayableAmount">0</span>  <span>Points</span></p>
+                                    <div class="col-5 pe-0">
+                                        <p class="text-end heading6 text-colour1"><span class="text-end" id="spnPayableAmount">0</span>  <span>Points</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +133,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="bg-colour1 b-radius-top-right p-3">
-                                    <h2 class="heading6 text-colour6"><i class="fa-regular fa-circle-user mr-2"></i><span>Driver Details</span></h2>
+                                    <h2 class="heading6 text-colour6"><i class="fa-regular fa-circle-user me-2"></i><span>Driver Details</span></h2>
                                 </div>
                                 <div class="p-3">
                                     <div class="row">
@@ -182,7 +178,7 @@
                                                         <input type="checkbox" id="chkTnC" />
                                                         <span class="checkmark"></span>
                                                     </span>
-                                                    <span class="d-inline-block ml-2"><span>I have read and accept the</span>
+                                                    <span class="d-inline-block ms-2"><span>I have read and accept the</span>
                                                         <a href="TermsAndConditions.aspx" target="_blank" class="link1">Terms & Conditions</a></span>
                                                 </label>
                                             </div>
@@ -213,8 +209,8 @@
                        <h5 class="modal-title">
                             <span>Important Information</span>
                         </h5>
-                        <button type="button" class="close" data-dismiss="modal">
-                            <i class="fa-solid fa-xmark"></i>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal">
+                            <i class="fas fa-times"></i>
                         </button>
                    </div> 
                 <!-- Modal body -->
@@ -239,37 +235,37 @@
                                         <div class="borderColor">
                                             <img src="images/icon/seat-icon.svg" class="img-fluid" />
                                         </div>
-                                        <span class="ml-2">x 5</span>
+                                        <span class="ms-2">x 5</span>
                                     </div>
                                     <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
                                         <div class="borderColor">
                                             <img src="images/icon/gear-icon.svg" class="img-fluid" />
                                         </div>
-                                        <span class="ml-2">Automatic</span>
+                                        <span class="ms-2">Automatic</span>
                                     </div>
                                     <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
                                         <div class="borderColor">
                                             <img src="images/icon/door-icon.svg" class="img-fluid" />
                                         </div>
-                                        <span class="ml-2">2-4</span>
+                                        <span class="ms-2">2-4</span>
                                     </div>
                                     <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
                                         <div class="borderColor">
                                             <i class="fa fa-bus" aria-hidden="true"></i>
                                         </div>
-                                        <span class="ml-2">Shuttle </span>
+                                        <span class="ms-2">Shuttle </span>
                                     </div>
                                     <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
                                         <div class="borderColor">
                                             <img src="images/icon/ac-icon.svg" class="img-fluid" />
                                         </div>
-                                        <span class="ml-2">AirCon</span>
+                                        <span class="ms-2">AirCon</span>
                                     </div>
                                     <div class="col-6 col-md-6 mb-1 mt-2 d-flex align-items-center">
                                         <div class="borderColor">
                                             <img src="images/icon/fuel-icon.svg" class="img-fluid" />
                                         </div>
-                                        <span class="ml-2">Fair Fuel Policy</span>
+                                        <span class="ms-2">Fair Fuel Policy</span>
                                     </div>
 
                                 </div>
@@ -280,14 +276,14 @@
 
                             </div>
                         </div>
-                        <div class="col-12 border-top pt-3 mt-3 pr-0 pl-0 productDetails">
+                        <div class="col-12 border-top pt-3 mt-3 pe-0 ps-0 productDetails">
                             <div class="d-flex flex-wrap justify-content-between align-items-center">
                                 <div class="col-6 col-md-6 order-md-0">
                                     <div class="carLogo">
                                         <img class="img-fluid mt-auto mb-auto" src="\images/giift-logo.svg" alt="Logo">
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-6 mt-2 mt-md-0 order-md-1 text-left">
+                                <div class="col-6 col-md-6 mt-2 mt-md-0 order-md-1 text-start">
                                     <div class="vehicleLocation">
                                         <a class="link1 text-decoration-none text-colour7"><i class="fa fa-map-marker" aria-hidden="true"></i>Vehicle location:</a>
                                         <span>DUBAI INTL AIRPORT TERMINAL 3, 154 AIRPORT ROAD, DUBAI, 21971</span>

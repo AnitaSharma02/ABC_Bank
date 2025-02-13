@@ -153,7 +153,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
-                    <li class="mr-3"><a href="\">
+                    <li class="me-3"><a href="\">
                         <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
@@ -172,8 +172,8 @@
                     <div
                         class="bg-colour2 d-flex flex-wrap justify-content-between align-items-center py-2 px-2 px-lg-3 mb-1">
                         <%--<button
-                      data-toggle="modal"
-                      data-target="#dvFilterModal"
+                      data-bs-toggle="modal"
+                      data-bs-target="#dvFilterModal"
                       type="button"
                       class="btn btn-one col-12 d-lg-none mb-2"
                     >
@@ -186,10 +186,10 @@
                         <button
                             class="btn btn-one arrowBtn col-auto d-flex mt-2 mt-sm-0 collapsed modify"
                             type="button"
-                            data-toggle="collapse"
-                            data-target="#dvForm">
+                            data-bs-toggle="collapse"
+                            data-bs-target="#dvForm">
                             <span class="d-inline-block">Modify</span>
-                            <span class="arrow-icon ml-2">
+                            <span class="arrow-icon ms-2">
                                 <i class="fa fa-caret-up"></i>
                             </span>
                         </button>
@@ -200,16 +200,16 @@
                                  <div class="row dvLabel r- d-none">
                                     <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">
                                         <label class="h8 heading-semibold text-colour7 radio-container d-flex">
-                                            <span class="d-inline-block ml-1">
-                                                <input id="onelidomestic" class="radio " name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7">One-Way</span>
+                                            <span class="d-inline-block ms-1">
+                                                <input id="onelidomestic" class="radio " name="iternarydomestic" onchange="return onewayShowDomestic();" type="radio"><span class="pe-3 ps-2 h6 heading-regular text-colour7">One-Way</span>
                                                 <span class="radiomark"></span>
                                             </span>
                                         </label>
                                     </div>
                                     <div class="col-6 col-sm-4 col-md-9 col-lg-10 selTravel mb-3">
                                         <label class="h8 heading-semibold text-colour7 radio-container d-flex">
-                                            <span class="d-inline-block ml-1">
-                                                <input class="radio" name="iternarydomestic" checked="checked" onchange="return RoundTripShowDomestic();" id="retlidomestic" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7">Return</span>
+                                            <span class="d-inline-block ms-1">
+                                                <input class="radio" name="iternarydomestic" checked="checked" onchange="return RoundTripShowDomestic();" id="retlidomestic" type="radio"><span class="pe-3 ps-2 h6 heading-regular text-colour7">Return</span>
                                                 <span class="radiomark"></span>
                                             </span>
                                          </label>
@@ -222,7 +222,7 @@
                                                <option>One Way</option>
                                              </select>
                                             <%--<div class="dvDropdown dropdown">
-                                                <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-toggle="dropdown" aria-expanded="false">
+                                                <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                    Return
                                                 </button>
                                                 <div class="dropdown-menu">
@@ -237,8 +237,8 @@
                                               <option>Business</option>
                                                  <option>First</option>
                                             </select>
-                                             <%--<div class="dvDropdown dropdown text-sm-center text-lg-left">
-                                                 <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-toggle="dropdown" aria-expanded="false">
+                                             <%--<div class="dvDropdown dropdown text-sm-center text-lg-start">
+                                                 <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     Economy
                                                  </button>
                                                  <div class="dropdown-menu dropdown-menu-right dropdown-menu-sm-left">
@@ -248,14 +248,14 @@
                                               </div>--%>
                                          </div>
                                          <div class="col-12 col-md-4 col-sm-4 col-lg-3 mb-3">
-                                             <div class="dvDropdown dropdown text-sm-right text-lg-left">
-                                                 <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-toggle="dropdown" aria-expanded="false">
+                                             <div class="dvDropdown dropdown text-sm-end text-lg-start">
+                                                 <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                    Passenger
                                                  </button> 
                                                  <div class="dropdown-menu prevent-close w-250 dropdown-menu-sm-right">
                                                      <div class="dvQtySelectorAdultDomestic dvQtySelector dropdown-item d-flex align-items-center">
                                                            <div class="col-6 special-text h7">Adult(s) 12+ Yrs</div>
-                                                           <div class="col-6 d-flex align-items-center pr-0">
+                                                           <div class="col-6 d-flex align-items-center pe-0">
                                                               <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('AdultDomestic')" class="fa fa-minus decreaseQtyAdultDomestic border p-1 b-radius"></i></div>
                                                               <div class="col-4 text-center px-0"><input type="text" id="qtyValueAdultDomestic" class="form-control bg-transparent border-0 text-center qtyValueAdultDomestic" value="1" readonly="readonly"></div>
                                                               <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('AdultDomestic',4)" class="fa fa-plus increaseQtyAdultDomestic border p-1 b-radius"></i></div>
@@ -263,7 +263,7 @@
                                                        </div>
                                                        <div class="dvQtySelectorChildDomestic dvQtySelector dropdown-item d-flex align-items-center">
                                                           <div class="col-6 special-text h7">Child(ren) 2 - 11 Yrs</div>
-                                                          <div class="col-6 d-flex align-items-center pr-0">
+                                                          <div class="col-6 d-flex align-items-center pe-0">
                                                               <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('ChildDomestic')" class="fa fa-minus decreaseQtyChildDomestic border p-1 b-radius"></i></div>
                                                               <div class="col-4 text-center px-0"><input type="text" id="qtyValueChildDomestic" class="form-control bg-transparent border-0 text-center qtyValueChildDomestic" value="0" readonly="readonly"></div>
                                                               <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('ChildDomestic',2)" class="fa fa-plus increaseQtyChildDomestic border p-1 b-radius"></i></div>
@@ -271,7 +271,7 @@
                                                       </div> 
                                                        <div class="dvQtySelectorInfantDomestic dvQtySelector dropdown-item d-flex- align-items-center d-none">
                                                           <div class="col-6 special-text h7">Infant(s) Below 2 Yrs</div>
-                                                          <div class="col-6 d-flex align-items-center pr-0">
+                                                          <div class="col-6 d-flex align-items-center pe-0">
                                                               <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('InfantDomestic')" class="fa fa-minus decreaseQtyInfantDomestic border p-1 b-radius"></i></div>
                                                               <div class="col-4 text-center px-0"><input type="text" id="qtyValueInfantDomestic" class="form-control bg-transparent border-0 text-center qtyValueInfantDomestic" value="0" readonly="readonly"></div>
                                                               <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('InfantDomestic',2)" class="fa fa-plus increaseQtyInfantDomestic border p-1 b-radius"></i></div>
@@ -285,10 +285,9 @@
                                     <div class="col-12 col-md-6 col-lg mb-3">
                                        <label class="h8 heading-semibold text-colour7">From</label>
                                         <div class="dvTextBoxFromdomestic input-group">
-                                            <input class="input from-icon form-control pr-5" id="textBoxFromdomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
-                                            <div class="input-group-append">
-                                                <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
-                                            </div>
+                                            <input class="input from-icon form-control pe-5" id="textBoxFromdomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
+                                             <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
+                                            
                                         </div>
                                         <input type="hidden" id="hdntripdomestic" value="true" />
                                         </div> 
@@ -299,37 +298,31 @@
                                     <div class="col-12 col-md-6 col-lg mb-3">
                                         <label class="h8 heading-semibold text-colour7">To</label>
                                         <div class="dvTextBoxTodomestic input-group">
-                                            <input class="input from-icon form-control pr-5" id="textBoxTodomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
-                                            <div class="input-group-append">
-                                                <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
-                                            </div>
-                                        </div>
+                                            <input class="input from-icon form-control pe-5" id="textBoxTodomestic" onfocus="placeholderOnFocusdomestic(this,'Enter City or Airport');" onblur="placeholderOnFocusdomestic(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
+                                             <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
+                                          </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3">
                                         <label class="h8 heading-semibold text-colour7">Departure</label>
                                         <div class="input-group">
-                                            <input id="txtDepartdomestic" class="input datePicker form-control cal-icon pr-5" onfocus="placeholderOnFocusdomestic(this,'Enter Date');" onblur="placeholderOnFocusdomestic(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
-                                            <div class="input-group-append">
-                                                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
-                                            </div>
-                                        </div>
+                                            <input id="txtDepartdomestic" class="input datePicker form-control cal-icon pe-5" onfocus="placeholderOnFocusdomestic(this,'Enter Date');" onblur="placeholderOnFocusdomestic(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
+                                             <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
+                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg mb-3" id="divrtndomestic">
                                                     <label class="h8 heading-semibold text-colour7">Return</label>
                                                     <div class="input-group"> 
-                                                        <input class="input datePicker form-control cal-icon pr-5" id="txtReturndomestic" onfocus="placeholderOnFocusdomestic(this,'Enter Date');"
+                                                        <input class="input datePicker form-control cal-icon pe-5" id="txtReturndomestic" onfocus="placeholderOnFocusdomestic(this,'Enter Date');"
                                                         onblur="placeholderOnFocusdomestic(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
-                                                        </div>
-                                                    </div>
+                                                        <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
+                                                     </div>
                                                 </div>                                                                                
                                     <div class="col-12">
                                             <div class="row">
                                                 <div class="col-6 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
                                                     <label class="h8 heading-semibold text-colour7">Adult(12+Yrs)</label>
                                                     <div class="input-bg">
-                                                        <select id="DropDownListAdultdomestic" class="dropdown-select form-control">
+                                                        <select id="DropDownListAdultdomestic" class="dropdown-select form-select">
                                                             <option value="1" selected="selected">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -341,7 +334,7 @@
                                                 <div class="col-6 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
                                                     <label class="h8 heading-semibold text-colour7">Children(2-11Yrs)</label>
                                                     <div class="input-bg">
-                                                        <select id="DropDownListChilddomestic" class="dropdown-select form-control">
+                                                        <select id="DropDownListChilddomestic" class="dropdown-select form-select">
                                                             <option value="0" selected="selected">0</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -375,40 +368,32 @@
                                     <input class="input form-control" id="textBoxFromdomestic" onfocus="placeholderOnFocusdomestic(this, 'Enter City or Airport');"
                                         onblur="placeholderOnFocusdomestic(this, 'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                     <input type="hidden" id="hdntripdomestic" value="true" />
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-colour6"><i class="fa fa-plane" aria-hidden="true"></i></span>
-                                    </div>
-                                </div>
+                                     <span class="input-group-text bg-colour6"><i class="fa fa-plane" aria-hidden="true"></i></span>
+                                 </div>
                             </div>
                             <div class="col-sm-6 mb-3">
                                 <label class="h8 heading-semibold">To</label>
                                 <div class="input-group mb-3">
                                     <input class="input form-control" id="textBoxTodomestic" onfocus="placeholderOnFocusdomestic(this, 'Enter City or Airport');"
                                         onblur="placeholderOnFocusdomestic(this, 'Enter City or Airport');" value="Enter City or Airport" type="text" />
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-colour6"><i class="fa fa-plane" aria-hidden="true"></i></span>
-                                    </div>
-                                </div>
+                                     <span class="input-group-text bg-colour6"><i class="fa fa-plane" aria-hidden="true"></i></span>
+                                 </div>
                             </div>
                             <div class="col-sm-6 mb-3">
                                 <label class="h8 heading-semibold">Departure</label>
                                 <div class="input-group mb-3">
                                     <input id="txtDepartdomestic" class="input form-control" onfocus="placeholderOnFocusdomestic(this, 'Enter Date');"
                                         onblur="placeholderOnFocusdomestic(this, 'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-colour6"><i class="fa fa-calendar-o"></i></span>
-                                    </div>
-                                </div>
+                                     <span class="input-group-text bg-colour6"><i class="fa fa-calendar-o"></i></span>
+                                 </div>
                             </div>
                             <div class="col-sm-6 mb-3" id="divrtndomestic">
                                 <label class="h8 heading-semibold">Return</label>
                                 <div class="input-group mb-3">
                                     <input class="input form-control" id="txtReturndomestic" onfocus="placeholderOnFocusdomestic(this,'Enter Date');"
                                         onblur="placeholderOnFocusdomestic(this, 'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
-                                    <div class="input-group-append">
-                                        <span class="input-group-text bg-colour6"><i class="fa fa-calendar-o"></i></span>
-                                    </div>
-                                </div>
+                                   <span class="input-group-text bg-colour6"><i class="fa fa-calendar-o"></i></span>
+                                 </div>
                             </div>
                             <div class="col-12">
                                 <!-- <div id="tblDynamic" class="row">  -->
@@ -416,7 +401,7 @@
                                     <div class="col-6 col-md-3 mb-3">
                                         <label class="h8 heading-semibold d-none w-100 mb-1">Room 1</label>
                                         <label class="h8 heading-semibold">Adult(s) 12+ Yrs</label>
-                                        <select id="DropDownListAdultdomestic" class="dropdown-select form-control">
+                                        <select id="DropDownListAdultdomestic" class="dropdown-select form-select">
                                             <option value="1" selected="selected">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -427,7 +412,7 @@
                                     <div class="col-6 col-md-3 mb-3">
                                         <label class="h8 heading-semibold d-none w-100 mb-1">Room 1</label>
                                         <label class="h8 heading-semibold">Child(ren) 2 - 11 Yrs</label>
-                                        <select id="DropDownListChilddomestic" class="dropdown-select form-control">
+                                        <select id="DropDownListChilddomestic" class="dropdown-select form-select">
                                             <option value="0" selected="selected">0</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -440,7 +425,7 @@
                                         <div class="d-none">
                                             <label class="h8 heading-semibold d-flex align-items-center">
                                                 <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
-                                                <span class="ml-2 h8 heading-semibold">Redeem Points</span>
+                                                <span class="ms-2 h8 heading-semibold">Redeem Points</span>
                                             </label>
                                         </div>
                                         <button onclick="var retvalue = FlightValidationDomestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button" class="purple-btn Search hvr-sweep-to-right" value=" Search ">Search Flight</button>
@@ -455,7 +440,7 @@
                     <div class="row">
                         <div class="SearchDetail SearchBorder col-12 d-none">
                             <%-- <asp:Label ID="LabelYourSearchDetails" runat="server" CssClass="Content_Style" Text=""></asp:Label>--%>
-                            <a href="#modify_search" class="btn btn-one" id="btnModify" data-toggle="collapse">Modify</a>
+                            <a href="#modify_search" class="btn btn-one" id="btnModify" data-bs-toggle="collapse">Modify</a>
                         </div>
                     </div>
                     <div class="bg-colour2 serviceWidget collapse" id="modify_search">
@@ -495,7 +480,7 @@
                                             <div class="col-md-4 col-6">
                                                 <div class="input-bg">
                                                     <label>Adult(s) 12+ Yrs</label>
-                                                    <%-- <select id="DropDownListAdultdomestic" class="dropdown-select form-control">
+                                                    <%-- <select id="DropDownListAdultdomestic" class="dropdown-select form-select">
                                                     <option value="1" selected="selected">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -508,7 +493,7 @@
                                             <div class="col-md-4 col-6">
                                                 <div class="input-bg">
                                                     <label>Child(ren) 2 - 11 Yrs</label>
-                                                    <%--<select id="DropDownListChilddomestic" class="dropdown-select form-control">
+                                                    <%--<select id="DropDownListChilddomestic" class="dropdown-select form-select">
                                                     <option value="0" selected="selected">0</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>

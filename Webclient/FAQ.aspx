@@ -13,7 +13,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
-                    <li class="mr-3">
+                    <li class="me-3">
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
@@ -30,21 +30,19 @@
                 <div class="col-12">
                     <div class="dvCommonAccordion accordion" id="static-accordion">
                         <!-- FLIGHTS -->
-                        <div class="card mb-3">
-                            <div class="card-header p-0">
-                                <h2 class="mb-0">
-                                    <button class="h6 btn btn-block text-left p-3 heading-semibold" type="button" data-toggle="collapse"
-                                        data-target="#collapse1">
+                        <div class="accordion-item mb-3">
+                                <h2 class="accordion-header mb-0">
+                                    <button class="accordion-button h6 btn btn-block text-start p-3 heading-semibold" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse1">
                                         Flights
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
                                     </button>
                                 </h2>
-                            </div>
 
-                            <div id="collapse1" class="collapse show" data-parent="#static-accordion">
-                                <div class="card-body">
+                            <div id="collapse1" class="collapse show" data-bs-parent="#static-accordion">
+                                <div class="accordion-body">
                                     <p class="heading-semibold text-colour7">How do I cancel a flight reservation?</p>
                                     <p class="mb-3">For bookings made through Infinity Rewards, cancellations are allowed if the booking qualifies under refund policy, then points will be refunded back into your account. For any reasons not initiated by you, i.e. flights being grounded/canceled/or any other unforeseen circumstances wherein you are denied travel, applicable reward points will be refunded back into your rewards account within 45 working days.</p>
 
@@ -72,21 +70,19 @@
                         <!-- FLIGHTS -->
 
                         <!-- HOTELS -->
-                        <div class="card mb-3">
-                            <div class="card-header p-0">
-                                <h2 class="mb-0">
-                                    <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapse2">
+                        <div class="accordion-item mb-3">
+                                <h2 class="accordion-header mb-0">
+                                    <button class="accordion-button h6 btn btn-block text-start p-3 heading-semibold collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse2">
                                         Hotels
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
                                     </button>
                                 </h2>
-                            </div>
 
-                            <div id="collapse2" class="collapse" data-parent="#static-accordion">
-                                <div class="card-body">
+                            <div id="collapse2" class="collapse" data-bs-parent="#static-accordion">
+                                <div class="accordion-body">
                                     <p class="heading-semibold text-colour7">How do I cancel a flight reservation?</p>
                                     <p class="mb-3">For bookings made through Infinity Rewards, cancellations are allowed if the booking qualifies under refund policy, then points will be refunded back into your account. For any reasons not initiated by you, i.e. flights being grounded/canceled/or any other unforeseen circumstances wherein you are denied travel, applicable reward points will be refunded back into your rewards account within 45 working days.</p>
 
@@ -124,15 +120,15 @@
                                     <p class="mb-3">Yes, you can. Although, you will have to check with the hotel directly for such requests and book online.</p>
 
                                     <p class="heading-semibold text-colour7">I did not get an email confirmation. What do I do?</p>
-                                    <p class="">
+                                    <p >
                                         If you do not receive a confirmation e-mail from us, there is a possibility that an improper e-mail address was registered in our records, or your Internet Service Provider blocked the e-mail as a ‘spam’ in which case we suggest you check the address and your spam folder. You can also contact us by sending an e-mail at infinity@abcbanking.mu or calling ABC Banking Corporation’s Customer Support. It is important at the time of contacting us that you convey information on:
                                     </p>
                                     <ul class="mb-3">
-     <li><p>Name against which reservation was made</p></li>
-     <li><p>Location (city) and name of the hotel</p></li>
-     <li><p>Dates of check-in / check-out</p></li>
-     <li><p>CIF Number</p></li>
- </ul>
+                                        <li><p>Name against which reservation was made</p></li>
+                                        <li><p>Location (city) and name of the hotel</p></li>
+                                        <li><p>Dates of check-in / check-out</p></li>
+                                        <li><p>CIF Number</p></li>
+                                    </ul>
 
                                     <p class="heading-semibold text-colour7">I am arriving late; will the hotel hold my room until I arrive?</p>
                                     <p class="mb-3">Yes, the hotel will hold your room booking until 7 am the day after your planned arrival date, as your reservation is a confirmed booking. However, please check with the hotel for details.</p>
@@ -170,21 +166,19 @@
                         <!-- HOTELS -->
 
                         <!-- CAR RENTAL -->
-                        <div class="card mb-3">
-                            <div class="card-header p-0">
-                                <h2 class="mb-0">
-                                    <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapse3">
+                        <div class="accordion-item mb-3">
+                                <h2 class="accordion-header mb-0">
+                                    <button class="accordion-button h6 btn btn-block text-start p-3 heading-semibold collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse3">
                                         Car Rental
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
                                     </button>
                                 </h2>
-                            </div>
 
-                            <div id="collapse3" class="collapse" data-parent="#static-accordion">
-                                <div class="card-body">
+                            <div id="collapse3" class="collapse" data-bs-parent="#static-accordion">
+                                <div class="accordion-body">
                                     <p class="heading-semibold text-colour7">Do I get an immediate booking confirmation?</p>
                                     <p class="mb-3">Once car redemption is made, the confirmation is not immediate. It takes a minimum of 24 - 48 hours for confirmation. For any queries regarding confirmation, you can contact us via e-mail at Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>. In case the booking does not get confirmed, the points/cash will be refunded back into your account and you can repeat your attempt to book online.</p>
 
@@ -211,21 +205,19 @@
                         <!-- CAR RENTAL -->
 
                         <!-- SHOP -->
-                        <div class="card mb-3">
-                            <div class="card-header p-0">
-                                <h2 class="mb-0">
-                                    <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapse4">
+                        <div class="accordion-item mb-3">
+                                <h2 class="accordion-header mb-0">
+                                    <button class="accordion-button h6 btn btn-block text-start p-3 heading-semibold collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse4">
                                         Shop
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
                                     </button>
                                 </h2>
-                            </div>
 
-                            <div id="collapse4" class="collapse" data-parent="#static-accordion">
-                                <div class="card-body">
+                            <div id="collapse4" class="collapse" data-bs-parent="#static-accordion">
+                                <div class="accordion-body">
                                     <p class="heading-semibold text-colour7">How can I dispute my Infinity Rewards transactions/purchases?</p>
                                     <p class="mb-3">You can dispute the transaction by emailing Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>, which will log the complaint.</p>
 
@@ -271,21 +263,19 @@
                         <!-- SHOP -->
 
                         <!-- GIFT VOUCHERS -->
-                        <div class="card mb-3">
-                            <div class="card-header p-0">
-                                <h2 class="mb-0">
-                                    <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapse5">
+                        <div class="accordion-item mb-3">
+                                <h2 class="accordion-header mb-0">
+                                    <button class="accordion-button h6 btn btn-block text-start p-3 heading-semibold collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse5">
                                         Gift Vouchers
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
                                     </button>
                                 </h2>
-                            </div>
 
-                            <div id="collapse5" class="collapse" data-parent="#static-accordion">
-                                <div class="card-body">
+                            <div id="collapse5" class="collapse" data-bs-parent="#static-accordion">
+                                <div class="accordion-body">
                                     <p class="heading-semibold text-colour7">How many days will it take to get my Gift Voucher delivered?</p>
                                     <p class="mb-3">Your Gift Voucher details will be emailed within 24 hours to your registered email address (subject to the availability of stock). More details can be found on the brand's terms and conditions in the Infinity Rewards App.</p>
 
@@ -306,21 +296,19 @@
                         <!-- GIFT VOUCHERS  -->
 
                         <!-- LOUNGES -->
-                        <div class="card mb-3">
-                            <div class="card-header p-0">
-                                <h2 class="mb-0">
-                                    <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapse6">
+                        <div class="accordion-item mb-3">
+                                <h2 class="accordion-header mb-0">
+                                    <button class="accordion-button h6 btn btn-block text-start p-3 heading-semibold collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse6">
                                         Lounges
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
                                     </button>
                                 </h2>
-                            </div>
 
-                            <div id="collapse6" class="collapse" data-parent="#static-accordion">
-                                <div class="card-body">
+                            <div id="collapse6" class="collapse" data-bs-parent="#static-accordion">
+                                <div class="accordion-body">
                                     <p class="heading-semibold text-colour7">What is an Airport Lounge?</p>
                                     <p class="mb-3">An airport lounge is a facility operated at many airports for selected passengers, offering comforts beyond those afforded in the airport terminal itself, such as more comfortable seating, quieter environments, and often better access to customer service representatives. Other accommodations may include private meeting rooms, telephones, wireless internet access, and other business services, along with provisions to enhance passenger comfort, such as free beverages, snacks/food, magazines, and showers.</p>
 
@@ -339,21 +327,19 @@
                         <!-- LOUNGES -->
 
                         <!-- EXPERIENCES -->
-                        <div class="card mb-3">
-                            <div class="card-header p-0">
-                                <h2 class="mb-0">
-                                    <button class="h6 btn btn-block text-left p-3 heading-semibold collapsed" type="button" data-toggle="collapse"
-                                        data-target="#collapse7">
+                        <div class="accordion-item mb-3">
+                                <h2 class="accordion-header mb-0">
+                                    <button class="accordion-button h6 btn btn-block text-start p-3 heading-semibold collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse7">
                                         Experiences
                                         <span class="arrow-icon">
                                             <i class="fa fa-caret-up"></i>
                                         </span>
                                     </button>
                                 </h2>
-                            </div>
 
-                            <div id="collapse7" class="collapse" data-parent="#static-accordion">
-                                <div class="card-body">
+                            <div id="collapse7" class="collapse" data-bs-parent="#static-accordion">
+                                <div class="accordion-body">
                                     <p class="heading-semibold text-colour7">Is there a way I can cancel my order or get a refund?</p>
                                     <p class="mb-3">Please refer to the terms and conditions mentioned under each experience as this may vary accordingly. In case of bookings eligible for cancellation, please email Customer Support at <a class="link1" href="mailto:infinity@abcbanking.mu">infinity@abcbanking.mu</a>.</p>
 

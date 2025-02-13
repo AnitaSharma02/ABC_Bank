@@ -16,13 +16,13 @@
             $("#<%=txtEffectiveDate.ClientID%>").datepicker('show');
         });
         //show datepicker onclick of icon
-        $(".dvTxtDOBChild .input-group-append .input-group-text").on("click", function () {
+        $(".dvTxtDOBChild .input-group-text").on("click", function () {
             $("#<%=txtDOB.ClientID%>").datepicker("show");
         });
-        $(".dvTxtExpiryDateChild .input-group-append .input-group-text").on("click", function () {
+        $(".dvTxtExpiryDateChild .input-group-text").on("click", function () {
             $("#<%=txtExpiryDate.ClientID%>").datepicker("show");
         });
-        $(".dvTxtEffectiveDateChild .input-group-append .input-group-text").on("click", function () {
+        $(".dvTxtEffectiveDateChild .input-group-text").on("click", function () {
             $("#<%=txtEffectiveDate.ClientID%>").datepicker("show");
         });
         const currentDate = new Date();
@@ -86,7 +86,7 @@
     <div class="col-md-6 mb-3">
         <label class="label">Title</label>
         <div class="dvInput select_box">
-            <asp:DropDownList ID="ddlTitle" CssClass="form-control" runat="server" Style="width: 100%;">
+            <asp:DropDownList ID="ddlTitle" CssClass="form-select" runat="server" Style="width: 100%;">
                 <asp:ListItem Value="1" Selected="True">Title</asp:ListItem>
                 <asp:ListItem Value="Male">Mstr</asp:ListItem>
                 <asp:ListItem Value="Female">Miss</asp:ListItem>
@@ -124,10 +124,8 @@
         <label class="label">Date of Birth</label>
         <div class="dvInputGroup dvTxtDOBChild input-group">
             <asp:TextBox ID="txtDOB" class="form-control icnDate" runat="server" AutoComplete="off"></asp:TextBox>
-            <div class="input-group-append">
-                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
-            </div>
-        </div>
+             <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
+         </div>
         <asp:RequiredFieldValidator ID="rfvAdultDOB" runat="server" ControlToValidate="txtDOB"
             Display="Dynamic" ErrorMessage="Enter Date of Birth" ValidationGroup="WebValidation" CssClass="rptErrorMassage text-danger"></asp:RequiredFieldValidator>
         <asp:CustomValidator ID="customChildDOBValidator" runat="server" ErrorMessage="Child  (2-12 yrs)"
@@ -170,7 +168,7 @@ ErrorMessage="Minimum 6 characters required."></asp:RegularExpressionValidator>
         <div class="col-md-6 mb-3" id="divNationality" runat="server">
             <label class="label">Nationality</label>
             <div class="dvInput input-group" id="divNationalityData" runat="server">
-                <asp:DropDownList ID="drpNationality" class="form-control" runat="server">
+                <asp:DropDownList ID="drpNationality" class="form-select" runat="server">
                     <asp:ListItem Text="Select" Selected="true" Value="">
                     </asp:ListItem>
                 </asp:DropDownList>
@@ -219,10 +217,8 @@ ErrorMessage="Minimum 6 characters required."></asp:RegularExpressionValidator>
             <div class="dvTxtEffectiveDateChild dvInputGroup input-group">
                 <asp:TextBox ID="txtEffectiveDate" runat="server" CssClass="form-control icnDate"
                     Text="" AutoComplete="off"></asp:TextBox>
-                <div class="input-group-append">
-                    <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
-                </div>
-            </div>
+                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
+             </div>
             <%--<div class="invalid-feedback" id="ErrPassportissue" runat="server">--%>
             <asp:RequiredFieldValidator ID="rfvAdultEffectiveDate" runat="server" ControlToValidate="txtEffectiveDate"
                 Display="Dynamic" ErrorMessage="Enter Date of Issuance" ValidationGroup="WebValidation" CssClass="rptErrorMassage text-danger"
@@ -237,10 +233,8 @@ ErrorMessage="Minimum 6 characters required."></asp:RegularExpressionValidator>
             <div class="dvTxtExpiryDateChild dvInputGroup input-group">
                 <asp:TextBox ID="txtExpiryDate" runat="server" CssClass="form-control icnDate" Text=""
                     AutoComplete="off"></asp:TextBox>
-                <div class="input-group-append">
-                    <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
-                </div>
-            </div>
+               <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
+             </div>
             <%-- <div class="invalid-feedback" id="ErrPassportexpiry" runat="server">--%>
             <asp:RequiredFieldValidator ID="rfvAdultExpiryDate" runat="server" ControlToValidate="txtExpiryDate"
                 Display="Dynamic" ErrorMessage="Enter Expiry Date" ValidationGroup="WebValidation" CssClass="rptErrorMassage text-danger"

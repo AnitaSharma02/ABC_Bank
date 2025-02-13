@@ -67,7 +67,7 @@ public partial class Index : Page
 
                     }
                     sb.Append("</div>");
-                    sb.Append("<div class=\"swiper-pagination container-xl p-0 text-lg-right\"></div>");
+                    sb.Append("<div class=\"swiper-pagination container-xl p-0 text-lg-end\"></div>");
                     sb.Append("<div class=\"swiper-button-prev\">");
                     sb.Append("<img src=\"images/icons/arrows/left-yellow-arrow-2.svg\" alt=\"\" />");
                     sb.Append("</div>");

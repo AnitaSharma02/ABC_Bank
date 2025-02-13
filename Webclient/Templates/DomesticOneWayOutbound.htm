@@ -7,19 +7,19 @@
             <div class="border dvhover px-3" id="OneWayflight" name="Oneway">
                 <div class="flight-block seq_{$T.record.SequenceNo}">
                     <div class="dvAirInfo row py-2">
-                        <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start align-items-center text-center text-md-left">
+                        <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-start align-items-center text-center text-md-start">
                             <img src='{$T.record.AirlineLogo}' alt="" />
-                            <span class="heading-semibold d-inline-block pl-2">{$T.record.AirlineName}  ({$T.record.FlightNo})</span>
+                            <span class="heading-semibold d-inline-block ps-2">{$T.record.AirlineName}  ({$T.record.FlightNo})</span>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="row justify-content-between align-items-center my-2">
-                                <div class="col-3 pr-md-0">
+                                <div class="col-3 pe-md-0">
                                     <span class="">{$T.record.DepartureTime}</span>
                                 </div>
                                 <div class="col-6 d-flex justify-content-between align-items-center px-0">
                                     <div class="border-top w-100"></div>
                                 </div>
-                                <div class="col-3 pl-md-0 text-right ">
+                                <div class="col-3 ps-md-0 text-end ">
                                     <span class="">{$T.record.ArrivalTime}</span>
                                 </div>
                             </div>
@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-4 text-center text-md-right">
+                        <div class="col-12 col-md-4 text-center text-md-end">
                             <h2 class="heading6 text-colour1">
                                 <span>Points </span>
                                 <span id="TotalFareAmount"> {$T.record.FareTotal}</span>
@@ -46,7 +46,7 @@
                                 <!--<div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-lg-center border-right-lg border-bottom-lg">
                                     <span class="">{$T.record.FlightDate}</span>
                                 </div>-->
-                                <!--<div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-right text-lg-center border-right-lg border-bottom-lg">
+                                <!--<div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-end text-lg-center border-right-lg border-bottom-lg">
                                     <span class="">{$T.record.DepartureTime}</span>
                                 </div>-->
                                 <!--<div class="col-12 col-lg-6 text-lg-center">
@@ -65,7 +65,7 @@
                                     </div>
                                 </div>-->
  
-                                <!--<div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-right text-lg-center border-bottom">
+                                <!--<div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-end text-lg-center border-bottom">
                                     <span class="">{$T.record.ArrivalTime}</span>
                                 </div>-->
                             </div>

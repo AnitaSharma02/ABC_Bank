@@ -43,7 +43,7 @@
             <label class="h8 heading-semibold text-colour7">Nationality</label>
            <%-- <label>Nationality</label>--%>
             <div class="select_box" id="divNationalityData" runat="server">
-                <asp:DropDownList ID="drpNationality" class="form-control" runat="server" >
+                <asp:DropDownList ID="drpNationality" class="form-select" runat="server" >
                  <asp:ListItem Text="Nepal" Value="NP">
                 </asp:ListItem>
             </asp:DropDownList>

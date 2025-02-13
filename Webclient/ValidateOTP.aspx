@@ -13,7 +13,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 pt-3 pb-0">
-                    <li class="mr-3"><a href="hoteldetails.html">
+                    <li class="me-3"><a href="hoteldetails.html">
                         <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>

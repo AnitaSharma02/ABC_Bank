@@ -1,3 +1,7 @@
+.dvExperienceProductDetails .dvThumbSwiperSlider .dvThumbSlide .img-container{
+    padding-bottom:15%;
+}
+
 /*=========[ REMOVE NOT-ALLOWED ICON ]=========*/
 .dvExperienceProductDetails .dvInput.input-group .form-control[readonly],
 .dvExperienceProductDetails .dvInputGroup.input-group .form-control[readonly] {
@@ -33,13 +37,7 @@
 
 /*=========[ EXPERIENCEBOOKINGDETAILS PAGE ]=========*/
 
-/*.dvExperienceBookingDetails .dvBookingDetails {
-    background-color: var(--colour5);
-    padding: 12px;
-}
-.dvExperienceBookingDetails .dvBookingDetails p {
-    color: var(--colour1);
-}*/
+
 
 /*=========[ EXPERIENCEBOOKINGDETAILS PAGE ]=========*/
 
@@ -63,19 +61,15 @@
     .dvExperienceProductStatus .dvDeliveryTrack .dvLine {
         position: absolute;
         top: 50%;
-        transform: translate(0, -50%);
-        z-index: 0;
-        left: 25%;
-        width: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        width: 75%;
     }
 }
 
 @media (min-width: 992px) {
-    .dvExperienceProductBookingDetails .dvDeliveryTrack .dvLine,
-    .dvExperienceProductStatus .dvDeliveryTrack .dvLine {
-        left: 30%;
-        width: 90%;
-    }
+
 }
 
 @media (min-width: 1200px) {

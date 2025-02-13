@@ -10,14 +10,14 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" type="text/css" href="~/fonts/fontawesome-free-6.5.1-web/css/all.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="\Css/jquery-ui.css" />
-    <link rel="stylesheet" href="\Css/bootstrap.min.css" />
+    <link rel="stylesheet" href="\Css/bootstrap5.min.css" />
     <link rel="stylesheet" href="\Css/swiper.min.css" />
     <link rel="stylesheet" href="\Css/root.css" />
     <link rel="stylesheet" href="\Css/global.css" />
     <script src="\Jquery/jquery.min.js" type="text/javascript"></script>
     <script src="\Jquery/jquery-ui.js" type="text/javascript"></script>
     <script src="\Jquery/common.js" type="text/javascript"></script>
-    <script src="\Jquery/bootstrap.min.js" type="text/javascript"></script>
+    <script src="\Jquery/bootstrap5.min.js" type="text/javascript"></script>
     <script src="\Jquery/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
     <script src="\Jquery/swiper.min.js"></script>
     <!--Language Libs -->
@@ -211,15 +211,39 @@
 
         // this script is for to show navbar-toggler on only shop redemption
         function hideShowNavbarToggler() {
-            const element = document.querySelector(".dvShopMenu #CP_divMenuContent");
-            if (element) {
-                const totalLength = element.innerHTML.trim().length;
+            const element1 = document.querySelector(".dvShopMenu #CP_divMenuContent");
+            const element2 = document.querySelector(".dvShopMenu #dvMenu ul.navbar-nav");
+            const element3 = document.querySelector(".dvShopMenu #CP_aCartBtn");
+            const element4 = document.querySelector(".dvShopMenu .dvNavbarToggler");
+            if (element1) {
+                const totalLength = element1.innerHTML.trim().length;
                 if (totalLength < 1) {
                     $('.dvShopMenu .dvNavbarToggler .navbar-toggler').css('display', 'none');
-                    $('.dvShopMenu .dvShopSearchBox').attr('class', 'dvShopSearchBox col-12 col-lg-3 order-lg-2 ml-auto');
+                    $('.dvShopMenu .dvShopSearchBox').attr('class', 'dvShopSearchBox col-12 col-lg-3 order-lg-2 ms-auto');
+                }
+            }
+            if (element2) {
+                const totalLength = element2.innerHTML.trim().length;
+                if (totalLength < 1) {
+                    $('.dvShopMenu .dvNavbarToggler .navbar-toggler').css('display', 'none');
+                    $('.dvShopMenu .dvShopSearchBox').attr('class', 'dvShopSearchBox col-12 col-lg-3 order-lg-2 ms-auto');
+                }
+            }
+            if (element3 && element4) {
+                const element1totalLength = element1.innerHTML.trim().length;
+                const element2totalLength = element2.innerHTML.trim().length;
+                if (element1totalLength > 0 && element2totalLength < 1) {
+                    $('.dvShopMenu .dvNavbarToggler .navbar-toggler').css('display', 'none');
+                    $('.dvShopMenu .dvShopSearchBox').attr('class', 'dvShopSearchBox col col-lg-3 order-lg-2 ms-auto ps-0');
                 }
             }
         }
+
+
+        
+
+
+
 
 
         // check url and apply classnames for different redemptions
@@ -277,6 +301,12 @@
             else if (productType === 'digital' && breadcrumbItem === 'Giftcards') {
                 $('.dvProductDetail').addClass('dvProductDetailGiftcards');
             }
+            else if (productType === 'digital' && breadcrumbItem === 'Global Gift Vouchers') {
+                $('.dvProductDetail').addClass('dvProductDetailGlobalGiftVouchers');
+            }
+            else if (productType === 'digital' && breadcrumbItem === 'Local Gift Vouchers') {
+                $('.dvProductDetail').addClass('dvProductDetailLocalGiftVouchers');
+            }
             else if (productType === 'physical' && breadcrumbItem === 'Shop') {
                 $('.dvProductDetail').addClass('dvProductDetailShop');
             }
@@ -298,7 +328,7 @@
                 <div class="container-xl">
                     <div class="row">
                         <div class="dvUserInfo col-6 col-lg-4 d-flex align-items-center">
-                            <div class="mr-2">
+                            <div class="me-2">
                                 <i class="fa-regular fa-user text-colour6"></i>
                             </div>
                             <div class="" id="liwelcome" runat="server" visible="true">
@@ -308,13 +338,13 @@
                                 </asp:Label>
                             </div>
                         </div>
-                        <div class="dvActivationInfo col-6 text-right col-lg-auto ml-lg-auto d-none- d-lg-block- invisible border-lg-right border-right-0" id="lnkRegister" runat="server">
+                        <div class="dvActivationInfo col-6 text-end col-lg-auto ms-lg-auto d-none- d-lg-block- invisible border-lg-right border-right-0" id="lnkRegister" runat="server">
                             <a href="\Activation.aspx" class="nav-link p-0 text-colour6">
                                 <i class="fa fa-power-off"></i>
                                 <span>Activation</span>
                             </a>
                         </div>
-                        <div class="dvBalanceInfo col-6 col-lg-auto ml-lg-auto text-right  border-lg-right border-right-0" runat="server" visible="false" id="dvPoints">
+                        <div class="dvBalanceInfo col-6 col-lg-auto ms-lg-auto text-end  border-lg-right border-right-0" runat="server" visible="false" id="dvPoints">
                             <div class="dvPoints">
                                 <div class="nav-item" id="liPoints" runat="server" visible="false">
                                     <a class="points" href="javascript:void(0);">Points<span>
@@ -323,28 +353,28 @@
                                 </div>
                                 <div id="HeaderTot" runat="server" visible="false">
                                     <asp:Label runat="server" CssClass="text-colour6 " ID="Label1" Text="Points"></asp:Label>
-                                    <span class="ml-1 text-colour6" id="totAvbPointDiv" runat="server" visible="false">
+                                    <span class="ms-1 text-colour6" id="totAvbPointDiv" runat="server" visible="false">
                                         <asp:Label runat="server" ID="lblCurrentBal" ForeColor="" Text="0"></asp:Label>
                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="dvLoginInfo col-6 col-lg-auto d-none d-lg-block text-right" id="lnkloginlogout" runat="server">
+                        <div class="dvLoginInfo col-6 col-lg-auto d-none d-lg-block text-end" id="lnkloginlogout" runat="server">
                             <div class="nav-item">
                                 <a href="Login.aspx" class="nav-link d-inline-block p-0 text-colour6" id="lnkLogin" runat="server">
-                                    <i class="fa-regular fa-user pr-1 d-inline-block"></i>
+                                    <i class="fa-regular fa-user pe-1 d-inline-block"></i>
                                     <span class="nav-link p-0 d-inline-block">Login</span>
                                 </a>
                                 <a id="liLogout" runat="server" visible="false">
-                                    <asp:LinkButton runat="server" CausesValidation="false" ID="logout" data-toggle="modal" data-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link d-inline-block p-0 text-colour6">
-                                    <i class="fa-regular fa-user pr-1 d-inline-block"></i>
-                                        <span class="nav-link p-0 d-inline-block">Logout</span>
+                                    <asp:LinkButton runat="server" CausesValidation="false" ID="logout" data-bs-toggle="modal" data-bs-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link d-inline-block p-0">
+                                    <i class="fa-regular fa-user pe-1 d-inline-block text-colour6"></i>
+                                        <span class="nav-link p-0 d-inline-block text-colour6">Logout</span>
                                     </asp:LinkButton>
                                 </a>
                             </div>
                         </div>
 
-                        <div class="dvLanguageScript col-6 col-lg-auto text-right d-none">
+                        <div class="dvLanguageScript col-6 col-lg-auto text-end d-none">
                             <select class="dvLang d-none-" id="languageSelector">
                                 <option value="en">en</option>
                                 <option value="np">np</option>
@@ -358,24 +388,24 @@
             <div class="container-xl py-lg-3">
                 <nav class="navbar navbar-expand-lg navbar-light px-0 py-2 mx-lg-n3 justify-content-start">
                     <div class="logo m-0 col-auto col-lg-2 px-0 px-lg-3 order-0 order-lg-0">
-                        <a href="Index.aspx" class="d-inline-block pr-2 mr-1">
+                        <a href="Index.aspx" class="d-inline-block pe-2 me-1">
                             <img src="../Images/logos/infinity-logo.svg" />
                         </a>
                     </div>
-                    <div class="logo m-0 col-auto col-lg-2 px-0 px-lg-3 order-1 order-lg-2 text-lg-right">
+                    <div class="logo m-0 col-auto col-lg-2 px-0 px-lg-3 order-1 order-lg-2 text-lg-end">
                         <a href="https://www.abcbanking.mu/" target="_blank" class="d-inline-block">
                             <img src="../Images/logos/abc-footer-logo.svg" />
                         </a>
                     </div>
-                    <div class="order-3 col-auto col-lg-auto align-items-center justify-content-end px-0 pr-lg-3 d-lg-none ml-auto">
-                        <button class="navbar-toggler d-lg-none px-0 py-2 border-0 ml-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <div class="order-3 col-auto col-lg-auto align-items-center justify-content-end px-0 pe-lg-3 d-lg-none ms-auto">
+                        <button class="navbar-toggler d-lg-none px-0 py-2 border-0 ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                             <%--<span class="navbar-toggler-icon"></span>--%>
                             <%--<img src="/Images/icons/other/menu.png" alt="?" />--%>
                             <i class="fa-solid fa-bars-staggered text-colour1"></i>
                         </button>
                     </div>
 
-                    <div class="navbar-collapse collapse order-3 order-lg-1 col-lg-auto px-0 px-lg-3 mb-1 mb-lg-0 justify-content-lg-end ml-auto" id="navbarSupportedContent">
+                    <div class="navbar-collapse collapse order-3 order-lg-1 col-lg-auto px-0 px-lg-3 mb-1 mb-lg-0 justify-content-lg-end ms-auto" id="navbarSupportedContent">
                         <ul class="navbar-nav align-items-lg-center w-100">
                             <li class="nav-item">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" id="about" href="AboutUs.aspx">About Us</a>
@@ -389,9 +419,9 @@
                             <li class="nav-item dropdown" runat="server" visible="true" id="limyaccount">
                                 <a class="nav-link py-2 py-lg-0 px-0 px-lg-3" href="StatementSummary.aspx" id="navbarDropdown">My Account</a>
                             </li>
-                            <%--<li class="dvUserInfo nav-item d-flex align-items-center border-top ml-lg-auto pt-2 pt-lg-0">
+                            <%--<li class="dvUserInfo nav-item d-flex align-items-center border-top ms-lg-auto pt-2 pt-lg-0">
                                 <div class="d-flex align-items-center">
-                                    <div class="mr-2">
+                                    <div class="me-2">
                                         <i class="fa-regular fa-user text-colour7"></i>
                                     </div>
                                     <div class="" id="liwelcome" runat="server" visible="true">
@@ -404,29 +434,29 @@
                             </li>--%>
                             <li class="dvLoginInfo nav-item d-lg-none" id="mob_lnkloginlogout" runat="server">
                                 <a href="Login.aspx" class="nav-link p-2 btn btn-one" id="mob_lnkLogin" runat="server">
-                                    <i class="fa-regular fa-user pr-1 d-inline-block"></i>
+                                    <i class="fa-regular fa-user pe-1 d-inline-block"></i>
                                     <span class="d-inline-block">Login</span>
                                 </a>
                                 <a id="mob_liLogout" class="nav-link p-2 btn btn-one d-none" runat="server" visible="false">
-                                    <asp:LinkButton runat="server" CausesValidation="false" ID="mob_logout" data-toggle="modal" data-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link p-2 btn btn-one">
-                                        <i class="fa-regular fa-user pr-1 d-inline-block"></i>
+                                    <asp:LinkButton runat="server" CausesValidation="false" ID="mob_logout" data-bs-toggle="modal" data-bs-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link p-2 btn btn-one">
+                                        <i class="fa-regular fa-user pe-1 d-inline-block"></i>
                                         <span class="d-inline-block">Logout</span>
                                     </asp:LinkButton>
                                 </a>
                             </li>
                             <li class="dvActivationInfo nav-item d-none" id="mob_lnkRegister" runat="server">
-                                <a href="\Activation.aspx" id="mob_activation" class="nav-link p-2 btn btn-one mt-2"><i class="fa fa-power-off pr-1"></i><span>Activation</span></a>
+                                <a href="\Activation.aspx" id="mob_activation" class="nav-link p-2 btn btn-one mt-2"><i class="fa fa-power-off pe-1"></i><span>Activation</span></a>
                             </li>
                         </ul>
                         <div class="dvLoginBtn d-none">
                             <%-- <div class="nav-item" id="lnkloginlogout" runat="server">
                                 <a href="Login.aspx" class="nav-link d-inline-block p-0 text-colour6" id="lnkLogin" runat="server">
-                                    <i class="fa-regular fa-user pr-1 d-inline-block"></i>
+                                    <i class="fa-regular fa-user pe-1 d-inline-block"></i>
                                     <span class="nav-link p-0 d-inline-block">Login</span>
                                 </a>
                                 <a id="liLogout" runat="server" visible="false">
-                                    <asp:LinkButton runat="server" CausesValidation="false" ID="logout" data-toggle="modal" data-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link text-colour6">
-                                        <i class="fa-regular fa-user pr-1 d-inline-block"></i>
+                                    <asp:LinkButton runat="server" CausesValidation="false" ID="logout" data-bs-toggle="modal" data-bs-target="#dvLogoutModal" OnClick="SignOut" CssClass="nav-link text-colour6">
+                                        <i class="fa-regular fa-user pe-1 d-inline-block"></i>
                                         <span class="nav-link p-0 d-inline-block">Logout</span>
                                     </asp:LinkButton>
                                 </a>
@@ -474,7 +504,7 @@
             <div class="bg-colour1 py-4">
                 <div class="container-xl">
                     <div class="row align-items-lg-center">
-                        <div class="dvLinks col-lg-10 text-center text-lg-left mb-3 mb-lg-0 text-uppercase">
+                        <div class="dvLinks col-lg-10 text-center text-lg-start mb-3 mb-lg-0 text-uppercase">
                             <a class="d-block d-md-inline-block py-1" href="Earn.aspx">Earn</a>
                             <a class="d-block d-md-inline-block py-1" href="Redeem.aspx">Redeem</a>
                             <a class="d-block d-md-inline-block py-1" href="AboutUs.aspx">About Us</a>
@@ -484,7 +514,7 @@
                             <a class="d-block d-md-inline-block py-1" href="BookingPolicy.aspx">Booking Policy</a>
                             <%--<a class="d-block d-md-inline-block py-1" href="ComingSoon.aspx">Disclaimer</a>--%>
                         </div>
-                        <div class="dvSocialIcons col-lg-2 text-center text-lg-right mb-3 mb-md-0">
+                        <div class="dvSocialIcons col-lg-2 text-center text-lg-end mb-3 mb-md-0">
                             <a class="d-inline-block px-1" href="https://www.facebook.com/ABCbankingcorporation" target="_blank">
                                 <%--<img src="images/icons/social/facebook.svg" />--%>
                                 <i class="fa-brands fa-facebook text-colour6"></i>
@@ -496,12 +526,12 @@
                                 <%--<i class="fa-brands fa-linkedin-in text-colour6"></i>--%>
                                 <i class="fa-brands fa-linkedin text-colour6"></i>
                             </a>
-                            <%--<a class="d-inline-block pl-1" href="" target="_blank">
+                            <%--<a class="d-inline-block ps-1" href="" target="_blank">
                                 <%--<img src="images/icons/social/Instagram.svg" />--%
                                 <i class="fa-brands fa-instagram text-colour6"></i>
                                 <%--<i class="fa-brands fa-square-instagram text-colour6"></i>--%
                             </a>--%>
-                            <%--<a class="d-inline-block pl-1" href="" target="_blank">
+                            <%--<a class="d-inline-block ps-1" href="" target="_blank">
                                 <%--<img src="images/icons/social/Instagram.svg" />--%
                                 <%--<i class="fa-brands fa-x-twitter text-colour6"></i>--%
                                 <%--<i class="fa-brands fa-square-x-twitter text-colour6"></i>--%
@@ -512,11 +542,11 @@
             </div>
             <div class="container-xl py-4">
                 <div class="row align-items-lg-center">
-                    <div class="col-sm-12 col-lg-2 text-center text-lg-left mb-3 mb-lg-0">
+                    <div class="col-sm-12 col-lg-2 text-center text-lg-start mb-3 mb-lg-0">
                         <a class="d-inline-block" href="https://www.abcbanking.mu/" target="_blank">
                             <img class="img-fluid footer-logo" src="images/logos/abc-footer-logo.svg" alt="Infinity Rewards Logo" /></a>
                     </div>
-                    <div class="col-sm-12 col-lg-6 text-center text-lg-left mb-3 mb-lg-0">
+                    <div class="col-sm-12 col-lg-6 text-center text-lg-start mb-3 mb-lg-0">
                         <p class="h8 heading-semibold text-colour7">
                             &copy;
                           <script>
@@ -525,7 +555,7 @@
                             ABC BANKING CORPORATION LTD. All rights reserved.
                         </p>
                     </div>
-                    <div class="col-sm-12 col-lg-4 text-center text-lg-right">
+                    <div class="col-sm-12 col-lg-4 text-center text-lg-end">
                         <a class="d-inline-block" href="https://www.giift.com/" target="_blank">
                             <img class="img-fluid" src="images/logos/giift-logo.svg" alt="Giift Logo" />
                         </a>
@@ -543,15 +573,15 @@
             <div class="modal-content">
                 <div class="modal-header border-0">
                     <h5 class="modal-title">Logout</h5>
-                    <button type="button" class="close" data-dismiss="modal">
-                        <i class="fa-solid fa-xmark"></i>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
                     </button>
                 </div>
                 <div class="modal-body text-center">
                     <p class="heading-semibold">Do you want to Signout?</p>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <a class="btn btn-one" data-dismiss="modal">No</a>
+                    <a class="btn btn-one" data-bs-dismiss="modal">No</a>
                     <a class="btn btn-one" id="dsktopYes" href="Logout.aspx">Yes</a>
                 </div>
             </div>

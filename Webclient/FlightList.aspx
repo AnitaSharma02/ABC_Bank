@@ -32,11 +32,11 @@
 
             });
             //show datepicker onclick of icon
-            $(".dvTxtDepart .input-group-append .input-group-text").on("click", function () {
+            $(".dvTxtDepart .input-group-text").on("click", function () {
                 $("#txtDepart").datepicker("show");
             });
             //show datepicker onclick of icon
-            $(".dvTxtReturn .input-group-append .input-group-text").on("click", function () {
+            $(".dvTxtReturn .input-group-text").on("click", function () {
                 $("#txtReturn").datepicker("show");
             });
 
@@ -174,7 +174,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
-                    <li class="mr-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
+                    <li class="me-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
                     <li class="breadcrumb-item"><a href="FlightSearch.aspx"> Flight Search</a></li>
@@ -188,13 +188,14 @@
             <div class="row">
                 <div class="dvFilter modal fade col-lg-3 px-0 px-lg-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content border-0 b-radius">
-                            <div class="modal-header border-0 d-lg-block p-0">
-                                 <div class="modal-title dvTotalRecords border-0 p-3">
-                                    <p class="heading6 text-colour1"><span>Total Flights Found</span> <span class="filter-text" id="lblNoofFlight"></span></p>
-                                </div>
-                                <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
-                                     <i class="fa-solid fa-xmark"></i>
+                        <div class="modal-content border-0">
+                            <div class="modal-header border-0 d-lg-block">
+                                 <h5 class="modal-title dvTotalRecords border-0">
+                                    <span class="heading6 text-colour1">Total Flights Found</span>
+                                    <span class="filter-text heading6 text-colour1" id="lblNoofFlight"></span>
+                                </h5>
+                                 <button type="button" class="btn-close d-lg-none" data-bs-dismiss="modal">
+                                    <%--<i class="fa-solid fa-xmark"></i>--%>
                                  </button>
                             </div>
                              <div class="modal-body p-lg-0">
@@ -202,10 +203,10 @@
                                     <div class="card my-3">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span class="heading6 mb-2 text-capitalize">Stops</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-start heading-semibold" type="button" data-bs-toggle="collapse-" data-bs-target="#collapse2"><span class="heading6 mb-2 text-capitalize">Stops</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
-                                        <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">
+                                        <div id="collapse2" class="collapse- show" data-bs-parent="#filter-accordion">
                                             <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="">
                                                     <div class="dvLabel divStops dvVcData airList"></div>
@@ -221,11 +222,11 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="heading6 mb-2 text-capitalize">Total Points</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-start collapsed heading-semibold" type="button" data-bs-toggle="collapse-" data-bs-target="#collapse1"><span class="heading6 mb-2 text-capitalize">Total Points</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
 
-                                        <div id="collapse1" class="collapse- show" data-parent="#filter-accordion">
+                                        <div id="collapse1" class="collapse- show" data-bs-parent="#filter-accordion">
                                             <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvRangeSlider flt-stop-chkbox robothik f_sliderW fl">
                                                     <div id="priceSlider" class="PriceSlider">
@@ -243,10 +244,10 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse3"><span class="heading6 mb-2 text-capitalize">Airlines</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-start collapsed heading-semibold" type="button" data-bs-toggle="collapse-" data-bs-target="#collapse3"><span class="heading6 mb-2 text-capitalize">Airlines</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
-                                        <div id="collapse3" class="collapse-" data-parent="#filter-accordion">
+                                        <div id="collapse3" class="collapse-" data-bs-parent="#filter-accordion">
                                             <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvLabel dvVcData airList" id="DivAirLinesList"></div>
                                             </div>
@@ -260,10 +261,10 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse4"><span class="heading6 mb-2 text-capitalize">Total Duration</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-start collapsed heading-semibold" type="button" data-bs-toggle="collapse-" data-bs-target="#collapse4"><span class="heading6 mb-2 text-capitalize">Total Duration</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
-                                        <div id="collapse4" class="collapse-" data-parent="#filter-accordion">
+                                        <div id="collapse4" class="collapse-" data-bs-parent="#filter-accordion">
                                             <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvRangeSlider flt-stop-chkbox robothik f_sliderW fl">
                                                     <div id="durationSlider" class="PriceSlider"></div>
@@ -280,11 +281,11 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse5"><span class="heading6 mb-2 text-capitalize">Departure Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-start collapsed heading-semibold" type="button" data-bs-toggle="collapse-" data-bs-target="#collapse5"><span class="heading6 mb-2 text-capitalize">Departure Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
 
-                                        <div id="collapse5" class="collapse-" data-parent="#filter-accordion">
+                                        <div id="collapse5" class="collapse-" data-bs-parent="#filter-accordion">
                                             <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvRangeSlider flt-stop-chkbox robothik f_sliderW fl">
                                                     <div id="departureSlider" class="PriceSlider"></div>
@@ -301,11 +302,11 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse6"><span class="heading6 mb-2 text-capitalize">Arrival Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-start collapsed heading-semibold" type="button" data-bs-toggle="collapse-" data-bs-target="#collapse6"><span class="heading6 mb-2 text-capitalize">Arrival Time</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
 
-                                        <div id="collapse6" class="collapse-" data-parent="#filter-accordion">
+                                        <div id="collapse6" class="collapse-" data-bs-parent="#filter-accordion">
                                             <div class="card-body scroll-ver- px-0 pt-1 pb-2">
                                                 <div class="dvRangeSlider flt-stop-chkbox robothik f_sliderW fl">
                                                     <div id="arrivalSlider" class="PriceSlider"></div>
@@ -329,10 +330,10 @@
                     <div class="row">
                         <div class="dvModify col-12 mb-3">
                             <div class="bg-colour2 b-radius px-3 py-2 mb-1">
-                                <div class="d-flex flex-wrap justify-content-between align-items-center">
-                                    <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none mb-2">Filter </button>
-                                    <asp:Label ID="LabelYourSearchDetails" runat="server" CssClass="Content_Style h6 heading-regular text-colour7 col-auto px-0 mb-2 mb-lg-0" Text=""></asp:Label>
-                                    <button class="btn btn-one arrowBtn col-auto d-flex collapsed" type="button" data-toggle="collapse" onclick="showModifyFlight()" data-target="#dvForm"><span class="d-inline-block">Modify</span> <span class="arrow-icon ml-2"><i class="fa fa-caret-up"></i></span></button>
+                                <div class="row mx-n1 justify-content-between align-items-center">
+                                    <button data-bs-toggle="modal" data-bs-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none mb-2">Filter </button>
+                                    <asp:Label ID="LabelYourSearchDetails" runat="server" CssClass="Content_Style h7 heading-regular text-colour7 col-auto px-0 mb-2 mb-lg-0" Text=""></asp:Label>
+                                    <button class="btn btn-one arrowBtn col-auto d-flex collapsed" type="button" data-bs-toggle="collapse" onclick="showModifyFlight()" data-bs-target="#dvForm"><span class="d-inline-block">Modify</span> <span class="arrow-icon ms-2"><i class="fa fa-caret-up"></i></span></button>
                                 </div>
                             </div>
                             <div id="dvForm" class="dvForm collapse bg-colour2 b-radius py-3">
@@ -341,8 +342,8 @@
                                         <div class="row dvLabel r- d-none">
                                                 <div class="col-6 col-sm-4 col-md-3 col-lg-2 selTravel mb-3">
                                                     <label class="radio-container d-flex">
-                                                        <span class="d-inline-block ml-1">
-                                                        <input id="oneli" class="radio " name="iternary" onchange="return onwayShow();" type="radio"><span class="pr-3 pl-2 h6 heading-regular text-colour7">One-Way</span>
+                                                        <span class="d-inline-block ms-1">
+                                                        <input id="oneli" class="radio " name="iternary" onchange="return onwayShow();" type="radio"><span class="pe-3 ps-2 h6 heading-regular text-colour7">One-Way</span>
                                                         <span class="radiomark"></span>
                                                         </span>
                                                     </label>
@@ -350,8 +351,8 @@
                    
                                                 <div class="col-6 col-sm-4 col-md-9 col-lg-10 selTravel mb-3">
                                                     <label class="radio-container d-flex">
-                                                        <span class="d-inline-block ml-1">
-                                                        <input  id="retli" class="radio" name="iternary" onchange="return RoundTripShow();" type="radio" checked="checked"><span class="pr-3 pl-2 h6 heading-regular text-colour7">Return</span>
+                                                        <span class="d-inline-block ms-1">
+                                                        <input  id="retli" class="radio" name="iternary" onchange="return RoundTripShow();" type="radio" checked="checked"><span class="pe-3 ps-2 h6 heading-regular text-colour7">Return</span>
                                                         <span class="radiomark"></span>
                                                         </span>
                                                     </label>
@@ -364,7 +365,7 @@
                                                     <option>One Way</option>
                                                     </select>
                                                 <%--<div class="dvDropdown dropdown">
-                                                    <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-toggle="dropdown" aria-expanded="false">
+                                                    <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                         Return
                                                     </button>
                                                     <div class="dropdown-menu prevent-close">
@@ -379,8 +380,8 @@
                                                     <option>Business</option>
                                                     <option>First</option>
                                                 </select>
-                                                <%--<div class="dvDropdown dropdown text-sm-center text-lg-left">
-                                                    <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-toggle="dropdown" aria-expanded="false">
+                                                <%--<div class="dvDropdown dropdown text-sm-center text-lg-start">
+                                                    <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                         Economy
                                                     </button>
                                                     <div class="dropdown-menu prevent-close dropdown-menu-right dropdown-menu-sm-left">
@@ -391,7 +392,7 @@
                                             </div>
                                             <div class="col-12 col-sm-auto mb-3">
                                                  <div class="dvDropdown dropdown">
-                                                     <button type="button" class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" data-toggle="dropdown" data-display="static" aria-expanded="false">
+                                                     <button type="button" class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" data-bs-toggle="dropdown" data-display="static" aria-expanded="false">
                                                          Passenger
                                                      </button>
                                                      <div class="dropdown-menu prevent-close dropdown-menu-sm-right dropdown-menu-lg-left p-0">
@@ -402,11 +403,11 @@
                                                                  </div>
                                                                  <div class="col-6 col-sm-12">
                                                                      <div class="row align-items-center mt-1">
-                                                                         <div class="col-4 text-left"><i role="button" onclick="DecreaseCount('Adult')" class="fa fa-minus decreaseQtyAdult border p-1 b-radius"></i></div>
+                                                                         <div class="col-4 text-start"><i role="button" onclick="DecreaseCount('Adult')" class="fa fa-minus decreaseQtyAdult border p-1 b-radius"></i></div>
                                                                          <div class="col-4 text-center">
                                                                              <input type="text" id="qtyValueAdult" class="form-control p-0 bg-transparent border-0 text-center qtyValueAdult" value="1" readonly="readonly">
                                                                          </div>
-                                                                         <div class="col-4 text-right"><i role="button" onclick="IncreaseCount('Adult',4)" class="fa fa-plus increaseQtyAdult border p-1 b-radius"></i></div>
+                                                                         <div class="col-4 text-end"><i role="button" onclick="IncreaseCount('Adult',4)" class="fa fa-plus increaseQtyAdult border p-1 b-radius"></i></div>
                                                                      </div>
                                                                  </div>
                                                              </div>
@@ -419,11 +420,11 @@
                                                                  </div>
                                                                  <div class="col-6 col-sm-12">
                                                                      <div class="row align-items-center mt-1">
-                                                                         <div class="col-4 text-left"><i role="button" onclick="DecreaseCount('Child')" class="fa fa-minus decreaseQtyChild border p-1 b-radius"></i></div>
+                                                                         <div class="col-4 text-start"><i role="button" onclick="DecreaseCount('Child')" class="fa fa-minus decreaseQtyChild border p-1 b-radius"></i></div>
                                                                          <div class="col-4 text-center">
                                                                              <input type="text" id="qtyValueChild" class="form-control p-0 bg-transparent border-0 text-center qtyValueChild" value="0" readonly="readonly">
                                                                          </div>
-                                                                         <div class="col-4 text-right"><i role="button" onclick="IncreaseCount('Child',2)" class="fa fa-plus increaseQtyChild border p-1 b-radius"></i></div>
+                                                                         <div class="col-4 text-end"><i role="button" onclick="IncreaseCount('Child',2)" class="fa fa-plus increaseQtyChild border p-1 b-radius"></i></div>
                                                                      </div>
                                                                  </div>
                                                              </div>
@@ -436,25 +437,25 @@
                                                                  </div>
                                                                  <div class="col-6 col-sm-12">
                                                                      <div class="row align-items-center mt-1">
-                                                                         <div class="col-4 text-left"><i role="button" onclick="DecreaseCount('Infant')" class="fa fa-minus decreaseQtyInfant border p-1 b-radius"></i></div>
+                                                                         <div class="col-4 text-start"><i role="button" onclick="DecreaseCount('Infant')" class="fa fa-minus decreaseQtyInfant border p-1 b-radius"></i></div>
                                                                          <div class="col-4 text-center">
                                                                              <input type="text" id="qtyValueInfant" class="form-control p-0 bg-transparent border-0 text-center qtyValueInfant" value="0" readonly="readonly">
                                                                          </div>
-                                                                         <div class="col-4 text-right"><i role="button" onclick="IncreaseCount('Infant',2)" class="fa fa-plus increaseQtyInfant border p-1 b-radius"></i></div>
+                                                                         <div class="col-4 text-end"><i role="button" onclick="IncreaseCount('Infant',2)" class="fa fa-plus increaseQtyInfant border p-1 b-radius"></i></div>
                                                                      </div>
                                                                  </div>
                                                              </div>
                                                          </div>
                                                      </div>
                                                  </div>
-                                                <%--<div class="dvDropdown dropdown text-sm-right text-lg-left">
-                                                    <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-toggle="dropdown" aria-expanded="false">
+                                                <%--<div class="dvDropdown dropdown text-sm-end text-lg-start">
+                                                    <button class="h7 btn text-capitalize dropdown-toggle bg-transparent border-0 p-0 text-colour6" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                         Passenger
                                                     </button>
                                                     <div class="dropdown-menu prevent-close w-250 dropdown-menu-sm-right">
                                                     <div class="dvQtySelectorAdult dvQtySelector dropdown-item d-flex align-items-center">
                                                         <div class="col-6 special-text h7">Adult(s) 12+ Yrs</div>
-                                                        <div class="col-6 d-flex align-items-center pr-0">
+                                                        <div class="col-6 d-flex align-items-center pe-0">
                                                             <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('Adult')" class="fa fa-minus decreaseQtyAdult border p-1 b-radius"></i></div>
                                                             <div class="col-4 text-center px-0"><input type="text" id="qtyValueAdult" class="form-control bg-transparent border-0 text-center qtyValueAdult" value="1" readonly="readonly"></div>
                                                             <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('Adult',4)" class="fa fa-plus increaseQtyAdult border p-1 b-radius"></i></div>
@@ -462,7 +463,7 @@
                                                     </div>
                                                     <div class="dvQtySelectorChild dvQtySelector dropdown-item d-flex align-items-center">
                                                         <div class="col-6 special-text h7">Child(ren) 2 - 11 Yrs</div>
-                                                        <div class="col-6 d-flex align-items-center pr-0">
+                                                        <div class="col-6 d-flex align-items-center pe-0">
                                                             <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('Child')" class="fa fa-minus decreaseQtyChild border p-1 b-radius"></i></div>
                                                             <div class="col-4 text-center px-0"><input type="text" id="qtyValueChild" class="form-control bg-transparent border-0 text-center qtyValueChild" value="0" readonly="readonly"></div>
                                                             <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('Child',2)" class="fa fa-plus increaseQtyChild border p-1 b-radius"></i></div>
@@ -470,7 +471,7 @@
                                                     </div> 
                                                     <div class="dvQtySelectorInfant dvQtySelector dropdown-item d-flex align-items-center">
                                                         <div class="col-6 special-text h7">Infant(s) Below 2 Yrs</div>
-                                                        <div class="col-6 d-flex align-items-center pr-0">
+                                                        <div class="col-6 d-flex align-items-center pe-0">
                                                             <div class="col-4 text-center px-0"><i role="button" onclick="DecreaseCount('Infant')" class="fa fa-minus decreaseQtyInfant border p-1 b-radius"></i></div>
                                                             <div class="col-4 text-center px-0"><input type="text" id="qtyValueInfant" class="form-control bg-transparent border-0 text-center qtyValueInfant" value="0" readonly="readonly"></div>
                                                             <div class="col-4 text-center px-0"><i role="button" onclick="IncreaseCount('Infant',2)" class="fa fa-plus increaseQtyInfant border p-1 b-radius"></i></div>
@@ -485,14 +486,14 @@
                                         <div class="col-12 d-none">
                                             <div class="row">
                                                 <div class="col-6 mb-3">
-                                                    <select class="form-control">
+                                                    <select class="form-select">
                                                         <option value="Economy" selected="selected">Economy</option>
                                                         <option value="Business">Business</option>
                                                         <option value="First">First</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-6 mb-3">
-                                                    <select id="" class="dropdown-select form-control">
+                                                    <select id="" class="dropdown-select form-select">
                                                         <option value="1" selected="selected">1 Adult</option>
                                                         <option value="2">2 Adult</option>
                                                         <option value="3">3 Adult</option>
@@ -501,7 +502,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-6 mb-3">
-                                                    <select id="" class="dropdown-select form-control">
+                                                    <select id="" class="dropdown-select form-select">
                                                         <option value="0" selected="selected">0 Child</option>
                                                         <option value="1">1 Child</option>
                                                         <option value="2">2 Child</option>
@@ -511,7 +512,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-6 mb-3">
-                                                    <select id="" class="dropdown-select form-control">
+                                                    <select id="" class="dropdown-select form-select">
                                                         <option value="0" selected="selected">0 Infant(s)</option>
                                                         <option value="1">1 Infant(s)</option>
                                                         <option value="2">2 Infant(s)</option>
@@ -527,10 +528,8 @@
                                                 <div class="dvTextBoxFrom dvInputGroup input-group">
                                                     <input class="form-control" id="textBoxFrom" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
                                                     <input type="hidden" id="hdntrip" value="true" />
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
-                                                    </div>
-                                                </div>
+                                                    <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
+                                                 </div>
                                             </div>    
                                                 <div class="col-12 col-md-6 col-lg-auto d-none mb-3 d-xl-flex flex-xl-column justify-content-xl-center align-items-xl-center text-center  ">
                                                         <label class="invisible">i</label>
@@ -540,35 +539,29 @@
                                             <label class="label">To</label>
                                             <div class="dvTextBoxTo dvInputGroup input-group">
                                                 <input class="input form-control" id="textBoxTo" onfocus="placeholderOnFocus(this,'Enter City or Airport');" onblur="placeholderOnFocus(this,'Enter City or Airport');" value="Enter City or Airport" type="text" />
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
-                                                </div>
-                                            </div>
+                                                <span class="input-group-text bg-colour6"><i class="fa-solid fa-location-dot"></i></span>
+                                             </div>
                                             </div>
                                             <input type ="hidden" id="DepartDate" />
                                         <div class="col-12 col-md-6 col-lg mb-3">
                                             <label class="label">Departure</label>
                                             <div class="dvInputGroup input-group">
                                                 <input id="txtDepart" class="input datePicker form-control" onfocus="placeholderOnFocus(this,'Enter Date');" onblur="placeholderOnFocus(this,'Enter Date');"" value="Enter Date" type="text" readonly="readonly" />
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
-                                                </div>
-                                            </div>
+                                                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
+                                             </div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg mb-3" id="divrtn">
                                             <label class="label">Return</label>
                                             <div class="dvInputGroup input-group">
                                                 <input id="txtReturn" class="input datePicker form-control cal-icon"  onfocus="placeholderOnFocus(this,'Enter Date');"
                                                 onblur="placeholderOnFocus(this,'Enter Date');" value="Enter Date" type="text" readonly="readonly" />
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
-                                                </div>
-                                            </div>
+                                                 <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
+                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-lg-4 selTravel mb-3 r- d-none">
                                             <label class="label">Travel Class</label>
                                             <div class="dvInput input-group">
-                                                <select class="form-control" id="dropDownListEconomy">
+                                                <select class="form-select" id="dropDownListEconomy">
                                                     <option value="Economy" selected="selected">Economy</option>
                                                     <option value="Business">Business</option>
                                                     <option value="First">First</option>
@@ -587,7 +580,7 @@
                                             <div class="row">
                                                 <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
                                                     <label class="label">Adult(s) 12+ Yrs</label>
-                                                        <select id="DropDownListAdult" class="dropdown-select form-control">
+                                                        <select id="DropDownListAdult" class="dropdown-select form-select">
                                                             <option value="1" selected="selected">1</option>
                                                             <option value="2">2</option>
                                                             <option value="3">3</option>
@@ -597,7 +590,7 @@
                                                 </div>
                                                 <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 mb-md-0 r- d-none">
                                                     <label class="label">Child(ren) 2 - 11 Yrs</label>
-                                                        <select id="DropDownListChild" class="dropdown-select form-control">
+                                                        <select id="DropDownListChild" class="dropdown-select form-select">
                                                             <option value="0" selected="selected">0</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -608,7 +601,7 @@
                                                 </div>
                                                 <div class="col-6 col-sm-4 col-md-4 col-xl-3 mb-3 r- d-none">
                                                     <label class="label">Infant(s) Below 2 Yrs</label>
-                                                    <select id="DropDownListInfant" class="dropdown-select form-control">
+                                                    <select id="DropDownListInfant" class="dropdown-select form-select">
                                                         <option value="0" selected="selected">0</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
@@ -621,7 +614,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12 dvLabel invisible d-none">
                                                             <label class="label checkbox-container d-flex">
-                                                                <span class="d-inline-block ml-1">
+                                                                <span class="d-inline-block ms-1">
                                                                     <input name="vehicle" value="Bike" checked="checked" disabled="disabled" type="checkbox" />
                                                                     <span>Redeem Points</span>
                                                                     <span class="checkmark" style="top:2px;"></span>

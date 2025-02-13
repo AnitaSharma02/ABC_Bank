@@ -37,7 +37,7 @@
 
 
 /*delivery track for carlist & cardetails & carpayment pages*/
-.dvCarList .dvDeliveryTrack .w-30,
+/*.dvCarList .dvDeliveryTrack .w-30,
 .dvCarDetails .dvDeliveryTrack .w-30,
 .dvCarPayment .dvDeliveryTrack .w-30 {
     width: 30px;
@@ -55,6 +55,33 @@
 .dvCarList .dvDeliveryTrack span.rounded-circle,
 .dvCarDetails .dvDeliveryTrack span.rounded-circle,
 .dvCarPayment .dvDeliveryTrack span.rounded-circle {
+    font-weight: bold;
+}
+.dvCarList .dvDeliveryTrack .active > span.rounded-circle:first-child,
+.dvCarDetails .dvDeliveryTrack .active > span.rounded-circle:first-child,
+.dvCarPayment .dvDeliveryTrack .active > span.rounded-circle:first-child{
+    background-color: var(--colour1);
+    color: var(--colour6);
+    font-weight: bold;
+}*/
+.dvCarList .dvDeliveryTrack .w-30,
+.dvCarDetails .dvDeliveryTrack .w-30,
+.dvCarPayment .dvDeliveryTrack .w-30 {
+    width: 30px;
+}
+.dvCarList .dvDeliveryTrack .h-30,
+.dvCarDetails .dvDeliveryTrack .h-30,
+.dvCarPayment .dvDeliveryTrack .h-30 {
+    height: 30px;
+}
+.dvCarList .dvDeliveryTrack,
+.dvCarDetails .dvDeliveryTrack,
+.dvCarPayment .dvDeliveryTrack {
+    position: relative;
+}
+.dvCarList .dvDeliveryTrack span.rounded-circle,
+.dvCarDetails .dvDeliveryTrack span.rounded-circle,
+.dvCarPayment .dvDeliveryTrack span.rounded-circle{
     font-weight: bold;
 }
 .dvCarList .dvDeliveryTrack .active > span.rounded-circle:first-child,
@@ -207,7 +234,7 @@
   display: flex;
 }
 .dvCarDetails .dvPayOption .checkmark {
-  margin-top: 15px;
+  margin-top: 16px;
 }
 /*=========[ CARDETAILS PAGE ]=========*/
 
@@ -236,23 +263,33 @@
 }
 
 @media (min-width: 768px) {
-    .dvCarList .dvDeliveryTrack .dvLine,
+    /*.dvCarList .dvDeliveryTrack .dvLine,
     .dvCarDetails .dvDeliveryTrack .dvLine,
     .dvCarPayment .dvDeliveryTrack .dvLine {
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
-        z-index: 0;
-        left: 35%;
-        width: 85%;
+        z-index: -1;
+        left: 25%;
+        width: 50%;
+    }*/
+    .dvCarList .dvDeliveryTrack .dvLine,
+    .dvCarDetails .dvDeliveryTrack .dvLine,
+    .dvCarPayment .dvDeliveryTrack .dvLine {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        width: 75%;
     }
 }
 
 @media (min-width: 992px) {
-    .dvCarList .dvDeliveryTrack .dvLine,
+/*    .dvCarList .dvDeliveryTrack .dvLine,
     .dvCarDetails .dvDeliveryTrack .dvLine,
     .dvCarPayment .dvDeliveryTrack .dvLine {
-        left: 40%;
-        width: 85%;
-    }
+        left: 25%;
+        width: 50%;
+    }*/
 }

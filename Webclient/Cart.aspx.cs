@@ -46,7 +46,7 @@ public partial class Cart : Page
                         if (lobjShoppingCart != null && lobjShoppingCart.Items.Count > 0 && lobjShoppingCart.IsValid)
                         {
                             btnCheckout.Attributes.Remove("class");
-                            btnCheckout.Attributes.Add("class", "btn btn-two w-100");
+                            btnCheckout.Attributes.Add("class", "col-12 col-md-6 mt-2 col-lg-auto");
 
                             bool available = Cart.CheckAvailability();
                             if (available)
@@ -99,16 +99,16 @@ public partial class Cart : Page
             Session["ShoppingCart"] = lobjShoppingCart;
             if (lobjShoppingCart.ItemsCount > 0)
             {
-                //lstrHtmlContent += "<table class=\"table table-striped\"><thead><tr><th scope = \"col\"></th><th scope=\"col\">Product</th><th scope= \"col\" class=\"text-left\">Quantity</th><th scope = \"col\" class=\"text-left\">Price</th><th></th></tr></thead><tbody>";
+                //lstrHtmlContent += "<table class=\"table table-striped\"><thead><tr><th scope = \"col\"></th><th scope=\"col\">Product</th><th scope= \"col\" class=\"text-start\">Quantity</th><th scope = \"col\" class=\"text-start\">Price</th><th></th></tr></thead><tbody>";
                 for (int i = 0; i < lobjShoppingCart.ItemsCount; i++)
                 {
-                    lstrHtmlContent += "<div class=\"row align-items-center justify-content-between\"><div class=\"pr-0 col-3 col-sm-2 col-lg-1\"><div class=\"img-container\"><img class=\"\" src=\"" + lobjShoppingCart.Items[i].ImageUrl + "\"/></div></div>"
+                    lstrHtmlContent += "<div class=\"row align-items-center justify-content-between\"><div class=\"pe-0 col-3 col-sm-2 col-lg-1\"><div class=\"img-container\"><img class=\"\" src=\"" + lobjShoppingCart.Items[i].ImageUrl + "\"/></div></div>"
                         + "<div class=\"col-9 col-sm-7 col-lg-6 col-xl-6\"> <p><span>Product:</span> " + "<span class=\"h6 heading-bold\">" + lobjShoppingCart.Items[i].Name + "</span></p>" + " </div>"
-                        + "<div class=\"col-12 col-sm-3 col-lg-2 my-1\"> <p class=\"d-md-flex align-items-center\"><span class=\"pb-1 d-inline-block mr-1\">Qty: </span> " + " <span class=\"dvInput input-group heading-bold\"> <input class=\"form-control\"id=\"" + lobjShoppingCart.Items[i].ProductId + "\" type=\"text\" value=\"" + lobjShoppingCart.Items[i].Quantity + "\" onchange=\"var varReturn = UpdateLineItemQty('" + lobjShoppingCart.Items[i].ProductId + "','" + lobjShoppingCart.Items[i].MinQuantity + "','" + lobjShoppingCart.Items[i].MaxQuantity + "','" + lobjShoppingCart.Items[i].ProductType + "',this.value);event.returnValue = varReturn; (event.preventDefault) ? event.preventDefault() : event.returnValue = false; return varReturn;\"/> </span></p></div>"
+                        + "<div class=\"col-12 col-sm-3 col-lg-2 my-1\"> <p class=\"d-md-flex align-items-center\"><span class=\"pb-1 d-inline-block me-1\">Qty: </span> " + " <span class=\"dvInput input-group heading-bold\"> <input class=\"form-control\"id=\"" + lobjShoppingCart.Items[i].ProductId + "\" type=\"text\" value=\"" + lobjShoppingCart.Items[i].Quantity + "\" onchange=\"var varReturn = UpdateLineItemQty('" + lobjShoppingCart.Items[i].ProductId + "','" + lobjShoppingCart.Items[i].MinQuantity + "','" + lobjShoppingCart.Items[i].MaxQuantity + "','" + lobjShoppingCart.Items[i].ProductType + "',this.value);event.returnValue = varReturn; (event.preventDefault) ? event.preventDefault() : event.returnValue = false; return varReturn;\"/> </span></p></div>"
                         + "<div class=\"col-12 col-lg-3 col-xl-3\">"
                         + "<div class=\"row align-items-center justify-content-sm-end\">"
                         + "<div class=\"col-9 col-sm-auto\"> <p class=\"heading-bold\">" + "<span class=\"heading-regular\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Items[i].Price.SalePriceWithTax.Amount), "Points") + " </span>" + "</p></div>"
-                        + "<div class=\"col-3 col-sm-auto text-right cart\">"
+                        + "<div class=\"col-3 col-sm-auto text-end cart\">"
                         + "<p class=\"btn btn-one bg-transparent p-0 border-0\" onclick=\"var varReturn = RemoveLineItem(\'" + lobjShoppingCart.Items[i].ProductId + "\'); event.returnValue = varReturn; (event.preventDefault) ? event.preventDefault() : event.returnValue = false; return varReturn;\"><i class=\"fa fa-trash text-colour1\"></i></p></div></div>"
                         + "</div>"
                         + "</div>"
@@ -144,9 +144,9 @@ public partial class Cart : Page
                         + "</div>"
                         + "</div>";
                 }
-                lstrHtmlContent += "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p>Sub-Total</p></div> <div class=\"col-6 col-md-3 text-right\"><p class=\"heading-regular\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.SubTotal.Amount), "Points") + "</p></div></div>"
-                         + "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p>Shipping</p></div> <div class=\"col-6 col-md-3 text-right\"><p class=\"heading-regular\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.ShippingPrice.Amount), "Points") + "</p></div></div>"
-                         + "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-right\"><p class=\"heading-bold\">Total</p></div> <div class=\"col-6 col-md-3 text-right\"><p class=\"heading-bold\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.Total.Amount), "Points") + "</p></div></div>";
+                lstrHtmlContent += "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-end\"><p>Sub-Total</p></div> <div class=\"col-6 col-md-3 text-end\"><p class=\"heading-regular\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.SubTotal.Amount), "Points") + "</p></div></div>"
+                         + "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-end\"><p>Shipping</p></div> <div class=\"col-6 col-md-3 text-end\"><p class=\"heading-regular\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.ShippingPrice.Amount), "Points") + "</p></div></div>"
+                         + "<div class=\"row align-items-lg-center justify-content-between my-1\"><div class=\"col-6 col-md-3 offset-md-6 text-md-end\"><p class=\"heading-bold\">Total</p></div> <div class=\"col-6 col-md-3 text-end\"><p class=\"heading-bold\">" + lobjModel.FormatPoints(Math.Ceiling(lobjShoppingCart.Price.Total.Amount), "Points") + "</p></div></div>";
                // lstrHtmlContent += "</tbody></table>";
             }
             else

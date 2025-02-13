@@ -7,8 +7,8 @@
                     <div class="col-6 d-flex align-items-center">
                         <img src="{$T.record.ListOfFlightDetails[0].ListOfFlightSegments[0].Carrier.CarrierLogoPath}" title="{$T.record.ListOfFlightDetails[0].ListOfFlightSegments[0].Carrier.CarrierName}">
                     </div>
-                    <div class="col-6 text-right">
-                        <div class="text-right">
+                    <div class="col-6 text-end">
+                        <div class="text-end">
                             <h2 class="heading6 text-colour1">
                                 <span class="points-text">Points</span>
                                 <span class="CommaSeperated"> {$T.record.FareDetails.TotalPoints} </span>
@@ -32,7 +32,7 @@
                             <div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-lg-center border-right-lg">
                                 <span class="h7 heading-regular text-colour7 ">{$T.ListOfFlightSegments.DisplayDepartureDate}</span>
                             </div>
-                            <div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-right text-lg-center border-right-lg">
+                            <div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-end text-lg-center border-right-lg">
                                 <span class="h7 heading-regular text-colour7 ">{ConvertTime($T.ListOfFlightSegments.DisplayDepartureTime)}</span>
                             </div>
                             <div class="col-12 col-lg-6 text-lg-center">
@@ -55,7 +55,7 @@
                             <div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-lg-center border-right-lg">
                                 <span class="h7 heading-regular text-colour7 ">{$T.ListOfFlightSegments.DisplayArrivalDate}</span>
                             </div>
-                            <div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-right text-lg-center">
+                            <div class="col-6 col-lg d-lg-flex justify-content-lg-center align-items-lg-center text-end text-lg-center">
                                 <span class="h7 heading-regular text-colour7 ">{ConvertTime($T.ListOfFlightSegments.DisplayArrivalTime)}</span>
                             </div>
                         </div>
@@ -65,77 +65,78 @@
                 </div>
                 <div class="dvSeeDetails row border-top">
                     <div class="col-12 d-flex justify-content-between align-items-center py-2">
-                        <a href="#details_seq_{$T.record.SequenceNo}" id="flight_details" data-toggle="collapse" data-target="#dvDetails{$T.record.SequenceNo}" class="heading6 arrowBtn col-auto d-flex collapsed" aria-expanded="false"><span class="d-inline-block">See Flight Details</span> <span class="arrow-icon ml-2"> <i class="fa fa-caret-up"></i> </span></a>
+                        <a href="#details_seq_{$T.record.SequenceNo}" id="flight_details" data-bs-toggle="collapse" data-bs-target="#dvDetails{$T.record.SequenceNo}" class="heading6 arrowBtn col-auto d-flex collapsed" aria-expanded="false"><span class="d-inline-block">See Flight Details</span> <span class="arrow-icon ms-2"> <i class="fa fa-caret-up"></i> </span></a>
                         <div class=" searchBtnl"><button class="btn btn-one" onclick="var retvalue = BookNowClick('{$T.record.SequenceNo}'); event.returnValue= retvalue;event.preventDefault(); return retvalue;" style="cursor: pointer;">Redeem</button></div>
                     </div>
                 </div>
-                <div id="dvDetails{$T.record.SequenceNo}" class="dvVcData col-12 collapse bg-light2 border mb-3">
-                    <div class="dvDeparture row" id="details_seq_{$T.record.SequenceNo}" style="">
-                        {#foreach $T.record.ListOfFlightDetails as ListOfFlightDetails}
-                        <div class="col-12 bg-colour6 py-2 mb-2">
-                            {#if $T.ListOfFlightDetails$iteration==0}
-                            <div class="row align-items-center">
-                                <div class="col-auto col-sm-6">
-                                    <span class=" h6 heading-regular text-colour7"><span>Departure</span> <i class="fa fa-arrow-right"></i></span>
+                <div class="row">
+                    <div id="dvDetails{$T.record.SequenceNo}" class="dvVcData col-12 collapse bg-light2 border mb-3">
+                        <div class="dvDeparture row" id="details_seq_{$T.record.SequenceNo}" style="">
+                            {#foreach $T.record.ListOfFlightDetails as ListOfFlightDetails}
+                            <div class="col-12 bg-colour6 py-2 mb-2">
+                                {#if $T.ListOfFlightDetails$iteration==0}
+                                <div class="row align-items-center">
+                                    <div class="col-auto col-sm-6">
+                                        <span class=" h6 heading-regular text-colour7"><span>Departure</span> <i class="fa fa-arrow-right"></i></span>
+                                    </div>
+                                    <div class="col-auto col-sm-6 text-sm-end">
+                                        <span class="h6 heading-regular text-colour7">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <span>Total Duration</span>: {$T.ListOfFlightDetails.TotalDurationDisplay}
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="col-auto col-sm-6 text-sm-right">
-                                    <span class="h6 heading-regular text-colour7">
-                                        <i class="fa-regular fa-clock"></i>
-                                        <span>Total Duration</span>: {$T.ListOfFlightDetails.TotalDurationDisplay}
-                                    </span>
+                                {#else}
+                                <div class="row align-items-center">
+                                    <div class="col-auto col-sm-6">
+                                        <span class=" h6 heading-regular text-colour7"><span>Return</span> <i class="fa fa-arrow-right"></i></span>
+                                    </div>
+                                    <div class="col-auto col-sm-6 text-sm-end">
+                                        <span class="h6 heading-regular text-colour7">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <span>Total Duration</span>: {$T.ListOfFlightDetails.TotalDurationDisplay}
+                                        </span>
+                                    </div>
                                 </div>
+                                {#/if}
                             </div>
-                            {#else}
-                            <div class="row align-items-center">
-                                <div class="col-auto col-sm-6">
-                                    <span class=" h6 heading-regular text-colour7"><span>Return</span> <i class="fa fa-arrow-right"></i></span>
-                                </div>
-                                <div class="col-auto col-sm-6 text-sm-right">
-                                    <span class="h6 heading-regular text-colour7">
-                                        <i class="fa-regular fa-clock"></i>
-                                        <span>Total Duration</span>: {$T.ListOfFlightDetails.TotalDurationDisplay}
-                                    </span>
-                                </div>
-                            </div>
-                            {#/if}
-                        </div>
 
-                        {#foreach $T.ListOfFlightDetails.ListOfFlightSegments as ListOfFlightSegments}
-                        <div class="col-12 py-2 mb-2">
-                            <div class="row ">
-                                <div class="col-12 col-sm-4 d-flex align-items-center mb-3">
-                                    <img src="{$T.ListOfFlightSegments.Carrier.CarrierLogoPath}">
-                                    <span class="h6 heading-regular text-colour7 ml-2"> {$T.ListOfFlightSegments.Carrier.CarrierName} ({$T.ListOfFlightSegments.FlightNo})</span>
-                                </div>
-                                <div class="col-6 col-sm-4">
-                                    <p>
-                                        <span class="d-block heading-bold h7 heading-regular text-colour7 "><strong>{$T.ListOfFlightSegments.DepartureAirField.City} ({$T.ListOfFlightSegments.DepartureAirField.IATACode}) </strong></span>
-                                        <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DepartureAirField.AirportName}</span>
-                                        <span class="d-block heading-bold h7 heading-regular text-colour7"> Departure Date:</span>
-                                        <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DisplayDepartureDate}</span>
-                                        <span class="d-block heading-bold h7 heading-regular text-colour7">Departure Time:</span>
-                                        <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DisplayDepartureTime}</span>
-                                    </p>
-                                </div>
-                                <div class="col-6 col-sm-4">
-                                    <p>
-                                        <span class="d-block heading-bold h7 heading-regular text-colour7 "><strong>{$T.ListOfFlightSegments.ArrivalAirField.City} ({$T.ListOfFlightSegments.ArrivalAirField.IATACode}) </strong></span>
-                                        <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.ArrivalAirField.AirportName}</span>
-                                        <span class="d-block h7 heading-regular text-colour7"><strong>Arrival Date:</strong></span>
-                                        <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DisplayArrivalDate}</span>
-                                        <span class="d-block h7 heading-regular text-colour7"> <strong>Arrival Time:</strong>  </span>
-                                        <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DisplayArrivalTime}</span>
-                                        <span class="fOption h7 heading-regular text-colour7"><span class="baggage "><i class="fa fa-suitcase"></i> <span>Baggage Allowance</span> - {$T.ListOfFlightSegments.BaggageAllowance} </span></span>
-                                    </p>
+                            {#foreach $T.ListOfFlightDetails.ListOfFlightSegments as ListOfFlightSegments}
+                            <div class="col-12 py-2 mb-2">
+                                <div class="row ">
+                                    <div class="col-12 col-sm-4 d-flex align-items-center mb-3">
+                                        <img src="{$T.ListOfFlightSegments.Carrier.CarrierLogoPath}">
+                                        <span class="h6 heading-regular text-colour7 ms-2"> {$T.ListOfFlightSegments.Carrier.CarrierName} ({$T.ListOfFlightSegments.FlightNo})</span>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <p>
+                                            <span class="d-block heading-bold h7 heading-regular text-colour7 "><strong>{$T.ListOfFlightSegments.DepartureAirField.City} ({$T.ListOfFlightSegments.DepartureAirField.IATACode}) </strong></span>
+                                            <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DepartureAirField.AirportName}</span>
+                                            <span class="d-block heading-bold h7 heading-regular text-colour7"> Departure Date:</span>
+                                            <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DisplayDepartureDate}</span>
+                                            <span class="d-block heading-bold h7 heading-regular text-colour7">Departure Time:</span>
+                                            <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DisplayDepartureTime}</span>
+                                        </p>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+                                        <p>
+                                            <span class="d-block heading-bold h7 heading-regular text-colour7 "><strong>{$T.ListOfFlightSegments.ArrivalAirField.City} ({$T.ListOfFlightSegments.ArrivalAirField.IATACode}) </strong></span>
+                                            <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.ArrivalAirField.AirportName}</span>
+                                            <span class="d-block h7 heading-regular text-colour7"><strong>Arrival Date:</strong></span>
+                                            <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DisplayArrivalDate}</span>
+                                            <span class="d-block h7 heading-regular text-colour7"> <strong>Arrival Time:</strong>  </span>
+                                            <span class="d-block h7 heading-regular text-colour7">{$T.ListOfFlightSegments.DisplayArrivalTime}</span>
+                                            <span class="fOption h7 heading-regular text-colour7"><span class="baggage "><i class="fa fa-suitcase"></i> <span>Baggage Allowance</span> - {$T.ListOfFlightSegments.BaggageAllowance} </span></span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
+                            {#/for}
+                            {#/for}
                         </div>
-                        {#/for}
-                        {#/for}
                     </div>
                 </div>
             </div>
-            
         </div>
 
         {#/for}

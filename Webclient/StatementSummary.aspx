@@ -89,14 +89,14 @@
                     <ul>
                         <li class="d-block">
                             <div class="text-center">
-                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span class="acc-text">Welcome,</span><span class="ml-2 acc-text" id="spnMemberName"></span></h2>
+                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span class="acc-text">Welcome,</span><span class="ms-2 acc-text" id="spnMemberName"></span></h2>
                             </div>
                         </li>
                         <li class="d-block">
                             <div class="text-center">
                                 <h3 class="h3 heading-semibold text-white">
                                     <span id="totAvbPointDiv"></span>
-                                    <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-white"></span>
+                                    <span id="spnMemberCurrentBal" class="ms-2 heading-bold text-white"></span>
                                 </h3>
                             </div>
                         </li>
@@ -145,7 +145,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-4">
-                    <li class="mr-3">
+                    <li class="me-3">
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
@@ -162,7 +162,7 @@
             <div class="row">
                 <div class="dvEarned col-12 mb-4">
                     <div class="bg-colour2 py-2 b-radius">
-                        <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/plus.svg" />
+                        <img class="d-inline-block ps-2 pe-1 ps-sm-3 pe-sm-2" src="/images/icons/other/plus.svg" />
                         <h5 id="my_account_poin_summary_earned" class="d-inline-block h6 heading-bold">Earned Points</h5>
                     </div>
                     <div class="d-flex flex-wrap">
@@ -193,7 +193,7 @@
 
                 <div class="dvRedeemed col-12 mb-4">
                     <div class="bg-colour2 py-2 b-radius">
-                        <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/minus.svg" />
+                        <img class="d-inline-block ps-2 pe-1 ps-sm-3 pe-sm-2" src="/images/icons/other/minus.svg" />
                         <h5 id="my_account_poin_summary_redeemed" class="d-inline-block h6 heading-bold">Redeemed Points</h5>
                     </div>
                     <div class="d-flex flex-wrap">
@@ -210,7 +210,7 @@
 
                 <div class="dvExpired col-12 mb-4 d-none">
                     <div class="bg-colour2 py-2 b-radius">
-                        <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/minus.svg" />
+                        <img class="d-inline-block ps-2 pe-1 ps-sm-3 pe-sm-2" src="/images/icons/other/minus.svg" />
                         <h5 class="d-inline-block heading-bold">Expired Points</h5>
                     </div>
                     <div class="d-flex flex-wrap">
@@ -228,7 +228,7 @@
                 <div class="dvBalance col-12">
                     <div class="bg-colour1 py-2 b-radius d-flex flex-wrap justify-content-between align-items-center">
                         <div>
-                            <img class="d-inline-block pl-2 pr-1 pl-sm-3 pr-sm-2" src="/images/icons/other/equal.svg" />
+                            <img class="d-inline-block ps-2 pe-1 ps-sm-3 pe-sm-2" src="/images/icons/other/equal.svg" />
                             <h5 class="d-inline-block h6 heading-bold text-white">Points Balance</h5>
                         </div>
                         <span id="my_account_poin_summary_balance" class="d-inline-block text-white heading-bold px-3">
@@ -237,7 +237,7 @@
                     </div>
                     <div class="d-flex">
                         <div class="col-12 border py-3">
-                            <ul class="pl-3">
+                            <ul class="ps-3">
                                 <li>Bonus Points: are the extra points given by the Bank as Bonus.</li>
                                 <li>Spend Points: are the points earned/accumulated by using various products & services of Bank.
                                 </li>

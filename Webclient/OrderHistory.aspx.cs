@@ -92,9 +92,9 @@ public partial class OrderHistory : Page
                                 + "<div class=\"col-12 col-sm-6 col-lg-2 mb-1\"><p><span class=\"h7 d-block heading-bold text-colour7\">Order No.</span> <span class=\"h6 d-block\">" + lobjOrders.CustomerOrders[i].Number + "</span></p></div>"
                                 + "<div class=\"col-12 col-sm-6 col-lg-3 mb-1\"><p><span class=\"h7 d-block heading-bold text-colour7\">Order Date</span><span class=\"h6 d-block\">" + DateTime.Parse(lobjOrders.CustomerOrders[i].CreatedDate.ToString()).ToLocalTime() + "</span></p></div>"
                                 + "<div class=\"col-12 col-lg-2 col-sm-6 mb-1\"><p class=\"\"><span class=\"h7 d-block heading-bold text-colour7\">Points</span><span class=\"h6 d-block\">" + lobjModel.FormatPoints(Math.Ceiling(lobjOrders.CustomerOrders[i].Price.Total.Amount), "Points") + "</span></p></div>"
-                                + "<div class=\"col-6 col-lg-1 col-sm-3 mb-1\"><p><span class=\"h7 d-block heading-bold text-colour7 pr-2\">Qty:</span><span class=\"h6 d-block\">" + lobjOrders.CustomerOrders[i].Items.Count + "</span></p></div>"
-                                + "<div class=\"col-6 col-lg-2 col-sm-3 mb-1 text-right\"><p class=\"h6 heading-semibold text-success\">" + lobjOrders.CustomerOrders[i].Status + "</p></div>"
-                                + "<div class=\"col-12 col-lg-2 text-lg-right mt-2 mt-lg-0\"><a href = \"OrderDetails.aspx?OrderNumber=" + lobjOrders.CustomerOrders[i].Number + "\" class=\"btn btn-one w-100\">View Details</a></div>"
+                                + "<div class=\"col-6 col-lg-1 col-sm-3 mb-1\"><p><span class=\"h7 d-block heading-bold text-colour7 pe-2\">Qty:</span><span class=\"h6 d-block\">" + lobjOrders.CustomerOrders[i].Items.Count + "</span></p></div>"
+                                + "<div class=\"col-6 col-lg-2 col-sm-3 mb-1 text-end\"><p class=\"h6 heading-semibold text-success\">" + lobjOrders.CustomerOrders[i].Status + "</p></div>"
+                                + "<div class=\"col-12 col-lg-2 text-lg-end mt-2 mt-lg-0\"><a href = \"OrderDetails.aspx?OrderNumber=" + lobjOrders.CustomerOrders[i].Number + "\" class=\"btn btn-one w-100\">View Details</a></div>"
                                 + "</div></div>"
                                 + "</div></div>";
                     }

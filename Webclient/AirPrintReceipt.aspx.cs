@@ -46,20 +46,9 @@ public partial class AirPrintReceipt : System.Web.UI.Page
                     if (HttpContext.Current.Session["FlightBooked"] != null)
                     {
                         lobjItineraryDetails = Session["FlightBooked"] as ItineraryDetails;
-                        //if (lobjItineraryDetails.BookingPaymentDetails.PaymentType.Equals(PaymentType.Points))
-                        //{
-                            lblTotalMiles.Text = Convert.ToString(lobjModel.FloatToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints));
-                        //}
-                    }
-                    //if (HttpContext.Current.Session["RetriveBookingInfo"] != null)
-                    //{
-                    //    lobjItineraryDetails = Session["RetriveBookingInfo"] as ItineraryDetails;
 
-                    //    if (lobjItineraryDetails.BookingPaymentDetails.PaymentType.Equals(PaymentType.Points))
-                    //    {
-                    //        lblTotalMiles.Text = Convert.ToString(lobjModel.FloatToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints));
-                    //    }
-                    //}
+                        lblTotalMiles.Text = Convert.ToString(lobjModel.FloatToThousandSeperated(lobjItineraryDetails.FareDetails.TotalPoints));
+                    }
                     else
                     {
                         lobjItineraryDetails = null;
@@ -73,12 +62,13 @@ public partial class AirPrintReceipt : System.Web.UI.Page
                     lblTransactionRefNo.Text = lobjItineraryDetails.ItineraryReference;
                     //lblGDSPNR.Text = lobjItineraryDetails.ListOfFlightDetails[0].ListOfFlightSegments[0].AirlinePNR;
                     lblGDSPNR.Text = lobjItineraryDetails.ItineraryTripId;
-                    
+
                 }
                 else
                 {
-                    Response.Redirect("Index.aspx",false);
+                    Response.Redirect("Index.aspx", false);
                 }
+              
             }
         }
         catch (Exception ex)

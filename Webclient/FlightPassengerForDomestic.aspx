@@ -41,7 +41,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
-                    <li class="mr-3"><a href="\">
+                    <li class="me-3"><a href="\">
                         <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
@@ -87,7 +87,7 @@
                                         </ItemTemplate>
                                     </asp:Repeater>
                                 </div>
-                                <div class="col-12 text-center text-lg-left pb-3" id="btnBookFlightDomestic">
+                                <div class="col-12 text-center text-lg-start pb-3" id="btnBookFlightDomestic">
                                     <asp:Button ValidationGroup="WebValidation" ID="btnSubmit" runat="server" OnClientClick="fnShowLoaderOnSubmitClick();" OnClick="btnBookFlightDomestic_Click" Text="Proceed to Pay" class="btn btn-one"></asp:Button>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                         <div class="col-12">
                             <div class="bg-colour1 d-flex justify-content-between align-items-center">
                                 <h2 class="h6 heading-semibold bg-colour1 text-colour6 p-3">Itinerary</h2>
-                                <a href="FlightListForDomestic.aspx?edit=1" class="btn btn-two mr-1">Edit</a>
+                                <a href="FlightListForDomestic.aspx?edit=1" class="btn btn-two me-1">Edit</a>
                             </div>
                         </div>
                         <div class="col-12">

@@ -352,7 +352,7 @@ function loadRoomsOnPage(noofRooms) {
     strTemplate += '<input type="checkbox" disabled="disabled" checked="checked" />';
     strTemplate += '<span class="checkmark"></span>';
     strTemplate += '</span>';
-    strTemplate += '<span class="d-inline-block ml-2">Redeem Points</span>';
+    strTemplate += '<span class="d-inline-block ms-2">Redeem Points</span>';
     strTemplate += '</label>';
     strTemplate += '</div>';
     strTemplate += '</div>';
@@ -375,7 +375,7 @@ function GenrateAdultScript(adult, count) {
     }
     htmlString += "<div class='row'><div class='col-md-6 col-6'>";
     htmlString += "<label class='h8 heading-semibold'>Adult(s) 12+ Yrs</label>";
-    htmlString += "<select id='ddlAdult" + count + "' class='form-control'>";
+    htmlString += "<select id='ddlAdult" + count + "' class='form-select'>";
     for (var i = 1; i < 5; i++) {
         if (i == adult) {
             htmlString += "<option value='" + i + "' selected='selected' >" + i + "</option>";
@@ -392,7 +392,7 @@ function GenrateChildScript(child, count) {
     var htmlString = "";
     htmlString += "<div class='col-md-6 col-6'>";
     htmlString += "<label class='h8 heading-semibold'>Child(ren) 2 - 11 Yrs</label>";
-    htmlString += "<select id='ddlChild" + count + "' class='form-control'>";
+    htmlString += "<select id='ddlChild" + count + "' class='form-select'>";
     for (var i = 0; i < 3; i++) {
         if (i == child) {
             htmlString += "<option value='" + i + "' selected='selected' >" + i + "</option>";
@@ -521,14 +521,14 @@ function BindRoomsDynamic(Count) {
             htmlString += "<label><span class='h8 heading-semibold'> Room </span> <span class='h8 heading-semibold'>" + RoomCount + "</span></label>";
             htmlString += "<div class='row'>";
             htmlString += "<div class='col-6 col-md-6'>";
-            htmlString += "<label class='h8 heading-semibold'>Adults(12+ Yrs)</label><div class=''><select class='form-control' id='ddlAdult" + i + "'>";
+            htmlString += "<label class='h8 heading-semibold'>Adults(12+ Yrs)</label><div class=''><select class='form-select' id='ddlAdult" + i + "'>";
             htmlString += "<option value='1'>1</option>";
             htmlString += "<option value='2'>2</option>";
             htmlString += "<option value='3'>3</option>";
             htmlString += "<option value='4'>4</option>";
             htmlString += "</select></i></div>";
             htmlString += "</div><div class='col-6 col-md-6'>";
-            htmlString += "<label class='h8 heading-semibold'>Children(2 - 11Yrs)</label><div class=''><select class='form-control' id='ddlChild" + i + "'>";
+            htmlString += "<label class='h8 heading-semibold'>Children(2 - 11Yrs)</label><div class=''><select class='form-select' id='ddlChild" + i + "'>";
             htmlString += "<option value='0'>0</option>"
             htmlString += "<option value='1'>1</option>"
             htmlString += "<option value='2'>2</option>"
@@ -563,7 +563,7 @@ function BindRoomsDynamic(Count) {
         htmlString += '<input type="checkbox" disabled="disabled" checked="checked" />';
         htmlString += '<span class="checkmark"></span>';
         htmlString += '</span>';
-        htmlString += '<span class="d-inline-block ml-2">Redeem Points</span>';
+        htmlString += '<span class="d-inline-block ms-2">Redeem Points</span>';
         htmlString += '</label>';
         htmlString += '</div>';
         htmlString += '</div>';
@@ -578,7 +578,7 @@ function BindRoomsDynamic(Count) {
         //htmlString += '<input type="checkbox" disabled="disabled" checked="checked" />';
         //htmlString += '<span class="checkmark"></span>';
         //htmlString += '</span>';
-        //htmlString += '<span class="d-inline-block ml-2">Redeem Points</span>';
+        //htmlString += '<span class="d-inline-block ms-2">Redeem Points</span>';
         //htmlString += '</label>';
         //htmlString += '</div>';
         //htmlString += '</div>';

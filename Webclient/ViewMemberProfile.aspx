@@ -36,14 +36,14 @@
                     <ul>
                         <li class="d-block">
                             <div class="text-center">
-                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span class="acc-text">Welcome,</span><span class="ml-2 acc-text" id="spnMemberName"></span></h2>
+                                <h2 class="h3 heading-semibold text-white" id="lblMemberName"><span class="acc-text">Welcome,</span><span class="ms-2 acc-text" id="spnMemberName"></span></h2>
                             </div>
                         </li>
                         <li class="d-block">
                             <div class="text-center">
                                 <h3 class="h3 heading-semibold text-white">
                                     <span id="totAvbPointDiv">Total Points</span>
-                                    <span id="spnMemberCurrentBal" class="ml-2 heading-bold text-white"></span></h3>
+                                    <span id="spnMemberCurrentBal" class="ms-2 heading-bold text-white"></span></h3>
                             </div>
                         </li>
                     </ul>
@@ -91,7 +91,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-4">
-                    <li class="mr-3">
+                    <li class="me-3">
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
@@ -109,24 +109,22 @@
                 <div class="col-12">
                     <div class="border b-radius p-3">
                         <div class="dvCommonAccordion accordion" id="manage-accordion">
-                            <div class="card mb-3">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0">
+                            <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header mb-0">
                                         <button
-                                            class="btn- btn-block text-left p-3 h6 text-uppercase"
+                                            class="accordion-button btn- btn-block text-start p-3 h6 text-uppercase"
                                             type="button"
-                                            data-toggle="collapse"
-                                            data-target="#collapse1">
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapse1">
                                             <span>Contact Details</span>
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
                                         </button>
                                     </h2>
-                                </div>
 
-                                <div id="collapse1" class="collapse show" data-parent="#manage-accordion">
-                                    <div class="card-body p-3">
+                                <div id="collapse1" class="collapse show" data-bs-parent="#manage-accordion">
+                                    <div class="accordion-body p-3">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="bg-colour6 p-3">
@@ -176,23 +174,21 @@
                                 </div>
                             </div>
 
-                            <%--<div class="card mb-3">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0">
+                            <%--<div class="accordion-item mb-3">
+                                    <h2 class="accordion-header mb-0">
                                         <button
-                                            class="btn- btn-block text-left p-3 h6 text-uppercase collapsed"
+                                            class="accordion-button btn- btn-block text-start p-3 h6 text-uppercase collapsed"
                                             type="button"
-                                            data-toggle="collapse"
-                                            data-target="#collapse2">
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapse2">
                                             <span>Change Password</span>
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
                                         </button>
                                     </h2>
-                                </div>
-                                <div id="collapse2" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body p-3">
+                                <div id="collapse2" class="collapse" data-bs-parent="#manage-accordion">
+                                    <div class="accordion-body p-3">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="bg-colour6 p-3">
@@ -209,10 +205,8 @@
                                                                             placeholder="Enter Your Password"
                                                                             onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
                                                                             id="txtOldPassword" />
-                                                                        <div class="input-group-append">
-                                                                            <span toggle="#txtOldPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
-                                                                        </div>
-                                                                    </div>
+                                                                       <span toggle="#txtOldPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -226,10 +220,8 @@
                                                                             placeholder="Enter New Password"
                                                                             onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
                                                                             id="txtPassword" />
-                                                                        <div class="input-group-append">
-                                                                            <span toggle="#txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
-                                                                        </div>
-                                                                    </div>
+                                                                         <span toggle="#txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -243,17 +235,15 @@
                                                                             placeholder="Enter New Password"
                                                                             onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;"
                                                                             id="txtNewPassword" />
-                                                                        <div class="input-group-append">
-                                                                            <span toggle="#txtNewPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
-                                                                        </div>
-                                                                    </div>
+                                                                         <span toggle="#txtNewPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                                      </div>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-sm-8 mb-3">
                                                                    <asp:Button runat="server" ID="Button1" OnClientClick="var retValue = ChangePassword(); event.returnValue = retValue;return retValue;" CssClass="btn btn-one" Text="Save & Continue" />
                                                                 </div>
-                                                                <div id="ChangePasswordValidation" class="pl-3 text-danger">
+                                                                <div id="ChangePasswordValidation" class="ps-3 text-danger">
                                                                 </div>
                                                             </div>
                                                         </div>

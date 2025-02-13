@@ -29,10 +29,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 pr-md-0 d-md-flex">
+                <div class="col-md-6 pe-md-0 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/flight-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pl-md-0">
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center ps-md-0">
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
@@ -48,10 +48,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 pl-md-0 order-md-1 d-md-flex">
+                <div class="col-md-6 ps-md-0 order-md-1 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/hotel-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pr-md-0">
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pe-md-0">
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
@@ -67,10 +67,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 pr-md-0 d-md-flex">
+                <div class="col-md-6 pe-md-0 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/airport-lounge-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pl-md-0">
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center ps-md-0">
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
@@ -86,10 +86,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 pl-md-0 order-md-1 d-md-flex">
+                <div class="col-md-6 ps-md-0 order-md-1 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/miles-exchange-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pr-md-0">
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pe-md-0">
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
@@ -105,10 +105,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 pr-md-0 d-md-flex">
+                <div class="col-md-6 pe-md-0 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/experiences-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pl-md-0">
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center ps-md-0">
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
@@ -124,10 +124,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 pl-md-0 order-md-1 d-md-flex">
+                <div class="col-md-6 ps-md-0 order-md-1 d-md-flex">
                     <img class="img-fluid" src="/Images/homepage/rewards-that-cater-to-every-desire/shop-booking.jpg" alt="image not found" />
                 </div>
-                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pr-md-0">
+                <div class="col-md-6 d-md-flex flex-md-column justify-content-md-center pe-md-0">
                     <div class="bg-colour3 p-3 p-md-4 h-100">
                         <div class="d-md-flex flex-md-column justify-content-md-center h-100">
                             <div>
@@ -194,7 +194,7 @@
                                 </div>
                                 <div class="col-10 col-sm-11">
                                     <h2 class="heading5 mb-2">How do I accumulate points?</h2>
-                                    <p>Earn points with every transaction made with your credit card.</p>
+                                    <p>Earn points with every transaction made with your credit card. Start accumulating rewards with every interaction!</p>
                                 </div>
                             </div>
                             <div class="row mb-3">

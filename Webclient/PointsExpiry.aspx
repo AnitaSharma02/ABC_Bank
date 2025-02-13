@@ -58,7 +58,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-4">
-                    <li class="mr-3">
+                    <li class="me-3">
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
@@ -81,7 +81,7 @@
                             </div>
                             <div class="col-5 col-sm-3 col-lg-2">
                                 <asp:DropDownList ID="dtYear" runat="server" OnSelectedIndexChanged="dtYear_SelectedIndexChanged"
-                                    AutoPostBack="true" CssClass="form-control">
+                                    AutoPostBack="true" CssClass="form-select">
                                 </asp:DropDownList>
                             </div>
                             <!-- <div class="col-sm"></div> -->
@@ -92,7 +92,7 @@
                         <div class="row mx-0" id="rptExpirySchedule" runat="server"></div>
                     </div>
 
-                    <div class="bg-colour2 pt-0 pb-3">
+                    <div class="bg-colour2 p-3">
                         <div class="row">
                             <div class="col-12">
                                 <p class="heading-bold text-colour7" id="divExpiredon" runat="server">

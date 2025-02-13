@@ -7,7 +7,7 @@
  * anything special to choose one license or the other and you don't have to
  * notify anyone which license you are using. You are free to use
  * UniversalLanguageSelector in commercial projects as long as the copyright
- * header is left intact. See files GPL-LICENSE and MIT-LICENSE for details.
+ * header is left intact. See files Gps-LICENSE and MIT-LICENSE for details.
  *
  * @licence GNU General Public Licence 2.0 or later
  * @licence MIT License

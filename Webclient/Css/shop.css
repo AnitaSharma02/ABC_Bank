@@ -20,6 +20,12 @@
 
 
 /*=========[ Product Details ]=========*/
+/* adjust ration of image */
+.dvProductDetail .dvThumbSwiperSlider .dvThumbSlide .img-container{
+    padding-bottom:15%;
+}
+/* adjust ration of image */
+
 
 /*description tab menu on productdetail page*/
 .dvProductDetail .dvDetails ul {
@@ -80,13 +86,23 @@
     background-color: var(--modal-header-bg-colour);
     font-size: 1.25rem;
 }
-.dvVouchersPopup .close {
+.dvVouchersPopup .btn-close {
     z-index: 99999;
     position: absolute;
-    right: 1rem;
-    top: .75rem;
+    right: .5rem;
+    top: .6rem;
     color: var(--modal-close-icon-text-colour);
     opacity: var(--modal-close-btn-opacity);
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    /*background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23var(--colour6)'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1rem;*/
+    background: none;
 }
 .dvVouchersPopup .close i {
     font-size: 1.1rem;
@@ -113,12 +129,12 @@
 .dvProductDetail .dvProductInfo .dvAddToCart .form-control[readonly]{
     background: var(--colour6);
 }
-.dvProductDetail .dvProductInfo .dvAddToCart .input-group-prepend {
+/*.dvProductDetail .dvProductInfo .dvAddToCart .input-group-prepend {
     margin-right: 0;
 }
 .dvProductDetail .dvProductInfo .dvAddToCart .input-group-append {
     margin-left: 0;
-}
+}*/
 
 /*=========[ SHOP List ]=========*/
 .dvProductList .dvFilter.modal .accordion .card-header,

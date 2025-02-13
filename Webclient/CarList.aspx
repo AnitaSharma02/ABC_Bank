@@ -16,608 +16,596 @@
     </script>   
     <div class="dvCarList dvProductList">
         <div class="container-xl">
-            <div class="row dvDeliveryTrack">
-                <div class="col-4 mb-lg-3">
-                    <div class="dvLine border d-none d-md-block px-3"></div>
+            <div class="row dvDeliveryTrack mt-3 my-md-4">
+                <div class="dvLine border d-none d-md-block"></div>
+                <div class="col-4">
                     <div class="row justify-content-md-center">
-                        <div class="col-md-auto my-3">
+                        <div class="col-md-auto mb-3 mb-md-0 bg-colour6">
                             <div class="d-flex flex-column flex-sm-row align-items-center active">
                                 <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">1</span>
-                                <a class="h7 heading-bold bg-colour6 px-3 text-center text-colour1">Your Car</a>
+                                <a class="h7 heading-bold ps-sm-3 text-center text-colour1">Your Car</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-lg-3">
-                    <div class="dvLine border d-none d-md-block px-3"></div>
+                <div class="col-4">
                     <div class="row justify-content-md-center">
-                        <div class="col-md-auto my-3">
+                        <div class="col-md-auto mb-3 mb-md-0 bg-colour6">
                             <div class="d-flex flex-column flex-sm-row align-items-center">
                                 <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">2</span>
-                                <a class="h7 bg-colour6 px-3 text-center text-colour7" id="hrefBookingDetailsId" runat="server">Deal</a>
+                                <a class="h7 heading-regular ps-sm-3 text-center text-colour7" id="hrefBookingDetailsId" runat="server">Deal</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mb-lg-3">
-                    <%--<div class="dvLine border d-none d-md-block px-3"></div>--%>
+                <div class="col-4">
                     <div class="row justify-content-md-center">
-                        <div class="col-md-auto my-3">
+                        <div class="col-md-auto mb-3 mb-md-0 bg-colour6">
                             <div class="d-flex flex-column flex-sm-row align-items-center">
                                 <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">3</span>
-                                <a class="h7 bg-colour6 px-3 text-center text-colour7">Payment</a>
+                                <a class="h7 heading-regular ps-sm-3 text-center text-colour7">Payment</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="dvSidebar col-lg-3 mb-3 mb-lg-0"">
-                    <div class="border b-radius p-3 mb-3">
-                        <div class="row">
-                            <div class="col-12 leftBoxCont">
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="dvSidebar col-lg-12">
+                            <div class="border b-radius p-3 mb-3">
                                 <div class="row">
-                                    <%--<div class="col-12 col-md-12 col-lg-6 mb-1">
-                                        <i class="fa-solid fa-car-side"></i>
-                                    </div>--%>
-                                    <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
-                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span>PICK UP LOCATION</span></h2>
-                                        <p id="spnpickuplocation" class="h7" ></p>
-                                        <p id="spnpickupdate" class="h7"></p>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
-                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span>CAR DROP OFF LOCATION</span></h2>
-                                        <p id="spndroppoffLocation" class="h7" ></p>
-                                        <p id="spndropoffdate" class="h7"></p>
-                                    </div>
-                                    <div class="col-12 col-md-4 col-lg-12 mb-3">
-                                        <h2 class="heading6"><i class="fa-solid fa-location-dot"></i> <span>Driver's Residence Country</span></h2>
-                                        <p id="spndriverresidenceCountry" class="h7"></p>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <button type="button" class="btn btn-one w-100 editBtn" onclick="bindcountry()">Edit</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 popupForm">
-                                <div class="row">
-                                    <div class="col-12 d-flex justify-content-between align-items-center mb-3 popupHead">
-                                        <span class="heading6">Get Your Quote Now!</span>
-                                        <a href="#" class="btn btn-three closeBtn"><i class="fa fa-times" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div id="CarValidationError" runat="server" class="dvErrors p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-row dvParent">
-                                            <div class="col-lg-12 col-md-12 col-12 mb-2 mt-2">
-                                                <label for="validationDefaultUsername" class="label">Pick up location?</label>
-                                                <div class="dvInputGroup input-group dvPickupLocation">
-                                                    <input type="text" class="form-control" id="txtpickupLocation" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2" required>
-                                                    <input type="hidden" id="hndpickupLocationId" value="">
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text bg-colour6">
-                                                            <i class="fa-solid fa-location-dot"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
+                                    <div class="col-12 leftBoxCont">
+                                        <div class="row">
+                                            <%--<div class="col-12 col-md-12 col-lg-6 mb-1">
+                                                <i class="fa-solid fa-car-side"></i>
+                                            </div>--%>
+                                            <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
+                                                <h2 class="heading6"><i class="fa-solid fa-location-dot me-2"></i><span>PICK UP LOCATION</span></h2>
+                                                <p id="spnpickuplocation" class="h7"></p>
+                                                <p id="spnpickupdate" class="h7"></p>
                                             </div>
-                                            <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
-                                                <label class="label">Pick-Up Date</label>
-                                                <div class="dvInputGroup input-group">
-                                                    <input class="input form-control" value="Enter Date" onfocus="placeholderOnFocus(this);"
-                                                        type="text" id="txtpickupDate" readonly="readonly" />
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text bg-colour6">
-                                                            <i class="fa-regular fa-calendar"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
+                                            <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-3">
+                                                <h2 class="heading6"><i class="fa-solid fa-location-dot me-2"></i><span>CAR DROP OFF LOCATION</span></h2>
+                                                <p id="spndroppoffLocation" class="h7"></p>
+                                                <p id="spndropoffdate" class="h7"></p>
                                             </div>
-                                            <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
-                                                    <label for="exampleFormControlSelect1" class="label">Pick-Up Time</label>
-                                                    <div class="dvInput input-group">
-                                                    <select class="form-control" id="ddlPickupTime">
-                                                        <option>00:00</option>
-                                                        <option>00:15</option>
-                                                        <option>00:30</option>
-                                                        <option>00:45</option>
-                                                        <option>01:00</option>
-                                                        <option>01:15</option>
-                                                        <option>01:30</option>
-                                                        <option>01:45</option>
-                                                        <option>02:00</option>
-                                                        <option>02:15</option>
-                                                        <option>02:30</option>
-                                                        <option>02:45</option>
-                                                        <option>03:00</option>
-                                                        <option>03:15</option>
-                                                        <option>03:30</option>
-                                                        <option>03:45</option>
-                                                        <option>04:00</option>
-                                                        <option>04:15</option>
-                                                        <option>04:30</option>
-                                                        <option>04:45</option>
-                                                        <option>05:00</option>
-                                                        <option>05:15</option>
-                                                        <option>05:30</option>
-                                                        <option>05:45</option>
-                                                        <option>06:00</option>
-                                                        <option>06:15</option>
-                                                        <option>06:30</option>
-                                                        <option>06:45</option>
-                                                        <option>07:00</option>
-                                                        <option>07:15</option>
-                                                        <option>07:30</option>
-                                                        <option>07:45</option>
-                                                        <option>08:00</option>
-                                                        <option>08:15</option>
-                                                        <option>08:30</option>
-                                                        <option>08:45</option>
-                                                        <option>09:00</option>
-                                                        <option>09:15</option>
-                                                        <option>09:30</option>
-                                                        <option>09:45</option>
-                                                        <option>10:00</option>
-                                                        <option>10:15</option>
-                                                        <option>10:30</option>
-                                                        <option>10:45</option>
-                                                        <option>11:00</option>
-                                                        <option>11:15</option>
-                                                        <option>11:30</option>
-                                                        <option>11:45</option>
-                                                        <option selected="selected">12:00</option>
-                                                        <option>12:15</option>
-                                                        <option>12:30</option>
-                                                        <option>12:45</option>
-                                                        <option>13:00</option>
-                                                        <option>13:15</option>
-                                                        <option>13:30</option>
-                                                        <option>13:45</option>
-                                                        <option>14:00</option>
-                                                        <option>14:15</option>
-                                                        <option>14:30</option>
-                                                        <option>14:45</option>
-                                                        <option>15:00</option>
-                                                        <option>15:15</option>
-                                                        <option>15:30</option>
-                                                        <option>15:45</option>
-                                                        <option>16:00</option>
-                                                        <option>16:15</option>
-                                                        <option>16:30</option>
-                                                        <option>16:45</option>
-                                                        <option>17:00</option>
-                                                        <option>17:15</option>
-                                                        <option>17:30</option>
-                                                        <option>17:45</option>
-                                                        <option>18:00</option>
-                                                        <option>18:15</option>
-                                                        <option>18:30</option>
-                                                        <option>18:45</option>
-                                                        <option>19:00</option>
-                                                        <option>19:15</option>
-                                                        <option>19:30</option>
-                                                        <option>19:45</option>
-                                                        <option>20:00</option>
-                                                        <option>20:15</option>
-                                                        <option>20:30</option>
-                                                        <option>20:45</option>
-                                                        <option>21:00</option>
-                                                        <option>21:15</option>
-                                                        <option>21:30</option>
-                                                        <option>21:45</option>
-                                                        <option>22:00</option>
-                                                        <option>22:15</option>
-                                                        <option>22:30</option>
-                                                        <option>22:45</option>
-                                                        <option>23:00</option>
-                                                        <option>23:15</option>
-                                                        <option>23:30</option>
-
-                                                    </select>
-                                
-                                                </div>
+                                            <div class="col-12 col-md-4 col-lg-12 mb-3">
+                                                <h2 class="heading6"><i class="fa-solid fa-location-dot me-2"></i><span>Driver's Residence Country</span></h2>
+                                                <p id="spndriverresidenceCountry" class="h7"></p>
                                             </div>
-                                                <div class="col-12 mb-3">
-                                                <div class="dvLabel">
-                                                    <label class="checkbox-container d-flex">
-                                                    <span class="d-inline-block">
-                                                        <input type="checkbox" id="chkDropoffLocation"  />
-                                                        <span class="checkmark"></span>
-                                                    </span>
-                                                    <span class="d-inline-block ml-2 heading-medium h8 pt-1"> Return car to same location?</span
-                                                    >
-                                                    </label>
-                                                </div>
-                                                </div>
-                                            <div class="col-12 col-lg-12 col-xl-12">
-                                                <div class="form-group dvInput1 fade-out">
-                                                    <label class="label">Car Drop off location?</label>
-                                                    <div class="dvInputGroup input-group dvDopoffLocation">
-                                                        <input type="text" class="form-control" id="txtDopoffLocation">
-                                                        <input type="hidden" id="hndDopoffLocationId" value="">
-                                                        <div class="input-group-append">
-                                                        <span class="input-group-text bg-colour6">
-                                                            <i class="fa-solid fa-location-dot"></i>
-                                                        </span>
-                                                    </div>
-                                                    </div>
-                                                </div>
+                                            <div class="col-12 col-lg-6">
+                                                <button type="button" class="btn btn-one w-100 editBtn" onclick="bindcountry()">Edit</button>
                                             </div>
-
-                                            <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
-                                                <label class="label">Drop off date</label>
-                                                <div class="dvInputGroup input-group">
-                                                    <input class="input form-control" value="Enter Date" onfocus="placeholderOnFocus(this);"
-                                                        onblur="placeholderOnFocus(this);" type="text" id="txtDropoffDate" readonly="readonly" />
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text bg-colour6">
-                                                            <i class="fa-regular fa-calendar"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
-                                                    <label for="exampleFormControlSelect2" class="label">Pick-Up Time</label>
-                                                <div class="dvInput input-group">
-                                                        <select class="form-control" id="ddlDropoffTime">
-                                                        <option>00:00</option>
-                                                        <option>00:15</option>
-                                                        <option>00:30</option>
-                                                        <option>00:45</option>
-                                                        <option>01:00</option>
-                                                        <option>01:15</option>
-                                                        <option>01:30</option>
-                                                        <option>01:45</option>
-                                                        <option>02:00</option>
-                                                        <option>02:15</option>
-                                                        <option>02:30</option>
-                                                        <option>02:45</option>
-                                                        <option>03:00</option>
-                                                        <option>03:15</option>
-                                                        <option>03:30</option>
-                                                        <option>03:45</option>
-                                                        <option>04:00</option>
-                                                        <option>04:15</option>
-                                                        <option>04:30</option>
-                                                        <option>04:45</option>
-                                                        <option>05:00</option>
-                                                        <option>05:15</option>
-                                                        <option>05:30</option>
-                                                        <option>05:45</option>
-                                                        <option>06:00</option>
-                                                        <option>06:15</option>
-                                                        <option>06:30</option>
-                                                        <option>06:45</option>
-                                                        <option>07:00</option>
-                                                        <option>07:15</option>
-                                                        <option>07:30</option>
-                                                        <option>07:45</option>
-                                                        <option>08:00</option>
-                                                        <option>08:15</option>
-                                                        <option>08:30</option>
-                                                        <option>08:45</option>
-                                                        <option>09:00</option>
-                                                        <option>09:15</option>
-                                                        <option>09:30</option>
-                                                        <option>09:45</option>
-                                                        <option>10:00</option>
-                                                        <option>10:15</option>
-                                                        <option>10:30</option>
-                                                        <option>10:45</option>
-                                                        <option>11:00</option>
-                                                        <option>11:15</option>
-                                                        <option>11:30</option>
-                                                        <option>11:45</option>
-                                                        <option selected="selected">12:00</option>
-                                                        <option>12:15</option>
-                                                        <option>12:30</option>
-                                                        <option>12:45</option>
-                                                        <option>13:00</option>
-                                                        <option>13:15</option>
-                                                        <option>13:30</option>
-                                                        <option>13:45</option>
-                                                        <option>14:00</option>
-                                                        <option>14:15</option>
-                                                        <option>14:30</option>
-                                                        <option>14:45</option>
-                                                        <option>15:00</option>
-                                                        <option>15:15</option>
-                                                        <option>15:30</option>
-                                                        <option>15:45</option>
-                                                        <option>16:00</option>
-                                                        <option>16:15</option>
-                                                        <option>16:30</option>
-                                                        <option>16:45</option>
-                                                        <option>17:00</option>
-                                                        <option>17:15</option>
-                                                        <option>17:30</option>
-                                                        <option>17:45</option>
-                                                        <option>18:00</option>
-                                                        <option>18:15</option>
-                                                        <option>18:30</option>
-                                                        <option>18:45</option>
-                                                        <option>19:00</option>
-                                                        <option>19:15</option>
-                                                        <option>19:30</option>
-                                                        <option>19:45</option>
-                                                        <option>20:00</option>
-                                                        <option>20:15</option>
-                                                        <option>20:30</option>
-                                                        <option>20:45</option>
-                                                        <option>21:00</option>
-                                                        <option>21:15</option>
-                                                        <option>21:30</option>
-                                                        <option>21:45</option>
-                                                        <option>22:00</option>
-                                                        <option>22:15</option>
-                                                        <option>22:30</option>
-                                                        <option>22:45</option>
-                                                        <option>23:00</option>
-                                                        <option>23:15</option>
-                                                        <option>23:30</option>
-                                                    </select>
-                                                    </div>
-                                            </div>
-                                                <div class="col-12 mb-3">
-                                                <div class="dvLabel">
-                                                    <label class="checkbox-container d-flex">
-                                                    <span class="d-inline-block">
-                                                        <input type="checkbox" id="chkDriverAge" />
-                                                        <span class="checkmark"></span>
-                                                    </span>
-                                                    <span class="d-inline-block ml-2 heading-medium h8 pt-1"> Driver aged 30-65 years?</span
-                                                    >
-                                                    </label>
-                                                </div>
-                                                </div>
-                                            <div class="col-12 col-lg-12 col-xl-12">
-                                                    <div class="form-group dvInput2">
-                                                    <label class="label" id="lbldriverage">Driver age</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" id="txtDriverAge" onkeypress="return validateNumber(event)">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2" style="display:none;">
-                                                <label class="label">Discount</label>
-                                                <div class="dvInputGroup input-group">
-                                                    <input class="input form-control" value="Discount" onfocus="placeholderOnFocus(this);"
-                                                        type="text" id="Text1" runat="server" readonly="readonly" />
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text bg-colour6">
-                                                                <i class="fa-solid fa-percent"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                <div class="col-12 mb-3">
-                                                <div class="dvLabel">
-                                                    <label class="checkbox-container d-flex">
-                                                    <span class="d-inline-block">
-                                                        <input type="checkbox" id="gridCheck3" checked/>
-                                                        <span class="checkmark"></span>
-                                                    </span>
-                                                    <span class="d-inline-block ml-2 heading-medium h8 pt-1">Driver's Residence Country: </span ><span id="spndriverCountry" class="ml-1 heading-medium h8 pt-1"> </span>
-                                                    </label>
-                                                </div>
-                                                </div>
-                                            <div class="col-12 col-lg-12 col-xl-12">
-                            
-                                                <div class="form-group dvInput3 fade-out">
-                                                    <label class="label">Driver's Residence Country</label>
-                                                    <div class="">
-                                                            <div class="dvPickupLocation w-100 input-group">
-                                                            <%--   <input type="text" class="form-control" id="txtDriverResidence">--%>
-                                                                <select id="txtDriverResidence" class="form-control" onchange="handleSelectChange(event)"></select>
-                                                            <input type="hidden" id="hnddriverLocationId" value="" />
-                                                                <input type="hidden" id="hnddriverLocationname" value="" />
-                                                                <%-- <div class="input-group-append">
-                                                                    <div class="input-group-text"><i class="fa-solid fa-angle-down h8"></i></div>
-                                                            </div>--%>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                <div class="col-12 col-lg-12 col-xl-12">
-                                                    <button class="btn btn-one" type="submit" onclick="var retvalue = CarValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;">Search</button>
-                                                </div>
                                         </div>
                                     </div>
+                                    <div class="col-12 popupForm">
+                                        <div class="row">
+                                            <div class="col-12 d-flex justify-content-between align-items-center mb-3 popupHead">
+                                                <span class="heading6">Get Your Quote Now!</span>
+                                                <a href="#" class="btn btn-three closeBtn"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div id="CarValidationError" runat="server" class="dvErrors p-1 mb-2 alert alert-danger text-center h6 heading-semibold" style="display: none;"></div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-row dvParent">
+                                                    <div class="col-lg-12 col-md-12 col-12 mb-2 mt-2">
+                                                        <label for="validationDefaultUsername" class="label">Pick up location?</label>
+                                                        <div class="dvInputGroup input-group dvPickupLocation">
+                                                            <input type="text" class="form-control" id="txtpickupLocation" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2" required>
+                                                            <input type="hidden" id="hndpickupLocationId" value="">
+                                                            
+                                                                <span class="input-group-text bg-colour6">
+                                                                    <i class="fa-solid fa-location-dot"></i>
+                                                                </span>
+                                                           
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
+                                                        <label class="label">Pick-Up Date</label>
+                                                        <div class="dvInputGroup input-group">
+                                                            <input class="input form-control" value="Enter Date" onfocus="placeholderOnFocus(this);"
+                                                                type="text" id="txtpickupDate" readonly="readonly" />
+                                                                 <span class="input-group-text bg-colour6">
+                                                                    <i class="fa-regular fa-calendar"></i>
+                                                                </span>
+                                                         </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
+                                                        <label for="exampleFormControlSelect1" class="label">Pick-Up Time</label>
+                                                        <div class="dvInput input-group">
+                                                            <select class="form-select" id="ddlPickupTime">
+                                                                <option>00:00</option>
+                                                                <option>00:15</option>
+                                                                <option>00:30</option>
+                                                                <option>00:45</option>
+                                                                <option>01:00</option>
+                                                                <option>01:15</option>
+                                                                <option>01:30</option>
+                                                                <option>01:45</option>
+                                                                <option>02:00</option>
+                                                                <option>02:15</option>
+                                                                <option>02:30</option>
+                                                                <option>02:45</option>
+                                                                <option>03:00</option>
+                                                                <option>03:15</option>
+                                                                <option>03:30</option>
+                                                                <option>03:45</option>
+                                                                <option>04:00</option>
+                                                                <option>04:15</option>
+                                                                <option>04:30</option>
+                                                                <option>04:45</option>
+                                                                <option>05:00</option>
+                                                                <option>05:15</option>
+                                                                <option>05:30</option>
+                                                                <option>05:45</option>
+                                                                <option>06:00</option>
+                                                                <option>06:15</option>
+                                                                <option>06:30</option>
+                                                                <option>06:45</option>
+                                                                <option>07:00</option>
+                                                                <option>07:15</option>
+                                                                <option>07:30</option>
+                                                                <option>07:45</option>
+                                                                <option>08:00</option>
+                                                                <option>08:15</option>
+                                                                <option>08:30</option>
+                                                                <option>08:45</option>
+                                                                <option>09:00</option>
+                                                                <option>09:15</option>
+                                                                <option>09:30</option>
+                                                                <option>09:45</option>
+                                                                <option>10:00</option>
+                                                                <option>10:15</option>
+                                                                <option>10:30</option>
+                                                                <option>10:45</option>
+                                                                <option>11:00</option>
+                                                                <option>11:15</option>
+                                                                <option>11:30</option>
+                                                                <option>11:45</option>
+                                                                <option selected="selected">12:00</option>
+                                                                <option>12:15</option>
+                                                                <option>12:30</option>
+                                                                <option>12:45</option>
+                                                                <option>13:00</option>
+                                                                <option>13:15</option>
+                                                                <option>13:30</option>
+                                                                <option>13:45</option>
+                                                                <option>14:00</option>
+                                                                <option>14:15</option>
+                                                                <option>14:30</option>
+                                                                <option>14:45</option>
+                                                                <option>15:00</option>
+                                                                <option>15:15</option>
+                                                                <option>15:30</option>
+                                                                <option>15:45</option>
+                                                                <option>16:00</option>
+                                                                <option>16:15</option>
+                                                                <option>16:30</option>
+                                                                <option>16:45</option>
+                                                                <option>17:00</option>
+                                                                <option>17:15</option>
+                                                                <option>17:30</option>
+                                                                <option>17:45</option>
+                                                                <option>18:00</option>
+                                                                <option>18:15</option>
+                                                                <option>18:30</option>
+                                                                <option>18:45</option>
+                                                                <option>19:00</option>
+                                                                <option>19:15</option>
+                                                                <option>19:30</option>
+                                                                <option>19:45</option>
+                                                                <option>20:00</option>
+                                                                <option>20:15</option>
+                                                                <option>20:30</option>
+                                                                <option>20:45</option>
+                                                                <option>21:00</option>
+                                                                <option>21:15</option>
+                                                                <option>21:30</option>
+                                                                <option>21:45</option>
+                                                                <option>22:00</option>
+                                                                <option>22:15</option>
+                                                                <option>22:30</option>
+                                                                <option>22:45</option>
+                                                                <option>23:00</option>
+                                                                <option>23:15</option>
+                                                                <option>23:30</option>
 
-              
+                                                            </select>
 
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <div class="dvLabel">
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input type="checkbox" id="chkDropoffLocation" />
+                                                                    <span class="checkmark"></span>
+                                                                </span>
+                                                                <span class="d-inline-block ms-2 heading-medium h8 pt-1">Return car to same location?</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-xl-12">
+                                                        <div class="form-group dvInput1 fade-out">
+                                                            <label class="label">Car Drop off location?</label>
+                                                            <div class="dvInputGroup input-group dvDopoffLocation">
+                                                                <input type="text" class="form-control" id="txtDopoffLocation">
+                                                                <input type="hidden" id="hndDopoffLocationId" value="">
+                                                                    <span class="input-group-text bg-colour6">
+                                                                        <i class="fa-solid fa-location-dot"></i>
+                                                                    </span>
+                                                             </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
+                                                        <label class="label">Drop off date</label>
+                                                        <div class="dvInputGroup input-group">
+                                                            <input class="input form-control" value="Enter Date" onfocus="placeholderOnFocus(this);"
+                                                                onblur="placeholderOnFocus(this);" type="text" id="txtDropoffDate" readonly="readonly" />
+                                                                <span class="input-group-text bg-colour6">
+                                                                    <i class="fa-regular fa-calendar"></i>
+                                                                </span>
+                                                         </div>
+                                                    </div>
+                                                    <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2">
+                                                        <label for="exampleFormControlSelect2" class="label">Pick-Up Time</label>
+                                                        <div class="dvInput input-group">
+                                                            <select class="form-select" id="ddlDropoffTime">
+                                                                <option>00:00</option>
+                                                                <option>00:15</option>
+                                                                <option>00:30</option>
+                                                                <option>00:45</option>
+                                                                <option>01:00</option>
+                                                                <option>01:15</option>
+                                                                <option>01:30</option>
+                                                                <option>01:45</option>
+                                                                <option>02:00</option>
+                                                                <option>02:15</option>
+                                                                <option>02:30</option>
+                                                                <option>02:45</option>
+                                                                <option>03:00</option>
+                                                                <option>03:15</option>
+                                                                <option>03:30</option>
+                                                                <option>03:45</option>
+                                                                <option>04:00</option>
+                                                                <option>04:15</option>
+                                                                <option>04:30</option>
+                                                                <option>04:45</option>
+                                                                <option>05:00</option>
+                                                                <option>05:15</option>
+                                                                <option>05:30</option>
+                                                                <option>05:45</option>
+                                                                <option>06:00</option>
+                                                                <option>06:15</option>
+                                                                <option>06:30</option>
+                                                                <option>06:45</option>
+                                                                <option>07:00</option>
+                                                                <option>07:15</option>
+                                                                <option>07:30</option>
+                                                                <option>07:45</option>
+                                                                <option>08:00</option>
+                                                                <option>08:15</option>
+                                                                <option>08:30</option>
+                                                                <option>08:45</option>
+                                                                <option>09:00</option>
+                                                                <option>09:15</option>
+                                                                <option>09:30</option>
+                                                                <option>09:45</option>
+                                                                <option>10:00</option>
+                                                                <option>10:15</option>
+                                                                <option>10:30</option>
+                                                                <option>10:45</option>
+                                                                <option>11:00</option>
+                                                                <option>11:15</option>
+                                                                <option>11:30</option>
+                                                                <option>11:45</option>
+                                                                <option selected="selected">12:00</option>
+                                                                <option>12:15</option>
+                                                                <option>12:30</option>
+                                                                <option>12:45</option>
+                                                                <option>13:00</option>
+                                                                <option>13:15</option>
+                                                                <option>13:30</option>
+                                                                <option>13:45</option>
+                                                                <option>14:00</option>
+                                                                <option>14:15</option>
+                                                                <option>14:30</option>
+                                                                <option>14:45</option>
+                                                                <option>15:00</option>
+                                                                <option>15:15</option>
+                                                                <option>15:30</option>
+                                                                <option>15:45</option>
+                                                                <option>16:00</option>
+                                                                <option>16:15</option>
+                                                                <option>16:30</option>
+                                                                <option>16:45</option>
+                                                                <option>17:00</option>
+                                                                <option>17:15</option>
+                                                                <option>17:30</option>
+                                                                <option>17:45</option>
+                                                                <option>18:00</option>
+                                                                <option>18:15</option>
+                                                                <option>18:30</option>
+                                                                <option>18:45</option>
+                                                                <option>19:00</option>
+                                                                <option>19:15</option>
+                                                                <option>19:30</option>
+                                                                <option>19:45</option>
+                                                                <option>20:00</option>
+                                                                <option>20:15</option>
+                                                                <option>20:30</option>
+                                                                <option>20:45</option>
+                                                                <option>21:00</option>
+                                                                <option>21:15</option>
+                                                                <option>21:30</option>
+                                                                <option>21:45</option>
+                                                                <option>22:00</option>
+                                                                <option>22:15</option>
+                                                                <option>22:30</option>
+                                                                <option>22:45</option>
+                                                                <option>23:00</option>
+                                                                <option>23:15</option>
+                                                                <option>23:30</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <div class="dvLabel">
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input type="checkbox" id="chkDriverAge" />
+                                                                    <span class="checkmark"></span>
+                                                                </span>
+                                                                <span class="d-inline-block ms-2 heading-medium h8 pt-1">Driver aged 30-65 years?</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-xl-12">
+                                                        <div class="form-group dvInput2">
+                                                            <label class="label" id="lbldriverage">Driver age</label>
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" id="txtDriverAge" onkeypress="return validateNumber(event)">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12 col-md-12 col-lg-12 mb-2 mt-2" style="display: none;">
+                                                        <label class="label">Discount</label>
+                                                        <div class="dvInputGroup input-group">
+                                                            <input class="input form-control" value="Discount" onfocus="placeholderOnFocus(this);"
+                                                                type="text" id="Text1" runat="server" readonly="readonly" />
+                                                            <span class="input-group-text bg-colour6">
+                                                                    <i class="fa-solid fa-percent"></i>
+                                                                </span>
+                                                         </div>
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <div class="dvLabel">
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input type="checkbox" id="gridCheck3" checked />
+                                                                    <span class="checkmark"></span>
+                                                                </span>
+                                                                <span class="d-inline-block ms-2 heading-medium h8 pt-1">Driver's Residence Country: </span><span id="spndriverCountry" class="ms-1 heading-medium h8 pt-1"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-xl-12 mb-3">
+
+                                                        <div class="form-group dvInput3 fade-out">
+                                                            <label class="label">Driver's Residence Country</label>
+                                                            <div class="">
+                                                                <div class="dvPickupLocation w-100 input-group">
+                                                                    <%--   <input type="text" class="form-control" id="txtDriverResidence">--%>
+                                                                    <select id="txtDriverResidence" class="form-select" onchange="handleSelectChange(event)"></select>
+                                                                    <input type="hidden" id="hnddriverLocationId" value="" />
+                                                                    <input type="hidden" id="hnddriverLocationname" value="" />
+                                                                    <%--  <div class="input-group-text"><i class="fa-solid fa-angle-down h8"></i></div>
+                                                                     --%>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-lg-12 col-xl-12">
+                                                        <button class="btn btn-one" type="submit" onclick="var retvalue = CarValidation(); event.returnValue= retvalue;event.preventDefault(); return retvalue;">Search</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one w-100 d-lg-none">Filter </button>
-
-                    <div class="dvFilter modal fade mb-3" id="dvFilterModal" tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                            <div class="modal-content border-0 b-radius">
-                                <div class="modal-header border-0 p-0">
-                                    <div class="modal-title border-0 p-3">
-                                        <h5 class="h6 heading-semibold text-colour1">
-                                            <i class="fa fa-filter mx-0"></i>
-                                            <span>Filters</span>
+                        <div class="dvFilter modal col-lg-3 fade mb-3" style="width: 100%" id="dvFilterModal" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content border-0 b-radius">
+                                    <div class="modal-header border-0">
+                                        <h5 class="modal-title dvTotalRecords border-0">
+                                            <span class="text-colour1"><i class="fa fa-filter mx-0"></i></span>
+                                            <span class="heading6 text-colour1">Filters</span>
                                         </h5>
-                                    </div>
-                                    <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </button>
 
-                                    <%--<i class="fa fa-filter mx-0"></i>
+                                        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="modal">
+                                            <%--<i class="fa-solid fa-xmark"></i>--%>
+                                        </button>
+
+                                        <%--<i class="fa fa-filter mx-0"></i>
                                     <span class="h7 heading-semibold">Filters Results</span>--%>
-                                </div>
-                                <div class="modal-body p-lg-0">
-                                    <div class="accordion" id="filter-accordion">
-                                        <div class="card my-3 mb-lg-3 mt-lg-0">
-                                            <div class="card-header p-0">
-                                                <h2 class="mb-0">
-                                                    <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="heading6">Passengers</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
-                                                </h2>
-                                            </div>
-                                            <div id="collapse1" class="collapse- show" data-parent="#filter-accordion">
-                                                <div class="card-body scroll-ver- px-0 pt-1 pb-2">
-                                                    <div class="dvLabel">
-                                                        <label class="checkbox-container d-flex">
-                                                            <span class="d-inline-block">
-                                                                <input name="PASSENGERS" onchange="FilterCarList('');" value="3,4" type="checkbox" id="gridCheckPASSENGERS3-4" />
-                                                                <span class="checkmark"></span>
-                                                            </span>
-                                                            <span class="d-inline-block ml-2">3 to 4</span>
-                                                        </label>
-                                                        <label class="checkbox-container d-flex">
-                                                            <span class="d-inline-block">
-                                                                <input name="PASSENGERS" onchange="FilterCarList('');" value="5,6" type="checkbox" id="gridCheckPASSENGERS5-6">
-                                                                <span class="checkmark"></span>
-                                                            </span>
-                                                            <span class="d-inline-block ml-2">5 to 6 </span>
-                                                        </label>
-                                                        <label class="checkbox-container d-flex">
-                                                            <span class="d-inline-block">
-                                                                <input name="PASSENGERS" onchange="FilterCarList('');" value="7,8" type="checkbox" id="gridCheckPASSENGERS7-8">
-                                                                <span class="checkmark"></span>
-                                                            </span>
-                                                            <span class="d-inline-block ml-2">7 to 8 </span>
-                                                        </label>
-                                                        <label class="checkbox-container d-flex">
-                                                            <span class="d-inline-block">
-                                                                <input name="PASSENGERS" onchange="FilterCarList('');" value="8,9" type="checkbox" id="gridCheckPASSENGERS8-9">
-                                                                <span class="checkmark"></span>
-                                                            </span>
-                                                            <span class="d-inline-block ml-2">8 to 9 </span>
-                                                        </label>
+                                    </div>
+                                    <div class="modal-body p-lg-0">
+                                        <div class="accordion" id="filter-accordion">
+                                            <div class="card my-3 mb-lg-3 mt-lg-0">
+                                                <div class="card-header p-0">
+                                                    <h2 class="mb-0">
+                                                        <button class="btn btn-block text-start heading-semibold" type="button" data-bs-toggle="collapse-" data-bs-target="#collapse1"><span class="heading6">Passengers</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                    </h2>
+                                                </div>
+                                                <div id="collapse1" class="collapse- show" data-bs-parent="#filter-accordion">
+                                                    <div class="card-body scroll-ver- px-0 pt-1 pb-2">
+                                                        <div class="dvLabel">
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input name="PASSENGERS" onchange="FilterCarList('');" value="3,4" type="checkbox" id="gridCheckPASSENGERS3-4" />
+                                                                    <span class="checkmark"></span>
+                                                                </span>
+                                                                <span class="d-inline-block ms-2">3 to 4</span>
+                                                            </label>
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input name="PASSENGERS" onchange="FilterCarList('');" value="5,6" type="checkbox" id="gridCheckPASSENGERS5-6">
+                                                                    <span class="checkmark"></span>
+                                                                </span>
+                                                                <span class="d-inline-block ms-2">5 to 6 </span>
+                                                            </label>
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input name="PASSENGERS" onchange="FilterCarList('');" value="7,8" type="checkbox" id="gridCheckPASSENGERS7-8">
+                                                                    <span class="checkmark"></span>
+                                                                </span>
+                                                                <span class="d-inline-block ms-2">7 to 8 </span>
+                                                            </label>
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input name="PASSENGERS" onchange="FilterCarList('');" value="8,9" type="checkbox" id="gridCheckPASSENGERS8-9">
+                                                                    <span class="checkmark"></span>
+                                                                </span>
+                                                                <span class="d-inline-block ms-2">8 to 9 </span>
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div class="dvBorderBottom">
-                                            <div class="">
-                                                <div class="border-bottom my-3"></div>
+                                            <div class="dvBorderBottom">
+                                                <div class="">
+                                                    <div class="border-bottom my-3"></div>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="card">
-                                            <div class="card-header p-0">
-                                                <h2 class="mb-0">
-                                                    <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span class="heading6">Transmission</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
-                                                </h2>
-                                            </div>
-                                            <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">
-                                                <div class="card-body scroll-ver- px-0 pt-1 pb-2">
-                                                    <div class="dvLabel">
-                                                        <label class="checkbox-container d-flex">
-                                                            <span class="d-inline-block">
-                                                                <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" value="Manual" id="gridCheckManual">
-                                                                <span class="checkmark"></span>
-                                                            </span>
-                                                            <span class="d-inline-block ml-2">Manual</span>
-                                                        </label>
-                                                        <label class="checkbox-container d-flex">
-                                                            <span class="d-inline-block">
-                                                                <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" value="Automatic" id="gridCheckAutomatic">
-                                                                <span class="checkmark"></span>
-                                                            </span>
-                                                            <span class="d-inline-block ml-2">Automatic</span>
-                                                        </label>
+                                            <div class="card">
+                                                <div class="card-header p-0">
+                                                    <h2 class="mb-0">
+                                                        <button class="btn btn-block text-start collapsed heading-semibold" type="button" data-bs-toggle="collapse-" data-bs-target="#collapse2"><span class="heading6">Transmission</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                    </h2>
+                                                </div>
+                                                <div id="collapse2" class="collapse- show" data-bs-parent="#filter-accordion">
+                                                    <div class="card-body scroll-ver- px-0 pt-1 pb-2">
+                                                        <div class="dvLabel">
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" value="Manual" id="gridCheckManual">
+                                                                    <span class="checkmark"></span>
+                                                                </span>
+                                                                <span class="d-inline-block ms-2">Manual</span>
+                                                            </label>
+                                                            <label class="checkbox-container d-flex">
+                                                                <span class="d-inline-block">
+                                                                    <input class="form-check-input chkTransmission" name="Transmission" onchange="FilterCarList();" type="checkbox" value="Automatic" id="gridCheckAutomatic">
+                                                                    <span class="checkmark"></span>
+                                                                </span>
+                                                                <span class="d-inline-block ms-2">Automatic</span>
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="dvBorderBottom">
-                                            <div class="">
-                                                <div class="border-bottom my-3"></div>
+                                            <div class="dvBorderBottom">
+                                                <div class="">
+                                                    <div class="border-bottom my-3"></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="modal-footer justify-content-center p-lg-2">
-                                    <button type="button" class="btn btn-one w-100" onclick="FilterCarList('All');">Reset</button>
+                                    <div class="modal-footer justify-content-center p-lg-2">
+                                        <button type="button" class="btn btn-one w-100" onclick="FilterCarList('All');">Reset</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9">
-        <div class="dvCarSelection row flex-nowrap scroll-hoz mx-0 equal-col">
-            <div class="col-5 col-sm-3 mb-3">
-                <label class="checkbox-container b-radius">
-                    <input type="checkbox" checked name="VehicleType" value="small" onchange="FilterCarList('');" />
-                    <div class="checkmark d-block p-2 text-center b-radius">
-                        <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                        <p class="h7 heading-bold text-colour7">Small</p>
-                        <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
+                    <button data-bs-toggle="modal" data-bs-target="#dvFilterModal" type="button" class="btn btn-one w-100 mb-3 mb-lg-0 d-lg-none">Filter </button>
+                    <div class="dvCarSelection row flex-nowrap scroll-hoz mx-0 equal-col">
+                        <div class="col-5 col-sm-3 mb-3">
+                            <label class="checkbox-container b-radius">
+                                <input type="checkbox" checked name="VehicleType" value="small" onchange="FilterCarList('');" />
+                                <div class="checkmark d-block p-2 text-center b-radius">
+                                    <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
+                                    <p class="h7 heading-bold text-colour7">Small</p>
+                                    <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-5 col-sm-3 mb-3">
+                            <label class="checkbox-container b-radius">
+                                <input type="checkbox" name="VehicleType" value="medium" onchange="FilterCarList('');" />
+                                <div class="checkmark d-block p-2 text-center b-radius">
+                                    <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
+                                    <p class="h7 heading-bold text-colour7">Medium</p>
+                                    <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-5 col-sm-3 mb-3">
+                            <label class="checkbox-container b-radius">
+                                <input type="checkbox" name="VehicleType" value="large" onchange="FilterCarList('');" />
+                                <div class="checkmark d-block p-2 text-center b-radius">
+                                    <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
+                                    <p class="h7 heading-bold text-colour7">Large</p>
+                                    <%--  <span class="d-none d-lg-block">from 119,39C</span>--%>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-5 col-sm-3 mb-3">
+                            <label class="checkbox-container b-radius">
+                                <input type="checkbox" name="VehicleType" value="luxury" onchange="FilterCarList('');" />
+                                <div class="checkmark d-block p-2 text-center b-radius">
+                                    <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
+                                    <p class="h7 heading-bold text-colour7">Luxury</p>
+                                    <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
+                                </div>
+                            </label>
+                        </div>
                     </div>
-                </label>
-            </div>
-            <div class="col-5 col-sm-3 mb-3">
-                <label class="checkbox-container b-radius">
-                    <input type="checkbox" name="VehicleType" value="medium" onchange="FilterCarList('');" />
-                    <div class="checkmark d-block p-2 text-center b-radius">
-                        <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                        <p class="h7 heading-bold text-colour7">Medium</p>
-                        <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
-                    </div>
-                </label>
-            </div>
-            <div class="col-5 col-sm-3 mb-3">
-                <label class="checkbox-container b-radius">
-                    <input type="checkbox" name="VehicleType" value="large" onchange="FilterCarList('');" />
-                    <div class="checkmark d-block p-2 text-center b-radius">
-                        <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                        <p class="h7 heading-bold text-colour7">Large</p>
-                        <%--  <span class="d-none d-lg-block">from 119,39C</span>--%>
-                    </div>
-                </label>
-            </div>
-            <div class="col-5 col-sm-3 mb-3">
-                <label class="checkbox-container b-radius">
-                    <input type="checkbox" name="VehicleType" value="luxury" onchange="FilterCarList('');" />
-                    <div class="checkmark d-block p-2 text-center b-radius">
-                        <img src="https://cdn.enjoytravel.com/img/site-images/small-car.jpg" alt="" />
-                        <p class="h7 heading-bold text-colour7">Luxury</p>
-                        <%--<span class="d-none d-lg-block">from 119,39C</span>--%>
-                    </div>
-                </label>
-            </div>
-        </div>
-        <div class="dvTotalRecords my-3">
-            <div class="b-radius bg-colour5 p-3">
-                <span id="spancarcount" class="heading6 text-colour1">0</span>
-                <span class="heading6 text-colour1">cars found</span>
-<%--                <a class="link1 text-decoration-none text-colour7 ml-3">
+                    <div class="dvTotalRecords my-3">
+                        <div class="b-radius bg-colour5 p-3">
+                            <span id="spancarcount" class="heading6 text-colour1">0</span>
+                            <span class="heading6 text-colour1">cars found</span>
+                            <%--                <a class="link1 text-decoration-none text-colour7 ms-3">
                     <i class="fa-solid fa-location-dot"></i>
                     <span class="">View locations on a map</span>
                 </a>--%>
-            </div>
-        </div>
+                        </div>
+                    </div>
 
-        <div id="divCarListContainer">
-        </div>
+                    <div id="divCarListContainer">
+                    </div>
 
-    </div>
+                </div>
             </div>
         </div>
     </div>
 
     
-    <div class="dvCommonModal dvMoreInfoModal modal fade pr-lg-0" id="dvMoreInfoModal">
+    <div class="dvCommonModal dvMoreInfoModal modal fade pe-lg-0" id="dvMoreInfoModal">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content">
                  <div class="modal-header border-0">         
                     <h5 class="modal-title">
                         <span>Important information</span>
                     </h5>
-                    <button type="button" class="close" data-dismiss="modal">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
+                   <button type="button" class="btn-close" data-bs-dismiss="modal">
+                       <i class="fas fa-times"></i>
+                   </button>
                   </div>                
                 <div class="dvVcData modal-body" id="divmoreInfoDetails"></div>
             </div>

@@ -71,11 +71,11 @@
 <div class="row mt-3 dvFlightInformation">
     <div class="col-12">
         <div class="row">
-            <div class="col-7 pr-0">
+            <div class="col-7 pe-0">
                 <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 border">Departure Flight <i class="fa-solid fa-plane"></i></h2>
             </div>
-            <div class="col-5 pl-0">
-                <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 h-100 border border-left-0 text-sm-right">
+            <div class="col-5 ps-0">
+                <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 h-100 border border-left-0 text-sm-end">
                     <asp:Label ID="LabelClass" runat="server"></asp:Label></h2>
             </div>
         </div>
@@ -185,12 +185,13 @@
 
             <HeaderTemplate>
                 <div class="row">
-                    <div class="col-8 pr-0">
+                    <div class="col-7 pe-0">
                         <h2 class="h7 heading-bold text-colour6 bg-colour1 py-3 px-2 border" runat="server" visible="true" id="dvReturnFlight">Return Flights <i class="fa fa-plane" aria-hidden="true" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);"></i></h2>
                     </div>
-                    <div class="col-4 pl-0">
-                        <h2 class="h7 heading-bold text-colour6 bg-colour1 py-3 px-2 border border-left-0 text-right">
-                            <asp:Label ID="lblReturnClass" runat="server"></asp:Label></h2>
+                    <div class="col-5 ps-0">
+                        <h2 class="h7 heading-bold text-colour6 bg-colour1 p-3 h-100 border border-left-0 text-sm-end">
+                            <asp:Label ID="lblReturnClass" runat="server"></asp:Label>
+                        </h2>
                     </div>
                 </div>
                 <div class="px-3 border">
@@ -280,11 +281,9 @@
                         </div>
                     </div>
                 </div>
-
-
             </ItemTemplate>
             <FooterTemplate>
-                </div> 
+                    </div> 
                 </div>
             </FooterTemplate>
         </asp:Repeater>

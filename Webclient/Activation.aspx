@@ -84,7 +84,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 pt-3 pb-0">
-                    <li class="mr-3"><a href="\">
+                    <li class="me-3"><a href="\">
                         <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
@@ -124,7 +124,7 @@
                                         </div>
                                         <%-- <div class="col-12 mb-3 valignM dvLabel">
                                             <label class="checkbox-container d-flex">
-                                                <span class="d-inline-block ml-1">
+                                                <span class="d-inline-block ms-1">
                                                     <input id="chkTnC" runat="server" type="checkbox" />
                                                     <span>Please accept <a href="\TermsAndConditions.aspx">Terms and Conditions</a>.</span>
                                                     <span class="checkmark"></span>
@@ -169,9 +169,9 @@
                                                     <label class="label">New Password:</label>
                                                     <div class="input-group">
                                                         <asp:TextBox ID="txtPassword" autocomplete="off" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
-                                                        <div class="input-group-append">
+                                                       
                                                             <span toggle="#CP_txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
-                                                        </div>
+                                                      
                                                     </div>
                                                 </div>
                                                 <div class="col-12 mb-3">
@@ -190,9 +190,8 @@
                                                     <label class="label">Confirm New Password:</label>
                                                     <div class="input-group">
                                                         <asp:TextBox ID="txtConfirmpassword" autocomplete="off" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
-                                                        <div class="input-group-append">
-                                                            <span toggle="#CP_txtConfirmpassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
-                                                        </div>
+                                                        <span toggle="#CP_txtConfirmpassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                                        
                                                     </div>
                                                 </div>
                                                <%-- <div class="col-12 mb-3">
@@ -221,7 +220,7 @@
                                                 </div>--%>
                                                 <div class="col-12 mb-3 valignM dvLabel">
                                                     <label class="checkbox-container d-flex">
-                                                        <span class="d-inline-block ml-1">
+                                                        <span class="d-inline-block ms-1">
                                                             <input id="chkTnC" runat="server" type="checkbox" />
                                                             <span>Please accept </span><a class="link1" href="\TermsAndConditions.aspx" target="_blank">Terms and Conditions</a>
                                                             <span class="checkmark"></span>

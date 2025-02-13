@@ -10,41 +10,38 @@
         }
     </style>
 
-    <div class="dvExperienceProductBookingDetails py-3">
+    <div class="dvExperienceProductBookingDetails py-3 py-md-4">
         <div class="container-xl">
             <div class="row">
-
                 <div class="col-12">
-                    <div class="row dvDeliveryTrack">
-                        <div class="col-4 mb-lg-3">
-                            <div class="dvLine border d-none d-md-block px-3"></div>
+                    <div class="row dvDeliveryTrack mb-md-4">
+                        <div class="dvLine border d-none d-md-block"></div>
+                        <div class="col-4">                            
                             <div class="row justify-content-md-center">
-                                <div class="col-md-auto my-3">
+                                <div class="col-md-auto mb-3 mb-md-0 bg-colour6">
                                     <div class="d-flex flex-column flex-sm-row align-items-center active">
                                         <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">1</span>
-                                        <a class="h7 heading-regular bg-colour6 px-3 text-center text-colour7">Booking Details</a>
+                                        <a class="h7 heading-bold ps-sm-3 text-center text-colour1">Booking Details</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 mb-lg-3">
-                            <div class="dvLine border d-none d-md-block px-3"></div>
+                        <div class="col-4">
                             <div class="row justify-content-md-center">
-                                <div class="col-md-auto my-3">
+                                <div class="col-md-auto mb-3 mb-md-0 bg-colour6">
                                     <div class="d-flex flex-column flex-sm-row align-items-center">
                                         <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">2</span>
-                                        <a class="h7 heading-regular bg-colour6 px-3 text-center text-colour7" id="hrefBookingDetailsId" runat="server">Payment Details</a>
+                                        <a class="h7 heading-regular ps-sm-3 text-center text-colour7" id="hrefBookingDetailsId" runat="server">Payment Details</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 mb-lg-3">
-                            <%--<div class="dvLine border d-none d-md-block px-3"></div>--%>
+                        <div class="col-4">
                             <div class="row justify-content-md-center">
-                                <div class="col-md-auto my-3">
+                                <div class="col-md-auto mb-3 mb-md-0 bg-colour6">
                                     <div class="d-flex flex-column flex-sm-row align-items-center">
                                         <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30">3</span>
-                                        <a class="h7 heading-regular bg-colour6 px-3 text-center text-colour7">Thank You</a>
+                                        <a class="h7 heading-regular ps-sm-3 text-center text-colour7">Thank You</a>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +61,7 @@
                                     <div class="col-12 col-md-12 col-lg-4 mb-3">
                                         <label class="label"><span>Title</span><span class="text-danger">*</span></label>
                                         <div class="dvInput input-group">
-                                            <select class="select selectBtn selectDropdown form-control" id="sltitle">
+                                            <select class="select selectBtn selectDropdown form-select" id="sltitle">
                                                 <option selected="selected" value="">Select Title</option>
                                                 <option value="Mr">Mr.</option>
                                                 <option value="Ms">Ms.</option>
@@ -85,10 +82,8 @@
                                                 placeholder="Enter First Name"
                                                 aria-describedby="inputGroupPrepend2"
                                                 required="" />
-                                            <div class="input-group-prepend">
                                                 <span class="input-group-text bg-colour6"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
+                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12 col-lg-4 mb-3">
                                         <label class="label"><span>Last Name</span><span class="text-danger">*</span></label>
@@ -103,10 +98,8 @@
                                                 autocomplete="off"
                                                 aria-describedby="inputGroupPrepend2"
                                                 required="" />
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text bg-colour6"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
+                                             <span class="input-group-text bg-colour6"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                         </div>
                                     </div>
                                 </div>
                                 <div class="row mt-1">
@@ -123,12 +116,10 @@
                                                 placeholder="Enter Email Id"
                                                 aria-describedby="inputGroupPrepend2"
                                                 required="required" />
-                                            <div class="input-group-prepend">
                                                 <span class="input-group-text bg-colour6">
                                                     <i class="fa fa-envelope" aria-hidden="true"></i>
                                                 </span>
-                                            </div>
-                                        </div>
+                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12 col-lg-4 mb-3">
                                         <label class="label"><span>Contact Number</span><span class="text-danger">*</span></label>
@@ -143,12 +134,10 @@
                                                 placeholder="Enter Contact Number"
                                                 aria-describedby="inputGroupPrepend2"
                                                 required="required" />
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text bg-colour6">
+                                             <span class="input-group-text bg-colour6">
                                                     <i class="fa fa-phone-square" aria-hidden="true"></i>
                                                 </span>
-                                            </div>
-                                        </div>
+                                         </div>
                                     </div>
 
 
@@ -165,10 +154,8 @@
                                                 placeholder="Enter Date of Birth"
                                                 aria-describedby="inputGroupPrepend2"
                                                 required="required" />
-
-                                            <div class="input-group-append">
-                                                <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
-                                            </div>
+                                             <span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>
+                                             
                                         </div>
                                         <%-- <asp:RequiredFieldValidator ID="rfvAdultDOB" runat="server" ControlToValidate="txtDOB"
                                             Display="Dynamic" ErrorMessage="Enter Date of Birth" ValidationGroup="WebValidation"
@@ -181,7 +168,7 @@
                                     <div class="col-12 col-md-12 col-lg-4" id="divNationality" runat="server">
                                         <label class="label"><span>Nationality</span><span class="text-danger">*</span></label>
                                         <div class="dvInput input-group" id="divNationalityData" runat="server">
-                                            <asp:DropDownList ID="drpNationality" class="form-control" runat="server">
+                                            <asp:DropDownList ID="drpNationality" class="form-select" runat="server">
                                             </asp:DropDownList>
                                         </div>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Display="Dynamic" ControlToValidate="drpNationality"
@@ -212,11 +199,11 @@
                                     <div class="col-12 col-lg-6 mt-lg-0 mt-3">
                                         <div class="dvLabel mb-3">
                                             <label class="checkbox-container d-flex">
-                                                <span class="d-inline-block ml-1">
+                                                <span class="d-inline-block ms-1">
                                                     <input type="checkbox" onchange="ValidateBookingDetailsFields();" id="chkTnCPolicy" />
                                                     <span class="checkmark"></span>
                                                 </span>
-                                                <span id="spnTnCPolicy" class="d-inline-block ml-2 heading-regular h7">
+                                                <span id="spnTnCPolicy" class="d-inline-block ms-2 heading-regular h7">
                                                     <span>I have read and agree to ABC Bank</span>
                                                     <a href="TermsAndConditions.aspx" class="link1" target="_blank">Terms & Conditions</a> <span>and</span>
                                                     <a href="BookingPolicy.aspx" class="link1" target="_blank">Booking & Cancellation Policy</a>
@@ -234,7 +221,7 @@
                                 </div>
                             </div>
 
-                            <div class="mt-3 text-center text-lg-right" id="divbtnProceedPayment" runat="server">
+                            <div class="mt-3 text-center text-lg-end" id="divbtnProceedPayment" runat="server">
                                 <%--<button
                                         class="btn btn-one"
                                         type="button" id="btnProceedToPayment"
@@ -257,15 +244,15 @@
                     <h5 class="modal-title">
                         <span>Alert</span>
                     </h5>
-                    <button type="button" class="close" data-dismiss="modal">
-                        <i class="fa-solid fa-xmark"></i>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
                     </button>
                 </div>
                 <div class="modal-body text-center" id="alertmessage">
                     <p class="h6 text-colour7 heading-semibold" id="errormessage"></p>
                 </div>
                 <div class="modal-footer justify-content-center border-0 px-0">
-                    <button type="button" class="btn btn-one" data-dismiss="modal">Ok</button>
+                    <button type="button" class="btn btn-one" data-bs-dismiss="modal">Ok</button>
                 </div>
             </div>
         </div>
@@ -275,7 +262,7 @@
             $("#txtDOB").click(function () {
                 $("#txtDOB").datepicker('show');
             });
-            $(".dvTxtDOBAdult .input-group-append .input-group-text").on("click", function () {
+            $(".dvTxtDOBAdult .input-group-text").on("click", function () {
                 $("#txtDOB").datepicker("show");
             });
             $("#txtDOB").datepicker({
@@ -376,11 +363,11 @@
                     html += '<p><a id="hrefEditbuttonId" class="btn btn-two" runat="server">Edit</a></p>';
                     html += '</div>';
                     //html += '</div>';
-                    //html += '<div class="dvCityName pl-3 pr-3">';
+                    //html += '<div class="dvCityName ps-3 pe-3">';
                     html += '<h2 class="heading6 mt-3">' + data.ProductInfoResponse.data.title + '</h2>';
                     html += '<p class="h7 mb-3">Option: ' + data.ProductInfoResponse.producttypedetails.item_uuid.filter(obj => obj.uuid == ptuuid)[0].title + '</p>';
                     //html += '</div>';
-                    //html += '<div class="dvSelectDate pl-3 pr-3 mt-3">';
+                    //html += '<div class="dvSelectDate ps-3 pe-3 mt-3">';
                     html += '<div class="d-flex flex-wrap justify-content-between">';
                     html += '<p class="h7">Selected Date:</p>';
                     html += '<p class="h7">' + formatDate(selectedDate) + '</p>';
@@ -388,7 +375,7 @@
                     //html += '</div>';
 
                     if (timeslotuuid != null && timeslotuuid != '') {
-                        //html += '<div class="dvSelectDate pl-3 pr-3 pt-2">';
+                        //html += '<div class="dvSelectDate ps-3 pe-3 pt-2">';
                         html += '<div class="d-flex flex-wrap justify-content-between">';
                         html += '<p class="h7">Time Slot:</p>';
                         $.each(data.ProductInfoResponse.producttypedetails.item_uuid, function (i) {
@@ -403,7 +390,7 @@
                         html += '</div>';
                         //html += '</div>';
                     }
-                    //html += '<div class="dvSelectDate pl-3 pr-3 pt-2">';
+                    //html += '<div class="dvSelectDate ps-3 pe-3 pt-2">';
                     var totalAmount = 0.00;
                     var totalPax = 0;
                     $.each(data.ProductInfoResponse.producttypedetails.item_uuid, function (i) {
@@ -443,23 +430,23 @@
                     //html += '</div>';
 
                     html += '<div class="border-top my-2"></div>';
-                    //html += '<div class="dvSelectDate pl-3 pr-3 pt-2 pb-2">';
+                    //html += '<div class="dvSelectDate ps-3 pe-3 pt-2 pb-2">';
                     html += '<div class="d-flex justify-content-between">';
                     html += '<p class="h7">Service fee</p>';
                     html += '<p class="h7">' + data.ProductInfoResponse.data.convertedCurrency.code + " " + FormatCurrency(0) + '</p>';
                     html += '</div>';
                     //html += '</div>';
                     html += '<div class="border-bottom my-2"></div>';
-                    //html += '<div class="dvSelectDate pl-3 pr-3 pt-2">';
+                    //html += '<div class="dvSelectDate ps-3 pe-3 pt-2">';
                     html += '<div class="d-flex justify-content-between">';
                     html += '<p class="heading6">TOTAL:</p>';
                     html += '<div>';
-                    html += '<span class="heading6 pr-2" id="currencycode">' + data.ProductInfoResponse.data.convertedCurrency.code + '</span><span class="heading6" id="totalAmount">' + FormatCurrency(totalAmount) + '</span>';
+                    html += '<span class="heading6 pe-2" id="currencycode">' + data.ProductInfoResponse.data.convertedCurrency.code + '</span><span class="heading6" id="totalAmount">' + FormatCurrency(totalAmount) + '</span>';
                     html += '</div>';
                     /*                 html += '<p class="heading-semibold" id="totalAmount">' + data.ProductInfoResponse.data.convertedCurrency.code + " " + FormatCurrency(totalAmount) + '</p>';*/
                     html += '</div>';
                     //html += '</div>';
-                    //html += '<div class="dvSelectDate pl-3 pr-3 pb-3">';
+                    //html += '<div class="dvSelectDate ps-3 pe-3 pb-3">';
                     html += '<div class="d-flex justify-content-between">';
                     html += '<p></p>';
                     html += '<p class="h8">Price incl. GST</p>';
@@ -495,7 +482,7 @@
                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].IsRequired == true) {
                                                 selectclassname = "sltadditionalinfo";
                                             }
-                                            html += '<select id="' + selectId + '" class="select selectBtn selectDropdown form-control ' + selectclassname + '">';
+                                            html += '<select id="' + selectId + '" class="select selectBtn selectDropdown form-select ' + selectclassname + '">';
                                             html += '<option value="">Select ' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '</option>';
                                             $.each(data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].items, function (k) {
                                                 html += '<option value="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].items[k].value + '">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].items[k].label + '</option>';
@@ -612,9 +599,7 @@
                                             }
                                             html += '<div class="input-group-">';
                                             html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
-                                            html += '<div class="input-group-append">';
                                             html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
-                                            html += '</div>';
                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                 html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
                                             }
@@ -631,9 +616,7 @@
                                             }
                                             html += '<div class="input-group-">';
                                             html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
-                                            html += '<div class="input-group-append">';
                                             html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
-                                            html += '</div>';
                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                 html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
                                             }
@@ -650,10 +633,8 @@
                                             }
                                             html += '<div class="input-group-">';
                                             html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
-                                            html += '<div class="input-group-append">';
                                             html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
-                                            html += '</div>';
-                                            if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
+                                             if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                 html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
                                             }
                                             html += '</div>';
@@ -693,7 +674,7 @@
                                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].IsRequired == true) {
                                                     selectclassname = "sltadditionalinfo";
                                                 }
-                                                html += '<select id="' + selectId + '" class="select selectBtn selectDropdown form-control ' + selectclassname + '">';
+                                                html += '<select id="' + selectId + '" class="select selectBtn selectDropdown form-select ' + selectclassname + '">';
                                                 html += '<option value="">Select ' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '</option>';
                                                 $.each(data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].items, function (k) {
                                                     html += '<option value="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].items[k].value + '">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].items[k].label + '</option>';
@@ -810,9 +791,7 @@
                                                 }
                                                 html += '<div class="input-group-">';
                                                 html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
-                                                html += '<div class="input-group-append">';
                                                 html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
-                                                html += '</div>';
                                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                     html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
                                                 }
@@ -829,9 +808,7 @@
                                                 }
                                                 html += '<div class="input-group-">';
                                                 html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
-                                                html += '<div class="input-group-append">';
                                                 html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
-                                                html += '</div>';
                                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                     html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
                                                 }
@@ -848,9 +825,7 @@
                                                 }
                                                 html += '<div class="input-group-">';
                                                 html += '<input readonly="readonly"  autocomplete="off" maxlength="20" type="text" onkeyup="ValidateBookingDetailsFields();"  id="' + inputId + '" class="form-control ' + inputclassname + '" placeholder="' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].name + '"/>';
-                                                html += '<div class="input-group-append">';
                                                 html += '<span class="input-group-text bg-colour6"><i class="fa-regular fa-calendar"></i></span>';
-                                                html += '</div>';
                                                 if (data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != null && data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description != '') {
                                                     html += '<span class="h8 heading-semibold label text-capitalize mt-2 w-100">' + data.ProductInfoResponse.producttypedetails.item_uuid[i].typeinfo.options.perBooking[j].description + '</span>';
                                                 }

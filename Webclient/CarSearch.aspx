@@ -24,11 +24,11 @@
                                     <div class="dvPickupLocation dvInputGroup input-group">
                                         <input type="text" class="form-control" id="txtpickupLocation" placeholder="Please enter a pick-up location" aria-describedby="inputGroupPrepend2">
                                         <input type="hidden" id="hndpickupLocationId" value="">
-                                        <div class="input-group-append">
+                                        
                                             <span class="input-group-text bg-colour6">
                                                 <i class="fa-solid fa-location-dot"></i>
                                             </span>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-2 mb-3">
@@ -36,17 +36,16 @@
                                     <div class="dvInputGroup input-group">
                                         <input class="input form-control" placeholder="Enter Date"
                                             type="text" id="txtpickupDate" readonly="readonly" />
-                                        <div class="input-group-append">
                                             <span class="input-group-text bg-colour6">
                                                 <i class="fa-regular fa-calendar"></i>
                                             </span>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-2 mb-3">
                                     <label for="exampleFormControlSelect1" class="label">Time</label>
                                     <div class="dvInput input-group">
-                                        <select class="form-control " id="ddlPickupTime">
+                                        <select class="form-select " id="ddlPickupTime">
                                             <option>00:00</option>
                                             <option>00:15</option>
                                             <option>00:30</option>
@@ -151,17 +150,17 @@
                                     <label class="label">Drop off date</label>
                                     <div class="dvInputGroup input-group">
                                         <input class="input datePicker form-control" placeholder="Enter Date" type="text" id="txtDropoffDate" readonly="readonly" />
-                                        <div class="input-group-append">
+                                        
                                             <span class="input-group-text bg-colour6">
                                                 <i class="fa-regular fa-calendar"></i>
                                             </span>
-                                        </div>
+                                         
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-2 mb-3">
                                     <label for="exampleFormControlSelect2" class="label">Time</label>
                                     <div class="dvInput input-group">
-                                        <select class="form-control" id="ddlDropoffTime">
+                                        <select class="form-select" id="ddlDropoffTime">
                                             <option>00:00</option>
                                             <option>00:15</option>
                                             <option>00:30</option>
@@ -272,7 +271,7 @@
                                                 <input type="checkbox" id="chkDropoffLocation" checked>
                                                 <span class="checkmark"></span>
                                             </span>
-                                            <span class="h7 d-inline-block ml-2">Return to same location?</span>
+                                            <span class="h7 d-inline-block ms-2">Return to same location?</span>
                                         </label>
                                     </div>
 
@@ -281,11 +280,11 @@
                                         <div class="dvDopoffLocation dvInputGroup input-group">
                                             <input type="text" class="form-control" id="txtDopoffLocation" placeholder="Enter Location">
                                             <input type="hidden" id="hndDopoffLocationId" value="">
-                                            <div class="input-group-append">
+                                             
                                                 <span class="input-group-text bg-colour6">
                                                     <i class="fa-solid fa-location-dot"></i>
                                                 </span>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -296,7 +295,7 @@
                                                 <input type="checkbox" id="chkDriverAge" checked>
                                                 <span class="checkmark"></span>
                                             </span>
-                                            <span class="h7 d-inline-block ml-2">Driver aged 30-65 years?</span>
+                                            <span class="h7 d-inline-block ms-2">Driver aged 30-65 years?</span>
                                         </label>
                                     </div>
 
@@ -314,7 +313,7 @@
                                                 <input type="checkbox" id="chkDiscountCode">
                                                 <span class="checkmark"></span>
                                             </span>
-                                            <span class="h7 d-inline-block ml-2">Discount code?</span>
+                                            <span class="h7 d-inline-block ms-2">Discount code?</span>
                                         </label>
                                     </div>
 

@@ -40,7 +40,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
-                    <li class="mr-3"><a href="\">
+                    <li class="me-3"><a href="\">
                         <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
@@ -71,7 +71,7 @@
                                     <div class="row mt-3 dvLabel">
                                         <div class="col-12 mb-1">
                                             <label class="checkbox-container d-flex">
-                                                <span class="d-inline-block ml-1">
+                                                <span class="d-inline-block ms-1">
                                                     <input id="chkAcceptAgreements" type="checkbox" value="rewards Points" runat="server" />
                                                     <span>I have read and agree to Infinity Rewards</span> <a class="link1" href="TermsandConditions.aspx" target="_blank">Terms & Conditions </a><span>and the </span><a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation policy</a>
                                                     <span>of the respective service provider.</span>
@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="col-12">
                                             <label class="checkbox-container d-flex">
-                                                <span class="d-inline-block ml-1">
+                                                <span class="d-inline-block ms-1">
                                                     <input id="chkAcceptPayMiles" type="checkbox" value="rewards Points" runat="server" />
                                                     <span>I agree to redeem</span>
                                                     <asp:Label ID="lblTotalPoints" runat="server" />
@@ -95,8 +95,8 @@
                                     <div class="dvErrors ErrorMsgContainer text-danger" CssClass="red-text" id="errorDiv">
                                     </div>
                                     <br />
-                                    <div class="d-flex flex-row justify-content-end mb-2 text-right px-3">
-                                        <div class="mr-2">
+                                    <div class="d-flex flex-row justify-content-end mb-2 text-end px-3">
+                                        <div class="me-2">
                                             <asp:Button ID="btnBack" CssClass="btn btn-two" runat="server" OnClientClick="var retvalue = redirectLocation('FlightPassengerForDomestic.aspx'); event.returnValue= retvalue;event.preventDefault(); return retvalue;"
                                                 Text="Back" />
                                         </div>

@@ -87,7 +87,7 @@ public partial class SiteShopMaster : MasterPage
             if (lobjListOfMenuLinkList != null && lobjListOfMenuLinkList.Count > 0)
             {
                 List<MenuLinkList> lobjMainMenuLinkList = new List<MenuLinkList>();
-                lstrHtmlContent.Append("<ul class=\"navbar-nav mr-auto\">");
+                lstrHtmlContent.Append("<ul class=\"navbar-nav me-auto\">");
                 lobjMainMenuLinkList.Add(lobjListOfMenuLinkList.Find(lobj => lobj.Name.Equals("main-menu")));
                 for (int i = 0; i < lobjMainMenuLinkList[0].MenuLinks.Count; i++)
                 {
@@ -96,7 +96,7 @@ public partial class SiteShopMaster : MasterPage
                     if (lobjMenuLinkList != null && lobjMenuLinkList.MenuLinks.Count > 0)
                     {
                         lstrHtmlContent.Append("<li class=\"nav-item dropdown\">"
-                            + "<a class=\"nav-link dropdown-toggle d-flex align-items-center justify-content-between text-uppercase\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">" + char.ToUpper(lobjMenuLinkList.Title[0]) + lobjMenuLinkList.Title.Substring(1) + "</a>"
+                            + "<a class=\"nav-link dropdown-toggle arrow-icon d-flex align-items-center justify-content-between text-uppercase\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">" + char.ToUpper(lobjMenuLinkList.Title[0]) + lobjMenuLinkList.Title.Substring(1) + "</a>"
                             + "<div class=\"dropdown-menu w-100 py-0\" aria-labelledby=\"navbarDropdown\">");
                         for (int j = 0; j < lobjMenuLinkList.MenuLinks.Count; j++)
                         {
@@ -106,7 +106,7 @@ public partial class SiteShopMaster : MasterPage
                     }
                     else
                     {
-                        lstrHtmlContent.Append("<li class=\"nav-item dropdown\"><a class=\"nav-link dropdown-toggle d-flex align-items-center justify-content-between text-uppercase\" href=\"" + lobjMainMenuLinkList[0].MenuLinks[i].Url + "\">" + lobjMainMenuLinkList[0].MenuLinks[i].Title + "</a></li>");
+                        lstrHtmlContent.Append("<li class=\"nav-item dropdown\"><a class=\"nav-link dropdown-toggle arrow-icon d-flex align-items-center justify-content-between text-uppercase\" href=\"" + lobjMainMenuLinkList[0].MenuLinks[i].Url + "\">" + lobjMainMenuLinkList[0].MenuLinks[i].Title + "</a></li>");
                     }
                 }
                 lstrHtmlContent.Append("</ul>");
@@ -128,7 +128,7 @@ public partial class SiteShopMaster : MasterPage
             List<Category> categories = model.SearchCategories();
             if (categories != null && categories.Count > 0)
             {
-                lstrHtmlContent.Append("<div class=\"collapse navbar-collapse\" id=\"dvMenu\"><ul class=\"navbar-nav mr-auto\">");
+                lstrHtmlContent.Append("<div class=\"collapse navbar-collapse\" id=\"dvMenu\"><ul class=\"navbar-nav me-auto\">");
                 List<Category> mainmenus = categories.FindAll(x => x.ParentId == categoryId);
                 foreach (var mainMenu in mainmenus)
                 {
@@ -136,12 +136,12 @@ public partial class SiteShopMaster : MasterPage
                     if (categories.Exists(x => mainMenu.Id.Equals(x.ParentId)))
                     {
                         lstrHtmlContent.Append("<li class=\"nav-item dropdown\">" +
-                            "<a class=\"nav-link dropdown-toggle d-flex align-items-center justify-content-between text-uppercase\" role=\"button\" data-toggle=\"dropdown\" aria-expanded=\"false\" href=\"#\">" + mainMenu.Name + "</a>");
+                            "<a class=\"nav-link dropdown-toggle arrow-icon d-flex align-items-center justify-content-between text-uppercase\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" href=\"#\">" + mainMenu.Name + "</a>");
                         lstrHtmlContent.Append(BindSubMenu(mainMenu.Id, categories));
                     }
                     else
                     {
-                        lstrHtmlContent.Append("<li class=\"nav-item dropdown\"><a class=\"nav-link dropdown-toggle d-flex align-items-center justify-content-between text-uppercase\" role=\"button\" data-toggle=\"dropdown\" aria-expanded=\"false\" href=\"" +
+                        lstrHtmlContent.Append("<li class=\"nav-item dropdown\"><a class=\"nav-link dropdown-toggle arrow-icon d-flex align-items-center justify-content-between text-uppercase\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" href=\"" +
                             string.Format("ShopList.aspx?CategoryId={0}", mainMenu.Id + "&ProductType=Physical") + "\">" + mainMenu.Name + "</a>");
                     }
                     lstrHtmlContent.Append("</li>");

@@ -1008,7 +1008,7 @@ function AddRemoveAditionalCharges(Action, name, amount, rateRef, ProductId) {
                             completeHTML += "<p>" + CarBookingDetails.AdditonalCharges[count].Name + "</p>";
                             completeHTML += " </div>";
                             completeHTML += "<div class=\"col-6\">";
-                            completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].amount).toFixed(2) + " Points</p>";
+                            completeHTML += "<p class=\"text-end\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].amount).toFixed(2) + " Points</p>";
                             completeHTML += " </div>";
                             completeHTML += " </div>";
                         }
@@ -1019,7 +1019,7 @@ function AddRemoveAditionalCharges(Action, name, amount, rateRef, ProductId) {
                             completeHTML += "<p>" + CarBookingDetails.AdditonalCharges[count].Quantity + "x " + CarBookingDetails.AdditonalCharges[count].Name + "</p>";
                             completeHTML += "</div>";
                             completeHTML += "<div class=\"col-6\">";
-                            completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].TotalChargeamount).toFixed(2) + " Points</p>";
+                            completeHTML += "<p class=\"text-end\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].TotalChargeamount).toFixed(2) + " Points</p>";
                             completeHTML += "</div>";
                             completeHTML += "</div>";
                         }
@@ -1045,7 +1045,7 @@ function AddRemoveAditionalCharges(Action, name, amount, rateRef, ProductId) {
                             completeHTML += "<p>" + CarBookingDetails.AdditonalCharges[count].Name + "</p>";
                             completeHTML += " </div>";
                             completeHTML += "<div class=\"col-6\">";
-                            completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].amount).toFixed(2) + " Points</p>";
+                            completeHTML += "<p class=\"text-end\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].amount).toFixed(2) + " Points</p>";
                             completeHTML += " </div>";
                             completeHTML += " </div>";
                         }
@@ -1056,7 +1056,7 @@ function AddRemoveAditionalCharges(Action, name, amount, rateRef, ProductId) {
                             completeHTML += "<p>" + CarBookingDetails.AdditonalCharges[count].Quantity + "x " + CarBookingDetails.AdditonalCharges[count].Name + "</p>";
                             completeHTML += "</div>";
                             completeHTML += "<div class=\"col-6\">";
-                            completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].TotalChargeamount).toFixed(2) + " Points</p>";
+                            completeHTML += "<p class=\"text-end\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].TotalChargeamount).toFixed(2) + " Points</p>";
                             completeHTML += "</div>";
                             completeHTML += "</div>";
                         }
@@ -1153,7 +1153,7 @@ function MapCarDetails() {
                         completeHTML += "<p>" + CarBookingDetails.AdditonalCharges[count].Name + "</p>";
                         completeHTML += " </div>";
                         completeHTML += "<div class=\"col-6\">";
-                        completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].amount).toFixed(2) + " Points</p>";
+                        completeHTML += "<p class=\"text-end\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].amount).toFixed(2) + " Points</p>";
                         completeHTML += " </div>";
                         completeHTML += " </div>";
                     }
@@ -1164,7 +1164,7 @@ function MapCarDetails() {
                         completeHTML += "<p>" + CarBookingDetails.AdditonalCharges[count].Quantity + "x " + CarBookingDetails.AdditonalCharges[count].Name + "</p>";
                         completeHTML += "</div>";
                         completeHTML += "<div class=\"col-6\">";
-                        completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].TotalChargeamount).toFixed(2) + " Points</p>";
+                        completeHTML += "<p class=\"text-end\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].TotalChargeamount).toFixed(2) + " Points</p>";
                         completeHTML += "</div>";
                         completeHTML += "</div>";
                     }
@@ -1225,7 +1225,7 @@ function AddAdditionalCharges(a) {
                         completeHTML += "<p>" + CarBookingDetails.AdditonalCharges[count].Quantity + "x " + CarBookingDetails.AdditonalCharges[count].Name + "</p>";
                         completeHTML += "</div>";
                         completeHTML += "<div class=\"col-6\">";
-                        completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].TotalChargeamount).toFixed(2) + " Points</p>";
+                        completeHTML += "<p class=\"text-end\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].TotalChargeamount).toFixed(2) + " Points</p>";
                         completeHTML += "</div>";
                         completeHTML += "</div>";
                     }
@@ -1235,7 +1235,7 @@ function AddAdditionalCharges(a) {
                         completeHTML += "<p>" + CarBookingDetails.AdditonalCharges[count].Name + "</p>";
                         completeHTML += " </div>";
                         completeHTML += "<div class=\"col-6\">";
-                        completeHTML += "<p class=\"text-right\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].amount).toFixed(2) + " Points</p>";
+                        completeHTML += "<p class=\"text-end\">" + parseFloat(CarBookingDetails.AdditonalCharges[count].amount).toFixed(2) + " Points</p>";
                         completeHTML += " </div>";
                         completeHTML += " </div>";
                     }
@@ -1453,15 +1453,15 @@ function ViewMoreInfoAdditionalCharges(CodeId) {
                 completeHTML += "<div class=\"col-12 productDetails\">";
                 completeHTML += "<div class=\"row justify-content-between align-items-center mb-3\">";
                 completeHTML += "<div class=\"col-12 col-sm-8 col-md-8 col-lg-10 order-md-0\">";
-                completeHTML += "<p><i class=\"fa fa-clipboard mr-2\" aria-hidden=\"true\"></i> <span class=\"text-colour7 heading-semibold\">" + extras.name + "</span></p>";
+                completeHTML += "<p><i class=\"fa fa-clipboard me-2\" aria-hidden=\"true\"></i> <span class=\"text-colour7 heading-semibold\">" + extras.name + "</span></p>";
                 completeHTML += "</div>";
-                completeHTML += "<div class=\"col-12 col-sm-4 col-md-4 col-lg-2 mt-2 mt-md-0 order-md-1 text-left\">";
+                completeHTML += "<div class=\"col-12 col-sm-4 col-md-4 col-lg-2 mt-2 mt-md-0 order-md-1 text-start\">";
                 completeHTML += "<span class=\"text-colour7 heading-semibold\"> " + extras.rentalPrice.display.amount + " Points</span>"; // mapp dynamic amount pending.
                 completeHTML += "</div>";
                 completeHTML += "</div>";
                 completeHTML += "<div class=\"row dvSeat\">";
                 completeHTML += "<div class=\"col-12\">";
-                completeHTML += "<p class=\"\"><i class=\"fa fa-clipboard mr-2\" aria-hidden=\"true\"></i><span class=\"text-colour7 heading-semibold\">" + extras.name + "</span></p>";
+                completeHTML += "<p class=\"\"><i class=\"fa fa-clipboard me-2\" aria-hidden=\"true\"></i><span class=\"text-colour7 heading-semibold\">" + extras.name + "</span></p>";
                 completeHTML += "</div>";
                 completeHTML += "</div>";
                 completeHTML += "</div>";

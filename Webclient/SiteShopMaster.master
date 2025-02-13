@@ -188,28 +188,26 @@
     </script>
     <div class="dvShopMenu">
         <div class="container-xl" id="divShopMenuBar" runat="server">
-            <nav class="navbar navbar-expand-lg navbar-light p-0 mx-n3">
-                <div class="dvNavbarToggler col-auto d-lg-none order-lg-0 pr-0">
-                    <button class="navbar-toggler px-1" type="button" data-toggle="collapse" data-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <nav class="row navbar navbar-expand-lg navbar-light p-0">
+                <div class="dvNavbarToggler col-auto d-lg-none order-lg-0 pe-0">
+                    <button class="navbar-toggler px-1" type="button" data-bs-toggle="collapse" data-bs-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 </div>
-                <div class="dvShopSearchBox col col-lg-3 order-lg-2 ml-auto d-none-">
+                <div class="dvShopSearchBox col col-lg-3 order-lg-2 ms-auto d-none-">
                     <div class="dvSearch">
                         <div class="dvTxtProductName dvInputGroup input-group">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductName">
-                            <div class="input-group-append">
-                                <span id="btnSearchExperiences" type="button" class="input-group-text" onclick="SearchProduct()">
+                             <span id="btnSearchExperiences" type="button" class="input-group-text" onclick="SearchProduct()">
                                     <%--<img src="../images/icons/other/search-icon1.svg" />--%>
                                     <i class="fa-solid fa-magnifying-glass text-colour6"></i>
                                 </span>
-                            </div>
-                        </div>
+                         </div>
                     </div>
                 </div>
-                <a href="Cart.aspx" id="aCartBtn" runat="server" class="order-lg-3 pl-0 col-auto d-flex align-items-center justify-content-end ml-auto">
+                <a href="Cart.aspx" id="aCartBtn" runat="server" class="order-lg-3 ps-0 col-auto d-flex align-items-center justify-content-end ms-auto">
                     <span>
                         <img src="images/shoppage/icon-cart.svg" class="icon-cart" />
                     </span>
-                    <span id="spanCartItems" runat="server" class="h7 badge bg-light border text-colour7 p-2 ml-2">0</span>
+                    <span id="spanCartItems" runat="server" class="h7 badge bg-light border text-colour7 p-2 ms-2">0</span>
                 </a>
                 <div class="col-12 col-lg-8 order-lg-1">
                     <div id="divMenuContent" runat="server">
@@ -224,23 +222,21 @@
             <div id="divShopMenuBar" runat="server">
                 <nav class="navbar navbar-expand-lg navbar-light px-0 mx-n3">
                     <div class="col-2 d-lg-none order-lg-0">
-                        <button class="navbar-toggler px-1" type="button" data-toggle="collapse" data-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <button class="navbar-toggler px-1" type="button" data-bs-toggle="collapse" data-bs-target="#dvMenu" aria-controls="dvMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     </div>
-                    <div class="col-10 col-lg-3 d-flex align-items-center justify-content-end order-lg-2 pl-0">
+                    <div class="col-10 col-lg-3 d-flex align-items-center justify-content-end order-lg-2 ps-0">
                         <div class="dvSearch col-8 px-0">
                             <div class="input-group">
                                 <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="txtProductName">
-                                <div class="input-group-prepend">
-                                    <span id="btnSearchExperiences" type="button" class="input-group-text" onclick="SearchProduct()">
+                                <span id="btnSearchExperiences" type="button" class="input-group-text" onclick="SearchProduct()">
                                         <img src="../images/icons/other/search-icon1.svg" /></span>
-                                </div>
-                            </div>
+                             </div>
                         </div>
-                        <div class="col-auto pr-0">
+                        <div class="col-auto pe-0">
                             <a href="Cart.aspx" id="aCartBtn" runat="server" class="d-block">
                                 <div class="d-flex align-items-center">
                                     <span><img src="images/shoppage/icon-cart.svg" class="icon-cart" /></span>
-                                    <span id="spanCartItems" runat="server" class="h7 badge bg-light border p-2 ml-2">0</span>
+                                    <span id="spanCartItems" runat="server" class="h7 badge bg-light border p-2 ms-2">0</span>
                                 </div>
                             </a>
                         </div>
