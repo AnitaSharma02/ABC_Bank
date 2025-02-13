@@ -26,7 +26,7 @@
     <div class="container-xl">
         <nav>
             <ul class="breadcrumb px-0 pt-3 pb-0">
-                <li class="mr-3"><a href="\">
+                <li class="me-3"><a href="\">
                     <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                 </li>
                 <li class="breadcrumb-item"><a href="\">Home</a></li>
@@ -76,19 +76,15 @@
                                     <label class="label">Password:</label>
                                     <div class="dvInput input-group">
                                         <input type="password" class="form-control" id="txtPassword" runat="server" />
-                                         <div class="input-group-append">
-                                             <span toggle="#CP_txtPassword" class="input-group-text bg-colour6 fa fa-solid fa-eye-slash toggle-password passwordShow"></span>
-                                         </div>
-                                     </div>
+                                         <span toggle="#CP_txtPassword" class="input-group-text bg-colour6 fa fa-solid fa-eye-slash toggle-password passwordShow"></span>
+                                      </div>
                                 </div>
                                 <div class="col-12 mb-4">
                                     <label class="label">Confirm Password:</label>
                                     <div class="dvInput input-group">
                                         <input type="password" class="form-control" id="txtConfirmPassword" runat="server" />
-                                        <div class="input-group-append">
-                                            <span toggle="#CP_txtConfirmPassword" class="input-group-text bg-colour6 fa fa-solid fa-eye-slash toggle-password passwordShow"></span>
-                                        </div> 
-                                    </div>
+                                         <span toggle="#CP_txtConfirmPassword" class="input-group-text bg-colour6 fa fa-solid fa-eye-slash toggle-password passwordShow"></span>
+                                     </div>
                                 </div>
                                 <div class="col-12 mb-3"> 
                                      <input type="button" class="btn btn-one w-100" value="Reset Password" onclick="var retValue = ValidateForgotPasswordOTP(); event.returnValue = retValue; (event.preventDefault) ? event.preventDefault() : event.returnValue = false; return retValue;" />

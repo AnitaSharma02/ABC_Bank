@@ -2,9 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <link rel="stylesheet" href="\Css/experience.css" />
-     <link rel="stylesheet" href="/Css/swiper.min.css" />
- <link href="Css/jquery.ui.datepicker.css" rel="stylesheet" type="text/css" />
- <script src="/Jquery/swiper.min.js"></script>
     <style>
         .dvInnerBanner {
             display: none;
@@ -16,7 +13,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
-                    <li class="mr-3">
+                    <li class="me-3">
                         <a href="hoteldetails.html">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
@@ -54,9 +51,9 @@
                                                 readonly="readonly"
                                                 type="text"
                                                 class="form-control" />
-                                            <div class="input-group-append">
+                                          
                                                 <span class="input-group-text"><i class="fa-regular fa-calendar"></i></span>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-6 col-md-4" id="divAdult"></div>
@@ -73,9 +70,9 @@
                         <div class="dvTabs col-12">
                             <nav>
                                 <div class="nav nav-tabs flex-nowrap scroll-hoz border-bottom-0" id="nav-tab" role="tablist">
-                                    <button class="nav-link active" data-toggle="tab" data-target="#highlights-tab" type="button">Information</button>
-                                    <button class="nav-link" data-toggle="tab" data-target="#description-tab" type="button">Description</button>
-                                    <button class="nav-link" data-toggle="tab" data-target="#address-tab" type="button">Location</button>
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#highlights-tab" type="button">Information</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#description-tab" type="button">Description</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#address-tab" type="button">Location</button>
                                 </div>
                             </nav>
                             <div class="tab-content" id="nav-tabContent">
@@ -103,7 +100,7 @@
             GetRedemptionOptions();
         });
         // $(document).ready(function () {
-        $(".dvtxtBookingDate .input-group-append .input-group-text").on("click", function () {
+        $(".dvtxtBookingDate .input-group-text").on("click", function () {
             $("#txtBookingDate").datepicker("show");
         });
         var uuid = getQuerystring("uuid");
@@ -445,7 +442,7 @@
                         /* $("#lblAdult").text("Adult(" + parseData.producttypedetails.item_uuid[0].typeinfo.minAdultAge + "-" + parseData.producttypedetails.item_uuid[0].typeinfo.maxAdultAge + " Yrs)");*/
                         html += '<label class="label" id="lblSenior">Adult( ' + parseData.producttypedetails.item_uuid[0].typeinfo.minAdultAge + '-' + parseData.producttypedetails.item_uuid[0].typeinfo.maxAdultAge + ' Yrs)</label>';
                         html += '<div class=" dvInput input-group" id="sltAdult">';
-                        html += '<select class="select selectBtn selectDropdown form-control" name="DrpDownAdult" id="selectDrpDownAdult" onchange="SelectDrpDownChangeFunction()">';
+                        html += '<select class="select selectBtn selectDropdown form-select" name="DrpDownAdult" id="selectDrpDownAdult" onchange="SelectDrpDownChangeFunction()">';
                         /*html += '<option  selected="selected" value="firstOption">Select</option>';*/
                         for (let i = (minAdult == null ? 0 : minAdult); i <= maxAdult; i++) {
                             html += '<option  value="' + i + '">' + i + '</option>';
@@ -460,7 +457,7 @@
                         let maxSenior = parseData.producttypedetails.item_uuid[0].typeinfo.maxSeniors;
                         html += '<label class="label" id="lblSenior">Senior( ' + parseData.producttypedetails.item_uuid[0].typeinfo.minSeniorAge + '-' + parseData.producttypedetails.item_uuid[0].typeinfo.maxSeniorAge + ' Yrs)</label>';
                         html += '<div class="dvInput input-group" id="sltSenior">';
-                        html += '<select class="select selectBtn selectDropdown form-control" name="DrpDownSenior" id="selectDrpDownSenior" onchange="SelectDrpDownChangeFunction()">';
+                        html += '<select class="select selectBtn selectDropdown form-select" name="DrpDownSenior" id="selectDrpDownSenior" onchange="SelectDrpDownChangeFunction()">';
                         /*html += '<option  selected="selected" value="firstOption">Select</option>';*/
                         for (let i = (minSenior == null ? 0 : minSenior); i <= maxSenior; i++) {
                             html += '<option  value="' + i + '">' + i + '</option>';
@@ -479,7 +476,7 @@
                         let maxChildren = parseData.producttypedetails.item_uuid[0].typeinfo.maxChildren;
                         html += '<label class="label" id="lblChildren">Child( ' + parseData.producttypedetails.item_uuid[0].typeinfo.minChildAge + '-' + parseData.producttypedetails.item_uuid[0].typeinfo.maxChildAge + ' Yrs)</label>';
                         html += '<div class="dvInput input-group" id="sltChild">';
-                        html += '<select class="select selectBtn selectDropdown form-control" name="DrpDownChildren" id="selectDrpDownChildren" onchange="SelectDrpDownChangeFunction()">';
+                        html += '<select class="select selectBtn selectDropdown form-select" name="DrpDownChildren" id="selectDrpDownChildren" onchange="SelectDrpDownChangeFunction()">';
                         /*html += '<option  selected="selected" value="firstOption">Select</option>';*/
                         for (let i = (minChildren == null ? 0 : minChildren); i <= maxChildren; i++) {
                             html += '<option  value="' + i + '">' + i + '</option>';
@@ -506,36 +503,36 @@
                         html += '<div class="dvEnterTravelDate">';
                         html += '<div class="d-flex flex-wrap bg-colour2 py-2">';
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.available == true) {
-                            html += '<div "class="col-12 d-flex align-items-center ptypepricebydate text-colour7 mb-2"> <span class="h7 heading-semibold">Valid only on</span> <span class="ml-2 h7 heading-semibold">' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></div>';
+                            html += '<div "class="col-12 d-flex align-items-center ptypepricebydate text-colour7 mb-2"> <span class="h7 heading-semibold">Valid only on</span> <span class="ms-2 h7 heading-semibold">' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></div>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isBmgVoucher == true) {
-                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-mobile-screen-button h7"></i><span class="ml-2 h7">Show on mobile</span></div>';
+                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-mobile-screen-button h7"></i><span class="ms-2 h7">Show on mobile</span></div>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isNonRefundable == true) {
                             html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7">';
-                            html += '<i class="fa-solid fa-triangle-exclamation h7"></i><span class="ml-2 h7">Non Refundable</span>';
+                            html += '<i class="fa-solid fa-triangle-exclamation h7"></i><span class="ms-2 h7">Non Refundable</span>';
                             html += '</div>';
                         }
                         else {
                             html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7">';
-                            html += '<i class="fa-solid fa-triangle-exclamation h7"></i><span class="ml-2 h7">Refundable</span>';
+                            html += '<i class="fa-solid fa-triangle-exclamation h7"></i><span class="ms-2 h7">Refundable</span>';
                             html += '</div>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.instantConfirmation == true) {
-                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-bolt h7"></i><span class="ml-2 h7">Instant</div></span>';
+                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-bolt h7"></i><span class="ms-2 h7">Instant</div></span>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.voucherRequiresPrinting == true) {
-                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-bolt h7"></i><span class="ml-2 h7">Print ticket</div></span>';
+                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-bolt h7"></i><span class="ms-2 h7">Print ticket</div></span>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.directAdmission == true) {
                             html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7">';
-                            html += '<i class="fa fa-address-book h7" aria-hidden="true"></i><span class="ml-2 h7">Direct admission</span>';
+                            html += '<i class="fa fa-address-book h7" aria-hidden="true"></i><span class="ms-2 h7">Direct admission</span>';
                             html += '</div>';
                         }
                         html += '</div>';
 
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate == null) {
-                            html += '<div class="mt-2 mb-4 text-center text-lg-right clsentertraveldate">';
+                            html += '<div class="mt-2 mb-4 text-center text-lg-end clsentertraveldate">';
                             html += '<button class="btn btn-one" onclick="var retvalue = ShowDatePicker(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button"';
                             html += 'value="Search"> Enter travel date </button>';
                             html += '</div>';
@@ -582,7 +579,7 @@
                                     html += '<div id="' + parseData.producttypedetails.item_uuid[i].uuid + '">';
                                     html += '<div class="row">';
                                     html += '<div class="col-sm-6 mb-2">';
-                                    html += '<select class="select selectBtn selectDropdown form-control">';
+                                    html += '<select class="select selectBtn selectDropdown form-select">';
                                     html += '<option value="">Select timeslot</option>';
                                     $.each(parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots, function (k) {
                                         html += '<option value="' + parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots[k].uuid + '">' + parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots[k].startTime.slice(0, -3) + ' - ' + parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots[k].endTime.slice(0, -3) + '</option>';
@@ -746,36 +743,36 @@
                         html += '<div class="dvEnterTravelDetails">';
                         html += '<div class="d-flex flex-wrap bg-colour2 py-2">';
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate != null && parseData.producttypedetails.item_uuid[i].typePriceByDate.available == true) {
-                            html += '<div class="col-12 d-flex align-items-center ptypepricebydate text-colour7 mb-2"> <span class="h7 heading-semibold">Valid only on</span> <span class="ml-2 h7 heading-semibold">' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></div>';
+                            html += '<div class="col-12 d-flex align-items-center ptypepricebydate text-colour7 mb-2"> <span class="h7 heading-semibold">Valid only on</span> <span class="ms-2 h7 heading-semibold">' + formatDate(parseData.producttypedetails.item_uuid[i].typePriceByDate.date) + '</span></div>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isBmgVoucher == true) {
-                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-mobile-screen-button h7"></i><span class="ml-2 h7">Show on mobile</span></div>';
+                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-mobile-screen-button h7"></i><span class="ms-2 h7">Show on mobile</span></div>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.isNonRefundable == true) {
                             html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7">';
-                            html += '<i class="fa-solid fa-triangle-exclamation h7"></i><span class="ml-2 h7">Non Refundable</span>';
+                            html += '<i class="fa-solid fa-triangle-exclamation h7"></i><span class="ms-2 h7">Non Refundable</span>';
                             html += '</div>';
                         }
                         else {
                             html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7">';
-                            html += '<i class="fa-solid fa-triangle-exclamation h7"></i><span class="ml-2 h7">Refundable</span>';
+                            html += '<i class="fa-solid fa-triangle-exclamation h7"></i><span class="ms-2 h7">Refundable</span>';
                             html += '</div>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.voucherRequiresPrinting == true) {
-                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-bolt h7"></i><span class="ml-2 h7">Print ticket</span></div>';
+                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-bolt h7"></i><span class="ms-2 h7">Print ticket</span></div>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.instantConfirmation == true) {
-                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-bolt h7"></i><span class="ml-2 h7">Instant</span></div>';
+                            html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7"><i class="fa-solid fa-bolt h7"></i><span class="ms-2 h7">Instant</span></div>';
                         }
                         if (parseData.producttypedetails.item_uuid[i].typeinfo.directAdmission == true) {
                             html += '<div class="col-6 col-md-4 d-flex align-items-center text-colour7">';
-                            html += '<i class="fa fa-address-book h7" aria-hidden="true"></i><span class="ml-2 h7">Direct admission</span>';
+                            html += '<i class="fa fa-address-book h7" aria-hidden="true"></i><span class="ms-2 h7">Direct admission</span>';
                             html += '</div>';
                         }
                         html += '</div>';
 
                         if (parseData.producttypedetails.item_uuid[i].typePriceByDate == null) {
-                            html += '<div class="mt-2 mb-4 text-center text-lg-right clsentertraveldate">';
+                            html += '<div class="mt-2 mb-4 text-center text-lg-end clsentertraveldate">';
                             html += '<button class="btn btn-one" onclick="var retvalue = ShowDatePicker(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" type="button"';
                             html += 'value="Search"> Enter travel date </button>';
                             html += '</div>';
@@ -804,13 +801,13 @@
                                    
                                     if (parseInt($('#selectDrpDownAdult').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "adult") {
                                         showBookNow = true;
-                                        html += '<p class="dvItem text-colour7 heading-bold h7 ml-2">' + $('#selectDrpDownAdult').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p class="dvItem text-colour7 heading-bold h7 ms-2">' + $('#selectDrpDownAdult').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                     else if (parseInt($('#selectDrpDownSenior').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "senior" && showBookNow) {
-                                        html += '<p class="dvItem text-colour7 heading-bold h7 ml-2">' + $('#selectDrpDownSenior').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p class="dvItem text-colour7 heading-bold h7 ms-2">' + $('#selectDrpDownSenior').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                     else if (parseInt($('#selectDrpDownChildren').children("option:selected").val()) > 0 && ratesAarray[n].category.toLowerCase() == "child" && showBookNow) {
-                                        html += '<p class="dvItem text-colour7 heading-bold h7 ml-2">' + $('#selectDrpDownChildren').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
+                                        html += '<p class="dvItem text-colour7 heading-bold h7 ms-2">' + $('#selectDrpDownChildren').children("option:selected").val() + " " + categoryName + ' x ' + recommendedPriceFormat + '</p>';
                                     }
                                 });
                                 if (!showBookNow) {
@@ -826,7 +823,7 @@
                                     html += '<div id="' + parseData.producttypedetails.item_uuid[i].uuid + '">';
                                     html += '<div class="row">';
                                     html += '<div class="col-sm-6 mb-2">';
-                                    html += '<select class="select selectBtn selectDropdown form-control">';
+                                    html += '<select class="select selectBtn selectDropdown form-select">';
                                     html += '<option value="">Select timeslot</option>';
                                     $.each(parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots, function (k) {
                                         html += '<option value="' + parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots[k].uuid + '">' + parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots[k].startTime.slice(0, -3) + ' - ' + parseData.producttypedetails.item_uuid[i].typePriceByDate.timeslots[k].endTime.slice(0, -3) + '</option>';
@@ -884,7 +881,7 @@
                     }
                     else {
 
-                        $("#" + ptuuid).closest("div").after('<p class="dvErrors text-danger text-left"><span id="' + ptuuid + 'danger">This field is required</span></p>');
+                        $("#" + ptuuid).closest("div").after('<p class="dvErrors text-danger text-start"><span id="' + ptuuid + 'danger">This field is required</span></p>');
                         // $('#updProgress').hide();
                         //$('#' + ptuuid + 'btnBookNow').prop('disabled', false);
                         $("#" + ptuuid).addClass('text-danger');

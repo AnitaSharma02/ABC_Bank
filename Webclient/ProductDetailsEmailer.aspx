@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Product Details" Language="C#" MasterPageFile="SiteShopMaster.master" AutoEventWireup="true" CodeFile="ProductDetailsEmailer.aspx.cs" Inherits="ProductDetailsEmailer" %>
+﻿<%@ Page Title="Product Details" Language="C#" MasterPageFile="SiteShopMaster.master" AutoEventWireup="true" CodeFile="ProductDetailsEmailer.aspx.cs" Inherits="ProductDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CPSHOP" runat="Server">
     <link rel="stylesheet" href="\Css/shop.css" />
@@ -16,7 +16,7 @@
      <div class="container-xl">
          <nav  id="divBreadbrums" runat="server">
              <%--<ul class="breadcrumb px-0 py-3">
-                 <li class="mr-3"><a href="hoteldetails.html"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
+                 <li class="me-3"><a href="hoteldetails.html"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                  </li>
                  <li class="breadcrumb-item"><a href="\">Home</a></li>
                  <li class="breadcrumb-item active">Shop</li>
@@ -38,10 +38,10 @@
                                 <img id="imgProductImageMain" runat="server" />
                              </div>--%>
                             </div>
-                            <div class="swiper-button-next mr-3">
+                            <div class="swiper-button-next me-3">
                                 <img src="images/icons/arrows/right-yellow-arrow-2.svg" />
                             </div>
-                            <div class="swiper-button-prev ml-3">
+                            <div class="swiper-button-prev ms-3">
                                 <img src="images/icons/arrows/left-yellow-arrow-2.svg" />
                             </div>
                         </div>
@@ -71,26 +71,27 @@
                     <div class="dvAdd row mb-4">
                         <div class="dvAddToCart col-12">
                             <div class="row">
-                                <div class="form-group col-12 col-sm-3" id="divQuantity" runat="server">
+                                <div class="form-group col-12 col-sm-3 mb-3 mb-sm-0" id="divQuantity" runat="server">
                                      <h2 class="h6 heading-regular text-colour7 mb-2">Quantity</h2>
                                       <div class="dvPlusMinusButtons">                                            
                                           <div class="input-group">
-                                              <div class="input-group-prepend">
+                                               
                                                   <button type="button" class="btn btn-one" data-type="minus" data-field="" onclick="quantityMinus()">
                                                       <i class="fa fa-minus"></i>
                                                   </button>
-                                              </div>
+                                              
                                               <span id="qtyRealtime" runat="server" style="display: none;" />
                                               <input type="text" class="form-control text-center text-colour7 border" runat="server" id="quantity" name="quantity" strp="1" readonly="readonly" min="1" max="100" value="1" />
-                                              <div class="input-group-append">
+                                               
                                                   <button type="button" class="btn btn-one" data-type="plus" data-field="" onclick="quantityPlus()">
                                                       <i class="fa fa-plus"></i>
                                                   </button>
-                                              </div>
+                                              
                                           </div>
                                       </div>
+                                      </div>
                                        <%-- <div class="row align-items-center">
-                                          <div class="plus col-auto pr-0">
+                                          <div class="plus col-auto pe-0">
                                             <button type="button" class="btn btn-addtocart p-0" data-type="minus" data-field="" onclick="quantityMinus()">
                                               <i class="fa fa-minus"></i>
                                             </button>
@@ -98,7 +99,7 @@
                                           <div class="value col-4 px-0">
                                             <input type="text" class="form-control text-center text-colour7" runat="server" id="quantity" name="quantity" strp="1" value="1" readonly="readonly" />
                                           </div>
-                                          <div class="minus col-auto pl-0">
+                                          <div class="minus col-auto ps-0">
                                             <button type="button" class="btn btn-addtocart p-0" data-type="plus" data-field="" onclick="quantityPlus()">
                                               <i class="fa fa-plus"></i>
                                             </button>
@@ -178,12 +179,12 @@
                     <div class="row">  
                         <div class="col-12">
                             <div class="form-group" id="divOutOfStock" runat="server" style="display: none;">
-                                <h2 class="h6 heading-semibold text-danger">Out Of Stock</h2>
+                                <h2 class="h6 heading-semibold text-danger mb-3">Out Of Stock</h2>
                             </div>
-                            <div class="form-group" id="divInsufficient" runat="server" style="display: none;">
+                            <div class="form-group mb-3" id="divInsufficient" runat="server" style="display: none;">
                                 <h2 class="h6 heading-semibold text-danger">Insufficient Points</h2>
                             </div>
-                             <div class="form-group" id="divEmailErrorMsg" runat="server">
+                             <div class="form-group mb-3" id="divEmailErrorMsg" runat="server">
                                 <h2 class="h6 heading-semibold text-danger">You cannot proceed for redemption since there is no email address updated , kindly contact bank to update the email address.</h2>
                             </div>
                         </div>
@@ -192,9 +193,9 @@
                       <div class="dvTabs col-12">
                         <nav>
                          <div class="nav nav-tabs flex-nowrap scroll-hoz border-bottom-0" id="nav-tab" role="tablist" >
-                            <button class="heading-semibold nav-link text-capitalize active mr-2" id="description-tab" data-toggle="tab" data-target="#description" type="button"> description </button>
-                            <button class="heading-semibold nav-link text-capitalize" id="terms-conditions-tab" data-toggle="tab" data-target="#terms-conditions" type="button">Terms And Conditions</button>
-                            <button class="heading-semibold nav-link text-capitalize" id="divSpecificationtab" data-toggle="tab" data-target="#specification" type="button" runat="server" visible="false" > Specifications </button>
+                            <button class="heading-semibold nav-link text-capitalize active me-2" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button"> description </button>
+                            <button class="heading-semibold nav-link text-capitalize" id="terms-conditions-tab" data-bs-toggle="tab" data-bs-target="#terms-conditions" type="button">Terms And Conditions</button>
+                            <button class="heading-semibold nav-link text-capitalize" id="divSpecificationtab" data-bs-toggle="tab" data-bs-target="#specification" type="button" runat="server" visible="false" > Specifications </button>
                           </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
@@ -274,13 +275,13 @@
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
               <%--<div class="modal-header"> 
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true" class="text-colour6">&times;</span>
                 </button>
               </div>--%>
               <div class="modal-body">
-                  <button type="button" class="close" data-dismiss="modal">
-                      <i class="fa-solid fa-xmark"></i>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal">
+                      <i class="fas fa-times"></i>
                   </button>
                   <div id="divDynamicContent">
                   </div>
@@ -318,15 +319,15 @@
             <div class="modal-content">
                 <div class="modal-header border-0">
                     <h5 class="modal-title" id="exampleModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal">
-                        <i class="fa-solid fa-xmark"></i>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
                     </button>
                 </div>
                 <div class="modal-body text-center" id="divmessage">
                     <p class="h6 heading-semibold text-colour7" id="popupmessage"></p>
                 </div>
                 <div class="modal-footer justify-content-center border-0">
-                    <button type="button" class="btn btn-one" data-dismiss="modal">Ok</button>
+                    <button type="button" class="btn btn-one" data-bs-dismiss="modal">Ok</button>
                     <%--<button type="button" class="btn btn-one">Save changes</button>--%>
                 </div>
             </div>
@@ -341,15 +342,15 @@
                     <h5 class="modal-title">
                         <span>Alert</span>
                     </h5>
-                    <button type="button" class="close" data-dismiss="modal">
-                        <i class="fa-solid fa-xmark"></i>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
                     </button>
                 </div>
                 <div class="modal-body text-center" id="alertmessage">
                     <p class="h6 text-colour7 heading-semibold" id="errormessage"></p>
                 </div>
                 <div class="modal-footer justify-content-center border-0 px-0">
-                    <button type="button" class="btn btn-one" data-dismiss="modal">Ok</button>
+                    <button type="button" class="btn btn-one" data-bs-dismiss="modal">Ok</button>
                 </div>
             </div>
         </div>
@@ -809,7 +810,7 @@
                         $('#CP_CPSHOP_divspanpoints').text(ConvertThousandSeparator(data[0].Price.SalePrice.Amount * quantity));
                         for (var i = 0; i < data[0].Images.length; i++) {
                             //$('#CP_CPSHOP_divThumbnailImages').html('<img src="' + data[0].Images[i].Url + '" class="img-thumbnail" height="100" width="100" onclick="changeImage(this)"/>');
-                            thumbnailimg += '<div class="swiper-slide"><img src="' + data[0].Images[i].Url + '" onclick="changeImage(this)"></div>';
+                            thumbnailimg += '<div class="swiper-slide img-container"><img src="' + data[0].Images[i].Url + '" onclick="changeImage(this)"></div>';
                             mainImage += '<div class="swiper-slide img-container"><img src="' + data[0].Images[i].Url + '\"></div>';
                         }
                         $('#CP_CPSHOP_imgProductImageMain').html(mainImage);

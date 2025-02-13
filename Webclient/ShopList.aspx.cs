@@ -54,7 +54,7 @@ public partial class ShopList : Page
                     List<Category> mainmenus = categories.FindAll(x => x.Id == categoryId);
                     foreach (var mainMenu in mainmenus)
                     {
-                        lstrHtmlContent.Append("<ul class=\"breadcrumb px-0 py-3\"><li class=\"mr-3\"><a href=\"\\\"><img src=\"images/icons/arrows/arrow-left.svg\" /></a></li><li class=\"breadcrumb-item\"><a href=\"Index.aspx\">Home</a></li>");
+                        lstrHtmlContent.Append("<ul class=\"breadcrumb px-0 py-3\"><li class=\"me-3\"><a href=\"\\\"><img src=\"images/icons/arrows/arrow-left.svg\" /></a></li><li class=\"breadcrumb-item\"><a href=\"Index.aspx\">Home</a></li>");
                         lstrHtmlContent.Append("<li class=\"breadcrumb-item active\"><a href =\"Shop.aspx?CategoryId=" + categoryId + "&ProductType=Physical" + "\">" + mainMenu.Name + "</a></li> </ul>");
                     }
                     lobjModel.LogActivity(string.Format("Visit Shoplist.aspx page; CategoryId-:{0}; CategoryName-:{1}; ProductType-:Physical", categoryId, mainmenus[0].Name), ActivityType.PageLoad);
@@ -62,7 +62,7 @@ public partial class ShopList : Page
                 else
                 {
                     List<Category> mainmenus = categories.FindAll(x => x.Id == categoryId);
-                    lstrHtmlContent.Append("<ul class=\"breadcrumb px-0 py-3\"><li class=\"mr-3\"><a href=\"\\\"><img src=\"images/icons/arrows/arrow-left.svg\" /></a></li><li class=\"breadcrumb-item\"><a  href=\"Index.aspx\">Home</a></li>");
+                    lstrHtmlContent.Append("<ul class=\"breadcrumb px-0 py-3\"><li class=\"me-3\"><a href=\"\\\"><img src=\"images/icons/arrows/arrow-left.svg\" /></a></li><li class=\"breadcrumb-item\"><a  href=\"Index.aspx\">Home</a></li>");
                     lstrHtmlContent.Append("<li class=\"breadcrumb-item active\"><a href =\"ShopList.aspx?CategoryId=" + categoryId + "&ProductType=Digital" + "\"> " + mainmenus[0].Name + " </a></li> </ul>");
                     Session["CategoryName"] = Convert.ToString(string.Concat(mainmenus[0].Name.Where(c => !char.IsWhiteSpace(c))).Replace("-", "")).ToLower();
                     lobjModel.LogActivity(string.Format("Visit Shoplist.aspx page; CategoryId-:{0}; CategoryName-:{1}; ProductType-:digital", categoryId, (mainmenus.Count > 0 ? mainmenus[0].Name : string.Empty)), ActivityType.PageLoad);
@@ -346,13 +346,13 @@ public partial class ShopList : Page
                     {
                         if (i == 0)
                         {
-                            filterHtml.Append(string.Format("<div id='{0}' class=\"card mb-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-left\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapse1\"><span class=\"heading6 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
-                            filterHtml.Append("<div id=\"collapse1-\" class=\"collapse-\" data-parent=\"#filter-accordion\"><div class=\"card-body scroll-ver pr-3 pt-1 pb-2\">");
+                            filterHtml.Append(string.Format("<div id='{0}' class=\"card mb-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-start\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapse1\"><span class=\"heading6 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
+                            filterHtml.Append("<div id=\"collapse1-\" class=\"collapse-\" data-bs-parent=\"#filter-accordion\"><div class=\"card-body scroll-ver pe-3 pt-1 pb-2\">");
                         }
                         else
                         {
-                            filterHtml.Append(string.Format("<div id='{0}' class=\"card mb-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-left collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapse2\" ><span class=\"heading6 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
-                            filterHtml.Append("<div id=\"collapse2-\" class=\"collapse-\" data-parent=\"#filter-accordion\"><div class=\"card-body scroll-ver pr-3 pt-1 pb-2\">");
+                            filterHtml.Append(string.Format("<div id='{0}' class=\"card mb-3\"><div class=\"card-header p-0\"><h2 class=\"mb-0\"><button class=\"btn btn-block text-start collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapse2\" ><span class=\"heading6 mb-2 text-capitalize\">{0}</span><span class=\"arrow-icon\"> <i class=\"fa fa-caret-up-\"></i> </span> </button></h2></div>", filter.Label));
+                            filterHtml.Append("<div id=\"collapse2-\" class=\"collapse-\" data-bs-parent=\"#filter-accordion\"><div class=\"card-body scroll-ver pe-3 pt-1 pb-2\">");
                         }
                         i++;
                         foreach (var item in filter.Items)
@@ -369,9 +369,9 @@ public partial class ShopList : Page
                                 + "<input class=\"form-check-input\" type=\"checkbox\" value=\"" + item.Value + "\" onchange='FilterProducts();return false;' id=\"" + item.Value + "\" " + lstrChecked + ">"
                                 + "<span class=\"checkmark\"></span>"
                                 + "</span>"
-                                + "<span class=\"heading-regular h7 d-inline-block ml-2\" for=\"flexCheckChecked\">" + textInfo.ToTitleCase(item.Label) + "</span>"
+                                + "<span class=\"heading-regular h7 d-inline-block ms-2\" for=\"flexCheckChecked\">" + textInfo.ToTitleCase(item.Label) + "</span>"
                                 + "</label>"
-                                + "<span class=\"heading-regular h7 d-inline-block ml-2\">" + item.Count + "</span>"
+                                + "<span class=\"heading-regular h7 d-inline-block ms-2\">" + item.Count + "</span>"
                                 + "</div>");
                         }
                         filterHtml.Append("</div></div></div></div><div class=\"dvBorderBottom\">\r\n<div class=\"\">\r\n<div class=\"border-bottom my-3\"></div>\r\n</div>\r\n</div>");

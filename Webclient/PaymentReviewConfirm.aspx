@@ -45,7 +45,7 @@
                                 <asp:Button ID="btnStripePayment" runat="server" CssClass="btn btn-one w-100" Text="Confirm Payment" OnClientClick="fnShowLoaderOnSubmitClick();" OnClick="btnStripePayment_Click" />
                             </div>
                             <div class="col-lg-12 col-sm-6 col-xl-6">
-                                <button type="button" class="btn btn-one w-100" data-toggle="modal" data-target="#confirmBoxModal">
+                                <button type="button" class="btn btn-one w-100" data-bs-toggle="modal" data-bs-target="#confirmBoxModal">
                                     Cancel Payment
                                 </button>
                             </div>
@@ -64,7 +64,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="heading-semibold text-colour6"" id="exampleModalLabel">Confirm</h5>
-                    <button type="button" class="close d-flex" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close d-flex" data-bs-dismiss="modal" aria-label="Close">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
@@ -76,7 +76,7 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-6">
-                                    <button class="btn btn-two w-100" id="" data-dismiss="modal">No</button>
+                                    <button class="btn btn-two w-100" id="" data-bs-dismiss="modal">No</button>
                                 </div>
                                 <div class="col-6">
                                     <span class="btn btn-two w-100" onclick="PaymentDiscardConfirm();">Yes</span>

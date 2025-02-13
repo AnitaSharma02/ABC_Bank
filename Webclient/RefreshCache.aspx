@@ -11,7 +11,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 pt-3 pb-0">
-                    <li class="mr-3"><a href="\">
+                    <li class="me-3"><a href="\">
                         <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
@@ -42,7 +42,7 @@
                             <div class="col-12 mt-3">
                                 <asp:Label ID="lblCache" CssClass="label" runat="server" Text="Cache"></asp:Label>
                                 <div class="dvInput input-group">
-                                    <asp:DropDownList ID="ddlCache" runat="server" class="form-control">
+                                    <asp:DropDownList ID="ddlCache" runat="server" class="form-select">
                                         <asp:ListItem Text="All" Value="All" Selected="True"></asp:ListItem>
                                         <asp:ListItem Text="RefererSupplier" Value="RefererSupplier"></asp:ListItem>
                                         <asp:ListItem Text="ProgramMaster" Value="ProgramMaster"></asp:ListItem>

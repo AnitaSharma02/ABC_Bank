@@ -73,19 +73,19 @@
 <div class="row mt-3 dvFlightInformation">
     <div class="col-12">
         <div class="row">
-            <div class="col-8 pr-0">
+            <div class="col-8 pe-0">
                 <h2 class="h7 bg-colour2 p-3 border border-right-0">
                     <span class="h7 heading-semibold text-colour6 bg-colour1">Departure Flight</span>
                     <i class="h7 fa fa-plane" aria-hidden="true"></i>
                 </h2>
             </div>
-            <div class="col-4 pl-0">
-                <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3 border border-left-0 text-right">
+            <div class="col-4 ps-0">
+                <h2 class="h7 heading-semibold text-colour6 bg-colour1 p-3 border border-left-0 text-end">
                     <asp:Label ID="LabelClass" runat="server"></asp:Label>
                 </h2>
             </div>
             <div class="col-12">
-                <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border text-right">
+                <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border text-end">
                     <span>PNR No.:<asp:Label ID="lblOutboundPNR" runat="server" /></span>
                 </h2>
             </div>
@@ -104,7 +104,7 @@
                         <div class="col-12 p-2">
                             <div>
                                 <img src='<%#Eval("AirlineLogo")%>' />
-                                <p class=""><%#Eval("AirlineName")%><span class="ml-2"><%#Eval("FlightNo")%></span></p>
+                                <p class=""><%#Eval("AirlineName")%><span class="ms-2"><%#Eval("FlightNo")%></span></p>
                             </div>
                         </div>
                     </div>
@@ -172,14 +172,14 @@
 <div class="row mt-3 dvFlightArrivalInfo">
     <div class="col-12">
         <div class="row">
-            <div class="col-6 pr-0">
+            <div class="col-6 pe-0">
                 <h2 class="h7 bg-colour2 p-3 border border-right-0" runat="server" visible="false" id="dvReturnFlight">
                     <span class="h7 heading-semibold text-colour7">Return Flights</span>
                     <i class="h7 fa fa-plane" aria-hidden="true" style="-webkit-transform: scaleX(-1); transform: scaleX(-1);"></i>
                 </h2>
             </div>
-            <div class="col-6 pl-0">
-                <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border text-right">
+            <div class="col-6 ps-0">
+                <h2 class="h7 heading-semibold text-colour7 bg-colour2 p-3 border text-end">
                     <span>PNR No.:<asp:Label ID="lblInboundPNR" runat="server" /></span>
                 </h2>
             </div>
@@ -198,7 +198,7 @@
                         <div class="col-12 p-2">
                             <div>
                                 <img src='<%#Eval("AirlineLogo")%>' />
-                                <p><%#Eval("AirlineName")%><span class="ml-2"><%#Eval("FlightNo")%></span></p>
+                                <p><%#Eval("AirlineName")%><span class="ms-2"><%#Eval("FlightNo")%></span></p>
                             </div>
                         </div>
                     </div>

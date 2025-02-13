@@ -56,7 +56,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 pt-3 pb-0">
-                    <li class="mr-3"><a href="\">
+                    <li class="me-3"><a href="\">
                         <img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
@@ -93,17 +93,15 @@
                                         <label class="label">Password:</label>
                                         <div class="dvInputGroup input-group">
                                             <input type="password" runat="server" autocomplete="off" class="form-control" id="txtPassword" />
-                                            <div class="input-group-append">
-                                                <span toggle="#CP_txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow">
+                                             <span toggle="#CP_txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow">
                                                     <i class="fa-regular fa-eye-slash"></i>
                                                 </span>
-                                            </div>
-                                        </div>
+                                         </div>
                                     </div>
                                     
                                     <div class="col-12 mb-3 valignM dvLabel">
                                         <label class="checkbox-container d-flex">
-                                            <span class="d-inline-block ml-1">
+                                            <span class="d-inline-block ms-1">
                                                 <input id="chkRememberMe" runat="server" type="checkbox" />
                                                 <span class="h6 heading-regular text-colour7">Remember me on this computer.</span>
                                                 <span class="checkmark"></span>
@@ -164,7 +162,7 @@
                                                 </div>
                                                 <div class="col-12 mb-3 valignM dvLabel">
                                                     <label class="checkbox-container d-flex">
-                                                        <span class="d-inline-block ml-1">
+                                                        <span class="d-inline-block ms-1">
                                                             <input id="chkRememberMe" runat="server" type="checkbox" />
                                                             <span class="h6 heading-regular text-colour7">Remember me on this computer.</span>
                                                             <span class="checkmark"></span>
@@ -182,7 +180,7 @@
 
                                                 <div class="col-12 mb-3 valignM dvLabel">
                                                     <label class="checkbox-container d-flex">
-                                                        <span class="d-inline-block ml-1">
+                                                        <span class="d-inline-block ms-1">
                                                             <input id="chkTnC" runat="server" type="checkbox" />
                                                             <span>Please accept </span><a class="link1" href="\TermsAndConditions.aspx" target="_blank">Terms and Conditions</a>
                                                             <span class="checkmark"></span>

@@ -52,10 +52,10 @@
 /*=========[ HOTELSEARCH PAGE ]=========*/
 
 /*=========[ HOTELDETAILS PAGE ]=========*/
-.dvHotelDetails .dvThumbSwiperSlider .mySwiper2 .img-container {
+.dvHotelDetails .dvThumbSwiperSlider .dvThumbBannerSlide .img-container {
   padding-bottom: 50%;
 }
-.dvHotelDetails .dvThumbSwiperSlider .mySwiper .img-container {
+.dvHotelDetails .dvThumbSwiperSlider .dvThumbSlide .img-container {
     padding-bottom: 15%;
 }
 
@@ -87,9 +87,9 @@
     left:.7rem;
     z-index: 0;
 }
-.dvHotelSearch .qtySelector .form-control {
-    padding: 0.75rem 0 !important;
-}
+/*.dvHotelSearch .qtySelector .form-control {
+    padding: 5px 0 !important;
+}*/
     .qtySelector .special-text::-webkit-input-placeholder {
         font-size: var(--placeholder-font-size);
         color: var(--placeholder-text-colour);

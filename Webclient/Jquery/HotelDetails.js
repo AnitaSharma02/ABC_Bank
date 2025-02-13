@@ -28,7 +28,7 @@ function BindNextHotel() {
             for (icount = 0; icount < HotelNextList.length; icount++) {
                 HotelList += '<div class="dvProductCard col-sm-6 col-md-4 col-lg-3 mb-4"><div class="dvItem"><a class="anchor" onclick="return getHotelDetails(' + HotelNextList[icount].hotelid + ')"><div class="img-container"><img onError="this.onerror=null;this.src=&quot;images/no-image.png&quot;" src="' + HotelNextList[icount].basicinfo.thumbnailimage + '" /></div><h2 class="px-3 pt-3 pb-2">' + HotelNextList[icount].basicinfo.hotelname + '</h2><div class="d-flex flex-wrap justify-content-between px-3 pb-3"><p class="points">' + HotelNextList[icount].roomrates.RoomRate[0].ratebreakdown.rate[0].RatePoint + ' Points </p><p class="points"></p></div><div class="rating px-3 mb-3">'
                     for (irating = 0; irating < parseInt(HotelNextList[icount].basicinfo.starrating); irating++) {
-                        HotelList += '<img class="mr-1" src="Images/icons/other/star-fill.svg">';
+                        HotelList += '<img class="me-1" src="Images/icons/other/star-fill.svg">';
                     }
                 HotelList += '</div></a></div></div>'
                 //HotelList += '<div class="rating">';
@@ -66,13 +66,13 @@ function BindHotelDetails() {
                 rptRoom += "<div class='col-12'> ";
                 rptRoom += "<div class='row justify-content-between'><div class='col-12 col-md-6 col-lg-5 col-xl-6 mb-2 mb-md-0'><h2 class='h6 heading-regular text-colour7'>" + HotelResponse[0].roomrates.RoomRate[icount].roomtype.roomdescription + " (inclusive of all taxes)</h2></div><div class='col-6 col-sm-4 col-md-2 col-lg-3 col-xl-2 mb-3 mb-sm-0'><span class='d-inline-block h6 heading-semibold text-colour7 totalPointValue'>" + HotelResponse[0].roomrates.RoomRate[icount].ratebreakdown.rate[0].RatePoint + " <span class='d-inline-block h7 heading-semibold text-colour7'>Points</span></span><span class='d-inline-block h7 heading-regular text-colour7'>  (per room per night)</span></div>";
                 rptRoom += "<div class='col-6 col-sm-4 col-md-2 mb-3 mb-sm-0'><span class='d-inline-block h6 heading-semibold text-colour7 totalPointValue'>" + HotelResponse[0].roomrates.RoomRate[icount].TotalPoints + "</span>&nbsp;<span class='d-inline-block h7 heading-semibold text-colour7'>Points</span>&nbsp;<span class='d-inline-block h7 heading-regular text-colour7'> for " + msg.d[1] + " night(s)</span></div>";
-                rptRoom += "<div class='col-12 col-sm-4 col-md-2 text-md-right'><button class='btn btn-one w-100 totalPointValue' onclick='return Bookroom(&quot;" + HotelResponse[0].roomrates.RoomRate[icount].roomtype.roomtypecode + "&quot;);'>Book Now</button></div></div></div>";
+                rptRoom += "<div class='col-12 col-sm-4 col-md-2 text-md-end'><button class='btn btn-one w-100 totalPointValue' onclick='return Bookroom(&quot;" + HotelResponse[0].roomrates.RoomRate[icount].roomtype.roomtypecode + "&quot;);'>Book Now</button></div></div></div>";
                 rptRoom += "<div class='col-12 my-3'><div class='border-bottom'></div></div>"
             }
             $("#minrate").html("<span class='h3 heading-semibold text-colour7 totalPointValue'>" + HotelResponse[0].roomrates.RoomRate[0].TotalPoints + "</span>&nbsp;<span class='h6 heading-regular text-colour7'>Points</span><span class='h6 heading-regular text-colour7'>(for " + msg.d[1] + " night(s))</span>");
             $("#rptRoomDetails").append(rptRoom);
             for (irating = 0; irating < parseInt(HotelResponse[0].basicinfo.starrating); irating++) {
-                HotelRating += '<img class="mr-1" src="Images/icons/other/star-fill.svg">';
+                HotelRating += '<img class="me-1" src="Images/icons/other/star-fill.svg">';
             }
             $("#divrating").append(HotelRating);
             $(".totalPointValue").digits();
@@ -140,23 +140,23 @@ function GetHotelInfo() {
             else {
 
                 //$("#contact2").append('<div class="btmSpace amey"><div class="divw20"><span class="ico_email"></span></div><div class="divw80"><a href="javascript:void(0);">Not Available</a></div></div>');
-                $("#contact2").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-phone.png" alt="" /><span class="ml-2">91-11-27052700</span></div>');
+                $("#contact2").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-phone.png" alt="" /><span class="ms-2">91-11-27052700</span></div>');
             }
             if (value.basicinfo[0].communicationinfo.fax != "") {
                 var html = "";
                 //html += '<li class="btmSpace amey"><div class="divw20"><span class="ico_fax"></span></div><div class="divw80">';
-                //html += '<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-fax.png" alt="" /><span class="ml-2"></span></div>';
+                //html += '<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-fax.png" alt="" /><span class="ms-2"></span></div>';
 
                 var array = value.basicinfo[0].communicationinfo.fax.split(",");
                 for (i = 0; i < array.length; i++) {
                     html += array[i];
                 }
                 //html += '</div></li>';
-                $("#contact2").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-fax.png" alt="" /><span class="ml-2">' + html + '</span></div>');
+                $("#contact2").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-fax.png" alt="" /><span class="ms-2">' + html + '</span></div>');
             }
             else {
                 //$("#contact2").append('<li class="btmSpace"><div class="divw20"><span class="ico_fax"></span></div><div class="divw80">Not Available</div></li>');
-                $("#contact2").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-fax.png" alt="" /><span class="ml-2">Not Available</span></div>');
+                $("#contact2").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-fax.png" alt="" /><span class="ms-2">Not Available</span></div>');
             }
             if (value.basicinfo[0].communicationinfo.phone != "") {
                 var html = "";
@@ -168,28 +168,28 @@ function GetHotelInfo() {
                     html += array[i];
                 }
                 //html += '</div></li>';
-                $("#contact1").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-fax.png" alt="" /><span class="ml-2">' + html + '</span></div>');
+                $("#contact1").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-fax.png" alt="" /><span class="ms-2">' + html + '</span></div>');
 
             }
             else {
                 //$("#contact1").append('<li class="btmSpace"><div class="divw20"><span class="ico_phone"></span></div><div class="divw80">Not Available</div></li>');
-                $("#contact1").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-fax.png" alt="" /><span class="ml-2">Not Available</span></div>');
+                $("#contact1").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-fax.png" alt="" /><span class="ms-2">Not Available</span></div>');
             }
             if (value.basicinfo[0].communicationinfo.website != "") {
                 var html = "";
                 //html += '<li class="btmSpace ameysa"><div class="divw20"><span class="ico_weblink"></span></div><div class="divw80">';
-                html += '<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-weblink.png" alt="" /><span class="ml-2">91-11-27052700</span></div>';
+                html += '<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-weblink.png" alt="" /><span class="ms-2">91-11-27052700</span></div>';
 
                 var array = value.basicinfo[0].communicationinfo.website.split(",");
                 for (i = 0; i < array.length; i++) {
                     html += '<a class="websitelnk" href="http://' + array[i] + '" target="_blank">' + array[i] + ',</a><br>';
                 }
                 //html += '</div></li>';
-                $("#contact1").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-weblink.png" alt="" /><span class="ml-2">' + html + '</span></div>');
+                $("#contact1").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-weblink.png" alt="" /><span class="ms-2">' + html + '</span></div>');
             }
             else {
                 //$("#contact1").append('<li class="btmSpace ameysa"><div class="divw20"><span class="ico_weblink"></span></div><div class="divw80"><a class="websitelnk">Not Available</a></div></li>');
-                $("#contact1").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-weblink.png" alt="" /><span class="ml-2">Not Available</span></div>');
+                $("#contact1").append('<div class="col-6 d-flex align-items-center"><img src="images/icons/other/ico-weblink.png" alt="" /><span class="ms-2">Not Available</span></div>');
             }
             if (value.basicinfo[0].overview != "" || value.otherinfo.Description != "") {
                 $("#OverView").append('<h2 class="h4 heading-semibold text-colour7 bg-colour2 p-3 mb-3">About This Hotel</h2><p>' + value.basicinfo[0].overview + "</p><p>" + value.otherinfo.Description + "</p>");
@@ -318,7 +318,7 @@ function BindBasicAmenities(AllAmenities) {
         }
     }
     //BasicAmenities += "</div><div onclick='return showAmenities()' class='linkAmenities'>View More</div>";
-    //BasicAmenities += '</div><button data-toggle="modal" data-target="#dvAmenitiesModal" class="btn btn-one mb-3">View Amenities</button >';
+    //BasicAmenities += '</div><button data-bs-toggle="modal" data-bs-target="#dvAmenitiesModal" class="btn btn-one mb-3">View Amenities</button >';
     //$("#BasicAmenities").append(BasicAmenities);
     return false;
 }

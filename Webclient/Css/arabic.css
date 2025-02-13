@@ -9,7 +9,7 @@
     direction: rtl;
 }
 
-/*.text-left, 
+/*.text-start, 
 h1, 
 h2, 
 h3, 
@@ -21,7 +21,7 @@ ul li {
     text-align: right !important;
 }*/
 
-.text-right-arabic{
+.text-end-arabic{
     text-align: right !important;
 }
 .align-items-end-arabic{

@@ -321,7 +321,7 @@
                         </div>
                         <div class="col-12 mt-3 d-none">
                             <div class="row">
-                                <div class="col-12 text-right">
+                                <div class="col-12 text-end">
                                     <a onclick="window.open('PrintCarVoucher.aspx')" class="btn btn-one">PRINT</a>
                                 </div>
                             </div>

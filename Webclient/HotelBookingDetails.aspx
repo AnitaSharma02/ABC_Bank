@@ -10,7 +10,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
-                    <li class="mr-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
+                    <li class="me-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
                     <li class="breadcrumb-item"><a href="HotelDetails.aspx"> Hotel Details</a></li>
@@ -54,7 +54,7 @@
            </div>--%>
                                         <label class="label">Title*</label>
                                         <div class="dvInput input-group">
-                                            <asp:DropDownList ID="ddlPersonalTitle" runat="server" CssClass="form-control">
+                                            <asp:DropDownList ID="ddlPersonalTitle" runat="server" CssClass="form-select">
                                                 <asp:ListItem Text="Mr." Value="0"></asp:ListItem>
                                                 <asp:ListItem Text="Ms." Value="1"></asp:ListItem>
                                                 <asp:ListItem Text="Mrs." Value="2"></asp:ListItem>
@@ -246,7 +246,7 @@
                                                     <asp:CheckBox ID="chkAcceptAgreements" runat="server" />
                                                     <span class="checkmark"></span>
                                                 </span>
-                                                <span class="d-inline-block ml-2 text-colour7"><span>I have read and agree to Infinity Rewards </span> <a href="TermsandConditions.aspx" target="_blank">Terms & Conditions</a> <span>and the</span> <a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation Policy</a> <span>of the respective service provider.</span></span>
+                                                <span class="d-inline-block ms-2 text-colour7"><span>I have read and agree to Infinity Rewards </span> <a href="TermsandConditions.aspx" target="_blank">Terms & Conditions</a> <span>and the</span> <a href="BookingPolicy.aspx" target="_blank">Booking & Cancellation Policy</a> <span>of the respective service provider.</span></span>
                                             </label>
                                         </div>
                                     </div>
@@ -257,7 +257,7 @@
                                                <asp:CheckBox ID="chkCancellationPolicy" runat="server" />
                                                <span class="checkmark"></span>
                                            </span>
-                                           <span class="d-inline-block ml-2 text-colour7"><span>I agree to redeem</span>
+                                           <span class="d-inline-block ms-2 text-colour7"><span>I agree to redeem</span>
                                                <asp:Label ID="lblTotalCharge" runat="server" Text=""></asp:Label><span>. I also understand and accept that.the redeemed Points cannot be refunded or credited upon cancellation of a hotel booking.</span></span>
                                        </label>
                                         </div>
@@ -284,7 +284,7 @@
                         <div class="col-12">
                             <div class="bg d-flex justify-content-between align-items-center">
                                 <h2 class="h6 heading-bold text-colour6 bg p-3">Hotel Details</h2>
-                                <a href="HotelResults.aspx?edit=1" class="btn btn-two mr-2 text-decoration-none">Edit</a>
+                                <a href="HotelResults.aspx?edit=1" class="btn btn-two me-2 text-decoration-none">Edit</a>
                             </div>
                         </div>
                         <div class="col-12">
@@ -299,7 +299,7 @@
                                 </div>
                                 <div class="border my-3"></div>
                                 <div class="row align-items-center justify-content-lg-between">
-                                    <div class="col-6 offset-3 offset-sm-0 col-sm-2 mb-3 mb-sm-0 pr-lg-1">
+                                    <div class="col-6 offset-3 offset-sm-0 col-sm-2 mb-3 mb-sm-0 pe-lg-1">
                                         <div class="img-container">
                                             <asp:Image ID="imgHotel" runat="server" />
                                         </div>
@@ -321,7 +321,7 @@
                                         </div>
                                     </div>
                                     <div
-                                        class="col-4 col-sm-3 col-lg-3 d-flex align-items-center flex-column text-center pl-lg-1">
+                                        class="col-4 col-sm-3 col-lg-3 d-flex align-items-center flex-column text-center ps-lg-1">
                                         <img src="Images/icons/other/time.png" alt="" />
                                         <div class="mt-lg-1">
                                             <p class="h7 text-colour7">Check-out</p>

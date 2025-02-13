@@ -14,7 +14,7 @@
      <div class="container-xl">
          <nav>
              <ul class="breadcrumb px-0 py-3">
-                 <li class="mr-3">
+                 <li class="me-3">
                      <a href="\">
                          <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                  </li>
@@ -86,13 +86,13 @@
                 <p class="heading-semibold text-colour7 mb-3">Activation and Viewing Infinity Rewards points through ABC Banking Internet Banking and Mobile Banking App</p>
                 <p class="mb-3">Customers can Activate their Infinity Rewards account by logging in ABC Banking Mobile App as per below:</p>
                  <ul class="mt-3 px-0" style="list-style: none;">
-     <li class="mb-3">1. Log into the ABC Banking Mobile App.</li>
-     <li class="mb-3">2. Click on Infinity Rewards.</li>
-     <li class="mb-3">3. Key in your Customer Unique Identifier (CIF)</li>
-     <li class="mb-3">4. You will receive an OTP for authentication on your registered Mobile number or Email Address.</li>
-     <li class="mb-3">5. Set your Password (must comply with ABC Banking’s password policy)</li>
-     <li class="mb-3">6. Your Infinity Rewards account will be activated, and you will have access to your rewards account.</li>
- </ul> 
+                     <li class="mb-3">1. Log into the ABC Banking Mobile App.</li>
+                     <li class="mb-3">2. Click on Infinity Rewards.</li>
+                     <li class="mb-3">3. Key in your Customer Unique Identifier (CIF)</li>
+                     <li class="mb-3">4. You will receive an OTP for authentication on your registered Mobile number or Email Address.</li>
+                     <li class="mb-3">5. Set your Password (must comply with ABC Banking’s password policy)</li>
+                     <li class="mb-3">6. Your Infinity Rewards account will be activated, and you will have access to your rewards account.</li>
+                 </ul> 
             </div>
         </div>
     </div>

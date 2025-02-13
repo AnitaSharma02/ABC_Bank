@@ -519,12 +519,12 @@ Present your Gift Voucher codes to redeem them at any of our participating partn
     <div class="row">
     <div class="col-12">
     <div class="dvCommonAccordion accordion" id="accordionExample">
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="fa fa-plus"></i>Voucher Summary</button>
-            </div>
-            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button type="button" class="accordion-button btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo"><i class="fa fa-plus"></i>Voucher Summary</button>
+            </h2>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
                     <p>Voucher Summary</p>
                 </div>
             </div>

@@ -71,7 +71,7 @@ public partial class ProductDetails : Page
                             foreach (var mainMenu in mainmenus)
                             {
                                 lstrHtmlContent.Append("<ul class=\"breadcrumb px-0 py-3\">" +
-                                    "<li class=\"mr-3\"><a href=\"\\\"><img class=\"\" src=\"images/icons/arrows/back-arrow.svg\"></a></</li>" +
+                                    "<li class=\"me-3\"><a href=\"\\\"><img class=\"\" src=\"images/icons/arrows/back-arrow.svg\"></a></</li>" +
                                     "<li class=\"breadcrumb-item\"><a href=\"Index.aspx\">Home</a></li>" +
                                     "<li class=\"breadcrumb-item \"><a href =\"Shop.aspx?CategoryId=" + lstrcategoryId + "&ProductType=Physical" + "\">Shop</a></li>" +
                                     "<li class=\"breadcrumb-item\">Product Detail</li>" +
@@ -85,7 +85,7 @@ public partial class ProductDetails : Page
                             {
                                 List<Category> mainmenus = categories.FindAll(x => x.Id == lstrcategoryId);
                                 lstrHtmlContent.Append("<ul class=\"breadcrumb px-0 py-3\">" +
-                                    "<li class=\"mr-3\"><a href=\"\\\"><img class=\"\" src=\"images/icons/arrows/back-arrow.svg\"></a></</li>" +
+                                    "<li class=\"me-3\"><a href=\"\\\"><img class=\"\" src=\"images/icons/arrows/back-arrow.svg\"></a></</li>" +
                                     "<li class=\"breadcrumb-item\"><a href=\"Index.aspx\">Home</a></li>" +
                                     "<li class=\"breadcrumb-item \"><a href =\"Shoplist.aspx?CategoryId=" + lstrcategoryId + "&ProductType=Digital" + "\">" + mainmenus[0].Name + "</a></li>" +
                                     "<li class=\"breadcrumb-item\">Product Detail</li>" +
@@ -212,7 +212,7 @@ public partial class ProductDetails : Page
                 string lstrHtmlContent = string.Empty;
                 for (int i = 0; i < lobjProduct.Images.Count; i++)
                 {
-                    lstrHtmlContent += "<div class=\"swiper-slide\"><img src=\"" + lobjProduct.Images[i].Url + "\"></div>";
+                    lstrHtmlContent += "<div class=\"swiper-slide img-container\"><img src=\"" + lobjProduct.Images[i].Url + "\"></div>";
                 }
                 List<string> lobjColorVariations = new List<string>();
                 List<string> lobjSizeVariations = new List<string>();

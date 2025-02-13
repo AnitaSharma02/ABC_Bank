@@ -183,36 +183,31 @@
                                     <div class="input-group mb-3">
                                         <input type="password"  autocomplete="off" class="form-control" aria-describedby="inputtxtPassword" id="txtOldPassword"
                                             onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;" />
-                                        <div class="input-group-append">
-                                            <span toggle="#txtOldPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
-                                        </div>
-                                        <%--<div class="input-group-append">
+                                         <span toggle="#txtOldPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                        
+                                        <%-- 
 									<span class="input-group-text bg-colour6" id="inputtxtMemberName"><i class="fa fa-user fa-2x"></i></span>
-								</div>--%>
+								 --%>
                                     </div>
 
                                     <label for="CP_txtPassword" class="txt-password Newpass">New Password:</label>
                                     <div class="input-group mb-3">
                                         <input type="password" autocomplete="off" class="form-control" aria-describedby="inputtxtPassword" id="txtPassword"
                                             onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;" />
-                                        <div class="input-group-append">
-                                            <span toggle="#txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
-                                        </div>
-                                    </div>
+                                         <span toggle="#txtPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                     </div>
 
                                     <label for="CP_txtNewPassword" class="txt-password repass">Confirm Password:</label>
                                     <div class="input-group mb-3">
                                         <input type="password" autocomplete="off" class="form-control" aria-describedby="inputtxtPassword"
                                             id="txtNewPassword" onkeypress="var retValue = ValidateOnEnter(event); event.returnValue = retValue; return retValue;" />
-                                        <div class="input-group-append">
-                                            <span toggle="#txtNewPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
-                                        </div>
-                                    </div>
+                                      <span toggle="#txtNewPassword" class="input-group-text bg-colour6 toggle-password passwordShow fa fa-solid fa-eye-slash"></span>
+                                     </div>
 
                                     <div class="form-group loginbtn txt-login-btn mt-3">
                                         <input type="button" class="blue_button btnContinue" value="Continue" onclick="var retvalue = ChangePassword(); event.returnValue = retvalue; return retvalue;" />
                                     </div>
-                                    <div id="ChangePasswordValidation" class="pl-3" style="color: #ff0000; font-size: 13px; float: left;">
+                                    <div id="ChangePasswordValidation" class="ps-3" style="color: #ff0000; font-size: 13px; float: left;">
                                     </div>
                                 </div>
 

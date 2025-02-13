@@ -124,7 +124,7 @@
 
                 <div class="dvFairConditions">
                     <h2 class="h7 heading-semibold text-colour7 pt-3 pb-2">Fair Conditions</h2>
-                    <ul class="pl-3">
+                    <ul class="ps-3">
                         <li>1. Use your reference number for all communication with us on this booking.</li>
                         <li>2. Your PNR number serves as a comfirmation of your ticket status.</li>
                         <li>3. Carry a print out of this E-Ticket and present it at the airlines counter at

@@ -11,7 +11,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
-                    <li class="mr-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
+                    <li class="me-3"><a href="\"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                     </li>
                     <li class="breadcrumb-item"><a href="\">Home</a></li>
                     <li class="breadcrumb-item"><a href="HotelResults.aspx"> Hotel Results</a></li>
@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="dvThumbSwiperSlider col-md-6 mb-3">
                     <div class="border b-radius p-3">
-                        <div class="swiper mySwiper2 mb-2">
+                        <div class="swiper dvThumbBannerSlide mb-2">
                             <div id="BannerImage" class="swiper-wrapper">
                             </div>
                             <div class="swiper-button-next">
@@ -35,7 +35,7 @@
                                 <img src="images/icons/arrows/left-yellow-arrow-2.svg" />
                             </div>
                         </div>
-                        <div class="swiper mySwiper">
+                        <div class="swiper dvThumbSlide">
                             <div id="ThumbBannerImage" class="swiper-wrapper">
                             </div>
                             <div class="swiper-button-next">
@@ -73,28 +73,28 @@
                     <div class="row mb-3" id="contact1">
                         <%--<div class="col-6 d-flex align-items-center">
                           <img src="images/icons/other/ico-phone.png" alt="" />
-                          <span class="ml-2">91-11-27052700</span>
+                          <span class="ms-2">91-11-27052700</span>
                         </div>
                         <div class="col-6 d-flex align-items-center">
                           <img src="images/icons/other/ico-msg.png" alt="" />
-                          <span class="ml-2">Not Available</span>
+                          <span class="ms-2">Not Available</span>
                         </div>--%>
                     </div>
                     <div class="row mb-3" id="contact2">
                         <%--<div class="col-6 d-flex align-items-center">
                             <img src="images/icons/other/ico-phone.png" alt="" />
-                            <span class="ml-2">91-11-27052700</span>
+                            <span class="ms-2">91-11-27052700</span>
                         </div>
                         <div class="col-6 d-flex align-items-center">
                             <img src="images/icons/other/ico-weblink.png" alt="" />
-                            <span class="ml-2">Not Available</span>
+                            <span class="ms-2">Not Available</span>
                         </div>--%>
                     </div>
                     <div class="row">
                         <div class="col-12" id="BasicAmenities">
                             <%--<button
-                            data-toggle="modal"
-                            data-target="#dvAmenitiesModal"
+                            data-bs-toggle="modal"
+                            data-bs-target="#dvAmenitiesModal"
                             class="btn btn-one mb-3"
                           >
                             View Amenities
@@ -111,8 +111,8 @@
                         </div>
                         <div class="col-12 mt-3">
                             <button type="button"
-                                data-toggle="modal"
-                                data-target="#dvAmenitiesModal"
+                                data-bs-toggle="modal"
+                                data-bs-target="#dvAmenitiesModal"
                                 class="btn btn-two mb-3">
                                 View Amenities
                             </button>
@@ -155,15 +155,15 @@
             <div class="modal-content">
                 <div class="dvVcData modal-header border-0">
                     <h5 class="modal-title" id="DivAmenitiesCategoryName"></h5>
-                     <button type="button" class="close" data-dismiss="modal">
-                         <i class="fa-solid fa-xmark"></i>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal">
+                         <i class="fas fa-times"></i>
                      </button>
                 </div>
                 <div class="modal-body pt-0">
                     <div id="DivAmenities" class="dvVcData row"></div>
                 </div>
                 <!-- <div class="modal-footer">
-              <button type="button" class="btn btn-two" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-two" data-bs-dismiss="modal">Close</button>
               <button type="button" class="btn btn-one">Save changes</button>
             </div> -->
             </div>
@@ -171,7 +171,7 @@
     </div>
 
     <script>
-        var swiper = new Swiper(".mySwiper", {
+        var swiper = new Swiper(".dvThumbSlide", {
             spaceBetween: 10,
             slidesPerView: 4,
             freeMode: true,
@@ -181,7 +181,7 @@
                 prevEl: ".swiper-button-prev",
             },
         });
-        var swiper2 = new Swiper(".mySwiper2", {
+        var swiper2 = new Swiper(".dvThumbBannerSlide", {
             spaceBetween: 10,
             navigation: {
                 nextEl: ".swiper-button-next",

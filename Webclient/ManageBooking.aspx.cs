@@ -432,7 +432,7 @@ public partial class ManageBooking : Page
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<span class=\"h6 d-block\">" + lobjModel.FloatToThousandSeperated(lintTotalPrice) + "</span></p>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("<div class=\"col-12 offset-md-3 col-md-3 col-lg-3 col-xl-3 mt-2 mt-md-0\"><p>");
-    //                    lsbTrInsuranceBookingDetailsHtml.Append("<a id=\"ViewDetails\" class=\"btn btn-one w-100\" onclick=\"return ViewDetails('" + item.ReferenceId.ToString()+"');\" data-toggle=\"modal\">View Details</a>");
+    //                    lsbTrInsuranceBookingDetailsHtml.Append("<a id=\"ViewDetails\" class=\"btn btn-one w-100\" onclick=\"return ViewDetails('" + item.ReferenceId.ToString()+"');\" data-bs-toggle=\"modal\">View Details</a>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</p>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div>");
     //                    lsbTrInsuranceBookingDetailsHtml.Append("</div></div></div></div>");

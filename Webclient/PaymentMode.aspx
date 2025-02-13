@@ -52,7 +52,7 @@
                                                 <input type="radio" name="radio" value="customRadio1" checked />
                                                 <span class="radiomark"></span>
                                             </span>
-                                            <span class="d-inline-block heading-light ml-3">
+                                            <span class="d-inline-block heading-light ms-3">
                                                 <img width="100" src="../images/logos/mobank-logo.png" alt="mo bank" /></span>
                                         </label>
                                     </div>
@@ -66,7 +66,7 @@
                                                 <input type="radio" name="radio" value="customRadio2" />
                                                 <span class="radiomark"></span>
                                             </span>
-                                            <span class="d-inline-block heading-light ml-3">
+                                            <span class="d-inline-block heading-light ms-3">
                                                 <img width="100" src="../images/logos/quickpay-logo.png" alt="quick pay" />
                                             </span>
                                         </label>
@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end">
-                                <button class="btn btn-one mr-3">Proceed</button>
+                                <button class="btn btn-one me-3">Proceed</button>
                                 <button class="btn btn-two">Cancel</button>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
         <div class="dvFooter border-top py-3">
             <div class="container-xl">            
                 <div class="row align-items-lg-center">
-                    <%--<div class="col-sm-12 col-lg-2 text-center text-lg-right mb-3 mb-lg-0">
+                    <%--<div class="col-sm-12 col-lg-2 text-center text-lg-end mb-3 mb-lg-0">
                         <a href="Index.aspx">
                             <img class="img-fluid" width="125" src="images/logos/infinity-logo.svg" alt="Infinity Rewards Logo" /></a>
                     </div>--%>
@@ -98,7 +98,7 @@
                   </script> Infinity Rewards. All rights reserved.
                         </p>
                     </div>
-                    <%--<div class="col-sm-12 col-lg-5 text-center text-lg-right">
+                    <%--<div class="col-sm-12 col-lg-5 text-center text-lg-end">
                         <a href="https://www.giift.com/" target="_blank">
                             <img class="img-fluid" width="70" src="images/logos/giift-logo.svg" alt="Giift Logo" />
                         </a>

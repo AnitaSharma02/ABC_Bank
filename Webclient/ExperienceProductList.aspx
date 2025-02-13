@@ -18,10 +18,8 @@
                 <div class="dvSearch dvErrors col-12 offset-lg-3 col-lg-6 mb-5">                    
                     <div class="dvInputGroup input-group">
                         <input id="txtSearchTerm" autocomplete="off" class="input form-control" type="text" name="searchTerm" placeholder="Search Destination" required />
-                        <div class="input-group-append">
-                            <button type="button" id="btnSearchExperiences" class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </div>
-                    </div>
+                         <button type="button" id="btnSearchExperiences" class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></button>
+                     </div>
                 </div>
             </div>
         </div>
@@ -94,7 +92,7 @@
         }
         function fnShowLoader(id) {
             var html = '';
-            html += '<div id="divExperienceLoader" class="spin-loader" style="margin: auto;">';
+            html += '<div id="divExperienceLoader" class="spin-loader d-flex justify-content-center" style="margin: auto;">';
             html += '<img class="spin" width="50" src="Images/loading.gif" alt="" />';
             html += '</div>';
             $("#" + id + "").append(html);

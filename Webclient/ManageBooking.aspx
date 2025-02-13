@@ -122,7 +122,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-4">
-                    <li class="mr-3">
+                    <li class="me-3">
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
@@ -142,15 +142,15 @@
                     <h5 class="modal-title">
                         <span>Booking Details</span>
                     </h5>
-                    <button type="button" class="close" data-dismiss="modal">
-                        <i class="fa-solid fa-xmark"></i>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div id="bookingDetails"></div>
                 </div>
                 <%-- <div class="modal-footer">
-            <button type="button" class="btn btn-two" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-two" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-one">Save changes</button>
           </div>--%>
             </div>
@@ -163,20 +163,18 @@
                 <div class="col-12">
                     <div class="border b-radius p-3">
                         <div class="dvCommonAccordion accordion" id="manage-accordion">
-                            <div class="card mb-3">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0 ">
-                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase" type="button"
-                                            data-toggle="collapse" data-target="#collapse1">
+                            <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header mb-0 ">
+                                        <button class="accordion-button btn- btn-block text-start p-3 h6 text-uppercase" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse1">
                                             <span>Flight Booking Details</span>
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
                                         </button>
                                     </h2>
-                                </div>
-                                <div id="collapse1" class="collapse show" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0">
+                                <div id="collapse1" class="collapse show" data-bs-parent="#manage-accordion">
+                                    <div class="accordion-body scroll-ver p-0">
                                         <asp:Repeater ID="rptBookingDetails" runat="server">
                                             <ItemTemplate>
                                                 <div class="row">
@@ -235,7 +233,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-12 col-md-6 col-xl-2">
+                                                                <div class="col-12 col-md-6 col-xl-2 mt-2">
                                                                     <p>
                                                                         <asp:LinkButton ID="BtnViewAir" CssClass="btn btn-one w-100" Text="View Details" runat="server" OnClientClick='<%#String.Format("javascript:return ShowAirReceipt(\"{0}\")",Eval("ItineraryReference").ToString())%>'></asp:LinkButton>
                                                                     </p>
@@ -259,20 +257,18 @@
                                 </div>
                             </div>
 
-                            <div class="card mb-3">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0">
-                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapse2">
+                            <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header mb-0">
+                                        <button class="accordion-button btn- btn-block text-start p-3 h6 text-uppercase collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse2">
                                             Hotel Booking Details
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
                                         </button>
                                     </h2>
-                                </div>
-                                <div id="collapse2" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0">
+                                <div id="collapse2" class="collapse" data-bs-parent="#manage-accordion">
+                                    <div class="accordion-body scroll-ver p-0">
                                         <asp:Repeater ID="rptHotelCancelBookingDetails" runat="server">
                                             <ItemTemplate>
                                                 <div class="row">
@@ -311,7 +307,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-12 col-md-3">
+                                                                <div class="col-12 col-md-3 mb-3">
                                                                     <p>
                                                                         <span class="h7 d-block heading-semibold text-colour7">Ref No.</span>
                                                                         <span class="h6 d-block">
@@ -319,7 +315,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3">
+                                                                <div class="col-6 col-md-3 mb-3">
                                                                     <p>
                                                                         <span class="h7 d-block heading-semibold text-colour7">Points</span>
                                                                         <span class="h6 d-block">
@@ -327,7 +323,7 @@
                                                                         </span>
                                                                     </p>
                                                                 </div>
-                                                                <div class="col-6 col-md-3">
+                                                                <div class="col-6 col-md-3 mb-3">
                                                                     <p>
                                                                         <span class="h7 d-block heading-semibold text-colour7">Status</span>
                                                                         <span class="h6 d-block">
@@ -363,20 +359,18 @@
                                 </div>
                             </div>
 
-                            <div class="card mb-3 ">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0">
-                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapse3">
+                            <div class="accordion-item mb-3 ">
+                                    <h2 class="accordion-header mb-0">
+                                        <button class="accordion-button btn- btn-block text-start p-3 h6 text-uppercase collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse3">
                                             Experience Booking Details
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
                                         </button>
                                     </h2>
-                                </div>
-                                <div id="collapse3" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0" id="divExperienceBookingDetails" runat="server">
+                                <div id="collapse3" class="collapse" data-bs-parent="#manage-accordion">
+                                    <div class="accordion-body scroll-ver p-0" id="divExperienceBookingDetails" runat="server">
                                         <asp:Repeater ID="rptExperienceBookingDetails" runat="server">
                                             <ItemTemplate>
                                                 <div class="row">
@@ -473,74 +467,66 @@
                                 </div>
                             </div>
 
-                            <div class="card mb-3 d-none">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0">
-                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapse4">
+                            <div class="accordion mb-3 d-none">
+                                    <h2 class="accordion-header mb-0">
+                                        <button class="accordion-button btn- btn-block text-start p-3 h6 text-uppercase collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse4">
                                             Domestic Flight Booking Details
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
                                         </button>
                                     </h2>
-                                </div>
-                                <div id="collapse4" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0" id="divDomesticFlightBookingDetails" runat="server">
+                                <div id="collapse4" class="collapse" data-bs-parent="#manage-accordion">
+                                    <div class="accordion-body scroll-ver p-0" id="divDomesticFlightBookingDetails" runat="server">
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="card mb-3" style="display: none;">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0">
-                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapse5">
+                            <div class="accordion mb-3" style="display: none;">
+                                    <h2 class="accordion-header mb-0">
+                                        <button class="accordion-button btn- btn-block text-start p-3 h6 text-uppercase collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse5">
                                             Insurance Booking Details
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
                                         </button>
                                     </h2>
-                                </div>
-                                <div id="collapse5" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0" id="divInsuranceFlightBookingDetails" runat="server">
+                                <div id="collapse5" class="collapse" data-bs-parent="#manage-accordion">
+                                    <div class="accordion-body scroll-ver p-0" id="divInsuranceFlightBookingDetails" runat="server">
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="card" style="display: none;">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0">
-                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapse6">
+                            <div class="accordion" style="display: none;">
+                                    <h2 class="accordion-header mb-0">
+                                        <button class="accordion-button btn- btn-block text-start p-3 h6 text-uppercase collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse6">
                                             ISP Booking Details
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
                                         </button>
                                     </h2>
-                                </div>
-                                <div id="collapse6" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0" id="divISPFlightBookingDetails" runat="server">
+                                <div id="collapse6" class="collapse" data-bs-parent="#manage-accordion">
+                                    <div class="accordion-body scroll-ver p-0" id="divISPFlightBookingDetails" runat="server">
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="card">
-                                <div class="card-header p-0">
-                                    <h2 class="mb-0 ">
-                                        <button class="btn- btn-block text-left p-3 h6 text-uppercase collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapse7">
+                            <div class="accordion">
+                                    <h2 class="accordion-header mb-0">
+                                        <button class="accordion-button btn- btn-block text-start p-3 h6 text-uppercase collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse7">
                                             <span>Car Booking Details</span>
                                             <span class="arrow-icon">
                                                 <i class="fa fa-caret-up"></i>
                                             </span>
                                         </button>
                                     </h2>
-                                </div>
-                                <div id="collapse7" class="collapse" data-parent="#manage-accordion">
-                                    <div class="card-body scroll-ver p-0">
+                                <div id="collapse7" class="collapse" data-bs-parent="#manage-accordion">
+                                    <div class="accordion-body scroll-ver p-0">
                                         <asp:Repeater ID="rptCarBookingDetails" runat="server">
                                             <ItemTemplate>
                                                 <div class="row">
@@ -597,7 +583,7 @@
                                                                         </span>
                                                                     </span>
                                                                     <asp:HiddenField ID="HiddenField1" Value='<%#Eval("Reference_Unique_Id").ToString()%>' runat="server"></asp:HiddenField>
-                                                                    <asp:LinkButton CssClass="btn btn-one w-50 ml-2" ID="LinkButton1" runat="server" Text="Print" OnClientClick='<%#String.Format("javascript:return ShowCarVoucher(\"{0}\",\"{1}\",\"{2}\")",Eval("Reference_Unique_Id").ToString(),Eval("Access_Token").ToString(),Eval("Reserve_Number").ToString())%>'></asp:LinkButton>
+                                                                    <asp:LinkButton CssClass="btn btn-one w-50 ms-2" ID="LinkButton1" runat="server" Text="Print" OnClientClick='<%#String.Format("javascript:return ShowCarVoucher(\"{0}\",\"{1}\",\"{2}\")",Eval("Reference_Unique_Id").ToString(),Eval("Access_Token").ToString(),Eval("Reserve_Number").ToString())%>'></asp:LinkButton>
                                                                 </div>
                                                                 <%-- <div class="col-12 col-md-3 mb-1">
                                                                     <p>

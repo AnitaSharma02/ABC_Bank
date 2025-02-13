@@ -2,12 +2,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CP" runat="Server">
     <link rel="stylesheet" href="\Css/experience.css" />
-
+    <style>
+        .dvInnerBanner{
+            display:none;
+        }
+    </style>
     <%-- <div class="dvBreadcrumbs mt-3 mb-3">
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
-                    <li class="mr-3">
+                    <li class="me-3">
                         <a href="hoteldetails.html">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
@@ -23,17 +27,17 @@
             <div class="row">
                 <div class="dvFilter modal fade col-lg-3 px-0 px-lg-3 mb-3" id="dvFilterModal" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content border-0 b-radius">
-                            <div class="modal-header border-0 p-0">
-                                <div class="modal-title border-0 p-3">
-                                    <h5 class="h6 heading-semibold text-colour1">
-                                        <i class="fa fa-filter mx-0"></i>
-                                        <span>Filters</span>
+                        <div class="modal-content border-0">
+                            <div class="modal-header border-0 d-lg-block">
+                               
+                                    <h5 class="modal-title dvTotalRecords border-0">
+                                         <span class="text-colour1"><i class="fa fa-filter mx-0"></i></span>
+                                        <span class="heading6 text-colour1">Filters</span>
                                     </h5>
-                                </div>
-                                <button type="button" class="close d-lg-none px-3" data-dismiss="modal">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </button>
+                               
+                                 <button type="button" class="btn-close d-lg-none" data-bs-dismiss="modal">
+     <%--<i class="fa-solid fa-xmark"></i>--%>
+  </button>
                                 <%--<i class="fa fa-filter mx-0"></i>
                                  <span class="h7 heading-semibold">Filters Results</span>--%>
                             </div>
@@ -42,10 +46,10 @@
                                     <div class="card my-3 mb-lg-3 mt-lg-0">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse1"><span class="heading6 mb-2 text-capitalize">Types</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-start heading-semibold" type="button" data-bs-toggle="collapse-" data-bs-target="#collapse1"><span class="heading6 mb-2 text-capitalize">Types</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
-                                        <div id="collapse1" class="collapse- show" data-parent="#filter-accordion">
+                                        <div id="collapse1" class="collapse- show" data-bs-parent="#filter-accordion">
                                             <div class="card-body scroll-ver- px-0 pt-1 pb-2" id="divtype">
                                             </div>
                                         </div>
@@ -60,10 +64,10 @@
                                     <div class="card">
                                         <div class="card-header p-0">
                                             <h2 class="mb-0">
-                                                <button class="btn btn-block text-left collapsed heading-semibold" type="button" data-toggle="collapse-" data-target="#collapse2"><span class="heading6 mb-2 text-capitalize">Categories</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
+                                                <button class="btn btn-block text-start collapsed heading-semibold" type="button" data-bs-toggle="collapse-" data-bs-target="#collapse2"><span class="heading6 mb-2 text-capitalize">Categories</span> <span class="arrow-icon"><i class="fa fa-caret-up-"></i></span></button>
                                             </h2>
                                         </div>
-                                        <div id="collapse2" class="collapse- show" data-parent="#filter-accordion">
+                                        <div id="collapse2" class="collapse- show" data-bs-parent="#filter-accordion">
                                             <div class="card-body scroll-ver px-0 pt-1 pb-2" id="divCategories">
                                             </div>
                                         </div>
@@ -87,15 +91,14 @@
                         <div class="dvModify col-12 mb-3">
                             <div class="row justify-content-between align-items-center mb-1">
                                 <div class="col-lg-12">
-                                    <button data-toggle="modal" data-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none mb-2">Filter </button>
+                                    <button data-bs-toggle="modal" data-bs-target="#dvFilterModal" type="button" class="btn btn-one col-12 d-lg-none mb-2">Filter </button>
                                     <div class="row justify-content-end align-items-center">
                                         <div class="dvSearch dvErrors col-12 col-lg-12">
                                             <div>
                                                 <div class="dvInputGroup input-group">
                                                     <input id="txtSearchTerm" autocomplete="off" class="input form-control" type="text" name="searchTerm" value="" placeholder="Search Destination" />
-                                                    <div class="input-group-append">
-                                                        <button type="button" id="btnSearchExperiences" class="input-group-text bg-colour1"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                                    </div>
+                                                     <button type="button" id="btnSearchExperiences" class="input-group-text bg-colour1"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                                     
                                                 </div>
                                             </div>
                                         </div>
@@ -484,7 +487,7 @@
                         //html += '<input id="chkTypesCheckAll" type="checkbox" checked="checked"  value="SelectAll"/>';
                         //html += '<span class="checkmark"></span>';
                         //html += '</span>';
-                        //html += '<span class="d-inline-block ml-2">Select All</span>';
+                        //html += '<span class="d-inline-block ms-2">Select All</span>';
                         //html += '</label>';
                         //html += '</div>';
                         $.each(parseData.types, function (i) {
@@ -494,7 +497,7 @@
                             html += '<input type="checkbox" class="chktypes" value="' + parseData.types[i] + '" />';
                             html += '<span class="checkmark"></span>';
                             html += '</span>';
-                            html += '<span class="d-inline-block ml-2">' + parseData.types[i] + '</span>';
+                            html += '<span class="d-inline-block ms-2">' + parseData.types[i] + '</span>';
                             html += '</label>';
                             html += '</div>';
 
@@ -514,7 +517,7 @@
                         //html += '<input id="chkCategoriesCheckAll" type="checkbox" checked="checked" value="SelectAll" />';
                         //html += '<span class="checkmark"></span>';
                         //html += '</span>';
-                        //html += '<span class="d-inline-block ml-2">Select All</span>';
+                        //html += '<span class="d-inline-block ms-2">Select All</span>';
                         //html += '</label>';
                         //html += '</div>';
                         $.each(parseData.categories, function (i) {
@@ -524,7 +527,7 @@
                             html += '<input type="checkbox" class="chkcategories" value="' + parseData.categories[i] + '" />';
                             html += '<span class="checkmark"></span>';
                             html += '</span>';
-                            html += '<span class="d-inline-block ml-2">' + parseData.categories[i] + '</span>';
+                            html += '<span class="d-inline-block ms-2">' + parseData.categories[i] + '</span>';
                             html += '</label>';
                             html += '</div>';
                         });

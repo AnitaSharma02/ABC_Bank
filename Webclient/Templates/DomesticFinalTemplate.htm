@@ -9,7 +9,7 @@
                     <div class="col-12 col-md-4 border-bottom border-bottom-md border-right-md" id="OutboundFlightdetails">
                         <div class="py-3 text-center">
                             <img src='{$T.record.Departure_AirlineLogo}' alt="" />
-                            <span class="heading-semibold d-inline-block pl-2">{$T.record.Departure_AirlineName}  ({$T.record.Departure_FlightNo})</span>
+                            <span class="heading-semibold d-inline-block ps-2">{$T.record.Departure_AirlineName}  ({$T.record.Departure_FlightNo})</span>
                             <span class="">{$T.record.Departure_DepartureTime}</span>
                             <span>-</span>
                             <span class="">{$T.record.Departure_ArrivalTime}</span>
@@ -18,7 +18,7 @@
                     <div class="col-12 col-md-4 border-bottom border-bottom-md border-right-md" id="InboundFlightdetails">
                         <div class="py-3 text-center">
                             <img src='{$T.record.Return_AirlineLogo}' alt="" />
-                            <span class="heading-semibold d-inline-block pl-2">{$T.record.Return_AirlineName}  ({$T.record.Return_FlightNo})</span>
+                            <span class="heading-semibold d-inline-block ps-2">{$T.record.Return_AirlineName}  ({$T.record.Return_FlightNo})</span>
                             <span class="">{$T.record.Return_DepartureTime}</span>
                             <span>-</span>
                             <span class="">{$T.record.Return_ArrivalTime}</span>
@@ -26,14 +26,14 @@
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="py-3 text-center d-md-flex justify-content-md-end align-items-center">
-                            <span class="heading-semibold d-inline-block pr-md-1">Points </span> <span class="heading-semibold d-inline-block" id="TotalFareAmount"> {$T.record.FareTotal}</span>
-                            <span class="heading-semibold d-inline-block pl-2 divInsufficient" id="divInsufficient" style="color:red"></span>
+                            <span class="heading-semibold d-inline-block pe-md-1">Points </span> <span class="heading-semibold d-inline-block" id="TotalFareAmount"> {$T.record.FareTotal}</span>
+                            <span class="heading-semibold d-inline-block ps-2 divInsufficient" id="divInsufficient" style="color:red"></span>
                             <button class="btn btn-one btnRedeemFlight"  id="btnRedeemFlight" onclick="var retvalue = BookNowClick_Domestic(); event.returnValue= retvalue;event.preventDefault(); return retvalue;" style="cursor: pointer;">Redeem Now</button>
                         </div>
                     </div>
                 </div>
                 <!--<div class="dvFlightDetails"> 
-                    <a href="" class="heading-regular py-1 px-3" data-toggle="modal" data-target="#exampleModalScrollable">
+                    <a href="" class="heading-regular py-1 px-3" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable">
                         Flight details <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                     </a>
                 </div>-->
@@ -46,7 +46,7 @@
         <div class="modal-content">
             <div class="modal-header border-0">
                 <h5 class="modal-title" id="exampleModalScrollableTitle"></h5>
-                <button type="button" class="close" data-dismiss="modal">
+                <button type="button" class="close" data-bs-dismiss="modal">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
@@ -54,7 +54,7 @@
                 ...
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-two" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-two" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-one">Save changes</button>
             </div>
         </div>

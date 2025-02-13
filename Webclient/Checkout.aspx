@@ -13,7 +13,7 @@
     <div class="container-xl">
         <nav>
             <ul class="breadcrumb px-0 py-3">
-                <li class="mr-3"><a href="hoteldetails.html"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
+                <li class="me-3"><a href="hoteldetails.html"><img src="images/icons/arrows/arrow-left.svg" alt=""></a>
                 </li>
                 <li class="breadcrumb-item"><a href="\">Home</a></li>
                 <li class="breadcrumb-item active"><a href="Shop.aspx?CategoryId=9149a75f-1f53-4ed7-b9b3-260b0fd6d606&ProductType=Physical&type=Shop&Locale=en"> Shop</a></li>
@@ -84,7 +84,7 @@
                                         <div class="col-md-4 mb-3">
                                             <label class="label" for="country">Country</label>
                                             <div class="dvInput input-group">
-                                                <select class="form-control custom-select d-block w-100" id="country">
+                                                <select class="form-select custom-select d-block w-100" id="country">
                                                     <option value="">Choose...</option>
                                                     <option value="KE">Kenya</option>
                                                     <option value="QA">Qatar</option>

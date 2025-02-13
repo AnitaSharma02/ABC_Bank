@@ -131,7 +131,7 @@ public partial class Shop : Page
                                     , product.PrimaryImage.Url, product.Name, product.Id, lobjModel.FormatPoints(Math.Ceiling(product.Price.SalePriceWithTax.Amount), "Points"), string.Format("<div class='starRat'>{0}</div>", starratings), pstrProductType));
                             }
                             sb.Append("</div>");
-                            sb.Append(string.Format("<div class='d-flex justify-content-between align-items-center mt-4'><a href='ShopList.aspx?terms=Tags:{0}&ProductType=Physical' class='btn btn-one'>View all</a> <div class='swiper-buttons'><div class='d-flex justify-content-center'><div class='swiper-button-prev pr-3' id='shop_swiper-button-prev'><img src ='images/icons/arrows/left-black-arrow.svg' /></div><div class='swiper-button-next' id='shop_swiper-button-next'><img src ='images/icons/arrows/right-black-arrow.svg' /></div></div></div></div>", offers[0]));
+                            sb.Append(string.Format("<div class='d-flex justify-content-between align-items-center mt-4'><a href='ShopList.aspx?terms=Tags:{0}&ProductType=Physical' class='btn btn-one'>View all</a> <div class='swiper-buttons'><div class='d-flex justify-content-center'><div class='swiper-button-prev pe-3' id='shop_swiper-button-prev'><img src ='images/icons/arrows/left-black-arrow.svg' /></div><div class='swiper-button-next' id='shop_swiper-button-next'><img src ='images/icons/arrows/right-black-arrow.svg' /></div></div></div></div>", offers[0]));
                             sb.Append("</div>");
                             
                         }

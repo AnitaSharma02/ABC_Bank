@@ -139,37 +139,37 @@ $(document).ready(function () {
     var strHtml = "";
     /*Code for */
     if (flag5star == true) {
-        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" value="5" display="5" onclick="showImage()" checked="checked"  /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
+        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pe-2"><label class= "checkbox-container d-flex"><span class="d-inline-block me-2"><input type="checkbox" value="5" display="5" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
         strHtml += "5,";
         $("#Chk5").prop('checked', true);
         $("#ChkAll").prop('checked', false);
     }
     if (flag4star == true) {
-        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" value="4" display="4" onclick="showImage()" checked="checked"/><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
+        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pe-2"><label class= "checkbox-container d-flex"><span class="d-inline-block me-2"><input type="checkbox" value="4" display="4" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
         strHtml += "4,";
         $("#Chk4").prop('checked', true);
         $("#ChkAll").prop('checked', false);
     }
     if (flag3star == true) {
-        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" value="3" display="3" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
+        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pe-2"><label class= "checkbox-container d-flex"><span class="d-inline-block me-2"><input type="checkbox" value="3" display="3" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
         strHtml += "3,";
         $("#Chk3").prop('checked', true);
         $("#ChkAll").prop('checked', false);
     }
     if (flag2star == true) {
-        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" value="2" display="2" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
+        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pe-2"><label class= "checkbox-container d-flex"><span class="d-inline-block me-2"><input type="checkbox" value="2" display="2" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
         strHtml += "2,";
         $("#Chk2").prop('checked', true);
         $("#ChkAll").prop('checked', false);
     }
     if (flag1star == true) {
-        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" value="1" display="1" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
+        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pe-2"><label class= "checkbox-container d-flex"><span class="d-inline-block me-2"><input type="checkbox" value="1" display="1" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
         strHtml += "1,";
         $("#Chk1").prop('checked', true);
         $("#ChkAll").prop('checked', false);
     }
     if (flagNorated == true) {
-        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" id="chkRatingNotAvailble" display="NOTAVAILABLE" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
+        $("#divRatings").append('<div class="dvLabel d-flex justify-content-between pe-2"><label class= "checkbox-container d-flex"><span class="d-inline-block me-2"><input type="checkbox" id="chkRatingNotAvailble" display="NOTAVAILABLE" onclick="showImage()" checked="checked" /><span class="checkmark"></span></span><div><img src="Images/icons/other/star-fill.svg" style="FL"/></div></label></div>');
     }
     if (flag5star == true && flag4star == true && flag3star == true && flag2star == true && flag1star == true) {
         $("#ChkAll").prop('checked', true);
@@ -192,7 +192,7 @@ $(document).ready(function () {
 
     $("#totalHotel").html("<span> Total Hotel(s) Found: </span>");
     //var HotelChain = "<li class='listHotel'><input type='checkbox' display='None' checked onclick='filtersData.ShowHideRows()' /> None</li>";
-    var HotelChain = '<div class="dvLabel d-flex justify-content-between pr-2"><label class= "checkbox-container d-flex"><span class="d-inline-block mr-2"><input type="checkbox" display="None" checked onclick="filtersData.ShowHideRows()" /><span class="checkmark"></span></span><div></div><span class="d-inline-block">None</span></label></div>';
+    var HotelChain = '<div class="dvLabel d-flex justify-content-between pe-2"><label class= "checkbox-container d-flex"><span class="d-inline-block me-2"><input type="checkbox" display="None" checked onclick="filtersData.ShowHideRows()" /><span class="checkmark"></span></span><div></div><span class="d-inline-block">None</span></label></div>';
     for (var count = 0; count < FilterHotelRange.ListOfHotelChain.length; count++) {
         if (FilterHotelRange.ListOfHotelChain[count].toString() != "") {
             HotelChain += "<li class='listHotel'><input type='checkbox' display='" + FilterHotelRange.ListOfHotelChain[count] + "' checked onclick='filtersData.ShowHideRows()' /> " + FilterHotelRange.ListOfHotelChain[count] + "</li>";

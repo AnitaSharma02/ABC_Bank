@@ -484,7 +484,7 @@
     --filter-mobile-modal-content-overflow: hidden; /* apply when you need b-radius */
     --filter-mobile-modal-body-padding: 0 1rem 0 1rem;
     --filter-mobile-modal-header-bg: var(--colour5);
-    --filter-mobile-modal-header-padding: 0.5rem 1rem;
+    --filter-mobile-modal-header-padding: 1rem 1rem;
     /* modal title */
     --filter-mobile-modal-title-family: var(--font-bold);
     --filter-mobile-modal-title-fontsize: 1rem;
@@ -505,6 +505,7 @@
     --filter-mobile-accordion-card-header-padding: 0;
     --filter-mobile-accordion-card-header-btn-border: 1px solid transparent;
     --filter-mobile-accordion-card-header-btn-padding: 0.5rem 0;
+    --filter-mobile-accordion-card-header-btn-bg:#ffffff;
     --filter-mobile-accordion-card-body-padding: 0;
     /* show or hide scroll-ver */
     --filter-mobile-accordion-scroll-ver-overflow-x: hidden;
@@ -523,8 +524,8 @@
     /* converted modal to static */
     --filter-desktop-modal-position: static;
     --filter-desktop-modal-display: block;
-    --filter-desktop-modal-width: auto;
-    --filter-desktop-modal-height: auto;
+    --filter-desktop-modal-width: 25%;
+    --filter-desktop-modal-height: 100%;
     --filter-desktop-modal-overflow: auto;
     --filter-desktop-modal-opacity: 1;
     --filter-desktop-modal-z-index: 0;
@@ -566,10 +567,10 @@
     --modal-footer-padding: 0 1rem 1rem 1rem;
     /*modal close button*/
     --modal-close-btn-opacity: 1;
-    --modal-close-btn-fontsize: 1rem;
+    --modal-close-btn-fontsize: 1.25rem;
     --modal-close-icon-bg: transparent;
     --modal-close-icon-text-colour: var(--colour6);
-    --modal-close-icon-fontsize: 1rem;
+    --modal-close-icon-fontsize: 1.25rem;
 
     /*==================[ COMMON ACCORDION ]==================*/
     --accordion-header-family: var(--font-semibold);
@@ -773,7 +774,7 @@
 
     /*==================[ BOOTSTRAP PAGINATION ]==================*/
     --b-pagination-box-shadow-focus: none;
-    --b-pagination-pagelink-bg: transparent;
+    --b-pagination-pagelink-bg: var(--colour6);
     --b-pagination-pagelink-text-colour: var(--colour1);
     --b-pagination-pagelink-cursor: pointer;
     /*active*/
@@ -1004,7 +1005,7 @@ Templates/DomesticFinalTemplate.htm
 
 .dvCommonAccordion - DONE
 ------------------------------------
-NOTE - ignore data-parent="#filter-accordion" sections, these accordions are in .dvFilter modal fade sections
+NOTE - ignore data-bs-parent="#filter-accordion" sections, these accordions are in .dvFilter modal fade sections
 Aboutus.aspx
 BookingPolicy.aspx
 CarDetails.aspx

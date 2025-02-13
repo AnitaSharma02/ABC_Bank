@@ -96,19 +96,19 @@ public partial class CarDetails : System.Web.UI.Page
                        
                     }
 
-                    sbcardetails.Append("<div class=\"card-header p-0\" id=\"headingTwo\">");
-                    sbcardetails.Append("<h2 class=\"mb-0\">");
-                    sbcardetails.Append("<button class=\"btn btn-block text-left p-3 collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapseTwo\" aria-expanded=\"false\" aria-controls=\"collapseTwo\">");
+                    //sbcardetails.Append("<div class=\"card-header p-0\" id=\"headingTwo\">");
+                    sbcardetails.Append("<h2 class=\"accordion-header mb-0\">");
+                    sbcardetails.Append("<button class=\"accordion-button btn btn-block text-start p-3 collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapseTwo\" aria-expanded=\"false\" aria-controls=\"collapseTwo\">");
                     sbcardetails.Append("<span class=\"heading-bold h6\">" + lobjVehicle.vehicle.name + "</span" + "<span> (Similar)</span > <span class=\"arrow-icon\"> <i class=\"fa fa-caret-up\" aria-hidden=\"true\"></i> </span>");
-                    sbcardetails.Append("</button></h2></div>");
-                    sbcardetails.Append("<div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionExample\">");
+                    sbcardetails.Append("</button></h2>");
+                    sbcardetails.Append("<div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-bs-parent=\"#accordionExample\">");
                     sbcardetails.Append("<div class=\"card-body p-3\">");
                     sbcardetails.Append("<div class=\"row\">");
                     sbcardetails.Append("<div class=\"col-12\">");                    
-                    sbcardetails.Append("<div class=\"dvCarImage\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
+                    sbcardetails.Append("<div class=\"dvCarImage\" data-bs-toggle=\"modal\" data-bs-target=\"#dvMoreInfoModal\">");
                     sbcardetails.Append("<img class=\"img-fluid mt-auto mb-auto\" src=" + lobjVehicle.vehicle.images[0].url + " />");
                     sbcardetails.Append("</div>");
-                    sbcardetails.Append("<div class=\"btn btn-two w-100 my-3\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
+                    sbcardetails.Append("<div class=\"btn btn-two w-100 my-3\" data-bs-toggle=\"modal\" data-bs-target=\"#dvMoreInfoModal\">");
                     sbcardetails.Append("More info");
                     sbcardetails.Append("</div>");
                     sbcardetails.Append("<div class=\"dvProvider text-center\">");
@@ -127,21 +127,21 @@ public partial class CarDetails : System.Web.UI.Page
                     sbcardetails.Append("<div class=\"\">");
                     sbcardetails.Append("<i class=\"fa-solid fa-couch\"></i>");
                     sbcardetails.Append("</div>");
-                    sbcardetails.Append("<span class=\"ml-2 h7\">x " + lobjVehicle.vehicle.seats + "</span>");
+                    sbcardetails.Append("<span class=\"ms-2 h7\">x " + lobjVehicle.vehicle.seats + "</span>");
                     sbcardetails.Append("</div>");
 
                     sbcardetails.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbcardetails.Append("<div class=\"\">");
                     sbcardetails.Append("<i class=\"fa-solid fa-life-ring\"></i>");
                     sbcardetails.Append("</div>");
-                    sbcardetails.Append("<span class=\"ml-2 h7\"> " + lobjVehicle.vehicle.transmission + "</span>");
+                    sbcardetails.Append("<span class=\"ms-2 h7\"> " + lobjVehicle.vehicle.transmission + "</span>");
                     sbcardetails.Append("</div>");
 
                     sbcardetails.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbcardetails.Append("<div class=\"\">");
                     sbcardetails.Append("<i class=\"fa-solid fa-door-closed\"></i>");
                     sbcardetails.Append("</div>");
-                    sbcardetails.Append("<span class=\"ml-2 h7\"> " + lobjVehicle.vehicle.doors + "</span>");
+                    sbcardetails.Append("<span class=\"ms-2 h7\"> " + lobjVehicle.vehicle.doors + "</span>");
                     sbcardetails.Append("</div>");
 
                     if (lobjVehicle.vehicle.airco)
@@ -157,14 +157,14 @@ public partial class CarDetails : System.Web.UI.Page
                     sbcardetails.Append("<div class=\"\">");
                     sbcardetails.Append("<i class=\"fa-solid fa-snowflake\"></i>");
                     sbcardetails.Append("</div>");
-                    sbcardetails.Append("<span class=\"ml-2 h7\">" + lstrAircon + "</span>");
+                    sbcardetails.Append("<span class=\"ms-2 h7\">" + lstrAircon + "</span>");
                     sbcardetails.Append("</div>");
 
                     sbcardetails.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbcardetails.Append("<div class=\"\">");
                     sbcardetails.Append("<i class=\"fa-solid fa-gas-pump\"></i>");
                     sbcardetails.Append("</div>");
-                    sbcardetails.Append("<span class=\"ml-2 h7\">Fair Fuel Policy</span>");
+                    sbcardetails.Append("<span class=\"ms-2 h7\">Fair Fuel Policy</span>");
                     sbcardetails.Append("</div>");
                     sbcardetails.Append("</div>");
                     sbcardetails.Append("</div>");
@@ -194,35 +194,35 @@ public partial class CarDetails : System.Web.UI.Page
                     sbmoreInfo.Append("<div class=\"\">");
                     sbmoreInfo.Append("<i class=\"fa-solid fa-couch\"></i>");
                     sbmoreInfo.Append("</div>");
-                    sbmoreInfo.Append("<span class=\"ml-2 h7\">x " + lobjVehicle.vehicle.seats + "</span>");
+                    sbmoreInfo.Append("<span class=\"ms-2 h7\">x " + lobjVehicle.vehicle.seats + "</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"\">");
                     sbmoreInfo.Append("<i class=\"fa-solid fa-life-ring\"></i>");
                     sbmoreInfo.Append("</div>");
-                    sbmoreInfo.Append("<span class=\"ml-2 h7\"> " + lobjVehicle.vehicle.transmission + "</span>");
+                    sbmoreInfo.Append("<span class=\"ms-2 h7\"> " + lobjVehicle.vehicle.transmission + "</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"\">");
                     sbmoreInfo.Append("<i class=\"fa-solid fa-door-closed\"></i>");
                     sbmoreInfo.Append("</div>");
-                    sbmoreInfo.Append("<span class=\"ml-2 h7\"> " + lobjVehicle.vehicle.doors + "</span>");
+                    sbmoreInfo.Append("<span class=\"ms-2 h7\"> " + lobjVehicle.vehicle.doors + "</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"\">");
                     sbmoreInfo.Append("<i class=\"fa-solid fa-gas-pump\"></i>");
                     sbmoreInfo.Append("</div>");
-                    sbmoreInfo.Append("<span class=\"ml-2 h7\">Fair Fuel Policy</span>");
+                    sbmoreInfo.Append("<span class=\"ms-2 h7\">Fair Fuel Policy</span>");
                     sbmoreInfo.Append("</div>");
 
                     sbmoreInfo.Append("<div class=\"col-6 col-md-6 d-flex mb-1 mt-2 align-items-center\">");
                     sbmoreInfo.Append("<div class=\"\">");
                     sbmoreInfo.Append("<i class=\"fa-solid fa-snowflake\"></i>");
                     sbmoreInfo.Append("</div>");
-                    sbmoreInfo.Append("<span class=\"ml-2 h7\">" + lstrAircon + "</span>");
+                    sbmoreInfo.Append("<span class=\"ms-2 h7\">" + lstrAircon + "</span>");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("</div>");
                     //sbmoreInfo.Append("<div class=\"travelBtn mt-4\">");
@@ -239,14 +239,14 @@ public partial class CarDetails : System.Web.UI.Page
                     sbmoreInfo.Append("<img width=\"50\" class=\"img-fluid mt-auto mb-auto\" src=\"images/logos/giift-logo-blue.svg\" alt=\"Logo\">");
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("</div>");
-                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-9 mt-2 mt-md-0 order-md-1 text-left\">");
+                    sbmoreInfo.Append("<div class=\"col-12 col-sm-6 col-md-9 mt-2 mt-md-0 order-md-1 text-start\">");
                     sbmoreInfo.Append("<div class=\"\">");
                     sbmoreInfo.Append("<a class=\"link1 text-decoration-none text-colour7\" ><i class=\"fa-solid fa-location-dot\"></i><span> Vehicle location:</span></a>");
 
                     Branch lobjBranch = lobjCarAvailabilityResponse.data.branches.Find(x => x.id == lobjVehicle.pickUpBranchId);
                     if (lobjBranch != null)
                     {
-                        sbmoreInfo.Append("<span class=\"h7 text-colour7 ml-1\"> " + lobjBranch.addressData.line1 + "," + lobjBranch.addressData.line3 + "," + lobjBranch.addressData.postalCode + " </span>");
+                        sbmoreInfo.Append("<span class=\"h7 text-colour7 ms-1\"> " + lobjBranch.addressData.line1 + "," + lobjBranch.addressData.line3 + "," + lobjBranch.addressData.postalCode + " </span>");
                     }
                     sbmoreInfo.Append("</div>");
                     sbmoreInfo.Append("</div>");
@@ -288,7 +288,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     {
                                         sbAdditionalEquipment.Append("<div class=\"row my-3 align-items-md-center\">");
                                         sbAdditionalEquipment.Append("<div class=\"col-sm-2\">");
-                                        sbAdditionalEquipment.Append("<select class=\"form-control\" name= \"cars\" class=\"\" id = \"" + extras.code + "\" onchange=\"AddAdditionalCharges('" + extras.code + "');\">");
+                                        sbAdditionalEquipment.Append("<select class=\"form-select\" name= \"cars\" class=\"\" id = \"" + extras.code + "\" onchange=\"AddAdditionalCharges('" + extras.code + "');\">");
                                         sbAdditionalEquipment.Append("<option value=\"0\"> 0 </option>");
                                         sbAdditionalEquipment.Append("<option value=\"1\"> 1 </option>");
                                         sbAdditionalEquipment.Append("<option value=\"2\"> 2 </option>");
@@ -322,18 +322,18 @@ public partial class CarDetails : System.Web.UI.Page
 
                             sb.Append("<div class=\"dvPayOption col-12 col-lg-6\">");
                             sb.Append("<div class=\"dvLabel\">");
-                            sb.Append("<label class=\"checkbox-container border b-radius mt-3 pr-3\">");
+                            sb.Append("<label class=\"checkbox-container border b-radius mt-3 pe-3\">");
                             sb.Append("<div class=\"col-12 d-flex align-items-center p-3\">");
                             sb.Append("<span class=\"d-inline-block\">");
                             sb.Append("<input type=\"radio\" value=\"" + PaymentOption.rateReference + "\" onchange=\"GetRateDetails('" + PaymentOption.rateReference + "');\" name=\"payment\" id=" + PaymentOption.paymentType + " checked>");
-                            sb.Append("<span class=\"checkmark\">");
+                            sb.Append("<span class=\"checkmark ms-3\">");
                             sb.Append("</span>");
                             sb.Append("</span>");
                             //sb.Append("<span class=\"PayCont\">PAY NOW:</span> <span>" + PaymentOption.payments.payNow.vehicle.display.amount + "<i class=\"fa fa-usd\" aria-hidden=\"true\"></i></span>");
-                            sb.Append("<span class=\"PayCont heading-bold text-colour1 text-uppercase ml-2\">PAY NOW:</span> <span class=\"heading-bold text-colour1 mx-2\">" + String.Format("{0:0.00}", PaymentOption.payments.estimatedTotal.total.display.amount) + " Points</span>");
+                            sb.Append("<span class=\"PayCont heading-bold text-colour1 text-uppercase ms-2\">PAY NOW:</span> <span class=\"heading-bold text-colour1 mx-2\">" + String.Format("{0:0.00}", PaymentOption.payments.estimatedTotal.total.display.amount) + " Points</span>");
                             sb.Append("<span class=\"tickmark\"><i class=\"fa fa-check correctIcon\" id=\"correctIcon\"></i></span>");
                             sb.Append("</div>");
-                            sb.Append("<div class=\"col-12 border-top pl-0 py-3\">");
+                            sb.Append("<div class=\"col-12 border-top ps-0 py-3\">");
                             //sb.Append("<div class=\"\">");
                             sb.Append("<p><span>Select this option to pay your car hire balance in full..Inc.</span> <strong class=\"heading-bold\">free cancellation</strong> <span>up to 48 hours before pick up!</span></p>");
                             //sb.Append("</div>");
@@ -367,7 +367,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     /*sbextras.Append("<div class=\"row\">");
                                     sbextras.Append("<div class=\"col-12\">");*/
                                     sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i><span> " + extras.name + " </span></h2>");
-                                    //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
+                                    //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-bs-toggle=\"modal\" data-bs-target=\"#dvMoreInfoModal\">");
                                     //sbextras.Append("More info");
                                     //sbextras.Append("</div>");
                                     /*sbextras.Append("</div>");
@@ -384,7 +384,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     sbextras.Append("<p class=\"heading6 text-colour1\"> " + String.Format("{0:0.00}", extras.rentalPrice.display.amount) + " Points</p>");
                                     /*sbextras.Append("</div>");*/
                                     sbextras.Append("</div>");
-                                    sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-right\">");
+                                    sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-end\">");
                                     /*sbextras.Append("<div class=\"travelBtn\">");*/
                                     sbextras.Append("<button type =\"button\" id=ADD_" + extras.productId + " onclick=\"AddRemoveAditionalCharges('ADD','" + extras.name + "','" + extras.rentalPrice.display.amount + "','" + PaymentOption.rateReference + "','" + extras.productId + "');\" class=\"btn btn-one dvAdd\"><span>+ ADD</span></button>");
                                     sbextras.Append("<button type =\"button\" id=REMOVE_" + extras.productId + " onclick=\"AddRemoveAditionalCharges('REMOVE','" + extras.name + "','" + extras.rentalPrice.display.amount + "','" + PaymentOption.rateReference + "','" + extras.productId + "');\" class=\"d-none btn btn-one dvRemove\">- REMOVE</button>");
@@ -419,7 +419,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     /*sbextras.Append("<div class=\"row\">");
                                     sbextras.Append("<div class=\"col-12\">");*/
                                     sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i><span> " + extras.name + " </span></h2>");
-                                    //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
+                                    //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-bs-toggle=\"modal\" data-bs-target=\"#dvMoreInfoModal\">");
                                     //sbextras.Append("More info");
                                     //sbextras.Append("</div>");
                                     /*sbextras.Append("</div>");
@@ -436,7 +436,7 @@ public partial class CarDetails : System.Web.UI.Page
                                     sbextras.Append("<p class=\"heading6 text-colour1\"> " +String.Format("{0:0.00}", extras.rentalPrice.display.amount) + " Points</p>");
                                     /*sbextras.Append("</div>");*/
                                     sbextras.Append("</div>");
-                                    sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-right\">");
+                                    sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-end\">");
                                     /*sbextras.Append("<div class=\"travelBtn\">");*/
                                     sbextras.Append("<button type =\"button\" id=ADD_" + extras.productId + " onclick=\"AddRemoveAditionalCharges('ADD','" + extras.name + "','" + extras.rentalPrice.display.amount + "','" + PaymentOption.rateReference + "','" + extras.productId + "');\" class=\"btn btn-one dvAdd\">+ ADD</button>");
                                     sbextras.Append("<button type =\"button\" id=REMOVE_" + extras.productId + " onclick=\"AddRemoveAditionalCharges('REMOVE','" + extras.name + "','" + extras.rentalPrice.display.amount + "','" + PaymentOption.rateReference + "','" + extras.productId + "');\" class=\"d-none btn btn-one dvRemove\">- REMOVE</button>");
@@ -546,7 +546,7 @@ public partial class CarDetails : System.Web.UI.Page
                         /*sbextras.Append("<div class=\"row\">");
                         sbextras.Append("<div class=\"col-12\">");*/
                         sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i><span> " + extras.name + " </span></h2>");
-                        //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
+                        //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-bs-toggle=\"modal\" data-bs-target=\"#dvMoreInfoModal\">");
                         //sbextras.Append("More info");
                         //sbextras.Append("</div>");
                         /*sbextras.Append("</div>");
@@ -562,7 +562,7 @@ public partial class CarDetails : System.Web.UI.Page
                         sbextras.Append("<p class=\"heading6 text-colour1\"> " + String.Format("{0:0.00}", extras.rentalPrice.display.amount) + "<i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
                         /*sbextras.Append("</div>");*/
                         sbextras.Append("</div>");
-                        sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-right\">");
+                        sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-end\">");
                         /*sbextras.Append("<div class=\"travelBtn\">");*/
                         sbextras.Append("<button type =\"button\" id=ADD_" + extras.productId + " onclick=\"AddRemoveAditionalCharges('ADD','" + extras.name + "','" + extras.rentalPrice.display.amount + "','" + lobjRateResponse.data.package.rateReference + "','" + extras.productId + "');\" class=\"btn btn-one dvAdd\">+ ADD</button>");
                         sbextras.Append("<button type =\"button\" id=REMOVE_" + extras.productId + " onclick=\"AddRemoveAditionalCharges('REMOVE','" + extras.name + "','" + extras.rentalPrice.display.amount + "','" + lobjRateResponse.data.package.rateReference + "','" + extras.productId + "');\" class=\"d-none btn btn-one dvRemove\">- REMOVE</button>");
@@ -597,7 +597,7 @@ public partial class CarDetails : System.Web.UI.Page
                         /*sbextras.Append("<div class=\"row\">");
                         sbextras.Append("<div class=\"col-12\">");*/
                         sbextras.Append("<h2 class=\"heading6 mb-2\"><i class=\"fa-solid fa-shield-halved\"></i><span> " + extras.name + " </span></h2>");
-                        //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-toggle=\"modal\" data-target=\"#dvMoreInfoModal\">");
+                        //sbextras.Append("<div class=\"moreInfo mt-md-1\" data-bs-toggle=\"modal\" data-bs-target=\"#dvMoreInfoModal\">");
                         //sbextras.Append("More info");
                         //sbextras.Append("</div>");
                         /*sbextras.Append("</div>");
@@ -613,7 +613,7 @@ public partial class CarDetails : System.Web.UI.Page
                         sbextras.Append("<p class=\"heading6 text-colour1\"> " +String.Format("{0:0.00}", extras.rentalPrice.display.amount) + "<i class=\"fa fa-usd\" aria-hidden=\"true\"></i></p>");
                         /*sbextras.Append("</div>");*/
                         sbextras.Append("</div>");
-                        sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-right\">");
+                        sbextras.Append("<div class=\"col-6 col-md-5 col-lg-4 text-end\">");
                         /*sbextras.Append("<div class=\"travelBtn\">");*/
                         sbextras.Append("<button type =\"button\" id=ADD_" + extras.productId + " onclick=\"AddRemoveAditionalCharges('ADD','" + extras.name + "','" + extras.rentalPrice.display.amount + "','" + lobjRateResponse.data.package.rateReference + "','" + extras.productId + "');\" class=\"btn btn-one dvAdd\">+ ADD</button>");
                         sbextras.Append("<button type =\"button\" id=REMOVE_" + extras.productId + " onclick=\"AddRemoveAditionalCharges('REMOVE','" + extras.name + "','" + extras.rentalPrice.display.amount + "','" + lobjRateResponse.data.package.rateReference + "','" + extras.productId + "');\" class=\"d-none btn btn-one dvRemove\">- REMOVE</button>");
@@ -632,8 +632,8 @@ public partial class CarDetails : System.Web.UI.Page
                     else
                     {
                         sbAdditionalEquipment.Append("<div class=\"row mb-3\">");
-                        sbAdditionalEquipment.Append("<div class=\"col-3 col-md-3 col-lg-2 dvSelectForm pl-0\">");
-                        sbAdditionalEquipment.Append("<select class=\"form-control\" name= \"cars\" class=\"\" id = \"" + extras.code + "\" onchange=\"AddAdditionalCharges(this);\">");
+                        sbAdditionalEquipment.Append("<div class=\"col-3 col-md-3 col-lg-2 dvSelectForm ps-0\">");
+                        sbAdditionalEquipment.Append("<select class=\"form-select\" name= \"cars\" class=\"\" id = \"" + extras.code + "\" onchange=\"AddAdditionalCharges(this);\">");
                         sbAdditionalEquipment.Append("<option value=\"0\"> 0 </option>");
                         sbAdditionalEquipment.Append("<option value=\"1\"> 1 </option>");
                         sbAdditionalEquipment.Append("<option value=\"2\"> 2 </option>");
@@ -641,9 +641,9 @@ public partial class CarDetails : System.Web.UI.Page
                         sbAdditionalEquipment.Append("<option value=\"4\"> 4 </option>");
                         sbAdditionalEquipment.Append("</select>");
                         sbAdditionalEquipment.Append("</div>");
-                        sbAdditionalEquipment.Append("<div class=\"col-5 col-md-5 col-lg-4 dvChildName pl-md-2 pl-lg-5\">");
+                        sbAdditionalEquipment.Append("<div class=\"col-5 col-md-5 col-lg-4 dvChildName ps-md-2 ps-lg-5\">");
                         sbAdditionalEquipment.Append("<p id = \"spnaditionalchargename_" + extras.code + "\"> " + extras.name + "</p>");
-                        sbAdditionalEquipment.Append("<div class=\"btn btn-two\" data-toggle=\"modal\" data-target=\"#dvAdditionalEquipmentModal\">");
+                        sbAdditionalEquipment.Append("<div class=\"btn btn-two\" data-bs-toggle=\"modal\" data-bs-target=\"#dvAdditionalEquipmentModal\">");
                         sbAdditionalEquipment.Append("More info");
                         sbAdditionalEquipment.Append("</div>");
                         sbAdditionalEquipment.Append("</div>");

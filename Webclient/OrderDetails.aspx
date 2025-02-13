@@ -21,7 +21,7 @@
         <div class="container-xl">
             <nav>
                 <ul class="breadcrumb px-0 py-3">
-                    <li class="mr-3">
+                    <li class="me-3">
                         <a href="\">
                             <img src="images/icons/arrows/back-arrow.svg" alt="" /></a>
                     </li>
@@ -96,25 +96,25 @@
                 <%--<div class="dvLine border d-none d-md-block px-3"></div>--%>
                <%-- <div class="col-6 col-md-auto mb-3 mt-3 my-3">
                     <div class="d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3" runat="server" id="divOrderConfirmed">
-                        <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30 mr-sm-2">1</span>
+                        <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30 me-sm-2">1</span>
                         <span class="h6 heading-regular">Order Confirmed</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-auto mb-3 mt-3 my-3">
                     <div class="d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3" runat="server" id="divOrderPicked">
-                        <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30 mr-sm-2">2</span>
+                        <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30 me-sm-2">2</span>
                         <span class="h6 heading-regular">Picked by courier</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-auto mb-3 mt-md-3 my-3">
                     <div class="d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3" runat="server" id="divOtw">
-                        <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30 mr-sm-2">3</span>
+                        <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30 me-sm-2">3</span>
                         <span class="h6 heading-regular">On the way</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-auto mb-3 mt-md-3 my-3">
                     <div class="d-flex flex-column flex-sm-row align-items-center bg-colour6 px-md-1 px-lg-3" runat="server" id="divDelivered">
-                        <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30 mr-sm-2">4</span>
+                        <span class="d-flex align-items-center justify-content-center bg-colour2 p-3 rounded-circle w-30 h-30 me-sm-2">4</span>
                         <span class="h6 heading-regular">Delivered</span>
                     </div>
                 </div>--%>
@@ -169,25 +169,46 @@
     </div>
 
     <!-- Modal -->
-    <div class="dvCommonModal dvOrderDetailsPopup modal fade" id="dvOrderDetailsModal" tabindex="-1">
+  <%--  <div class="dvCommonModal dvOrderDetailsPopup modal fade" id="dvOrderDetailsModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
                <div class="modal-header border-0">
                    <h5 class="modal-title">Details</h5>
-                    <button type="button" class="close" data-dismiss="modal">
-                        <i class="fa-solid fa-xmark"></i>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                        <i class="fas fa-times"></i>
                     </button>
                </div> 
                 <div class="modal-body bg-colour2 p-3">
                     <div id="divDynamicContent"></div>
                 </div>
                 <!-- <div class="modal-footer">
-              <button type="button" class="btn btn-two" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-two" data-bs-dismiss="modal">Close</button>
               <button type="button" class="btn btn-one">Save changes</button>
             </div> -->
             </div>
         </div>
+    </div>--%>
+    <div class="dvCommonModal dvOrderDetailsPopup modal fade" id="dvOrderDetailsModal" tabindex="-1" aria-labelledby="dvOrderDetailsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal">
+            <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body bg-colour2 p-3">
+        <div id="divDynamicContent"></div>
+      </div>
+      <!-- Uncomment the footer if needed -->
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
     </div>
+  </div>
+</div>
+
     <!-- Modal -->
 
     <script type="text/javascript">
