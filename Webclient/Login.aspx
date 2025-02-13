@@ -135,12 +135,14 @@
                                             <div class="row">
                                                 <div class="col-12 mb-3">
                                                     <label class="label">CIF</label>
-                                                   <div class="dvInput input-group tooltip-container">
-                                                        <asp:TextBox ID="txtMemberId" autocomplete="off" runat="server" CssClass="form-control" onkeypress="var retValue = ActivationOTPOnEnter(event); event.returnValue = retValue; return retValue;"></asp:TextBox>
-                                                       <div class="tooltip">Your CIF is a seven-digit code and is part of your account number <span style="letter-spacing: 1px;">009999<u class="text-danger h7 text-decoration-underline">9999999</u>99</span></div>
+                                                    <div class="tooltip-container">
+                                                    <span class="exclamation">!</span>
+                                                            <div class="tooltip">Your CIF is a seven-digit code and is part of your account number <span style="letter-spacing: 1px;">009999<u class="text-danger h7 text-decoration-underline">9999999</u>99</span></div>
+                                                  
                                                     </div>
-                                                   
-                                                    
+                                                   <div class="dvInput input-group ">
+                                                        <asp:TextBox ID="txtMemberId" autocomplete="off" runat="server" CssClass="form-control" onkeypress="var retValue = ActivationOTPOnEnter(event); event.returnValue = retValue; return retValue;"></asp:TextBox>
+                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
