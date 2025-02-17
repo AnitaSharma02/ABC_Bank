@@ -145,7 +145,7 @@
                                                         <div class="col-sm-3 mb-3">
                                                             <p class="">
                                                                 <span class="h7 d-block heading-semibold text-colour7">E-mail ID</span>
-                                                                <asp:Label ID="labelEmailValue" CssClass="d-block" runat="server"></asp:Label>
+                                                                <asp:Label ID="labelEmailValue" CssClass="d-block text-break" runat="server"></asp:Label>
                                                             </p>
                                                         </div>
                                                         <div class="col-sm-3 mb-3">

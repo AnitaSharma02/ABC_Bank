@@ -300,7 +300,7 @@
                                     </div>
                                 </ItemTemplate>
                             </asp:Repeater>--%>
-                            <div id="divtransactionSummaryData" class="col-12"></div>
+                            <div id="divtransactionSummaryData" class="col-12 mb-3"></div>
                         </div>
                     </div>
                 </div>

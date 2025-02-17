@@ -82,9 +82,9 @@
     </script>
     <style>
         #dvHeroSlider,
+        .dvInnerBanner,
         .dvRedemptionMenu,
-        .dvInnerBanner
-        #sitemap {
+        .dvShopMenu {
             display: none;
         }
     </style>
