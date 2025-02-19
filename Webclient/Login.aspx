@@ -134,7 +134,7 @@
                                                 <div class="col-12 mb-3">
                                                     <label class="label">CIF</label>
                                                     <div class="tooltip-container">
-                                                    <span class="exclamation">!</span>
+                                                    <span class="exclamation"><img src="images/Info.svg" width="1" height="14" alt=""></span>
                                                             <div class="tooltip">Your CIF is a seven-digit code and is part of your account number <span style="letter-spacing: 1px;">009999<u class="text-danger h7 text-decoration-underline">9999999</u>99</span></div>
                                                   
                                                     </div>
